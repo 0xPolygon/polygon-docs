@@ -1,0 +1,161 @@
+site_name: Polygon docs
+site_author: Polygon Labs
+copyright: Copyright &copy; 2023 Polygon Labs
+#remote_branch: gh-pages
+#remote_name: gh-deploy
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: white
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Sora
+    code: roboto
+  language: en
+  favicon: img/favicon.ico
+  logo: img/logo.png
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - CDK:
+      - Welcome: 
+        - technology/cdk/index.md # marketing landing page
+      - Get started: 
+        - Quickstart: technology/cdk/quickstart.md
+     # - How to: 
+      - Specification:
+        - Validium vs zkEVM: technology/cdk/deployment-differences.md
+        - Allowlists: technology/cdk/allowlists.md
+      - Concepts:
+        - What is the CDK: technology/cdk/what-is-polygon-cdk.md
+        - Data availability: technology/cdk/dac.md
+        - System attributes: technology/cdk/validium-attributes.md
+     # - API:
+      - Troubleshooting:
+        - CDK program: technology/cdk/program.md
+  - zkEVM:
+      - Overview: zkEVM/index.md
+      - Building on zKEVM: zkEVM/building.md
+      - Learning zkEVM: zkEVM/learning.md
+  - PoS:
+      - Overview: pos/index.md
+  - Miden:
+      - Overview: miden/index.md
+      #- Miden playground: https://0xpolygonmiden.github.io/examples/
+      #- Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
+      #- Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
+  - Tools: tools/index.md
+  - Tutorials:
+      - Tutorials: tutorials/index.md
+      - Build a Validium-based App-chain: tutorials/build-validium.md
+      - Deploy a zkEVM Rollup: tutorials/deploy-zkEVM.md
+      - Deploy a Miden Rollup: tutorials/deploy-miden.md
+      - Build a dApp on zkEVM: tutorials/build-zkEVM-dapp.md
+      - Run a PoS node: tutorials/run-pos-node.md
+      - Become a PoS Validator: tutorials/become-pos-validator.md
+
+extra:
+  # We'll add language options back when we actually support them.
+  # alternate:
+  #  - name: Español
+  #    link: /es/
+  #    lang: es
+  #  - name: Chinese (Simplified)
+  #    link: /zh/
+  #    lang: zh
+  generator: false
+  analytics:
+  #  provider: google
+  #  property: G-XXXXXXXXXX
+  social:
+    - icon: fontawesome/solid/circle-question
+      link: https://support.polygon.technology/support/solutions
+    - icon: fontawesome/solid/globe
+      link: https://polygon.technology/
+    - icon: fontawesome/brands/github
+      link: https://github.com/0xPolygon/wiki
+  feedback:
+    title: Was this page helpful?
+    ratings:
+      - icon: fontawesome/regular/face-grin-stars
+        name: This page was helpful
+        data: 1
+        note: >-
+          Thanks for your feedback!
+      - icon: fontawesome/regular/face-grimace
+        name: This page could be improved
+        data: 0
+        note: >-
+          Thanks for your feedback! Help us improve this page by
+          using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+extra_css:
+  - _site_essentials/stylesheets/extra.css
+  - _site_essentials/stylesheets/section-nav.css
+  - https://fonts.googleapis.com/icon?family=Material+Icons
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+      toc_depth: 4
+  - codehilite
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - markdown_include.include:
+      base_path: docs
+  - admonition
+  - footnotes
+  - def_list
+  - attr_list
+  - abbr
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - meta
+  - smarty
+
+plugins:
+  - search

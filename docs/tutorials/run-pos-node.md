@@ -1,0 +1,3 @@
+# Run a PoS node
+
+Lorem ipsum ...
