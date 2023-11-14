@@ -49,17 +49,19 @@ nav:
         - technology/cdk/index.md # marketing landing page
       - Get started: 
         - Quickstart: technology/cdk/quickstart.md
-     # - How to: 
+        - Deploy in validium mode: technology/cdk/deployment-validium.md
+      - How to: 
+        - Manage policies: technology/cdk/how-to/manage-policies.md
+      - Architecture:
+        - Tx flow: technology/cdk/tx-flow.md
       - Specification:
-        - Validium vs zkEVM: technology/cdk/deployment-differences.md
-        - Allowlists: technology/cdk/allowlists.md
+        - Validium vs zkEVM: technology/cdk/validium-vs-zkevm.md
+        - Performance benchmarks: technology/cdk/performance-benchmarks.md
       - Concepts:
-        - What is the CDK: technology/cdk/what-is-polygon-cdk.md
         - Data availability: technology/cdk/dac.md
-        - System attributes: technology/cdk/validium-attributes.md
      # - API:
       - Troubleshooting:
-        - CDK program: technology/cdk/program.md
+        - Component repos: technology/cdk/component-repos.md
   - zkEVM:
       - Overview: zkEVM/index.md
       - Building on zKEVM: zkEVM/building.md
@@ -134,8 +136,6 @@ markdown_extensions:
       permalink_title: Link to this section
       toc_depth: 4
   - codehilite
-  - pymdownx.tabbed
-  - pymdownx.superfences
   - markdown_include.include:
       base_path: docs
   - admonition
@@ -143,6 +143,8 @@ markdown_extensions:
   - def_list
   - attr_list
   - abbr
+  - pymdownx.tabbed
+  - pymdownx.superfences
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -154,6 +156,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - pymdownx.caret
   - meta
   - smarty
 
