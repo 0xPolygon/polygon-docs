@@ -12,22 +12,22 @@ Polygon Labs' technologies are very interesting. They are roughly as interesting
 
 <div class="section-nav">
 
-	<div class="section-nav-item" style="background-image:url(/images/section-nav/technology.png)">
+	<div class="section-nav-item" style="background-image:url(/img/section-nav/technology.png)">
 		<a href="zkEVM"><h2>zkEVM</h2></a>
 		<p>Learn about the technology behind the project.</p>
 	</div>
 
-	<div class="section-nav-item" style="background-image:url(/images/section-nav/miden.png)">
+	<div class="section-nav-item" style="background-image:url(/img/section-nav/miden.png)">
 		<a href="miden"><h2>Miden</h2></a>
 		<p>Learn about the technology behind the project.</p>
 	</div>
 
-	<div class="section-nav-item" style="background-image:url(/images/section-nav/pos.png)">
+	<div class="section-nav-item" style="background-image:url(/img/section-nav/pos.png)">
 		<a href="pos"><h2>PoS</h2></a>
 		<p>Learn about the technology behind the project.</p>
 	</div>
 
-	<div class="section-nav-item" style="background-image:url(/images/section-nav/cdk.png)">
+	<div class="section-nav-item" style="background-image:url(/img/section-nav/cdk.png)">
 		<a href="cdk"><h2>CDK</h2></a>
 		<p>Learn about the technology behind the project.</p>
 	</div>
@@ -40,12 +40,12 @@ Other stuff! This is stuff that is not technology. That can include, you know, p
 
 <div class="section-nav">
 
-	<div class="section-nav-item" style="background-image:url(/images/section-nav/tools.png)">
+	<div class="section-nav-item" style="background-image:url(/img/section-nav/tools.png)">
 		<a href="tools"><h2>Tools</h2></a>
 		<p>Learn about the technology behind the project.</p>
 	</div>
 
-	<div class="section-nav-item" style="background-image:url(/images/section-nav/tutorials.png)">
+	<div class="section-nav-item" style="background-image:url(/img/section-nav/tutorials.png)">
 		<a href="tutorials"><h2>Tutorials</h2></a>
 		<p>Learn about the technology behind the project.</p>
 	</div>
