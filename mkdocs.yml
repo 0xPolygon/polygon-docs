@@ -50,7 +50,7 @@ nav:
       - Get started:
         - Overview: cdk/overview.md
         - Quickstart: cdk/quickstart.md
-        - Deploy in validium mode: cdk/deployment-validium.md
+        - Deploy validium: cdk/deploy-validium.md
       - How to: 
         - Manage policies: cdk/how-to/manage-policies.md
       - Architecture:
