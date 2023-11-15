@@ -22,7 +22,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   font:
-    text: Sora
+    text: Tahoma
     code: roboto
   language: en
   favicon: img/favicon.ico
@@ -46,22 +46,23 @@ nav:
   - Home: index.md
   - CDK:
       - Welcome: 
-        - technology/cdk/index.md # marketing landing page
-      - Get started: 
-        - Quickstart: technology/cdk/quickstart.md
-        - Deploy in validium mode: technology/cdk/deployment-validium.md
+        - cdk/index.md # marketing landing page
+      - Get started:
+        - Overview: cdk/overview.md
+        - Quickstart: cdk/quickstart.md
+        - Deploy in validium mode: cdk/deployment-validium.md
       - How to: 
-        - Manage policies: technology/cdk/how-to/manage-policies.md
+        - Manage policies: cdk/how-to/manage-policies.md
       - Architecture:
-        - Tx flow: technology/cdk/tx-flow.md
+        - Tx flow: cdk/tx-flow.md
       - Specification:
-        - Validium vs zkEVM: technology/cdk/validium-vs-zkevm.md
-        - Performance benchmarks: technology/cdk/performance-benchmarks.md
+        - Validium vs zkEVM: cdk/validium-vs-zkevm.md
+        - Performance benchmarks: cdk/performance-benchmarks.md
       - Concepts:
-        - Data availability: technology/cdk/dac.md
+        - Data availability: cdk/dac.md
      # - API:
       - Troubleshooting:
-        - Component repos: technology/cdk/component-repos.md
+        - Component repos: cdk/component-repos.md
   - zkEVM:
       - Overview: zkEVM/index.md
       - Building on zKEVM: zkEVM/building.md
@@ -162,3 +163,4 @@ markdown_extensions:
 
 plugins:
   - search
+  - git-revision-date-localized

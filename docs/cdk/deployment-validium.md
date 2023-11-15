@@ -8,7 +8,7 @@
     For the latest updates, follow our official GitHub repositories.
 
     - [Node](https://github.com/0xPolygon/cdk-validium-node)
-    - [Data Availability](https://github.com/0xPolygon/cdk-data-availability)
+    - [Data availability](https://github.com/0xPolygon/cdk-data-availability)
     - [Contracts](https://github.com/0xPolygon/cdk-validium-contracts)
 
 
