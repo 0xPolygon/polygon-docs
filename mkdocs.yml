@@ -22,7 +22,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   font:
-    text: Sora
+    text: Tahoma
     code: roboto
   language: en
   favicon: img/favicon.ico
@@ -46,20 +46,24 @@ nav:
   - Home: index.md
   - CDK:
       - Welcome: 
-        - technology/cdk/index.md # marketing landing page
-      - Get started: 
-        - Quickstart: technology/cdk/quickstart.md
-     # - How to: 
+        - cdk/index.md # marketing landing page
+      - Get started:
+        - Overview: cdk/get-started/overview.md
+        - Quickstart validium: cdk/get-started/quickstart.md
+        - Deploy validium: cdk/get-started/deploy-validium.md
+      - How to: 
+        - Manage policies: cdk/how-to/manage-policies.md
+      #- Architecture:
       - Specification:
-        - Validium vs zkEVM: technology/cdk/deployment-differences.md
-        - Allowlists: technology/cdk/allowlists.md
+        - Validium vs zkEVM: cdk/specification/validium-vs-zkevm.md
+        - Performance benchmarks: cdk/specification/performance-benchmarks.md
       - Concepts:
-        - What is the CDK: technology/cdk/what-is-polygon-cdk.md
-        - Data availability: technology/cdk/dac.md
-        - System attributes: technology/cdk/validium-attributes.md
+        - Data availability: cdk/concepts/dac.md
      # - API:
       - Troubleshooting:
-        - CDK program: technology/cdk/program.md
+        - CDK component repos: cdk/troubleshooting/component-repos.md
+      - Retiring products:
+        - EDGE: cdk/edge-suggestion.md
   - zkEVM:
       - Overview: zkEVM/index.md
       - Building on zKEVM: zkEVM/building.md
@@ -134,8 +138,6 @@ markdown_extensions:
       permalink_title: Link to this section
       toc_depth: 4
   - codehilite
-  - pymdownx.tabbed
-  - pymdownx.superfences
   - markdown_include.include:
       base_path: docs
   - admonition
@@ -143,6 +145,8 @@ markdown_extensions:
   - def_list
   - attr_list
   - abbr
+  - pymdownx.tabbed
+  - pymdownx.superfences
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -154,8 +158,10 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - pymdownx.caret
   - meta
   - smarty
 
 plugins:
   - search
+ # - git-revision-date-localized

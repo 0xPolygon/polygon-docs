@@ -5,14 +5,12 @@
 
 This tutorial will guide you through the process of setting up a CDK Validium on your local machine using the deployment guidance of [<ins>Snapchain</ins>](https://www.snapchain.dev/).
 
-:::info Polygon CDK is in public preview stage and subject to changes
-
 Please note that the current Data Availability (DA) configuration in Polygon CDK is using a Data Availability Committee (DAC) node with a local Geth client as the L1. However, the integration with Layer 1 testnets, including Sepoilla, is actively being pursued.
 
 The CDK Validium is actively being developed, with ongoing feature enhancements and issue resolutions. For the latest updates, follow our official GitHub repositories.
 
 - [<ins>Node</ins>](https://github.com/0xPolygon/cdk-validium-node)
-- [<ins>Data Availability</ins>](https://github.com/0xPolygon/cdk-data-availability)
+- [<ins>Data availability</ins>](https://github.com/0xPolygon/cdk-data-availability)
 - [<ins>Contracts</ins>](https://github.com/0xPolygon/cdk-validium-contracts)
 
 New features and refinements are designed to enhance user experience without disrupting ongoing activities.
