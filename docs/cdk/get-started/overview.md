@@ -1,6 +1,6 @@
 Polygon's Chain Development Kit (CDK) is a software tool for blockchain developers which allows easy install and configuration of a variety of chain architectures.
 
-!!! warning
+!!! warning "INCORRECT"
     - At the time of writing, the CDK only supports validium nodes. The CDK in validium mode is in active development, with ongoing feature enhancements and issue resolutions. 
         
         For the latest updates, follow our official GitHub repositories:
@@ -11,3 +11,11 @@ Polygon's Chain Development Kit (CDK) is a software tool for blockchain develope
     - CDK zkEVM-rollup mode is in development.
 
 ![CDK flavors](../../img/cdk/cdk-modes.jpg) 
+
+
+Notes from chat with Gabriel:
+
+open source, **modular set of concepts, projects build L2/blockchain specific to needs/use cases 
+
+CDK -> conifguration choice of rollup and validium you make before you deploy
+? -> zero (type 1 prover), EDGE, Miden, zkWasm, 

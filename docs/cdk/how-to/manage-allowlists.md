@@ -1,3 +1,6 @@
+!!! note
+    Only validium
+
 ## Policy overview
 
 A **policy** is a set of rules that govern what actions are allowed or denied in the transaction pool. 

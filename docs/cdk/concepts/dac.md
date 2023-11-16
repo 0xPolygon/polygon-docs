@@ -1,4 +1,8 @@
-A data availability committee (DAC) is an offchain network of nodes that provides data to a blockchain network. The advantages are:
+!!! note
+    fix this: https://medium.com/coinmonks/what-is-data-availability-and-why-do-we-need-it-7993c039fc44
+
+
+A data availability committee (DAC) is an optional offchain network of nodes that provides data to a blockchain network. The advantages are:
 
 - **Lower transaction fees**: Reduced computational requirements lead to lower fees.
 - **State privacy**: A secure copy of state transitions ensures data integrity and privacy.
