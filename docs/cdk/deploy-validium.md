@@ -1,17 +1,3 @@
-!!! info 
-    Polygon CDK is in public preview stage and subject to changes.
-
-
-!!! warning
-    The CDK in validium mode is in active development, with ongoing feature enhancements and issue resolutions. 
-    
-    For the latest updates, follow our official GitHub repositories.
-
-    - [Node](https://github.com/0xPolygon/cdk-validium-node)
-    - [Data availability](https://github.com/0xPolygon/cdk-data-availability)
-    - [Contracts](https://github.com/0xPolygon/cdk-validium-contracts)
-
-
 !!! important "Recommendation"
     Follow the [Quickstart](quickstart.md) for a hands-on introduction to CDK in validium mode.
 
@@ -29,8 +15,10 @@ Next, set up and run the CDK validium node.
 
 Follow the instructions in the [CDK validium node repository's README](https://github.com/0xPolygon/cdk-validium-node).
 
-## 3. Run the data availability (DA) node
 
-Finally, once the CDK validium node is operational, set up and run the data availability node. 
+!!! danger "There are no instructions - awaiting feedback"
+    ## 3. Run the data availability (DA) node
 
-Instructions for this can be found in the [<ins>CDK DA Node GitHub repository's README</ins>](https://github.com/0xPolygon/cdk-data-availability).
+    Finally, once the CDK validium node is operational, set up and run the data availability node. 
+
+    Instructions for this can be found in the [<ins>CDK DA Node GitHub repository's README</ins>](https://github.com/0xPolygon/cdk-data-availability).
