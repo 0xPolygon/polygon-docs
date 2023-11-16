@@ -24,7 +24,7 @@ Navigate to `Add network` in your wallet, and enter the respective network detai
 | zkEVM Testnet | `https://rpc.public.zkevm-test.net` | `1442` | `https://testnet-zkevm.polygonscan.com` | **ETH** |
 
 
-Once the wallet is connected, the next step is to [bridge crypto assets](zkEVM/bridge-to-zkevm.md) from Ethereum to zkEVM. 
+Once the wallet is connected, the next step is to bridge crypto assets from Ethereum to zkEVM. 
 
 For testnet purposes, you can use the zkEVM faucet to get testnet tokens. 
 
