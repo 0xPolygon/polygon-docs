@@ -1,29 +1,31 @@
-## Validium node
+## Policy overview
 
-A **policy** is a set of rules that govern what actions are allowed or denied in the transaction pool. Currently, there are two defined policies:
-
-- **SendTx**: governs whether an address may send transactions to the pool.
-- **Deploy**: governs whether an address may deploy a contract.
-
-The CDK validium node offers policy management features that include allowlisting[^1], denylisting[^2], and access control lists (ACLs)[^3]. These features are beneficial for validium-based app-chains that require fine-grained control over transaction pools. 
-
-## Architecture
-
-The architecture is divided into the following main components:
-
-- **Policy management layer**: Defined in `policy.go`, this layer is responsible for the core logic of policy management.
-- **Data layer**: Defined in `pgpoolstorage/policy.go`, this layer interacts with the data layer (PostgreSQL database) to store and retrieve policy and ACL data.
-- **Policy definitions**: Defined in `pool/policy.go`, this layer contains the data structures and utility functions for policies and ACLs.
-- **Policy interface**: Defined in `pool/interfaces.go`, this interface outlines the methods that any concrete type must implement to be considered a policy in the system.
-
-## Policy features
+A **policy** is a set of rules that govern what actions are allowed or denied in the transaction pool. 
 
 - **Fine-grained control**: Developers can specify policies at a granular level, allowing or denying specific actions for specific addresses.
 - **Dynamic updates**: Policies and ACLs can be updated on-the-fly without requiring a node restart.
 - **Database-backed**: All policy data is stored in a PostgreSQL database.
 - **Extensible**: New policies can be easily added to the system.
 
-## Instructions for using policies
+## Validium node
+
+### Policies
+
+Currently, there are two defined policies:
+
+- **SendTx**: governs whether an address may send transactions to the pool.
+- **Deploy**: governs whether an address may deploy a contract.
+
+The CDK validium node offers policy management features that include allowlisting[^1], denylisting[^2], and access control lists (ACLs)[^3]. These features are beneficial for validium-based app-chains that require fine-grained control over transaction pools. 
+
+### Code definitions
+
+- **Policy management**: [`cmd/policy.go`](https://github.com/0xPolygon/cdk-validium-node/blob/5399f8859af9ffb0eb693bf395e1f09b53b154de/cmd/policy.go) contains the core logic of policy management.
+- **Policy definitions**: [`pool/policy.go`](https://github.com/0xPolygon/cdk-validium-node/blob/5399f8859af9ffb0eb693bf395e1f09b53b154de/pool/policy.go) contains structs and utility functions for policies and ACLs.
+- **Data**: [`pgpoolstorage/policy.go`](https://github.com/0xPolygon/cdk-validium-node/blob/5399f8859af9ffb0eb693bf395e1f09b53b154de/pool/policy.go) interacts with the data layer (PostgreSQL database) to store and retrieve policy and ACL data.
+- **Policy interface**: [`pool/interfaces.go`](https://github.com/0xPolygon/cdk-validium-node/blob/5399f8859af9ffb0eb693bf395e1f09b53b154de/pool/interfaces.go#L42) contains a `policy` interface which defines the methods that policies must implement.
+
+### How to use a policy
 
 | Command name | Description                                           | Flags & parameters                                                                                      |
 |--------------|-------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -36,7 +38,7 @@ The architecture is divided into the following main components:
 !!! note
     For the examples, we are using a `deploy` policy.
 
-### Add addresses to a policy
+#### Add addresses
 
 To add one or more addresses to a specific policy, you can use the `policy add` command. If you have a CSV file containing the addresses, you can use the --csv` flag.
 
@@ -44,7 +46,7 @@ To add one or more addresses to a specific policy, you can use the `policy add` 
 docker exec -it cdk-validium-aggregator /app/cdk-validium-node policy add --policy deploy 0xAddress1
 ```
 
-### Remove addresses from a policy
+#### Remove addresses
 
 To remove addresses from a policy, you can use the `policy remove` command.
 
@@ -56,7 +58,7 @@ docker exec -it cdk-validium-aggregator /app/cdk-validium-node policy remove --p
 docker exec -it cdk-validium-aggregator /app/cdk-validium-node policy remove --policy deploy --csv addresses.csv
 ```
 
-### Clear all addresses from a policy
+#### Clear all addresses
 
 To remove all addresses from a policy's ACL, you can use the `policy clear` command.
 
@@ -64,7 +66,7 @@ To remove all addresses from a policy's ACL, you can use the `policy clear` comm
 docker exec -it cdk-validium-aggregator /app/cdk-validium-node policy clear --policy deploy
 ```
 
-### Describing policies
+#### Get information about a policy
 
 To get information about a specific policy or all policies, you can use the `policy describe` command.
 

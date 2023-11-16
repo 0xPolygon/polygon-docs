@@ -3,7 +3,7 @@
 Polygon CDK running in validium mode inherits the core functionalities of zkEVM rollup mode and adds a [data availability layer](dac.md).
 
 !!! danger
-    How can we say that validium inherits from zkEVM rollup when zkEVM rollup is unavailable?
+    How can we say that validium inherits from zkEVM rollup when zkEVM rollup is unavailable? Do we mean non-CDK zkEVM rollup? We need to say so.
 
 ## Key differences
 

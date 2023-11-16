@@ -55,8 +55,8 @@ nav:
         - Manage policies: cdk/how-to/manage-policies.md
       #- Architecture:
       - Specification:
-        - Validium vs zkEVM: cdk/validium-vs-zkevm.md
-        - Performance benchmarks: cdk/performance-benchmarks.md
+        - Validium vs zkEVM: cdk/specification/validium-vs-zkevm.md
+        - Performance benchmarks: cdk/specification/performance-benchmarks.md
       - Concepts:
         - Data availability: cdk/dac.md
      # - API:
