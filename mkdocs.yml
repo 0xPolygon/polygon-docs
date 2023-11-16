@@ -48,9 +48,9 @@ nav:
       - Welcome: 
         - cdk/index.md # marketing landing page
       - Get started:
-        - Overview: cdk/overview.md
-        - Quickstart validium: cdk/quickstart.md
-        - Deploy validium: cdk/deploy-validium.md
+        - Overview: cdk/get-started/overview.md
+        - Quickstart validium: cdk/get-started/quickstart.md
+        - Deploy validium: cdk/get-started/deploy-validium.md
       - How to: 
         - Manage policies: cdk/how-to/manage-policies.md
       #- Architecture:
@@ -58,10 +58,10 @@ nav:
         - Validium vs zkEVM: cdk/specification/validium-vs-zkevm.md
         - Performance benchmarks: cdk/specification/performance-benchmarks.md
       - Concepts:
-        - Data availability: cdk/dac.md
+        - Data availability: cdk/concepts/dac.md
      # - API:
       - Troubleshooting:
-        - CDK component repos: cdk/component-repos.md
+        - CDK component repos: cdk/troubleshooting/component-repos.md
       - Retiring products:
         - EDGE: cdk/edge-suggestion.md
   - zkEVM:
@@ -164,4 +164,4 @@ markdown_extensions:
 
 plugins:
   - search
-  - git-revision-date-localized
+ # - git-revision-date-localized
