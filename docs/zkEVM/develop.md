@@ -14,7 +14,9 @@ keywords:
 
 ## Connecting to zkEVM
 
-Add the **Polygon zkEVM** network to your wallet, either the mainnet or the testnet, by entering the respective details as given in the below table:
+Add the **Polygon zkEVM** network to your wallet in order to interact with either the mainnet or the testnet.
+
+Navigate to `Add network` in your wallet, and enter the respective network details as given in the below table:
 
 | Network | RPC URL | ChainID | Block Explorer URL | Currency |
 | ------- | ------------------------------- | ---------------- | ---------------- | ----- |
