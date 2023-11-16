@@ -66,8 +66,12 @@ nav:
         - EDGE: cdk/edge-suggestion.md
   - zkEVM:
       - Overview: zkEVM/index.md
-      - Building on zKEVM: zkEVM/building.md
+      - Get started:
+        - Welcome: zkEVM/qswelcome.md
+        - Quickstart: zkEVM/develop.md
+      - How to: zkEVM/building.md
       - Learning zkEVM: zkEVM/learning.md
+      - Disclosures: zkEVM/risk-disclosures.md
   - PoS:
       - Overview: pos/index.md
   - Miden:
