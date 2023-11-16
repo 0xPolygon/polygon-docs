@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-virtualenv venv
+/Users/ammatlala/Library/Python/3.11/bin/virtualenv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
-mkdocs serve --strict
+mkdocs serve
 
