@@ -1,4 +1,6 @@
 # Architecture
+
+# Architecture
 ---
 id: architecture
 title: Architecture
