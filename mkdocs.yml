@@ -67,11 +67,30 @@ nav:
   - zkEVM:
       - Overview: zkEVM/index.md
       - Get started:
-        - Welcome: zkEVM/qswelcome.md
-        - Quickstart: zkEVM/develop.md
-      - How to: zkEVM/building.md
+        - Welcome: zkEVM/welcome.md
+        - Quickstart:
+          - Connecting to zkEVM: zkEVM/connect-wallet.md
+          - Using Polygon faucet: zkEVM/zkevm-faucet.md
+          - Bridging assets to zkEVM: zkEVM/bridge-to-zkevm.md
+        - Setup nodes:
+          - Setup local zkNode: zkEVM/setup-local-node.md
+          - Setup production zkNode: zkEVM/setup-production-node.md
+        - Deploy full zkEVM:
+          - Start here: zkEVM/step1-fullzkevm.md
+          - Install dependencies: zkEVM/step2-fullzkevm.md
+          - Create wallets: zkEVM/step3-fullzkevm.md
+          - Deploy zkNode: zkEVM/step4-fullzkevm.md
+          - Configure prover: zkEVM/step5-fullzkevm.md
+          - Activate forced transactions: zkEVM/step6-fullzkevm.md
+      - How to: 
+        - Write a contract: zkEVM/autocode-smart-contract.md
+        - Deploy a contract with Foundry: zkEVM/using-foundry.md
+        - Deploy a contract with Hardhat: zkEVM/using-hardhat.md
+        - Verify a contract: zkEVM/verify-smart-contract.md
       - Learning zkEVM: zkEVM/learning.md
       - Disclosures: zkEVM/risk-disclosures.md
+      - Third-party tools:
+        - Using web3modal SDK: zkEVM/using-web3modal.md
   - PoS:
       - Overview: pos/index.md
   - Miden:
