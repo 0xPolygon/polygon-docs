@@ -49,10 +49,12 @@ nav:
         - cdk/index.md # marketing landing page
       - Get started:
         - Overview: cdk/get-started/overview.md
-        - Quickstart validium: cdk/get-started/quickstart.md
+        - Quickstart:
+          - Validium: cdk/get-started/quickstart-validium.md
+          - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy validium: cdk/get-started/deploy-validium.md
       - How to: 
-        - Manage policies: cdk/how-to/manage-policies.md
+        - Manage allowlists: cdk/how-to/manage-allowlists.md
       #- Architecture:
       - Specification:
         - Validium vs zkEVM: cdk/specification/validium-vs-zkevm.md

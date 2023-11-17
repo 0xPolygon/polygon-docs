@@ -1,3 +1,8 @@
+!!! important
+    Policies are currently only available in validium mode.
+
+Managing allowlists, denylists, and ACLs is done with policies.
+
 ## Policy overview
 
 A **policy** is a set of rules that govern what actions are allowed or denied in the transaction pool. 
@@ -36,7 +41,7 @@ The CDK validium node offers policy management features that include allowlistin
 | `policy update`  | Update the default action for a policy             | `--policy` (or `-p`): Policy name<br/>`--allow`: Set policy to 'allow'<br/>`--deny`: Set policy to 'deny' |
 
 !!! note
-    For the examples, we are using a `deploy` policy.
+    The examples demonstrate a `deploy` policy.
 
 #### Add addresses
 
