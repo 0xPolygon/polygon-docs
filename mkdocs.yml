@@ -67,13 +67,32 @@ nav:
       - Retiring products:
         - EDGE: cdk/edge-suggestion.md
   - zkEVM:
-      - Overview: zkEVM/index.md
+      - zkEVM/index.md
       - Get started:
-        - Welcome: zkEVM/qswelcome.md
-        - Quickstart: zkEVM/develop.md
-      - How to: zkEVM/building.md
-      - Learning zkEVM: zkEVM/learning.md
-      - Disclosures: zkEVM/risk-disclosures.md
+        - Welcome: zkEVM/welcome.md
+        - Quickstart:
+          - Connecting to zkEVM: zkEVM/connect-wallet.md
+          - Using Polygon faucet: zkEVM/zkevm-faucet.md
+          - Bridging assets to zkEVM: zkEVM/bridge-to-zkevm.md
+        - Setup nodes:
+          - Setup local zkNode: zkEVM/setup-local-node.md
+          - Setup production zkNode: zkEVM/setup-production-node.md
+        - Deploy full zkEVM:
+          - Start here: zkEVM/step1-fullzkevm.md
+          - Install dependencies: zkEVM/step2-fullzkevm.md
+          - Create wallets: zkEVM/step3-fullzkevm.md
+          - Deploy zkNode: zkEVM/step4-fullzkevm.md
+          - Configure prover: zkEVM/step5-fullzkevm.md
+          - Activate forced transactions: zkEVM/step6-fullzkevm.md
+      - How to: 
+        - Write a contract: zkEVM/autocode-smart-contract.md
+        - Deploy a contract with Foundry: zkEVM/using-foundry.md
+        - Deploy a contract with Hardhat: zkEVM/using-hardhat.md
+        - Verify a contract: zkEVM/verify-smart-contract.md
+      - Concepts:
+        - Learning zkEVM: zkEVM/learning.md
+      - Troubleshooting:
+        - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
       - Overview: pos/index.md
   - Miden:
@@ -81,7 +100,9 @@ nav:
       #- Miden playground: https://0xpolygonmiden.github.io/examples/
       #- Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
       #- Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
-  - Tools: tools/index.md
+  - Tools: 
+      - tools/index.md
+      - Using Web3Modal SDK: tools/using-web3modal.md
   - Tutorials:
       - Tutorials: tutorials/index.md
       - Build a Validium-based App-chain: tutorials/build-validium.md
