@@ -65,7 +65,22 @@ nav:
       - Building on zKEVM: zkEVM/building.md
       - Learning zkEVM: zkEVM/learning.md
   - PoS:
-      - Overview: pos/index.md
+      - Welcome: 
+        - technology/pos/index.md
+      - Get started: 
+        - technology/pos/get-started.md
+      - How-tos: 
+        - technology/pos/how-tos.md
+      - Architecture:
+          - technology/pos/architecture.md
+      - Specification:
+          - technology/pos/spec.md
+      - Concepts:
+          - technology/pos/concepts.md
+      - API:
+          - technology/pos/api.md
+      - FAQ:
+          - technology/pos/faq.md
   - Miden:
       - Overview: miden/index.md
       #- Miden playground: https://0xpolygonmiden.github.io/examples/
