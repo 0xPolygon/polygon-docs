@@ -1,100 +1,59 @@
-SME: Gabriel
+This quickstart guides you through the process of setting up a CDK validium on your local machine.
 
-!!! info
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+!!! danger "Is it true?"
+    Please note that the current Data Availability (DA) configuration in Polygon CDK is using a Data Availability Committee (DAC) node with a local Geth client as the L1. However, the integration with Layer 1 testnets, including Sepoilla, is actively being pursued.
 
-This tutorial will guide you through the process of setting up a CDK Validium on your local machine using the deployment guidance of [<ins>Snapchain</ins>](https://www.snapchain.dev/).
+## Prerequisites
 
-Please note that the current Data Availability (DA) configuration in Polygon CDK is using a Data Availability Committee (DAC) node with a local Geth client as the L1. However, the integration with Layer 1 testnets, including Sepoilla, is actively being pursued.
+### System requirements
 
-The CDK Validium is actively being developed, with ongoing feature enhancements and issue resolutions. For the latest updates, follow our official GitHub repositories.
+- A Linux-based OS (e.g., Ubuntu Server 22.04 LTS).
+- At least 16GB RAM with a 4-core CPU.
+- An AMD64 architecture system.
 
-- [<ins>Node</ins>](https://github.com/0xPolygon/cdk-validium-node)
-- [<ins>Data availability</ins>](https://github.com/0xPolygon/cdk-data-availability)
-- [<ins>Contracts</ins>](https://github.com/0xPolygon/cdk-validium-contracts)
+!!! warning
+    CDK does not support ARM-based Macs
 
-New features and refinements are designed to enhance user experience without disrupting ongoing activities.
+### Software requirements
 
-:::
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-## What you'll learn
+## 1. Clone the repo
 
-In this tutorial, you'll quickly dive into the world of Polygon CDK. You'll learn to set up and run a local CDK-based chain, enabling you to:
-
-- Gain a rapid understanding of Polygon CDK.
-- Test smart contracts.
-- Execute web3 transactions.
-- Investigate network capabilities.
-
-## What you'll need
-
-This tutorial requires Docker and Docker Compose. They allow you to run multiple services in separate environments. If you haven't installed these tools yet, you can do so by following the guides at the following links:
-
-- [<ins>Docker</ins>](https://www.docker.com/get-started)
-- [<ins>Docker Compose</ins>](https://docs.docker.com/compose/install/)
-
-### Recommended System Requirements
-
-Ensure that your system meets the following recommended specifications before starting this tutorial:
-
-- A Linux-based OS (e.g., Ubuntu Server 22.04 LTS)
-- At least 16GB RAM with a 4-core CPU
-- An AMD64 architecture system
-
-:::caution Does not yet support ARM-based Macs
-
-:::
-
-## What You'll Do
-
-In this tutorial, you'll go through the following steps. Make sure to follow each section in order if this is your first time setting up a zkValidium.
-
-1. [<ins>Download Configuration Files</ins>](#step-1-download-configuration-files): You'll start by downloading necessary configuration files from our repository.
-2. [<ins>Launch the Validium Locally</ins>](#step-2-launch-the-validium-locally): After setting up your workspace, you'll launch the zkValidium on your local machine and ensure all services are running properly.
-3. [<ins>Test the Validium</ins>](#step-3-test-the-validium): With your local CDK Validium running, you'll verify its functionalities, including testing block explorers and making transactions.
-4. [<ins>Test the Bridge</ins>](#step-4-test-the-bridge): In this section, you will test using the native bridges to transfer assets between the L1 and L2.
-
-## Step 1: Download Configuration Files
-
-The first step involves downloading the necessary configuration files from our repository. Run the following commands in your terminal to clone the repository and navigate into it:
+Run the following commands:
 
 ```bash
 git clone https://github.com/Snapchain/zkValidium-quickstart.git
 cd zkValidium-quickstart
 ```
 
-Create the `.env` file by copying from the example:
+Create the `.env` file by copying the example:
 ```bash
 cp .env.example .env
 ```
 
-The repository includes these key files:
+## 2. Launch validium locally
 
-- `Docker-compose.yml`: This Docker Compose file defines all the necessary containers to set up the CDK Validium. 
-- `Makefile`: This file includes a series of commands that will help you manage your CDK Validium node.
-- `config`: This folder contains configuration files required for the CDK Validium.
-
-## Step 2: Launch the Validium Locally
-
-With the repository cloned and your working directory set, let's start up the CDK Validium. First, you'll need to pull the necessary Docker images from Docker Hub:
+2.1 Pull the required Docker images from Docker Hub:
 
 ```bash
-docker-compose pull
+sudo docker-compose pull
 ```
 
-After pulling the images, you can start your local CDK Validium:
+2.2 After pulling the images, start your local CDK Validium:
 
 ```bash
-make run
+sudo make run
 ```
 
-To ensure all services are running properly, check the status of each container:
+2.3 To ensure all services are running properly, check the status of each container:
 
 ```bash
 docker-compose ps 
 ```
 
-You will see results similar to the following:
+You should see the following output:
 
 <details>
 <summary>Container status details ↓</summary>
@@ -139,43 +98,44 @@ zkevm-bridge-ui                  /bin/sh /app/scripts/deploy.sh   Up            
 ```
 </details>
 
-If any service isn't running (i.e., in Exit 1 state), you can investigate further using the logs:
+2.3.1 If a service isn't running (i.e. it is in Exit 1 state), investigate further using the logs:
 
 ```bash
-docker-compose logs <container_name>
+sudo docker-compose logs <container_name>
 ```
 
-Note: `<container_name>` can be found in results above.
+!!! info
+    Find the `<container_name>` in the log output.
 
+2.4 Useful commands
 
-To stop the zkValidium, use:
+To stop CDK validium, use:
 
 ```bash
-make stop
+sudo make stop
 ```
 
-And to restart all the services:
+To restart all services:
 
 ```bash
-make restart
+sudo make restart
 ```
 
-## Step 3: Test the Validium
+## 3. Test validium
 
-Congratulations! Your local zkValidium is now up and running. Let's test its functionalities.
+3.1 Verify the block explorer is running by navigating to [localhost:4001](http://localhost:4001/). 
 
-First, verify the block explorer by navigating to [localhost:4001](http://localhost:4001/). You should see a page similar to this:
+You should see a page similar to this:
 
 <div align="center">
   <img src="/img/cdk/cdk-block-explorer-empty.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-<br/>
+### 4. Add the network to a Web3 wallet
 
-Now, let's add the network to your Web3 wallet by populating the necessary fields.
-> **We'll use MetaMask for our example.**
+4.1 Follow MetaMask's instructions on [how to set up a network manually](https://support.metamask.io/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC).
 
-- Set the chain ID to be **1001**. 
+- Set the chain ID to **1001**. 
 - The currency symbol can be anything but we will use **POL** by default. 
 - The RPC node and block explorer containers can be found at ports **8123** and **4001**, respectively.
 
@@ -183,112 +143,109 @@ Now, let's add the network to your Web3 wallet by populating the necessary field
   <img src="/img/cdk/cdk-metamask-add-network.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-Next, switch to the new network:
+4.2 Switch to the new network:
 
 <div align="center">
   <img src="/img/cdk/cdk-metamask-switch-network.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-By default, an account with private key `0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80` has been preloaded with tokens.
+!!! danger "Important"
+    - An account with test funds is available with private key `0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80`.
+    - NEVER transfer real assets to the address associated with this private key.
 
-:::caution NEVER transfer real assets to the address associated with the above private key
-:::
-
-Import this account and you will see the balance shown up as 100000 POL:
+4.3 [Import the account to MetaMask](https://support.metamask.io/hc/en-us/articles/360015489331-How-to-import-an-account). The balance shows up as 100000 POL:
 
 <div align="center">
   <img src="/img/cdk/cdk-metamask-import-account.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-You can now try a transaction by transferring some tokens to another account:
+4.4 Transfer some tokens to another account:
 
 <div align="center">
   <img src="/img/cdk/cdk-metamask-transfer.gif" alt="bridge" width="90%" height="30%" />
 </div>
 
-After confirming the transaction, check the updated balances:
+4.5 After confirming the transaction, check the updated balances:
 
 <div align="center">
   <img src="/img/cdk/cdk-metamask-transfer-result.gif" alt="bridge" width="90%" height="30%" />
 </div>
 
-You can also view the transaction details in the block explorer by clicking on the transaction details in MetaMask:
+4.6 You can also view the transaction details in the block explorer by clicking on the transaction details in MetaMask:
 
 <div align="center">
   <img src="/img/cdk/cdk-tx-view-on-block-explorer.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-## Step 4: Test the bridge
+## 5. Test the bridge
 
-The CDK stack comes with a native bridge with UI to allow you to transfer fund between the L1 and the L2 validium.
+CDK has a native bridge with UI that allows you to transfer funds between the L1 and the L2 validium.
 
-In this section, you will learn how to bridge fund from the L1 to the validium L2 and then bridge it back from the validium to the L1.
+### L1 to L2
 
-Before you can bridge any fund from the L1 to the validium L2, you also need to add the L1 RPC to MetaMask similar to what you have done in previous steps:
+5.1 Add the L1 RPC to MetaMask:
 
 <div align="center">
   <img src="/img/cdk/cdk-metamask-add-l1.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-<br/>
+5.2 Switch to the L1 network and you will see the previously imported account with ~999 POL on the L1 chain.
 
-Switch to the L1 network and you will see the previously imported account already with ~999 POL on the L1 chain.
+5.3 Verify the bridge UI by navigating to [localhost:8088](http://localhost:8088/). 
 
-First, verify the bridge UI by navigating to [localhost:8088](http://localhost:8088/). You should see a page similar to this and click on "Connect a wallet > MetaMask":
+5.4 Click on **Connect a wallet > MetaMask**.
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-<br/>
-
-Select the previously imported account (0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266) to connect and once you are connected, you should see a page like this:
+5.5 Select the previously imported account (0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266). Once you are connected, you should see a page like this:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-connected.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-<br/>
+5.6 Enter the amount (e.g. 5) to bridge and click **Continue**, you will see the **Confirm Bridge** page. 
 
-Enter the amount (e.g. 5) to bridge and click "Continue", you will see the "Confirm Bridge" page. Click "Bridge" and approve the transaction on the MetaMask pop-up:
+5.7 Click **Bridge** and approve the transaction on the MetaMask pop-up:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-confirm.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-<br/>
-
-Once the bridging is completed, you should see the "Activity" page like this:
+5.8 Once bridging is complete, you should see the **Activity** page:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-completed-l1-to-l2.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-<br/>
+### L2 to L1
 
-Now let's bridge back the fund from the validium L2 to the L1 chain. Switch network on MetaMask to your validium chain and navigate back to [localhost:8088](http://localhost:8088/). You should see both the updated L1 and L2 balances:
+5.9 Switch network on MetaMask to your validium chain and navigate back to [localhost:8088](http://localhost:8088/). 
+
+5.10 You should see both the updated L1 and L2 balances:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-l2-to-l1.png" alt="bridge" width="90%" height="30%" />
 </div>
-<br/>
 
-Enter an amount (e.g. 1) and follow the same process to bridge the fund back to the L1.
+5.11 Enter an amount and follow the same process to bridge the fund back to the L1.
 
-:::caution Note
-You cannot bridge back fund more than what you have previously bridged from L1 to the L2.
-:::
+!!! note
+    You cannot bridge back fund more than what you have previously bridged from L1 to the L2.
 
-The L2->L1 bridging is slightly different than L1->L2 and you will see the "Activity" page like this after the transaction is executed:
+The L2->L1 bridging is slightly different than L1->L2 and you will see the **Activity** page like this after the transaction is executed:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-l2-to-l1-on-hold.png" alt="bridge" width="90%" height="30%" />
 </div>
-<br/>
 
- Click "Finalise" and approve the transaction (Note: MetaMask will pop up a window to ask you to switch to the L1 network first). Then you will see this once the bridging is completed:
+5.12 Click **Finalise** and approve the transaction (Note: MetaMask will pop up a window to ask you to switch to the L1 network first). Then you will see this once the bridging is completed:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-l2-to-l1-completed.png" alt="bridge" width="90%" height="30%" />
 </div>
-<br/> 
+
+!!! urgent
+    - First time, I had an error on step 5.12 -> cannot estimate gas.
+    - Second time, I had an error much earlier on, but that's probably because I didn't clear the images up, even though I restarted. 

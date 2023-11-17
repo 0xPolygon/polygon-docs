@@ -1,5 +1,5 @@
 !!! important "Recommendation"
-    Follow the [Quickstart](quickstart.md) for a hands-on introduction to CDK in validium mode.
+    Follow the [Quickstart](quickstart-validium.md) for a hands-on introduction to CDK in validium mode.
 
 Follow the steps below to deploy a CDK validium instance.
 

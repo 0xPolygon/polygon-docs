@@ -1,7 +1,7 @@
 [comment]: <> (data comes from here: https://www.notion.so/polygontechnology/CDK-Validium-TPS-Analysis-8aafda0d6b824c3781270cca30a8f70d#c6725ef8b93748ea8879d7e49e67c2fc and results are marked as OLD.. SME > @ruchawalawalkar)
 
-!!! note
-    validium only
+!!! important
+    Performance benchmarks are currently only available in validium mode.
 
 ## Strategy
 
