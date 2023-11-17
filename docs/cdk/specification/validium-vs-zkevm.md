@@ -4,7 +4,7 @@ Polygon CDK running in validium mode inherits the core functionalities of a zkEV
 
 ## Key differences
 
-|        | zkEVM (non-CDK)                                                      | Validium                                                                           |
+|        | Rollup                                                    | Validium                                                                           |
 | ------------------------ | ----------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | **Node type**            | [zkEVM node](https://github.com/0xPolygonHermez/zkevm-node) | [Validium node](https://github.com/0xPolygon/cdk-validium-node): zkEVM node with validium extensions                  |
 | **Data availability**    | On-chain                                                    | Off-chain via DACs + [DA node](https://github.com/0xPolygon/cdk-data-availability) |
