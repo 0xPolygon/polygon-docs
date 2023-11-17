@@ -79,11 +79,10 @@ nav:
         - technology/pos/index.md
       - Get started: 
         - technology/pos/get-started.md
-      - How to: 
-        - technology/pos/how-to.md
+      - How-tos: 
+        - technology/pos/how-tos.md
       - Architecture:
-          - technology/pos/architecture/index.md
-          - POL: technology/pos/architecture/pol.md
+          - technology/pos/architecture.md
       - Specification:
           - technology/pos/spec.md
       - Concepts:
