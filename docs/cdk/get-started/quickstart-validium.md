@@ -131,7 +131,7 @@ You should see a page similar to this:
   <img src="/img/cdk/cdk-block-explorer-empty.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-### 4. Add the network to a Web3 wallet
+## 4. Add the network to a Web3 wallet
 
 4.1 Follow MetaMask's instructions on [how to set up a network manually](https://support.metamask.io/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC).
 
