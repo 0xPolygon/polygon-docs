@@ -1,22 +1,61 @@
 # polygon-docs
 
-Polygon Docs website, built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
+Welcome to the Polygon Docs website, built with [the Material theme for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
 ## Instructions for use
 
-Please open a branch and we will approve each other's work for now.
+Work on a local branch and request a review from a teammate.
 
-## Running Locally
+## How to run the site locally
 
-### Python
+### Clone the repo
 
-You must have Python 3.11, `pip3` and the `virtualenv` Python package installed. Then, simply run:
+```sh
+git clone https://github.com/0xPolygon/polygon-docs.git
+cd polygon-docs
+```
 
-```bash
+### Run with Python
+
+1. Download and install Python 3.11: https://www.python.org/downloads/
+
+2. Install the `virtualenv` package:
+
+```sh
+pip install virtualenv
+```
+
+3. Build and serve the html
+
+```sh
 ./run.sh
 ```
 
-### Docker
+The site runs at: http://127.0.0.1:8000/
 
-* `docker build -t polygon-docs .`
-* `docker compose up`
+### Run with Docker
+
+1. Run the following commands from the project root:
+
+```sh
+docker build -t polygon-docs .
+docker compose up
+```
+
+### Run manually
+
+1. Download and install Python, as above, and ensure you have installed all the packages listed in `requirements.txt`, e.g.:
+
+```sh
+pip install markdown-include==0.8.1
+```
+
+2. Run the following from the project root to bring up the site:
+
+```sh
+mkdocs serve --strict
+```
+
+## Questions
+
+Feel free to contact the team any time: `#disc_tkd_techdocs`
