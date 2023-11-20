@@ -69,7 +69,7 @@ nav:
       - Retiring products:
         - EDGE: cdk/edge-suggestion.md
   - zkEVM:
-      - zkEVM/index.md
+      - zkEVM/index.md # marketing landing page
       - Get started:
         - Welcome: zkEVM/welcome.md
         - Quickstart:
