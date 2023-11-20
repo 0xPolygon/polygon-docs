@@ -1,4 +1,4 @@
-# polygon-docs
+# Polygon docs
 
 Welcome to the Polygon Docs website, built with [the Material theme for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
