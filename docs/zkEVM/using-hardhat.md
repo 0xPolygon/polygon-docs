@@ -5,11 +5,10 @@ This document is a guide on how to deploy a smart contract on the Polygon zkEVM 
 
 ## Initial Setup
 
-:::info
+!!!info
+    
+    Before starting with this deployment, please ensure that your wallet is connected to the Polygon zkEVM Testnet. See the demo [here](develop.md) for details on how to connect your wallet.
 
-Before starting with this deployment, please ensure that your wallet is connected to the Polygon zkEVM Testnet. See the demo [here](/zkevm/develop.md#deploying-smart-contracts) for details on how to connect your wallet.
-
-::: 
 
 - Add the Polygon zkEVM Testnet to your Metamask wallet and get some Testnet ETH from the [Polygon Faucet](https://faucet.polygon.technology).
 
@@ -70,7 +69,7 @@ mv README.md README-tutorial.md
 
     The aim here is to achieve the following outcome:
 
-    ![Figure _ ](img/proj-created-outcome.png)
+    ![Figure _ ](../img/zkvm/zkv-proj-created-outcome.png)
 
     So then, 
 
@@ -289,4 +288,6 @@ The next step is to turn `Counter.sol` into a dApp by importing the `ethers` and
     </Button>
     ```
 
-Now, run the Counter dApp by simply using `npm start` in CLI at the project root. **Congratulations** for reaching this far. You have successfully deployed a dApp on the Polygon zkEVM Testnet.
+Now, run the Counter dApp by simply using `npm start` in CLI at the project root.
+
+**Congratulations** for reaching this far. You have successfully deployed a dApp on the Polygon zkEVM Testnet.

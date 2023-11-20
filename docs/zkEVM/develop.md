@@ -37,7 +37,7 @@ The development experience on zkEVM is seamless and identical to Ethereum Virtua
 Here is a video tutorial on **how to add Polygon zkEVM Testnet to MetaMask and deploy smart contracts**:
 
 <video autoplay width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="/img/zkevm/tutorial.mp4"></source>
+  <source type="video/mp4" src="../img/zkvm/zkevm/tutorial.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 

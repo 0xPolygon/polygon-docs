@@ -1,5 +1,5 @@
 
-Continue with this deployment guide's **Fifth Step** where you configure the Prover and Services.
+Continue with this deployment guide's **fifth step** where you configure the Prover and Services.
 
 ## Edit DBs
 
@@ -28,7 +28,7 @@ GRANT ALL PRIVILEGES ON TABLE state.program TO prover_user;
 
 Save and exit the file once the changes have been made. The above SQL script will set up your databases for the zkEVM Node.
 
-## Configure the Prover
+## Configure the prover
 
 Create the `~/zkevm/config.json` and paste the configs below. Replace the `aggregatorClientHost` parameter with your **PUBLIC IP**:
 
@@ -136,7 +136,7 @@ vim ~/zkevm/config.json
 
 </details>
 
-### Configure Services
+### Configure services
 
 Edit the `~/zkevm/mainnet/docker-compose.yml` file with the following content:
 
@@ -646,11 +646,11 @@ services:
 
 </details>
 
-## Start Services
+## Start services
 
 Continue with starting all the services as indicated below.
 
-### Start the Databases
+### Start the databases
 
 ```bash
 export ZKEVM_NET="mainnet"
@@ -661,7 +661,7 @@ docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-state-db
 ```
 
-### Start the Prover (contains Executor)
+### Start the prover (contains executor)
 
 ```bash
 export ZKEVM_NET="mainnet"
@@ -671,21 +671,21 @@ docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-prover --tail 20
 ```
 
-### Start Synchronizer
+### Start synchronizer
 
 ```bash
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d zkevm-sync
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-sync --tail 20
 ```
 
-### Start L2 Gas Pricer
+### Start L2 gas pricer
 
 ```bash
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d zkevm-l2gaspricer
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-l2gaspricer --tail 20
 ```
 
-### Start Transaction Manager
+### Start transaction manager
 
 ```bash
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d zkevm-eth-tx-manager
@@ -699,21 +699,21 @@ docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-json-rpc --tail 20
 ```
 
-### Start the Sequencer
+### Start the sequencer
 
 ```bash
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d zkevm-sequencer
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-sequencer --tail 20
 ```
 
-### Start the Aggregator
+### Start the aggregator
 
 ```bash
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d zkevm-aggregator
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-aggregator --tail 20
 ```
 
-### Start the Block Explorer
+### Start the block explorer
 
 ```bash
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d zkevm-explorer-l2 zkevm-explorer-l2-db
@@ -721,7 +721,7 @@ docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-explorer-l2 --tail 20
 ```
 
-### Start the Bridge
+### Start the bridge
 
 ```bash
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d zkevm-bridge-service zkevm-bridge-db

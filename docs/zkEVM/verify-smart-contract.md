@@ -3,7 +3,7 @@ Once a smart contract is deployed to zkEVM, it can be verified in various ways d
 
 Ensure that your wallet is connected while following this guide. We will use Metamask wallet throughout this tutorial.
 
-## Manual Verification
+## Manual verification
 
 After successfully compiling a smart contract, follow the next steps to verify your smart contract.
 
@@ -20,74 +20,58 @@ After successfully compiling a smart contract, follow the next steps to verify y
 6. Click the **Verify and Publish** button.
 
 7. There are 3 options to provide the Contract's code. We will be diving into the following two options:
+??? "Flattened source code"
+    Click **Next** after selecting the **via Flattened Source Code** option.
+    
+    Various frameworks have specific ways to flatten the source code. Our examples are **Remix** and **Foundry**.
 
-<details>
-<summary>Flattened Source Code</summary>
+    #### Using Remix
+    
+    In order to flatten the contract code with Remix, one needs to only right-click on the contract name and select **Flatten** option from the drop-down menu that appears. See the below figure for reference.
 
-Click **Next** after selecting the **via Flattened Source Code** option. 
+    ![Selecting the flatten code option](../img/zkvm/flatten-code-remix.png)
 
-Various frameworks have specific ways to flatten the source code. Our examples are **Remix** and **Foundry**.
+    After selecting **Flatten**, a new `.sol` file with the suffix `_flatten.sol` is automatically created. Copy the contents of the new `<Original-Name>_flatten.sol` file and paste into the `Enter the Solidity Contract` field in the explorer.
 
-#### Using Remix
+    #### Using Foundry
 
-In order to flatten the contract code with Remix, one needs to only right-click on the contract name and select **Flatten** option from the drop-down menu that appears. See the below figure for reference.
+    In order to flatten the code using Foundry, the following command can be used:
+    
+    ```bash
+        forge flatten src/<Contract-Name> -o <Any-Name-For-Flattened-Code>.sol
+    ```        
+    With this command, the flattened code gets saved in the `<Any-Name-For-Flattened-Code>.sol` file. Copy the contents of the new `<Any-Name-For-Flattened-Code>.sol` file and paste into the `Enter the Solodity Contract` field in the [explorer](https://testnet-zkevm.polygonscan.com).
 
-![Selecting the flatten code option](figures/flatten-code-remix.png)
 
-After selecting **Flatten**, a new `.sol` file with the suffix `_flatten.sol` is automatically created. Copy the contents of the new `<Original-Name>_flatten.sol` file and paste into the `Enter the Solidity Contract` field in the explorer.
+??? "Standard input JSON"
+    Click **Next** after selecting the **via Standard Input JSON** option.
 
-#### Using Foundry
+    1. In order to update the **Compiler** based on your contract's compiler version,
+        - Click the &#8595; for a list of compiler versions.
+        - Select the corresponding version. For example, select `v0.8.9+commit.e5eed63a` if your code has `pragma solidity ^0.8.9;`.
+    
+    2. Paste the **Standard input JSON** file into the *Drop the standard input JSON file or Click here* field. You can find it in your local project folder.
+        - The **Standard input JSON** file is the `{"superlongnumberfile"}.json` in the `build-info` subfolder. Path example: `fullstack-zkevm/src/build-info/{"superlongnumberfile"}.json`
+        - Save this file to parse it with [Prettier](https://prettier.io/)
+        - Find the input JSON object. It will look [something like this](https://docs.soliditylang.org/en/latest/using-the-compiler.html#input-description) &rarr; `"input": {}`
+        - Copy the **input** object value into a new file
+        - **Name and save** this file locally in the **root folder**. Check this [example file](https://github.com/oceans404/zkevm-hardhat-demo/blob/main/example-standard-input.json) for reference
+        - Drag and drop the **Standard Input JSON** file into *Drop the standard input JSON file or Click here* field. Once pasted, the **Verify & Publish** button becomes active.
 
-In order to flatten the code using Foundry, the following command can be used: 
+    3. Since you have provided an input, set *Try to fetch constructor arguments automatically* to **No**.
 
-```bash
-forge flatten src/<Contract-Name> -o <Any-Name-For-Flattened-Code>.sol
-```
+    4. To add your ABI-encoded constructor arguments:
+        - Open the [Online ABI Encoder](https://abi.hashex.org/)
+        - Choose the `Auto-parse` tab.
+        - Copy the ABI-encoded output.
+        - Paste it into `ABI-encoded Constructor Arguments` if required by the contract.
 
-With this command, the flattened code gets saved in the `<Any-Name-For-Flattened-Code>.sol` file. Copy the contents of the new `<Any-Name-For-Flattened-Code>.sol` file and paste into the `Enter the Solodity Contract` field in the [explorer](https://testnet-zkevm.polygonscan.com).
-</details>
+Once you paste the contents of the newly created `.sol` file to the *Enter the Solidity Contract* field, the **Verify & Publish** button will be active.
 
-<details>
-<summary>Standard Input JSON</summary>
+Click on **Verify & Publish** to verify your deployed smart contract.
 
-Click **Next** after selecting the **via Standard Input JSON** option.
 
-1. In order to update the **Compiler** based on your contract's compiler version, 
-
-    - Click the &#8595; for a list of compiler versions. 
-
-    - Select the corresponding version. For example, select `v0.8.9+commit.e5eed63a` if your code has `pragma solidity ^0.8.9;`.
-
-2. Paste the **Standard Input JSON** file into the *Drop the standard input JSON file or Click here* field. You can find it in your local project folder.
-
-    - The **Standard Input JSON** file is the `{"superlongnumberfile"}.json` in the `build-info` subfolder. Path example: `fullstack-zkevm/src/build-info/{"superlongnumberfile"}.json` 
-
-    - Save this file to parse it with [Prettier](https://prettier.io/)
-
-    - Find the input JSON object. It will look [something like this](https://docs.soliditylang.org/en/latest/using-the-compiler.html#input-description) &rarr; `"input": {}`
-
-    - Copy the **input** object value into a new file
-
-    - **Name and save** this file locally in the **root folder**. Check this [example file](https://github.com/oceans404/zkevm-hardhat-demo/blob/main/example-standard-input.json) for reference
-
-    - Drag and drop the **Standard Input JSON** file into *Drop the standard input JSON file or Click here* field. Once pasted, the **Verify & Publish** button becomes active.
-
-3. Since you have provided an input, set *Try to fetch constructor arguments automatically* to **No**.
-
-4. To add your ABI-encoded constructor arguments: 
-
-    - Open the [Online ABI Encoder](https://abi.hashex.org/)  
-    - Choose the `Auto-parse` tab.
-    - Copy the ABI-encoded output.
-    - Paste it into `ABI-encoded Constructor Arguments` if required by the contract.
-
-</details>
-
-8. Once you paste the contents of the newly created `.sol` file to the *Enter the Solidity Contract* field, the **Verify & Publish** button will be active.
-
-9. Click on **Verify & Publish** to verify your deployed smart contract.
-
-## Verify Using Remix
+## Verify using Remix
 
 We will be using the ready-made `Storage.sol` contract in Remix. Compile the contract and follow the steps provided below. 
 

@@ -1,9 +1,8 @@
 
-:::caution Risks
+!!!caution
+    Risks
 
-Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Risks FAQ</ins>](/zkevm/risk-disclosure.md) section.
-
-:::
+    Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Risks FAQ</ins>](risk-disclosures.md) section.
 
 
 ## Get Started with Web3Modal

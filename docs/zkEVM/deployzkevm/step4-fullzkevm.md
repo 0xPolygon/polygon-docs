@@ -1,7 +1,7 @@
 
-Continue with the **Fourth Step** of this Deployment-Guide where you deploy the zkNode.
+Continue with the **fourth step** of this deployment-guide where you deploy the zkNode.
 
-## zkNode Deployment
+## zkNode deployment
 
 First, create the following directories:
 
@@ -34,7 +34,7 @@ ZKEVM_NODE_STATEDB_DATA_DIR = "~/zkevm/data/statedb"
 ZKEVM_NODE_POOLDB_DATA_DIR = "~/zkevm/data/pooldb"
 ```
 
-### Approve MATIC Token for Sequencer
+### Approve MATIC token for sequencer
 
 Run the below command to launch a Hardhat console connected to the Goerli network.
 
@@ -59,7 +59,7 @@ maticTokenContractWallet = maticTokenContract.connect(wallet);
 await maticTokenContractWallet.approve("", ethers.utils.parseEther("100.0")); // From ~/zkevm-contracts/deployments/goerli_*/deploy_output.json polygonZkEVMAddress
 ```
 
-### Configure Genesis
+### Configure genesis
 
 Run the below commands to copy `genesis.json` file into appropriate location and open for editing:
 
@@ -81,7 +81,7 @@ Edit the file changing the following parameters from `~/zkevm/zkevm-contracts/de
 # add above to head of file, leave all remaining fields intact
 ```
 
-### Update Node Config file
+### Update node config file
 
 Edit `~/zkevm/mainnet/config/environments/testnet/public.node.config.toml` with the following values. The config file is large and we'll update the documentation in the future to list only the updated parameters.
 
@@ -276,7 +276,7 @@ Enabled = true
 
 </details>
 
-### Add Wallets
+### Add wallets
 
 Copy/paste keystore value from wallets.txt for sequencer/aggregator respectively:
 
