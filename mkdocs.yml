@@ -76,21 +76,64 @@ nav:
       - Disclosures: zkEVM/risk-disclosures.md
   - PoS:
       - Welcome: 
-        - technology/pos/index.md
+        - pos/index.md
       - Get started: 
-        - technology/pos/get-started.md
-      - How-tos: 
-        - technology/pos/how-tos.md
+        - pos/get-started.md
+      - How-tos:
+        - How-tos: pos/howto/index.md
+        - Bridging:
+          - Bridging: pos/howto/bridging/index.md
+          - Ethereum-Polygon: pos/howto/bridging/ethereum-polygon/index.md
+          - L1-L2 Communication: pos/howto/bridging/l1-l2-communication/index.md
+        - Operating:
+          - Operating: pos/howto/operating/index.md
+          - Full Node:
+            - Full Node: pos/howto/operating/full-node/index.md
+            - Manual Install: pos/howto/operating/full-node/manual-install.md
+            - Ansible: pos/howto/operating/full-node/ansible.md
+            - Docker: pos/howto/operating/full-node/docker.md
+            - Google Cloud: pos/howto/operating/full-node/gcp.md
+          - Access Node: pos/howto/operating/access-node.md
+          - Archive Node: pos/howto/operating/archive-node.md
+          - Erigon Node: pos/howto/operating/erigon-node.md
+        - Smart Contracts:
+          - Smart Contracts: pos/howto/smart-contracts/index.md
+          - Alchemy: pos/howto/smart-contracts/alchemy.md
+          - ChainIDE: pos/howto/smart-contracts/chainide.md
+          - ChainStack: pos/howto/smart-contracts/chainstack.md
+          - GetBlock: pos/howto/smart-contracts/getblock.md
+          - QuickNode: pos/howto/smart-contracts/quicknode.md
+          - SmartPress: pos/howto/smart-contracts/smartpress.md
+          - ThirdWeb: pos/howto/smart-contracts/thirdweb.md
       - Architecture:
-          - technology/pos/architecture.md
+          - pos/architecture/index.md
+          - Block Producer: Bor:
+            - Bor: pos/architecture/bor/index.md
+            - Components: pos/architecture/bor/components.md
+            - Consensus: pos/architecture/bor/consensus.md
+            - State Sync: pos/architecture/bor/state-sync.md
+          - Validator: Heimdall:
+            - Heimdall: pos/architecture/heimdall/index.md
+            - Ante Handler: pos/architecture/heimdall/antehandler.md
+            - Checkpoints: pos/architecture/heimdall/checkpoints.md
+            - Encoder: pos/architecture/heimdall/encoder.md
+            - Peppermint: pos/architecture/heimdall/encoder.md
+            - Stdtx: pos/architecture/heimdall/encoder.md
+            - Transactions: pos/architecture/heimdall/encoder.md
+            - Types: pos/architecture/heimdall/encoder.md
+            - Validator Key Management: pos/architecture/heimdall/encoder.md
+            - Validators: pos/architecture/heimdall/encoder.md
       - Specification:
-          - technology/pos/spec.md
+          - pos/spec/index.md
       - Concepts:
-          - technology/pos/concepts.md
+          - Tokens:
+            - Tokens: pos/concepts/tokens/index.md
+            - POL: pos/concepts/tokens/pol.md
+            - MATIC: pos/concepts/tokens/matic.md
       - API:
-          - technology/pos/api.md
+          - pos/api/index.md
       - FAQ:
-          - technology/pos/faq.md
+          - pos/faq/index.md
   - Miden:
       - Overview: miden/index.md
       #- Miden playground: https://0xpolygonmiden.github.io/examples/
