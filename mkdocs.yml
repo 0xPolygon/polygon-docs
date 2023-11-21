@@ -52,22 +52,22 @@ nav:
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
-        - Deploy validium: cdk/get-started/deploy-validium.md
+        - Deploy:
+          - Validium: cdk/get-started/deploy-validium.md
+          - Rollup: cdk/get-started/deploy-rollup.md
       - How to: 
         - Manage allowlists: cdk/how-to/manage-allowlists.md
       #- Architecture:
       - Specification:
-        - Validium vs zkEVM: cdk/specification/validium-vs-zkevm.md
+        - Validium vs rollup: cdk/specification/validium-vs-rollup.md
         - Performance benchmarks: cdk/specification/performance-benchmarks.md
       - Concepts:
         - Data availability: cdk/concepts/dac.md
      # - API:
       - Troubleshooting:
         - CDK component repos: cdk/troubleshooting/component-repos.md
-      - Retiring products:
-        - EDGE: cdk/edge-suggestion.md
   - zkEVM:
-      - zkEVM/index.md
+      - zkEVM/index.md # marketing landing page
       - Get started:
         - Welcome: zkEVM/welcome.md
         - Quickstart:
@@ -191,4 +191,5 @@ markdown_extensions:
 
 plugins:
   - search
- # - git-revision-date-localized
+  - open-in-new-tab
+  #- git-revision-date-localized

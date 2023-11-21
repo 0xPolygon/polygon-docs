@@ -1,8 +1,5 @@
 This quickstart guides you through the process of setting up a CDK validium on your local machine.
 
-!!! danger "Is it true?"
-    Please note that the current Data Availability (DA) configuration in Polygon CDK is using a Data Availability Committee (DAC) node with a local Geth client as the L1. However, the integration with Layer 1 testnets, including Sepoilla, is actively being pursued.
-
 ## Prerequisites
 
 ### System requirements
@@ -12,7 +9,7 @@ This quickstart guides you through the process of setting up a CDK validium on y
 - An AMD64 architecture system.
 
 !!! warning
-    CDK does not support ARM-based Macs
+    CDK does not support ARM-based Macs.
 
 ### Software requirements
 
@@ -41,7 +38,7 @@ cp .env.example .env
 sudo docker-compose pull
 ```
 
-2.2 After pulling the images, start your local CDK Validium:
+2.2 After pulling the images, start your local CDK validium:
 
 ```bash
 sudo make run
@@ -98,7 +95,7 @@ zkevm-bridge-ui                  /bin/sh /app/scripts/deploy.sh   Up            
 ```
 </details>
 
-2.3.1 If a service isn't running (i.e. it is in Exit 1 state), investigate further using the logs:
+2.3.1 If a service isn't running (i.e. it is in `Exit 1` state), investigate further using the logs:
 
 ```bash
 sudo docker-compose logs <container_name>
@@ -121,6 +118,9 @@ To restart all services:
 sudo make restart
 ```
 
+!!! note
+    This local deployment runs on an L1 Geth instance.
+
 ## 3. Test validium
 
 3.1 Verify the block explorer is running by navigating to [localhost:4001](http://localhost:4001/). 
@@ -131,7 +131,7 @@ You should see a page similar to this:
   <img src="/img/cdk/cdk-block-explorer-empty.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-### 4. Add the network to a Web3 wallet
+## 4. Add the network to a Web3 wallet
 
 4.1 Follow MetaMask's instructions on [how to set up a network manually](https://support.metamask.io/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC).
 
@@ -159,6 +159,9 @@ You should see a page similar to this:
   <img src="/img/cdk/cdk-metamask-import-account.png" alt="bridge" width="90%" height="30%" />
 </div>
 
+!!! danger
+    Today, 21/11, I got stuck here with pending transfers that weren't picked up by blockexplorer.
+
 4.4 Transfer some tokens to another account:
 
 <div align="center">
@@ -181,55 +184,55 @@ You should see a page similar to this:
 
 CDK has a native bridge with UI that allows you to transfer funds between the L1 and the L2 validium.
 
-### L1 to L2
+### 5.1 L1 to L2
 
-5.1 Add the L1 RPC to MetaMask:
+5.1.1 Add the L1 RPC to MetaMask:
 
 <div align="center">
   <img src="/img/cdk/cdk-metamask-add-l1.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-5.2 Switch to the L1 network and you will see the previously imported account with ~999 POL on the L1 chain.
+5.1.2 Switch to the L1 network and you will see the previously imported account with ~999 POL on the L1 chain.
 
-5.3 Verify the bridge UI by navigating to [localhost:8088](http://localhost:8088/). 
+5.1.3 Verify the bridge UI by navigating to [localhost:8088](http://localhost:8088/). 
 
-5.4 Click on **Connect a wallet > MetaMask**.
+5.1.4 Click on **Connect a wallet > MetaMask**.
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-5.5 Select the previously imported account (0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266). Once you are connected, you should see a page like this:
+5.1.5 Select the previously imported account (0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266). Once you are connected, you should see a page like this:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-connected.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-5.6 Enter the amount (e.g. 5) to bridge and click **Continue**, you will see the **Confirm Bridge** page. 
+5.1.6 Enter the amount (e.g. 5) to bridge and click **Continue**, you will see the **Confirm Bridge** page. 
 
-5.7 Click **Bridge** and approve the transaction on the MetaMask pop-up:
+5.1.7 Click **Bridge** and approve the transaction on the MetaMask pop-up:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-confirm.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-5.8 Once bridging is complete, you should see the **Activity** page:
+5.1.8 Once bridging is complete, you should see the **Activity** page:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-completed-l1-to-l2.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-### L2 to L1
+### 5.2 L2 to L1
 
-5.9 Switch network on MetaMask to your validium chain and navigate back to [localhost:8088](http://localhost:8088/). 
+5.2.1 Switch network on MetaMask to your validium chain and navigate back to [localhost:8088](http://localhost:8088/). 
 
-5.10 You should see both the updated L1 and L2 balances:
+5.2.2 You should see both the updated L1 and L2 balances:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-l2-to-l1.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-5.11 Enter an amount and follow the same process to bridge the fund back to the L1.
+5.2.3 Enter an amount and follow the same process to bridge the fund back to the L1.
 
 !!! note
     You cannot bridge back fund more than what you have previously bridged from L1 to the L2.
@@ -240,7 +243,7 @@ The L2->L1 bridging is slightly different than L1->L2 and you will see the **Act
   <img src="/img/cdk/cdk-bridge-l2-to-l1-on-hold.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-5.12 Click **Finalise** and approve the transaction (Note: MetaMask will pop up a window to ask you to switch to the L1 network first). Then you will see this once the bridging is completed:
+5.2.4 Click **Finalise** and approve the transaction (Note: MetaMask will pop up a window to ask you to switch to the L1 network first). Then you will see this once the bridging is completed:
 
 <div align="center">
   <img src="/img/cdk/cdk-bridge-l2-to-l1-completed.png" alt="bridge" width="90%" height="30%" />
@@ -249,3 +252,6 @@ The L2->L1 bridging is slightly different than L1->L2 and you will see the **Act
 !!! urgent
     - First time, I had an error on step 5.12 -> cannot estimate gas.
     - Second time, I had an error much earlier on, but that's probably because I didn't clear the images up, even though I restarted. 
+
+!!! question
+    What makes this CDK?
