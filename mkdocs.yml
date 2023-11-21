@@ -66,8 +66,6 @@ nav:
      # - API:
       - Troubleshooting:
         - CDK component repos: cdk/troubleshooting/component-repos.md
-      - Retiring products:
-        - EDGE: cdk/edge-suggestion.md
   - zkEVM:
       - zkEVM/index.md # marketing landing page
       - Get started:
