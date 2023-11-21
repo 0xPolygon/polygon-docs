@@ -38,7 +38,7 @@ cp .env.example .env
 sudo docker-compose pull
 ```
 
-2.2 After pulling the images, start your local CDK Validium:
+2.2 After pulling the images, start your local CDK validium:
 
 ```bash
 sudo make run
@@ -95,7 +95,7 @@ zkevm-bridge-ui                  /bin/sh /app/scripts/deploy.sh   Up            
 ```
 </details>
 
-2.3.1 If a service isn't running (i.e. it is in Exit 1 state), investigate further using the logs:
+2.3.1 If a service isn't running (i.e. it is in `Exit 1` state), investigate further using the logs:
 
 ```bash
 sudo docker-compose logs <container_name>
@@ -119,7 +119,7 @@ sudo make restart
 ```
 
 !!! note
-    This deployment runs on an L1 Geth instance.
+    This local deployment runs on an L1 Geth instance.
 
 ## 3. Test validium
 
@@ -158,6 +158,9 @@ You should see a page similar to this:
 <div align="center">
   <img src="/img/cdk/cdk-metamask-import-account.png" alt="bridge" width="90%" height="30%" />
 </div>
+
+!!! danger
+    Today, 21/11, I got stuck here with pending transfers that weren't picked up by blockexplorer.
 
 4.4 Transfer some tokens to another account:
 

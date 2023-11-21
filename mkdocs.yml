@@ -193,4 +193,5 @@ markdown_extensions:
 
 plugins:
   - search
- # - git-revision-date-localized
+  - open-in-new-tab
+  #- git-revision-date-localized
