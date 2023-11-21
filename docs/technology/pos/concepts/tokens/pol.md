@@ -1,4 +1,7 @@
-# POL
+:::caution **Important Update**
+
+There is a proposal to transition the native token of the Polygon PoS network from MATIC to POL. This document will provide details on what this means for users of MATIC, the Polygon ecosystem, and the planned changes. Please read carefully and find more information [<ins>here</ins>](https://polygon.technology/blog/polygon-2-0-implementation-officially-begins-the-first-set-of-pips-polygon-improvement-proposals-released).
+
 :::
 
 ## General Overview
@@ -19,7 +22,7 @@ Check out how to do so [<ins>here</ins>](/docs/category/proposals/).
 
 ### **Do** I Need to Do Anything Today **as a Node Operator or Delegator?**
 
-**No**. You can provide feedback on the proposed changes in the PIPs and monitor Github and the forum for new node software versions to remain compatible with your given chain when PIPs are approved by the community.
+**No**. You can provide feedback on the proposed changes in the PIPs and monitor Github and the forum for new node software versions to remain compatible with your given chain when PIPs are approved by the community.
 
 ### **Do** I Need to Do Anything **Today as an Application or Tooling Developer?**
 
