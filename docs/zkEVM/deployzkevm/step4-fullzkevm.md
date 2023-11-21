@@ -85,37 +85,34 @@ Edit the file changing the following parameters from `~/zkevm/zkevm-contracts/de
 
 Edit `~/zkevm/mainnet/config/environments/testnet/public.node.config.toml` with the following values. The config file is large and we'll update the documentation in the future to list only the updated parameters.
 
-<details>
-<summary>Click to expand the Node <code>config.toml</code> file</summary>
+??? "Click to expand the <code>node.config.toml</code> file"
+    ```bash
+    vim ~/zkevm/mainnet/config/environments/testnet/public.node.config.toml
+    ```
 
+    ```bash
+    IsTrustedSequencer = true
+    [Log]
+    Environment = "development"
+    Level = "debug"
+    Outputs = ["stderr","stdout"]
 
-```bash
-vim ~/zkevm/mainnet/config/environments/testnet/public.node.config.toml
-```
+    [StateDB]
+    User = "state_user"
+    Password = "state_password"
+    Name = "state_db"
+    Host = "zkevm-state-db"
+    Port = "5432"
+    EnableLog = false
+    MaxConns = 200
 
-```bash
-IsTrustedSequencer = true
-[Log]
-Environment = "development"
-Level = "debug"
-Outputs = ["stderr","stdout"]
-
-[StateDB]
-User = "state_user"
-Password = "state_password"
-Name = "state_db"
-Host = "zkevm-state-db"
-Port = "5432"
-EnableLog = false
-MaxConns = 200
-
-[Pool]
-FreeClaimGasLimit = 1500000
-MaxTxBytesSize=30132
-MaxTxDataBytesSize=30000
-DefaultMinGasPriceAllowed = 1000000000
-MinAllowedGasPriceInterval = "5m"
-PollMinAllowedGasPriceInterval = "15s"
+    [Pool]
+    FreeClaimGasLimit = 1500000
+    MaxTxBytesSize=30132
+    MaxTxDataBytesSize=30000
+    DefaultMinGasPriceAllowed = 1000000000
+    MinAllowedGasPriceInterval = "5m"
+    PollMinAllowedGasPriceInterval = "15s"
         [Pool.DB]
         User = "pool_user"
         Password = "pool_password"
@@ -124,76 +121,74 @@ PollMinAllowedGasPriceInterval = "15s"
         Port = "5432"
         EnableLog = false
         MaxConns = 200
-
-[Etherman]
-URL = "http://localhost:8845"    # put a valid Goerli node
-MultiGasProvider = false
-L1URL = "http://localhost:8845"  # put a valid Goerli node
-L2URLs = ["http://X.X.X.X:8545"]  # your public IP
+    [Etherman]
+    URL = "http://localhost:8845"    # put a valid Goerli node
+    MultiGasProvider = false
+    L1URL = "http://localhost:8845"  # put a valid Goerli node
+    L2URLs = ["http://X.X.X.X:8545"]  # your public IP
         [Etherman.Etherscan]
-                ApiKey = ""     # Etherscan API key
-
-[RPC]
-Host = "0.0.0.0"
-Port = 8545
-ReadTimeoutInSec = 60
-WriteTimeoutInSec = 60
-MaxRequestsPerIPAndSecond = 5000
-SequencerNodeURI = ""
-BroadcastURI = "http://3.144.195.147:61090"
-DefaultSenderAddress = "0x1111111111111111111111111111111111111111"
-EnableL2SuggestedGasPricePolling = true
+        ApiKey = ""     # Etherscan API key
+    
+    [RPC]
+    Host = "0.0.0.0"
+    Port = 8545
+    ReadTimeoutInSec = 60
+    WriteTimeoutInSec = 60
+    MaxRequestsPerIPAndSecond = 5000
+    SequencerNodeURI = ""
+    BroadcastURI = "http://3.144.195.147:61090"
+    DefaultSenderAddress = "0x1111111111111111111111111111111111111111"
+    EnableL2SuggestedGasPricePolling = true
         [RPC.WebSockets]
                 Enabled = true
                 Port = 8546
+    [Synchronizer]
+    SyncInterval = "5s"
+    SyncChunkSize = 500
+    trustedSequencerURL = "http://X.X.X.X:8545"  # your public IP
+    
+    [MTClient]
+    URI = "zkevm-prover:50061"
 
-[Synchronizer]
-SyncInterval = "5s"
-SyncChunkSize = 500
-trustedSequencerURL = "http://X.X.X.X:8545"  # your public IP
-
-[MTClient]
-URI = "zkevm-prover:50061"
-
-[Executor]
-URI = "zkevm-prover:50071"
-
-[Metrics]
-Host = "0.0.0.0"
-Port = 9091
-Enabled = true
-ProfilingHost = "0.0.0.0"
-ProfilingPort = 6060
-ProfilingEnabled = false
-
-[Sequencer]
-WaitPeriodPoolIsEmpty = "1s"
-WaitPeriodSendSequence = "15s"
-LastBatchVirtualizationTimeMaxWaitPeriod = "10s"
-BlocksAmountForTxsToBeDeleted = 100
-FrequencyToCheckTxsForDelete = "12h"
-MaxTxsPerBatch = 150
-MaxBatchBytesSize = 129848
-MaxCumulativeGasUsed = 30000000
-MaxKeccakHashes = 468
-MaxPoseidonHashes = 279620
-MaxPoseidonPaddings = 149796
-MaxMemAligns = 262144
-MaxArithmetics = 262144
-MaxBinaries = 262144
-MaxSteps = 8388608
-WeightBatchBytesSize = 1
-WeightCumulativeGasUsed = 1
-WeightKeccakHashes = 1
-WeightPoseidonHashes = 1
-WeightPoseidonPaddings = 1
-WeightMemAligns = 1
-WeightArithmetics = 1
-WeightBinaries = 1
-WeightSteps = 1
-TxLifetimeCheckTimeout = "10m"
-MaxTxLifetime = "3h"
-MaxTxSizeForL1 = 131072
+    [Executor]
+    URI = "zkevm-prover:50071"
+    
+    [Metrics]
+    Host = "0.0.0.0"
+    Port = 9091
+    Enabled = true
+    ProfilingHost = "0.0.0.0"
+    ProfilingPort = 6060
+    ProfilingEnabled = false
+    
+    [Sequencer]
+    WaitPeriodPoolIsEmpty = "1s"
+    WaitPeriodSendSequence = "15s"
+    LastBatchVirtualizationTimeMaxWaitPeriod = "10s"
+    BlocksAmountForTxsToBeDeleted = 100
+    FrequencyToCheckTxsForDelete = "12h"
+    MaxTxsPerBatch = 150
+    MaxBatchBytesSize = 129848
+    MaxCumulativeGasUsed = 30000000
+    MaxKeccakHashes = 468
+    MaxPoseidonHashes = 279620
+    MaxPoseidonPaddings = 149796
+    MaxMemAligns = 262144
+    MaxArithmetics = 262144
+    MaxBinaries = 262144
+    MaxSteps = 8388608
+    WeightBatchBytesSize = 1
+    WeightCumulativeGasUsed = 1
+    WeightKeccakHashes = 1
+    WeightPoseidonHashes = 1
+    WeightPoseidonPaddings = 1
+    WeightMemAligns = 1
+    WeightArithmetics = 1
+    WeightBinaries = 1
+    WeightSteps = 1
+    TxLifetimeCheckTimeout = "10m"
+    MaxTxLifetime = "3h"
+    MaxTxSizeForL1 = 131072
         [Sequencer.Finalizer]
                 GERDeadlineTimeoutInSec = "2s"
                 ForcedBatchDeadlineTimeoutInSec = "60s"
@@ -210,71 +205,67 @@ MaxTxSizeForL1 = 131072
                 PoolRetrievalInterval = "500ms"
         [Sequencer.Worker]
                 ResourceCostMultiplier = 1000
-
-[SequenceSender]
-WaitPeriodSendSequence = "5s"
-LastBatchVirtualizationTimeMaxWaitPeriod = "5s"
-MaxTxSizeForL1 = 131072
-SenderAddress = ""  # trustedSequencer address from deploy_output.json
-PrivateKeys = [{Path = "/pk/sequencer.keystore", Password = "password"}]
-
-[Aggregator]
-Host = "0.0.0.0"
-Port = 50081
-ForkId = 4
-RetryTime = "5s"
-VerifyProofInterval = "30s"
-TxProfitabilityCheckerType = "acceptall"
-TxProfitabilityMinReward = "1.1"
-ProofStatePollingInterval = "5s"
-SenderAddress = ""  # trustedAggregator address from deploy_output.json
-CleanupLockedProofsInterval = "2m"
-GeneratingProofCleanupThreshold = "10m"
-
-[EthTxManager]
-ForcedGas = 0
-PrivateKeys = [
+    [SequenceSender]
+    WaitPeriodSendSequence = "5s"
+    LastBatchVirtualizationTimeMaxWaitPeriod = "5s"
+    MaxTxSizeForL1 = 131072
+    SenderAddress = ""  # trustedSequencer address from deploy_output.json
+    PrivateKeys = [{Path = "/pk/sequencer.keystore", Password = "password"}]
+    
+    [Aggregator]
+    Host = "0.0.0.0"
+    Port = 50081
+    ForkId = 4
+    RetryTime = "5s"
+    VerifyProofInterval = "30s"
+    TxProfitabilityCheckerType = "acceptall"
+    TxProfitabilityMinReward = "1.1"
+    ProofStatePollingInterval = "5s"
+    SenderAddress = ""  # trustedAggregator address from deploy_output.json
+    CleanupLockedProofsInterval = "2m"
+    GeneratingProofCleanupThreshold = "10m"
+    
+    [EthTxManager]
+    ForcedGas = 0
+    PrivateKeys = [
         {Path = "/pk/sequencer.keystore", Password = "password"},
         {Path = "/pk/aggregator.keystore", Password = "password"}
-]
-
-[Database]
-Database = "postgres"
-User = "test_user"
-Password = "test_password"
-Name = "test_db"
-Host = "zkevm-bridge-db"
-Port = "5435"
-MaxConns = 20
-
-[BridgeController]
-Store = "postgres"
-Height = 32
-
-[BridgeServer]
-GRPCPort = "9090"
-HTTPPort = "8080"
-
-[NetworkConfig]
-GenBlockNumber = 9500870     # deploymentBlockNumber from deploy_output.json
-PolygonZkEVMAddress = ""  # polygonZkEVMAddress from deploy_output.json
-PolygonBridgeAddress = ""  # PolygonZkEVMBridge from genesis.json
-PolygonZkEVMGlobalExitRootAddress = ""  # polygonZkEVMGlobalExitRootAddress from deploy_output.json
-MaticTokenAddress = ""  # maticTokenAddress from deploy_output.json
-L2PolygonBridgeAddresses = [""]  # PolygonZkEVMBridge from genesis.json
-L1ChainID = 5  # Goerli chainID
-
-[L2GasPriceSuggester]
-Type = "default"
-DefaultGasPriceWei = 100000000
-
-[ClaimTxManager]
-FrequencyToMonitorTxs = "1s"
-PrivateKey = {Path = "/pk/sequencer.keystore", Password = "password"}
-Enabled = true
-```
-
-</details>
+        ]
+    [Database]
+    Database = "postgres"
+    User = "test_user"
+    Password = "test_password"
+    Name = "test_db"
+    Host = "zkevm-bridge-db"
+    Port = "5435"
+    MaxConns = 20
+    
+    [BridgeController]
+    Store = "postgres"
+    Height = 32
+    
+    [BridgeServer]
+    GRPCPort = "9090"
+    HTTPPort = "8080"
+    
+    [NetworkConfig]
+    GenBlockNumber = 9500870     # deploymentBlockNumber from deploy_output.json
+    PolygonZkEVMAddress = ""  # polygonZkEVMAddress from deploy_output.json
+    PolygonBridgeAddress = ""  # PolygonZkEVMBridge from genesis.json
+    PolygonZkEVMGlobalExitRootAddress = ""  # polygonZkEVMGlobalExitRootAddress from deploy_output.json
+    MaticTokenAddress = ""  # maticTokenAddress from deploy_output.json
+    L2PolygonBridgeAddresses = [""]  # PolygonZkEVMBridge from genesis.json
+    L1ChainID = 5  # Goerli chainID
+    
+    [L2GasPriceSuggester]
+    Type = "default"
+    DefaultGasPriceWei = 100000000
+    
+    [ClaimTxManager]
+    FrequencyToMonitorTxs = "1s"
+    PrivateKey = {Path = "/pk/sequencer.keystore", Password = "password"}
+    Enabled = true
+    ```
 
 ### Add wallets
 
