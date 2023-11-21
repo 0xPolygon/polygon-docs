@@ -2,14 +2,14 @@ Data availability in blockchain technology refers to whether or not transaction 
 
 If data is available on-chain, then each node has to store every piece of data related to every transaction. This can be costly for node operators as hardware and storage requirements are high. Moving data off-chain streamlines node architecture and operations.
 
-!!! quote "Recommended resource"
+!!! info "Recommended resource"
     See Ethereum.org's discussion on [data availability](https://ethereum.org/en/developers/docs/data-availability/).
 
 ## What is a validium?
 
 Validiums are blockchain solutions that do not store transaction data. 
 
-!!! quote "Recommended resource"
+!!! info "Recommended resource"
     See Ethereum.org's glossary [definition of validiums](https://ethereum.org/en/developers/docs/scaling/validium/).
 
 ## What is a DAC?

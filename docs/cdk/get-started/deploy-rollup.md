@@ -1,4 +1,4 @@
-!!! important "Recommendation"
+!!! note "Recommendation"
     Follow the [quickstart](quickstart-rollup.md) for a hands-on introduction to CDK in rollup mode.
 
 ## Deploy a CDK rollup locally
