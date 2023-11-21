@@ -25,7 +25,7 @@ A DAC is an off-chain network of nodes that implements a data storage layer in a
 
 DACs store the data required to reconstruct the state of the blockchain and make that data accessible so that, if the main blockchain network goes down, users can still access their assets and data.
 
-DAC set up can be costly and therefore DACs mostly support Enterprise use cases which require cheap and fast transactions with a private and secure data layer.
+Setting up a DAC can be costly and therefore DACs mostly support Enterprise use cases which require cheap and fast transactions with a private and secure data layer.
 
 The CDK validium DAC is a secure consortium of nodes that ensures off-chain data access. 
 
