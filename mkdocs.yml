@@ -78,7 +78,7 @@ nav:
       - Welcome: 
         - pos/index.md
       - Get started: 
-        - pos/get-started.md
+        - Get started: pos/get-started/index.md
       - How-tos:
         - How-tos: pos/howto/index.md
         - Bridging:
@@ -142,6 +142,7 @@ nav:
       - Specification:
           - pos/spec/index.md
       - Concepts:
+          - Concepts: pos/concepts/index.md
           - Tokens:
             - Tokens: pos/concepts/tokens/index.md
             - POL: pos/concepts/tokens/pol.md
