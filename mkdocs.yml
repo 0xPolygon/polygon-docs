@@ -93,6 +93,10 @@ nav:
             - Ansible: pos/howto/operating/full-node/ansible.md
             - Docker: pos/howto/operating/full-node/docker.md
             - Google Cloud: pos/howto/operating/full-node/gcp.md
+          - Validator Node:
+            - Validator Node: pos/howto/operating/validator-node/index.md
+            - Manual Install: pos/howto/operating/validator-node/manual-install.md
+            - Ansible: pos/howto/operating/validator-node/ansible.md
           - Access Node: pos/howto/operating/access-node.md
           - Archive Node: pos/howto/operating/archive-node.md
           - Erigon Node: pos/howto/operating/erigon-node.md
@@ -107,22 +111,34 @@ nav:
           - ThirdWeb: pos/howto/smart-contracts/thirdweb.md
       - Architecture:
           - pos/architecture/index.md
-          - Block Producer: Bor:
+          - The Bor Block Producer:
             - Bor: pos/architecture/bor/index.md
             - Components: pos/architecture/bor/components.md
             - Consensus: pos/architecture/bor/consensus.md
             - State Sync: pos/architecture/bor/state-sync.md
-          - Validator: Heimdall:
+          - The Heimdall Validator:
             - Heimdall: pos/architecture/heimdall/index.md
             - Ante Handler: pos/architecture/heimdall/antehandler.md
-            - Checkpoints: pos/architecture/heimdall/checkpoints.md
+            - Checkpoint: pos/architecture/heimdall/checkpoint.md
             - Encoder: pos/architecture/heimdall/encoder.md
-            - Peppermint: pos/architecture/heimdall/encoder.md
+            - Governance: pos/architecture/heimdall/governance.md
+            - Key Management: pos/architecture/heimdall/key-management.md
+            - Responsibilities: pos/architecture/heimdall/responsibilities.md
+            - Rewards: pos/architecture/heimdall/rewards.md
             - Stdtx: pos/architecture/heimdall/encoder.md
             - Transactions: pos/architecture/heimdall/encoder.md
             - Types: pos/architecture/heimdall/encoder.md
-            - Validator Key Management: pos/architecture/heimdall/encoder.md
-            - Validators: pos/architecture/heimdall/encoder.md
+            - Validators: pos/architecture/heimdall/validators.md
+            - Modules:
+              - Modules: pos/architecture/heimdall/modules/index.md
+              - Auth: pos/architecture/heimdall/modules/auth.md
+              - Bank: pos/architecture/heimdall/modules/bank.md
+              - Bor: pos/architecture/heimdall/modules/bor.md
+              - Chain Manager: pos/architecture/heimdall/modules/chain-manager.md
+              - Checkpoint: pos/architecture/heimdall/modules/checkpoint.md
+              - Clerk: pos/architecture/heimdall/modules/clerk.md
+              - Staking: pos/architecture/heimdall/modules/staking.md
+            - FAQ: pos/architecture/heimdall/faq.md
       - Specification:
           - pos/spec/index.md
       - Concepts:
@@ -130,6 +146,11 @@ nav:
             - Tokens: pos/concepts/tokens/index.md
             - POL: pos/concepts/tokens/pol.md
             - MATIC: pos/concepts/tokens/matic.md
+          - Transactions:
+            - Transactions: pos/concepts/transactions/index.md
+            - EIP-1559: pos/concepts/transactions/eip-1559.md
+            - EIP-4337: pos/concepts/transactions/eip-4337.md
+            - Meta-Transactions: pos/concepts/transactions/meta-transactions.md
       - API:
           - pos/api/index.md
       - FAQ:
