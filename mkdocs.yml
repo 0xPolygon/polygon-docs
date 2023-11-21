@@ -97,6 +97,7 @@ nav:
             - Validator Node: pos/howto/operating/validator-node/index.md
             - Manual Install: pos/howto/operating/validator-node/manual-install.md
             - Ansible: pos/howto/operating/validator-node/ansible.md
+            - Staking: pos/howto/operating/validator-node/staking.md
           - Access Node: pos/howto/operating/access-node.md
           - Archive Node: pos/howto/operating/archive-node.md
           - Erigon Node: pos/howto/operating/erigon-node.md
@@ -109,6 +110,7 @@ nav:
           - QuickNode: pos/howto/smart-contracts/quicknode.md
           - SmartPress: pos/howto/smart-contracts/smartpress.md
           - ThirdWeb: pos/howto/smart-contracts/thirdweb.md
+        - Polygon DID: pos/howto/polygon-did.md
       - Architecture:
           - pos/architecture/index.md
           - The Bor Block Producer:
