@@ -17,4 +17,3 @@ Simply switch to the zkEVM RPC and start building on a network with a higher thr
 
 
 
-
