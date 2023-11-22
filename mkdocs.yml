@@ -52,22 +52,22 @@ nav:
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
-        - Deploy validium: cdk/get-started/deploy-validium.md
+        - Deploy:
+          - Validium: cdk/get-started/deploy-validium.md
+          - Rollup: cdk/get-started/deploy-rollup.md
       - How to: 
         - Manage allowlists: cdk/how-to/manage-allowlists.md
       #- Architecture:
       - Specification:
-        - Validium vs zkEVM: cdk/specification/validium-vs-zkevm.md
+        - Validium vs rollup: cdk/specification/validium-vs-rollup.md
         - Performance benchmarks: cdk/specification/performance-benchmarks.md
       - Concepts:
         - Data availability: cdk/concepts/dac.md
      # - API:
       - Troubleshooting:
         - CDK component repos: cdk/troubleshooting/component-repos.md
-      - Retiring products:
-        - EDGE: cdk/edge-suggestion.md
   - zkEVM:
-      - Overview: zkEVM/index.md
+      - zkEVM/index.md # marketing landing page
       - Get started:
         - Welcome: zkEVM/welcome.md
         - Quickstart:
@@ -90,10 +90,10 @@ nav:
         - Deploy a contract with Foundry: zkEVM/using-foundry.md
         - Deploy a contract with Hardhat: zkEVM/using-hardhat.md
         - Verify a contract: zkEVM/verify-smart-contract.md
-      - Learning zkEVM: zkEVM/learning.md
-      - Disclosures: zkEVM/risk-disclosures.md
-      - Third-party tools:
-        - Using web3modal SDK: zkEVM/using-web3modal.md
+      - Concepts:
+        - Learning zkEVM: zkEVM/learning.md
+      - Troubleshooting:
+        - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
       - Overview: pos/index.md
   - Miden:
@@ -101,7 +101,9 @@ nav:
       #- Miden playground: https://0xpolygonmiden.github.io/examples/
       #- Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
       #- Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
-  - Tools: tools/index.md
+  - Tools: 
+      - tools/index.md
+      - Using Web3Modal SDK: tools/using-web3modal.md
   - Tutorials:
       - Tutorials: tutorials/index.md
       - Build a Validium-based App-chain: tutorials/build-validium.md
@@ -190,4 +192,5 @@ markdown_extensions:
 
 plugins:
   - search
- # - git-revision-date-localized
+  - open-in-new-tab
+  #- git-revision-date-localized

@@ -6,7 +6,6 @@ Polygon zkEVM is fully compatible with Ethereum to provide a complete EVM-like U
 
 Users do not need any special toolings or wallets in order to build or interact with Polygon zkEVM.
 
-
 Simply switch to the zkEVM RPC and start building on a network with a higher throughput and lower fees.
 
 !!!caution
