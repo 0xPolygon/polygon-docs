@@ -1,25 +1,3 @@
----
-id: getblock
-title: How to Deploy a Smart Contract using GetBlock
-sidebar_label: Using GetBlock
-description: Guide to deploy smart contracts using GetBlock
-keywords:
-  - docs
-  - matic
-  - polygon
-  - getblock
-  - create smart contract
-  - deploy on polygon
-  - verify your smart contract
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
 The Polygon API endpoint by GetBlock is a useful tool for early-stage teams that want to take advantage of Polygon's benefits. In this tutorial, we will walk you through the steps to create and deploy an ERC-20 smart contract on the Polygon Mumbai testnet using [Metamask](https://metamask.io/), Remix, and [GetBlock](https://getblock.io/nodes/matic/).
 
 You will learn how to use GetBlock to create and deploy a smart contract on the Mumbai Testnet using [GetBlock](https://getblock.io/) endpoints.

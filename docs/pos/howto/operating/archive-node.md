@@ -1,28 +1,3 @@
----
-id: archive-node-nodereal
-title: Using NodeReal
-description: Quick and easy third-party service that handles node requests and returns archive responses
-keywords:
-  - docs
-  - matic
-  - polygon
-  - node
-  - nodereal
-  - query
-  - archive node
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
----
-
 ## Get access to an Archive Node with NodeReal
 
 If you're new to Web3 development, [NodeReal](https://nodereal.io/) simplifies the process of setting up a full node on Polygon.

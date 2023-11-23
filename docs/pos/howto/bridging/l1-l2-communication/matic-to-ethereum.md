@@ -1,15 +1,3 @@
----
-id: matic-to-ethereum
-title: Transfer data from Polygon to Ethereum
-description: Transfer state or data from Polygon to Ethereum via Contracts
-keywords:
-  - docs
-  - matic
-image: https://matic.network/banners/matic-network-16x9.png
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 Mechanism for transferring data from Polygon to Ethereum is a little different from doing the same for Ethereum to Polygon. The **checkpoint** transactions created by the Validators on the Ethereum chain are used for achieving this. Basically a transaction is initially created on Polygon. While creating this transaction it has to be ensured that an **event is emitted** and the **event logs includes the data we wish to transfer** from Polygon to Ethereum.
 
 In a period of time ( about 10-30 mins ), this transaction is check-pointed on the Ethereum chain by the validators. Once checkpointing is done, the hash of the transaction created on the Polygon chain can be submitted as a proof on the **RootChainManager** contract on the Ethereum chain. This contract, validates the transaction, verifies that this transaction is included in the checkpoint and finally decodes the event logs from this transaction.

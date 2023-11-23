@@ -1,24 +1,3 @@
----
-id: thirdweb
-title: How to Deploy a Smart Contract Using thirdweb
-sidebar_label: Using thirdweb
-description: "Lean how to deploy smart contracts on Polygon PoS using thirdweb."
-keywords:
-  - docs
-  - matic
-  - polygon
-  - thirdweb
-  - create smart contract
-  - deploy on polygon
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
 thirdweb is a complete web3 development framework that provides everything you need to connect your apps and games to decentralized networks.
 
 ## Create a contract using thirdweb

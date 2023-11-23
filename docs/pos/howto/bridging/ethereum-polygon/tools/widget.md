@@ -1,16 +1,3 @@
----
-id: widget
-title: Wallet Widget
-sidebar_label: Wallet Widget
-description: "UI tools to execute bridge transactions."
-keywords:
-  - docs
-  - matic
-image: https://matic.network/banners/matic-network-16x9.png 
----
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 Wallet widget is a UI tool which can be embedded in any web application for executing bridge transactions - Deposit & Withdraw. 
 
 Every widget is identified by an unique name which you can get from [Widget dashboard](https://wallet.polygon.technology/widget-dashboard) .

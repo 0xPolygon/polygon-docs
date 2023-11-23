@@ -1,20 +1,3 @@
----
-id: full-node-gcp
-title: How to Run a Full PoS Node using Google Cloud Platform
-sidebar_label: Google Cloud
-description: "Learn how to deploy a full Polygon PoS node."
-keywords:
-  - docs
-  - polygon
-  - matic
-  - node
-  - full node setup
-  - ansible
-  - deploy
-image: https://wiki.polygon.technology/img/polygon-wiki.png
----
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 In this document, we will describe how to deploy Polygon nodes into a Virtual Machine instance on the Google Cloud Platform (GCP).
 
 It is recommended to use any modern Debian or Linux Ubuntu OS with long-term support, i.e. Debian 11, Ubuntu 20.04. We'll focus on Ubuntu 20.04 in this guide.
@@ -116,4 +99,4 @@ Blockchain data is saved onto additional drives which are kept by default on VM 
 
 At the end, you will get an instance as shown in the below diagram.
 
-<img src={useBaseUrl("img/mainnet/polygon-instance.svg")} />
+<img src="/img/pos/polygon-instance.svg")} />

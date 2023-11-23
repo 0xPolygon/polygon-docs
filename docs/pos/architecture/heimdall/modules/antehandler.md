@@ -1,16 +1,3 @@
----
-id: antehandler
-title: Ante Handler
-description: Ante Handler checks and validates the transaction
-keywords:
-  - docs
-  - matic
-  - polygon
-  - Ante Handler
-  - validate transactions
-image: https://matic.network/banners/matic-network-16x9.png 
----
-
 # Ante Handler
 
 Ante handler checks and validates the transaction. After the verification, it checks the balance of the sender for enough fees and deduct fees in case of successful transaction inclusion.

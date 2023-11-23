@@ -1,18 +1,3 @@
----
-id: default-ports
-title: Default Ports for Nodes
-sidebar_label: Network Ports
-description: "A comprehensive list of default ports utilized by Polygon PoS nodes."
-keywords:
-  - docs
-  - polygon
-  - matic
-  - port
-  - port management
-  - default ports
-image: https://wiki.polygon.technology/img/polygon-wiki.png
----
-
 This guide provides a detailed list of default ports used across Polygon nodes, including Bor and Heimdall. Understanding these ports is crucial for network configuration and effective communication between nodes.
 
 ## Bor Node

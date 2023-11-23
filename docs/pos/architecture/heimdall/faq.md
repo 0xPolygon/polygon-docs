@@ -1,17 +1,3 @@
----
-id: technical-faqs
-title: Technical FAQs
-description: Frequently asked questions related to running a Validator on the Polygon network.
-keywords:
-  - docs
-  - polygon
-  - polygon wiki
-  - faqs
-  - technical
-slug: technical-faqs
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
 ### 1. Are the private keys same for Heimdall and Bor keystore?
 
 Yes, the private key used for generating Validator keys and Bor Keystore is the same.

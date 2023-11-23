@@ -1,16 +1,3 @@
----
-id: bank
-title: Bank
-description: Module handling account balance transfers for Heimdall
-keywords:
-  - docs
-  - matic
-  - bank
-  - account balance
-  - heimdall
-image: https://matic.network/banners/matic-network-16x9.png 
----
-
 # Bank Module
 
 The `bank` module handles account balance transfers for Heimdall. This module corresponds to the `bank` module from cosmos-sdk.

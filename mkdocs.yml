@@ -32,6 +32,10 @@ theme:
     - search.highlight
     - search.share
     - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.expansion
+    - navigation.integration
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
@@ -81,10 +85,6 @@ nav:
         - Get started: pos/get-started/index.md
       - How-tos:
         - How-tos: pos/howto/index.md
-        - Bridging:
-          - Bridging: pos/howto/bridging/index.md
-          - Ethereum-Polygon: pos/howto/bridging/ethereum-polygon/index.md
-          - L1-L2 Communication: pos/howto/bridging/l1-l2-communication/index.md
         - Operating:
           - Operating: pos/howto/operating/index.md
           - Full Node:
@@ -101,6 +101,10 @@ nav:
           - Access Node: pos/howto/operating/access-node.md
           - Archive Node: pos/howto/operating/archive-node.md
           - Erigon Node: pos/howto/operating/erigon-node.md
+        - Bridging:
+          - Bridging: pos/howto/bridging/index.md
+          - Ethereum-Polygon: pos/howto/bridging/ethereum-polygon/index.md
+          - L1-L2 Communication: pos/howto/bridging/l1-l2-communication/index.md
         - Smart Contracts:
           - Smart Contracts: pos/howto/smart-contracts/index.md
           - Alchemy: pos/howto/smart-contracts/alchemy.md
@@ -113,26 +117,21 @@ nav:
         - Polygon DID: pos/howto/polygon-did.md
       - Architecture:
           - pos/architecture/index.md
-          - The Bor Block Producer:
+          - Bor:
             - Bor: pos/architecture/bor/index.md
-            - Components: pos/architecture/bor/components.md
             - Consensus: pos/architecture/bor/consensus.md
             - State Sync: pos/architecture/bor/state-sync.md
-          - The Heimdall Validator:
+            - Network Configuration: pos/architecture/bor/network-config.md
+            - Snapshots: pos/architecture/bor/snapshots.md
+          - Heimdall:
             - Heimdall: pos/architecture/heimdall/index.md
-            - Ante Handler: pos/architecture/heimdall/antehandler.md
             - Checkpoint: pos/architecture/heimdall/checkpoint.md
-            - Encoder: pos/architecture/heimdall/encoder.md
             - Governance: pos/architecture/heimdall/governance.md
             - Key Management: pos/architecture/heimdall/key-management.md
-            - Responsibilities: pos/architecture/heimdall/responsibilities.md
-            - Rewards: pos/architecture/heimdall/rewards.md
-            - Stdtx: pos/architecture/heimdall/encoder.md
-            - Transactions: pos/architecture/heimdall/encoder.md
-            - Types: pos/architecture/heimdall/encoder.md
-            - Validators: pos/architecture/heimdall/validators.md
+            - Stdtx: pos/architecture/heimdall/stdtx.md
             - Modules:
               - Modules: pos/architecture/heimdall/modules/index.md
+              - Ante Handler: pos/architecture/heimdall/modules/antehandler.md
               - Auth: pos/architecture/heimdall/modules/auth.md
               - Bank: pos/architecture/heimdall/modules/bank.md
               - Bor: pos/architecture/heimdall/modules/bor.md
@@ -140,6 +139,7 @@ nav:
               - Checkpoint: pos/architecture/heimdall/modules/checkpoint.md
               - Clerk: pos/architecture/heimdall/modules/clerk.md
               - Staking: pos/architecture/heimdall/modules/staking.md
+              - Topup: pos/architecture/heimdall/modules/topup.md
             - FAQ: pos/architecture/heimdall/faq.md
       - Specification:
           - pos/spec/index.md
@@ -156,8 +156,6 @@ nav:
             - Meta-Transactions: pos/concepts/transactions/meta-transactions.md
       - API:
           - pos/api/index.md
-      - FAQ:
-          - pos/faq/index.md
   - Miden:
       - Overview: miden/index.md
       #- Miden playground: https://0xpolygonmiden.github.io/examples/
@@ -249,7 +247,16 @@ markdown_extensions:
   - pymdownx.caret
   - meta
   - smarty
+  - pymdownx.extra
 
 plugins:
   - search
+  - enumerate-headings:
+      restart_increment_after:
+        - cdk/index.md
+        - zkEVM/index.md
+        - pos/index.md
+        - miden/index.md
+        - tools/index.md
+        - tutorials/index.md
  # - git-revision-date-localized

@@ -1,23 +1,3 @@
----
-id: submit-mapping-request
-title: Mapping Tokens
-sidebar_label: Mapping tokens
-description:  A guide on how to map tokens between Ethereum and Polygon Chains using the PoS Bridge
-keywords:
-  - docs
-  - polygon wiki
-  - token mapping
-  - pos bridge
-  - polygon
-  - goerli
-  - ethereum
-  - testnet
-  - mainnet
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 Mapping is necessary in order to transfer your assets to and from Ethereum and Polygon PoS. We offer two bridges to do the same. More details on the bridge can be understood [here](/pos/design/bridge/ethereum-polygon/getting-started.md).
 
 :::info

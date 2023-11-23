@@ -1,19 +1,3 @@
----
-id: mintable-assets
-title: Mintable PoS Assets
-sidebar_label: Mintable assets
-description: Mint and create assets on the Polygon network with Fx-Portal.
-keywords:
-  - docs
-  - polygon wiki
-  - polygon
-  - mintable assets
-  - mint
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 Assets can be transferred to and from across the Ethereum and Polygon chain using the PoS bridge. These assets include ERC20, ERC721, ERC1155 and many other token standards. Most of the assets are pre-existing on Ethereum chain. But new assets can be created on the Polygon chain as well and moved back to Ethereum chain as and when required. This can save lots of gas and time that is spent on token minting on Ethereum.
 
 Creation of assets on the Polygon chain is much easier and a more recommended approach. **These assets can be moved to Ethereum chain when required**. Such type of assets are called **Polygon mintable assets**.

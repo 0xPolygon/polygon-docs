@@ -1,23 +1,3 @@
----
-id: access-node-alchemy
-title: Access Node with Alchemy
-description: Make blockchain queries on Polygon without building a full node using the Alchemy SDK.
-keywords:
-  - docs
-  - matic
-  - polygon
-  - node
-  - alchemy
-  - alchemy sdk
-  - query 
-  - full node
-image: https://wiki.polygon.technology/img/polygon-wiki.png
----
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 If you're a new Web3 developer, it's unlikely that you'll need to run your own full node on Polygon. 
 
 The majority of developers use a node provider, or a third-party external service that receives node requests and returns responses for you automatically. That's because the fastest way to get developing on Polygon is using a node provider rather than managing your own node.

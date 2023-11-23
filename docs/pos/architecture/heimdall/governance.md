@@ -1,18 +1,3 @@
----
-id: governance
-title: Governance
-sidebar_label: Governance
-description: System with a 1 token - 1 vote basis
-keywords:
-  - docs
-  - matic
-  - one token
-  - one vote
-  - governance
-  - heimdall
-image: https://matic.network/banners/matic-network-16x9.png 
----
-
 # Governance
 
 Heimdall governance works exactly the same as [Cosmos-sdk `x/gov` module](https://docs.cosmos.network/master/modules/gov/).

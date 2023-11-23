@@ -1,13 +1,6 @@
+# Getting Started
 
 This guide will introduce you to the Polygon PoS ecosystem. You'll find links to valuable resources and websites that will bring you up to speed on building, not only on Polygon but also on general blockchain application development.
-
-:::tip Stay in the know
-
-Keep up with the latest builder updates from the Polygon
-team and the community by subscribing to the
-[<ins>Polygon notification groups</ins>](https://polygon.technology/notifications/).
-
-:::
 
 ## Building on Polygon
 
@@ -26,12 +19,6 @@ Polygon supports many services you can use to test, compile, debug, and deploy d
 ### Connecting to Polygon
 
 You can add Polygon to MetaMask or directly use Arkane, which allows you to connect to Polygon using [RPC](https://docs.polygon.technology/docs/tools/wallets/metamask/config-polygon-on-metamask/).
-
-:::note Directory of publicly available PoS RPC endpoints
-
-Check out a list of public endpoints for the Polygon PoS network at [Alchemy's Chain Connect resource](https://www.alchemy.com/chain-connect/chain/polygon-pos) and [Chainlist](https://chainlist.org/chain/137).
-
-:::
 
 In order to connect with the Polygon network to read blockchain information, we recommend using the Alchemy SDK.
 
@@ -107,52 +94,6 @@ If this is overwhelming, that’s alright! You can jump right into the action an
 1. **Beware the cost of being on the bleeding edge**: Like typical niche programming, dApps and blockchain development moves very quickly. While researching, you may find complex code repositories, 404s on a documentation site, or even no documentation. Use that opportunity to reach out to us via any social media channel.
 2. **The learning curve may be daunting, but the barrier to entry is low**: The community is very open and welcoming! Projects welcome pull requests from outsiders and resolve any blockers actively. We’re working on creating a better world and contribution in any form is appreciated. We’ll be grateful to onboard you into this amazing Web3 ecosystem.
 
-:::info Stay Updated
-
-Decentralized application development encourages network decentralization. Follow our social media handles for more insights and updates about the Polygon ecosystem. You can find the links to all the Polygon communities [here](https://polygon.technology/community/).
-
-
-
-
-
-
-
-
-
-
-
----
-id: validator-index
-title: Validator Index
-description: A collection of instructions on how to run and operate validator nodes on the Polygon Network
-keywords:
-  - docs
-  - polygon
-  - validate
-  - validator
-  - maintain
-  - architecture
-  - Validator Index
-slug: validator-index
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::tip Stay in the know
-
-Keep up with the latest node and validator updates from the Polygon team and the community by subscribing to [Polygon notifications](https://polygon.technology/notifications/).
-
-:::
-
-Validators are the key actor in maintaining the Polygon network. Validators run a full node and secure
-the network by staking MATIC to produce blocks, validate and participate in PoS consensus.
-
-:::info
-
-There is limited space for accepting new validators. New validators can only join the active set when a currently active validator unbonds.
-
-A new auction process for validator replacement will be rolled out.
-
-:::
 
 ## Overview
 

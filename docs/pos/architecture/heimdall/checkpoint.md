@@ -1,18 +1,3 @@
----
-id: checkpoint
-title: Checkpoint
-description: Snapshots of the Bor chain state submitted to Ethereum
-keywords:
-  - docs
-  - matic
-  - polygon
-  - checkpoint
-  - snapshots of bor chain
-  - ethereum
-image: https://matic.network/banners/matic-network-16x9.png
----
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Checkpoint
 
 Checkpoints are the most crucial part of the Polygon network. It represents snapshots of the Bor chain state and is supposed to be attested by ⅔+ of the validator set before it is validated and submitted on the contracts deployed on Ethereum.
@@ -47,7 +32,7 @@ type CheckpointBlockHeader struct {
 
 ### Root hash
 
-<img src={useBaseUrl("img/checkpoint/checkpoint.svg")} />
+<img src="/img/pos/checkpoint.svg")} />
 
 `RootHash` is the Merkle hash of Bor block hashes from `StartBlock` to `EndBlock`. Root hash for the checkpoint is created using the following way:
 

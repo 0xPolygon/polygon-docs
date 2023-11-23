@@ -1,25 +1,3 @@
----
-id: smartpress
-title: How to Deploy a Smart Contract Using SmartPress
-sidebar_label: Using SmartPress
-description: "Learn how to deploy smart contracts on Polygon PoS using SmartPress."
-keywords:
-  - docs
-  - matic
-  - polygon
-  - smartpress
-  - ai
-  - create smart contract
-  - deploy on polygon
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
 SmartPress is an AI tool that crafts custom smart contracts from language prompts.
 
 > For details on the variety of contracts SmartPress can create, check out [SmartPress’s website](https://smartpress.ai).
@@ -28,7 +6,7 @@ SmartPress is an AI tool that crafts custom smart contracts from language prompt
 
 To create a new smart contract with SmartPress, follow these steps:
 
-1. In your browser, navigate to [smartpress.ai](smartpress.ai).
+1. In your browser, navigate to [smartpress.ai](https://smartpress.ai).
 2. Enter the specifications for your desired contract.
 3. Let SmartPress generate the contract for you; no need for an IDE or code editor.
 4. Review the output. If satisfied, proceed to validation and testing. If not, modify your input and repeat the process.
@@ -57,7 +35,3 @@ To verify your new contract, follow these steps:
 6. Choose your preferred licence.
 7. Paste the flattened code in the code box.
 8. Verification will complete.
-
-## Need help?
-
-If you have any questions or encounter any issues during the process, **please reach out to the [official SmartPress support](contact@smartpress.ai)**.

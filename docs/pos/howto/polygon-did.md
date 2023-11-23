@@ -1,18 +1,3 @@
----
-id: did-implementation
-title: Polygon DID Implementation
-sidebar_label: Identity
-description: Learn about DID implementation on Polygon
-keywords:
-  - docs
-  - polygon
-  - matic
-  - DID
-  - identity
-image: https://wiki.polygon.technology/img/polygon-logo.png
-slug: did-implementation/getting-started
----
-
 This is a startup guide for users who wish to use the implementation packages published by Polygon team, to generate and publish a Polygon DID on the Polygon ledger.
 
 The Polygon DID method Implementation comprises of 3 packages, namely the polygon-did-registrar, polygon-did-resolver and polygon-did-registry-contract. A user who wants to incorporate the functionality to either register or read a DID on or from Polygon network can use the following guide.

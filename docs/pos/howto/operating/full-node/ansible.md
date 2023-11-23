@@ -1,20 +1,3 @@
----
-id: full-node-ansible
-title: How to Run a Full PoS Node using Ansible
-sidebar_label: Ansible
-description: "Learn how to deploy a full Polygon PoS node."
-keywords:
-  - docs
-  - polygon
-  - matic
-  - node
-  - full node setup
-  - ansible
-  - deploy
-image: https://wiki.polygon.technology/img/polygon-wiki.png
----
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html) is used to
 configure and manage a full node. 
 
@@ -65,7 +48,7 @@ Length in byte format - 4
   ansible-playbook playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3 network=mumbai node_type=sentry" --list-hosts
   ```
 
-  <img src={useBaseUrl("img/network/full-node-mumbai.png")} />
+  <img src="/img/pos/full-node-mumbai.png")} />
 
 - Next, set up the full node with this command:
 

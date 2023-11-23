@@ -1,16 +1,3 @@
----
-id: topup
-title: Topup
-description: An amount which will be used to pay fees on Heimdall chain
-keywords:
-  - docs
-  - matic
-  - topup
-  - fees
-  - heimdall
-image: https://matic.network/banners/matic-network-16x9.png 
----
-
 # Topup
 
 Heimdall Topup is an amount which will be used to pay fees on Heimdall chain.

@@ -1,16 +1,3 @@
----
-id: chainmanager
-title: Chain Manager
-description: Module that provides all necessary dependencies
-keywords:
-  - docs
-  - matic
-  - chain manager
-  - module
-  - heimdall
-image: https://matic.network/banners/matic-network-16x9.png 
----
-
 # Chain Manager
 
 This document specifies an overview of the chain manager module of Heimdall.

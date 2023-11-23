@@ -1,4 +1,4 @@
-# What is Polygon PoS?
+# Proof of Stake on Polygon
 
 Polygon PoS, originally launched as Matic Network, has undergone significant transformations to address the evolving needs of blockchain scalability and security. Initially designed to scale Ethereum through a hybrid Plasma sidechain, the network is currently in the process of transitioning into a ZK-based validium solution on Ethereum. This evolution aims to offer enhanced scalability and robust security features.
 
