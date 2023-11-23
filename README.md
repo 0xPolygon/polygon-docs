@@ -44,16 +44,16 @@ docker compose up
 
 ### Run manually
 
-1. Download and install Python, as above, and ensure you have installed all the packages listed in `requirements.txt`:
+1. Download and install Python, as above, and ensure you have installed all the packages listed in `requirements.txt`, e.g.:
 
 ```sh
-pip3 install -r requirements.txt
+pip install markdown-include==0.8.1
 ```
 
 2. Run the following from the project root to bring up the site:
 
 ```sh
-./run.sh
+mkdocs serve --strict
 ```
 
 ## Questions
