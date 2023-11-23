@@ -1,10 +1,10 @@
 
-Continue with the **Sixth Step** of this Deployment-Guide where you activate forced transactions, as well as bridging and claiming assets.
+Continue with the **sixth step** of this deployment-guide where you activate forced transactions, as well as bridging and claiming assets.
 
-## Activate Forced Transactions
+## Activate forced transactions
 
 
-You can check out [this](/zkevm/protocol/sequencer-resistance.md) document to learn more about Forced Batches of transactions.
+You can check out [this](/zkevm/protocol/sequencer-resistance.md) document to learn more about forced batches of transactions.
 
 ```bash
 cd ~/zkevm-contracts
@@ -24,7 +24,7 @@ const zkevmContractWallet = zkevm.connect(wallet);
 await zkevmContract.activateForceBatches();
 ```
 
-## Provide L1 ETH to the Bridge
+## Provide L1 ETH to the bridge
 
 Run the below commands in CLI to **create a bridge transaction** and send L1 Ether to the zkEVM Bridge.
 
@@ -56,9 +56,9 @@ go run main.go
 # 2023-06-07T06:29:14.211Z      INFO    initial-bridge/main.go:46       Success!        {"pid": 776268, "version": "v0.1.0"}
 ```
 
-## Claim Your L2 zkETH
+## Claim your L2 zkETH
 
-After sending your first bridge transaction to your zkEVM network, create a **forzed claim to get the zkETH in L2**.
+After sending your first bridge transaction to your zkEVM network, create a **forced claim to get the zkETH in L2**.
 
 ```bash
 mkdir -p ~/zkevm/initial-claim
@@ -99,8 +99,6 @@ go run main.go
 # 2023-06-07T06:41:50.731Z     INFO    initial-claim/main.go:196       Success!!!!     {"pid": 783804, "version": "v0.1.0"}
 ```
 
-:::tip Congratulations !!
-
-Congratulations on reaching this far in setting up your own zkEVM network. **Your network is live on the Testnet** and you can send transactions to verify the same. Also, we have provided a Goerli full node setup guide below in case you are looking for one.
-
-:::
+!!!congratulations
+    Congratulations on reaching this far in setting up your own zkEVM network.
+    **Your network is live on the Testnet** and you can send transactions to verify the same. Also, we have provided a Goerli full node setup guide below in case you are looking for one.
