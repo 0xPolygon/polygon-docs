@@ -1,17 +1,3 @@
----
-id: validator-key-management
-title: Validator Key Management
-description: Signer and Owner Key validator management
-keywords:
-  - docs
-  - matic
-  - polygon
-  - Validator Key Management
-  - signer
-  - owner
-image: https://matic.network/banners/matic-network-16x9.png 
----
-
 # Validator Key Management
 
 Each validator uses two keys to manage validator related activities on Polygon. The Signer key is kept on the node and is generally considered a `hot` wallet, whereas the Owner key is supposed to kept very secure, is used infrequently, and is generally considered a `cold` wallet. The staked funds are controlled by the Owner key. 

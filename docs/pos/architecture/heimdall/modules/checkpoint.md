@@ -1,17 +1,3 @@
----
-id: checkpoint
-title: Checkpoint
-description: Module that manages checkpoint-related functionalities
-keywords:
-  - docs
-  - matic
-  - checkpoint
-  - heimdall
-image: https://matic.network/banners/matic-network-16x9.png 
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Checkpoint
 
 `checkpoint` module manages checkpoint related functionalities for Heimdall. It needs Bor chain when a new checkpoint is proposed on Heimdall to verify checkpoint root hash.
@@ -24,11 +10,11 @@ Heimdall uses the same leader selection algorithm as Tendermint to select the ne
 
 Each checkpoint has validator as proposer. If checkpoint on Ethereum chain fails or succeeds, `ack` and `no-ack` transaction would change the proposer on Heimdall for next checkpoint. The following flow chart represents the life cycle of the checkpoint:
 
-<img src={useBaseUrl("img/checkpoint/checkpoint-flowchart.svg")} />
+<img src="/img/pos/checkpoint-flowchart.svg")} />
 
 ## Messages
 
-<img src={useBaseUrl("img/checkpoint/checkpoint-module-flow.svg")} />
+<img src="/img/pos/checkpoint-module-flow.svg")} />
 
 ### MsgCheckpoint
 

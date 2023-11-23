@@ -1,15 +1,3 @@
----
-id: auth
-title: Auth
-description: Module for specifying base transaction and account types
-keywords:
-  - docs
-  - matic
-  - auth module
-  - transaction
-  - account types
-image: https://matic.network/banners/matic-network-16x9.png 
----
 # Auth Module
 
 This document describes the `auth` module of Heimdall.
@@ -22,7 +10,7 @@ Fees serve two purposes for an operator of the network.
 
 Fees limit the growth of the state stored by every full node and allow for general purpose censorship of transactions of little economic value. Fees are best suited as an anti-spam mechanism where validators are disinterested in the use of the network and identities of users.
 
-Since Heimdall doesn't support custom contract or code for any transaction, it uses fixed cost transactions. For fixed cost transactions, the validator can top up their accounts on the Ethereum chain and get tokens on Heimdall using the [Topup](Topup.md) module.
+Since Heimdall doesn't support custom contract or code for any transaction, it uses fixed cost transactions. For fixed cost transactions, the validator can top up their accounts on the Ethereum chain and get tokens on Heimdall using the [Topup](topup.md) module.
 
 ## Types
 

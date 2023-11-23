@@ -1,24 +1,3 @@
----
-id: snapshot-instructions-heimdall-bor
-title: Heimdall & Bor Snapshots
-sidebar_label: Heimdall & Bor Snapshots
-description: Heimdall and Bor snapshot Instructions for faster syncing.
-keywords:
-  - docs
-  - matic
-  - polygon
-  - binary
-  - node
-  - validator
-  - sentry
-  - heimdall
-  - bor
-  - snapshots
-image: https://wiki.polygon.technology/img/polygon-wiki.png
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 When setting up a new sentry, validator, or full node server, it is recommended that you use snapshots for faster syncing without having to sync over the network. Using snapshots will save you several days for both Heimdall and Bor. **Note: We no longer support bor archive snapshots due to unsustainable data growth.** 
 
 :::tip

@@ -1,34 +1,5 @@
----
-id: chainide
-title: How to Deploy a Smart Contract Using ChainIDE
-sidebar_label: Using ChainIDE
-description: Learn how to use ChainIDE to build and deploy smart contracts.
-keywords:
-  - docs
-  - matic
-  - polygon
-  - IDE
-  - build
-  - deploy
-  - environment
-  - smart contract
-  - chainIDE
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
 [ChainIDE](https://chainide.com/) is a chain agnostic, cloud-based IDE for creating decentralized applications. It enhances development cycle through pre-configured plugins that save users' time and effort. This is a beginner guide on creating and deploying a simple ERC-721 smart contract on the Polygon Mumbai Testnet.
 
-:::tip
-
-If you have any questions, feel free to ask the ChainIDE team in their [<ins>Discord</ins>](https://discord.gg/QpGq4hjWrh).
-
-:::
 
 ## Prerequisites
 

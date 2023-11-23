@@ -1,17 +1,3 @@
----
-id: staking
-title: Staking
-description: Module that manages validator-related transactions and state
-keywords:
-  - docs
-  - matic
-  - staking
-  - heimdall
-  - validator
-image: https://matic.network/banners/matic-network-16x9.png 
----
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Staking
 
 Staking module manages validator related transactions and state for Heimdall. Note that a validator stakes their tokens on the Ethereum chain and becomes a validator. Respective validators send the transactions on Heimdall using necessary parameters to acknowledge the Ethereum stake change. Once the majority of the validators agree on the change on the stake, this module saves the validator information on Heimdall state.
@@ -34,7 +20,7 @@ More details here: [Rewards](/docs/pos/design/validator/rewards.md#what-is-the-i
 
 ## Messages
 
-<img src={useBaseUrl('img/staking/stake-management-flow.svg')} />
+<img src="img/pos/stake-management-flow.svg" />
 
 ### MsgValidatorJoin
 

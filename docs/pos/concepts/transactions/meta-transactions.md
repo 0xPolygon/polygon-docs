@@ -1,19 +1,3 @@
----
-id: meta-transactions
-title: Meta Transactions
-sidebar_label: Meta Transactions
-description: Learn about meta transactions and how you can use them.
-keywords:
-  - docs
-  - polygon
-  - matic
-  - transactions
-  - meta transactions
-  - gasless
-image: https://matic.network/banners/matic-network-16x9.png
-slug: meta-transactions
----
-
 Daily smart contract calls are at their highest, hitting around 2.5 to 3 million per day.
 DApps are starting to realize their utility but are becoming victims of their success or others’
 success due to gas fees. Not to mention, the onboarding hurdles of users and the challenges of current
@@ -113,20 +97,6 @@ relayers or spin up a custom solution:
 - [Gas Station Network (GSN)](https://docs.opengsn.org/#ethereum-gas-station-network-gsn)
 - [Infura](https://infura.io/product/ethereum/transactions-itx)
 - [Gelato](https://docs.gelato.network/developer-products/gelato-relay-sdk)
-
-
-
-
----
-id: network-agnostics
-title: Network Agnostic Transactions
-sidebar_label: Network Agnostic Transactions
-description: "Integrate Network Agnostic Transactions in your dApp."
-keywords:
-  - docs
-  - matic
-image: https://matic.network/banners/matic-network-16x9.png
----
 
 ## Goal
 
@@ -335,34 +305,6 @@ let data = await web3.eth.abi.encodeFunctionCall({
     */
 
     ```
-
-
-
-
-
-
-
-
-
-
----
-id: account-abstraction
-title: Account Abstraction
-sidebar_label: Overview
-description: "Learn about how account abstraction can improve transaction experience"
-keywords:
-  - docs
-  - polygon
-  - matic
-  - transaction
-  - account abstraction
-  - meta transaction
-  - eip4337
-  - EIP-4337
-  - ERC-4337
-image: https://wiki.polygon.technology/img/polygon-logo.png
-slug: account-abstraction
----
 
 Account Abstraction is a blockchain technology that enables users to utilize smart contracts as their accounts. While the default account for most users is an Externally Owned Account (EOA), which is controlled by an external private key, it requires users to have a considerable understanding of blockchain technology to use them securely. Fortunately, smart contract accounts can create superior user experiences.
 

@@ -1,20 +1,3 @@
----
-id: run-validator-binaries
-title: How to Run a Validator Node using Binaries
-sidebar_label: Binaries
-description: Use the package to set up your validator node on the Polygon Network.
-keywords:
-  - docs
-  - polygon wiki
-  - polygon
-  - binary
-  - node
-  - validator
-  - sentry
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 This guide will walk you through running a Polygon validator node from packages.
 
 For system requirements,
@@ -567,21 +550,6 @@ the [Staking](/docs/pos/design/validator/core-components/staking.md) guide to st
 
 
 
-
----
-id: run-validator-packages
-title: How to Run a Validator Node with Packages
-sidebar_label: Packages
-description: Use the package to set up your validator node on the Polygon Network.
-keywords:
-  - docs
-  - polygon wiki
-  - polygon
-  - binary
-  - node
-  - validator
-  - sentry
----
 
 ## Prerequisites
 

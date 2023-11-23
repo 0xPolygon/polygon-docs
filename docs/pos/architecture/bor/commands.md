@@ -1,21 +1,3 @@
----
-id: pos-common-commands
-title: Common Commands
-sidebar_label: Node Commands
-description: "A guide to essential Linux and Polygon-specific commands for node operations."
-keywords:
-  - docs
-  - matic
-  - polygon
-  - validator
-  - commands
-  - faq
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 This guide provides a curated list of common commands and Polygon-specific operations essential for node operators. Whether you're setting up a full node, validator node or troubleshooting, these commands will assist you in managing your Polygon PoS environment effectively.
 
 ## Frequently Used Commands for Bor & Heimdall

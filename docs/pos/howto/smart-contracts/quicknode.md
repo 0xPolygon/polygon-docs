@@ -1,27 +1,3 @@
----
-id: quicknode
-title: How to Deploy a Smart Contract Using QuickNode
-sidebar_label: Using QuickNode
-description:  Deploy Smart Contracts on Polygon using Brownie and Quicknode.
-keywords:
-  - docs
-  - matic
-  - quicknode
-  - polygon
-  - python
-  - web3.py
-  - smart contract
-  - brownie
-  - deploy
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
 Python is one of the most versatile programming languages; from researchers running their test models to developers using it in heavy production environments, it has use cases in every possible technical field.
 
 In this tutorial, you will learn how to use [Brownie](https://eth-brownie.readthedocs.io/en/latest/index.html#brownie) framework to write and deploy a smart contract by leveraging [QuickNode](https://www.quicknode.com/chains/matic?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide) testnet nodes for Polygon.

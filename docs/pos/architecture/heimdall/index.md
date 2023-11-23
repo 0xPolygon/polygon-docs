@@ -1,17 +1,3 @@
----
-id: overview
-title: Overview
-description: Heimdall is the heart of the Polygon network
-keywords:
-  - docs
-  - matic
-  - polygon
-  - heimdall
-  - cosmos
-  - peppermint
-image: https://matic.network/banners/matic-network-16x9.png 
----
-
 # Heimdall
 
 Heimdall is the heart of the Polygon network. It manages validators, block producer selection, spans, the state-sync mechanism between Ethereum and Matic and other essentials aspects of the system.

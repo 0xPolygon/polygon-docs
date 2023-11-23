@@ -1,99 +1,46 @@
-# Bor Consensus
+# Consensus in Bor
 
 Bor consensus is inspired by Clique consensus: [https://eips.ethereum.org/EIPS/eip-225](https://eips.ethereum.org/EIPS/eip-225). Clique works with multiple pre-defined producers. All producers vote on new producers using Clique APIs. They take turns creating blocks.
 
-Bor fetches new producers through span and sprint management mechanism.
+Bor fetches new producers through span and a sprint management mechanism.
 
 ## Validators
 
 Polygon is a Proof-of-stake system. Anyone can stake their Matic token on Ethereum smart-contract, "staking contract", and become a validator for the system.
 
-```jsx
-function stake(
-	uint256 amount,
-	uint256 heimdallFee,
-	address signer,
-	bool acceptDelegation
-) external;
-```
-
 Once validators are active on Heimdall they get selected as producers through `bor` module.
-
-Check Bor overview to understand span management more in details: [Bor Overview](https://www.notion.so/Bor-Overview-c8bdb110cd4d4090a7e1589ac1006bab)
 
 ## Span
 
 A logically defined set of blocks for which a set of validators is chosen from among all the available validators. Heimdall provides span details through span-details APIs.
 
-```go
-// HeimdallSpan represents span from heimdall APIs
-type HeimdallSpan struct {
-	Span
-	ValidatorSet      ValidatorSet `json:"validator_set" yaml:"validator_set"`
-	SelectedProducers []Validator  `json:"selected_producers" yaml:"selected_producers"`
-	ChainID           string       `json:"bor_chain_id" yaml:"bor_chain_id"`
-}
-
-// Span represents a current bor span
-type Span struct {
-	ID         uint64 `json:"span_id" yaml:"span_id"`
-	StartBlock uint64 `json:"start_block" yaml:"start_block"`
-	EndBlock   uint64 `json:"end_block" yaml:"end_block"`
-}
-
-// Validator represents a volatile state for each Validator
-type Validator struct {
-	ID               uint64         `json:"ID"`
-	Address          common.Address `json:"signer"`
-	VotingPower      int64          `json:"power"`
-	ProposerPriority int64          `json:"accum"`
-}
-```
-
-Geth (In this case, Bor) uses block `snapshot` to store state data for each block, including consensus related data.
-
-Each validator in span contains voting power. Based on their power, they get selected as block producers. Higher power, a higher probability of becoming block producers. Bor uses Tendermint's algorithm for the same. Source: [https://github.com/maticnetwork/bor/blob/master/consensus/bor/valset/validator_set.go](https://github.com/maticnetwork/bor/blob/master/consensus/bor/valset/validator_set.go)
+Each validator in span contains voting power. Based on their power, they get selected as block producers. Higher power, a higher probability of becoming block producers. Bor uses Tendermint's algorithm for the same. 
 
 ## Sprint
 
-A set of blocks within a span for which only a single block producer is chosen to produce blocks. The sprint size is a factor of span size. Bor uses `validatorSet` to get current proposer/producer for current sprint.
+A set of blocks within a span for which only a single block producer is chosen to produce blocks. The sprint size is a factor of span size. 
 
-```go
-currentProposerForSprint := snap.ValidatorSet().Proposer
-```
-
-Apart from the current proposer, Bor selects back-up producers.
+Apart from the current proposer, Bor also selects back-up producers.
 
 ## Authorizing a block
 
-The producers in Bor also called signers, since to authorize a block for the network, the producer needs to sign the block's hash containing **everything except the signature itself**. This means that the hash contains every field of the header, and also the `extraData` with the exception of the 65-byte signature suffix.
+The producers in Bor are also called signers, since to authorize a block for the network, the producer needs to sign the block's hash containing **everything except the signature itself**. This means that the hash contains every field of the header, and also the `extraData` with the exception of the 65-byte signature suffix.
 
-This hash is signed using the standard `secp256k1` curve, and the resulting 65-byte signature is embedded into the `extraData` as the trailing 65-byte suffix.
+This hash is signed using the standard `secp256k1` curve, and the resulting 65-byte signature is embedded into the `extraData` as the trailing 65-byte suffix.
 
-Each signed block is assigned to a difficulty that puts weight on Block. In-turn signing weighs more (`DIFF_INTURN`) than out of turn one (`DIFF_NOTURN`).
-
-### Authorization strategies
-
-As long as producers conform to the above specs, they can authorize and distribute blocks as they see fit. The following suggested strategy will, however, reduce network traffic and small forks, so it’s a suggested feature:
-
-- If a producer is allowed to sign a block (is on the authorized list)
-    - Calculate the optimal signing time of the next block (parent + `Period`)
-    - If the producer is in-turn, wait for the exact time to arrive, sign and broadcast immediately
-    - If the producer is out-of-turn, delay signing by `wiggle`
-
-This small strategy will ensure that the in-turn producer (who's block weighs more) has a slight advantage to sign and propagate versus the out-of-turn signers. Also, the scheme allows a bit of scale with an increase of the number of producers.
+Each signed block is assigned to a difficulty that puts weight on the Block. In-turn signing weighs more (`DIFF_INTURN) than out-of-turn one (`DIFF_NOTURN`).
 
 ### Out-of-turn signing
 
-Bor chooses multiple block producers as a backup when in-turn producer doesn't produce a block. This could happen for a variety of reasons like:
+Bor chooses multiple block producers as a backup when an in-turn producer doesn't produce a block. This could happen for a variety of reasons:
 
-- Block producer node is down
+- The block producer node is down
 - The block producer is trying to withhold the block
 - The block producer is not producing a block intentionally.
 
-When the above happens, Bor's backup mechanism kicks in.
+When the above happens, Bor's backup mechanism is used.
 
-At any point of time, the validators set is stored as an array sorted on the basis of their signer address. Assume, that the validator set is ordered as A, B, C, D and that it is C's turn to produce a block. If C doesn't produce a block within a sufficient amount of time, D becomes in turn to produce one. If D doesn't then A and then B.
+At any point in time, the validators set is stored as an array sorted based on their signer address. Assume, that the validator set is ordered as A, B, C, D and that it is C's turn to produce a block. If C doesn't produce a block within a sufficient amount of time, it becomes D's turn to produce one. If D doesn't, then A and then B.
 
 However, since there will be some time before C produces and propagates a block, the backup validators will wait a certain amount of time before starting to produce a block. This time delay is called wiggle.
 
@@ -110,7 +57,7 @@ Wiggle is the time that a producer should wait before starting to produce a bloc
 
 ### Resolving forks
 
-While the above mechanism adds to the robustness of chain to a certain extent, it introduces the possibility of forks. It could actually be possible that C produced a block, but there was a larger than expected delay in propagation and hence D also produced a block, so that leads to at least 2 forks.
+While the above mechanism adds to the robustness of the chain to a certain extent, it introduces the possibility of forks. It could actually be possible that C produced a block, but there was a larger than expected delay in propagation and hence D also produced a block, so that leads to at least 2 forks.
 
 The resolution is simple - choose the chain with higher difficulty. But then the question is how do we define difficulty of a block in our setup?
 
@@ -139,8 +86,6 @@ Here is how header looks like for a block:
 ```js
 header.Extra = header.Vanity + header.ProducerBytes /* optional */ + header.Seal
 ```
-
-<img src={useBaseUrl("img/Bor/header-bytes.svg")} />
 
 ## State sync from Ethereum Chain
 

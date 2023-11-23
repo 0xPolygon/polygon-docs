@@ -1,20 +1,3 @@
----
-id: validator-staking-operations
-title: How to Stake on Polygon PoS Mainnet
-sidebar_label: Stake on PoS
-description: Learn how to stake as a validator on the Polygon Network
-keywords:
-  - docs
-  - matic
-  - polygon
-  - stake
-  - claim
-  - unstake
-slug: validator-staking-operations
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 ## Prerequisites
 
 ### Full node set up

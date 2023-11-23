@@ -1,16 +1,3 @@
----
-id: state-sync
-title: State Sync Mechanism
-description: Mechanism to read Ethereum data from Matic EVM chain
-keywords:
-  - docs
-  - matic
-  - state sync
-  - mechanism
-  - read ethereum data
-image: https://matic.network/banners/matic-network-16x9.png 
----
-
 # State Sync Mechanism
 
 `State Sync` is the native mechanism to read Ethereum data from Matic EVM chain. 
@@ -29,18 +16,6 @@ This is the flow required from dapps / users to work with state-sync:
 5. After every sprint on `bor`, the Bor node fetches the pending state-sync events from Heimdall via an API call.
 6. The receiver contract inherits `IStateReceiver` interface, and custom logic of decoding the data bytes and performing any action sits inside `onStateReceive` function: [https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/IStateReceiver.sol](https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/IStateReceiver.sol)
 
-
----
-id: how-state-sync-works
-title: How does State Sync work?
-description: "Sending the state from the Ethereum chain to the Bor chain."
-keywords:
-  - docs
-  - matic
-  - state sync
-  - working
-image: https://matic.network/banners/matic-network-16x9.png 
----
 
 # How does State Sync work?
 

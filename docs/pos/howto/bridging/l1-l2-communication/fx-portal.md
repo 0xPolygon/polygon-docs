@@ -1,19 +1,3 @@
----
-id: fx-portal
-title: FxPortal Overview
-sidebar_label: Overview
-description: Transfer state or data from Ethereum to Polygon without mapping using FxPortal.
-keywords:
-  - docs
-  - polygon wiki
-  - polygon
-  - FxPortal
-  - ethereum to polygon
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 The usual mechanism to natively read Ethereum data from Polygon is using **State Sync**. This enables the transfer of arbitrary data from Ethereum to Polygon. However, this approach also requires mapping of the root and child contracts if the default interface cannot be used. FxPortal offers an alternative where ERC standardized tokens can be deployed without any mapping involved, simply using the deployed base FxPortal contracts.
 
 ## What is FxPortal?

@@ -1,21 +1,3 @@
----
-id: full-node-binaries
-title: How to Run a Full PoS Node
-sidebar_label: Binaries
-description: "Learn how to deploy a full Polygon PoS node."
-keywords:
-  - docs
-  - polygon
-  - matic
-  - node
-  - full node setup
-  - ansible
-  - deploy
-image: https://wiki.polygon.technology/img/polygon-wiki.png
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 This deployment guide walks you through starting and running a full node through various methods. For the system requirements, see the [Minimum Technical Requirements](/pos/validator/validator-node-system-requirements.md) guide.
 
 :::tip Snapshots
@@ -193,30 +175,6 @@ journalctl -u bor.service -f
 Open ports 22, 26656 and 30303 to world (0.0.0.0/0) on sentry node firewall.
 
 You can use VPN to restrict access for port 22 as per your requirement and security guidelines.
-
-
-
-
-
-
-
-
----
-id: full-node-packages
-title: How to Run a Full PoS Node using Packages
-sidebar_label: Packages
-description: "Learn how to deploy a full Polygon PoS node."
-keywords:
-  - docs
-  - polygon
-  - matic
-  - node
-  - full node setup
-  - ansible
-  - deploy
-image: https://wiki.polygon.technology/img/polygon-wiki.png
----
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Overview
 

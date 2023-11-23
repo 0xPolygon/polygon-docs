@@ -1,16 +1,3 @@
----
-id: fx-example
-title: Deployment Example
-description: Transfer state or data from Ethereum to Polygon without mapping using FxPortal.
-keywords:
-  - docs
-  - polygon wiki
-  - polygon
-  - FxPortal
-  - ethereum to polygon
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
 ## Overview
 
 The contracts in the following example consist of two main parts, one for

@@ -1,20 +1,3 @@
----
-id: run-validator-ansible
-title: How to Run a Validator Node with Ansible
-sidebar_label: Ansible
-description: "Use the package to set up your validator node on the Polygon Network."
-keywords:
-  - docs
-  - polygon wiki
-  - polygon
-  - binary
-  - node
-  - validator
-  - sentry
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 This section guides you through starting and running the validator node through an Ansible playbook.
 
 For the system requirements, see [Validator Node System Requirements](/pos/validator/validator-node-system-requirements.md).

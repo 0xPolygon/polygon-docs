@@ -1,20 +1,3 @@
----
-id: erigon-client
-title: How to Run an Erigon Client Node
-sidebar_label: Run an Erigon Node
-description: "Learn how to set up an Erigon Client for Polygon PoS."
-keywords:
-  - erigon
-  - archive
-  - node
-  - binary
-  - polygon
-  - docs
-image: https://wiki.polygon.technology/img/polygon-wiki.png
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 ## System Requirements
 
 - 16-core CPU

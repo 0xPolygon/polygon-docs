@@ -1,20 +1,3 @@
----
-id: full-node-docker
-title: How to Run a Full PoS Node using Docker
-sidebar_label: Docker
-description: "Learn how to deploy a full Polygon PoS node."
-keywords:
-  - docs
-  - polygon
-  - matic
-  - node
-  - full node setup
-  - docker
-  - deploy
-image: https://wiki.polygon.technology/img/polygon-wiki.png
----
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 The Polygon team distributes official Docker images which can be used to run nodes on the Polygon Mainnet. These instructions are for running a Full Node, but they can be adapted for running sentry nodes and validators as well.
 
 ## Prerequisites
