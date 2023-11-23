@@ -1,7 +1,7 @@
 
 
 !!!caution
-    Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Disclosures</ins>](risk-disclosures.md) section.
+    Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Disclosures</ins>]() section.
 
 
 Add the **Polygon zkEVM** network to your wallet in order to interact with either the mainnet or the testnet.

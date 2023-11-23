@@ -12,7 +12,7 @@ The major components of zkEVM are:
 
 The skeletal architecture of Polygon zkEVM is shown below:
 
-![Skeletal Overview of zkEVM](../zkvm/fig1-simpl-arch.png)
+![Skeletal Overview of zkEVM](../../img/zkvm/fig1-simpl-arch.png)
 
 ## Consensus contract
 
@@ -73,7 +73,7 @@ To carry out these procedures, zkEVM employs two sorts of participants: **Sequen
 
 The  Smart Contract, therefore, makes two calls: one to receive batches from Sequencers, and another to Aggregators, requesting batches to be validated.
 ​
-![Simplified Proof of Efficiency](../zkvm/fig2-simple-poe.png)
+![Simplified Proof of Efficiency](../../img/zkvm/fig2-simple-poe.png)
 ​
 ### Tokenomics
 ​
@@ -125,7 +125,7 @@ zkEVM employs advanced zero-knowledge technology to create validity proofs. It u
 
 It consists of a **Main State Machine Executor**, a collection of **secondary State Machines** (each with its own executor), a **STARK-proof builder**, and a **SNARK-proof builder**.
 
-![Skeletal Overview of zkProver](../zkvm/fig4-zkProv-arch.png)
+![Skeletal Overview of zkProver](../../img/zkvm/fig4-zkProv-arch.png)
 
 In a nutshell, **the zkEVM expresses state changes in a polynomial form**. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. To put it another way, all valid batches must satisfy specific polynomial constraints. Check out the detailed architecture of zkProver [here](/zkevm/zkProver/overview.md).
 

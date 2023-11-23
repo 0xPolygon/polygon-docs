@@ -1,6 +1,6 @@
 
 !!!caution
-    Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Disclosures</ins>](risk-disclosures.md) section.
+    Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Disclosures</ins>]() section.
 
 Polygon faucet is the official tool provided by Polygon Labs to obtain Testnet tokens. It is a faucet that is similar to what ecosystem partners like Alchemy provide.
 
