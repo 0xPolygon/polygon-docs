@@ -273,13 +273,5 @@ markdown_extensions:
 
 plugins:
   - search
-  - enumerate-headings:
-      restart_increment_after:
-        - cdk/index.md
-        - zkEVM/index.md
-        - pos/index.md
-        - miden/index.md
-        - tools/index.md
-        - tutorials/index.md
   - open-in-new-tab
   - git-revision-date-localized
