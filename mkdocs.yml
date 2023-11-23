@@ -1,6 +1,7 @@
 site_name: Polygon docs
 site_author: Polygon Labs
 copyright: Copyright &copy; 2023 Polygon Labs
+repo_url: https://github.com/0xPolygon/polygon-docs
 #remote_branch: gh-pages
 #remote_name: gh-deploy
 
@@ -192,4 +193,4 @@ markdown_extensions:
 plugins:
   - search
   - open-in-new-tab
-  #- git-revision-date-localized
+  - git-revision-date-localized
