@@ -32,6 +32,10 @@ theme:
     - search.highlight
     - search.share
     - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.expansion
+    - navigation.integration
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
@@ -95,7 +99,83 @@ nav:
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
-      - Overview: pos/index.md
+      - Welcome: 
+        - pos/index.md
+      - Get started: 
+        - Get started: pos/get-started/index.md
+      - How-tos:
+        - How-tos: pos/howto/index.md
+        - Operating:
+          - Operating: pos/howto/operating/index.md
+          - Full Node:
+            - Full Node: pos/howto/operating/full-node/index.md
+            - Manual Install: pos/howto/operating/full-node/manual-install.md
+            - Ansible: pos/howto/operating/full-node/ansible.md
+            - Docker: pos/howto/operating/full-node/docker.md
+            - Google Cloud: pos/howto/operating/full-node/gcp.md
+          - Validator Node:
+            - Validator Node: pos/howto/operating/validator-node/index.md
+            - Manual Install: pos/howto/operating/validator-node/manual-install.md
+            - Ansible: pos/howto/operating/validator-node/ansible.md
+            - Staking: pos/howto/operating/validator-node/staking.md
+          - Access Node: pos/howto/operating/access-node.md
+          - Archive Node: pos/howto/operating/archive-node.md
+          - Erigon Node: pos/howto/operating/erigon-node.md
+        - Bridging:
+          - Bridging: pos/howto/bridging/index.md
+          - Ethereum-Polygon: pos/howto/bridging/ethereum-polygon/index.md
+          - L1-L2 Communication: pos/howto/bridging/l1-l2-communication/index.md
+        - Smart Contracts:
+          - Smart Contracts: pos/howto/smart-contracts/index.md
+          - Alchemy: pos/howto/smart-contracts/alchemy.md
+          - ChainIDE: pos/howto/smart-contracts/chainide.md
+          - ChainStack: pos/howto/smart-contracts/chainstack.md
+          - GetBlock: pos/howto/smart-contracts/getblock.md
+          - QuickNode: pos/howto/smart-contracts/quicknode.md
+          - SmartPress: pos/howto/smart-contracts/smartpress.md
+          - ThirdWeb: pos/howto/smart-contracts/thirdweb.md
+        - Polygon DID: pos/howto/polygon-did.md
+      - Architecture:
+          - pos/architecture/index.md
+          - Bor:
+            - Bor: pos/architecture/bor/index.md
+            - Consensus: pos/architecture/bor/consensus.md
+            - State Sync: pos/architecture/bor/state-sync.md
+            - Network Configuration: pos/architecture/bor/network-config.md
+            - Snapshots: pos/architecture/bor/snapshots.md
+          - Heimdall:
+            - Heimdall: pos/architecture/heimdall/index.md
+            - Checkpoint: pos/architecture/heimdall/checkpoint.md
+            - Governance: pos/architecture/heimdall/governance.md
+            - Key Management: pos/architecture/heimdall/key-management.md
+            - Stdtx: pos/architecture/heimdall/stdtx.md
+            - Modules:
+              - Modules: pos/architecture/heimdall/modules/index.md
+              - Ante Handler: pos/architecture/heimdall/modules/antehandler.md
+              - Auth: pos/architecture/heimdall/modules/auth.md
+              - Bank: pos/architecture/heimdall/modules/bank.md
+              - Bor: pos/architecture/heimdall/modules/bor.md
+              - Chain Manager: pos/architecture/heimdall/modules/chain-manager.md
+              - Checkpoint: pos/architecture/heimdall/modules/checkpoint.md
+              - Clerk: pos/architecture/heimdall/modules/clerk.md
+              - Staking: pos/architecture/heimdall/modules/staking.md
+              - Topup: pos/architecture/heimdall/modules/topup.md
+            - FAQ: pos/architecture/heimdall/faq.md
+      - Specification:
+          - pos/spec/index.md
+      - Concepts:
+          - Concepts: pos/concepts/index.md
+          - Tokens:
+            - Tokens: pos/concepts/tokens/index.md
+            - POL: pos/concepts/tokens/pol.md
+            - MATIC: pos/concepts/tokens/matic.md
+          - Transactions:
+            - Transactions: pos/concepts/transactions/index.md
+            - EIP-1559: pos/concepts/transactions/eip-1559.md
+            - EIP-4337: pos/concepts/transactions/eip-4337.md
+            - Meta-Transactions: pos/concepts/transactions/meta-transactions.md
+      - API:
+          - pos/api/index.md
   - Miden:
       - Overview: miden/index.md
       #- Miden playground: https://0xpolygonmiden.github.io/examples/
@@ -189,8 +269,11 @@ markdown_extensions:
   - pymdownx.caret
   - meta
   - smarty
+  - pymdownx.extra
 
 plugins:
   - search
   - open-in-new-tab
-  #- git-revision-date-localized
+
+validation:
+  absolute_links: ignore
