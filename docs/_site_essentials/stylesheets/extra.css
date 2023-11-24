@@ -1,50 +1,84 @@
 [data-md-color-scheme="slate"] {
-  --md-footer-bg-color: black;
-  .md-footer, .md-footer__inner, .md-footer-meta {
-    background-color: black;
-  }
+	--md-footer-bg-color: black;
+
+	.md-footer,
+	.md-footer__inner,
+	.md-footer-meta {
+		background-color: black;
+	}
 }
 
 [data-md-color-scheme="default"] {
-  --md-footer-bg-color: white;
-  --md-footer-fg-color: charcoal;
-  --md-default-bg-color: white;
-  --md-footer-fg-color--light: charcoal;
-  --md-footer-fg-color--lighter: charcoal;
-  .md-footer, .md-footer__inner, .md-footer-meta {
-    background-color: white;
-  }
+	--md-footer-bg-color: white;
+	--md-footer-fg-color: charcoal;
+	--md-default-bg-color: white;
+	--md-footer-fg-color--light: charcoal;
+	--md-footer-fg-color--lighter: charcoal;
+
+	.md-footer,
+	.md-footer__inner,
+	.md-footer-meta {
+		background-color: white;
+	}
 }
 
 img.figure {
-  border: 5px solid #ae6fdb !important;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  margin: 0 auto;
-  max-width: 80%;
-  display: block;
+	border: 5px solid #ae6fdb !important;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	margin: 0 auto;
+	max-width: 80%;
+	display: block;
 }
 
 div.flex-figure {
-  display: flex;
-  
+	display: flex;
 }
 
 div.flex-figure div.flex-figure-left {
-  flex-grow: 2;
+	flex-grow: 2;
 }
 
 div.flex-figure div.flex-figure-right {
-  flex-grow: 1;
-  flex-shrink: 1.5;
+	flex-grow: 1;
+	flex-shrink: 1.5;
 }
 
+div.info-box {
+	border: 5px solid #ae6fdb !important;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	margin: 0 auto;
+	max-width: 100%;
+	display: block;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	background-color: #F9F9F9;
+}
+
+div.info-box h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.1em;
+	font-weight: bold;
+	background-color: #ae6fdb;
+	color: #FFF;
+	padding: 2px 10px;
+	border-radius: 2px 2px 0 0;
+}
+
+div.info-box p {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 8px 10px;
+	font-size: 0.8em;
+	line-height: 1.3em;
+}
 
 /*
 .md-footer, .md-footer__inner, .md-footer-meta {
-    background-color: black;
+	background-color: black;
 }
 */
 
 .md-footer__inner {
-  display: none !important;
+	display: none !important;
 }
