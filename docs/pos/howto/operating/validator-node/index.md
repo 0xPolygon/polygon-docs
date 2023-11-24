@@ -25,7 +25,7 @@ Key responsibilities include:
   - Offer feedback and suggestions to the Polygon team.
 - **Rewards**: Earn staking rewards and transaction fees for validating blocks.
 
-## Technical node operations
+## Technical Node Operations
 
 These operations are automatically executed by the nodes:
 
