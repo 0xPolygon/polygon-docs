@@ -1,6 +1,6 @@
 This document explains how to automatically write a smart contract using the OpenZeppelin Wizard. The resulting smart contract code can either be integrated with Remix by Clicking the **Open in Remix** button, or copied to a clipboard and pasted in the user's intended IDE.
 
-## Getting Started
+## Getting started
 
 Navigate to the [OpenZeppelin Wizard](https://wizard.openzeppelin.com) in your browser. First thing to notice is the **Solidity Wizard** and **Cairo Wizard** buttons.
 
@@ -12,7 +12,7 @@ One can choose any of the following tabs to begin creating an out-of-box smart c
 - **Governor** for creating a DAO
 - **Custom** for writing a customized smart contract
 
-## Writing An NFT Contract
+## Writing an NFT contract
 
 For illustration purposes, we will be creating a NFT smart contract.
 
@@ -31,10 +31,10 @@ Suppose you wanted to create a `Mintable`, `Burnable` ERC721 token and specify a
 
   Notice that new lines of code are automatically written each time a feature is selected.
 
-## Voila! Contract Ready
+## Voila! Contract is ready
 
 With the resulting lines of code, you now have the NFT token contract written in Solidity. As mentioned above, this source code can now be ported to an IDE of your choice or opened directly in Remix.
 
 The below figure depicts the auto-written NFT smart contract code.
 
-![The End-Product NFT Source Code](img/end-product-nft-code.png)
+![The end-product NFT source code](../img/zkvm/zkv-end-product-nft-code.png)

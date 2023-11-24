@@ -1,18 +1,9 @@
-
-:::caution Risks
-
-Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Risks FAQ</ins>](/zkevm/risk-disclosure.md) section.
-
-:::
-
-
 ## Get Started with Web3Modal
 
-:::caution Content disclaimer
+!!!caution
+    Content disclaimer
 
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
+    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 ### Overview
 

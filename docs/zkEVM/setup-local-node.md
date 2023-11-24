@@ -3,15 +3,12 @@ Developers who wish to test their own smart contracts, experiment with new code,
 
 This tutorial is a guide to setting up a local but single zkEVM node. It is _single_ because it has no connections to external peers. It is a sandbox environment existing only on the user's local machine.
 
-:::caution
+!!!caution
+    Currently the zkProver does not run on ARM-powered Macs. For Windows users, the use of WSL/WSL2 is not recommended.
+    
+    Unfortunately, Apple M1 chips are not supported for now - since some optimizations on the zkProver require specific Intel instructions. This means some non-M1 computers won't work regardless of the OS, for example: AMD.
 
-Currently the zkProver does not run on ARM-powered Macs. For Windows users, the use of WSL/WSL2 is not recommended.
-
-Unfortunately, Apple M1 chips are not supported for now - since some optimizations on the zkProver require specific Intel instructions. This means some non-M1 computers won't work regardless of the OS, for example: AMD.
-
-:::
-
-After completing this tutorial, you will have the following components running:
+At the end of this tutorial, the following components will be running:
 
 - zkEVM Node Databases
 - Explorers and their Databases
@@ -50,43 +47,39 @@ make build-docker
 
 The image is built only once and whenever the code has changed.
 
-:::caution Building Docker Image
-
-For a given version of the Testnet implementation, be sure to use configuration files from the correct and corresponding tag. For instance: Make sure to use configuration files from RC9 tag in order to build an RC9 image.
-
-All tags can be found here: <ins>**https://github.com/0xPolygonHermez/zkevm-node/tags**</ins>
-
-:::
+!!!caution Building Docker Image
+    Every testnet version needs to use configuration files from the correct and corresponding tag. For instance: Make sure to use configuration files from RC9 tag in order to build an RC9 image.
+    
+    All tags can be found here: <ins>**https://github.com/0xPolygonHermez/zkevm-node/tags**</ins>
 
 Certain commands on the `zkevm-node` can interact with smart contracts, run specific components, create encryption files, and print debug information. 
 
 To interact with the binary program, we provide `docker-compose` files and a `Makefile` to spin up/down the various services and components, ensuring smooth local deployment and a better command line interface for developers.
 
-:::warning
+!!!warning
+    All the data is stored inside of each docker container. This means once you remove the container, the data will be lost.
 
-All the data is stored inside of each docker container. This means once you remove the container, the data will be lost.
+The `test/` directory contains scripts and files for developing and debugging. 
 
-:::
-
-The `test/` directory contains scripts and files for developing and debugging. Change the working directory to `test/` on your local machine.
+Change directory to `test/` on your local machine:
 
 ```bash
 cd test/
 ```
 
-Now, run the zkNode environment:
+Run the zkNode environment:
 
 ```bash
 make run
 ```
 
-To stop the zkNode:
+Stop the zkNode with this command:
 
 ```bash
 make stop
 ```
 
-To restart the whole zkNode environment:
+Restart the zkNode environment with this command:
 
 ```bash
 make restart
@@ -98,13 +91,10 @@ The Synchronizer regularly pulls for network updates, mainly from Ethereum but a
 
 The Keystore file, used to store private keys, is normally required for running the Sequencer and the Aggregator but not for the Synchronizer/RPC-setup.
 
-:::info
+!!!info
+    We have the inconvenient situation where the Keystore file is required to run the node when it shouldn't be the case. For example, if no transactions are sent to L1 then Keystore is not required, especially in the current zkEVM Testnet, where a trusted sequencer and a trusted aggregator are used.
 
-We have the inconvenient situation where the Keystore file is required to run the node when it shouldn't be the case. For example, if no transactions are sent to L1 then Keystore is not required, especially in the current zkEVM Testnet where a trusted sequencer and a trusted aggregator is used.
-
-This will be reviewed when a decentralised zkEVM network is implemented.
-
-:::
+    This will be reviewed when a decentralised zkEVM network is implemented.
 
 ## Sample data
 
@@ -125,11 +115,8 @@ make run-approve-matic
 
 ## Connecting to Metamask
 
-:::info
-
-Metamask requires the network to be running while configuring it, so make sure your network is up.
-
-:::
+!!!info
+    Metamask requires the network to be running while configuring it, so make sure your network is up.
 
 MetaMask can be configured to use the local zkEVM environment by following the steps below:
 

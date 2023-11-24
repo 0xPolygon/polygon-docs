@@ -3,13 +3,11 @@ Polygon zkEVM's Mainnet Beta is available for developers to launch smart contrac
 
 After spinning up an instance of the production zkNode, you will be able to run the Synchronizer and utilize the JSON-RPC interface.
 
-:::info
+!!!info 
+    Sequencer and Prover functionalities are not covered in this document as they are still undergoing development and rigorous testing.
+    
+    Syncing zkNode currently takes anywhere between 1-2 days depending on various factors. The team is working on snapshots to improve the syncing time.
 
-Sequencer and Prover functionalities are not covered in this document as they are still undergoing development and rigorous testing.
-
-Syncing zkNode currently takes anywhere between 1-2 days depending on various factors. The team is working on snapshots to improve the syncing time.
-
-:::
 
 ## Prerequisites
 
@@ -21,25 +19,22 @@ It is highly recommended that you create a separate folder for installing and wo
 
 ### Minimum System Requirements
 
-:::caution
 
-The zkProver does not work on ARM-based Macs yet. For Windows users, the use of WSL/WSL2 is not recommended.
+!!!caution
+    The zkProver does not work on ARM-based Macs yet. For Windows users, the use of WSL/WSL2 is not recommended.
 
-Currently, zkProver optimizations require CPUs that support the AVX2 instruction, which means some non-M1 computers, such as AMD, won't work with the software regardless of the OS.
+    Currently, zkProver optimizations require CPUs that support the AVX2 instruction, which means some non-M1 computers, such as AMD, won't work with the software regardless of the OS.
 
-:::
 
 - 16GB RAM
 - 4-core CPU
 - 70GB Storage (This will increase over time)
 
-:::info About Batch Rate
+!!!info About batch rate
+    Batches are closed every 10s, or whenever they are full (which can happen when there are high network loads).
+    Also, how frequent batches are closed is subject to change as it depends on the prevailing configurations. 
+    The batch rate will always need to be updated accordingly.
 
-Batches are closed every 10s, or whenever they are full (which can happen when there are high network loads).
-Also, how frequent batches are closed is subject to change as it depends on the prevailing configurations. 
-The batch rate will always need to be updated accordingly.
-
-:::
 
 ### Network Components
 

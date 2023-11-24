@@ -83,13 +83,14 @@ nav:
           - Setup local zkNode: zkEVM/setup-local-node.md
           - Setup production zkNode: zkEVM/setup-production-node.md
         - Deploy full zkEVM:
-          - Start here: zkEVM/step1-fullzkevm.md
-          - Install dependencies: zkEVM/step2-fullzkevm.md
-          - Create wallets: zkEVM/step3-fullzkevm.md
-          - Deploy zkNode: zkEVM/step4-fullzkevm.md
-          - Configure prover: zkEVM/step5-fullzkevm.md
-          - Activate forced transactions: zkEVM/step6-fullzkevm.md
-      - How to: 
+          - Start here: zkEVM/deployzkevm/step1-fullzkevm.md
+          - Install dependencies: zkEVM/deployzkevm/step2-fullzkevm.md
+          - Create wallets: zkEVM/deployzkevm/step3-fullzkevm.md
+          - Deploy zkNode: zkEVM/deployzkevm/step4-fullzkevm.md
+          - Configure prover: zkEVM/deployzkevm/step5-fullzkevm.md
+          - Activate forced transactions: zkEVM/deployzkevm/step6-fullzkevm.md
+          - Setup a Goërli node: zkEVM/deployzkevm/setup-goerlinode.md
+      - How to:
         - Write a contract: zkEVM/autocode-smart-contract.md
         - Deploy a contract with Foundry: zkEVM/using-foundry.md
         - Deploy a contract with Hardhat: zkEVM/using-hardhat.md
@@ -275,3 +276,6 @@ plugins:
   - search
   - open-in-new-tab
   - git-revision-date-localized
+
+validation:
+  absolute_links: ignore
