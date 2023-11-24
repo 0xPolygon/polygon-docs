@@ -1,11 +1,12 @@
 This deployment guide walks you through starting and running a full node through various methods. For the system requirements, see the [Minimum Technical Requirements](/pos/validator/validator-node-system-requirements.md) guide.
 
-<div class="info-box" markdown="1">
-<h3>Tip: Snapshots</h3>
-<p markdown="1">Steps in these guide involve waiting for the Heimdall and Bor services to fully sync. This process takes several days to complete.</p>
-<p markdown="1">Please use snapshots for faster syncing without having to sync over the network. For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](/pos/reference/snapshot-instructions-heimdall-bor.md).</p>
-<p markdown="1">For snapshot download links, see the [<ins>Polygon Chains Snapshots</ins>](https://snapshots.polygon.technology/) page.</p>
-</div>
+!!! tip "Snapshots"
+
+    Steps in these guide involve waiting for the Heimdall and Bor services to fully sync. This process takes several days to complete.
+
+    Please use snapshots for faster syncing without having to sync over the network. For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](/pos/reference/snapshot-instructions-heimdall-bor.md).
+    
+    For snapshot download links, see the [<ins>Polygon Chains Snapshots</ins>](https://snapshots.polygon.technology/) page.
 
 ## Overview
 
