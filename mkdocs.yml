@@ -61,7 +61,7 @@ nav:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: cdk/get-started/deploy-rollup.md
       - How to: 
-        - Manage allowlists: cdk/how-to/manage-allowlists.md
+        - Manage policies - allowlists, denylists, ACLs: cdk/how-to/manage-allowlists.md
       #- Architecture:
       - Specification:
         - Validium vs rollup: cdk/specification/validium-vs-rollup.md
@@ -275,7 +275,7 @@ markdown_extensions:
 plugins:
   - search
   - open-in-new-tab
-  - git-revision-date-localized
+  #- git-revision-date-localized
 
 validation:
   absolute_links: ignore
