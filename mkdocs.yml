@@ -1,7 +1,9 @@
 site_name: Polygon docs
 site_author: Polygon Labs
 copyright: Copyright &copy; 2023 Polygon Labs
+repo_name: Polygon docs
 repo_url: https://github.com/0xPolygon/polygon-docs
+edit_uri: edit/main/docs/
 #remote_branch: gh-pages
 #remote_name: gh-deploy
 
@@ -46,6 +48,7 @@ theme:
     - navigation.footer
     - toc.follow
     - content.code.copy
+    - content.action.edit
 
 nav:
   - Home: index.md
@@ -195,39 +198,30 @@ nav:
       - Become a PoS Validator: tutorials/become-pos-validator.md
 
 extra:
-  # We'll add language options back when we actually support them.
-  # alternate:
-  #  - name: Español
-  #    link: /es/
-  #    lang: es
-  #  - name: Chinese (Simplified)
-  #    link: /zh/
-  #    lang: zh
-  generator: false
   analytics:
   #  provider: google
   #  property: G-XXXXXXXXXX
+  #  feedback:  # feedback form only works when Google Analytics is set up and working
+  #    title: Was this page helpful?
+  #    ratings:
+  #      - icon: fontawesome/regular/face-grin-stars
+  #        name: This page was helpful
+  #        data: 1
+  #        note: >-
+  #          Thanks for your feedback!
+  #      - icon: fontawesome/regular/face-grimace
+  #        name: This page could be improved
+  #        data: 0
+  #        note: >-
+  #          Thanks for your feedback! Help us improve this page by
+  #          using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
   social:
     - icon: fontawesome/solid/circle-question
       link: https://support.polygon.technology/support/solutions
     - icon: fontawesome/solid/globe
       link: https://polygon.technology/
     - icon: fontawesome/brands/github
-      link: https://github.com/0xPolygon/wiki
-  feedback:
-    title: Was this page helpful?
-    ratings:
-      - icon: fontawesome/regular/face-grin-stars
-        name: This page was helpful
-        data: 1
-        note: >-
-          Thanks for your feedback!
-      - icon: fontawesome/regular/face-grimace
-        name: This page could be improved
-        data: 0
-        note: >-
-          Thanks for your feedback! Help us improve this page by
-          using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+      link: https://github.com/0xPolygon/polygon-docs
   consent:
     title: Cookie consent
     description: >-
@@ -235,7 +229,7 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
-
+      
 extra_css:
   - _site_essentials/stylesheets/extra.css
   - _site_essentials/stylesheets/section-nav.css
@@ -275,7 +269,14 @@ markdown_extensions:
 plugins:
   - search
   - open-in-new-tab
-  #- git-revision-date-localized
+#  - git-revision-date-localized:
+#      enable_creation_date: true
+#      fallback_to_build_date: true
+#  - git-committers:
+#      repository: 0xPolygon/polygon-docs
+#      #branch: main
+#      exclude:
+#        - README.md
 
 validation:
   absolute_links: ignore
