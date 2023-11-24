@@ -182,9 +182,9 @@ nav:
           - pos/api/index.md
   - Miden:
       - Overview: miden/index.md
-      #- Miden playground: https://0xpolygonmiden.github.io/examples/
-      #- Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
-      #- Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
+      - Miden playground: https://0xpolygonmiden.github.io/examples/
+      - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
+      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Tools: 
       - tools/index.md
       - Using Web3Modal SDK: tools/using-web3modal.md
