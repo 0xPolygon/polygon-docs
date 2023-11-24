@@ -59,10 +59,9 @@ After deploying the VM, software installation and snapshot downloading (if chose
     journalctl -fu heimdalld
     ```
 
-<div class="info-box" markdown="1">
-<h3>Note</h3>
-<p markdown="1">Blockchain data is stored on additional drives, retained by default when the VM is removed. Manually delete these disks if they are no longer needed.</p>
-</div>
+!!! note
+
+    Blockchain data is stored on additional drives, retained by default when the VM is removed. Manually delete these disks if they are no longer needed.
 
 Upon completion, your GCP console should display the newly created Polygon node instance, similar to the illustration below.
 

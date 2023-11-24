@@ -1,583 +1,142 @@
-This section guides you through starting and running the validator node through an Ansible playbook.
+This guide provides a step-by-step approach to deploy a Polygon validator node through an Ansible playbook, ensuring an efficient and reliable setup.
 
-For the system requirements, see [Validator Node System Requirements](/pos/validator/validator-node-system-requirements.md).
+## System Requirements and Setup Options
 
-If you would like to start and run the validator node from binaries, see [Run a Validator Node from Binaries](/pos/validator/run-validator/binaries.md).
+Before beginning, confirm your system aligns with the [system requirements for validator nodes](/pos/howto/operating/validator-node/#system-requirements-for-nodes). If you prefer running the validator node from binaries instead of Ansible, refer to [the manual installation instructions](/pos/validator/index.md).
 
-:::caution
+!!! warning "Limited Validator Slots"
 
-There is limited space for accepting new validators. New validators can only join the active set when an already active validator unbonds.
-
-:::
+    New validators can only join when an existing validator leaves the network.
 
 ## Prerequisites
 
-* Three machines — one local machine on which you will run the Ansible playbook; two remote machines — one sentry and one validator.
-* On the local machine, [Ansible](https://www.ansible.com/) installed.
-* On the local machine, [Python 3.x](https://www.python.org/downloads/) installed.
-* On the remote machines, make sure Go is *not* installed.
-* On the remote machines, your local machine's SSH public key is on the remote machines to let Ansible connect to them.
-* We have Bloxroute available as a relay network. If you need a gateway to be added as your Trusted Peer please contact **@validator-support-team** in [Polygon Discord](https://discord.com/invite/0xPolygon) > POS VALIDATORS | FULL NODE PROVIDERS | PARTNERS > bloxroute.
+- Three machines: One local machine for Ansible playbook execution and two remote machines (one sentry, one validator).
+- [Ansible](https://www.ansible.com/) installed on the local machine.
+- [Python 3.x](https://www.python.org/downloads/) installed on the local machine.
+- Ensure Go is *not* installed on the remote machines.
+- SSH public key of your local machine must be present on the remote machines for Ansible connectivity.
+- Access to Bloxroute as a relay network is available. For adding a gateway as a Trusted Peer, contact **@validator-support-team** on [Polygon Discord](https://discord.com/invite/0xPolygon).
 
-## Overview
+## Setting Up the Nodes
 
-:::caution
+### Preparing the Machines
 
-You must follow the **exact outlined sequence of actions**, otherwise you will run into issues.
-For example, **a sentry node must always be set up before the validator node**.
+1. Prepare three machines: two remote (sentry and validator) and one local (for running Ansible).
+2. Install Ansible and Python 3.x on the local machine.
 
-:::
+### Ansible Repository Setup
 
-To get to a running validator node, do the following:
+First, clone the [node-ansible repository](https://github.com/maticnetwork/node-ansible) on your local machine:
 
-1. Have the three machines prepared.
-1. Set up a sentry node through Ansible.
-1. Set up a validator node through Ansible.
-1. Configure the sentry node.
-1. Start the sentry node.
-1. Configure the validator node.
-1. Set the owner and signer keys.
-1. Start the validator node.
-1. Check node health with the community.
+   ```sh
+   git clone https://github.com/maticnetwork/node-ansible
+   cd node-ansible
+   ```
 
-## Set up the Sentry node
+Then, edit the `inventory.yml` file to add IP addresses of the sentry and validator nodes:
 
-On your local machine, clone the [node-ansible repository](https://github.com/maticnetwork/node-ansible):
+   ```yml
+   all:
+     hosts:
+     children:
+       sentry:
+         hosts:
+           sentry_ip_1: # Sentry Node IP
+       validator:
+         hosts:
+           validator_ip: # Validator Node IP
+   ```
 
-```sh
-git clone https://github.com/maticnetwork/node-ansible
-```
+3. Test connectivity to the sentry node:
 
-Change to the cloned repository:
+   ```sh
+   ansible sentry -m ping
+   ```
 
-```sh
-cd node-ansible
-```
+   Expected output:
 
-Add the IP addresses of the remote machines that will become a sentry node and a validator node to the `inventory.yml` file.
+   ```sh
+   sentry_ip_1 | SUCCESS => {
+       "changed": false,
+       "ping": "pong"
+   }
+   ```
 
-```yml
-all:
-  hosts:
-  children:
-    sentry:
-      hosts:
-        xxx.xxx.xx.xx: # <----- Add IP for sentry node
-        xxx.xxx.xx.xx: # <----- Add IP for second sentry node (optional)
-    validator:
-      hosts:
-        xxx.xxx.xx.xx: # <----- Add IP for validator node
-```
+### Sentry Node Setup
 
-Example:
+Execute a test run of the sentry node setup:
 
-```yml
-all:
-  hosts:
-  children:
-    sentry:
-      hosts:
-        188.166.216.25:
-    validator:
-      hosts:
-        134.209.100.175:
-```
-
-Check that the remote sentry machine is reachable. On the local machine, run:
-
-```sh
-$ ansible sentry -m ping
-```
-
-You should get this as output:
-
-```sh
-xxx.xxx.xx.xx | SUCCESS => {
-    "ansible_facts": {
-        "discovered_interpreter_python": "/usr/bin/python3"
-    },
-    "changed": false,
-    "ping": "pong"
-}
-```
-
-Do a test run of the sentry node setup:
-
-```sh
-ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3  network_version=mainnet-v1 node_type=sentry/sentry heimdall_network=mainnet" --list-hosts
-```
-
-This will be the output:
-
-```sh
-playbook: playbooks/network.yml
-  pattern: ['all']
-  host (1):
-    xx.xxx.x.xxx
-```
+   ```sh
+   ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3  network_version=mainnet-v1 node_type=sentry/sentry heimdall_network=mainnet" --list-hosts
+   ```
 
 Run the sentry node setup with sudo privileges:
 
-```sh
-ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3  network_version=mainnet-v1 node_type=sentry/sentry heimdall_network=mainnet" --ask-become-pass
-```
+   ```sh
+   ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3  network_version=mainnet-v1 node_type=sentry/sentry heimdall_network=mainnet" --ask-become-pass
+   ```
 
-Once the setup is complete, you will see a message of completion on the terminal.
+   On completion, a success message will appear.
 
-:::note
+!!! note
+    
+    To restart the setup due to any issues, use `ansible-playbook -l sentry playbooks/clean.yml`.
 
-If you run into an issue and would like to start over, run:
+### Validator Node Setup
 
-```sh
-ansible-playbook -l sentry playbooks/clean.yml
-```
+After the sentry node setup:
 
-:::
+Ensure the validator machine is reachable:
 
-## Set up the Validator node
+   ```sh
+   ansible validator -m ping
+   ```
 
-At this point, you have the sentry node set up.
+Perform a test run for the validator setup:
 
-On your local machine, you also have the Ansible playbook set up to run the validator node setup.
+   ```sh
+   ansible-playbook -l validator playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3 network_version=mainnet-v1 node_type=sentry/validator heimdall_network=mainnet" --list-hosts
+   ```
 
-Check that the remote validator machine is reachable. On the local machine, run `ansible validator -m ping`.
+Execute the validator node setup with sudo privileges:
 
-You should get this as output:
+   ```sh
+   ansible-playbook -l validator playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3  network_version=mainnet-v1 node_type=sentry/validator heimdall_network=mainnet" --ask-become-pass
+   ```
 
-```sh
-xxx.xxx.xx.xx | SUCCESS => {
-    "ansible_facts": {
-        "discovered_interpreter_python": "/usr/bin/python3"
-    },
-    "changed": false,
-    "ping": "pong"
-}
-```
+A success message will indicate completion.
 
-Do a test run of the validator node setup:
+!!! note
+    
+    Use `ansible-playbook -l validator playbooks/clean.yml` for a fresh start in case of any issues.
 
-```sh
-ansible-playbook -l validator playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3 network_version=mainnet-v1 node_type=sentry/validator heimdall_network=mainnet" --list-hosts
-```
+### Configuring Sentry Node
 
-You should get this as output:
+Configure the Heimdall and Bor services on the sentry node:
 
-```sh
-playbook: playbooks/network.yml
-  pattern: ['all']
-  host (1):
-    xx.xxx.x.xxx
-```
+1. Edit Heimdall's `config.toml` and Bor's `config.toml` as per the provided guidelines. Key parameters include `moniker`, `seeds`, `pex`, and `private_peer_ids`.
+2. Set firewall rules to open ports `26656`, `30303`, and optionally `22` with restricted access.
 
-Run the validator node setup with sudo privileges:
+### Starting Sentry Node
 
-```sh
-ansible-playbook -l validator playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3  network_version=mainnet-v1 node_type=sentry/validator heimdall_network=mainnet" --ask-become-pass
-```
+1. Start the Heimdall service and check its logs for successful execution.
+2. Once Heimdall is synced, start the Bor service and monitor its logs for successful operation.
 
-Once the setup is complete, you will see a message of completion on the terminal.
+### Configuring Validator Node
 
-:::note
+1. Configure Heimdall and Bor similar to the sentry setup, ensuring correct Ethereum RPC endpoint settings.
+2. Generate and place Heimdall's `priv_validator_key.json` and Bor's keystore file in their respective directories.
+3. Add `password.txt` file in the Bor directory and include it in Bor's `config.toml`.
 
-If you run into an issue and would like to start over, run:
+### Starting Validator Node
 
-```sh
-ansible-playbook -l validator playbooks/clean.yml
-```
+1. Start the Heimdall service on the validator node and wait for it to sync.
+2. Start the Bor service and monitor its operation through logs.
 
-:::
+## Health Check and Staking
 
-## Configure the Sentry node
+- After setting up the nodes, request a health check by the community on [Polygon's Discord](https://discord.com/invite/0xPolygon).
+- Maintain sufficient ETH balance in the signer address for transaction fees.
+- Proceed to [Staking](/docs/pos/design/validator/core-components/staking.md) to participate in network validation.
 
-Log into the remote sentry machine.
-
-### Configure the Heimdall Service
-
-Open `config.toml` for editing `vi /var/lib/heimdall/config/config.toml`.
-
-Change the following:
-
-* `moniker` — any name. Example: `moniker = "my-full-node"`.
-* `seeds` — the seed node addresses consisting of a node ID, an IP address, and a port.
-
-  Should already have the following values:
-
-  ```toml
-  seeds="1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656,6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656"
-  ```
-
-* `pex` — set the value to `true` to enable the peer exchange. Example: `pex = true`.
-* `private_peer_ids` — the node ID of Heimdall set up on the validator machine.
-
-  To get the node ID of Heimdall on the validator machine:
-
-  1. Log into the validator machine.
-  1. Run `heimdalld tendermint show-node-id`.
-
-  Example: `private_peer_ids = "0ee1de0515f577700a6a4b6ad882eff1eb15f066"`.
-
-* `prometheus` — set the value to `true` to enable the Prometheus metrics. Example: `prometheus = true`.
-* `max_open_connections` — set the value to `100`. Example: `max_open_connections = 100`.
-
-Save the changes in `config.toml`.
-
-### Configure the Bor Service
-
-Open for editing `vi /var/lib/bor/config.toml`.
-
-In `config.sh`, ensure the boot node addresses consisting of a node ID, an IP address, and a port by the bootnode paramater:
-
-```config
-bootnodes "enode://b8f1cc9c5d4403703fbf377116469667d2b1823c0daf16b7250aa576bacf399e42c3930ccfcb02c5df6879565a2b8931335565f0e8d3f8e72385ecf4a4bf160a@3.36.224.80:30303", "enode://8729e0c825f3d9cad382555f3e46dcff21af323e89025a0e6312df541f4a9e73abfa562d64906f5e59c51fe6f0501b3e61b07979606c56329c020ed739910759@54.194.245.5:30303"
-```
-
-Save the changes in `config.toml`.
-
-Open for editing `vi /var/lib/bor/config.toml`.
-
-In `config.toml`, ensure the `static-nodes` parameter has the following values:
-
-* `"enode://validator_machine_enodeID@validator_machine_ip:30303"` — the node ID and IP address of Bor set up on the validator machine.
-
-  To get the node ID of Bor on the validator machine:
-
-  1. Log into the validator machine.
-  1. Run `bor bootnode -node-key /var/lib/bor/data/bor/nodekey`, this command only works while Bor is not running. If the IP address is `0.0.0.0` then replace it with external facing IP address.
-
-Save the changes in `config.toml`.
-
-### Configure firewall
-
-The sentry machine must have the following ports open to the world `0.0.0.0/0`:
-
-* `26656`- Your Heimdall service will connect your node to other nodes using the Heimdall service.
-
-* `30303`- Your Bor service will connect your node to other nodes using the Bor service.
-
-* `22`- Open this port if your node is servicing validators. You will likely want to restrict what traffic can access this port as it is a sensitive port.
-
-:::note
-
-However, if they use a VPN connection, they can allow incoming SSH connections only from the VPN IP address.
-
-:::
-
-## Start the sentry node
-
-You will first start the Heimdall service. Once the Heimdall service syncs, you will start the Bor service.
-
-:::note
-
-The Heimdall service takes several days to fully sync from scratch.
-
-Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours. For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](https://forum.polygon.technology/t/snapshot-instructions-for-heimdall-and-bor/9233).
-
-For snapshot download links, see [Polygon Chains Snapshots](https://snapshot.polygon.technology/).
-
-:::
-
-### Start the Heimdall service
-
-The latest version, [Heimdall v1.0.3](https://github.com/maticnetwork/heimdall/releases/tag/v1.0.3), contains a few enhancements such as:
-1. Restricting data size in state sync txs to:
-    * **30Kb** when represented in **bytes**
-    * **60Kb** when represented as **string**.
-2. Increasing the **delay time** between the contract events of different validators to ensure that the mempool doesn't get filled very quickly in case of a burst of events which can hamper the progress of the chain.
-
-The following example shows how the data size is restricted:
-
-```
-Data - "abcd1234"
-Length in string format - 8
-Hex Byte representation - [171 205 18 52]
-Length in byte format - 4
-```
-
-Start the Heimdall service:
-
-```sh
-sudo service heimdalld start
-```
-
-Check the Heimdall service logs:
-
-```sh
-journalctl -u heimdalld.service -f
-```
-
-:::note
-
-In the logs, you may see the following errors:
-
-* `Stopping peer for error`
-* `MConnection flush failed`
-* `use of closed network connection`
-
-These mean that one of the nodes on the network refused a connection to your node. You do not need to do anything with these errors. Wait for your node to crawl more nodes on the network.
-
-:::
-
-Check the sync status of Heimdall:
-
-```sh
-curl localhost:26657/status
-```
-
-In the output, the `catching_up` value is:
-
-* `true` — the Heimdall service is syncing.
-* `false` — the Heimdall service is fully synced.
-
-Wait for the Heimdall service to fully sync.
-
-### Start the Bor Service
-
-Once the Heimdall service is fully synced, start the Bor service.
-
-Start the Bor service:
-
-```sh
-sudo service bor start
-```
-
-Check the Bor service logs:
-
-```sh
-journalctl -u bor.service -f
-```
-
-## Configure the validator node
-
-:::note
-
-To complete this section, you must have your own RPC endpoint of your own fully synced Ethereum mainnet node ready. The use of Infura and Alchemy is also sufficient and widely used among validators.
-
-:::
-
-### Configure the Heimdall Service
-
-Log into the remote validator machine.
-
-Open `config.toml` for editing `vi /var/lib/heimdall/config/config.toml`.
-
-Change the following:
-
-* `moniker` — any name. Example: `moniker = "my-validator-node"`.
-* `pex` — set the value to `false` to disable the peer exchange. Example: `pex = false`.
-* `private_peer_ids` — comment out the value to disable it. Example: `# private_peer_ids = ""`.
-
-
-  To get the node ID of Heimdall on the sentry machine:
-
-  1. Login to the sentry machine.
-  1. Run `heimdalld tendermint show-node-id`.
-
-  Example: `persistent_peers = "sentry_machineNodeID@sentry_instance_ip:26656"`
-
-* `prometheus` — set the value to `true` to enable the Prometheus metrics. Example: `prometheus = true`.
-
-Save the changes in `config.toml`.
-
-Open for editing `vi /var/lib/heimdall/config/heimdall-config.toml`.
-
-In `heimdall-config.toml`, change the following:
-
-* `eth_rpc_url` — an RPC endpoint for a fully synced Ethereum mainnet node, i.e Infura. `eth_rpc_url =<insert Infura or any full node RPC URL to Ethereum>`
-
-Example: `eth_rpc_url = "https://nd-123-456-789.p2pify.com/60f2a23810ba11c827d3da642802412a"`
-
-
-Save the changes in `heimdall-config.toml`.
-
-### Configure the Bor Service
-
-Open for editing `vi /var/lib/bor/config.toml`.
-
-In `config.toml`, ensure the trusted-nodes parameter has the following values:
-
-* `"enode://sentry_machine_enodeID@sentry_machine_ip:30303"` — the node ID and IP address of Bor set up on the sentry machine.
-
-  To get the node ID of Bor on the sentry machine:
-
-  1. Log into the sentry machine.
-  1. Run ```bor bootnode -node-key /var/lib/bor/data/bor/nodekey```, this command only works while Bor is not running. If the IP address is `0.0.0.0`, replace it with external facing IP address.
-
-Save the changes in `config.toml` file.
-
-## Set the owner and signer key
-
-:::note
-
-To complete this section, you must have already created two Ethereum wallets and have the private keys available as needed. One address will be used as the `Signer` and the other address as the `Owner`. Only the `Signer` address will be used in this section at the moment.
-
-:::
-
-
-On Polygon, you should keep the owner and signer keys different.
-
-* Signer — the address that signs the [checkpoint transactions](../glossary#checkpoint-transaction). The recommendation is to keep at least 1 ETH on the signer address.
-* Owner — the address that does the staking transactions. The recommendation is to keep the MATIC tokens on the owner address.
-
-### Generate a Heimdall private key
-
-You must generate a Heimdall private key only on the validator machine. **Do not generate a Heimdall private key on the sentry machine.**
-
-To generate the private key, run:
-
-```sh
-heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
-```
-
-:::note
-
-ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s `Signer` private key
-
-:::
-
-This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration directory:
-
-```sh
-mv ./priv_validator_key.json /var/lib/heimdall/config/
-```
-
-### Generate a Bor keystore file
-
-You must generate a Bor keystore file only on the validator machine. **Do not generate a Bor keystore file on the sentry machine.**
-
-To generate the private key, run:
-
-```sh
-heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
-```
-
-:::note
-
-ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s `Signer` private key.
-
-:::
-
-When prompted, set up a password to the keystore file.
-
-This will generate a `UTC-<time>-<address>` keystore file.
-
-Move the generated keystore file to the Bor configuration directory:
-
-```sh
-mv ./UTC-<time>-<address> /var/lib/bor/data/keystore/
-```
-
-Ensure the `keystore` parameter in `/var/lib/bor/config.toml` matches the directory `/var/lib/bor/data/keystore/`
-
-### Add `password.txt`
-
-Make sure to create a `password.txt` file then add the Bor keystore file password right in the `/var/lib/bor/password.txt` file.
-
-Ensure that `password` parameter in `/var/lib/bor/config.toml` matches the location of the password file.
-
-### Add your Ethereum address
-
-Open for editing `vi /var/lib/bor/config.toml`.
-
-In `[accounts]` section you should have paramater `password` already defined from previous step, now add your Ethereum address to `unlock` parameter and also ensure `allow-insecure-unlock` has a value of `true`.
-
-Example: 
-
-```sh
- [accounts]
-    allow-insecure-unlock = true
-    password = "/var/lib/bor/password.txt"
-    unlock = ["0xca67a8D767e45056DC92384b488E9Af654d78DE2"]
-```
-
-Save the changes in `/var/lib/bor/config.toml`.
-
-## Start the Validator node
-
-At this point, you must have:
-
-* The Heimdall service on the sentry machine fully synced and running.
-* The Bor service on the sentry machine running.
-* The Heimdall service and the Bor service on the validator machine configured.
-* Your owner and signer keys configured.
-
-### Start the Heimdall Service
-
-You will now start the Heimdall service on the validator machine. Once the Heimdall service syncs, you will start the Bor service on the validator machine.
-
-Start the Heimdall service:
-
-```sh
-sudo service heimdalld start
-```
-
-Check the Heimdall service logs:
-
-```sh
-journalctl -u heimdalld.service -f
-```
-
-Check the sync status of Heimdall:
-
-```sh
-curl localhost:26657/status
-```
-
-In the output, the `catching_up` value is:
-
-* `true` — the Heimdall service is syncing.
-* `false` — the Heimdall service is fully synced.
-
-Wait for the Heimdall service to fully sync.
-
-### Start the Bor Service
-
-Once the Heimdall service on the validator machine is fully synced, start the Bor service on the validator machine.
-
-Start the Bor service:
-
-```sh
-sudo service bor start
-```
-
-Check the Bor service logs:
-
-```sh
-journalctl -u bor.service -f
-```
-
-### Seed nodes and bootnodes
-
-- Heimdall seed nodes:
-
-  ```bash
-  moniker=<enter unique identifier>
-
-  # Mainnet:
-  seeds="1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656,6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656"
-
-  # Testnet:
-  seeds="9df7ae4bf9b996c0e3436ed4cd3050dbc5742a28@43.200.206.40:26656,d9275750bc877b0276c374307f0fd7eae1d71e35@54.216.248.9:26656,1a3258eb2b69b235d4749cf9266a94567d6c0199@52.214.83.78:26656"
-  ```
-- Bootnodes:
-
-  ```bash
-  # Mainnet:
-  bootnode ["enode://b8f1cc9c5d4403703fbf377116469667d2b1823c0daf16b7250aa576bacf399e42c3930ccfcb02c5df6879565a2b8931335565f0e8d3f8e72385ecf4a4bf160a@3.36.224.80:30303", "enode://8729e0c825f3d9cad382555f3e46dcff21af323e89025a0e6312df541f4a9e73abfa562d64906f5e59c51fe6f0501b3e61b07979606c56329c020ed739910759@54.194.245.5:30303"]
-
-  # Testnet:
-  bootnodes ["enode://bdcd4786a616a853b8a041f53496d853c68d99d54ff305615cd91c03cd56895e0a7f6e9f35dbf89131044e2114a9a782b792b5661e3aff07faf125a98606a071@43.200.206.40:30303", "enode://209aaf7ed549cf4a5700fd833da25413f80a1248bd3aa7fe2a87203e3f7b236dd729579e5c8df61c97bf508281bae4969d6de76a7393bcbd04a0af70270333b3@54.216.248.9:30303"]
-  ```
-
-## Check node health with the community
-
-Now that your Sentry and Validator nodes are synced and running, head over to [Discord](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes.
-
-:::note
-
-As validators, it’s mandatory to always have a check of the signer address. If the ETH balance reaches below 0.5 ETH then it should be refilled. Avoiding this will push out nodes from submitting checkpoint transactions.
-
-:::
-
-## Proceed to staking
-
-Now that you have your Sentry and Validator nodes health-checked, proceed to [Staking](/docs/pos/design/validator/core-components/staking).
+By following these steps, you can effectively set up and run a Polygon validator node using Ansible.
