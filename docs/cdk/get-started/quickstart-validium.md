@@ -159,9 +159,6 @@ You should see a page similar to this:
   <img src="/img/cdk/cdk-metamask-import-account.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-!!! danger
-    Today, 21/11, I got stuck here with pending transfers that weren't picked up by blockexplorer.
-
 4.4 Transfer some tokens to another account:
 
 <div align="center">
@@ -248,10 +245,3 @@ The L2->L1 bridging is slightly different than L1->L2 and you will see the **Act
 <div align="center">
   <img src="/img/cdk/cdk-bridge-l2-to-l1-completed.png" alt="bridge" width="90%" height="30%" />
 </div>
-
-!!! urgent
-    - First time, I had an error on step 5.12 -> cannot estimate gas.
-    - Second time, I had an error much earlier on, but that's probably because I didn't clear the images up, even though I restarted. 
-
-!!! question
-    What makes this CDK?

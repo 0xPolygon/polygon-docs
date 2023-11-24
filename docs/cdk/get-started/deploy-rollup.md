@@ -5,6 +5,3 @@
 
 The [zkEVM deployment quickstart documentation](../../zkEVM/deployzkevm/step1-fullzkevm.md) shows you how to deploy a zkEVM rollup on your local machine.
 
-!!! question
-    What makes this CDK?
-

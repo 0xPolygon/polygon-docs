@@ -1,6 +1,9 @@
 site_name: Polygon docs
 site_author: Polygon Labs
 copyright: Copyright &copy; 2023 Polygon Labs
+repo_name: Polygon docs
+repo_url: https://github.com/0xPolygon/polygon-docs
+edit_uri: edit/main/docs/
 #remote_branch: gh-pages
 #remote_name: gh-deploy
 
@@ -45,6 +48,7 @@ theme:
     - navigation.footer
     - toc.follow
     - content.code.copy
+    - content.action.edit
 
 nav:
   - Home: index.md
@@ -60,7 +64,7 @@ nav:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: cdk/get-started/deploy-rollup.md
       - How to: 
-        - Manage allowlists: cdk/how-to/manage-allowlists.md
+        - Manage policies - allowlists, denylists, ACLs: cdk/how-to/manage-allowlists.md
       #- Architecture:
       - Specification:
         - Validium vs rollup: cdk/specification/validium-vs-rollup.md
@@ -178,9 +182,9 @@ nav:
           - pos/api/index.md
   - Miden:
       - Overview: miden/index.md
-      #- Miden playground: https://0xpolygonmiden.github.io/examples/
-      #- Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
-      #- Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
+      - Miden playground: https://0xpolygonmiden.github.io/examples/
+      - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
+      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Tools: 
       - tools/index.md
       - Using Web3Modal SDK: tools/using-web3modal.md
@@ -194,39 +198,30 @@ nav:
       - Become a PoS Validator: tutorials/become-pos-validator.md
 
 extra:
-  # We'll add language options back when we actually support them.
-  # alternate:
-  #  - name: Español
-  #    link: /es/
-  #    lang: es
-  #  - name: Chinese (Simplified)
-  #    link: /zh/
-  #    lang: zh
-  generator: false
   analytics:
   #  provider: google
   #  property: G-XXXXXXXXXX
+  #  feedback:  # feedback form only works when Google Analytics is set up and working
+  #    title: Was this page helpful?
+  #    ratings:
+  #      - icon: fontawesome/regular/face-grin-stars
+  #        name: This page was helpful
+  #        data: 1
+  #        note: >-
+  #          Thanks for your feedback!
+  #      - icon: fontawesome/regular/face-grimace
+  #        name: This page could be improved
+  #        data: 0
+  #        note: >-
+  #          Thanks for your feedback! Help us improve this page by
+  #          using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
   social:
     - icon: fontawesome/solid/circle-question
       link: https://support.polygon.technology/support/solutions
     - icon: fontawesome/solid/globe
       link: https://polygon.technology/
     - icon: fontawesome/brands/github
-      link: https://github.com/0xPolygon/wiki
-  feedback:
-    title: Was this page helpful?
-    ratings:
-      - icon: fontawesome/regular/face-grin-stars
-        name: This page was helpful
-        data: 1
-        note: >-
-          Thanks for your feedback!
-      - icon: fontawesome/regular/face-grimace
-        name: This page could be improved
-        data: 0
-        note: >-
-          Thanks for your feedback! Help us improve this page by
-          using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+      link: https://github.com/0xPolygon/polygon-docs
   consent:
     title: Cookie consent
     description: >-
@@ -274,6 +269,14 @@ markdown_extensions:
 plugins:
   - search
   - open-in-new-tab
+#  - git-revision-date-localized:
+#      enable_creation_date: true
+#      fallback_to_build_date: true
+#  - git-committers:
+#      repository: 0xPolygon/polygon-docs
+#      #branch: main
+#      exclude:
+#        - README.md
 
 validation:
   absolute_links: ignore
