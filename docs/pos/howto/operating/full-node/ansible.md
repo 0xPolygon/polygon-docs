@@ -1,8 +1,6 @@
-## Overview of Ansible Playbook Utilization
-
 To configure and effectively manage a Polygon full node, we employ an [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html). This tool streamlines the process, ensuring a consistent and error-free setup.
 
-## Prerequisites for Ansible Setup
+## Prerequisites
 
 - **Ansible with Python 3.x**: Your local machine must have Ansible installed with Python version 3.x. Note that Python 2.x is incompatible with this setup. Use the following command to install Ansible using pip (Python's package installer). If pip is not installed, refer to [pip installation guidelines](https://pip.pypa.io/en/stable/):
 
@@ -14,7 +12,7 @@ To configure and effectively manage a Polygon full node, we employ an [Ansible p
 
 - **Environment Setup**: Ensure that Go is not installed on your environment. Ansible requires specific Go packages, and existing installations could lead to conflicts. Additionally, any pre-existing setups of Polygon Validator, Heimdall, or Bor on your VM/machine must be removed to avoid setup conflicts.
 
-## Setting Up the Full Node
+## Setting up the full node
 
 - **Remote Machine Access**: Confirm access to the VM or machine where the full node will be set up. Detailed setup instructions are available at the [node-ansible setup guide](https://github.com/maticnetwork/node-ansible#setup).
 
@@ -74,7 +72,7 @@ To configure and effectively manage a Polygon full node, we employ an [Ansible p
   sudo service bor start
   ```
 
-## Managing Logs and Permissions
+## Managing logs and permissions
 
 - **Logs**: Use `journalctl` for log management. For advanced usage, refer to [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs).
 
@@ -87,7 +85,7 @@ To configure and effectively manage a Polygon full node, we employ an [Ansible p
   sudo chown bor /var/lib/bor
   ```
 
-## Network Security and Port Configuration
+## Network security and port configuration
 
 - **Firewall Setup**: Open ports 22, 26656, and 30303 to all (0.
 

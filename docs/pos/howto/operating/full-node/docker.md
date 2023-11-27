@@ -15,7 +15,7 @@ Summary:
 - Have 2.5 TB to 5 TB of high-speed storage.
 - Use a public IP and open ports 30303 and 26656.
 
-## Initial Setup
+## Initial setup
 
 You should have root-level shell access to a Linux machine.
 
@@ -50,7 +50,7 @@ sudo usermod -aG docker $USER
 
 Logout and log back in to apply these changes.
 
-### Disk Setup
+### Disk setup
 
 The specific steps for disk setup will vary. Typically, you'll have a root partition for the OS and separate devices for blockchain data. For this guide, we'll assume an additional device mounted at `/mnt/data`.
 
@@ -77,7 +77,7 @@ To ensure the device mounts on reboot, add it to `/etc/fstab`:
 
 Reboot to confirm the proper loading of your mount.
 
-### Heimdall Setup
+### Heimdall setup
 
 With Docker running and storage prepared, it's time to set up Heimdall:
 
@@ -166,7 +166,7 @@ Check Bor's sync status with:
 curl 'localhost:8545/' --header 'Content-Type: application/json' -d '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
 ```
 
-### Seed Nodes and Bootnodes
+### Seed nodes and bootnodes
 
 - **Heimdall Seed Nodes**:
 

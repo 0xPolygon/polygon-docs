@@ -8,7 +8,7 @@ New developers on the Polygon network can use Alchemy as their node provider bec
 
 :::
 
-## Send Your First Blockchain Request
+## Send your first blockchain request
 
 This guide assumes you already have an [Alchemy account](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5) and access to the [Alchemy Dashboard](https://dashboard.alchemyapi.io).
 
@@ -28,7 +28,7 @@ First, you'll need an Alchemy API key to authenticate your requests. You can [cr
 
 ![img](https://files.readme.io/f0dbb19-ezgif.com-gif-maker_1.gif)
 
-### Make Your First CURL Request
+### Making a cURL request
 
 You can interact with Alchemy's Polygon infrastructure provider using JSON-RPC and your [command line interface](https://www.computerhope.com/jargon/c/commandi.htm).
 
@@ -64,7 +64,7 @@ Results:
   "result": "0x09184e72a000" // 10000000000000 }
 ```
 
-## Set Up the Alchemy SDK
+## Alchemy SDK setup
 
 To make blockchain requests directly from your Javascript / Node.js dApp, you'll need to integrate the **Alchemy SDK**, the easiest and most powerful way to access the blockchain and Alchemy's suite of enhanced APIs.
 
@@ -125,13 +125,13 @@ main();
 
 If you are unfamiliar with the async stuff, check out this [Medium post](https://betterprogramming.pub/understanding-async-await-in-javascript-1d81bb079b2c).
 
-### Run `index.js` Using node
+### Run `index.js` using node.js
 
 ```bash
 node index.js
 ```
 
-### Output in Your Console
+### Console output
 
 You should now see the latest block number output in your console.
 
@@ -147,7 +147,7 @@ The project associated with your API key should now look like this on the dashbo
 
 ![img](https://files.readme.io/bcfc9ff-Alchemy_Tutorial_Result2.png)
 
-## Start Building
+## Start building
 
 Don't know where to start? Check out these tutorials to get more familiar with Alchemy and blockchain development:
 
@@ -155,7 +155,7 @@ Don't know where to start? Check out these tutorials to get more familiar with A
 3. Learn [How to Send Transactions on Ethereum](https://docs.alchemy.com/docs/how-to-send-transactions-on-ethereum)
 4. Try deploying your first [Hello World Smart Contract](https://docs.alchemy.com/docs/hello-world-smart-contract) and get your hands dirty with some solidity programming!
 
-### Other Web3 Libraries
+### Other Web3 libraries
 
 There are a number of alternative Web3 libraries other than the Alchemy SDK you may already be using. See the documentation for these libraries below:
 

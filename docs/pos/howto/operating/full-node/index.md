@@ -1,8 +1,6 @@
-# Operating a Polygon Full PoS Node
+Welcome to the guide on setting up your own Polygon full Proof of Stake (PoS) node. Polygon, formerly known as Matic Network, represents a significant advancement in blockchain technology, offering a solution for Ethereum's scalability issues while maintaining its robust security features. By setting up a full PoS node on the Polygon network, you contribute to the network's decentralization, enhancing its security and efficiency.
 
-Welcome to the comprehensive guide on setting up your own Polygon full Proof of Stake (PoS) node. Polygon, formerly known as Matic Network, represents a significant advancement in blockchain technology, offering a solution for Ethereum's scalability issues while maintaining its robust security features. By setting up a full PoS node on the Polygon network, you contribute to the network's decentralization, enhancing its security and efficiency.
-
-### Why Run a Polygon Full PoS Node?
+### Why run a full PoS node?
 
 Running a full PoS node on the Polygon network offers several benefits:
 
@@ -20,7 +18,7 @@ Before diving into the setup process, ensure you have the following:
 - A stable and fast internet connection.
 - Basic knowledge of command-line interface operations and software installation.
 
-### Different Methods for Running a Node
+### Different methods for running a node
 
 This section includes guides for running the node via manual installation of binaries, Docker, Ansible, or Google Cloud Platform. Use the section navigation to peruse the method you prefer.
 
