@@ -198,6 +198,7 @@ nav:
       - Become a PoS Validator: tutorials/become-pos-validator.md
 
 extra:
+  generator: false
   analytics:
   #  provider: google
   #  property: G-XXXXXXXXXX
