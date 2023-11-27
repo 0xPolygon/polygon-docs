@@ -1,31 +1,25 @@
-# Proof of Stake on Polygon
+Polygon PoS, initially unveiled as the Matic Network, has undergone substantial evolution, reflecting the dynamic landscape of blockchain scalability and security. Beginning as a hybrid Plasma sidechain designed to enhance Ethereum's scalability, Polygon is now transitioning towards a ZK-based validium solution on Ethereum. This shift is driven by the goal of achieving superior scalability and fortified security.
 
-Polygon PoS, originally launched as Matic Network, has undergone significant transformations to address the evolving needs of blockchain scalability and security. Initially designed to scale Ethereum through a hybrid Plasma sidechain, the network is currently in the process of transitioning into a ZK-based validium solution on Ethereum. This evolution aims to offer enhanced scalability and robust security features.
+Polygon PoS is integrating the Polygon zkEVM execution environment, coupled with a specialized data availability layer. Its architecture is modular and composable, allowing fluid integration with a variety of layer-two scaling solutions. In this diverse and expanding ecosystem, Polygon PoS maintains its pivotal role as a primary "mainnet," underpinning numerous decentralized applications and services.
 
-In this transformation, Polygon PoS incorporates the execution environment of Polygon zkEVM along with a dedicated data availability layer. The architecture is inherently modular and composable, enabling it to seamlessly integrate into a broader fleet of layer-two scaling solutions. Despite its place in this diverse ecosystem, Polygon PoS will retain its role as a crucial "mainnet," serving as the foundational infrastructure for a wide array of decentralized applications and services.
+## Understanding the current PoS mechanism
 
-## How PoS Works Today
+### Transaction lifecycle overview
+Polygon PoS's transaction lifecycle is characterized by a systematic workflow:
 
-### Transaction Lifecycle
-The following cyclical workflow outlines the operational mechanics of today's Polygon PoS architecture:
+1. **Initiating Transactions**: Users initiate transactions on the Polygon PoS chain, often through smart contract interactions.
+2. **Validation by Plasma Checkpoint Nodes**: Public nodes validate these transactions in accordance with the Polygon chain’s prevailing state.
+3. **Checkpoint Creation and Ethereum Submission**: Post-validation, checkpoints encapsulating transaction data are crafted and forwarded to Ethereum's core contracts.
+4. **Ethereum Mainnet Verification**: Leveraging Fraud Proofs, Ethereum’s core contracts scrutinize the checkpoints for authenticity.
+5. **Executing Transactions**: Verified transactions are executed, culminating in state updates on the Matic Sidechain.
+6. **Asset Transfer (Optional)**: Assets can be relocated back to Ethereum, utilizing the Plasma Exit Queue within the core contracts.
+7. **Process Recurrence**: Users can initiate new transactions, re-engaging the cycle from the first step.
 
-1. **User Initiates Transaction**: On the Polygon PoS chain, typically via a smart contract function call.
-2. **Validation by Public Plasma Checkpoint Nodes**: These nodes validate the transaction against the Polygon chain's current state.
-3. **Checkpoint Creation and Submission**: A checkpoint of the validated transactions is created and submitted to the core contracts on the Ethereum mainnet.
-4. **Verification by Core Contracts**: Utilizing Fraud Proofs, the core contracts verify the checkpoint's validity.
-5. **Transaction Execution**: Upon successful verification, the transaction is executed and state changes are committed to the Matic Sidechain.
-6. **Asset Transfer (Optional)**: If needed, assets can be transferred back to the Ethereum mainnet via the Plasma Exit Queue in the core contracts.
-7. **Cycle Reiteration**: The process can be initiated again by the user, returning to step 1.
+### Core contracts on Ethereum mainnet
+At the heart of Polygon PoS's architecture is Ethereum mainnet, which anchors the system. A suite of core contracts on Ethereum provides essential functionalities, bridging the PoS chain with Ethereum. These include ensuring transaction and state change integrity via Fraud Proofs and managing asset transfers through the Plasma Exit Queue. These features collectively uphold security and operational fluidity between Polygon PoS and Ethereum.
 
-### Core Contracts on Ethereum Mainnet
-Ethereum mainnet serves as the foundational layer upon which Polygon's PoS architecture is built. Within the Ethereum ecosystem, a set of core contracts play a pivotal role in connecting the Polygon PoS chain to Ethereum. These core contracts are responsible for a range of functionalities, from anchoring the Polygon chain to handling asset transfers.
+### Checkpoint nodes
+Public Plasma Checkpoint Nodes, functioning as validators, are integral to the Polygon PoS framework. Their responsibilities span validating transactions and submitting checkpoints to Ethereum's core contracts. By producing cryptographic proofs and submitting them to Ethereum, these nodes reinforce the symbiotic relationship between the two chains, ensuring transactional integrity and security.
 
-The core contracts on the Ethereum mainnet incorporate two key features for security and functionality: Fraud Proofs and the Plasma Exit Queue. Fraud Proofs act as a security layer, enabling the validation of transactions and state changes to ensure transparency and security across operations. On the other hand, the Plasma Exit Queue manages the safe and efficient transfer of assets back to the Ethereum mainnet, allowing users to seamlessly move assets between the Polygon PoS chain and Ethereum without compromising data integrity or security.
-
-### Public Plasma Checkpoint Nodes
-Public Plasma Checkpoint Nodes serve as the validators in the Polygon PoS architecture. They perform two primary functions: transaction validation and checkpoint submission. When a transaction is initiated on the Polygon PoS chain, these nodes validate the transaction against the current state of the Polygon chain. After validating a set number of transactions, these nodes create a Merkle root of the transaction hashes, known as a "checkpoint," and submit it to the core contracts on the Ethereum mainnet.
-
-The role of these nodes is crucial as they act as a bridge between the Ethereum mainnet and the Polygon PoS chain. They ensure data integrity and security by submitting cryptographic proofs to the core contracts on Ethereum.
-
-### Polygon Sidechain
-The Polygon Sidechain is where the actual transaction processing takes place. Unlike the Ethereum mainnet, which can get congested and has higher transaction costs, the Sidechain offers a more scalable and cost-effective solution. The blocks in the Sidechain are validated by the Public Plasma Checkpoint Nodes and are organized in a manner that allows for high throughput and low latency.
+### The Polygon sidechain
+The Polygon Sidechain is the hub of transaction processing, offering a more scalable and cost-effective alternative to Ethereum's mainnet. Here, transactions validated by the Public Plasma Checkpoint Nodes are executed, with the Sidechain’s design optimized for high throughput and reduced latency. This makes the Polygon Sidechain a pivotal component in the network's ecosystem, efficiently handling transaction processing and maintaining the overall system's performance and reliability.

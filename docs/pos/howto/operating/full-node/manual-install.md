@@ -26,7 +26,7 @@ In this section, we will guide you through a sequential process to ensure the su
 
 It is imperative to follow these steps in the given order. Deviating from this sequence can lead to complications and potential issues in the setup and operation of your full PoS node. By adhering to this structured approach, you will ensure a successful and efficient node setup, ready to contribute to the Polygon network.
 
-## Initial Setup: Installing Build Essentials
+## Initial setup
 
 To establish a robust foundation for your Polygon full node, begin by installing `build-essential`. This package is a prerequisite, containing essential tools for compiling and managing your node. Execute the following commands to install it:
 
@@ -35,7 +35,7 @@ sudo apt-get update
 sudo apt-get install build-essential
 ```
 
-## Step-by-Step Installation of Polygon Node Components
+## Installing Polygon node components
 
 Polygon's node architecture is dual-layered, comprising Heimdall and Bor. Heimdall, a Tendermint-based layer, oversees Ethereum contracts, while Bor, derived from Geth, is responsible for block production.
 
@@ -57,7 +57,7 @@ Polygon's node architecture is dual-layered, comprising Heimdall and Bor. Heimda
    heimdalld version --long
    ```
 
-### Configuring Heimdall Seeds
+### Configuring Heimdall seeds
 
 - For **Mainnet**, execute the following commands to configure seeds and set ownership:
 
@@ -91,7 +91,7 @@ Polygon's node architecture is dual-layered, comprising Heimdall and Bor. Heimda
    bor version
    ```
 
-### Configuring Bor Seeds
+### Configuring Bor seeds
 
 - **Mainnet Configuration** involves setting bootnodes and ownership:
 
@@ -111,7 +111,7 @@ Polygon's node architecture is dual-layered, comprising Heimdall and Bor. Heimda
   chown bor /var/lib/bor
   ```
 
-## Update Service Configurations and User Permissions
+## Updating service configuration and user permissions
 
 Adjust user permissions for both Heimdall and Bor services by editing the respective service files:
 
@@ -122,7 +122,7 @@ sed -i 's/User=heimdall/User=root/g' /lib/systemd/system/heimdalld.service
 sed -i 's/User=bor/User=root/g' /lib/systemd/system/bor.service
 ```
 
-## Initiating Services
+## Initiating services
 
 Ensure Heimdall is fully synchronized before launching Bor. Use these commands to start and verify synchronization:
 
@@ -139,7 +139,7 @@ Once Heimdall is synced (catching_up: false), start Bor:
 sudo service bor start
 ```
 
-## Monitoring and Log Management
+## Monitoring and log management
 
 Utilize `journalctl` for log management. Here's how to access logs for Heimdall and Bor:
 
@@ -150,19 +150,9 @@ journalctl -u heimdalld.service -f
 journalctl -u bor.service -f
 ```
 
-## Firewall and Port Configuration
+## Firewall and port configuration
 
 Ensure proper network configuration by opening ports 22, 26656, and 30303. Additionally, consider
 
 VPN options for enhanced security.
 
-## Documentation Summary
-
-This guide provides a structured approach for:
-
-- Preparing your full node machine.
-- Sequential installation and configuration of Heimdall and Bor.
-- Essential post-installation steps and synchronization checks.
-- Best practices for monitoring and maintaining node health.
-
-**Important Reminder**: Adhering to the outlined sequence is critical to avoid potential issues.

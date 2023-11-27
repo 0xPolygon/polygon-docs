@@ -1,6 +1,6 @@
 Deploying Polygon nodes on a Virtual Machine (VM) instance in the Google Cloud Platform (GCP) is a straightforward process. This guide focuses on Ubuntu 20.04, a modern OS with long-term support, but the steps are adaptable to Debian 11 or other similar distributions.
 
-## Deploying a VM Instance on GCP
+## Deploying a VM instance on Google Cloud Platform
 
 To create a VM instance on GCP, you can use either the Google Cloud CLI or the Web Console. This guide will detail the process using the Google Cloud CLI.
 
