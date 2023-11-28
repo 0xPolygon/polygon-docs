@@ -64,7 +64,7 @@ nav:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: cdk/get-started/deploy-rollup.md
       - How to: 
-        - Manage policies - allowlists, denylists, ACLs: cdk/how-to/manage-allowlists.md
+        - Manage policies - allowlists, denylists: cdk/how-to/manage-allowlists.md
       #- Architecture:
       - Specification:
         - Validium vs rollup: cdk/specification/validium-vs-rollup.md
