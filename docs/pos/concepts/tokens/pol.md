@@ -18,7 +18,6 @@ Separately, you are encouraged to engage in the governance and decision-making p
 Your involvement and input can play a significant role in shaping the future of the Polygon ecosystem.
 
 You can participate in governance proposals to vote on various aspects of the Polygon ecosystem through the PIP program.
-Check out how to do so [<ins>here</ins>](/docs/category/proposals/).
 
 ### **Do** I Need to Do Anything Today **as a Node Operator or Delegator?**
 

@@ -2,7 +2,7 @@ This guide provides a step-by-step approach to deploy a Polygon validator node t
 
 ## Setup requirements and options
 
-Before beginning, confirm your system aligns with the [system requirements for validator nodes](/pos/howto/operating/validator-node/#system-requirements-for-nodes). If you prefer running the validator node from binaries instead of Ansible, refer to [the manual installation instructions](/pos/validator/index.md).
+Before beginning, confirm your system aligns with the [system requirements for validator nodes](index.md). If you prefer running the validator node from binaries instead of Ansible, refer to [the manual installation instructions](manual-install.md).
 
 !!! warning "Limited Validator Slots"
 
@@ -137,6 +137,6 @@ Configure the Heimdall and Bor services on the sentry node:
 
 - After setting up the nodes, request a health check by the community on [Polygon's Discord](https://discord.com/invite/0xPolygon).
 - Maintain sufficient ETH balance in the signer address for transaction fees.
-- Proceed to [Staking](/docs/pos/design/validator/core-components/staking.md) to participate in network validation.
+- Proceed to [Staking](staking.md) to participate in network validation.
 
 By following these steps, you can effectively set up and run a Polygon validator node using Ansible.

@@ -38,7 +38,7 @@ There are several ways to make requests to the Polygon PoS chain. Rather than ru
 
 If you don’t already have an Alchemy account, start by signing up for a free account [here](https://www.alchemy.com/polygon/?a=polygon-docs). After creating your account, you have the option of immediately creating your first app before reaching the dashboard.
 
-![img](/img/alchemy/alchemy-dashboard.png)
+![img](../../../img/pos/alchemy-dashboard.png)
 
 ### Create your App (and API key)
 
@@ -46,7 +46,7 @@ After successfully creating an Alchemy account, you will need to generate an API
 
 To generate a new API key, navigate to the **Apps** tab on the Alchemy dashboard navigation bar and select the **Create App** sub-tab.
 
-![img](/img/alchemy/create-app.png)
+![img](../../../img/pos/create-app.png)
 
 Name your new app **Hello World**, offer a short description, select **Polygon** for the chain, and choose **Polygon Mumbai** for your network.
 
@@ -58,7 +58,7 @@ Polygon PoS is a layer 2 scaling solution for Ethereum. Therefore, we need an Et
 
 To get your custom Polygon RPC URL from Alchemy, go to your **Hello World** app in your Alchemy dashboard and click **View Key** in the top right corner. Then go ahead and copy your Alchemy HTTP API key.
 
-![img](/img/alchemy/view-key.png)
+![img](../../../img/pos/view-key.png)
 
 You can download and create a MetaMask account for free [here](https://metamask.io/download.html). Once you've created an account, follow these steps to set up the Polygon PoS network on your wallet.
 
@@ -82,7 +82,7 @@ You'll need a few testnet tokens to deploy your smart contract to the Mumbai tes
 
 You can also use Alchemy's [free Mumbai faucet](https://mumbaifaucet.com/?a=polygon-docs).
 
-![img](/img/alchemy/faucet.png)
+![img](../../../img/pos/faucet.png)
 
 You will see the testnet tokens in your MetaMask account soon after.
 
@@ -90,7 +90,7 @@ You will see the testnet tokens in your MetaMask account soon after.
 
 To double-check our balance is there, let’s make an [eth\_getBalance](https://docs.alchemy.com/reference/eth-getbalance-polygon) request using [Alchemy’s composer tool](https://composer.alchemyapi.io/). Select **Polygon** as the chain, **Polygon Mumbai** as the network, `eth_getBalance` as the method, and input your address. This will return the amount of MATIC in our wallet. Check out [this video](https://youtu.be/r6sjRxBZJuU) for instructions on how to use the composer tool.
 
-![img](/img/alchemy/get-balance.png)
+![img](../../../img/pos/get-balance.png)
 
 After you input your MetaMask account address and click **Send Request**, you should see a response that looks like this:
 
@@ -392,13 +392,13 @@ If we go to the [Polygon Mumbai explorer](https://mumbai.polygonscan.com/) and s
 
 The `From` address should match your MetaMask account address and the `To` address will say **Contract Creation**. But if we click into the transaction, we’ll see our contract address in the `To` field.
 
-![img](/img/alchemy/polygon-scan.png)
+![img](../../../img/pos/polygon-scan.png)
 
 ### Verify the Contract
 
 Alchemy provides an [explorer](https://dashboard.alchemyapi.io/explorer) where you can find information about the methods deployed along with the smart contract, such as response time, HTTP status, error codes among others. It is a good environment to verify your contract and check whether the transactions went through.
 
-![img](/img/alchemy/calls.png)
+![img](../../../img/pos/calls.png)
 
 **Congratulations! You just deployed a smart contract to the Polygon Mumbai network.**
 
