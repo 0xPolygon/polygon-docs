@@ -36,7 +36,8 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-     -  uses: actions/setup-python@v4
+      - name: Use Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
