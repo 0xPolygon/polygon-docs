@@ -64,7 +64,7 @@ nav:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: cdk/get-started/deploy-rollup.md
       - How to: 
-        - Manage policies - allowlists, denylists, ACLs: cdk/how-to/manage-allowlists.md
+        - Manage policies - allowlists, denylists: cdk/how-to/manage-allowlists.md
       #- Architecture:
       - Specification:
         - Validium vs rollup: cdk/specification/validium-vs-rollup.md
@@ -98,8 +98,67 @@ nav:
         - Deploy a contract with Foundry: zkEVM/using-foundry.md
         - Deploy a contract with Hardhat: zkEVM/using-hardhat.md
         - Verify a contract: zkEVM/verify-smart-contract.md
+      - Architectural design:
+        - Architecture: zkEVM/architecture/architecture.md
+        - zkEVM Protocol:
+          - Introduction: zkEVM/protocol/introduction.md
+          - State management: zkEVM/protocol/state-management.md
+          - Trasaction life cycle:
+            - Submit transactions: zkEVM/protocol/submit-trasaction.md
+            - Transaction execution: zkEVM/protocol/transaction-execution.md
+            - Transaction batching: zkEVM/protocol/transaction-batching.md
+            - Batch sequencing: zkEVM/protocol/batch-sequencing.md
+            - Batch aggregation: zkEVM/protocol/batch-aggregation.md
+          - Incentive mechanism: zkEVM/protocol/incentive-mechanism.md
+          - Protocol upgradability: zkEVM/protocol/upgradability.md
+          - Admin role and governance: zkEVM/protocol/admin-role.md
+          - Upgrade process: zkEVM/protocol/zkevm-upgrades-process.md
+          - Security council: zkEVM/protocol/security-council.md
+          - Malfunction resistance:
+            - Force batches: zkEVM/protocol/sequencer-resistance.md
+            - Force verification: zkEVM/protocol/aggregator-resistance.md
+            - Emergency state: zkEVM/protocol/emergency-state.md
+          - zkEVM bridge:
+            - Bridge introduction: zkEVM/protocol/zkevm-bridge.md
+            - Exit trees: zkEVM/protocol/exit-tree.md
+            - Smart contracts: zkEVM/protocol/bridge-smart-contract.md
+            - Flow of assets: zkEVM/protocol/flow-of-assets.md
+          - LXLY bridge: zkEVM/protocol/lxly-bridge.md
+        - zkNode: zkEVM/zknode/zknode-overview.md
+        - zkProver:
+          - zkProver Overview: zkEVM/zkprover/zkprover-overview.md
+          - Main state machaine: 
+            - Introducing Main SM: zkEVM/zkprover/intro-main-sm.md
+            - As a processor: zkEVM/zkprover/the-processor.md
+          - STARK recursion:
+            - Introducing STARK recursion: zkEVM/zkprover/intro-stark-recursion.md
+            - Proving tools and techniques: zkEVM/zkprover/proving-tools.md
+            - Composition, Recursion and Aggregation: zkEVM/zkprover/stark-recursion-detail.md
+            - Recursion sub-process: zkEVM/zkprover/recursion-sub-process.md
+            - Proving architecture: zkEVM/zkprover/proving-architecture.md
+            - CIRCOM in zkProver: zkEVM/zkprover/circom-in-zkprover.md
+            - Proving setup phase: zkEVM/zkprover/proving-setup-phase.md
+            - Intermediate steps: zkEVM/zkprover/intermediate-recursion.md
+            - Final recursion step: zkEVM/zkprover/final-recursion-step.md
+            - Proof generation phase: zkEVM/zkprover/proof-generation-phase.md
+      - Specifications:
+        - EVM vs. zkEVM: zkEVM/specifications/evm-differences.md
       - Concepts:
-        - Learning zkEVM: zkEVM/learning.md
+        - EVM basics: zkEVM/concepts/evm-basics.md
+        - mFibonnaci state machine:
+          - Design approach: zkEVM/concepts/mfibonacci.md
+          - An example: zkEVM/concepts/mfibonacci-example.md
+          - Commitment scheme: zkEVM/concepts/commitment-scheme.md
+          - Verification scheme: zkEVM/concepts/verification-scheme.md
+          - PIL-STARK process: zkEVM/concepts/pil-stark.md
+          - PIL-STARK demo: zkEVM/concepts/pil-stark-demo.md
+        - Generic state machine: 
+          - Generic SM introduction: zkEVM/concepts/intro-generic-sm.md
+          - Execution trace: zkEVM/concepts/exec-trace-correct.md
+          - Ending programs: zkEVM/concepts/ending-program.md
+          - Program counter: zkEVM/concepts/program-counter.md
+          - Plookup: zkEVM/concepts/plookup.md
+        - CIRCOM: zkEVM/concepts/circom-intro-brief.md
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
