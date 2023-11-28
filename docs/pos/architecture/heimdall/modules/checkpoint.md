@@ -2,8 +2,6 @@
 
 `checkpoint` module manages checkpoint related functionalities for Heimdall. It needs Bor chain when a new checkpoint is proposed on Heimdall to verify checkpoint root hash.
 
-All related to checkpoint data is explained in details [here](/docs/pos/design/heimdall/checkpoint).
-
 ## Checkpoint life-cycle
 
 Heimdall uses the same leader selection algorithm as Tendermint to select the next proposer. While submitting checkpoints on the Ethereum chain, it may fail due to multiple reasons like gas limit, traffic on Ethereum, high gas fees. That's why the multi-stage checkpoint process is required.

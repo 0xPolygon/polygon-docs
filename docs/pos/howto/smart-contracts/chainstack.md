@@ -27,11 +27,11 @@ You need a node to deploy a smart contract to the blockchain network. Follow the
 
 **Step 1 &rarr;** Sign up with [Chainstack](https://console.chainstack.com/user/account/create)
 
-![img](/img/chainstack/sign-up.png)
+![img](../../../img/pos/sign-up.png)
 
 **Step 2 &rarr;** Follow the instructions on how to [deploy a Mumbai node](https://docs.chainstack.com/platform/join-a-public-network#join-a-polygon-pos-network)
 
-![img](/img/chainstack/join-network.png)
+![img](../../../img/pos/join-network.png)
 
 **Step 3 &rarr;** Get the [deployed node’s HTTPS endpoint](https://docs.chainstack.com/platform/view-node-access-and-credentials)
 

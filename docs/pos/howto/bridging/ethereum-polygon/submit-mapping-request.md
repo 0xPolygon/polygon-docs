@@ -1,4 +1,4 @@
-Mapping is necessary in order to transfer your assets to and from Ethereum and Polygon PoS. We offer two bridges to do the same. More details on the bridge can be understood [here](/pos/design/bridge/ethereum-polygon/getting-started.md).
+Mapping is necessary in order to transfer your assets to and from Ethereum and Polygon PoS. We offer two bridges to do the same. More details on the bridge can be understood [here](index.md).
 
 :::info
 

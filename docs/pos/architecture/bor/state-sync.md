@@ -1,8 +1,6 @@
-# State Sync Mechanism
-
 `State Sync` is the native mechanism to read Ethereum data from Matic EVM chain. 
 
-Validators on the Heimdall layer pickup the [StateSynced](https://github.com/maticnetwork/contracts/blob/a4c26d59ca6e842af2b8d2265be1da15189e29a4/contracts/root/stateSyncer/StateSender.sol#L24) event and pass it on to the Bor layer (read more about the architecture [here](/docs/pos/design/bor/overview). 
+Validators on the Heimdall layer pickup the [StateSynced](https://github.com/maticnetwork/contracts/blob/a4c26d59ca6e842af2b8d2265be1da15189e29a4/contracts/root/stateSyncer/StateSender.sol#L24) event and pass it on to the Bor layer. 
 
 The receiver contract inherits [IStateReceiver](https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/IStateReceiver.sol), and custom logic sits inside [onStateReceive](https://github.com/maticnetwork/genesis-contracts/blob/05556cfd91a6879a8190a6828428f50e4912ee1a/contracts/IStateReceiver.sol#L5) function.
 
@@ -78,13 +76,13 @@ interface IStateReceiver {
 
 Only `0x0000000000000000000000000000000000001001` — `StateReceiver.sol`, must be allowed to call `onStateReceive` function on target contract.
 
-## System Call
+## System call
 
 Only system address, `2^160-2`, allows making a system call. Bor calls it internally with the system address as `msg.sender`. It changes the contract state and updates the state root for a particular block. Inspired from [https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md) and [https://wiki.parity.io/Validator-Set#contracts](https://wiki.parity.io/Validator-Set#contracts)
 
 System call is helpful to change state to contract without making any transaction.
 
-## State-sync logs and Bor Block Receipt
+## State-sync logs and Bor block receipts
 
 Events emitted by system calls are handled in a different way than normal logs. Here is the code: [https://github.com/maticnetwork/bor/pull/90](https://github.com/maticnetwork/bor/pull/90).
 

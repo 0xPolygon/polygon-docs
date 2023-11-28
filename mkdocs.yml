@@ -158,7 +158,6 @@ nav:
               - Bor: pos/architecture/heimdall/modules/bor.md
               - Chain Manager: pos/architecture/heimdall/modules/chain-manager.md
               - Checkpoint: pos/architecture/heimdall/modules/checkpoint.md
-              - Clerk: pos/architecture/heimdall/modules/clerk.md
               - Staking: pos/architecture/heimdall/modules/staking.md
               - Topup: pos/architecture/heimdall/modules/topup.md
             - FAQ: pos/architecture/heimdall/faq.md
@@ -277,4 +276,4 @@ plugins:
 #        - README.md
 
 validation:
-  absolute_links: ignore
+  absolute_links: warn

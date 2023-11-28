@@ -4,7 +4,7 @@ Before staking on Polygon as a validator, ensure the following prerequisites are
 
 ### Validator Node Setup
 
-- **Validator Node Synced**: Ensure your validator node is fully set up and synchronized. For guidance, refer to [Run a Validator Node](/pos/validator/run-validator/binaries.md).
+- **Validator Node Synced**: Ensure your validator node is fully set up and synchronized. For guidance, refer to [Run a Validator Node](index.md).
 
 ### Account Verification
 
@@ -34,7 +34,7 @@ Stake on Polygon using the [Validator Dashboard](https://staking.polygon.technol
 
     Your staking will reflect on the [dashboard](https://staking.polygon.technology/account) after approximately 12 block confirmations.
 
-### Balance Verification
+### Balance verification
 
 To check the balance of your address, use the following command:
 
