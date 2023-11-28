@@ -17,7 +17,7 @@ jobs:
       ECR_REPOSITORY: docs-dev-ecr
       ECS_SERVICE: docs-dev-ecs-service
       ECS_CLUSTER: frontend-dev-ecs-cluster
-      ECS_TASK_DEFINITION: dev-taskdef.json
+      ECS_TASK_DEFINITION: .github/assets/dev-taskdef.json
       CONTAINER_NAME: docs-dev
     steps:
       - name: Checkout
@@ -53,7 +53,7 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile.nginx .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f .github/assets/Dockerfile.nginx .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
