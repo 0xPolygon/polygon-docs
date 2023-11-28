@@ -137,25 +137,10 @@ Bor does the following:
 
 Bor is the Block producer node and layer for the Polygon Network. It is based on Go Ethereum. Blocks produced on Bor are validated by Heimdall nodes.
 
-:::info See Also
+!!! info "Community resources"
 
 * GitHub repository: [Bor](https://github.com/maticnetwork/bor)
 * Blog post: [Heimdall and Bor](https://blog.polygon.technology/heimdall-and-bor/)
-
-:::
-
-This section guides you through the following topics:
-
-* [Validator responsibilities](/pos/design/validator/responsibilities.md)
-* Joining the network as a validator:
-  * [Start and run the nodes with Ansible](/pos/validator/run-validator/ansible.md)
-  * [Start and run the nodes with binaries](/pos/validator/run-validator/binaries.md)
-  * [Stake as a validator](/pos/validator/validator-staking-operations.md)
-* Maintaining your validator nodes:
-  * [Change the signer address](/pos/validator/change-signer-address.md)
-  * [Change the commission](/pos/validator/validator-commission-operations.md)
-
-Community assistance:
-
 * [Discord](https://discord.com/invite/0xPolygon)
 * [Forum](https://forum.polygon.technology/)
+

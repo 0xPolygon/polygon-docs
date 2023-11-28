@@ -51,7 +51,7 @@ Alternatively, you can deploy a prebuilt contract an NFTs, token, or marketplace
 
 1. Navigate to the [thirdweb Explore page:](https://thirdweb.com/explore)
 
-   ![img](/img/thirdweb/tw-explore.png)
+   ![img](../../../img/pos/tw-explore.png)
 
 2. Choose the type of contract you want to deploy from the available options.
 3. Follow the on-screen prompts to configure and deploy your contract.

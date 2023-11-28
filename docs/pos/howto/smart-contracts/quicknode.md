@@ -59,9 +59,7 @@ If the install fails, you can use the following command instead: `sudo pip3 inst
 
 :::
 
-To check if Brownie was installed correctly, type `brownie` in your command line, and it should give the following output:
-
-![img](/img/quicknode/brownie-commands.png)
+To check if Brownie was installed correctly, type `brownie` in your command line, and it should give the following )
 
 To get the token mix, simply type the following in your command line:
 
@@ -83,7 +81,7 @@ Now, open the `token` directory in your text editor. Under the `contracts/` fold
 
 Under the `scripts/` folder, you will find `token.py` Python script. This script will be used to deploy the contract, and modifications are needed based on contracts.
 
-![img](/img/quicknode/token-sol.png)
+![img](../../../img/pos/token-sol.png)
 
 The contract is an ERC-20 contract. You can learn more about the ERC-20 standards and contracts in this [guide on ERC-20 tokens](https://www.quicknode.com/guides/solidity/how-to-create-and-deploy-an-erc20-token).
 
@@ -91,7 +89,7 @@ The contract is an ERC-20 contract. You can learn more about the ERC-20 standard
 
 QuickNode has a global network of Polygon Mainnet and Mumbai testnet nodes. They also run a [free public Polygon RPC](https://docs.polygon.technology/docs/operate/network/#:~:text=https%3A//rpc%2Dmainnet.matic.quiknode.pro) but if you get rate limited, you can sign up for a [free trial node from QuickNode](https://www.quicknode.com/chains/matic?utm_source=polygon_docs&utm_campaign=ploygon_docs_contract_guide).
 
-![img](/img/quicknode/http_URL.png)
+![img](../../../img/pos/http_URL.png)
 
 Copy the **HTTP URL**, which will be useful later in the tutorial.
 
@@ -115,7 +113,7 @@ brownie accounts generate testac
 
 You will be asked to set up a password for your account! After completing the steps, this will generate an account along with a mnemonic phrase, save it offline. The name `testac` is the name for our account (You can choose any name that you like).
 
-![img](/img/quicknode/new-account.png)
+![img](../../../img/pos/new-account.png)
 
 :::note
 
@@ -131,7 +129,7 @@ We will need some test MATIC tokens to pay for gas fees to deploy our smart cont
 
 Copy the address of your account which we generated in this tutorial, paste it into the address field of [Polygon faucet](https://faucet.polygon.technology/), and click on **Submit**. The faucet will send you 0.2 test MATIC.
 
-![img](/img/quicknode/faucet.png)
+![img](../../../img/pos/faucet.png)
 
 ## Deploying your Smart Contract
 
@@ -141,7 +139,7 @@ Before deploying the contract, you need to compile it using:
 brownie compile
 ```
 
-![img](/img/quicknode/brownie-compile.png)
+![img](../../../img/pos/brownie-compile.png)
 
 Now open the `scripts/token.py` in your text editor, and make the following changes:
 
@@ -154,11 +152,9 @@ def main():
     return Token.deploy("Test Token", "TST", 18, 1e21, {'from': acct})
 ```
 
-:::info Explanation
+!!!info "Explanation"
 
-Using the above code, we have imported `testac` account which we created earlier, and stored it in `acct` variable. Also, in the next line, we have edited `'from':` part to receive data from `acct` variable.
-
-:::
+    Using the above code, we have imported `testac` account which we created earlier, and stored it in `acct` variable. Also, in the next line, we have edited `'from':` part to receive data from `acct` variable.
 
 Finally, we will deploy our smart contract:
 
@@ -170,11 +166,11 @@ brownie run token.py --network matic_mumbai
 
 After running the above command, you must get the transaction hash, and Brownie will wait for the transaction to get confirmed. Once the transaction is confirmed, it will return the address at which our contract is deployed on the Polygon Mumbai testnet.
 
-![img](/img/quicknode/brownie-run.png)
+![img](../../../img/pos/brownie-run.png)
 
 You can check out the deployed contract by copy-pasting the contract address at [Polygonscan Mumbai](https://mumbai.polygonscan.com/).
 
-![img](/img/quicknode/polygonscan.png)
+![img](../../../img/pos/polygonscan.png)
 
 ## Testing the Contract
 

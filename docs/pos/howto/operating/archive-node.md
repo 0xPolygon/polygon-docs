@@ -1,14 +1,17 @@
-## Get access to an Archive Node with NodeReal
+## Get access to an archive node with NodeReal
 
 If you're new to Web3 development, [NodeReal](https://nodereal.io/) simplifies the process of setting up a full node on Polygon.
 
-:::tip Simplify Polygon node usage with NodeReal and its quality assurance capabilities
+!!! tip Simplify Polygon node usage with NodeReal and its quality assurance capabilities
 
-Many developers prefer to use a node provider when getting started on Polygon, or any chain for that matter, as it offers a quick and easy way to handle requests and responses. NodeReal offers a range of features for developers looking for a node provider on the Polygon network. These features include a Standard Interface that simplifies node usage, as well as reliability and scalability for optimal performance. Additionally, NodeReal offers Archive Data for secure data storage, and an API Marketplace that provides additional resources for developers looking to build on Polygon.
+    Many developers prefer to use a node provider when getting started on Polygon, or any chain for that matter, as it offers a quick and easy way to handle requests and responses.
+    
+    NodeReal offers a range of features for developers looking for a node provider on the Polygon network. These features include a Standard Interface that simplifies node usage, as well as reliability and scalability for optimal performance. 
+    
+    Additionally, NodeReal offers Archive Data for secure data storage, and an API Marketplace that provides additional resources for developers looking to build on Polygon.
 
-:::
 
-## Send Your First Blockchain API Request
+## Send your first blockchain API request
 
 If you haven't signed up for a MegaNode account yet, you can find a step-by-step guide to getting started [here](https://docs.nodereal.io/docs/getting-started). Once you have a MegaNode account and access to the NodeReal Dashboard, you're ready to proceed.
 
@@ -18,11 +21,9 @@ If you haven't signed up for a MegaNode account yet, you can find a step-by-step
 
 To start sending RPC requests on MegaNode, you'll need to create an API Key. This project-based unit is used to manage your API requests, and requires you to input a name for the key and leave any notes you prefer for future reference. Here's how to get started:
 
-:::tip One API key for all chains
-
-With only one API Key, you can request all the chains and networks we support on NodeReal.
-
-:::
+!!! tip One API key for all chains
+    
+    With only one API Key, you can request all the chains and networks we support on NodeReal.
 
 **Get started &rarr;** Input an API **Key name** and leave any **notes** you prefer:
 
@@ -32,27 +33,23 @@ After you have created an API Key, you can find a dashboard on the main screen.
 
 ![MegaNode User's Dashboard](https://files.readme.io/b715e5a-Screen_Shot_2023-01-10_at_19.31.18.png)
 
-:::info How many API Keys can I create?
+!!! question "How many API Keys can I create?"
 
-The number of available API Keys is subjected to the pricing plan.
+    The number of available API Keys is subjected to the pricing plan.
 
-:::
-
-### Find Your API Key
+### Find your API key
 
 After you have successfully created an API Key, you can find the API endpoints on the API Key detail page. Please note that this API key is used to identify a particular user and should **NOT** be shared with anyone.
 
 ![Created Your First API key](https://files.readme.io/ce6a39d-Screen_Shot_2023-01-10_at_19.34.38.png)
 
-## Make Your First RPC Request
+## Make your first RPC request
 
 After you find the API Key, you can now start to send RPC requests on MegaNode. Please note that all usage will be calculated on an account basis. You can find our API docs [here](https://docs.nodereal.io/reference). Furthermore, you can find more information about the Compute Unit (CU) usage [here](https://docs.nodereal.io/docs/compute-units-cus) and the account Compute Unit Per Second (CUPS) rate limits [here](https://docs.nodereal.io/docs/cups-rate-limit).
 
-:::info Any concern about your Privacy?
+!!! info "Any concern about your Privacy?"
 
-Check out NodeReal [<ins>Privacy Policy</ins>](https://nodereal.io/privacy-policy).
-
-:::
+    Check out NodeReal [<ins>Privacy Policy</ins>](https://nodereal.io/privacy-policy).
 
 We’ll be using [Web3.js](https://web3js.readthedocs.io/en/v1.8.2/) libraries to make our first RPC request.
 
@@ -69,7 +66,7 @@ yarn init # (or yarn init --yes)
 yarn add web3
 ```
 
-With NPM:
+With npm:
 
 ```bash
 mkdir your-project-name
@@ -132,7 +129,7 @@ yarn add web3
 node index.js
 ```
 
-### Response in Your Terminal
+### Response in Your terminal
 
 You should be able to see the latest block number and block details on your terminal.
 
@@ -141,7 +138,7 @@ Latest block number: 40302452
 Latest block details: {.............}
 ```
 
-### Self-Service Troubleshooting for MegaNode users
+### Self-service troubleshooting for MegaNode users
 
 Please refer to [MegaNode Errors](https://docs.nodereal.io/docs/support) for more information.
 
