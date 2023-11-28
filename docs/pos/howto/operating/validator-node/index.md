@@ -2,7 +2,7 @@
 
 Operating as a validator on the Polygon Network involves playing a pivotal role in validating transactions within the blockchain. This guide provides details on how to run a Validator Node (including Sentry and Validator components) on the Polygon Network, the responsibilities involved, and the technical and operational aspects to consider.
 
-## Eligibility and Responsibilities
+## Eligibility and responsibilities
 
 To qualify as a validator on the Polygon Network, participants must:
 
@@ -25,7 +25,7 @@ Key responsibilities include:
   - Offer feedback and suggestions to the Polygon team.
 - **Rewards**: Earn staking rewards and transaction fees for validating blocks.
 
-## Technical Node Operations
+## Technical node operations
 
 These operations are automatically executed by the nodes:
 
@@ -34,38 +34,38 @@ These operations are automatically executed by the nodes:
 - **Checkpoint Submission**: Proposers among validators create, validate, and submit checkpoints to the Ethereum mainnet.
 - **State Sync**: Contract state data is synchronized between Ethereum and Polygon, particularly through Bor.
 
-## Operational Guidelines
+## Operational guidelines
 
-### Maintaining High Uptime
+### Maintaining high uptime
 
 - Validators must sign checkpoint transactions approximately every 34 minutes.
 - Failure to sign these transactions affects node performance.
 - Node health maintenance and monitoring are crucial for uninterrupted operations.
 
-### Daily Checks and Monitoring
+### Daily checks and monitoring
 
 - Regularly check and prune Heimdall and Bor services and processes.
 - Utilize Grafana Dashboards or alternative monitoring tools.
 - Monitor the Ethereum endpoint used on nodes to stay within request limits.
 
-### ETH Balance Management
+### ETH balance management
 
 - Adequate ETH balance is required for checkpoint transaction fees.
 - Fluctuations in Ethereum network gas prices must be considered.
 
-## Earning Rewards
+## Earning rewards
 
 Validators stake MATIC tokens for network security and receive rewards:
 
 - **Staking Rewards**: Validators are compensated for their contributions to network security.
 - **Transaction Fees**: Validators earn a portion of the transaction fees from the blocks they produce.
 
-### Reward Distribution
+### Reward distribution
 
 - A portion of Polygon's total token supply is allocated for staking rewards.
 - Rewards are designed to gradually shift from staking to transaction fee-based as the network matures.
 
-### Incentives for Validators
+### Incentives for validators
 
 - Validators earn rewards from both staking and transaction fees.
 - The reward structure is designed to balance the payout between staking and fees over time.
@@ -77,21 +77,21 @@ Validators should:
 - Be open to delegations from the community.
 - Clearly communicate their commission rates.
 
-## Effective Communication
+## Effective communication
 
 - Report issues promptly on platforms like Discord, the Polygon Forum, or GitHub.
 - Provide constructive feedback and suggestions.
 
-## System Requirements for Nodes
+## System requirements
 
-### Minimum Requirements
+### Minimum requirements
 
 - **RAM**: 32 GB
 - **CPU**: 8-core
 - **Storage**: 2.5 TB SSD
 - **AWS Equivalent**: c5.2xlarge for Sentry, c5.4xlarge for Validator node (with unlimited credits).
 
-### Recommended Requirements
+### Recommended requirements
 
 - **RAM**: 64 GB
 - **CPU**: 16-core

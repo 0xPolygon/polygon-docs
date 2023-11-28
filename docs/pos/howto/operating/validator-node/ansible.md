@@ -1,6 +1,6 @@
 This guide provides a step-by-step approach to deploy a Polygon validator node through an Ansible playbook, ensuring an efficient and reliable setup.
 
-## System Requirements and Setup Options
+## Setup requirements and options
 
 Before beginning, confirm your system aligns with the [system requirements for validator nodes](/pos/howto/operating/validator-node/#system-requirements-for-nodes). If you prefer running the validator node from binaries instead of Ansible, refer to [the manual installation instructions](/pos/validator/index.md).
 
@@ -17,7 +17,7 @@ Before beginning, confirm your system aligns with the [system requirements for v
 - SSH public key of your local machine must be present on the remote machines for Ansible connectivity.
 - Access to Bloxroute as a relay network is available. For adding a gateway as a Trusted Peer, contact **@validator-support-team** on [Polygon Discord](https://discord.com/invite/0xPolygon).
 
-## Setting Up the Nodes
+## Setting up the nodes
 
 ### Preparing the Machines
 
@@ -62,7 +62,7 @@ Then, edit the `inventory.yml` file to add IP addresses of the sentry and valida
    }
    ```
 
-### Sentry Node Setup
+### Sentry node setup
 
 Execute a test run of the sentry node setup:
 
@@ -82,7 +82,7 @@ Run the sentry node setup with sudo privileges:
     
     To restart the setup due to any issues, use `ansible-playbook -l sentry playbooks/clean.yml`.
 
-### Validator Node Setup
+### Validator node setup
 
 After the sentry node setup:
 
@@ -110,30 +110,30 @@ A success message will indicate completion.
     
     Use `ansible-playbook -l validator playbooks/clean.yml` for a fresh start in case of any issues.
 
-### Configuring Sentry Node
+### Configuring sentry node
 
 Configure the Heimdall and Bor services on the sentry node:
 
 1. Edit Heimdall's `config.toml` and Bor's `config.toml` as per the provided guidelines. Key parameters include `moniker`, `seeds`, `pex`, and `private_peer_ids`.
 2. Set firewall rules to open ports `26656`, `30303`, and optionally `22` with restricted access.
 
-### Starting Sentry Node
+### Starting sentry node
 
 1. Start the Heimdall service and check its logs for successful execution.
 2. Once Heimdall is synced, start the Bor service and monitor its logs for successful operation.
 
-### Configuring Validator Node
+### Configuring validator node
 
 1. Configure Heimdall and Bor similar to the sentry setup, ensuring correct Ethereum RPC endpoint settings.
 2. Generate and place Heimdall's `priv_validator_key.json` and Bor's keystore file in their respective directories.
 3. Add `password.txt` file in the Bor directory and include it in Bor's `config.toml`.
 
-### Starting Validator Node
+### Starting validator node
 
 1. Start the Heimdall service on the validator node and wait for it to sync.
 2. Start the Bor service and monitor its operation through logs.
 
-## Health Check and Staking
+## Health check and staking
 
 - After setting up the nodes, request a health check by the community on [Polygon's Discord](https://discord.com/invite/0xPolygon).
 - Maintain sufficient ETH balance in the signer address for transaction fees.
