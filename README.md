@@ -51,6 +51,14 @@ Before running the site locally, you need to have the following installed:
 
 ### Running the website
 
+Before running the website, you'll need to first load the Python virtual environment in your current shell. To do this, type the following (depending on your shell):
+
+- **Bash**, **zsh** (most common): `virtualenv venv; source venv/bin/activate`
+- **Fish**: `virtualenv venv; source venv/bin/activate.fish`
+- **Nu**: `virtualenv venv; source venv/bin/activate.nu`
+
+You only need to do the above once per shell session. Then, pick one of the following:
+
 1. **MkDocs in strict mode**: Use `mkdocs serve --strict` for a production-like environment.
 2. **MkDocs in normal mode**: Use `mkdocs serve` for a less strict, more forgiving environment, suitable for debugging.
 
