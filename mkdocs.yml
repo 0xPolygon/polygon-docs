@@ -150,6 +150,14 @@ nav:
           - Binary state machine: zkEVM/zkprover/binary-sm.md
           - Memory state machine: zkEVM/zkprover/memory-sm.md
           - Memory-Align state machine: zkEVM/zkprover/mem-align-sm.md
+          - Hashing state machines:
+            - Introducing hashing state machines: zkEVM/zkprover/intro-hashing-sm.md
+            - Keccak framework: zkEVM/zkprover/keccak-framework.md
+            - Padding-kk state machine: zkEVM/zkprover/paddingkk-sm.md
+            - Padding-kk-bit state machine: zkEVM/zkprover/paddingkk-bit-sm.md
+            - Bits2Field state machine: zkEVM/zkprover/bits2field-sm.md
+            - Keccak-f state machine: zkEVM/zkprover/keccakf-sm.md
+            - Poseidon state machine: zkEVM/zkprover/poseidon-sm.md
       - Specifications:
         - EVM vs. zkEVM: zkEVM/specifications/evm-differences.md
       - Concepts:
@@ -352,6 +360,7 @@ plugins:
 
 validation:
   absolute_links: ignore
+  # ignore
 
 markdown_extensions:
   - pymdownx.arithmatex:

@@ -10,7 +10,7 @@ It describes what a commitment scheme is, the necessary properties such a scheme
 
 ## Commitment scheme protocol
 
-In the case of our mFibonacci state machine, the Prover needs to commit to the polynomials $P(X)$, $Q(X)$ $P(X\omega)$ and $Q(X\omega)$, and the Verifier will request the Prover to evaluate these polynomials at randomly selected points (i.e., field elements).
+In the case of our mFibonacci state machine, the Prover needs to commit to the polynomials $P(X)$, $Q(X)$ $P( X \omega)$ and $Q( X \omega)$, and the Verifier will request the Prover to evaluate these polynomials at randomly selected points (i.e., field elements).
 
 The general protocol, in an interactive setting, is as follows;
 
@@ -84,7 +84,7 @@ Note that the prover does not provide any values concerning the constant polynom
 
 Any PCS such as [KZG](https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf) or [FRI-based](https://link.springer.com/content/pdf/10.1007%2F3-540-46766-1_9.pdf) can be used to efficiently prove correctness of computations of our mFibonacci state machine.
 
-## Range of identities
+## Proper range for identities
 
 Let's look carefully at the constraints of the mFibonacci state machine;
 

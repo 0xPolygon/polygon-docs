@@ -19,7 +19,7 @@ See the table below, taken from the presentation [here](https://docs.google.com/
 
 ![Comparison of Proof Sizes, Proof and Verification Times](/img/zkvm/fib9-stark-prf-sizes-times.png)
 
-### The FRI-PCS Context
+### FRI-PCS context
 
 The performance of a STARK is ascribable to the context in which it is deployed, the **FRI** Polynomial Commitment Scheme (or FRI-PCS). The acronym [**FRI**](https://drops.dagstuhl.de/opus/volltexte/2018/9018/pdf/LIPIcs-ICALP-2018-14.pdf) is short for **F**ast **R**eed-Solomon **I**nteractive Oracle Proof of Proximity, also abbreviated as "**F**ast **R**S-**I**OPP".
 
@@ -71,7 +71,7 @@ $$
 
 by splitting it into two steps, $\text{line 8}$ and $\text{line 11}$.
 
-### Compiling PIL Into JSON
+### Compiling PIL into JSON
 
 Due to the modular design of the zkProver, it is possible to take a $\texttt{.pil}$ file describing computations of any state machine and compile it into a parsed version, a $\texttt{.json}$ file, that can be interpreted by the other software components.
 
