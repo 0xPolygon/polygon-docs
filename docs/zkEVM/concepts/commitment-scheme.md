@@ -1,4 +1,4 @@
-The framework for the proof/verification system of our mFibonacci SM is that of a **Polynomial Commitment Scheme**. The mechanism for proving correctness of the computations carried out by the mFibonacci SM (or, any state machine in the zkEVM setting), is best described in terms of an interactive zero-knowledge proof system. One therefore thinks of the proof/verification system as enabled by an interaction of two parties, traditionally called the **Verifier** and the **Prover**.
+The framework for the proo-verification system of our mFibonacci SM is that of a **Polynomial Commitment Scheme**. The mechanism for proving correctness of the computations carried out by the mFibonacci SM (or, any state machine in the zkEVM setting), is best described in terms of an interactive zero-knowledge proof system. One therefore thinks of the proof/verification system as enabled by an interaction of two parties, traditionally called the **Verifier** and the **Prover**.
 
 In practice though, the so-called **Fiat-Shamir transformation** is used to turn such interactive schemes into non-interactive ones.
 
@@ -35,18 +35,15 @@ For all practical purposes, such the constructed proof/verification system needs
 
 - A proof system has **completeness** if every valid proof is convincing and acceptable to a verifier.
 
-Proof systems based on testing polynomial identities take advantage of a basic property of polynomials expressed by the [**Schwartz-Zippel Lemma**](https://courses.cs.washington.edu/courses/cse521/17wi/521-lecture-7.pdf). According to the Schwartz-Zippel Lemma;
-$$
-\text{Let } {Q(X_1, . . . , X_n)} \text{ be a nonzero polynomial of } {n} \text{ variables with degree } {d}. \text{ Let } {S} \text{ be a finite but }\qquad\qquad\qquad\text{ }\text{ }\text{ }\text{ } \\ 
-\text{sufficiently large subset of the field } {\mathbb{F}}.
-\text{ If we assign } { X_1, . . . , X_n }
-\text{ values from } {S} \text{ independently and } \qquad\qquad\qquad\text{ }\\ 
-\text{ uniformly at random, then }\ 
-{Pr[Q(X_1, . . . , X_n) = 0] ≤ \dfrac{d}{|S|}}. \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\text{ }\text{ } \\
-\text{ }
-$$
+Proof systems based on testing polynomial identities take advantage of a basic property of polynomials expressed by the [**Schwartz-Zippel Lemma**](https://courses.cs.washington.edu/courses/cse521/17wi/521-lecture-7.pdf).
 
-**Here's what the Schwartz-Zippel Lemma means in our specific case**. In the proof/verification system of our mFibonacci state machine:
+According to the Schwartz-Zippel Lemma;
+
+>For any non-zero polynomial ${Q(X_1, . . . , X_n)}$ on ${n}$ variables with degree ${d}$, and ${S}$ a finite but sufficiently large subset of the field $\mathbb{F}$, then values ${ X_1, . . . , X_n }$ from ${S}$ are independently and uniformly assigned at random, then 
+${Pr[Q(X_1, . . . , X_n) = 0] ≤ \dfrac{d}{|S|}}$.
+
+
+**Here's what the Schwartz-Zippel Lemma means in the specific case of the mFibonacci state machine**:
 
 >​If the verifier selects the challenges $\{ \alpha_1, \alpha_2 . . . , \alpha_l \}$ randomly and uniformly, then the probability of the prover finding a false polynomial ${Q'}$ of degree $d$, such that ${Q'(\alpha_j) = 0 = Q(\alpha_j)}$ for all $j \in \{ 1, 2, \dots , l \}$ , is at most ${\dfrac{d}{|S|}}$, which is very small.
 
@@ -62,12 +59,18 @@ In a typical commitment scheme, the following  protocol is followed;
 
 2. The verifier selects a random point $\alpha$, sends it to the prover, with a request for relevant *openings*.
 3. The prover then provides the openings; $P(\alpha)$, $P(\omega \alpha)$, $Q(\alpha)$ and $Q(\omega \alpha)$.
-4. The verifier can check correctness of the openings, by using transition constraints,
+4. The verifier can check correctness of the openings, by using transition constraints, 
+    $$
+    \begin{aligned}
+    \big( 1 − R(X) \big) \cdot \big[ P(X\cdot \omega) − Q(X) \big] = \bigg\lvert_{\mathcal{H}}\ 0\qquad\quad\text{ }\text{ }
+    \end{aligned}
+    $$
 
-$$
-\big( 1 − R(X) \big) \cdot \big[ P(X\cdot \omega) − Q(X) \big] = \bigg\lvert_{\mathcal{H}}\ 0\qquad\quad\text{ }\text{ }\text{ }\text{ } \\
-\big(1 − R(X)\big) · [Q(X\cdot \omega) − (P(X) · Q(X))] = \bigg\lvert_{\mathcal{H}}\ 0\text{ }\text{ }\\
-$$
+    $$
+    \begin{aligned}
+    \big( 1 − R(X) \big) · [Q(X\cdot \omega) − (P(X) · Q(X))] = \bigg\lvert_{\mathcal{H}}\ 0\text{ }\text{ }
+    \end{aligned}
+    $$
 
 5. In order to enable the verifier to check the boundary constraint,
    $$
@@ -86,9 +89,11 @@ Any PCS such as [KZG](https://www.iacr.org/archive/asiacrypt2010/6477178/6477178
 Let's look carefully at the constraints of the mFibonacci state machine;
 
 $$
+\begin{aligned}
 \big( 1 − R(X) \big) \cdot \big[ P(X\cdot \omega) − Q(X) \big] = \bigg\lvert_{\mathcal{H}}\ 0\qquad\quad\text{ }\text{ }\text{ }\text{ } \\
 \big(1 − R(X)\big) · [Q(X\cdot \omega) − (P(X) · Q(X))] = \bigg\lvert_{\mathcal{H}}\ 0\text{ }\text{ }\\
 \big(P(\omega^{\mathtt{T}}) - \mathcal{K} \big)\cdot R(X) = \bigg\lvert_{\mathcal{H}}\ 0\quad\text{ }\text{ }\quad\qquad\quad\quad\qquad\text{ }\text{ }\text{ }
+\end{aligned}
 $$
 
 where  $\mathtt{T}+1$  is the number of rows in the execution trace and $\mathcal{K}$ is an evaluation of $P(X)$ at $\omega^{\mathtt{T}}$, corresponding to the value of the registry $\mathtt{A}$ in the $(\mathtt{T}+1)$-st state, when specific initial values $\mathtt{A}_0$ and $\mathtt{B}_0$ are used in the state machine.
@@ -96,9 +101,11 @@ where  $\mathtt{T}+1$  is the number of rows in the execution trace and $\mathca
 The problem with the transition constraints, as presented above, is that they hold true only for $X \in \mathcal{H}$, and not necessarily for $X \in \mathbb{F}_p$. Note that the left-hand sides of the polynomial identities are but polynomials, which can be labelled $p_1(X)$, $p_2(X)$ and $p_3(X)$. That is;
 
 $$
+\begin{aligned}
 p_1(X) =\big( 1 − R(X) \big) \cdot \big[ P(X\cdot \omega) − Q(X) \big] =  \bigg\lvert_{\mathcal{H}}\ 0\qquad\quad\text{ }\text{ }\text{ }\text{ } \\
 p_2(X) = \big(1 − R(X)\big) · [Q(X\cdot \omega) − (P(X) · Q(X))] = \bigg\lvert_{\mathcal{H}}\ 0\text{ }\text{ }\\
-p_3(X) = \big(P(\omega^{\mathtt{T}}) - \mathcal{K} \big)\cdot R(X)  = \bigg\lvert_{\mathcal{H}}\ 0\quad\text{ }\text{ }\text{}\quad\qquad\qquad\qquad\text{ }
+p_3(X) = \big(P(\omega^{\mathtt{T}}) - \mathcal{K} \big)\cdot R(X)  = \bigg\lvert_{\mathcal{H}}\ 0\quad\text{ }\text{ }\text{}\qquad\qquad\qquad\qquad
+\end{aligned}
 $$
 
 Define the so-called *vanishing polynomial* on $\mathcal{H}$, denoted by $\mathtt{Z}_{\mathcal{H}}(X)$, as the monomial of maximal degree such that $\mathtt{Z}_{\mathcal{H}}(X) = 0$ for all $X \in \mathcal{H}$. Therefore;
