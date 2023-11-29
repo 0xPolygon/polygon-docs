@@ -8,25 +8,25 @@ Checkpoint structure on Heimdall state looks like following:
 
 ```go
 type CheckpointBlockHeader struct {
-	// Proposer is selected based on stake
-	Proposer        types.HeimdallAddress `json:"proposer"`
+ // Proposer is selected based on stake
+ Proposer        types.HeimdallAddress `json:"proposer"`
 
-	// StartBlock: The block number on Bor from which this checkpoint starts
-	StartBlock      uint64                `json:"startBlock"`
+ // StartBlock: The block number on Bor from which this checkpoint starts
+ StartBlock      uint64                `json:"startBlock"`
 
-	// EndBlock: The block number on Bor from which this checkpoint ends
-	EndBlock        uint64                `json:"endBlock"`
+ // EndBlock: The block number on Bor from which this checkpoint ends
+ EndBlock        uint64                `json:"endBlock"`
 
-	// RootHash is the Merkle root of all the leaves containing the block
-	// headers starting from start to the end block
-	RootHash        types.HeimdallHash    `json:"rootHash"`
+ // RootHash is the Merkle root of all the leaves containing the block
+ // headers starting from start to the end block
+ RootHash        types.HeimdallHash    `json:"rootHash"`
 
-	// Account root hash for each validator
+ // Account root hash for each validator
   // Hash of data that needs to be passed from Heimdall to Ethereum chain like withdraw topup etc.
-	AccountRootHash types.HeimdallHash    `json:"accountRootHash"`
+ AccountRootHash types.HeimdallHash    `json:"accountRootHash"`
 
   // Timestamp when checkpoint was created on Heimdall
-	TimeStamp       uint64          `json:"timestamp"`
+ TimeStamp       uint64          `json:"timestamp"`
 }
 ```
 
@@ -61,10 +61,10 @@ Source: [https://github.com/maticnetwork/heimdall/blob/develop/checkpoint/types/
 ```go
 // Golang representation of block data used in checkpoint
 blockData := crypto.Keccak256(appendBytes32(
-	blockHeader.Number.Bytes(),
-	new(big.Int).SetUint64(blockHeader.Time).Bytes(),
-	blockHeader.TxHash.Bytes(),
-	blockHeader.ReceiptHash.Bytes(),
+ blockHeader.Number.Bytes(),
+ new(big.Int).SetUint64(blockHeader.Time).Bytes(),
+ blockHeader.TxHash.Bytes(),
+ blockHeader.ReceiptHash.Bytes(),
 ))
 
 // array of block hashes of Bor blocks
@@ -105,21 +105,21 @@ Golang code for the account hash can be found here: [https://github.com/maticnet
 ```go
 // DividendAccount contains Fee, Slashed amount
 type DividendAccount struct {
-	ID            DividendAccountID `json:"ID"`
-	FeeAmount     string            `json:"feeAmount"`     // string representation of big.Int
-	SlashedAmount string            `json:"slashedAmount"` // string representation of big.Int
+ ID            DividendAccountID `json:"ID"`
+ FeeAmount     string            `json:"feeAmount"`     // string representation of big.Int
+ SlashedAmount string            `json:"slashedAmount"` // string representation of big.Int
 }
 
 // calculate hash for particular account
 func (da DividendAccount) CalculateHash() ([]byte, error) {
-	fee, _ := big.NewInt(0).SetString(da.FeeAmount, 10)
-	slashAmount, _ := big.NewInt(0).SetString(da.SlashedAmount, 10)
-	divAccountHash := crypto.Keccak256(appendBytes32(
-		new(big.Int).SetUint64(uint64(da.ID)).Bytes(),
-		fee.Bytes(),
-		slashAmount.Bytes(),
-	))
+ fee, _ := big.NewInt(0).SetString(da.FeeAmount, 10)
+ slashAmount, _ := big.NewInt(0).SetString(da.SlashedAmount, 10)
+ divAccountHash := crypto.Keccak256(appendBytes32(
+  new(big.Int).SetUint64(uint64(da.ID)).Bytes(),
+  fee.Bytes(),
+  slashAmount.Bytes(),
+ ))
 
-	return divAccountHash, nil
+ return divAccountHash, nil
 }
 ```

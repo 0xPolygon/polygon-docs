@@ -21,11 +21,11 @@ Each checkpoint has validator as proposer. If checkpoint on Ethereum chain fails
 ```go
 // MsgCheckpoint represents checkpoint transaction
 type MsgCheckpoint struct {
-	Proposer        types.HeimdallAddress `json:"proposer"`
-	StartBlock      uint64                `json:"startBlock"`
-	EndBlock        uint64                `json:"endBlock"`
-	RootHash        types.HeimdallHash    `json:"rootHash"`
-	AccountRootHash types.HeimdallHash    `json:"accountRootHash"`
+ Proposer        types.HeimdallAddress `json:"proposer"`
+ StartBlock      uint64                `json:"startBlock"`
+ EndBlock        uint64                `json:"endBlock"`
+ RootHash        types.HeimdallHash    `json:"rootHash"`
+ AccountRootHash types.HeimdallHash    `json:"accountRootHash"`
 }
 ```
 
@@ -41,7 +41,7 @@ gasWantedPerCheckpoinTx sdk.Gas = 10000000
 
 // checkpoint gas limit
 if stdTx.Msg.Type() == "checkpoint" && stdTx.Msg.Route() == "checkpoint" {
-	gasForTx = gasWantedPerCheckpoinTx
+ gasForTx = gasWantedPerCheckpoinTx
 }
 ```
 
@@ -54,10 +54,10 @@ This transaction will store proposed checkpoint on `checkpointBuffer` state inst
 ```go
 // MsgCheckpointAck represents checkpoint ack transaction if checkpoint is successful
 type MsgCheckpointAck struct {
-	From        types.HeimdallAddress `json:"from"`
-	HeaderBlock uint64                `json:"headerBlock"`
-	TxHash      types.HeimdallHash    `json:"tx_hash"`
-	LogIndex    uint64                `json:"log_index"`
+ From        types.HeimdallAddress `json:"from"`
+ HeaderBlock uint64                `json:"headerBlock"`
+ TxHash      types.HeimdallHash    `json:"tx_hash"`
+ LogIndex    uint64                `json:"log_index"`
 }
 ```
 
@@ -86,7 +86,7 @@ On successful event verification, it updates the actual count of checkpoint, als
 ```go
 // MsgCheckpointNoAck represents checkpoint no-ack transaction
 type MsgCheckpointNoAck struct {
-	From types.HeimdallAddress `json:"from"`
+ From types.HeimdallAddress `json:"from"`
 }
 ```
 
@@ -99,7 +99,6 @@ The checkpoint module contains the following parameters:
 |Key                   |Type  |Default value     |
 |----------------------|------|------------------|
 |CheckpointBufferTime  |uint64|1000 * time.Second|
-
 
 ## CLI Commands
 
@@ -123,11 +122,11 @@ Following command sends checkpoint transaction on Heimdall:
 
 ```yaml
 heimdallcli tx checkpoint send-checkpoint \
-	--start-block=<start-block> \
-	--end-block=<end-block> \
-	--root-hash=<root-hash> \
-	--account-root-hash=<account-root-hash> \
-	--chain-id=<chain-id>
+ --start-block=<start-block> \
+ --end-block=<end-block> \
+ --root-hash=<root-hash> \
+ --account-root-hash=<account-root-hash> \
+ --chain-id=<chain-id>
 ```
 
 ### Send `ack`
@@ -136,9 +135,9 @@ Following command sends ack transaction on Heimdall if checkpoint is successful 
 
 ```yaml
 heimdallcli tx checkpoint send-ack \
-	--tx-hash=<checkpoint-tx-hash>
-	--log-index=<checkpoint-event-log-index>
-	--header=<checkpoint-index> \
+ --tx-hash=<checkpoint-tx-hash>
+ --log-index=<checkpoint-event-log-index>
+ --header=<checkpoint-index> \
   --chain-id=<chain-id>
 ```
 
@@ -173,9 +172,9 @@ All query APIs will provide result in following format:
 
 ```json
 {
-	"height": "1",
-	"result": {
-		...	  
-	}
+ "height": "1",
+ "result": {
+  ...   
+ }
 }
 ```

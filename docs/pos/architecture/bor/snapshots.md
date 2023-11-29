@@ -1,10 +1,8 @@
-When setting up a new sentry, validator, or full node server, it is recommended that you use snapshots for faster syncing without having to sync over the network. Using snapshots will save you several days for both Heimdall and Bor. **Note: We no longer support bor archive snapshots due to unsustainable data growth.** 
+When setting up a new sentry, validator, or full node server, it is recommended that you use snapshots for faster syncing without having to sync over the network. Using snapshots will save you several days for both Heimdall and Bor. **Note: We no longer support bor archive snapshots due to unsustainable data growth.**
 
-:::tip
+!!! tip
 
-For the latest snapshot, please visit [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
-
-:::
+    For the latest snapshot, please visit [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
 
 ## Client Snapshots
 
@@ -29,7 +27,7 @@ curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --
 - Consider using a Screen session to prevent accidental interruptions during the chaindata download and extraction process.
 - The raw bash script code is collapsed below for transparency:
 
-<details> 
+<details>
 <summary>View script here ↓</summary>
 
 ```bash
@@ -179,7 +177,7 @@ curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --
 aria2c -c -m 0 -x6 -s6 -i $client-$network-parts.txt --max-concurrent-downloads=1
 ```
 
-Once the extraction is complete, ensure that you update the datadir configuration of your client to point to the path where the extracted data is located. This ensures that the systemd services can correctly register the snapshot data when the client starts. 
+Once the extraction is complete, ensure that you update the datadir configuration of your client to point to the path where the extracted data is located. This ensures that the systemd services can correctly register the snapshot data when the client starts.
 If you wish to preserve the default client configuration settings, you can use symbolic links (symlinks).
 
 For example, let's say you have mounted your block device at `~/snapshots` and have downloaded and extracted the chaindata
@@ -212,7 +210,7 @@ sudo service bor start
 | approx. compressed total | 250 GB (bor) + 35 GB (heimdall) | 285 GB |
 | approx. data growth daily | 10 GB (bor) + .5 GB (heimdall) | 10.5 GB |
 | approx. total extracted size | 350 GB (bor) + 50 GB (heimdall) | 400 GB |
-| suggested disk size (2.5x buffer) | 400 GB * 2.5 (natural chain growth) | 1 TB | 
+| suggested disk size (2.5x buffer) | 400 GB * 2.5 (natural chain growth) | 1 TB |
 
 **Polygon Mainnet**
 
@@ -230,7 +228,7 @@ sudo service bor start
 | approx. compressed total | 210 GB (erigon) + 35 GB (heimdall) | 245 GB |
 | approx. data growth daily | 4.5 GB (erigon) + .5 GB (heimdall) | 5 GB |
 | approx. total extracted size | 875 GB (erigon) + 50 GB (heimdall) | 925 GB |
-| suggested disk size (2.5x buffer) | 925 GB * 2.5 (natural chain growth) | 2.5 TB | 
+| suggested disk size (2.5x buffer) | 925 GB * 2.5 (natural chain growth) | 2.5 TB |
 
 **NOTE**
 PoS Network is deprecating Archive Node snapshots we request users to move to the Erigon Client and make use of Erigon Snapshots.

@@ -19,10 +19,10 @@ Here is the structure for the top-up transaction message:
 
 ```go
 type MsgTopup struct {
-	FromAddress types.HeimdallAddress `json:"from_address"`
-	ID          types.ValidatorID     `json:"id"`
-	TxHash      types.HeimdallHash    `json:"tx_hash"`
-	LogIndex    uint64                `json:"log_index"`
+ FromAddress types.HeimdallAddress `json:"from_address"`
+ ID          types.ValidatorID     `json:"id"`
+ TxHash      types.HeimdallHash    `json:"tx_hash"`
+ LogIndex    uint64                `json:"log_index"`
 }
 ```
 
@@ -32,13 +32,13 @@ type MsgTopup struct {
 
 Handler processes the withdraw by deducting the balance from the given validator and prepares the state to send the next checkpoint. The next possible checkpoint will contain the withdraw related state for the specific validator.
 
-Handler gets validator information based on `ValidatorAddress` and processes the withdraw. 
+Handler gets validator information based on `ValidatorAddress` and processes the withdraw.
 
 ```go
 // MsgWithdrawFee - high-level transaction of the fee coin withdrawal module
 type MsgWithdrawFee struct {
-	ValidatorAddress types.HeimdallAddress `json:"from_address"`
-	Amount           types.Int             `json:"amount"`
+ ValidatorAddress types.HeimdallAddress `json:"from_address"`
+ Amount           types.Int             `json:"amount"`
 }
 ```
 
@@ -48,10 +48,10 @@ type MsgWithdrawFee struct {
 
 ```bash
 heimdallcli tx topup fee
-	--log-index <log-index> 
-	--tx-hash <transaction-hash> 
-	--validator-id <validator ID here>
-	--chain-id <heimdall-chain-id>
+ --log-index <log-index> 
+ --tx-hash <transaction-hash> 
+ --validator-id <validator ID here>
+ --chain-id <heimdall-chain-id>
 ```
 
 ### Withdraw fee

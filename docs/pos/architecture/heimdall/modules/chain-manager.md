@@ -12,30 +12,30 @@ Chainmanager structure on Heimdall looks like the following:
 
 ```go
 type ChainParams struct {
-	// BorChainID is valid bor chainId
-	BorChainID            string                  `json:"bor_chain_id" yaml:"bor_chain_id"`
+ // BorChainID is valid bor chainId
+ BorChainID            string                  `json:"bor_chain_id" yaml:"bor_chain_id"`
 
-	// MaticTokenAddress is valid matic token address
-	MaticTokenAddress     hmTypes.HeimdallAddress `json:"matic_token_address" yaml:"matic_token_address"`
+ // MaticTokenAddress is valid matic token address
+ MaticTokenAddress     hmTypes.HeimdallAddress `json:"matic_token_address" yaml:"matic_token_address"`
 
-	// StakingManagerAddress is valid contract address
-	StakingManagerAddress hmTypes.HeimdallAddress `json:"staking_manager_address" yaml:"staking_manager_address"`
+ // StakingManagerAddress is valid contract address
+ StakingManagerAddress hmTypes.HeimdallAddress `json:"staking_manager_address" yaml:"staking_manager_address"`
 
-	// RootChainAddress is valid contract address
-	RootChainAddress      hmTypes.HeimdallAddress `json:"root_chain_address" yaml:"root_chain_address"`
+ // RootChainAddress is valid contract address
+ RootChainAddress      hmTypes.HeimdallAddress `json:"root_chain_address" yaml:"root_chain_address"`
 
-	// StakingInfoAddress is valid contract address
-	StakingInfoAddress    hmTypes.HeimdallAddress `json:"staking_info_address" yaml:"staking_info_address"`
+ // StakingInfoAddress is valid contract address
+ StakingInfoAddress    hmTypes.HeimdallAddress `json:"staking_info_address" yaml:"staking_info_address"`
 
-	// StateSendedAddress is valid contract address
-	StateSenderAddress    hmTypes.HeimdallAddress `json:"state_sender_address" yaml:"state_sender_address"`
+ // StateSendedAddress is valid contract address
+ StateSenderAddress    hmTypes.HeimdallAddress `json:"state_sender_address" yaml:"state_sender_address"`
 
-	// Bor Chain Contracts
-	// StateReceiveAddress is valid contract address
-	StateReceiverAddress hmTypes.HeimdallAddress `json:"state_receiver_address" yaml:"state_receiver_address"`
+ // Bor Chain Contracts
+ // StateReceiveAddress is valid contract address
+ StateReceiverAddress hmTypes.HeimdallAddress `json:"state_receiver_address" yaml:"state_receiver_address"`
 
-	// ValidatorSetAddress is valid contract address
-	ValidatorSetAddress  hmTypes.HeimdallAddress `json:"validator_set_address" yaml:"validator_set_address"`
+ // ValidatorSetAddress is valid contract address
+ ValidatorSetAddress  hmTypes.HeimdallAddress `json:"validator_set_address" yaml:"validator_set_address"`
 }
 ```
 
@@ -74,9 +74,9 @@ All query APIs will provide response in the following format:
 
 ```json
 {
-	"height": "1",
-	"result": {
-		...	  
-	}
+ "height": "1",
+ "result": {
+  ...   
+ }
 }
 ```

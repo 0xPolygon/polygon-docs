@@ -11,63 +11,63 @@ keep updating this list regularly for more convenience.
 
 **For Linux packages**
 
-####A. Where to find heimdall genesis file
+#### A. Where to find heimdall genesis file
 
 `$CONFIGPATH/heimdall/config/genesis.json`
 
-####B. Where to find heimdall-config.toml
+#### B. Where to find heimdall-config.toml
 
 `/etc/heimdall/config/heimdall-config.toml`
 
-####C. Where to find config.toml
+#### C. Where to find config.toml
 
 `/etc/heimdall/config/config.toml`
 
-####D. Where to find heimdall-seeds.txt
+#### D. Where to find heimdall-seeds.txt
 
 `$CONFIGPATH/heimdall/heimdall-seeds.txt`
 
-####E. Start Heimdall
+#### E. Start Heimdall
 
 `$ sudo service heimdalld start`
 
-####F. Start Heimdall rest-server
+#### F. Start Heimdall rest-server
 
 `$ sudo service heimdalld-rest-server start`
 
-####G. Start Heimdall bridge-server
+#### G. Start Heimdall bridge-server
 
 `$ sudo service heimdalld-bridge start`
 
-####H. Heimdall logs
+#### H. Heimdall logs
 
 `/var/log/matic-logs/`
 
-####I. Where to find Bor genesis file
+#### I. Where to find Bor genesis file
 
 `$CONFIGPATH/bor/genesis.json`
 
-####J. Start Bor
+#### J. Start Bor
 
 `sudo service bor start`
 
-####K Check heimdall logs
+#### K Check heimdall logs
 
 `tail -f heimdalld.log`
 
-####L. Check Heimdall rest-server
+#### L. Check Heimdall rest-server
 
 `tail -f heimdalld-rest-server.log`
 
-####M. Check Heimdall bridge logs
+#### M. Check Heimdall bridge logs
 
 `tail -f heimdalld-bridge.log`
 
-####N. Check bor logs
+#### N. Check bor logs
 
 `tail -f bor.log`
 
-####O. Kill Bor process
+#### O. Kill Bor process
 
 **For linux**:
 
@@ -104,7 +104,6 @@ For Binaries:
 
     `/var/lib/bor/password.txt`
 
-
 ### 4. Error: Wrong Block.Header.AppHash. Expected xxxx
 
 This usually occurs due to an incorrect installation of heimdall. You can follow the steps below to rectify this:
@@ -113,7 +112,7 @@ run
 
     ```heimdalld unsafe-reset-all```
 
-and start Heimdall services again. You can refer to this guide - https://docs.polygon.technology/docs/maintain/validate/run-validator
+and start Heimdall services again. You can refer to this guide - <https://docs.polygon.technology/docs/maintain/validate/run-validator>
 
 ### 5. From where do I create the API key?
 
@@ -127,7 +126,6 @@ Mainnet is selected by default.
 panic: Unknown db_backend leveldb, expected either goleveldb or memdb or fsdb
 
 Change the config to `goleveldb` in `config.toml`.
-
 
 ### 7. How do I delete remnants of Heimdall and Bor?
 
@@ -150,7 +148,6 @@ And
 
 ```$ sudo rm /etc/heimdall```
 
-
 ### 8. How many validators can be active concurrently?
 
 There will be upto 100 active validators at a time. We will bring in more participants if the limit is reached mid-way through the event as well. Note that active validators is mostly those whose uptime is high. Participants with high downtime will be forced out.
@@ -167,7 +164,6 @@ For example,
 
     heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000000000000 --validator 0xf8d1127780b89f167cb4578935e89b8ea1de774f
 
-
 ### 10. I was selected to become a validator but my ETH address was incorrect. What do I do?
 
 If you have access to the ETH address that you submitted earlier then you can transfer the Test tokens from that account to the current account. And then you can initiate your process of setting up your nodes.
@@ -182,7 +178,6 @@ Check "which bridge" - if it's `/usr/sbin/bridge` you're not running the right "
 
 Try `~/go/bin/bridge` instead `(or $GOBIN/bridge)`
 
-
 ### 12. I'm getting dpkg error
 
 **Error**: "dpkg: error processing archive matic-heimdall_1.0.0_amd64.deb (--install): trying to overwrite '/heimdalld-rest-server.service', which is also in package matic-node 1.0.0"
@@ -191,11 +186,9 @@ This occurs mainly because of a previous installation of Polygon on your machine
 
 `sudo dpkg -r matic-node`
 
-
 ### 13. I'm not clear on which Private Key should I add when I generate validator key
 
 The Private key to be used is your Wallet's ETH address where your Polygon testnet Tokens are stored. You can complete the setup with one public-private key pair tied to the address submitted on the form.
-
 
 ### 14. Is there a way to know if Heimdall is synced?
 
@@ -205,11 +198,9 @@ You can run the following command to check it:
 
 Check the value of catching_up. If it is false then the node is all synced up.
 
-
 ### 15. What if someone become a Top 10 staker, how he will receive his MATIC reward at the end?
 
-Stage 1 rewards are not based on stake. Please refer to https://blog.matic.network/counter-stake-stage-1-stake-on-the-beach-full-details-matic-network/ for the reward details. Participants with high stake don't automatically qualify for a reward in this stage.
-
+Stage 1 rewards are not based on stake. Please refer to <https://blog.matic.network/counter-stake-stage-1-stake-on-the-beach-full-details-matic-network/> for the reward details. Participants with high stake don't automatically qualify for a reward in this stage.
 
 ### 16. What should be my heimdall version?
 
@@ -218,7 +209,6 @@ To check your Heimdall version you can simply run:
 ```heimdalld version```
 
 The correct version of Heimdall for stage 1 should be `heimdalld version is beta-1.1-rc1-213-g2bfd1ac`
-
 
 ### 17. What values should I add in the stake amount and fee amount?
 
@@ -230,11 +220,9 @@ For example,
 
     heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000000000000 --validator 0xf8d1127780b89f167cb4578935e89b8ea1de774f
 
-
 ### 18. What's the difference between `/var/lib/heimdall` and `/etc/heimdall?`
 
 `/var/lib/heimdall` is the heimdall dir when you use the binary installation method. `/etc/heimdall` is for the Linux package installation method.
-
 
 ### 19. When I make the stake transaction, I'm getting "Gas Exceeded" error
 
@@ -246,11 +234,9 @@ For example,
 
     heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000000000000 --validator 0xf8d1127780b89f167cb4578935e89b8ea1de774f
 
-
 ### 20. When will I get a chance to become a Validator?
 
 We are progressively adding validators throughout the course of Stage 1 event. We will be releasing a list of new external validators gradually. This list will be announced on the Discord channel.
-
 
 ### 21. Where can I find Heimdall account info location?
 
@@ -262,11 +248,9 @@ For Linux package:
 
     /etc/heimdall/config
 
-
 ### 22. Which file do I add the API key in?
 
 Once you have created the API key you need to add the API key in `heimdall-config.toml` file.
-
 
 ### 23. Which file do I add the persistent_peers?
 
@@ -274,14 +258,12 @@ You can add the persistent_peers in the following file:
 
     /var/lib/heimdall/config/config.toml
 
-
 ### 24. “Did you reset Tendermint without resetting your application's data?”
 
 In such a case you can reset heimdall config data and try running the installation again.
 
-    $ heimdalld unsafe-reset-all
-    $ rm -rf $HEIMDALLDIR/bridge
-
+    heimdalld unsafe-reset-all
+    rm -rf $HEIMDALLDIR/bridge
 
 ### 25. Error: Unable to unmarshall config Error 1 error(s) decoding
 
@@ -324,11 +306,3 @@ Delete Bor: `sudo rm -rf /var/lib/bor`
 ### 28. What to do when you get "Wrong Block.Header.AppHash." error
 
 This error usually occurs due to Infura requests getting exhausted. When you setup a node on Polygon, you add an Infura Key to the Config file (Heimdall). By default you are allowed 100k Requests per day, if this limit is crossed, then you would face such problems. To resolve this you can create a new API key and add it to the `config.toml` file.
-
-:::tip Stay in the know
-
-Keep up with the latest node and validator updates from the Polygon
-team and the community by subscribing to the
-[Polygon notification groups](https://polygon.technology/notifications/).
-
-:::

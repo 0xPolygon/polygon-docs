@@ -41,11 +41,11 @@ Here is `ValidatorJoin` message for Heimdall transaction:
 
 ```go
 type MsgValidatorJoin struct {
-	From         hmTypes.HeimdallAddress `json:"from"`
-	ID           hmTypes.ValidatorID     `json:"id"`
-	SignerPubKey hmTypes.PubKey          `json:"pub_key"`
-	TxHash       hmTypes.HeimdallHash    `json:"tx_hash"`
-	LogIndex     uint64                  `json:"log_index"`
+ From         hmTypes.HeimdallAddress `json:"from"`
+ ID           hmTypes.ValidatorID     `json:"id"`
+ SignerPubKey hmTypes.PubKey          `json:"pub_key"`
+ TxHash       hmTypes.HeimdallHash    `json:"tx_hash"`
+ LogIndex     uint64                  `json:"log_index"`
 }
 ```
 
@@ -61,8 +61,8 @@ type MsgValidatorJoin struct {
  * @param newAmount        New staked amount
  */
 event StakeUpdate(
-	uint256 indexed validatorId, 
-	uint256 indexed newAmount
+ uint256 indexed validatorId, 
+ uint256 indexed newAmount
 );
 ```
 
@@ -71,10 +71,10 @@ Here is `MsgStakeUpdate` message for Heimdall transaction:
 ```go
 // MsgStakeUpdate represents stake update
 type MsgStakeUpdate struct {
-	From     hmTypes.HeimdallAddress `json:"from"`
-	ID       hmTypes.ValidatorID     `json:"id"`
-	TxHash   hmTypes.HeimdallHash    `json:"tx_hash"`
-	LogIndex uint64                  `json:"log_index"`
+ From     hmTypes.HeimdallAddress `json:"from"`
+ ID       hmTypes.ValidatorID     `json:"id"`
+ TxHash   hmTypes.HeimdallHash    `json:"tx_hash"`
+ LogIndex uint64                  `json:"log_index"`
 }
 ```
 
@@ -103,10 +103,10 @@ Here is `MsgValidatorExit` message for Heimdall transaction:
 
 ```go
 type MsgValidatorExit struct {
-	From     hmTypes.HeimdallAddress `json:"from"`
-	ID       hmTypes.ValidatorID     `json:"id"`
-	TxHash   hmTypes.HeimdallHash    `json:"tx_hash"`
-	LogIndex uint64                  `json:"log_index"`
+ From     hmTypes.HeimdallAddress `json:"from"`
+ ID       hmTypes.ValidatorID     `json:"id"`
+ TxHash   hmTypes.HeimdallHash    `json:"tx_hash"`
+ LogIndex uint64                  `json:"log_index"`
 }
 ```
 
@@ -136,11 +136,11 @@ Here is `MsgSignerUpdate` message for Heimdall transaction:
 ```go
 // MsgSignerUpdate signer update struct
 type MsgSignerUpdate struct {
-	From            hmTypes.HeimdallAddress `json:"from"`
-	ID              hmTypes.ValidatorID     `json:"id"`
-	NewSignerPubKey hmTypes.PubKey          `json:"pubKey"`
-	TxHash          hmTypes.HeimdallHash    `json:"tx_hash"`
-	LogIndex        uint64                  `json:"log_index"`
+ From            hmTypes.HeimdallAddress `json:"from"`
+ ID              hmTypes.ValidatorID     `json:"id"`
+ NewSignerPubKey hmTypes.PubKey          `json:"pubKey"`
+ TxHash          hmTypes.HeimdallHash    `json:"tx_hash"`
+ LogIndex        uint64                  `json:"log_index"`
 }
 ```
 
@@ -152,8 +152,8 @@ type MsgSignerUpdate struct {
 
 ```bash
 heimdallcli query staking validator-info \
-	--validator=<signer-address> \
-	--chain-id <chain-id>
+ --validator=<signer-address> \
+ --chain-id <chain-id>
 ```
 
 This command should display the following output:
@@ -175,8 +175,8 @@ This command should display the following output:
 
 ```bash
 heimdallcli query staking validator-info \
-	--id=<validator-id> \
-	--chain-id=<chain-id>
+ --id=<validator-id> \
+ --chain-id=<chain-id>
 ```
 
 This command should display the following output:
@@ -200,10 +200,10 @@ This command sends validator join command through CLI:
 
 ```bash
 heimdallcli tx staking validator-join \
-	--signer-pubkey <signer-public-key> \
-	--tx-hash <tx-hash>   \
-	--log-index <log-index> \ 
-	--chain-id <chain-id>
+ --signer-pubkey <signer-public-key> \
+ --tx-hash <tx-hash>   \
+ --log-index <log-index> \ 
+ --chain-id <chain-id>
 ```
 
 `tx-hash` value must be the same as Ethereum TX hash which emitted `Staked` event and `log-index` must be the same at which index the event is emitted.
@@ -215,14 +215,13 @@ heimdallcli tx staking validator-join \
 |Get Heimdall validator set|GET   |/staking/validator-set|
 |Get validator details |GET   |/staking/validator/validator-id|
 
-
 All query APIs will result in following format:
 
 ```json
 {
-	"height": "1",
-	"result": {
-		...	  
-	}
+ "height": "1",
+ "result": {
+  ...   
+ }
 }
 ```
