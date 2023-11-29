@@ -1,9 +1,8 @@
-`State Sync` is the native mechanism to read Ethereum data from Matic EVM chain. 
+`State Sync` is the native mechanism to read Ethereum data from Matic EVM chain.
 
-Validators on the Heimdall layer pickup the [StateSynced](https://github.com/maticnetwork/contracts/blob/a4c26d59ca6e842af2b8d2265be1da15189e29a4/contracts/root/stateSyncer/StateSender.sol#L24) event and pass it on to the Bor layer. 
+Validators on the Heimdall layer pickup the [StateSynced](https://github.com/maticnetwork/contracts/blob/a4c26d59ca6e842af2b8d2265be1da15189e29a4/contracts/root/stateSyncer/StateSender.sol#L24) event and pass it on to the Bor layer.
 
 The receiver contract inherits [IStateReceiver](https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/IStateReceiver.sol), and custom logic sits inside [onStateReceive](https://github.com/maticnetwork/genesis-contracts/blob/05556cfd91a6879a8190a6828428f50e4912ee1a/contracts/IStateReceiver.sol#L5) function.
-
 
 This is the flow required from dapps / users to work with state-sync:
 
@@ -14,30 +13,29 @@ This is the flow required from dapps / users to work with state-sync:
 5. After every sprint on `bor`, the Bor node fetches the pending state-sync events from Heimdall via an API call.
 6. The receiver contract inherits `IStateReceiver` interface, and custom logic of decoding the data bytes and performing any action sits inside `onStateReceive` function: [https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/IStateReceiver.sol](https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/IStateReceiver.sol)
 
-
-# How does State Sync work?
+## How does State Sync work?
 
 State management sends the state from the Ethereum chain to the Bor chain. It is called **state-sync**.
 
-State transfer from Ethereum to Bor happens through system call. Suppose, a user deposits USDC to the deposit manager on Ethereum. Validators listen to those events, validate, and store them in Heimdall state. Bor gets the latest state-sync records and updates the Bor state (mints equal amount of USDC on Bor) using a system call. 
+State transfer from Ethereum to Bor happens through system call. Suppose, a user deposits USDC to the deposit manager on Ethereum. Validators listen to those events, validate, and store them in Heimdall state. Bor gets the latest state-sync records and updates the Bor state (mints equal amount of USDC on Bor) using a system call.
 
 ## State sender
 
 Source: [https://github.com/maticnetwork/contracts/blob/develop/contracts/root/stateSyncer/StateSender.sol](https://github.com/maticnetwork/contracts/blob/develop/contracts/root/stateSyncer/StateSender.sol)
 
-To sync state, the contract calls following method **state sender contract** on Ethereum chain. 
+To sync state, the contract calls following method **state sender contract** on Ethereum chain.
 
 ```jsx
 contract StateSender {
-	/**
-	 * Emits `stateSynced` events to start sync process on Ethereum chain
-	 * @param receiver    Target contract on Bor chain
-	 * @param data        Data to send
-	 */
-	function syncState (
-		address receiver, 
-		bytes calldata data
-	) external;
+ /**
+  * Emits `stateSynced` events to start sync process on Ethereum chain
+  * @param receiver    Target contract on Bor chain
+  * @param data        Data to send
+  */
+ function syncState (
+  address receiver, 
+  bytes calldata data
+ ) external;
 }
 ```
 
@@ -51,9 +49,9 @@ contract StateSender {
  * @param data                Data to send to Bor chain for Target contract address
  */
 event StateSynced (
-	uint256 indexed id, 
-	address indexed contractAddress, 
-	bytes data
+ uint256 indexed id, 
+ address indexed contractAddress, 
+ bytes data
 );
 ```
 

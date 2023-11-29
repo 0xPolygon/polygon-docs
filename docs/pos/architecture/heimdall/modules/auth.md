@@ -18,7 +18,7 @@ Besides accounts (specified in State), the types exposed by the auth module are 
 
 ### StdSignature
 
-A `StdSignature` is the types of a byte array. 
+A `StdSignature` is the types of a byte array.
 
 ```go
 // StdSignature represents a sig
@@ -31,9 +31,9 @@ A `StdTx` is a struct that implements the `sdk.Tx` interface, and is likely 
 
 ```go
 type StdTx struct {
-		Msg       sdk.Msg      `json:"msg" yaml:"msg"`
-		Signature StdSignature `json:"signature" yaml:"signature"`
-		Memo      string       `json:"memo" yaml:"memo"`
+  Msg       sdk.Msg      `json:"msg" yaml:"msg"`
+  Signature StdSignature `json:"signature" yaml:"signature"`
+  Memo      string       `json:"memo" yaml:"memo"`
 }
 ```
 
@@ -48,11 +48,11 @@ A `StdSignDoc` is a replay-prevention structure to be signed over, which ensur
 // and the Sequence numbers for each signature (prevent
 // inchain replay and enforce tx ordering per account).
 type StdSignDoc struct {
-	ChainID       string          `json:"chain_id" yaml:"chain_id"`
-	AccountNumber uint64          `json:"account_number" yaml:"account_number"`
-	Sequence      uint64          `json:"sequence" yaml:"sequence"`
-	Msg           json.RawMessage `json:"msg" yaml:"msg"`
-	Memo          string          `json:"memo" yaml:"memo"`
+ ChainID       string          `json:"chain_id" yaml:"chain_id"`
+ AccountNumber uint64          `json:"account_number" yaml:"account_number"`
+ Sequence      uint64          `json:"sequence" yaml:"sequence"`
+ Msg           json.RawMessage `json:"msg" yaml:"msg"`
+ Memo          string          `json:"memo" yaml:"memo"`
 }
 ```
 
@@ -64,11 +64,11 @@ Source: [https://github.com/maticnetwork/heimdall/blob/master/auth/types/account
 
 ```go
 type BaseAccount struct {
-		Address types.HeimdallAddress `json:"address" yaml:"address"`
-		Coins types.Coins `json:"coins" yaml:"coins"`
-		PubKey crypto.PubKey `json:"public_key" yaml:"public_key"`
-		AccountNumber uint64 `json:"account_number" yaml:"account_number"`
-		Sequence uint64 `json:"sequence" yaml:"sequence"`
+  Address types.HeimdallAddress `json:"address" yaml:"address"`
+  Coins types.Coins `json:"coins" yaml:"coins"`
+  PubKey crypto.PubKey `json:"public_key" yaml:"public_key"`
+  AccountNumber uint64 `json:"account_number" yaml:"account_number"`
+  Sequence uint64 `json:"sequence" yaml:"sequence"`
 }
 ```
 
@@ -86,7 +86,6 @@ The auth module contains the following parameters:
 |DefaultMaxTxGas       |uint64|1000000           |
 |DefaultTxFees         |string|"1000000000000000"|
 
-
 ## CLI Commands
 
 ### Show account
@@ -101,8 +100,8 @@ Expected Result:
 
 ```json
 {
-	"address": "0x68243159a498cf20d945cf3E4250918278BA538E",
-	"pub_key": "0x040a9f6879c7cdab7ecc67e157cda15e8b2ddbde107a04bc22d02f50032e393f6360a05e85c7c1ecd201ad30dfb886af12dd02b47e4463f6f0f6f94159dc9f10b8"
+ "address": "0x68243159a498cf20d945cf3E4250918278BA538E",
+ "pub_key": "0x040a9f6879c7cdab7ecc67e157cda15e8b2ddbde107a04bc22d02f50032e393f6360a05e85c7c1ecd201ad30dfb886af12dd02b47e4463f6f0f6f94159dc9f10b8"
 }
 ```
 

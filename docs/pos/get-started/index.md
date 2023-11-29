@@ -1,146 +1,33 @@
-# Getting Started
+Polygon PoS, originally launched as Matic Network, has undergone significant transformations to address the evolving needs of blockchain scalability and security. Initially designed to scale Ethereum through a hybrid Plasma sidechain, the network is currently in the process of transitioning into a ZK-based validium solution on Ethereum. This evolution aims to offer enhanced scalability and robust security features.
 
-This guide will introduce you to the Polygon PoS ecosystem. You'll find links to valuable resources and websites that will bring you up to speed on building, not only on Polygon but also on general blockchain application development.
+In this transformation, Polygon PoS incorporates the execution environment of Polygon zkEVM along with a dedicated data availability layer. The architecture is inherently modular and composable, enabling it to seamlessly integrate into a broader fleet of layer-two scaling solutions. Despite its place in this diverse ecosystem, Polygon PoS will retain its role as a crucial "mainnet," serving as the foundational infrastructure for a wide array of decentralized applications and services.
 
-## Building on Polygon
+## How PoS Works Today
 
-If you are an Ethereum developer, you are already a Polygon developer. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All the tools you are familiar with on the Ethereum blockchain are supported on Polygon by default, such as Truffle, Remix, and Web3js.
+### Transaction Lifecycle
 
-You can deploy decentralized applications to either Polygon Mumbai Testnet or the Mainnet. The Polygon Mumbai Testnet connects with the Ethereum Goërli Testnet, which acts as its ParentChain. You can find all the network-related details in the [network documentation](https://github.com/0xPolygon/wiki/blob/master/docs/operate/network.md).
+The following cyclical workflow outlines the operational mechanics of today's Polygon PoS architecture:
 
-### Wallets
+1. **User Initiates Transaction**: On the Polygon PoS chain, typically via a smart contract function call.
+2. **Validation by Public Plasma Checkpoint Nodes**: These nodes validate the transaction against the Polygon chain's current state.
+3. **Checkpoint Creation and Submission**: A checkpoint of the validated transactions is created and submitted to the core contracts on the Ethereum mainnet.
+4. **Verification by Core Contracts**: Utilizing Fraud Proofs, the core contracts verify the checkpoint's validity.
+5. **Transaction Execution**: Upon successful verification, the transaction is executed and state changes are committed to the Matic Sidechain.
+6. **Asset Transfer (Optional)**: If needed, assets can be transferred back to the Ethereum mainnet via the Plasma Exit Queue in the core contracts.
+7. **Cycle Reiteration**: The process can be initiated again by the user, returning to step 1.
 
-To interact with the Polygon Network, you need to have an Ethereum-based wallet because Polygon runs on Ethereum Virtual Machine (EVM). You can choose to set up a [Metamask](https://github.com/0xPolygon/wiki/blob/master/docs/tools/wallets/metamask/overview.md) or [Arkane](https://github.com/0xPolygon/wiki/blob/master/docs/develop/wallets/arkane/intro_arkane.md) Wallet. More on wallet-related information and why you need one can be found in our [wallet documentation](https://docs.polygon.technology/docs/develop/wallets/getting-started).
+### Core Contracts on Ethereum Mainnet
 
-### Smart Contracts
+Ethereum mainnet serves as the foundational layer upon which Polygon's PoS architecture is built. Within the Ethereum ecosystem, a set of core contracts play a pivotal role in connecting the Polygon PoS chain to Ethereum. These core contracts are responsible for a range of functionalities, from anchoring the Polygon chain to handling asset transfers.
 
-Polygon supports many services you can use to test, compile, debug, and deploy decentralized applications onto the Polygon Network. These include deployment using [thirdweb](https://github.com/0xPolygon/wiki/blob/master/docs/develop/thirdweb.md), [Alchemy](https://github.com/0xPolygon/wiki/blob/master/docs/develop/alchemy.md), [Chainstack](https://github.com/0xPolygon/wiki/blob/master/docs/develop/chainstack.md), [QuickNode](https://github.com/0xPolygon/wiki/blob/master/docs/develop/quicknode.md), [Remix](https://github.com/0xPolygon/wiki/blob/master/docs/develop/remix.md), [Truffle](https://github.com/0xPolygon/wiki/blob/master/docs/develop/truffle.md), [Hardhat](https://github.com/0xPolygon/wiki/blob/master/docs/develop/hardhat.md), and [Replit](https://github.com/0xPolygon/wiki/blob/master/docs/develop/replit.md).
+The core contracts on the Ethereum mainnet incorporate two key features for security and functionality: Fraud Proofs and the Plasma Exit Queue. Fraud Proofs act as a security layer, enabling the validation of transactions and state changes to ensure transparency and security across operations. On the other hand, the Plasma Exit Queue manages the safe and efficient transfer of assets back to the Ethereum mainnet, allowing users to seamlessly move assets between the Polygon PoS chain and Ethereum without compromising data integrity or security.
 
-### Connecting to Polygon
+### Public Plasma Checkpoint Nodes
 
-You can add Polygon to MetaMask or directly use Arkane, which allows you to connect to Polygon using [RPC](https://docs.polygon.technology/docs/tools/wallets/metamask/config-polygon-on-metamask/).
+Public Plasma Checkpoint Nodes serve as the validators in the Polygon PoS architecture. They perform two primary functions: transaction validation and checkpoint submission. When a transaction is initiated on the Polygon PoS chain, these nodes validate the transaction against the current state of the Polygon chain. After validating a set number of transactions, these nodes create a Merkle root of the transaction hashes, known as a "checkpoint," and submit it to the core contracts on the Ethereum mainnet.
 
-In order to connect with the Polygon network to read blockchain information, we recommend using the Alchemy SDK.
+The role of these nodes is crucial as they act as a bridge between the Ethereum mainnet and the Polygon PoS chain. They ensure data integrity and security by submitting cryptographic proofs to the core contracts on Ethereum.
 
-```js
-// Javascript
-// Setup: npm install alchemy-sdk
-const { Alchemy, Network } = require("alchemy-sdk");
+### Polygon Sidechain
 
-const settings = {
-  apiKey: "demo", // Can replace with your API Key from https://www.alchemy.com
-  network: Network.MATIC_MAINNET, // Can replace with MATIC_MUMBAI
-};
-
-const alchemy = new Alchemy(settings);
-
-async function main() {
-  const latestBlock = await alchemy.core.getBlockNumber();
-  console.log("The latest block number is", latestBlock);
-}
-
-main();
-```
-
-## Get Started with Web3Modal
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
-### Overview
-
-[<ins>Web3Modal</ins>](https://web3modal.com/) is a simple and intuitive SDK that provides a drop-in UI to enable users of any wallet to seamlessly log in to applications, offering a unified and smooth experience. It features a streamlined wallet selection interface with automatic detection of various wallet types, including mobile, extension, desktop, and web app wallets.
-
-### Code Sandbox for Polygon
-
-The Web3Modal team has prepared a [<ins>Polygon Code Sandbox</ins>](https://codesandbox.io/p/sandbox/web3modal-v3-polygon-7264l5?file=/src/main.tsx:9,19-9,50). It’s a straightforward way for developers to integrate and get hands-on experience with Polygon.
-
-### How to Integrate
-
-1. **Visit Web3Modal:** Go to [<ins>Web3Modal's official website</ins>](https://web3modal.com/) to explore its features and capabilities.
-2. **Explore the Code Sandbox:** Utilize the [<ins>Polygon Code Sandbox</ins>](https://codesandbox.io/p/sandbox/web3modal-v3-polygon-7264l5?file=/src/main.tsx:9,19-9,50) to demo and understand the integration process.
-3. **Follow the Documentation:** Refer to the provided documentation and instructions to integrate Web3Modal into your projects and leverage its features effectively.
-
-## Building a new dApp on Polygon?
-
-Decentralized applications (dApps) act as the bridge between users and their data privacy on the blockchain. The increasing number of dApps validates their usefulness within the blockchain ecosystem, solving challenges like executing transactions between two participants without the need for central authority via smart contracts.
-
-Suppose you have no prior experience building decentralized applications (dApps). In that case, the below-mentioned resources will give you a head start on the tools required to build, debug, and deploy dApps on the Polygon Network.
-
-- [Full Stack dApp: Tutorial Series](https://kauri.io/full-stack-dapp-tutorial-series/5b8e401ee727370001c942e3/c)
-- [Web3.js](https://www.dappuniversity.com/articles/web3-js-intro)
-- [Ethers.js](https://docs.ethers.io/v5/)
-- [thirdweb](https://portal.thirdweb.com)
-- [Remix](https://docs.polygon.technology/docs/develop/remix/)
-- [Truffle](https://docs.polygon.technology/docs/develop/truffle)
-- [Metamask](https://docs.polygon.technology/docs/tools/wallets/metamask/overview)
-- [Arkane](https://docs.polygon.technology/docs/develop/wallets/arkane/intro)
-- [Develop a dApp using Fauna, Polygon and React](https://docs.polygon.technology/docs/develop/dapp-fauna-polygon-react)
-
-## Already have a dApp?
-
-If you already have a decentralized application (dApp) and are looking for a platform to help you scale efficiently, then you are at the right place because Polygon allows you to:
-
-1. **Easily migrate from Ethereum Virtual Machine (EVM) based chain**: Polygon prides itself in being the ultimate Layer-2 scaling solution for Ethereum. You don't have to worry about the underlying architecture while moving or deploying your dApps to the Polygon Network as long as it is EVM-compatible.
-2. **Use Polygon as a faster transaction layer**: Deploying your dApp to the Polygon Mainnet allows you to leverage Polygon as a faster transaction layer for your dApp. Additionally, you can get your tokens mapped by us. You can join our [technical discussions group](http://bit.ly/matic-technical-group) on Telegram to learn more.
-
-## Side Note
-
-If this is overwhelming, that’s alright! You can jump right into the action and start hacking. Here are some notes before you start diving into resources, repositories, and docs:
-
-1. **Beware the cost of being on the bleeding edge**: Like typical niche programming, dApps and blockchain development moves very quickly. While researching, you may find complex code repositories, 404s on a documentation site, or even no documentation. Use that opportunity to reach out to us via any social media channel.
-2. **The learning curve may be daunting, but the barrier to entry is low**: The community is very open and welcoming! Projects welcome pull requests from outsiders and resolve any blockers actively. We’re working on creating a better world and contribution in any form is appreciated. We’ll be grateful to onboard you into this amazing Web3 ecosystem.
-
-
-## Overview
-
-Polygon consists of the three following layers:
-
-* Ethereum layer — a set of contracts on the Ethereum mainnet.
-* Heimdall layer — a set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
-* Bor layer — a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
-
-To be a validator on the Polygon Network, you must run:
-
-* Sentry node — a separate machine running a Heimdall node and a Bor node. A sentry node is open to all nodes on the Polygon Network.
-* Validator node — a separate machine running a Heimdall node and a Bor node. A validator node is only open to its sentry node and closed to the rest of the network.
-* Stake the MATIC tokens in the staking contracts deployed on the Ethereum mainnet.
-
-## Components
-
-### Heimdall
-
-Heimdall does the following:
-
-* Monitors the staking contracts on the Ethereum mainnet.
-* Verifies all state transitions on the Bor chain.
-* Commits the Bor chain state checkpoints to the Ethereum mainnet.
-
-Heimdall is based on Tendermint.
-
-:::info See Also
-
-* GitHub repository: [Heimdall](https://github.com/maticnetwork/heimdall)
-* GitHub repository: [Staking contracts](https://github.com/maticnetwork/contracts/tree/master/contracts/staking)
-* Blog post: [Heimdall and Bor](https://blog.polygon.technology/heimdall-and-bor/)
-
-:::
-
-### Bor
-
-Bor does the following:
-
-* Produces blocks on the Polygon Network.
-
-Bor is the Block producer node and layer for the Polygon Network. It is based on Go Ethereum. Blocks produced on Bor are validated by Heimdall nodes.
-
-!!! info "Community resources"
-
-* GitHub repository: [Bor](https://github.com/maticnetwork/bor)
-* Blog post: [Heimdall and Bor](https://blog.polygon.technology/heimdall-and-bor/)
-* [Discord](https://discord.com/invite/0xPolygon)
-* [Forum](https://forum.polygon.technology/)
-
+The Polygon Sidechain is where the actual transaction processing takes place. Unlike the Ethereum mainnet, which can get congested and has higher transaction costs, the Sidechain offers a more scalable and cost-effective solution. The blocks in the Sidechain are validated by the Public Plasma Checkpoint Nodes and are organized in a manner that allows for high throughput and low latency.

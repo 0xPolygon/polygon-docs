@@ -4,7 +4,7 @@ Ante handler checks and validates the transaction. After the verification, it ch
 
 ## Gas Limit
 
-Each block and transaction have a limit for gas usage. A block can contain multiple transactions, but gas used by all transactions in a block must be less than block gas limit to avoid larger blocks. 
+Each block and transaction have a limit for gas usage. A block can contain multiple transactions, but gas used by all transactions in a block must be less than block gas limit to avoid larger blocks.
 
 ```go
 block.GasLimit >= sum(tx1.GasUsed + tx2.GasUsed + ..... + txN.GasUsed)
@@ -22,11 +22,11 @@ maxBytesPerBlock int64 = 22020096 // 21 MB
 
 // pass consensus params
 ConsensusParams: &abci.ConsensusParams{
-	Block: &abci.BlockParams{
-		MaxBytes: maxBytesPerBlock,
-		MaxGas:   maxGasPerBlock,
-	},
-	...
+ Block: &abci.BlockParams{
+  MaxBytes: maxBytesPerBlock,
+  MaxGas:   maxGasPerBlock,
+ },
+ ...
 },
 ```
 
@@ -44,7 +44,7 @@ gasWantedPerCheckpoinTx sdk.Gas = 10000000 // 10 Million
 
 // checkpoint gas limit
 if stdTx.Msg.Type() == "checkpoint" && stdTx.Msg.Route() == "checkpoint" {
-	gasForTx = gasWantedPerCheckpoinTx
+ gasForTx = gasWantedPerCheckpoinTx
 }
 ```
 

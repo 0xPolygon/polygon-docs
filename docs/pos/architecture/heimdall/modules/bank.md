@@ -11,9 +11,9 @@ The `bank` module handles account balance transfers for Heimdall. This module co
 ```go
 // MsgSend - high-level transaction of the coin module
 type MsgSend struct {
-	FromAddress types.HeimdallAddress `json:"from_address"`
-	ToAddress   types.HeimdallAddress `json:"to_address"`
-	Amount      types.Coins           `json:"amount"`
+ FromAddress types.HeimdallAddress `json:"from_address"`
+ ToAddress   types.HeimdallAddress `json:"to_address"`
+ Amount      types.Coins           `json:"amount"`
 }
 ```
 
@@ -24,8 +24,8 @@ type MsgSend struct {
 ```go
 // MsgMultiSend - high-level transaction of the coin module
 type MsgMultiSend struct {
-	Inputs  []Input  `json:"inputs"`
-	Outputs []Output `json:"outputs"`
+ Inputs  []Input  `json:"inputs"`
+ Outputs []Output `json:"outputs"`
 }
 ```
 
