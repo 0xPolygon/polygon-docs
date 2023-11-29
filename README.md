@@ -68,7 +68,7 @@ docker compose up
 This repository uses GitHub Actions to automate some deployments from certain branches, which is useful for testing:
 
 - **`main`**: Staging branch. Changes are deployed per-commit to https://docs-staging.polygon.technology.
-- **`dev`**: Experimental branch. Updates with main every 24 hours. Changes are deployed per-commit to https://docs-dev.polygon.technology.
+- **`dev`**: Experimental branch. Updates with `main` every 24 hours. Changes are deployed per-commit to https://docs-dev.polygon.technology.
 
 Whenever we are happy with `main`, a trigger can be manually done through GitHub Actions which deploys staging to production at https://docs.polygon.technology.
 
