@@ -13,25 +13,25 @@ In addition, we include top-level sections for Tools and Tutorials to support de
 
 ### Getting started
 
-1. **Fork and Branch**: Fork the `main` branch into your own GitHub account. Create a feature branch for your changes.
-2. **Make Changes**: Implement your changes or additions in your feature branch.
-3. **Contribution Quality**: Ensure that your contributions are:
+1. **Fork and branch**: Fork the `main` branch into your own GitHub account. Create a feature branch for your changes.
+2. **Make changes**: Implement your changes or additions in your feature branch.
+3. **Contribution quality**: Ensure that your contributions are:
    - **Atomic**: Small, self-contained, logical updates are preferred.
-   - **Well Documented**: Use clear commit messages. Explain your changes in the pull request description.
+   - **Well documented**: Use clear commit messages. Explain your changes in the pull request description.
    - **Tested**: Verify your changes do not break existing functionality.
-   - **Styled Correctly**: Follow the [Microsoft Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/).
+   - **Styled correctly**: Follow the [Microsoft Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/).
 
 ### Creating a pull request
 
-1. **Pull Request**: Once your changes are complete, create a pull request against the main branch of Polygon Technical Docs.
-2. **Review Process**: Your pull request will be reviewed by the maintainers. They may request changes or clarifications.
+1. **Pull request**: Once your changes are complete, create a pull request against the main branch of Polygon Technical Docs.
+2. **Review process**: Your pull request will be reviewed by the maintainers. They may request changes or clarifications.
 3. **Responsibility**: Contributors are expected to maintain their contributions over time and update them as necessary to ensure continued accuracy and relevance.
 
 ### Best practices
 
-- **Stay Informed**: Keep up-to-date with the latest developments in Polygon technologies.
-- **Engage with the Community**: Participate in discussions and provide feedback on other contributions.
-- **Stay Consistent**: Ensure your contributions are coherent with the rest of the documentation and do not overlap or contradict existing content.
+- **Stay informed**: Keep up-to-date with the latest developments in Polygon technologies.
+- **Engage with the community**: Participate in discussions and provide feedback on other contributions.
+- **Stay consistent**: Ensure your contributions are coherent with the rest of the documentation and do not overlap or contradict existing content.
 
 
 ## Running locally
@@ -45,14 +45,14 @@ Before running the site locally, you need to have the following installed:
 
 ### Setup
 
-1. **Clone Repository**: Clone the Polygon Technical Docs repository to your local machine.
-2. **Create a Virtual Environment**: Run `virtualenv venv; source venv/bin/activate` in the root directory.
-3. **Install Dependencies**: Install required Python packages with `pip3 install -r requirements.txt`.
+1. **Clone repository**: Clone the Polygon Technical Docs repository to your local machine.
+2. **Create a virtual environment**: Run `virtualenv venv; source venv/bin/activate` in the root directory.
+3. **Install dependencies**: Install required Python packages with `pip3 install -r requirements.txt`.
 
 ### Running the website
 
-1. **MkDocs in Strict Mode**: Use `mkdocs serve --strict` for a production-like environment.
-2. **MkDocs in Normal Mode**: Use `mkdocs serve` for a less strict, more forgiving environment, suitable for debugging.
+1. **MkDocs in strict mode**: Use `mkdocs serve --strict` for a production-like environment.
+2. **MkDocs in normal mode**: Use `mkdocs serve` for a less strict, more forgiving environment, suitable for debugging.
 
 ### Docker alternative
 
