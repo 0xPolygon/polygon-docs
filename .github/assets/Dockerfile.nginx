@@ -5,7 +5,7 @@ FROM nginx:alpine
 COPY site /usr/share/nginx/html
 
 #Replace default nginx.conf with custom configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY .github/assets/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose the desired port (default is 80 for NGINX)
 EXPOSE 80
