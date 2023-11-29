@@ -1,6 +1,6 @@
-# Polygon Technical Docs
+# Polygon Knowledge Layer
 
-Welcome to the Polygon Technical Docs! This documentation is built using [the Material theme for MkDocs](https://squidfunk.github.io/mkdocs-material/). Our goal is to establish a high-quality, curated, and comprehensive "source of truth" for technical knowledge surrounding Polygon's main technology. This includes detailed sections on:
+Welcome to the Polygon Knowledge Layer! This documentation is built using [the Material theme for MkDocs](https://squidfunk.github.io/mkdocs-material/). Our goal is to establish a high-quality, curated, and comprehensive "source of truth" for technical knowledge surrounding Polygon's main technology. This includes detailed sections on:
 
 - Polygon CDK
 - Polygon zkEVM
@@ -23,7 +23,7 @@ In addition, we include top-level sections for Tools and Tutorials to support de
 
 ### Creating a pull request
 
-1. **Pull request**: Once your changes are complete, create a pull request against the main branch of Polygon Technical Docs.
+1. **Pull request**: Once your changes are complete, create a pull request against the main branch of Polygon Knowledge Layer.
 2. **Review process**: Your pull request will be reviewed by the maintainers. They may request changes or clarifications.
 3. **Responsibility**: Contributors are expected to maintain their contributions over time and update them as necessary to ensure continued accuracy and relevance.
 
@@ -45,7 +45,7 @@ Before running the site locally, you need to have the following installed:
 
 ### Setup
 
-1. **Clone repository**: Clone the Polygon Technical Docs repository to your local machine.
+1. **Clone repository**: Clone the Polygon Knowledge Layer repository to your local machine.
 2. **Create a virtual environment**: Run `virtualenv venv; source venv/bin/activate` in the root directory.
 3. **Install dependencies**: Install required Python packages with `pip3 install -r requirements.txt`.
 

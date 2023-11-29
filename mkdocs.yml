@@ -1,7 +1,7 @@
-site_name: Polygon docs
+site_name: Polygon Knowledge Layer
 site_author: Polygon Labs
 copyright: Copyright &copy; 2023 Polygon Labs
-repo_name: Polygon docs
+repo_name: Polygon Knowledge Layer
 repo_url: https://github.com/0xPolygon/polygon-docs
 edit_uri: edit/main/docs/
 #remote_branch: gh-pages
