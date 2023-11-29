@@ -49,12 +49,12 @@ Before running the site locally, you need to have the following installed:
 2. **Create a Virtual Environment**: Run `virtualenv venv; source venv/bin/activate` in the root directory.
 3. **Install Dependencies**: Install required Python packages with `pip3 install -r requirements.txt`.
 
-### Running the Website
+### Running the website
 
 1. **MkDocs in Strict Mode**: Use `mkdocs serve --strict` for a production-like environment.
 2. **MkDocs in Normal Mode**: Use `mkdocs serve` for a less strict, more forgiving environment, suitable for debugging.
 
-### Docker Alternative
+### Docker alternative
 
 If you prefer Docker, you can build and run the site using the following commands:
 
