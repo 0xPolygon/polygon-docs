@@ -1,31 +1,15 @@
----
-id: getting-started
-title: Wallets
-sidebar_label: Getting Started
-description: Get a list of supported wallets and manage key strategy.
-keywords:
-  - wiki
-  - polygon
-  - wallet
-  - integrate
-  - guide
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
 This document serves as a wallet index for wallets compatible with Polygon.
 > Please note that this is not an exhaustive index.
 
 Wallets that support Polygon allow for key management, access to accounts controlled by
 private keys, and interfaces that allow users to perform chain actions and sign transactions.
 
-:::info Centralized Exchanges (CEXs)
+!!! info "Centralized Exchanges (CEXs)"
 
-For a list of CEXs that support Polygon, visit a third-party tracking website such as
-[<ins>**CoinMarketCap**</ins>](https://coinmarketcap.com/currencies/polygon/markets).
+      For a list of CEXs that support Polygon, visit a third-party tracking website such as [<ins>**CoinMarketCap**</ins>](https://coinmarketcap.com/currencies/polygon/markets).
 
-:::
 
-## Native Wallets
+## Native wallets
 
 The [Polygon Wallet Suite](https://wallet.polygon.technology) is a comprehensive solution for account management on Polygon.
 
@@ -43,34 +27,28 @@ It includes:
 - A zkEVM explorer for block explorer and analytics
 - Access to ecosystem dApps
 
-[Polygon Support](https://support.polygon.technology/support/home) can also provide assistance to users and address issues related to the wallet suite.
+[Polygon support](https://support.polygon.technology/support/home) can also provide assistance to users and address issues related to the wallet suite.
 
 | Interfaces                                                               | Custody       | Account Type | Multi-Sig | dApp Browser | Platform |
 |----------------------------------------------------------------------------|---------------|--------------|-----------|--------------|----------|
 | [Polygon Wallet Suite](https://wallet.polygon.technology/login/)           | non-custodial | EOA          | yes (Safe Bridge) | yes          | browser  |
 | [Hermez Wallet](https://wallet.hermez.io/login)                          | non-custodial | EOA          | no        | no           | browser  |
 
-:::tip Stay in the know
+!!! tip 
 
-Keep up with the latest Wallet Suite updates from the Polygon team and community by subscribing to our [<ins>Notifications</ins>](https://polygon.technology/notifications/).
+      Keep up with the latest Wallet Suite updates from the Polygon team and community by subscribing to our [<ins>notifications</ins>](https://polygon.technology/notifications/).
 
-:::
+## Partner wallets
 
-## Partner Wallets
+!!! caution "Third-party wallets"
 
-:::caution Third-party wallets
+      These third-party wallets have integrated Polygon and support a variety of features.
+      **You should do your own due diligence before using them**. The official Polygon
+      Support cannot provide assistance for issues with these wallets or other non-native wallets.
 
-These third-party wallets have integrated Polygon and support a variety of features.
-**You should do your own due diligence before using them**. The official Polygon
-Support cannot provide assistance for issues with these wallets or other non-native wallets.
+!!! caution "Content disclaimer"
 
-:::
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
+      Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 The following wallets are solutions that Polygon Technology has partnered with:
 
@@ -117,22 +95,19 @@ The following wallets are solutions that Polygon Technology has partnered with:
 | [Zerion](https://zerion.io/) 	| non-custodial 	| EOA 	| no 	| yes 	| yes 	|yes|  	| mobile, browser 	|
 | [Particle Network](https://particle.network) 	| non-custodial  | hybrid 	| no 	| yes 	| yes 	| yes 	| yes 	| mobile, browser, api/sdk 	|
 
-:::info Non-native wallet support
+!!! info "Non-native wallet support"
 
-Wallets denoted with * in the table above are not natively supported with the wallet software
-and require manual steps to add the Polygon network.
+      Wallets denoted with * in the table above are not natively supported with the wallet software and require manual steps to add the Polygon network.
 
-:::
-
-## Key Management Strategy
+## Key management strategy
 
 The following basic steps allow for the integration of a client-side application with Polygon:
 
 1. **Set up Web3**: [web3.js](https://web3js.readthedocs.io/) is a javascript library that
    allows a client-side application to talk to the blockchain. We configure web3.js to communicate
    via a developer-based wallet like MetaMask. Use the [web3.js docs](https://web3js.readthedocs.io/en/v1.2.2/getting-started.html#adding-web3-js) to learn about adding `web3.js` to your project.
-2. **Set up an Account**: You will be able to send transactions (specifically those that alter the
+2. **Set up an account**: You will be able to send transactions (specifically those that alter the
    state of the blockchain).
-3. **Instantiate Contracts**: Once a web3 object is in place, we next instantiate our deployed contract,
+3. **Instantiate contracts**: Once a web3 object is in place, we next instantiate our deployed contract,
    with which we interact.
 4. **Call functions**: Fetch data via functions in the contract through our contract object.

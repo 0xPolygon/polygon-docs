@@ -65,7 +65,6 @@ nav:
       #- Architecture:
       - Specification:
         - Validium vs rollup: cdk/specification/validium-vs-rollup.md
-        - Performance benchmarks: cdk/specification/performance-benchmarks.md
       - Concepts:
         - Data availability: cdk/concepts/dac.md
      # - API:
@@ -360,35 +359,37 @@ nav:
           - Tellor: tools/oracles/tellor.md
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
-          - Getting started:  wallets/getting-started.md
-          - connext:  wallets/connext.md
-          - fortmatic:  wallets/fortmatic.md
-          - particle-network:  wallets/particle-network.md
-          - plaid-wallet-onboard:  wallets/plaid-wallet-onboard.md
-          - portis:  wallets/portis.md
-          - slashauth:  wallets/slashauth.md
-          - torus:  wallets/torus.md
-          - walletconnect:  wallets/walletconnect.md
-          - Metamask:
-              - config-polygon-on-metamask:  wallets/metamask/config-polygon-on-metamask.md
-              - config-polygon-on-wallet-link:  wallets/metamask/config-polygon-on-wallet-link.md
-              - custom-tokens:  wallets/metamask/custom-tokens.md
-              - multiple-accounts:  wallets/metamask/multiple-accounts.md
-              - overview:  wallets/metamask/overview.md
-              - tutorial-metamask:  wallets/metamask/tutorial-metamask.md
-          - Venly:
-              - create_wallet:  wallets/venly/create_wallet.md
-              - custom_tokens:  wallets/venly/custom_tokens.md
-              - intro_arkane:  wallets/venly/intro_arkane.md
-              - network:  wallets/venly/network.md
-      - SDKs:
+          - Getting started:  tools/wallets/getting-started.md
+          - Polygon wallet:
+              - Web wallet v3 guide: tools/wallets/polygon-web-wallet/web-wallet-v3-guide.md
+              - Add a custom token: tools/wallets/polygon-web-wallet/adding-a-custom-token.md
+          - Third-party apps:
+              - Metamask:
+                  - Overview: tools/wallets/metamask/index.md
+                  - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
+                  - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
+                  - Configure custom tokens:  tools/wallets/metamask/custom-tokens.md
+                  - Create and import accounts:  tools/wallets/metamask/multiple-accounts.md
+              - Venly:
+                  - Intro:  tools/wallets/venly/index.md
+                  - Create wallet:  tools/wallets/venly/create-wallet.md
+                  - Add network:  tools/wallets/venly/add-network.md
+                  - Add custom token:  tools/wallets/venly/custom-tokens.md
+              - Wallet link: tools/wallets/wallet-link.md
+              - Fortmatic: tools/wallets/fortmatic.md
+              - Portis:  tools/wallets/portis.md
+              - Torus:  tools/wallets/torus.md          
+              - WalletConnect:  tools/wallets/walletconnect.md
+              - SlashAuth:  tools/wallets/slashauth.md
+              - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
+              - Particle network:  tools/wallets/particle-network.md
+      - APIs/SDKs:
           - Using Web3Modal SDK: tools/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
-          - zkEVM test: https://explorer-ui.mainnet.zkevm-test.net/
-          - OK link: https://www.oklink.com/polygon
-      - RPC providers: tools/rpc-providers.md
+          - zkEVM testnet: https://explorer-ui.mainnet.zkevm-test.net/
+          - OKLink: https://www.oklink.com/polygon
   - Tutorials:
       - Tutorials: tutorials/index.md
       - Build a Validium-based App-chain: tutorials/build-validium.md
