@@ -1,24 +1,5 @@
----
-id: slashauth
-title: SlashAuth
-description: SlashAuth provides authentication and authorization for dApps.
-keywords:
-  - wiki
-  - polygon
-  - slashauth
-  - authentication
-  - dapp
-  - integrate
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
----
+!!! caution "Content disclaimer"
+    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 **SlashAuth** allows developers to quickly authenticate users with their wallets and create **role-based access control based on the on-chain data**. A developer can use SlashAuth to securely log a user in and verify that they have the necessary tokens (ERC20, ERC721, ERC1155) to gain access to the website.
 
@@ -61,7 +42,7 @@ root.render(
 );
 ```
 
-## Add Login with Wallet
+## Add login with wallet
 
 The SlashAuth SDK gives you tools to quickly implement authentication via MetaMask wallet in your React application. The simplest implementation is to log the user in directly in their browser. We use the function `loginNoRedirectNoPopup()` from the `useSlashAuth()` hook to accomplish this.
 

@@ -1,24 +1,5 @@
----
-id: torus
-title: Torus
-description: Torus is a non-custodial key management system for dApps
-keywords:
-  - wiki
-  - polygon
-  - torus
-  - wallet
-  - guide
-  - dApp
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
----
+!!! caution "Content disclaimer"
+    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 Torus is a user-friendly, secure, and non-custodial key management system for decentralized apps. We're focused on providing mainstream users a gateway to the decentralized ecosystem.
 
@@ -29,13 +10,13 @@ Torus is a user-friendly, secure, and non-custodial key management system for de
 
 Depending on your application needs, Torus can be integrated via the Torus Wallet, or by interacting directly with the Torus Network via CustomAuth. For more information, visit the [Torus documentation](https://docs.tor.us/).
 
-## Torus Wallet Integration
+## Torus wallet integration
 
 If your application is already compatible with MetaMask or any other Web3 providers, integrating the Torus Wallet would give you a provider to wrap the same Web3 interface. You can install via a npm package. For more ways and in-depth information, please visit the official Torus documentation on [wallet integration](https://docs.tor.us/wallet/get-started).
 
 ### Installation
 
-```bash
+```sh
 npm i --save @toruslabs/torus-embed
 ```
 
@@ -64,6 +45,6 @@ await torus.login(); // await torus.ethereum.enable()
 const web3 = new Web3(torus.provider);
 ```
 
-## CustomAuth Integration
+## CustomAuth integration
 
 If you are looking to control your own UX, from login to every interaction, then you can use CustomAuth. You can integrate via one of their SDKs depending on the platform(s) you are building on. For more info, please visit [Torus CustomAuth integration](https://docs.tor.us/customauth/get-started).

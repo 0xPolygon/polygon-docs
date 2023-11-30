@@ -1,24 +1,5 @@
----
-id: particle-network
-title: Particle Network
-description: Particle Network is the Intent-Centric, Modular Access Layer of Web3
-keywords:
-  - wiki
-  - polygon
-  - particle network
-  - wallet
-  - guide
-  - waas
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
----
+!!! caution "Content disclaimer"
+    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 **Particle Network** is the Intent-Centric, Modular Access Layer of Web3. With Particle's Wallet-as-a-Service, developers can curate unparalleled user experience through modular and customizable EOA/AA embedded wallet components. By utilizing MPC-TSS for key management, Particle can streamline onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
 
@@ -37,6 +18,7 @@ Particle Wallet itself is available either in an application-embedded format, de
 The [Particle Auth](https://docs.particle.network/developers/auth-service/sdks/web) SDK represents the primary method of facilitating connection (wallet generation or login) and interaction with Particle.
 
 #### Install dependencies
+
 ```js
 yarn add @particle-network/auth @particle-network/provider
 ```
@@ -45,9 +27,10 @@ OR
 npm install --save @particle-network/auth @particle-network/provider
 ```
 
-#### Configure Particle
+#### Configure particle
 
 Now that you've installed the initial dependencies from Particle Network, you'll need to head over to the [Particle Network dashboard](https://dashboard.particle.network/#/login) to create a project & application so that you can acquire the required keys/IDs (`projectId`, `clientKey`, and `appId`) for configuration.
+
 ````js
 import { ParticleNetwork } from "@particle-network/auth";
 import { ParticleProvider } from "@particle-network/provider";
@@ -88,4 +71,3 @@ if (!particle.auth.isLogin()) {
 From this point, you can utilize `web3.js` as usual via `window.web3`. Signatures, confirmations, and other interactions will be routed to the embedded Particle interface, provided that a user is connected.
 
 The functionality of this SDK, alongside the various other SDKs & APIs that Particle offers, extends far. You can learn more about integrating and interacting with Particle [here](https://docs.particle.network/getting-started/get-started).
-

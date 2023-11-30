@@ -1,23 +1,5 @@
----
-id: portis
-title: Portis
-description: A web-based wallet built keeping easy user-onboarding in mind.
-keywords:
-  - wiki
-  - polygon
-  - wallet
-  - portis
-  - integrate
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
----
+!!! caution "Content disclaimer"
+    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 Portis is a web-based wallet built keeping easy user-onboarding in mind. It comes with a JavaScript SDK that integrates into the dApp and creates a local wallet-less experience for the user. Further, it handles setting up the wallet, transactions, and gas fees.
 
@@ -32,7 +14,7 @@ Like Metamask, it is non-custodial - users control their keys, Portis just store
 
 Install Portis in your dApp:
 
-```js
+```sh
 npm install --save @portis/web3
 ```
 
@@ -52,7 +34,7 @@ const portis = new Portis('YOUR_DAPP_ID', 'maticTestnet');
 const web3 = new Web3(portis.provider);
 ```
 
-## Set up Account
+## Set up account
 
 If the installation and instantiation of Web3 was successful, the following should successfully return the connected account:
 
@@ -63,7 +45,7 @@ this.web3.eth.getAccounts()
 })
 ```
 
-## Instantiating Contracts
+## Instantiating contracts
 
 This is how we should instantiate contracts:
 
@@ -71,9 +53,9 @@ This is how we should instantiate contracts:
 const myContractInstance = new this.web3.eth.Contract(myContractAbi, myContractAddress)
 ```
 
-## Calling Functions
+## Calling functions
 
-### Calling `call()` Function
+### Calling `call()` function
 
 ```js
 this.myContractInstance.methods.myMethod(myParams)
@@ -83,7 +65,7 @@ this.myContractInstance.methods.myMethod(myParams)
 )
 ```
 
-### Calling `send()` Function
+### Calling `send()` function
 ```js
 this.myContractInstance.methods.myMethod(myParams)
 .send({

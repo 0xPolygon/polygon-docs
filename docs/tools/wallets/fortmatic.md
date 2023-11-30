@@ -1,25 +1,6 @@
----
-id: fortmatic
-title: Fortmatic
-description: Use Formatic SDK to integrate your dApp with Polygon
-keywords:
-  - wiki
-  - polygon
-  - fortmatic
-  - integrate
-  - dapp
-  - sdk
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
----
-
+!!! caution "Content disclaimer"
+    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    
 Fortmatic SDK allows you to easily integrate your dApp with the Ethereum blockchain, whether you already have a dApp integrated with Web3 or are starting from scratch. Fortmatic provides a smooth and delightful experience for both you and your decentralized application users.
 
 ## Installation

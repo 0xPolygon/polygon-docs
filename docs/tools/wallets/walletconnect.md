@@ -1,28 +1,9 @@
----
-id: walletconnect
-title: WalletConnect
-description: An open protocol that creates a DApp-Wallet communication.
-keywords:
-  - wiki
-  - polygon
-  - dapp
-  - wallet
-  - integrate
-  - guide
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
----
+!!! caution "Content disclaimer"
+    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 **WalletConnect** is an open protocol - not a wallet - built to create a communication link between dApps and wallets. A wallet and an application supporting this protocol will enable a secure link through a shared key between any two peers. A connection is initiated by the dApp displaying a QR code with a standard WalletConnect URI and the connection is established when the wallet application approves the connection request. Further requests regarding funds transfer are confirmed on the wallet application itself.
 
-## Set Up Web3
+## Set up web3
 
 To set up your dApp to connect with a user’s Polygon Wallet, you can use WalletConnect’s provider to directly connect to Polygon. Install the following in your dApp:
 
@@ -74,7 +55,7 @@ const maticWeb3 = new Web3(maticProvider)
 const ropstenWeb3 = new Web3(ropstenProvider)
 ```
 
-## Instantiating Contracts
+## Instantiating contracts
 
 Once we have our **web3 object**, the instantiating of contracts involves the same steps as for Metamask. Make sure you have your **contract ABI** and **address** already in place.
 
@@ -82,17 +63,14 @@ Once we have our **web3 object**, the instantiating of contracts involves the sa
 const myContractInstance = new this.maticWeb3.eth.Contract(myContractAbi, myContractAddress)
 ```
 
-## Calling Functions
+## Calling functions
 
-:::info
-
-The private key will remain in the user’s wallet and the **app does not access it in any way**.
-
-:::
+!!! info
+    The private key will remain in the user’s wallet and the **app does not access it in any way**.
 
 We have two types of functions in Ethereum, depending upon the interaction with the blockchain. We `call()` when we read data and `send()` when we write data.
 
-### Calling `call()` Functions
+### Calling `call()` functions
 
 Reading data doesn’t require a signature, therefore the code should be like this:
 
@@ -105,7 +83,7 @@ this.myContractInstance.methods
   )
 ```
 
-### Calling `send()` Functions
+### Calling `send()` functions
 
 Since writing to the blockchain requires a signature, we prompt the user on their wallet (that supports WalletConnect) to sign the transaction.
 
