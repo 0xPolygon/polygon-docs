@@ -1,14 +1,6 @@
----
-id: approve
-title: approve
-keywords: 
-- 'pos client, erc721, approve, polygon, sdk'
-description: 'Approve required amount on root token'
----
+The `approve` method can be used to approve required amount on root token.
 
-`approve` method can be used to approve required amount on root token.
-
-```
+```js
 const erc721RootToken = posClient.erc721(<root token address>,true);
 
 const approveResult = await erc721RootToken.approve(<token id>);

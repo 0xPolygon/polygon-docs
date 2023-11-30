@@ -1,11 +1,3 @@
----
-id: abi-manager
-title: ABIManager
-keywords: 
-- 'abi manager, api type, read, write, polygon'
-description: "Matic.js's internal ABI manager."
----
-
 `matic.js` internally uses `ABIManager` for handling ABI management, configuration for you. All of the ABI and config are taken from [static repo](https://github.com/maticnetwork/static).
 
 ## Change ABI
@@ -14,7 +6,7 @@ Sometimes you are required to change the ABI, particularly when you are developi
 
 **Syntax**
 
-```
+```js
 import { ABIManager } from '@maticnetwork/maticjs'
 
 
@@ -34,7 +26,7 @@ The network name, contract name, bridge name etc can be taken from our [official
 
 **Example**
 
-```
+```js
 import { ABIManager } from '@maticnetwork/maticjs'
 
 

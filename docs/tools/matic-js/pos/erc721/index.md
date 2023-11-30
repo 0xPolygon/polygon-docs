@@ -1,11 +1,3 @@
----
-id: index
-title: POSClient
-keywords: 
-- 'pos client, erc721, contract, polygon, sdk'
-description: '`ERC721` method which helps you to interact with a ERC721 token.'
----
-
 # ERC721
 
 `POSClient` provides `erc721` method which helps you to interact with a erc721 token.

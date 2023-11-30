@@ -1,14 +1,6 @@
----
-id: withdraw-start
-title: withdraw start
-keywords: 
-- 'pos client, erc20, withdrawStart, polygon, sdk'
-description: 'Initiate the withdraw process.'
----
+The `withdrawStart` method can be used to initiate the withdraw process which will burn the specified amount on polygon chain.
 
-`withdrawStart` method can be used to initiate the withdraw process which will burn the specified amount on polygon chain.
-
-```
+```js
 const erc20Token = posClient.erc20(<child token address>);
 
 // start withdraw process for 100 amount

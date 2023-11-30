@@ -1,4 +1,4 @@
-The library follows common api architecture throughout and the APIs are divided into two types:
+The Matic.js library follows common api architecture throughout and the APIs are divided into two types:
 
 1. Read API
 2. Write API
@@ -44,21 +44,21 @@ const receipt = await result.getReceipt();
 
 ## Transaction option
 
-There are some configurable options that are available for all API's. These configurations can be passed in parameters.
+There are some configurable options that are available for all API's. These configurations can be passed as parameters.
 
 Available configurations are -
 
-- from?: string | number - The address transactions should be made from.
-- to?: string - The address transactions should be made to.
-- value?: number | string | BN - The value transferred for the transaction in wei.
-- gasLimit?: number | string - The maximum gas provided for a transaction (gas limit).
-- gasPrice?: number | string | BN - The gas price in wei to use for transactions.
-- data?: string - The byte code of the contract.
-- nonce?: number;
-- chainId?: number;
-- chain?: string;
-- hardfork?: string;
-- returnTransaction?: boolean - making it true will return the transaction object which can be used to send transaction manually.
+- `from?`: string | number - The address transactions should be made from.
+- `to?`: string - The address transactions should be made to.
+- `value?`: number | string | BN - The value transferred for the transaction in wei.
+- `gasLimit?`: number | string - The maximum gas provided for a transaction (gas limit).
+- `gasPrice?`: number | string | BN - The gas price in wei to use for transactions.
+- `data?`: string - The byte code of the contract.
+- `nonce?`: number;
+- `chainId?`: number;
+- `chain?`: string;
+- `hardfork?`: string;
+- `returnTransaction?`: boolean - making it true will return the transaction object which can be used to send transaction manually.
 
 This example configures the gas price:
 

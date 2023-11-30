@@ -1,14 +1,6 @@
----
-id: approve-all
-title: approveAll
-keywords: 
-- 'pos client, erc721, approveAll, polygon, sdk'
-description: 'Approve all tokens.'
----
+The `approveAll` method can be used to approve all tokens.
 
-`approveAll` method can be used to approve all tokens.
-
-```
+```js
 const erc721RootToken = posClient.erc721(<root token address>, true);
 
 const approveResult = await erc721RootToken.approveAll();

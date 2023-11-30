@@ -1,6 +1,6 @@
 The `@matic.js` is a javascript library which helps in interacting with the various components of Matic Network.
 
-In this Get Started tutorial - we will learn about how we can setup and interact with the POS bridge.
+In this get started document we will learn about how we can setup and interact with the POS bridge.
 
 In case you face any issues or have any queries, feel free to raise a [ticket](https://support.polygon.technology/support/tickets/new) to our Support Team or reach out to us on [Discord](https://discord.gg/32j4qNDn). 
 
@@ -68,13 +68,13 @@ Let's initiate `erc20` -
 
 ### ERC20
 
-**create erc20 child token**
+**Create erc20 child token**
 
 ```
 const erc20ChildToken = posClient.erc20(<token address>);
 ```
 
-**create erc20 parent token**
+**Create erc20 parent token**
 
 ```
 const erc20ParentToken = posClient.erc20(<token address>, true);

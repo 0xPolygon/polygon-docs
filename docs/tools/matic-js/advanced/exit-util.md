@@ -1,18 +1,10 @@
----
-id: exit-util
-title: ExitUtil
-keywords: 
-- 'exit util, api type, read, write, polygon'
-description: 'Generate proof with the ExitUtil class.'
----
-
-`matic.js` internally use `ExitUtil` for generating proof. It is a class which has different methods for helping with exit utilities.
+`matic.js` internally use `ExitUtil` for generating proofs. It is a class which has different methods for helping with exit utilities.
 
 ## buildPayloadForExit
 
 It exposes `buildPayloadForExit` method which can be used to generate proof.
 
-```
+```js
 import { ExitUtil, RootChain, use, Web3SideChainClient } from "@maticnetwork/maticjs";
 import { Web3ClientPlugin } from "@maticnetwork/maticjs-web3";
 import HDWalletProvider from "@truffle/hdwallet-provider";
@@ -59,7 +51,7 @@ const proof = await exitUtil.buildPayloadForExit(
 
 Every bridge client including **POSClient**, **PlasmaClient** exposes `exitUtil` property.
 
-```
+```js
 import { POSClient,use } from "@maticnetwork/maticjs"
 import { Web3ClientPlugin } from '@maticnetwork/maticjs-web3'
 import HDWalletProvider from "@truffle/hdwallet-provider"

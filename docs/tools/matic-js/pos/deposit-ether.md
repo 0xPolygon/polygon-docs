@@ -1,18 +1,9 @@
----
-id: deposit-ether
-title: deposit ether
-keywords: 
-- 'pos client, depositEther, polygon, sdk'
-description: 'Deposit a required amount of ether from ethereum to polygon.'
----
+Use the `depositEther` method to deposit **ETH** from ethereum to polygon. For example:
 
-`depositEther` method can be used to deposit required amount of **ether** from ethereum to polygon.
-
-```
+```js
 const result = await posClient.depositEther(<amount>, <userAddress>);
 
 const txHash = await result.getTransactionHash();
 
 const txReceipt = await result.getReceipt();
-
 ```

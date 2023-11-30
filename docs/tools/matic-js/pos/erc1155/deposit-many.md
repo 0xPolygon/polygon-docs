@@ -1,14 +1,6 @@
----
-id: deposit-many
-title: depositMany
-keywords: 
-- 'pos client, erc1155, deposit, polygon, sdk'
-description: 'Multiple deposit of ERC1155 tokens using matic.js'
----
+The `depositMany` method can be used to deposit required amounts of multiple token from ethereum to polygon chain. 
 
-`depositMany` method can be used to deposit required amounts of multiple token from ethereum to polygon chain. 
-
-```
+```js
 const erc1155RootToken = posClient.erc1155(<root token address>, true);
  
 const result = await erc1155RootToken.depositMany({

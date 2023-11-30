@@ -1,17 +1,4 @@
----
-id: common-methods
-title: Miscellaneous Methods
-sidebar_label: Miscellaneous
-description: Some of the commonly used methods on the Polygon zkEVM network.
-keywords:
-  - docs
-  - maticjs
-  - polygon
-  - zkEvm client
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-## isDeposited
+## `isDeposited`
 
 The `isDeposited` method can be used to check if a deposit has been completed.
 
@@ -19,7 +6,7 @@ The `isDeposited` method can be used to check if a deposit has been completed.
 const isDeposited = await zkEvmClient.isDeposited(tx_hash);
 ```
 
-## isDepositClaimable
+## `isDepositClaimable`
 
 The `isDepositClaimable` method checks if a deposit can be claimed on the network.
 
@@ -27,7 +14,7 @@ The `isDepositClaimable` method checks if a deposit can be claimed on the networ
 const isDepositClaimable = await zkEvmClient.isDepositClaimable(tx_hash);
 ```
 
-## isWithdrawExitable
+## `isWithdrawExitable`
 
 This method checks if the withdrawal process can be exited.
 
@@ -35,7 +22,7 @@ This method checks if the withdrawal process can be exited.
 const isWithdrawExitable = await zkEvmClient.isWithdrawExitable(tx_hash);
 ```
 
-## isExited
+## `isExited`
 
 isExited method checks if a withdrawal has been exited. It returns a boolean value.
 

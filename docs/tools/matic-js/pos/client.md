@@ -1,12 +1,4 @@
----
-id: index
-title: POSClient
-keywords: 
-- 'maticjs, pos client, contract, polygon, sdk'
-description: 'POSClient allows you to interact with POS Bridge.'
----
-
-MaticJS provides `POSClient` to interact with the **PoS Bridge**.
+Matic.js provides `POSClient` to interact with the **PoS Bridge**.
 
 ```js
 import { POSClient,use } from "@maticnetwork/maticjs"

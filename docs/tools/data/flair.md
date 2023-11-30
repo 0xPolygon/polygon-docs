@@ -31,7 +31,7 @@ Compared to other alternatives the main reasons are:
   * Use any external NPM library.
 * ✅ **Stream** any stored data to your destination database (Postgres, MongoDB, MySQL, Kafka, Elasticsearch, Timescale, etc).
 
-## Getting Started
+## Getting started
 
 1️⃣ Clone the [starter boilerplate](https://github.com/flair-sdk/starter-boilerplate) template and follow the instructions
 

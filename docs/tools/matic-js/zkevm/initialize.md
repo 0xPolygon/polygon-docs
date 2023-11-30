@@ -1,17 +1,5 @@
----
-id: initialize-zkevm
-title: Initialize ZkEvmClient
-sidebar_label: Initialize
-description: ZkEvmClient allows you to interact with the Polygon zkEVM network.
-keywords:
-  - docs
-  - maticjs
-  - polygon
-  - zkEvm client
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
 
-MaticJS library also provides **ZkEvmClient** to interact with the Polygon zkEVM network.
+Matic.js library also provides the **ZkEvmClient** to interact with the Polygon zkEVM network.
 
 ```js
 import { ZkEvmClient, use } from "@maticnetwork/maticjs"

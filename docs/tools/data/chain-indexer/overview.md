@@ -45,22 +45,22 @@ Initially, **Chain Indexer Framework** obtains the raw blockchain data via block
 
 ### ***Why choose chain indexer framework?***
 
-1. **Open Source:** Anyone can fork, modify, and host the software on their own infrastructure. Unlike common third-party indexers, **Chain Indexer Framework** offers complete control to developers, enabling them to monitor the service closely in order to identify and resolve issues.
-2. **Cost Savings:** developers can save money otherwise spent on third-party data indexers. There will be no restrictions on usage or API rate limits, as developers will host the service themselves.
-3. **Built Using TypeScript:** This developer-friendly programming language makes it easy to understand the code and implement changes. **Chain Indexer Framework** can be easily installed by downloading the NPM package and integrating it into your project.
-4. **One-Time Effort for Indexing Historical Blocks:** Once the raw blockchain data is indexed, developers can build an unlimited number of application layers on top of it. There will be no need to make RPC calls to re-index historical blocks, as they will already be available in the Kafka Data Warehouse.
-5. **Modular Architecture:** **Chain Indexer Framework** features a modular architecture, simplifying debugging and bug-fixing processes for developers.
-6. **Instant Query:** Imagine a customer walking into your retail store and asking for a specific product. If your inventory is well-organized, you can instantly determine whether the item is in stock and where it is located. **Chain Indexer Framework** enables similar real-time data queries, making it easier for dApps to access and utilize blockchain data.
-7. **Event-Triggered Actions:** Consider how online stores send customers notifications when an item is back in stock. **Chain Indexer Framework** can establish event triggers for specific blockchain activities, allowing dApps to automatically execute actions such as sending notifications or updating the user-interface.
+1. **Open source:** Anyone can fork, modify, and host the software on their own infrastructure. Unlike common third-party indexers, **Chain Indexer Framework** offers complete control to developers, enabling them to monitor the service closely in order to identify and resolve issues.
+2. **Cost savings:** developers can save money otherwise spent on third-party data indexers. There will be no restrictions on usage or API rate limits, as developers will host the service themselves.
+3. **Built using TypeScript:** This developer-friendly programming language makes it easy to understand the code and implement changes. **Chain Indexer Framework** can be easily installed by downloading the NPM package and integrating it into your project.
+4. **One-time effort for indexing historical blocks:** Once the raw blockchain data is indexed, developers can build an unlimited number of application layers on top of it. There will be no need to make RPC calls to re-index historical blocks, as they will already be available in the Kafka Data Warehouse.
+5. **Modular architecture:** **Chain Indexer Framework** features a modular architecture, simplifying debugging and bug-fixing processes for developers.
+6. **Instant query:** Imagine a customer walking into your retail store and asking for a specific product. If your inventory is well-organized, you can instantly determine whether the item is in stock and where it is located. **Chain Indexer Framework** enables similar real-time data queries, making it easier for dApps to access and utilize blockchain data.
+7. **Event-triggered actions:** Consider how online stores send customers notifications when an item is back in stock. **Chain Indexer Framework** can establish event triggers for specific blockchain activities, allowing dApps to automatically execute actions such as sending notifications or updating the user-interface.
 8. **Customization:** Just as some stores need to track perishable items differently from non-perishable ones, dApps often have unique data requirements. **Chain Indexer Framework’s** flexible architecture allows developers to customize data pipelines to meet their specific needs.
 9. **Scalability:** A small retail store might initially work with manual sorting, but as the business expands, automation becomes essential. **Chain Indexer Framework** can scale alongside your dApp's growth, handling increased data loads without sacrificing performance.
-10. **Improved User Experience:** Nothing frustrates a customer more than slow or unresponsive service. By providing faster and more reliable access to blockchain data, **Chain Indexer Framework** helps dApps offer a smoother, more responsive user experience.
+10. **Improved user experience:** Nothing frustrates a customer more than slow or unresponsive service. By providing faster and more reliable access to blockchain data, **Chain Indexer Framework** helps dApps offer a smoother, more responsive user experience.
 
 ### *Popular use cases*
 
-1. **Wallet Services**: Blockchain indexers can help wallet providers offer more features like transaction history, balance history, and real-time updates.
-2. **dApp Backend**: dApps often require real-time access to contract events, token transactions, and other on-chain activities. A data indexer can speed up this process considerably.
-3. **Analytics and Monitoring**: Firms specializing in blockchain analytics use indexers to monitor activities like fraudulent transactions, smart contract interactions, and trends in token transfers.
-4. **Cross-Chain Services**: For cross-chain swaps or interactions, indexers can offer data that facilitates more seamless integrations.
+1. **Wallet services**: Blockchain indexers can help wallet providers offer more features like transaction history, balance history, and real-time updates.
+2. **dApp backend**: dApps often require real-time access to contract events, token transactions, and other on-chain activities. A data indexer can speed up this process considerably.
+3. **Analytics and monitoring**: Firms specializing in blockchain analytics use indexers to monitor activities like fraudulent transactions, smart contract interactions, and trends in token transfers.
+4. **Cross-chain services**: For cross-chain swaps or interactions, indexers can offer data that facilitates more seamless integrations.
 5. **Oracles**: Data indexers can support oracles by providing them with a more efficient way to access specific data points on the blockchain.
-6. **NFT Marketplaces**: To track ownership changes, price histories, and various attributes of NFTs, data indexers are often used in the backend.
+6. **NFT marketplaces**: To track ownership changes, price histories, and various attributes of NFTs, data indexers are often used in the backend.

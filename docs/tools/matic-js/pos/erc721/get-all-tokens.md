@@ -1,18 +1,10 @@
----
-id: get-all-tokens 
-title: getAllTokens
-keywords: 
-- 'pos client, erc721, getAllTokens, polygon, sdk'
-description: 'Retrieve all tokens owened by specified user.'
----
+The `getAllTokens` method returns all tokens owned by specified user.
 
-`getAllTokens` method returns all tokens owned by specified user.
-
-```
+```js
 const erc721Token = posClient.erc721(<token address>);
 
 const result = await erc721Token.getAllTokens(<user address>, <limit>);
 
 ```
 
-you can also limit the tokens by specifying limit value in second parmater.
+You can also limit the tokens by specifying the limit value in the second parameter.

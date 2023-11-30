@@ -1,24 +1,15 @@
----
-id: plugin
-title: Plugin
-keywords: 
-- 'plugin, api type, read, write, polygon'
-description: 'Use plugin to inject code into Matic.js.'
----
-
 Using plugin you can inject your code into `matic.js`. It can be used to write common set of generic codes which can be provided to anyone using a package.
 
-:::info
-Plugin makes the `matic.js` light weight as it implements only important logical part.
-:::
+!!! info
+    Plugin makes the `matic.js` light weight as it implements only important logical part.
 
-In fact, the web3 library is supported using plugin which allows us to use our favourite library.
+In fact, the web3 library is supported using plugin which allows us to use our favorite library.
 
 ### Plugin development
 
 Plugin is a class which implements `IPlugin`.
 
-```
+```js
 import { IPlugin } from "@maticnetwork/maticjs";
 
 export class MyPlugin implements IPlugin {
@@ -34,11 +25,11 @@ export class MyPlugin implements IPlugin {
 
 As you can see - you just need to implement a `setup` method which will be called with default export of `matic.js`.
 
-### Use Plugin
+### Use plugin
 
 `matic.js` expose `use` method for using a plugin.
 
-```
+```js
 import { use } from '@maticnetwork/maticjs'
 
 use(MyPlugin)
