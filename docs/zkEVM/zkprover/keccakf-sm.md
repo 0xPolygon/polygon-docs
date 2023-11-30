@@ -110,7 +110,7 @@ See the below figure for a $\mathtt{1600}$-bit state array, displaying;
 
 2. The 5-bit column $\{[2,y,63]\}$ shown in green, consisting of $5$ bits, $\mathtt{Bit}[2,0,63]$ to $\mathtt{Bit}[2,4,63]$. 
 
-![Figure 1: Keccak's 1600-bit State as a 3D Array](/img/zkvm/01kkf-state-array-calibrated.png)
+![Figure 1: Keccak's 1600-bit State as a 3D Array](../../img/zkvm/01kkf-state-array-calibrated.png)
 
 A bit in the state $\mathbf{s}$ can be denoted by $\texttt{Bit}[x][y][z]$ as an element of the 3D-array state, but as $\texttt{Bit}[x,y,z]$ to indicate its location in position $(x,y,z)$ with respect to the Cartesian coordinate system.
 
@@ -232,7 +232,7 @@ See the below figure, for an illustration of the $\theta$ step mapping applied o
 
 The code of the $\theta$ step mapping is found here: [keccak_theta.cpp](https://github.com/0xPolygonHermez/zkevm-prover/blob/main/tools/sm/keccak_f/keccak_theta.cpp)
 
-![Theta Step Mapping On One Bit](/img/zkvm/02kkf-theta-map-one-bit.png)
+![Theta Step Mapping On One Bit](../../img/zkvm/02kkf-theta-map-one-bit.png)
 
 ### Mapping Rho
 
@@ -329,7 +329,7 @@ $$
 
 Below diagram, showing the $(x,y)$-slices, depicts the shuffling of the bits in accordance with the above table. This figure is in fact the mapping displayed in Figure 2.3 of the [Keccak Reference 3.0 [Page 20; 2011]](https://keccak.team/files/Keccak-reference-3.0.pdf).
 
-![How Pi shuffles bits on a 25-bit (x,y)-slice](/img/zkvm/03kkf-pi-stepmap-shuffle.png)
+![How Pi shuffles bits on a 25-bit (x,y)-slice](../../img/zkvm/03kkf-pi-stepmap-shuffle.png)
 
 The code of the $\pi$ step mapping is found here: [keccak_pi.cpp](https://github.com/0xPolygonHermez/zkevm-prover/blob/main/tools/sm/keccak_f/keccak_pi.cpp)
 
@@ -363,7 +363,7 @@ where  $x \in \{3,4,0,1,2\}$.
 
 Overall, the $\chi$ step mapping can be depicted as a "circuit" of gates as in the below diagram, taken from [FIPS PUB 202, August 2015 (Figure 6, Page 15)](https://csrc.nist.gov/publications/detail/fips/202/final).
 
-![The KeccakChi Gates Circuit](/img/zkvm/04kkf-chi-map-5bit-row.png)
+![The KeccakChi Gates Circuit](../../img/zkvm/04kkf-chi-map-5bit-row.png)
 
 The code of the $\chi$ step mapping is found here: [keccak_chi.cpp](https://github.com/0xPolygonHermez/zkevm-prover/blob/main/tools/sm/keccak_f/keccak_chi.cpp)
 
@@ -440,7 +440,7 @@ At $t = 0$, it is initialised to $\mathtt{10000000 = 0x80}$. A state transition 
 
 After every 7 consecutive state transitions, the LFSR produces enough bits to form the corresponding round-constant $RC[ir]$. The 7 bits map to their bit places in $RC[ir]$ according to the above shown table. 
 
-![The 7 rc bits LFSR](/img/zkvm/05kkf-iota-rc-bits-lfsr.png)
+![The 7 rc bits LFSR](../../img/zkvm/05kkf-iota-rc-bits-lfsr.png)
 
 #### Example
 
@@ -484,7 +484,7 @@ $$
 
 All 24 round constants $RC[i]$, where each is $64$ bits long, are given in their hexadecimal format below.
 
-![The 24 Round Constants in Hexadecimal](/img/zkvm/06kkf-all-24-rc-hex.png)
+![The 24 Round Constants in Hexadecimal](../../img/zkvm/06kkf-all-24-rc-hex.png)
 
 The C++ code for the LFSR can be found in the zkEVM Prover repository here: [keccak_rc.cpp](https://github.com/0xPolygonHermez/zkevm-prover/blob/main/tools/sm/keccak_f/keccak_rc.cpp)
 

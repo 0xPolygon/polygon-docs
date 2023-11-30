@@ -14,7 +14,7 @@ Observe that, as previously mentioned, committed polynomials are not needed in t
 
 See the below schema of the process used when building a zkEVM STARK.
 
-![Build the zkEVM STARK](/img/zkvm/11prf-rec-build-zkevm-stark.png)
+![Build the zkEVM STARK](../../img/zkvm/11prf-rec-build-zkevm-stark.png)
 
 Next to be built is the Merkle tree of evaluations of the constant polynomials, `zkevm.consttree`.
 
@@ -32,7 +32,7 @@ Further delineation of the proof generation is provided in later sections.
 
 The next step in the Setup phase is to generate the circuit that will verify the zkEVM STARK (see the below Figure).
 
-![Converting the zkEVM STARK verification into a circuit](/img/zkvm/12prf-rec-convert-verification-to-circuit.png)
+![Converting the zkEVM STARK verification into a circuit](../../img/zkvm/12prf-rec-convert-verification-to-circuit.png)
 
 The `pil2circom` process fills a CIRCOM `EJS` template, called $\mathtt{stark\_verifier.circom.ejs}$, with all the necessary information needed to validate the zkEVM STARK.
 
@@ -64,7 +64,7 @@ The zkEVM STARK is verified by a circuit called `zkevm.verifier`. This is the `c
 
 It is so called because the PIL code that verifies the `c12a` circuit, is a PlonKish circuit with custom gates and $\bf{12}$ polynomials, aiming at compression.
 
-![Convert the zkEVM verifier circuit to a STARK called c12a](/img/zkvm/13prf-rec-convert-zkevm-verifier-to-stark.png)
+![Convert the zkEVM verifier circuit to a STARK called c12a](../../img/zkvm/13prf-rec-convert-zkevm-verifier-to-stark.png)
 
 Given the above-mentioned R1CS description of the verification circuit `zkevm.verifier.r1cs`, a machine-like construction whose correct execution is equivalent to the validity of the previous circuit is obtained. This construction is described in a PIL file, `c12a.pil`.
 

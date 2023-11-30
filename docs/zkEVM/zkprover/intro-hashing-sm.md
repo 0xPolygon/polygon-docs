@@ -24,7 +24,7 @@ The state array is split into two chunks, one with $r$ bits and the other with $
 
 The elements that completely describe a single instance of a sponge construction are: the **fixed-length permutation $f$**, the **padding rule pad**, the **bitrate value $r$**, and the **capacity $c$**. A schema of the sponge construction is shown in the below figure.
 
-![A Sponge Function Construction](/img/zkvm/hsh01-sponge-construction.png)
+![A Sponge Function Construction](../../img/zkvm/hsh01-sponge-construction.png)
 
 ### Initializing phase
 

@@ -10,7 +10,7 @@ In L2 rollups such as the Polygon zkEVM, L1 smart contracts ensure proper manage
 
 Let's understand the zKEVM Bridge protocol design through an analogy. Make sure to check out the below illustration for easier understanding of the protocol.
 
-![Polygon zkEVM Bridge Schema](/img/zkvm/01pzb-polygon-zkevm-schema.png)
+![Polygon zkEVM Bridge Schema](../../img/zkvm/01pzb-polygon-zkevm-schema.png)
 
 Consider two networks; L1 and L2. In order **to bridge an asset between L1 and L2, a user has to lock the asset in the origin network (or Layer 1)**. The **Bridge smart contract then mints an equivalent value representative asset in the destination network L2**. This minted asset is known as a **Wrapped Token**.
 

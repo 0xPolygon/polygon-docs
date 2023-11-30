@@ -18,7 +18,7 @@ Denote the number of rounds by $\mathtt{R = R_F + R_P}$ where  $\mathtt{R_F}$  i
 
 [The figure](https://eprint.iacr.org/2019/458.pdf) below, depicts a HADES-based $\text{POSEIDON}^{\pi}$ permutation.
 
-![POSEIDON Hash ](/img/zkvm/01psd-hades-based-poseidon-perm.png)
+![POSEIDON Hash ](../../img/zkvm/01psd-hades-based-poseidon-perm.png)
 
 The **Poseidon S-box**, $S$, is defined over a finite field as the power map $x\mapsto x^d$, where $d\geq 3$  is chosen as the smallest integer that guarantees invertibility and provides non-linearity.
 
@@ -56,7 +56,7 @@ The zkProver uses the Goldilocks-like Poseidon defined over the field  $\mathbb{
 
 The states of the Poseidon SM coincide with the twelve (12) internal states of the $\text{POSEIDON}^{\pi}$ permutation function. These are; `in0`, `in1`, ... , `in7`, `hashType`, `cap1`, `cap2` and `cap3`. 
 
-![POSEIDON Hash ](/img/zkvm/02psd-poseidon-hash-pic.png)
+![POSEIDON Hash ](../../img/zkvm/02psd-poseidon-hash-pic.png)
 
 The parameters of the $\text{POSEIDON}^{\pi}$ permutation are as follows; 
 

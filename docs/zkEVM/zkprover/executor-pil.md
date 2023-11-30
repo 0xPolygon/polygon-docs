@@ -76,7 +76,7 @@ The states of the POSEIDON SM coincide with the twelve (12) internal states of t
 
 $\text{POSEIDON}^{\pi}$ runs 30 rounds, 3 times. Adding up to a total of 90 rounds. It outputs four (4) hash values; `hash0`, `hash1`, `hash2` and `hash3`.
 
-![POSEIDON HASH0 ](/img/zkvm/fig16-posdn-eg.png)
+![POSEIDON HASH0 ](../../img/zkvm/fig16-posdn-eg.png)
 
 In the case of the zkProver storage, two slightly different POSEIDON hashes are used; $\text{HASH0}$ is used when a branch node is created, whilst $\text{HASH1}$ is used when a leaf node is created. This depends on the `hashType`, which is a boolean. So POSEIDON acts as $\text{HASH1}$ when `hashType` = 1, and $\text{HASH0}$ when `hashType` = 0. 
 

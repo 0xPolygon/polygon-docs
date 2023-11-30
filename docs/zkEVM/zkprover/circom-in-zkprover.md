@@ -12,7 +12,7 @@ It is a circuit that proves correctness of the state transition from an `oldStat
 
 The **zkEVM Batch Prover** takes as inputs; the `oldStateRoot`, `oldAccInputHash`, `oldBatchNum`, `chainID` and `forkID`. And its outputs are; the `newStateRoot`, `newAccInputHash`, `localExitRoot` and `newBatchNum`,
 
-![zkEVM Batch Prover](/img/zkvm/04circom-batch-prover.png)
+![zkEVM Batch Prover](../../img/zkvm/04circom-batch-prover.png)
 
 The `localExitRoot` is the Merkle root of the `ExitTree` used in the Bridge to transfer information from the L2 to the Ethereum L1.
 
@@ -22,7 +22,7 @@ All transactions being processed are encoded into the batch via the `oldAccInput
 
 Although built in a smart contract, the encoding of transactions resembles a blockchain, where transactions are chained together with the Keccak hash function. See figure below depicting this encoding.
 
-![Transactions chained into a batch](/img/zkvm/05circom-forming-batch.png)
+![Transactions chained into a batch](../../img/zkvm/05circom-forming-batch.png)
 
 The main idea, when proving validity of a batch, is for the `oldAccInputHash` and its corresponding `newAccInputHash` to match accordingly.
 
@@ -54,7 +54,7 @@ Since the underlying proof scheme is PIL-STARK, in each of these prover circuits
 
 A typical $\mathtt{recursive_x}\ \mathtt{Verifier}$ CIRCOM template, for any $\texttt{x} \in \{1, 2, f\}$, looks like the circuit shown below.
 
-![Figure _ : Typical $\mathtt{recursive_1}\ \mathtt{Prover}$ CIRCOM template](/img/zkvm/06circom-typical-recursive-prover.png)
+![Figure _ : Typical $\mathtt{recursive_1}\ \mathtt{Prover}$ CIRCOM template](../../img/zkvm/06circom-typical-recursive-prover.png)
 
 ## Proof-Size Reductions
 

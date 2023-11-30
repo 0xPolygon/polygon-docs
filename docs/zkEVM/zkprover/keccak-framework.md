@@ -2,7 +2,7 @@ The zkEVM, as an L2 zk-Rollup for Ethereum, employs the Keccak hash function to 
 
 1. **The Padding-KK SM** is used for padding purposes, as well as validation of hash-related computations pertaining to the Main SM's queries. As depicted in the below figure, the **Padding-KK SM is Main SM's gateway to the Keccak hashing state machines**.
 
-   ![Keccak Design Schema](/img/zkvm/hsh02-sm-kk-framework.png)
+   ![Keccak Design Schema](../../img/zkvm/hsh02-sm-kk-framework.png)
 
 2. The **Padding-KK-Bit SM** converts between two string formats, the bytes of the Padding-KK SM to the bits of the Keccak-F Hashing SM, and vice-versa.
 

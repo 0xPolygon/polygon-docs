@@ -63,7 +63,7 @@ We define a read block as the string concatenating the content of the words affe
 
 The below figure shows the affected read words $\mathtt{m}_0$ and $\mathtt{m}_1$ that form the affected read block and the read value $\mathtt{val}$ for a read from the EVM at address $\mathtt{0x22}$ in our example memory.
 
-![Schema of MLOAD Example](/img/zkvm/01mem-align-schm-mld-eg.png)
+![Schema of MLOAD Example](../../img/zkvm/01mem-align-schm-mld-eg.png)
 
 Let us now introduce the flow at the time of validating a read.
 
@@ -93,7 +93,7 @@ $$
 \mathtt{w}_0 = \mathtt{0x88d1}\color{red}\mathtt{e201e6\dots}\color{black},\quad \mathtt{w}_1 = \mathtt{0x}\color{red} \mathtt{662b}\color{black} \mathtt{ff\dots54f9}.
 $$
 
-![Schema of MSTORE example](/img/zkvm/02mem-align-schm-mstr-eg.png)
+![Schema of MSTORE example](../../img/zkvm/02mem-align-schm-mstr-eg.png)
 
 The Main State Machine will need to perform several operations. We will be given an address $\mathtt{addr}$, an offset value $\mathtt{offset}$ and a value to be written $\mathtt{val}$. Identically as before, the Main SM will be in charge of reading the zkEVM memory to find $\mathtt{m}_0$ and $\mathtt{m}_1$ from the given address and offset. Of course, the validity of this query should be performed with a specific Plookup into the Memory SM, just as before.
 

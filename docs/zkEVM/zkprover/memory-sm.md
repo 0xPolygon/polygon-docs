@@ -162,7 +162,7 @@ There are various important details to remark from the point in which all memory
 - $\textbf{Remark}$. Notice that $\texttt{step}$ can take values beyond $N$ and that the value of $\texttt{step}$ after the row of the last address can coincide with a previous value. As we will show in the next section, where we describe the constraints, these facts do not cause any issue.
 - $\texttt{val[0..7]}$ are all set to $0$ until the last row.
 
-![Complete Memory SM Execution Trace](/img/zkvm/01mem-fig-exec-trc.png)
+![Complete Memory SM Execution Trace](../../img/zkvm/01mem-fig-exec-trc.png)
 
 ## Constraints
 
@@ -172,7 +172,7 @@ What constraints does the execution trace have to satisfy? And how is the Memory
 
 Let's start with the set of constraints regarding the topology of the state machine.
 
-![eqn set 1](/img/zkvm/sm-topology-1.png)
+![eqn set 1](../../img/zkvm/sm-topology-1.png)
 
 Equations (1) and (2) are straightforward. Equation (1) asserts that $\texttt{lastAccess}$ is a selector (i.e., a column whose values lie in the set $\{0,1\}$), while Equation (2) confirms that $\texttt{addr}$ does not change until it is accessed for the last time. Note that Equation (2) implies that addresses are processed one-by-one in the Memory SM, but it does not guarantee that they are ordered incrementally.
 
@@ -200,7 +200,7 @@ In words, whenever a transition do not change the address in question, verify th
 
 Let's continue with the operation selectors: $\texttt{mOp}$ and $\texttt{mWr}$.
 
-![eqn set 2](/img/zkvm/sm-topology-2.png)
+![eqn set 2](../../img/zkvm/sm-topology-2.png)
 
 Eqs. (4) and (5) ensure that $\texttt{mOp}$ and $\texttt{mWr}$ are, effectively, selectors. Eq. (6) is imposing a restriction to $\texttt{mWr}$ (and binding it with $\texttt{mOp}$) in the following sense: $\texttt{mWr}$ can be set to $1$ only if $\texttt{mOp}$ is also set to $1$. Similarly, if $\texttt{mOp}$ is set to $0$, then $\texttt{mWr}$ should be set to $0$ as well. This restriction comes naturally from the definition of these selectors.
 
@@ -208,7 +208,7 @@ Eqs. (4) and (5) ensure that $\texttt{mOp}$ and $\texttt{mWr}$ are, effectively,
 
 Finally, we explain the constraints that deal with the value columns $\texttt{val[0..7]}$.
 
-![eqn set 3](/img/zkvm/sm-topology-3.png)
+![eqn set 3](../../img/zkvm/sm-topology-3.png)
 
 We analyze both Eqs. (7) and (8) at the same time. Notice that we simply discuss the feasible cases:
 

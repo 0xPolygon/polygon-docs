@@ -24,7 +24,7 @@ Note that the bits (or bytes) of these strings cannot be simply combined and pre
 
 The idea here is to map each string to one or several blocks of 136 bytes (1088 bits), and include the proper padding at the tail-end part.
 
-![Schema of input strings allocation in Keccak](/img/zkvm/01pkk-input-strings-allocate.png)
+![Schema of input strings allocation in Keccak](../../img/zkvm/01pkk-input-strings-allocate.png)
 
 Observe that, as shown in the first string in the Figure above; Whenever the length of a certain string is a multiple of the block length of 136 bytes, a new block containing only the padding must be appended. Once this is done, the new resulting string can be provided to the Keccak-F SM for hashing. 
 
@@ -553,3 +553,4 @@ Observe that, among the rows with $\mathtt{crLen = 3}$ (the ones where the readi
 $$
 \mathtt{\big(len−rem−crLen+1\big) = 2 = HASHPOS}
 $$
+

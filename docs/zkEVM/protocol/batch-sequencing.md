@@ -1,6 +1,6 @@
 
 !!!info
-    This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](/protocol/submit-transaction.md) inside Polygon zkEVM.
+    This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](transaction-execution.md) inside Polygon zkEVM.
 
 **Batches need to be sequenced and validated** before they can become a part of the L2 Virtual State.
 
@@ -21,7 +21,7 @@ function sequenceBatches (
 
 The below figure shows the logic structure of a sequence of batches.
 
-![An outline of sequenced batches](/img/zkvm/03l2-sequencing-batches.png)
+![An outline of sequenced batches](../../img/zkvm/03l2-sequencing-batches.png)
 
 ## Max & Min batch size bounds
 
@@ -71,7 +71,7 @@ keccak256 (
 - `timestamp` is the batch timestamp,
 - `seqAddress` is address of Batch sequencer.
 
-![Batch chain structure](/img/zkvm/04l2-batch-chain-acc-hash.png)
+![Batch chain structure](../../img/zkvm/04l2-batch-chain-acc-hash.png)
 
 As shown in the diagram above, each accumulated input hash ensures the integrity of the current batch's data (i.e., `transactions`, `timestamp`, and `globalExitRoot`, as well as the order in which they were sequenced.
 

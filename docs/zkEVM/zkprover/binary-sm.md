@@ -22,7 +22,7 @@ In order to understand how the $\text{ADD}$ and $\text{SUB}$ operations work, on
 
 Below figure shows these codifications for 3-bit strings but the idea can be easily extended to 256-bit strings.
 
-![Figure 1: Codifications of 3-bit strings for signed and unsigned integers as used by the EVM](/img/zkvm/01bin-cdfctn-3bit-strngs.png)
+![Figure 1: Codifications of 3-bit strings for signed and unsigned integers as used by the EVM](../../img/zkvm/01bin-cdfctn-3bit-strngs.png)
 
 Adding two strings is performed bit-by-bit using the corresponding carry.
 
@@ -68,7 +68,7 @@ Consider the bit-wise operations; $\text{AND}$, $\text{OR}$, $\text{XOR}$ and $\
 
 The below table depicts the truth tables of $\text{AND}$, $\text{OR}$ and $\text{XOR}$ operators, respectively.
 
-![Truth Tables of bit-wise operations](/img/zkvm/02bin-trth-tbls-bitws.png)
+![Truth Tables of bit-wise operations](../../img/zkvm/02bin-trth-tbls-bitws.png)
 
 Notice that we do not consider the $\text{NOT}$ operation. This is because the $\text{NOT}$ operation can be easily implemented with the $\text{XOR}$ operation, by taking an $\text{XOR}$ of the given 256-bit string and $\texttt{0xff...ff}$.
 

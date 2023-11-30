@@ -4,7 +4,7 @@ Consider key-value pair based binary SMTs. The focus here is on explaining how t
 
 A NULL or **empty** SMT has a zero root. That is, it has no key and no value recorded in it. Similarly, a zero node or NULL node refers to a node that carries no value.
 
-## Constructing A Binary SMT With One Key-Value Pair 
+## A binary SMT with one key-value pair 
 
 A binary SMT with a **single key-value pair** $(K_{\mathbf{a}}, \text{V}_{\mathbf{a}})$, is built as follows. 
 
@@ -20,7 +20,7 @@ Suppose that $K_{\mathbf{a}} = 11010110$. In order to build a binary SMT with th
 
 See the below figure for the SMT representing the single key-value pair $(K_{\mathbf{a}}, \text{V}_{\mathbf{a}})$, where  $K_{\mathbf{a}} = 11010110$.
 
-![A Single key-value pair SMT](/img/zkvm/fig4-sngl-kv-eg.png)
+![A Single key-value pair SMT](../../img/zkvm/fig4-sngl-kv-eg.png)
 
 Note that the last nodes in binary SMT branches are generally either leaves or zero-nodes. 
 
@@ -28,7 +28,7 @@ In the case where the least-significant bit, **lsb of $K_{\mathbf{a}}$ is $1$**,
 
 This example also explains why we need a zero node. Since all trees used in our design are **binary** SMTs, a zero node is used as a default sibling for computing the parent node. This helps to differentiate between roots (also between parent nodes) because a root node actually identifies an SMT. Therefore, it is crucial to distinguish between  $\mathbf{root}_{a0} = \mathbf{H}(\mathbf{L}_{\mathbf{a}} \| \mathbf{0} )$ and $\mathbf{root}_{0a} = \mathbf{H}( \mathbf{0}\| \mathbf{L}_{\mathbf{a}})$ because they represent two distinct trees.
 
-## Constructing Binary SMTs With Two Key-Value Pairs
+## Binary SMTs with two key-value pairs
 
 Consider now SMTs with **two key-value pairs**, $(K_{\mathbf{a}}, \text{V}_{\mathbf{a}})$ and $(K_{\mathbf{b}}, \text{V}_{\mathbf{b}})$. 
 
@@ -56,7 +56,7 @@ Note that the leaf $\mathbf{L}_{\mathbf{a}}$ is on the left because the $\text{l
 
 See the below figure for the SMT representing the two key-value pairs $(K_{\mathbf{a}}, \text{V}_{\mathbf{a}})$ and $(K_{\mathbf{b}}, \text{V}_{\mathbf{b}})$, where $K_{\mathbf{a}} = 11010110$ and $K_{\mathbf{b}} = 11010101$.
 
-![Two key-value pairs SMT - Case 1](/img/zkvm/fig5-a-mpt-kv-eg.png)
+![Two key-value pairs SMT - Case 1](../../img/zkvm/fig5-a-mpt-kv-eg.png)
 
 ### Case 2
 
@@ -82,7 +82,7 @@ To build a binary SMT with this two key-values, $(K_{\mathbf{a}}, \text{V}_{\mat
 
 See the below figure depicting the SMT representing the two key-value pairs $(K_{\mathbf{a}}, \text{V}_{\mathbf{a}})$ and $(K_{\mathbf{b}}, \text{V}_{\mathbf{b}})$, where  $K_{\mathbf{a}} = 11010100$ and $K_{\mathbf{b}} = 11010110$. 
 
-![Two key-value pairs SMT - Case 2](/img/zkvm/fig5-b-mpt-kv-eg.png)
+![Two key-value pairs SMT - Case 2](../../img/zkvm/fig5-b-mpt-kv-eg.png)
 
 ### Case 3
 
@@ -112,7 +112,7 @@ Suppose that the two keys are given as $K_{\mathbf{a}} = 11011000$ and $K_{\math
 
 See the below figure depicting the SMT representing the two key-value pairs $(K_{\mathbf{a}}, \text{V}_{\mathbf{a}})$ and $(K_{\mathbf{b}}, \text{V}_{\mathbf{b}})$, where  $K_{\mathbf{a}} = 11011000$ and $K_{\mathbf{b}} = 10010100$.
 
-![Two key-value pairs SMT - Case 3](/img/zkvm/fig5-c-mpt-kv-eg.png)
+![Two key-value pairs SMT - Case 3](../../img/zkvm/fig5-c-mpt-kv-eg.png)
 
 There are several other SMTs of two key-value pairs $(K_{\mathbf{x}}, \text{V}_{\mathbf{x}})$ and $(K_{\mathbf{z}}, \text{V}_{\mathbf{z}})$ that can be constructed depending on how long the strings of the common least-significant bits between $K_{\mathbf{x}}$ and $K_{\mathbf{z}}$ are.
 

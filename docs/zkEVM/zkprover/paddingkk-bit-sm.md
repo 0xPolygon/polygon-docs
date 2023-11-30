@@ -8,7 +8,7 @@ Here's how this state machine facilitates operations between the Padding-KK SM a
 
 A block of 136 rows of bytes in the Padding-KK SM corresponds to $\mathtt{1993}$ rows in the Padding-KK-Bit SM. The picture below, displays the correspondence, also shows three subdivisions of the $\mathtt{1993}$ rows (corresponding to $\mathtt{1224+512+256+1}$).
 
-![Figure 1: Padding-KK block vs. Padding-KK-Bit's 3 subdivisions](/img/zkvm/01kkb-chunk-divs-136-bytes.png)
+![Figure 1: Padding-KK block vs. Padding-KK-Bit's 3 subdivisions](../../img/zkvm/01kkb-chunk-divs-136-bytes.png)
 
 **First Subdivision &rarr;** It consists of $\mathtt{9*136 = 1224}$ rows, where each of the $\mathtt{136}$ byte-rows has been expanded into $\mathtt{9}$ rows (i.e., $\mathtt{8}$ rows for the $\mathtt{8}$ bits plus $\mathtt{1}$ row for the byte that represents the $\mathtt{8}$ bits). The decomposition of the bytes into the 8 bits (with an extra row, just for the byte), is done for easy implementation in PIL. This subdivision of $\mathtt{1224}$ rows represents the bitrate of the KECCAK-F permutation. Therefore, a strategy to ensure that the bits are accurately and correctly provided, as input to the KECCAK-F SM, needs to be derived.
 
@@ -97,7 +97,7 @@ The challenge of breaking down bytes into bits has been the main focus up to thi
 
 Below figure depicts a schema of how to relate the above columns with the KECCAK-F sponge construction.
 
-![A schema relating Padding-KK-Bit to KECCAK-F Sponge Construction](/img/zkvm/02kkb-pad-kk-bit-to-kk-f.png)
+![A schema relating Padding-KK-Bit to KECCAK-F Sponge Construction](../../img/zkvm/02kkb-pad-kk-bit-to-kk-f.png)
 
 #### Constraints For Bit Transitions
 

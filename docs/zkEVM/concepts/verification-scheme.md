@@ -17,7 +17,7 @@ A STARK falls short of succinctness because, although verifier arithmetic comple
 
 See the table below, taken from the presentation [here](https://docs.google.com/presentation/d/1gfB6WZMvM9mmDKofFibIgsyYShdf0RV_Y8TLz3k1Ls0/edit#slide=id.g443ebc39b4_0_110), for a quick comparison of proofs sizes, prover and verification times, between STARKs, SNARKs and [Bulletproofs](https://eprint.iacr.org/2017/1066.pdf).
 
-![Comparison of Proof Sizes, Proof and Verification Times](/img/zkvm/fib9-stark-prf-sizes-times.png)
+![Comparison of Proof Sizes, Proof and Verification Times](../../img/zkvm/fib9-stark-prf-sizes-times.png)
 
 ### FRI-PCS context
 
@@ -40,7 +40,7 @@ Our special implementation of a STARK is called **PIL-STARK**, and its polynomia
 
 Before describing PIL-STARK a quick look at the novel Polynomial Identities Language (PIL), and some of its distinguishing features, will be helpful.
 
-### [Polynomial Identity Language](/docs/zkevm/PIL/introduction.md)
+### Polynomial Identity Language
 
 **PIL** is a domain-specific language (DSL) that provides a method for naming polynomials and describing the identities that define computations carried out by a state machine. 
 
@@ -57,7 +57,7 @@ In cases where several state machines are being proved; although each SM may hav
 
 See the figure below for a description of the mFibonacci SM in PIL, as an $\texttt{mFibonacci.pil}$ file.
 
-![The .pil file of the mFibonacci State Machine](/img/zkvm/fib10-pil-eg-mfibonacci.png)
+![The .pil file of the mFibonacci State Machine](../../img/zkvm/fib10-pil-eg-mfibonacci.png)
 
 The value of the polynomial $\mathtt{a}$ in the next step (or state) of the state machine, is denoted by $\mathtt{a'}$ and it is read "a"-prime. i.e., If $\mathtt{a = P(\omega^i)}$ then $\mathtt{a' = P(\omega^{i+1})}$.
 
@@ -103,7 +103,7 @@ Here's how to achieve the compilation of the $\texttt{mFibonacci.pil}$ file;
    $$
    You might need to prefix the path "$\texttt{myproject/mfibonacci.pil}$" with "~/"  
 
-5. If successful, the output report (printed in the terminal) looks like this, ![PILCOM Result For mFibonacci SM](/img/zkvm/fib11-pilcom-res-mfibon.png) 
+5. If successful, the output report (printed in the terminal) looks like this, ![PILCOM Result For mFibonacci SM](../../img/zkvm/fib11-pilcom-res-mfibon.png) 
 
    It provides information on the number of polynomials used (both constant and committed), the number of polynomial identities to be checked, and other information pertaining to the number of identities checked with; $\texttt{Plookup}$ tables, $\texttt{Permutation}$ checks and $\texttt{Connection}$ checks.
 
@@ -111,7 +111,7 @@ Here's how to achieve the compilation of the $\texttt{mFibonacci.pil}$ file;
 
    In our case, the $\texttt{.json}$ file produced by $\texttt{PILCOM}$ appears in the "MYPROJECT" folder as $\texttt{\{ \} fibonacci.pil.json}$ and its content looks like this (Well, after removing the many newlines),
 
-   ![Contents of the {} fibonacci.pil.json file](/img/zkvm/fib12-inside-parsed-pil.png)
+   ![Contents of the {} fibonacci.pil.json file](../../img/zkvm/fib12-inside-parsed-pil.png)
 
    The $\texttt{\{ \} fibonacci.pil.json}$ file contains much more detail than the results seen in Step 5 above. For instance, it reflects the polynomial names prefixed with the state machine namespace $\texttt{mFibonacci}$ as stipulated to in the $\texttt{mFibonacci.pil}$ file. 
 

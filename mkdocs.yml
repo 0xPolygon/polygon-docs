@@ -163,9 +163,10 @@ nav:
       - Concepts:
         - EVM basics: zkEVM/concepts/evm-basics.md
         - Sparse merkle trees:
-          - Merkle trees: zkEVM/concepts/simple-smt.md
-          - A simple SMT: zkEVM/concepts/detailed-smt.md
-          - Operations on SMTs:  zkEVM/concepts/basic-smt-ops.md
+          - Merkle trees: zkEVM/concepts/sparse-merkle-tree.md
+          - Constructing simple SMTs: zkEVM/concepts/simple-smt.md
+          - SMT concepts: zkEVM/concepts/detailed-smt.md
+          - Operations on SMTs: zkEVM/concepts/basic-smt-ops.md
         - mFibonnaci state machine:
           - Design approach: zkEVM/concepts/mfibonacci.md
           - An example: zkEVM/concepts/mfibonacci-example.md
@@ -364,14 +365,3 @@ validation:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
-
-extra_javascript:
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - javascripts/katex.js 
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
-
-extra_css:
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css

@@ -48,7 +48,7 @@ That is, the Navigation Path to the leaf corresponding to $\text{Key}_{\mathbf{0
 - Then the third least-significant bits of the four key parts, $\text{Key}_{\mathbf{0}} , \text{Key}_{\mathbf{1}} , \text{Key}_{\mathbf{2}} , \text{Key}_{\mathbf{3}}$, appearing in the order of the key parts as: $k_{\mathbf{0,2}\ } k_{\mathbf{1,2}\ } k_{\mathbf{2,2}\ } k_{\mathbf{3,2}}$.
 - Up until the most-significant bits of the four key parts, $\text{Key}_{\mathbf{0}} , \text{Key}_{\mathbf{1}} , \text{Key}_{\mathbf{2}} , \text{Key}_{\mathbf{3}}$, appearing in the order of the key parts as: $k_{\mathbf{0,63}\ } k_{\mathbf{1,63}\ } k_{\mathbf{2,63}\ } k_{\mathbf{3,63} }$.
 
-![Navigation Path Derivation](/img/zkvm/fig15-path-frm-key.png)
+![Navigation Path Derivation](../../img/zkvm/fig15-path-frm-key.png)
 
 This construction ensures that in every quadruplet of consecutive path-bits, there is a one-to-one correspondence between the bits and the four parts of the key, $\text{Key}_{\mathbf{0}} , \text{Key}_{\mathbf{1}} , \text{Key}_{\mathbf{2}} , \text{Key}_{\mathbf{3}}$. 
 

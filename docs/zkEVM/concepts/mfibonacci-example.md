@@ -34,7 +34,7 @@ such that the i-th state is the pair $\big( A_i , B_i \big)$.
 
 Such a state machine is an **mFibonacci state machine** if indeed the registry values conform to the format of the mFibonnacci Series. See Figure 4 below, for an mFibonacci state machine with the initial conditions, $A_0 = 2$ and $B_0 = 1$.
 
-![Figure 4: mFibonacci SM with two registries](/img/zkvm/fib6-mfibon-sm-2-regs.png)
+![Figure 4: mFibonacci SM with two registries](../../img/zkvm/fib6-mfibon-sm-2-regs.png)
 
 The state transitions from $\mathtt{S} = \big( A_i , B_i \big)$ to $\mathtt{S}' = \big( A_{i+1} , B_{i+1} \big)$ conform to the following constraints;
 
@@ -126,7 +126,7 @@ In order to inject some cyclicity into the mFibonacci SM, we add a third registr
 
 Hence the mFibonacci SM is as depicted in Figure 5 below.
 
-![mFibonacci SM with three registries](/img/zkvm/fib7-mfibon-sm-3-regs.png)
+![mFibonacci SM with three registries](../../img/zkvm/fib7-mfibon-sm-3-regs.png)
 
 The corresponding polynomial $R(x)$ is defined as follows;
 $$
@@ -249,4 +249,4 @@ $$
 
 Anyone who knows the three polynomials and the correct initial conditions, say $A_0 = 234$ and $B_0 = 135$, can simply run the mFibonacci SM code to compute $A_{\mathtt{1023}} = P(\omega^{\mathtt{1023}})$. See below figure for the JS code.
 
-![Code Example of the mFibonacci SM's Computation Trace](/img/zkvm/fib8-code-eg-exec-trace.png)
+![Code Example of the mFibonacci SM's Computation Trace](../../img/zkvm/fib8-code-eg-exec-trace.png)

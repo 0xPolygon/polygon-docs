@@ -106,7 +106,7 @@ Then, $(x_1[0] \cdot y_1[1]) + (x_1[1] \cdot y_1[0])$ is computed in the second 
 
 As depicted in the below figure, this process is completely analogous to the schoolbook multiplication. However, it is performed at 2-byte level, instead of decimal level.
 
-![School Multiplication Example](/img/zkvm/01arith-sch-mlt-eg.png)
+![School Multiplication Example](../../img/zkvm/01arith-sch-mlt-eg.png)
 
 Use the following notation:
 
