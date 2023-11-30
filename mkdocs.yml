@@ -360,7 +360,6 @@ plugins:
 
 validation:
   absolute_links: ignore
-  # ignore
 
 markdown_extensions:
   - pymdownx.arithmatex:

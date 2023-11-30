@@ -19,7 +19,7 @@ Instead of executing all the various computations on its own, the Main SM achiev
 - [Keccak SM](/zkevm/zkProver/keccakf-sm.md) which is a binary circuit that computes hash values of strings as instructed by the Main SM. And, it is implemented within a special framework, detailed [here](/zkevm/zkProver/keccak-framework.md).
 - [Poseidon SM](/zkevm/zkProver/poseidon-sm.md) which specialises with computing hash values required in building Sparse Merkle Trees as per the Main SM instructions.
 
-There are other *auxiliary* state machines used in the zkProver; the [Padding-KK](/zkevm/zkProver/paddingkk-sm.md), the [Padding-KK-Bit](/zkevm/zkProver/paddingkk-bit-sm.md), the Padding-PG SM, the [Memory Align SM](/zkevm/zkProver/mem-align-sm.md), the [Bits2Field SM](/zkevm/zkProver/bits2field-sm.md) and the ROM SM ([sm_rom.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_rom.js)).
+There are other *auxiliary* state machines used in the zkProver; the [Padding-KK](/zkEVM/zkProver/paddingkk-sm.md), the [Padding-KK-Bit](/zkProver/paddingkk-bit-sm.md), the Padding-PG SM, the [Memory Align SM](/zkProver/mem-align-sm.md), the [Bits2Field SM](/zkEVM/zkProver/bits2field-sm.md) and the ROM SM ([sm_rom.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_rom.js)).
 
 ## Algebraic Processor
 
@@ -70,7 +70,7 @@ where $\mathtt{inA}$, $\mathtt{inB}$, $\mathtt{inC}$, $\mathtt{inD}$ and $\matht
 
 The figure below displays the Main SM's state transition, showing the generic registers, the selector registers, setter registers and the `OP` register.
 
-![Main SM's state transition showing only generic registers](/img/zkvm/03msm-state-transition-gen-regs.png)
+![Main SM's state transition showing only generic registers](../../img/zkvm/03msm-state-transition-gen-regs.png)
 
 The output value of each register is given by:
 
@@ -179,7 +179,7 @@ Here are the descriptions of each of these registers;
 
 The figure below depicts the Main SM's simplified state transition in accordance with ROM instructions.
 
-![Main SM's simplified state transition](/img/zkvm/04msm-simple-state-transition.png)
+![Main SM's simplified state transition](../../img/zkvm/04msm-simple-state-transition.png)
 
 - $\texttt{STEP}$: The **Step Register** is used to store the number of instructions executed so far in the current transaction.
 
@@ -236,7 +236,7 @@ Special opcodes are used for each of the delegated SM. For example, $\texttt{bin
 
 The figure below depicts registers contributing to the $\texttt{addr}$ register and its use in secondary state machines such as the Memory SM, KeccakF SM, PoseidonG SM and the Storage SM. 
 
-![The addr register and its use in different contexts](/img/zkvm/05msm-addr-reg-contexts.png)
+![The addr register and its use in different contexts](../../img/zkvm/05msm-addr-reg-contexts.png)
 
 Many of these instructions generate some data and this data is injected into $\texttt{OP}$ via the $\texttt{FREE}\ \texttt{0...7}$ register, where $\texttt{FREE}$ means a free input.
 
