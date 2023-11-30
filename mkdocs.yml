@@ -251,14 +251,8 @@ nav:
   - Tools: 
       - tools/index.md
       - Using Web3Modal SDK: tools/using-web3modal.md
-  - Tutorials:
-      - Tutorials: tutorials/index.md
-      - Build a Validium-based App-chain: tutorials/build-validium.md
-      - Deploy a zkEVM Rollup: tutorials/deploy-zkEVM.md
-      - Deploy a Miden Rollup: tutorials/deploy-miden.md
-      - Build a dApp on zkEVM: tutorials/build-zkEVM-dapp.md
-      - Run a PoS node: tutorials/run-pos-node.md
-      - Become a PoS Validator: tutorials/become-pos-validator.md
+  - Learn:
+      - learn/index.md
 
 extra:
   generator: false
