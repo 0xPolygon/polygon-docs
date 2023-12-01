@@ -33,7 +33,7 @@ In line with Transparent Upgradaeable Proxies, this ensures that the state of th
 
 Following the above example of an upgrade on the Consensus Contract, the below depicts the process flow of a Polygon zkEVM upgrade.
 
-![Upgrade Overview](../../img/zkvm/upgrade-overview.png)
+![Upgrade Overview](../../img/zkEVM/upgrade-overview.png)
 
 ## Benefits for users
 
@@ -43,7 +43,7 @@ Secondly, most upgrades often include optimizations, bug fixing, or a more accur
 
 ## Polygon's Governance Position
 
-Polygon is committed to aligning itself with Ethereum's norms and values regarding L2 Governance. 
+Polygon is committed to aligning itself with Ethereum's norms and values regarding L2 Governance.
 
 For more details on Polygon's stance and plans on Governance, please refer to [The 3 Pillars of Polygon Governance](https://forum.polygon.technology/t/the-three-pillars-of-polygon-governance-call-for-proposals/11847) post in the community forum. The first pillar can be found [here](https://forum.polygon.technology/t/the-first-pillar-protocol-governance/11972) and the second one [here](https://forum.polygon.technology/t/the-second-pillar-system-smart-contracts-governance/12151).
 

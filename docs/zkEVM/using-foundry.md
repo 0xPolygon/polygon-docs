@@ -1,7 +1,7 @@
 
 Any smart contract deployable to the Ethereum network can be deployed easily to the Polygon zkEVM network. In this guide, we will demonstrate how to deploy an ERC-721 token contract on the Polygon zkEVM network using Foundry.
 
-We will be following the Soulbound NFT tutorial from [this video](https://www.loom.com/share/41dcd20628774d3bbcce5edf2647312f).   
+We will be following the Soulbound NFT tutorial from [this video](https://www.loom.com/share/41dcd20628774d3bbcce5edf2647312f).
 
 ## Set up the environment
 
@@ -13,7 +13,7 @@ If you have not installed Foundry, Go to [book.getfoundry](https://book.getfound
 
 Next, select **Creating a New Project** from the sidebar. Initialize and give your new project a name: ```forge init zkevm-sbt```
 
-In case of a `library not loaded error`, you should run below command and then repeat the above process again: 
+In case of a `library not loaded error`, you should run below command and then repeat the above process again:
 
 ```bash
 brew install libusb
@@ -25,17 +25,17 @@ If you never installed Rust or need an update, visit the website [here](https://
 
 Run the command `forge build` to build the project. The output should look something like this:
 
-![Successful forge build command](../img/zkvm/zkv-success-forge-build.png)
+![Successful forge build command](../img/zkEVM/zkv-success-forge-build.png)
 
 Now, test the build with `forge test`
 
-![Testing Forge Build](../img/zkvm/zkv-test-forge-build.png)
+![Testing Forge Build](../img/zkEVM/zkv-test-forge-build.png)
 
 You can check out the contents of the newly built project by switching to your IDE. In case of VSCode, just type: ```code .```
 
 ## Writing the smart contract
 
-1. Find the [OpenZeppelin Wizard](https://wizard.openzeppelin.com) in your browser, and use the wizard to create an out-of-the-box NFT contract. 
+1. Find the [OpenZeppelin Wizard](https://wizard.openzeppelin.com) in your browser, and use the wizard to create an out-of-the-box NFT contract.
 
     - Select the `ERC721` tab for an NFT smart contract.
 
@@ -122,7 +122,7 @@ This is the file that contains the metadata for the token which includes the ima
 
 ## Populate the `.env` File
 
-In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual way. That is, 
+In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual way. That is,
 
 - Create a `.env.sample` file within the `src` folder
 
@@ -140,11 +140,10 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
     ```
 
 !!!warning
-    
+
     Make sure `.env` is in the `.gitignore` file to avoid uploading your `ACCOUNT_PRIVATE_KEY`.
 
-
-## Deploy Your Contract 
+## Deploy Your Contract
 
 1. In the CLI, use the following command to ensure grabbing variables from `.env`:
 
@@ -167,7 +166,7 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
     which executes the following:
 
     - Does a `forge create`
-    - Passes the `RPC_URL` and `PVTKEY` 
+    - Passes the `RPC_URL` and `PVTKEY`
     - References the actual smart contract
 
     For example, when deploying the `Sbt.sol` contract, the command will look like this:
@@ -178,11 +177,11 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
 
 The above command compiles and deploys the contract to the zkEVM Testnet. The output on the CLI looks like this one below.
 
-![Successful Deploy Sbt.sol](../img/zkvm/zkv-success-deploy-sbtdotsol.png)
+![Successful Deploy Sbt.sol](../img/zkEVM/zkv-success-deploy-sbtdotsol.png)
 
 ## Check Deployed Contract in Explorer
 
-- Copy the address of your newly deployed contract (i.e. the `Deployed to:` address as in the above example output). 
+- Copy the address of your newly deployed contract (i.e. the `Deployed to:` address as in the above example output).
 
 - Go to the [zkEVM Testnet Explorer](https://testnet-zkevm.polygonscan.com), and paste the address in the `Search by address` field.
 

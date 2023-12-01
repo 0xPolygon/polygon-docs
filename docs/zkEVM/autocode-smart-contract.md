@@ -24,10 +24,10 @@ Suppose you wanted to create a `Mintable`, `Burnable` ERC721 token and specify a
 
 3. Use the check-boxes on the left to select features of your token
 
-  - Put a tick on the `Mintable` check-box
-  - Put a tick on the `Auto Increment Ids` check-box, this ensures uniqueness of each minted NFT
-  - Put a tick on the `Burnable` check-box
-  - Either leave the **default MIT license** or type the license of your choice
+- Put a tick on the `Mintable` check-box
+- Put a tick on the `Auto Increment Ids` check-box, this ensures uniqueness of each minted NFT
+- Put a tick on the `Burnable` check-box
+- Either leave the **default MIT license** or type the license of your choice
 
   Notice that new lines of code are automatically written each time a feature is selected.
 
@@ -37,4 +37,4 @@ With the resulting lines of code, you now have the NFT token contract written in
 
 The below figure depicts the auto-written NFT smart contract code.
 
-![The end-product NFT source code](../img/zkvm/zkv-end-product-nft-code.png)
+![The end-product NFT source code](../img/zkEVM/zkv-end-product-nft-code.png)

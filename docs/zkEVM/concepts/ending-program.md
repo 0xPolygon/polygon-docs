@@ -2,7 +2,7 @@
 
 Before looking at ways to properly end a program, let us first make a few remarks on how to handle negative numbers.
 
-Recall that all values of the execution trace belong to a field $\mathbb{F}_p$ where $p=2^{64} −2^{32} +1$. 
+Recall that all values of the execution trace belong to a field $\mathbb{F}_p$ where $p=2^{64} −2^{32} +1$.
 
 Since $\mathtt{(p-x) + x \equiv p \texttt{ modulo } p}$  for all $\mathtt{x \in \mathbb{F}_p }$  and  $\mathtt{p \equiv 0 \texttt{ modulo } p}$, it follows that $\mathtt{-x \equiv p-x \texttt{ modulo } p}$. Any negative number $\mathtt{-a}$ is therefore interpreted as $\mathtt{p − a}$.
 
@@ -21,8 +21,8 @@ $$
 \end{array}
 \hspace{0.1cm}
 
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline 
- \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline 
+\begin{array}{|l|c|c|c|c|c|c|c|}\hline
+ \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline
  \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ \hline
 
 \texttt{0} & \texttt{p-3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
@@ -64,8 +64,8 @@ $$
 \end{array}
 \hspace{0.1cm}
 
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline 
- \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline 
+\begin{array}{|l|c|c|c|c|c|c|c|}\hline
+ \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline
  \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ \hline
 
 \texttt{0} & \texttt{3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
@@ -113,8 +113,8 @@ $$
 \end{array}
 \hspace{0.1cm}
 
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline 
- \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline 
+\begin{array}{|l|c|c|c|c|c|c|c|}\hline
+ \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline
 \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ \hline
 \texttt{0} & \texttt{3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
 \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} \\ \hline
@@ -151,14 +151,14 @@ Since this instruction needs to specify the destination of the jump, we need to 
 $$
 \begin{aligned}
 \begin{array}{|l|c|}
-\hline 
+\hline
 \texttt{ line } & \bf{Instructions } \text{ }\text{ }\text{ }\text{ } \\ \hline
 \quad\texttt{ 0 } & \text{ }\mathtt{\$\{getAFreeInput()\} => A} \text{ }\\ \hline
 \quad\texttt{ 1 } & \text{ }\mathtt{-3 => B} \qquad\qquad\qquad\quad\quad \\ \hline
 \quad\texttt{ 2 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
 \quad\texttt{ 3 } & \text{ }\mathtt{A : JMPZ(5) } \quad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
 \quad\texttt{ 4 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
-\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline 
+\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -167,9 +167,9 @@ With regards to the instruction "$\texttt{A:JMPZ(5)}$" in $\texttt{line}$ $\text
 
 1. The $\texttt{A}$ registry, preceding the colon, means that $\texttt{op}$ is set to the value of $\texttt{A}$.
 
-2.	If $\texttt{op = 0}$, the program jumps to $\texttt{line}$ $\texttt{5}$.
+2. If $\texttt{op = 0}$, the program jumps to $\texttt{line}$ $\texttt{5}$.
 
-3.	If $\mathtt{op \not= 0}$,  the program continues sequentially with the instruction at $\texttt{line}$ $\texttt{4}$.
+3. If $\mathtt{op \not= 0}$,  the program continues sequentially with the instruction at $\texttt{line}$ $\texttt{4}$.
 
 ## Conditional jumps examples
 
@@ -184,14 +184,14 @@ In this example, the free input is $\mathtt{FREE = 7}$. Focusing on $\texttt{lin
 $$
 \begin{aligned}
 \begin{array}{|l|c|}
-\hline 
+\hline
 \texttt{ line } & \bf{Instructions } \text{ }\text{ }\text{ }\text{ } \\ \hline
 \quad\texttt{ 0 } & \text{ }\mathtt{\$\{getAFreeInput()\} => A} \text{ }\\ \hline
 \quad\texttt{ 1 } & \text{ }\mathtt{-3 => B} \qquad\qquad\qquad\quad\quad \\ \hline
 \quad\texttt{ 2 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
 \quad\texttt{ 3 } & \text{ }\mathtt{A : JMPZ(5) } \quad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
 \quad\texttt{ 4 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
-\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline 
+\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline
 \end{array}
 \hspace{0.1cm}
 
@@ -215,13 +215,13 @@ In this case, the free input is $\mathtt{FREE = 3}$. Again, focusing on $\texttt
 $$
 \begin{aligned}
 \begin{array}{|l|c|}
-\hline 
+\hline
 \texttt{ line } & \bf{Instructions } \text{ }\text{ }\text{ }\text{ } \\ \hline
 \quad\texttt{ 0 } & \text{ }\mathtt{\$\{getAFreeInput()\} => A} \text{ }\\ \hline
 \quad\texttt{ 1 } & \text{ }\mathtt{-3 => B} \qquad\qquad\qquad\quad\quad \\ \hline
 \quad\texttt{ 2 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
 \quad\texttt{ 3 } & \text{ }\mathtt{A : JMPZ(5) } \quad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
-\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline 
+\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline
 \end{array}
 
 \hspace{0.1cm}
@@ -258,7 +258,7 @@ Since the instructions require the executor to perform varied operations, and du
 
 3. **Check correct program ending**
 
-   How the program ends also needs to be managed. Due to the presence of jumps, the length of the execution trace is no longer constant for the same program if the free inputs are varied. 
+   How the program ends also needs to be managed. Due to the presence of jumps, the length of the execution trace is no longer constant for the same program if the free inputs are varied.
 
 4. **Check positioning of Publics**
 

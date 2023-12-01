@@ -7,7 +7,6 @@ This document provides a comprehensive list of differences between the Ethereum 
 
     To start deploying your own smart contracts on the zKEVM, check out the [<ins>deployment guide</ins>](/zkevm/develop.md).
 
-
 ## Opcodes
 
 This section lists out the changes we have done with Opcodes in zKEVM as compared to the EVM.
@@ -19,6 +18,7 @@ This section lists out the changes we have done with Opcodes in zKEVM as compare
 - **DIFFICULTY** &rarr;  returns "0" instead of a random number as in the EVM.
 
 - **BLOCKHASH** &rarr; returns all previous block hashes instead of just the last 256 blocks.
+
 > **BLOCKHASH** is the state root at the end of a processable transaction and is stored on the system smart contract.
 
 - **NUMBER** &rarr; returns the number of processable transactions.

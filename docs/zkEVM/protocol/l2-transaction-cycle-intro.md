@@ -2,7 +2,6 @@
 !!!info
     This document series describes in detail the various forms and stages that L2 users' transactions go through, from the time they are created in users' wallets to the time they are finally verified with indisputable evidence on L1.
 
-
 ## Submit transaction
 
 Transactions in the Polygon zkEVM network are created in users' wallets and signed with their private keys.

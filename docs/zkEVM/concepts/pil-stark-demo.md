@@ -2,7 +2,6 @@
 !!!note
     This document is a guide to a DIY implementation of the PIL-STARK proof/verification system.
 
-
 Before delving into the implementation, we first ensure the boundary constraints in the  $\texttt{mFibonacci.pil}$ code are not hardcoded. The aim here is to implement these values as $\texttt{publics}$. This subsequently populates the $\texttt{publics}$' field in the parsed $\texttt{\{ \} fibonacci.pil.json}$ file.
 
 ## Boundary Constraints As Publics
@@ -39,11 +38,11 @@ where the  **` : `**  colon-prefix indicates a read of the value stored at $\tex
 
 The modified $\texttt{mFibonacci.pil}$ file, before compilation with $\texttt{PILCOM}$, is now as follows,
 
-![mFibonacci.pil file with "publics"](../../img/zkvm/fib17-mfib-pil-w-pubs.png)
+![mFibonacci.pil file with "publics"](../../img/zkEVM/fib17-mfib-pil-w-pubs.png)
 
 This modified $\texttt{mFibonacci.pil}$ file can be compiled with $\texttt{PILCOM}$ in the manner demonstrated earlier. The resulting parsed PIL file, "$\texttt{\{ \} mfibonacci.pil.json}$", now reflects some information in the "$\texttt{publics}$" field, as shown here:
 
-![A non-empty "publics" field the parsed PIL file ](../../img/zkvm/fib18-non-empt-pubs-field.png)
+![A non-empty "publics" field the parsed PIL file ](../../img/zkEVM/fib18-non-empt-pubs-field.png)
 
 ## PIL-STARK Implementation Guide
 
@@ -59,7 +58,7 @@ npm init -y
 
 A successful initialisation looks like this:
 
-![Successful node initialisation](../../img/zkvm/fib19-init-node-project.png) 
+![Successful node initialisation](../../img/zkEVM/fib19-init-node-project.png)
 
 Next, install the required dependencies with the following command,
 
@@ -69,7 +68,7 @@ npm install pil-stark yargs chai
 
 The installation takes seconds, and again the results looks like this,
 
-![Installed dependencies](../../img/zkvm/fib20-dependncs-install-mfib.png)
+![Installed dependencies](../../img/zkEVM/fib20-dependncs-install-mfib.png)
 
 ### Create Input Files
 
@@ -86,11 +85,11 @@ First of all, the overall inputs to PIL-STARK are; the $\texttt{.pil}$ file desc
     pol ab = a*b;
 
   // publics
-  	public out = a(%N-1);
+   public out = a(%N-1);
 
   // transition constraints
-  	(1-ISLAST) * (a' - b) = 0;
-  	(1-ISLAST) * (b' - (ab)) = 0;
+   (1-ISLAST) * (a' - b) = 0;
+   (1-ISLAST) * (b' - (ab)) = 0;
 
   // boundary constraint
     ISLAST*(a-:out)=0;              
@@ -105,10 +104,10 @@ First of all, the overall inputs to PIL-STARK are; the $\texttt{.pil}$ file desc
     "nQueries": 8, 
     "verificationHashType": "GL", 
     "steps": [
-    	{"nBits": 11}, 
+     {"nBits": 11}, 
       {"nBits": 7}, 
       {"nBits": 3}
-  	]
+   ]
   }
   ```
 
@@ -124,26 +123,26 @@ Create a new file and call it  `executor_mfibonacci.js`. Copy the code-text show
 const { FGL } = require("pil-stark");
 
 module.exports.buildConstants = async function (pols) {
-	const N = 1024;
-	for ( let i=0; i<N; i++) { 
-  	pols.ISLAST[i] = (i == N-1) ? 1n : 0n;}
+ const N = 1024;
+ for ( let i=0; i<N; i++) { 
+   pols.ISLAST[i] = (i == N-1) ? 1n : 0n;}
     }
 
 module.exports.execute = async function (pols, input) { 
   const N = 1024;
-	pols.a[0] = BigInt(input[0]);
-	pols.b[0] = BigInt(input[1]); 
+ pols.a[0] = BigInt(input[0]);
+ pols.b[0] = BigInt(input[1]); 
   for(let i=1; i<N; i++){
-		pols.a[i] = pols.b[i-1];
-		pols.b[i] = FGL.mul(pols.a[i-1], pols.b[i-1]);
-	}
-	return pols.a[N-1];
+  pols.a[i] = pols.b[i-1];
+  pols.b[i] = FGL.mul(pols.a[i-1], pols.b[i-1]);
+ }
+ return pols.a[N-1];
 }
 ```
 
 ### Create PIL-STARK Proof Generator And Verifier
 
-Finally, create the PIL-STARK proof generator and verifier by creating a new file (using a code editor) and name it `mfib_gen_and_prove.js`. 
+Finally, create the PIL-STARK proof generator and verifier by creating a new file (using a code editor) and name it `mfib_gen_and_prove.js`.
 
 Copy the code-text shown below, into this `mfib_gen_and_prove.js` file and save it in the `mfibonacci_sm` subdirectory.
 
@@ -168,11 +167,11 @@ async function generateAndVerifyPilStark() {
 
     // Generate trace
     const evaluationPilResult = await verifyPil(FGL, pil, cmPols , constPols); 
-  	if (evaluationPilResult.length != 0) {
+   if (evaluationPilResult.length != 0) {
         console.log("Abort: the execution trace generated does not satisfy the PIL description!"); 
         for (let i=0; i < evaluationPilResult.length; i++) {
           console.log(pilVerificationResult[i]); } return;
-     	} else { 
+      } else { 
           console.log("Continue: execution trace matches the PIL!"); }
 
     // Setup for the stark
