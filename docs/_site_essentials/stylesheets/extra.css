@@ -42,13 +42,3 @@ div.flex-figure div.flex-figure-right {
 	flex-grow: 1;
 	flex-shrink: 1.5;
 }
-
-/*
-.md-footer, .md-footer__inner, .md-footer-meta {
-	background-color: black;
-}
-*/
-
-.md-footer__inner {
-	display: none !important;
-}
