@@ -106,31 +106,32 @@ See the below table for the corresponding execution trace:
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 1}\\ \hline
-\ \text{ 2}\\ \hline
-\ \text{ 3}\\ \hline
-\ \text{ 4}\\ \hline
-\ \text{ 5}\\ \hline
-\ \text{ 6}\\ \hline
-\ \text{ 7}\\ \hline
-\ \ \vdots\\ \hline
-\end{array}
+    \begin{array}{|l|c|}\hline
+    \texttt{row}\\ \hline
+    \ \text{ 1}\\ \hline
+    \ \text{ 2}\\ \hline
+    \ \text{ 3}\\ \hline
+    \ \text{ 4}\\ \hline
+    \ \text{ 5}\\ \hline
+    \ \text{ 6}\\ \hline
+    \ \text{ 7}\\ \hline
+    \ \ \vdots\\ \hline
+    \end{array}
 \end{aligned}
 \hspace{0.1cm}
 
-\begin{aligned}\begin{array}{|l|c|c|c|c|c|c|c|}\hline 
-\mathtt{freeIn} & \mathtt{RESET} & \texttt{out} \\ \hline 
-\ \quad\ \texttt{4} & \texttt{1} & \texttt{0} \\ \hline
-\ \quad\ \texttt{2} & \texttt{0} & \texttt{4}  \\ \hline
-\ \quad\ \texttt{3} & \texttt{1} & \texttt{8} \\ \hline
-\ \quad\ \texttt{1} & \texttt{0} & \texttt{3} \\ \hline
-\ \quad\ \texttt{9} & \texttt{1} & \texttt{3} \\ \hline
-\ \quad\ \texttt{0} & \texttt{0} & \texttt{9} \\ \hline
-\ \quad\ \texttt{0} & \texttt{1} & \texttt{0} \\ \hline
-\ \quad\ \vdots & \vdots & \vdots \\ \hline
-\end{array}
+\begin{aligned}
+    \begin{array}{|l|c|c|c|c|c|c|c|}\hline
+    \mathtt{freeIn} & \mathtt{RESET} & \texttt{out} \\ \hline
+    \ \quad\ \texttt{4} & \texttt{1} & \texttt{0} \\ \hline
+    \ \quad\ \texttt{2} & \texttt{0} & \texttt{4}  \\ \hline
+    \ \quad\ \texttt{3} & \texttt{1} & \texttt{8} \\ \hline
+    \ \quad\ \texttt{1} & \texttt{0} & \texttt{3} \\ \hline
+    \ \quad\ \texttt{9} & \texttt{1} & \texttt{3} \\ \hline
+    \ \quad\ \texttt{0} & \texttt{0} & \texttt{9} \\ \hline
+    \ \quad\ \texttt{0} & \texttt{1} & \texttt{0} \\ \hline
+    \ \quad\ \vdots & \vdots & \vdots \\ \hline
+    \end{array}
 \end{aligned}
 $$
 
