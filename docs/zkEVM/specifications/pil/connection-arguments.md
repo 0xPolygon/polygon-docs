@@ -1,17 +1,4 @@
----
-id: connect-arg
-title: Connection Arguments
-sidebar_label: Connection Arguments
-description: This document describes the Connection Arguments and how they are used in Polynomial Identity Language.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - connection arguments
-  - Copy Satisfiability
----
-
-## Copy Satisfiability
+This document describes the Connection Arguments and how they are used in Polynomial Identity Language.
 
 ### Connection Argument
 
@@ -19,11 +6,9 @@ Given a vector $a = ( a_1 , \dots , a_n) \in \mathbb{F}_n$ and a partition ${\la
 
 Moreover, we say that a protocol $(\mathcal{P}, \mathcal{V})$ is a **connection argument** if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that a vector $\text{\it{copy-satisfies}}$ a partition of $[n]$.
 
-:::info
+!!! info
 
-We use the term “connection” instead of “copy-satisfaction” because the argument is used in PIL in a more general sense than in the original definition given in [<ins>GWC19</ins>](https://eprint.iacr.org/2019/953).
-
-:::
+    We use the term “connection” instead of “copy-satisfaction” because the argument is used in PIL in a more general sense than in the original definition given in [<ins>GWC19</ins>](https://eprint.iacr.org/2019/953).
 
 ### Example
 
@@ -93,11 +78,9 @@ pol constant SA;
 
 A valid execution trace for this example was shown in Table 1 above.
 
-:::info Remark
+!!! info Remark
 
-The column $\texttt{SA}$ does not need to be declared as a constant polynomial. The **connection argument** will still hold true even if it is declared as committed.
-
-:::
+    The column $\texttt{SA}$ does not need to be declared as a constant polynomial. The **connection argument** will still hold true even if it is declared as committed.
 
 ## Multiple Copy Satisfiability
 

@@ -1,15 +1,4 @@
----
-id: public-values
-title: Public Values
-sidebar_label: Public Values
-description: Public Values refers to values of committed polynomials that are known to both the prover and the verifier, as part of the arithmetization process.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - public values
-  - fibonacci
----
+Public Values refers to values of committed polynomials that are known to both the prover and the verifier, as part of the arithmetization process.
 
 Public Values refers to values of committed polynomials that are known to both the prover and the verifier, as part of the arithmetization process. For example, if the prover is claiming to know the output of a certain computation, then its arithmetization would lead to the inclusion of a public value to some of the polynomials representing such a computation.
 

@@ -1,15 +1,4 @@
----
-id: pil-config
-title: PIL Configuration File
-sidebar_label: PIL Configuration
-description: The following document describes why Polynomial Identity Language uses a special configuration file.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - configuration
-  - dependency inclusion
----
+The following document describes why Polynomial Identity Language uses a special configuration file.
 
 In order for PIL to securely enable modularity, especially in complex settings such as the Polygon zkEVM's, where the Main SM has several secondary state machines executing different computations, a **dependency inclusion feature** among different `.pil` files needed to be developed.
 

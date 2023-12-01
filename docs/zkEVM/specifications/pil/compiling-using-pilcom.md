@@ -1,15 +1,4 @@
----
-id: pil-compile
-title: Compilation of PIL Programs
-sidebar_label: Compilation
-description: This document describes how Polynomial Identity Language programs are compiled by PILCOM.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - pilcom
-  - compilation
----
+This document describes how Polynomial Identity Language programs are compiled by PILCOM.
 
 Depending on the language used in implementation, every PIL code can be compiled into either a $\texttt{JSON}$ file or a $\texttt{C++}$ code by using a compiler called $\bf{pilcom}$. 
 

@@ -1,15 +1,4 @@
----
-id: permutation-arg
-title: Permutation Arguments
-sidebar_label: Permutation Arguments
-description: This document describes Permutation Arguments and how they are used in Polynomial Identity Language.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - permutation arguments
-  
----
+This document describes Permutation Arguments and how they are used in Polynomial Identity Language.
 
 ## Definition
 
@@ -21,11 +10,9 @@ $$
 
 A protocol $(\mathcal{P}, \mathcal{V})$ is a **permutation argument** if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that two vectors in $\mathbb{F}^n$ are a permutation of each other.
 
-:::note
+!!! note
 
-Unlike inclusion arguments, the two vectors subject to a permutation argument must have the same length.
-
-:::
+    Unlike inclusion arguments, the two vectors subject to a permutation argument must have the same length.
 
 In the PIL context, the Plookup permutation argument between two columns $\texttt{a}$ and $\texttt{b}$ can be declared using the keyword "$\texttt{is}$" and using the syntax "$\mathtt{ \{ a \}\ is\ \{ b \}}$", where $\texttt{a}$ and $\texttt{b}$ do not necessarily need to be defined in different programs.
 
@@ -96,8 +83,6 @@ pol commit d, e, f;
 pol commit sel;
 ```
 
-:::info Remark
+!!! info Remark
 
-The $\texttt{sel}$ column should be turned on (i.e., $\texttt{sel}$ set to $1$) the same number of times in both programs. Otherwise, a permutation cannot exist between any of the columns, since the resulting vectors would be of different lengths. This allows the use of this kind of argument even if both execution traces do not contain the same amount of rows.
-
-:::
+    The $\texttt{sel}$ column should be turned on (i.e., $\texttt{sel}$ set to $1$) the same number of times in both programs. Otherwise, a permutation cannot exist between any of the columns, since the resulting vectors would be of different lengths. This allows the use of this kind of argument even if both execution traces do not contain the same amount of rows.

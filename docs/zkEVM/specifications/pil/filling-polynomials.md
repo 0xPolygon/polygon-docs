@@ -1,20 +1,8 @@
----
-id: filling-polynomial
-title: Filling Polynomials
-sidebar_label: Filling Polynomials
-description: This document describes how to fill Polynomials in PIL using JavaScript and Pilcom.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - pilcom
-  - Filling Polynomials
-  - execution trace
----
+This document describes how to fill Polynomials in PIL using JavaScript and Pilcom.
 
 In this document, we are going to use **Javascript** and **pilcom** to generate a specific execution trace for a given PIL. 
 
-To do so, we are going to use the execution trace of a program previously discussed in the [Connecting Programs](connect-programs.md) section.
+To do so, we are going to use the execution trace of a program previously discussed in the [Connection Arguments](connection-arguments.md) section.
 
 We will also use the **pil-stark** library, which is a utility that provides a framework for setup, generation and verification of proofs. It uses an FGL class which mimics a finite field, and it is required by some functions that provide the **pilcom** package.
 
@@ -76,7 +64,7 @@ Using these, the polynomials can now be filled.
 
 ## `Main.pil` Code Example
 
-In our example, we recall the `main.pil` seen in the [Connecting Programs](connect-programs.md) section about $4$-bit integers.
+In our example, we recall the `main.pil` seen in the [Connection Arguments](connection-arguments.md) section about $4$-bit integers.
 
 Since we are only allowed to use $4$-bit integers, inputs for the trace, which are also the ones introduced in the $\mathtt{Main.a}$ polynomial, is a chain of integers n ascending cyclically from $0$ to $15$.
 

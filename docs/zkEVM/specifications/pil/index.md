@@ -1,18 +1,3 @@
----
-id: introduction
-title: Polynomial Identity Language
-sidebar_label: Introduction
-description: Polynomial Identity Language (PIL) is a domain-specific language (DSL) created to provide developers with a holistic framework for constructing programs through an easy-to-use interface, and abstracting the complexity of proof/verification mechanisms.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - introduction to PIL
-  - Polynomial Identity Language
----
-
-## Overview
-
 **Polynomial Identity Language (PIL)** is a domain-specific language (DSL) created to provide developers with a holistic framework for constructing programs through an easy-to-use interface, and abstracting the complexity of proof/verification mechanisms. In the zkEVM context, PIL is the very DNA of verification.
 
 One of the main peculiarities of PIL is its modularity, which allows programmers to define parametrizable programs called `namespaces`. Developers can therefore create their own custom namespaces and instantiate them from larger programs or some public library.

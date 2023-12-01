@@ -1,16 +1,4 @@
----
-id: pil-arguments
-title: Inclusion Arguments
-sidebar_label: Inclusion Arguments
-description: This document describes how Polynomial Identity Language implements Inclusion Arguments.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - execution trace
-  - addition
-  - polynomials
----
+This document describes how Polynomial Identity Language implements Inclusion Arguments.
 
 For most of the programs used in the zkEVM's Prover, the values recorded in the columns of execution traces are field elements. 
 

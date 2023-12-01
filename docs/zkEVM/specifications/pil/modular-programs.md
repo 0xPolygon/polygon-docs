@@ -1,14 +1,4 @@
----
-id: connect-programs
-title: Connecting Programs
-sidebar_label: Connecting Programs
-description: One of the core features of Polynomial Identity Language is that it allows modular design of its programs. This document describes how PIL connects programs.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - modular
----
+One of the core features of Polynomial Identity Language is that it allows modular design of its programs. This document describes how PIL connects programs.
 
 ## Modular Design
 
@@ -72,11 +62,11 @@ pol commit a, neg_a , op;
 a in Global.BITS4;
 ```
 
-:::info Remarks about the above code
-`BITS4` is a polynomial containing each of the possible 4-bit integers. These 4-bit integers can be chosen in any order when constructing `BITS4` because **inclusion checks do not respect orderings**.
+!!! info "Remarks about the above code"
 
-Also, observe that `BITS4` is called from a namespace which is different from where it is defined. The syntax `Namespace.polynomial` can be used to access polynomials of other namespaces.
-:::
+    `BITS4` is a polynomial containing each of the possible 4-bit integers. These 4-bit integers can be chosen in any order when constructing `BITS4` because **inclusion checks do not respect orderings**.
+
+    Also, observe that `BITS4` is called from a namespace which is different from where it is defined. The syntax `Namespace.polynomial` can be used to access polynomials of other namespaces.
 
 The traditional procedure is to put different namespaces in separate files and then use the include keyword to **“connect”** them. For instance, two programs can be defined as follows.
 

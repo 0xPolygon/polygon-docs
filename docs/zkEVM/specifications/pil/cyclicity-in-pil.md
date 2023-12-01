@@ -1,14 +1,4 @@
----
-id: cyclic-nature
-title: Cyclic Nature of PIL
-sidebar_label: Cyclic Nature
-description: This document describes how to introduce cyclicity to execution traces in Polynomial Identity Language.
-keywords:
-  - polygon
-  - PIL
-  - zkEVM
-  - cyclic nature
----
+This document describes how to introduce cyclicity to execution traces in Polynomial Identity Language.
 
 In order to synchronize the execution trace of a given program with the subgroup $G$ of the multiplicative group $\mathbb{F}^*$, over which interpolation is performed, an extra constant polynomial (or precompiled column) is added to the trace. 
 
@@ -44,27 +34,26 @@ $$
 
 Denote the cyclic group over which interpolation is carried out as $G = \{ g, g^2, g^3, g^4 = 1 \} \subset \mathbb{F}$.
 
-:::info Concession to an abuse of notation
-We use the symbols $\texttt{a}$ and $\texttt{b}$, that denote columns of the execution trace, to also denote the corresponding polynomials resulting from interpolation. The columns $\texttt{a}$ and $\texttt{b}$ are best expressed as arrays,
+!!! info Concession to an abuse of notation
+    We use the symbols $\texttt{a}$ and $\texttt{b}$, that denote columns of the execution trace, to also denote the corresponding polynomials resulting from interpolation. The columns $\texttt{a}$ and $\texttt{b}$ are best expressed as arrays,
 
-$$
-\texttt{a} = [1,0,-1,1] \ \text{and}\ \texttt{b} = [1,2,2,1]
-$$
+    $$
+    \texttt{a} = [1,0,-1,1] \ \text{and}\ \texttt{b} = [1,2,2,1]
+    $$
 
-while the respective polynomials that result from interpolation, should rather be denoted differently, say with, $P(X)$ and $Q(X)$, such that for each row index $i$,
+    while the respective polynomials that result from interpolation, should rather be denoted differently, say with, $P(X)$ and $Q(X)$, such that for each row index $i$,
 
-$$
-P(g^i) = \texttt{a}[i]\ \ \text{and}\ \ Q(g^i) = \texttt{b}[i] \tag{eqn}
-$$
+    $$
+    P(g^i) = \texttt{a}[i]\ \ \text{and}\ \ Q(g^i) = \texttt{b}[i] \tag{eqn}
+    $$
 
-**But in order to keep the PIL code simple and easily relatable to the execution trace**, we replace the $P$ and $Q$ with $\texttt{a}$ and $\texttt{b}$, respectively. The above $\text{eqn}$ will therefore be seen written as,
+    **But in order to keep the PIL code simple and easily relatable to the execution trace**, we replace the $P$ and $Q$ with $\texttt{a}$ and $\texttt{b}$, respectively. The above $\text{eqn}$ will therefore be seen written as,
 
-$$
-\texttt{a}(g^i) = \texttt{a}[i]\ \ \text{and}\ \ \texttt{b}(g^i) = \texttt{b}[i].
-$$
+    $$
+    \texttt{a}(g^i) = \texttt{a}[i]\ \ \text{and}\ \ \texttt{b}(g^i) = \texttt{b}[i].
+    $$
 
-For the sake of convenience, in this particular example, the row index starts at $0$ just so it syncs with the normal array indexing.
-:::
+    For the sake of convenience, in this particular example, the row index starts at $0$ just so it syncs with the normal array indexing.
 
 ### Constraints And Cyclicity
 

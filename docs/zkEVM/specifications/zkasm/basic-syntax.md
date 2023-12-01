@@ -16,13 +16,11 @@ keywords:
 
 This section is devoted to explain the basic syntax of zkASM from a high-level perspective. Advanced syntax is totally dependant on the use case (e.g. the design of a zkEVM) and will be explained in more detail with more complete examples later on.
 
-:::info
+!!! info
 
-Each instruction of the zkASM is executed sequentially (the exception being the execution of a jump) one after the other.
+    Each instruction of the zkASM is executed sequentially (the exception being the execution of a jump) one after the other.
 
-Instructions are depicted line by line and are divided in two parts. The left-side part includes the code that is actually getting executed in the corresponding file, while the right-side part is related to the execution of opcodes, jumps and subroutines, indicated by the colon "$:$" symbol.
-
-:::
+    Instructions are depicted line by line and are divided in two parts. The left-side part includes the code that is actually getting executed in the corresponding file, while the right-side part is related to the execution of opcodes, jumps and subroutines, indicated by the colon "$:$" symbol.
 
 ## Comments and Modules
 

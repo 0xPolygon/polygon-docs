@@ -158,18 +158,18 @@ nav:
       - Specifications:
         - Polynomial Identity Language:
           - Polynomial Identity Language: zkEVM/specifications/pil/index.md
-          - connect-arg: zkEVM/specifications/pil/connect-arg.md
-          - connect-programs: zkEVM/specifications/pil/connect-programs.md
-          - cyclic-nature: zkEVM/specifications/pil/cyclic-nature.md
-          - filling-polynomial: zkEVM/specifications/pil/filling-polynomial.md
-          - generate-proof: zkEVM/specifications/pil/generate-proof.md
-          - permutation-arguments: zkEVM/specifications/pil/permutation-arguments.md
-          - pil-arguments: zkEVM/specifications/pil/pil-arguments.md
-          - pil-compile: zkEVM/specifications/pil/pil-compile.md
-          - pil-config: zkEVM/specifications/pil/pil-config.md
-          - pil-plonk: zkEVM/specifications/pil/pil-plonk.md
-          - public-values: zkEVM/specifications/pil/public-values.md
-          - simple-program: zkEVM/specifications/pil/simple-program.md
+          - Simple example: zkEVM/specifications/pil/simple-example.md
+          - Modular programs: zkEVM/specifications/pil/modular-programs.md
+          - Connection arguments: zkEVM/specifications/pil/connection-arguments.md
+          - Cyclicity in PIL: zkEVM/specifications/pil/cyclicity-in-pil.md
+          - Filling polynomials: zkEVM/specifications/pil/filling-polynomials.md
+          - Generating proofs: zkEVM/specifications/pil/generating-proofs.md
+          - Permutation arguments: zkEVM/specifications/pil/permutation-arguments.md
+          - Inclusion arguments: zkEVM/specifications/pil/inclusion-arguments.md
+          - Compiling using PILCOM: zkEVM/specifications/pil/compiling-using-pilcom.md
+          - Configuration files: zkEVM/specifications/pil/configuration-files.md
+          - PLONK in PIL: zkEVM/specifications/pil/plonk-in-pil.md
+          - Public values: zkEVM/specifications/pil/public-values.md
         - zkASM:
           - zkASM: zkEVM/specifications/zkasm/index.md
           - Basic Syntax: zkEVM/specifications/zkasm/basic-syntax.md
@@ -383,4 +383,4 @@ validation:
 extra_javascript:
   - js/mathjax.js
   - js/polyfill.min.js
-  - js/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
