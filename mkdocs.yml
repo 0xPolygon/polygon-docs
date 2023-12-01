@@ -498,7 +498,7 @@ plugins:
 #        - README.md
 
 validation:
-  absolute_links: ignore
+  absolute_links: warn
 
 markdown_extensions:
   - pymdownx.arithmatex:
