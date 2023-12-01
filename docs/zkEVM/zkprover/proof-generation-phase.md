@@ -2,13 +2,13 @@ This section explains the proof generation phase for all proofs; the zkEVM STARK
 
 ## Proof of the zkEVM STARK
 
-The execution trace has up to this point been built, together with a PIL file describing the ROM of the zkEVM. Given these two, a STARK proof which attests to the correct execution of the zkEVM, can be generated using the PIL-STARK tooling explained [here](/concepts/pil-stark.md).
+The execution trace has up to this point been built, together with a PIL file describing the ROM of the zkEVM. Given these two, a STARK proof which attests to the correct execution of the zkEVM, can be generated using the PIL-STARK tooling explained [here](../concepts/pil-stark.md).
 
 In this step, a blowup factor of 2 is used, so the proof becomes quite big due to a huge amount of polynomials.
 
 The compression step `c12a` was added for this very reason, raising the blowup factor and thus reducing the number of polynomials.
 
-![Generation for a zkEVM Proof.](/img/zkvm/22prf-rec-generation-stark-proof-for-recursivef.png)
+![Generation for a zkEVM Proof.](../../img/zkvm/22prf-rec-generation-stark-proof-for-recursivef.png)
 
 In order to generate the proof, the $\mathtt{main\_prover}$ service is used, and requires as input;
 
@@ -31,7 +31,7 @@ The same $\mathtt{main\_prover}$ service used earlier is again used here, and as
 
 It in turn generates the proof `c12a.proof` and the publics `c12a.public` combined in the `c12a.zkin.proof` file.
 
-![Generate a STARK proof for c12a.](/img/zkvm/23prf-rec-generation-stark-proof-for-c12.png)
+![Generate a STARK proof for c12a.](../../img/zkvm/23prf-rec-generation-stark-proof-for-c12.png)
 
 ### Proof of recursive1
 
@@ -43,7 +43,7 @@ The same $\mathtt{main\_prover}$ service used previously is applied again here, 
 
 This generates the proof and the publics joined in the `recursive1.zkin.proof` file.
 
-![Generate a STARK proof for recursive1.](/img/zkvm/24prf-rec-generation-stark-proof-for-recursive1.png)
+![Generate a STARK proof for recursive1.](../../img/zkvm/24prf-rec-generation-stark-proof-for-recursive1.png)
 
 ### Proof of recursive2
 
@@ -55,7 +55,7 @@ The same service $\mathtt{main\_prover}$ generates this proof, as it was done be
 
 This generate the proof and the publics combined in the `recursive2.zkin.proof` file.
 
-![Generate a STARK proof for recursive2.](/img/zkvm/25prf-rec-generation-stark-proof-for-recursive2.png)
+![Generate a STARK proof for recursive2.](../../img/zkvm/25prf-rec-generation-stark-proof-for-recursive2.png)
 
 ### Proof of recursivef
 
@@ -67,7 +67,7 @@ Again, the same $\mathtt{main\_prover}$ service is used to generate the proof. A
 
 This will generate the proof and the publics joined in the `recursivef.zkin.proof` file.
 
-![Generate a STARK proof for recursivef.](/img/zkvm/26prf-rec-generation-zkevm-proof.png)
+![Generate a STARK proof for recursivef.](../../img/zkvm/26prf-rec-generation-zkevm-proof.png)
 
 ### Proof of the final Stage
 

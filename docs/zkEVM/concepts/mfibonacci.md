@@ -3,7 +3,7 @@ This document gives a short summary of the **Multiplicative Fibonacci State Mach
 
 The computations involved in Ethereum, such as; making payments, transferring ERC20 tokens and running smart contracts; are repeatedly carried out and are all deterministic. That is, a particular input always produces the same output. Unlike the arithmetic circuit model which would need loops to be unrolled and hence resulting in undesirably larger circuits, the **State Machine** model is most suitable for iterative and deterministic computations.
 
-![Deterministic Computation](/img/zkvm/fib4-deterministic-compt.png)
+![Deterministic Computation](../../img/zkvm/fib4-deterministic-compt.png)
 
 ## zkProver's state machine design
 
@@ -19,7 +19,7 @@ These types of computations form a perfect analogy of what the zkProver has to d
 
 The approach taken, is that of developing a State Machine that allows a prover to create and submit a verifiable proof of knowledge, and anyone can take such a proof to verify its validity.
 
-![A Skeletal View of the Design Process](/img/zkvm/fib5-design-approach-outline.png)
+![A Skeletal View of the Design Process](../../img/zkvm/fib5-design-approach-outline.png)
 
 The process that leads to achieving such a State Machine-based system takes a few steps; 
 

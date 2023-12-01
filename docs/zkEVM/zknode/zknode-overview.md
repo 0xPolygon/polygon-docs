@@ -4,7 +4,7 @@ The main actors influencing the L2 State and its finality are the _trusted Seque
 
 The zkNode architecture is modular in nature. See the below diagram for more clarity.
 
-![zkNode Diagram](/img/zkvm/fig3-zkNode-arch.png)
+![zkNode Diagram](../../img/zkvm/fig3-zkNode-arch.png)
 
 Most important to understand, is the primary path taken by transactions; from when users submit the transactions to the zkEVM network up until they are finalized and incorporated in the L1 State.
 
@@ -19,4 +19,4 @@ Polygon zkEVM achieves this by utilizing several actors. Here is a list of the m
 - The **Aggregator** is another node whose role is to produce proofs attesting to the integrity of the Sequencer's proposed state change. These proofs are zero-knowledge proofs (or ZK-proofs) and the Aggregator employs a cryptographic component called the Prover for this purpose.
 - The **Prover** is a complex cryptographic tool capable of producing ZK-proofs of hundreds of batches, and aggregating these into a single ZK-proof which is published as the validity proof.
 
-Users can set up their own _local zkNode_ by following this guide [here](/zkevm/setup-local-node.md), or a production zkNode as detailed [here](/docs/zkevm/setup-production-node.md).
+Users can set up their own _local zkNode_ by following this guide [here](../setup-local-node.md), or a production zkNode as detailed [here](../setup-production-node.md).

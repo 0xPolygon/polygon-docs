@@ -4,7 +4,7 @@ There are five intermediate stages to achieving this; the **Compression Stage**,
 
 An overview of the overall process can be seen in the below figure.
 
-![Proving architecture with recursion, aggregation and composition](/img/zkvm/10prf-rec-proving-arch-outline.png)
+![Proving architecture with recursion, aggregation and composition](../../img/zkvm/10prf-rec-proving-arch-outline.png)
 
 ## Compression Stage
 
@@ -64,7 +64,7 @@ The $\mathtt{{\pi}_{FFLONK}}$ proof gets published on-chain as the validity proo
 
 All the public inputs used throughout the entire recursion procedure get hashed together, and the resulting digest forms the public input to the SNARK circuit.
 
-The set of all public inputs is listed below (see the documents on [zkEVM L2 state management](/zkevm/protocol/state-management.md) and [bridge](/zkevm/protocol/zkevm-bridge.md)):
+The set of all public inputs is listed below (see the documents on [zkEVM L2 state management](../protocol/state-management.md) and [bridge](../protocol/zkevm-bridge.md)):
 
 - `oldStateRoot`
 - `oldAccInputHash`

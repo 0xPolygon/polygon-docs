@@ -32,7 +32,7 @@ Following the verification of the ZK-proof, the Consensus Contract sends the zkE
 
 The below diagram shows the interactions of the three Bridge-related smart contracts when assets are bridged, as well as when assets are claimed. The interaction of the smart contracts is described in the following subsections.
 
-![Interaction among Bridge-related smart contracts in L1](/img/zkvm/04pzb-overall-interact-bridge-scs.png)
+![Interaction among Bridge-related smart contracts in L1](../../img/zkvm/04pzb-overall-interact-bridge-scs.png)
 
 ### L1 &rarr; zkEVM transfer
 
@@ -80,4 +80,4 @@ Here is the step-by-step process.
 
 The ZK-proof-generating circuit also writes the L2 Exit Tree Root to the Mainnet. The zkEVM Bridge SC deployed on L1 can then finalize the transfer by using the `Claim` function.
 
-![An overview of L2 Bridge-related smart contracts](/img/zkvm/05pzb-l2-related-scs.png)
+![An overview of L2 Bridge-related smart contracts](../../img/zkvm/05pzb-l2-related-scs.png)

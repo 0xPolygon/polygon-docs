@@ -10,9 +10,9 @@ PIL-STARK proof/verification consists of three components; Setup, Prover, and Ve
 
 - The Verifier receives the **STARK** proof and public values from the Prover, as well as the `starkInfo` and `constRoot` from the Setup phase. The Verifier's output is either an `Accept` if the proof is accepted, or a `Reject` if the proof is rejected.
 
-The full details of the PIL-STARK process are given [here](/zkevm/zkProver/pil-stark.md), while the following diagram summarizes entire PIL-STARK process.
+The full details of the PIL-STARK process are given [here](../concepts/pil-stark.md), while the following diagram summarizes entire PIL-STARK process.
 
-![PIL-STARK Process](/img/zkvm/01prf-rec-pil-stark.png)
+![PIL-STARK Process](../../img/zkvm/01prf-rec-pil-stark.png)
 
 ## Role of FRI
 

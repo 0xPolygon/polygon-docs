@@ -16,7 +16,7 @@ The output CIRCOM file `recursivef.circom`, obtained by running a different scri
 
 Both these outputs are used later on, to build and fill the next execution trace.
 
-![Figure 19: Convert the `recursive2` STARK to its verifier circuit called `recursivef`.](/img/zkvm/19prf-rec-recursive2-stark-to-recursivef-circuit.png)
+![Figure 19: Convert the `recursive2` STARK to its verifier circuit called `recursivef`.](../../img/zkvm/19prf-rec-recursive2-stark-to-recursivef-circuit.png)
 
 ## Setup `C2S` for `recursivef`
 
@@ -33,7 +33,7 @@ Since all FRI-related parameters are stored in a `recursive.starkstruct` file, a
 - the `recursivef.pil` file as inputs to the $\mathtt{generate\_starkinfo}$ service in order to generate the `recursivef.starkinfo` file, and
 - the `recursivef.const` as inputs to the component that builds the Merkle tree of evaluations of constant polynomials, `recursivef.consttree`, and its root `recursivef.verkey`.
 
-![Figure 20: Convert the `recursivef` circuit to its associated STARK.](/img/zkvm/20prf-rec-recursivef-circuit-2-stark.png)
+![Figure 20: Convert the `recursivef` circuit to its associated STARK.](../../img/zkvm/20prf-rec-recursivef-circuit-2-stark.png)
 
 ## Setup `S2C` for final
 
@@ -49,4 +49,4 @@ by filling the $\mathtt{stark\_} \texttt{verifier.circom.ejs}$ template.
 
 This verifier CIRCOM file gets imported by the `final.circom` circuit in order to generate the circuit being proved, using `FFLONK` procedure.
 
-![Convert the `recursivef` STARK to its verifier circuit called `final.circom}$.](/img/zkvm/21prf-rec-recursivef-stark-to-final-circom.png)
+![Convert the `recursivef` STARK to its verifier circuit called `final.circom}$.](../../img/zkvm/21prf-rec-recursivef-stark-to-final-circom.png)

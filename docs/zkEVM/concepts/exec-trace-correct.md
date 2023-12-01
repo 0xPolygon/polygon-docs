@@ -30,7 +30,7 @@ $$
 
 The figure below depicts the linear combinations of our state machine as an algebraic processor of sorts.
 
-![The Generic State Machine as an Algebraic Processor](/img/zkvm/gen4-sm-alg-processor.png)
+![The Generic State Machine as an Algebraic Processor](../../img/zkvm/gen4-sm-alg-processor.png)
 
 The vertical gray box (with the "+" sign) in the above figure denotes addition. It expresses forming linear combinations of some of the columns; $\texttt{FREE}$, $\texttt{A}$, $\texttt{B}$, or $\texttt{CONST}$. Each is either included or excluded from the linear combination depending on whether their corresponding selectors have the value $\mathtt{1}$ or $\mathtt{0}$. An extra register denoted by $\texttt{op}$ acts as a carrier of intermediate of the computation being executed and waiting to be placed in the correct output register (on the right in above figure), depending on the values of $\texttt{setA}$ and $\texttt{setB}$. 
 
@@ -142,7 +142,7 @@ Also, **the free inputs may come in the form of another JSON file**, let's name 
 
 See below diagram for a concise description of what the Executor does.
 
-![Figure 5: SM Executor in a broader context](/img/zkvm/gen5-sm-exec-broader-contxt.png)
+![Figure 5: SM Executor in a broader context](../../img/zkvm/gen5-sm-exec-broader-contxt.png)
 
 Although the execution trace is composed of the evaluations of the committed polynomials and the evaluations of the constant polynomials, the two evaluations do not happen simultaneously. 
 
@@ -220,4 +220,4 @@ In the big scheme of things, these are Lagrange polynomials emanating from inter
 
 The PIL description of the SM Executor, reading instructions from the zkASM program with four instructions, is depicted in the figure provided below.
 
-![The PIL description for the 4-instruction program](/img/zkvm/gen6-pil-4instrct-prog.png)
+![The PIL description for the 4-instruction program](../../img/zkvm/gen6-pil-4instrct-prog.png)

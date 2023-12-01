@@ -1,4 +1,4 @@
-As a microprocessor-type state machine, the Main SM is a typical example of a [**Generic State Machine**](/zkevm/zkProver/intro-generic-sm.md)
+As a microprocessor-type state machine, the Main SM is a typical example of a **Generic State Machine**.
 
 It is a state machine that behaves like an Algebraic processor. It receives instructions in the form of programs written in the zero-knowledge Assembly (zkASM) language, and makes state transitions in accordance with these instructions.
 
@@ -6,20 +6,20 @@ As a Generic SM, it can be thought of as being composed of two parts:
 
 1. The **firmware** part which is concerned with interpreting program instructions and correctly generating the execution trace. The ROM, which is a computer program written in zkASM, contains the set of all the zkProver's instructions. It is to the Polygon zkEVM what the EVM Interpreter is to Ethereum.
 
-2. The **hardware** part is responsible for setting up polynomial identities that every correctly-generated execution trace must satisfy. These polynomial identities (which are obtained via an interpolation process), are described in a novel language developed by the Polygon zkEVM team, called the [Polynomial Identity Language](/zkevm/PIL/introduction.md).
+2. The **hardware** part is responsible for setting up polynomial identities that every correctly-generated execution trace must satisfy. These polynomial identities (which are obtained via an interpolation process), are described in a novel language developed by the Polygon zkEVM team, called the Polynomial Identity Language.
 
 ## Specialist State Machines
 
 Instead of executing all the various computations on its own, the Main SM achieves efficiency by delegating verification of complex computations to specialized secondary state machines. These are:
 
-- [Storage SM](/zkevm/zkProver/intro-storage-sm.md) which handles all storage-related computations (e.g., Create, Read, Update and Delete).
-- [Arithmetic SM](/zkevm/zkProver/arithmetic-sm.md) which carries out elliptic curve arithmetic operations related to ECDSA. 
-- [Binary SM](/zkevm/zkProver/binary-sm.md) which is responsible for performing all binary operations as the Executor requires.
-- [Memory SM](/zkevm/zkProver/memory-sm.md) which in the zkEVM plays the same role the EVM Memory plays in Ethereum.   
-- [Keccak SM](/zkevm/zkProver/keccakf-sm.md) which is a binary circuit that computes hash values of strings as instructed by the Main SM. And, it is implemented within a special framework, detailed [here](/zkevm/zkProver/keccak-framework.md).
-- [Poseidon SM](/zkevm/zkProver/poseidon-sm.md) which specialises with computing hash values required in building Sparse Merkle Trees as per the Main SM instructions.
+- [Storage SM](intro-storage-sm.md) which handles all storage-related computations (e.g., Create, Read, Update and Delete).
+- [Arithmetic SM](arithmetic-sm.md) which carries out elliptic curve arithmetic operations related to ECDSA. 
+- [Binary SM](binary-sm.md) which is responsible for performing all binary operations as the Executor requires.
+- [Memory SM](memory-sm.md) which in the zkEVM plays the same role the EVM Memory plays in Ethereum.   
+- [Keccak SM](keccakf-sm.md) which is a binary circuit that computes hash values of strings as instructed by the Main SM. And, it is implemented within a special framework, detailed [here](keccak-framework.md).
+- [Poseidon SM](poseidon-sm.md) which specialises with computing hash values required in building Sparse Merkle Trees as per the Main SM instructions.
 
-There are other *auxiliary* state machines used in the zkProver; the [Padding-KK](/zkevm/zkProver/paddingkk-sm.md), the [Padding-KK-Bit](/zkevm/zkProver/paddingkk-bit-sm.md), the Padding-PG SM, the [Memory Align SM](/zkevm/zkProver/mem-align-sm.md), the [Bits2Field SM](/zkevm/zkProver/bits2field-sm.md) and the ROM SM ([sm_rom.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_rom.js)).
+There are other *auxiliary* state machines used in the zkProver; the [Padding-KK](paddingkk-sm.md), the [Padding-KK-Bit](paddingkk-bit-sm.md), the Padding-PG SM, the [Memory Align SM](mem-align-sm.md), the [Bits2Field SM](bits2field-sm.md) and the ROM SM ([sm_rom.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_rom.js)).
 
 ## Algebraic Processor
 
@@ -70,7 +70,7 @@ where $\mathtt{inA}$, $\mathtt{inB}$, $\mathtt{inC}$, $\mathtt{inD}$ and $\matht
 
 The figure below displays the Main SM's state transition, showing the generic registers, the selector registers, setter registers and the `OP` register.
 
-![Main SM's state transition showing only generic registers](/img/zkvm/03msm-state-transition-gen-regs.png)
+![Main SM's state transition showing only generic registers](../../img/zkvm/03msm-state-transition-gen-regs.png)
 
 The output value of each register is given by:
 
@@ -179,7 +179,7 @@ Here are the descriptions of each of these registers;
 
 The figure below depicts the Main SM's simplified state transition in accordance with ROM instructions.
 
-![Main SM's simplified state transition](/img/zkvm/04msm-simple-state-transition.png)
+![Main SM's simplified state transition](../../img/zkvm/04msm-simple-state-transition.png)
 
 - $\texttt{STEP}$: The **Step Register** is used to store the number of instructions executed so far in the current transaction.
 
@@ -236,7 +236,7 @@ Special opcodes are used for each of the delegated SM. For example, $\texttt{bin
 
 The figure below depicts registers contributing to the $\texttt{addr}$ register and its use in secondary state machines such as the Memory SM, KeccakF SM, PoseidonG SM and the Storage SM. 
 
-![The addr register and its use in different contexts](/img/zkvm/05msm-addr-reg-contexts.png)
+![The addr register and its use in different contexts](../../img/zkvm/05msm-addr-reg-contexts.png)
 
 Many of these instructions generate some data and this data is injected into $\texttt{OP}$ via the $\texttt{FREE}\ \texttt{0...7}$ register, where $\texttt{FREE}$ means a free input.
 
@@ -374,7 +374,7 @@ It is important to fill the $\texttt{A}\ \texttt{0...7}$ and $\texttt{B}\ \textt
 
 Binary SM executes and verifies the following operations - Addition $\texttt{ADD}$, Subtraction $\texttt{SUB}$, Less-than $\texttt{LT}$, Signed less-than $\texttt{SLT}$, Equals $\texttt{EQ}$, $\texttt{AND}$, $\texttt{OR}$, $\texttt{XOR}$ and $\texttt{NOT}$.
 
-The details on what these operations are, have been documented [here](/zkevm/zkProver/binary-sm.md).
+The details on what these operations are, have been documented [here](binary-sm.md).
 
 #### Example
 

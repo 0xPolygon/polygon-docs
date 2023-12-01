@@ -17,7 +17,7 @@ The process that leads to achieving such a State Machine-based system takes a fe
 
 These Polynomial Identities are equations that can be easily tested in order to verify the Prover's claims.
 
-A **Commitment Scheme** is required for facilitating the proving and verification. Henceforth, in the zkProver context, a proof/verification scheme called **PIL-STARK** is used. Check out the documentation [here](/zkevm/zkProver/commitment-scheme.md) for the Polygon zkEVM's commitment scheme setting.
+A **Commitment Scheme** is required for facilitating the proving and verification. Henceforth, in the zkProver context, a proof/verification scheme called **PIL-STARK** is used. Check out the documentation [here](../concepts/commitment-scheme.md) for the Polygon zkEVM's commitment scheme setting.
 
 ## Overall Process
 

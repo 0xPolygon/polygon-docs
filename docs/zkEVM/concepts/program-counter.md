@@ -6,7 +6,7 @@ We denote it by $\texttt{zkPC}$ because it is verified in a zero-knowledge manne
 
 The $\texttt{zkPC}$ is therefore a new column of the execution trace and it contains, at each clock, the line in the zkASM program of the instruction being executed.
 
-![Figure 7: A state machine with a Program Counter](/img/zkvm/gen7-state-machine-w-zkpc.png)
+![Figure 7: A state machine with a Program Counter](../../img/zkvm/gen7-state-machine-w-zkpc.png)
 
 In addition to the $\texttt{JMPZ(addr)}$, an unconditional jump instruction $\texttt{JMP(addr)}$ is allowed in the zkASM program. 
 
@@ -107,7 +107,7 @@ So, we query the executor for when the execution trace is at its last but one ro
 
 The assembly program uses labels instead of explicit line numbers, hence conforming to how assembly programs are typically written. Labels are convenient because with them, the assembly compiler can take care of computing actual line numbers. For instance, as in Figure 8 below; $\mathtt{start}$ is line $\mathtt{0}$ and $\mathtt{finalWait}$ is line $\mathtt{5}$.
 
-![Figure 8: Ending a Program with a loop](/img/zkvm/gen8-end-prog-w-loop.png)
+![Figure 8: Ending a Program with a loop](../../img/zkvm/gen8-end-prog-w-loop.png)
 
 ## Commentary on the execution trace
 
