@@ -12,7 +12,7 @@ Chainstack provides infrastructure for Ethereum-based applications and other blo
 
 Foundry is a fast toolkit for Ethereum application development written in Rust. It provides testing, interaction with EVM smart contracts, sending transactions, and blockchain data retrieval.
 
-!!! tip
+!!! note
 
     If you have any questions, reach out in the [<ins>Chainstack Discord</ins>](https://discord.com/invite/Cymtg2f7pX) server.
 

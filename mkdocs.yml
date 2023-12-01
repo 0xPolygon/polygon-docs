@@ -362,6 +362,8 @@ markdown_extensions:
   - meta
   - smarty
   - pymdownx.extra
+  - pymdownx.arithmatex:
+      generic: true
 
 plugins:
   - search
@@ -377,10 +379,6 @@ plugins:
 
 validation:
   absolute_links: ignore
-
-markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
 
 extra_javascript:
   - js/mathjax.js
