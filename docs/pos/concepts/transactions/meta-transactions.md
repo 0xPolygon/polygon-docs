@@ -45,13 +45,9 @@ will wrap the request (the signed message) into an actual transaction (which mea
 and broadcast it to the network, where the contract unwraps the transaction by validating the original
 signature and executes it on behalf of the user.
 
-:::note The words meta and batch may be analogous to some
+!!! note "The words meta and batch may be analogous to some"
 
-To clarify: a meta transaction is different from a batch transaction, where a batch transaction is
-a transaction that can send multiple transactions at once and are then executed from a single sender
-(single nonce specified) in sequence.
-
-:::
+    To clarify: a meta transaction is different from a batch transaction, where a batch transaction is a transaction that can send multiple transactions at once and are then executed from a single sender (single nonce specified) in sequence.
 
 In summary, meta transactions are a design pattern where:
 
@@ -104,7 +100,6 @@ Execute transactions on Polygon chain, without changing provider on MetaMask (th
 
 Under the hood, user signs on an intent to execute a transaction, which is relayed by a simple relayer to execute it on a contract deployed on Polygon chain.
 
-
 ## What is enabling transaction execution?
 
 The client that the user interacts with (web browser, mobile apps, etc) never interacts with the blockchain, instead it interacts with a simple relayer server (or a network of relayers), similar to the way GSN or any meta-transaction solution works ( see: [Meta Transactions: An Introduction](https://www.notion.so/Meta-Transactions-An-Introduction-8f54cf75321e4ec3b6d755e18e406590)).
@@ -134,8 +129,6 @@ For any action that requires blockchain interaction,
 
 - Make sure that the contract you'd like to interact with inherits from `NativeMetaTransactions` - 👀 peep into `executeMetaTransaction` function in the contract.
 - Link: [https://github.com/maticnetwork/pos-portal/blob/34be03cfd227c25b49c5791ffba6a4ffc9b76036/flat/ChildERC20.sol#L1338](https://github.com/maticnetwork/pos-portal/blob/34be03cfd227c25b49c5791ffba6a4ffc9b76036/flat/ChildERC20.sol#L1338)
-
-
 
 ```jsx
 
@@ -171,7 +164,6 @@ let data = await web3.eth.abi.encodeFunctionCall({
   });
 
   ```
-
 
 - Once you have a relayer and the contracts setup, what is required is for the client to be able to fetch an EIP712 formatted signature and simply call the API with the required parameters
 
@@ -297,7 +289,7 @@ let data = await web3.eth.abi.encodeFunctionCall({
         })
         .onEvent(biconomy.ERROR, (error, message) => {
           // Handle error while initializing mexa
-    			console.error(error);
+       console.error(error);
         });
 
     /**

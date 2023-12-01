@@ -1,3 +1,0 @@
-# Become a PoS validator
-
-Lorem ipsum ...

@@ -13,11 +13,11 @@ Source: [https://github.com/maticnetwork/heimdall/blob/develop/bor/handler.go#L2
 ```go
 // MsgProposeSpan creates msg propose span
 type MsgProposeSpan struct {
-	ID         uint64                  `json:"span_id"`
-	Proposer   hmTypes.HeimdallAddress `json:"proposer"`
-	StartBlock uint64                  `json:"start_block"`
-	EndBlock   uint64                  `json:"end_block"`
-	ChainID    string                  `json:"bor_chain_id"`
+ ID         uint64                  `json:"span_id"`
+ Proposer   hmTypes.HeimdallAddress `json:"proposer"`
+ StartBlock uint64                  `json:"start_block"`
+ EndBlock   uint64                  `json:"end_block"`
+ ChainID    string                  `json:"bor_chain_id"`
 }
 ```
 
@@ -30,32 +30,32 @@ Here is how this transaction chooses producers out of all validators:
 // SelectNextProducers selects producers for the next span by converting power to slots
 // spanEligibleVals - all validators eligible for next span
 func SelectNextProducers(blkHash common.Hash, spanEligibleVals []hmTypes.Validator, producerCount uint64) (selectedIDs []uint64, err error) {
-	if len(spanEligibleVals) <= int(producerCount) {
-		for _, val := range spanEligibleVals {
-			selectedIDs = append(selectedIDs, uint64(val.ID))
-		}
-		return
-	}
+ if len(spanEligibleVals) <= int(producerCount) {
+  for _, val := range spanEligibleVals {
+   selectedIDs = append(selectedIDs, uint64(val.ID))
+  }
+  return
+ }
 
-	// extract seed from hash
-	seed := helper.ToBytes32(blkHash.Bytes()[:32])
-	validatorIndices := convertToSlots(spanEligibleVals)
-	selectedIDs, err = ShuffleList(validatorIndices, seed)
-	if err != nil {
-		return
-	}
-	return selectedIDs[:producerCount], nil
+ // extract seed from hash
+ seed := helper.ToBytes32(blkHash.Bytes()[:32])
+ validatorIndices := convertToSlots(spanEligibleVals)
+ selectedIDs, err = ShuffleList(validatorIndices, seed)
+ if err != nil {
+  return
+ }
+ return selectedIDs[:producerCount], nil
 }
 
 // converts validator power to slots
 func convertToSlots(vals []hmTypes.Validator) (validatorIndices []uint64) {
-	for _, val := range vals {
-		for val.VotingPower >= types.SlotCost {
-			validatorIndices = append(validatorIndices, uint64(val.ID))
-			val.VotingPower = val.VotingPower - types.SlotCost
-		}
-	}
-	return validatorIndices
+ for _, val := range vals {
+  for val.VotingPower >= types.SlotCost {
+   validatorIndices = append(validatorIndices, uint64(val.ID))
+   val.VotingPower = val.VotingPower - types.SlotCost
+  }
+ }
+ return validatorIndices
 }
 ```
 
@@ -66,12 +66,12 @@ Here are the span details that Heimdall uses:
 ```go
 // Span structure
 type Span struct {
-	ID                uint64       `json:"span_id" yaml:"span_id"`
-	StartBlock        uint64       `json:"start_block" yaml:"start_block"`
-	EndBlock          uint64       `json:"end_block" yaml:"end_block"`
-	ValidatorSet      ValidatorSet `json:"validator_set" yaml:"validator_set"`
-	SelectedProducers []Validator  `json:"selected_producers" yaml:"selected_producers"`
-	ChainID           string       `json:"bor_chain_id" yaml:"bor_chain_id"`
+ ID                uint64       `json:"span_id" yaml:"span_id"`
+ StartBlock        uint64       `json:"start_block" yaml:"start_block"`
+ EndBlock          uint64       `json:"end_block" yaml:"end_block"`
+ ValidatorSet      ValidatorSet `json:"validator_set" yaml:"validator_set"`
+ SelectedProducers []Validator  `json:"selected_producers" yaml:"selected_producers"`
+ ChainID           string       `json:"bor_chain_id" yaml:"bor_chain_id"`
 }
 ```
 
@@ -95,8 +95,8 @@ Previously, a sprint would last [64 blocks](https://github.com/maticnetwork/bor/
 
 ```bash
 heimdallcli tx bor propose-span \
-	--start-block <start-block> \
-	--chain-id <heimdall-chain-id>
+ --start-block <start-block> \
+ --chain-id <heimdall-chain-id>
 ```
 
 ### Query current span

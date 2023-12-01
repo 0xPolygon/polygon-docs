@@ -1,8 +1,6 @@
-:::caution **Important Update**
+!!! danger "Important update"
 
-There is a proposal to transition the native token of the Polygon PoS network from MATIC to POL. This document will provide details on what this means for users of MATIC, the Polygon ecosystem, and the planned changes. Please read carefully and find more information [<ins>here</ins>](https://polygon.technology/blog/polygon-2-0-implementation-officially-begins-the-first-set-of-pips-polygon-improvement-proposals-released).
-
-:::
+    There is a proposal to transition the native token of the Polygon PoS network from MATIC to POL. This document will provide details on what this means for users of MATIC, the Polygon ecosystem, and the planned changes. Please read carefully and find more information [<ins>here</ins>](https://polygon.technology/blog/polygon-2-0-implementation-officially-begins-the-first-set-of-pips-polygon-improvement-proposals-released).
 
 ## General Overview
 
@@ -12,13 +10,12 @@ POL is the native token upgrade for the Polygon ecosystem, designed for use in a
 
 ### Do I Need to Do Anything Today as an Active Participant?
 
-**No**, if you’re currently using MATIC in the Polygon PoS network, there is nothing to do in the near term. 
+**No**, if you’re currently using MATIC in the Polygon PoS network, there is nothing to do in the near term.
 
-Separately, you are encouraged to engage in the governance and decision-making processes put forward by the recent PIPs. 
+Separately, you are encouraged to engage in the governance and decision-making processes put forward by the recent PIPs.
 Your involvement and input can play a significant role in shaping the future of the Polygon ecosystem.
 
 You can participate in governance proposals to vote on various aspects of the Polygon ecosystem through the PIP program.
-Check out how to do so [<ins>here</ins>](/docs/category/proposals/).
 
 ### **Do** I Need to Do Anything Today **as a Node Operator or Delegator?**
 
@@ -76,13 +73,14 @@ MATIC is held in the migration contract and can be used for unmigration.
 ### Can POL Tokens Be Reverted Back to MATIC?
 
 **Yes**, the migration contract includes a feature known as "unmigration." This allows users to convert their POL to an equivalent amount of MATIC. Governance controls this feature, providing flexibility in response to network conditions or security concerns.
+
 ## Bridging Mechanisms
 
 ### How Does the Modified Plasma Bridge Function?
 
 The Plasma Bridge will undergo modifications, with community approval, to change the native token of Polygon PoS to the new POL token. Specifically, the following changes are being proposed:
 
-- **Bridging POL to Polygon PoS**: if you bridge POL tokens to Polygon PoS, you will receive 
+- **Bridging POL to Polygon PoS**: if you bridge POL tokens to Polygon PoS, you will receive
 an equal amount of native tokens (POL) on Polygon PoS.
 - **Bridging POL to Ethereum****: when bridging native tokens (POL), the bridge will always disburse POL tokens.
 

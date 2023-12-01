@@ -7,9 +7,9 @@ In this system, holders of the native staking token of the chain can vote on pro
 - **Proposal submission:** Validators can submit proposals with a deposit. Once the minimum deposit is reached, proposal enters voting period. Valdiators that deposited on proposals can recover their deposits once the proposal is rejected or accepted.
 - **Vote:** Validators can vote on proposals that reached MinDeposit.
 
-There are deposit period and voting period as params in `gov` module. Minimum deposit has to be achieved before deposit period ends, otherwise proposal will be automatically rejected. 
+There are deposit period and voting period as params in `gov` module. Minimum deposit has to be achieved before deposit period ends, otherwise proposal will be automatically rejected.
 
-Once minimum deposits reached within deposit period, voting period starts. In voting period, all validators should vote their choices for the proposal. After voting period ends, `gov/Endblocker.go` executes `tally`  function and accepts or rejects proposal based on `tally_params` — `quorum`, `threshold` and `veto`. 
+Once minimum deposits reached within deposit period, voting period starts. In voting period, all validators should vote their choices for the proposal. After voting period ends, `gov/Endblocker.go` executes `tally`  function and accepts or rejects proposal based on `tally_params` — `quorum`, `threshold` and `veto`.
 
 Source: [https://github.com/maticnetwork/heimdall/blob/develop/gov/endblocker.go](https://github.com/maticnetwork/heimdall/blob/develop/gov/endblocker.go)
 
@@ -19,7 +19,7 @@ There are different types of proposals that can be implemented in Heimdall. As o
 
 Using this type of proposal, validators can change any `params` in any `module` of Heimdall.
 
-Example: change minimum `tx_fees` for the transaction in `auth` module. When the proposal gets accepted, it automatically changes the `params` in Heimdall state. No extra TX is needed. 
+Example: change minimum `tx_fees` for the transaction in `auth` module. When the proposal gets accepted, it automatically changes the `params` in Heimdall state. No extra TX is needed.
 
 ## CLI Commands
 
@@ -50,8 +50,8 @@ deposit_parmas:
 
 ```bash
 heimdallcli tx gov submit-proposal \
-	--validator-id 1 param-change proposal.json \
-	--chain-id <heimdall-chain-id>
+ --validator-id 1 param-change proposal.json \
+ --chain-id <heimdall-chain-id>
 ```
 
 `proposal.json` is a file which includes proposal in json format.
