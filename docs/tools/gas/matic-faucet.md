@@ -17,7 +17,7 @@ In addition, Polygon faucet also provides **Polygon zkEVM Testnet ETH tokens**.
 
 - Navigate to [**faucet.polygon.technology**](https://faucet.polygon.technology/)
 
-   ![img](/img/tools/gas/faucet.png)
+   ![img](../../img/tools/gas/faucet.png)
 
 - Select one of the blockchain testnet networks, where:
     - **Mumbai** - Polygon Testnet
@@ -37,7 +37,7 @@ In addition, Polygon faucet also provides **Polygon zkEVM Testnet ETH tokens**.
 
 - Click **Confirm** to finalize the transaction
 
-   ![img](/img/tools/gas/confirm-transaction.png)
+   ![img](../../img/tools/gas/confirm-transaction.png)
    
 
 !!! danger
@@ -46,7 +46,7 @@ In addition, Polygon faucet also provides **Polygon zkEVM Testnet ETH tokens**.
 
 - After confirmation, you will receive the requested Testnet tokens within 1 to 2 minutes.
 
-   ![img](/img/tools/gas/success.png)
+   ![img](../../img/tools/gas/success.png)
 
 ## Alchemy MATIC faucet
 
@@ -56,7 +56,7 @@ In addition, Polygon faucet also provides **Polygon zkEVM Testnet ETH tokens**.
 
 - You can request MATIC tokens from **Alchemy's Mumbai Faucet**. In order to receive Testnet tokens, head over to the [**Mumbai Faucet website**](https://mumbaifaucet.com/) by Alchemy, enter your **wallet address** and hit the **Send Me MATIC** button.
 
-![img](/img/tools/gas/alchemy-faucet1.png)
+![img](../../img/tools/gas/alchemy-faucet1.png)
 
 - You can check the transaction hash as soon as you finish requesting your MATIC and also view the transaction details on [Polygonscan](https://mumbai.polygonscan.com/).
 
@@ -66,7 +66,7 @@ In order to receive MATIC Mumbai tokens using QuickNode Fauct,
 
 - Head over to [QuickNode Multi-chain Faucet](https://faucet.quicknode.com/drip). Connect your wallet (MetaMask or Phantom) by clicking on **Connect Wallet**. Select Polygon and Mumbai Testnet from the dropdown menus, and then click on **Continue**.
 
-   ![img](/img/tools/gas/quicknode-faucet2.png)
+   ![img](../../img/tools/gas/quicknode-faucet2.png)
 
 !!! tip "Get 1 MATIC"
 
@@ -74,7 +74,7 @@ In order to receive MATIC Mumbai tokens using QuickNode Fauct,
 
 - To receive 0.1 Testnet MATIC, click on **No thanks, just send me 0.1 MATIC**.
 
-   ![img](/img/tools/gas/quicknode-faucet3.png)
+   ![img](../../img/tools/gas/quicknode-faucet3.png)
 
 - You can also view your transaction details on [Polygonscan](https://mumbai.polygonscan.com/) by clicking on the **TxHash**.
 

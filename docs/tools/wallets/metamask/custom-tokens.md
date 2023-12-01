@@ -9,18 +9,18 @@ You can use the same process to add any custom tokens to any network on Metamask
 
 First, choose the appropriate network for the new token on your Metamask's home screen. Then click on "Import Tokens".
 
-![img](/img/tools/wallet/metamask/develop/add-test-token.png)
+![img](../../../img/tools/wallet/metamask/develop/add-test-token.png)
 
 It will then navigate you to a new screen. On the Import Tokens screen, copy-paste an address in the Token Address field.
 
 !!! info
     To illustrate this process, we are using an **ERC20-TESTV4** token on the **Goerli network**. Find other test tokens from other networks [<ins>here</ins>](#tokens-and-contract-adresses).
 
-![img](/img/tools/wallet/metamask/develop/token-contract-address.png)
+![img](../../../img/tools/wallet/metamask/develop/token-contract-address.png)
 
 The other fields will auto-populate. Click on Add Custom Tokens and then click on Import Tokens. The `TEST` token should now be displayed on your account on Metamask.
 
-![img](/img/tools/wallet/metamask/develop/added-token.png)
+![img](../../../img/tools/wallet/metamask/develop/added-token.png)
 
 **Adding a test ERC1155 token to your MetaMask account**
 

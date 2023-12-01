@@ -390,14 +390,8 @@ nav:
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://explorer-ui.mainnet.zkevm-test.net/
           - OKLink: https://www.oklink.com/polygon
-  - Tutorials:
-      - Tutorials: tutorials/index.md
-      - Build a Validium-based App-chain: tutorials/build-validium.md
-      - Deploy a zkEVM Rollup: tutorials/deploy-zkEVM.md
-      - Deploy a Miden Rollup: tutorials/deploy-miden.md
-      - Build a dApp on zkEVM: tutorials/build-zkEVM-dapp.md
-      - Run a PoS node: tutorials/run-pos-node.md
-      - Become a PoS Validator: tutorials/become-pos-validator.md
+  - Learn:
+      - learn/index.md
 
 extra:
   generator: false
@@ -482,4 +476,4 @@ plugins:
 #        - README.md
 
 validation:
-  absolute_links: ignore
+  absolute_links: warn

@@ -12,4 +12,4 @@ const txReceipt = await result.getReceipt();
 
 ```
 
-It might take some time to see the deposited amount on polygon chain. You can use [isDeposited](/docs/tools/matic-js/pos/is-deposited) method for checking status.
+It might take some time to see the deposited amount on polygon chain. You can use [isDeposited](../is-deposited.md) method for checking status.

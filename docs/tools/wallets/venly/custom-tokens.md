@@ -15,4 +15,4 @@ You can always contact the Venly team via their in-app chat and ask them to add 
 
 Venly has developed its service in such a way that it will automatically pick up custom created Non-Fungible Tokens (NFTs) if they follow the ERC721 and ERC1155 standard.
 
-![The Hulk ERC1155 NFT on Polygon](/img/tools/wallet/venly/06.png)
+![The Hulk ERC1155 NFT on Polygon](../../../img/tools/wallet/venly/06.png)

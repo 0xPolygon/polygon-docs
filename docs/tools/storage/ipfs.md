@@ -1,16 +1,5 @@
----
-id: ipfs
-title: IPFS
-description: "IPFS - distributed system for storing and accessing data."
-keywords:
-  - IPFS
-  - matic
-  - docs
-  - polygon
-  - storage
-  - blockchain
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
+!!! caution "Content disclaimer"
+    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 ### Context
 
@@ -29,7 +18,7 @@ Finally, an ever growing active community of users makes this peer-to-peer shari
 
 IPFS based storage allows you to simply store the CID for your content rather than loading entire files to Polygon blockchain; allowing for decreased costs, larger file sizes, and provably persistent storage. For more details refer [IPFS Docs](https://docs.ipfs.io/).
 
-### Example Projects
+### Example projects
 
 1. Tutorial in scaffold-eth that demonstrates how to mint an NFT on Polygon with IPFS - [link](https://github.com/scaffold-eth/scaffold-eth/tree/simple-nft-example)
 

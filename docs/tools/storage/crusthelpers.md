@@ -1,25 +1,5 @@
----
-id: crusthelpers
-title: Crust Network
-description: Decentralized IPFS storage network
-keywords:
-  - Crust Network
-  - crustfiles
-  - crust-polygon bridge
-  - IPFS storage
-  - matic
-  - polygon
-  - docs
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-:::caution Content disclaimer
-
-Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
-:::
-
----
+!!! caution "Content disclaimer"
+    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 [Crust Network](https://crust.network) provides a decentralized storage network for Web3. It is designed to realize the core values of decentralization, privacy and assurance. Crust supports multiple storage-layer protocols such as IPFS, and exposes instantly accessible on-chain storage functions to users.
 
@@ -31,7 +11,7 @@ Check out the **[Decentralized Storage Market](https://wiki.crust.network/docs/e
 
 :::
 
-## Crust Storage Helpers
+## Crust storage helpers
 
 - [Crust Files](https://crustfiles.io): Built by the Crust community, Crust Files is the first personal cloud storage for Web3 that supports multi-web3 wallet login and provides fully decentralized and privacy storage function for all users.
 - [IPFS W3Auth Gateway](https://docs.ipfs.tech/concepts/ipfs-gateway/#authenticated-gateways): A Web3 authenticated IPFS gateway that supports all the IPFS *WRITE* functions and helps users upload files or host content after passing the W3Auth verification.

@@ -14,17 +14,17 @@ To create a new wallet with MetaMask you need to install the extension first. Yo
     !!! note
         In this tutorial we will be using Google Chrome as an example, but the workflow is the same for all browsers.
 
-    ![img](/img/tools/wallet/metamask/metamask-home.png)
+    ![img](../../../img/tools/wallet/metamask/metamask-home.png)
 
 2. Click **Download** to install MetaMask as a Google Chrome extension.
 
 3. Click **Add to Chrome.**
 
-    ![img](/img/tools/wallet/metamask/develop/add-chrome.png)
+    ![img](../../../img/tools/wallet/metamask/develop/add-chrome.png)
 
 4. Click **Add Extension**.
 
-    ![img](/img/tools/wallet/metamask/develop/add-extension.png)
+    ![img](../../../img/tools/wallet/metamask/develop/add-extension.png)
 
 That’s it! You have successfully installed MetaMask extension!
 
@@ -34,15 +34,15 @@ The next step is to create an account.
 
 1. When the download is finished, you will be able to either **restore a wallet** with a Secret Recovery Phrase or **create a new account**, by creating a new wallet and generating a new Secret Recovery Phrase.
 
-    ![img](/img/tools/wallet/metamask/develop/new-metamask.png)
+    ![img](../../../img/tools/wallet/metamask/develop/new-metamask.png)
 
 2. You will be asked to create a new password. Create a strong password and click **Create**.
 
-    ![img](/img/tools/wallet/metamask/develop/create-password.png)
+    ![img](../../../img/tools/wallet/metamask/develop/create-password.png)
 
 3. MetaMask will then provide some information about the Secret Recovery Phrase and on the next page you will see your phrase.
 
-    ![img](/img/tools/wallet/metamask/develop/reveal-phrase.png)
+    ![img](../../../img/tools/wallet/metamask/develop/reveal-phrase.png)
 
 4. Write the 12-word phrase down  on a piece of paper on the same order presented.
 
@@ -51,7 +51,7 @@ The next step is to create an account.
 
 5. Verify your secret phrase by selecting the previously generated phrase. When done, click **Confirm**.
 
-    ![img](/img/tools/wallet/metamask/develop/phrase.gif)
+    ![img](../../../img/tools/wallet/metamask/develop/phrase.gif)
 
 By “solving this puzzle” you are confirming that you know your secret phrase.
 

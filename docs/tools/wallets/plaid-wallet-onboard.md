@@ -5,7 +5,7 @@
 
 Wallet Onboard can be configured to automatically ensure that users have their wallets set up to use the Polygon network.
 
-![img](/img/tools/wallet/plaid-wallet-onboard/splash.png)
+![img](../../img/tools/wallet/plaid-wallet-onboard/splash.png)
 
 ## Installation and Prerequisites
 
@@ -42,6 +42,6 @@ Here's a simple example of the code used to integrate Wallet Onboard on Polygon 
 
 If a user connects their wallet and it is not using Polygon, Wallet Onboard will attempt to add or switch to Polygon automatically, or will instruct the user to switch.
 
-![img](/img/tools/wallet/plaid-wallet-onboard/switch.png)
+![img](../../img/tools/wallet/plaid-wallet-onboard/switch.png)
 
 For a complete overview of the configuration options and capabilities of Wallet Onboard, please refer to the [official Wallet Onboard documentation](https://plaid.com/docs/wallet-onboard/).

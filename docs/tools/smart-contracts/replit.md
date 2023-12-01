@@ -35,11 +35,11 @@ Every Repl that you create is a fully functional development and production envi
 
 1. [Log in](https://replit.com/login) or [create an account](https://replit.com/signup). After creating your [Replit account](https://docs.replit.com/tutorials/01-introduction-to-the-repl-it-ide), your home screen will include a dashboard where you can view, create projects, and manage your account.
 
-    ![img](/img/tools/replit/dashboard.png)
+    ![img](../../img/tools/replit/dashboard.png)
 
 2. Once logged in, create a Solidity starter repl, Select **+ Create Repl** from the left panel or **+** in the top right corner of the screen.
 
-    ![img](/img/tools/replit/solidity.png)
+    ![img](../../img/tools/replit/solidity.png)
 
 3. Select the [**Solidity starter (beta)**](https://replit.com/@replit/Solidity-starter-beta?v=1) template and give your project a title.
 
@@ -57,11 +57,11 @@ Make sure that you have followed the list of **Prerequisites** above so that you
 
 2. Connect your MetaMask wallet to the web interface and switch to the [Mumbai Testnet](../wallets/metamask/config-polygon-on-metamask).
 
-    ![img](/img/tools/replit/connect.png)
+    ![img](../../img/tools/replit/connect.png)
 
 3. Click on **Connect wallet**, select your account, then choose **Connect**.
 
-    ![img](/img/tools/replit/deploy-list.png)
+    ![img](../../img/tools/replit/deploy-list.png)
 
 4. From the dropdown list, select the contract that you want to deploy. Click on **Deploy**.
 

@@ -6,9 +6,9 @@ hide:
 
 The Polygon Wiki is the source of truth for Polygon, providing comprehensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building on Polygon.
 
-## Technology
+## Place Holder 
 
-Polygon Labs' technologies are very interesting. They are roughly as interesting as a very interesting thing. Learn more about these amazing discoveries below.
+Content will follow here
 
 <div class="section-nav">
 
@@ -34,9 +34,9 @@ Polygon Labs' technologies are very interesting. They are roughly as interesting
 
 </div>
 
-## Other Stuff
+## Place holder 
 
-Other stuff! This is stuff that is not technology. That can include, you know, paintings. Books. Are books technology? Hmm. Cats. Cats are definitely not a technology. This can include cats.
+Other tyoe of content will go here. 
 
 <div class="section-nav">
 

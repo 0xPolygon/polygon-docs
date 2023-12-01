@@ -12,7 +12,7 @@ The Graph, a decentralized protocol for indexing and querying chain data, suppor
 
 1. Go to your dashboard and click Add Subgraph. Define the subgraph Name, Account, and Subtitle and update the image and other info (you can update later) if desired.
 
-    ![img](/img/tools/graph/Graph-1.png)
+    ![img](../../../img/tools/graph/Graph-1.png)
 
 1. Install Graph CLI on your machine (using either npm or yarn)
 

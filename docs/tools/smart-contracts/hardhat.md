@@ -35,7 +35,7 @@ Let’s create the sample project and go through these steps to try out a sample
 
 To create a sample project, run `npx hardhat` in your project folder. You should see the following prompt:
 
-![img](/img/tools/hardhat/quickstart.png)
+![img](../../img/tools/hardhat/quickstart.png)
 
 Choose the JavaScript project and go through these steps to compile, test and deploy the sample contract.
 
@@ -148,7 +148,7 @@ npx hardhat test
 
 And this is an expected output:
 
-![img](/img/tools/hardhat/test.png)
+![img](../../img/tools/hardhat/test.png)
 
 ### Deploying on Polygon network
 

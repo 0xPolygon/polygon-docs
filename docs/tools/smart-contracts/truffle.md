@@ -104,7 +104,7 @@ You can run Solidity and Javascript tests.
 
     You should see the following output:
 
-    ![img](/img/tools/truffle/test1.png)
+    ![img](../../img/tools/truffle/test1.png)
 
 2. Run the JavaScript test:
 
@@ -114,7 +114,7 @@ You can run Solidity and Javascript tests.
 
     You should see the following output:
 
-    ![img](/img/tools/truffle/test2.png)
+    ![img](../../img/tools/truffle/test2.png)
 
 ### Compiling the contract
 
@@ -126,7 +126,7 @@ truffle compile
 
 You will see the following output:
 
-![img](/img/tools/truffle/compile.png)
+![img](../../img/tools/truffle/compile.png)
 
 ### Configuring the smart contract
 
@@ -180,7 +180,7 @@ truffle compile
 truffle deploy --network matic
 ```
 
-![img](/img/tools/truffle/deployed-contract.png)
+![img](../../img/tools/truffle/deployed-contract.png)
 
 !!! note
     Remember your `address`, `transaction_hash` and other details provided would differ. Above is just to provide an idea of the structure.

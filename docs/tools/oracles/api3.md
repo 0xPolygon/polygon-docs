@@ -13,7 +13,7 @@ An [Airnode](https://docs.api3.org/explore/airnode/what-is-airnode.html) is a **
 An on-chain smart contract makes a request in the [**RRP protocol contract (AirnodeRrpV0.sol)**](https://docs.api3.org/reference/airnode/latest/concepts/) that adds the request to the event logs. The Airnode then accesses the event logs, fetches the API data and performs a callback to the requester with the requested data.
 
 
-![img](../../img/tools/oracles/api3/airnode1.png)
+![img](../..../../img/tools/oracles/api3/airnode1.png)
 
 ## Requesting off-chain data by calling an Airnode
 
@@ -27,7 +27,7 @@ The requester calling an Airnode primarily focuses on two tasks:
 - **Make the request**
 - **Accept and decode the response**
 
-![img](../../img/tools/oracles/api3/airnode2.png)
+![img](../..../../img/tools/oracles/api3/airnode2.png)
 
 Here is an example of a basic requester contract to request data from an Airnode:
 
@@ -128,7 +128,7 @@ Due to being composed of first-party data feeds, dAPIs offer security, transpare
 The [API3 Market](https://market.api3.org/dapis) enables users to connect to a dAPI and access the associated data feed services.
 
 
-![img](../../img/tools/oracles/api3/SS4.png)
+![img](../..../../img/tools/oracles/api3/SS4.png)
 
 [*To know more about how dAPIs work, click here*](https://docs.api3.org/explore/dapis/what-are-dapis.html)
 
@@ -166,7 +166,7 @@ The [API3 Market](https://market.api3.org/dapis) provides a list of all the dAPI
 
 You can then decide if you want to use Self-funded or Managed dAPIs.
 
-![img](../../img/tools/oracles/api3/dapi-page.png)
+![img](../..../../img/tools/oracles/api3/dapi-page.png)
 
 #### Funding a sponsor wallet
 
@@ -175,19 +175,19 @@ If you are trying to access Self-funded dAPIs, you need to make sure that the sp
 - Wallet is connected to the Market and is the same network as the dAPI you are funding.
 - Balance of the wallet should be greater than the amount you are sending to the `sponsorWallet`.
 
-![img](../../img/tools/oracles/api3/market1.png)
+![img](../..../../img/tools/oracles/api3/market1.png)
 
 To fund the dAPI, you need to click on the **Fund Gas** button. Depending upon if a proxy contract is already deployed, you will see a different UI.
 
-![img](../../img/tools/oracles/api3/market2.png)
+![img](../..../../img/tools/oracles/api3/market2.png)
 
 Use the gas estimator to select how much gas is needed by the dAPI. Click on **Send Matic** to send the entered amount to the sponsor wallet of the respective dAPI.
 
-![img](../../img/tools/oracles/api3/market3.png)
+![img](../..../../img/tools/oracles/api3/market3.png)
 
 Once the transaction is broadcasted & confirmed on the blockchain a transaction confirmation screen will appear.
 
-![img](../../img/tools/oracles/api3/market4.png)
+![img](../..../../img/tools/oracles/api3/market4.png)
 
 #### Deploying a proxy contract to access the dAPI
 
@@ -198,11 +198,11 @@ Smart contracts can interact and read values from contracts that are already dep
 
 If you are deploying a proxy contract during the funding process, clicking on the **Get proxy** button will initiate a transaction to your MetaMask that will deploy a proxy contract.
 
-![img](../../img/tools/oracles/api3/market5.png)
+![img](../..../../img/tools/oracles/api3/market5.png)
 
 Once the transaction is broadcasted and confirmed on the blockchain, the proxy contract address will be shown on the UI.
 
-![img](../../img/tools/oracles/api3/market6.png)
+![img](../..../../img/tools/oracles/api3/market6.png)
 
 ### Subscribing to managed dAPIs
 

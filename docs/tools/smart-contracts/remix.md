@@ -19,7 +19,7 @@ This tutorial guides you to implement a **Hello World** dApp which echoes a mess
 
 Remix is a Ethereum-focused IDE: an online platform to develop and deploy smart contracts. To start building a smart contract, click on **New File** and name it `HelloWorld.sol`.
 
-![](/img/tools/remix/new-file.png)
+![](../../img/tools/remix/new-file.png)
 
 ## Smart contract
 
@@ -122,13 +122,13 @@ In both Testnet and Mainnet, you do the below to deploy your smart contract usin
 
 - Select **Injected Provider** MetaMask in the **Environment** dropdown and your contract
 
-  ![RemixIDE_Step1](/img/tools/remix/injected-provider.png)
+  ![RemixIDE_Step1](../../img/tools/remix/injected-provider.png)
 
 - Accept the **Connect** request received in MetaMask. If the popup doesn't open by default, you can also try manually launching the MetaMask extension
 
 - Once MetaMask is connected to Remix, the `Deploy` transaction would generate another MetaMask popup that requires transaction confirmation. Simply confirm the transaction!
 
-  ![RemixIDE_Step1](/img/tools/remix/confirm_tx.png)
+  ![RemixIDE_Step1](../../img/tools/remix/confirm_tx.png)
 <br/>
 
 **Congratulations! You have successfully deployed the **HelloWorld** Smart Contract to the **Polygon Mumbai Testnet** You can start interacting with your Smart Contract. Check the deployment status at https://mumbai.polygonscan.com/.
@@ -149,7 +149,7 @@ sol-merger \"./contracts/*.sol\" ./build
 
 - Navigate to your contract's Polygonscan page and click on **Verify and Publish**.
 
-  ![RemixIDE_Step1](/img/tools/remix/verify-publish.png)
+  ![RemixIDE_Step1](../../img/tools/remix/verify-publish.png)
 
 - Select **Solidity (Single File)** in compiler type
 

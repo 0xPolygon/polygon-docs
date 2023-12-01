@@ -16,20 +16,20 @@ Here is how it works:
 
 1. Easily add any token to your list by adding the contract address as a custom token (we support contract addresses on both Polygon or Ethereum):
 
-    ![img](/img/tools/wallet/wallet-bridge/001.png)
+    ![img](../../img/tools/wallet/wallet-bridge/001.png)
 
-    ![img](/img/tools/wallet/wallet-bridge/002.png)
+    ![img](../../img/tools/wallet/wallet-bridge/002.png)
 
 2. Once the token information is fetched, you will see a confirmation screen with all the token information. You can then add it as a custom token which will be stored locally in your system, We suggest you reverify the token contracts twice as there are a lot of clone or scam tokens:
 
-    ![img](/img/tools/wallet/wallet-bridge/003.png)
+    ![img](../../img/tools/wallet/wallet-bridge/003.png)
 
-    ![img](/img/tools/wallet/wallet-bridge/004.png)
+    ![img](../../../img/tools/wallet/wallet-bridge/004.png)
 
 3. Your added token is now shown when selecting a token:
 
-    ![img](/img/tools/wallet/wallet-bridge/005.png)
+    ![img](../../../img/tools/wallet/wallet-bridge/005.png)
 
     You can also add a token directly from the tokens tab of the **Manage** screen:
 
-    ![img](/img/tools/wallet/wallet-bridge/006.png)
+    ![img](../../../img/tools/wallet/wallet-bridge/006.png)
