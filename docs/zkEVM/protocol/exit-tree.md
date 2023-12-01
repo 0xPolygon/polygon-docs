@@ -24,7 +24,7 @@ As a result, given any network Exit Tree, whether L1 or L2, **its Exit Tree Root
 
 Consider a scenario of bridging assets between the L1 Mainnet and L2 network. The **Global Exit Tree** is a binary Merkle Tree whose leaf nodes are the L1 Exit Tree's Merkle root and the L2 Exit Tree's Merkle root. A Global Exit Tree is depicted in the figure below.
 
-![The L1-L2 Global Exit Tree](/img/zkvm/02pzb-global-exit-tree.png)
+![The L1-L2 Global Exit Tree](../../img/zkvm/02pzb-global-exit-tree.png)
 
 The **Merkle root of the Global Exit Tree is called the Global Exit Root**.
 
@@ -59,7 +59,7 @@ The added new exit leaf means the L1 Exit Tree now has a new root. The new L1 Ex
 
 In order to claim the bridged assets on the destination L2 network, the Global Exit Root gets checked with a Merkle proof. That is, one can use a Merkle proof to check if indeed there exists an exit leaf (with the information of assets being bridged to L2) represented in the Global Exit Tree by the corresponding L1 Exit Tree Root.
 
-![Updating L1 Exit Tree and the Global Exit Root](/img/zkvm/03pzb-exit-leaf-add-L1-L2.png)
+![Updating L1 Exit Tree and the Global Exit Root](../../img/zkvm/03pzb-exit-leaf-add-L1-L2.png)
 
 ### Transfer from Rollup L2 to L1
 

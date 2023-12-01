@@ -1,6 +1,6 @@
 
 !!!info
-    This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](/protocol/l2-transaction-cycle-intro.md) inside Polygon zkEVM.
+    This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](l2-transaction-cycle-intro.md) inside Polygon zkEVM.
 
 The **Trusted Sequencer reads transactions from the pool** and decides whether to **discard** them or **order and execute** them. Transactions that have been executed are added to a transaction batch, and the Sequencer's local L2 State is updated.
 

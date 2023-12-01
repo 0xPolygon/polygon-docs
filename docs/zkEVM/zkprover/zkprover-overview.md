@@ -12,7 +12,7 @@ The **zkProver** performs complex mathematical computations in the form of polyn
 
 The zkProver mainly interacts with two components, i.e. the Node and the Database (DB). Hence, before diving deeper into other components, we must understand the flow of control between zkProver, the Node, and Database. Here is a diagram to explain the process clearly.
 
-![zkProver, the Node, and Database ](/img/zkvm/fig1-zkprv-and-node.png)
+![zkProver, the Node, and Database ](../../img/zkvm/fig1-zkprv-and-node.png)
 
 As depicted in the flow diagram above, the whole interaction works out in 4 steps.
 
@@ -42,7 +42,7 @@ The Main SM Executor directly instructs each of the secondary state machines by 
 
 The grey boxes are not state machines but indicate **Actions**, which are specific instructions from the Main State Machine to the relevant Secondary State Machine. These instructions dictate how a state should transition in a State Machine. However, every **Action**, whether from the generic Main SM or the specific SM, must be supported with a proof that it was correctly executed.
 
-![The Main SM Executor's Instructions](/img/zkvm/fig2-actions-sec-sm.png)
+![The Main SM Executor's Instructions](../../img/zkvm/fig2-actions-sec-sm.png)
 
 There are some natural dependencies between; 
 
@@ -79,7 +79,7 @@ The **Firmware** part runs the zkASM language to set up the logic and rules, whi
 
 The **Hardware** component, which uses the Polynomial Identity Language (PIL), defines constraints (or polynomial identities), expresses them in JSON format, and stores them in the accompanying JSON-file. These constraints are parsed to the specific SM Executor, because all computations must be executed in conformance to the polynomial identities.
 
-![Microprocessor State Machine](/img/zkvm/fig-micro-pro-pic.png)
+![Microprocessor State Machine](../../img/zkvm/fig-micro-pro-pic.png)
 
 !!!info
     Although the Main SM and the Storage SM have the same look and feel, they differ considerably.
@@ -122,7 +122,7 @@ Here is a step-by-step outline of how the system achieves proof / verification o
 
 While the polynomial constraints are written in the PIL language, the instructions are initially written in zkASM but subsequently expressed and stored in JSON format. Although not all verification involves a Plookup, the diagram below, briefly illustrates the wide role Plookup plays in the zkProver.
 
-![Plookup and the zkProver State Machines](/img/zkvm/plook-ops-mainSM-copy.png)
+![Plookup and the zkProver State Machines](../../img/zkvm/plook-ops-mainSM-copy.png)
 
 ## Components of zkProver
 
@@ -138,7 +138,7 @@ For the sake of simplicity, one can think of the zkProver as being composed of t
 
 In the nutshell, the zkProver uses these four components to generates verifiable proofs. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. All valid batches must satisfy specific polynomial constraints.
 
-![Simplified Diagram of zkProver](/img/zkvm/fig5-main-prts-zkpr.png)
+![Simplified Diagram of zkProver](../../img/zkvm/fig5-main-prts-zkpr.png)
 
 ### The executor
 

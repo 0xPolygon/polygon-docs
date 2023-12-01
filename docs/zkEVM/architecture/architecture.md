@@ -66,9 +66,9 @@ A smart contract verifies the validity proofs to ensure that each transition is 
 
 To carry out these procedures, zkEVM employs two sorts of participants: **Sequencers** and **Aggregators**. Under this two-layer model: 
 ​
-- [**Sequencers**](/zkevm/zknode/overview.md#sequencers) &rarr; propose transaction batches to the network, i.e. they roll-up the transaction requests in batches and add them to the Consensus Contract.
+- **Sequencers** &rarr; propose transaction batches to the network, i.e. they roll-up the transaction requests in batches and add them to the Consensus Contract.
 ​
-- [**Aggregators**](/zkevm/zknode/overview.md#aggregators) &rarr; check the validity of the transaction batches and provide validity proofs. Any permissionless Aggregator can submit the proof to demonstrate the correctness of the state transition computation.
+- **Aggregators** &rarr; check the validity of the transaction batches and provide validity proofs. Any permissionless Aggregator can submit the proof to demonstrate the correctness of the state transition computation.
 
 The  Smart Contract, therefore, makes two calls: one to receive batches from Sequencers, and another to Aggregators, requesting batches to be validated.
 ​
@@ -93,14 +93,14 @@ An Aggregator receives all the transaction information from the Sequencer and se
 - For a given batch or batches, an Aggregator that submits a validity proof first earns the MATIC fee (which is being paid by the Sequencer(s) of the batch(es)).
 - The Aggregators need to indicate their intention to validate transactions. After that, they compete to produce validity proofs based on their own strategy.
 
-## [zkNode](/zkevm/zknode/overview.md)
+## zkNode
 
 zkNode is the software needed to run any zkEVM node. It is a client that the network requires to implement the Synchronization and govern the roles of the participants (Sequencers or Aggregators). Polygon zkEVM participants will choose how they participate:
 
 - As a node to know the state of the network, or
 - As a participant in the process of batch production in any of the two roles: **Sequencer** or **Aggregator**
 
-The zkNode architecture is modular in nature. You can dig deeper into zkNode and its components [here](/zkevm/zknode/overview.md).
+The zkNode architecture is modular in nature. You can dig deeper into zkNode and its components [here](../zknode/zknode-overview.md).
 
 ### Incentivization structure
 
@@ -118,7 +118,7 @@ The two permissionless participants of the zkEVM network are: **Sequencers** and
    - Static Cost: L1 call cost + Server cost (to build a proof)
    - Profitable if: `MATIC fee` > `L1 call` + `Server cost`
 
-## [zkProver](/zkevm/zkProver/overview.md)
+## zkProver
 
 zkEVM employs advanced zero-knowledge technology to create validity proofs. It uses a **zero-knowledge prover (zkProver)**, which is intended to run on any server and is being engineered to be compatible with most consumer hardware. Every **Aggregator** will use this zkProver to validate batches and provide Validity Proofs.
 
@@ -126,9 +126,9 @@ It consists of a **Main State Machine Executor**, a collection of **secondary St
 
 ![Skeletal Overview of zkProver](../../img/zkvm/fig4-zkProv-arch.png)
 
-In a nutshell, **the zkEVM expresses state changes in a polynomial form**. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. To put it another way, all valid batches must satisfy specific polynomial constraints. Check out the detailed architecture of zkProver [here](/zkevm/zkProver/overview.md).
+In a nutshell, **the zkEVM expresses state changes in a polynomial form**. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. To put it another way, all valid batches must satisfy specific polynomial constraints. Check out the detailed architecture of zkProver [here](../zkprover/zkprover-overview.md).
 
-## [zkEVM bridge](/zkevm/protocol/zkevm-bridge.md)
+## zkEVM bridge
 
 The **zkEVM bridge** is a Smart Contract that lets users transfer their assets between two layers, LX and LY. The L1-L2 in zkEVM is a decentralized bridge for secure deposits and withdrawal of assets. It is a combination of two smart contracts, one deployed on one chain and the second on the other.
 
@@ -142,7 +142,7 @@ Verifier is a Smart Contract which is able to verify any ZK-SNARK cryptographic 
 
 The Verifier contract is currently deployed on the [Ethereum Mainnet](https://etherscan.io/address/0x4F9A0e7FD2Bf6067db6994CF12E4495Df938E6e9) and [Goerli Testnet](https://goerli.etherscan.io/address/0x8EdA1d8c254a77a57A6A7A1C0262e9A44A7C6D6d).
 
-## [Transaction life cycle](/zkevm/protocol/l2-transaction-cycle-intro.md)
+## Transaction life cycle
 
 Before getting into a transaction flow in L2, users need some funds to perform any L2 transaction. In order to do so, users need to transfer some ether from L1 to L2 through the zkEVM Bridge dApp.
 
@@ -159,7 +159,7 @@ Before getting into a transaction flow in L2, users need some funds to perform a
    - Aggregator will take pending transactions to be verified and build a Proof in order to achieve finality on L1
    - Once the Proof is validated, user's transactions will attain L1 finality (important for withdrawals). This is called the **consolidated state**.
 
-The above process is a summarized version of how transactions are processed in zkEVM. We recommend you to take a look at the complete [transaction life cycle](/zkevm/protocol/l2-transaction-cycle-intro.md) document.
+The above process is a summarized version of how transactions are processed in zkEVM. We recommend you to take a look at the complete [transaction life cycle](../protocol/l2-transaction-cycle-intro.md) document.
 
 ## Design characteristics
 

@@ -1,10 +1,10 @@
-Main State Machine is a component of the zkProver that can be instantiated with various computations pertaining to transactions submitted by users to the Polygon zkEVM network. See an outline of the zkProver [here](/zkevm/zkProver/overview.md).
+Main State Machine is a component of the zkProver that can be instantiated with various computations pertaining to transactions submitted by users to the Polygon zkEVM network. 
 
 In addition to carrying out these computations, the Main SM also generates fixed-length, easy-to-verify cryptographic proofs of Computational Integrity (CI). These proofs can be verified by spending only a minimal amount of computational resources.
 
-It achieves this by using cutting-edge zero-knowledge technology. In particular, these proofs are STARK proofs that are recursively aggregated into one STARK proof, which is in turn proved with a SNARK proof. This last SNARK proof is published as the validity proof. You can read a summary of the STARK proofs recursion [here](/zkevm/zkProver/overview.md#stark-recursion-component), and its complete documentation [here](/zkevm/zkProver/intro-stark-recursion.md).
+It achieves this by using cutting-edge zero-knowledge technology. In particular, these proofs are STARK proofs that are recursively aggregated into one STARK proof, which is in turn proved with a SNARK proof. This last SNARK proof is published as the validity proof. You can read a summary of the STARK proofs recursion [here](zkprover-overview.md), and its complete documentation [here](intro-stark-recursion.md).
 
-![zkEVM batch prover structure](/img/zkvm/02msm-prover-structure.png)
+![zkEVM batch prover structure](../../img/zkvm/02msm-prover-structure.png)
 
 ## The ROM
 
@@ -88,7 +88,7 @@ The Storage Root is basically all the storage of the State that a smart contract
 
 Here is how the tree in the EVM looks like:
 
-![A simplified EVM's State Trie](/img/zkvm/06msm-eth-state-trie.png)
+![A simplified EVM's State Trie](../../img/zkvm/06msm-eth-state-trie.png)
 
 ### zkEVM State Trie
 
@@ -112,7 +112,7 @@ Each of the values; $\texttt{V0}, \texttt{V1}, \texttt{V2}, \dots , \texttt{V7}$
 
 The figure below depicts the 5 leaf-types together with the corresponding keys:
 
-![A simplified Polygon zkEVM's State Trie](/img/zkvm/07msm-zkevm-state-trie.png)
+![A simplified Polygon zkEVM's State Trie](../../img/zkvm/07msm-zkevm-state-trie.png)
 
 ## Memory Regions
 
@@ -158,7 +158,7 @@ As depicted in the figure below, each Context is divided into three word-blocks.
 
   `MEM`, like `STACK`, is also defined per Context.
 
-![Schema of contexts and memory regions of the zkEVM](/img/zkvm/08msm-zkevm-memory-regions.png)
+![Schema of contexts and memory regions of the zkEVM](../../img/zkvm/08msm-zkevm-memory-regions.png)
 
 For a given slot in memory, its pointer is computed as:
 
@@ -182,9 +182,9 @@ That difference is the EVM Memory is created in the form of slots where each slo
 
 It was therefore necessary to align the EVM's $8$-bit slots with the zkEVM's $256$-bit slots. 
 
-A mapping to synchronize the two Memories comes in the form a special state machine called the [**Mem-Align State Machine**](/zkevm/zkProver/mem-align-sm.md). It is a specialized SM solely dealing with the alignment of the EVM Memory with the zkEVM Memory.
+A mapping to synchronize the two Memories comes in the form a special state machine called the [**Mem-Align State Machine**](mem-align-sm.md). It is a specialized SM solely dealing with the alignment of the EVM Memory with the zkEVM Memory.
 
-![Aligning the EVM Memory to the zkEVM Memory](/img/zkvm/09msm-evm-zkevm-mem-align.png)
+![Aligning the EVM Memory to the zkEVM Memory](../../img/zkvm/09msm-evm-zkevm-mem-align.png)
 
 ### zkEVM Stack
 
@@ -200,7 +200,7 @@ The rest of the zkEVM Stack slots are used to store `CALLDATA` and its interpret
 
 The figure below displays a schematic representation of the zkEVM Stack and the EVM Stack:
 
-![Schematic comparison of the zkEVM Stack and the EVM Stack](/img/zkvm/10msm-zkevm-stack-slots.png)
+![Schematic comparison of the zkEVM Stack and the EVM Stack](../../img/zkvm/10msm-zkevm-stack-slots.png)
 
 ## TLDR;
 
@@ -208,6 +208,6 @@ The figure below displays a schematic representation of the zkEVM Stack and the 
 
 &rarr; The zkEVM uses SMT with five different leaf types. 
 
-&rarr; Memory alignment between the EVM and the zkEVM is handled by a specialist state machine, the [**Mem-Align State Machine**](/zkevm/zkProver/mem-align-sm.md).
+&rarr; Memory alignment between the EVM and the zkEVM is handled by a specialist state machine, the [**Mem-Align State Machine**](mem-align-sm.md).
 
 &rarr; The two Stacks are exactly the same except that the zkEVM has many more slots compared to the EVM.

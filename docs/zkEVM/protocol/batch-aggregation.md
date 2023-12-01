@@ -1,7 +1,7 @@
 
 !!!info
 
-This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](/protocol/l2-transaction-cycle-intro.md) inside Polygon zkEVM.
+This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](l2-transaction-cycle-intro.md) inside Polygon zkEVM.
 
 The **Trusted Aggregator should eventually aggregate the sequences of batches previously committed by the Trusted Sequencer in order to achieve the L2 State final stage**, which is the Consolidated State.
 
@@ -18,7 +18,7 @@ A **SNARK (Succinct Non-interactive Arguments of Knowledge)** is the underlying 
 
 As a result, the integrity of an exhaustive computation can be verified using a fraction of the computational resources required by the original computation. As a result, by employing a SNARK schema, we can provide on-chain security to exhaustive off-chain computations in a gas-efficient manner.
 
-![Off-chain L2 state transition with on-chain security inheritance](/img/zkvm/05l2-off-chain-on-chain-trans.png)
+![Off-chain L2 state transition with on-chain security inheritance](../../img/zkvm/05l2-off-chain-on-chain-trans.png)
 
 As shown in the above diagram, the off-chain execution of the batches will suppose an L2 state transition and consequently, a change to a new L2 state root. 
 

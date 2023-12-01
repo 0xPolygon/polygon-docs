@@ -24,7 +24,7 @@ The verifier circuit is instantiated inside $\mathtt{recursive1.circom}$, connec
 
 The output circom file `recursive1.circom` , is compiled into a R1CS `recursive1.r1cs` file and a `witness calculator program`, $\mathtt{recursive1.witnesscal}$, which will be used for both building and filling the next execution trace.
 
-![Convert the c12a STARK to a c12a verifier circuit](/img/zkvm/14prf-rec-convert-stark-to-circuit-verifier.png)
+![Convert the c12a STARK to a c12a verifier circuit](../../img/zkvm/14prf-rec-convert-stark-to-circuit-verifier.png)
 
 ## Setup `C2S` for `recursive1`
 
@@ -41,7 +41,7 @@ Note that all the FRI-related parameters are stored in a `recursive.starkstruct`
 
 In this case, a blowup factor of $2^4 = 16$ is used, and thus allowing the number of queries to be $32$.
 
-![Convert the `recursive1` circuit to its associated STARK](/img/zkvm/15prf-rec-convert-circuit-to-assoc-stark.png)
+![Convert the `recursive1` circuit to its associated STARK](../../img/zkvm/15prf-rec-convert-circuit-to-assoc-stark.png)
 
 ## Setup `S2C` for `recursive2`
 
@@ -68,7 +68,7 @@ Henceforth, the `recursive2.circom` circuit has two verifiers and two multiplexo
 
 A schema of the `recursive2` circuit generated is as shown in the below Figure.
 
-![Figure 16: Convert the `recursive1` circuit to its associated STARK](/img/zkvm/16prf-rec-recursive2-circuit.png)
+![Figure 16: Convert the `recursive1` circuit to its associated STARK](../../img/zkvm/16prf-rec-recursive2-circuit.png)
 
 Observe that, since the upper proof is of the $\mathtt{\pi_{rec2}}$-type, the Multiplexor does not provides the constant root `rootC` to the `Verifier A` for hardcoding it, because this verifier should get it through a public input from the previous circuit.
 
@@ -76,7 +76,7 @@ Otherwise, since the lower proof has the $\mathtt{\pi_{rec1}}$-type, the Multipl
 
 The output CIRCOM file `recursive2.circom` , is obtained by running a different script called `genrecursive` which is compiled into an R1CS `recursive2.r1cs` file and a witness calculator program `recursive2.witnesscal` and they will both be used, later on, to build and fill the next execution trace.
 
-![Convert the `recursive1` STARK to its verifier circuit called `recursive2` ](/img/zkvm/17prf-rec-stark-to-circuit-recursive2.png)
+![Convert the `recursive1` STARK to its verifier circuit called `recursive2` ](../../img/zkvm/17prf-rec-stark-to-circuit-recursive2.png)
 
 ## Setup `C2S` for `recursive2`
 
@@ -98,4 +98,4 @@ Note that all the FRI-related parameters are stored in a `recursive.starkstruct`
 
 In this case, we are using the same blowup factor of $2^4 = 16$, allowing the number of queries to be $32$.
 
-![Convert the `recursive2` circuit to its associated STARK.](/img/zkvm/18prf-rec-recursive2-circuit-2-stark.png)
+![Convert the `recursive2` circuit to its associated STARK.](../../img/zkvm/18prf-rec-recursive2-circuit-2-stark.png)

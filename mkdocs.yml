@@ -138,10 +138,32 @@ nav:
             - Intermediate steps: zkEVM/zkprover/intermediate-recursion.md
             - Final recursion step: zkEVM/zkprover/final-recursion-step.md
             - Proof generation phase: zkEVM/zkprover/proof-generation-phase.md
+          - Storage state machine:
+            - Introducing Storage SM: zkEVM/zkprover/intro-storage-sm.md
+            - Creating keys and paths: zkEVM/zkprover/construct-key-path.md
+            - Storage SM mechanism: zkEVM/zkprover/storage-sm-mechanism.md
+            - Executor and PIL: zkEVM/zkprover/executor-pil.md
+          - Arithmetic state machine: zkEVM/zkprover/arithmetic-sm.md
+          - Binary state machine: zkEVM/zkprover/binary-sm.md
+          - Memory state machine: zkEVM/zkprover/memory-sm.md
+          - Memory-Align state machine: zkEVM/zkprover/mem-align-sm.md
+          - Hashing state machines:
+            - Introducing hashing state machines: zkEVM/zkprover/intro-hashing-sm.md
+            - Keccak framework: zkEVM/zkprover/keccak-framework.md
+            - Padding-kk state machine: zkEVM/zkprover/paddingkk-sm.md
+            - Padding-kk-bit state machine: zkEVM/zkprover/paddingkk-bit-sm.md
+            - Bits2Field state machine: zkEVM/zkprover/bits2field-sm.md
+            - Keccak-f state machine: zkEVM/zkprover/keccakf-sm.md
+            - Poseidon state machine: zkEVM/zkprover/poseidon-sm.md
       - Specifications:
         - EVM vs. zkEVM: zkEVM/specifications/evm-differences.md
       - Concepts:
         - EVM basics: zkEVM/concepts/evm-basics.md
+        - Sparse merkle trees:
+          - Merkle trees: zkEVM/concepts/sparse-merkle-tree.md
+          - Constructing simple SMTs: zkEVM/concepts/simple-smt.md
+          - SMT concepts: zkEVM/concepts/detailed-smt.md
+          - Operations on SMTs: zkEVM/concepts/basic-smt-ops.md
         - mFibonnaci state machine:
           - Design approach: zkEVM/concepts/mfibonacci.md
           - An example: zkEVM/concepts/mfibonacci-example.md
@@ -255,7 +277,6 @@ nav:
       - learn/index.md
 
 extra:
-  generator: false
   analytics:
   #  provider: google
   #  property: G-XXXXXXXXXX
@@ -337,4 +358,8 @@ plugins:
 #        - README.md
 
 validation:
-  absolute_links: warn
+  absolute_links: ignore
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true

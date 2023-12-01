@@ -4,7 +4,7 @@ Continue with the **sixth step** of this deployment-guide where you activate for
 ## Activate forced transactions
 
 
-You can check out [this](/zkevm/protocol/sequencer-resistance.md) document to learn more about forced batches of transactions.
+You can check out [this](../protocol/sequencer-resistance.md) document to learn more about forced batches of transactions.
 
 ```bash
 cd ~/zkevm-contracts
