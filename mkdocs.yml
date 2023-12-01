@@ -417,6 +417,7 @@ nav:
       - learn/index.md
 
 extra:
+  generator: false
   analytics:
   #  provider: google
   #  property: G-XXXXXXXXXX
@@ -469,7 +470,8 @@ markdown_extensions:
   - abbr
   - pymdownx.tabbed
   - pymdownx.superfences
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.keys
@@ -499,7 +501,3 @@ plugins:
 
 validation:
   absolute_links: warn
-
-markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
