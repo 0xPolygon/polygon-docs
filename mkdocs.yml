@@ -381,3 +381,8 @@ validation:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+
+extra_javascript:
+  - js/mathjax.js
+  - js/polyfill.min.js
+  - js/tex-mml-chtml.js
