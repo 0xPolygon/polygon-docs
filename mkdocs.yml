@@ -281,9 +281,6 @@ nav:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
       - Data:
-          - Chain indexer:
-              - Overview: tools/data/chain-indexer/overview.md
-              - Usage: tools/data/chain-indexer/usage.md
           - The Graph: 
               - Overview: tools/data/the-graph/overview.md
               - Data: tools/data/the-graph/data.md
