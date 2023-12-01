@@ -6,8 +6,8 @@ Inbound oracles bring off-chain or real-world data to the blockchain, whereas th
 
 ## Resources
 
-1. [What is the blockchain oracle problem?](https://blog.chain.link/what-is-the-blockchain-oracle-problem/)
-1. [What is Blockchain Oracle](https://cryptobriefing.com/what-is-blockchain-oracle/)
-2. [Types of Blockchain Oracle](https://blockchainhub.net/blockchain-oracles/)
-3. [Tutorial: Getting decentralized price data](https://docs.chain.link/docs/get-the-latest-price)
-4. [Tutorial: How to integrate Razor on Polygon](https://docs.razor.network/tutorial/matic/)
+1. [What is the blockchain oracle problem?](https://blog.chain.link/what-is-the-blockchain-oracle-problem/).
+1. [What is Blockchain Oracle](https://cryptobriefing.com/what-is-blockchain-oracle/).
+2. [Types of Blockchain Oracle](https://blockchainhub.net/blockchain-oracles/).
+3. [Tutorial: Getting decentralized price data](https://docs.chain.link/docs/get-the-latest-price).
+4. [Tutorial: How to integrate Razor on Polygon](https://docs.razor.network/tutorial/matic/).

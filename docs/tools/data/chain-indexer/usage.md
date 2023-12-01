@@ -32,6 +32,6 @@ const chain-indexer-framework = require('@maticnetwork/chain-indexer-framework')
 To gain a clearer understanding of the entire process, let's consider two straightforward [examples](https://github.com/0xPolygon/chain-indexer-framework/blob/main/examples/README.md). 
 
 - [First example](https://github.com/0xPolygon/chain-indexer-framework/blob/main/examples/matic_transfer/README.md) involves indexing MATIC transfer events from the Ethereum blockchain.
-- [Second example](https://github.com/0xPolygon/chain-indexer-framework/blob/main/examples/nft_balancer/README.md) involes indexing NFT Transfer and maintaining NFT Balance
+- [Second example](https://github.com/0xPolygon/chain-indexer-framework/blob/main/examples/nft_balancer/README.md) involes indexing NFT Transfer and maintaining NFT Balance.
 
 Both these examples encompass all the layers involved, starting from producers, moving through transformers, and concluding with consumers.

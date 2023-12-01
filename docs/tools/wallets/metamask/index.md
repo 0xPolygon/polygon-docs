@@ -13,10 +13,10 @@
 
 ## Guide to set up MetaMask for Polygon
 
-* [Download & Install MetaMask](/tools/wallets/metamask/tutorial-metamask.md)
-* [Configure Polygon on MetaMask](/tools/wallets/metamask/config-polygon-on-metamask.md)
-* [Config Custom Tokens](/tools/wallets/metamask/custom-tokens.md)
-* [Create & Import Accounts](/tools/wallets/metamask/multiple-accounts.md)
+* [Download & install MetaMask](create-metamask-wallet.md).
+* [Configure Polygon on MetaMask](add-polygon-network.md).
+* [Config custom tokens](custom-tokens.md).
+* [Create & import accounts](multiple-accounts.md).
 
 ### 1. Set up Web3
 

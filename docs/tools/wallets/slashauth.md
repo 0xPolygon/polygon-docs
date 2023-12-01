@@ -146,6 +146,4 @@ function App() {
 export default App;
 ```
 
-**Congratulations! You're successfully integrated SlashAuth in your dApp.**
-
 You can find the full example of this code in our [GitHub repo](https://github.com/slashauth/slashauth-react-quickstart-example).

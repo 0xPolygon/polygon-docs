@@ -20,6 +20,6 @@ IPFS based storage allows you to simply store the CID for your content rather th
 
 ### Example projects
 
-1. Tutorial in scaffold-eth that demonstrates how to mint an NFT on Polygon with IPFS - [link](https://github.com/scaffold-eth/scaffold-eth/tree/simple-nft-example)
+1. Tutorial in scaffold-eth that demonstrates how to mint an NFT on Polygon with IPFS - [link](https://github.com/scaffold-eth/scaffold-eth/tree/simple-nft-example).
 
-2. Building a full stack web3 app with Next.js, Polygon, Solidity, The Graph, IPFS, and Hardhat - [link](https://dev.to/dabit3/the-complete-guide-to-full-stack-web3-development-4g74)
+2. Building a full stack web3 app with Next.js, Polygon, Solidity, The Graph, IPFS, and Hardhat - [link](https://dev.to/dabit3/the-complete-guide-to-full-stack-web3-development-4g74).

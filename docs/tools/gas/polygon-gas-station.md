@@ -11,7 +11,7 @@ We received a lot of requests from dApp developers for building a gas price reco
 
 ### Mumbai
 
-For getting gas price recommendation from this oracle (Polygon Mumbai), send **GET** request to [https://gasstation-testnet.polygon.technology/v2](https://gasstation-testnet.polygon.technology/v2)
+For getting gas price recommendation from this oracle (Polygon Mumbai), send a **GET** request to [https://gasstation-testnet.polygon.technology/v2](https://gasstation-testnet.polygon.technology/v2).
 
 #### cURL
 
@@ -36,7 +36,7 @@ requests.get('https://gasstation-testnet.polygon.technology/v2').json()
 
 ### Mainnet
 
-For getting gas price recommendation from this oracle (Polygon Mainnet), send **GET** request to the Polygon Gas Station V2 to get the gas fee estimates. Polygon Gas Station V2 Endpoint: [https://gasstation.polygon.technology/v2](https://gasstation.polygon.technology/v2)
+For getting a gas price recommendation from this oracle (Polygon Mainnet), send a **GET** request to the Polygon Gas Station V2 to get the gas fee estimates. Polygon Gas Station V2 Endpoint: [https://gasstation.polygon.technology/v2](https://gasstation.polygon.technology/v2).
 
 #### cURL
 
@@ -89,4 +89,4 @@ An example JSON response will look like this:
 - `safelow`, `standard`, `fast`, `estimatedBaseFee` are gas prices in GWei. You can use these prices before sending transaction off to Polygon, depending upon your needs.
 - `blockNumber` tells what was latest block mined when recommendation was made.
 - `blockTime`, in second, gives average block time of the network.
--  On Polygon PoS mainnet, it is mandatory to pass a **minimum priority fees of 30 gwei**
+-  On Polygon PoS mainnet, it is mandatory to pass a **minimum priority fees of 30 gwei**.

@@ -255,9 +255,9 @@ There is much more information and explanation in the code comments, so please t
 
 Here are some additional resources regarding the UMA DVM:
 
-- [Technical Architecture](https://docs.umaproject.org/oracle/tech-architecture)
-- [Economic Architecture](https://docs.umaproject.org/oracle/econ-architecture)
-- [Blog post](https://medium.com/uma-project/umas-data-verification-mechanism-3c5342759eb8) on UMA’s DVM design
-- [Whitepaper](https://github.com/UMAprotocol/whitepaper/blob/master/UMA-DVM-oracle-whitepaper.pdf) on UMA’s DVM design
-- [Research repo](https://github.com/UMAprotocol/research) for optimal fee policy
-- [UMIP repo](https://github.com/UMAprotocol/UMIPs) for governance proposals
+- [Technical architecture](https://docs.umaproject.org/oracle/tech-architecture).
+- [Economic architecture](https://docs.umaproject.org/oracle/econ-architecture).
+- [Blog post](https://medium.com/uma-project/umas-data-verification-mechanism-3c5342759eb8) on UMA’s DVM design.
+- [Whitepaper](https://github.com/UMAprotocol/whitepaper/blob/master/UMA-DVM-oracle-whitepaper.pdf) on UMA’s DVM design.
+- [Research repo](https://github.com/UMAprotocol/research) for optimal fee policy.
+- [UMIP repo](https://github.com/UMAprotocol/UMIPs) for governance proposals.

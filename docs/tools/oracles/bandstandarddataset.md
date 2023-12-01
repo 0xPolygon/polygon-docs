@@ -95,12 +95,12 @@ $ node index.js
 
 For each pair, the following information will be returned:
 
-- `pair`: The base/quote symbol pair string
-- `rate`: The resulting rate of the given pair
+- `pair`: The base/quote symbol pair string.
+- `rate`: The resulting rate of the given pair.
 - `updated`: The timestamp at which the base and quote symbols was last updated on BandChain. For `USD`, this will be the current timestamp.
 - `rawRate`: This object consists of two parts.
-  - `value` is the `BigInt` value of the actual rate, multiplied by `10^decimals`
-  - `decimals` is then the exponent by which `rate` was multiplied by to get `rawRate`
+  - `value` is the `BigInt` value of the actual rate, multiplied by `10^decimals`.
+  - `decimals` is then the exponent by which `rate` was multiplied by to get `rawRate`.
 
 ## Example usage
 

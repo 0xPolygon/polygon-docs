@@ -7,7 +7,7 @@ Wallet Onboard can be configured to automatically ensure that users have their w
 
 ![img](../../img/tools/wallet/plaid-wallet-onboard/splash.png)
 
-## Installation and Prerequisites
+## Installation and prerequisites
 
 Wallet Onboard can be used in any JavaScript-based web dApp, and there is a [React library](https://github.com/plaid/react-plaid-link#usage-with-wallet-onboard) for ReactJS applications as well.
 

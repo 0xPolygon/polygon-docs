@@ -3,10 +3,10 @@
 
 Torus is a user-friendly, secure, and non-custodial key management system for decentralized apps. We're focused on providing mainstream users a gateway to the decentralized ecosystem.
 
-**Type**: Non-custodial / HD <br/>
-**Private Key Storage**: User’s local browser storage / Encrypted and stored on Torus servers <br/>
-**Communication to Ethereum Ledger**: Infura <br/>
-**Private key encoding**: Mnemonic / Social-Auth-login <br/>
+- **Type**: Non-custodial/HD.
+- **Private Key Storage**: User’s local browser storage/encrypted and stored on Torus servers.
+- **Communication to Ethereum Ledger**: Infura.
+- **Private key encoding**: Mnemonic/social-Auth-login.
 
 Depending on your application needs, Torus can be integrated via the Torus Wallet, or by interacting directly with the Torus Network via CustomAuth. For more information, visit the [Torus documentation](https://docs.tor.us/).
 

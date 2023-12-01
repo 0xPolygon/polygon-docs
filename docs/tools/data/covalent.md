@@ -4,7 +4,7 @@
 
 !!! tip "Quickstart"
 
-    Check out **[<ins>this introduction video</ins>](https://www.youtube.com/watch?v=qhibXxKANWE)**
+    Check out **[<ins>this introductory video</ins>](https://www.youtube.com/watch?v=qhibXxKANWE)**
     to get started.
 
 ## Supported endpoints

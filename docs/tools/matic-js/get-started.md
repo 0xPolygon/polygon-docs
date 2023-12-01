@@ -1,4 +1,4 @@
-The `@matic.js` is a javascript library which helps in interacting with the various components of Matic Network.
+Matic.js is a javascript library which helps in interacting with the various components of Matic Network.
 
 In this get started document we will learn about how we can setup and interact with the POS bridge.
 
@@ -64,8 +64,6 @@ await posClient.init({
 
 After `POSClient` is initiated, we need to initiate the required token types like - `erc20`, `erc721` etc.
 
-Let's initiate `erc20` -
-
 ### ERC20
 
 **Create erc20 child token**
@@ -82,8 +80,6 @@ const erc20ParentToken = posClient.erc20(<token address>, true);
 ```
 
 Once erc20 is initaited, you can call various methods that are available, like - `getBalance`, `approve`, `deposit` , `withdraw` etc.
-
-Let's see some of the API examples -
 
 #### `getBalance`
 

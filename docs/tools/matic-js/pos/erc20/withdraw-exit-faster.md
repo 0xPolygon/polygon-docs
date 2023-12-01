@@ -1,6 +1,6 @@
 The `withdrawExitFaster` method can be used to exit the withdraw process faster by using the txHash from `withdrawStart` method.
 
-It is generally fast because it generates proof in the backend. You need to configure [setProofAPI](/docs/tools/matic-js/set-proof-api).
+It is generally fast because it generates proof in the backend. You need to configure [setProofAPI](../../set-proof-api.md).
 
 **Note**- withdrawStart transaction must be checkpointed in order to exit the withdraw.
 

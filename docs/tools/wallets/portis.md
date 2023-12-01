@@ -5,12 +5,12 @@ Portis is a web-based wallet built keeping easy user-onboarding in mind. It come
 
 Like Metamask, it is non-custodial - users control their keys, Portis just stores them securely. But, unlike Metamask, it is integrated into the application and not the browser. Users have their keys associated with their login ID and passwords.
 
-**Type**: Non-custodial/HD <br/>
-**Private Key Storage**: Encrypted and stored on Portis servers <br/>
-**Communication to Ethereum Ledger**: Defined by the developer <br/>
-**Private key encoding**: Mnemonic<br/>
+- **Type**: Non-custodial/HD.
+- **Private Key Storage**: Encrypted and stored on Portis servers.
+- **Communication to Ethereum Ledger**: Defined by the developer.
+- **Private key encoding**: Mnemonic.
 
-## Set up Web3
+## Set up web3
 
 Install Portis in your dApp:
 

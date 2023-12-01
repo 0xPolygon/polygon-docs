@@ -6,10 +6,10 @@ This article guides you to build and deploy a solidity smart contract on Polygon
 
 ## What you will do
 
-- Create a Replit account
-- Create a Repl environment
-- Deploy a sample project on the Polygon Mumbai network
-- Verify the contract
+- Create a Replit account.
+- Create a Repl environment.
+- Deploy a sample project on the Polygon Mumbai network.
+- Verify the contract.
 - Publish your project to a personal Replit profile.
 
 !!! tip
@@ -24,10 +24,10 @@ You need a browser-based Web3 wallet to interact with the Polygon Mumbai Testnet
 
 You must set up all of the following prerequisites to be able to deploy your solidity smart contract on Polygon:
 
-1. [Create a Replit account](https://replit.com/signup)
-2. [Download MetaMask wallet](/docs/tools/wallets/metamask/hello)
-3. [Configure Polygon on MetaMask](/docs/tools/wallets/metamask/config-polygon-on-metamask)
-4. [Get testnet tokens](https://faucet.polygon.technology)
+1. [Create a Replit account](https://replit.com/signup).
+2. [Download MetaMask wallet](../wallets/metamask/index.md).
+3. [Configure Polygon on MetaMask](../wallets/metamask/add-polygon-network.md).
+4. [Get testnet tokens](https://faucet.polygon.technology).
 
 ## Working with a Repl
 
@@ -55,7 +55,7 @@ Make sure that you have followed the list of **Prerequisites** above so that you
 
 1. Click on **Run** (at the Top) to install all relevant packages and start up the contract deployment UI.
 
-2. Connect your MetaMask wallet to the web interface and switch to the [Mumbai Testnet](../wallets/metamask/config-polygon-on-metamask).
+2. Connect your MetaMask wallet to the web interface and switch to the [Mumbai Testnet](../wallets/metamask/add-polygon-network.md).
 
     ![img](../../img/tools/replit/connect.png)
 

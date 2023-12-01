@@ -9,10 +9,10 @@ Additionally, across a variety of EVM chains, including Polygon, Particle's Wall
 
 Particle Wallet itself is available either in an application-embedded format, depending on the type of integration a specific developer chooses, or standalone through the [mobile](https://apps.apple.com/us/app/particle-crypto-wallet/id1632425771) or [web](https://wallet.particle.network) application. Particle Wallet offers a range of features, including a toggleable ERC-4337 mode, 1inch-powered swaps, LI.FI-powered bridging, and other standard and miscellaneous functions.
 
-**Type**: Non-custodial <br/>
-**Private Key Storage**: User’s local device / Encrypted and stored with Particle <br/>
-**Communication to Ethereum Ledger**: Mixed / Particle <br/>
-**Key management mechanism**: MPC-TSS <br/>
+- **Type**: Non-custodial.
+- **Private Key Storage**: User’s local device/encrypted and stored with Particle.
+- **Communication to Ethereum Ledger**: Mixed/Particle.
+- **Key management mechanism**: MPC-TSS.
 
 ## Integrating Particle Auth
 The [Particle Auth](https://docs.particle.network/developers/auth-service/sdks/web) SDK represents the primary method of facilitating connection (wallet generation or login) and interaction with Particle.

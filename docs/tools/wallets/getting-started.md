@@ -15,17 +15,17 @@ The [Polygon Wallet Suite](https://wallet.polygon.technology) is a comprehensive
 
 It includes:
 
-- A portfolio view to check balances on Polygon chains
-- A bridge for transferring assets between Polygon PoS and Ethereum
-- A swap feature for swapping between tokens
-- A token mapper for mapping tokens between Polygon and Ethereum
-- A faucet for obtaining free test tokens
-- A safe bridge for securely bridging between Polygon and Ethereum
-- A bridge explorer for checking bridging transactions
-- Staking options to secure the Polygon PoS by staking MATIC tokens
-- A bridge for transferring assets between Polygon zkEVM and Ethereum
-- A zkEVM explorer for block explorer and analytics
-- Access to ecosystem dApps
+- A portfolio view to check balances on Polygon chains.
+- A bridge for transferring assets between Polygon PoS and Ethereum.
+- A swap feature for swapping between tokens.
+- A token mapper for mapping tokens between Polygon and Ethereum.
+- A faucet for obtaining free test tokens.
+- A safe bridge for securely bridging between Polygon and Ethereum.
+- A bridge explorer for checking bridging transactions.
+- Staking options to secure the Polygon PoS by staking MATIC tokens.
+- A bridge for transferring assets between Polygon zkEVM and Ethereum.
+- A zkEVM explorer for block explorer and analytics.
+- Access to ecosystem dApps.
 
 [Polygon support](https://support.polygon.technology/support/home) can also provide assistance to users and address issues related to the wallet suite.
 

@@ -8,9 +8,9 @@
 
 ## What you will do
 
-- Install and set up Truffle
-- Deploy contract on Polygon Network
-- Check the deployment status on Polygonscan
+- Install and set up Truffle.
+- Deploy a contract on the Polygon Network.
+- Check the deployment status on Polygonscan.
 
 ## Prerequisites
 

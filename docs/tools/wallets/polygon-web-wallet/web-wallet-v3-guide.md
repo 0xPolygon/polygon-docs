@@ -4,7 +4,7 @@ This guide shows instructions to deposit and withdraw funds using [Polygon Walle
 
 !!! tip
 
-    Please refer to [<ins>this guide</ins>](/tools/wallets/metamask/config-polygon-on-metamask.md) to learn how to connect Polygon to Metamask.
+    Please refer to [<ins>this guide</ins>](../metamask/add-polygon-network.md) to learn how to connect Polygon to Metamask.
 
 ## Logging into the Polygon Wallet Suite
 
@@ -19,7 +19,7 @@ Once you connect your account with the Web Wallet, you will be taken to the land
 
 Click on the Polygon Wallet or Polygon Bridge, and you will see all your token balances on the Polygon Wallet across the bridges.
 
-![img](../../img/tools/wallet/v3/landing-page.png)
+![img](../../../img/tools/wallet/v3/landing-page.png)
 
 !!! tip "Metamask"
 
@@ -36,35 +36,35 @@ You can either watch the **video tutorial** here or follow the **step-by-step gu
   </video>
 </div>
 
-#### Step-by-Step Guide
+#### Step-by-step guide
 
 1. Click on the **Move Funds from Ethereum to Polygon** button or on the **Deposit** button from any of the token types in the **Token** Balance** section.
-  ![img](../../img/tools/wallet/v3/deposit/balances.png)
+  ![img](../../../img/tools/wallet/v3/deposit/balances.png)
 
 2. You will be redirected to the bridge page where you need to enter the deposit amount.
 
-    ![img](../../img/tools/wallet/v3/deposit/bridge.png)
+    ![img](../../../img/tools/wallet/v3/deposit/bridge.png)
 
     !!! note
         The **transfer mode** will be enabled based on the token chosen.
 
 3. Once you have added the amount that you want to deposit, you can then click on the **Transfer** button. After you click on the **Transfer** button, you need to click on the **Continue** button on the next popup.
 
-    ![img](../../img/tools/wallet/v3/deposit/please-note.png)
+    ![img](../../../img/tools/wallet/v3/deposit/please-note.png)
 
     You will see a **Transfer Overview** popup with an estimate of the total gas required for the transaction:
 
-    ![img](../../img/tools/wallet/v3/deposit/transfer-overview.png)
+    ![img](../../../img/tools/wallet/v3/deposit/transfer-overview.png)
 
     After that, you can review your transaction details:
 
-    ![img](../../img/tools/wallet/v3/deposit/review-transfer.png)
+    ![img](../../../img/tools/wallet/v3/deposit/review-transfer.png)
 
 4. Once you confirm the transaction, you will see a **Transfer in Progress** popup which will show you the Deposit status. It will take ~7-8 minutes for the tokens to show up on Polygon.
 
 5. After the required time, the transaction will be completed.
 
-    ![img](../../img/tools/wallet/v3/deposit/completed.png)
+    ![img](../../../img/tools/wallet/v3/deposit/completed.png)
 
 You can always check your past and current transactions by clicking on the **Transactions** tab on the left.
 
@@ -84,38 +84,38 @@ Withdrawing funds from Polygon back to the Ethereum Mainnet via PoS Bridge is an
 #### Step-by-step guide
 
 1. To withdraw funds, click on the **Withdraw** option on any of the tokens from the **Token Balance** section.
-    ![img](../../img/tools/wallet/v3/pos/balances.png)
+    ![img](../../../img/tools/wallet/v3/pos/balances.png)
 
 2. You will be redirected to the Bridge page where you need to enter the Withdrawal amount.
 
-    ![img](../../img/tools/wallet/v3/pos/bridge.png)
+    ![img](../../../img/tools/wallet/v3/pos/bridge.png)
 
     !!! note
         The **transfer mode** will be enabled based on the token chosen.
 
 3. Once you have added the amount that you want to withdraw, you can then click on the **Transfer** button. After you click on the **Transfer** button, you need to click on the **Continue** button on the next popup.
 
-    ![img](../../img/tools/wallet/v3/pos/please-note.png)
+    ![img](../../../img/tools/wallet/v3/pos/please-note.png)
 
     You will see a **Transfer Overview** popup with an estimate of the total gas required for the transaction:
 
-    ![img](../../img/tools/wallet/v3/pos/transfer-overview.png)
+    ![img](../../../img/tools/wallet/v3/pos/transfer-overview.png)
 
     After that, you can review your transaction details:
 
-    ![img](../../img/tools/wallet/v3/pos/review-transfer.png)
+    ![img](../../../img/tools/wallet/v3/pos/review-transfer.png)
 
 4. Once the transaction is approved, you will see a popup on your screen like this:
 
-    ![img](../../img/tools/wallet/v3/pos/transaction-progress.png)
+    ![img](../../../img/tools/wallet/v3/pos/transaction-progress.png)
 
     The first transaction is to initiate your withdrawal. You need to wait for the checkpoint to arrive. This could take up to 3 hours to complete.
 
-    ![img](../../img/tools/wallet/v3/pos/waiting-checkpoint.png)
+    ![img](../../../img/tools/wallet/v3/pos/waiting-checkpoint.png)
 
 5. Once the checkpoint has arrived, you will need to **confirm the second transaction**. Then, when you have confirmed the second transaction, you will receive your funds back on Ethereum.
 
-    ![img](../../img/tools/wallet/v3/pos/completed.png)
+    ![img](../../../img/tools/wallet/v3/pos/completed.png)
 
 ## Swap for gas
 
@@ -143,26 +143,26 @@ You can either watch the video tutorial below or follow the step-by-step guide.
 
 1. Assuming you are on the assets homepage, find the **Swap for Gas** feature on the sidebar on your left.
 
-    ![img](../../img/tools/wallet/swap-gas-home.png)
+    ![img](../../../img/tools/wallet/swap-gas-home.png)
 
 2. Now, you need to set the amount of MATIC you need, either by choosing one of the given quantities or entering the amount you need (1). You should also select the token that will be swapped for MATIC (2). **The minimum amount for requesting MATIC tokens is 0.5 MATIC**.
 
-    ![img](../../img/tools/wallet/swap-gas-tokens.png)
+    ![img](../../../img/tools/wallet/swap-gas-tokens.png)
 
-3. MetaMask will then prompt you to sign the transaction. If you haven't added the Polygon network to your Metamask, you will be prompted to install it. Please proceed with the installation or check out this guide [here](/tools/wallets/metamask/config-polygon-on-metamask.md).
+3. MetaMask will then prompt you to sign the transaction. If you haven't added the Polygon network to your Metamask, you will be prompted to install it. Please proceed with the installation or check out this guide [here](../metamask/add-polygon-network.md).
 
-    ![img](../../img/tools/wallet/swap-gas-signature.png)
+    ![img](../../../img/tools/wallet/swap-gas-signature.png)
 
     !!! note
         If the **Sign** button is not visible, try scrolling down by clicking on the down arrow in the **Message** field.
 
 4. After you signed it, you will be able to transfer the requested amount of MATIC to your wallet.
 
-    ![img](../../img/tools/wallet/swap-gas-transfer.png)
+    ![img](../../../img/tools/wallet/swap-gas-transfer.png)
 
 5. A new signature will be requested:
 
-    ![img](../../img/tools/wallet/swap-gas-sign-swap.png)
+    ![img](../../../img/tools/wallet/swap-gas-sign-swap.png)
 
     Transaction completed. Remember that you can always verify it on [Polygonscan](https://polygonscan.com/)!
 
@@ -171,7 +171,7 @@ You can either watch the video tutorial below or follow the step-by-step guide.
 
 You can swap tokens for other tokens using the **Token Swap** feature, which uses decentralized exchanges under the hood. The Token Swap feature may be found in the Wallet Suite side menu.
 
-![img](../../img/tools/wallet/swap-token-home.png)
+![img](../../../img/tools/wallet/swap-token-home.png)
 
 You can either watch the video tutorial here or follow the step-by-step guide provided below.
 
@@ -186,11 +186,11 @@ You can either watch the video tutorial here or follow the step-by-step guide pr
 
 1. The token on the top is the one you are swapping. The other one on the bottom is what you are going to receive.
 
-    ![img](../../img/tools/wallet/swap-token.png)
+    ![img](../../../img/tools/wallet/swap-token.png)
 
 2. Review the transaction before it goes through.
 
-    ![img](../../img/tools/wallet/swap-token-review.png)
+    ![img](../../../img/tools/wallet/swap-token-review.png)
 
 3. **Sign** and confirm the transaction on MetaMask and the transaction will be completed successfully.
 
@@ -198,7 +198,7 @@ You can either watch the video tutorial here or follow the step-by-step guide pr
 
 You can customize the list of tokens you may see on the Polygon Wallet Suite homepage. For that, click on **Manage Token List**:
 
-![img](../../img/tools/wallet/token-list-home.png)
+![img](../../../img/tools/wallet/token-list-home.png)
 
 There are some default options provided by Polygon, but you can always add new token lists by entering their URLs.
 

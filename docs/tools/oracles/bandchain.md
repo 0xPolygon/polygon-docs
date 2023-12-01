@@ -16,7 +16,7 @@ Band Protocol allows you to query data from traditional web APIs and use it in t
 
         You can click on the oracle script of your choice, and then from the **Execute** tab you can pass in the parameters and get the response from BandChain. The response will contain the result and also an EVM proof. This proof has to be copied and will be used in the final step. The BandChain docs for querying oracle using explorer are available [**here**](https://docs.bandchain.org/dapp-developers/requesting-data-from-bandchain/requesting-data-via-explorer).
 
-        ![img](../..../../img/tools/oracles/bandchain/executeoracle.png)
+        ![img](../../img/tools/oracles/bandchain/executeoracle.png)
 
         Given above is an example of making an oracle request to get the random number values. The value 100 is passed to the `max_range` parameter of the oracle request. We get a hash in response. Clicking on this hash will show us the complete details of the response.
 

@@ -6,11 +6,11 @@ In this tutorial, you will learn how to set up Hardhat and use it to build, test
 
 ### What you will do
 
-- Set up Hardhat
-- Create a simple smart contract
-- Compile contract
-- Test contract
-- Deploy contract
+- Set up Hardhat.
+- Create a simple smart contract.
+- Compile the contract.
+- Test the contract.
+- Deploy the contract.
 
 ## Setting up the development environment
 

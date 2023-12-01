@@ -4,15 +4,15 @@
 
 Tellor is an oracle that provides censorship resistant data that is secured by simple crypto-economic incentives. Data can be provided by anyone and checked by everyone. Tellor’s flexible structure can provide any data at any time interval to allow for easy experimentation/innovation.
 
-## (Soft) Prerequisites
+## (Soft) prerequisites
 
 We're assuming the following about your coding skill-level to focus on the oracle aspect.
 
 Assumptions:
 
-- you can navigate a terminal
-- you have npm installed
-- you know how to use npm to manage dependencies
+- You can navigate a terminal.
+- You have npm installed.
+- You know how to use npm to manage dependencies.
 
 Tellor is a live and open-sourced oracle ready for implementation. This beginner's guide is here to showcase the ease with which one can get up and running with Tellor, providing your project with a fully decentralized and censorship-resistant oracle.
 
@@ -68,7 +68,7 @@ contract PriceContract is UsingTellor {
 }
 ```
 
-## Addresses:
+## Addresses
 
 Tellor Tributes: [`0xe3322702bedaaed36cddab233360b939775ae5f1`](https://polygonscan.com/token/0xe3322702bedaaed36cddab233360b939775ae5f1#code)
 

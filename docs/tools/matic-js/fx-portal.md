@@ -4,4 +4,4 @@ For more info about FxPortal, please read [the FxPortal overview documentation](
 
 FxPortal bridge functionality is available in a [separate repository](https://github.com/0xPolygon/maticjs-fxportal) as a plugin for maticjs. The package provides different API's for interacting with bridge.
 
-Here is repository link - [https://github.com/0xPolygon/maticjs-fxportal](https://github.com/0xPolygon/maticjs-fxportal)
+Here is the repository link: [https://github.com/0xPolygon/maticjs-fxportal](https://github.com/0xPolygon/maticjs-fxportal).

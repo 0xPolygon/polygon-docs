@@ -4,8 +4,9 @@
 In order to view the flow of funds in your accounts, on the Polygon Network, you will need to configure Polygon testnet and mainnet URLs on Metamask.
 
 There are two ways to do it:
-1. [Using Polygonscan](/tools/wallets/metamask/config-polygon-on-metamask.md#polygon-scan)
-2. [Add the Polygon network manually](/tools/wallets/metamask/config-polygon-on-metamask.md#add-the-polygon-network-manually)
+
+1. [Using Polygonscan](add-polygon-network.md#polygon-scan)
+2. [Add the Polygon network manually](add-polygon-network.md#add-the-polygon-network-manually)
 
 !!! tip
     Find a tip at the end of this article on how to easily add **Polygon Mainnet** to Metamask.

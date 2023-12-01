@@ -14,7 +14,7 @@ The Graph, a decentralized protocol for indexing and querying chain data, suppor
 
     ![img](../../../img/tools/graph/Graph-1.png)
 
-1. Install Graph CLI on your machine (using either npm or yarn)
+1. Install Graph CLI on your machine (using either npm or yarn).
 
     ```bash
     $ npm install -g @graphprotocol/graph-cli
@@ -38,14 +38,14 @@ The Graph, a decentralized protocol for indexing and querying chain data, suppor
 
     >Note: More details are here: https://thegraph.com/docs/define-a-subgraph#create-a-subgraph-project
 
-1. Authenticate with the hosted service
+1. Authenticate with the hosted service.
 
       ```bash
       graph auth https://api.thegraph.com/deploy/ <your-access-token>
       ```
       You can find the access token by going to your dashboard on the graph website.
 
-1. cd to the directory you created and start defining the subgraph. Information on creating a subgraph is available in the Graph Docs here. https://thegraph.com/docs/define-a-subgraph
+1. `cd` to the directory you created and start defining the subgraph. Information on creating a subgraph is available in the Graph Docs here: https://thegraph.com/docs/define-a-subgraph.
 
 1. When you are ready, deploy your subgraph. You can always test and redeploy as needed.
 
@@ -57,6 +57,6 @@ The Graph, a decentralized protocol for indexing and querying chain data, suppor
 
     Your subgraph will be deployed and can be accessed from your dashboard.
 
-You can learn about querying the subgraph here: https://thegraph.com/docs/query-the-graph#using-the-graph-explorer
+You can learn about querying the subgraph here: https://thegraph.com/docs/query-the-graph#using-the-graph-explorer.
 
 If you want to make your subgraph public, you can do so by accessing your subgraph from your dashboard and then click on edit button. You will see the slider at the bottom of edit page.

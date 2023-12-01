@@ -20,8 +20,8 @@ Write methods publish some data on the blockchain, so they consumes gas. Example
 
 A write method returns (at least) two data items:
 
-1. TransactionHash
-2. TransactionReceipt
+1. `TransactionHash`
+2. `TransactionReceipt`
 
 For example:
 

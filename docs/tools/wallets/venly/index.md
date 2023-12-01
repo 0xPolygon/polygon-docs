@@ -10,14 +10,14 @@ Each application is unique and has different needs, therefore they provide diffe
 
 ## Key Features
 
-- Support Web and Mobile
-- Offers social logins
-- Offers fiat-on-ramp
-- Supports both Polygon and Ethereum
-- Supports NFTs (ERC721 and ERC1155) on Polygon
-- Easy to integrate using Web3
-- Built for a mainstream audience
-- Offers in-app customer support
+- Support web and mobile.
+- Offers social logins.
+- Offers fiat-on-ramp.
+- Supports both Polygon and Ethereum.
+- Supports NFTs (ERC721 and ERC1155) on Polygon.
+- Easy to integrate using Web3.
+- Built for a mainstream audience.
+- Offers in-app customer support.
 
 ## Getting Started
 
