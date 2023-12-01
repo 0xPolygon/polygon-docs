@@ -5,12 +5,9 @@ This document provides a comprehensive list of differences between the Ethereum 
 
     Note that the following differences have no impact on the developer experience with the zkEVM as compared to the EVM. Gas optimization techniques, interacting with libraries like Web3.js and Ethers.js, and deploying contracts works seamlessly on the zkEVM without any overhead.
 
-    To start deploying your own smart contracts on the zKEVM, check out the [<ins>deployment guide</ins>](/zkevm/develop.md).
-
-
 ## Opcodes
 
-This section lists out the changes we have done with Opcodes in zKEVM as compared to the EVM.
+This section lists the changes we have done with Opcodes in zKEVM as compared to the EVM.
 
 - **SELFDESTRUCT** &rarr; removed and replaced by **SENDALL**.
 

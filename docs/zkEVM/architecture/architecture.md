@@ -159,7 +159,7 @@ Before getting into a transaction flow in L2, users need some funds to perform a
    - Aggregator will take pending transactions to be verified and build a Proof in order to achieve finality on L1
    - Once the Proof is validated, user's transactions will attain L1 finality (important for withdrawals). This is called the **consolidated state**.
 
-The above process is a summarized version of how transactions are processed in zkEVM. We recommend you to take a look at the complete [transaction life cycle](../protocol/l2-transaction-cycle-intro.md) document.
+The above process is a summarized version of how transactions are processed in zkEVM. We recommend you to take a look at the complete [transaction life cycle](../protocol/submit-transaction.md) document.
 
 ## Design characteristics
 

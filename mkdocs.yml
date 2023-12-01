@@ -101,7 +101,7 @@ nav:
           - Introduction: zkEVM/protocol/introduction.md
           - State management: zkEVM/protocol/state-management.md
           - Trasaction life cycle:
-            - Submit transactions: zkEVM/protocol/submit-trasaction.md
+            - Submit transactions: zkEVM/protocol/submit-transaction.md
             - Transaction execution: zkEVM/protocol/transaction-execution.md
             - Transaction batching: zkEVM/protocol/transaction-batching.md
             - Batch sequencing: zkEVM/protocol/batch-sequencing.md
