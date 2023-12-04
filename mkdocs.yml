@@ -421,8 +421,7 @@ nav:
               - SlashAuth:  tools/wallets/slashauth.md
               - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
               - Particle network:  tools/wallets/particle-network.md
-      - APIs/SDKs:
-          - Using Web3Modal SDK: tools/using-web3modal.md
+              - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
