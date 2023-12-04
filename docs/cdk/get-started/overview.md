@@ -5,9 +5,7 @@ Polygon's Chain Development Kit (CDK) is a modular, open source software tool fo
 
 CDK users choose a chain architecture specific to their needs and use cases.
 
-<center>
-![CDK flavors](../../img/cdk/cdk-modes.png) 
-</center>
+BLURB:
 
 !!! info
     For the latest updates, follow our official GitHub repositories.
