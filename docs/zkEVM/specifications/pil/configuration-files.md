@@ -4,7 +4,7 @@ In order for PIL to securely enable modularity, especially in complex settings s
 
 ## Dependency Inclusion Feature
 
-Let's consider a scenario. If the PIL code of Secondary SMs reflects unique properties such as the maximum length (for example, the length $\mathtt{2^{10}}$ of the Multiplier SM as seen in the first line of [the `multiplier.pil` code](/zkevm/PIL/pil-compile.md)), such properties can easily become magic numbers which attackers could use as distinguishers of which computation is running at a given point in time.
+Let's consider a scenario. If the PIL code of Secondary SMs reflects unique properties such as the maximum length (for example, the length $\mathtt{2^{10}}$ of the Multiplier SM as seen in the first line of [the `multiplier.pil` code](compiling-using-pilcom.md)), such properties can easily become magic numbers which attackers could use as distinguishers of which computation is running at a given point in time.
 
 This is where the **dependency inclusion feature** comes in.
 
