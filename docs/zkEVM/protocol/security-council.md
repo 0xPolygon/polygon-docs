@@ -6,6 +6,7 @@ That is, instead of employing the 2-out-of-3 _Admin Multisig Contract_ and waiti
 
 It is crucial, however, to emphasise that the _Security Council Multisig_ is a temporary measure, and will ultimately be phased-out once the Polygon zkEVM has been sufficiently battle-tested.
 z
+
 ## Understanding Security Council Multisig
 
 The _security council_ is a committee that oversees the security of the Polygon zkEVM during its initial phase.
@@ -17,7 +18,7 @@ The _security council_ of a rollup has a two-fold responsibility,
 
 The _security council_ therefore utilises a special _multisig_ contract that overrides the usual _Admin Multisig Contract_ and the _Timelock Contract_.
 
-![Figure 1: Overview of the Security Council in relation to the Admin Contract](../../img/zkvm/security-council-overview.png)
+![Figure 1: Overview of the Security Council in relation to the Admin Contract](../../img/zkEVM/security-council-overview.png)
 
 ### Security Council Composition
 

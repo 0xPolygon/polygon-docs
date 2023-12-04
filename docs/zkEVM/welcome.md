@@ -10,9 +10,3 @@ Simply switch to the zkEVM RPC and start building on a network with a higher thr
 
 !!!caution
     Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Disclosures</ins>]() section.
-
-
-
-
-
-

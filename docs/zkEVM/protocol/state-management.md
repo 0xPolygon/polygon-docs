@@ -11,10 +11,9 @@ The off-chain execution of the batches will eventually be verified on-chain via 
 !!!info
     Both **data availability** and **verification of transaction execution** rely only on L1 security assumptions and at the final stage of the protocol, the nodes will only rely on data present in L1 to stay synchronized with each L2 State transition.
 
+![figure 1](../../img/zkEVM/01L2-overview-l2-state-management.png)
 
-![figure 1](../../img/zkvm/01L2-overview-l2-state-management.png)
-
-As shown in the above figure, **L2 nodes can receive batch data in three different ways**: 
+As shown in the above figure, **L2 nodes can receive batch data in three different ways**:
 
 1. Directly from the Trusted Sequencer before the batches are committed to L1, or
 2. Straight from L1 after the batches have been sequenced, or
@@ -34,4 +33,4 @@ The information used to update the L2 State in **the last case** includes verifi
 
 The figure below depicts the timeline of L2 State stages from a batch perspective, as well as the actions that trigger progression from one stage to the next.
 
-![L2 State stages timeline](../../img/zkvm/02l2-l2-state-timeline.png)
+![L2 State stages timeline](../../img/zkEVM/02l2-l2-state-timeline.png)

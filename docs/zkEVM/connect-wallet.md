@@ -1,8 +1,6 @@
 
-
 !!!caution
     Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Disclosures</ins>]() section.
-
 
 Add the **Polygon zkEVM** network to your wallet in order to interact with either the mainnet or the testnet.
 
@@ -16,7 +14,7 @@ Navigate to `Add network` in your wallet, and enter the respective network detai
 Here is a video tutorial on **how to add Polygon zkEVM Testnet to MetaMask and deploy smart contracts**:
 
 <video loop width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="../../img/zkvm/tutorial.mp4"></source>
+  <source type="video/mp4" src="../img/zkEVM/tutorial.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 

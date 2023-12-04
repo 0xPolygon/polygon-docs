@@ -121,7 +121,6 @@ Only fill in the commented fields in your `deploy_parameters.json` file:
 
     You will need to send 0.5 GöETH to the Deployment Address wallet listed in `wallets.txt`.
 
-
 Adjust the `gasPrice` according to the network status. For Goerli, you can check it with the following command, where you insert your Etherscan API key, note this can sometimes be 0 for testnet:
 
 ```bash

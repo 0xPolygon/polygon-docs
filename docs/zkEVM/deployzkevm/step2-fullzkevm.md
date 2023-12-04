@@ -39,7 +39,6 @@ Next, add these to your `.profile`:
     source .profile
    ```
 
-
 Lastly, confirm the installation of Golang by running this command: `$ go version`
 
 ## Download/extract mainnet files
@@ -68,7 +67,6 @@ for url in "${urls[@]}"; do
   aria2c -x6 -s6 "$url"
 done
 ```
-
 
 <!-- ```bash
 aria2c -x6 -s6 "https://de012a78750e59b808d922b39535e862.s3.eu-west-1.amazonaws.com/v1.1.0-rc.1-fork.4.tgz"

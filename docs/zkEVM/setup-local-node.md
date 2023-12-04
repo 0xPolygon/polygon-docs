@@ -5,7 +5,7 @@ This tutorial is a guide to setting up a local but single zkEVM node. It is _sin
 
 !!!caution
     Currently the zkProver does not run on ARM-powered Macs. For Windows users, the use of WSL/WSL2 is not recommended.
-    
+
     Unfortunately, Apple M1 chips are not supported for now - since some optimizations on the zkProver require specific Intel instructions. This means some non-M1 computers won't work regardless of the OS, for example: AMD.
 
 At the end of this tutorial, the following components will be running:
@@ -39,7 +39,7 @@ Start by cloning the [official zkNode repository](https://github.com/0xPolygonHe
 git clone https://github.com/0xPolygonHermez/zkevm-node.git
 ```
 
-Build the `zkevm-node` docker image. 
+Build the `zkevm-node` docker image.
 
 ```bash
 make build-docker
@@ -49,17 +49,17 @@ The image is built only once and whenever the code has changed.
 
 !!!caution Building Docker Image
     Every testnet version needs to use configuration files from the correct and corresponding tag. For instance: Make sure to use configuration files from RC9 tag in order to build an RC9 image.
-    
+
     All tags can be found here: <ins>**https://github.com/0xPolygonHermez/zkevm-node/tags**</ins>
 
-Certain commands on the `zkevm-node` can interact with smart contracts, run specific components, create encryption files, and print debug information. 
+Certain commands on the `zkevm-node` can interact with smart contracts, run specific components, create encryption files, and print debug information.
 
 To interact with the binary program, we provide `docker-compose` files and a `Makefile` to spin up/down the various services and components, ensuring smooth local deployment and a better command line interface for developers.
 
 !!!warning
     All the data is stored inside of each docker container. This means once you remove the container, the data will be lost.
 
-The `test/` directory contains scripts and files for developing and debugging. 
+The `test/` directory contains scripts and files for developing and debugging.
 
 Change directory to `test/` on your local machine:
 
@@ -86,6 +86,7 @@ make restart
 ```
 
 ## Configuration parameters
+
 ​
 The Synchronizer regularly pulls for network updates, mainly from Ethereum but also via the Trusted Sequencer's broadcasting mechanism, in order to stay up-to-date. Unless otherwise specified in the setup, the Synchronizer's default syncing rate is every 2 seconds.
 
@@ -125,18 +126,18 @@ MetaMask can be configured to use the local zkEVM environment by following the s
 3. On the left menu, click on **Networks**
 4. Click on **Add Network** button
 5. Fill up the L2 network information
-    * **Network Name:** Polygon zkEVM - Local
-    * **New RPC URL:** <http://localhost:8123>
-    * **ChainID:** 1001
-    * **Currency Symbol:** ETH
-    * **Block Explorer URL:** <http://localhost:4000>
+    - **Network Name:** Polygon zkEVM - Local
+    - **New RPC URL:** <http://localhost:8123>
+    - **ChainID:** 1001
+    - **Currency Symbol:** ETH
+    - **Block Explorer URL:** <http://localhost:4000>
 6. Click on **Save**
 7. Click on **Add Network** button
 8. Fill up the L1 network information
-    * **Network Name:** Geth - Local
-    * **New RPC URL:** <http://localhost:8545>
-    * **ChainID:** 1337
-    * **Currency Symbol:** ETH
+    - **Network Name:** Geth - Local
+    - **New RPC URL:** <http://localhost:8545>
+    - **ChainID:** 1337
+    - **Currency Symbol:** ETH
 9. Click on **Save**
 
 You can now interact with your local zkEVM network and sign transactions from your MetaMask wallet.

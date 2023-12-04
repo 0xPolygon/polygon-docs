@@ -14,7 +14,7 @@ The faucet allows anyone to request ETH testnet tokens, such as Sepolia testnet 
 Here is how to use the Polygon zkEVM faucet:
 
 - Navigate to [**faucet.polygon.technology**](https://faucet.polygon.technology/)
-![Figure: faucet-zk](../img/zkvm/zkv-faucet-zketh.png)
+![Figure: faucet-zk](../img/zkEVM/zkv-faucet-zketh.png)
 
 - Select the network where you want to receive the test tokens. In our case, we will select **Polygon zkEVM**.
 
@@ -26,8 +26,8 @@ Here is how to use the Polygon zkEVM faucet:
 
 - Click **Confirm** to finalize the transaction
 
-![Figure: confirm-tx](../img/zkvm/zkv-confirm-zketh.png)
+![Figure: confirm-tx](../img/zkEVM/zkv-confirm-zketh.png)
 
 - After confirmation, you will receive the requested Testnet tokens within ~1 minute. You can also verify the transaction by clicking on the Polygonscan link.
 
-![Figure: success-zk](../img/zkvm/zkv-success-zketh.png)
+![Figure: success-zk](../img/zkEVM/zkv-success-zketh.png)

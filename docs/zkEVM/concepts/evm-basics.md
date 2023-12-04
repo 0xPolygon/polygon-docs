@@ -10,13 +10,13 @@ keywords:
   - ethereum virtual machine
 ---
 
-In this series of documents, we will dig deeper into the Main State Machine Executor component of the zkProver. It is one of the four main components of the zkProver, outlined [here](../zkprover/zkprover-overview.md). These are - **Executor**, **STARK Recursion**, **CIRCOM**, and **Rapid SNARK**.
+In this series of documents, we will dig deeper into the Main State Machine Executor component of the zkProver. It is one of the four main components of the zkProver, outlined [here](../architecture/zkprover/zkprover-overview.md). These are - **Executor**, **STARK Recursion**, **CIRCOM**, and **Rapid SNARK**.
 
 Since the design of the zkProver emulates that of the EVM, this document focuses on explaining the basics of **Ethereum Virtual Machine** (EVM).
 
 ## Overview of Polygon zkEVM
 
-**Polygon zkEVM is an L2 network that implements a special instance of the Ethereum Virtual Machine (EVM)**. It emulates the EVM in that the zkProver, which is core to proving and verifying computation correctness, is also designed as a state machine or a cluster of state machines. 
+**Polygon zkEVM is an L2 network that implements a special instance of the Ethereum Virtual Machine (EVM)**. It emulates the EVM in that the zkProver, which is core to proving and verifying computation correctness, is also designed as a state machine or a cluster of state machines.
 
 The terms **state machine** and **virtual machine** are used interchangeably in this documentation.
 
@@ -36,7 +36,7 @@ The EVM is categorized as a **quasi–Turing-complete state machine** because it
 
 At any given point in time, the current state of the Ethereum blockchain is defined by a collection of the blockchain data. An Ethereum state therefore includes **account balances**, **smart contract code**, **smart contract storage**, and other information relevant to the operation of the network.
 
-Since Ethereum is a distributed digital ledger, its state is maintained by each of the network's full-nodes. 
+Since Ethereum is a distributed digital ledger, its state is maintained by each of the network's full-nodes.
 
 ## Key features of EVM
 
@@ -52,13 +52,13 @@ In terms of how it operates, the EVM is described as; **deterministic**, **sandb
 
 The EVM is made up of several components that work together to execute smart contracts on the Ethereum blockchain and provide the above-mentioned features.
 
-![EVM Components Involved in the Processing of a Transaction](../../img/zkvm/01msm-evm-components.png)
+![EVM Components Involved in the Processing of a Transaction](../../img/zkEVM/01msm-evm-components.png)
 
 The main components of the EVM involved in the processing of a transaction are:
 
-1. **Smart contract bytecode**, which is the low-level code executed by the EVM. 
+1. **Smart contract bytecode**, which is the low-level code executed by the EVM.
 
-    Each bytecode is a sequence of opcodes (machine-level instructions). And each opcode in an EVM bytecode corresponds to a specific operation, such as arithmetic, conditional branching or memory manipulation. The EVM executes bytecode in a step-by-step fashion, with each opcode being processed in a given sequence. 
+    Each bytecode is a sequence of opcodes (machine-level instructions). And each opcode in an EVM bytecode corresponds to a specific operation, such as arithmetic, conditional branching or memory manipulation. The EVM executes bytecode in a step-by-step fashion, with each opcode being processed in a given sequence.
 
     In general, smart contracts are written in a high-level programming language, such as [Solidity](https://docs.soliditylang.org/en/v0.8.20/) or [Vyper](https://docs.vyperlang.org/en/stable/), and then compiled into an EVM bytecode.
 
@@ -86,7 +86,7 @@ The EVM is a variant of the [**Von Neumann architecture**](https://en.wikipedia.
 
 ### EVM Computational Costs
 
-The EVM has its own instruction set or list of available **opcodes**, which is a set of low-level commands used to manipulate data in the Stack, Memory and Storage components. 
+The EVM has its own instruction set or list of available **opcodes**, which is a set of low-level commands used to manipulate data in the Stack, Memory and Storage components.
 
 The instruction set includes operations such as Arithmetic, Bit manipulation and Control flow.
 
@@ -128,7 +128,7 @@ If a contract attempts to `PUSH` more elements onto the Stack, exceeding the $10
 
 ## Memory
 
-The EVM Memory is used for storing large data structures, such as arrays and strings. It is a linear array of bytes used by smart contracts to store and retrieve data. The size of the memory is dynamically allocated at runtime, meaning that the amount of memory available to a smart contract can grow depending on its needs. 
+The EVM Memory is used for storing large data structures, such as arrays and strings. It is a linear array of bytes used by smart contracts to store and retrieve data. The size of the memory is dynamically allocated at runtime, meaning that the amount of memory available to a smart contract can grow depending on its needs.
 
 EVM Memory is byte-addressable, which means that each byte in the memory can be individually addressed using a unique index.
 
@@ -144,7 +144,7 @@ It’s also worth noting that, since accessing and modifying EVM Memory consumes
 
 - The parent contract’s memory space is saved, and the new contract’s memory space is initialized. The new contract can then make use of its memory as needed.
 
-- When the called contract’s execution is completed, the memory space is released and the parent contract’s saved memory is restored. 
+- When the called contract’s execution is completed, the memory space is released and the parent contract’s saved memory is restored.
 
 It is worth noting that if a smart contract does not actually use the memory it has been allocated, that memory cannot be reclaimed or reused in the execution context of another contract.
 
@@ -164,7 +164,7 @@ The opcodes related to memory are as follows:
 
 Accessing and modifying storage is a relatively expensive operation in terms of gas costs. EVM storage is implemented as a modified version of the **Merkle Patricia Tree** data structure, which allows for efficient access and modification of the storage data.
 
-A **Patricia Tree** is a specific type of a trie designed to be more space-efficient than a standard trie, by storing only the unique parts of the keys in the tree. Patricia Trees are particularly useful in scenarios where keys share common prefixes, as they allow for more efficient use of memory and faster lookups compared to standard tries. 
+A **Patricia Tree** is a specific type of a trie designed to be more space-efficient than a standard trie, by storing only the unique parts of the keys in the tree. Patricia Trees are particularly useful in scenarios where keys share common prefixes, as they allow for more efficient use of memory and faster lookups compared to standard tries.
 
 The following opcodes are used to manipulate the storage of a smart contract:
 
@@ -188,25 +188,25 @@ Transactions are decoded so as to obtain relevant information such as; the recip
 
 ### Signature Verification
 
-Every transaction is digitally signed with a signature, which is generated using the **Elliptic Curve Digital Signature Algorithm (ECDSA)**. 
+Every transaction is digitally signed with a signature, which is generated using the **Elliptic Curve Digital Signature Algorithm (ECDSA)**.
 
 The ECDSA signature is represented by three (3) values, generally denoted as $\texttt{r}, \texttt{s}, \texttt{v}$.
 
-Since the signature, or in particular the triplet $(\texttt{r}, \texttt{s}, \texttt{v})$, was computed from the secret key which is uniquely associated with the address of the Ethereum account (being debited), the three values $(\texttt{r}, \texttt{s}, \texttt{v})$ are sufficient to accurately verify that the transaction has been signed by the owner of the Ethereum account. 
+Since the signature, or in particular the triplet $(\texttt{r}, \texttt{s}, \texttt{v})$, was computed from the secret key which is uniquely associated with the address of the Ethereum account (being debited), the three values $(\texttt{r}, \texttt{s}, \texttt{v})$ are sufficient to accurately verify that the transaction has been signed by the owner of the Ethereum account.
 
 The Ethereum account is identified by a 20-byte (160-bit) address. The address is derived from the public key associated with the Ethereum account. It is in fact the last 20 bytes of the 256-bit Keccak hash of the public key.
 
 ### Processing A Transaction
 
-The EVM begins by creating a context with an empty stack and memory space. 
+The EVM begins by creating a context with an empty stack and memory space.
 
 The bytecode instructions are then executed. The execution involves values being pushed and popped onto and from the Stack as required.
 
-EVM uses a Program Counter to keep track of which instruction to execute next. Each opcode has a fixed number of bytes, so the Program Counter increments by the appropriate number of bytes after each instruction is executed. 
+EVM uses a Program Counter to keep track of which instruction to execute next. Each opcode has a fixed number of bytes, so the Program Counter increments by the appropriate number of bytes after each instruction is executed.
 
 ### Stack Elements And Word Size
 
-Stack elements are 32 bytes in size. This means each value pushed onto the Stack by an opcode, as well as each value popped off the Stack by an opcode, are each 32 bytes in size. 
+Stack elements are 32 bytes in size. This means each value pushed onto the Stack by an opcode, as well as each value popped off the Stack by an opcode, are each 32 bytes in size.
 
 The 32-byte size limit for Stack elements is a fundamental design choice in Ethereum, and is purely based on the size of the **EVM word**. The **EVM word is the basic unit of storage and processing in the EVM, defined as a 256-bit (32-byte) unsigned integer**. Since the EVM word is the smallest unit of data that can be processed by the EVM, the stack elements are conveniently set to be of the same size.
 
@@ -235,8 +235,8 @@ Some of the most commonly used opcodes include:
 
 ## References
 
-The [Ethereum yellow paper](https://ethereum.github.io/yellowpaper/paper.pdf) entails technical details on the Ethereum with some of the opcodes listed and described on Pages 30 to 38. 
+The [Ethereum yellow paper](https://ethereum.github.io/yellowpaper/paper.pdf) entails technical details on the Ethereum with some of the opcodes listed and described on Pages 30 to 38.
 
-A more elaborate exposition of the Ethereum Blockchain is provided in the book [Mastering Ethereum](https://github.com/ethereumbook/ethereumbook) by Andreas M. Antonopoulos and Gavin Wood. 
+A more elaborate exposition of the Ethereum Blockchain is provided in the book [Mastering Ethereum](https://github.com/ethereumbook/ethereumbook) by Andreas M. Antonopoulos and Gavin Wood.
 
 The shortest and less technical paper on Ethereum is [Beigepaper: An Ethereum Technical Specification](https://github.com/chronaeon/beigepaper/blob/master/beigepaper.pdf) by Micah Dameron.

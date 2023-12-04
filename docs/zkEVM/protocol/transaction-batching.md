@@ -16,11 +16,11 @@ struct BatchData {
 
 ### Transactions
 
-​These are byte arrays containing the concatenated batch transactions. 
+​These are byte arrays containing the concatenated batch transactions.
 
 ​Each transaction is **encoded according to the Ethereum pre-EIP-155 or EIP-155 formats using RLP (Recursive-length prefix) standard**, but the signature values, `v`, `r` and `s`, are concatenated as shown below;
 
-1. `EIP-155`: $\mathtt{\ rlp(nonce, gasprice, gasLimit, to, value, data, chainid, 0, 0,) \#v\#r\#s\#effectivePercentage}$ 
+1. `EIP-155`: $\mathtt{\ rlp(nonce, gasprice, gasLimit, to, value, data, chainid, 0, 0,) \#v\#r\#s\#effectivePercentage}$
 
 2. `pre-EIP-155`: $\mathtt{\ rlp(nonce, gasprice, gasLimit, to, value, data) \#v\#r\#s\# effectivePercentage}$.
 
@@ -32,7 +32,7 @@ The Bridge transports assets between L1 and L2, and a claiming transaction unloc
 
 ### Timestamp
 
-​In as much as Ethereum blocks have timestamps, **each batch has a timestamp**. 
+​In as much as Ethereum blocks have timestamps, **each batch has a timestamp**.
 
 ​There are two constraints each timestamp must satisfy in order to ensure that batches are ordered in time and synchronized with L1 blocks;
 

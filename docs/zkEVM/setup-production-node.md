@@ -3,15 +3,14 @@ Polygon zkEVM's Mainnet Beta is available for developers to launch smart contrac
 
 After spinning up an instance of the production zkNode, you will be able to run the Synchronizer and utilize the JSON-RPC interface.
 
-!!!info 
+!!!info
     Sequencer and Prover functionalities are not covered in this document as they are still undergoing development and rigorous testing.
-    
-    Syncing zkNode currently takes anywhere between 1-2 days depending on various factors. The team is working on snapshots to improve the syncing time.
 
+    Syncing zkNode currently takes anywhere between 1-2 days depending on various factors. The team is working on snapshots to improve the syncing time.
 
 ## Prerequisites
 
-This tutorial requires `docker-compose` to have been installed. 
+This tutorial requires `docker-compose` to have been installed.
 
 Please check the [official docker-compose installation guide](https://docs.docker.com/compose/install/) for this purpose.
 
@@ -19,12 +18,10 @@ It is highly recommended that you create a separate folder for installing and wo
 
 ### Minimum System Requirements
 
-
 !!!caution
     The zkProver does not work on ARM-based Macs yet. For Windows users, the use of WSL/WSL2 is not recommended.
 
     Currently, zkProver optimizations require CPUs that support the AVX2 instruction, which means some non-M1 computers, such as AMD, won't work with the software regardless of the OS.
-
 
 - 16GB RAM
 - 4-core CPU
@@ -32,9 +29,8 @@ It is highly recommended that you create a separate folder for installing and wo
 
 !!!info About batch rate
     Batches are closed every 10s, or whenever they are full (which can happen when there are high network loads).
-    Also, how frequent batches are closed is subject to change as it depends on the prevailing configurations. 
+    Also, how frequent batches are closed is subject to change as it depends on the prevailing configurations.
     The batch rate will always need to be updated accordingly.
-
 
 ### Network Components
 
@@ -51,7 +47,7 @@ Let's set up each of the above components!
 
 The Ethereum Node is the first component to be set up. And it is because the Ethereum network takes a long time to synchronise. So, we start synchronising the Ethereum Node, and then begin to setup other components while waiting for the synchronisation to complete.
 
-There are numerous ways to set up an Ethereum L1 environment; we will use Geth for this. We recommend Geth, but a Goerli node will suffice. 
+There are numerous ways to set up an Ethereum L1 environment; we will use Geth for this. We recommend Geth, but a Goerli node will suffice.
 
 Follow the instructions provided in this [guide to setup and install Geth](https://geth.ethereum.org/docs/getting-started/installing-geth).
 
@@ -77,11 +73,13 @@ Let's start setting up our zkNode:
   # define your config directory
   ZKEVM_CONFIG_DIR=./path_to_config
   ```
+
 2. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command.
 
   ```bash
   curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/latest/download/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
   ```
+
 3. Copy the `example.env` file with the environment parameters:
 
 ```
@@ -89,7 +87,7 @@ cp $ZKEVM_DIR/$ZKEVM_NET/example.env $ZKEVM_CONFIG_DIR/.env
 
 ```
 
-4. The `example.env` file must be modified according to your configurations.   
+4. The `example.env` file must be modified according to your configurations.
 
 Edit the .env file with your favourite editor (we'll use nano in this guide): ```nano $ZKEVM_CONFIG_DIR/.env```
 

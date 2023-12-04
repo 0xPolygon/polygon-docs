@@ -6,7 +6,7 @@ Suppose a user wants to bridge some assets from the L1 Mainnet to L2 (here, Poly
 
 2. The Global Exit Root Manager (`PolygonZkEVMGlobalExitRoot.sol`) appends the new L1 Exit Tree Root to the Global Exit Tree and computes the Global Exit Root.
 
-3. The Sequencer fetches the latest Global Exit Root from the Global Exit Root Manager. 
+3. The Sequencer fetches the latest Global Exit Root from the Global Exit Root Manager.
 
 4. At the start of the transaction batch, the Sequencer stores the Global Exit Root in special storage slots of the L2 Global Exit Root Manager SC (PolygonZkEVMGlobalExitRootL2.sol), allowing L2 users to access it.
 
@@ -25,7 +25,6 @@ Consider now the case where a user commits to bridging some assets from L2 to L1
 !!!info
     Note that there is an intermediate step which, for the sake of simplicity, is not depicted in the below figure. And that step is: **The user's bridging transaction gets included in one of batches selected and sequenced by the Sequencer**.
 
-
 3. The Aggregator generates a ZK-proof attesting to the computational integrity in the execution of sequenced batches (where one of these batches includes the user's bridging transaction).
 
 4. For verification purposes, the Aggregator sends the ZK-proof together with all relevant batch information that led to the new L2 Exit Tree Root (computed in step 2 above), to the Consensus Contract (`PolygonZkEVM.sol`).
@@ -43,5 +42,4 @@ Consider now the case where a user commits to bridging some assets from L2 to L1
 
     For a more wholistic view of the interaction between the Consensus Contract and the Sequencer, the reader is referred to earlier subsections of this documentation, specifically on the [<ins>Consensus Contract</ins>](../architecture/architecture.md).
 
-
-![A end-to-end flow of assets between L1 and L2](../../img/zkvm/06pzb-complete-asset-flow-l1-l2.png)
+![A end-to-end flow of assets between L1 and L2](../../img/zkEVM/06pzb-complete-asset-flow-l1-l2.png)

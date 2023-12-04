@@ -11,6 +11,7 @@ Next, make sure you have the following commands installed:
 - wget
 - jq
 - docker
+
 ```bash
 sudo apt update -y
 sudo apt install -y wget jq docker.io
@@ -24,16 +25,20 @@ Additionally, you will need **an L1 Goerli address** to proceed with the setup t
 ## Preparation
 
 1. Create a directory for your Goerli node:
+
 ```bash
 mkdir -p ~/goerli-node/docker-volumes/{geth,prysm}
 ```
+
 2. Create a `docker-compose.yml` file and open it for editing:
+
 ```bash
   cd ~/goerli-node/
   vim docker-compose.yml
 ```
 
 3. Copy and paste the following content into the `docker-compose.yml` file:
+
 ```yaml
  services:
    geth:
@@ -85,12 +90,14 @@ mkdir -p ~/goerli-node/docker-volumes/{geth,prysm}
 4. Save and Close the `docker-compose.yml` file.
 
 5. Create an `.env` file and open it for editing:
+
 ```bash
 cd ~/goerli-node/
 vim .env
 ```
 
 6. Set the following environment variables in the `.env` file:
+
 ```bash
  L1_RPC_PORT=8845
  L1_SUGGESTED_FEE_RECIPIENT_ADDR=0x  # Put your Goerli account address
@@ -100,10 +107,12 @@ vim .env
 7. Save and Close the `.env` file.
 
 8. Add geth config.toml file with following values to increase RPC timeouts
+
 ```bash
 cd ~/goerli-node/
 vim config.toml
 ```
+
 ```bash
 [Node.HTTPTimeouts]
 ReadTimeout = 600000000000
@@ -115,26 +124,32 @@ IdleTimeout = 1200000000000
 ## Deploy
 
 1. Start the compose services:
+
 ```bash
 cd ~/goerli-node/
 docker compose --env-file /root/goerli-node/.env -f /root/goerli-node/docker-compose.yml up -d
 ```
 
 2. Check the logs of the prysm service to monitor the synchronization progress:
+
 ```bash
 docker compose --env-file /root/goerli-node/.env -f /root/goerli-node/docker-compose.yml logs -f prysm --tail 20
 ```
+
   Wait for the initial sync to complete. You will see log messages similar to the following indicating the progress:
+
   ```bash
     #goerli-consensus  | time="2023-06-19 09:39:44" level=info msg="Synced up to slot 5888296" prefix=initial-sync
   ```
 
 3. Check the logs of the geth service to monitor the initial download and sync progress:
+
 ```bash
 docker compose --env-file /root/goerli-node/.env -f /root/goerli-node/docker-compose.yml logs -f geth --tail 20
 ```
 
 - This process may take a couple of hours. Look for log messages similar to the following indicating the progress:
+
 ```bash
 #goerli-execution  | INFO [06-19|09:43:24.954] Syncing beacon headers                   downloaded=25600 left=9,177,918 eta=1h5m31.860s
 #goerli-execution  | INFO [06-19|10:09:19.488] Syncing: state download in progress      synced=0.30% state=331.34MiB accounts=81053@20.52MiB slots=1,112,986@239.47MiB codes=11681@71.34MiB >

@@ -3,7 +3,6 @@ zkProver's data is stored in the form of a special **Sparse Merkle Tree (SMT), w
 !!!tip
     The content of this document is rather elementary. Experienced developers can fast-forward to later sections and only refer back as the need arises.
 
-
 A typical Merkle tree has **leaves**, **branches** and a **root**. A leaf is a node with no child-nodes, while a branch is a node with child-nodes. The root is therefore the node with no parent-node.
 
 See the below figure for an example of how a hash function $\mathbf{H}$ is used to create a Merkle tree recording eight values;
@@ -12,18 +11,18 @@ $$
 \text{V}_{\mathbf{a}}, \text{V}_{\mathbf{b}}, \text{V}_{\mathbf{c}}, \text{V}_{\mathbf{d}}, \text{V}_{\mathbf{e}}, \text{V}_{\mathbf{f}}, \text{V}_{\mathbf{g}}, \text{V}_{\mathbf{h}}
 $$
 
-![A Merkle Tree Example](../../img/zkvm/fig2-mkl-tree-gen.png)
+![A Merkle Tree Example](../../img/zkEVM/fig2-mkl-tree-gen.png)
 
 Firstly, each leaf is nothing but the hash value $\mathbf{H}(\text{V}_{\mathbf{i}})$ of a particular value $\text{V}_{\mathbf{i}}$, where $\mathbf{i}$ is an element of the index-set $\{ \mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}, \mathbf{e}, \mathbf{f}, \mathbf{g}, \mathbf{h} \}$.
 
-Secondly, the branch nodes are computed as follows; 
+Secondly, the branch nodes are computed as follows;
 
 $$
-\mathbf{B}_{\mathbf{ab}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{a}})\| \mathbf{H}(\text{V}_{\mathbf{b}})\big), \\   
+\mathbf{B}_{\mathbf{ab}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{a}})\| \mathbf{H}(\text{V}_{\mathbf{b}})\big), \\
 \mathbf{B}_{\mathbf{cd}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{c}})\| \mathbf{H}(\text{V}_{\mathbf{d}})\big), \\  
 \mathbf{B}_{\mathbf{ef}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{e}})\| \mathbf{H}(\text{V}_{\mathbf{f}})\big),\text{ } \\  
 \mathbf{B}_{\mathbf{gh}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{g}})\| \mathbf{H}(\text{V}_{\mathbf{h}})\big), \\
-\mathbf{B}_{\mathbf{abcd}} = \mathbf{H} \big(\mathbf{B}_{\mathbf{ab}}\| \mathbf{B}_{\mathbf{cd}}\big), \text{}  \text{and} \\ 
+\mathbf{B}_{\mathbf{abcd}} = \mathbf{H} \big(\mathbf{B}_{\mathbf{ab}}\| \mathbf{B}_{\mathbf{cd}}\big), \text{}  \text{and} \\
 \mathbf{B}_{\mathbf{efgh}} = \mathbf{H} \big( \mathbf{B}_{\mathbf{ef}}\| \mathbf{B}_{\mathbf{gh}}\big). \quad \text{ } \text{ } \text{ }
 $$
 
@@ -39,9 +38,9 @@ Suppose one is given the key-value pair $( K_{\mathbf{d}} , V_{\mathbf{d}})$, wh
 
 In order to locate the key-value pair $( K_{\mathbf{d}} , V_{\mathbf{d}})$ in the Merkle depicted in the figure above, the key $K_{\mathbf{d}}$ is read bit-by-bit from the right-most bit to the left-most bit. While traversing the tree ***from the root downwards***,
 
--  a zero-key-bit "$0$" means "**follow the edge going to the left**", 
+- a zero-key-bit "$0$" means "**follow the edge going to the left**",
 
--  a key-bit "$1$" means "**follow the edge going to the right**".
+- a key-bit "$1$" means "**follow the edge going to the right**".
 
 Since $K_{\mathbf{d} } = 10010110$, as follows:
 
@@ -53,7 +52,7 @@ Since $\mathbf{H}( V_{\mathbf{d}})$ is a leaf and not a branch, and the navigati
 
 One can similarly **climb** the tree, going in the reverse direction, by using the key-bits of the given key in the reverse order. That is, starting with the last key-bit used to reach the leaf and ending with the least-significant bit of the key.
 
-The **tree-address** of the value $V_{\mathbf{x}}$, herein refers to the position of the leaf $L_{\mathbf{x}} := \mathbf{H}( V_{\mathbf{x}})$, denoted by the key-bits used to reach $L_{\mathbf{d}}$ but in the reverse order. 
+The **tree-address** of the value $V_{\mathbf{x}}$, herein refers to the position of the leaf $L_{\mathbf{x}} := \mathbf{H}( V_{\mathbf{x}})$, denoted by the key-bits used to reach $L_{\mathbf{d}}$ but in the reverse order.
 
 In the above example, the tree-address of $V_{\mathbf{d}}$ is `011`.
 
@@ -77,11 +76,10 @@ The verifier then checks the prover's claim by computing the Merkle root as foll
 
 3. Next, he computes  $\mathbf{H} \big( \tilde{ \mathbf{B}}_{\mathbf{ef}}\|\mathbf{B}_{\mathbf{gh}} \big) =: \tilde{ \mathbf{B}}_{\mathbf{efgh}}$, corresponding to the branch node $\mathbf{B}_{\mathbf{efgh}}$.
 
-4.	Now, uses $\mathbf{H} \big( \mathbf{B}_{\mathbf{abcd}}\| \tilde{ \mathbf{B}}_{\mathbf{efgh}} \big) =: \tilde{ \mathbf{root}}_{\mathbf{a..h}}$.
+4. Now, uses $\mathbf{H} \big( \mathbf{B}_{\mathbf{abcd}}\| \tilde{ \mathbf{B}}_{\mathbf{efgh}} \big) =: \tilde{ \mathbf{root}}_{\mathbf{a..h}}$.
 
 The Merkle proof is concluded by checking whether $\tilde{ \mathbf{root}}_{\mathbf{a\dots h}}$ equals to the publicly known root $\mathbf{root}_{\mathbf{a..h}}$.
 
-
 !!!note
-    The symbol `tilde` denoted $\tilde{\Box}$, is used throughout the document to indicate 
+    The symbol `tilde` denoted $\tilde{\Box}$, is used throughout the document to indicate
     that the computed value, $\tilde{\Box}$, still needs to be checked, or tested to be true.
