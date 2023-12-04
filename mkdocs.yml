@@ -1,4 +1,4 @@
-site_name: Polygon Knowledge Layer
+site_name: Polygon knowledge layer
 site_author: Polygon Labs
 copyright: Copyright &copy; 2023 Polygon Labs
 repo_name: Polygon Knowledge Layer
@@ -308,24 +308,19 @@ nav:
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
       - Matic.js:
-          - Installation:  tools/matic-js/installation.md
-          - API overview:  tools/matic-js/api-architecture.md
-          - Get started:  tools/matic-js/get-started.md
-          - Setup:
-              - Ethers:  tools/matic-js/setup/ethers.md
-              - Web3js:  tools/matic-js/setup/web3js.md
-          - Set proof API:  tools/matic-js/set-proof-api.md
-          - FX portal bridge:  tools/matic-js/fx-portal.md
-          - zkEVM:
-              - Initialize:  tools/matic-js/zkevm/initialize.md
-              - ERC20:  tools/matic-js/zkevm/erc20.md
-              - Common methods:  tools/matic-js/zkevm/common-methods.md
           - POS:
+              - Installation:  tools/matic-js/installation.md
               - POS client:  tools/matic-js/pos/client.md
-              - Common methods:
-                  - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
-                  - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
-                  - isDeposited:  tools/matic-js/pos/is-deposited.md
+              - API overview:  tools/matic-js/api-architecture.md
+              - Get started:  tools/matic-js/get-started.md
+              - Setup:
+                  - Ethers:  tools/matic-js/setup/ethers.md
+                  - Web3js:  tools/matic-js/setup/web3js.md
+              - Set proof API:  tools/matic-js/set-proof-api.md
+              - Advanced:
+                  - ABI manager:  tools/matic-js/advanced/abi-manager.md
+                  - Exit util:  tools/matic-js/advanced/exit-util.md
+                  - Plugin:  tools/matic-js/advanced/plugin.md
               - ERC20:
                   - Overview: tools/matic-js/pos/erc20/index.md
                   - approveMax:  tools/matic-js/pos/erc20/approve-max.md
@@ -376,10 +371,14 @@ nav:
                   - withdraw-exit:  tools/matic-js/pos/erc1155/withdraw-exit.md
                   - withdraw-start-many:  tools/matic-js/pos/erc1155/withdraw-start-many.md
                   - withdraw-start:  tools/matic-js/pos/erc1155/withdraw-start.md
-          - Advanced:
-              - ABI manager:  tools/matic-js/advanced/abi-manager.md
-              - Exit util:  tools/matic-js/advanced/exit-util.md
-              - Plugin:  tools/matic-js/advanced/plugin.md
+              - Common methods:
+                  - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
+                  - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
+                  - isDeposited:  tools/matic-js/pos/is-deposited.md
+          - zkEVM:
+              - Initialize:  tools/matic-js/zkevm/initialize.md
+              - ERC20:  tools/matic-js/zkevm/erc20.md
+              - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md
@@ -398,30 +397,26 @@ nav:
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
           - Getting started:  tools/wallets/getting-started.md
-          - Polygon wallet:
-              - Web wallet v3 guide: tools/wallets/polygon-web-wallet/web-wallet-v3-guide.md
-              - Add a custom token: tools/wallets/polygon-web-wallet/adding-a-custom-token.md
-          - Third-party apps:
-              - Metamask:
-                  - Overview: tools/wallets/metamask/index.md
-                  - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
-                  - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
-                  - Configure custom tokens:  tools/wallets/metamask/custom-tokens.md
-                  - Create and import accounts:  tools/wallets/metamask/multiple-accounts.md
-              - Venly:
-                  - Intro:  tools/wallets/venly/index.md
-                  - Create wallet:  tools/wallets/venly/create-wallet.md
-                  - Add network:  tools/wallets/venly/add-network.md
-                  - Add custom token:  tools/wallets/venly/custom-tokens.md
-              - Wallet link: tools/wallets/wallet-link.md
-              - Fortmatic: tools/wallets/fortmatic.md
-              - Portis:  tools/wallets/portis.md
-              - Torus:  tools/wallets/torus.md          
-              - WalletConnect:  tools/wallets/walletconnect.md
-              - SlashAuth:  tools/wallets/slashauth.md
-              - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
-              - Particle network:  tools/wallets/particle-network.md
-              - Web3Modal: tools/wallets/using-web3modal.md
+          - Metamask:
+              - Overview: tools/wallets/metamask/index.md
+              - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
+              - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
+              - Configure custom tokens:  tools/wallets/metamask/custom-tokens.md
+              - Create and import accounts:  tools/wallets/metamask/multiple-accounts.md
+          - Venly:
+              - Intro:  tools/wallets/venly/index.md
+              - Create wallet:  tools/wallets/venly/create-wallet.md
+              - Add network:  tools/wallets/venly/add-network.md
+              - Add custom token:  tools/wallets/venly/custom-tokens.md
+          - Wallet link: tools/wallets/wallet-link.md
+          - Fortmatic: tools/wallets/fortmatic.md
+          - Portis:  tools/wallets/portis.md
+          - Torus:  tools/wallets/torus.md          
+          - WalletConnect:  tools/wallets/walletconnect.md
+          - SlashAuth:  tools/wallets/slashauth.md
+          - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
+          - Particle network:  tools/wallets/particle-network.md
+          - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
