@@ -25,7 +25,6 @@ cp ~/$ZKEVM_DIR/$ZKEVM_NET/example.env $ZKEVM_CONFIG_DIR/.env
 vim $ZKEVM_CONFIG_DIR/.env
 ```
 
-
 In the `.env` file, set:
 
 ```bash
@@ -88,7 +87,7 @@ Edit `~/zkevm/mainnet/config/environments/testnet/public.node.config.toml` with 
 ??? "Click to expand the <code>node.config.toml</code> file"
     ```bash
     vim ~/zkevm/mainnet/config/environments/testnet/public.node.config.toml
-    ```
+```
 
     ```bash
     IsTrustedSequencer = true
@@ -270,7 +269,6 @@ Edit `~/zkevm/mainnet/config/environments/testnet/public.node.config.toml` with 
 ### Add wallets
 
 Copy/paste keystore value from wallets.txt for sequencer/aggregator respectively:
-
 
 ```bash
 # paste only the keystore value from wallets.txt in each respective file

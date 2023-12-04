@@ -4,11 +4,10 @@
 
     The description given here is by no means the architecture of the PIL-STARK system.
 
-
-Simply put, **PIL-STARK** is a special STARK that enables; 
+Simply put, **PIL-STARK** is a special STARK that enables;
 
 - the State Machine Prover (SM-Prover) to generate a **STARK** proofs for a State Machine written in **PIL**
-- And, the State Machine Verifier (SM-Verifier) to verify the STARK-proofs provided by the Prover. 
+- And, the State Machine Verifier (SM-Verifier) to verify the STARK-proofs provided by the Prover.
 
 Hence there is a PIL-STARK component in the SM-Prover which is the **Generator** of a STARK proof, and another PIL-STARK component in the SM-Verifier which is the actual **Verifier** of the STARK proof.
 
@@ -38,7 +37,7 @@ Overall, the Setup Phase of PIL-STARK takes as inputs; the $\texttt{.pil}$ file 
 
 We emphasise that the Setup Phase of PIL-STARK is run only once for a particular $\texttt{.pil}$ file describing the state machine. A change in the $\texttt{.pil}$ file means a fresh Setup needs to be executed.
 
-![PIL-STARK Setup](../../img/zkvm/fib13-pil-stark-setup.png)
+![PIL-STARK Setup](../../img/zkEVM/fib13-pil-stark-setup.png)
 
 ## PIL-STARK Proving Phase
 
@@ -58,20 +57,20 @@ However, with every set of inputs, the SM-Prover's Executor computes correspondi
 
 This STARK Proof Generator takes as inputs; the evaluations of the committed polynomials from the SM-Prover's Executor, the evaluations of the constant polynomials from the Setup Phase, together with the $\texttt{constTree}$ and the $\texttt{starkInfo}$.
 
-This is where the evaluations of the committed polynomials, from the SM-Prover's Executor, are Merkelized. And all elements of the ultimate STARK proof are generated, these include; the witness and the required openings of the committed polynomials. 
+This is where the evaluations of the committed polynomials, from the SM-Prover's Executor, are Merkelized. And all elements of the ultimate STARK proof are generated, these include; the witness and the required openings of the committed polynomials.
 
 The output of the STARK Proof Generator is a $\texttt{STARK}$ $\texttt{proof}$ and the $\texttt{publics}$, which are values to be publicised.
 
-For the PIL-STARK Proving Phase as a whole, also as depicted in Figure 9 below, 
+For the PIL-STARK Proving Phase as a whole, also as depicted in Figure 9 below,
 
 - there are five (5) inputs; the $\texttt{input.json}$ file, the PIL $\texttt{.json}$ file from $\texttt{PILCOM}$, the evaluations of the constant polynomials from the Setup Phase, as well as the $\texttt{constTree}$ and the $\texttt{starkInfo}$.
 - and there are two (2) outputs; a $\texttt{STARK}$ $\texttt{proof}$ and the $\texttt{publics}$.
 
-![PIL-STARK in SM-Prover](../../img/zkvm/fib14-pil-stark-in-prover.png)
+![PIL-STARK in SM-Prover](../../img/zkEVM/fib14-pil-stark-in-prover.png)
 
 ## PIL-STARK Verification Phase
 
-The Verification Phase is constituted by the PIL-STARK Verifier. 
+The Verification Phase is constituted by the PIL-STARK Verifier.
 
 As it is common practice amongst zero-knowledge proof/verification systems, the size of the Verifier's inputs is very small compared to that of the Prover's inputs. For example, while the Proving Phase takes the whole $\texttt{constTree}$ as one of its inputs, the Verifier takes the $\texttt{constRoot}$ instead.
 
@@ -79,7 +78,7 @@ The inputs to the Verifier are; the $\texttt{STARK}$ $\texttt{proof}$ and the $\
 
 And the Verifier's output is either an $\texttt{Accept}$ if the proof is accepted, or a $\texttt{Reject}$ if the proof is rejected.
 
-![PIL-STARK in the SM-Verifier](../../img/zkvm/fib15-pil-stark-in-verifier.png)
+![PIL-STARK in the SM-Verifier](../../img/zkEVM/fib15-pil-stark-in-verifier.png)
 
 PIL-STARK is, all-in-all, a specific implementation of a STARK that can be used as a generic tool for proving state machines' polynomial identities.
 

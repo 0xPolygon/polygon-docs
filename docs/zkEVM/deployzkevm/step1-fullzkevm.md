@@ -16,12 +16,10 @@ However, in order to allow for in-between breaks, the process is aesthetically s
 
 - [**Sixth step**](step6-fullzkevm.md): Activating forced txs and Bridging/claiming Assets.
 
-
 !!!caution
     Instructions in this document are subject to frequent updates as the zkEVM software is still in early development stages.
 
     Please report [<ins>here</ins>](https://support.polygon.technology/support/tickets/new) or reach out to our [<ins>support team on Discord</ins>](https://discord.com/invite/0xPolygon) if you encounter any issues.
-
 
 ## Overview and setting up
 
@@ -40,7 +38,6 @@ The modular design of the zkEVM allows for most components to be separately inst
 The below table enlists all the zkEVM components/services and their corresponding container-names.
 
 Our zkEVM deployment-guide provides CLI commands to automatically create these Docker containers.
-
 
 | Component         | Container            | Brief\ Description                                           |
 | :---------------- | :------------------- | ------------------------------------------------------------ |
@@ -62,10 +59,8 @@ Our zkEVM deployment-guide provides CLI commands to automatically create these D
 | Goërli Execution  | goerli-execution     | L1 node's execution layer.                                   |
 | Goërli Consensus  | goerli-consensus     | L1 node's consensus layer.                                   |
 
-
-!!!info 
+!!!info
     The **first step** of this deployment-guide begins here!
-
 
 ### Preliminary setup
 
@@ -90,7 +85,6 @@ In order to run multiple Docker containers, an extra tool called **docker compos
 
 !!!info
     One more thing, since the Prover is resource-heavy, you will need to run its container externally. Access to cloud computing services such as AWS EC2 or DigitalOcean will be required.
-
 
 ### Prerequisites
 
@@ -124,12 +118,11 @@ The full prover is resource-intensive as it utilises the exact same proving stac
     - 96-core CPU
     - Minimum 768GB RAM
 
-
 The Mock Prover is a dummy prover which simply adds a "Valid ✅" checkmark to every batch.
 
 !!!info
     The **mock prover**, on the other hand only requires:
-    
+
     - 4-core CPU
     - 8GB RAM (16GB recommended)
 

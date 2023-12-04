@@ -6,11 +6,11 @@ The idea here is to create a state machine that behaves like a processor of sort
 
 See Figure below, for such a state machine with registries $\texttt{A}$ and $\texttt{B}$, and a state $\big(\texttt{A}^{\texttt{i}},\texttt{B}^{\texttt{i}}\big)$ that changes to another state $\big(\texttt{A}^{\texttt{i+2}},\texttt{B}^{\texttt{i+2}}\big)$ in accordance with two instructions, $\texttt{Instruction}_{\texttt{i}}$ and $\texttt{Instruction}_{\texttt{i+1}}$.
 
-![Figure 1: A typical generic state machine](../../img/zkvm/gen1-typical-gen-sm.png)
+![Figure 1: A typical generic state machine](../../img/zkEVM/gen1-typical-gen-sm.png)
 
 The aim with this document is to explain how the machinery used in the mFibonacci SM; to execute computations, produce proofs of correctness of execution, and verify these proofs; can extend to a generic state machine.
 
-Think of our state machine as being composed of two parts; the part that has to do with generating the execution trace, while the other part is focused on verifying that the executions were correctly executed. 
+Think of our state machine as being composed of two parts; the part that has to do with generating the execution trace, while the other part is focused on verifying that the executions were correctly executed.
 
 - The former part is more like the "software" of the state machine, as it is concerned with interpreting program instructions and correctly generating the execution trace. A novel language dubbed the **Zero-knowledge Assembly Language** (zkASM) is used in this part.
 
@@ -18,13 +18,13 @@ Think of our state machine as being composed of two parts; the part that has to 
 
 ## Generic SM Executor
 
-As seen with the mFibonacci SM, the SM executor takes certain inputs together with the description of the SM, in order to produce the execution trace specifically corresponding to these inputs. 
+As seen with the mFibonacci SM, the SM executor takes certain inputs together with the description of the SM, in order to produce the execution trace specifically corresponding to these inputs.
 
-![Figure 2: mFibonacci State Machine producing input-specific execution trace](../../img/zkvm/gen2-mfib-exec-w-inputs.png)
+![Figure 2: mFibonacci State Machine producing input-specific execution trace](../../img/zkEVM/gen2-mfib-exec-w-inputs.png)
 
 The main difference, in the Generic State Machine case, is the inclusion of a program which stipulates computations to be carried out by the SM executor. These computations could range from a simple addition of two registry values, or moving the value in registry $\texttt{A}$ to registry $\texttt{B}$, to computing some linear combination of several registry values.
 
-![Figure 3: A Generic State Machine producing input- and program-specific execution trace ](../../img/zkvm/gen3-gen-sm-w-input-instrctn.png)
+![Figure 3: A Generic State Machine producing input- and program-specific execution trace ](../../img/zkEVM/gen3-gen-sm-w-input-instrctn.png)
 
 So then, instead of programming the SM executor ourselves with a specific set of instructions as we did with the mFibonacci SM, the executor of a Generic SM is programmed to read arbitrary instructions encapsulated in some program (depending on the capacity of the SM or the SM's context of application). As mentioned above, each of these programs is initially written, not in a language like Javascript, but in the zkASM language.
 
@@ -37,12 +37,12 @@ Here is an example of a program containing four instructions, expressed in the z
 $$
 \begin{aligned}
 \begin{array}{|l|c|}
-\hline 
+\hline
 \texttt{ } & \bf{Instructions } \text{ }\text{ }\text{ }\text{ } \\ \hline
 \texttt{ } & \mathtt{\$\{getAFreeInput()\} => A} \text{ }\\ \hline
 \texttt{ } & \mathtt{3 => B} \qquad\qquad\qquad\qquad\quad \\ \hline
 \texttt{ } & \mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
-\texttt{ } & \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline 
+\texttt{ } & \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -61,8 +61,8 @@ In addition to carrying out computations as per instructions in programs, the ex
 Consider, as an example, the execution trace the executor produces for the above program of four instructions. Suppose the free input value used is $7$. The generated execution trace can be depicted in tabular form as shown below.
 
 $$
-\begin{aligned}\begin{array}{|l|c|c|c|c|c|c|c|}\hline 
-\texttt{ } & \bf{Instructions } \text{ }\text{ }\text{ }\text{ } & \texttt{FREE} & \texttt{CONST}& \texttt{A}& \mathtt{A'}& \texttt{B}& \mathtt{B'} \\ \hline 
+\begin{aligned}\begin{array}{|l|c|c|c|c|c|c|c|}\hline
+\texttt{ } & \bf{Instructions } \text{ }\text{ }\text{ }\text{ } & \texttt{FREE} & \texttt{CONST}& \texttt{A}& \mathtt{A'}& \texttt{B}& \mathtt{B'} \\ \hline
 \texttt{ } & \mathtt{\$\{getAFreeInput()\} => A} \text{ } & \texttt{7} & \texttt{0} & \texttt{0} & \texttt{7} & \texttt{0} & \texttt{0}\\ \hline
 
 \texttt{ } & \mathtt{3 => B} \qquad\qquad\qquad\qquad\quad & \texttt{0} & \texttt{3} & \texttt{7} & \texttt{7} & \texttt{0} & \texttt{3} \\ \hline
@@ -76,7 +76,7 @@ $$
 \end{aligned}
 $$
 
-This execution trace utilises a total of six columns. Perhaps the use of the columns corresponding to the two registries $\texttt{A}$ and $\texttt{B}$, as well as the columns for the constant $\texttt{CONST}$ and the free input $\texttt{FREE}$, are a bit obvious. But the reason for having the other two columns, $\mathtt{A'}$ and $\mathtt{B'}$, may not be so apparent. 
+This execution trace utilises a total of six columns. Perhaps the use of the columns corresponding to the two registries $\texttt{A}$ and $\texttt{B}$, as well as the columns for the constant $\texttt{CONST}$ and the free input $\texttt{FREE}$, are a bit obvious. But the reason for having the other two columns, $\mathtt{A'}$ and $\mathtt{B'}$, may not be so apparent.
 
 The reason there are two extra columns, instead of only four, is the need to capture each state transition in full, and per instruction. The column labelled $\mathtt{A'}$ therefore denotes the next state of the registry $\mathtt{A}$, and similarly, $\mathtt{B'}$ denotes the next state of the registry $\mathtt{B}$. This ensures that each row of the execution trace reflects the entire state transition pertaining to each specific instruction.
 

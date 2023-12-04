@@ -16,7 +16,7 @@ As a result, while the contract is in the emergency state, the **Sequencer canno
 
 The emergency state can only be triggered by **two contract functions**:
 
-1. It can be directly activated by calling the `activateEmergencyState` function by contract owner. 
+1. It can be directly activated by calling the `activateEmergencyState` function by contract owner.
 
 2. It can also be called by anyone after a `HALT AGGREGATION TIMEOUT` constant delay (of one week) has passed. The timeout begins when the batch corresponding to the `sequencedBatchNum` argument has been sequenced but not yet verified.
 

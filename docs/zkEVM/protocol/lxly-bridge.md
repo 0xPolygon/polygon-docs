@@ -47,7 +47,7 @@ A complete transfer of assets in Version-1 involves three smart contracts; the P
 
 The below figure depicts a _bridge_ of assets and a _claim_ of assets;
 
-![Figure 1: An asset transfer and three Smart Contracts](../../img/zkvm/lxly-1-v1-asset-transfer.png)
+![Figure 1: An asset transfer and three Smart Contracts](../../img/zkEVM/lxly-1-v1-asset-transfer.png)
 
 Observe, in the above figure, that the Consensus Contract (PolygonZkEVM.sol) is able to;
 
@@ -76,7 +76,7 @@ The _Rollup Manager_ SC stores the information of the sequenced batches in the f
 
 Once sequenced batches have been verified, the _Global Exit Tree_ gets updated, in an approach similar to the zkEVM Bridge Version-1.
 
-![Figure 2: New version of bridge](../../img/zkvm/lxly-2-new-bridge-design.png)
+![Figure 2: New version of bridge](../../img/zkEVM/lxly-2-new-bridge-design.png)
 
 ### Rollup Manager's Role
 
@@ -118,7 +118,7 @@ The below diagram captures the following flow of events, most of which are handl
 - Verification of batches,
 - Updating the Global Exit Root.
 
-![Figure 3: Events flow related to RollupManager.sol](../../img/zkvm/lxly-3-flow-rollupmanager.png)
+![Figure 3: Events flow related to RollupManager.sol](../../img/zkEVM/lxly-3-flow-rollupmanager.png)
 
 ## Conclusion
 

@@ -9,6 +9,7 @@ This section will describe the infrastructure that Polygon designed and implemen
 This section describes the components used in the Polygon zkEVM to enable transaction finality while ensuring the correctness of state transitions.
 
 The three main components of zkEVM protocol are:
+
 - **Trusted Sequencer**
 - **Trusted Aggregator**, and
 - **Consensus Contract (PolygonZkEVM.sol, deployed on L1)**
@@ -33,8 +34,6 @@ The Consensus Contract's logic validates the Zero-Knowledge proofs, resulting in
      L2 State Root
 
      An L2 State root is a concise cryptographic digest of the L2 State. In case you want to read more about State roots, please check out [<ins>this article</ins>](https://ethereum.org/en/developers/docs/scaling/zk-rollups/#state-commitments).
-
-
 
 The Trusted Aggregator should run a zkEVM node in **Aggregator mode** and must control a specific Ethereum account enforced in a Consensus Contract.
 

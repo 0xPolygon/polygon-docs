@@ -42,7 +42,7 @@ vim ~/zkevm/config.json
       "runExecutorServer": false,
       "runExecutorClient": false,
       "runExecutorClientMultithread": false,
-      
+
       "runStateDBServer": false,
       "runStateDBTest": false,
       
@@ -131,7 +131,6 @@ vim ~/zkevm/config.json
     }
     ```
 
-
 ### Configure services
 
 Edit the `~/zkevm/mainnet/docker-compose.yml` file with the following content:
@@ -146,7 +145,7 @@ vim ~/zkevm/mainnet/docker-compose.yml
     networks:
       default:
       name: zkevm
-    
+
     services:
       zkevm-sequencer:
         container_name: zkevm-sequencer
@@ -636,8 +635,6 @@ vim ~/zkevm/mainnet/docker-compose.yml
           - "/app/zkevm-bridge run --cfg /app/config.toml"
     ```
   
-
-
 ## Start services
 
 Continue with starting all the services as indicated below.

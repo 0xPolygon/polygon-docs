@@ -27,10 +27,9 @@ To inherit security and avoid prolonging and making the audit process more compl
 
     Furthermore, **openzeppelin-upgrades** is more than just a set of contracts; it also includes Hardhat and Truffle plugins to help with proxy deployment, upgrades, and administrator rights management.
 
-
 As shown in the diagram below, Open Zeppelin's TUP pattern separates the protocol implementation of storage variables using delegated calls and the fallback function, allowing the implementation code to be updated without changing the storage state or the contract's public address.
 
-![tup pattern schema](../../img/zkvm/tup-pattern.png)
+![tup pattern schema](../../img/zkEVM/tup-pattern.png)
 
 Following OpenZeppelin's recommendations, an instance of the contract **ProxyAdmin.sol**, which is also included in the openzeppelin-upgrades library, is deployed and its address is set as the proxy contract's admin. The Hardhat and Truffle plugins make these operations safe and simple.
 

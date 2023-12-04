@@ -6,9 +6,8 @@ This document is a guide on how to deploy a smart contract on the Polygon zkEVM 
 ## Initial Setup
 
 !!!info
-    
-    Before starting with this deployment, please ensure that your wallet is connected to the Polygon zkEVM Testnet. See the demo [here](connect-wallet.md) for details on how to connect your wallet.
 
+    Before starting with this deployment, please ensure that your wallet is connected to the Polygon zkEVM Testnet. See the demo [here](connect-wallet.md) for details on how to connect your wallet.
 
 - Add the Polygon zkEVM Testnet to your Metamask wallet and get some Testnet ETH from the [Polygon Faucet](https://faucet.polygon.technology).
 
@@ -69,13 +68,13 @@ mv README.md README-tutorial.md
 
     The aim here is to achieve the following outcome:
 
-    ![Figure _ ](../img/zkvm/zkv-proj-created-outcome.png)
+    ![Figure _ ](../img/zkEVM/zkv-proj-created-outcome.png)
 
-    So then, 
+    So then,
 
-    - **Press** `<ENTER>` to set the project root 
-    - **Press** `<ENTER>` again to accept addition of `.gitignore`
-    - **Type** `n` to reject installing `sample project's dependencies` 
+  - **Press** `<ENTER>` to set the project root
+  - **Press** `<ENTER>` again to accept addition of `.gitignore`
+  - **Type** `n` to reject installing `sample project's dependencies`
 
     The idea here is to postpone installing dependencies to later steps due to a possible version-related bug.
 

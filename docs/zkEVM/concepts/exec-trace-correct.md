@@ -10,7 +10,7 @@ Since these arithmetic constraints govern state transitions, they express the ne
 
 We therefore need auxiliary columns for **selectors**. Like switches that can either be ON or OFF, selectors too can either have a value $\mathtt{1}$ or $\mathtt{0}$, depending on the instruction being executed.
 
-In continuing with the previous example of a four-instruction state machine, 
+In continuing with the previous example of a four-instruction state machine,
 
 - We use selectors; $\texttt{inFREE}$, $\texttt{inA}$, $\texttt{inB}$, $\texttt{setA}$ and $\texttt{setB}$; corresponding to the columns; $\texttt{FREE}$, $\texttt{A}$, $\texttt{B}$, $\mathtt{A'}$ and $\mathtt{B'}$, respectively.
 
@@ -23,61 +23,61 @@ In continuing with the previous example of a four-instruction state machine,
 The **arithmetic constraints** are therefore defined by the following linear combinations;
 
 $$
-\mathtt{A′ = A + setA \cdot \big( inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST - A \big)} \\ 
+\mathtt{A′ = A + setA \cdot \big( inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST - A \big)} \\
 
 \mathtt{B′ = B + setB \cdot \big( inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST - B \big)} \\ \tag{Eqn 1}
 $$
 
 The figure below depicts the linear combinations of our state machine as an algebraic processor of sorts.
 
-![The Generic State Machine as an Algebraic Processor](../../img/zkvm/gen4-sm-alg-processor.png)
+![The Generic State Machine as an Algebraic Processor](../../img/zkEVM/gen4-sm-alg-processor.png)
 
-The vertical gray box (with the "+" sign) in the above figure denotes addition. It expresses forming linear combinations of some of the columns; $\texttt{FREE}$, $\texttt{A}$, $\texttt{B}$, or $\texttt{CONST}$. Each is either included or excluded from the linear combination depending on whether their corresponding selectors have the value $\mathtt{1}$ or $\mathtt{0}$. An extra register denoted by $\texttt{op}$ acts as a carrier of intermediate of the computation being executed and waiting to be placed in the correct output register (on the right in above figure), depending on the values of $\texttt{setA}$ and $\texttt{setB}$. 
+The vertical gray box (with the "+" sign) in the above figure denotes addition. It expresses forming linear combinations of some of the columns; $\texttt{FREE}$, $\texttt{A}$, $\texttt{B}$, or $\texttt{CONST}$. Each is either included or excluded from the linear combination depending on whether their corresponding selectors have the value $\mathtt{1}$ or $\mathtt{0}$. An extra register denoted by $\texttt{op}$ acts as a carrier of intermediate of the computation being executed and waiting to be placed in the correct output register (on the right in above figure), depending on the values of $\texttt{setA}$ and $\texttt{setB}$.
 
 ## Testing Arithmetic Constraints
 
 We now test if the arithmetic constraints tally with each of the four instructions of our program.
 
-1.  **The first instruction: "$\mathtt{\$\{getAFreeInput()\} => A}$"**
+1. **The first instruction: "$\mathtt{\$\{getAFreeInput()\} => A}$"**
 
     The first instruction involves a free input $7$ and this free input is moved into registry $\texttt{A}$, as its the next value. Therefore, by definition of the selectors, $\mathtt{inFREE = 1}$ and $\mathtt{setA = 1}$. Also, the value of the other selectors is $\texttt{0}$. Substituting these values in the above arithmetic constraints yields;
 
     $$
-    \mathtt{A′ = A + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 1 \cdot 7 + 0 - A \big) = A + (7 - A) = 7}\text{ } \\ 
+    \mathtt{A′ = A + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 1 \cdot 7 + 0 - A \big) = A + (7 - A) = 7}\text{ } \\
 
     \mathtt{B′ = B + 0 \cdot \big( 0 \cdot A + 0 \cdot B + 1 \cdot 7 + 0 - B \big) = B}\qquad\qquad\qquad \\
     $$
 
     This illustrates that the value of the free input was moved into $\texttt{A}$, while $\texttt{B}$ remains unaltered. Hence, the first instruction was correctly executed.
 
-2.  **The second instruction: "$\mathtt{3 => B}$"**
+2. **The second instruction: "$\mathtt{3 => B}$"**
 
     The second instruction involves the $\mathtt{CONST}$ column, and the constant value $\texttt{3}$ is moved into registry $\texttt{B}$, as its next value. Consequently, $\mathtt{CONST = 3}$ and $\mathtt{setB = 1}$. All other selectors have the value $\texttt{0}$. Again, substituting these values in the arithmetic constraints yields;
     $$
-    \mathtt{A′ = A + 0 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 3 - A \big) = A}\qquad\qquad\qquad \\ 
+    \mathtt{A′ = A + 0 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 3 - A \big) = A}\qquad\qquad\qquad \\
 
     \mathtt{B′ = B + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 3 - B \big) = B + (3 - B) = 3} \\
     $$
     This shows that the value of $\texttt{A}$ was not changed, but the constant value $\mathtt{3}$  was moved into $\texttt{B}$. And thus, the second instruction was correctly executed.
 
-3.	**The third instruction, "$\mathtt{:ADD }$"**
+3. **The third instruction, "$\mathtt{:ADD }$"**
 
     This instruction involves the registries $\texttt{A}$ and $\texttt{B}$, and the result is moved into registry $\texttt{A}$, as its the next value. This means, the values of the corresponding selectors are as follows; $\mathtt{inA = 1}$, $\mathtt{inB = 1}$ and $\mathtt{setA = 1}$. The arithmetic constraints become;
 
     $$
-    \mathtt{A′ = A + 1 \cdot \big( 1 \cdot A + 1 \cdot B + 0 \cdot FREE + 0 - A \big) = A + (A + B - A) = A + B}\text{ } \\ 
+    \mathtt{A′ = A + 1 \cdot \big( 1 \cdot A + 1 \cdot B + 0 \cdot FREE + 0 - A \big) = A + (A + B - A) = A + B}\text{ } \\
 
     \mathtt{B′ = B + 0 \cdot \big( 1 \cdot A + 1 \cdot B + 0 \cdot FREE + 0 - B \big) = B}\qquad\qquad\qquad\qquad\quad  \\
     $$
 
     The sum of the registry values in $\mathtt{A}$ and $\mathtt{B}$ was moved into $\texttt{A}$, while $\texttt{B}$ remains unmodified, proving that the third instruction was correctly executed.
 
-4.	**The fourth instruction, "$\mathtt{:END }$"**
+4. **The fourth instruction, "$\mathtt{:END }$"**
 
     The fourth instruction moves the initial registry values (i.e., $\mathtt{A = 0}$ and $\mathtt{B_0 = 0}$) into registries $\texttt{A}$ and $\texttt{B}$, as their next values, respectively. As a result, values of the corresponding selectors are; $\mathtt{setA = 1}$ and $\mathtt{setB = 1}$. Substitutions into the arithmetic constraints give us the following;
 
     $$
-    \mathtt{A′ = A + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 0 - A \big) = A - A = 0} \\ 
+    \mathtt{A′ = A + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 0 - A \big) = A - A = 0} \\
 
     \mathtt{B′ = B + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 0 - B \big) = B - B = 0} \\
     $$
@@ -99,8 +99,8 @@ $$
 \end{array}
 \hspace{0.1cm}
 
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline 
- \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline 
+\begin{array}{|l|c|c|c|c|c|c|c|}\hline
+ \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline
  \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ \hline
 
 \texttt{0} & \texttt{3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
@@ -122,13 +122,13 @@ $$
 \end{aligned}
 $$
 
-## Remarks 
+## Remarks
 
-1.	The $\texttt{CONST}$ column stores the constants of the computation. It should however, not be mistaken for a constant polynomial. The term 'constant' refers to the fact that the column contains constants of the computations.
+1. The $\texttt{CONST}$ column stores the constants of the computation. It should however, not be mistaken for a constant polynomial. The term 'constant' refers to the fact that the column contains constants of the computations.
 
-2.	It shall be seen later, in our implementation of a state machine with jumps, that $\texttt{CONST}$ is in fact a committed polynomial rather than a constant polynomial.
+2. It shall be seen later, in our implementation of a state machine with jumps, that $\texttt{CONST}$ is in fact a committed polynomial rather than a constant polynomial.
 
-3.	All the operations in the constraints are carried out $\mathtt{\ modulo }$ the order $p$ of the prime field. The so-called **Goldilocks-like Field**, with $p = 2^{64} − 2^{32} +1$, is mainly used where 64-bit numbers suffice (see [Plonky2](https://github.com/mir-protocol/plonky2/blob/main/plonky2/plonky2.pdf)). Otherwise, the [BN128 field](https://iden3-docs.readthedocs.io/en/latest/iden3_repos/research/publications/zkproof-standards-workshop-2/baby-jubjub/baby-jubjub.html) is deployed.
+3. All the operations in the constraints are carried out $\mathtt{\ modulo }$ the order $p$ of the prime field. The so-called **Goldilocks-like Field**, with $p = 2^{64} − 2^{32} +1$, is mainly used where 64-bit numbers suffice (see [Plonky2](https://github.com/mir-protocol/plonky2/blob/main/plonky2/plonky2.pdf)). Otherwise, the [BN128 field](https://iden3-docs.readthedocs.io/en/latest/iden3_repos/research/publications/zkproof-standards-workshop-2/baby-jubjub/baby-jubjub.html) is deployed.
 
 In order to match the type of commitment scheme used in the zkEVM, these arithmetic constraints must first be expressed as polynomial identities, which are in turn compiled with PILCOM.
 
@@ -142,11 +142,11 @@ Also, **the free inputs may come in the form of another JSON file**, let's name 
 
 See below diagram for a concise description of what the Executor does.
 
-![Figure 5: SM Executor in a broader context](../../img/zkvm/gen5-sm-exec-broader-contxt.png)
+![Figure 5: SM Executor in a broader context](../../img/zkEVM/gen5-sm-exec-broader-contxt.png)
 
-Although the execution trace is composed of the evaluations of the committed polynomials and the evaluations of the constant polynomials, the two evaluations do not happen simultaneously. 
+Although the execution trace is composed of the evaluations of the committed polynomials and the evaluations of the constant polynomials, the two evaluations do not happen simultaneously.
 
-Instead, the constant polynomials are preprocessed only once, because they do not change and are specific for a particular state machine. 
+Instead, the constant polynomials are preprocessed only once, because they do not change and are specific for a particular state machine.
 
 The committed polynomials, on the other hand, can vary. And are therefore only processed as and when their corresponding verifiable proof is required.
 
@@ -180,14 +180,13 @@ $$
 
 \mathtt{ inB = [0,0,1,0] } \text{ }\text{ } \iff\text{ } \ \mathtt{inB(x) = inB(\omega^i) = inB[i]} \quad\text{}\text{}\qquad\qquad\text{ }\text{ }\text{}\text{ }\text{ }\text{ } \\
 
-\mathtt{ setA = [1,0,1,1] \text{ }\text{ } \iff\text{ } \  \mathtt{ setA(x) = setA(\omega^i) = setA[i] } }\qquad\quad\text{ }\text{ }\text{ }\text{ } \\ 
+\mathtt{ setA = [1,0,1,1] \text{ }\text{ } \iff\text{ } \  \mathtt{ setA(x) = setA(\omega^i) = setA[i] } }\qquad\quad\text{ }\text{ }\text{ }\text{ } \\
 
 \mathtt{ setB = [0,1,0,1] } \text{ }\text{ } \iff\text{ } \ \mathtt{setB(x) = setB(\omega^i) = setB[i]} \qquad\qquad\text{}\\
 
 \mathtt{ FREE = [7,0,0,0] }\text{ }\text{ } \iff\text{ } \  \mathtt{FREE(x) =  FREE(\omega^i) = FREE[i]}\qquad\qquad\text{} \\
 
 \mathtt{ CONST = [1,0,0,0] }\text{ }\text{ } \iff\text{ } \  \mathtt{CONST(x) = CONST(\omega^i) = CONST[i]}\qquad\text{} \\
-
 
 \text{ }\mathtt{ inFREE = [1,0,0,0] } \text{ }\text{ } \iff\text{ } \ \mathtt{inFREE(x) = inFREE(\omega^i) = inFREE[i]} \\
 \end{aligned}
@@ -196,12 +195,12 @@ $$
 The arithmetic constraints seen above as $\bf{Eqn\ 1}$, are easily written as polynomial identities, as follows,
 
 $$
-\mathtt{A(x\omega) - \big(A(x) + setA(x) \cdot \big( op(x) - A(x) \big) \big) = 0} \\ 
+\mathtt{A(x\omega) - \big(A(x) + setA(x) \cdot \big( op(x) - A(x) \big) \big) = 0} \\
 
 \mathtt{B(x\omega) - \big( B(x) + setB(x) \cdot \big(  op(x) - B(x) \big) \big) = 0} \\
 $$
 
-where $\mathtt{op(x) = inA(x) \cdot A(x) + inB(x) \cdot B(x) + inFREE(x) \cdot FREE(x) + CONST(x)}$. 
+where $\mathtt{op(x) = inA(x) \cdot A(x) + inB(x) \cdot B(x) + inFREE(x) \cdot FREE(x) + CONST(x)}$.
 
 As far as **boundary constraints** are concerned, we can, for instance,
 
@@ -214,10 +213,10 @@ As far as **boundary constraints** are concerned, we can, for instance,
   \mathtt{L1(x) \cdot \big(FREE(\omega^0) - input\big) = 0} \\
   \mathtt{L2(x) \cdot \big(A(\omega^{3}) - output\big) = 0}\quad \\
   $$
-  where $\mathtt{L1(x)}$ and $\mathtt{L2(x)}$ are precomputed constant polynomials. In fact, $\mathtt{L1(x) = [1,0,0,0]}$ and  $\mathtt{L2(x) = [0,0,0,1]}$. 
+  where $\mathtt{L1(x)}$ and $\mathtt{L2(x)}$ are precomputed constant polynomials. In fact, $\mathtt{L1(x) = [1,0,0,0]}$ and  $\mathtt{L2(x) = [0,0,0,1]}$.
 
 In the big scheme of things, these are Lagrange polynomials emanating from interpolation. Verification relies on the fact that: these polynomial identities, including the boundary constraints, hold true *if, and only if* the execution trace is correct and faithful to the instructions in the zkASM program.
 
 The PIL description of the SM Executor, reading instructions from the zkASM program with four instructions, is depicted in the figure provided below.
 
-![The PIL description for the 4-instruction program](../../img/zkvm/gen6-pil-4instrct-prog.png)
+![The PIL description for the 4-instruction program](../../img/zkEVM/gen6-pil-4instrct-prog.png)
