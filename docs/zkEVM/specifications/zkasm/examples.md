@@ -1,15 +1,3 @@
----
-id: some-examples
-title: Some Examples
-sidebar_label: Some Examples
-description: This document provides useful code snippet examples in zkASM.
-keywords:
-  - polygon
-  - zkASM
-  - zkEVM
-  - examples
----
-
 ## EVM ADD
 
 Let's take the EVM ADD opcode as our first starting example:

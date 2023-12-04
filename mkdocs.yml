@@ -295,6 +295,7 @@ nav:
       - learn/index.md
 
 extra:
+  generator: false
   analytics:
   #  provider: google
   #  property: G-XXXXXXXXXX
@@ -331,6 +332,7 @@ extra_css:
   - _site_essentials/stylesheets/extra.css
   - _site_essentials/stylesheets/section-nav.css
   - https://fonts.googleapis.com/icon?family=Material+Icons
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 markdown_extensions:
   - toc:
@@ -347,7 +349,8 @@ markdown_extensions:
   - abbr
   - pymdownx.tabbed
   - pymdownx.superfences
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.keys
@@ -362,8 +365,6 @@ markdown_extensions:
   - meta
   - smarty
   - pymdownx.extra
-  - pymdownx.arithmatex:
-      generic: true
 
 plugins:
   - search
@@ -378,9 +379,13 @@ plugins:
 #        - README.md
 
 validation:
-  absolute_links: ignore
+  absolute_links: warn
 
 extra_javascript:
   - js/mathjax.js
-  - js/polyfill.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
