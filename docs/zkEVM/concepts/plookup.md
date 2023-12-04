@@ -6,7 +6,7 @@ This subsection is part of the Generic SM and its goal is to define Plookup befo
 
 Plookup was described by the original authors in [GW20](https://eprint.iacr.org/2020/315.pdf) as a protocol for checking whether values of a committed polynomial, over a multiplicative subgroup $\text{H}$ of a finite field  $\mathbb{F}$, are contained in a vector  $\mathbf{t} \in \mathbb{F}^d$  that represents values of a table  $\mathcal{T}$. More precisely, Plookup is used to check if certain evaluations of some committed polynomial are part of some row $\mathbf{t}$ of a lookup table  $\mathcal{T}$.
 
-One particular use case of this primitive is: checking whether all evaluations of a polynomial $f(x)$, restricted to values of a multiplicative subgroup $\text{H} \sub \mathbb{F}$, fall in a given range $\{ 0 , 1 , \dots , M \}$. i.e., proving that, for every $z \in \text{H}$, we have $\mathbf{f(z) \in \{ 0 , 1 , \dots , M \}}$.   
+One particular use case of this primitive is: checking whether all evaluations of a polynomial $f(x)$, restricted to values of a multiplicative subgroup $\text{H} \sub \mathbb{F}$, fall in a given range $\{ 0 , 1 , \dots , M \}$. i.e., proving that, for every $z \in \text{H}$, we have $\mathbf{f(z) \in \{ 0 , 1 , \dots , M \}}$.
 
 Plookup's strategy for soundness depends on a few basic mathematical concepts described below.
 
@@ -14,9 +14,9 @@ Plookup's strategy for soundness depends on a few basic mathematical concepts de
 
 ### Sets And Multisets
 
-Recall that a **set** is a collection of distinct objects, called elements, where repetitions and order of elements are disregarded. That is, the set  $\{ 1 , 3 , 7 \}$  is the same set as  $\{ 3 , 7 , 1 , 7 , 1 , 1 \}$. 
+Recall that a **set** is a collection of distinct objects, called elements, where repetitions and order of elements are disregarded. That is, the set  $\{ 1 , 3 , 7 \}$  is the same set as  $\{ 3 , 7 , 1 , 7 , 1 , 1 \}$.
 
-Yet, as **multisets**, $\{ 1 , 3 , 7 \}$ is not the same as $\{ 3 , 7 , 1 , 7 , 1 , 1 \}.$ It is because multisets take into consideration all instances of an element. 
+Yet, as **multisets**, $\{ 1 , 3 , 7 \}$ is not the same as $\{ 3 , 7 , 1 , 7 , 1 , 1 \}.$ It is because multisets take into consideration all instances of an element.
 
 Given a multiset $\mathbf{s}$, we define **multiplicity** to be the number of all instances of an element.
 
@@ -34,13 +34,13 @@ Unless otherwise stated, all sorted multisets will henceforth be **sorted by $\m
 
 For any given sorted multiset $\mathbf{s} = \{a_1 , a_2 , \dots , a_n\}$, define **the set of differences** of $\mathbf{s}$ as the set of non-zero differences $\{a_2 - a_1 , a_3 - a_2 , \dots , a_n - a_{n-1}\}$. That is, zero-differences, $a_i - a_{i-1} = 0$, are discarded.
 
-Take as examples the following sorted multisets: $\mathbf{t} = \{1, 3, 7\}$, $\mathbf{s} = \{1 , 1 , 1 , 3 , 7 , 7\}$ and $\mathbf{r} = \{2, 6, 6, 6, 8\}$. These three multisets have the same set of differences, which is $\{2, 4\}$. 
+Take as examples the following sorted multisets: $\mathbf{t} = \{1, 3, 7\}$, $\mathbf{s} = \{1 , 1 , 1 , 3 , 7 , 7\}$ and $\mathbf{r} = \{2, 6, 6, 6, 8\}$. These three multisets have the same set of differences, which is $\{2, 4\}$.
 
 Although $\mathbf{r}$ has the same set of differences as $\mathbf{s}$ and $\mathbf{t}$, note that the differences appear in a different order; 4 appeared first then 2.
 
 #### Testing For Containment
 
-Let $\mathbf{s}$ and $\mathbf{t}$ be ordered multisets, $\mathbf{s} = \{s_1 , s_2 , \dots , s_d\}$ and none of the elements of $\mathbf{t}  = \{t_1 , t_2 , \dots , t_n\}$ are repeated. 
+Let $\mathbf{s}$ and $\mathbf{t}$ be ordered multisets, $\mathbf{s} = \{s_1 , s_2 , \dots , s_d\}$ and none of the elements of $\mathbf{t}  = \{t_1 , t_2 , \dots , t_n\}$ are repeated.
 
 It can be observed that:
 
@@ -61,7 +61,7 @@ Consider again the ordered multisets: $\mathbf{t} = \{t_1 , t_2 , \dots , t_n\}$
 
 If $\mathbf{s}$ has some repeated elements, $s_i = s_{i+1}$ for some $1 \leq i \leq n$, then these can be tested by comparing randomized sets of differences.
 
-A **randomized set of differences** related to $\mathbf{s}$ is created by selecting a random field element $\beta \in \mathbb{F}$ and defined as the set $\{s_i + \beta\cdot s_{i+1}\ |\ 1 \leq i < d \}$.   
+A **randomized set of differences** related to $\mathbf{s}$ is created by selecting a random field element $\beta \in \mathbb{F}$ and defined as the set $\{s_i + \beta\cdot s_{i+1}\ |\ 1 \leq i < d \}$.
 
 So, instead of a pair $(s_i, s_{i+1})$ of repeated elements yielding a difference of zero because $s_i = s_{i+1}$, they yield
 
@@ -79,7 +79,7 @@ A test can therefore be coined using a **grand product argument** akin to the on
 
 The above concepts defined for multisets apply similarly to vectors, and the Plookup protocol also extends readily to vectors.
 
-A **vector** is a collection of ordered field elements, for some finite field $\mathbb{F}$, and it is denoted by $\mathbf{a} = ( a_1 , a_2 , \dots , a_n )$. 
+A **vector** is a collection of ordered field elements, for some finite field $\mathbb{F}$, and it is denoted by $\mathbf{a} = ( a_1 , a_2 , \dots , a_n )$.
 
 A vector $\mathbf{a} = ( a_1 , a_2 , \dots , a_n )$ is **contained** in a vector $\mathbf{b} = ( b_1 , b_2 , \dots , b_d )$, denoted by $\mathbf{a} \sub \mathbf{b}$ , if each $a_i \in  \{ b_1 , b_2 , \dots , b_d \}$ for  $i \in \{ 1 , 2 , \dots , n \}$.
 
@@ -131,7 +131,6 @@ The Plookup protocol boils down to proving that the two polynomials $F$ and $G$ 
      - Deploying the **grand product argument** which describes the polynomials $F$ and $G$ appearing in the polynomial identities
      - Concatenation of witness vectors with the LUT vectors 
 
-
 ### Plookup in PIL
 
 The test for whether the polynomial identities $\{F \equiv G\}$ hold true, is based on the following Lemma (viz. Claim 3.1 as stated and proved in Pages 4 and 5 of the [Plookup paper](https://eprint.iacr.org/2020/315.pdf)).
@@ -146,7 +145,7 @@ $$
 \{f_1, \dots , f_m \} \texttt{ in } \{t_1, \dots , t_m \}
 $$
 
-where "$\texttt{in}$" is a PIL keyword for set inclusion, $f \subset t$. 
+where "$\texttt{in}$" is a PIL keyword for set inclusion, $f \subset t$.
 
 #### Application of Plookup in PIL
 
@@ -163,16 +162,16 @@ $$
 is one of the valid combinations of the ROM instructions,
 
 $$
-\{ \texttt{Rom.CONST},\ \texttt{Rom.inA},\ \texttt{Rom.inB},\ \texttt{Rom.inFREE},\ \texttt{Rom.setA},\ \texttt{Rom.setB},\ \texttt{Rom.JMP},\\ 
+\{ \texttt{Rom.CONST},\ \texttt{Rom.inA},\ \texttt{Rom.inB},\ \texttt{Rom.inFREE},\ \texttt{Rom.setA},\ \texttt{Rom.setB},\ \texttt{Rom.JMP},\\
  \texttt{Rom.JMPZ},\ \texttt{Rom.offset},\ \texttt{Rom.line} \}.
 \\
 $$
 
-**PIL uses Plookup to carry out this check.** This appears at the last three lines of the PIL code for the Generic state machine, shown in the below figure. 
+**PIL uses Plookup to carry out this check.** This appears at the last three lines of the PIL code for the Generic state machine, shown in the below figure.
 
 Recall that the ROM's polynomial counterpart to the $\texttt{zkPC}$ is the $\texttt{line}$.
 
-![Plookup in the PIL Code for the Generic State Machine](../../img/zkvm/plookup-generic-sm-pil.png)
+![Plookup in the PIL Code for the Generic State Machine](../../img/zkEVM/plookup-generic-sm-pil.png)
 
 ### Role in zkEVM
 
@@ -180,4 +179,4 @@ Plookup instructions appear in the PIL codes of state machines in the zkEVM. Plo
 
 The diagram below depicts the extensive role that Plookup plays in the zkProver's secondary state machines.
 
-![Plookup and the zkProver State Machines](../../img/zkvm/plook-ops-mainSM.png)
+![Plookup and the zkProver State Machines](../../img/zkEVM/plook-ops-mainSM.png)

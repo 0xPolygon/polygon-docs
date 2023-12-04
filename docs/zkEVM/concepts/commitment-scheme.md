@@ -5,7 +5,6 @@ In practice though, the so-called **Fiat-Shamir transformation** is used to turn
 !!!caution
     This document dives deep into the technical details of commitment schemes underpinning the zkProver.
 
-
 It describes what a commitment scheme is, the necessary properties such a scheme must possess, and how the previously stated polynomial identities look like in reality.
 
 ## Commitment scheme protocol
@@ -39,9 +38,8 @@ Proof systems based on testing polynomial identities take advantage of a basic p
 
 According to the Schwartz-Zippel Lemma;
 
->For any non-zero polynomial ${Q(X_1, . . . , X_n)}$ on ${n}$ variables with degree ${d}$, and ${S}$ a finite but sufficiently large subset of the field $\mathbb{F}$, then values ${ X_1, . . . , X_n }$ from ${S}$ are independently and uniformly assigned at random, then 
+>For any non-zero polynomial ${Q(X_1, . . . , X_n)}$ on ${n}$ variables with degree ${d}$, and ${S}$ a finite but sufficiently large subset of the field $\mathbb{F}$, then values ${ X_1, . . . , X_n }$ from ${S}$ are independently and uniformly assigned at random, then
 ${Pr[Q(X_1, . . . , X_n) = 0] ≤ \dfrac{d}{|S|}}$.
-
 
 **Here's what the Schwartz-Zippel Lemma means in the specific case of the mFibonacci state machine**:
 
@@ -59,7 +57,7 @@ In a typical commitment scheme, the following  protocol is followed;
 
 2. The verifier selects a random point $\alpha$, sends it to the prover, with a request for relevant *openings*.
 3. The prover then provides the openings; $P(\alpha)$, $P(\omega \alpha)$, $Q(\alpha)$ and $Q(\omega \alpha)$.
-4. The verifier can check correctness of the openings, by using transition constraints, 
+4. The verifier can check correctness of the openings, by using transition constraints,
     $$
     \begin{aligned}
     \big( 1 − R(X) \big) \cdot \big[ P(X\cdot \omega) − Q(X) \big] = \bigg\lvert_{\mathcal{H}}\ 0\qquad\quad\text{ }\text{ }

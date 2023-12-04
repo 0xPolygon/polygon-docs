@@ -1,5 +1,5 @@
 
-Once a smart contract is deployed to zkEVM, it can be verified in various ways depending on the framework of deployment as well as the complexity of the contract. The aim here is to use examples to illustrate how you can manually verify a deployed smart contract. 
+Once a smart contract is deployed to zkEVM, it can be verified in various ways depending on the framework of deployment as well as the complexity of the contract. The aim here is to use examples to illustrate how you can manually verify a deployed smart contract.
 
 Ensure that your wallet is connected while following this guide. We will use Metamask wallet throughout this tutorial.
 
@@ -7,7 +7,7 @@ Ensure that your wallet is connected while following this guide. We will use Met
 
 After successfully compiling a smart contract, follow the next steps to verify your smart contract.
 
-1. Copy the **Address** to which the smart contract is deployed. 
+1. Copy the **Address** to which the smart contract is deployed.
 
 2. Navigate to the [zkEVM Explorer](https://testnet-zkevm.polygonscan.com) and paste the contract address into the Search box. This opens a window with a box labelled **Contract Address Details**.
 
@@ -22,26 +22,26 @@ After successfully compiling a smart contract, follow the next steps to verify y
 7. There are 3 options to provide the Contract's code. We will be diving into the following two options:
 ??? "Flattened source code"
     Click **Next** after selecting the **via Flattened Source Code** option.
-    
+
     Various frameworks have specific ways to flatten the source code. Our examples are **Remix** and **Foundry**.
 
-    #### Using Remix
-    
+#### Using Remix
+
     In order to flatten the contract code with Remix, one needs to only right-click on the contract name and select **Flatten** option from the drop-down menu that appears. See the below figure for reference.
 
-    ![Selecting the flatten code option](../img/zkvm/flatten-code-remix.png)
+    ![Selecting the flatten code option](../img/zkEVM/flatten-code-remix.png)
 
     After selecting **Flatten**, a new `.sol` file with the suffix `_flatten.sol` is automatically created. Copy the contents of the new `<Original-Name>_flatten.sol` file and paste into the `Enter the Solidity Contract` field in the explorer.
 
-    #### Using Foundry
+#### Using Foundry
 
     In order to flatten the code using Foundry, the following command can be used:
-    
+
     ```bash
         forge flatten src/<Contract-Name> -o <Any-Name-For-Flattened-Code>.sol
-    ```        
-    With this command, the flattened code gets saved in the `<Any-Name-For-Flattened-Code>.sol` file. Copy the contents of the new `<Any-Name-For-Flattened-Code>.sol` file and paste into the `Enter the Solodity Contract` field in the [explorer](https://testnet-zkevm.polygonscan.com).
+    ```
 
+    With this command, the flattened code gets saved in the `<Any-Name-For-Flattened-Code>.sol` file. Copy the contents of the new `<Any-Name-For-Flattened-Code>.sol` file and paste into the `Enter the Solodity Contract` field in the [explorer](https://testnet-zkevm.polygonscan.com).
 
 ??? "Standard input JSON"
     Click **Next** after selecting the **via Standard Input JSON** option.
@@ -66,14 +66,13 @@ After successfully compiling a smart contract, follow the next steps to verify y
         - Copy the ABI-encoded output.
         - Paste it into `ABI-encoded Constructor Arguments` if required by the contract.
 
-Once you paste the contents of the newly created `.sol` file to the *Enter the Solidity Contract* field, the **Verify & Publish** button will be active.
+Once you paste the contents of the newly created `.sol` file to the _Enter the Solidity Contract_ field, the **Verify & Publish** button will be active.
 
 Click on **Verify & Publish** to verify your deployed smart contract.
 
-
 ## Verify using Remix
 
-We will be using the ready-made `Storage.sol` contract in Remix. Compile the contract and follow the steps provided below. 
+We will be using the ready-made `Storage.sol` contract in Remix. Compile the contract and follow the steps provided below.
 
 1. Deploy the `Storage.sol` contract:
 
@@ -85,17 +84,17 @@ We will be using the ready-made `Storage.sol` contract in Remix. Compile the con
 2. Check the deployed smart contract on Etherscan:
 
     - Copy the contract address below the **Deploy Contracts**
-    - Navigate to the [Goërli explorer](https://goerli.etherscan.io) 
-    - Paste the contract address in the *Search by address* field and press **ENTER**
+    - Navigate to the [Goërli explorer](https://goerli.etherscan.io)
+    - Paste the contract address in the _Search by address_ field and press **ENTER**
     - Click on the **Transaction Hash** to see transaction details.
 
 3. You are going to need your **Etherscan API Key** in order to verify.
 
     - Login to Etherscan
     - Hover the cursor over your username for a drop-down menu.
-    - Select **API Keys** 
+    - Select **API Keys**
     - Click **API Keys** again below the **Others** option.
-    - Copy the API Key. 
+    - Copy the API Key.
 
 4. Next, in the Remix IDE:
 
@@ -109,9 +108,9 @@ We will be using the ready-made `Storage.sol` contract in Remix. Compile the con
 
     - Ensure that **Goërli** is present in the **Selected Network** field
 
-    - Click within the *Contract Name* field and type in the name of your deployed contract, or select it if it appears.
+    - Click within the _Contract Name_ field and type in the name of your deployed contract, or select it if it appears.
 
-    - Paste the address in the *Contract Address* field.
+    - Paste the address in the _Contract Address_ field.
 
     - **Verify** button will be active if all information has been provided.
 

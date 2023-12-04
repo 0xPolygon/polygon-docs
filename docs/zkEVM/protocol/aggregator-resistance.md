@@ -9,9 +9,9 @@ function verifyBatches(
     uint64 finalNewBatch,
     bytes32 newLocalExitRoot,
     bytes32 newStateRoot,
-    uint256	[2] calldata proofA,
-    uint256	[2] [2] calldata proofB,
-    uint256	[2] calldata proofC,
+    uint256 [2] calldata proofA,
+    uint256 [2] [2] calldata proofB,
+    uint256 [2] calldata proofC,
 ) public ifNotEmergencyState
 ```
 
@@ -34,9 +34,9 @@ The struct used looks like this:
 
 ```
 struct PendingState {
-  uint64	timestamp;
-  uint64	lastVerifiedBatch;
-  bytes32	exitRoot;
+  uint64 timestamp;
+  uint64 lastVerifiedBatch;
+  bytes32 exitRoot;
   bytes32 stateRoot;
 }
 ```
@@ -47,7 +47,7 @@ The `lastPendingState` storage variable is used to keep track of the number of p
 
 The below figure shows the L2 Stages timeline from a batch perspective, and the actions that triggers its inclusion in the next L2 State stage, when a batch sequence is Aggregated through the `verifyBatches` function.
 
-![L2 State stages timeline with pending state](../../img/zkvm/11l2-stages-timeline-pending.png)
+![L2 State stages timeline with pending state](../../img/zkEVM/11l2-stages-timeline-pending.png)
 
 The **presence of batch sequences in pending state has no effect on the correct and proper functioning of the protocol**. Non-forced batch sequences are verified before pending ones, and not all sequences enter the pending state.
 

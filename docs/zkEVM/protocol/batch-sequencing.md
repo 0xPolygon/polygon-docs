@@ -15,13 +15,13 @@ mapping(uint64 => SequencedBatchData) public sequencedBatches;
 
 ```
 function sequenceBatches ( 
-	BatchData[] memory batches
+ BatchData[] memory batches
 ) public ifNotEmergencyState onlyTrustedSequencer
 ```
 
 The below figure shows the logic structure of a sequence of batches.
 
-![An outline of sequenced batches](../../img/zkvm/03l2-sequencing-batches.png)
+![An outline of sequenced batches](../../img/zkEVM/03l2-sequencing-batches.png)
 
 ## Max & Min batch size bounds
 
@@ -53,13 +53,13 @@ An accumulated hash of a specific batch has the following structure:
 
 ```
 keccak256 ( 
-	abi.encodePacked (
-		bytes32 oldAccInputHash, 
-		keccak256(bytes transactions), 
-		bytes32 globalExitRoot ,
-		uint64 timestamp ,
-		address seqAddress
-	)
+ abi.encodePacked (
+  bytes32 oldAccInputHash, 
+  keccak256(bytes transactions), 
+  bytes32 globalExitRoot ,
+  uint64 timestamp ,
+  address seqAddress
+ )
 )
 ```
 
@@ -71,7 +71,7 @@ keccak256 (
 - `timestamp` is the batch timestamp,
 - `seqAddress` is address of Batch sequencer.
 
-![Batch chain structure](../../img/zkvm/04l2-batch-chain-acc-hash.png)
+![Batch chain structure](../../img/zkEVM/04l2-batch-chain-acc-hash.png)
 
 As shown in the diagram above, each accumulated input hash ensures the integrity of the current batch's data (i.e., `transactions`, `timestamp`, and `globalExitRoot`, as well as the order in which they were sequenced.
 
@@ -81,9 +81,9 @@ The batch sequence is added to the `sequencedBatches` mapping using the followin
 
 ```
 struct SequencedBatchData {
-	bytes32 accInputHash;
-	uint64 sequencedTimestamp;
-	uint64 previousLastBatchSequenced;
+ bytes32 accInputHash;
+ uint64 sequencedTimestamp;
+ uint64 previousLastBatchSequenced;
 }
 ```
 
@@ -100,7 +100,8 @@ The index number of the last batch in the sequence is used as key and the `Seque
 Since storage operations in L1 are very expensive in terms of gas consumption, it is critical to use it as little as possible. To accomplish this, **storage slots (or mapping entries) are used solely to store a sequence commitment**.
 
 Each mapping entry commits two batch indices.
-- last batch of the previous sequence as value of `SequencedBatchData` struct, and 
+
+- last batch of the previous sequence as value of `SequencedBatchData` struct, and
 - last batch of the current sequence as mapping key,
 
 along with the accumulated hash of the last batch in the current sequence and a timestamp.
@@ -111,7 +112,7 @@ As previously stated, **the hash digest will be a commitment of the entire batch
 
 The data availability of the L2 transactions is guaranteed because the data of each batch can be recovered from the calldata of the sequencing transaction, which is not part of the contract storage but is part of the L1 State.
 
-Finally a `SequenceBatches` event will be emitted. 
+Finally a `SequenceBatches` event will be emitted.
 
 ```
 event SequenceBatches (uint64 indexed numBatch)

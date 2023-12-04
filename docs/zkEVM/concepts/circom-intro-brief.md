@@ -1,11 +1,10 @@
 
 !!!info
-    In this document, we describe the CIRCOM component of the zkProver. It is one of the four main components of the zkProver, as outlined [here](../zkprover/zkprover-overview.md). These principal components are; the Executor or Main SM, STARK Recursion, CIRCOM, and Rapid SNARK.
+    In this document, we describe the CIRCOM component of the zkProver. It is one of the four main components of the zkProver, as outlined [here](../architecture/zkprover/zkprover-overview.md). These principal components are; the Executor or Main SM, STARK Recursion, CIRCOM, and Rapid SNARK.
 
     You may refer to the original [CIRCOM research paper](https://www.techrxiv.org/articles/preprint/CIRCOM_A_Robust_and_Scalable_Language_for_Building_Complex_Zero-Knowledge_Circuits/19374986/1) for more details.
 
-
-As seen in the [zkProver Overview](../zkprover/zkprover-overview.md) document, the output of the STARK Recursion component is a STARK proof.
+As seen in the [zkProver Overview](../architecture/zkprover/zkprover-overview.md) document, the output of the STARK Recursion component is a STARK proof.
 
 The next step in the zkProver's process of providing validity proof is to **produce the witness similar to the output of the STARK Recursion**.
 
@@ -15,7 +14,7 @@ Although the zkProver is designed as a state machine emulating the EVM, in order
 
 The witness is in turn taken as input to the Rapid SNARK, which is used to generate a SNARK proof published as the validity proof.
 
-![CIRCOM's input and output](../../img/zkvm/01circom-witness-zkprover.png)
+![CIRCOM's input and output](../../img/zkEVM/01circom-witness-zkprover.png)
 
 In fact, CIRCOM takes a STARK proof as input and produces its corresponding Arithmetic circuit, expressed as the equivalent set of equations called Rank-1 Constraint System (R1CS).
 
@@ -47,7 +46,7 @@ CIRCOM was developed for the very purpose of scaling complex Arithmetic circuits
 
 CIRCOM is a Domain-Specific Language (DSL) used to define Arithmetic circuits, and it has an associated compiler of Arithmetic circuits to their respective Rank-1 Constraint System (or R1CS).
 
-![CIRCOM Overall Context](../../img/zkvm/02circom-overall-context.png)
+![CIRCOM Overall Context](../../img/zkEVM/02circom-overall-context.png)
 
 ### CIRCOM As A DSL
 
@@ -80,7 +79,7 @@ The CIRCOM language has its own peculiarities. The focus in this subsection is o
 
 Consider as an example, the `Multiplier` circuit with input signals $\texttt{a}$ and $\texttt{b}$, and an output signal $\texttt{c}$ satisfying the constraint $\texttt{a} \times \texttt{b} \texttt{ - c = 0}$.
 
-![A simple Multiplier Arithmetic circuit](../../img/zkvm/03circom-simple-arith-circuit.png)
+![A simple Multiplier Arithmetic circuit](../../img/zkEVM/03circom-simple-arith-circuit.png)
 
 The figure above depicts a simple `Multiplier` Arithmetic circuit with input wires labeled $\texttt{a}$ and $\texttt{b}$ and an output wire labeled $\texttt{c}$ such that $\texttt{a} \times \texttt{b\ = } \texttt{c}$. The wires are referred to as signals. The constraint related to this Multiplier circuit is:
 
@@ -243,7 +242,7 @@ template Multiplier() {
   signal input a;
   signal input b;
   signal output c;
-	c <== a * b;
+ c <== a * b;
 }
 
 component main {public [a]} = Multiplier();

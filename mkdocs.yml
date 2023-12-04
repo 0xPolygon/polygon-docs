@@ -95,13 +95,13 @@ nav:
         - Deploy a contract with Foundry: zkEVM/using-foundry.md
         - Deploy a contract with Hardhat: zkEVM/using-hardhat.md
         - Verify a contract: zkEVM/verify-smart-contract.md
-      - Architectural design:
-        - Architecture: zkEVM/architecture/architecture.md
+      - Architecture:
+        - Architecture: zkEVM/architecture/index.md
         - zkEVM Protocol:
           - Introduction: zkEVM/protocol/introduction.md
           - State management: zkEVM/protocol/state-management.md
           - Trasaction life cycle:
-            - Submit transactions: zkEVM/protocol/submit-trasaction.md
+            - Submit transactions: zkEVM/protocol/submit-transaction.md
             - Transaction execution: zkEVM/protocol/transaction-execution.md
             - Transaction batching: zkEVM/protocol/transaction-batching.md
             - Batch sequencing: zkEVM/protocol/batch-sequencing.md
@@ -121,41 +121,59 @@ nav:
             - Smart contracts: zkEVM/protocol/bridge-smart-contract.md
             - Flow of assets: zkEVM/protocol/flow-of-assets.md
           - LXLY bridge: zkEVM/protocol/lxly-bridge.md
-        - zkNode: zkEVM/zknode/zknode-overview.md
+        - zkNode: zkEVM/architecture/zknode/index.md
         - zkProver:
-          - zkProver Overview: zkEVM/zkprover/zkprover-overview.md
+          - zkProver Overview: zkEVM/architecture/zkprover/zkprover-overview.md
           - Main state machaine: 
-            - Introducing Main SM: zkEVM/zkprover/intro-main-sm.md
-            - As a processor: zkEVM/zkprover/the-processor.md
+            - Introducing Main SM: zkEVM/architecture/zkprover/intro-main-sm.md
+            - As a processor: zkEVM/architecture/zkprover/the-processor.md
           - STARK recursion:
-            - Introducing STARK recursion: zkEVM/zkprover/intro-stark-recursion.md
-            - Proving tools and techniques: zkEVM/zkprover/proving-tools.md
-            - Composition, Recursion and Aggregation: zkEVM/zkprover/stark-recursion-detail.md
-            - Recursion sub-process: zkEVM/zkprover/recursion-sub-process.md
-            - Proving architecture: zkEVM/zkprover/proving-architecture.md
-            - CIRCOM in zkProver: zkEVM/zkprover/circom-in-zkprover.md
-            - Proving setup phase: zkEVM/zkprover/proving-setup-phase.md
-            - Intermediate steps: zkEVM/zkprover/intermediate-recursion.md
-            - Final recursion step: zkEVM/zkprover/final-recursion-step.md
-            - Proof generation phase: zkEVM/zkprover/proof-generation-phase.md
+            - Introducing STARK recursion: zkEVM/architecture/zkprover/intro-stark-recursion.md
+            - Proving tools and techniques: zkEVM/architecture/zkprover/proving-tools.md
+            - Composition, Recursion and Aggregation: zkEVM/architecture/zkprover/stark-recursion-detail.md
+            - Recursion sub-process: zkEVM/architecture/zkprover/recursion-sub-process.md
+            - Proving architecture: zkEVM/architecture/zkprover/proving-architecture.md
+            - CIRCOM in zkProver: zkEVM/architecture/zkprover/circom-in-zkprover.md
+            - Proving setup phase: zkEVM/architecture/zkprover/proving-setup-phase.md
+            - Intermediate steps: zkEVM/architecture/zkprover/intermediate-recursion.md
+            - Final recursion step: zkEVM/architecture/zkprover/final-recursion-step.md
+            - Proof generation phase: zkEVM/architecture/zkprover/proof-generation-phase.md
           - Storage state machine:
-            - Introducing Storage SM: zkEVM/zkprover/intro-storage-sm.md
-            - Creating keys and paths: zkEVM/zkprover/construct-key-path.md
-            - Storage SM mechanism: zkEVM/zkprover/storage-sm-mechanism.md
-            - Executor and PIL: zkEVM/zkprover/executor-pil.md
-          - Arithmetic state machine: zkEVM/zkprover/arithmetic-sm.md
-          - Binary state machine: zkEVM/zkprover/binary-sm.md
-          - Memory state machine: zkEVM/zkprover/memory-sm.md
-          - Memory-Align state machine: zkEVM/zkprover/mem-align-sm.md
+            - Introducing Storage SM: zkEVM/architecture/zkprover/intro-storage-sm.md
+            - Creating keys and paths: zkEVM/architecture/zkprover/construct-key-path.md
+            - Storage SM mechanism: zkEVM/architecture/zkprover/storage-sm-mechanism.md
+            - Executor and PIL: zkEVM/architecture/zkprover/executor-pil.md
+          - Arithmetic state machine: zkEVM/architecture/zkprover/arithmetic-sm.md
+          - Binary state machine: zkEVM/architecture/zkprover/binary-sm.md
+          - Memory state machine: zkEVM/architecture/zkprover/memory-sm.md
+          - Memory-Align state machine: zkEVM/architecture/zkprover/mem-align-sm.md
           - Hashing state machines:
-            - Introducing hashing state machines: zkEVM/zkprover/intro-hashing-sm.md
-            - Keccak framework: zkEVM/zkprover/keccak-framework.md
-            - Padding-kk state machine: zkEVM/zkprover/paddingkk-sm.md
-            - Padding-kk-bit state machine: zkEVM/zkprover/paddingkk-bit-sm.md
-            - Bits2Field state machine: zkEVM/zkprover/bits2field-sm.md
-            - Keccak-f state machine: zkEVM/zkprover/keccakf-sm.md
-            - Poseidon state machine: zkEVM/zkprover/poseidon-sm.md
+            - Introducing hashing state machines: zkEVM/architecture/zkprover/intro-hashing-sm.md
+            - Keccak framework: zkEVM/architecture/zkprover/keccak-framework.md
+            - Padding-kk state machine: zkEVM/architecture/zkprover/paddingkk-sm.md
+            - Padding-kk-bit state machine: zkEVM/architecture/zkprover/paddingkk-bit-sm.md
+            - Bits2Field state machine: zkEVM/architecture/zkprover/bits2field-sm.md
+            - Keccak-f state machine: zkEVM/architecture/zkprover/keccakf-sm.md
+            - Poseidon state machine: zkEVM/architecture/zkprover/poseidon-sm.md
       - Specifications:
+        - Polynomial Identity Language:
+          - Polynomial Identity Language: zkEVM/specifications/pil/index.md
+          - Simple example: zkEVM/specifications/pil/simple-example.md
+          - Modular programs: zkEVM/specifications/pil/modular-programs.md
+          - Connection arguments: zkEVM/specifications/pil/connection-arguments.md
+          - Cyclicity in PIL: zkEVM/specifications/pil/cyclicity-in-pil.md
+          - Filling polynomials: zkEVM/specifications/pil/filling-polynomials.md
+          - Generating proofs: zkEVM/specifications/pil/generating-proofs.md
+          - Permutation arguments: zkEVM/specifications/pil/permutation-arguments.md
+          - Inclusion arguments: zkEVM/specifications/pil/inclusion-arguments.md
+          - Compiling using PILCOM: zkEVM/specifications/pil/compiling-using-pilcom.md
+          - Configuration files: zkEVM/specifications/pil/configuration-files.md
+          - PLONK in PIL: zkEVM/specifications/pil/plonk-in-pil.md
+          - Public values: zkEVM/specifications/pil/public-values.md
+        - zkASM:
+          - zkASM: zkEVM/specifications/zkasm/index.md
+          - Basic Syntax: zkEVM/specifications/zkasm/basic-syntax.md
+          - Examples: zkEVM/specifications/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/specifications/evm-differences.md
       - Concepts:
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -451,6 +469,7 @@ extra_css:
   - _site_essentials/stylesheets/extra.css
   - _site_essentials/stylesheets/section-nav.css
   - https://fonts.googleapis.com/icon?family=Material+Icons
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 markdown_extensions:
   - toc:
@@ -498,3 +517,12 @@ plugins:
 
 validation:
   absolute_links: warn
+
+extra_javascript:
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css

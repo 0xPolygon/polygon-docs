@@ -12,7 +12,7 @@ To incentivize the Aggregator for each batch sequenced, the Sequencer must lock 
 
 The below diagram depicts the various fees and rewards earned by the protocol's actors.
 
-![Fees paid and rewards rewards for each actor in the protocol](../../img/zkvm/06l2-actor-income-outcomes.png)
+![Fees paid and rewards rewards for each actor in the protocol](../../img/zkEVM/06l2-actor-income-outcomes.png)
 
 To maximize its income, **the Sequencer prioritizes transactions with higher gas prices**. Furthermore, there is a threshold below which it is unprofitable for the Sequencer to execute transactions because the fees earned from L2 users are less than the fees paid for sequencing fees (plus L1 sequencing transaction fee).
 
@@ -53,13 +53,13 @@ $$
 where:
 
 - `L1AggTxGasFee` is the Aggregation transaction gas fee paid in L1,
--  `batchReward` is the quantity of MATIC earned per batch aggregated,
--  `nBatches` is the number of batches in the sequence,
+- `batchReward` is the quantity of MATIC earned per batch aggregated,
+- `nBatches` is the number of batches in the sequence,
 - `MATIC/ETH` is the price of MATIC token expressed in ETH.
 
 ## Variable batchFee re-adjustments
 
-The `batchFee` is automatically adjusted with every aggregation of a sequence by an independent Aggregator. 
+The `batchFee` is automatically adjusted with every aggregation of a sequence by an independent Aggregator.
 
 This happens when the Trusted Aggregator isn't working properly and the `batchFee` variable needs to be changed to encourage aggregation. Further information on the Trusted Aggregator's inactivity or malfunctioning is provided in upcoming sections.
 
@@ -93,7 +93,7 @@ The graph below shows the percentage variation of the 'batchFee' variable depend
 
 It should be noted that the goal is to increase the aggregation reward in order to incentivize aggregators.
 
-![% of batch fee variation when late batches dominate the sequence](../../img/zkvm/07l2-batch-fee-var.png)
+![% of batch fee variation when late batches dominate the sequence](../../img/zkEVM/07l2-batch-fee-var.png)
 
 ### Case 2
 
@@ -105,7 +105,7 @@ $$
 
 The graph below shows the percentage variation of the `batchFee` variable depending on the `diffBatches` value for different values of `multiplierBatchFee` when batches below the time target dominate the sequence. It should be noted that the goal is to **reduce the aggregation reward**.
 
-![% of batch fee variation when batches below the time target dominate the sequence](../../img/zkvm/08l2-batches-below-time-target.png)
+![% of batch fee variation when batches below the time target dominate the sequence](../../img/zkEVM/08l2-batches-below-time-target.png)
 
 To summarize, the admin can tune the reaction of `batchFee` variable re-adjustments by adjusting `veryBatchTimeTarget` and `multiplierBatchFee`. The values set during the contract's initialization are listed below:
 

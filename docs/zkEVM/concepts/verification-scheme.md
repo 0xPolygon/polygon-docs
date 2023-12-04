@@ -1,8 +1,9 @@
 ## Constructing the verification scheme
 
-The zkEVM's basic proof system for proving correctness of all state machine computations is a **STARK**. 
+The zkEVM's basic proof system for proving correctness of all state machine computations is a **STARK**.
 
 The fundamental configuration of the zkProver:
+
 - It utilises STARK proofs for proving correctness of computations, due to their speed.
 - For succinct verification, these STARK proofs are in turn proved with a single SNARK.
 - So, it employs STARK proofs internally, while the publicised validity proofs are SNARKs.
@@ -17,7 +18,7 @@ A STARK falls short of succinctness because, although verifier arithmetic comple
 
 See the table below, taken from the presentation [here](https://docs.google.com/presentation/d/1gfB6WZMvM9mmDKofFibIgsyYShdf0RV_Y8TLz3k1Ls0/edit#slide=id.g443ebc39b4_0_110), for a quick comparison of proofs sizes, prover and verification times, between STARKs, SNARKs and [Bulletproofs](https://eprint.iacr.org/2017/1066.pdf).
 
-![Comparison of Proof Sizes, Proof and Verification Times](../../img/zkvm/fib9-stark-prf-sizes-times.png)
+![Comparison of Proof Sizes, Proof and Verification Times](../../img/zkEVM/fib9-stark-prf-sizes-times.png)
 
 ### FRI-PCS context
 
@@ -31,20 +32,20 @@ FRI is in fact a Merkle commitment scheme where commitments are roots of Merkle 
 
 **The FRI protocol is considered fast for several reasons;**
 
-1. Due to its resemblance of the ubiquitous Fast Fourier Transforms (FFTs). 
+1. Due to its resemblance of the ubiquitous Fast Fourier Transforms (FFTs).
 2. The arithmetic complexity of the prover is strictly linear.
-3. The size of the proof is O(n log(n)). 
+3. The size of the proof is O(n log(n)).
 4. The arithmetic complexity of the verifier is strictly logarithmic.
 
-Our special implementation of a STARK is called **PIL-STARK**, and its polynomial commitment scheme (PCS) is also based on the FRI protocol. We will later demonstrate how PIL-STARK is used to prove the polynomial identities of the mFibonacci state machine. 
+Our special implementation of a STARK is called **PIL-STARK**, and its polynomial commitment scheme (PCS) is also based on the FRI protocol. We will later demonstrate how PIL-STARK is used to prove the polynomial identities of the mFibonacci state machine.
 
 Before describing PIL-STARK a quick look at the novel Polynomial Identities Language (PIL), and some of its distinguishing features, will be helpful.
 
 ### Polynomial Identity Language
 
-**PIL** is a domain-specific language (DSL) that provides a method for naming polynomials and describing the identities that define computations carried out by a state machine. 
+**PIL** is a domain-specific language (DSL) that provides a method for naming polynomials and describing the identities that define computations carried out by a state machine.
 
-A typical $\texttt{.pil}$ file for a given state machine specifies the details of the computation that the state machine carries out; 
+A typical $\texttt{.pil}$ file for a given state machine specifies the details of the computation that the state machine carries out;
 
 - the size (or degree) of the polynomials. i.e., the number of rows of the execution trace.
 - the namespace of the state machine, which becomes a prefix to names of the SM's polynomials.
@@ -57,7 +58,7 @@ In cases where several state machines are being proved; although each SM may hav
 
 See the figure below for a description of the mFibonacci SM in PIL, as an $\texttt{mFibonacci.pil}$ file.
 
-![The .pil file of the mFibonacci State Machine](../../img/zkvm/fib10-pil-eg-mfibonacci.png)
+![The .pil file of the mFibonacci State Machine](../../img/zkEVM/fib10-pil-eg-mfibonacci.png)
 
 The value of the polynomial $\mathtt{a}$ in the next step (or state) of the state machine, is denoted by $\mathtt{a'}$ and it is read "a"-prime. i.e., If $\mathtt{a = P(\omega^i)}$ then $\mathtt{a' = P(\omega^{i+1})}$.
 
@@ -79,14 +80,14 @@ We demonstrate compiling the $\texttt{mFibonacci.pil}$ file into a $\texttt{.jso
 
 Here's how to achieve the compilation of the $\texttt{mFibonacci.pil}$ file;
 
-1. Clone the $\texttt{PILCOM}$ [repo](https://github.com/0xPolygonHermez/pilcom), 
+1. Clone the $\texttt{PILCOM}$ [repo](https://github.com/0xPolygonHermez/pilcom),
    $$
    \texttt{git clone https://github.com/0xPolygonHermez/pilcom}
    $$
 
-2. Once cloned, switch directory to $\texttt{pilcom/}$, and install the module and build the parser, 
+2. Once cloned, switch directory to $\texttt{pilcom/}$, and install the module and build the parser,
    $$
-   \texttt{pilcom\$ npm install}\text{ }\text{ }\text{ }\text{ } \\ 
+   \texttt{pilcom\$ npm install}\text{ }\text{ }\text{ }\text{ } \\
     \texttt{pilcom\$ npm run build}
    $$
 
@@ -103,7 +104,7 @@ Here's how to achieve the compilation of the $\texttt{mFibonacci.pil}$ file;
    $$
    You might need to prefix the path "$\texttt{myproject/mfibonacci.pil}$" with "~/"  
 
-5. If successful, the output report (printed in the terminal) looks like this, ![PILCOM Result For mFibonacci SM](../../img/zkvm/fib11-pilcom-res-mfibon.png) 
+5. If successful, the output report (printed in the terminal) looks like this, ![PILCOM Result For mFibonacci SM](../../img/zkEVM/fib11-pilcom-res-mfibon.png)
 
    It provides information on the number of polynomials used (both constant and committed), the number of polynomial identities to be checked, and other information pertaining to the number of identities checked with; $\texttt{Plookup}$ tables, $\texttt{Permutation}$ checks and $\texttt{Connection}$ checks.
 
@@ -111,11 +112,11 @@ Here's how to achieve the compilation of the $\texttt{mFibonacci.pil}$ file;
 
    In our case, the $\texttt{.json}$ file produced by $\texttt{PILCOM}$ appears in the "MYPROJECT" folder as $\texttt{\{ \} fibonacci.pil.json}$ and its content looks like this (Well, after removing the many newlines),
 
-   ![Contents of the {} fibonacci.pil.json file](../../img/zkvm/fib12-inside-parsed-pil.png)
+   ![Contents of the {} fibonacci.pil.json file](../../img/zkEVM/fib12-inside-parsed-pil.png)
 
-   The $\texttt{\{ \} fibonacci.pil.json}$ file contains much more detail than the results seen in Step 5 above. For instance, it reflects the polynomial names prefixed with the state machine namespace $\texttt{mFibonacci}$ as stipulated to in the $\texttt{mFibonacci.pil}$ file. 
+   The $\texttt{\{ \} fibonacci.pil.json}$ file contains much more detail than the results seen in Step 5 above. For instance, it reflects the polynomial names prefixed with the state machine namespace $\texttt{mFibonacci}$ as stipulated to in the $\texttt{mFibonacci.pil}$ file.
 
-   Each polynomial is further described with four (4) attributes; 
+   Each polynomial is further described with four (4) attributes;
 
    (a)  $\texttt{type}$ which specifies whether the polynomial is committed, constant or intermediate.
 

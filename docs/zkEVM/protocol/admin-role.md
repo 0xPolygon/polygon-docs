@@ -39,7 +39,6 @@ Moreover, all proxies are owned by the Admin account, making it the only account
 
      Timelock Controller is a smart contract that enables setting up a delay to provide users some time to leave before applying potentially risky maintenance procedures.
 
-
 The **Timelock Controller** has been added to the zkEVM Protocol in order to improve user security and confidence.
 
 The Admin can schedule and commit maintenance operations transactions in L1 using a Timelock Controller, and the timelock can be activated to carry out the transactions when a specified `minDelay` time has passed.
@@ -56,7 +55,7 @@ The Admin carries significant and critical responsibility, which is why it is co
 
 Below figure shows the governance tree of Polygon zkEVM L1 contracts.
 
-![governance tree of zkEVM L1 contracts](../../img/zkvm/governance-tree.png)
+![governance tree of zkEVM L1 contracts](../../img/zkEVM/governance-tree.png)
 
 Protocol maintenance operations can only be performed by following these steps:
 

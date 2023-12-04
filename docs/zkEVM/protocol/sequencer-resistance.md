@@ -2,7 +2,7 @@ Users must rely on a Trusted Sequencer for their transactions to be executed in 
 
 **A forced batch is a collection of L2 transactions that users can commit to L1 to publicly declare their intent to execute those transactions**.
 
-![Forced batch sequencing flow](../../img/zkvm/09l2-forced-batch-seq-flow.png)
+![Forced batch sequencing flow](../../img/zkEVM/09l2-forced-batch-seq-flow.png)
 
 The `PolygonZkEVM.sol` contract has a `forcedBatches` mapping, as shown in the above figure, in which users can submit transaction batches to be forced. The `forcedBatches` mapping serves as an immutable notice board where forced batches are timestamped and published before being included in a sequence.
 
@@ -15,7 +15,6 @@ mapping(uint64 => bytes32) public forcedBatches;
 !!!caution
     The Trusted Sequencer will include these forced batches in future sequences to maintain its status as a trusted entity. Otherwise, users will be able to demonstrate that they are being censored, and the Trusted Sequencer's trusted status will be revoked.
 
-
 Although the Trusted Sequencer is incentivized to sequence the forced batches published in the `forcedBatches` mapping, this does not guarantee finality of the transactions' execution in those batches.
 
 In order to ensure finality in the case of Trusted Sequencer's malfunction, the L1 `PolygonZkEVM.sol` contract has an alternative batch sequencing function called `sequenceForceBatches`. **This function allows anyone to sequence forced batches that have been published in the `multiplierBatchFee` mapping for a time period**, specified by the public constant `FORCE_BATCH_TIMEOUT`, yet they have not been sequenced. The **timeout is set to 5 days**.
@@ -24,8 +23,8 @@ Any user can publish a batch to be forced by directly calling `forceBatch` funct
 
 ```
 function forceBatch(
-	bytes memory transactions ,
-	uint256 maticAmount
+ bytes memory transactions ,
+ uint256 maticAmount
 ) public ifNotEmergencyState isForceBatchAllowed
 ```
 
@@ -55,11 +54,11 @@ The `lastForceBatch` storage variable, which is incremented for each forced batc
 
 ```
 keccak256(
-	abi.encodePacked(
-		keccak256(bytes transactions),
-		bytes32 globalExitRoot,
-		unint64 minTimestamp
-	)
+ abi.encodePacked(
+  keccak256(bytes transactions),
+  bytes32 globalExitRoot,
+  unint64 minTimestamp
+ )
 );
 ```
 
@@ -71,7 +70,7 @@ In the extremely unlikely event that **the Trusted Sequencer fails, any user can
 
 ```
 function sequenceForceBatches(
-	ForcedBatchData[] memory batches
+ ForcedBatchData[] memory batches
 ) public ifNotEmergencyState isForceBatchAllowed
 ```
 
@@ -91,4 +90,4 @@ Note that since the sequences of forced batches sequenced using the `sequenceFor
 
 This situation has been detected and handled by the node software. It will reorganise its local L2 State instance based on the L2 State retrieved from L1. The diagram below depicts the distinctions between trusted and virtual L2 states that occur when a forced batch sequence is executed.
 
-![Differences between trusted and virtual L2 State](../../img/zkvm/10l2-diff-trustd-virtual-state.png)
+![Differences between trusted and virtual L2 State](../../img/zkEVM/10l2-diff-trustd-virtual-state.png)

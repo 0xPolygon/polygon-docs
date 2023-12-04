@@ -6,9 +6,9 @@ We denote it by $\texttt{zkPC}$ because it is verified in a zero-knowledge manne
 
 The $\texttt{zkPC}$ is therefore a new column of the execution trace and it contains, at each clock, the line in the zkASM program of the instruction being executed.
 
-![Figure 7: A state machine with a Program Counter](../../img/zkvm/gen7-state-machine-w-zkpc.png)
+![Figure 7: A state machine with a Program Counter](../../img/zkEVM/gen7-state-machine-w-zkpc.png)
 
-In addition to the $\texttt{JMPZ(addr)}$, an unconditional jump instruction $\texttt{JMP(addr)}$ is allowed in the zkASM program. 
+In addition to the $\texttt{JMPZ(addr)}$, an unconditional jump instruction $\texttt{JMP(addr)}$ is allowed in the zkASM program.
 
 Unlike the $\texttt{JMPZ(addr)}$ instruction, when the state machine executes $\texttt{JMP(addr)}$, it must jump to the line $\texttt{addr}$, irrespective of what the value of $\texttt{op}$ is.
 
@@ -18,18 +18,18 @@ This is how the $\texttt{JMP(addr)}$ instruction is implemented: A new selector 
 $$
 \mathtt{zkPC' = (zkPC+1)+JMP \cdot \big(addr−(zkPC+1)\big)} \tag{Eqn 0*}
 $$
-$\texttt{JMP}$ therefore acts as a 'flag' where; 
+$\texttt{JMP}$ therefore acts as a 'flag' where;
 
 - $\mathtt{zkPC' =  (zkPC+1)+ 0 \cdot \big(addr−(zkPC+1)\big) = zkPC+1}$, if $\texttt{JMP}$ is not activated (i.e., if $\texttt{JMP}$ is $\mathtt{0}$), or
-- $\mathtt{zkPC' = (zkPC+1)+ 1 \cdot \big(addr−(zkPC+1)\big) = addr}$, if $\texttt{JMP}$ is activated (i.e., if $\texttt{JMP}$ is $\mathtt{1}$). 
+- $\mathtt{zkPC' = (zkPC+1)+ 1 \cdot \big(addr−(zkPC+1)\big) = addr}$, if $\texttt{JMP}$ is activated (i.e., if $\texttt{JMP}$ is $\mathtt{1}$).
 
 Note that execution continues with the next chronological line of instruction $\texttt{zkPC+1}$ when $\texttt{JMP}$ is $\mathtt{0}$, but otherwise proceeds to execute the instruction in line number $\texttt{addr}$.
 
 ### Program Counter Constraint Related To JMPZ
 
-The $\texttt{JMPZ(addr)}$ similarly needs a selector to be added as an extra column to the execution trace, call it $\texttt{JMPZ}$. 
+The $\texttt{JMPZ(addr)}$ similarly needs a selector to be added as an extra column to the execution trace, call it $\texttt{JMPZ}$.
 
-Since the $\texttt{JMPZ(addr)}$ instruction is executed only on condition that $\texttt{op}$ is zero, we introduce a flag called $\mathtt{isZero}$, such that; 
+Since the $\texttt{JMPZ(addr)}$ instruction is executed only on condition that $\texttt{op}$ is zero, we introduce a flag called $\mathtt{isZero}$, such that;
 
 $\mathtt{isZero = 1}$ if $\texttt{op = 0}$, and $\mathtt{isZero = 0}$ if $\mathtt{op \not= 0}$.
 
@@ -55,7 +55,7 @@ $$
 
 In order to ascertain correct execution of the $\texttt{JMPZ(addr)}$ instruction, it suffices to check the above three constraints; $\text{Eqn 1*}$, $\text{Eqn 2*}$ and $\text{Eqn 3*}$.
 
-Note that $\mathtt{op^{−1}}$ is not part of any instruction. The evaluations of $\mathtt{op^{−1}}$ therefore have to be included in the execution trace as a committed polynomial, and thus enables checking the first identity, $\text{Eqn 1*}$. 
+Note that $\mathtt{op^{−1}}$ is not part of any instruction. The evaluations of $\mathtt{op^{−1}}$ therefore have to be included in the execution trace as a committed polynomial, and thus enables checking the first identity, $\text{Eqn 1*}$.
 
 Most importantly, we rename the polynomial $\mathtt{op^{−1}}$ as $\texttt{invOp}$.
 
@@ -95,19 +95,19 @@ With the intermediate definition in $\text{Eqn **}$ , we are preparing the path 
 
 ## Correct Program ending with w loop
 
-We have previously resorted to ending our program by repeating the "$\texttt{:END}$" instruction. This was not the best solution. 
+We have previously resorted to ending our program by repeating the "$\texttt{:END}$" instruction. This was not the best solution.
 
 To properly finish our programs, we need to ensure that the execution trace generated from the assembly is cyclic.
 
 We therefore utilise a loop while the current $\texttt{line}$ is less than $\mathtt{N-1}$, a step before the last step of the execution trace. That is, before jumping back to the start, with the $\texttt{JMP(start)}$ instruction, the current $\texttt{line}$ is checked with the function "$\texttt{beforeLast()}$".
 
-So, we query the executor for when the execution trace is at its last but one row, with the following line of code, 
+So, we query the executor for when the execution trace is at its last but one row, with the following line of code,
 
 ```$beforeLast()    :JMPZ(finalWait);```
 
 The assembly program uses labels instead of explicit line numbers, hence conforming to how assembly programs are typically written. Labels are convenient because with them, the assembly compiler can take care of computing actual line numbers. For instance, as in Figure 8 below; $\mathtt{start}$ is line $\mathtt{0}$ and $\mathtt{finalWait}$ is line $\mathtt{5}$.
 
-![Figure 8: Ending a Program with a loop](../../img/zkvm/gen8-end-prog-w-loop.png)
+![Figure 8: Ending a Program with a loop](../../img/zkEVM/gen8-end-prog-w-loop.png)
 
 ## Commentary on the execution trace
 
@@ -115,7 +115,7 @@ The intention here to give a step-by-step commentary on the execution trace for 
 
 We show the values corresponding to each $\texttt{step}$ of the execution trace, particularly for,
 
-- The committed polynomials that form part of the instruction; $\texttt{CONST}$, $\texttt{offset}$, $\texttt{JMP}$, $\texttt{JMPZ}$, $\texttt{setB}$, $\texttt{setA}$, $\texttt{inFREE}$,  $\texttt{inB}$, $\texttt{inA}$, $\texttt{zkPC}$ and $\mathtt{zkPC'}$. 
+- The committed polynomials that form part of the instruction; $\texttt{CONST}$, $\texttt{offset}$, $\texttt{JMP}$, $\texttt{JMPZ}$, $\texttt{setB}$, $\texttt{setA}$, $\texttt{inFREE}$,  $\texttt{inB}$, $\texttt{inA}$, $\texttt{zkPC}$ and $\mathtt{zkPC'}$.
 - The committed polynomials that are only part of the trace; $\texttt{FREE}$, $\texttt{A}$, $\mathtt{A'}$, $\texttt{B}$, $\mathtt{B'}$ and  $\texttt{invOp}$.
 - The intermediate polynomials $\texttt{Im}$, which are just intermediate definitions; $\texttt{op}$, $\texttt{isZero}$ and $\texttt{doJMP}$.
 
@@ -141,11 +141,11 @@ $$
 \mathtt{isZero\ := (1 − op \cdot op^{−1}) = (1 − 3 \cdot 3^{−1}) = 0}.\qquad\qquad\qquad\qquad\text{ }\qquad \\
 $$
 
-Also, since there are no jumps in the instruction, $\mathtt{JMP = 0}$ and $\mathtt{JMPZ = 0}$, and therefore $\mathtt{zkPC′ = zkPC + 1}$. 
+Also, since there are no jumps in the instruction, $\mathtt{JMP = 0}$ and $\mathtt{JMPZ = 0}$, and therefore $\mathtt{zkPC′ = zkPC + 1}$.
 
-We use Eqn 4* to check whether $\mathtt{zkPC′ = zkPC + 1 = 0+1 = 1}$. 
+We use Eqn 4* to check whether $\mathtt{zkPC′ = zkPC + 1 = 0+1 = 1}$.
 
-First, note that, 
+First, note that,
 
 $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 0 \cdot 0 + 0 = 0}. \qquad\qquad\qquad\qquad\qquad \\
@@ -167,11 +167,11 @@ $$
 
 and $\mathtt{invOp = (-3)^{-1}}$.
 
-So, $\mathtt{isZero\ := (1 − op \cdot op^{−1}) = \big(1 − (-3) \cdot (-3)^{−1}\big) = 0}$. 
+So, $\mathtt{isZero\ := (1 − op \cdot op^{−1}) = \big(1 − (-3) \cdot (-3)^{−1}\big) = 0}$.
 
 Again, the absence of jumps in the instruction means, $\mathtt{JMP = 0}$ and $\mathtt{JMPZ = 0}$. And therefore $\mathtt{zkPC′ = zkPC + 1}$.
 
-Again, we use Eqn 4 to check whether $\mathtt{zkPC′ = zkPC + 1 = 1+1 = 2}$. 
+Again, we use Eqn 4 to check whether $\mathtt{zkPC′ = zkPC + 1 = 1+1 = 2}$.
 
 Note that,
 
@@ -190,7 +190,7 @@ Here is the execution trace thus far;
 $$
 \small
 \begin{array}{|l|c|}
-\hline 
+\hline
 \texttt{step} & \bf{instructions} \\ \hline
 \quad\texttt{0} & \mathtt{{getAFreeInput()} => A}\text{ }\\ \hline
 \quad\texttt{1} & \mathtt{-3 => B}\text{ }\qquad\qquad\qquad\text{ }\text{ } \\ \hline
@@ -245,8 +245,6 @@ $$
 $$
 The Program Counter therefore moves to the subsequent line of instruction. That is, the next instruction to be executed must the one in $\texttt{line}$ $\texttt{3}$ of the Assembly code.
 
-
-
 ### Step 3: "A :JMPZ(finalWait)"
 
 According this instruction, the executor has to jump on condition that $\texttt{A}$ is $\mathtt{0}$, otherwise there is no jump. The polynomials immediately involved in this instruction are $\mathtt{inA}$ and $\mathtt{JMPZ}$. Therefore, $\mathtt{inA = 1}$ and $\mathtt{JMPZ = 1}$.
@@ -275,13 +273,13 @@ $$
 
 ### Step 4:  "{beforeLast()} :JMPZ(finalWait)"
 
-The $\texttt{beforeLast()}$ function, which keeps track of the number of steps being executed, reads the current step-number as a free input. Since the execution trace is currently at step $\mathtt{4}$ and not $\mathtt{6}$, then the executor returns a zero. And thus, $\mathtt{inFREE = 1}$ and $\mathtt{JMPZ = 1}$ but $\mathtt{inA = 0}$, $\mathtt{inB =0}$, $\mathtt{FREE = 0}$ and $\mathtt{CONST = 0}$. Consequently, 
+The $\texttt{beforeLast()}$ function, which keeps track of the number of steps being executed, reads the current step-number as a free input. Since the execution trace is currently at step $\mathtt{4}$ and not $\mathtt{6}$, then the executor returns a zero. And thus, $\mathtt{inFREE = 1}$ and $\mathtt{JMPZ = 1}$ but $\mathtt{inA = 0}$, $\mathtt{inB =0}$, $\mathtt{FREE = 0}$ and $\mathtt{CONST = 0}$. Consequently,
 $$
 \mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot A\ +\ 0 \cdot B\ +\ 1 \cdot 0\ +\ 0\  =\ 0}.
 $$
 Therefore $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$. Hence according to $\texttt{JMPZ(finalWait)}$, a jump is executed. This means the executor must jump to the $\mathtt{offset = 5}$ address, as computed by the Assembly compiler. It follows that $\mathtt{zkPC′}$ must be $\mathtt{5}$.
 
-Let us use Eqn 4* to check if indeed $\mathtt{zkPC′ = 5}$. We first note that, there are no unconditional jumps, so $\mathtt{JMP = 0}$. And, 
+Let us use Eqn 4* to check if indeed $\mathtt{zkPC′ = 5}$. We first note that, there are no unconditional jumps, so $\mathtt{JMP = 0}$. And,
 
 $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 1 \cdot 1 + 0 = 1}. \qquad\qquad\qquad\qquad\qquad \\
@@ -296,7 +294,7 @@ The execution trace is currently as follows,
 $$
 \small
 \begin{array}{|l|c|}
-\hline 
+\hline
 \texttt{step} & \bf{instructions} \\ \hline
 \quad\texttt{0} & \mathtt{{getAFreeInput()} => A}\quad\qquad\qquad\\ \hline
 \quad\texttt{1} & \mathtt{-3 => B}\qquad\qquad\qquad\qquad\qquad\qquad\text{ }\text{ } \\ \hline
@@ -348,7 +346,7 @@ $$
 \mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot A\ +\ 0 \cdot B\ +\ 1 \cdot 0\ +\ 0\  =\ 0},
 $$
 
-which means  $\mathtt{FREE = 0}$ and $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$. So, again $\texttt{JMPZ(finalWait)}$ gets executed. 
+which means  $\mathtt{FREE = 0}$ and $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$. So, again $\texttt{JMPZ(finalWait)}$ gets executed.
 
 The absence of unconditional jumps means $\mathtt{JMP = 0}$, while $\mathtt{JMPZ = 1}$. Since $\mathtt{offset = 5}$, the Program Counter, $\mathtt{zkPC′}$, must in the next step be $\mathtt{5}$.
 
@@ -370,9 +368,9 @@ In this case, the current step is the last but one step. That is, the $\texttt{b
 $$
 \mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot A\ +\ 0 \cdot B\ +\ 1 \cdot 1\ +\ 0\  =\ 1}.
 $$
-This means  $\mathtt{FREE = 1}$ and $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 1 \cdot 1) = 0}$. And, this time $\texttt{JMPZ(finalWait)}$ is not executed, implying the next Program Counter, $\mathtt{zkPC′ = zkPC + 1}$. 
+This means  $\mathtt{FREE = 1}$ and $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 1 \cdot 1) = 0}$. And, this time $\texttt{JMPZ(finalWait)}$ is not executed, implying the next Program Counter, $\mathtt{zkPC′ = zkPC + 1}$.
 
-Since there are no jumps in this step, $\mathtt{JMP = 0}$ and $\mathtt{JMPZ = 0}$, yielding 
+Since there are no jumps in this step, $\mathtt{JMP = 0}$ and $\mathtt{JMPZ = 0}$, yielding
 $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 0 \cdot 1 + 0 = 0}, \\
 $$
@@ -383,15 +381,15 @@ $$
 
 ### Step 7: "0=>A,B :JMP(start)"
 
-The aim with this instruction is to complete the execution trace such that it is of the correct size (which is $\mathtt{8}$ in this example). 
+The aim with this instruction is to complete the execution trace such that it is of the correct size (which is $\mathtt{8}$ in this example).
 
-It ends the execution by setting $\texttt{A}$ and $\texttt{B}$ to zero, and jumps to $\mathtt{start}$, which is line $\mathtt{0}$. And thus, $\mathtt{zkPC'}$ must be $\mathtt{0}$. Hence, $\mathtt{setA = 1}$, $\mathtt{setB = 1}$ and $\mathtt{JMP = 1}$ but $\mathtt{inFREE = 0}$, $\mathtt{inA =0}$, $\mathtt{inB =0}$ and $\mathtt{CONST = 0}$. Consequently, 
+It ends the execution by setting $\texttt{A}$ and $\texttt{B}$ to zero, and jumps to $\mathtt{start}$, which is line $\mathtt{0}$. And thus, $\mathtt{zkPC'}$ must be $\mathtt{0}$. Hence, $\mathtt{setA = 1}$, $\mathtt{setB = 1}$ and $\mathtt{JMP = 1}$ but $\mathtt{inFREE = 0}$, $\mathtt{inA =0}$, $\mathtt{inB =0}$ and $\mathtt{CONST = 0}$. Consequently,
 $$
 \mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot 0\ +\ 0 \cdot (-3)\ +\ 0 \cdot 1\ +\ 0\  =\ 0}.
 $$
-Therefore $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$. 
+Therefore $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$.
 
-There are no conditional jumps, so $\mathtt{JMPZ = 0}$. Then, as a consequence of this, 
+There are no conditional jumps, so $\mathtt{JMPZ = 0}$. Then, as a consequence of this,
 $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 0 \cdot 1 + 1 = 1}. \\
 $$
@@ -407,7 +405,7 @@ See the complete execution trace below,
 $$
 \small
 \begin{array}{|l|c|}
-\hline 
+\hline
 \texttt{step} & \bf{instructions} \\ \hline
 \quad\texttt{0} & \mathtt{{getAFreeInput()} => A}\quad\qquad\qquad\\ \hline
 \quad\texttt{1} & \mathtt{-3 => B}\qquad\qquad\qquad\qquad\qquad\qquad\text{ }\text{ } \\ \hline
@@ -467,7 +465,7 @@ Note that in cases where the jumps are such that $\mathtt{offset}$ is one of the
 
 ## Publics Placed at Known Steps
 
-Regarding the $\texttt{publics}$, it is best to place these at specific and known steps. 
+Regarding the $\texttt{publics}$, it is best to place these at specific and known steps.
 
 Notice that, in the above example, the final loop added to Assembly program repeats the values of the registries $\mathtt{A}$ and $\mathtt{B}$ until they are reset to Step $\mathtt{0}$.
 

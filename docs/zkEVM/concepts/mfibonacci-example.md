@@ -2,12 +2,12 @@ Consider a proof/verification scheme, using an arbitrary Polynomial Commitment S
 
 ## What is a multiplicative Fibonacci series?
 
-The multiplicative Fibonacci Series (or simply mFibonacci Series), denoted by 
+The multiplicative Fibonacci Series (or simply mFibonacci Series), denoted by
 $$
 \mathbf{a_0, a_1, a_2, \dots , a_n}
 $$
 
-has the property that the product of every two consecutive members $\mathbf{a_{i-1}}$ and $\mathbf{a_i}$ gives the value of the next member $\mathbf{a_{i+1}}$. That is, $\mathbf{ a_{i+1} = a_{i-1}\cdot a_i }$. 
+has the property that the product of every two consecutive members $\mathbf{a_{i-1}}$ and $\mathbf{a_i}$ gives the value of the next member $\mathbf{a_{i+1}}$. That is, $\mathbf{ a_{i+1} = a_{i-1}\cdot a_i }$.
 
 Also, the initial values are specified as $\mathbf{a_0} = 2$ and $\mathbf{a_1} = 1$.
 
@@ -17,7 +17,7 @@ $$
 \mathbf{ \ \ 2,\ \ 1,\ \ 2,\ \ 2,\ \ 4,\ \ 8,\ \ 32,\ \ 256,\ \ 8192,\ \ 2097152,\ \ \dots }
 $$
 
-As a trivial example, the challenge may be: Prove knowledge of the initial values that produced $\mathbf{a_{10} = 17179869184}$, the eleventh member of the mFibonacci Series, without revealing the initial values. 
+As a trivial example, the challenge may be: Prove knowledge of the initial values that produced $\mathbf{a_{10} = 17179869184}$, the eleventh member of the mFibonacci Series, without revealing the initial values.
 
 The task therefore, is to first build a state machine that would enable anyone to prove knowledge of the initial values $\mathbf{a_0}$ and $\mathbf{a_1}$ that yields a specific N-th member of the mFibonacci Series.
 
@@ -26,7 +26,7 @@ The task therefore, is to first build a state machine that would enable anyone t
 Consider a state machine with two registries $\mathbf{A}$ and $\mathbf{B}$ where
 $$
 \begin{aligned}
-\mathbf{A} = [A_0, A_1, \dots , A_T ], \\ 
+\mathbf{A} = [A_0, A_1, \dots , A_T ], \\
 \mathbf{B} = [B_0, B_ 1, \dots , B_T]
 \end{aligned}
 $$
@@ -34,7 +34,7 @@ such that the i-th state is the pair $\big( A_i , B_i \big)$.
 
 Such a state machine is an **mFibonacci state machine** if indeed the registry values conform to the format of the mFibonnacci Series. See Figure 4 below, for an mFibonacci state machine with the initial conditions, $A_0 = 2$ and $B_0 = 1$.
 
-![Figure 4: mFibonacci SM with two registries](../../img/zkvm/fib6-mfibon-sm-2-regs.png)
+![Figure 4: mFibonacci SM with two registries](../../img/zkEVM/fib6-mfibon-sm-2-regs.png)
 
 The state transitions from $\mathtt{S} = \big( A_i , B_i \big)$ to $\mathtt{S}' = \big( A_{i+1} , B_{i+1} \big)$ conform to the following constraints;
 
@@ -49,7 +49,7 @@ The aim here is to; express the evolution of the execution trace in terms of pol
 
 ## Building polynomial identities
 
-The polynomials that represent the two registries are taken from the set of polynomials $\mathbb{F}_p [X]$, where the coefficients are elements of a prime field $\mathbb{F}_p$ and $p = 2^{64} − 2^{32} + 1$. 
+The polynomials that represent the two registries are taken from the set of polynomials $\mathbb{F}_p [X]$, where the coefficients are elements of a prime field $\mathbb{F}_p$ and $p = 2^{64} − 2^{32} + 1$.
 
 The polynomials are evaluated over the subgroup
 $$
@@ -100,7 +100,7 @@ However, the unrestricted value of $i$, which implies there is no bound on the n
 
 Let us test if the polynomial identities hold true for all permissible values of $i$. So let $X = \omega^7$ and refer to the registry values given in Figure 4.
 
-- For the first identity we get, 
+- For the first identity we get,
 
 $$
 \begin{aligned}
@@ -109,7 +109,7 @@ P(X\cdot \omega) = P(\omega^7 \cdot \omega) = P(\omega^8) = P(\omega^0) = A_0 = 
 \end{aligned}
 $$
 
-- Similarly, for the second identity, we get, 
+- Similarly, for the second identity, we get,
 
 $$
 \begin{aligned}
@@ -126,7 +126,7 @@ In order to inject some cyclicity into the mFibonacci SM, we add a third registr
 
 Hence the mFibonacci SM is as depicted in Figure 5 below.
 
-![mFibonacci SM with three registries](../../img/zkvm/fib7-mfibon-sm-3-regs.png)
+![mFibonacci SM with three registries](../../img/zkEVM/fib7-mfibon-sm-3-regs.png)
 
 The corresponding polynomial $R(x)$ is defined as follows;
 $$
@@ -146,10 +146,10 @@ The polynomial $R(x)$ is incorporated into the previous polynomial identities as
 
 $$
 \begin{aligned}
-P(X \cdot \omega) = \bigg\lvert_{\mathcal{H}}\ \ 
- Q(X) \cdot \big( 1 − R(X) \big) + R(X)\cdot  A_0 
+P(X \cdot \omega) = \bigg\lvert_{\mathcal{H}}\ \
+ Q(X) \cdot \big( 1 − R(X) \big) + R(X)\cdot  A_0
 \quad\quad\text{ }\text{ }\text{ } \\
-Q(X\cdot \omega) = \bigg\lvert_{\mathcal{H}}\ \ 
+Q(X\cdot \omega) = \bigg\lvert_{\mathcal{H}}\ \
 (1 − R(X)) \cdot P(X)\cdot Q(X) + R(X)\cdot B_0
 \end{aligned}
 $$
@@ -177,7 +177,7 @@ $$
 \end{aligned}
 $$
 
-- Similarly, for the second identity, we observe that, 
+- Similarly, for the second identity, we observe that,
 
 $$
 \begin{aligned}
@@ -233,7 +233,7 @@ In other words, the prover has to provide three polynomials $P(X)$, $Q(X)$, $P(X
 
 This logic is valid simply because the computations carried out by the state machine are deterministic by nature.
 
-### Proof elements and verification 
+### Proof elements and verification
 
 All computations are carried out in a field $\mathbb{F}_p$ , where $p = \mathtt{2^{64}-2^{32}+1}$, a Goldilocks-like prime number.
 
@@ -249,4 +249,4 @@ $$
 
 Anyone who knows the three polynomials and the correct initial conditions, say $A_0 = 234$ and $B_0 = 135$, can simply run the mFibonacci SM code to compute $A_{\mathtt{1023}} = P(\omega^{\mathtt{1023}})$. See below figure for the JS code.
 
-![Code Example of the mFibonacci SM's Computation Trace](../../img/zkvm/fib8-code-eg-exec-trace.png)
+![Code Example of the mFibonacci SM's Computation Trace](../../img/zkEVM/fib8-code-eg-exec-trace.png)
