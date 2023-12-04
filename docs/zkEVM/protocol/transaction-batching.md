@@ -2,6 +2,7 @@
 !!!info
     This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](submit-transaction.md) inside Polygon zkEVM.
 
+
 The **Trusted Sequencer** must batch the transactions using the following `BatchData` struct specified in the `PolygonZkEVM.sol` contract:
 
 ```

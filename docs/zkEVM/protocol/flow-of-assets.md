@@ -40,6 +40,6 @@ Consider now the case where a user commits to bridging some assets from L2 to L1
 
     For example, the interaction between the Consensus Contract and the Sequencer is omitted in the figure.
 
-    For a more wholistic view of the interaction between the Consensus Contract and the Sequencer, the reader is referred to earlier subsections of this documentation, specifically on the [<ins>Consensus Contract</ins>](/zkevm/architecture.md#consensus-contract).
+    For a more wholistic view of the interaction between the Consensus Contract and the Sequencer, the reader is referred to earlier subsections of this documentation, specifically on the [<ins>Consensus Contract</ins>](../architecture/index.md).
 
 ![A end-to-end flow of assets between L1 and L2](../../img/zkEVM/06pzb-complete-asset-flow-l1-l2.png)
