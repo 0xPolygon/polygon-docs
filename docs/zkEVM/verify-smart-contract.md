@@ -1,4 +1,3 @@
-
 Once a smart contract is deployed to zkEVM, it can be verified in various ways depending on the framework of deployment as well as the complexity of the contract. The aim here is to use examples to illustrate how you can manually verify a deployed smart contract.
 
 Ensure that your wallet is connected while following this guide. We will use Metamask wallet throughout this tutorial.
@@ -27,21 +26,21 @@ After successfully compiling a smart contract, follow the next steps to verify y
 
 #### Using Remix
 
-    In order to flatten the contract code with Remix, one needs to only right-click on the contract name and select **Flatten** option from the drop-down menu that appears. See the below figure for reference.
+In order to flatten the contract code with Remix, one needs to only right-click on the contract name and select **Flatten** option from the drop-down menu that appears. See the below figure for reference.
 
-    ![Selecting the flatten code option](../img/zkEVM/flatten-code-remix.png)
+![Selecting the flatten code option](../img/zkEVM/flatten-code-remix.png)
 
-    After selecting **Flatten**, a new `.sol` file with the suffix `_flatten.sol` is automatically created. Copy the contents of the new `<Original-Name>_flatten.sol` file and paste into the `Enter the Solidity Contract` field in the explorer.
+After selecting **Flatten**, a new `.sol` file with the suffix `_flatten.sol` is automatically created. Copy the contents of the new `<Original-Name>_flatten.sol` file and paste into the `Enter the Solidity Contract` field in the explorer.
 
 #### Using Foundry
 
-    In order to flatten the code using Foundry, the following command can be used:
+In order to flatten the code using Foundry, the following command can be used:
 
-    ```bash
-        forge flatten src/<Contract-Name> -o <Any-Name-For-Flattened-Code>.sol
-    ```
+```bash
+    forge flatten src/<Contract-Name> -o <Any-Name-For-Flattened-Code>.sol
+```
 
-    With this command, the flattened code gets saved in the `<Any-Name-For-Flattened-Code>.sol` file. Copy the contents of the new `<Any-Name-For-Flattened-Code>.sol` file and paste into the `Enter the Solodity Contract` field in the [explorer](https://testnet-zkevm.polygonscan.com).
+With this command, the flattened code gets saved in the `<Any-Name-For-Flattened-Code>.sol` file. Copy the contents of the new `<Any-Name-For-Flattened-Code>.sol` file and paste into the `Enter the Solodity Contract` field in the [explorer](https://testnet-zkevm.polygonscan.com).
 
 ??? "Standard input JSON"
     Click **Next** after selecting the **via Standard Input JSON** option.
