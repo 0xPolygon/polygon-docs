@@ -1,24 +1,26 @@
-Heimdall's "Ante handler" is responsible for checking and validating all transactions. After verification, it checks the balance of the sender for enough fees and deduct fees in case of successful transaction inclusion.
+Heimdall's "Ante Handler" plays a crucial role in the integrity and efficiency of transaction processing. It is primarily responsible for the preliminary verification and validation of all transactions, ensuring that they meet the necessary criteria before being included in a block. This includes checking the sender's balance to ensure there are sufficient funds to cover transaction fees and subsequently deducting these fees for successful transactions.
 
-## Gas limit
+## Advanced Gas Management in Heimdall
 
-Each block and transaction have a limit for gas usage. A block can contain multiple transactions, but gas used by all transactions in a block must be less than block gas limit to avoid larger blocks.
+### Block and Transaction Gas Limits
+
+Heimdall employs a gas limit system to regulate the computational and storage resources consumed by transactions and blocks. This system is designed to prevent excessive block sizes and ensure network stability.
+
+#### Block Gas Limit
+
+Each block in Heimdall has a maximum gas limit, constraining the total gas used by all transactions within the block. The sum of the gas used by each transaction in a block must not exceed this limit:
 
 ```go
 block.GasLimit >= sum(tx1.GasUsed + tx2.GasUsed + ..... + txN.GasUsed)
 ```
 
-Note that each state manipulation on transaction costs gas, including signature verification for the transaction.
-
-### Block gas limit
-
-Max block gas limit and bytes per block is passed while setting up app's consensus params: [https://github.com/maticnetwork/heimdall/blob/develop/app/app.go#L464-L471](https://github.com/maticnetwork/heimdall/blob/develop/app/app.go#L464-L471)
+The maximum block gas limit and block size are specified as part of the consensus parameters during the application setup, as seen in the Heimdall source code at [app.go#L464-L471](https://github.com/maticnetwork/heimdall/blob/develop/app/app.go#L464-L471):
 
 ```go
 maxGasPerBlock   int64 = 10000000 // 10 Million
 maxBytesPerBlock int64 = 22020096 // 21 MB
 
-// pass consensus params
+// Setting consensus parameters
 ConsensusParams: &abci.ConsensusParams{
  Block: &abci.BlockParams{
   MaxBytes: maxBytesPerBlock,
@@ -28,26 +30,30 @@ ConsensusParams: &abci.ConsensusParams{
 },
 ```
 
-### Transaction Gas limit
+#### Transaction Gas Limit
 
-The transaction gas limit is defined in params in `auth` module. It can be changed through the Heimdall `gov` module.
+For individual transactions, the gas limit is determined by parameters in the `auth` module and can be modified through Heimdall's governance (`gov`) module.
 
-### Checkpoint transaction gas limit
+#### Special Handling of Checkpoint Transactions
 
-Since block contains multiple transactions and verifies this particular transaction on the Ethereum chain, Merkle proof is required. To avoid extra Merkle proof verification for checkpoint transaction, Heimdall only allows one transaction in the block if the transaction type is `MsgCheckpoint`
+Checkpoint transactions, which require Merkle proof verification on the Ethereum chain, are treated distinctly. To streamline processing and avoid the overhead of additional Merkle proof verification, Heimdall restricts blocks containing a `MsgCheckpoint` transaction to just that one transaction:
 
 ```go
-// fee wanted for checkpoint transaction
+// Gas requirement for checkpoint transaction
 gasWantedPerCheckpoinTx sdk.Gas = 10000000 // 10 Million
 
-// checkpoint gas limit
+// Special gas limit handling for checkpoint transactions
 if stdTx.Msg.Type() == "checkpoint" && stdTx.Msg.Route() == "checkpoint" {
  gasForTx = gasWantedPerCheckpoinTx
 }
 ```
 
-## Transaction verification and replay protection
+## Enhanced Transaction Verification and Replay Protection
 
-Ante Handler handles and verifies signature in incoming transaction: [https://github.com/maticnetwork/heimdall/blob/develop/auth/ante.go#L230-L266](https://github.com/maticnetwork/heimdall/blob/develop/auth/ante.go#L230-L266)
+The Ante Handler in Heimdall is instrumental in ensuring the legitimacy and uniqueness of transactions. It performs a thorough verification of incoming transactions, including signature validation, as delineated in the source code at [ante.go#L230-L266](https://github.com/maticnetwork/heimdall/blob/develop/auth/ante.go#L230-L266).
 
-Each transaction must include `sequenceNumber` to avoid replay attacks. After each successful transaction inclusion, Ante handler increases the sequence number for the TX sender account to avoid duplication (replay) of the previous transactions.
+### Sequence Number for Replay Protection
+
+A critical aspect of transaction security in Heimdall is the use of a `sequenceNumber` in each transaction. This feature is a safeguard against replay attacks, where a transaction might be fraudulently or mistakenly repeated. To prevent such scenarios, the Ante Handler increments the sequence number for the sender's account after each successful transaction. This incrementation ensures that each transaction is unique and that previous transactions cannot be replayed.
+
+In summary, Heimdall's Ante Handler, along with its sophisticated gas management and transaction verification systems, provides a robust framework for secure and efficient transaction processing. The careful balance of block and transaction gas limits, coupled with advanced replay protection mechanisms, ensures the smooth operation of the Heimdall chain within the Polygon network.
