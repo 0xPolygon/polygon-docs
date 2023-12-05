@@ -2,7 +2,7 @@ This document describes how PLONK verification is implemented in Polynomial Iden
 
 This document will help us in understanding how to implement $\mathcal{PlonK}$ verification by using **connection arguments**. Let's begin!
 
-## PLONK-like Circuit
+## PLONK-like circuit
 
 Suppose one is given a $\mathcal{PlonK}$-like circuit $C$. Such a circuit is defined as a set of preprocessed polynomials $\texttt{QL}$, $\texttt{QR}$, $\texttt{QM}$, $\texttt{QO}$ and $\texttt{QC}$ describing all the $\mathcal{PlonK}$ gates (that is, interpolating the values of the PlonK selectors at each of the gates in a selected order), as well as connection polynomials; $\texttt{SA}$, $\texttt{SB}$ and $\texttt{SC}$; specifying the copy-constraints that need to be satisfied.
 
@@ -24,7 +24,7 @@ Belo figure shows the execution trace raised by the circuit.
 
 ![Execution trace for the PlonK-like circuit](../../../img/zkEVM/25pil2-exec-circuit-plonk-like-circuit.png)
 
-### PIL Code
+### PIL code
 
 The PIL code that validates this circuit is as follows:
 

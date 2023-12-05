@@ -10,36 +10,12 @@ Consider the same zkASM program with four instructions, as discussed before, exc
 
 $$
 \begin{aligned}
-
-\begin{array}{|l|c|}
-\hline
-\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ } \bf{Instructions }\\ \hline
-\texttt{ } \mathtt{\$\{getAFreeInput()\} => A} \\\hline
-\texttt{ } \mathtt{-3 => B} \qquad\qquad\qquad\qquad\quad\\\hline
-\texttt{ } \mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ }\\\hline
-\texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ }\\\hline
-\end{array}
-\hspace{0.1cm}
-
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
- \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline
- \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ \hline
-
-\texttt{0} & \texttt{p-3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-
- \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} \\ \hline
-
-  \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-
-\end{array}
-\hspace{0.1cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'}\\\hline
-\mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0}\\\hline
-\mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{p-3}\\\hline
-\mathtt{7} & \mathtt{4} & \mathtt{p-3} & \mathtt{p-3}\\\hline
-\mathtt{4} & \mathtt{0} & \mathtt{p-3} & \mathtt{0}\\\hline
+ \texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ } \bf{Instructions } & \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} \\ \hline
+\mathtt{\$\{getAFreeInput()\} => A} & \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0} \\ \hline
+\texttt{ } \mathtt{-3 => B} & \texttt{0} & \texttt{p-3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{p-3} \\ \hline
+\texttt{ } \mathtt{:ADD } & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} & \mathtt{7} & \mathtt{4} & \mathtt{p-3} & \mathtt{p-3} \\ \hline
+\texttt{ } \mathtt{:END } & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{4} & \mathtt{0} & \mathtt{p-3} & \mathtt{0} \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -51,44 +27,19 @@ The FFTs are most efficient for polynomials of degree $\mathtt{T + 1 = 2^N}$. Th
 Consider the following program, with only five instructions, and its corresponding execution trace.
 
 $$
-\begin{aligned}
-
-\begin{array}{|l|c|}
-\hline
-\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ } \bf{Instructions }\\ \hline
-\texttt{ } \mathtt{\$\{getAFreeInput()\} => A} \\\hline
-\texttt{ } \mathtt{3 => B} \qquad\qquad\qquad\qquad\quad\\\hline
-\texttt{ } \mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ }\\\hline
-\texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ }\\\hline
-\texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ }\\\hline
-\end{array}
-\hspace{0.1cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
- \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline
- \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ \hline
-
-\texttt{0} & \texttt{3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-
- \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} \\ \hline
-
-  \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} \\ \hline
-
-  \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-
-\end{array}
-\hspace{0.1cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'}\\\hline
-\mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0}\\\hline
-\mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{3}\\\hline
-\mathtt{7} & \mathtt{10} & \mathtt{3} & \mathtt{3}\\\hline
-\mathtt{10} & \mathtt{13} & \mathtt{3} & \mathtt{3}\\\hline
-\mathtt{13} & \mathtt{0} & \mathtt{3} & \mathtt{0}\\\hline
-\end{array}
-\end{aligned}
+   \begin{aligned}
+   \begin{array}{|l|c|}
+   \hline
+   \texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ } \bf{Instructions } & \texttt{FREE} & \texttt{CONST}& \texttt{setB} & \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} \\ \hline
+   \texttt{ } \mathtt{\$\{getAFreeInput()\} => A} & \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0} \\\hline
+   \texttt{ } \mathtt{3 => B} \qquad\qquad\qquad\qquad\quad & \texttt{0} & \texttt{3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{3} \\\hline
+   \texttt{ } \mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} & \mathtt{7} & \mathtt{10} & \mathtt{3} & \mathtt{3} \\\hline
+   \texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} & \mathtt{10} & \mathtt{13} & \mathtt{3} & \mathtt{3} \\\hline
+   \texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{13} & \mathtt{0} & \mathtt{3} & \mathtt{0} \\\hline
+   \end{array}
+   \end{aligned}
 $$
+
 
 The question is: How (or when) to end the program when the trace has size $\mathtt{5}$ and the polynomials have are of degree $\mathtt{2^3 = 8}$?
 
@@ -98,44 +49,16 @@ A simple and naïve fix could be to repeating the "$\texttt{:END}$" instruction 
 
 $$
 \begin{aligned}
-
-\begin{array}{|l|c|}
-\hline
-\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ } \bf{Instructions }\\ \hline
-\texttt{ } \mathtt{\$\{getAFreeInput()\} => A} \\\hline
-\texttt{ } \mathtt{3 => B} \qquad\qquad\qquad\qquad\quad\\\hline
-\texttt{ } \mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ }\\\hline
-\texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ }\\\hline
-\texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ }\\\hline
-\texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ }\\\hline
-\texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ }\\\hline
-\texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ }\\\hline
-\end{array}
-\hspace{0.1cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
- \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline
-\texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ \hline
-\texttt{0} & \texttt{3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-\texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} \\ \hline
-\texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} \\ \hline  
-\texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-\texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-\texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-\texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-\end{array}
-\hspace{0.1cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'}\\\hline
-\mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0}\\\hline
-\mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{3}\\\hline
-\mathtt{7} & \mathtt{10} & \mathtt{3} & \mathtt{3}\\\hline
-\mathtt{10} & \mathtt{13} & \mathtt{3} & \mathtt{3}\\\hline
-\mathtt{13} & \mathtt{0} & \mathtt{3} & \mathtt{0}\\\hline
-\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0}\\\hline
-\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0}\\\hline
-\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0}\\\hline
+\begin{array}{|l|c|} \hline
+\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ } \bf{Instructions } & \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} \\ \hline
+ \mathtt{\$\{getAFreeInput()\} => A} & \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0}  \\\hline
+ \mathtt{3 => B} \qquad\qquad\qquad\qquad\quad & \texttt{0} & \texttt{3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{3} \\\hline
+ \mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} & \mathtt{7} & \mathtt{10} & \mathtt{3} & \mathtt{3} \\\hline
+ \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} & \mathtt{10} & \mathtt{13} & \mathtt{3} & \mathtt{3} \\\hline
+ \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{13} & \mathtt{0} & \mathtt{3} & \mathtt{0} \\\hline
+ \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} \\\hline
+ \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} \\\hline
+ \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} \\\hline
 \end{array}
 \end{aligned}
 $$

@@ -2,7 +2,7 @@ The following document describes why Polynomial Identity Language uses a special
 
 In order for PIL to securely enable modularity, especially in complex settings such as the Polygon zkEVM's, where the Main SM has several secondary state machines executing different computations, a **dependency inclusion feature** among different `.pil` files needed to be developed.
 
-## Dependency Inclusion Feature
+## Dependency inclusion feature
 
 Let's consider a scenario. If the PIL code of Secondary SMs reflects unique properties such as the maximum length (for example, the length $\mathtt{2^{10}}$ of the Multiplier SM as seen in the first line of [the `multiplier.pil` code](compiling-using-pilcom.md)), such properties can easily become magic numbers which attackers could use as distinguishers of which computation is running at a given point in time.
 

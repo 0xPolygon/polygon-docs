@@ -4,7 +4,7 @@ The first step is to build a mechanism for verifying correctness of the executio
 
 Similar to the mFibonacci SM, where each state had to conform to polynomial identities, the arithmetic constraints of the generic state machine will be translated into polynomial identities and ultimately be translated into the PIL language.
 
-## Constructing Arithmetic Constraints
+## Constructing arithmetic constraints
 
 Since these arithmetic constraints govern state transitions, they express the next state $\big(\mathtt{A'} ,\mathtt{B'}\big)$ in terms of the current state $\big(\texttt{A},\texttt{B}\big)$. That is, in terms of the execution trace, the new registry values are linear combinations of previous registry values, together with constants and free inputs.
 
@@ -34,7 +34,7 @@ The figure below depicts the linear combinations of our state machine as an alge
 
 The vertical gray box (with the "+" sign) in the above figure denotes addition. It expresses forming linear combinations of some of the columns; $\texttt{FREE}$, $\texttt{A}$, $\texttt{B}$, or $\texttt{CONST}$. Each is either included or excluded from the linear combination depending on whether their corresponding selectors have the value $\mathtt{1}$ or $\mathtt{0}$. An extra register denoted by $\texttt{op}$ acts as a carrier of intermediate of the computation being executed and waiting to be placed in the correct output register (on the right in above figure), depending on the values of $\texttt{setA}$ and $\texttt{setB}$.
 
-## Testing Arithmetic Constraints
+## Testing arithmetic constraints
 
 We now test if the arithmetic constraints tally with each of the four instructions of our program.
 
@@ -132,7 +132,7 @@ $$
 
 In order to match the type of commitment scheme used in the zkEVM, these arithmetic constraints must first be expressed as polynomial identities, which are in turn compiled with PILCOM.
 
-## Deeper Context For The Executor
+## Deeper context for the executor
 
 Up to this stage, we have only mentioned that the SM Executor reads instructions in a program written in zkASM, and **it may take some free inputs in order to produce an execution trace**. There is however a lot more detail that goes into this process.
 
@@ -150,7 +150,7 @@ Instead, the constant polynomials are preprocessed only once, because they do no
 
 The committed polynomials, on the other hand, can vary. And are therefore only processed as and when their corresponding verifiable proof is required.
 
-## Polynomial Identities
+## Polynomial identities
 
 For verification purposes, the execution trace needs to be interpolated into polynomial identities.
 

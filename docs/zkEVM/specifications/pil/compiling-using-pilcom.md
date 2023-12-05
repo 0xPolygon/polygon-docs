@@ -20,7 +20,7 @@ $ node src/pil.js <input.pil> -c -n namespace
 
 in which case the corresponding header files (`.hpp`) will be generated in the `./pols_generated` folder. 
 
-## Restriction On Polynomial Degrees
+## Restriction on polynomial degrees
 
 The current version of PIL can only handle quadratics. Simply put, **given any set of polynomials; $\texttt{a}$, $\texttt{b}$ and $\texttt{c}$; PIL can only handle products of two polynomials at a time**,
 
@@ -56,7 +56,7 @@ where in this case, $\texttt{carry} = \texttt{freeIn} * \texttt{out}$.
 
 In the same sense that keywords $\texttt{commit}$ and $\texttt{constant}$ can be thought of as $\text{types}$ of polynomials, $\texttt{intermediate}$ can also be regarded as a third type of polynomial in PIL.
 
-## PIL Compilation
+## PIL compilation
 
 In order to compile the above PIL code to a JSON file, follow the following steps.
 
