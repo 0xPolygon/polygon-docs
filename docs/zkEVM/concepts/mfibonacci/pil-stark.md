@@ -37,7 +37,7 @@ Overall, the Setup Phase of PIL-STARK takes as inputs; the $\texttt{.pil}$ file 
 
 We emphasise that the Setup Phase of PIL-STARK is run only once for a particular $\texttt{.pil}$ file describing the state machine. A change in the $\texttt{.pil}$ file means a fresh Setup needs to be executed.
 
-![PIL-STARK Setup](../../img/zkEVM/fib13-pil-stark-setup.png)
+![PIL-STARK Setup](../../../img/zkEVM/fib13-pil-stark-setup.png)
 
 ## PIL-STARK Proving Phase
 
@@ -66,7 +66,7 @@ For the PIL-STARK Proving Phase as a whole, also as depicted in Figure 9 below,
 - there are five (5) inputs; the $\texttt{input.json}$ file, the PIL $\texttt{.json}$ file from $\texttt{PILCOM}$, the evaluations of the constant polynomials from the Setup Phase, as well as the $\texttt{constTree}$ and the $\texttt{starkInfo}$.
 - and there are two (2) outputs; a $\texttt{STARK}$ $\texttt{proof}$ and the $\texttt{publics}$.
 
-![PIL-STARK in SM-Prover](../../img/zkEVM/fib14-pil-stark-in-prover.png)
+![PIL-STARK in SM-Prover](../../../img/zkEVM/fib14-pil-stark-in-prover.png)
 
 ## PIL-STARK Verification Phase
 
@@ -78,7 +78,7 @@ The inputs to the Verifier are; the $\texttt{STARK}$ $\texttt{proof}$ and the $\
 
 And the Verifier's output is either an $\texttt{Accept}$ if the proof is accepted, or a $\texttt{Reject}$ if the proof is rejected.
 
-![PIL-STARK in the SM-Verifier](../../img/zkEVM/fib15-pil-stark-in-verifier.png)
+![PIL-STARK in the SM-Verifier](../../../img/zkEVM/fib15-pil-stark-in-verifier.png)
 
 PIL-STARK is, all-in-all, a specific implementation of a STARK that can be used as a generic tool for proving state machines' polynomial identities.
 

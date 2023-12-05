@@ -177,25 +177,25 @@ nav:
         - EVM vs. zkEVM: zkEVM/specifications/evm-differences.md
       - Concepts:
         - EVM basics: zkEVM/concepts/evm-basics.md
-        - Sparse merkle trees:
-          - Merkle trees: zkEVM/concepts/sparse-merkle-tree.md
-          - Constructing simple SMTs: zkEVM/concepts/simple-smt.md
-          - SMT concepts: zkEVM/concepts/detailed-smt.md
-          - Operations on SMTs: zkEVM/concepts/basic-smt-ops.md
-        - mFibonnaci state machine:
-          - Design approach: zkEVM/concepts/mfibonacci.md
-          - An example: zkEVM/concepts/mfibonacci-example.md
-          - Commitment scheme: zkEVM/concepts/commitment-scheme.md
-          - Verification scheme: zkEVM/concepts/verification-scheme.md
-          - PIL-STARK process: zkEVM/concepts/pil-stark.md
-          - PIL-STARK demo: zkEVM/concepts/pil-stark-demo.md
-        - Generic state machine: 
-          - Generic SM introduction: zkEVM/concepts/intro-generic-sm.md
-          - Execution trace: zkEVM/concepts/exec-trace-correct.md
-          - Ending programs: zkEVM/concepts/ending-program.md
-          - Program counter: zkEVM/concepts/program-counter.md
-          - Plookup: zkEVM/concepts/plookup.md
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
+        - Sparse merkle trees:
+          - Merkle trees: zkEVM/concepts/sparse-merkle-trees/sparse-merkle-tree.md
+          - Constructing simple SMTs: zkEVM/concepts/sparse-merkle-trees/simple-smt.md
+          - SMT concepts: zkEVM/concepts/sparse-merkle-trees/detailed-smt.md
+          - Operations on SMTs: zkEVM/concepts/sparse-merkle-trees/basic-smt-ops.md
+        - mFibonnaci state machine:
+          - Design approach: zkEVM/concepts/mfibonacci/mfibonacci.md
+          - An example: zkEVM/concepts/mfibonacci/mfibonacci-example.md
+          - Commitment scheme: zkEVM/concepts/mfibonacci/commitment-scheme.md
+          - Verification scheme: zkEVM/concepts/mfibonacci/verification-scheme.md
+          - PIL-STARK process: zkEVM/concepts/mfibonacci/pil-stark.md
+          - PIL-STARK demo: zkEVM/concepts/mfibonacci/pil-stark-demo.md
+        - Generic state machine: 
+          - Generic SM introduction: zkEVM/concepts/generic-state-machine/intro-generic-sm.md
+          - Execution trace: zkEVM/concepts/generic-state-machine/exec-trace-correct.md
+          - Ending programs: zkEVM/concepts/generic-state-machine/ending-program.md
+          - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
+          - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:

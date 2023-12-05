@@ -24,7 +24,7 @@ The leaf levels are as follows;
 
 $\text{lvl}(\mathbf{L}_{\mathbf{a}}) = 2$, $\text{lvl}(\mathbf{L}_{\mathbf{b}}) = 4$, $\text{lvl}(\mathbf{L}_{\mathbf{c}}) = 4$, $\text{lvl}(\mathbf{L}_{\mathbf{d}}) = 3$, $\text{lvl}(\mathbf{L}_{\mathbf{e}}) = 2$, $\text{lvl}(\mathbf{L}_{\mathbf{f}}) = 3$ and $\text{lvl}(\mathbf{L}_{\mathbf{g}}) = 3$.
 
-![Figure 6: An SMT of 7 key-value pairs](../../img/zkEVM/fig6-mpt-gen-eg.png)
+![Figure 6: An SMT of 7 key-value pairs](../../../img/zkEVM/fig6-mpt-gen-eg.png)
 
 As illustrated, keys basically determine the shape of the SMT. They dictate where respective leaves must be placed when building the SMT.
 
@@ -69,7 +69,7 @@ That is, the Attacker claims that some $V_{\mathbf{fk}}$ is stored at $\mathbf{L
 
 Verifier is unaware that $V_{\mathbf{fk}}$ is in fact the concatenated value of the hidden real leaves, $\mathbf{L_{a}}$ and $\mathbf{L_{b}}$, that are children of the *supposed* leaf $\mathbf{L_{fk}}$. i.e., Verifier does not know that leaf $\mathbf{L_{fk}}$ is in fact a branch.
 
-![Figure 7: MPT - Fake Leaf Attack](../../img/zkEVM/fig7-fake-leaf-eg.png)
+![Figure 7: MPT - Fake Leaf Attack](../../../img/zkEVM/fig7-fake-leaf-eg.png)
 
 So then, the verifier being unaware that $\mathbf{L_{fk}}$ is not a properly constructed leaf, starts verification as follows;
 
@@ -159,7 +159,7 @@ An Attacker can pick the key-value pair $(K_{\mathbf{x}}, V_\mathbf{{x}})$ such 
 
 Consider the below figure and suppose the Attacker provides the following data;
 
-![Non-binding Key-Value Pairs](../../img/zkEVM/fig8-non-binding-eg.png)
+![Non-binding Key-Value Pairs](../../../img/zkEVM/fig8-non-binding-eg.png)
 
 - The key-value $(K_{\mathbf{x}}, V_\mathbf{{x}})$, where
   $K_{\mathbf{x}} = 10100110$ and $V_{\mathbf{x}} = V_\mathbf{d}$.
@@ -304,7 +304,7 @@ The following example illustrates a Merkle proof when the above strategy is appl
 
 Consider an SMT where the keys are 8-bit long, and the prover commits to the key-value $( K_{\mathbf{c}} , \text{HV}_{\mathbf{c}} )$ with $K_{\mathbf{c}} = 10010100$. See figure below.
 
-![ZK Merkle Proof Example](../../img/zkEVM/fig9-zk-mkl-prf.png)
+![ZK Merkle Proof Example](../../../img/zkEVM/fig9-zk-mkl-prf.png)
 
 Since the levels to root is 3, the prover provides; the least-significant key-bits, $\text{kb}_0 = 0$, $\text{kb}_1 = 0$, $\text{kb}_2 = 1$, the stored hashed-value $\text{HV}_{\mathbf{c}}$, the root  $\mathbf{{root}_{a..f}}$, the Remaining Key $\mathbf{ \text{RK}_{\mathbf{c}}} = 10010$, and the siblings $\mathbf{{S}_{ab}}$, $\mathbf{{L}_{d}}$ and $\mathbf{{S}_{\mathbf{ef}}}$.
 

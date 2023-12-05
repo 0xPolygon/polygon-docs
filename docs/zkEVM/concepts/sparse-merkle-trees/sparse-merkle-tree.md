@@ -11,7 +11,7 @@ $$
 \text{V}_{\mathbf{a}}, \text{V}_{\mathbf{b}}, \text{V}_{\mathbf{c}}, \text{V}_{\mathbf{d}}, \text{V}_{\mathbf{e}}, \text{V}_{\mathbf{f}}, \text{V}_{\mathbf{g}}, \text{V}_{\mathbf{h}}
 $$
 
-![A Merkle Tree Example](../../img/zkEVM/fig2-mkl-tree-gen.png)
+![A Merkle Tree Example](../../../img/zkEVM/fig2-mkl-tree-gen.png)
 
 Firstly, each leaf is nothing but the hash value $\mathbf{H}(\text{V}_{\mathbf{i}})$ of a particular value $\text{V}_{\mathbf{i}}$, where $\mathbf{i}$ is an element of the index-set $\{ \mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}, \mathbf{e}, \mathbf{f}, \mathbf{g}, \mathbf{h} \}$.
 

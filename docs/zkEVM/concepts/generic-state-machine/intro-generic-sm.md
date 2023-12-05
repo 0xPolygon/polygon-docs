@@ -6,7 +6,7 @@ The idea here is to create a state machine that behaves like a processor of sort
 
 See Figure below, for such a state machine with registries $\texttt{A}$ and $\texttt{B}$, and a state $\big(\texttt{A}^{\texttt{i}},\texttt{B}^{\texttt{i}}\big)$ that changes to another state $\big(\texttt{A}^{\texttt{i+2}},\texttt{B}^{\texttt{i+2}}\big)$ in accordance with two instructions, $\texttt{Instruction}_{\texttt{i}}$ and $\texttt{Instruction}_{\texttt{i+1}}$.
 
-![Figure 1: A typical generic state machine](../../img/zkEVM/gen1-typical-gen-sm.png)
+![Figure 1: A typical generic state machine](../../../img/zkEVM/gen1-typical-gen-sm.png)
 
 The aim with this document is to explain how the machinery used in the mFibonacci SM; to execute computations, produce proofs of correctness of execution, and verify these proofs; can extend to a generic state machine.
 
@@ -20,11 +20,11 @@ Think of our state machine as being composed of two parts; the part that has to 
 
 As seen with the mFibonacci SM, the SM executor takes certain inputs together with the description of the SM, in order to produce the execution trace specifically corresponding to these inputs.
 
-![Figure 2: mFibonacci State Machine producing input-specific execution trace](../../img/zkEVM/gen2-mfib-exec-w-inputs.png)
+![Figure 2: mFibonacci State Machine producing input-specific execution trace](../../../img/zkEVM/gen2-mfib-exec-w-inputs.png)
 
 The main difference, in the Generic State Machine case, is the inclusion of a program which stipulates computations to be carried out by the SM executor. These computations could range from a simple addition of two registry values, or moving the value in registry $\texttt{A}$ to registry $\texttt{B}$, to computing some linear combination of several registry values.
 
-![Figure 3: A Generic State Machine producing input- and program-specific execution trace ](../../img/zkEVM/gen3-gen-sm-w-input-instrctn.png)
+![Figure 3: A Generic State Machine producing input- and program-specific execution trace ](../../../img/zkEVM/gen3-gen-sm-w-input-instrctn.png)
 
 So then, instead of programming the SM executor ourselves with a specific set of instructions as we did with the mFibonacci SM, the executor of a Generic SM is programmed to read arbitrary instructions encapsulated in some program (depending on the capacity of the SM or the SM's context of application). As mentioned above, each of these programs is initially written, not in a language like Javascript, but in the zkASM language.
 
