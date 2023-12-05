@@ -19,16 +19,12 @@ To create a new smart contract with SmartPress, follow these steps:
 3. Let SmartPress generate the contract for you; no need for an IDE or code editor.
 4. Review the output. If satisfied, proceed to validation and testing. If not, modify your input and repeat the process.
 
-![Screenshot 2023-08-15 at 12 33 59 pm](https://github.com/crokau/wiki/assets/71380821/c43ccb48-3b1b-4cad-814b-8eddc0f735c1)
-
 ## Deploy your Contract using SmartPress
 
 To deploy your smart contract on Polygon PoS:
 
 1. After creation, connect your wallet and switch your network to either Mumbai testnet or Polygon PoS.
 2. Press the 'Deploy' button. If you lack transaction gas, use the provided faucet links to obtain some.
-
-![Screenshot 2023-08-15 at 12 37 39 pm](https://github.com/crokau/wiki/assets/71380821/ea20889b-1b5e-44b7-ba9c-f208abf1e944)
 
 ## Verify the Contract
 

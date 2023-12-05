@@ -264,7 +264,6 @@ nav:
               - Bank: pos/architecture/heimdall/modules/bank.md
               - Bor: pos/architecture/heimdall/modules/bor.md
               - Chain manager: pos/architecture/heimdall/modules/chain-manager.md
-              - Checkpoint: pos/architecture/heimdall/modules/checkpoint.md
               - Staking: pos/architecture/heimdall/modules/staking.md
               - Topup: pos/architecture/heimdall/modules/topup.md
             - FAQ: pos/architecture/heimdall/faq.md

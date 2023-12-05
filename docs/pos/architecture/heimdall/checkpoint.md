@@ -1,40 +1,40 @@
-# Checkpoint
+Checkpoints are vital components of the Polygon network, representing snapshots of the Bor chain state. These checkpoints are attested by a majority of the validator set before being validated and submitted on Ethereum contracts.
 
-Checkpoints are the most crucial part of the Polygon network. It represents snapshots of the Bor chain state and is supposed to be attested by ⅔+ of the validator set before it is validated and submitted on the contracts deployed on Ethereum.
+Heimdall, an integral part of this process, manages checkpoint functionalities using the `checkpoint` module. It coordinates with the Bor chain to verify checkpoint root hashes when a new checkpoint is proposed.
 
-## Types
+## Checkpoint life-cycle and types
 
-Checkpoint structure on Heimdall state looks like following:
+### Life-cycle
+
+Heimdall selects the next proposer using Tendermint's leader selection algorithm. The multi-stage checkpoint process is crucial due to potential failures when submitting checkpoints on the Ethereum chain caused by factors like gas limit, network traffic, or high gas fees.
+
+Each checkpoint has a validator as the proposer. The outcome of a checkpoint on the Ethereum chain (success or failure) triggers an `ack` (acknowledgment) or `no-ack` (no acknowledgment) transaction, altering the proposer for the next checkpoint on Heimdall.
+
+#### Flow chart representations
+
+- [Checkpoint Life-cycle Flowchart](../../../img/pos/checkpoint-flowchart.svg)
+- [Checkpoint Module Flow](../../../img/pos/checkpoint-module-flow.svg)
+
+### Types and structures
+
+#### Checkpoint block header
 
 ```go
 type CheckpointBlockHeader struct {
- // Proposer is selected based on stake
  Proposer        types.HeimdallAddress `json:"proposer"`
-
- // StartBlock: The block number on Bor from which this checkpoint starts
  StartBlock      uint64                `json:"startBlock"`
-
- // EndBlock: The block number on Bor from which this checkpoint ends
  EndBlock        uint64                `json:"endBlock"`
-
- // RootHash is the Merkle root of all the leaves containing the block
- // headers starting from start to the end block
  RootHash        types.HeimdallHash    `json:"rootHash"`
-
- // Account root hash for each validator
-  // Hash of data that needs to be passed from Heimdall to Ethereum chain like withdraw topup etc.
  AccountRootHash types.HeimdallHash    `json:"accountRootHash"`
-
-  // Timestamp when checkpoint was created on Heimdall
- TimeStamp       uint64          `json:"timestamp"`
+ TimeStamp       uint64                `json:"timestamp"`
 }
 ```
 
-### Root hash
+#### Root hash calculation
 
-<img src="/img/pos/checkpoint.svg")} />
+![Root Hash Image](../../../img/pos/checkpoint.svg)
 
-`RootHash` is the Merkle hash of Bor block hashes from `StartBlock` to `EndBlock`. Root hash for the checkpoint is created using the following way:
+The `RootHash` is calculated as a Merkle hash of Bor block hashes from `StartBlock` to `EndBlock`. The process involves hashing each block's number, time, transaction hash, and receipt hash, then creating a Merkle root of these hashes.
 
 ```matlab
 blockHash = keccak256([number, time, tx hash, receipt hash])
@@ -123,3 +123,125 @@ func (da DividendAccount) CalculateHash() ([]byte, error) {
  return divAccountHash, nil
 }
 ```
+
+## Messages in checkpoint module
+
+### MsgCheckpoint
+
+`MsgCheckpoint` handles checkpoint verification on Heimdall, utilizing RLP encoding for Ethereum chain verification. It prioritizes transactions with high gas consumption to ensure only one `MsgCheckpoint` transaction per block.
+
+```go
+// MsgCheckpoint represents checkpoint transaction
+type MsgCheckpoint struct {
+ Proposer        types.HeimdallAddress `json:"proposer"`
+ StartBlock      uint64                `json:"startBlock"`
+ EndBlock        uint64                `json:"endBlock"`
+ RootHash        types.HeimdallHash    `json:"rootHash"`
+ AccountRootHash types.HeimdallHash    `json:"accountRootHash"`
+}
+```
+
+### MsgCheckpointAck
+
+`MsgCheckpointAck` manages successful checkpoint submissions, updating the checkpoint count and clearing the `checkpointBuffer`.
+
+```go
+// MsgCheckpointAck represents checkpoint ack transaction if checkpoint is successful
+type MsgCheckpointAck struct {
+ From        types.HeimdallAddress `json:"from"`
+ HeaderBlock uint64                `json:"headerBlock"`
+ TxHash      types.HeimdallHash    `json:"tx_hash"`
+ LogIndex    uint64                `json:"log_index"`
+}
+```
+
+### MsgCheckpointNoAck
+
+`MsgCheckpointNoAck` deals with unsuccessful checkpoints or offline proposers, allowing a timeout period before selecting a new proposer.
+
+```go
+// MsgCheckpointNoAck represents checkpoint no-ack transaction
+type MsgCheckpointNoAck struct {
+ From types.HeimdallAddress `json:"from"`
+}
+```
+
+## Parameters and CLI commands
+
+### Parameters
+
+The checkpoint module contains the following parameters:
+
+|Key                   |Type  |Default value     |
+|----------------------|------|------------------|
+|CheckpointBufferTime  |uint64|1000 * time.Second|
+
+### CLI commands
+
+Commands are available for various actions such as sending checkpoints, sending `ack` or `no-ack` transactions, and querying parameters.
+
+### Printing all parameters
+
+```go
+heimdallcli query checkpoint params --trust-node
+```
+
+Expected Result:
+
+```yaml
+checkpoint_buffer_time: 16m40s
+```
+
+### Send Checkpoint
+
+Following command sends checkpoint transaction on Heimdall:
+
+```yaml
+heimdallcli tx checkpoint send-checkpoint \
+ --start-block=<start-block> \
+ --end-block=<end-block> \
+ --root-hash=<root-hash> \
+ --account-root-hash=<account-root-hash> \
+ --chain-id=<chain-id>
+```
+
+### Send `ack`
+
+Following command sends ack transaction on Heimdall if checkpoint is successful on Ethereum:
+
+```yaml
+heimdallcli tx checkpoint send-ack \
+ --tx-hash=<checkpoint-tx-hash>
+ --log-index=<checkpoint-event-log-index>
+ --header=<checkpoint-index> \
+  --chain-id=<chain-id>
+```
+
+### Send `no-ack`
+
+Following command send no-ack transaction on Heimdall:
+
+```yaml
+heimdallcli tx checkpoint send-noack --chain-id <chain-id>
+```
+
+## REST APIs
+
+Heimdall provides several REST APIs for interacting with the checkpoint module, including endpoints for preparing messages, querying checkpoints, and more.
+
+|Name                  |Method|Endpoint          |
+|----------------------|------|------------------|
+|It returns the prepared msg for ack checkpoint|POST   |/checkpoint/ack|
+|It returns the prepared msg for new checkpoint|POST   |/checkpoint/new|
+|It returns the prepared msg for no-ack checkpoint|POST   |/checkpoint/no-ack|
+|Checkpoint by number  |GET   |/checkpoints/<checkpoint-number\>|
+|Get current checkpoint buffer state|GET   |/checkpoints/buffer|
+|Get checkpoint counts |GET   |/checkpoints/count |
+|Get last no-ack details|GET   |/checkpoints/last-no-ack|
+|Get latest checkpoint |GET   |/checkpoints/latest|
+|All checkpoints       |GET   |/checkpoints/list  |
+|It returns the checkpoint parameters|GET   |/checkpoints/parama|
+|It returns the prepared checkpoint|GET   |/checkpoints/prepare|
+|Get ack count, buffer, validator set, validator count and last-no-ack details|GET   |/overview         |
+
+For more details and the response format of these APIs, visit [Heimdall API Documentation](https://heimdall-api.polygon.technology/swagger-ui/#/checkpoint).

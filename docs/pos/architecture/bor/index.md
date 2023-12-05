@@ -1,5 +1,3 @@
-# The Bor Block Producer
-
 Bor is our Block producer layer, which, in sync with the Heimdall validator, selects the producers and verifiers for each span and sprint.
 
 The Bor node or the Block Producer implementation is basically the EVM-compatible blockchain operator. Currently, it is a Geth implementation with custom changes done to the consensus algorithm.
@@ -20,7 +18,7 @@ Block Producers for the Bor layer are a committee selected from the Validator po
 
 The ratio of Stake/Staking power specifies the probability to be selected as a member of the block producer committee.
 
-<img src="/img/pos/bor-span.png" />
+![](../../../img/pos/bor-span.png)
 
 #### Selection Process
 
