@@ -138,7 +138,7 @@ It consists of a **Main State Machine Executor**, a collection of **secondary St
 
 ![Skeletal Overview of zkProver](../../img/zkEVM/fig4-zkProv-arch.png)
 
-In a nutshell, **the zkEVM expresses state changes in a polynomial form**. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. To put it another way, all valid batches must satisfy specific polynomial constraints. Check out the detailed architecture of zkProver [here](zkprover/zkprover-overview.md).
+In a nutshell, **the zkEVM expresses state changes in a polynomial form**. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. To put it another way, all valid batches must satisfy specific polynomial constraints. Check out the detailed architecture of zkProver [here](zkprover/index.md).
 
 ## zkEVM bridge
 
