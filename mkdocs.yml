@@ -70,7 +70,7 @@ nav:
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
      # - API:
-      - Troubleshooting:
+      - Additional resources:
         - CDK component repos: cdk/troubleshooting/component-repos.md
   - zkEVM:
       - zkEVM/index.md # marketing landing page
