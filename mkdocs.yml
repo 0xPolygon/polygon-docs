@@ -1,4 +1,4 @@
-site_name: Polygon Knowledge Layer
+site_name: Polygon knowledge layer
 site_author: Polygon Labs
 copyright: Copyright &copy; 2023 Polygon Labs
 repo_name: Polygon Knowledge Layer
@@ -46,6 +46,7 @@ theme:
     - toc.follow
     - content.code.copy
     - content.action.edit
+    - content.action.view
 
 nav:
   - Home: index.md
@@ -65,7 +66,6 @@ nav:
       #- Architecture:
       - Specification:
         - Validium vs rollup: cdk/specification/validium-vs-rollup.md
-        - Performance benchmarks: cdk/specification/performance-benchmarks.md
       - Concepts:
         - Data availability: cdk/concepts/dac.md
      # - API:
@@ -290,7 +290,138 @@ nav:
       - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Tools: 
       - tools/index.md
-      - Using Web3Modal SDK: tools/using-web3modal.md
+      - Smart contract development: 
+          - Hardhat: tools/smart-contracts/hardhat.md
+          - Truffle: tools/smart-contracts/truffle.md
+          - Remix: tools/smart-contracts/remix.md
+          - Replit: tools/smart-contracts/replit.md
+      - Gas:
+          - Polygon MATIC faucet: tools/gas/matic-faucet.md
+          - Polygon gas station: tools/gas/polygon-gas-station.md
+      - Data:
+          - The Graph: 
+              - Overview: tools/data/the-graph/overview.md
+              - Data: tools/data/the-graph/data.md
+              - Entities: tools/data/the-graph/entities.md
+              - Queries: tools/data/the-graph/queries.md
+          - Covalent: tools/data/covalent.md
+          - Flair: tools/data/flair.md
+          - PARSIQ: tools/data/parsiq.md
+      - Matic.js:
+          - POS:
+              - Installation:  tools/matic-js/installation.md
+              - POS client:  tools/matic-js/pos/client.md
+              - API overview:  tools/matic-js/api-architecture.md
+              - Get started:  tools/matic-js/get-started.md
+              - Setup:
+                  - Ethers:  tools/matic-js/setup/ethers.md
+                  - Web3js:  tools/matic-js/setup/web3js.md
+              - Set proof API:  tools/matic-js/set-proof-api.md
+              - Advanced:
+                  - ABI manager:  tools/matic-js/advanced/abi-manager.md
+                  - Exit util:  tools/matic-js/advanced/exit-util.md
+                  - Plugin:  tools/matic-js/advanced/plugin.md
+              - ERC20:
+                  - Overview: tools/matic-js/pos/erc20/index.md
+                  - approveMax:  tools/matic-js/pos/erc20/approve-max.md
+                  - approve:  tools/matic-js/pos/erc20/approve.md
+                  - deposit:  tools/matic-js/pos/erc20/deposit.md
+                  - getAllowance:  tools/matic-js/pos/erc20/get-allowance.md
+                  - getBalance:  tools/matic-js/pos/erc20/get-balance.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc20/is-withdraw-exited.md
+                  - transfer:  tools/matic-js/pos/erc20/transfer.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc20/withdraw-exit-faster.md
+                  - withdrawExit:  tools/matic-js/pos/erc20/withdraw-exit.md
+                  - withdrawStart:  tools/matic-js/pos/erc20/withdraw-start.md
+              - ERC721:
+                  - Overview:  tools/matic-js/pos/erc721/index.md
+                  - approveAll:  tools/matic-js/pos/erc721/approve-all.md
+                  - approve:  tools/matic-js/pos/erc721/approve.md
+                  - depositMany:  tools/matic-js/pos/erc721/deposit-many.md
+                  - deposit:  tools/matic-js/pos/erc721/deposit.md
+                  - getAllTokens:  tools/matic-js/pos/erc721/get-all-tokens.md
+                  - getTokenIdAtIndexForUser:  tools/matic-js/pos/erc721/get-token-id-at-index-for-user.md
+                  - getTokensCount:  tools/matic-js/pos/erc721/get-tokens-count.md
+                  - isApprovedAll:  tools/matic-js/pos/erc721/is-approved-all.md
+                  - isApproved:  tools/matic-js/pos/erc721/is-approved.md
+                  - isWithdrawExitedMany:  tools/matic-js/pos/erc721/is-withdraw-exited-many.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc721/is-withdraw-exited.md
+                  - transfer:  tools/matic-js/pos/erc721/transfer.md
+                  - withdrawExitFasterMany:  tools/matic-js/pos/erc721/withdraw-exit-faster-many.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc721/withdraw-exit-faster.md
+                  - withdrawExitMany:  tools/matic-js/pos/erc721/withdraw-exit-many.md
+                  - withdrawExit:  tools/matic-js/pos/erc721/withdraw-exit.md
+                  - withdrawStartMany:  tools/matic-js/pos/erc721/withdraw-start-many.md
+                  - withdrawStartWithMetaData:  tools/matic-js/pos/erc721/withdraw-start-with-meta-data.md
+                  - withdrawStart:  tools/matic-js/pos/erc721/withdraw-start.md
+              - ERC1155:
+                  - approve-all-for-mintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
+                  - approve-all:  tools/matic-js/pos/erc1155/approve-all.md
+                  - deposit-many:  tools/matic-js/pos/erc1155/deposit-many.md
+                  - deposit:  tools/matic-js/pos/erc1155/deposit.md
+                  - get-balance:  tools/matic-js/pos/erc1155/get-balance.md
+                  - index:  tools/matic-js/pos/erc1155/index.md
+                  - is-approved-all:  tools/matic-js/pos/erc1155/is-approved-all.md
+                  - is-withdraw-exited-many:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
+                  - is-withdraw-exited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
+                  - transfer:  tools/matic-js/pos/erc1155/transfer.md
+                  - withdraw-exit-faster-many:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
+                  - withdraw-exit-faster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
+                  - withdraw-exit-many:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
+                  - withdraw-exit:  tools/matic-js/pos/erc1155/withdraw-exit.md
+                  - withdraw-start-many:  tools/matic-js/pos/erc1155/withdraw-start-many.md
+                  - withdraw-start:  tools/matic-js/pos/erc1155/withdraw-start.md
+              - Common methods:
+                  - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
+                  - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
+                  - isDeposited:  tools/matic-js/pos/is-deposited.md
+          - zkEVM:
+              - Initialize:  tools/matic-js/zkevm/initialize.md
+              - ERC20:  tools/matic-js/zkevm/erc20.md
+              - Common methods:  tools/matic-js/zkevm/common-methods.md
+      - Storage: 
+          - IPFS: tools/storage/ipfs.md
+          - Filecoin: tools/storage/filecoinhelpers.md
+          - Crust network: tools/storage/crusthelpers.md
+          - Mint NFTs: tools/storage/nftstorage.md
+      - Oracles:
+          - Getting started: tools/oracles/getting-started.md
+          - API3: tools/oracles/api3.md
+          - Bandchain: tools/oracles/bandchain.md
+          - Band standard dataset: tools/oracles/bandstandarddataset.md
+          - Chainlink: tools/oracles/chainlink.md
+          - DIA: tools/oracles/diadataoracles.md
+          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
+          - Razor: tools/oracles/razor.md
+          - Tellor: tools/oracles/tellor.md
+          - Umbrella: tools/oracles/umbrella.md
+      - Wallets:
+          - Getting started:  tools/wallets/getting-started.md
+          - Metamask:
+              - Overview: tools/wallets/metamask/index.md
+              - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
+              - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
+              - Configure custom tokens:  tools/wallets/metamask/custom-tokens.md
+              - Create and import accounts:  tools/wallets/metamask/multiple-accounts.md
+          - Venly:
+              - Intro:  tools/wallets/venly/index.md
+              - Create wallet:  tools/wallets/venly/create-wallet.md
+              - Add network:  tools/wallets/venly/add-network.md
+              - Add custom token:  tools/wallets/venly/custom-tokens.md
+          - Wallet link: tools/wallets/wallet-link.md
+          - Fortmatic: tools/wallets/fortmatic.md
+          - Portis:  tools/wallets/portis.md
+          - Torus:  tools/wallets/torus.md          
+          - WalletConnect:  tools/wallets/walletconnect.md
+          - SlashAuth:  tools/wallets/slashauth.md
+          - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
+          - Particle network:  tools/wallets/particle-network.md
+          - Web3Modal: tools/wallets/using-web3modal.md
+      - Block explorers:
+          - Polygon: https://polygonscan.com/ 
+          - zkEVM: https://zkevm.polygonscan.com/
+          - zkEVM testnet: https://explorer-ui.mainnet.zkevm-test.net/
+          - OKLink: https://www.oklink.com/polygon
   - Learn:
       - learn/index.md
 
