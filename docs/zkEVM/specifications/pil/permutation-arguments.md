@@ -34,7 +34,7 @@ A valid execution trace with the number of rows $\texttt{N} = 4$, for the above 
 
 ![Execution traces for programs A and B](../../../img/zkEVM/17pil2-table-proga-progb-perm-args-1st-eg-table.png)
 
-## Permutation Args over Multiple Columns
+## Permutation arguments over multiple columns
 
 Permutation arguments in PIL can be written not only over single columns but over multiple columns as well.
 

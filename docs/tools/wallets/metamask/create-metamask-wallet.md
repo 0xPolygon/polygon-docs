@@ -38,7 +38,9 @@ The next step is to create an account.
 
 2. You will be asked to create a new password. Create a strong password and click **Create**.
 
-    ![img](../../../img/tools/wallet/metamask/develop/create-password.png)
+    <center>
+    ![img](../../../img/tools/wallet/metamask/develop/create-password.png){ width="50%" }
+    </center>
 
 3. MetaMask will then provide some information about the Secret Recovery Phrase and on the next page you will see your phrase.
 

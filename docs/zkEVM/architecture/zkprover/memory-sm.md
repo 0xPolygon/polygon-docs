@@ -14,6 +14,8 @@ Now, let's see the layout in memory of the following two words $\texttt{0xc417..
 
 The below table displays this layout. Let's call this Table 1.
 
+<center>
+
 | $\mathbf{ADDRESS}$ |  $\mathbf{BYTE}$  |
 | :----------------: | :---------------: |
 |    $\mathtt{0}$    |  $\mathtt{0xc4}$  |
@@ -27,6 +29,8 @@ The below table displays this layout. Let's call this Table 1.
 |   $\mathtt{62}$    |  $\mathtt{0xb7}$  |
 |   $\mathtt{63}$    |  $\mathtt{0x23}$  |
 
+</center>
+
 Observe that each word has 32 bytes and the words are stored in Big-Endian form. So, the most significant bytes are set in the lower addresses. The EVM provides three opcodes to interact with the memory area. **There is an opcode to read, and an opcode to write 32-byte words providing an offset**:
 
 - $\texttt{MLOAD}$: It receives an offset and returns the 32 bytes in memory starting at that offset
@@ -35,6 +39,8 @@ Observe that each word has 32 bytes and the words are stored in Big-Endian form.
 Considering our previous memory contents, if we perform an $\texttt{MLOAD}$ with an offset of $\texttt{1}$, we would obtain the following word: $\texttt{0x17...a788}$.
 
 On the other hand, if we do an $\texttt{MSTORE}$ with an offset of $\texttt{1}$ with the word $\texttt{0x74f0...ce92}$, we would modify the content of the memory as shown in the below table (or Table 2).
+
+<center>
 
 | $\mathbf{ADDRESS}$ |     $\mathbf{BYTE}$      |
 | :----------------: | :----------------------: |
@@ -48,6 +54,8 @@ On the other hand, if we do an $\texttt{MSTORE}$ with an offset of $\texttt{1}$ 
 | $\mathtt{\vdots}$  |    $\mathtt{\vdots}$     |
 |   $\mathtt{62}$    |     $\mathtt{0xb7}$      |
 |   $\mathtt{63}$    |     $\mathtt{0x23}$      |
+
+</center>
 
 When the offset is not a multiple of 32 (or 0x20), as in the previous example, we have to use bytes from two different words when doing $\texttt{MLOAD}$ or $\texttt{MSTORE}$.
 

@@ -1,6 +1,6 @@
 The following document describes how proofs of execution correctness are generated using pil-stark package.
 
-Once the constant and the committed polynomials are filled (as seen in the [Filling Polynomial section](filling-polynomials.md)), the next step is generation of a proof of correctness.
+Once the constant and the committed polynomials are filled (as seen in the [Filling polynomials section](filling-polynomials.md)), the next step is generation of a proof of correctness.
 
 A Javascript package called `pil-stark` has been specially designed to work together with `pilcom` to generate STARK proofs for execution correctness of programs being verified.
 
@@ -89,4 +89,4 @@ async function execute() {
 
 If the output of the `starkVerify` function is `true`, the proof is valid. Otherwise, the verifier should invalidate the proof sent by the prover.
 
-A `pil-stark` DIY guide is given [here](../../concepts/pil-stark-demo.md).
+A `pil-stark` DIY guide is given [here](../../concepts/mfibonacci/pil-stark-demo.md).

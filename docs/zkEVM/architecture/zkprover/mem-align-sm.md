@@ -90,7 +90,7 @@ $$
 in the address $\mathtt{0x22}$ of the byte-addressed Ethereum memory. We are using the same $\mathtt{m}_0$ and $\mathtt{m}_1$ (and since we are writing into the same address as before) and they will transition into:
 
 $$
-\mathtt{w}_0 = \mathtt{0x88d1}\color{red}\mathtt{e201e6\dots}\color{black},\quad \mathtt{w}_1 = \mathtt{0x}\color{red} \mathtt{662b}\color{black} \mathtt{ff\dots54f9}.
+\mathtt{w}_0 = \mathtt{0x88d1} \mathtt{e201e6\dots},\quad \mathtt{w}_1 = \mathtt{0x} \mathtt{662b} \mathtt{ff\dots54f9}.
 $$
 
 ![Schema of MSTORE example](../../../img/zkEVM/02mem-align-schm-mstr-eg.png)

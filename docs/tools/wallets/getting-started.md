@@ -1,4 +1,4 @@
-This document serves as a wallet index for wallets compatible with Polygon.
+This section serves as a wallet index for wallets compatible with Polygon.
 > Please note that this is not an exhaustive index.
 
 Wallets that support Polygon allow for key management, access to accounts controlled by

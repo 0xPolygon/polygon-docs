@@ -1,4 +1,4 @@
-site_name: Polygon Knowledge Layer
+site_name: Polygon knowledge layer
 site_author: Polygon Labs
 copyright: Copyright &copy; 2023 Polygon Labs
 repo_name: Polygon Knowledge Layer
@@ -177,25 +177,25 @@ nav:
         - EVM vs. zkEVM: zkEVM/specifications/evm-differences.md
       - Concepts:
         - EVM basics: zkEVM/concepts/evm-basics.md
-        - Sparse merkle trees:
-          - Merkle trees: zkEVM/concepts/sparse-merkle-tree.md
-          - Constructing simple SMTs: zkEVM/concepts/simple-smt.md
-          - SMT concepts: zkEVM/concepts/detailed-smt.md
-          - Operations on SMTs: zkEVM/concepts/basic-smt-ops.md
-        - mFibonnaci state machine:
-          - Design approach: zkEVM/concepts/mfibonacci.md
-          - An example: zkEVM/concepts/mfibonacci-example.md
-          - Commitment scheme: zkEVM/concepts/commitment-scheme.md
-          - Verification scheme: zkEVM/concepts/verification-scheme.md
-          - PIL-STARK process: zkEVM/concepts/pil-stark.md
-          - PIL-STARK demo: zkEVM/concepts/pil-stark-demo.md
-        - Generic state machine: 
-          - Generic SM introduction: zkEVM/concepts/intro-generic-sm.md
-          - Execution trace: zkEVM/concepts/exec-trace-correct.md
-          - Ending programs: zkEVM/concepts/ending-program.md
-          - Program counter: zkEVM/concepts/program-counter.md
-          - Plookup: zkEVM/concepts/plookup.md
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
+        - Sparse merkle trees:
+          - Merkle trees: zkEVM/concepts/sparse-merkle-trees/sparse-merkle-tree.md
+          - Constructing simple SMTs: zkEVM/concepts/sparse-merkle-trees/simple-smt.md
+          - SMT concepts: zkEVM/concepts/sparse-merkle-trees/detailed-smt.md
+          - Operations on SMTs: zkEVM/concepts/sparse-merkle-trees/basic-smt-ops.md
+        - mFibonnaci state machine:
+          - Design approach: zkEVM/concepts/mfibonacci/mfibonacci.md
+          - An example: zkEVM/concepts/mfibonacci/mfibonacci-example.md
+          - Commitment scheme: zkEVM/concepts/mfibonacci/commitment-scheme.md
+          - Verification scheme: zkEVM/concepts/mfibonacci/verification-scheme.md
+          - PIL-STARK process: zkEVM/concepts/mfibonacci/pil-stark.md
+          - PIL-STARK demo: zkEVM/concepts/mfibonacci/pil-stark-demo.md
+        - Generic state machine: 
+          - Generic SM introduction: zkEVM/concepts/generic-state-machine/intro-generic-sm.md
+          - Execution trace: zkEVM/concepts/generic-state-machine/exec-trace-correct.md
+          - Ending programs: zkEVM/concepts/generic-state-machine/ending-program.md
+          - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
+          - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
@@ -246,30 +246,24 @@ nav:
           - pos/architecture/index.md
           - Bor:
             - Bor: pos/architecture/bor/index.md
-            - Consensus: pos/architecture/bor/consensus.md
             - State sync: pos/architecture/bor/state-sync.md
             - Network configuration: pos/architecture/bor/network-config.md
             - Snapshots: pos/architecture/bor/snapshots.md
             - Commands: pos/architecture/bor/commands.md
           - Heimdall:
             - Heimdall: pos/architecture/heimdall/index.md
-            - Checkpoint: pos/architecture/heimdall/checkpoint.md
-            - Governance: pos/architecture/heimdall/governance.md
+            - Heimdall and Bor: pos/architecture/heimdall/heimdall-and-bor.md
+            - Authentication: pos/architecture/heimdall/authentication.md
             - Key management: pos/architecture/heimdall/key-management.md
-            - Stdtx: pos/architecture/heimdall/stdtx.md
-            - Modules:
-              - Modules: pos/architecture/heimdall/modules/index.md
-              - Ante handler: pos/architecture/heimdall/modules/antehandler.md
-              - Auth: pos/architecture/heimdall/modules/auth.md
-              - Bank: pos/architecture/heimdall/modules/bank.md
-              - Bor: pos/architecture/heimdall/modules/bor.md
-              - Chain manager: pos/architecture/heimdall/modules/chain-manager.md
-              - Checkpoint: pos/architecture/heimdall/modules/checkpoint.md
-              - Staking: pos/architecture/heimdall/modules/staking.md
-              - Topup: pos/architecture/heimdall/modules/topup.md
-            - FAQ: pos/architecture/heimdall/faq.md
+            - Validation: pos/architecture/heimdall/validation.md
+            - Balance transfers: pos/architecture/heimdall/balance-transfers.md
+            - Staking: pos/architecture/heimdall/staking.md
+            - Checkpoints: pos/architecture/heimdall/checkpoints.md
+            - Topup: pos/architecture/heimdall/topup.md
+            - Chain management: pos/architecture/heimdall/chain-management.md
+            - Governance: pos/architecture/heimdall/governance.md
       - Specification:
-          - pos/spec/index.md
+          - Specification: pos/spec/index.md
       - Concepts:
           - Concepts: pos/concepts/index.md
           - Tokens:
@@ -308,24 +302,19 @@ nav:
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
       - Matic.js:
-          - Installation:  tools/matic-js/installation.md
-          - API overview:  tools/matic-js/api-architecture.md
-          - Get started:  tools/matic-js/get-started.md
-          - Setup:
-              - Ethers:  tools/matic-js/setup/ethers.md
-              - Web3js:  tools/matic-js/setup/web3js.md
-          - Set proof API:  tools/matic-js/set-proof-api.md
-          - FX portal bridge:  tools/matic-js/fx-portal.md
-          - zkEVM:
-              - Initialize:  tools/matic-js/zkevm/initialize.md
-              - ERC20:  tools/matic-js/zkevm/erc20.md
-              - Common methods:  tools/matic-js/zkevm/common-methods.md
           - POS:
+              - Installation:  tools/matic-js/installation.md
               - POS client:  tools/matic-js/pos/client.md
-              - Common methods:
-                  - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
-                  - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
-                  - isDeposited:  tools/matic-js/pos/is-deposited.md
+              - API overview:  tools/matic-js/api-architecture.md
+              - Get started:  tools/matic-js/get-started.md
+              - Setup:
+                  - Ethers:  tools/matic-js/setup/ethers.md
+                  - Web3js:  tools/matic-js/setup/web3js.md
+              - Set proof API:  tools/matic-js/set-proof-api.md
+              - Advanced:
+                  - ABI manager:  tools/matic-js/advanced/abi-manager.md
+                  - Exit util:  tools/matic-js/advanced/exit-util.md
+                  - Plugin:  tools/matic-js/advanced/plugin.md
               - ERC20:
                   - Overview: tools/matic-js/pos/erc20/index.md
                   - approveMax:  tools/matic-js/pos/erc20/approve-max.md
@@ -376,10 +365,14 @@ nav:
                   - withdraw-exit:  tools/matic-js/pos/erc1155/withdraw-exit.md
                   - withdraw-start-many:  tools/matic-js/pos/erc1155/withdraw-start-many.md
                   - withdraw-start:  tools/matic-js/pos/erc1155/withdraw-start.md
-          - Advanced:
-              - ABI manager:  tools/matic-js/advanced/abi-manager.md
-              - Exit util:  tools/matic-js/advanced/exit-util.md
-              - Plugin:  tools/matic-js/advanced/plugin.md
+              - Common methods:
+                  - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
+                  - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
+                  - isDeposited:  tools/matic-js/pos/is-deposited.md
+          - zkEVM:
+              - Initialize:  tools/matic-js/zkevm/initialize.md
+              - ERC20:  tools/matic-js/zkevm/erc20.md
+              - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md
@@ -398,30 +391,26 @@ nav:
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
           - Getting started:  tools/wallets/getting-started.md
-          - Polygon wallet:
-              - Web wallet v3 guide: tools/wallets/polygon-web-wallet/web-wallet-v3-guide.md
-              - Add a custom token: tools/wallets/polygon-web-wallet/adding-a-custom-token.md
-          - Third-party apps:
-              - Metamask:
-                  - Overview: tools/wallets/metamask/index.md
-                  - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
-                  - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
-                  - Configure custom tokens:  tools/wallets/metamask/custom-tokens.md
-                  - Create and import accounts:  tools/wallets/metamask/multiple-accounts.md
-              - Venly:
-                  - Intro:  tools/wallets/venly/index.md
-                  - Create wallet:  tools/wallets/venly/create-wallet.md
-                  - Add network:  tools/wallets/venly/add-network.md
-                  - Add custom token:  tools/wallets/venly/custom-tokens.md
-              - Wallet link: tools/wallets/wallet-link.md
-              - Fortmatic: tools/wallets/fortmatic.md
-              - Portis:  tools/wallets/portis.md
-              - Torus:  tools/wallets/torus.md          
-              - WalletConnect:  tools/wallets/walletconnect.md
-              - SlashAuth:  tools/wallets/slashauth.md
-              - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
-              - Particle network:  tools/wallets/particle-network.md
-              - Web3Modal: tools/wallets/using-web3modal.md
+          - Metamask:
+              - Overview: tools/wallets/metamask/index.md
+              - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
+              - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
+              - Configure custom tokens:  tools/wallets/metamask/custom-tokens.md
+              - Create and import accounts:  tools/wallets/metamask/multiple-accounts.md
+          - Venly:
+              - Intro:  tools/wallets/venly/index.md
+              - Create wallet:  tools/wallets/venly/create-wallet.md
+              - Add network:  tools/wallets/venly/add-network.md
+              - Add custom token:  tools/wallets/venly/custom-tokens.md
+          - Wallet link: tools/wallets/wallet-link.md
+          - Fortmatic: tools/wallets/fortmatic.md
+          - Portis:  tools/wallets/portis.md
+          - Torus:  tools/wallets/torus.md          
+          - WalletConnect:  tools/wallets/walletconnect.md
+          - SlashAuth:  tools/wallets/slashauth.md
+          - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
+          - Particle network:  tools/wallets/particle-network.md
+          - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/

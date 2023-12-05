@@ -4,7 +4,7 @@ PIL was designed with the aim to simplify the proving and verification of execut
 
 In the nutshell, a typical PIL code states the program identifier, the parameters used in the program's computations as well as constraints these parameters must satisfy. 
 
-## Key Features
+## Key features
 
 A PIL code starts with the program's $\texttt{namespace}$ which is a reserved keyword used to identify the program being executed and to frame the scope of the program definition.
 
@@ -16,7 +16,7 @@ As opposed to $\texttt{constant}$ polynomials which are preprocessed for a given
 
 The keyword $\texttt{commit}$ allows the compiler to identify the corresponding polynomial as committed.
 
-## Multiplier Program in PIL
+## Multiplier program in PIL
 
 Let us create a simple PIL program that models the computation of the product of two integers. Consider a program that, at each step, takes two input numbers and multiplies them. 
 
@@ -37,31 +37,18 @@ $$
 See the execution trace of the Multiplier program in the table below:
 
 $$
-\begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 1}\\ \hline
-\ \text{ 2}\\ \hline
-\ \text{ 3}\\ \hline
-\ \text{ 4}\\ \hline
-\ \text{ 5}\\ \hline
-\ \text{ 6}\\ \hline
-\ \ \vdots\\ \hline
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-\begin{aligned}\begin{array}{|l|c|c|c|c|c|c|c|}\hline 
-\mathtt{freeIn1} & \mathtt{freeIn2} & \texttt{out} \\ \hline 
-\ \quad\ \texttt{4} & \texttt{2} & \texttt{8} \\ \hline
-\ \quad\ \texttt{3} & \texttt{1} & \texttt{3}  \\ \hline
-\ \quad\ \texttt{0} & \texttt{9} & \texttt{0} \\ \hline
-\ \quad\ \texttt{7} & \texttt{3} & \texttt{21} \\ \hline
-\ \quad\ \texttt{4} & \texttt{4} & \texttt{16} \\ \hline
-\ \quad\ \texttt{5} & \texttt{6} & \texttt{30} \\ \hline
-\ \quad\ \vdots & \vdots & \vdots \\ \hline
-\end{array}
-\end{aligned}
+    \begin{aligned}
+        \begin{array}{|l|c|c|c|c|c|c|c|}\hline
+        \texttt{row} & \mathtt{freeIn1} & \mathtt{freeIn2} & \texttt{out} \\ \hline
+        \ \text{ 1} & \texttt{4} & \texttt{2} & \texttt{8} \\ \hline
+        \ \text{ 2} & \texttt{3} & \texttt{1} & \texttt{3}  \\ \hline
+        \ \text{ 3} & \texttt{0} & \texttt{9} & \texttt{0} \\ \hline
+        \ \text{ 4} & \texttt{7} & \texttt{3} & \texttt{21} \\ \hline
+        \ \text{ 5} & \texttt{4} & \texttt{4} & \texttt{16} \\ \hline
+        \ \text{ 6} & \texttt{5} & \texttt{6} & \texttt{30} \\ \hline
+        \text{ } \ \vdots & \vdots & \vdots & \vdots \\ \hline
+        \end{array}
+    \end{aligned}
 $$
 
 Since the above identity, labelled $\text{Eqn. 1}$, is satisfied in each of the rows of the execution trace, it means that the output column is filled with correct values.
@@ -105,36 +92,21 @@ Here's a more practical design, which reduces the $2^{10}$ committed polynomials
 See the below table for the corresponding execution trace:
 
 $$
-\begin{aligned}
-    \begin{array}{|l|c|}\hline
-    \texttt{row}\\ \hline
-    \ \text{ 1}\\ \hline
-    \ \text{ 2}\\ \hline
-    \ \text{ 3}\\ \hline
-    \ \text{ 4}\\ \hline
-    \ \text{ 5}\\ \hline
-    \ \text{ 6}\\ \hline
-    \ \text{ 7}\\ \hline
-    \ \ \vdots\\ \hline
-    \end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-\begin{aligned}
-    \begin{array}{|l|c|c|c|c|c|c|c|}\hline
-    \mathtt{freeIn} & \mathtt{RESET} & \texttt{out} \\ \hline
-    \ \quad\ \texttt{4} & \texttt{1} & \texttt{0} \\ \hline
-    \ \quad\ \texttt{2} & \texttt{0} & \texttt{4}  \\ \hline
-    \ \quad\ \texttt{3} & \texttt{1} & \texttt{8} \\ \hline
-    \ \quad\ \texttt{1} & \texttt{0} & \texttt{3} \\ \hline
-    \ \quad\ \texttt{9} & \texttt{1} & \texttt{3} \\ \hline
-    \ \quad\ \texttt{0} & \texttt{0} & \texttt{9} \\ \hline
-    \ \quad\ \texttt{0} & \texttt{1} & \texttt{0} \\ \hline
-    \ \quad\ \vdots & \vdots & \vdots \\ \hline
-    \end{array}
-\end{aligned}
+    \begin{aligned}
+        \begin{array}{|l|c|c|c|c|}\hline
+        \texttt{row} & \mathtt{freeIn} & \mathtt{RESET} & \texttt{out} \\ \hline
+         \ \text{ 1} & \texttt{4} & \texttt{1} & \texttt{0} \\ \hline
+         \ \text{ 2} & \texttt{2} & \texttt{0} & \texttt{4}  \\ \hline
+         \ \text{ 3} & \texttt{3} & \texttt{1} & \texttt{8} \\ \hline
+         \ \text{ 4} & \texttt{1} & \texttt{0} & \texttt{3} \\ \hline
+         \ \text{ 5} & \texttt{9} & \texttt{1} & \texttt{3} \\ \hline
+         \ \text{ 6} & \texttt{0} & \texttt{0} & \texttt{9} \\ \hline
+         \ \text{ 7} & \texttt{0} & \texttt{1} & \texttt{0} \\ \hline
+         \text{ }\ \text{ } \vdots & \vdots & \vdots & \vdots \\ \hline
+        \end{array}
+    \end{aligned}
 $$
-
+    
 Observe how each column of the execution trace records the **"state"** in each row. 
 
 - $\texttt{row 1}$ : The $\texttt{freeIn}$ column records the first input $4$ of the operation, hence $\texttt{RESET}$ reflects a $1$, while $\texttt{out}$ records $0$ as its default initial value.
@@ -153,50 +125,51 @@ In order to express the values of the $\texttt{out}$ polynomial in terms of the 
 
 - Whenever $\texttt{RESET}$ equals $1$ (i.e., in every $\texttt{row 2i-1}$), the next value of the $\texttt{out}$ polynomial, denoted by $\texttt{out}'$, equals the value of current $\texttt{freeIn}$ value. That is,
 
-  $$
-  \texttt{out}' = \texttt{RESET} * \texttt{freeIn} \tag{Eqn. 2}
-  $$
+    $$
+        \texttt{out}' = \texttt{RESET} * \texttt{freeIn} \qquad\qquad\qquad\qquad \tag{Eqn. 2}
+    $$
 
-- Whenever $\texttt{RESET}$ equals $0$ (i.e., in every $\texttt{row 2i}$), the next value $\texttt{out}'$ is the product of the current and the previous values of $\texttt{freeIn}$. That is,
+- Whenever $\texttt{RESET}$ equals $0$ (i.e., in every $\texttt{row 2i}$), the next value $\texttt{out}'$ is the product of the current and the previous values of $\texttt{freeIn}$. 
+    That is,
 
-  $$
-  \texttt{out}' = \texttt{freeIn}_{\texttt{row 2i}} * \texttt{freeIn}_{\texttt{row 2i-1}} \tag{Eqn. 3}
-  $$
+    $$
+        \texttt{out}' = \texttt{freeIn}_{\texttt{row 2i}} * \texttt{freeIn}_{\texttt{row 2i-1}} \quad\quad \tag{Eqn. 3}
+    $$
 
-  which is the value of the $\texttt{out}$ polynomial in $\texttt{row 2i+1}$.
+    which is the value of the $\texttt{out}$ polynomial in $\texttt{row 2i+1}$.
 
-  But, whenever $\texttt{RESET}$ equals $0$  (for every $\texttt{row 2i}$), we have $\texttt{out} = \texttt{freeIn}_{\texttt{row 2i-1}}$. Hence $\text{Eqn. 3}$ can be rewritten as,
+    But, whenever $\texttt{RESET}$ equals $0$  (for every $\texttt{row 2i}$), we have $\texttt{out} = \texttt{freeIn}_{\texttt{row 2i-1}}$. Hence $\text{Eqn. 3}$ can be rewritten as,
 
-  $$
-  \texttt{out}' = \texttt{freeIn} * \texttt{out} \tag{Eqn. 4}
-  $$
+    $$
+        \texttt{out}' = \texttt{freeIn} * \texttt{out} \qquad\qquad\qquad\qquad\quad \tag{Eqn. 4}
+    $$
 
-  Or equivalently, for every $\texttt{row 2i}$, the next output value $\texttt{out}'$ can be expressed as:
+    Or equivalently, for every $\texttt{row 2i}$, the next output value $\texttt{out}'$ can be expressed as:
 
-  $$
-  \texttt{out}' = (1 - \texttt{RESET}) (\texttt{freeIn} * \texttt{out}) \tag{Eqn. 5}
-  $$
+    $$
+        \texttt{out}' = (1 - \texttt{RESET}) (\texttt{freeIn} * \texttt{out})\quad\quad\quad \tag{Eqn. 5}
+    $$
 
-  Putting $\text{Eqn. 2}$ and $\text{Eqn. 5}$ together yields the following constraint:
+    Putting $\text{Eqn. 2}$ and $\text{Eqn. 5}$ together yields the following constraint:
 
-  $$
-  \texttt{out}' = \texttt{RESET} * \texttt{freeIn}\ +\ (1 - \texttt{RESET}) (\texttt{freeIn} * \texttt{out}) \tag{Eqn. 6}
-  $$
+    $$
+        \texttt{out}' = \texttt{RESET} * \texttt{freeIn}\ +\ (1 - \texttt{RESET}) (\texttt{freeIn} * \texttt{out})\quad  \tag{Eqn. 6}
+    $$
 
-Therefore, the PIL code for an optimized Multiplier SM can be written as follows,
+    Therefore, the PIL code for an optimized Multiplier SM can be written as follows,
 
-```
-namespace Multiplier(2**10);
+    ```
+    namespace Multiplier(2**10);
 
-// Constant Polynomials
-pol constant RESET;
+    // Constant Polynomials
+    pol constant RESET;
 
-// Committed Polynomials
-pol commit freeIn;
-pol commit out;
+    // Committed Polynomials
+    pol commit freeIn;
+    pol commit out;
 
-// Constraints
-out' = RESET*freeIn + (1-RESET)*(out*freeIn);
-```
+    // Constraints
+    out' = RESET*freeIn + (1-RESET)*(out*freeIn);
+    ```
 
-Observe that the $\texttt{RESET}$ polynomial is $\texttt{constant}$ because it does not change from one execution to the next. In an actual implementation of the `Multiplier` program, $\texttt{RESET}$ would be among the preprocessed polynomials.
+    Observe that the $\texttt{RESET}$ polynomial is $\texttt{constant}$ because it does not change from one execution to the next. In an actual implementation of the `Multiplier` program, $\texttt{RESET}$ would be among the preprocessed polynomials.
