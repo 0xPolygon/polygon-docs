@@ -1,10 +1,6 @@
-# Auth Module
+Heimdall's `auth` module is responsible for specifying the base transaction and account types for an application. It contains the ante handler, where all basic transaction validity checks (signatures, nonces, auxiliary fields) are performed, and exposes the account keeper, which allows other modules to read, write, and modify accounts.
 
-This document describes the `auth` module of Heimdall.
-
-The `auth` module is responsible for specifying the base transaction and account types for an application. It contains the ante handler, where all basic transaction validity checks (signatures, nonces, auxiliary fields) are performed, and exposes the account keeper, which allows other modules to read, write, and modify accounts.
-
-## Gas and Fees
+## Gas and fees
 
 Fees serve two purposes for an operator of the network.
 
@@ -86,7 +82,7 @@ The auth module contains the following parameters:
 |DefaultMaxTxGas       |uint64|1000000           |
 |DefaultTxFees         |string|"1000000000000000"|
 
-## CLI Commands
+## CLI commands
 
 ### Show account
 

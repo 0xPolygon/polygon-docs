@@ -1,8 +1,6 @@
-# Ante Handler
+Heimdall's "Ante handler" is responsible for checking and validating all transactions. After verification, it checks the balance of the sender for enough fees and deduct fees in case of successful transaction inclusion.
 
-Ante handler checks and validates the transaction. After the verification, it checks the balance of the sender for enough fees and deduct fees in case of successful transaction inclusion.
-
-## Gas Limit
+## Gas limit
 
 Each block and transaction have a limit for gas usage. A block can contain multiple transactions, but gas used by all transactions in a block must be less than block gas limit to avoid larger blocks.
 
@@ -12,7 +10,7 @@ block.GasLimit >= sum(tx1.GasUsed + tx2.GasUsed + ..... + txN.GasUsed)
 
 Note that each state manipulation on transaction costs gas, including signature verification for the transaction.
 
-### Block Gas Limit
+### Block gas limit
 
 Max block gas limit and bytes per block is passed while setting up app's consensus params: [https://github.com/maticnetwork/heimdall/blob/develop/app/app.go#L464-L471](https://github.com/maticnetwork/heimdall/blob/develop/app/app.go#L464-L471)
 
@@ -30,11 +28,11 @@ ConsensusParams: &abci.ConsensusParams{
 },
 ```
 
-### Transaction Gas Limit
+### Transaction Gas limit
 
 The transaction gas limit is defined in params in `auth` module. It can be changed through the Heimdall `gov` module.
 
-### Checkpoint Transaction Gas Limit
+### Checkpoint transaction gas limit
 
 Since block contains multiple transactions and verifies this particular transaction on the Ethereum chain, Merkle proof is required. To avoid extra Merkle proof verification for checkpoint transaction, Heimdall only allows one transaction in the block if the transaction type is `MsgCheckpoint`
 
@@ -48,7 +46,7 @@ if stdTx.Msg.Type() == "checkpoint" && stdTx.Msg.Route() == "checkpoint" {
 }
 ```
 
-## Transaction Verification and Replay Protection
+## Transaction verification and replay protection
 
 Ante Handler handles and verifies signature in incoming transaction: [https://github.com/maticnetwork/heimdall/blob/develop/auth/ante.go#L230-L266](https://github.com/maticnetwork/heimdall/blob/develop/auth/ante.go#L230-L266)
 

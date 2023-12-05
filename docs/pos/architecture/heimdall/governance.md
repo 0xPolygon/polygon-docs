@@ -1,52 +1,37 @@
-# Governance
+Heimdall's governance operates identically to the Cosmos-sdk `x/gov` module, as detailed in [Cosmos-sdk documentation](https://docs.cosmos.network/master/modules/gov/).
 
-Heimdall governance works exactly the same as [Cosmos-sdk `x/gov` module](https://docs.cosmos.network/master/modules/gov/).
+## Overview
 
-In this system, holders of the native staking token of the chain can vote on proposals on a `1 token = 1 vote` basis. Here is a list of features the module currently supports:
+In Heimdall, token holders can influence decisions by voting on proposals. Each token equals one vote. The governance system currently supports:
 
-- **Proposal submission:** Validators can submit proposals with a deposit. Once the minimum deposit is reached, proposal enters voting period. Valdiators that deposited on proposals can recover their deposits once the proposal is rejected or accepted.
-- **Vote:** Validators can vote on proposals that reached MinDeposit.
+- **Proposal submission:** Validators can submit proposals along with a deposit. If the deposit reaches the minimum threshold within a set period, the proposal moves to a voting phase. Validators can reclaim their deposits after the proposal's acceptance or rejection.
+- **Voting:** Validators are eligible to vote on proposals that have met the minimum deposit requirement.
 
-There are deposit period and voting period as params in `gov` module. Minimum deposit has to be achieved before deposit period ends, otherwise proposal will be automatically rejected.
+The governance module includes two critical periods: the deposit and voting periods. Proposals failing to meet the minimum deposit by the end of the deposit period are automatically rejected. Upon reaching the minimum deposit, the voting period commences, during which validators cast their votes. After the voting period, the `gov/Endblocker.go` script tallies the votes and determines the proposal's fate based on `tally_params`: quorum, threshold, and veto. The tallying process is detailed in the source code at [Heimdall GitHub repository](https://github.com/maticnetwork/heimdall/blob/develop/gov/endblocker.go).
 
-Once minimum deposits reached within deposit period, voting period starts. In voting period, all validators should vote their choices for the proposal. After voting period ends, `gov/Endblocker.go` executes `tally`  function and accepts or rejects proposal based on `tally_params` — `quorum`, `threshold` and `veto`.
+### Types of proposals
 
-Source: [https://github.com/maticnetwork/heimdall/blob/develop/gov/endblocker.go](https://github.com/maticnetwork/heimdall/blob/develop/gov/endblocker.go)
+Currently, Heimdall supports the **Param Change Proposal**, allowing validators to modify parameters in any of Heimdall's modules.
 
-There are different types of proposals that can be implemented in Heimdall. As of now, it supports only the **Param change proposal**.
+#### Param Change Proposal example
 
-### Param change proposal
+For instance, validators might propose to alter the minimum `tx_fees` in the `auth` module. If the proposal is approved, the parameters in the Heimdall state are automatically updated without the need for an additional transaction.
 
-Using this type of proposal, validators can change any `params` in any `module` of Heimdall.
+## Command Line Interface (CLI) commands
 
-Example: change minimum `tx_fees` for the transaction in `auth` module. When the proposal gets accepted, it automatically changes the `params` in Heimdall state. No extra TX is needed.
+### Checking governance parameters
 
-## CLI Commands
-
-### Query gov params
+To view all parameters for the governance module:
 
 ```go
 heimdallcli query gov params --trust-node
 ```
 
-This shows all params for governance module.
+This command displays the current governance parameters, such as voting period, quorum, threshold, veto, and minimum deposit requirements.
 
-```go
-voting_params:
-  voting_period: 48h0m0s
-tally_params:
-  quorum: "334000000000000000"
-  threshold: "500000000000000000"
-  veto: "334000000000000000"
-deposit_parmas:
-  min_deposit:
-  - denom: matic
-    amount:
-      i: "10000000000000000000"
-  max_deposit_period: 48h0m0s
-```
+### Submitting a proposal
 
-### Submit proposal
+To submit a proposal:
 
 ```bash
 heimdallcli tx gov submit-proposal \
@@ -54,56 +39,40 @@ heimdallcli tx gov submit-proposal \
  --chain-id <heimdall-chain-id>
 ```
 
-`proposal.json` is a file which includes proposal in json format.
+`proposal.json` is a JSON-formatted file containing the proposal details.
 
-```json
-{
-  "title": "Auth Param Change",
-  "description": "Update max tx gas",
-  "changes": [
-    {
-      "subspace": "auth",
-      "key": "MaxTxGas",
-      "value": "2000000"
-    }
-  ],
-  "deposit": [
-    {
-      "denom": "matic",
-      "amount": "1000000000000000000"
-    }
-  ]
-}
-```
+### Querying proposals
 
-### Query proposal
-
-To query all proposals:
+To list all proposals:
 
 ```go
 heimdallcli query gov proposals --trust-node
 ```
 
-To query a particular proposal:
+To query a specific proposal:
 
 ```go
-heimdallcli query gov proposals 1 --trust-node
+heimdallcli query gov proposal 1 --trust-node
 ```
 
-### Vote on proposal
+### Voting on a proposal
 
-To vote on a particular proposal:
+To vote on a proposal:
 
 ```bash
-heimdallcli tx gov vote 1 "Yes" --validator-id 1  --chain-id <heimdal-chain-id>
+heimdallcli tx gov vote 1 "Yes" --validator-id 1 --chain-id <heimdall-chain-id>
 ```
 
-Proposal will be automatically tallied after voting period.
+Votes are automatically tallied after the voting period concludes.
 
 ## REST APIs
 
-|Name                  |Method|Endpoint          |
-|----------------------|------|------------------|
-|Get all proposals     |GET   |/gov/proposals    |
-|Get proposal details  |GET   |/gov/proposals/`proposal-id`|
-|Get all votes for the proposal|GET   |/gov/proposals/`proposal-id`/votes|
+Heimdall also offers REST APIs for interacting with the governance system:
+
+| Name | Method | Endpoint |
+| ---- | ------ | -------- |
+| Get all proposals | GET | `/gov/proposals` |
+| Get proposal details | GET | `/gov/proposals/{proposal-id}` |
+| Get all votes for a proposal | GET | `/gov/proposals/{proposal-id}/votes` |
+
+These APIs facilitate access to proposal details, voting records, and overall governance activity.

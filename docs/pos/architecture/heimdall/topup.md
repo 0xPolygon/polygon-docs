@@ -1,6 +1,4 @@
-# Topup
-
-Heimdall Topup is an amount which will be used to pay fees on Heimdall chain.
+Topups are amounts used to pay fees on the Heimdall chain.
 
 There are two ways to topup your account:
 

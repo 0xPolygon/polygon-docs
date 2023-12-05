@@ -1,5 +1,3 @@
-# Chain Manager
-
 This document specifies an overview of the chain manager module of Heimdall.
 
 The **chain manager** module provides all necessary dependencies like `contract-addresses`, `bor_chain_id,` and `tx_confirmation_time`. Other parameters can be added to this later on.
@@ -39,7 +37,7 @@ type ChainParams struct {
 }
 ```
 
-## CLI Commands
+## CLI commands
 
 ### Parameters
 
@@ -49,7 +47,7 @@ To print all params;
 heimdallcli query chainmanager params --trust-node
 ```
 
-### Expected Result
+### Expected result
 
 ```yaml
 tx_confirmation_time: 12s

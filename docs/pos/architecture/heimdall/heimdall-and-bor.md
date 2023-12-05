@@ -1,14 +1,10 @@
-# Bor Module
-
-Bor module handles span management on Heimdall. Given Bor chain's current block number `n`, current span `span`, if `span.StartBlock <= n < span.EndBlock`, new span is proposed on Heimdall by any validator.
+Heimdall's `bor` module is responsible for managing span intervals and coordinating interactions with the Bor chain. Specifically, it determines when a new span can be proposed on Heimdall based on the current block number `n` and the current span `span`. A new span proposal is permissible when the current Bor chain block number `n` falls within the range of `span.StartBlock` and `span.EndBlock` (inclusive of `StartBlock` and exclusive of `EndBlock`). Validators on the Heimdall chain can propose a new span when these conditions are met.
 
 ## Messages
 
 ### MsgProposeSpan
 
-`MsgProposeSpan` sets the validators’ committee for a given `span` and stores a new span into Heimdall state.
-
-Source: [https://github.com/maticnetwork/heimdall/blob/develop/bor/handler.go#L27](https://github.com/maticnetwork/heimdall/blob/develop/bor/handler.go#L27)
+The `MsgProposeSpan` message plays a crucial role in setting up the validator committee for a specific span and records a new span in the Heimdall state. This message is detailed in the Heimdall source code at [bor/handler.go#L27](https://github.com/maticnetwork/heimdall/blob/develop/bor/handler.go#L27).
 
 ```go
 // MsgProposeSpan creates msg propose span
@@ -21,10 +17,15 @@ type MsgProposeSpan struct {
 }
 ```
 
-Here is how this transaction chooses producers out of all validators:
+#### Selection of Producers
 
-1. It creates multiple slots based on validators' power. Example: A with power 10 will have 10 slots, B with power 20 with have 20 slots.
-2. With all slots, `shuffle` function shuffles them using `seed` and selects first `producerCount` producers.  `bor` module on Heimdall uses ETH 2.0 shuffle algorithm to choose producers out of all validators. Each span `n` uses block hash of Ethereum (ETH 1.0) block `n`  as `seed`. Note that slots based selection allows validators to get selected based on their power. The higher power validator will have a higher probability to get selected. Source: [https://github.com/maticnetwork/heimdall/blob/develop/bor/selection.go](https://github.com/maticnetwork/heimdall/blob/develop/bor/selection.go)
+The process for choosing producers from among all validators involves a two-step mechanism:
+
+1. **Slot Allocation Based on Validator Power:** Each validator is assigned a number of slots proportional to their power. For instance, a validator with a power rating of 10 will receive 10 slots, while one with a power rating of 20 will receive 20 slots. This method ensures that validators with higher power have a correspondingly higher chance of being selected.
+
+2. **Shuffling and Selection:** All allocated slots are then shuffled using a `seed` derived from the Ethereum (ETH 1.0) block hash corresponding to each span `n`. The first `producerCount` producers are selected from this shuffled list. The `bor` module on Heimdall employs the Ethereum 2.0 shuffle algorithm for this selection process. The algorithm's implementation can be viewed at [bor/selection.go](https://github.com/maticnetwork/heimdall/blob/develop/bor/selection.go).
+
+This method of selection ensures that the process is both fair and weighted according to the validators' power, thereby maintaining a balanced and proportional representation in the span committee.
 
 ```go
 // SelectNextProducers selects producers for the next span by converting power to slots
@@ -180,6 +181,6 @@ producer_count: 4
 
 |Name                  |Method|Endpoint          |
 |----------------------|------|------------------|
-|Span details          |GET   |/bor/span/<span-id\>|
+|Span details          |GET   |/bor/span/span-id |
 |Get latest span       |GET   |/bor/latest-span  |
 |Get params            |GET   |/bor/params       |
