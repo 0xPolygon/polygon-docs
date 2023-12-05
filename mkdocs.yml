@@ -257,6 +257,7 @@ nav:
             - Governance: pos/architecture/heimdall/governance.md
             - Key management: pos/architecture/heimdall/key-management.md
             - Stdtx: pos/architecture/heimdall/stdtx.md
+            - Staking: pos/architecture/heimdall/staking.md
             - Modules:
               - Modules: pos/architecture/heimdall/modules/index.md
               - Ante handler: pos/architecture/heimdall/modules/antehandler.md
@@ -264,7 +265,6 @@ nav:
               - Bank: pos/architecture/heimdall/modules/bank.md
               - Bor: pos/architecture/heimdall/modules/bor.md
               - Chain manager: pos/architecture/heimdall/modules/chain-manager.md
-              - Staking: pos/architecture/heimdall/modules/staking.md
               - Topup: pos/architecture/heimdall/modules/topup.md
             - FAQ: pos/architecture/heimdall/faq.md
       - Specification:

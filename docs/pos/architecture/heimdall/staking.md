@@ -4,7 +4,7 @@ Staking module manages validator related transactions and state for Heimdall. No
 
 ## Messages
 
-<img src="img/pos/stake-management-flow.svg" />
+![](../../../img/pos/stake-management-flow.svg)
 
 ### MsgValidatorJoin
 
