@@ -20,4 +20,4 @@ Follow the instructions in the [CDK validium node repository's README](https://g
 
 Finally, once the CDK validium node is operational, set up and run the data availability node. 
 
-Check for instructions here: [<ins>CDK DA Node GitHub running instructions</ins>](https://github.com/0xPolygon/cdk-data-availability/docs/running.md).
+Check for instructions here: [<ins>CDK DA Node GitHub running instructions</ins>](https://github.com/0xPolygon/cdk-data-availability/blob/main/docs/running.md).

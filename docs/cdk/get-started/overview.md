@@ -1,11 +1,20 @@
-Polygon's Chain Development Kit (CDK) is a modular, open source software tool for blockchain developers which supports installation and configuration of a variety of chain architectures.
+Polygon’s Chain Development Kit (CDK) is a modular, open source software toolkit for blockchain developers which supports installation and configuration of a variety of chain architectures.  
+
+This section documents the two most popular deployments currently supported by CDK:
+
+- Validium
+- Rollup
+
+Users select a chain architecture specific to their needs from a set of supported, open source options. Alternatively, users can select custom components for specific requirements. 
+
+The diagram below shows the two supported configuration options for data availability (DA), rollup or validium. Rollups post transaction data from the CDK directly onto Ethereum whereas validiums only post the transaction hash.
+
+![CDK architecture choices](../../img/cdk/cdk-architecture.png)
+
+Check out the [data availability docs](../concepts/dac.md) for more information.
 
 !!! important
-    At the time of writing, CDK offers rollup and validium configurations.
-
-CDK users choose a chain architecture specific to their needs and use cases.
-
-BLURB:
+    The documentation describes standard deployments. You can edit the configuration files to implement your own custom set ups.
 
 !!! info
     For the latest updates, follow our official GitHub repositories.

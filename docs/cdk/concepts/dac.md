@@ -5,14 +5,7 @@ If data is available on-chain, then each node has to store every piece of data r
 !!! info "Recommended resource"
     See Ethereum.org's discussion on [data availability](https://ethereum.org/en/developers/docs/data-availability/).
 
-## What is a validium?
-
-Validiums are blockchain solutions that do not store transaction data. 
-
-!!! info "Recommended resource"
-    See Ethereum.org's glossary [definition of validiums](https://ethereum.org/en/developers/docs/scaling/validium/).
-
-## What is a DAC?
+## Data availability committees
 
 Polygon's CDK validium has an optional data availability committee (DAC).
 
