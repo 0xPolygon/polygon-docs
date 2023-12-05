@@ -253,16 +253,16 @@ nav:
             - Commands: pos/architecture/bor/commands.md
           - Heimdall:
             - Heimdall: pos/architecture/heimdall/index.md
+            - Heimdall and Bor: pos/architecture/heimdall/heimdall-and-bor.md
             - Authentication: pos/architecture/heimdall/authentication.md
+            - Key management: pos/architecture/heimdall/key-management.md
             - Validation: pos/architecture/heimdall/validation.md
+            - Balance transfers: pos/architecture/heimdall/balance-transfers.md
             - Staking: pos/architecture/heimdall/staking.md
             - Checkpoints: pos/architecture/heimdall/checkpoints.md
-            - Governance: pos/architecture/heimdall/governance.md
             - Topup: pos/architecture/heimdall/topup.md
-            - Key management: pos/architecture/heimdall/key-management.md
             - Chain management: pos/architecture/heimdall/chain-management.md
-            - Balance transfers: pos/architecture/heimdall/balance-transfers.md
-            - Heimdall and Bor: pos/architecture/heimdall/heimdall-and-bor.md
+            - Governance: pos/architecture/heimdall/governance.md
       - Specification:
           - pos/spec/index.md
       - Concepts:
