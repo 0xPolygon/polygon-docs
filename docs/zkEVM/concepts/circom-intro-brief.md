@@ -22,7 +22,7 @@ The set of valid circuit input, intermediate and output values satisfying the R1
 
 This document focuses on what CIRCOM is, its common context of implementation, and how the zkProver utilizes CIRCOM.
 
-## Circuit Context
+## Circuit context
 
 Arithmetic circuits are mostly used as standard models for studying the complexity of computations.
 
@@ -48,7 +48,7 @@ CIRCOM is a Domain-Specific Language (DSL) used to define Arithmetic circuits, a
 
 ![CIRCOM Overall Context](../../img/zkEVM/02circom-overall-context.png)
 
-### CIRCOM As A DSL
+### CIRCOM as a DSL
 
 As described in the title of its [specifications paper](https://www.techrxiv.org/articles/preprint/CIRCOM_A_Robust_and_Scalable_Language_for_Building_Complex_Zero-Knowledge_Circuits/19374986/1), CIRCOM is a **language for building complex zero-knowledge circuits**.
 
@@ -62,7 +62,7 @@ In this regard, CIRCOM users can use templates to create their own custom circui
 
 However, CIRCOM users can also use templates from [CIRCOMLIB](https://github.com/iden3/circomlib), which is a publicly available library that contains hundreds of circuits such as; comparators, hash functions, digital signatures, binary and decimal converters.
 
-### Circuit Compiler
+### Circuit compiler
 
 In addition to being a DSL used to define and create Arithmetic circuits, CIRCOM has a special compiler of Arithmetic circuits into their equivalent R1CS.
 
@@ -87,7 +87,7 @@ $$
 \texttt{a} \times \texttt{b} \texttt{ - c = 0}
 $$
 
-### The `pragma` Instruction
+### The `pragma` instruction
 
 The `pragma` instruction specifies the version of the CIRCOM compiler being used. It is meant to ensure compatibility between the circuit and the compiler version. If the two are incompatible, the compiler throws a warning.
 
@@ -97,7 +97,7 @@ pragma circom 2.0.0;
 
 As a precautionary measure, all files with the `.circom` extension should start with a `pragma` instruction. In the absence of this instruction, it is assumed that the code is compatible with the latest compiler version.
 
-### Declaration Of Signals
+### Declaration of signals
 
 In the Multiplier example, there are two input signals $\texttt{a}$ and $\texttt{b}$, and an output signal $\texttt{c}$.
 
@@ -111,7 +111,7 @@ signal input b;
 signal output c;
 ```
 
-### The <== Operator
+### The <== operator
 
 The functionality of this operator is twofold;
 
@@ -122,7 +122,7 @@ The functionality of this operator is twofold;
 c <== a * b;
 ```
 
-### Creation Of Templates
+### Creation of templates
 
 One of the main peculiarities of CIRCOM is the allowance to define parameterizable small circuits called **templates**.
 
@@ -145,7 +145,7 @@ template Multiplier () {
 }
 ```
 
-### Instantiation Of Templates
+### Instantiation of templates
 
 Although the above code succeeds in creating the `Multiplier template`, the template is yet to be instantiated.
 
@@ -163,7 +163,7 @@ Declaration of components is the means by which CIRCOM enables programmers to wo
 
 Small circuits can be defined which can be combined to create larger circuits by the complexity of the computations needed to be carried out.
 
-### Compiling a Circuit
+### Compiling a circuit
 
 As previously mentioned, the use of the operator "<==" in the `Multiplier template` has dual functionality:
 
@@ -193,7 +193,7 @@ Whichever program is used, needs as input, a file containing a set of valid inpu
 
 Recall that **a valid set of circuit input, intermediate and output values is called the witness**.
 
-### Private And Public Signals
+### Private and public signals
 
 Depending on the `template` being used, some signals are `private` while others are `public`.
 
@@ -205,7 +205,7 @@ component main {public [a]} = Multiplier();
 
 According to the above line, the input signal $\texttt{a}$ is `public`, while $\texttt{b}$ is `private` by default.
 
-### Main Component
+### Main component
 
 The CIRCOM compiler needs a specific component as an entry point. And this initial component is called `main`.
 
@@ -229,7 +229,7 @@ However, the `main` component has a special attribute to set a list of global in
 
 The rule of thumb is: **Any other input signal not included in this list `{public [s1,..,sn]}`, is considered private**.
 
-### Concluding CIRCOM's Features
+### Concluding CIRCOM's features
 
 There are many more features that distinguish CIRCOM from other known ZK tools. The rest of these features delineated in the original [CIRCOM paper](https://www.techrxiv.org/articles/preprint/CIRCOM_A_Robust_and_Scalable_Language_for_Building_Complex_Zero-Knowledge_Circuits/19374986/1).
 

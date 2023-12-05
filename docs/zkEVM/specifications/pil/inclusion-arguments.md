@@ -4,11 +4,11 @@ For most of the programs used in the zkEVM's Prover, the values recorded in the 
 
 In some cases, there may be a need to restrict the sizes of these values to only a certain number of bits. It is therefore necessary to devise a good control strategy for handling both **underflows** and **overflows**.
 
-## Verify Addition Of 2-byte Numbers
+## Verify addition of 2-byte numbers
 
 The aim in this section is to design a program (and its corresponding PIL code) to verify addition of two integers each of a size fitting in exactly 2 bytes. Any input to the addition program will be considered invalid if it is not an integer in the range [0, 65535].
 
-## Naive Execution Trace
+## Naive execution trace
 
 Of course, there are many ways in which such a program can be arithmetized. We are going to use a method based on **inclusion arguments**. The overall idea is to reduce $2$-byte additions to $1$-byte additions. 
 
@@ -58,7 +58,7 @@ Observe that $\text{Eqn. 9}$ is not satisfied in row 4, because the $\texttt{car
 
 The problem with this design is that there's no direct way to introduce the previous value of $\texttt{carry}$ in the PIL code.
 
-## Adding An Extra Polynomial
+## Adding an extra polynomial
 
 There is a need to introduce another polynomial, call it $\texttt{prevCarry}$, which contains a shifted version of the value in the $\texttt{carry}$ polynomial.
 
@@ -70,24 +70,12 @@ $$
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 1}\\ 
-\ \text{ 2}\\ \hline
-\ \text{ 3}\\ 
-\ \text{ 4}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-\begin{aligned}\begin{array}{|c|c|c|c|}\hline 
-\mathtt{a} & \mathtt{b} & \texttt{prevCarry} & \texttt{carry} & \texttt{add} \\ \hline 
-\texttt{ox11} & \texttt{0x22} & \texttt{0x01} & \texttt{0x00} & \texttt{0x33} \\ 
-\texttt{0x30} & \texttt{0x40} & \texttt{0x00} & \texttt{0x00} & \texttt{0x70} \\ \hline
-\texttt{0xff} & \texttt{0xee} & \texttt{0x00} & \texttt{0x01} & \texttt{0xed}\\ 
-\texttt{0x00} & \texttt{0xff} & \texttt{0x01} & \texttt{0x01} &  \texttt{0x00} \\ \hline
-
+\begin{array}{|c|c|c|c|}\hline 
+\texttt{row} & \mathtt{a} & \mathtt{b} & \texttt{prevCarry} & \texttt{carry} & \texttt{add} \\ \hline 
+\ \text{ 1} & \texttt{ox11} & \texttt{0x22} & \texttt{0x01} & \texttt{0x00} & \texttt{0x33} \\ 
+\ \text{ 2} & \texttt{0x30} & \texttt{0x40} & \texttt{0x00} & \texttt{0x00} & \texttt{0x70} \\ \hline
+\ \text{ 3} & \texttt{0xff} & \texttt{0xee} & \texttt{0x00} & \texttt{0x01} & \texttt{0xed}\\ 
+\ \text{ 4} & \texttt{0x00} & \texttt{0xff} & \texttt{0x01} & \texttt{0x01} &  \texttt{0x00} \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -102,24 +90,12 @@ The execution trace is now adjusted as follows,
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 1}\\ 
-\ \text{ 2}\\ \hline
-\ \text{ 3}\\ 
-\ \text{ 4}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-\begin{aligned}\begin{array}{|c|c|c|c|c|}\hline 
-\mathtt{a} & \mathtt{b} & \texttt{prevCarry} & \texttt{carry} & \texttt{add} & \texttt{RESET} \\ \hline
-\texttt{ox11} & \texttt{0x22} & \texttt{0x01} & \texttt{0x00} & \texttt{0x33} & \texttt{1} \\ 
-\texttt{0x30} & \texttt{0x40} & \texttt{0x00} & \texttt{0x00} & \texttt{0x70} & \texttt{0} \\ \hline
-\texttt{0xff} & \texttt{0xee} & \texttt{0x00} & \texttt{0x01} & \texttt{0xed} & \texttt{1} \\ 
-\texttt{0x00} & \texttt{0xff} & \texttt{0x01} & \texttt{0x01} &  \texttt{0x00} & \texttt{0} \\ \hline
-
+\begin{array}{|c|c|c|c|c|}\hline 
+\texttt{row} & \mathtt{a} & \mathtt{b} & \texttt{prevCarry} & \texttt{carry} & \texttt{add} & \texttt{RESET} \\ \hline
+\ \text{ 1} & \texttt{ox11} & \texttt{0x22} & \texttt{0x01} & \texttt{0x00} & \texttt{0x33} & \texttt{1} \\ 
+\ \text{ 2} & \texttt{0x30} & \texttt{0x40} & \texttt{0x00} & \texttt{0x00} & \texttt{0x70} & \texttt{0} \\ \hline
+\ \text{ 3} & \texttt{0xff} & \texttt{0xee} & \texttt{0x00} & \texttt{0x01} & \texttt{0xed} & \texttt{1} \\ 
+\ \text{ 4} & \texttt{0x00} & \texttt{0xff} & \texttt{0x01} & \texttt{0x01} &  \texttt{0x00} & \texttt{0} \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -145,7 +121,7 @@ prevCarry ' = carry;
 a + b + (1-RESET)*prevCarry = carry*2**8 + add;
 ```
 
-## Addition Of n-byte Numbers
+## Addition of n-byte numbers
 
 Similarly to the Multiplier example of the previous sections, it is worth mentioning that by changing only the $\texttt{RESET}$ polynomial (and not the PIL itself), it is possible to arithmetize the program in such a way that generic $n$-byte additions can be verified. 
 
@@ -157,24 +133,12 @@ For example, the following execution trace is valid, as it satisfies all the con
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 1}\\ 
-\ \text{ 2}\\ \hline
-\ \text{ 3}\\ 
-\ \text{ 4}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-\begin{aligned}\begin{array}{|c|c|c|c|c|}\hline 
-\mathtt{a} & \mathtt{b} & \texttt{prevCarry} & \texttt{carry} & \texttt{add} & \texttt{RESET} \\ \hline
-\texttt{ox11} & \texttt{0x22} & \texttt{0x01} & p\cdot 2^8 & \texttt{0x33} & \texttt{1} \\ 
-\texttt{0x30} & \texttt{0x40} & p\cdot 2^8 & \texttt{0x00} & \texttt{0x70} + p\cdot 2^8 & \texttt{0} \\ \hline
-\texttt{0xff} & \texttt{0xee} & \texttt{0x00} & \texttt{0x01} + p\cdot 2^8 & \texttt{0xed} & \texttt{1} \\ 
-\texttt{0x00} & \texttt{0xff} & \texttt{0x01} + p\cdot 2^8 & \texttt{0x01} &  \texttt{0x00} + p\cdot 2^8 & \texttt{0} \\ \hline
-
+\begin{array}{|c|c|c|c|c|}\hline 
+\texttt{row} & \mathtt{a} & \mathtt{b} & \texttt{prevCarry} & \texttt{carry} & \texttt{add} & \texttt{RESET} \\ \hline
+\ \text{ 1} & \texttt{ox11} & \texttt{0x22} & \texttt{0x01} & p\cdot 2^8 & \texttt{0x33} & \texttt{1} \\ 
+\ \text{ 2} & \texttt{0x30} & \texttt{0x40} & p\cdot 2^8 & \texttt{0x00} & \texttt{0x70} + p\cdot 2^8 & \texttt{0} \\ \hline
+\ \text{ 3} & \texttt{0xff} & \texttt{0xee} & \texttt{0x00} & \texttt{0x01} + p\cdot 2^8 & \texttt{0xed} & \texttt{1} \\ 
+\ \text{ 4} & \texttt{0x00} & \texttt{0xff} & \texttt{0x01} + p\cdot 2^8 & \texttt{0x01} &  \texttt{0x00} + p\cdot 2^8 & \texttt{0} \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -185,7 +149,7 @@ Nonetheless, the introduction of more bytes in either column does not break the 
 
 An inclusion argument is used for this purpose.
 
-## Inclusion Argument
+## Inclusion argument
 
 Given two vectors, $\texttt{a} = (a_1, . . . , a_n) \in \mathbb{F}^n_p$ and $\texttt{b} = (b_1,...,b_m) \in \mathbb{F}^m_p$, it is said that,
 
@@ -223,7 +187,7 @@ A valid execution trace (with $\texttt{N} = 4$) for the above example is shown i
 
 ![Two Programs each with 2-column Execution Traces](../../../img/zkEVM/11pil-2-progs-2-exec-traces-eg.png)
 
-### Generalized Inclusion Arguments
+### Generalized inclusion arguments
 
 In PIL we can also write inclusion arguments not only over single columns but over multiple columns. That is, given two subsets of committed columns $\mathtt{a_1}, \dots , \mathtt{a}_m$ and $\texttt{b}_1, \dots , \texttt{b}_m$ of some program(s) we can write as,
 
@@ -253,37 +217,18 @@ The execution trace of these polynomials can be constructed as follows:
 
 $$
 \begin{aligned}
-\begin{array}{|c|c|}\hline
-\texttt{row}\\ \hline
-\text{ 1}\\ 
-\text{ 2}\\ 
-\text{ 3}\\ 
-\vdots \\ 
-\text{256}\\
-\text{257}\\
-\text{258}\\
-\vdots \\
-\text{65535}\\
-\text{65536}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-
-\begin{aligned}\begin{array}{|c|c|c|c|}\hline 
-\mathtt{	BYTE\_A} & \mathtt{BYTE\_B} & \mathtt{BYTE\_CARRY} & \mathtt{BYTE\_ADD} \\ \hline 
-\texttt{0x00} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} \\ 
-\texttt{0x00} & \texttt{0x01} & \texttt{0x00} & \texttt{0x01} \\
-\texttt{0x00} & \texttt{0x02} & \texttt{0x00} & \texttt{0x02} \\
-\vdots & \vdots & \vdots & \vdots \\
-\texttt{0x00} & \texttt{0xff} & \texttt{0x00} & \texttt{0xff} \\ 
-\texttt{0x01} & \texttt{0x00} & \texttt{0x00} & \texttt{0x01} \\
-\texttt{0x01} & \texttt{0x01} & \texttt{0x00} & \texttt{0x02} \\ 
-\vdots & \vdots & \vdots & \vdots \\
-\texttt{0xff} & \texttt{0xfe} & \texttt{0x01} & \texttt{0xfd} \\
-\texttt{0xff} & \texttt{0xff} & \texttt{0x01} & \texttt{0xfe} \\ \hline
-
+\begin{array}{|c|c|c|c|}\hline 
+\texttt{row} & \mathtt{	BYTE\_A} & \mathtt{BYTE\_B} & \mathtt{BYTE\_CARRY} & \mathtt{BYTE\_ADD} \\ \hline 
+\texttt{1} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} \\ 
+\texttt{2} & \texttt{0x00} & \texttt{0x01} & \texttt{0x00} & \texttt{0x01} \\
+\texttt{3} & \texttt{0x00} & \texttt{0x02} & \texttt{0x00} & \texttt{0x02} \\
+\vdots & \vdots & \vdots & \vdots & \vdots \\
+\texttt{256} & \texttt{0x00} & \texttt{0xff} & \texttt{0x00} & \texttt{0xff} \\ 
+\texttt{258} & \texttt{0x01} & \texttt{0x00} & \texttt{0x00} & \texttt{0x01} \\
+\texttt{259} & \texttt{0x01} & \texttt{0x01} & \texttt{0x00} & \texttt{0x02} \\ 
+\vdots & \vdots & \vdots & \vdots & \vdots \\
+\texttt{65535} & \texttt{0xff} & \texttt{0xfe} & \texttt{0x01} & \texttt{0xfd} \\
+\texttt{65536} & \texttt{0xff} & \texttt{0xff} & \texttt{0x01} & \texttt{0xfe} \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -335,7 +280,7 @@ polIdentities: 3
 
 Observe that $\texttt{plookupIdentities}$ counts the number of inclusion arguments used in the PIL program (one in our example).
 
-## Avoiding Redundancy
+## Avoiding redundancy
 
 Further modifications can be added to avoid redundancy in the PIL. This can be achieved by introducing another constant polynomial $\mathtt{BYTE\_PREVCARRY}$. 
 
@@ -347,58 +292,29 @@ A summary of how the table looks like with the new changes is already in the tab
 
 $$
 \begin{aligned}
-\begin{array}{|c|c|}\hline
-\texttt{row}\\ \hline
-\text{ 1}\\ 
-\text{ 2}\\ 
-\text{ 3}\\ 
-\vdots \\ 
-\text{256}\\
-\text{257}\\
-\text{258}\\
-\vdots \\
-\text{65535}\\
-\text{65536}\\
-\text{65537}\\
-\text{65538}\\
-\text{65539}\\
-\vdots \\
-\text{65792}\\
-\text{65793}\\
-\text{65794}\\
-\vdots \\
-\text{131071}\\ 
-\text{131072}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-
-\begin{aligned}\begin{array}{|c|c|c|c|}\hline 
-\mathtt{	BYTE\_A} & \mathtt{BYTE\_B} & \mathtt{BYTE\_PREVCARRY} & \mathtt{BYTE\_CARRY}  & \mathtt{BYTE\_ADD} \\ \hline 
-\texttt{0x00} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} \\ 
-\texttt{0x00} & \texttt{0x01} & \texttt{0x00} & \texttt{0x00} & \texttt{0x01} \\
-\texttt{0x00} & \texttt{0x02} & \texttt{0x00} & \texttt{0x00} & \texttt{0x02} \\
-\vdots & \vdots & \vdots & \vdots & \vdots \\
-\texttt{0x00} & \texttt{0xff} & \texttt{0x00} & \texttt{0x00} & \texttt{0xff} \\ 
-\texttt{0x01} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} & \texttt{0x01} \\
-\texttt{0x01} & \texttt{0x01} & \texttt{0x00} & \texttt{0x00} & \texttt{0x02} \\ 
-\vdots & \vdots & \vdots & \vdots & \vdots \\
-\texttt{0xff} & \texttt{0xfe} & \texttt{0x00} & \texttt{0x01} & \texttt{0xfd} \\
-\texttt{0xff} & \texttt{0xff} & \texttt{0x00} & \texttt{0x01} & \texttt{0xfe} \\ 
-\texttt{0x00} & \texttt{0x00} & \texttt{0x01} & \texttt{0x00} & \texttt{0x00} \\
-\texttt{0x00} & \texttt{0x01} & \texttt{0x01} & \texttt{0x00} & \texttt{0x02} \\
-\texttt{0x00} & \texttt{0x02} & \texttt{0x01} & \texttt{0x00} & \texttt{0x03} \\
-\vdots & \vdots & \vdots & \vdots & \vdots \\
-\texttt{0x00} & \texttt{0xff} & \texttt{0x01} & \texttt{0x01} & \texttt{0x00} \\
-\texttt{0x01} & \texttt{0x00} & \texttt{0x01} & \texttt{0x00} & \texttt{0x02} \\
-\texttt{0x01} & \texttt{0x01} & \texttt{0x01} & \texttt{0x00} & \texttt{0x03} \\
-\vdots & \vdots & \vdots & \vdots & \vdots \\
-\texttt{0xff} & \texttt{0xfe} & \texttt{0x01} & \texttt{0x01} & \texttt{0xfe} \\ 
-\texttt{0xff} & \texttt{0xff} & \texttt{0x01} & \texttt{0x01} & \texttt{0xff}
+\begin{array}{|c|c|c|c|}\hline 
+\texttt{row} & \mathtt{	BYTE\_A} & \mathtt{BYTE\_B} & \mathtt{BYTE\_PREVCARRY} & \mathtt{BYTE\_CARRY}  & \mathtt{BYTE\_ADD} \\ \hline 
+\text{ 1} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} \\ 
+\text{ 2} & \texttt{0x00} & \texttt{0x01} & \texttt{0x00} & \texttt{0x00} & \texttt{0x01} \\
+\text{ 3} & \texttt{0x00} & \texttt{0x02} & \texttt{0x00} & \texttt{0x00} & \texttt{0x02} \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+\text{256} & \texttt{0x00} & \texttt{0xff} & \texttt{0x00} & \texttt{0x00} & \texttt{0xff} \\ 
+\text{257} & \texttt{0x01} & \texttt{0x00} & \texttt{0x00} & \texttt{0x00} & \texttt{0x01} \\
+\text{258} & \texttt{0x01} & \texttt{0x01} & \texttt{0x00} & \texttt{0x00} & \texttt{0x02} \\ 
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+\text{65535} & \texttt{0xff} & \texttt{0xfe} & \texttt{0x00} & \texttt{0x01} & \texttt{0xfd} \\
+\text{65536} & \texttt{0xff} & \texttt{0xff} & \texttt{0x00} & \texttt{0x01} & \texttt{0xfe} \\
+\text{65537} & \texttt{0x00} & \texttt{0x00} & \texttt{0x01} & \texttt{0x00} & \texttt{0x00} \\
+\text{65538} & \texttt{0x00} & \texttt{0x01} & \texttt{0x01} & \texttt{0x00} & \texttt{0x02} \\
+\text{65539} & \texttt{0x00} & \texttt{0x02} & \texttt{0x01} & \texttt{0x00} & \texttt{0x03} \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+\text{65792} & \texttt{0x00} & \texttt{0xff} & \texttt{0x01} & \texttt{0x01} & \texttt{0x00} \\
+\text{65793} & \texttt{0x01} & \texttt{0x00} & \texttt{0x01} & \texttt{0x00} & \texttt{0x02} \\
+\text{65794} & \texttt{0x01} & \texttt{0x01} & \texttt{0x01} & \texttt{0x00} & \texttt{0x03} \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+\text{131071} & \texttt{0xff} & \texttt{0xfe} & \texttt{0x01} & \texttt{0x01} & \texttt{0xfe} \\ 
+\text{131072} & \texttt{0xff} & \texttt{0xff} & \texttt{0x01} & \texttt{0x01} & \texttt{0xff}
 \\ \hline
-
 \end{array}
 \end{aligned}
 $$
@@ -427,4 +343,3 @@ prevCarry' = carry;
 
 {a, b, (1 - RESET)*prevCarry, carry, add} in {BYTE_A, BYTE_B, BYTE_PREVCARRY, BYTE_CARRY, BYTE_ADD};
 ```
-

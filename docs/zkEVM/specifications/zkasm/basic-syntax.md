@@ -1,19 +1,3 @@
----
-id: basic-syntax
-title: Basic Syntax
-sidebar_label: Basic Syntax
-description: This document explains the basic syntax of zkASM from a high-level perspective. Advanced syntax is totally dependant on the use case.
-keywords:
-  - polygon
-  - zkEVM
-  - module
-  - register
-  - opcode
-  - assert
-  - zkASM
-  - syntax
----
-
 This section is devoted to explain the basic syntax of zkASM from a high-level perspective. Advanced syntax is totally dependant on the use case (e.g. the design of a zkEVM) and will be explained in more detail with more complete examples later on.
 
 !!! info
@@ -22,7 +6,7 @@ This section is devoted to explain the basic syntax of zkASM from a high-level p
 
     Instructions are depicted line by line and are divided in two parts. The left-side part includes the code that is actually getting executed in the corresponding file, while the right-side part is related to the execution of opcodes, jumps and subroutines, indicated by the colon "$:$" symbol.
 
-## Comments and Modules
+## Comments and modules
 
 Comments are made with the semicolon "$;$" symbol.
 
@@ -42,7 +26,7 @@ INCLUDE "constants.zkasm"
 ; -- code --
 ```
 
-## Storing Values on Registers
+## Storing values on registers
 
 There are many ways in which values can be stored into registers:
 
@@ -78,7 +62,7 @@ There are many ways in which values can be stored into registers:
         ${A >> 2} => B
         ${A & 0x03} => C
 
-## Introducing Opcodes
+## Introducing opcodes
 
 Until this point, every instruction consisted of a direct interaction with the registers. Now, we move one step forward and we create interaction with other parts of the ROM, thanks to the introduction of zkEVM Opcodes.
 
@@ -121,7 +105,7 @@ It is also common to encounter negative jumps to check appropriate situations, i
 SP - 2  :JMPN(stackUnderflow)
 ```
 
-## Code Injection
+## Code injection
 
 Inline javascript-based instruction can be injected in plain by using the double dollar "$" symbol.
 

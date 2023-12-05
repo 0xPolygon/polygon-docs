@@ -16,7 +16,7 @@ Think of our state machine as being composed of two parts; the part that has to 
 
 - But the latter part is more like the "hardware" as it consists of a set of arithmetic constraints (or their equivalent, polynomial identities) that every correctly generated execution trace must satisfy. Since these arithmetic constraints are transformed into polynomial identities (via an interpolation process), they are described in a novel language called the **Polynomial Identity Language** (PIL).
 
-## Generic SM Executor
+## Generic SM executor
 
 As seen with the mFibonacci SM, the SM executor takes certain inputs together with the description of the SM, in order to produce the execution trace specifically corresponding to these inputs.
 
@@ -28,7 +28,7 @@ The main difference, in the Generic State Machine case, is the inclusion of a pr
 
 So then, instead of programming the SM executor ourselves with a specific set of instructions as we did with the mFibonacci SM, the executor of a Generic SM is programmed to read arbitrary instructions encapsulated in some program (depending on the capacity of the SM or the SM's context of application). As mentioned above, each of these programs is initially written, not in a language like Javascript, but in the zkASM language.
 
-### State Machine Instructions
+### State machine instructions
 
 We continue with the state machine model shown in Figure 1 above; a state machine with two registries $\texttt{A}$ and $\texttt{B}$, and executes computations as per instruction(s) specified in a program.
 
@@ -54,25 +54,21 @@ Suppose the state machine starts with the initial state $\big(\texttt{A},\texttt
 - Thirdly, "$\mathtt{:ADD }$" instructs the executor to compute the sum of registry value in $\mathtt{A}$ with the one in $\mathtt{B}$, and save the output into register $\mathtt{A}$.
 - Lastly, "$\mathtt{:END }$" tells the executor to reset the registries $\mathtt{A}$ and $\mathtt{B}$ to their initial values in the next state, and thus achieving the cyclic behaviour.
 
-### Execution Trace
+### Execution trace
 
 In addition to carrying out computations as per instructions in programs, the executor must also generate the trace of all state transitions, called the **Execution Trace**.
 
 Consider, as an example, the execution trace the executor produces for the above program of four instructions. Suppose the free input value used is $7$. The generated execution trace can be depicted in tabular form as shown below.
 
 $$
-\begin{aligned}\begin{array}{|l|c|c|c|c|c|c|c|}\hline
+\begin{aligned}
+\begin{array}{|l|c|c|c|c|c|c|c|}\hline
 \texttt{ } & \bf{Instructions } \text{ }\text{ }\text{ }\text{ } & \texttt{FREE} & \texttt{CONST}& \texttt{A}& \mathtt{A'}& \texttt{B}& \mathtt{B'} \\ \hline
 \texttt{ } & \mathtt{\$\{getAFreeInput()\} => A} \text{ } & \texttt{7} & \texttt{0} & \texttt{0} & \texttt{7} & \texttt{0} & \texttt{0}\\ \hline
-
 \texttt{ } & \mathtt{3 => B} \qquad\qquad\qquad\qquad\quad & \texttt{0} & \texttt{3} & \texttt{7} & \texttt{7} & \texttt{0} & \texttt{3} \\ \hline
-
 \texttt{ } & \mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{7} & \texttt{10} & \texttt{3} & \texttt{3} \\ \hline
-
 \texttt{ } & \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{10} & \texttt{0} & \texttt{3} & \texttt{0} \\ \hline
-
 \end{array}
-
 \end{aligned}
 $$
 

@@ -21,7 +21,7 @@ This section lists the changes we have done with Opcodes in zKEVM as compared to
 
 - **NUMBER** &rarr; returns the number of processable transactions.
 
-## Precompiled Contracts
+## Precompiled contracts
 
 The following precompiled contracts are supported in the zkEVM:
 
@@ -34,7 +34,7 @@ Other precompiled contracts have no effect on the zkEVM state tree and are treat
 
 **zk-counters** &rarr; batch resources are available, linked to state-machine components, as a supplementary addition to gas computation.
 
-## Other Minor Differences
+## Other minor differences
 
 - zkEVM doesn't clean storage when a contract is deployed at an address due to the zkEVM state tree specification.
 

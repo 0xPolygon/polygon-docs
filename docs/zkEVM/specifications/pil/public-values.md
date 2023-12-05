@@ -4,7 +4,7 @@ Public Values refers to values of committed polynomials that are known to both t
 
 In this section, we build a PIL program that arithmetizes a Fibonacci sequence, and illustrate how it makes use of public values.
 
-## Modular Fibonacci Sequence
+## Modular Fibonacci sequence
 
 Suppose one wants to prove knowledge of the first two terms $F_1$ and $F_2$ of a Fibonacci sequence $(F_n)_{n \in N}$ whose $1024$-th term $F_{1024}$ is:
 

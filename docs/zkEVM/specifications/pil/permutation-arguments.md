@@ -5,7 +5,7 @@ This document describes Permutation Arguments and how they are used in Polynomia
 Let $a = (a_1,...,a_n)$ and $b = (b_1, \dots , b_n)$ be any two vectors in $\mathbb{F}^n$. The vectors $a$ and $b$ are permutations of each other if there exists a bijective mapping (i.e., a permutation) $\sigma : [n] \to [n]$ such that $a = \sigma(b)$, where $\sigma(b)$ is defined by:
 
 $$
-\sigma(b)\ :=\ ( b_{\sigma(1)}, \dots , b_{\sigma(n)}).
+\sigma(b)\ :=\ \big( b_{\sigma(1)}, \dots , b_{\sigma(n)} \big).
 $$
 
 A protocol $(\mathcal{P}, \mathcal{V})$ is a **permutation argument** if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that two vectors in $\mathbb{F}^n$ are a permutation of each other.

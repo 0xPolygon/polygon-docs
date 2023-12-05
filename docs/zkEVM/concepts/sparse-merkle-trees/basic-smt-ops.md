@@ -2,7 +2,7 @@ The previous sections have focused on the design of binary SMTs. The problems th
 
 Now that the basic design is established, the other operations can be delineated. The operations that the Storage State Machine performs, as per instructions of the Main SM Executor, are called **Storage Actions**. As mentioned above, the Storage SM verifies whether the operations; **Create, READ, **UPDATE** and Delete (CRUD)**; executed by the Main SM were correctly computed.
 
-## The READ Operation
+## The READ operation
 
 First, we illustrate the **READ** operation, which is in fact a **Get**.
 
@@ -22,7 +22,7 @@ If the given **key leads to a zero-node**, then the verifier needs only prove th
 
 But if the given **key leads to an existing leaf**, the verifier has to prove the leaf exists in the SMT and show that the given key is not the same as the actual key associated with the value at the leaf.
 
-### When The Key Is Not Set
+### When The key is not set
 
 Suppose the verifier needs to prove that the keys, $K_{\mathbf{x}} = 11010101$ and $K_{\mathbf{z}} = 10101010$ are not set in the SMT depicted in the figure below.
 
@@ -70,7 +70,7 @@ In proving that $\mathbf{L}_{\mathbf{b}}$ is indeed in the tree, the verifier ca
 
  4. Completes the root-check by testing equality, $\mathbf{\tilde{root}}_{ab0} = \mathbf{{root}}_{ab0}$.  
 
-- **Checks The Keys**
+- **Checks the keys**
 
     The verifier takes the two Remaining Keys $\text{RK}_{\mathbf{x}}$ and $\text{RK}_{\mathbf{b}}$, and the key-bits $\text{kb}_0$ and $\text{kb}_{\mathbf{1}}$;
 
@@ -82,13 +82,11 @@ In proving that $\mathbf{L}_{\mathbf{b}}$ is indeed in the tree, the verifier ca
 
 This proves that the key $K_{\mathbf{x}}$ is not set.
 
-:::info Remark
+!!!info
+    
+    The last check, where the verifier checks inequality of keys, turns out to be very expensive to implement. A much more smarter method is used in the Storage State Machine.
 
-The last check, where the verifier checks inequality of keys, turns out to be very expensive to implement. A much more smarter method is used in the Storage State Machine.
-
-:::
-
-## The UPDATE Operation
+## The UPDATE operation
 
 The **UPDATE** operation does not change the topology of the tree. When carrying out the **UPDATE**, it is therefore important to retain all labels of nodes.
 
@@ -104,7 +102,7 @@ The verifier can continue with **Step 2** only if all the checks in **Step 1** p
 
 For the **UPDATE** operation, **Step 1** is exactly the same as the **READ** operation. We therefore focus on illustrating **Step 2**.
 
-### Example: UPDATE Operation
+### Example: UPDATE operation
 
 Suppose the set key is $K_{\mathbf{c}} = 10110100$ corresponding to the old value $V_{\mathbf{c}}$, and the new value is $V_\mathbf{new}$.
 
@@ -138,13 +136,13 @@ Note that the key-bits are not changed. Therefore, replacing the following old v
 $\text{HV}_\mathbf{c}, \mathbf{{B}_{abc}}, \mathbf{{B}_{abcb}}, \mathbf{{root}_{ab..f } }$,
 with the new ones, $\text{HV}_\mathbf{new}, \mathbf{{\bar{B}}_{abc}}, \mathbf{{\bar{B}}_{abcb}}, \mathbf{{root}_{new } }$, respectively, completes the **UPDATE** operation.
 
-## The CREATE Operation
+## The CREATE operation
 
-The **CREATE** Operation adds a new leaf $\mathbf{L_{\mathbf{new}}}$ to the SMT in order to insert and store a new key-value pair $( \mathbf{{K_{new}}} , \mathbf{V_{\mathbf{new}}} )$ at $\mathbf{L_{\mathbf{new}}}$, where the key $\mathbf{K_{new}}$ was never used in the SMT and thus is uniquely associated with the leaf $\mathbf{L_{new}}$.
+The **CREATE** operation adds a new leaf $\mathbf{L_{\mathbf{new}}}$ to the SMT in order to insert and store a new key-value pair $( \mathbf{{K_{new}}} , \mathbf{V_{\mathbf{new}}} )$ at $\mathbf{L_{\mathbf{new}}}$, where the key $\mathbf{K_{new}}$ was never used in the SMT and thus is uniquely associated with the leaf $\mathbf{L_{new}}$.
 
 When navigating from the root, the new key $\mathbf{K_{new}}$ can lead to either a zero node or an existing leaf. This results in two scenarios as discussed below.
 
-### If New Key Navigates To A Zero Node
+### If new key navigates to a zero node
 
 That is, the first $l$ least-significant bits of the key $\mathbf{K_{new}}$ leads to a zero node, where $l$  is the **levels to root** of the zero node.
 
@@ -158,13 +156,12 @@ The **CREATE** operation, in this case, therefore boils down to an **UPDATE** op
 - Then forming the new leaf, $\mathbf{L_{new}} = \mathbf{H_{leaf}}( \text{RK}_{\mathbf{new}} \| \text{HV}_{\mathbf{new}})$,
 - Recomputing all the nodes along the path climbing from the leaf $\mathbf{L_{new}}$ to the root, including computing the new root.
 
-#### Example: CREATE Operation at a Zero Node
+#### Example: CREATE operation at a zero node
 
-:::note
+!!!note
+    Inserting a new key-value pair at a Zero Node does not change the topology of the tree.
 
-Inserting a new key-value pair at a Zero Node does not change the topology of the tree.
 
-:::
 
 Suppose a new leaf with the key-value pair $\big(K_{\mathbf{new}}, \text{V}_{\mathbf{new}}\big)$, where $K_{\mathbf{new}} = 11010110$, needs to be created.
 
@@ -180,7 +177,7 @@ At this stage the verifier checks if this is indeed a zero node;
 2. Then it computes $\mathbf{{\tilde{root}}_{ab0c}} = \mathbf{H_{noleaf}} \big( \mathbf{{\tilde{B}}_{ab0}} \| \mathbf{L_{c}} \big)$.
 3. And, checks if $\mathbf{{\tilde{root}}_{ab0c}}$ equals $\mathbf{{root}_{ab0c}}$.
 
-![CREATE Operation - Zero Node](../../../img/zkEVM/fig12-crt-zero-node.png)
+![CREATE operation - Zero Node](../../../img/zkEVM/fig12-crt-zero-node.png)
 
 Once the zero-value is checked, the verifier now creates a non-zero leaf with the key-value pair $\big( \mathbf{K_{new}} , \text{HV}_{\mathbf{new}}\big)$.
 
@@ -191,11 +188,11 @@ Once the zero-value is checked, the verifier now creates a non-zero leaf with th
 
 An update of these values; the branch $\mathbf{B_{ab0}}$ to $\mathbf{B_{new}}$ and the old root $\mathbf{{root}_{ab0c}}$ to $\mathbf{{root}_{new}}$; completes the **CREATE** operation.
 
-### If New Key Navigates To A Non-Zero Leaf
+### If new key navigates to a non-zero leaf
 
 That is, the first $\mathbf{l}$ least-significant bits of the key $\mathbf{K_{new}}$ leads to a non-zero leaf $\mathbf{L_z}$, where $\mathbf{l}$ is $\mathbf{L_z}$'s number of *levels to root*. This means, the keys $\mathbf{K_{new}}$ and $\mathbf{K_{z}}$ share a common string of least-significant key-bits, which is $\mathbf{l}$ bits long.
 
-#### 1. Checking Leaf Inclusion
+#### 1. Checking leaf inclusion
 
 The first step is to double-check that indeed the value $V_\mathbf{z}$ stored at the leaf $\mathbf{L_z}$ is indeed included in the root.
 
@@ -203,9 +200,9 @@ That is, the verifier performs a Merkle proof starting with either $\mathbf{H_{n
 
 Once it is established that the value $V_\mathbf{z}$ stored at the leaf $\mathbf{L_z}$ is included in the root, the new leaf $\mathbf{L_{new}}$ storing the key-value pair can now be created.
 
-#### 2. Extending The SMT
+#### 2. Extending the SMT
 
-Since it is not permissible for two distinct non-zero leaves, $\mathbf{L_{new}}$ and $\mathbf{L_z}$, to share a tree-address, a **CREATE** Operation at $\mathbf{L_z}$ results in extending the tree; by adding a new branch $\mathbf{B_{ext1}}$ at the tree-address where $\mathbf{L_z}$ has been positioned.
+Since it is not permissible for two distinct non-zero leaves, $\mathbf{L_{new}}$ and $\mathbf{L_z}$, to share a tree-address, a **CREATE** operation at $\mathbf{L_z}$ results in extending the tree; by adding a new branch $\mathbf{B_{ext1}}$ at the tree-address where $\mathbf{L_z}$ has been positioned.
 
 As discussed earlier in this document, when building binary SMTs, the aim is to find a tree-address for the new leaf $\mathbf{L_{new}}$ which differs from the tree-address of any existing leaf $\mathbf{L_z}$.
 
@@ -221,37 +218,37 @@ Here's the general procedure;
 6. However, if $\text{kb}_\mathbf{(l+2)new} = \text{kb}_\mathbf{(l+2)z}$, then a third extension branch $\mathbf{B_{ext3}}$ is formed. And, as before, the second extension branch $\mathbf{B_{ext2}}$ is made a parent-node to both $\mathbf{B_{ext3}}$ and a NULL node "$\mathbf{0}$". And similarly, the key-bit $\text{kb}_\mathbf{(l+2)new}$ determines whether the NULL node "$\mathbf{0}$" is on the left or the right.
 7. This procedure (of extending the tree) continues until, $\text{kb}_\mathbf{(l+j)new} \neq \text{kb}_\mathbf{(l+j)z}$ for some $j > 2$. In which case, the $\mathbf{(l + j)}$-th extension branch $\mathbf{B_{ext(l + j)}}$, with the $\mathbf{L_{new}}$ and $\mathbf{L_{z}}$ as its child-nodes, completes the **CREATE** operation.
 
-#### 3. UPDATE of Values
+#### 3. UPDATE of values
 
-The **CREATE** Operation is actually only complete once all the values on the navigation path from the new root to the new leaf are updated.
+The **CREATE** operation is actually only complete once all the values on the navigation path from the new root to the new leaf are updated.
 
-### Example: CREATE Operation with Single Branch Extension
+### Example: CREATE operation with single branch extension
 
 Suppose a leaf needs to be created to store a new key-value pair $\big({K_{\mathbf{new}}\ } , V_\mathbf{{new}}\big)$, where $K_{\mathbf{new}} = 11010110$.
 
 Consider the SMT shown in the below figure.
 
-![CREATE Operation - Non-zero Leaf Node](../../../img/zkEVM/fig13-a-crt-nzleaf-ext.png)
+![CREATE operation - Non-zero Leaf Node](../../../img/zkEVM/fig13-a-crt-nzleaf-ext.png)
 
 In this example, navigation using the least-significant key-bits, $\text{kb}_\mathbf{0} = 0$ and $\text{kb}_\mathbf{1} = 1$, leads to an existing leaf $\mathbf{L_{\mathbf{c}}}$. And the key-value pair $(V_\mathbf{\mathbf{c}}, \text{HV}_\mathbf{\mathbf{c}})$ stored at $\mathbf{L_{\mathbf{c}}}$ has the key $K_{\mathbf{c}} = 11010010$.
 
-1. **Value-Inclusion Check**
+1. **Value-inclusion check**
 
-    A value-inclusion check of $V_\mathbf{\mathbf{c}}$ is performed before creating any new leaf. Since this amounts to a **READ** Operation, which has been illustrated in previous examples, we omit how this is done here.
+    A value-inclusion check of $V_\mathbf{\mathbf{c}}$ is performed before creating any new leaf. Since this amounts to a **READ** operation, which has been illustrated in previous examples, we omit how this is done here.
 
-    Once $V_\mathbf{\mathbf{c}}$ passes the check, the **CREATE** Operation continues by inserting the new leaf.
+    Once $V_\mathbf{\mathbf{c}}$ passes the check, the **CREATE** operation continues by inserting the new leaf.
 
-2. **New Leaf Insertion**
+2. **New leaf insertion**
 
     In this example, the new leaf $\mathbf{L_{new}}$ cannot be inserted at the key-address `01` where $\mathbf{L_{\mathbf{c}}}$ is positioned. A branch extension $\mathbf{{B}_{ext}}$ must therefore be done at the address `01` with the leaves $\mathbf{L_{new}}$ and $\mathbf{L_{c}}$ as child-nodes.
 
     Since the third least-significant key-bits of $K_{\mathbf{new}}$ and $K_{\mathbf{c}}$ are not the same, $\text{kb}_\mathbf{2new} = 1$ and $\text{kb}_\mathbf{2c} = 0$, the addresses `110` and `010` of the leaves $\mathbf{L_{new}}$ and $\mathbf{L_{c}}$, respectively, are distinct.
 
-    Therefore, no further extension is necessary. And the **CREATE** Operation is complete by updating all the values on the navigation path.
+    Therefore, no further extension is necessary. And the **CREATE** operation is complete by updating all the values on the navigation path.
 
     The next process, after forming the branch extension, is to **UPDATE** all the nodes along the path from the root to the new leaf $\mathbf{L_{new}}$. The verifier follows the steps of the **UPDATE** operation to accomplish this.
 
-3. **UPDATE of SMT Values**
+3. **UPDATE of SMT values**
 
     The verifier computes the following;
 
@@ -261,27 +258,27 @@ In this example, navigation using the least-significant key-bits, $\text{kb}_\ma
     4. Again, $\mathbf{B_{new}} = \mathbf{H_{noleaf}}( \mathbf{S_{ab}} \| \mathbf{B_{ext}} )$,
     5. And finally computes, $\mathbf{{root}_{new}} = \mathbf{H_{noleaf}}( \mathbf{B_{new}} \| \mathbf{L_{d}} )$.
 
-    This illustrates how the **CREATE** Operation is performed at a non-zero leaf, when only one branch extension is required.
+    This illustrates how the **CREATE** operation is performed at a non-zero leaf, when only one branch extension is required.
 
-### Example: CREATE Operation with Multiple Branch Extensions
+### Example: CREATE operation with multiple branch extensions
 
-This example provides an illustration of the **CREATE** Operation at a non-zero leaf, where more than one branch extensions are required.
+This example provides an illustration of the **CREATE** operation at a non-zero leaf, where more than one branch extensions are required.
 
 Suppose a leaf must be created to store a new key-value pair $\big(K_{\mathbf{new}}, V_\mathbf{new}\big)$, where $K_{\mathbf{new}} = 11010110$.
 
 Consider the SMT shown in the below figure.
 
-![CREATE Operation - Three Branch Extensions](../../../img/zkEVM/fig13-b-crt-nzleaf-xt.png)
+![CREATE operation - Three Branch Extensions](../../../img/zkEVM/fig13-b-crt-nzleaf-xt.png)
 
 Navigating the tree by using the least-significant key-bits, $\text{kb}_\mathbf{0} = 0$ and $\text{kb}_\mathbf{1} = 1$, leads to an existing leaf $\mathbf{L_{\mathbf{c}}}$. In this example, suppose the key-value pair $(K_{\mathbf{c}}, \text{HV}_\mathbf{\mathbf{c}})$ stored at $\mathbf{L_{\mathbf{c}}}$ has the key $K_{\mathbf{c}} = 11100110$.
 
-1. **Value-Inclusion Check**
+1. **Value-inclusion check**
 
-    Before creating the new leaf, it is important to first check if $V_\mathbf{\mathbf{c}}$ is indeed included in the root, $\mathbf{root}_\mathbf{abcd}$. Since this amounts to performing a **READ** Operation, which has been illustrated in previous examples, we omit here how this is done.
+    Before creating the new leaf, it is important to first check if $V_\mathbf{\mathbf{c}}$ is indeed included in the root, $\mathbf{root}_\mathbf{abcd}$. Since this amounts to performing a **READ** operation, which has been illustrated in previous examples, we omit here how this is done.
 
-    Once $V_\mathbf{\mathbf{c}}$ passes the value-inclusion check, the **CREATE** Operation proceeds with inserting the new leaf.
+    Once $V_\mathbf{\mathbf{c}}$ passes the value-inclusion check, the **CREATE** operation proceeds with inserting the new leaf.
 
-2. **New Leaf Insertion**
+2. **New leaf insertion**
 
     Note that the first and second least-significant key-bits for both $K_\mathbf{new}$ and $K_\mathbf{c}$ are the same. That is, $\text{kb}_\mathbf{0new} = 0 = \text{kb}_\mathbf{0c}$ and $\text{kb}_\mathbf{1new} = 1 = \text{kb}_\mathbf{1c}$.
 
@@ -303,7 +300,7 @@ Navigating the tree by using the least-significant key-bits, $\text{kb}_\mathbf{
 
     Once unique addresses for the key-value pairs $\big( K_{\mathbf{c}} , V_\mathbf{c} \big)$ and $\big( K_\mathbf{{new}} , V_{\mathbf{new}}\big)$ are reached, and the leaf $\mathbf{L_{new}}$ is inserted, all the nodes along the navigation path from the new leaf $\mathbf{L_{new}}$ to the root are updated as follows.
 
-3. **UPDATE of SMT Values**
+3. **UPDATE of SMT values**
 
     The verifier computes,
 
@@ -317,17 +314,17 @@ Navigating the tree by using the least-significant key-bits, $\text{kb}_\mathbf{
 
     This completes the **CREATE** operation at an existing leaf where several branch extensions are needed. Note that the **CREATE** operation at a non-leaf node clearly changes the topology of the tree.
 
-## The DELETE Operation
+## The DELETE operation
 
-The **DELETE** Operation refers to a removal of a certain key-value pair from a binary SMT. It is in fact the reverse of the **CREATE** Operation.
+The **DELETE** operation refers to a removal of a certain key-value pair from a binary SMT. It is in fact the reverse of the **CREATE** operation.
 
-There are two types of scenarios that can occur when executing a **DELETE** Operation.
+There are two types of scenarios that can occur when executing a **DELETE** operation.
 
-There is a scenario where a **DELETE** Operation is equivalent to an **UPDATE** Operation of a non-zero leaf to a NULL leaf. In this case the topology of the SMT does not change. This occurs when the leaf being deleted has a non-zero sibling-node.
+There is a scenario where a **DELETE** operation is equivalent to an **UPDATE** operation of a non-zero leaf to a NULL leaf. In this case the topology of the SMT does not change. This occurs when the leaf being deleted has a non-zero sibling-node.
 
-On the other hand, a **DELETE** Operation can be tantamount to the reverse of a **CREATE** Operation where extension branches are removed from the tree. The topology of the SMT can drastically change. This scenario occurs when the leaf being removed has a zero sibling-node.
+On the other hand, a **DELETE** operation can be tantamount to the reverse of a **CREATE** operation where extension branches are removed from the tree. The topology of the SMT can drastically change. This scenario occurs when the leaf being removed has a zero sibling-node.
 
-A **DELETE** Operation involves two main steps;
+A **DELETE** operation involves two main steps;
 
 1. A **READ** of the value to be deleted is executed. That is;
 
@@ -340,7 +337,7 @@ A **DELETE** Operation involves two main steps;
     - If the **sibling is not a zero node**, an **UPDATE** to a zero is performed.
     - If the **sibling is a zero-node**, an **UPDATE** to a zero is performed and the parent-node is turned into a NULL node with no child-nodes.
 
-### DELETE Leaves With Non-Zero Siblings
+### DELETE leaves with non-zero siblings
 
 Consider a **DELETE** of a key-value pair $\big(K_{\mathbf{b}} , V_\mathbf{b} \big)$ where its leaf $\mathbf{L_b}$ has a non-zero node sibling.
 
@@ -348,7 +345,7 @@ Suppose the data provided includes; the Remaining Key $\tilde{\text{RK}}_{\mathb
 
 With reference to the figure below, navigation leads to the leaf $\mathbf{L_b}$.
 
-![DELETE Operation - Non-Zero Sibling](../../../img/zkEVM/fig14-a-dlt-nz-sib.png)
+![DELETE operation - Non-Zero Sibling](../../../img/zkEVM/fig14-a-dlt-nz-sib.png)
 
 Next, perform a Merkle proof to check if the hashed value $\text{HV}_\mathbf{b}$ at $\mathbf{L_b}$ is included in the given root;
 
@@ -367,7 +364,7 @@ Since the sibling $\mathbf{L_a}$ is not a zero node, the hashed value $\text{HV}
 
 Notice how the SMT maintains its original shape.
 
-### DELETE Leaves With Zero Siblings
+### DELETE leaves with zero siblings
 
 Consider deleting a key-value pair $\big(K_{\mathbf{c}} , V_\mathbf{c} \big)$ where its leaf $\mathbf{L_c}$ has a zero-node sibling.
 
@@ -375,19 +372,19 @@ Suppose the data provided includes; the Remaining Key $\tilde{\text{RK}}_{\mathb
 
 With reference to the figure below, navigation leads to the leaf $\mathbf{L_c}$.
 
-![Figure 14(../../../img/zkEVM/fig14-b-dlt-z-sib.png): DELETE Operation - Zero Sibling](../../../img/zkEVM/fig14-b-dlt-z-sib.png)
+![Figure 14(../../../img/zkEVM/fig14-b-dlt-z-sib.png): DELETE operation - Zero Sibling](../../../img/zkEVM/fig14-b-dlt-z-sib.png)
 
 The **READ** step in this case is similar to what is seen in the above case.
 
 The **UPDATE** step depends on the sibling of $\mathbf{L_c}$. Since the sibling is $\mathbf{0}$, an **UPDATE** of $\mathbf{L_c}$ to zero results in the branch $\mathbf{B_{0c}}$ having two zero nodes as child-nodes. Since $\mathbf{H_{noleaf}} ( \mathbf{0} \| \mathbf{0}) = 0$, it is therefore expedient to turn the branch $\mathbf{B_{0c}}$ into a zero node with no child-nodes.
 
-That is, the **UPDATE** step of this **DELETE** Operation concludes as follows;
+That is, the **UPDATE** step of this **DELETE** operation concludes as follows;
 
 - The original branch $\mathbf{B_{0c}}$ is now "$\mathbf{0}$", a zero node.
 - The parent-node is now, $\mathbf{B_{a0}} = \mathbf{H_{noleaf}} ( \mathbf{L_a} \| \mathbf{0}  )$.
 - And, the new root, $\mathbf{{root}_{a0d}} =   \mathbf{H_{noleaf}}(\mathbf{B_{a0}} \| \mathbf{L_d})$.
 
-Notice that in this example, the **DELETE** Operation alters the topology of the SMT.
+Notice that in this example, the **DELETE** operation alters the topology of the SMT.
 
 ## Conclusion
 

@@ -85,7 +85,7 @@ nav:
           - Setup local zkNode: zkEVM/setup-local-node.md
           - Setup production zkNode: zkEVM/setup-production-node.md
         - Deploy full zkEVM:
-          - Start here: zkEVM/deployzkevm/step1-fullzkevm.md
+          - All steps to deploying a zkEVM: zkEVM/deployzkevm/step1-fullzkevm.md
           - Install dependencies: zkEVM/deployzkevm/step2-fullzkevm.md
           - Create wallets: zkEVM/deployzkevm/step3-fullzkevm.md
           - Deploy zkNode: zkEVM/deployzkevm/step4-fullzkevm.md
