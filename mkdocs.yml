@@ -246,7 +246,6 @@ nav:
           - pos/architecture/index.md
           - Bor:
             - Bor: pos/architecture/bor/index.md
-            - Consensus: pos/architecture/bor/consensus.md
             - State sync: pos/architecture/bor/state-sync.md
             - Network configuration: pos/architecture/bor/network-config.md
             - Snapshots: pos/architecture/bor/snapshots.md
