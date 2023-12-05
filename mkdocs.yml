@@ -246,30 +246,24 @@ nav:
           - pos/architecture/index.md
           - Bor:
             - Bor: pos/architecture/bor/index.md
-            - Consensus: pos/architecture/bor/consensus.md
             - State sync: pos/architecture/bor/state-sync.md
             - Network configuration: pos/architecture/bor/network-config.md
             - Snapshots: pos/architecture/bor/snapshots.md
             - Commands: pos/architecture/bor/commands.md
           - Heimdall:
             - Heimdall: pos/architecture/heimdall/index.md
-            - Checkpoint: pos/architecture/heimdall/checkpoint.md
-            - Governance: pos/architecture/heimdall/governance.md
+            - Heimdall and Bor: pos/architecture/heimdall/heimdall-and-bor.md
+            - Authentication: pos/architecture/heimdall/authentication.md
             - Key management: pos/architecture/heimdall/key-management.md
-            - Stdtx: pos/architecture/heimdall/stdtx.md
-            - Modules:
-              - Modules: pos/architecture/heimdall/modules/index.md
-              - Ante handler: pos/architecture/heimdall/modules/antehandler.md
-              - Auth: pos/architecture/heimdall/modules/auth.md
-              - Bank: pos/architecture/heimdall/modules/bank.md
-              - Bor: pos/architecture/heimdall/modules/bor.md
-              - Chain manager: pos/architecture/heimdall/modules/chain-manager.md
-              - Checkpoint: pos/architecture/heimdall/modules/checkpoint.md
-              - Staking: pos/architecture/heimdall/modules/staking.md
-              - Topup: pos/architecture/heimdall/modules/topup.md
-            - FAQ: pos/architecture/heimdall/faq.md
+            - Validation: pos/architecture/heimdall/validation.md
+            - Balance transfers: pos/architecture/heimdall/balance-transfers.md
+            - Staking: pos/architecture/heimdall/staking.md
+            - Checkpoints: pos/architecture/heimdall/checkpoints.md
+            - Topup: pos/architecture/heimdall/topup.md
+            - Chain management: pos/architecture/heimdall/chain-management.md
+            - Governance: pos/architecture/heimdall/governance.md
       - Specification:
-          - pos/spec/index.md
+          - Specification: pos/spec/index.md
       - Concepts:
           - Concepts: pos/concepts/index.md
           - Tokens:

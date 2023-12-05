@@ -7,6 +7,6 @@ On Polygon, the node is designed with a two-layer implementation represented by 
 
 </div>
 <div class="flex-figure-right">
-<img src="/img/pos/matic_structure.png" class="figure figure-right" alt="Matic Structure Diagram" />
+<img src="../../img/pos/matic_structure.png" class="figure figure-right" alt="Matic Structure Diagram" />
 </div>
 </div>
