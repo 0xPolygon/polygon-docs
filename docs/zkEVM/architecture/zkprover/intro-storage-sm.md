@@ -18,7 +18,7 @@ The Main SM's instructions, or Storage Actions, are parsed to the Storage SM Exe
 
 The hardware part uses another novel language, called **Polynomial Identity Language** (PIL), which is also developed by the team and especially designed for the zkProver, because almost all state machines express computations in terms of polynomials. State transitions in state machines must satisfy computation-specific polynomial identities.
 
-In order for the Storage SM to carry out Storage Actions, its Executor generates committed and constant polynomials, which are then checked against polynomial identities to prove that computations were correctly executed. See the [Design Approach](../../concepts/mfibonacci.md) section for how this achieved.
+In order for the Storage SM to carry out Storage Actions, its Executor generates committed and constant polynomials, which are then checked against polynomial identities to prove that computations were correctly executed. See the [Design Approach](../../concepts/mfibonacci/mfibonacci.md) section for how this achieved.
 
 ## zkProver's storage
 

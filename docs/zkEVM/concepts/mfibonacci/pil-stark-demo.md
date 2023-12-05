@@ -38,11 +38,11 @@ where the  **` : `**  colon-prefix indicates a read of the value stored at $\tex
 
 The modified $\texttt{mFibonacci.pil}$ file, before compilation with $\texttt{PILCOM}$, is now as follows,
 
-![mFibonacci.pil file with "publics"](../../img/zkEVM/fib17-mfib-pil-w-pubs.png)
+![mFibonacci.pil file with "publics"](../../../img/zkEVM/fib17-mfib-pil-w-pubs.png)
 
 This modified $\texttt{mFibonacci.pil}$ file can be compiled with $\texttt{PILCOM}$ in the manner demonstrated earlier. The resulting parsed PIL file, "$\texttt{\{ \} mfibonacci.pil.json}$", now reflects some information in the "$\texttt{publics}$" field, as shown here:
 
-![A non-empty "publics" field the parsed PIL file ](../../img/zkEVM/fib18-non-empt-pubs-field.png)
+![A non-empty "publics" field the parsed PIL file ](../../../img/zkEVM/fib18-non-empt-pubs-field.png)
 
 ## PIL-STARK Implementation Guide
 
@@ -58,7 +58,7 @@ npm init -y
 
 A successful initialisation looks like this:
 
-![Successful node initialisation](../../img/zkEVM/fib19-init-node-project.png)
+![Successful node initialisation](../../../img/zkEVM/fib19-init-node-project.png)
 
 Next, install the required dependencies with the following command,
 
@@ -68,7 +68,7 @@ npm install pil-stark yargs chai
 
 The installation takes seconds, and again the results looks like this,
 
-![Installed dependencies](../../img/zkEVM/fib20-dependncs-install-mfib.png)
+![Installed dependencies](../../../img/zkEVM/fib20-dependncs-install-mfib.png)
 
 ### Create Input Files
 

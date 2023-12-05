@@ -171,7 +171,7 @@ $$
 
 Recall that the ROM's polynomial counterpart to the $\texttt{zkPC}$ is the $\texttt{line}$.
 
-![Plookup in the PIL Code for the Generic State Machine](../../img/zkEVM/plookup-generic-sm-pil.png)
+![Plookup in the PIL Code for the Generic State Machine](../../../img/zkEVM/plookup-generic-sm-pil.png)
 
 ### Role in zkEVM
 
@@ -179,4 +179,4 @@ Plookup instructions appear in the PIL codes of state machines in the zkEVM. Plo
 
 The diagram below depicts the extensive role that Plookup plays in the zkProver's secondary state machines.
 
-![Plookup and the zkProver State Machines](../../img/zkEVM/plook-ops-mainSM.png)
+![Plookup and the zkProver State Machines](../../../img/zkEVM/plook-ops-mainSM.png)

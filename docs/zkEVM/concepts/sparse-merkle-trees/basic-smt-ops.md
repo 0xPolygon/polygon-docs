@@ -26,7 +26,7 @@ But if the given **key leads to an existing leaf**, the verifier has to prove th
 
 Suppose the verifier needs to prove that the keys, $K_{\mathbf{x}} = 11010101$ and $K_{\mathbf{z}} = 10101010$ are not set in the SMT depicted in the figure below.
 
-![Key Not Set Example](../../img/zkEVM/fig10-key-not-set-eg.png)
+![Key Not Set Example](../../../img/zkEVM/fig10-key-not-set-eg.png)
 
 #### Case 1: When the key leads to a zero-node
 
@@ -120,7 +120,7 @@ The verifier is provided with the following data;
 
 Consider the SMT given in the below figure.
 
-![Value UPDATE Example](../../img/zkEVM/fig11-val-update-eg.png)
+![Value UPDATE Example](../../../img/zkEVM/fig11-val-update-eg.png)
 
 The required **Step 2** of the **UPDATE** operation involves:
 
@@ -180,7 +180,7 @@ At this stage the verifier checks if this is indeed a zero node;
 2. Then it computes $\mathbf{{\tilde{root}}_{ab0c}} = \mathbf{H_{noleaf}} \big( \mathbf{{\tilde{B}}_{ab0}} \| \mathbf{L_{c}} \big)$.
 3. And, checks if $\mathbf{{\tilde{root}}_{ab0c}}$ equals $\mathbf{{root}_{ab0c}}$.
 
-![CREATE Operation - Zero Node](../../img/zkEVM/fig12-crt-zero-node.png)
+![CREATE Operation - Zero Node](../../../img/zkEVM/fig12-crt-zero-node.png)
 
 Once the zero-value is checked, the verifier now creates a non-zero leaf with the key-value pair $\big( \mathbf{K_{new}} , \text{HV}_{\mathbf{new}}\big)$.
 
@@ -231,7 +231,7 @@ Suppose a leaf needs to be created to store a new key-value pair $\big({K_{\math
 
 Consider the SMT shown in the below figure.
 
-![CREATE Operation - Non-zero Leaf Node](../../img/zkEVM/fig13-a-crt-nzleaf-ext.png)
+![CREATE Operation - Non-zero Leaf Node](../../../img/zkEVM/fig13-a-crt-nzleaf-ext.png)
 
 In this example, navigation using the least-significant key-bits, $\text{kb}_\mathbf{0} = 0$ and $\text{kb}_\mathbf{1} = 1$, leads to an existing leaf $\mathbf{L_{\mathbf{c}}}$. And the key-value pair $(V_\mathbf{\mathbf{c}}, \text{HV}_\mathbf{\mathbf{c}})$ stored at $\mathbf{L_{\mathbf{c}}}$ has the key $K_{\mathbf{c}} = 11010010$.
 
@@ -271,7 +271,7 @@ Suppose a leaf must be created to store a new key-value pair $\big(K_{\mathbf{ne
 
 Consider the SMT shown in the below figure.
 
-![CREATE Operation - Three Branch Extensions](../../img/zkEVM/fig13-b-crt-nzleaf-xt.png)
+![CREATE Operation - Three Branch Extensions](../../../img/zkEVM/fig13-b-crt-nzleaf-xt.png)
 
 Navigating the tree by using the least-significant key-bits, $\text{kb}_\mathbf{0} = 0$ and $\text{kb}_\mathbf{1} = 1$, leads to an existing leaf $\mathbf{L_{\mathbf{c}}}$. In this example, suppose the key-value pair $(K_{\mathbf{c}}, \text{HV}_\mathbf{\mathbf{c}})$ stored at $\mathbf{L_{\mathbf{c}}}$ has the key $K_{\mathbf{c}} = 11100110$.
 
@@ -348,7 +348,7 @@ Suppose the data provided includes; the Remaining Key $\tilde{\text{RK}}_{\mathb
 
 With reference to the figure below, navigation leads to the leaf $\mathbf{L_b}$.
 
-![DELETE Operation - Non-Zero Sibling](../../img/zkEVM/fig14-a-dlt-nz-sib.png)
+![DELETE Operation - Non-Zero Sibling](../../../img/zkEVM/fig14-a-dlt-nz-sib.png)
 
 Next, perform a Merkle proof to check if the hashed value $\text{HV}_\mathbf{b}$ at $\mathbf{L_b}$ is included in the given root;
 
@@ -375,7 +375,7 @@ Suppose the data provided includes; the Remaining Key $\tilde{\text{RK}}_{\mathb
 
 With reference to the figure below, navigation leads to the leaf $\mathbf{L_c}$.
 
-![Figure 14(../../img/zkEVM/fig14-b-dlt-z-sib.png): DELETE Operation - Zero Sibling](../../img/zkEVM/fig14-b-dlt-z-sib.png)
+![Figure 14(../../../img/zkEVM/fig14-b-dlt-z-sib.png): DELETE Operation - Zero Sibling](../../../img/zkEVM/fig14-b-dlt-z-sib.png)
 
 The **READ** step in this case is similar to what is seen in the above case.
 

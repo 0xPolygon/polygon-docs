@@ -2,7 +2,7 @@ This section explains the proof generation phase for all proofs; the zkEVM STARK
 
 ## Proof of the zkEVM STARK
 
-The execution trace has up to this point been built, together with a PIL file describing the ROM of the zkEVM. Given these two, a STARK proof which attests to the correct execution of the zkEVM, can be generated using the PIL-STARK tooling explained [here](../../concepts/pil-stark.md).
+The execution trace has up to this point been built, together with a PIL file describing the ROM of the zkEVM. Given these two, a STARK proof which attests to the correct execution of the zkEVM, can be generated using the PIL-STARK tooling explained [here](../../concepts/mfibonacci/pil-stark.md).
 
 In this step, a blowup factor of 2 is used, so the proof becomes quite big due to a huge amount of polynomials.
 
