@@ -76,18 +76,21 @@ $$
 \ \text{ 2}\\ \hline
 \ \text{ 3}\\ 
 \ \text{ 4}\\ \hline
-
 \end{array}
 \end{aligned}
-\hspace{0.1cm}
+$$
 
-\begin{aligned}\begin{array}{|c|c|c|c|}\hline 
+<!-- 
+\hspace{0.1cm} -->
+
+$$
+\begin{aligned}
+\begin{array}{|c|c|c|c|}\hline 
 \mathtt{a} & \mathtt{b} & \texttt{prevCarry} & \texttt{carry} & \texttt{add} \\ \hline 
 \texttt{ox11} & \texttt{0x22} & \texttt{0x01} & \texttt{0x00} & \texttt{0x33} \\ 
 \texttt{0x30} & \texttt{0x40} & \texttt{0x00} & \texttt{0x00} & \texttt{0x70} \\ \hline
 \texttt{0xff} & \texttt{0xee} & \texttt{0x00} & \texttt{0x01} & \texttt{0xed}\\ 
 \texttt{0x00} & \texttt{0xff} & \texttt{0x01} & \texttt{0x01} &  \texttt{0x00} \\ \hline
-
 \end{array}
 \end{aligned}
 $$
