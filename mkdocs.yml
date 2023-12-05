@@ -51,10 +51,9 @@ theme:
 nav:
   - Home: index.md
   - CDK:
-      - Welcome: 
-        - cdk/index.md # marketing landing page
+      - cdk/index.md # marketing landing page
+      - Welcome: cdk/welcome.md
       - Get started:
-        - Overview: cdk/get-started/overview.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
