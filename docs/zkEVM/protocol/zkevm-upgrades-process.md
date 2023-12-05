@@ -41,7 +41,7 @@ Firstly, the zkEVM team is committed to securing the system for the sake of prot
 
 Secondly, most upgrades often include optimizations, bug fixing, or a more accurate formula for effective gas pricing. This subsequently means fair and less transaction costs overall.
 
-## Polygon's Governance Position
+## Polygon's governance position
 
 Polygon is committed to aligning itself with Ethereum's norms and values regarding L2 Governance.
 

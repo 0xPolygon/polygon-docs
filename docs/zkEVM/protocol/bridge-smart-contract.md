@@ -1,18 +1,18 @@
-This section describes how asset transfers are enabled by three smart contracts; the **Bridge SC** (PolygonZkEVMBridge.sol), the **Global Exit Root Manager** (PolygonZkEVMGlobalExitRoot.sol), and the **Consensus Contract** (PolygonZkEVM.sol).
+This section describes how asset transfers are enabled by three smart contracts; the Bridge SC (PolygonZkEVMBridge.sol), the Global Exit Root Manager (PolygonZkEVMGlobalExitRoot.sol), and the Consensus Contract (PolygonZkEVM.sol).
 
 ## Bridge smart contract
 
-The zkEVM Bridge Smart Contract (**PolygonZkEVMBridge.sol**) carries out two functions; the **Bridge (or deposit)** and the **Claim (or withdrawal)** functions. It enables **bridging** of assets from one network to another, as well as **claiming** assets received in the destination network.
+The zkEVM Bridge Smart Contract (PolygonZkEVMBridge.sol) carries out two functions; the Bridge (or deposit) and the Claim (or withdrawal) functions. It enables bridging of assets from one network to another, as well as claiming assets received in the destination network.
 
-As explained in the [Exit Tree](exit-tree.md) document, once a user initiates and commits to a transfer of assets from a network L2 to L1, the zkEVM Bridge SC adds an exit leaf to the L2 Exit Tree. The corresponding transfer data is contained in such an exit leaf. Following that, the L2 Exit Tree's root is updated and made available to the next smart contract in the workflow i.e., the **Global Exit Root Manager SC**.
+As explained in the [Exit Tree](exit-tree.md) document, once a user initiates and commits to a transfer of assets from a network L2 to L1, the zkEVM Bridge SC adds an exit leaf to the L2 Exit Tree. The corresponding transfer data is contained in such an exit leaf. Following that, the L2 Exit Tree's root is updated and made available to the next smart contract in the workflow i.e., the Global Exit Root Manager SC.
 
 ## Global Exit Root manager contract
 
-The Global Exit Root Manager SC (**PolygonZkEVMGlobalExitRoot.sol**) manages the Global Exit Tree Root. It is in charge of updating the Global Exit Tree Root and acts as a repository for the Global Exit Tree's history.
+The Global Exit Root Manager SC (PolygonZkEVMGlobalExitRoot.sol) manages the Global Exit Tree Root. It is in charge of updating the Global Exit Tree Root and acts as a repository for the Global Exit Tree's history.
 
 The logic of the zkEVM Bridge SC has been separated from that of the Global Exit Root Manager SC in order to achieve improved interoperability.
 
-This means that **the zkEVM Bridge SC, in conjunction with the Global Exit Root Manager SC, can be installed in any network to achieve the same results**.
+This means that the zkEVM Bridge SC, in conjunction with the Global Exit Root Manager SC, can be installed in any network to achieve the same results.
 
 !!!info
     There are two Global Exit Root manager SCs: one deployed in L1, while the other is deployed in L2.
@@ -49,9 +49,9 @@ Now the reverse process, while focusing only at the L1 smart contracts.
 
 1. The Consensus Contract uses the `SequenceBatches` function to sequence batches, which include among other transactions the asset transfer information.
 
-2. A special smart contract called `Verify.sol` calls the `VerifyBatches` function and takes **Batch Info** as input. As part of the Consensus process, but not shown in the above figure, the Aggregator produces a validity proof for the sequenced batches. And this proof is automatically verified in this step.
+2. A special smart contract called `Verify.sol` calls the `VerifyBatches` function and takes Batch Info as input. As part of the Consensus process, but not shown in the above figure, the Aggregator produces a validity proof for the sequenced batches. And this proof is automatically verified in this step.
 
-3. The zkEVM Exit Tree gets updated only after a successful verification of sequenced batches (again, for the sake of simplicity, this is not reflected in the above figure). The **Consensus Contract (`PolygonZkEVM.sol`) sends the updated zkEVM Exit Root to the Global Exit Root Manager, which subsequently updates the Global Exit Root**.
+3. The zkEVM Exit Tree gets updated only after a successful verification of sequenced batches (again, for the sake of simplicity, this is not reflected in the above figure). The Consensus Contract (`PolygonZkEVM.sol`) sends the updated zkEVM Exit Root to the Global Exit Root Manager, which subsequently updates the Global Exit Root.
 
 4. The zkEVM Bridge SC (`PolygonZkEVMBridge.sol`) then retrieves the updated Global Exit Root and uses the `Claim` function to complete the transfer.
 
@@ -61,7 +61,7 @@ The focus in this subsection is on the bridge-related smart contracts used in La
 
 The Bridge SC (`PolygonZkEVMBridge.sol`) in L2 is the same smart contract deployed on Layer 1 (here, Ethereum Mainnet).
 
-But the **L2 Global Exit Root Manager SC** is different, and it appears in code as `PolygonZkEVMGlobalExitRootL2.sol`. This is a **special contract that allows synchronization of L2 Exit Tree Root and the Global Exit Root**.
+But the L2 Global Exit Root Manager SC is different, and it appears in code as `PolygonZkEVMGlobalExitRootL2.sol`. This is a special contract that allows synchronization of L2 Exit Tree Root and the Global Exit Root.
 
 The L2 Global Exit Root Manager has storage slots to store the Global Exit Root and the L2 Exit Tree Root. In order to correctly ensure validity of the synchronization between the Global Exit Tree and L2 Exit Tree, these storage slots are directly accessible to the low-level ZK-proof-generating circuit.
 

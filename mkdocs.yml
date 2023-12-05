@@ -125,8 +125,8 @@ nav:
           - LXLY bridge: zkEVM/protocol/lxly-bridge.md
         - zkNode: zkEVM/architecture/zknode/index.md
         - zkProver:
-          - zkProver Overview: zkEVM/architecture/zkprover/zkprover-overview.md
-          - Main state machaine: 
+          - zkProver overview: zkEVM/architecture/zkprover/zkprover-overview.md
+          - Main state machine: 
             - Introducing Main SM: zkEVM/architecture/zkprover/intro-main-sm.md
             - As a processor: zkEVM/architecture/zkprover/the-processor.md
           - STARK recursion:

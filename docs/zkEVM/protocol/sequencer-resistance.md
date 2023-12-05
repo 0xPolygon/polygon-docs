@@ -1,6 +1,6 @@
-Users must rely on a Trusted Sequencer for their transactions to be executed in the L2. However, users can include their transactions in a **forced batch** if they are unable to execute them through the Trusted Sequencer.
+Users must rely on a Trusted Sequencer for their transactions to be executed in the L2. However, users can include their transactions in a forced batch if they are unable to execute them through the Trusted Sequencer.
 
-**A forced batch is a collection of L2 transactions that users can commit to L1 to publicly declare their intent to execute those transactions**.
+A forced batch is a collection of L2 transactions that users can commit to L1 to publicly declare their intent to execute those transactions.
 
 ![Forced batch sequencing flow](../../img/zkEVM/09l2-forced-batch-seq-flow.png)
 
@@ -17,7 +17,7 @@ mapping(uint64 => bytes32) public forcedBatches;
 
 Although the Trusted Sequencer is incentivized to sequence the forced batches published in the `forcedBatches` mapping, this does not guarantee finality of the transactions' execution in those batches.
 
-In order to ensure finality in the case of Trusted Sequencer's malfunction, the L1 `PolygonZkEVM.sol` contract has an alternative batch sequencing function called `sequenceForceBatches`. **This function allows anyone to sequence forced batches that have been published in the `multiplierBatchFee` mapping for a time period**, specified by the public constant `FORCE_BATCH_TIMEOUT`, yet they have not been sequenced. The **timeout is set to 5 days**.
+In order to ensure finality in the case of Trusted Sequencer's malfunction, the L1 `PolygonZkEVM.sol` contract has an alternative batch sequencing function called `sequenceForceBatches`. This function allows anyone to sequence forced batches that have been published in the `multiplierBatchFee` mapping for a time period, specified by the public constant `FORCE_BATCH_TIMEOUT`, yet they have not been sequenced. The timeout is set to 5 days.
 
 Any user can publish a batch to be forced by directly calling `forceBatch` function:
 
@@ -36,7 +36,7 @@ function forceBatch(
 In order to successfully publish forced batch to the `forcedBatches` mapping, the following conditions must be met, otherwise the transaction will revert;
 
 - The contract must not be in emergency state,
-- The **force batches** must be allowed,
+- The force batches must be allowed,
 - The `maticAmount` argument must be higher than the MATIC fee per batch,
 - The length of the transactions byte array must be less than the value of `MAX_TRANSACTIONS_BYTE_LENGTH` constant (which is set at 300000).
 
@@ -62,11 +62,11 @@ keccak256(
 );
 ```
 
-Storage slots (mapping entries) are only used to store a commitment of the forced batch for storage usage optimization reasons. **Data availability is ensured because it can be recovered from transaction calldata**.
+Storage slots (mapping entries) are only used to store a commitment of the forced batch for storage usage optimization reasons. Data availability is ensured because it can be recovered from transaction calldata.
 
 The contract sets the `minTimestamp` to the L1 block timestamp, at which point the forced batch is published.
 
-In the extremely unlikely event that **the Trusted Sequencer fails, any user can use the `sequenceForceBatches` function to sequence forced batches**:
+In the extremely unlikely event that the Trusted Sequencer fails, any user can use the `sequenceForceBatches` function to sequence forced batches:
 
 ```
 function sequenceForceBatches(
@@ -78,7 +78,7 @@ The `sequenceForceBatches` function is similar to the `sequenceBatches` function
 
 The `sequenceForceBatches` function determines whether each batch in the submitted sequence has been published to the `forcedBatches` mapping for a period of time greater than the `FORCE BATCH TIMEOUT`.
 
-**Because the MATIC batch fee was paid at the time of publication, it will not be required to be paid again**.
+Because the MATIC batch fee was paid at the time of publication, it will not be required to be paid again.
 
 If the sequence of forced batches meets all of the sequence conditions, it will be added to the `sequencedBatches` mapping as a regular one. As a result, a `sequenceForceBatches` event will be generated.
 

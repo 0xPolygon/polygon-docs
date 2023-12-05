@@ -114,12 +114,13 @@ The above table illustrates how the columns can be used to record the executiona
 
 By capturing the relationships between and among the columns (registers defined above) in terms of equations, amounts to translating the execution of the padding into a verification code written in PIL.
 
-1. In order to guarantee that the value recorded in the $\texttt{rem}$ register decreases until $\texttt{lastHash}$ is 1 (that is, the end of the string), use the relation,
-  $$
-  \mathtt{rem}'\cdot \mathtt{(1 - lastHash)\ = (rem - 1)(1 - lastHash)} \tag{Eqn.2}
-  $$
+  1. In order to guarantee that the value recorded in the $\texttt{rem}$ register decreases until $\texttt{lastHash}$ is 1 (that is, the end of the string), use the relation,
 
-2. How can we validate the fact that $\texttt{spare}$ was constructed as expected?
+    $$
+    \mathtt{rem}'\cdot \mathtt{(1 - lastHash)\ = (rem - 1)(1 - lastHash)} \quad \tag{Eqn.2}
+    $$
+
+  2. How can we validate the fact that $\texttt{spare}$ was constructed as expected?
 
     First observe that $\texttt{spare}$ changes to 1 immediately after a 1 was recorded in the $\texttt{remIsZero}$ register. (i.e., immediately when the padding starts, and when $\mathtt{pad} \not= 0x81$.)
 
@@ -130,7 +131,7 @@ By capturing the relationships between and among the columns (registers defined 
     \texttt{spare}' \mathtt{ = (spare + remIsZero)\cdot (1 - lastHash)} \tag{Eqn.3}
     $$
 
-3. Verifying correctness of the $\texttt{connected}$ register requires two constraints;
+  3. Verifying correctness of the $\texttt{connected}$ register requires two constraints;
 
     &rarr; Checking that $\texttt{connected}$ is constant in each block
 

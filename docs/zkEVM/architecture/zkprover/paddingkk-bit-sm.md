@@ -2,7 +2,7 @@
 
 The Padding-KK-Bit SM is in charge of validating each action connected to the inputs and outputs of the Keccak-F permutation blocks in addition to being a two-way bytes-to-bits converter.
 
-## Design Strategy
+## Design strategy
 
 Here's how this state machine facilitates operations between the Padding-KK SM and the Keccak-F SM.
 
@@ -10,13 +10,13 @@ A block of 136 rows of bytes in the Padding-KK SM corresponds to $\mathtt{1993}$
 
 ![Figure 1: Padding-KK block vs. Padding-KK-Bit's 3 subdivisions](../../../img/zkEVM/01kkb-chunk-divs-136-bytes.png)
 
-**First Subdivision &rarr;** It consists of $\mathtt{9*136 = 1224}$ rows, where each of the $\mathtt{136}$ byte-rows has been expanded into $\mathtt{9}$ rows (i.e., $\mathtt{8}$ rows for the $\mathtt{8}$ bits plus $\mathtt{1}$ row for the byte that represents the $\mathtt{8}$ bits). The decomposition of the bytes into the 8 bits (with an extra row, just for the byte), is done for easy implementation in PIL. This subdivision of $\mathtt{1224}$ rows represents the bitrate of the KECCAK-F permutation. Therefore, a strategy to ensure that the bits are accurately and correctly provided, as input to the KECCAK-F SM, needs to be derived.
+**First subdivision &rarr;** It consists of $\mathtt{9*136 = 1224}$ rows, where each of the $\mathtt{136}$ byte-rows has been expanded into $\mathtt{9}$ rows (i.e., $\mathtt{8}$ rows for the $\mathtt{8}$ bits plus $\mathtt{1}$ row for the byte that represents the $\mathtt{8}$ bits). The decomposition of the bytes into the 8 bits (with an extra row, just for the byte), is done for easy implementation in PIL. This subdivision of $\mathtt{1224}$ rows represents the bitrate of the KECCAK-F permutation. Therefore, a strategy to ensure that the bits are accurately and correctly provided, as input to the KECCAK-F SM, needs to be derived.
 
-**Second Subdivision &rarr;** This consists of the $\mathtt{512}$ rows, and represents the capacity input-bits in the $\mathtt{1600}$-bit state of the KECCAK-F SM. Within the KECCAK-F state machine, unlike the bits in the first subdivision of $\mathtt{1224}$ rows, the capacity bits are not affected by any exterior bits.
+**Second subdivision &rarr;** This consists of the $\mathtt{512}$ rows, and represents the capacity input-bits in the $\mathtt{1600}$-bit state of the KECCAK-F SM. Within the KECCAK-F state machine, unlike the bits in the first subdivision of $\mathtt{1224}$ rows, the capacity bits are not affected by any exterior bits.
 
-**Third Subdivision &rarr;** It consists of $\mathtt{256 + 1}$ rows represents the 256 bits of the intermediate hash value produced by the KECCAK-F permutation. At the end of hashing each 1088 bits (136-byte) string, this intermediate hash value actually coincides with the final hash of the KECCAK-256 hash function. Each hash value, the final digest, is packed into eight 32-bit registers at the final row of this subdivision.
+**Third subdivision &rarr;** It consists of $\mathtt{256 + 1}$ rows represents the 256 bits of the intermediate hash value produced by the KECCAK-F permutation. At the end of hashing each 1088 bits (136-byte) string, this intermediate hash value actually coincides with the final hash of the KECCAK-256 hash function. Each hash value, the final digest, is packed into eight 32-bit registers at the final row of this subdivision.
 
-### Bytes To Bits Correspondence
+### Bytes to bits correspondence
 
 This section elaborates how the Padding-KK-Bit SM handles the correspondence of bytes between state machines, and correct positioning of bits with respect to the powers of 2.
 
@@ -32,7 +32,7 @@ Starting with the first subdivision, the $\mathtt{1224}$ rows related with the b
 
 - Therefore, **each complete byte is recorded at the last row of such a 9-row byte block** of the $\texttt{r8}$ register. This row is flagged with a "1" in the same row of another register called $\texttt{latchR8}$. **This ensures that $\texttt{latchR8}$ is 0 in all rows except the last row of a 9-row byte block**.
 
-#### Example: Representation of Two Bytes
+#### Example: Representation of two bytes
 
 Here's an example of how two bytes, $\mathtt{0xa1}$ and $\mathtt{0xfe}$, from the Padding-KK SM look like in the Padding-KK-Bit SM. The horizontal lines mark the end of a byte block.
 
@@ -83,7 +83,7 @@ $$
 \mathtt{rBit \cdot (1−rBit) = 0}
 $$
 
-### Validating Transitions Of Bits
+### Validating transitions of bits
 
 The challenge of breaking down bytes into bits has been the main focus up to this point. Here, it is intended to verify the bit transitions following the KECCAK-F operation, which is carried out for each block of 136 bytes. For this, a few columns are introduced.
 
@@ -99,7 +99,7 @@ Below figure depicts a schema of how to relate the above columns with the KECCAK
 
 ![A schema relating Padding-KK-Bit to KECCAK-F Sponge Construction](../../../img/zkEVM/02kkb-pad-kk-bit-to-kk-f.png)
 
-#### Constraints For Bit Transitions
+#### Constraints for bit transitions
 
 These constraints are needed to ensure correct transition between rows.
 
@@ -149,7 +149,7 @@ $$
 \end{array}
 $$
 
-### Capacity Connection In The 512-Rows
+### Capacity connection in the 512 rows
 
 The second subdivision of the Padding-KK-Bit SM's $\mathtt{1993}$-row block consists of the $\mathtt{512}$ rows, corresponding to KECCAK-F SM's capacity bits. It is mandatory to ensure these capacity bits (the middle subdivision of each $\mathtt{1993}$-row block) are not affected by any exterior bit.
 
@@ -161,7 +161,7 @@ $$
 
 This ensures that in each $1993$-row block, $\mathtt{rBit}$ is $0$ everywhere in the rows corresponding to the capacity bits. This results in XOR-ing $\mathtt{sOutBit}$ with a $0$. And thus, for the rows corresponding to the capacity bits, computing $\mathtt{sInBit = sOutBit \bigoplus rBit}$, amounts to $\mathtt{sInBit = sOutBit}$. Therefore, $\mathbf{Eqn. 8}$ guarantees that the capacity bits are not modified by any exterior bits.
 
-### Output Calculations In The (256 + 1)-Rows
+### Output calculations in the (256 + 1) rows
 
 Now, the last part of the Padding-KK-Bit SM is to keep track of the last subdivision of each $1993$-row block. Recall that this third subdivision consists of $256 + 1$ rows, and it is in charge of storing each bit of the intermediate hashes of the KECCAK-F permutation blocks. The $256$ bits of the KECCAK-F permutation output are sequentially and cumulatively stored in eight 32-bit registers $\{\mathtt{sOut_i}|\ 0 \leq i \leq 7 \}$. In a similar method used for the read operations in the Padding-KK SM, eight (8) factor columns $\{\mathtt{FSOut_i} |\ 0 \leq i \leq 7\}$ are used to ensure correct positioning (of each of the $32$ bits in $\mathtt{sOut_i}$) with respect to powers of $2$.
 
@@ -217,7 +217,7 @@ The $\mathtt{latchSOut}$ register ensures that $\mathtt{sOutBit}$ is not constra
 
 This concludes our design for creating the Padding-KK-Bit SM. What is left to be done is to connect both states machines and check the validity of the last hash.
 
-## Padding-KK SM and Padding-KK-Bit SM Connection
+## Padding-KK SM and Padding-KK-Bit SM connection
 
 This section describes how these two state machines, the Padding-KK SM and the Padding-KK-Bit SM, connect **via Plookup**.
 
