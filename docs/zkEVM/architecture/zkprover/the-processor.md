@@ -34,15 +34,13 @@ In order to emulate the EVM opcodes, the Polygon zkEVM introduces five state-rel
 However, since the Main SM operates over a finite field of almost, but less than $64$ bits, each register is split into $8$ subcomponents of $32$ bits each:
 
 $$
-\mathtt{A_0,...,A_7} \\
-
-\mathtt{B_0,...,B_7} \\
-
-\mathtt{C_0,...,C_7} \\
-
-\mathtt{D_0,...,D_7} \\
-
-\mathtt{E_0,...,E_7}
+    \begin{aligned}
+    \mathtt{A_0,...,A_7} \\
+    \mathtt{B_0,...,B_7} \\
+    \mathtt{C_0,...,C_7} \\
+    \mathtt{D_0,...,D_7} \\
+    \mathtt{E_0,...,E_7}
+    \end{aligned}
 $$
 
 with $\mathtt{A_i}$, $\mathtt{B_i}$, $\mathtt{C_i}$, $\mathtt{D_i}$, $\mathtt{E_i}$ $\mathtt{ \in  \{ 0,  \dots , 2^{32 − 1}\}}$.

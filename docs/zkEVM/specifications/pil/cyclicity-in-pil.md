@@ -4,30 +4,17 @@ In order to synchronize the execution trace of a given program with the subgroup
 
 An explanation of what this group $G = \langle g \rangle$ is, and why it is naturally a cyclic group, was discussed in the [Basic Concepts](../../concepts/mfibonacci-example.md) section of the zkProver.
 
-## Non-cyclic SM Example
+## Non-cyclic SM example
 
-Consider a program with the following execution trace of length $\texttt{\%N} = 4$;
+Consider a program with the following execution trace of length $\%\texttt{N} = 4$;
 
 $$
-\begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 0}\\ \hline
-\ \text{ 1}\\ \hline
-\ \text{ 2}\\ \hline
-\ \text{ 3}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
 \begin{aligned}\begin{array}{|l|c|c|}\hline 
-\ \mathtt{a} & \mathtt{b} \\ \hline 
-\ \texttt{1} & \texttt{1} \\ \hline
-\ \texttt{0} & \texttt{2} \\ \hline
- \texttt{-1} & \texttt{2} \\ \hline
-\ \texttt{1} & \texttt{1} \\ \hline
-
+\texttt{row} &\ \mathtt{a} & \mathtt{b} \\ \hline 
+\ \text{ 0} & \ \texttt{1} & \texttt{1} \\ \hline
+\ \text{ 1} & \ \texttt{0} & \texttt{2} \\ \hline
+\ \text{ 2} & \texttt{-1} & \texttt{2} \\ \hline
+\ \text{ 3} & \ \texttt{1} & \texttt{1} \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -55,7 +42,7 @@ Denote the cyclic group over which interpolation is carried out as $G = \{ g, g^
 
     For the sake of convenience, in this particular example, the row index starts at $0$ just so it syncs with the normal array indexing.
 
-### Constraints And Cyclicity
+### Constraints and cyclicity
 
 Observe that the column $\mathtt{a}$ only takes on the values; $0$, $1$ or $−1$; and these values satisfy the constraint,
 
@@ -99,7 +86,7 @@ $$
 
 This proves that second constraint is not satisfied for $i = 3$. And therefore the execution trace is **not cyclic**.
 
-## Introducing Cyclicity
+## Introducing cyclicity
 
 The execution trace can be made cyclic by introducing a selector polynomial, call it $\texttt{SEL}$, such that its column values are $1$ in every row  except the last, where it's $0$,
 
@@ -109,24 +96,12 @@ The above execution trace is now modified to the following:
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 0}\\ \hline
-\ \text{ 1}\\ \hline
-\ \text{ 2}\\ \hline
-\ \text{ 3}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-\begin{aligned}\begin{array}{|l|c|c|c|}\hline 
-\ \mathtt{a} & \mathtt{b} & \mathtt{SEL} \\ \hline 
-\ \texttt{1} & \texttt{1} & \texttt{1} \\ \hline
-\ \texttt{0} & \texttt{2} & \texttt{1} \\ \hline
- \texttt{-1} & \texttt{2} & \texttt{1}\\ \hline
-\ \texttt{1} & \texttt{1} & \texttt{0}\\ \hline
-
+\begin{array}{|l|c|c|c|}\hline 
+\texttt{row} & \ \mathtt{a} & \mathtt{b} & \mathtt{SEL} \\ \hline 
+\ \text{ 0} & \ \texttt{1} & \texttt{1} & \texttt{1} \\ \hline
+\ \text{ 1} & \ \texttt{0} & \texttt{2} & \texttt{1} \\ \hline
+\ \text{ 2} & \texttt{-1} & \texttt{2} & \texttt{1}\\ \hline
+\ \text{ 3} & \ \texttt{1} & \texttt{1} & \texttt{0}\\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -142,37 +117,38 @@ Given these adjustments, we note that;
     $$
     \texttt{SEL} \cdot (\texttt{a} + \texttt{b}) = 0 \cdot  (\texttt{a} + \texttt{b}) = 0.
     $$
+
     All-in-all, the adjusted execution trace attains cyclicity if the second constraint is set to:
+
     $$
     \texttt{b}' =\ \texttt{SEL} \cdot (\texttt{a} + \texttt{b})\ +\ (1 - \texttt{SEL}).
     $$
 
+    As seen earlier, for the case $i = 3$,
 
-As seen earlier, for the case $i = 3$,
+    $$
+    \text{LHS} = \texttt{b}'(g^{3}) = \texttt{b}(g\cdot g^{3}) = \texttt{b}(g^{0}) = \texttt{b}[0] = 1
+    $$
 
-$$
-\text{LHS} = \texttt{b}'(g^{3}) = \texttt{b}(g\cdot g^{3}) = \texttt{b}(g^{0}) = \texttt{b}[0] = 1
-$$
+    and now,
 
-and now,
+    $$
+    \text{RHS}\ =\ \texttt{SEL}(g^3)\cdot \big(\texttt{a}(g^3) + \texttt{b}(g^3)\big) +\ \big(1 - \texttt{SEL}(g^3)\big)\ \\
+    =\ \texttt{SEL}[3] \cdot \big( \texttt{a}[3] + \texttt{b}[3] \big) +\ (1 - \texttt{SEL}[3])\ \text{ } \\
+    =\ 0\cdot \big( 1 + 1 \big) + \big( 1 - 0 \big) =\ 0 + 1 = 1.\quad
+    $$
 
-$$
-\text{RHS}\ =\ \texttt{SEL}(g^3)\cdot \big(\texttt{a}(g^3) + \texttt{b}(g^3)\big) +\ \big(1 - \texttt{SEL}(g^3)\big)\ \\
-=\ \texttt{SEL}[3] \cdot \big( \texttt{a}[3] + \texttt{b}[3] \big) +\ (1 - \texttt{SEL}[3])\ \text{ } \\ 
-=\ 0\cdot \big( 1 + 1 \big) + \big( 1 - 0 \big) =\ 0 + 1 = 1.\quad
-$$
+    The valid PIL code, with all the adjustments, is as depicted below:
 
-The valid PIL code, with all the adjustments, is as depicted below:
+    ```
+    namespace CyclicExample(4);
 
-```
-namespace CyclicExample(4);
+    pol commit a, b;
+    pol constant SEL;
+    pol carry = (a+1)*a;
+    
+    carry*(a-1) = 0;
+    b' = SEL*(b+a) + (1-SEL);
+    ```
 
-pol commit a, b;
-pol constant SEL; 
-pol carry = (a+1)*a;
-
-carry*(a-1) = 0;
-b' = SEL*(b+a) + (1-SEL);
-```
-
-For implementation purposes, even as alluded to in the previous section, in order to prevent exposing distinguishing features, a configuration file is used to store the exact length of the program $\texttt{\%N} = 4$ so that only the symbol $\texttt{N}$ appears in the PIL code. 
+    For implementation purposes, even as alluded to in the previous section, in order to prevent exposing distinguishing features, a configuration file is used to store the exact length of the program $\%\texttt{N} = 4$ so that only the symbol $\texttt{N}$ appears in the PIL code. 

@@ -1,7 +1,6 @@
 
 !!!info
-
-This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](submit-transaction.md) inside Polygon zkEVM.
+    This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](submit-transaction.md) inside Polygon zkEVM.
 
 The **Trusted Aggregator should eventually aggregate the sequences of batches previously committed by the Trusted Sequencer in order to achieve the L2 State final stage**, which is the Consolidated State.
 

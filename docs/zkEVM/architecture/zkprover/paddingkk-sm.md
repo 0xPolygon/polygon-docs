@@ -115,137 +115,135 @@ The above table illustrates how the columns can be used to record the executiona
 By capturing the relationships between and among the columns (registers defined above) in terms of equations, amounts to translating the execution of the padding into a verification code written in PIL.
 
 1. In order to guarantee that the value recorded in the $\texttt{rem}$ register decreases until $\texttt{lastHash}$ is 1 (that is, the end of the string), use the relation,
-
-$$
-\mathtt{rem}'\cdot \mathtt{(1 - lastHash)\ = (rem - 1)(1 - lastHash)} \tag{Eqn.2}
-$$
+  $$
+  \mathtt{rem}'\cdot \mathtt{(1 - lastHash)\ = (rem - 1)(1 - lastHash)} \tag{Eqn.2}
+  $$
 
 2. How can we validate the fact that $\texttt{spare}$ was constructed as expected?
 
-  First observe that $\texttt{spare}$ changes to 1 immediately after a 1 was recorded in the $\texttt{remIsZero}$ register. (i.e., immediately when the padding starts, and when $\mathtt{pad} \not= 0x81$.)
+    First observe that $\texttt{spare}$ changes to 1 immediately after a 1 was recorded in the $\texttt{remIsZero}$ register. (i.e., immediately when the padding starts, and when $\mathtt{pad} \not= 0x81$.)
 
-  Secondly, notice that after this point, $\texttt{spare}$ remains 1 until (and including when) $\texttt{lastHash}$ equals 1. After which, $\texttt{spare}$ becomes 0.
+    Secondly, notice that after this point, $\texttt{spare}$ remains 1 until (and including when) $\texttt{lastHash}$ equals 1. After which, $\texttt{spare}$ becomes 0.
 
-  Hence, these behaviour can be captured as,
-  $$
-  \texttt{spare}' \mathtt{ = (spare + remIsZero)\cdot (1 - lastHash)} \tag{Eqn.3}
-  $$
+    Hence, these behaviour can be captured as,
+    $$
+    \texttt{spare}' \mathtt{ = (spare + remIsZero)\cdot (1 - lastHash)} \tag{Eqn.3}
+    $$
 
 3. Verifying correctness of the $\texttt{connected}$ register requires two constraints;
 
-  &rarr; Checking that $\texttt{connected}$ is constant in each block
+    &rarr; Checking that $\texttt{connected}$ is constant in each block
 
-  $$
-  \mathtt{connected'}\cdot \mathtt{(1 - lastBlock) = connected \cdot (1 - lastBlock)}  \tag{Eqn.4}
-  $$
+    $$
+    \mathtt{connected'}\cdot \mathtt{(1 - lastBlock) = connected \cdot (1 - lastBlock)} \tag{Eqn.4}
+    $$
 
-  &rarr; Checking two specific situations,
+    &rarr; Checking two specific situations,
 
     - When $\mathtt{lastBlock}$ is 1 and $\mathtt{lastHash}$ is 0 : in this case, the next value of $\texttt{connected}$ should be 0, because of the block change but within the same string.
 
     - When both $\mathtt{lastBlock}$ and $\mathtt{lastHash}$ are 1 : in this case, the next value of $\texttt{connected}$ should be 0, due to the string change.
 
-  These two scenarios are verified with the following constraint,
+    These two scenarios are verified with the following constraint,
 
-  $$
-  \mathtt{connected' \cdot lastBlock = ( 1 - lastHash) \cdot lastBlock} \tag{Eqn.5}
-  $$
-
+    $$
+    \mathtt{connected' \cdot lastBlock = ( 1 - lastHash) \cdot lastBlock} \tag{Eqn.5}
+    $$
+    
 4. The $\mathtt{len}$ register is constant within each string. It must therefore satisfy this relationship,
 
-  $$
-  \mathtt{ len'\cdot firstHash = len\cdot (1 - lastHash)} \tag{Eqn.6}
-  $$
-
+    $$
+    \mathtt{ len'\cdot firstHash = len\cdot (1 - lastHash)} \tag{Eqn.6}
+    $$
+    
 5. Checking that $\mathtt{len}$ and $\mathtt{rem}$ coincide at the first state of each string, use the constraint,
 
-  $$
-  \mathtt{len \cdot firstHash = rem\cdot firstHash} \tag{Eqn.7}
-  $$
+    $$
+    \mathtt{len \cdot firstHash = rem\cdot firstHash} \tag{Eqn.7}
+    $$
 
-  where $\mathtt{firstHash}$ is a committed column and it is such that $\mathtt{firstHash' = lastHash}$.
+    where $\mathtt{firstHash}$ is a committed column and it is such that $\mathtt{firstHash' = lastHash}$.
 
-  In fact, $\mathtt{firstHash}$ is a shifted version of $\mathtt{lastHash}$, which is used to ensure that, when starting a string (and therefore, $\mathtt{firstHash = 1}$), then $\mathtt{len = rem}$.
+    In fact, $\mathtt{firstHash}$ is a shifted version of $\mathtt{lastHash}$, which is used to ensure that, when starting a string (and therefore, $\mathtt{firstHash = 1}$), then $\mathtt{len = rem}$.
 
-  $$
-  \begin{array}{|l|c|c|c|c|c|}
-  \hline
-  \texttt{lastHash} & \texttt{firstHash}\\ \hline
-  \text{ }\text{ } \text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 \\
-  \text{ }\text{ }\text{ }\text{ }\text{ }\cdots & \cdots\\
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }0 & 0 \\ \hline
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }0 & 0 \\
-  \text{ }\text{ }\text{ }\text{ }\text{ }\cdots & \cdots\\
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }1 & 0 \\ \hline
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }0 & 1 \\
-  \text{  }\text{ }\text{ }\text{  }\text{ }\text{} \cdots & \cdots\\ \hline
-  \end{array}
-  $$
-
+    $$
+    \begin{array}{|l|c|c|c|c|c|}
+    \hline
+      \texttt{lastHash} & \texttt{firstHash}\\ \hline
+      \text{ }\text{ } \text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 \\
+      \text{ }\text{ }\text{ }\text{ }\text{ }\cdots & \cdots\\
+      \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }0 & 0 \\ \hline
+      \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }0 & 0 \\
+      \text{ }\text{ }\text{ }\text{ }\text{ }\cdots & \cdots\\
+      \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }1 & 0 \\ \hline
+      \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }0 & 1 \\
+      \text{  }\text{ }\text{ }\text{  }\text{ }\text{} \cdots & \cdots\\ \hline
+    \end{array}
+    $$
+    
 6. Let us now specify the relations that satisfy the $\mathtt{addr}$ register. As commented on before, $\mathtt{addr}$ is constant within each string. Hence, $\mathtt{(addr' - addr) = 0}$ if and only if $\mathtt{1 - lastHash \not= 0}$.
 
-  The constraint for the $\mathtt{addr}$ register is therefore,
+    The constraint for the $\mathtt{addr}$ register is therefore,
 
-  $$
-  \mathtt{(addr' - addr) \cdot (1 - lastHash)  = 0}\tag{Eqn.8}
-  $$
+    $$
+    \mathtt{(addr' - addr) \cdot (1 - lastHash)  = 0}\tag{Eqn.8}
+    $$
 
-  Note that going from one string to the next, the values of the $\mathtt{addr}$ register form an increasing sequence (increasing by steps of 1 from one string to the next).
+    Note that going from one string to the next, the values of the $\mathtt{addr}$ register form an increasing sequence (increasing by steps of 1 from one string to the next).
 
-  However, since the polynomials utilized in this scheme are all cyclic (due to evaluations on roots of unity), there is a need to ensure that the $\mathtt{addr}$ register resets to $0$ whenever the reading returns to the first row.
+    However, since the polynomials utilized in this scheme are all cyclic (due to evaluations on roots of unity), there is a need to ensure that the $\mathtt{addr}$ register resets to $0$ whenever the reading returns to the first row.
 
-  For this purpose, a register called $\mathtt{lastBlockLatch}$ is added. And $\mathtt{lastBlockLatch}$ is 1, if $\mathtt{lastBlock}$ is 1 and the string, that the last block belongs to, is not the last one.
+    For this purpose, a register called $\mathtt{lastBlockLatch}$ is added. And $\mathtt{lastBlockLatch}$ is 1, if $\mathtt{lastBlock}$ is 1 and the string, that the last block belongs to, is not the last one.
 
-  Similarly, another register called $\mathtt{lastHashLatch}$ is added, and it is defined such that
+    Similarly, another register called $\mathtt{lastHashLatch}$ is added, and it is defined such that
 
-  $$
-  \mathtt{ lastHashLatch = lastBlockLatch \cdot (spare + remIsZero) } \tag{Eqn.9}
-  $$
+    $$
+    \mathtt{ lastHashLatch = lastBlockLatch \cdot (spare + remIsZero) } \tag{Eqn.9}
+    $$
 
-  See below table for a comparison between the $\texttt{latch}$ and non-$\mathtt{latch}$ registers.  
+    See below table for a comparison between the $\texttt{latch}$ and non-$\mathtt{latch}$ registers.
 
-  $$
-  \begin{array}{|l|c|c|c|c|c|}
-  \hline
-  \texttt{lastBlock} & \texttt{lastBlockLatch} & \texttt{lastHash} & \texttt{lastHashLatch}\\ \hline
-  \text{ }\text{ } \text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 & 0 & 0 \\
-  \text{ }\text{ }\text{ }\text{ }\text{ }\cdots & \cdots & \cdots & \cdots\\
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 1 & 0 & 0 \\ \hline
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 & 0 & 0 \\
-  \text{ }\text{ }\text{ }\text{ }\text{ }\cdots & \cdots & \cdots & \cdots\\
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 1 & 1 & 1 \\ \hline
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 & 0 & 0  \\
-  \text{  }\text{ }\text{ }\text{  }\text{ }\text{} \cdots & \cdots & \cdots & \cdots\\
-  \text{  }\text{ }\text{ }\text{  }\text{ }\text{} \cdots & \cdots & \cdots & \cdots \\
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 0 & 1 & 0  \\\hline
-  \end{array}
-  $$
-
+    $$
+    \begin{array}{|l|c|c|c|c|c|}
+    \hline
+      \texttt{lastBlock} & \texttt{lastBlockLatch} & \texttt{lastHash} & \texttt{lastHashLatch}\\ \hline
+      \text{ }\text{ } \text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 & 0 & 0 \\
+      \text{ }\text{ }\text{ }\text{ }\text{ }\cdots & \cdots & \cdots & \cdots\\
+      \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 1 & 0 & 0 \\ \hline
+      \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 & 0 & 0 \\
+      \text{ }\text{ }\text{ }\text{ }\text{ }\cdots & \cdots & \cdots & \cdots\\
+      \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 1 & 1 & 1 \\ \hline
+      \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 & 0 & 0  \\
+      \text{  }\text{ }\text{ }\text{  }\text{ }\text{} \cdots & \cdots & \cdots & \cdots\\
+      \text{  }\text{ }\text{ }\text{  }\text{ }\text{} \cdots & \cdots & \cdots & \cdots \\
+      \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 0 & 1 & 0  \\\hline
+      \end{array}
+    $$
+    
 7. In order to grapple with the increasing but cyclic sequence of $\mathtt{addr}$, the following constraint is used,
-  
-  $$
-  \mathtt{ ( addr' - 1 - addr)\cdot lastHashLatch = 0} \tag{Eqn.10}
-  $$
 
+    $$
+    \mathtt{ ( addr' - 1 - addr)\cdot lastHashLatch = 0} \tag{Eqn.10}
+    $$
+    
 8. Now, checking whether $\mathtt{remIsZero}$ is 1 if and only if $\mathtt{rem}$ is 0, is done reversely by first committing the column $\mathtt{remInv}$, the inverse of $\mathtt{rem}$, and computing $\mathtt{remIsZero}$ as:
+    $$
+    \mathtt{remIsZero = 1 − rem · remInv} \tag{Eqn.11}
+    $$
 
-  $$
-  \mathtt{remIsZero = 1 − rem · remInv} \tag{Eqn.11}
-  $$
-
-  And then, as usual, check the relation, $\mathtt{remIsZero \cdot rem = 0}$.
-
+    And then, as usual, check the relation, $\mathtt{remIsZero \cdot rem = 0}$.
+    
 9. Next is the $\mathtt{aFreeIn}$ register which stores the input byte if and only if the current row does not corresponding to the padding. $\mathtt{aFreeIn}$ is computed from the $\mathtt{remIsZero}$, $\mathtt{spare}$ and $\mathtt{lastHash}$ registers. This ensures loading the padding bytes at their correct positions.
+    
+    In fact, this register will be used in the Plookup of the next state machine.
 
-  In fact, this register will be used in the Plookup of the next state machine.
+    Observe that $\mathtt{aFreeIn}$ can be computed as
+    
+    $$
+    \mathtt{aFreeIn = (1 − (remIsZero + spare)) \cdot freeIn + remIsZero + lastHash \cdot 0x80} \tag{Eqn.12}
+    $$
 
-  Observe that $\mathtt{aFreeIn}$ can be computed as
-
-  $$
-  \mathtt{aFreeIn = (1 − (remIsZero + spare)) \cdot freeIn + remIsZero + lastHash \cdot 0x80} \tag{Eqn.12}
-  $$
-
-  Let us carefully analyze this equation:
+    Let us carefully analyze this equation:
 
     - If $\texttt{remIsZero}$, $\texttt{spare}$ and $\texttt{lastHash}$ are all $0$, then $\texttt{aFreeIn}$ equals $\texttt{freeIn}$. As mentioned above, at the non-padding rows, we just store $\texttt{freeIn}$.
     - If $\texttt{remIsZero}$ is 1, $\texttt{spare}$ is 0 and $\texttt{lastHash}$ is 0, then $\texttt{aFreeIn}$ equals $\texttt{0x01}$, which is the first byte of the padding.
@@ -253,19 +251,19 @@ $$
     - If $\texttt{remIsZero}$ is 0, $\texttt{spare}$ is 1 and $\texttt{lastHash}$ is 1, then $\texttt{aFreeIn}$ equals $\texttt{0x80}$, which is the last byte of the padding.
     - Lastly, we should consider the special case where the padding is only the byte $\texttt{0x81}$. In this case, $\texttt{spare}$ is 0 at the last row meanwhile $\texttt{lastHash}$ and $\texttt{remIsZero}$ are both 1. Therefore, $\texttt{aFreeIn}$ equals $\texttt{0x81}$, as we wanted.
 
-  See below table for all the above cases when computing $\texttt{aFreeIn}$.
+    See below table for all the above cases when computing $\texttt{aFreeIn}$.
 
-  $$
-  \begin{array}{|l|c|c|c|c|c|}
-  \hline
-  \texttt{remIsZero} & \texttt{spare} & \texttt{lastHash} & \texttt{aFreeIn} \\ \hline
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 & 0 & \texttt{freeIn} \\ \hline
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 0 & 0 & \texttt{0x01} \\ \hline
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 1 & 0 & \texttt{0x00} \\ \hline
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 1 & 1 & \texttt{0x80} \\ \hline
-  \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 0 & 1 & \texttt{0x81} \\ \hline
-  \end{array}
-  $$
+$$
+\begin{array}{|l|c|c|c|c|c|}
+\hline
+    \texttt{remIsZero} & \texttt{spare} & \texttt{lastHash} & \texttt{aFreeIn} \\ \hline
+    \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 0 & 0 & \texttt{freeIn} \\ \hline
+    \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 0 & 0 & \texttt{0x01} \\ \hline
+    \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 1 & 0 & \texttt{0x00} \\ \hline
+    \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 0 & 1 & 1 & \texttt{0x80} \\ \hline
+    \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 0 & 1 & \texttt{0x81} \\ \hline
+\end{array}
+$$
 
 ### Hash output check
 
@@ -418,11 +416,15 @@ $$
 \mathtt{0x1f02ef10, 0x111a6e6e} \text{ and } \mathtt{0xff00}
 $$
 Moreover, each byte has a corresponding weight $(2^8)^j$, for some $j \in \{0, 1, 2, 3\}$, such that,
+
 $$
+\begin{aligned}
 \mathtt{0x1f02ef10=0x10 \cdot 2^0 +0xef\cdot 2^8 +0x02\cdot 2^{16} + 0x1f\cdot2^{24}}\\
 \mathtt{0x111a6e6e=0x6e\cdot2^0 +0x6e\cdot2^8 +0x1a\cdot2^{16} +0x11\cdot2^{24}}\\
 \mathtt{0xff00=0x00\cdot2^0 +0xff\cdot2^8}\quad\quad\quad\qquad\quad\quad\quad \text{ }\text{}
+\end{aligned}
 $$
+
 Henceforth, we should reflect this in our state machine using the columns $\mathtt{crF_i}$ and $\mathtt{crV_i}$ for our previous example.
 
 $$
@@ -453,14 +455,18 @@ Lastly, observe that the rows corresponding to $\mathtt{crLatch = 1}$, store the
 
 **Constraints pertaining to $\{\mathtt{crV_i}\}$ and $\{\mathtt{crF_i}\}$**
 
-The idea here is to compute a column  $\mathtt{crVC_i}$ defined by,  
+The idea here is to compute a column  $\mathtt{crVC_i}$ defined by,
+
 $$
 \mathtt{crVC_i = crV_i + crF_i \cdot aFreeIn} \tag{Eqn.19}
 $$
+
 and then verify that the next state $\mathtt{crV'_i}$ coincides with $\mathtt{crVC_i}$ whenever $\mathtt{crLatch}$ is not equal to 1. This will confirm that the $\{\mathtt{crV_i}\}$ registers are not only sequentially read, but are also correctly computed from the previous states. Hence, the following constraint needs to be added;
+
 $$
 \mathtt{crV' = crVC \cdot (1 − crLatch)}  \tag{Eqn.20}
 $$
+
 So far so good.
 
 Now observe that the tuple $(\mathtt{crOffset, crF0, crF1, . . . , crF7})$ is not totally arbitrary. In fact, it needs to be checked whether $\mathtt{crOffset \in \{1,\dots,32\}}$ and $\mathtt{crFi \in \{1,2^8,2^{16},2^{24}\}}$. This is done via a Plookup. That is, checking if the row corresponding to $\mathtt{crLatch = 1}$ is contained among the previously computed table of constants having all possible combinations of the previous columns.

@@ -18,24 +18,12 @@ Hence, a new addition is checked in every second row.
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 1}\\ 
-\ \text{ 2}\\ \hline
-\ \text{ 3}\\ 
-\ \text{ 4}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-\begin{aligned}\begin{array}{|c|c|c|}\hline 
-\mathtt{a} & \mathtt{b} & \mathtt{operation} \\ \hline 
-\texttt{ox11} & \texttt{0x22} & {undefined} \\ 
-\texttt{0x30} & \texttt{0x40} & \texttt{0x3011} + \texttt{0x4022} \\ \hline
-\texttt{0xff} & \texttt{0xee} & {undefined} \\ 
-\texttt{0x00} & \texttt{0xff} & \texttt{0x00ff} +  \texttt{0xffee} \\ \hline
-
+\begin{array}{|c|c|c|}\hline 
+\texttt{row} & \mathtt{a} & \mathtt{b} & \mathtt{operation} \\ \hline 
+\ \text{ 1} & \texttt{ox11} & \texttt{0x22} & {undefined} \\ 
+\ \text{ 2} & \texttt{0x30} & \texttt{0x40} & \texttt{0x3011} + \texttt{0x4022} \\ \hline
+\ \text{ 3} & \texttt{0xff} & \texttt{0xee} & {undefined} \\ 
+\ \text{ 4} & \texttt{0x00} & \texttt{0xff} & \texttt{0x00ff} +  \texttt{0xffee} \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -45,32 +33,20 @@ The output of the addition between $1$-byte words can't be stored in a single co
 The result of the addition will be split into two columns; $\texttt{carry}$ and $\texttt{add}$. Each column accepts only $1$-byte words, thereby storing the complete result so that a correct addition between bytes can be defined as:
 
 $$
-\texttt{a}\ +\ \texttt{b} \ = \texttt{carry}\cdot 2^8\ + \texttt{add} \tag{Eqn. 9}
+\texttt{a}\ +\ \texttt{b} \ = \texttt{carry}\cdot 2^8\ + \texttt{add} \qquad\quad \tag{Eqn. 9}
 $$
 
 The below table shows an example of a valid execution trace for this program.
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 1}\\ 
-\ \text{ 2}\\ \hline
-\ \text{ 3}\\ 
-\ \text{ 4}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-\begin{aligned}\begin{array}{|c|c|c|}\hline 
-\mathtt{a} & \mathtt{b} & \texttt{carry} & \texttt{add} \\ \hline 
-\texttt{ox11} & \texttt{0x22} & \texttt{0x00} & \texttt{0x33} \\ 
-\texttt{0x30} & \texttt{0x40} & \texttt{0x00} & \texttt{0x70} \\ \hline
-\texttt{0xff} & \texttt{0xee} & \texttt{0x01} & \texttt{0xed}\\ 
-\texttt{0x00} & \texttt{0xff} & \texttt{0x01} &  \texttt{0x00} \\ \hline
-
-\end{array}
+    \begin{array}{|l|c|c|}\hline
+    \texttt{row} & \mathtt{a} & \mathtt{b} & \texttt{carry} & \texttt{add} \\ \hline 
+    \ \text{ 1} & \texttt{ox11} & \texttt{0x22} & \texttt{0x00} & \texttt{0x33} \\ 
+    \ \text{ 2} & \texttt{0x30} & \texttt{0x40} & \texttt{0x00} & \texttt{0x70} \\ \hline
+    \ \text{ 3} & \texttt{0xff} & \texttt{0xee} & \texttt{0x01} & \texttt{0xed}\\ 
+    \ \text{ 4} & \texttt{0x00} & \texttt{0xff} & \texttt{0x01} &  \texttt{0x00} \\ \hline
+    \end{array}
 \end{aligned}
 $$
 

@@ -28,7 +28,7 @@ These are individuals or organizations with vested interest in the welfare of th
 
 The Polygon zkEVM's Security Council is constituted of eight (8) members, four of whom are internal to the Polygon team, while the rest of the members must be from outside Polygon.
 
-The minimum requirement, even as mentioned in the L2Beat [report](https://media.licdn.com/dms/document/media/D4E1FAQE1XqdMFsScFA/feedshare-document-pdf-analyzed/0/1690120681987?e=1691625600&v=beta&t=JJkqLlnEXh8_DalqrD3GH4e9umrfUo8iRpcdFJVww40), is for these individuals to be adequately _knowledgeable and competent enough to make the best judgment about the actions approved by the multisig_.
+The minimum requirement, even as mentioned in the L2Beat report downloadable [here](https://l2beat.com/multisig-report), is for these individuals to be adequately _knowledgeable and competent enough to make the best judgment about the actions approved by the multisig_.
 
 These members are not completely anonymous as their addresses are publicly known. Their addresses can be checked in Etherscan.
 

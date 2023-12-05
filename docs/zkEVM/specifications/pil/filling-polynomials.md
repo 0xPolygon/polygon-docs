@@ -2,11 +2,11 @@ This document describes how to fill Polynomials in PIL using JavaScript and Pilc
 
 In this document, we are going to use **Javascript** and **pilcom** to generate a specific execution trace for a given PIL. 
 
-To do so, we are going to use the execution trace of a program previously discussed in the [Connection Arguments](connection-arguments.md) section.
+To do so, we are going to use the execution trace of a program previously discussed in the [Connection arguments](connection-arguments.md) section.
 
 We will also use the **pil-stark** library, which is a utility that provides a framework for setup, generation and verification of proofs. It uses an FGL class which mimics a finite field, and it is required by some functions that provide the **pilcom** package.
 
-## Execute Code
+## Execute code
 
 First of all, under the scope of an asynchronous function called `execute`, we parse the provided PIL code (which is, in our case, `main.pil`) into a **Javascript** object using the `compile` function of **pilcom**.
 
@@ -22,7 +22,7 @@ async function execute() {
 }
 ```
 
-## Pilcom Package
+## Pilcom package
 
 The **pilcom** package also provides two functions; `newConstPolsArray` and `newCommitPolsArray`. Both these functions use the `pil` object in order to create two crucial objects:
 
@@ -43,7 +43,7 @@ async function execute() {
 }
 ```
 
-## Accessing Execution Trace
+## Accessing execution trace
 
 The above-mentioned objects contain useful information about the PIL itself, such as the provided length of the program `N`, the total number of constant polynomials and the total number of committed polynomials. Accessing these objects will allow us to fill the entire execution trace for that PIL.
 
@@ -62,9 +62,9 @@ Note that;
 
 Using these, the polynomials can now be filled.
 
-## `Main.pil` Code Example
+## `Main.pil` code example
 
-In our example, we recall the `main.pil` seen in the [Connection Arguments](connection-arguments.md) section about $4$-bit integers.
+In our example, we recall the `main.pil` seen in the [Connection arguments](connection-arguments.md) section about $4$-bit integers.
 
 Since we are only allowed to use $4$-bit integers, inputs for the trace, which are also the ones introduced in the $\mathtt{Main.a}$ polynomial, is a chain of integers n ascending cyclically from $0$ to $15$.
 

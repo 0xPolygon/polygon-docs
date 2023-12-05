@@ -45,7 +45,7 @@ The grey boxes are not state machines but indicate **Actions**, which are specif
 
 There are some natural dependencies between;
 
-- the **Storage State Machine** which uses merkle Trees and the **POSEIDON State Machine**, which is needed for computing hash values of all nodes in the Storage's Merkle Trees.
+- the **Storage State Machine** which uses merkle Trees and the **Poseidon State Machine**, which is needed for computing hash values of all nodes in the Storage's Merkle Trees.
 - each of the hashing state machines, **Keccak Function SM** and the **PoseidonG SM**, and their respective padding state machines, i.e. the **Padding-KK SM** and the **Padding-PG SM**.
 
 ## Two novel languages for zkProver
@@ -87,7 +87,7 @@ The **Hardware** component, which uses the Polynomial Identity Language (PIL), d
 
 ## Hashing in the zkProver
 
-There are two secondary state machines specialising with Hashing &rarr; The **Keccak State Machine**, and the **POSEIDON State Machine**. Each of them is an **"automised"** version of its standard cryptographic hash function.
+There are two secondary state machines specialising with Hashing &rarr; The **Keccak State Machine**, and the **Poseidon State Machine**. Each of them is an **"automised"** version of its standard cryptographic hash function.
 
 ### Keccak state machine
 
@@ -95,7 +95,7 @@ The Keccak SM is a gates state machine. It has a set of logic gates (the hardwar
 
 ### Poseidon state machine
 
-The POSEIDON hash function has been publicised as a [zk-STARK-friendly hash function](https://starkware.co/hash-challenge/). It is newer than the Keccak hash and thus still under the scrutiny of cryptanalysts. As such, it is best-suited for the zkProver context.
+The POSEIDON hash function has been publicised as a zk-STARK-friendly hash function. It is newer than the Keccak hash and thus still under the scrutiny of cryptanalysts. As such, it is best-suited for the zkProver context.
 
 The **Poseidon SM** is very straight-forward if someone is familiar with the internal mechanism of the original Poseidon hash function.
 

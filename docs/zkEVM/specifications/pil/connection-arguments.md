@@ -1,10 +1,10 @@
-This document describes the Connection Arguments and how they are used in Polynomial Identity Language.
+This document describes the connection arguments and how they are used in Polynomial Identity Language.
 
-### Connection Argument
+### What is a connection argument?
 
-Given a vector $a = ( a_1 , \dots , a_n) \in \mathbb{F}_n$ and a partition ${\large{\S}} = \{ S_1, \dots , S_t \}$ of $[n]$, we say "$a$ $\text{\it{copy-satisfies}}$ ${\large{\S}}$" if for each $S_k \in {\large{\S}}$, we have that $a_i = a_j$ whenever $i, j \in S_k$, with $i, j \in [n]$ and $k \in [t]$.
+Given a vector $a = ( a_1 , \dots , a_n) \in \mathbb{F}_n$ and a partition ${\large{\S}} = \{ S_1, \dots , S_t \}$ of $[n]$, we say "$a$ $\textit{copy-satisfies}$ ${\large{\S}}$" if for each $S_k \in {\large{\S}}$, we have that $a_i = a_j$ whenever $i, j \in S_k$ , with $i, j \in [n]$ and $k \in [t]$.
 
-Moreover, we say that a protocol $(\mathcal{P}, \mathcal{V})$ is a **connection argument** if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that a vector $\text{\it{copy-satisfies}}$ a partition of $[n]$.
+Moreover, we say that a protocol $(\mathcal{P}, \mathcal{V})$ is a **connection argument** if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that a vector $\textit{copy-satisfies}$ a partition of $[n]$.
 
 !!! info
 
@@ -42,17 +42,17 @@ $$
 \end{aligned} \tag{Table 1}
 $$
 
-The vector $\mathtt{a}\ \text{\it{copy-satisfies}}\ {\large{\S}}$ because $\mathtt{a}_1 = \mathtt{a}_3 = \mathtt{a}_5 = 3$ and $\mathtt{a}_4 = \mathtt{a}_6 = 1$. 
+The vector $\mathtt{a}\ \textit{copy-satisfies}\ {\large{\S}}$ because $\mathtt{a}_1 = \mathtt{a}_3 = \mathtt{a}_5 = 3$ and $\mathtt{a}_4 = \mathtt{a}_6 = 1$. 
 
 Observe that, since the singleton $\{2\}$ is in ${\large{\S}}$, then $\mathtt{a}_2$ is not related to any other element in $\mathtt{a}$. 
 
-Also, the vector $\mathtt{b}$ does not $\text{\it{copy-satisfies}}\ {\large{\S}}$ because $\mathtt{b}_1 = \mathtt{b}_5 =3 \not= 7 = \mathtt{b}_3$.
+Also, the vector $\mathtt{b}$ does not $\textit{copy-satisfies}\ {\large{\S}}$ because $\mathtt{b}_1 = \mathtt{b}_5 =3 \not= 7 = \mathtt{b}_3$.
 
 In the context of programs, connection arguments can be written easily in PIL by introducing a column associated with the chosen partition. This is also done in [GWC19](https://eprint.iacr.org/2019/953).
 
 Recall that column values are evaluations of a polynomial at $G = \langle g \rangle$ and $\texttt{N}$ is the length of the execution trace.
 
-Given a polynomial $\texttt{a}$ and a partition ${\large{\S}}$, suppose we want to write in PIL a constraint attesting to the $\text{\it{copy-satisfiability}}$ of a certain ${\large{\S}}$.
+Given a polynomial $\texttt{a}$ and a partition ${\large{\S}}$, suppose we want to write in PIL a constraint attesting to the $\textit{copy-satisfiability}$ of a certain ${\large{\S}}$.
 
 We first construct a permutation $\sigma : [n] \to [n]$ such that for each set $S_i \in {\large{\S}}$, we have that $\sigma({\large{\S}})$ contains a cycle of all elements of $S_i$.
 
@@ -82,13 +82,13 @@ A valid execution trace for this example was shown in Table 1 above.
 
     The column $\texttt{SA}$ does not need to be declared as a constant polynomial. The **connection argument** will still hold true even if it is declared as committed.
 
-## Multiple Copy Satisfiability
+## Multiple copy satisfiability
 
 Connection arguments can be extended to several columns by encoding each column with a “part” of the permutation. Informally, the permutation is now able to span across the values of each of the involved polynomials in a way that the cycles formed in the permutation must contain the same value.
 
-### Multi-Column Copy Satisfiability
+### Multi-column copy satisfiability
 
-Given vectors $a_1, \dots , a_k$ in $\mathbb{F}^n$ and a partition ${\large{\S}} = \{S_1,...,S_t\}$ of $[kn]$, we say $a_1,...,a_k$ $\text{\it{copy-satisfy}}\ {\large{\S}}$ if for each $S_m \in {\large{\S}}$, we have that $a_{{l_1},i} = a_{{l_2},j}$ whenever $i,j \in S_m$, with $i,j \in [n]$, $l_1, l_2 \in [k]$ and $m \in [t]$.
+Given vectors $a_1, \dots , a_k$ in $\mathbb{F}^n$ and a partition ${\large{\S}} = \{S_1,...,S_t\}$ of $[kn]$, we say $a_1,...,a_k$ $\textit{copy-satisfy}\ {\large{\S}}$ if for each $S_m \in {\large{\S}}$, we have that $a_{{l_1},i} = a_{{l_2},j}$ whenever $i,j \in S_m$, with $i,j \in [n]$, $l_1, l_2 \in [k]$ and $m \in [t]$.
 
 For example, say that we have ${\large{\S}} = \{\{1\}, \{2,3,4,9\}, \{5\}, \{6\}, \{7,10\}, \{8,11\}, \{12\}\}$. Then, the below table depicts an execution trace for three columns $\texttt{a}, \texttt{b}, \texttt{c}$ that copy-satisfies ${\large{\S}}$.
 

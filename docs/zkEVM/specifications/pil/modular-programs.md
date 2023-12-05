@@ -1,6 +1,6 @@
 One of the core features of Polynomial Identity Language is that it allows modular design of its programs. This document describes how PIL connects programs.
 
-## Modular Design
+## Modular design
 
 One of PIL's core features is that it allows **modular design** of its programs. By modular, we mean the ability to split the design of a program $M$ into multiple smaller programs, such that a proper combination of these small programs leads to $M$.
 
@@ -19,29 +19,17 @@ Then, the idea is to split these integers into bits in another program, allowing
 The main program will consist of $3$ columns; $\texttt{a}$, $\mathtt{neg\_a}$, and $\texttt{op}$. In each row, the column $\texttt{a}$ contains the integer $a$ of the computation $a \cdot \bar{a}$. The columns, $\mathtt{neg\_a}$ and $\texttt{op}$, contain $\bar{a}$ and $a \cdot \bar{a}$, respectively.
 
 The below table represents a valid execution trace of the program that validates negated strings of bits.
-
+        
 $$
-\begin{aligned}
-\begin{array}{|l|c|}\hline
-\texttt{row}\\ \hline
-\ \text{ 1}\\ 
-\ \text{ 2}\\ 
-\ \text{ 3}\\ 
-\ \text{ 4}\\ \hline
-
-\end{array}
-\end{aligned}
-\hspace{0.1cm}
-
-\begin{aligned}\begin{array}{|c|c|c|}\hline 
-\mathtt{a} & \mathtt{neg\_a} & \texttt{op} \\ \hline 
-\texttt{1101} & \texttt{0010} & \texttt{00011010} \\ 
-\texttt{0100} & \texttt{1011} & \texttt{00101100} \\ 
-\texttt{1111} & \texttt{0000} & \texttt{00000000} \\ 
-\texttt{1000} & \texttt{0111} & \texttt{00111000} \\ \hline
-
-\end{array}
-\end{aligned}
+    \begin{aligned}
+        \begin{array}{|c|c|c|}\hline
+        \texttt{row} & \mathtt{a} & \mathtt{neg\_a} & \texttt{op} \\ \hline
+        \ \text{ 1} & \texttt{1101} & \texttt{0010} & \texttt{00011010} \\
+        \ \text{ 2} & \texttt{0100} & \texttt{1011} & \texttt{00101100} \\
+        \ \text{ 3} & \texttt{1111} & \texttt{0000} & \texttt{00000000} \\
+        \ \text{ 4} & \texttt{1000} & \texttt{0111} & \texttt{00111000} \\ \hline
+        \end{array}
+    \end{aligned}
 $$
 
 First, there is a need to enforce that each of the inputs is a 4-bit integer. That is, an integer in the range $[0, 15]$.
@@ -50,17 +38,17 @@ This can be enforced via an inclusion argument. Specifically, this argument enfo
 
 The PIL code for a **range check** of a column $\texttt{a}$ is as follows:
 
-```
-include "config.pil"; 
+    ```
+    include "config.pil";
 
-namespace Global(%N);
-pol constant BITS4; 
+    namespace Global(%N);
+    pol constant BITS4;
 
-namespace Main(%N);
-pol commit a, neg_a , op; 
+    namespace Main(%N);
+    pol commit a, neg_a , op;
 
-a in Global.BITS4;
-```
+    a in Global.BITS4;
+    ```
 
 !!! info "Remarks about the above code"
 
@@ -97,33 +85,17 @@ As mentioned before, working directly with $4$-bits would be difficult. Hence, a
 See the below table for a concrete example of the execution trace.
 
 $$
-\begin{aligned}
-\begin{array}{|c|c|}\hline
-\texttt{row}\\ \hline
-\text{1}\\ 
-\text{2}\\ 
-\text{3}\\
-\text{4}\\ \hline
-\text{5}\\
-\text{6}\\ 
-\text{7}\\
-\text{8}\\ \hline
- \vdots \\ \hline
-\end{array}
-\end{aligned}
-\hspace{0.2cm}
-
 \begin{aligned}\begin{array}{|c|c|c|}\hline 
-\mathtt{bits} & \mathtt{nbits} & \mathtt{FACTOR} \\ \hline 
-\texttt{1} & \texttt{0} & \texttt{1} \\ 
-\texttt{0} & \texttt{1} & \texttt{2} \\ 
-\texttt{1} & \texttt{0} & \mathtt{2^2} \\ 
-\texttt{1} & \texttt{0} & \mathtt{2^3} \\ \hline
-\texttt{0} & \texttt{1} & \texttt{1} \\
-\texttt{0} & \texttt{1} & \texttt{2} \\ 
-\texttt{1} & \texttt{0} & \mathtt{2^2} \\ 
-\texttt{0} & \texttt{1} & \mathtt{2^3} \\ \hline
-\vdots & \vdots & \vdots \\ \hline
+\texttt{row} & \mathtt{bits} & \mathtt{nbits} & \mathtt{FACTOR} \\ \hline 
+\text{1} & \texttt{1} & \texttt{0} & \texttt{1} \\ 
+\text{2} & \texttt{0} & \texttt{1} & \texttt{2} \\ 
+\text{3} & \texttt{1} & \texttt{0} & \mathtt{2^2} \\ 
+\text{4} & \texttt{1} & \texttt{0} & \mathtt{2^3} \\ \hline
+\text{5} & \texttt{0} & \texttt{1} & \texttt{1} \\
+\text{6} & \texttt{0} & \texttt{1} & \texttt{2} \\ 
+\text{7} & \texttt{1} & \texttt{0} & \mathtt{2^2} \\ 
+\text{8} & \texttt{0} & \texttt{1} & \mathtt{2^3} \\ \hline
+\vdots & \vdots & \vdots & \vdots \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -143,40 +115,27 @@ Observe that the cyclic behavior is ensured in this situation because $4$ divide
 The following are the constraints that should be added to PIL in order to describe this generation:
 
 $$
-\mathtt{a}'\ = \ \mathtt{FACTOR}' \cdot \mathtt{bits}' \ +\ (1 - \mathtt{RESET}) \cdot \mathtt{a} \\
-\mathtt{neg\_a}'\ =\ \mathtt{FACTOR}' \cdot \mathtt{nbits}'\ +\ (1 - \mathtt{RESET}) \cdot \mathtt{neg\_a} \tag{Eqn. 11}
+\mathtt{a}'\ = \ \mathtt{FACTOR}' \cdot \mathtt{bits}' \ +\ (1 - \mathtt{RESET}) \cdot \mathtt{a} \qquad\qquad\qquad \tag{Eqn. 11a}
+$$
+
+$$
+\mathtt{neg\_a}'\ =\ \mathtt{FACTOR}' \cdot \mathtt{nbits}'\ +\ (1 - \mathtt{RESET}) \cdot \mathtt{neg\_a} \quad\ \tag{Eqn. 11b}
 $$
 
 The below table shows a complete example of what the execution trace of the $\mathtt{Negation}$ program looks like.
 
 $$
-\begin{aligned}
-\begin{array}{|c|c|}\hline
-\texttt{row}\\ \hline
-\text{1}\\ 
-\text{2}\\ 
-\text{3}\\
-\text{4}\\ \hline
-\text{5}\\
-\text{6}\\ 
-\text{7}\\
-\text{8}\\ \hline
-\vdots \\ \hline
-\end{array}
-\end{aligned}
-\hspace{0.2cm}
-
 \begin{aligned}\begin{array}{|c|c|c|}\hline 
-\mathtt{bits} & \mathtt{nbits} & \mathtt{FACTOR} & \mathtt{a} & \mathtt{neg\_a} & \mathtt{RESET} \\ \hline 
-\texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ 
-\texttt{0} & \texttt{1} & \texttt{2} & \texttt{01} & \texttt{10} & \texttt{0} \\ 
-\texttt{1} & \texttt{0} & \mathtt{2^2} & \texttt{101} & \texttt{010} & \texttt{0} \\ 
-\texttt{1} & \texttt{0} & \mathtt{2^3} & \texttt{1101} & \texttt{0010} & \texttt{1} \\ \hline
-\texttt{0} & \texttt{1} & \texttt{1}  & \texttt{0} & \texttt{1} & \texttt{0} \\
-\texttt{0} & \texttt{1} & \texttt{2} & \texttt{00} & \texttt{11} & \texttt{0} \\ 
-\texttt{1} & \texttt{0} & \mathtt{2^2} & \texttt{100} & \texttt{011} & \texttt{0} \\ 
-\texttt{0} & \texttt{1} & \mathtt{2^3} & \texttt{0100} & \texttt{1011} & \texttt{1} \\ \hline
-\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\ \hline
+\texttt{row} & \mathtt{bits} & \mathtt{nbits} & \mathtt{FACTOR} & \mathtt{a} & \mathtt{neg\_a} & \mathtt{RESET} \\ \hline 
+\text{1} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ 
+\text{2} & \texttt{0} & \texttt{1} & \texttt{2} & \texttt{01} & \texttt{10} & \texttt{0} \\ 
+\text{3} & \texttt{1} & \texttt{0} & \mathtt{2^2} & \texttt{101} & \texttt{010} & \texttt{0} \\ 
+\text{4} & \texttt{1} & \texttt{0} & \mathtt{2^3} & \texttt{1101} & \texttt{0010} & \texttt{1} \\ \hline
+\text{5} & \texttt{0} & \texttt{1} & \texttt{1}  & \texttt{0} & \texttt{1} & \texttt{0} \\
+\text{6} & \texttt{0} & \texttt{1} & \texttt{2} & \texttt{00} & \texttt{11} & \texttt{0} \\ 
+\text{7} & \texttt{1} & \texttt{0} & \mathtt{2^2} & \texttt{100} & \texttt{011} & \texttt{0} \\ 
+\text{8} & \texttt{0} & \texttt{1} & \mathtt{2^3} & \texttt{0100} & \texttt{1011} & \texttt{1} \\ \hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\ \hline
 \end{array}
 \end{aligned}
 $$
@@ -250,7 +209,7 @@ We simply add the following line of code to achieve this:
 {a, neg_a, op} in {Multiplier.freeIn1, Multiplier.freeIn2, Multiplier.out};
 ```
 
-## PIL Codes
+## PIL codes
 
 PIL codes of all the newly developed programs can be found below.
 
