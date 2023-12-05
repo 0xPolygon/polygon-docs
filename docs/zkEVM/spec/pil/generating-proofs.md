@@ -65,7 +65,7 @@ Observe that the `starkGen` object contains a `starkInfo` field which contains, 
 
 ## `starkVerify`
 
-Now that a proof has been generated, it can be verified by invoking the `starkVerify` function. 
+Now that a proof has been generated, it can be verified by invoking the `starkVerify` function.
 
 This function needs some information provided by the outputs of both the `starkSetup` and `starkGen` function as arguments.
 

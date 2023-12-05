@@ -2,7 +2,7 @@ This document explains the fundamentals of Polynomial Identity Language with the
 
 PIL was designed with the aim to simplify the proving and verification of execution correctness. Given that PIL is geared towards modularity, each PIL code has to stipulate a unique identifier for each program. It therefore has an effective syntax that is easy to learn.
 
-In the nutshell, a typical PIL code states the program identifier, the parameters used in the program's computations as well as constraints these parameters must satisfy. 
+In the nutshell, a typical PIL code states the program identifier, the parameters used in the program's computations as well as constraints these parameters must satisfy.
 
 ## Key features
 
@@ -18,7 +18,7 @@ The keyword $\texttt{commit}$ allows the compiler to identify the corresponding 
 
 ## Multiplier program in PIL
 
-Let us create a simple PIL program that models the computation of the product of two integers. Consider a program that, at each step, takes two input numbers and multiplies them. 
+Let us create a simple PIL program that models the computation of the product of two integers. Consider a program that, at each step, takes two input numbers and multiplies them.
 
 Such a program is commonly referred to as the $\text{Multiplier}$ program, and it can be modelled by using 3 polynomials;
 
@@ -73,7 +73,7 @@ out = freeIn1*freeIn2;
 
 In the above figure, the namespace given to the `Multiplier` program is $\texttt{Multiplier}$, and its specified length is $2^{10}$.
 
-In the zkEVM context, these polynomials would be committed by the Main state machine for verification, they appear in the PIL code as `pol commit`. 
+In the zkEVM context, these polynomials would be committed by the Main state machine for verification, they appear in the PIL code as `pol commit`.
 
 ## Optimized `Multiplier` program
 
@@ -106,8 +106,8 @@ $$
         \end{array}
     \end{aligned}
 $$
-    
-Observe how each column of the execution trace records the **"state"** in each row. 
+
+Observe how each column of the execution trace records the **"state"** in each row.
 
 - $\texttt{row 1}$ : The $\texttt{freeIn}$ column records the first input $4$ of the operation, hence $\texttt{RESET}$ reflects a $1$, while $\texttt{out}$ records $0$ as its default initial value.
 
@@ -129,7 +129,7 @@ In order to express the values of the $\texttt{out}$ polynomial in terms of the 
         \texttt{out}' = \texttt{RESET} * \texttt{freeIn} \qquad\qquad\qquad\qquad \tag{Eqn. 2}
     $$
 
-- Whenever $\texttt{RESET}$ equals $0$ (i.e., in every $\texttt{row 2i}$), the next value $\texttt{out}'$ is the product of the current and the previous values of $\texttt{freeIn}$. 
+- Whenever $\texttt{RESET}$ equals $0$ (i.e., in every $\texttt{row 2i}$), the next value $\texttt{out}'$ is the product of the current and the previous values of $\texttt{freeIn}$.
     That is,
 
     $$

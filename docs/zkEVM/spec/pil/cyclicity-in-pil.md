@@ -1,6 +1,6 @@
 This document describes how to introduce cyclicity to execution traces in Polynomial Identity Language.
 
-In order to synchronize the execution trace of a given program with the subgroup $G$ of the multiplicative group $\mathbb{F}^*$, over which interpolation is performed, an extra constant polynomial (or precompiled column) is added to the trace. 
+In order to synchronize the execution trace of a given program with the subgroup $G$ of the multiplicative group $\mathbb{F}^*$, over which interpolation is performed, an extra constant polynomial (or precompiled column) is added to the trace.
 
 An explanation of what this group $G = \langle g \rangle$ is, and why it is naturally a cyclic group, was discussed in the [Basic Concepts](../../concepts/mfibonacci/mfibonacci-example.md) section of the zkProver.
 
@@ -9,8 +9,8 @@ An explanation of what this group $G = \langle g \rangle$ is, and why it is natu
 Consider a program with the following execution trace of length $\%\texttt{N} = 4$;
 
 $$
-\begin{aligned}\begin{array}{|l|c|c|}\hline 
-\texttt{row} &\ \mathtt{a} & \mathtt{b} \\ \hline 
+\begin{aligned}\begin{array}{|l|c|c|}\hline
+\texttt{row} &\ \mathtt{a} & \mathtt{b} \\ \hline
 \ \text{ 0} & \ \texttt{1} & \texttt{1} \\ \hline
 \ \text{ 1} & \ \texttt{0} & \texttt{2} \\ \hline
 \ \text{ 2} & \texttt{-1} & \texttt{2} \\ \hline
@@ -64,7 +64,7 @@ $$
 
 However, this second constraint is satisfied for every row except for the last one. That is, $\texttt{b}'(g^{3}) \not= \texttt{a}(g^3) + \texttt{b}(g^3)$. Let us proof this inequality.
 
-But we first check one of the other cases. In particular, the case for $i = 2$. 
+But we first check one of the other cases. In particular, the case for $i = 2$.
 
 Recall that  $\texttt{b}'(g^{i}) = \texttt{b}(g\cdot g^{i}) = \texttt{b}(g^{i+1})$ by definition. Then,
 
@@ -73,7 +73,7 @@ $$
 \text{RHS} = \texttt{a}(g^{2}) + \texttt{b}(g^{2}) = a[2] + b[2] = -1 + 2 = 1
 $$
 
-This proves that the second constraints holds true for the case $i = 2$. 
+This proves that the second constraints holds true for the case $i = 2$.
 
 Now for the case $i = 3$.
 
@@ -96,8 +96,8 @@ The above execution trace is now modified to the following:
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|c|c|}\hline 
-\texttt{row} & \ \mathtt{a} & \mathtt{b} & \mathtt{SEL} \\ \hline 
+\begin{array}{|l|c|c|c|}\hline
+\texttt{row} & \ \mathtt{a} & \mathtt{b} & \mathtt{SEL} \\ \hline
 \ \text{ 0} & \ \texttt{1} & \texttt{1} & \texttt{1} \\ \hline
 \ \text{ 1} & \ \texttt{0} & \texttt{2} & \texttt{1} \\ \hline
 \ \text{ 2} & \texttt{-1} & \texttt{2} & \texttt{1}\\ \hline
@@ -151,4 +151,4 @@ Given these adjustments, we note that;
     b' = SEL*(b+a) + (1-SEL);
     ```
 
-    For implementation purposes, even as alluded to in the previous section, in order to prevent exposing distinguishing features, a configuration file is used to store the exact length of the program $\%\texttt{N} = 4$ so that only the symbol $\texttt{N}$ appears in the PIL code. 
+    For implementation purposes, even as alluded to in the previous section, in order to prevent exposing distinguishing features, a configuration file is used to store the exact length of the program $\%\texttt{N} = 4$ so that only the symbol $\texttt{N}$ appears in the PIL code.

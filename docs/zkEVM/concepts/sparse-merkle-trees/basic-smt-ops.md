@@ -62,6 +62,7 @@ Since the key navigates to a leaf, the Verifier's task is to prove two things si
 In proving that $\mathbf{L}_{\mathbf{b}}$ is indeed in the tree, the verifier carries out the following tasks simultaneously;
 
 - **Checks The Root**
+
  1. Computes the hash of the hashed-value, $\mathbf{ \tilde{L} }_{\mathbf{b}} = \mathbf{H_{leaf}} ( \text{RK}_{\mathbf{b}} \| \text{HV}_{\mathbf{b}} )$,
 
  2. Uses the first sibling to compute, $\mathbf{{\tilde{B}}_{\mathbf{ab}}} = \mathbf{H_{noleaf}} \big( \mathbf{L}_{\mathbf{a}} \| \mathbf{ \tilde{L}}_{\mathbf{b}} \big)$,
@@ -83,7 +84,7 @@ In proving that $\mathbf{L}_{\mathbf{b}}$ is indeed in the tree, the verifier ca
 This proves that the key $K_{\mathbf{x}}$ is not set.
 
 !!!info
-    
+
     The last check, where the verifier checks inequality of keys, turns out to be very expensive to implement. A much more smarter method is used in the Storage State Machine.
 
 ## The UPDATE operation
@@ -160,8 +161,6 @@ The **CREATE** operation, in this case, therefore boils down to an **UPDATE** op
 
 !!!note
     Inserting a new key-value pair at a Zero Node does not change the topology of the tree.
-
-
 
 Suppose a new leaf with the key-value pair $\big(K_{\mathbf{new}}, \text{V}_{\mathbf{new}}\big)$, where $K_{\mathbf{new}} = 11010110$, needs to be created.
 

@@ -11,8 +11,8 @@ The advantage of building modular programs makes for easy testing, reviewing, au
 
 ## Computational model
 
-Many other domain-specific languages (DSL) or toolstacks, such as [Circom](https://docs.circom.io/) or [Halo2](https://zcash.github.io/halo2/), focus on the abstraction of a particular computational model, such as an arithmetic circuit. 
+Many other domain-specific languages (DSL) or toolstacks, such as [Circom](https://docs.circom.io/) or [Halo2](https://zcash.github.io/halo2/), focus on the abstraction of a particular computational model, such as an arithmetic circuit.
 
-However, recent proof systems such as STARKs have shown that arithmetic circuits might not be the best computational models for all use cases. For example, given a complete programming language, computing a valid proof for a circuit satisfiability problem may result in long proving times due to the overhead of re-used logic. 
+However, recent proof systems such as STARKs have shown that arithmetic circuits might not be the best computational models for all use cases. For example, given a complete programming language, computing a valid proof for a circuit satisfiability problem may result in long proving times due to the overhead of re-used logic.
 
 By opting for deployment of programs with their low-level programming, shorter proving times are attainable, especially with the advent of proof/verification-aiding languages such as PIL. Hence the decision to adopt state machines as the best computational model for the Polygon zkEVM.

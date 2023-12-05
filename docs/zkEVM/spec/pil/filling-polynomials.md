@@ -1,6 +1,6 @@
 This document describes how to fill Polynomials in PIL using JavaScript and Pilcom.
 
-In this document, we are going to use **Javascript** and **pilcom** to generate a specific execution trace for a given PIL. 
+In this document, we are going to use **Javascript** and **pilcom** to generate a specific execution trace for a given PIL.
 
 To do so, we are going to use the execution trace of a program previously discussed in the [Connection arguments](connection-arguments.md) section.
 
@@ -26,7 +26,7 @@ async function execute() {
 
 The **pilcom** package also provides two functions; `newConstPolsArray` and `newCommitPolsArray`. Both these functions use the `pil` object in order to create two crucial objects:
 
-1. First is the constant polynomials object `constPols`, which is created by the `newConstPolsArray` function, and 
+1. First is the constant polynomials object `constPols`, which is created by the `newConstPolsArray` function, and
 2. Second is the committed polynomials object `cmPols`, created by `newCommitPolsArray`.
 
 Below is an outline of the **pilcom** package.

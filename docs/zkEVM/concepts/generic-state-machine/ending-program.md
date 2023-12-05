@@ -40,7 +40,6 @@ $$
    \end{aligned}
 $$
 
-
 The question is: How (or when) to end the program when the trace has size $\mathtt{5}$ and the polynomials have are of degree $\mathtt{2^3 = 8}$?
 
 ## Naïve way to end a program

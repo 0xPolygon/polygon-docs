@@ -12,7 +12,7 @@ Moreover, we say that a protocol $(\mathcal{P}, \mathcal{V})$ is a **connection 
 
 ### Example
 
-Let ${\large{\S}} = \{\{2\}, \{1, 3, 5\}, \{4, 6\}\}$ be a specified partition of $[6]$. 
+Let ${\large{\S}} = \{\{2\}, \{1, 3, 5\}, \{4, 6\}\}$ be a specified partition of $[6]$.
 
 Observe the two columns depicted below:
 
@@ -20,10 +20,10 @@ $$
 \begin{aligned}
 \begin{array}{|c|c|}\hline
 \texttt{ a }\\ \hline
-\text{3}\\ 
-\text{9}\\ 
 \text{3}\\
-\text{1}\\ 
+\text{9}\\
+\text{3}\\
+\text{1}\\
 \text{3}\\
 \text{1}\\ \hline
 \end{array}
@@ -32,19 +32,19 @@ $$
 \begin{aligned}
 \begin{array}{|c|c|}\hline
 \texttt{ b }\\ \hline
-\text{3}\\ 
-\text{9}\\ 
+\text{3}\\
+\text{9}\\
 \text{7}\\
-\text{1}\\ 
+\text{1}\\
 \text{3}\\
 \text{1}\\ \hline
 \end{array}
 \end{aligned} \tag{Table 1}
 $$
 
-The vector $\mathtt{a}\ \textit{copy-satisfies}\ {\large{\S}}$ because $\mathtt{a}_1 = \mathtt{a}_3 = \mathtt{a}_5 = 3$ and $\mathtt{a}_4 = \mathtt{a}_6 = 1$. 
+The vector $\mathtt{a}\ \textit{copy-satisfies}\ {\large{\S}}$ because $\mathtt{a}_1 = \mathtt{a}_3 = \mathtt{a}_5 = 3$ and $\mathtt{a}_4 = \mathtt{a}_6 = 1$.
 
-Observe that, since the singleton $\{2\}$ is in ${\large{\S}}$, then $\mathtt{a}_2$ is not related to any other element in $\mathtt{a}$. 
+Observe that, since the singleton $\{2\}$ is in ${\large{\S}}$, then $\mathtt{a}_2$ is not related to any other element in $\mathtt{a}$.
 
 Also, the vector $\mathtt{b}$ does not $\textit{copy-satisfies}\ {\large{\S}}$ because $\mathtt{b}_1 = \mathtt{b}_5 =3 \not= 7 = \mathtt{b}_3$.
 
@@ -96,7 +96,7 @@ For example, say that we have ${\large{\S}} = \{\{1\}, \{2,3,4,9\}, \{5\}, \{6\}
 
 We reduce this problem to the one column case by thinking of the permutation $\sigma$ as applied to the concatenation of column $\texttt{a}$, then $\texttt{b}$ and finally $\texttt{c}$.
 
-So, the permutation $\sigma$ that makes $\texttt{a}$, $\texttt{b}$ and $\texttt{c}$ copy-satisfy ${\large{\S}}$ is $(1, 9, 2, 3, 5, 6, 10, 11, 4, 7, 8, 12)$. 
+So, the permutation $\sigma$ that makes $\texttt{a}$, $\texttt{b}$ and $\texttt{c}$ copy-satisfy ${\large{\S}}$ is $(1, 9, 2, 3, 5, 6, 10, 11, 4, 7, 8, 12)$.
 
 In this case we construct polynomials $S_{\texttt{a}}$, $S_{\texttt{b}}$ and $S_c$ such that:
 

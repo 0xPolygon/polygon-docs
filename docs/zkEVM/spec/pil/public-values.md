@@ -20,17 +20,17 @@ The modular Fibonacci sequence can be arithmetized with $3$ columns (i.e., $3$ p
 
 - First, two committed polynomials $\texttt{a}$ and $\texttt{b}$ that keep track of the sequence elements. We naturally obtain the following constraints between $\texttt{a}$ and $\texttt{b}$;
 
-	$$
-	\texttt{a}’ =\ \texttt{b}\qquad \\
-	\texttt{b}’ =\ \texttt{a} + \texttt{b}
-	$$
+ $$
+ \texttt{a}’ =\ \texttt{b}\qquad \\
+ \texttt{b}’ =\ \texttt{a} + \texttt{b}
+ $$
 
 - Second, the constant polynomial $\texttt{ISLAST}$, which is defined as,
 
-	$$
-	\texttt{ISLAST}(g^i)\ = 0,\ \text{ for all}\ \ i \in [\texttt{N}−1]\ \text{and}\\
-	\texttt{ISLAST}(g^i)\ = 1,\ \text{ for}\ i = \texttt{N}.\ \qquad\qquad\quad
-	$$
+ $$
+ \texttt{ISLAST}(g^i)\ = 0,\ \text{ for all}\ \ i \in [\texttt{N}−1]\ \text{and}\\
+ \texttt{ISLAST}(g^i)\ = 1,\ \text{ for}\ i = \texttt{N}.\ \qquad\qquad\quad
+ $$
 
 With the introduction of the $\texttt{ISLAST}$ polynomial, the above constraints can be rewritten as follows:
 
@@ -84,6 +84,3 @@ public result = a(%N-1);
 (1-ISLAST) * (b' - a - b) = 0;
 ISLAST * (a - :result) = 0;
 ```
-
-
-
