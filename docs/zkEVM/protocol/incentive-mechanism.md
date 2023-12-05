@@ -41,7 +41,7 @@ The **number of MATIC tokens earned** by the Aggregator each time it aggregates 
 The MATIC earned per batch aggregated is calculated by the L1 `PolygonZkEVM.sol` contract prior to sequence aggregation using the following expression:
 
 $$
-    \mathtt{batchReward} =  { \dfrac{ \textit{`` }contract\ MATIC\ balance\textit{''}}{\textit{`` }Quantity\ of\ batches\ not\ aggregated\ yet \textit{''}}}
+    \mathtt{batchReward} =  { \dfrac{ \textit{``}contract\ MATIC\ balance\textit{''}}{\textit{``}Quantity\ of\ batches\ not\ aggregated\ yet \textit{''}}}
 $$
 
 The following expression represents **the total amount of ETH value that the Aggregator will earn for the aggregation of a sequence of batches**:

@@ -131,10 +131,12 @@ The Plookup checks the operation code, the registries for the input and output 2
 This section provides examples of how the byte-wise operations work.
 
 A $256$-bit integer $\mathbf{a}$ is herein denoted in vector form as $(a_{31}, \dots, a_1, a_0)$ to indicate that,
+
 $$
 \mathbf{a} = a_{31}\cdot (2^8)^{31} + a_{30}\cdot (2^8)^{30} + \cdots + a_1\cdot2^8 + a_0   =
 \sum_{i = {31}}^{0} a_i \cdot (2^8)^i,
 $$
+
 where each $a_i$ is a byte that can take values between $0$ and $2^8 - 1$.
 
 **Example 1**

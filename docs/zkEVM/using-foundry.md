@@ -94,7 +94,7 @@ The stored data typically consists of the name of the token, brief description a
 
 - Choose an image and give it a name relatable to the token
 
-- Find some free of charge IPFS storage for the image, like [NFT.STORAGE](htps://nft.storage)
+- Find some free of charge IPFS storage for the image, like [NFT.STORAGE](https://nft.storage)
 
 - Upload the image to the storage using your GitHub account
 

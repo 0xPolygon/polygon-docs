@@ -18,7 +18,7 @@ Denote the number of rounds by $\mathtt{R = R_F + R_P}$ where  $\mathtt{R_F}$  i
 
 [The figure](https://eprint.iacr.org/2019/458.pdf) below, depicts a HADES-based $\text{POSEIDON}^{\pi}$ permutation.
 
-![POSEIDON Hash ](../../../img/zkEVM/01psd-hades-based-poseidon-perm.png)
+![POSEIDON Hash](../../../img/zkEVM/01psd-hades-based-poseidon-perm.png)
 
 The **Poseidon S-box**, $S$, is defined over a finite field as the power map $x\mapsto x^d$, where $d\geq 3$  is chosen as the smallest integer that guarantees invertibility and provides non-linearity.
 
@@ -65,7 +65,7 @@ The parameters of the $\text{POSEIDON}^{\pi}$ permutation are as follows;
 - S-box used is the mapping, $f(x) = x^7$.
 - It has 8 full rounds. A **full round** means applying the same S-box on each of the 12 words.
 - It has 22 partial rounds. A **partial round** means the S-box is applied only to the first input word, `in0`.
-- The **MDS** matrix used is a $(t\times t)$ Cauchy matrix, with $2t + 1 \leq p$ and where each $(i,j)$-entry is of the form $\dfrac{1}{x_i + y_i}$, where the two pairwise distinct sets $\{ x_i \}$ and $\{ y_i \}$ are defined as `MCIRC` and `MDIAG`, respectively. The linear diffusion layer is defined in lines 104 to 116 of the code [sm_poseidon.js](https://github.com/hermeznetwork/zkproverjs/blob/main/src/sm/sm_poseidong.js), and it is explicitly used in lines 99 to 110 of [poseidon.pil](https://github.com/hermeznetwork/zkproverjs/blob/main/pil/poseidong.pil) code.
+- The **MDS** matrix used is a $(t\times t)$ Cauchy matrix, with $2t + 1 \leq p$ and where each $(i,j)$-entry is of the form $\dfrac{1}{x_i + y_i}$, where the two pairwise distinct sets $\{ x_i \}$ and $\{ y_i \}$ are defined as `MCIRC` and `MDIAG`, respectively. The linear diffusion layer is defined in lines 104 to 116 of the code [sm_poseidon.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_poseidong.js), and it is explicitly used in lines 99 to 110 of [poseidon.pil](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/poseidong.pil) code.
 
 $\text{POSEIDON}^{\pi}$ runs 30 rounds, 3 times. Adding up to a total of 90 rounds. It outputs four hash values; `hash0`, `hash1`, `hash2` and `hash3`.
 

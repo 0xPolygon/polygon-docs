@@ -170,43 +170,39 @@ Now, the last part of the Padding-KK-Bit SM is to keep track of the last subdivi
 Consider the 256 bits, $\mathtt{0b|10110011\dots1010|\dots|11\dots11|01\dots10101101|}$, where "$|$" separates every set of 32 bits. The table below displays how the $256 + 1$ rows of a $1993$-block are stored in the registers $\{\mathtt{sOut_i}|\ 0 \leq i \leq 7 \}$.
 
 $$
-\small
-\begin{array}{|l|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\texttt{sOutBit} & \mathtt{sOut_0} & \mathtt{sOut_1} & \mathtt{\dots} & \mathtt{sOut_7} & \mathtt{FSOut_0} & \mathtt{FSOut_1} & \mathtt{\dots}  & \mathtt{FSOut_7} & \mathtt{latchSOut}\\ \hline
-\text{ }\text{ }\text{ }\text{ } \dots & \dots  & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\ \hline
-\quad\text{ }\text{ } 1 & \mathtt{0b1} & \mathtt{0b0} & \dots & \mathtt{0b0} & 1 & 0& \dots & 0 & 0\\
-\quad\text{ }\text{ }0 & \mathtt{0b01} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2 & 0& \dots & 0 & 0 \\
-\quad\text{ }\text{ }1 & \mathtt{0b101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^2 & 0&  \dots & 0 & 0\\
-\quad\text{ }\text{ }1 & \mathtt{0b1101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^3 & 0& \dots & 0 & 0\\
-\quad\text{ }\text{ }0 & \mathtt{0b01101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^4 & 0& \dots & 0 & 0\\
-\quad\text{ }\text{ }1 & \mathtt{0b101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^5 & 0& \dots & 0 & 0\\
-\quad\text{ }\text{ }0 & \mathtt{0b0101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^6 & 0& \dots & 0 & 0\\
-\quad\text{ }\text{ }1 & \mathtt{0b10101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^7 & 0& \dots & 0 & 0\\
-
-\text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots &  \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
-
-\quad\text{ }\text{ }1 & \mathtt{0b1\dots10101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^{30} & 0 & \dots & 0 & 0\\
-\quad\text{ }\text{ }0 & \mathtt{0b01\dots10101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^{31} & 0 & \dots & 0 & 0\\
-\hline
-\quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b1} & \dots & \mathtt{0b0} & 0 & 1 & \dots & 0 & 0 \\
-\quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11} & \dots & \mathtt{0b0} & 0 & 2 & \dots & 0 & 0 \\
-\text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots & \dots& \dots & \dots & \dots & \dots & \dots & \dots \\
-\quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b1\dots 11} & \dots & \mathtt{0b0} & 0 & 2^{30} & \dots & 0 & 0\\
-\quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b0} & 0 & 2^{31} & \dots & 0 & 0\\
-\hline
-\text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
-\text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
-\hline
-\quad\text{ }\text{ }0 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b0} & 0 & 0 & \dots & 1 & 0\\
-\quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b10} & 0 & 0 & \dots & 2 & 0\\
-\quad\text{ }\text{ }0 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b010} & 0 & 0 &  \dots & 2^2 & 0\\
-\quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b1010} & 0 & 0 &   \dots & 2^3 & 0\\
-\text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
-\quad\text{ }\text{ }0 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b0110011\dots 1010} & 0 & 0 & \dots & 2^{30} & 0\\
-\quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b10110011\dots 1010} & 0 & 0 & \dots & 2^{31} & 1\\ \hline
-
-\end{array}
+    \begin{array}{|l|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \texttt{sOutBit} & \mathtt{sOut_0} & \mathtt{sOut_1} & \mathtt{\dots} & \mathtt{sOut_7} & \mathtt{FSOut_0} & \mathtt{FSOut_1} & \mathtt{\dots}  & \mathtt{FSOut_7} & \mathtt{latchSOut}\\ \hline
+    \text{ }\text{ }\text{ }\text{ } \dots & \dots  & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\ \hline
+    \quad\text{ }\text{ } 1 & \mathtt{0b1} & \mathtt{0b0} & \dots & \mathtt{0b0} & 1 & 0& \dots & 0 & 0\\
+    \quad\text{ }\text{ }0 & \mathtt{0b01} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2 & 0& \dots & 0 & 0 \\
+    \quad\text{ }\text{ }1 & \mathtt{0b101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^2 & 0&  \dots & 0 & 0\\
+    \quad\text{ }\text{ }1 & \mathtt{0b1101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^3 & 0& \dots & 0 & 0\\
+    \quad\text{ }\text{ }0 & \mathtt{0b01101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^4 & 0& \dots & 0 & 0\\
+    \quad\text{ }\text{ }1 & \mathtt{0b101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^5 & 0& \dots & 0 & 0\\
+    \quad\text{ }\text{ }0 & \mathtt{0b0101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^6 & 0& \dots & 0 & 0\\
+    \quad\text{ }\text{ }1 & \mathtt{0b10101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^7 & 0& \dots & 0 & 0\\
+    \text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots &  \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
+    \quad\text{ }\text{ }1 & \mathtt{0b1\dots10101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^{30} & 0 & \dots & 0 & 0\\
+    \quad\text{ }\text{ }0 & \mathtt{0b01\dots10101101} & \mathtt{0b0} & \dots & \mathtt{0b0} & 2^{31} & 0 & \dots & 0 & 0\\
+    \hline
+    \quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b1} & \dots & \mathtt{0b0} & 0 & 1 & \dots & 0 & 0 \\
+    \quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11} & \dots & \mathtt{0b0} & 0 & 2 & \dots & 0 & 0 \\
+    \text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots & \dots& \dots & \dots & \dots & \dots & \dots & \dots \\
+    \quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b1\dots 11} & \dots & \mathtt{0b0} & 0 & 2^{30} & \dots & 0 & 0\\
+    \quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b0} & 0 & 2^{31} & \dots & 0 & 0\\
+    \hline
+    \text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
+    \text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
+    \hline
+    \quad\text{ }\text{ }0 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b0} & 0 & 0 & \dots & 1 & 0\\
+    \quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b10} & 0 & 0 & \dots & 2 & 0\\
+    \quad\text{ }\text{ }0 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b010} & 0 & 0 &  \dots & 2^2 & 0\\
+    \quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b1010} & 0 & 0 &   \dots & 2^3 & 0\\
+    \text{ }\text{ }\text{ }\text{ } \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots\\
+    \quad\text{ }\text{ }0 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b0110011\dots 1010} & 0 & 0 & \dots & 2^{30} & 0\\
+    \quad\text{ }\text{ }1 & \mathtt{0b01\dots10101101} & \mathtt{0b11\dots 11} & \dots & \mathtt{0b10110011\dots 1010} & 0 & 0 & \dots & 2^{31} & 1\\ \hline
+    \end{array}
 $$
 
 Observe how factors $\{\mathtt{FSOut_i} |\ 0 \leq i \leq 7\}$, in the above table, are used to construct the $32$-bit registers $\{\mathtt{sOut_i}|\ 0 \leq \mathtt{i} \leq 7 \}$. Note that the last row contains the complete set of the $256$ bits. These columns fulfil the following relations,

@@ -9,7 +9,7 @@ The advantage of building modular programs makes for easy testing, reviewing, au
 - Expressing polynomial relations, including `identities` and `lookup arguments`
 - Specifying the type of a polynomial, such as `bool` or `u32`
 
-## Computational Model
+## Computational model
 
 Many other domain-specific languages (DSL) or toolstacks, such as [Circom](https://docs.circom.io/) or [Halo2](https://zcash.github.io/halo2/), focus on the abstraction of a particular computational model, such as an arithmetic circuit. 
 
