@@ -19,4 +19,4 @@ Polygon zkEVM achieves this by utilizing several actors. Here is a list of the m
 - The **Aggregator** is another node whose role is to produce proofs attesting to the integrity of the Sequencer's proposed state change. These proofs are zero-knowledge proofs (or ZK-proofs) and the Aggregator employs a cryptographic component called the Prover for this purpose.
 - The **Prover** is a complex cryptographic tool capable of producing ZK-proofs of hundreds of batches, and aggregating these into a single ZK-proof which is published as the validity proof.
 
-Users can set up their own _local zkNode_ by following this guide [here](../../setup-local-node.md), or a production zkNode as detailed [here](../../setup-production-node.md).
+Users can set up their own _local zkNode_ by following this guide [here](../../get-started/setup-nodes/local-node.md), or a production zkNode as detailed [here](../../get-started/setup-nodes/production-node.md).

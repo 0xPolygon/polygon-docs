@@ -1,10 +1,10 @@
 
 !!!info
-    In this document, we describe the CIRCOM component of the zkProver. It is one of the four main components of the zkProver, as outlined [here](../architecture/zkprover/zkprover-overview.md). These principal components are; the Executor or Main SM, STARK Recursion, CIRCOM, and Rapid SNARK.
+    In this document, we describe the CIRCOM component of the zkProver. It is one of the four main components of the zkProver, as outlined [here](../architecture/zkprover/index.md). These principal components are; the Executor or Main SM, STARK Recursion, CIRCOM, and Rapid SNARK.
 
     You may refer to the original [CIRCOM research paper](https://www.techrxiv.org/articles/preprint/CIRCOM_A_Robust_and_Scalable_Language_for_Building_Complex_Zero-Knowledge_Circuits/19374986/1) for more details.
 
-As seen in the [zkProver Overview](../architecture/zkprover/zkprover-overview.md) document, the output of the STARK Recursion component is a STARK proof.
+As seen in the [zkProver Overview](../architecture/zkprover/index.md) document, the output of the STARK Recursion component is a STARK proof.
 
 The next step in the zkProver's process of providing validity proof is to **produce the witness similar to the output of the STARK Recursion**.
 

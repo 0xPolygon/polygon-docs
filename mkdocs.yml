@@ -70,112 +70,112 @@ nav:
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
      # - API:
-      - Troubleshooting:
+      - Additional resources:
         - CDK component repos: cdk/troubleshooting/component-repos.md
   - zkEVM:
       - zkEVM/index.md # marketing landing page
       - Get started:
-        - Welcome: zkEVM/welcome.md
-        - Quickstart:
-          - Connecting to zkEVM: zkEVM/connect-wallet.md
-          - Using Polygon faucet: zkEVM/zkevm-faucet.md
-          - Bridging assets to zkEVM: zkEVM/bridge-to-zkevm.md
+        - Get started: zkEVM/get-started/index.md
+        - Quick start:
+          - Connecting to zkEVM: zkEVM/get-started/quick-start/connect-wallet.md
+          - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
+          - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
         - Setup nodes:
-          - Setup local zkNode: zkEVM/setup-local-node.md
-          - Setup production zkNode: zkEVM/setup-production-node.md
-        - Deploy full zkEVM:
-          - All steps to deploying a zkEVM: zkEVM/deployzkevm/step1-fullzkevm.md
-          - Install dependencies: zkEVM/deployzkevm/step2-fullzkevm.md
-          - Create wallets: zkEVM/deployzkevm/step3-fullzkevm.md
-          - Deploy zkNode: zkEVM/deployzkevm/step4-fullzkevm.md
-          - Configure prover: zkEVM/deployzkevm/step5-fullzkevm.md
-          - Activate forced transactions: zkEVM/deployzkevm/step6-fullzkevm.md
-          - Setup a Goërli node: zkEVM/deployzkevm/setup-goerlinode.md
+          - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
+          - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
+        - Deploy zkEVM:
+          - Deploy zkEVM: zkEVM/get-started/deploy-zkevm/index.md
+          - Install dependencies: zkEVM/get-started/deploy-zkevm/install-dependencies.md
+          - Create wallets: zkEVM/get-started/deploy-zkevm/create-wallets.md
+          - Deploy zkNode: zkEVM/get-started/deploy-zkevm/deploy-zknode.md
+          - Configure prover: zkEVM/get-started/deploy-zkevm/configure-prover.md
+          - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
+          - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
       - How to:
-        - Write a contract: zkEVM/autocode-smart-contract.md
-        - Deploy a contract with Foundry: zkEVM/using-foundry.md
-        - Deploy a contract with Hardhat: zkEVM/using-hardhat.md
-        - Verify a contract: zkEVM/verify-smart-contract.md
+        - Write a contract: zkEVM/how-to/write-contract.md
+        - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
+        - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
+        - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
         - zkEVM Protocol:
-          - Introduction: zkEVM/protocol/introduction.md
-          - State management: zkEVM/protocol/state-management.md
+          - zkEVM Protocol: zkEVM/architecture/protocol/index.md
+          - State management: zkEVM/architecture/protocol/state-management.md
           - Trasaction life cycle:
-            - Submit transactions: zkEVM/protocol/submit-transaction.md
-            - Transaction execution: zkEVM/protocol/transaction-execution.md
-            - Transaction batching: zkEVM/protocol/transaction-batching.md
-            - Batch sequencing: zkEVM/protocol/batch-sequencing.md
-            - Batch aggregation: zkEVM/protocol/batch-aggregation.md
-          - Incentive mechanism: zkEVM/protocol/incentive-mechanism.md
-          - Protocol upgradability: zkEVM/protocol/upgradability.md
-          - Admin role and governance: zkEVM/protocol/admin-role.md
-          - Upgrade process: zkEVM/protocol/zkevm-upgrades-process.md
-          - Security council: zkEVM/protocol/security-council.md
+            - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
+            - Transaction execution: zkEVM/architecture/protocol/transaction-life-cycle/transaction-execution.md
+            - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
+            - Batch sequencing: zkEVM/architecture/protocol/transaction-life-cycle/batch-sequencing.md
+            - Batch aggregation: zkEVM/architecture/protocol/transaction-life-cycle/batch-aggregation.md
+          - Incentive mechanism: zkEVM/architecture/protocol/incentive-mechanism.md
+          - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
+          - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
+          - Upgrade process: zkEVM/architecture/protocol/upgrade-process.md
+          - Security council: zkEVM/architecture/protocol/security-council.md
           - Malfunction resistance:
-            - Force batches: zkEVM/protocol/sequencer-resistance.md
-            - Force verification: zkEVM/protocol/aggregator-resistance.md
-            - Emergency state: zkEVM/protocol/emergency-state.md
-          - zkEVM bridge:
-            - Bridge introduction: zkEVM/protocol/zkevm-bridge.md
-            - Exit trees: zkEVM/protocol/exit-tree.md
-            - Smart contracts: zkEVM/protocol/bridge-smart-contract.md
-            - Flow of assets: zkEVM/protocol/flow-of-assets.md
-          - LXLY bridge: zkEVM/protocol/lxly-bridge.md
+            - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
+            - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
+            - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
+          - zkEVM Bridge:
+            - zkEVM Bridge: zkEVM/architecture/protocol/zkevm-bridge/index.md
+            - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
+            - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
+            - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
+          - LXLY bridge: zkEVM/architecture/protocol/lxly-bridge.md
         - zkNode: zkEVM/architecture/zknode/index.md
         - zkProver:
-          - zkProver overview: zkEVM/architecture/zkprover/zkprover-overview.md
+          - zkProver: zkEVM/architecture/zkprover/index.md
           - Main state machine: 
-            - Introducing Main SM: zkEVM/architecture/zkprover/intro-main-sm.md
-            - As a processor: zkEVM/architecture/zkprover/the-processor.md
+            - Main state machine: zkEVM/architecture/zkprover/main-state-machine/index.md
+            - As a processor: zkEVM/architecture/zkprover/main-state-machine/processor.md
           - STARK recursion:
-            - Introducing STARK recursion: zkEVM/architecture/zkprover/intro-stark-recursion.md
-            - Proving tools and techniques: zkEVM/architecture/zkprover/proving-tools.md
-            - Composition, Recursion and Aggregation: zkEVM/architecture/zkprover/stark-recursion-detail.md
-            - Recursion sub-process: zkEVM/architecture/zkprover/recursion-sub-process.md
-            - Proving architecture: zkEVM/architecture/zkprover/proving-architecture.md
-            - CIRCOM in zkProver: zkEVM/architecture/zkprover/circom-in-zkprover.md
-            - Proving setup phase: zkEVM/architecture/zkprover/proving-setup-phase.md
-            - Intermediate steps: zkEVM/architecture/zkprover/intermediate-recursion.md
-            - Final recursion step: zkEVM/architecture/zkprover/final-recursion-step.md
-            - Proof generation phase: zkEVM/architecture/zkprover/proof-generation-phase.md
+            - STARK recursion: zkEVM/architecture/zkprover/stark-recursion/index.md
+            - Proving tools and techniques: zkEVM/architecture/zkprover/stark-recursion/proving-tools.md
+            - Composition, Recursion and Aggregation: zkEVM/architecture/zkprover/stark-recursion/composition-recursion-aggregation.md
+            - Recursion sub-process: zkEVM/architecture/zkprover/stark-recursion/recursion-sub-process.md
+            - Proving architecture: zkEVM/architecture/zkprover/stark-recursion/proving-architecture.md
+            - CIRCOM in zkProver: zkEVM/architecture/zkprover/stark-recursion/circom-in-zkprover.md
+            - Proving setup phase: zkEVM/architecture/zkprover/stark-recursion/proving-setup-phase.md
+            - Intermediate steps: zkEVM/architecture/zkprover/stark-recursion/intermediate-recursion.md
+            - Final recursion step: zkEVM/architecture/zkprover/stark-recursion/final-recursion-step.md
+            - Proof generation phase: zkEVM/architecture/zkprover/stark-recursion/proof-generation-phase.md
           - Storage state machine:
-            - Introducing Storage SM: zkEVM/architecture/zkprover/intro-storage-sm.md
-            - Creating keys and paths: zkEVM/architecture/zkprover/construct-key-path.md
-            - Storage SM mechanism: zkEVM/architecture/zkprover/storage-sm-mechanism.md
-            - Executor and PIL: zkEVM/architecture/zkprover/executor-pil.md
+            - Storage state machine: zkEVM/architecture/zkprover/storage-state-machine/index.md
+            - Creating keys and paths: zkEVM/architecture/zkprover/storage-state-machine/construct-key-path.md
+            - Storage SM mechanism: zkEVM/architecture/zkprover/storage-state-machine/mechanism.md
+            - Executor and PIL: zkEVM/architecture/zkprover/storage-state-machine/executor-pil.md
           - Arithmetic state machine: zkEVM/architecture/zkprover/arithmetic-sm.md
           - Binary state machine: zkEVM/architecture/zkprover/binary-sm.md
           - Memory state machine: zkEVM/architecture/zkprover/memory-sm.md
           - Memory-Align state machine: zkEVM/architecture/zkprover/mem-align-sm.md
           - Hashing state machines:
-            - Introducing hashing state machines: zkEVM/architecture/zkprover/intro-hashing-sm.md
-            - Keccak framework: zkEVM/architecture/zkprover/keccak-framework.md
-            - Padding-kk state machine: zkEVM/architecture/zkprover/paddingkk-sm.md
-            - Padding-kk-bit state machine: zkEVM/architecture/zkprover/paddingkk-bit-sm.md
-            - Bits2Field state machine: zkEVM/architecture/zkprover/bits2field-sm.md
-            - Keccak-f state machine: zkEVM/architecture/zkprover/keccakf-sm.md
-            - Poseidon state machine: zkEVM/architecture/zkprover/poseidon-sm.md
-      - Specifications:
+            - Hashing state machines: zkEVM/architecture/zkprover/hashing-state-machines/index.md
+            - Keccak framework: zkEVM/architecture/zkprover/hashing-state-machines/keccak-framework.md
+            - Padding-kk state machine: zkEVM/architecture/zkprover/hashing-state-machines/paddingkk-sm.md
+            - Padding-kk-bit state machine: zkEVM/architecture/zkprover/hashing-state-machines/paddingkk-bit-sm.md
+            - Bits2Field state machine: zkEVM/architecture/zkprover/hashing-state-machines/bits2field-sm.md
+            - Keccak-f state machine: zkEVM/architecture/zkprover/hashing-state-machines/keccakf-sm.md
+            - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
+      - Specification:
         - Polynomial Identity Language:
-          - Polynomial Identity Language: zkEVM/specifications/pil/index.md
-          - Simple example: zkEVM/specifications/pil/simple-example.md
-          - Modular programs: zkEVM/specifications/pil/modular-programs.md
-          - Connection arguments: zkEVM/specifications/pil/connection-arguments.md
-          - Cyclicity in PIL: zkEVM/specifications/pil/cyclicity-in-pil.md
-          - Filling polynomials: zkEVM/specifications/pil/filling-polynomials.md
-          - Generating proofs: zkEVM/specifications/pil/generating-proofs.md
-          - Permutation arguments: zkEVM/specifications/pil/permutation-arguments.md
-          - Inclusion arguments: zkEVM/specifications/pil/inclusion-arguments.md
-          - Compiling using PILCOM: zkEVM/specifications/pil/compiling-using-pilcom.md
-          - Configuration files: zkEVM/specifications/pil/configuration-files.md
-          - PLONK in PIL: zkEVM/specifications/pil/plonk-in-pil.md
-          - Public values: zkEVM/specifications/pil/public-values.md
+          - Polynomial Identity Language: zkEVM/spec/pil/index.md
+          - Simple example: zkEVM/spec/pil/simple-example.md
+          - Modular programs: zkEVM/spec/pil/modular-programs.md
+          - Connection arguments: zkEVM/spec/pil/connection-arguments.md
+          - Cyclicity in PIL: zkEVM/spec/pil/cyclicity-in-pil.md
+          - Filling polynomials: zkEVM/spec/pil/filling-polynomials.md
+          - Generating proofs: zkEVM/spec/pil/generating-proofs.md
+          - Permutation arguments: zkEVM/spec/pil/permutation-arguments.md
+          - Inclusion arguments: zkEVM/spec/pil/inclusion-arguments.md
+          - Compiling using PILCOM: zkEVM/spec/pil/compiling-using-pilcom.md
+          - Configuration files: zkEVM/spec/pil/configuration-files.md
+          - PLONK in PIL: zkEVM/spec/pil/plonk-in-pil.md
+          - Public values: zkEVM/spec/pil/public-values.md
         - zkASM:
-          - zkASM: zkEVM/specifications/zkasm/index.md
-          - Basic Syntax: zkEVM/specifications/zkasm/basic-syntax.md
-          - Examples: zkEVM/specifications/zkasm/examples.md
-        - EVM vs. zkEVM: zkEVM/specifications/evm-differences.md
+          - zkASM: zkEVM/spec/zkasm/index.md
+          - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
+          - Examples: zkEVM/spec/zkasm/examples.md
+        - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
       - Concepts:
         - EVM basics: zkEVM/concepts/evm-basics.md
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
