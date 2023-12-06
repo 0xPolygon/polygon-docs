@@ -1,7 +1,7 @@
 
-!!! note "Content disclaimer"   
+!!! note "Content disclaimer"
 
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 Real-time and historical custom data indexing for any evm chain.
 
@@ -18,6 +18,7 @@ Compared to other alternatives the main reasons are:
 * 🚄  Native **real-time stream processing** for certain data workload (such as aggregations, rollups) for things like total volume per pool, or total portfolio per user wallet.
 * ☁️  **Managed** cloud services avoid DevOps and irrelevant engineering costs for dApp developers.
 * 🧑‍💻  Avoid decentralization **overhead** (consensus, network hops, etc) since we believe to enable best UX for dApps reading data must be as close to the developers as possible.
+
 ### Features
 
 * ✅ Listen to **any EVM chain** with just an RPC URL.
@@ -39,6 +40,7 @@ Compared to other alternatives the main reasons are:
 git clone https://github.com/flair-sdk/starter-boilerplate.git
 # ... follow instructions in README.md
 ```
+
 !!! info
 
     Boilerplate instructions will create a **new cluster**, generate **an API Key**, and set up a manifest.yml to index your **first contract** with **sample custom processor** scripts.
@@ -83,7 +85,6 @@ pnpm flair backfill --chain 137 -b 47807770
 # backfill for the recent data in the last X minute
 pnpm flair backfill --chain 137 --min-timestamp="30 mins ago" -d backward
 ```
-
 
 4️⃣ [Query](https://docs.flair.dev/#getting-started) your custom indexed data.
 

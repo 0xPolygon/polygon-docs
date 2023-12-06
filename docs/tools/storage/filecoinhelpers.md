@@ -1,5 +1,5 @@
 !!! caution "Content disclaimer"
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 Filecoin is built on top of IPFS and supports storing data long-term via on-chain deals. Together, they help us break free from centralized services while conveniently allowing us to enjoy the same luxuries of speed and guaranteed storage that centralized services would bring.
 
@@ -12,5 +12,3 @@ Filecoin is built on top of IPFS and supports storing data long-term via on-chai
 - [NFT.storage](https://nft.storage): NFT storage service that stores and retrieves data relating to NFTs on IPFS and Filecoin ([video](https://youtu.be/Ckb4RRJo-W0)).
 
 - [Web3.storage](https://web3.storage): Data storage service that stores and retrieves data on IPFS and Filecoin ([video](https://youtu.be/lPEqg6oL3Nk)).
-
-

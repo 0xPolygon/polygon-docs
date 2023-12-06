@@ -50,7 +50,7 @@ The image is built only once and whenever the code has changed.
 !!!caution Building Docker Image
     Every testnet version needs to use configuration files from the correct and corresponding tag. For instance: Make sure to use configuration files from RC9 tag in order to build an RC9 image.
 
-    All tags can be found here: <ins>**https://github.com/0xPolygonHermez/zkevm-node/tags**</ins>
+    All tags can be found here: **https://github.com/0xPolygonHermez/zkevm-node/tags**
 
 Certain commands on the `zkevm-node` can interact with smart contracts, run specific components, create encryption files, and print debug information.
 

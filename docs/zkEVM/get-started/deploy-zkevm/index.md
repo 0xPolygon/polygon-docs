@@ -19,7 +19,7 @@ However, in order to allow for in-between breaks, the process is aesthetically s
 !!!caution
     Instructions in this document are subject to frequent updates as the zkEVM software is still in early development stages.
 
-    Please report [here](https://support.polygon.technology/support/tickets/new) or reach out to our [<ins>support team on Discord</ins>](https://discord.com/invite/0xPolygon) if you encounter any issues.
+    Please report [here](https://support.polygon.technology/support/tickets/new) or reach out to our [support team on Discord](https://discord.com/invite/0xPolygon) if you encounter any issues.
 
 ## Overview and setting up
 

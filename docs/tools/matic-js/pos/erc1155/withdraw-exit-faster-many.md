@@ -2,7 +2,6 @@ The `withdrawExitFasterMany` method can be used to exit the withdraw process by 
 
 It is fast because it generates proof in backend. You need to configure [setProofAPI](../../set-proof-api.md).
 
-
 **Note**- withdrawStart transaction must be checkpointed in order to exit the withdraw.
 
 ```js

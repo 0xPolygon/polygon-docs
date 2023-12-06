@@ -1,7 +1,6 @@
 !!! info "Content disclaimer"
 
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
-
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 # Polygon root subgraph introduction
 
@@ -11,7 +10,6 @@ This subgraph can be used to query on-chain Polygon data. The subgraph data is s
 
 The PolygonRoot subgraph works by listening for events emitted by one or more data sources (Smart Contracts) on the various chains. It handles the indexing and caching of data which can later be queried using the GraphQL API Endpoint, providing an excellent developer experience.
 
-
 ## Helpful resources
 
 - [Video tutorial on creating an API Key](https://www.youtube.com/watch?v=UrfIpm-Vlgs).
@@ -19,5 +17,5 @@ The PolygonRoot subgraph works by listening for events emitted by one or more da
 - [Querying from an application](https://thegraph.com/docs/en/developer/querying-from-your-app/).
 - [How to use the explorer and playground to query on-chain data](https://medium.com/@chidubem_/how-to-query-on-chain-data-with-the-graph-f8507488215).
 - [Explorer page](https://thegraph.com/explorer/subgraph?id=FDrqtqbp8LhG1hSnwtWB2hE6C97FWA54irrozjb2TtMH&view=Overview).
-- GraphQL Endpoint: https://gateway.thegraph.com/api/[api-key]/subgraphs/id/FDrqtqbp8LhG1hSnwtWB2hE6C97FWA54irrozjb2TtMH.
+- GraphQL Endpoint: <https://gateway.thegraph.com/api/[api-key]/subgraphs/id/FDrqtqbp8LhG1hSnwtWB2hE6C97FWA54irrozjb2TtMH>.
 - [Code repo](https://github.com/maticnetwork/subgraphs).

@@ -42,7 +42,7 @@ The strategic implementation of the contract-based consensus promises to ensure 
 !!!tip
     Good to Know
 
-    Possibilities of coupling the Consensus Contract (previously called Proof of Efficiency or PoE) with a PoS (Proof of Stake) are currently being explored. A detailed description is published on the [<ins>Ethereum Research</ins>](https://ethresear.ch/t/proof-of-efficiency-a-new-consensus-mechanism-for-zk-rollups/11988) website.
+    Possibilities of coupling the Consensus Contract (previously called Proof of Efficiency or PoE) with a PoS (Proof of Stake) are currently being explored. A detailed description is published on the [Ethereum Research](https://ethresear.ch/t/proof-of-efficiency-a-new-consensus-mechanism-for-zk-rollups/11988) website.
 
 ### On-chain data availability
 
@@ -64,7 +64,7 @@ Unless, among other things, the proving module can be highly accelerated to miti
 The underlying protocol in zkEVM ensures that the state transitions are correct by employing a validity proof. To ensure that a set of pre-determined rules have been followed for allowing state transitions, the **Consensus Contract** (`PolygonZkEVM.sol`, deployed on L1) is utilized.
 ​
 !!!info
-    The **Consensus Contract** is currently deployed on both [<ins>Ethereum Mainnet</ins>](https://etherscan.io/address/0x5132A183E9F3CB7C848b0AAC5Ae0c4f0491B7aB2) and [<ins>Goerli Testnet</ins>](https://goerli.etherscan.io/address/0xa997cfD539E703921fD1e3Cf25b4c241a27a4c7A).
+    The **Consensus Contract** is currently deployed on both [Ethereum Mainnet](https://etherscan.io/address/0x5132A183E9F3CB7C848b0AAC5Ae0c4f0491B7aB2) and [Goerli Testnet](https://goerli.etherscan.io/address/0xa997cfD539E703921fD1e3Cf25b4c241a27a4c7A).
 ​
 ​
 A smart contract verifies the validity proofs to ensure that each transition is completed correctly. This is accomplished by employing zk-SNARK circuits. A system of this type requires two processes: **transaction batching** and **transaction validation**.

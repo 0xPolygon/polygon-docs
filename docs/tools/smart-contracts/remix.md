@@ -80,11 +80,11 @@ To deploy to the Mumbai testnet, we have to connect to the Web3 world which can 
 - Open Metamask. Click on the network dropdown menu (set to **Ethereum Mainnet** by default) and click on the **Add Network** button. MaticVigil provides a public endpoint and is rate-limited. Therefore, most developers use a free blockchain provider like [Alchemy](https://docs.alchemy.com/docs/how-to-add-polygon-to-metamask) or [Quicknode](https://www.quicknode.com/guides/smart-contract-development/how-to-deploy-a-smart-contract-on-maticpolygon#setting-up-metamask-with-polygon-node) to have a dedicated RPC endpoint with faster throughput AKA **computing units per second (CUPs)**. You need to create a free account to get your private API key from one of these providers to put into the dedicated RPC endpoint URL below.
 
   - **Network:** Polygon Mumbai Testnet
-  - **RPC URL (public endpoint):** https://rpc-mumbai.maticvigil.com.
-  - **RPC URL (dedicated endpoint):** https://polygon-mumbai.g.alchemy.com/v2/your-api-key. You'll need a [free API key](https://docs.alchemy.com)
+  - **RPC URL (public endpoint):** <https://rpc-mumbai.maticvigil.com>.
+  - **RPC URL (dedicated endpoint):** <https://polygon-mumbai.g.alchemy.com/v2/your-api-key>. You'll need a [free API key](https://docs.alchemy.com)
   - **Chain ID:** 80001
   - **Currency Symbol:** MATIC
-  - **Block Explorer URL:** https://mumbai.polygonscan.com/
+  - **Block Explorer URL:** <https://mumbai.polygonscan.com/>
 
 - Go ahead and click **Save**
 
@@ -103,10 +103,10 @@ Similar to the steps above when you deployed to Mumbai, you open your MetaMask w
 - Open Metamask
 
   - **Network Name**: Polygon Mainnet
-  - **New RPC URL**: https://polygon-mainnet.g.alchemy.com/v2/your-api-key
+  - **New RPC URL**: <https://polygon-mainnet.g.alchemy.com/v2/your-api-key>
   - **Chain ID**: 137
   - **Currency Symbol**: MATIC
-  - **Block Explorer URL**: https://polygonscan.com/
+  - **Block Explorer URL**: <https://polygonscan.com/>
 
 - Go ahead and click **Save**
 
@@ -131,7 +131,7 @@ In both Testnet and Mainnet, you do the below to deploy your smart contract usin
   ![RemixIDE_Step1](../../img/tools/remix/confirm_tx.png)
 <br/>
 
-**Congratulations! You have successfully deployed the **HelloWorld** Smart Contract to the **Polygon Mumbai Testnet** You can start interacting with your Smart Contract. Check the deployment status at https://mumbai.polygonscan.com/.
+**Congratulations! You have successfully deployed the **HelloWorld** Smart Contract to the **Polygon Mumbai Testnet** You can start interacting with your Smart Contract. Check the deployment status at <https://mumbai.polygonscan.com/>.
 
 ## Verifying your contract
 
@@ -160,4 +160,3 @@ sol-merger \"./contracts/*.sol\" ./build
 In the next section, paste your flattened samrt contract here. If you had enabled optimization, then adjust the `optimization` section accordingly.
 
 Constructor arguments should have been filled in automatically. If not, they can be retrieved from the trailing bytes of the deployment transaction (example: `000000000000000000000000a6fa4fb5f76172d178d61b04b0ecd319c5d1c0aa`).
-

@@ -1,6 +1,6 @@
 !!! info "Content disclaimer"
 
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 Developers building on Polygon can now leverage Band Protocol's decentralized oracle infrastructure. With Band Protocol's oracle, they now have access to various cryptocurrency price data to integrate into their applications.
 
@@ -47,7 +47,6 @@ For example, if we call `getReferenceDataBulk` with `['BTC','BTC','ETH']` and `[
 ## BandChain.JS
 
 Band's node helper library [`bandchain.js`](https://www.npmjs.com/package/@bandprotocol/bandchain.js) also supports a similar `getReferenceData` function. This function takes one argument, a list of token pairs to query the result. It then returns a list of corresponding rate values.
-
 
 ### Example usage
 

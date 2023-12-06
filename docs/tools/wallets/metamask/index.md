@@ -1,5 +1,5 @@
 !!! caution "Content disclaimer"
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 [MetaMask](https://metamask.io/) is a crypto wallet that can be used in a web browser and on mobile devices to interact with the Ethereum blockchain. It allows you to run Ethereum Dapps (Decentralized Apps) right in your browser without running a full Ethereum node.
 
@@ -9,7 +9,7 @@
 **Private key encoding**: Mnemonic <br/>
 
 !!! warning
-    Please Backup your **Secret Recovery Phrase**. If your device breaks, is lost, stolen, or has data corruption, there is no other way to recover it. The Secret Recovery Phrase is the only way to recover your MetaMask accounts. Check more **[<ins>Basic Safety and Security Tips for MetaMask</ins>](https://metamask.zendesk.com/hc/en-us/articles/360015489591-Basic-Safety-and-Security-Tips-for-MetaMask)**.
+    Please Backup your **Secret Recovery Phrase**. If your device breaks, is lost, stolen, or has data corruption, there is no other way to recover it. The Secret Recovery Phrase is the only way to recover your MetaMask accounts. Check more **[Basic Safety and Security Tips for MetaMask](https://metamask.zendesk.com/hc/en-us/articles/360015489591-Basic-Safety-and-Security-Tips-for-MetaMask)**.
 
 ## Guide to set up MetaMask for Polygon
 
@@ -114,7 +114,6 @@ Now for any function you’d want to call from your contract, we directly intera
 !!! tip
     - Functions that alter the state of the contract are called `send()` functions.
     - Functions that do not alter the state of the contract are called `call()` functions.
-
 
 #### Calling `call()` Functions
 

@@ -1,6 +1,6 @@
 
 !!!info
-    This document is a continuation in the series of articles explaining the [<ins>Transaction Life Cycle</ins>](transaction-execution.md) inside Polygon zkEVM.
+    This document is a continuation in the series of articles explaining the [Transaction Life Cycle](transaction-execution.md) inside Polygon zkEVM.
 
 **Batches need to be sequenced and validated** before they can become a part of the L2 Virtual State.
 

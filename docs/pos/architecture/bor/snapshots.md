@@ -2,7 +2,7 @@ When setting up a new sentry, validator, or full node server, it is recommended 
 
 !!! tip
 
-    For the latest snapshot, please visit [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
+    For the latest snapshot, please visit [Polygon Chains Snapshots](https://snapshot.polygon.technology/).
 
 ## Client Snapshots
 

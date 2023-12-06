@@ -14,7 +14,7 @@ This article guides you to build and deploy a solidity smart contract on Polygon
 
 !!! tip
 
-    For additional examples about Solidity with Replit, you can read the article <ins>**[Get started with Replit](https://blog.replit.com/solidity)**</ins> or check <ins>**[Replit Solidity documentation and Escrow contract tutorial](https://docs.replit.com/tutorials/33-escrow-contract-with-solidity)**</ins>.
+    For additional examples about Solidity with Replit, you can read the article **[Get started with Replit](https://blog.replit.com/solidity)** or check **[Replit Solidity documentation and Escrow contract tutorial](https://docs.replit.com/tutorials/33-escrow-contract-with-solidity)**.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Every Repl that you create is a fully functional development and production envi
 
     !!! note
 
-        The Solidity starter repl comes with a browser-friendly interface, built using the <ins>**[Web3 Ethereum JavaScript API](https://web3js.readthedocs.io/en/v1.5.2/)**</ins>, which you can use to deploy and interact with our contracts. We will deploy to Replit’s testnet, a custom version of the Ethereum blockchain managed by Replit and optimised for testing.
+        The Solidity starter repl comes with a browser-friendly interface, built using the **[Web3 Ethereum JavaScript API](https://web3js.readthedocs.io/en/v1.5.2/)**, which you can use to deploy and interact with our contracts. We will deploy to Replit’s testnet, a custom version of the Ethereum blockchain managed by Replit and optimised for testing.
 
 ## Deploy on Polygon
 

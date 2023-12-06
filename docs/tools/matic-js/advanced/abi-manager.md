@@ -41,7 +41,3 @@ manager.setABI('ERC20PredicateProxy','pos', 'abi value');
 
 manager.getABI('ERC20PredicateProxy','pos');
 ```
-
-
-
-

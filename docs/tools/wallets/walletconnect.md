@@ -1,5 +1,5 @@
 !!! caution "Content disclaimer"
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 **WalletConnect** is an open protocol - not a wallet - built to create a communication link between dApps and wallets. A wallet and an application supporting this protocol will enable a secure link through a shared key between any two peers. A connection is initiated by the dApp displaying a QR code with a standard WalletConnect URI and the connection is established when the wallet application approves the connection request. Further requests regarding funds transfer are confirmed on the wallet application itself.
 
@@ -14,7 +14,7 @@ npm install --save @maticnetwork/walletconnect-provider
 Install `matic.js` for Polygon integration:
 
 ```bash
-$ npm install @maticnetwork/maticjs
+npm install @maticnetwork/maticjs
 ```
 
 And add the following code in your dApp;
@@ -88,6 +88,7 @@ this.myContractInstance.methods
 Since writing to the blockchain requires a signature, we prompt the user on their wallet (that supports WalletConnect) to sign the transaction.
 
 This involves three steps:
+
 1. Constructing a transaction
 2. Getting a signature on the transaction
 3. Sending signed transaction
@@ -102,7 +103,6 @@ const tx = {
 ```
 
 The above code creates a transaction object which is then sent to user’s wallet for signature:
-
 
 ```js
 maticWeb3.eth.signTransaction(tx)
