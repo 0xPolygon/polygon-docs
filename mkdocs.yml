@@ -51,29 +51,31 @@ theme:
 nav:
   - Home: index.md
   - CDK:
-      - cdk/index.md # marketing landing page
-      - Welcome: cdk/welcome.md
+      - Welcome: cdk/index.md # marketing landing page
       - Get started:
+        - Get started: cdk/get-started/index.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: cdk/get-started/deploy-rollup.md
-      - How to: 
+      - How to:
+        - How to: cdk/how-to/index.md
         - Manage policies - allowlists, denylists: cdk/how-to/manage-allowlists.md
       #- Architecture:
       - Specification:
-        - Validium vs rollup: cdk/specification/validium-vs-rollup.md
+        - Specification: cdk/spec/index.md
+        - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
         - Rollup: cdk/concepts/rollup.md
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
      # - API:
       - Additional resources:
-        - CDK component repos: cdk/troubleshooting/component-repos.md
+        - Additional resources: cdk/troubleshooting/index.md
   - zkEVM:
-      - zkEVM/index.md # marketing landing page
+      - Welcome: zkEVM/index.md # marketing landing page
       - Get started:
         - Get started: zkEVM/get-started/index.md
         - Quick start:
@@ -92,6 +94,7 @@ nav:
           - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
           - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
       - How to:
+        - How to: zkEVM/how-to/index.md
         - Write a contract: zkEVM/how-to/write-contract.md
         - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
         - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
@@ -157,6 +160,7 @@ nav:
             - Keccak-f state machine: zkEVM/architecture/zkprover/hashing-state-machines/keccakf-sm.md
             - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
       - Specification:
+        - Specification: zkEVM/spec/index.md
         - Polynomial Identity Language:
           - Polynomial Identity Language: zkEVM/spec/pil/index.md
           - Simple example: zkEVM/spec/pil/simple-example.md
@@ -177,6 +181,7 @@ nav:
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
       - Concepts:
+        - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
         - Sparse merkle trees:
@@ -200,7 +205,7 @@ nav:
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
-      - pos/index.md # marketing landing page
+      - Welcome: pos/index.md # marketing landing page
       - Get started: 
         - Get started: pos/get-started/index.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
@@ -244,7 +249,7 @@ nav:
           - ThirdWeb: pos/how-to/smart-contracts/thirdweb.md
         - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
-          - pos/architecture/index.md
+          - Architecture: pos/architecture/index.md
           - Bor:
             - Bor: pos/architecture/bor/index.md
             - State sync: pos/architecture/bor/state-sync.md
@@ -279,7 +284,8 @@ nav:
       - API:
           - pos/api/index.md
   - Miden:
-      - Overview: miden/index.md
+      - Welcome: miden/index.md # marketing landing page
+      - Get started: miden/get-started/index.md
       - Miden playground: https://0xpolygonmiden.github.io/examples/
       - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
       - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
