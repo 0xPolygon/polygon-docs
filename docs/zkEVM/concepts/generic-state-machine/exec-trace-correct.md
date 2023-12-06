@@ -23,9 +23,11 @@ In continuing with the previous example of a four-instruction state machine,
 The **arithmetic constraints** are therefore defined by the following linear combinations;
 
 $$
-\mathtt{A′ = A + setA \cdot \big( inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST - A \big)} \\
+\mathtt{A′ = A + setA \cdot \big( inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST - A \big)} \\ \tag{Eqn 1a}
+$$
 
-\mathtt{B′ = B + setB \cdot \big( inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST - B \big)} \\ \tag{Eqn 1}
+$$
+\mathtt{B′ = B + setB \cdot \big( inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST - B \big)} \\ \tag{Eqn 1b}
 $$
 
 The figure below depicts the linear combinations of our state machine as an algebraic processor of sorts.
@@ -43,8 +45,10 @@ We now test if the arithmetic constraints tally with each of the four instructio
     The first instruction involves a free input $7$ and this free input is moved into registry $\texttt{A}$, as its the next value. Therefore, by definition of the selectors, $\mathtt{inFREE = 1}$ and $\mathtt{setA = 1}$. Also, the value of the other selectors is $\texttt{0}$. Substituting these values in the above arithmetic constraints yields;
 
     $$
-    \mathtt{A′ = A + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 1 \cdot 7 + 0 - A \big) = A + (7 - A) = 7}\text{ } \\
+    \mathtt{A′ = A + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 1 \cdot 7 + 0 - A \big) = A + (7 - A) = 7}\text{ }
+    $$
 
+    $$
     \mathtt{B′ = B + 0 \cdot \big( 0 \cdot A + 0 \cdot B + 1 \cdot 7 + 0 - B \big) = B}\qquad\qquad\qquad \\
     $$
 
@@ -52,34 +56,48 @@ We now test if the arithmetic constraints tally with each of the four instructio
 
 2. **The second instruction: "$\mathtt{3 => B}$"**
 
-    The second instruction involves the $\mathtt{CONST}$ column, and the constant value $\texttt{3}$ is moved into registry $\texttt{B}$, as its next value. Consequently, $\mathtt{CONST = 3}$ and $\mathtt{setB = 1}$. All other selectors have the value $\texttt{0}$. Again, substituting these values in the arithmetic constraints yields;
-    $$
-    \mathtt{A′ = A + 0 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 3 - A \big) = A}\qquad\qquad\qquad \\
+    The second instruction involves the $\mathtt{CONST}$ column, and the constant value $\texttt{3}$ is moved into registry $\texttt{B}$, as its next value. Consequently, $\mathtt{CONST = 3}$ and $\mathtt{setB = 1}$. All other selectors have the value $\texttt{0}$. 
+    
+    Again, substituting these values in the arithmetic constraints yields;
 
-    \mathtt{B′ = B + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 3 - B \big) = B + (3 - B) = 3} \\
     $$
+    \mathtt{A′ = A + 0 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 3 - A \big) = A}\qquad\qquad\qquad
+    $$
+
+    $$
+    \mathtt{B′ = B + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 3 - B \big) = B + (3 - B) = 3}
+    $$
+
     This shows that the value of $\texttt{A}$ was not changed, but the constant value $\mathtt{3}$  was moved into $\texttt{B}$. And thus, the second instruction was correctly executed.
 
 3. **The third instruction, "$\mathtt{:ADD }$"**
 
-    This instruction involves the registries $\texttt{A}$ and $\texttt{B}$, and the result is moved into registry $\texttt{A}$, as its the next value. This means, the values of the corresponding selectors are as follows; $\mathtt{inA = 1}$, $\mathtt{inB = 1}$ and $\mathtt{setA = 1}$. The arithmetic constraints become;
+    This instruction involves the registries $\texttt{A}$ and $\texttt{B}$, and the result is moved into registry $\texttt{A}$, as its the next value. This means, the values of the corresponding selectors are as follows; $\mathtt{inA = 1}$, $\mathtt{inB = 1}$ and $\mathtt{setA = 1}$.
+    
+    The arithmetic constraints become;
 
     $$
-    \mathtt{A′ = A + 1 \cdot \big( 1 \cdot A + 1 \cdot B + 0 \cdot FREE + 0 - A \big) = A + (A + B - A) = A + B}\text{ } \\
+    \mathtt{A′ = A + 1 \cdot \big( 1 \cdot A + 1 \cdot B + 0 \cdot FREE + 0 - A \big) = A + (A + B - A) = A + B}\text{ }
+    $$
 
-    \mathtt{B′ = B + 0 \cdot \big( 1 \cdot A + 1 \cdot B + 0 \cdot FREE + 0 - B \big) = B}\qquad\qquad\qquad\qquad\quad  \\
+    $$
+    \mathtt{B′ = B + 0 \cdot \big( 1 \cdot A + 1 \cdot B + 0 \cdot FREE + 0 - B \big) = B}\qquad\qquad\qquad\qquad\quad
     $$
 
     The sum of the registry values in $\mathtt{A}$ and $\mathtt{B}$ was moved into $\texttt{A}$, while $\texttt{B}$ remains unmodified, proving that the third instruction was correctly executed.
 
 4. **The fourth instruction, "$\mathtt{:END }$"**
 
-    The fourth instruction moves the initial registry values (i.e., $\mathtt{A = 0}$ and $\mathtt{B_0 = 0}$) into registries $\texttt{A}$ and $\texttt{B}$, as their next values, respectively. As a result, values of the corresponding selectors are; $\mathtt{setA = 1}$ and $\mathtt{setB = 1}$. Substitutions into the arithmetic constraints give us the following;
+    The fourth instruction moves the initial registry values (i.e., $\mathtt{A = 0}$ and $\mathtt{B_0 = 0}$) into registries $\texttt{A}$ and $\texttt{B}$, as their next values, respectively. As a result, values of the corresponding selectors are; $\mathtt{setA = 1}$ and $\mathtt{setB = 1}$.
+    
+    Substitutions into the arithmetic constraints give us the following;
 
     $$
-    \mathtt{A′ = A + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 0 - A \big) = A - A = 0} \\
+    \mathtt{A′ = A + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 0 - A \big) = A - A = 0}
+    $$
 
-    \mathtt{B′ = B + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 0 - B \big) = B - B = 0} \\
+    $$
+    \mathtt{B′ = B + 1 \cdot \big( 0 \cdot A + 0 \cdot B + 0 \cdot FREE + 0 - B \big) = B - B = 0} 
     $$
 
     Clearly, the next registry values of both $\mathtt{A}$ and $\mathtt{B}$ are reset to zeros as per the fourth instruction.
@@ -87,40 +105,18 @@ We now test if the arithmetic constraints tally with each of the four instructio
 The execution trace can now be updated to reflect the selector columns, as shown below.
 
 $$
+\small
 \begin{aligned}
-
-\begin{array}{|l|c|}
-\hline
-\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ } \bf{Instructions }\\ \hline
-\texttt{ } \mathtt{\$\{getAFreeInput()\} => A} \\\hline
-\texttt{ } \mathtt{3 => B} \qquad\qquad\qquad\qquad\quad\\\hline
-\texttt{ } \mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ }\\\hline
-\texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ }\\\hline
-\end{array}
-\hspace{0.1cm}
-
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
- \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} \\ \hline
- \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} \\ \hline
-
-\texttt{0} & \texttt{3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-
- \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} \\ \hline
-
-  \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} \\ \hline
-
-\end{array}
-\hspace{0.1cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'}\\\hline
-\mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0}\\\hline
-\mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{3}\\\hline
-\mathtt{7} & \mathtt{10} & \mathtt{3} & \mathtt{3}\\\hline
-\mathtt{10} & \mathtt{0} & \mathtt{3} & \mathtt{0}\\\hline
+    \texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ }\texttt{ } \bf{Instructions } & \texttt{FREE} & \texttt{CONST}& \texttt{setB}& \mathtt{setA}& \texttt{inFREE}& \mathtt{inB} & \mathtt{inA} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} \\ \hline
+    \texttt{ } \mathtt{\$\{getAFreeInput()\} => A} & \texttt{7} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0} \\ \hline
+    \texttt{ } \mathtt{3 => B} \qquad\qquad\qquad\qquad\quad & \texttt{0} & \texttt{3} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{3} \\ \hline
+    \texttt{ } \mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{0} & \texttt{1} & \texttt{1} & \mathtt{7} & \mathtt{10} & \mathtt{3} & \mathtt{3} \\ \hline
+    \texttt{ } \mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \texttt{0} & \texttt{0} & \texttt{1} & \texttt{1} & \texttt{0} & \texttt{0} & \texttt{0} & \mathtt{10} & \mathtt{0} & \mathtt{3} & \mathtt{0} \\ \hline
 \end{array}
 \end{aligned}
 $$
+
 
 ## Remarks
 
@@ -173,21 +169,13 @@ That is, according to the execution trace in Table 3 above, these polynomials ar
 $$
 \begin{aligned}
 \mathtt{ A = [0,7,7,10]}\text{ }\text{ } \iff\text{ } \ \mathtt{ A(x) = A(\omega^i) = A[i]}  \qquad\qquad\qquad\qquad\quad\text{ }\text{ }\text{ }  \\
-
 \mathtt{ B = [0,0,3,3] } \text{ }\text{ } \iff\text{ } \  \mathtt{ B(x) = B(\omega^i) = B[i] }\qquad\qquad\qquad\qquad\qquad\text{}\text{ } \\
-
-\mathtt{ inA = [0,0,1,1]\text{ }\text{ } \iff\text{ } \ \mathtt{ inA(x) = inA(\omega^i) = inA[i]}   }\qquad\qquad\quad\quad\text{}\text{ } \\
-
+\mathtt{ inA = [0,0,1,1]\text{ }\text{ } \iff\text{ } \ \mathtt{ inA(x) = inA(\omega^i) = inA[i]}   }\qquad\qquad\quad\text{}\text{ } \\
 \mathtt{ inB = [0,0,1,0] } \text{ }\text{ } \iff\text{ } \ \mathtt{inB(x) = inB(\omega^i) = inB[i]} \quad\text{}\text{}\qquad\qquad\text{ }\text{ }\text{}\text{ }\text{ }\text{ } \\
-
-\mathtt{ setA = [1,0,1,1] \text{ }\text{ } \iff\text{ } \  \mathtt{ setA(x) = setA(\omega^i) = setA[i] } }\qquad\quad\text{ }\text{ }\text{ }\text{ } \\
-
+\mathtt{ setA = [1,0,1,1] \text{ }\text{ } \iff\text{ } \  \mathtt{ setA(x) = setA(\omega^i) = setA[i] } }\qquad\text{ }\text{ }\text{ }\text{ } \\
 \mathtt{ setB = [0,1,0,1] } \text{ }\text{ } \iff\text{ } \ \mathtt{setB(x) = setB(\omega^i) = setB[i]} \qquad\qquad\text{}\\
-
 \mathtt{ FREE = [7,0,0,0] }\text{ }\text{ } \iff\text{ } \  \mathtt{FREE(x) =  FREE(\omega^i) = FREE[i]}\qquad\qquad\text{} \\
-
 \mathtt{ CONST = [1,0,0,0] }\text{ }\text{ } \iff\text{ } \  \mathtt{CONST(x) = CONST(\omega^i) = CONST[i]}\qquad\text{} \\
-
 \text{ }\mathtt{ inFREE = [1,0,0,0] } \text{ }\text{ } \iff\text{ } \ \mathtt{inFREE(x) = inFREE(\omega^i) = inFREE[i]} \\
 \end{aligned}
 $$
@@ -195,9 +183,10 @@ $$
 The arithmetic constraints seen above as $\bf{Eqn\ 1}$, are easily written as polynomial identities, as follows,
 
 $$
+\begin{aligned}
 \mathtt{A(x\omega) - \big(A(x) + setA(x) \cdot \big( op(x) - A(x) \big) \big) = 0} \\
-
-\mathtt{B(x\omega) - \big( B(x) + setB(x) \cdot \big(  op(x) - B(x) \big) \big) = 0} \\
+\mathtt{B(x\omega) - \big( B(x) + setB(x) \cdot \big(  op(x) - B(x) \big) \big) = 0} 
+\end{aligned}
 $$
 
 where $\mathtt{op(x) = inA(x) \cdot A(x) + inB(x) \cdot B(x) + inFREE(x) \cdot FREE(x) + CONST(x)}$.
@@ -213,7 +202,8 @@ As far as **boundary constraints** are concerned, we can, for instance,
   \mathtt{L1(x) \cdot \big(FREE(\omega^0) - input\big) = 0} \\
   \mathtt{L2(x) \cdot \big(A(\omega^{3}) - output\big) = 0}\quad \\
   $$
-  where $\mathtt{L1(x)}$ and $\mathtt{L2(x)}$ are precomputed constant polynomials. In fact, $\mathtt{L1(x) = [1,0,0,0]}$ and  $\mathtt{L2(x) = [0,0,0,1]}$.
+  where $\mathtt{L1(x)}$ and $\mathtt{L2(x)}$ are precomputed constant polynomials.
+   In fact, $\mathtt{L1(x) = [1,0,0,0]}$ and  $\mathtt{L2(x) = [0,0,0,1]}$.
 
 In the big scheme of things, these are Lagrange polynomials emanating from interpolation. Verification relies on the fact that: these polynomial identities, including the boundary constraints, hold true *if, and only if* the execution trace is correct and faithful to the instructions in the zkASM program.
 

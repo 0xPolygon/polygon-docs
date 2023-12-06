@@ -6,7 +6,7 @@ This subsection is part of the Generic SM and its goal is to define Plookup befo
 
 Plookup was described by the original authors in [GW20](https://eprint.iacr.org/2020/315.pdf) as a protocol for checking whether values of a committed polynomial, over a multiplicative subgroup $\text{H}$ of a finite field  $\mathbb{F}$, are contained in a vector  $\mathbf{t} \in \mathbb{F}^d$  that represents values of a table  $\mathcal{T}$. More precisely, Plookup is used to check if certain evaluations of some committed polynomial are part of some row $\mathbf{t}$ of a lookup table  $\mathcal{T}$.
 
-One particular use case of this primitive is: checking whether all evaluations of a polynomial $f(x)$, restricted to values of a multiplicative subgroup $\text{H} \sub \mathbb{F}$, fall in a given range $\{ 0 , 1 , \dots , M \}$. i.e., proving that, for every $z \in \text{H}$, we have $\mathbf{f(z) \in \{ 0 , 1 , \dots , M \}}$.
+One particular use case of this primitive is: checking whether all evaluations of a polynomial $f(x)$, restricted to values of a multiplicative subgroup $\text{H} \subset \mathbb{F}$, fall in a given range $\{ 0 , 1 , \dots , M \}$. i.e., proving that, for every $z \in \text{H}$, we have $\mathbf{f(z) \in \{ 0 , 1 , \dots , M \}}$.
 
 Plookup's strategy for soundness depends on a few basic mathematical concepts described below.
 
@@ -114,9 +114,10 @@ In the case of a non-interactive proof/verification system, **the Trusted Party 
 The polynomials $F$ and $G$ in the polynomial identities $\{F \equiv G\}$ are bi-variate polynomials in $\beta$ and $\gamma$, related to randomized sets of differences associated with $\{f\}$ and $\{t\}$. They are defined in terms of grand product expressions seen here,
 
 $$
+\begin{aligned}
 F(\beta, \gamma) := (1+\beta)^n \cdot \prod_{i \in [n]} (\gamma + f_i) \prod_{i \in [d-1]} (\gamma (1+\beta) + t_i + \beta t_{i+1}) \\
-
 G(\beta, \gamma) := \prod_{i\in[n+d-1]}(\gamma(1+\beta) + s_i + \beta s_{i+1})
+\end{aligned}
 $$
 
 where $\beta$ and $\gamma$ are the randomly selected field elements.

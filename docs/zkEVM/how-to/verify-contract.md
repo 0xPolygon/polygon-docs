@@ -28,7 +28,7 @@ After successfully compiling a smart contract, follow the next steps to verify y
 
 In order to flatten the contract code with Remix, one needs to only right-click on the contract name and select **Flatten** option from the drop-down menu that appears. See the below figure for reference.
 
-    ![Selecting the flatten code option](../img/zkEVM/flatten-code-remix.png)
+![Selecting the flatten code option](../../img/zkEVM/flatten-code-remix.png)
 
 After selecting **Flatten**, a new `.sol` file with the suffix `_flatten.sol` is automatically created. Copy the contents of the new `<Original-Name>_flatten.sol` file and paste into the `Enter the Solidity Contract` field in the explorer.
 
