@@ -12,7 +12,6 @@ An [Airnode](https://docs.api3.org/explore/airnode/what-is-airnode.html) is a **
 
 An on-chain smart contract makes a request in the [**RRP protocol contract (AirnodeRrpV0.sol)**](https://docs.api3.org/reference/airnode/latest/concepts/) that adds the request to the event logs. The Airnode then accesses the event logs, fetches the API data and performs a callback to the requester with the requested data.
 
-
 ![img](../../img/tools/oracles/api3/airnode1.png)
 
 ## Requesting off-chain data by calling an Airnode
@@ -92,7 +91,6 @@ The `_rrpAddress` is the main `airnodeRrpAddress`. The RRP Contracts have alread
 |:------------------------:|:------------------------------------------------:|
 | AirnodeRrpV0 |   `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`    |
 
-
 ### Request parameters
 
 The `makeRequest()` function expects the following parameters to make a valid request.
@@ -110,12 +108,11 @@ The callback to the **Requester** contains two parameters:
 - `data`: In case of a successful response, this is the requested data which has been encoded and contains a timestamp in addition to other response data. Decode it using the `decode()` function from the `abi` object.
 
 :::note
-Sponsors should not fund a `sponsorWallet` with more then they can trust the Airnode with, as the Airnode controls the private key to the `sponsorWallet`. The deployer of such Airnode 
+Sponsors should not fund a `sponsorWallet` with more then they can trust the Airnode with, as the Airnode controls the private key to the `sponsorWallet`. The deployer of such Airnode
 undertakes no custody obligations, and the risk of loss or misuse of any excess funds sent to the `sponsorWallet` remains with the sponsor
 :::
 
 ### [Try deploying it on Remix!](https://remix.ethereum.org/#url=https://github.com/api3-ecosystem/remix-contracts/blob/master/contracts/Requester.sol&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.9+commit.e5eed63a.js)
-
 
 ## Using dAPIs - API3 datafeeds
 
@@ -127,7 +124,6 @@ Due to being composed of first-party data feeds, dAPIs offer security, transpare
 
 The [API3 Market](https://market.api3.org/dapis) enables users to connect to a dAPI and access the associated data feed services.
 
-
 ![img](../../img/tools/oracles/api3/SS4.png)
 
 [*To know more about how dAPIs work, click here*](https://docs.api3.org/explore/dapis/what-are-dapis.html)
@@ -135,6 +131,7 @@ The [API3 Market](https://market.api3.org/dapis) enables users to connect to a d
 ### Types of dAPIs
 
 #### Self-funded dAPIs
+
 [Self-funded dAPIs](https://docs.api3.org/reference/dapis/understand/self-funded.html) are single-source data feeds that can be funded by the users with
 their own funds. The amount of gas supplied determines how long the dAPI will be
 available to use. If it runs out of gas, the dAPI will no longer be updated
@@ -143,6 +140,7 @@ unless it is funded again.
 [Click here to read more about Self-funded dAPIs](https://docs.api3.org/guides/dapis/subscribing-self-funded-dapis/).
 
 #### Managed dAPIs
+
 [Managed dAPIs](https://docs.api3.org/reference/dapis/understand/managed.html) are sourced directly from multiple [first-party](https://docs.api3.org/explore/airnode/why-first-party-oracles.html) data providers
 running an Airnode and aggregated using Airnode's signed data using
 a median function. The gas costs
@@ -206,7 +204,7 @@ Once the transaction is broadcasted and confirmed on the blockchain, the proxy c
 
 ### Subscribing to managed dAPIs
 
-If you are trying to access Managed dAPIs, 
+If you are trying to access Managed dAPIs,
 once you have selected your dAPI, you will then be presented with an option to
 choose from either **Managed** or **Self-funded**. Select Managed dAPIs.
 
@@ -274,7 +272,7 @@ contract DataFeedReaderExample is Ownable {
 
 - `readDataFeed()` is a view function that returns the latest price of the set dAPI.
 
-You can read more about dAPIs [here](https://docs.api3.org/guides/dapis/subscribing-managed-dapis/). 
+You can read more about dAPIs [here](https://docs.api3.org/guides/dapis/subscribing-managed-dapis/).
 
 ### [Try deploying it on Remix!](https://remix.ethereum.org/#url=https://github.com/api3-ecosystem/remix-contracts/blob/master/contracts/DataFeedReader.sol&lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.18+commit.87f61d96.js)
 

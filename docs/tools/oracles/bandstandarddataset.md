@@ -48,7 +48,6 @@ For example, if we call `getReferenceDataBulk` with `['BTC','BTC','ETH']` and `[
 
 Band's node helper library [`bandchain.js`](https://www.npmjs.com/package/@bandprotocol/bandchain.js) also supports a similar `getReferenceData` function. This function takes one argument, a list of token pairs to query the result. It then returns a list of corresponding rate values.
 
-
 ### Example usage
 
 The code below shows an example usage of the function:

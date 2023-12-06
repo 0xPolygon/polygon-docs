@@ -158,7 +158,7 @@ Run this command in root of the project directory:
 npx hardhat run scripts/deploy.js --network polygon_mumbai
 ```
 
-The contract will be deployed on Matic's Mumbai Testnet, and you can check the deployment status here: https://mumbai.polygonscan.com/
+The contract will be deployed on Matic's Mumbai Testnet, and you can check the deployment status here: <https://mumbai.polygonscan.com/>
 
 **Congratulations! You have successfully deployed Greeter Smart Contract. Now you can interact with the Smart Contract.**
 

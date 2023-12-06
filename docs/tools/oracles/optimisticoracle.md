@@ -28,24 +28,26 @@ The Optimistic Oracle is used by financial contracts or any third party to retri
     This section explains how different participants can interact with the Optimistic Oracle. To view the most updated mainnet, kovan or L2 deployments of the Optimistic Oracle contracts, refer to the [production addresses](https://docs.umaproject.org/dev-ref/addresses).
 
 There are twelve methods that make up the Optimistic Oracle interface.
--  `requestPrice`
--  `proposePrice`
--  `disputePrice`
--  `settle`
--  `hasPrice`
--  `getRequest`
--  `settleAndGetPrice`
--  `setBond`
--  `setCustomLiveness`
--  `setRefundOnDispute`
--  `proposePriceFor`
--  `disputePriceFor`
+
+- `requestPrice`
+- `proposePrice`
+- `disputePrice`
+- `settle`
+- `hasPrice`
+- `getRequest`
+- `settleAndGetPrice`
+- `setBond`
+- `setCustomLiveness`
+- `setRefundOnDispute`
+- `proposePriceFor`
+- `disputePriceFor`
 
 ### requestPrice
 
 Requests a new price. This must be for a registered price identifier. Note that this is called automatically by most financial contracts that are registered in the UMA system, but can be called by anyone for any registered price identifier. For example, the Expiring Multiparty (EMP) contract calls this method when its `expire` method is called.
 
 Parameters:
+
 - `identifier`: price identifier being requested.
 - `timestamp`: timestamp of the price being requested.
 - `ancillaryData`: ancillary data representing additional args being passed with the price request.
@@ -57,6 +59,7 @@ Parameters:
 Proposes a price value for an existing price request.
 
 Parameters:
+
 - `requester`: sender of the initial price request.
 - `identifier`: price identifier to identify the existing request.
 - `timestamp`: timestamp to identify the existing request.
@@ -68,6 +71,7 @@ Parameters:
 Disputes a price value for an existing price request with an active proposal.
 
 Parameters:
+
 - `requester`: sender of the initial price request.
 - `identifier`: price identifier to identify the existing request.
 - `timestamp`: timestamp to identify the existing request.
@@ -78,6 +82,7 @@ Parameters:
 Attempts to settle an outstanding price request. Will revert if it can’t be settled.
 
 Parameters:
+
 - `requester`: sender of the initial price request.
 - `identifier`: price identifier to identify the existing request.
 - `timestamp`: timestamp to identify the existing request.
@@ -88,6 +93,7 @@ Parameters:
 Checks if a given request has resolved or been settled (i.e the optimistic oracle has a price).
 
 Parameters:
+
 - `requester`: sender of the initial price request.
 - `identifier`: price identifier to identify the existing request.
 - `timestamp`: timestamp to identify the existing request.
@@ -98,6 +104,7 @@ Parameters:
 Gets the current data structure containing all information about a price request.
 
 Parameters:
+
 - `requester`: sender of the initial price request.
 - `identifier`: price identifier to identify the existing request.
 - `timestamp`: timestamp to identify the existing request.
@@ -108,6 +115,7 @@ Parameters:
 Retrieves a price that was previously requested by a caller. Reverts if the request is not settled or settleable. Note: this method is not view so that this call may actually settle the price request if it hasn’t been settled.
 
 Parameters:
+
 - `identifier`: price identifier to identify the existing request.
 - `timestamp`: timestamp to identify the existing request.
 - `ancillaryData`: ancillary data of the price being requested.
@@ -117,6 +125,7 @@ Parameters:
 Set the proposal bond associated with a price request.
 
 Parameters:
+
 - `identifier`: price identifier to identify the existing request.
 - `timestamp`: timestamp to identify the existing request.
 - `ancillaryData`: ancillary data of the price being requested.
@@ -127,6 +136,7 @@ Parameters:
 Sets a custom liveness value for the request. Liveness is the amount of time a proposal must wait before being auto-resolved.
 
 Parameters:
+
 - `identifier`: price identifier to identify the existing request.
 - `timestamp`: timestamp to identify the existing request.
 - `ancillaryData`: ancillary data of the price being requested.
@@ -137,6 +147,7 @@ Parameters:
 Sets the request to refund the reward if the proposal is disputed. This can help to "hedge" the caller in the event of a dispute-caused delay. Note: in the event of a dispute, the winner still receives the other’s bond, so there is still profit to be made even if the reward is refunded.
 
 Parameters:
+
 - `identifier`: price identifier to identify the existing request.
 - `timestamp`: timestamp to identify the existing request.
 - `ancillaryData`: ancillary data of the price being requested.
@@ -146,6 +157,7 @@ Parameters:
 Disputes a price request with an active proposal on another address' behalf. Note: this address will receive any rewards that come from this dispute. However, any bonds are pulled from the caller.
 
 Parameters:
+
 - `disputer`: address to set as the disputer.
 - `requester`: sender of the initial price request.
 - `identifier`: price identifier to identify the existing request.
@@ -157,6 +169,7 @@ Parameters:
 Proposes a price value on another address' behalf. Note: this address will receive any rewards that come from this proposal. However, any bonds are pulled from the caller.
 
 Parameters:
+
 - `proposer`: address to set as the proposer.
 - `requester`: sender of the initial price request.
 - `identifier`: price identifier to identify the existing request.
@@ -170,11 +183,11 @@ This demo will set up an `OptimisticDepositBox` contract which custodies a user�
 
 On a local testnet blockchain, the user will deposit wETH (Wrapped Ether) into the contract and withdraw wETH denominated in USD. For example, if the user wants to withdraw $10,000 USD of wETH, and the ETH/USD exchange rate is $2,000, they would withdraw 5 wETH.
 
-* The user links the `OptimisticDepositBox` with one of the price identifiers enabled on the DVM.
+- The user links the `OptimisticDepositBox` with one of the price identifiers enabled on the DVM.
 
-* The user deposits wETH into the `OptimisticDepositBox` and register it with the `ETH/USD` price identifier.
+- The user deposits wETH into the `OptimisticDepositBox` and register it with the `ETH/USD` price identifier.
 
-* The user can now withdraw a USD-denominated amount of wETH from their `DepositBox` via smart contract calls, with the Optimistic Oracle enabling optimistic on-chain pricing.
+- The user can now withdraw a USD-denominated amount of wETH from their `DepositBox` via smart contract calls, with the Optimistic Oracle enabling optimistic on-chain pricing.
 
 In this example, the user would not have been able to transfer USD-denominated amounts of wETH without referencing an off-chain `ETH/USD` price feed. The Optimistic Oracle therefore enables the user to "pull" a reference price.
 

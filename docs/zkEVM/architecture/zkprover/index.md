@@ -6,7 +6,6 @@ The zkProver performs complex mathematical computations in the form of polynomia
 
 !!!info
     zkProver is a component of the Polygon zkEVM which is solely responsible for Proving.
-    
 
 ## Interaction with node and database
 

@@ -215,10 +215,10 @@ Here is the list of jobs that the Polygon oracle is configured to run.
 | Name |  Return Type  | ID | Adapters |
 |-----|--------|------|-------|
 | HTTP GET | `uint256` | `da20aae0e4c843f6949e5cb3f7cfe8c4` |  `httpget`<br/>`jsonparse`<br/>`multiply`<br/>`ethuint256`<br/>`ethtx`  |
-| HTTP GET | `int256` | `e0c76e45462f4e429ba32c114bfbf5ac ` |  `httpget`<br/>`jsonparse`<br/>`multiply`<br/>`ethint256`<br/>`ethtx`  |
-| HTTP GET | `bool` | `999539ec63414233bdc989d8a8ff10aa ` |  `httpget`<br/>`jsonparse`<br/>`ethbool`<br/>`ethtx`  |
-| HTTP GET | `bytes32` | `a82495a8fd5b4cb492b17dc0cc31a4fe ` | `httpget`<br/>`jsonparse`<br/>`ethbytes32`<br/>`ethtx`  |
-| HTTP GET | `string` | `7d80a6386ef543a3abb52817f6707e3b ` | `httpget`<br/>`jsonparse`<br/>`ethstring`<br/>`ethtx`  |
-| HTTP POST | `bytes32` | `a82495a8fd5b4cb492b17dc0cc31a4fe ` | `httppost`<br/>`jsonparse`<br/>`ethbytes32`<br/>`ethtx`  |
+| HTTP GET | `int256` | `e0c76e45462f4e429ba32c114bfbf5ac` |  `httpget`<br/>`jsonparse`<br/>`multiply`<br/>`ethint256`<br/>`ethtx`  |
+| HTTP GET | `bool` | `999539ec63414233bdc989d8a8ff10aa` |  `httpget`<br/>`jsonparse`<br/>`ethbool`<br/>`ethtx`  |
+| HTTP GET | `bytes32` | `a82495a8fd5b4cb492b17dc0cc31a4fe` | `httpget`<br/>`jsonparse`<br/>`ethbytes32`<br/>`ethtx`  |
+| HTTP GET | `string` | `7d80a6386ef543a3abb52817f6707e3b` | `httpget`<br/>`jsonparse`<br/>`ethstring`<br/>`ethtx`  |
+| HTTP POST | `bytes32` | `a82495a8fd5b4cb492b17dc0cc31a4fe` | `httppost`<br/>`jsonparse`<br/>`ethbytes32`<br/>`ethtx`  |
 
 The complete Chainlink API reference can be found [here](https://docs.chain.link/any-api/api-reference).

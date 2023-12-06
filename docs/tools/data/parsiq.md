@@ -1,5 +1,5 @@
 
-!!! note "Content disclaimer"   
+!!! note "Content disclaimer"
 
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
@@ -15,6 +15,7 @@ PARSIQ is a reliable, fully customizable blockchain data indexer, helping develo
 ### PARSIQ Tsunami API
 
 PARSIQ Tsunami API is a highly efficient API to fetch raw Web3 data:
+
 - Events, calls, transactions (internal included), transfers, contracts, blocks - you name it. Possibility to use unlimited blockrange makes Tsunami a hard-to-beat solution for realiably getting large amounts of data from the blockchain. CSV Export is available.
 - Get decoded, human readable data right out of the box.
 - Need an up to date feeds of data streamed to you in real time? Give our low latency Real Time Streaming service a try.
@@ -25,7 +26,7 @@ PARSIQ Tsunami API is a highly efficient API to fetch raw Web3 data:
 
 ### PARSIQ SDK
 
-Some more complicated cases where custom data needs to be stored, accumulated, and calculated, cannot be covered by an API. In that cases, use PARSIQ SDK or go for a Custom Data Lake. They allow you to set up data bases and data processing logic to solve your specific use case. 
+Some more complicated cases where custom data needs to be stored, accumulated, and calculated, cannot be covered by an API. In that cases, use PARSIQ SDK or go for a Custom Data Lake. They allow you to set up data bases and data processing logic to solve your specific use case.
 
 !!! info "SDK Documentation"
 

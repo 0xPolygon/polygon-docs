@@ -10,7 +10,5 @@ Below you will find an overview of the public Venly environments and networks to
 
 Environment | Polygon Network | Venly Service Link
 --- | --- |---
-Production | Polygon Mainnet | https://app.arkane.network
-Staging | Mumbai Testnet | https://staging.arkane.network/
-
-
+Production | Polygon Mainnet | <https://app.arkane.network>
+Staging | Mumbai Testnet | <https://staging.arkane.network/>

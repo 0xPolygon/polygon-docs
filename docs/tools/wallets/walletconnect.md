@@ -14,7 +14,7 @@ npm install --save @maticnetwork/walletconnect-provider
 Install `matic.js` for Polygon integration:
 
 ```bash
-$ npm install @maticnetwork/maticjs
+npm install @maticnetwork/maticjs
 ```
 
 And add the following code in your dApp;
@@ -88,6 +88,7 @@ this.myContractInstance.methods
 Since writing to the blockchain requires a signature, we prompt the user on their wallet (that supports WalletConnect) to sign the transaction.
 
 This involves three steps:
+
 1. Constructing a transaction
 2. Getting a signature on the transaction
 3. Sending signed transaction
@@ -102,7 +103,6 @@ const tx = {
 ```
 
 The above code creates a transaction object which is then sent to user’s wallet for signature:
-
 
 ```js
 maticWeb3.eth.signTransaction(tx)

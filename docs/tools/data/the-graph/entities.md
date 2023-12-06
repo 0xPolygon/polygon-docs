@@ -44,6 +44,7 @@
 | receiver | Bytes! | Receiver address      |
 | sender   | Bytes! | Sender address        |
                                             |
+
 ## PredicateRegistration
 
 | Field            | Type    | Description                                |

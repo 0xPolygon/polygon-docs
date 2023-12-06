@@ -6,7 +6,7 @@ POL is the native token upgrade for the Polygon ecosystem, designed for use in a
 
 If the POL proposal is supported by the community, the POL upgrade is estimated to take place in Q4 2023. The systems utilizing MATIC will not begin the transition until Q1 2024, allowing time for a smooth migration/upgrade and stakeholder preparation. The initial amount of POL refers to the total number of POL when the upgrade occurs. In the case of POL, the initial amount is 10 billion tokens — 1:1 with MATIC since this is an upgrade.
 
-## Do I need to do anything today...
+## Do I need to do anything today
 
 ### ...as an active participant?
 

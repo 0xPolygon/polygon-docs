@@ -1,4 +1,4 @@
-!!! note "Content disclaimer"   
+!!! note "Content disclaimer"
 
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 

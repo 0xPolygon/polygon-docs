@@ -115,7 +115,6 @@ Now for any function you’d want to call from your contract, we directly intera
     - Functions that alter the state of the contract are called `send()` functions.
     - Functions that do not alter the state of the contract are called `call()` functions.
 
-
 #### Calling `call()` Functions
 
 ```js

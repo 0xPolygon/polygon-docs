@@ -7,7 +7,6 @@ Venly will help you in interacting with the Polygon network, create blockchain w
 
 Each application is unique and has different needs, therefore they provide different ways of interacting with Venly. Applications that have support for Web3 are recommendated to integrate the [Venly Web3 provider](https://docs.venly.io/widget/web3-provider/getting-started), others are suggested to use the [Venly Widget](https://docs.venly.io/widget/widget/introduction).
 
-
 ## Key Features
 
 - Support web and mobile.

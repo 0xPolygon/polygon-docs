@@ -20,16 +20,16 @@ In addition, Polygon faucet also provides **Polygon zkEVM Testnet ETH tokens**.
    ![img](../../img/tools/gas/faucet.png)
 
 - Select one of the blockchain testnet networks, where:
-    - **Mumbai** - Polygon Testnet
-    - **Goerli** - Ethereum Testnet
-    - **Polygon zkEVM** - Polygon zkEVM Testnet
+  - **Mumbai** - Polygon Testnet
+  - **Goerli** - Ethereum Testnet
+  - **Polygon zkEVM** - Polygon zkEVM Testnet
 
 - Select the type of Testnet token that you want to receive, where:
-    - **MATIC Token** - Testnet token of Polygon network
-    - **Test ERC20** - Standard testnet token on the Ethereum network
-    - **Test ERC1155** - Standard testnet token used for NFTs
-    - **LINK** - ERC677 testnet token that inherits functionality from the ERC20
-    - **zkEVM ETH** - Testnet ETH on the Polygon zkEVM testnet network
+  - **MATIC Token** - Testnet token of Polygon network
+  - **Test ERC20** - Standard testnet token on the Ethereum network
+  - **Test ERC1155** - Standard testnet token used for NFTs
+  - **LINK** - ERC677 testnet token that inherits functionality from the ERC20
+  - **zkEVM ETH** - Testnet ETH on the Polygon zkEVM testnet network
 
 - Enter your wallet address (you can copy it from your MetaMask or Polygon wallet)
 
@@ -38,7 +38,6 @@ In addition, Polygon faucet also provides **Polygon zkEVM Testnet ETH tokens**.
 - Click **Confirm** to finalize the transaction
 
    ![img](../../img/tools/gas/confirm-transaction.png)
-   
 
 !!! danger
 
@@ -77,4 +76,3 @@ In order to receive MATIC Mumbai tokens using QuickNode Fauct,
    ![img](../../img/tools/gas/quicknode-faucet3.png)
 
 - You can also view your transaction details on [Polygonscan](https://mumbai.polygonscan.com/) by clicking on the **TxHash**.
-

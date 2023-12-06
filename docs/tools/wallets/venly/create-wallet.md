@@ -32,5 +32,3 @@ Once you've pressed the button, Venly will ask you to confirm the new wallet cre
 ![Wallet Dashboard](../../../img/tools/wallet/venly/05.png)
 
 **Congratulations!** You have now created your Polygon wallet using Venly to manage your digital assets on the Polygon network.
-
-

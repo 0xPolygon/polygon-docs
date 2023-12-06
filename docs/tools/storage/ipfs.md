@@ -15,7 +15,6 @@ Content addressing uses cryptography to create a uniquely verifable hash based u
 
 Finally, an ever growing active community of users makes this peer-to-peer sharing of content possible. Developers upload and pin content to IPFS while Filecoin or Crust storage providers help to ensure persistent storage of that content.
 
-
 IPFS based storage allows you to simply store the CID for your content rather than loading entire files to Polygon blockchain; allowing for decreased costs, larger file sizes, and provably persistent storage. For more details refer [IPFS Docs](https://docs.ipfs.io/).
 
 ### Example projects

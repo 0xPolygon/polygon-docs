@@ -66,6 +66,7 @@ this.myContractInstance.methods.myMethod(myParams)
 ```
 
 ### Calling `send()` function
+
 ```js
 this.myContractInstance.methods.myMethod(myParams)
 .send({

@@ -6,7 +6,7 @@
 
 The service leverages a network of decentralized community validators to ensure the reliability of the oracle data.
 
-## Solutions   
+## Solutions
 
 Umbrella Network provides three data consumption options: on-chain data, layer 2 data, and on-demand data.
 

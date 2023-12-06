@@ -1,4 +1,4 @@
-Data availability in blockchain technology refers to whether or not transaction data is available on-chain or off-chain. 
+Data availability in blockchain technology refers to whether or not transaction data is available on-chain or off-chain.
 
 If data is available on-chain, then each node has to store every piece of data related to every transaction. This can be costly for node operators as hardware and storage requirements are high. Moving data off-chain streamlines node architecture and operations.
 
@@ -14,13 +14,13 @@ A DAC is an off-chain network of nodes that implements a data storage layer in a
 - **Lower transaction fees**: Reduced computational requirements lead to lower fees and faster finality on the main network.
 - **Privacy and security**: The DAC stores secure and private transaction data.
 - **Trustless**: Data owners do not have to trust the blockchain operator.
-- **Scalable**: Decoupling data storage from the main chain supports more scalable networks. 
+- **Scalable**: Decoupling data storage from the main chain supports more scalable networks.
 
 DACs store the data required to reconstruct the state of the blockchain and make that data accessible so that, if the main blockchain network goes down, users can still access their assets and data.
 
 Setting up a DAC can be costly and therefore DACs mostly support Enterprise use cases which require cheap and fast transactions with a private and secure data layer.
 
-The CDK validium DAC is a secure consortium of nodes that ensures off-chain data access. 
+The CDK validium DAC is a secure consortium of nodes that ensures off-chain data access.
 
 ## DAC data flow
 

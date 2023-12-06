@@ -89,4 +89,4 @@ An example JSON response will look like this:
 - `safelow`, `standard`, `fast`, `estimatedBaseFee` are gas prices in GWei. You can use these prices before sending transaction off to Polygon, depending upon your needs.
 - `blockNumber` tells what was latest block mined when recommendation was made.
 - `blockTime`, in second, gives average block time of the network.
--  On Polygon PoS mainnet, it is mandatory to pass a **minimum priority fees of 30 gwei**.
+- On Polygon PoS mainnet, it is mandatory to pass a **minimum priority fees of 30 gwei**.

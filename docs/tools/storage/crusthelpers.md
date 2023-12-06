@@ -17,4 +17,3 @@ Check out the **[Decentralized Storage Market](https://wiki.crust.network/docs/e
 - [IPFS W3Auth Gateway](https://docs.ipfs.tech/concepts/ipfs-gateway/#authenticated-gateways): A Web3 authenticated IPFS gateway that supports all the IPFS *WRITE* functions and helps users upload files or host content after passing the W3Auth verification.
 - [IPFS W3Auth Pinning Service](https://wiki.crust.network/docs/en/buildIPFSW3AuthPin): A standard IPFS pinning service with Web3 authentication that allows users to access Crust storage resources without needing to interact with the Crust blockchain.
 - [Crust Github Action](https://github.com/marketplace/actions/crust-ipfs-pin): A standard Github action which can include fully decentralized CI/CD hosting with Crust.
-

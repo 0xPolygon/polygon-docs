@@ -5,7 +5,7 @@ This section documents the two most popular deployments currently supported by C
 - Validium
 - Rollup
 
-Users select a chain architecture specific to their needs from a set of supported, open source options. Alternatively, users can select custom components for specific requirements. 
+Users select a chain architecture specific to their needs from a set of supported, open source options. Alternatively, users can select custom components for specific requirements.
 
 !!! important "Why are there zkEVM docs in the CDK section?"
      Several of the docs point to zkEVM specific deployment documentation because the rollup flavor of CDK uses zkEVM deployment defaults.

@@ -1,4 +1,4 @@
-The `depositMany` method can be used to deposit required amounts of multiple token from ethereum to polygon chain. 
+The `depositMany` method can be used to deposit required amounts of multiple token from ethereum to polygon chain.
 
 ```js
 const erc1155RootToken = posClient.erc1155(<root token address>, true);
