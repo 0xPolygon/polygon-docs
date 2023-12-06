@@ -13,7 +13,7 @@ The _security council_ is a committee that oversees the security of the Polygon 
 
 The _security council_ of a rollup has a two-fold responsibility,
 
-- Seeing to it that the system is timeously halted in case of the [_emergency state_](emergency-state.md), and
+- Seeing to it that the system is timeously halted in case of the [_emergency state_](malfunction-resistance/emergency-state.md), and
 - Ensuring that _emergency upgrades_ are implemented as soon as it is practically possible.
 
 The _security council_ therefore utilises a special _multisig_ contract that overrides the usual _Admin Multisig Contract_ and the _Timelock Contract_.

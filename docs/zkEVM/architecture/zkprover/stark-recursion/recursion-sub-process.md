@@ -88,7 +88,7 @@ In particular, the custom gates providing the various functionalities are;
 
 - **Poseidon**: This custom gate is capable of validating a Poseidon hash from a given eight ($8$) field elements as inputs, four ($4$) field elements as the capacity, and a variable number of output elements.
 
-  More specifically, this circuit implements the MDS matrix as its diffusion layer, and the $7$-th power of field elements computations as the non-linear layer (S-boxes), in executing each of the rounds of the Poseidon hash's sponge construction. The Poseidon hash is documented [here](poseidon-sm.md).
+  More specifically, this circuit implements the MDS matrix as its diffusion layer, and the $7$-th power of field elements computations as the non-linear layer (S-boxes), in executing each of the rounds of the Poseidon hash's sponge construction. The Poseidon hash is documented [here](../hashing-state-machines/poseidon-sm.md).
 
 - **Extended Field Operations**: This custom gate is capable of validating multiplications and additions (or a combination of the two) over the extended field $\mathbb{F}_p^3$. The inputs are three ($3$) elements $a$, $b$ and $c$ in $\mathbb{F}_p^3$ and the corresponding output is:
 
@@ -112,7 +112,7 @@ In addition, there exists a special selector called `PARTIAL`, which is in charg
 
 ## Recursion Step Proof
 
-The proof of each intermediate **STARK** needs to be computed in order to generate the final proof. See the diagram in the [**Proving Phase**](stark-recursion-detail.md) subsection.
+The proof of each intermediate **STARK** needs to be computed in order to generate the final proof. See the diagram in the [**Proving Phase**](composition-recursion-aggregation.md) subsection.
 
 Each intermediate **STARK** proof is generated using the witness values provided by the execution of the associated `circuit witness calculator` program, which in turn takes as inputs the `publics` and the values of the previous proof.
 

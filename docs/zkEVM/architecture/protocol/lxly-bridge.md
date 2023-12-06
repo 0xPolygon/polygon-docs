@@ -29,7 +29,7 @@ Version-1 consists mainly of three (3) smart contracts;
 - the Global Exit Root manager contract ([PolygonZkEVMGlobalExitRoot.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMGlobalExitRoot.sol)), which facillitates synchronization of state-info between the L2 and the L1.
 - the Polygon zkEVM Consensus contract ([PolygonZkEVM.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVM.sol)), which handles the sequencing and verification of transactions in the form of batches.
 
-Interaction of these three contracts has been detailed [here](flow-of-assets.md).
+Interaction of these three contracts has been detailed [here](zkevm-bridge/flow-of-assets.md).
 
 ### Global Exit Trees Review
 

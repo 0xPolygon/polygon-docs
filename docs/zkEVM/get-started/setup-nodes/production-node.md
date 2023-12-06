@@ -14,7 +14,7 @@ This tutorial requires `docker-compose` to have been installed.
 
 Please check the [official docker-compose installation guide](https://docs.docker.com/compose/install/) for this purpose.
 
-It is highly recommended that you create a separate folder for installing and working around the zkNode. We won't be cloning any repository (unlike [<ins>local zkNode setup</ins>](setup-local-node.md)) so it's better to create a folder before starting the zkNode setup: ```mkdir -p /$HOME/zkevm-node```.
+It is highly recommended that you create a separate folder for installing and working around the zkNode. We won't be cloning any repository (unlike [<ins>local zkNode setup</ins>](local-node.md)) so it's better to create a folder before starting the zkNode setup: ```mkdir -p /$HOME/zkevm-node```.
 
 ### Minimum System Requirements
 

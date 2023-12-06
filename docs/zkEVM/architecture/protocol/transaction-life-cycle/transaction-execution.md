@@ -11,9 +11,10 @@ Once a transaction is added to the L2 State, it is broadcast to all other zkEVM 
 Users will typically interact with trusted L2 State. However, due to certain protocol characteristics, the verification process for L2 transactions (on Layer 1 to enable withdrawals) can take a long time, typically around 30 minutes but up to a week in rare cases.
 
 !!!note
+
      What is the rare case scenario?
      Verification of transactions on L1 will take 1 week only in the case when an **Emergency State is activated** or the **aggregator does not batch any proofs at all**.
 
-     Additionally, the emergency mode is activated if a sequenced batch is not aggregated in 7 days. Please refer to [<ins>this guide</ins>](emergency-state.md) to understand more about the Emergency State.
+     Additionally, the emergency mode is activated if a sequenced batch is not aggregated in 7 days. Please refer to [this guide](../malfunction-resistance/emergency-state.md) to understand more about the Emergency State.
 
 As a result, users should be mindful of the potential risks associated with high-value transactions, particularly those that cannot be reversed, such as off-ramps, over-the-counter transactions, and alternative bridges.

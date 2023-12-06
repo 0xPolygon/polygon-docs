@@ -126,7 +126,7 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
 
 - Create a `.env.sample` file within the `src` folder
 
-- Populate `.env.sample` file with your `ACCOUNT_PRIVATE_KEY` and the zkEVM Testnet's `RPC URL` found [here](connect-wallet.md). So the `.env.sample` file will look like this:
+- Populate `.env.sample` file with your `ACCOUNT_PRIVATE_KEY` and the zkEVM Testnet's `RPC URL` found [here](../get-started/quick-start/connect-wallet.md). So the `.env.sample` file will look like this:
 
     ```json
     RPC_URL="https://rpc.public.zkevm-test.net"

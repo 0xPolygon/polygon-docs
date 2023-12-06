@@ -100,7 +100,7 @@ You'll need the following items to begin:
 - L1 Goërli node RPC
 - Goërli address with **0.5 GöETH**
 
-See this guide here for [**setting up your own Goërli node**](setup-goerlinode.md).
+See this guide here for [**setting up your own Goërli node**](setup-goerli-node.md).
 
 #### Computing requirements
 
