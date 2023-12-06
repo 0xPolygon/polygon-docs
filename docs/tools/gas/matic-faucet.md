@@ -42,7 +42,7 @@ In addition, Polygon faucet also provides **Polygon zkEVM Testnet ETH tokens**.
 
 !!! danger
 
-      If you don't have enough MATIC Testnet tokens in your account to pay for the gas fees, the transaction may fail. If you require testnet tokens in bulk, please fill <ins>**[this form](https://docs.google.com/forms/d/e/1FAIpQLSe4npoGldJknEs9EBtPaV3AS-0HTso2IuMWDCiMmLEMCx8euQ/viewform)**</ins>.
+      If you don't have enough MATIC Testnet tokens in your account to pay for the gas fees, the transaction may fail. If you require testnet tokens in bulk, please fill **[this form](https://docs.google.com/forms/d/e/1FAIpQLSe4npoGldJknEs9EBtPaV3AS-0HTso2IuMWDCiMmLEMCx8euQ/viewform)**.
 
 - After confirmation, you will receive the requested Testnet tokens within 1 to 2 minutes.
 
@@ -70,7 +70,7 @@ In order to receive MATIC Mumbai tokens using QuickNode Fauct,
 
 !!! tip "Get 1 MATIC"
 
-      If you **tweet** the [<ins>drip faucet URL</ins>](https://faucet.quicknode.com/drip) along with your wallet address and submit the tweet URL, you get 10X more MATIC Testnet tokens (i.e. 1 MATIC).
+      If you **tweet** the [drip faucet URL](https://faucet.quicknode.com/drip) along with your wallet address and submit the tweet URL, you get 10X more MATIC Testnet tokens (i.e. 1 MATIC).
 
 - To receive 0.1 Testnet MATIC, click on **No thanks, just send me 0.1 MATIC**.
 

@@ -14,7 +14,7 @@ Foundry is a fast toolkit for Ethereum application development written in Rust. 
 
 !!! tip
 
-    If you have any questions, reach out in the [<ins>Chainstack Discord</ins>](https://discord.com/invite/Cymtg2f7pX) server.
+    If you have any questions, reach out in the [Chainstack Discord](https://discord.com/invite/Cymtg2f7pX) server.
 
 ## What you will learn
 
@@ -129,7 +129,7 @@ forge create HelloWorld --constructor-args "Hello" --contracts /root/foundry/src
 
 !!! tip
 
-    You can always check the contract's deployment on [<ins>Mumbai Polygonscan</ins>](https://mumbai.polygonscan.com/) using the newly-generated hash from the last step.
+    You can always check the contract's deployment on [Mumbai Polygonscan](https://mumbai.polygonscan.com/) using the newly-generated hash from the last step.
 
 ## Test the Contract
 
@@ -137,4 +137,4 @@ There is a `forge test` command in case you need to check whether the contract i
 
 **Congratulations! You have deployed your Hello World smart contract on Polygon.**
 
-See also Chainstack docs for more Polygon-related [<ins>tutorials</ins>](https://docs.chainstack.com/tutorials/polygon/) and [<ins>tools</ins>](https://docs.chainstack.com/operations/polygon/tools).
+See also Chainstack docs for more Polygon-related [tutorials](https://docs.chainstack.com/tutorials/polygon/) and [tools](https://docs.chainstack.com/operations/polygon/tools).

@@ -1,8 +1,8 @@
 !!! danger "Important update"
 
-    There is a proposal to transition the native token of the Polygon PoS network from MATIC to POL. This document will provide details on what this means for users of MATIC, the Polygon ecosystem, and the planned changes. Please read carefully and find more information [<ins>here</ins>](https://polygon.technology/blog/polygon-2-0-implementation-officially-begins-the-first-set-of-pips-polygon-improvement-proposals-released).
+    There is a proposal to transition the native token of the Polygon PoS network from MATIC to POL. This document will provide details on what this means for users of MATIC, the Polygon ecosystem, and the planned changes. Please read carefully and find more information [here](https://polygon.technology/blog/polygon-2-0-implementation-officially-begins-the-first-set-of-pips-polygon-improvement-proposals-released).
 
-POL is the native token upgrade for the Polygon ecosystem, designed for use in a wide range of activities and purposes, including as a tool for network participation and security. By staking POL, participants can actively contribute to the ecosystem as validators. Importantly, POL has many of the same features as MATIC, is built on OpenZeppelin's ERC20 implementations, and supports [<ins>EIP-2612</ins>](https://eips.ethereum.org/EIPS/eip-2612) for signature-based permit approvals.
+POL is the native token upgrade for the Polygon ecosystem, designed for use in a wide range of activities and purposes, including as a tool for network participation and security. By staking POL, participants can actively contribute to the ecosystem as validators. Importantly, POL has many of the same features as MATIC, is built on OpenZeppelin's ERC20 implementations, and supports [EIP-2612](https://eips.ethereum.org/EIPS/eip-2612) for signature-based permit approvals.
 
 If the POL proposal is supported by the community, the POL upgrade is estimated to take place in Q4 2023. The systems utilizing MATIC will not begin the transition until Q1 2024, allowing time for a smooth migration/upgrade and stakeholder preparation. The initial amount of POL refers to the total number of POL when the upgrade occurs. In the case of POL, the initial amount is 10 billion tokens — 1:1 with MATIC since this is an upgrade.
 
@@ -23,7 +23,7 @@ No. You can provide feedback on the proposed changes in the PIPs and monitor Gi
 
 ### ...as an application or tooling developer?
 
-No. You can review the [<ins>PIPs</ins>](https://forum.polygon.technology/t/pip-17-polygon-ecosystem-token-pol/12912) and provide feedback on the proposed changes and analyze if any changes break your smart contracts. Developers for applications on the Polygon PoS should not see any breaking changes.
+No. You can review the [PIPs](https://forum.polygon.technology/t/pip-17-polygon-ecosystem-token-pol/12912) and provide feedback on the proposed changes and analyze if any changes break your smart contracts. Developers for applications on the Polygon PoS should not see any breaking changes.
 
 ## POL technical information
 

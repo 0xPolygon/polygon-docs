@@ -23,7 +23,7 @@ The e**STARK** protocol is composed of two main phases; the **low-degree reducti
 !!!info
      What is FRI
 
-     [<ins>**FRI**</ins>](https://drops.dagstuhl.de/opus/volltexte/2018/9018/pdf/LIPIcs-ICALP-2018-14.pdf) refers to **Fast Reed-Solomon Interactive Oracle Proof of Proximity**. The FRI protocol consists of two phases: a **commit phase** and **query phase**. You can read more about the protocol in [<ins>this document</ins>](https://eprint.iacr.org/2021/582.pdf) by **StarkWare Team**.
+     [**FRI**](https://drops.dagstuhl.de/opus/volltexte/2018/9018/pdf/LIPIcs-ICALP-2018-14.pdf) refers to **Fast Reed-Solomon Interactive Oracle Proof of Proximity**. The FRI protocol consists of two phases: a **commit phase** and **query phase**. You can read more about the protocol in [this document](https://eprint.iacr.org/2021/582.pdf) by **StarkWare Team**.
 
 1. **Low-degree reduction phase**
 

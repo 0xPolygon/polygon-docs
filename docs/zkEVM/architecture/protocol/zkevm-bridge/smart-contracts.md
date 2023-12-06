@@ -17,7 +17,7 @@ This means that the zkEVM Bridge SC, in conjunction with the Global Exit Root Ma
 !!!info
     There are two Global Exit Root manager SCs: one deployed in L1, while the other is deployed in L2.
 
-    Their Solidity code files are; [<ins>PolygonZkEVMGlobalExitRoot.sol</ins>](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/PolygonZkEVMGlobalExitRoot.sol), and [<ins>PolygonZkEVMGlobalExitRootL2.sol</ins>](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/PolygonZkEVMGlobalExitRootL2.sol), respectively.
+    Their Solidity code files are; [PolygonZkEVMGlobalExitRoot.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/PolygonZkEVMGlobalExitRoot.sol), and [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/PolygonZkEVMGlobalExitRootL2.sol), respectively.
 
 ## Consensus contract
 

@@ -48,7 +48,7 @@ After you find the API Key, you can now start to send RPC requests on MegaNode. 
 
 !!! info "Any concern about your Privacy?"
 
-    Check out NodeReal [<ins>Privacy Policy</ins>](https://nodereal.io/privacy-policy).
+    Check out NodeReal [Privacy Policy](https://nodereal.io/privacy-policy).
 
 We’ll be using [Web3.js](https://web3js.readthedocs.io/en/v1.8.2/) libraries to make our first RPC request.
 

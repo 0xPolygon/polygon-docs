@@ -1,5 +1,5 @@
 !!! caution "Content disclaimer"
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 **Venly (prev. Arkane Network)** allows you to easily integrate your app to the Polygon blockchain, whether you already have an app integrated with Web3 or are building a new app from scratch. Venly provides a smooth and delightful experience for you and your users on both web & mobile.
 
@@ -26,7 +26,7 @@ If you already support Web3 technology, you can improve the UX within your appli
 By making use of our Web3 provider you are able to leverage the full potential of Venly with minimal effort and you will be able to onboard users that are less tech savvy without making them leave your application or download third party plugins. Integrating just takes 2 steps and ~5 minutes.
 
 !!! tip
-    Venly provides a [<ins>Venly Widget</ins>](https://docs.venly.io/widget/) to help developers generate Web 3 support to their applications.
+    Venly provides a [Venly Widget](https://docs.venly.io/widget/) to help developers generate Web 3 support to their applications.
 
 ### Add the library to your project
 
@@ -59,7 +59,7 @@ The web3 instance now works as if it was injected by Parity or Metamask. You can
 **Congratulations! Your dApp now supports Venly.**
 
 !!! info
-    To connect with a personalised [Client ID](https://docs.venly.io/widget/deep-dive/authentication#client-id), and access our production environment, please request access one using this [<ins>form</ins>](https://forms.venly.io/clientID).
+    To connect with a personalised [Client ID](https://docs.venly.io/widget/deep-dive/authentication#client-id), and access our production environment, please request access one using this [form](https://forms.venly.io/clientID).
 
 ## More about Venly
 

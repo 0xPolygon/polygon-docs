@@ -4,7 +4,7 @@
 
 !!! note
 
-    This tutorial is an adapted version of the [<ins>Truffle quickstart guide</ins>](https://www.trufflesuite.com/docs/truffle/quickstart) article.
+    This tutorial is an adapted version of the [Truffle quickstart guide](https://www.trufflesuite.com/docs/truffle/quickstart) article.
 
 ## What you will do
 

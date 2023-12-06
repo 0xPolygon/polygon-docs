@@ -29,7 +29,7 @@ To create your Hardhat project, run `npx hardhat` in your project folder.
 Let’s create the sample project and go through these steps to try out a sample task and compile, test and deploy the sample contract.
 
 !!! note
-    The sample project used here comes from the [<ins>Hardhat Quickstart guide</ins>](https://hardhat.org/getting-started/#quick-start), as well as its instructions.
+    The sample project used here comes from the [Hardhat Quickstart guide](https://hardhat.org/getting-started/#quick-start), as well as its instructions.
 
 ## Creating a project
 
@@ -120,7 +120,7 @@ module.exports = {
 !!! note
     Note that the file above requires DOTENV, for managing environment variables and also ethers and etherscan. Make sure to install all those packages.
 
-    Find more instructions on how to use DOTENV on [<ins>this page</ins>](https://www.npmjs.com/package/dotenv).
+    Find more instructions on how to use DOTENV on [this page](https://www.npmjs.com/package/dotenv).
 
     You can deploy on MATIC(Polygon mainnet) if you change polygon_mumbai by MATIC.
 

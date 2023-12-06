@@ -6,7 +6,7 @@ private keys, and interfaces that allow users to perform chain actions and sign 
 
 !!! info "Centralized Exchanges (CEXs)"
 
-      For a list of CEXs that support Polygon, visit a third-party tracking website such as [<ins>**CoinMarketCap**</ins>](https://coinmarketcap.com/currencies/polygon/markets).
+      For a list of CEXs that support Polygon, visit a third-party tracking website such as [**CoinMarketCap**](https://coinmarketcap.com/currencies/polygon/markets).
 
 
 ## Native wallets
@@ -36,7 +36,7 @@ It includes:
 
 !!! tip 
 
-      Keep up with the latest Wallet Suite updates from the Polygon team and community by subscribing to our [<ins>notifications</ins>](https://polygon.technology/notifications/).
+      Keep up with the latest Wallet Suite updates from the Polygon team and community by subscribing to our [notifications](https://polygon.technology/notifications/).
 
 ## Partner wallets
 
@@ -48,7 +48,7 @@ It includes:
 
 !!! caution "Content disclaimer"
 
-      Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+      Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 The following wallets are solutions that Polygon Technology has partnered with:
 

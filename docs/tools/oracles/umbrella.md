@@ -1,8 +1,8 @@
 !!! info "Content disclaimer"
 
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
-[<ins>Umbrella Network</ins>](https://umb.network/) is a decentralized oracle service that provides blockchain projects with secure, scalable, and customizable data solutions.
+[Umbrella Network](https://umb.network/) is a decentralized oracle service that provides blockchain projects with secure, scalable, and customizable data solutions.
 
 The service leverages a network of decentralized community validators to ensure the reliability of the oracle data.
 
@@ -26,8 +26,8 @@ On-demand data fetching planned for Q3 2023.
 
 ### Technical documentation
 
-The official technical documentation can be found [<ins>here</ins>](https://umbrella-network.readme.io/docs).
+The official technical documentation can be found [here](https://umbrella-network.readme.io/docs).
 
 ### Custom feeds
 
-In case your project requires a custom feed, please contact the Umbrella team [<ins>here</ins>](https://www.umb.network/contact#form).
+In case your project requires a custom feed, please contact the Umbrella team [here](https://www.umb.network/contact#form).

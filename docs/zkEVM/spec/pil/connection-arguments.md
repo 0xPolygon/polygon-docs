@@ -8,7 +8,7 @@ Moreover, we say that a protocol $(\mathcal{P}, \mathcal{V})$ is a **connection 
 
 !!! info
 
-    We use the term “connection” instead of “copy-satisfaction” because the argument is used in PIL in a more general sense than in the original definition given in [<ins>GWC19</ins>](https://eprint.iacr.org/2019/953).
+    We use the term “connection” instead of “copy-satisfaction” because the argument is used in PIL in a more general sense than in the original definition given in [GWC19](https://eprint.iacr.org/2019/953).
 
 ### Example
 

@@ -1,7 +1,7 @@
 
 !!! note "Content disclaimer"   
 
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 ## About PARSIQ
 
@@ -9,7 +9,7 @@ PARSIQ is a reliable, fully customizable blockchain data indexer, helping develo
 
 !!! tip "Quickstart"
 
-    Check out **[<ins>this introduction video</ins>](https://www.youtube.com/watch?v=kQJYJGt62hc)**
+    Check out **[this introduction video](https://www.youtube.com/watch?v=kQJYJGt62hc)**
     to get started.
 
 ### PARSIQ Tsunami API
@@ -21,7 +21,7 @@ PARSIQ Tsunami API is a highly efficient API to fetch raw Web3 data:
 
 !!! info "Endpoints"
 
-    Please check out our [<ins>PARSIQ API Reference</ins>](https://docs.parsiq.net/reference/introduction) to see all the available endpoints.
+    Please check out our [PARSIQ API Reference](https://docs.parsiq.net/reference/introduction) to see all the available endpoints.
 
 ### PARSIQ SDK
 
@@ -29,4 +29,4 @@ Some more complicated cases where custom data needs to be stored, accumulated, a
 
 !!! info "SDK Documentation"
 
-    Please see [<ins>PARSIQ SDK documentation</ins>](https://medium.com/parsiq/introducing-parsiq-sdk-675431864633) for more details.
+    Please see [PARSIQ SDK documentation](https://medium.com/parsiq/introducing-parsiq-sdk-675431864633) for more details.
