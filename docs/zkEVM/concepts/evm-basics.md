@@ -1,4 +1,4 @@
-In this series of documents, we will dig deeper into the Main State Machine Executor component of the zkProver. It is one of the four main components of the zkProver, outlined [here](../architecture/zkprover/zkprover-overview.md). These are - Executor, STARK Recursion, CIRCOM, and Rapid SNARK.
+In this series of documents, we will dig deeper into the Main State Machine Executor component of the zkProver. It is one of the four main components of the zkProver, outlined [here](../architecture/zkprover/index.md). These are - Executor, STARK Recursion, CIRCOM, and Rapid SNARK.
 
 Since the design of the zkProver emulates that of the EVM, this document focuses on explaining the basics of Ethereum Virtual Machine (EVM).
 
@@ -12,7 +12,7 @@ Although the Polygon zkEVM architecture and state differ from the Ethereum, comm
 
 Since Polygon zkEVM is a separate instance, with a state distinct from Ethereum, balances in accounts may differ and therefore L1 smart contracts cannot be directly accessed through L2 transactions.
 
-A special zkEVM bridge and cross-chain messaging mechanism have been developed so as to enable the exchange of data between both networks. More details on the zkEVM Bridge are documented [here](../protocol/zkevm-bridge.md).
+A special zkEVM bridge and cross-chain messaging mechanism have been developed so as to enable the exchange of data between both networks. More details on the zkEVM Bridge are documented [here](../architecture/protocol/zkevm-bridge/index.md).
 
 ## Basics of EVM
 

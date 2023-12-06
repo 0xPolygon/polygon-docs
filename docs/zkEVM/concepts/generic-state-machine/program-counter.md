@@ -25,24 +25,22 @@ $\texttt{JMP}$ therefore acts as a 'flag' where;
 
 Note that execution continues with the next chronological line of instruction $\texttt{zkPC+1}$ when $\texttt{JMP}$ is $\mathtt{0}$, but otherwise proceeds to execute the instruction in line number $\texttt{addr}$.
 
-### Program Counter Constraint Related To JMPZ
+### Program Counter constraint related to JMPZ
 
 The $\texttt{JMPZ(addr)}$ similarly needs a selector to be added as an extra column to the execution trace, call it $\texttt{JMPZ}$.
 
-Since the $\texttt{JMPZ(addr)}$ instruction is executed only on condition that $\texttt{op}$ is zero, we introduce a flag called $\mathtt{isZero}$, such that;
-
-$\mathtt{isZero = 1}$ if $\texttt{op = 0}$, and $\mathtt{isZero = 0}$ if $\mathtt{op \not= 0}$.
-
+Since the $\texttt{JMPZ(addr)}$ instruction is executed only on condition that $\texttt{op}$ is zero, we introduce a flag called $\mathtt{isZero}$, such that; 
+$\mathtt{isZero = 1}$ if $\texttt{op = 0}$, and $\mathtt{isZero = 0}$ if $\mathtt{op \not= 0}$. 
 This means $\texttt{op}$ and $\mathtt{isZero}$ satisfy the following constraint,
 
 $$
-\mathtt{isZero \cdot op = 0}. \tag{Eqn 1*}
+\mathtt{isZero \cdot op = 0}. \qquad\qquad\qquad \tag{Eqn 1*}
 $$
 
 Note that $\texttt{op}$ is a field element, and every non-zero element of the prime field $\mathbb{F}_p$ has an inverse. That is, $\texttt{op}^{-1}$ exists *if and only if* $\mathtt{op \not= 0}$. The following constraint together with $\text{Eqn 1*}$ can be tested to check whether  $\texttt{op}$ and $\mathtt{isZero}$ are as required,
 
 $$
-\mathtt{isZero\ := (1 − op \cdot op^{−1})} \tag{Eqn 2*}
+\mathtt{isZero\ := (1 − op \cdot op^{−1})} \qquad \tag{Eqn 2*}
 $$
 
 Since $\mathtt{JMPZ = 1}$ only if $\texttt{JMPZ(addr)}$ is the very instruction in the line currently being executed, and $\mathtt{zkPC' = addr}$  only if  $\mathtt{isZero = 1}$. It follows that the factor  $(\mathtt{JMPZ \cdot isZero})$ $\mathtt{ = 1}$  only if both  $\texttt{JMPZ}$  $\mathtt{= 1}$  and $\mathtt{isZero}$ $\mathtt{= 1}$ hold true.
@@ -50,7 +48,7 @@ Since $\mathtt{JMPZ = 1}$ only if $\texttt{JMPZ(addr)}$ is the very instruction 
 Hence, the following constraint enforces the correct sequence of instructions when $\texttt{JMPZ}$ is executed;
 
 $$
-\mathtt{zkPC' = (zkPC+1)+(JMPZ \cdot isZero) \cdot \big(addr−(zkPC+1)\big)} \tag{Eqn 3*}
+\mathtt{zkPC' = (zkPC+1)+(JMPZ \cdot isZero) \cdot \big(addr−(zkPC+1)\big)}\quad \tag{Eqn 3*}
 $$
 
 In order to ascertain correct execution of the $\texttt{JMPZ(addr)}$ instruction, it suffices to check the above three constraints; $\text{Eqn 1*}$, $\text{Eqn 2*}$ and $\text{Eqn 3*}$.
@@ -85,7 +83,6 @@ $$
 \mathtt{zkPC} & \mathtt{JMP} & \mathtt{JMPZ} & \mathtt{invOp} & \mathtt{offset}\\\hline
 \quad\mathtt{\dots\ } & \mathtt{\dots } & \mathtt{\dots} & \mathtt{\dots} & \mathtt{\dots}\\\hline
 \quad\mathtt{\dots} &\mathtt{\dots} & \mathtt{\dots} & \mathtt{\dots} & \mathtt{\dots}\\\hline
-
 \quad\mathtt{\dots} & \mathtt{\dots} & \mathtt{\dots} & \mathtt{\dots} & \mathtt{\dots}\\\hline
 \quad\mathtt{\dots} & \mathtt{\dots} & \mathtt{\dots} & \mathtt{\dots} & \mathtt{\dots}\\
 \end{array}
@@ -93,7 +90,7 @@ $$
 
 With the intermediate definition in $\text{Eqn **}$ , we are preparing the path to expanding the $\texttt{addr}$ definition, for example, to include other sources (apart from instructions) from which to get the destination address in jumps.
 
-## Correct Program ending with w loop
+## Correct program ending with a loop
 
 We have previously resorted to ending our program by repeating the "$\texttt{:END}$" instruction. This was not the best solution.
 
@@ -189,35 +186,26 @@ Here is the execution trace thus far;
 
 $$
 \small
-\begin{array}{|l|c|}
-\hline
-\texttt{step} & \bf{instructions} \\ \hline
-\quad\texttt{0} & \mathtt{{getAFreeInput()} => A}\text{ }\\ \hline
-\quad\texttt{1} & \mathtt{-3 => B}\text{ }\qquad\qquad\qquad\text{ }\text{ } \\ \hline
+\begin{aligned}
+\begin{array}{|l|c|c|c|c|c|c|c|c|} \hline
+\texttt{step} & \bf{instructions} & \mathtt{CONST} & \mathtt{offset} & \mathtt{JMP} & \mathtt{JMPZ} & \mathtt{setB} & \mathtt{setA} & \mathtt{inFREE} & \mathtt{inB} & \mathtt{inA} & \mathtt{zkPC} & \mathtt{zkPC'} \\ \hline
+\quad\texttt{0} & \mathtt{{getAFreeInput()} => A}\text{ } & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} \\ \hline
+\quad\texttt{1} & \mathtt{-3 => B}\text{ }\qquad\qquad\qquad\text{ }\text{ } & \ \mathtt{-3} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{2} \\ \hline
 \end{array}
-\hspace{0.02cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{CONST} & \mathtt{offset} & \mathtt{JMP} & \mathtt{JMPZ} & \mathtt{setB} & \mathtt{setA} & \mathtt{inFREE} & \mathtt{inB} & \mathtt{inA} & \mathtt{zkPC} & \mathtt{zkPC'} \\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1}\\\hline
-\ \mathtt{-3} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{2}\\\hline
-\end{array}
-\hspace{0.02cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{op} & \mathtt{isZero} & \mathtt{doJMP} \\\hline
-\text{ }\mathtt{3} & \mathtt{0} & \mathtt{0} \\\hline
-\mathtt{-3} &\mathtt{0} & \mathtt{0}\\\hline
-\end{array}
-\hspace{0.02cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} & \mathtt{invOp}\\\hline
-\quad\mathtt{3} & \mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{0\ } & \mathtt{3^{-1}}\\\hline
-\quad\mathtt{0} &\mathtt{3} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{(-3)^{-1}}\\\hline
-\end{array}
-\\
+\end{aligned}
 $$
+
+$$
+\small
+\begin{aligned}
+\begin{array}{|l|c|c|c|c|c|c|c|}\hline
+\mathtt{op} & \mathtt{isZero} & \mathtt{doJMP} & \mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} & \mathtt{invOp} \\\hline
+\text{ }\mathtt{3} & \mathtt{0} & \mathtt{0} & \quad\mathtt{3} & \mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{0\ } & \mathtt{3^{-1}} \\\hline
+\mathtt{-3} &\mathtt{0} & \mathtt{0} & \quad\mathtt{0} &\mathtt{3} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{(-3)^{-1}}\\\hline
+\end{array}
+\end{aligned}
+$$
+
 
 ### Step 2: ": ADD"
 
@@ -277,14 +265,18 @@ The $\texttt{beforeLast()}$ function, which keeps track of the number of steps b
 $$
 \mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot A\ +\ 0 \cdot B\ +\ 1 \cdot 0\ +\ 0\  =\ 0}.
 $$
-Therefore $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$. Hence according to $\texttt{JMPZ(finalWait)}$, a jump is executed. This means the executor must jump to the $\mathtt{offset = 5}$ address, as computed by the Assembly compiler. It follows that $\mathtt{zkPC′}$ must be $\mathtt{5}$.
+Therefore $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$. 
+
+Hence according to $\texttt{JMPZ(finalWait)}$, a jump is executed. This means the executor must jump to the $\mathtt{offset = 5}$ address, as computed by the Assembly compiler. It follows that $\mathtt{zkPC′}$ must be $\mathtt{5}$.
 
 Let us use Eqn 4* to check if indeed $\mathtt{zkPC′ = 5}$. We first note that, there are no unconditional jumps, so $\mathtt{JMP = 0}$. And,
 
 $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 1 \cdot 1 + 0 = 1}. \qquad\qquad\qquad\qquad\qquad \\
 $$
+
 The next value of the Program Counter is given by,
+
 $$
 \mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)\ =\ (5+1)\ +\ 1 \cdot \big(5−(5+1)\big)\ =\ 6 + (5-6)\ =\ 5.}
 $$
@@ -293,47 +285,30 @@ The execution trace is currently as follows,
 
 $$
 \small
-\begin{array}{|l|c|}
-\hline
-\texttt{step} & \bf{instructions} \\ \hline
-\quad\texttt{0} & \mathtt{{getAFreeInput()} => A}\quad\qquad\qquad\\ \hline
-\quad\texttt{1} & \mathtt{-3 => B}\qquad\qquad\qquad\qquad\qquad\qquad\text{ }\text{ } \\ \hline
-\quad\texttt{2} & \mathtt{:ADD}\qquad\quad\qquad\qquad\qquad\qquad\qquad\ \\ \hline
-\quad\texttt{3} & \mathtt{A \qquad :JMPZ(finalWait)}\qquad\qquad \\ \hline
-\quad\texttt{4} & \mathtt{\{beforeLast()\}\quad:JMPZ(finalWait)} \\ \hline
-\end{array}
-\hspace{0.02cm}
-
+\begin{aligned}
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{CONST} & \mathtt{offset} & \mathtt{JMP} & \mathtt{JMPZ} & \mathtt{setB} & \mathtt{setA} & \mathtt{inFREE} & \mathtt{inB} & \mathtt{inA} & \mathtt{zkPC} & \mathtt{zkPC'} \\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1}\\\hline
-\ \mathtt{-3} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{2}\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{2} & \mathtt{3}\\\hline
-\quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{3} & \mathtt{5}\\\hline
-\quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{5} & \mathtt{5}\\\hline
+\texttt{step} & \bf{instructions} & \mathtt{CONST} & \mathtt{offset} & \mathtt{JMP} & \mathtt{JMPZ} & \mathtt{setB} & \mathtt{setA} & \mathtt{inFREE} & \mathtt{inB} & \mathtt{inA} & \mathtt{zkPC} & \mathtt{zkPC'} \\\hline
+\quad\texttt{0} & \mathtt{{getAFreeInput()} => A}\quad\qquad\qquad & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1}\\\hline
+\quad\texttt{1} & \mathtt{-3 => B}\qquad\qquad\qquad\qquad\qquad\qquad\text{ }\text{ } & \ \mathtt{-3} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{2}\\\hline
+\quad\texttt{2} & \mathtt{:ADD}\qquad\quad\qquad\qquad\qquad\qquad\qquad\ & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{2} & \mathtt{3}\\\hline
+\quad\texttt{3} & \mathtt{A \qquad :JMPZ(finalWait)}\qquad\qquad & \quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{3} & \mathtt{5}\\\hline
+\quad\texttt{4} & \mathtt{\{beforeLast()\}\quad:JMPZ(finalWait)} & \quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{5} & \mathtt{5}\\\hline
 \end{array}
-\hspace{0.02cm}
+\end{aligned}
+$$
 
+$$
+\small
+\begin{aligned}
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{op} & \mathtt{isZero} & \mathtt{doJMP} \\\hline
-\text{ }\mathtt{3} & \mathtt{0} & \mathtt{0} \\\hline
-\mathtt{-3} &\mathtt{0} & \mathtt{0}\\\hline
-\text{ }\mathtt{0} & \mathtt{1} & \mathtt{0} \\\hline
-\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1}\\\hline
-\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1} \\\hline
+\mathtt{op} & \mathtt{isZero} & \mathtt{doJMP} & \mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} & \mathtt{invOp}\\\hline
+\text{ }\mathtt{3} & \mathtt{0} & \mathtt{0} & \quad\mathtt{3} & \mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{0\ } & \mathtt{3^{-1}}\\\hline
+\mathtt{-3} &\mathtt{0} & \mathtt{0} & \quad\mathtt{0} &\mathtt{3} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{(-3)^{-1}}\\\hline
+\text{ }\mathtt{0} & \mathtt{1} & \mathtt{0} & \quad\mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
+\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1} & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
+\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1} & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3} & \mathtt{\alpha}\\\hline
 \end{array}
-\hspace{0.02cm}
-
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} & \mathtt{invOp}\\\hline
-\quad\mathtt{3} & \mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{0\ } & \mathtt{3^{-1}}\\\hline
-\quad\mathtt{0} &\mathtt{3} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{(-3)^{-1}}\\\hline
-\quad\mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3} & \mathtt{\alpha}\\\hline
-\end{array}
-\hspace{0.02cm}
-\\
+\end{aligned}
 $$
 
 ### Step 5:  "{beforeLast()} :JMPZ(finalWait)"
@@ -375,6 +350,7 @@ $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 0 \cdot 1 + 0 = 0}, \\
 $$
 and with a quick verification using Eqn 4*, we obtain
+
 $$
 \mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)\ =\ (5+1)\ +\ 0 \cdot \big(addr −(5+1)\big)\ =\ 6.}
 $$
@@ -383,17 +359,24 @@ $$
 
 The aim with this instruction is to complete the execution trace such that it is of the correct size (which is $\mathtt{8}$ in this example).
 
-It ends the execution by setting $\texttt{A}$ and $\texttt{B}$ to zero, and jumps to $\mathtt{start}$, which is line $\mathtt{0}$. And thus, $\mathtt{zkPC'}$ must be $\mathtt{0}$. Hence, $\mathtt{setA = 1}$, $\mathtt{setB = 1}$ and $\mathtt{JMP = 1}$ but $\mathtt{inFREE = 0}$, $\mathtt{inA =0}$, $\mathtt{inB =0}$ and $\mathtt{CONST = 0}$. Consequently,
+It ends the execution by setting $\texttt{A}$ and $\texttt{B}$ to zero, and jumps to $\mathtt{start}$, which is line $\mathtt{0}$. And thus, $\mathtt{zkPC'}$ must be $\mathtt{0}$. 
+
+Hence, $\mathtt{setA = 1}$, $\mathtt{setB = 1}$ and $\mathtt{JMP = 1}$ but $\mathtt{inFREE = 0}$, $\mathtt{inA =0}$, $\mathtt{inB =0}$ and $\mathtt{CONST = 0}$. Consequently,
+
 $$
 \mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot 0\ +\ 0 \cdot (-3)\ +\ 0 \cdot 1\ +\ 0\  =\ 0}.
 $$
+
 Therefore $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$.
 
 There are no conditional jumps, so $\mathtt{JMPZ = 0}$. Then, as a consequence of this,
+
 $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 0 \cdot 1 + 1 = 1}. \\
 $$
+
 The constraint in Eqn 4* verifies the next value of the Program Counter as follows,
+
 $$
 \mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)\ =\ (6+1)\ +\ 1 \cdot \big(0 −(6+1)\big)\ =\ 0.}
 $$
@@ -402,8 +385,8 @@ This instruction, as the last step the Assembly program, achieves two things; Fi
 
 See the complete execution trace below,  
 
-$$
-\small
+<!-- $$
+\begin{aligned}
 \begin{array}{|l|c|}
 \hline
 \texttt{step} & \bf{instructions} \\ \hline
@@ -416,21 +399,32 @@ $$
 \quad\texttt{6} & \mathtt{\{beforeLast()\}\quad:JMPZ(finalWait)}\\ \hline
 \quad\texttt{7} & \mathtt{0 => A,B \quad\qquad\ \ :JMP(start)}\qquad \\ \hline
 \end{array}
-\hspace{0.02cm}
+\end{aligned}
+$$ -->
 
+<!-- \hspace{0.02cm} -->
+
+$$
+\small
+\begin{aligned}
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{CONST} & \mathtt{offset} & \mathtt{JMP} & \mathtt{JMPZ} & \mathtt{setB} & \mathtt{setA} & \mathtt{inFREE} & \mathtt{inB} & \mathtt{inA} & \mathtt{zkPC} & \mathtt{zkPC'} \\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1}\\\hline
-\ \mathtt{-3} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{2}\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{2} & \mathtt{3}\\\hline
-\quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{3} & \mathtt{5}\\\hline
-\quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{5} & \mathtt{5}\\\hline
-\quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{5} & \mathtt{5}\\\hline
-\quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{5} & \mathtt{6}\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{6} & \mathtt{0}\\\hline
+\texttt{step} & \bf{instructions} & \mathtt{CONST} & \mathtt{offset} & \mathtt{JMP} & \mathtt{JMPZ} & \mathtt{setB} & \mathtt{setA} & \mathtt{inFREE} & \mathtt{inB} & \mathtt{inA} & \mathtt{zkPC} & \mathtt{zkPC'} \\\hline
+\quad\texttt{0} & \mathtt{{getAFreeInput()} => A}\quad\qquad\qquad & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1}\\\hline
+\quad\texttt{1} & \mathtt{-3 => B}\qquad\qquad\qquad\qquad\qquad\qquad\text{ }\text{ } & \ \mathtt{-3} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{2}\\\hline
+\quad\texttt{2} & \mathtt{:ADD}\qquad\quad\qquad\qquad\qquad\qquad\qquad\ & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{2} & \mathtt{3}\\\hline
+\quad\texttt{3} & \mathtt{A \qquad :JMPZ(finalWait)}\qquad\qquad & \quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{3} & \mathtt{5}\\\hline
+\quad\texttt{4} & \mathtt{\{beforeLast()\}\quad:JMPZ(finalWait)} & \quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{5} & \mathtt{5}\\\hline
+\quad\texttt{5} & \mathtt{\{beforeLast()\}\quad:JMPZ(finalWait)} & \quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{5} & \mathtt{5}\\\hline
+\quad\texttt{6} & \mathtt{\{beforeLast()\}\quad:JMPZ(finalWait)} & \quad\mathtt{0} & \mathtt{5} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{5} & \mathtt{6}\\\hline
+\quad\texttt{7} & \mathtt{0 => A,B \quad\qquad\ \ :JMP(start)}\qquad & \quad\mathtt{0} & \mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{1} & \mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{6} & \mathtt{0}\\\hline
 \end{array}
-\hspace{0.02cm}
+\end{aligned}
+$$
 
+<!-- \hspace{0.02cm} -->
+
+<!-- $$
+\begin{aligned}
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
 \mathtt{op} & \mathtt{isZero} & \mathtt{doJMP} \\\hline
 \text{ }\mathtt{3} & \mathtt{0} & \mathtt{0} \\\hline
@@ -438,32 +432,37 @@ $$
 \text{ }\mathtt{0} & \mathtt{1} & \mathtt{0} \\\hline
 \text{ }\mathtt{0} & \mathtt{1} & \mathtt{1}\\\hline
 \text{ }\mathtt{0} & \mathtt{1} & \mathtt{1} \\\hline
-\text{ }\mathtt{0} &\mathtt{1} & \mathtt{1}\\\hline
+\text{ }\mathtt{0} &\mathtt{1} & \mathtt{1} \\\hline
 \text{ }\mathtt{1} & \mathtt{0} & \mathtt{0} \\\hline
 \text{ }\mathtt{0} & \mathtt{1} & \mathtt{1}\\\hline
 \end{array}
-\hspace{0.02cm}
+\end{aligned}
+$$ -->
 
+<!-- \hspace{0.02cm} -->
+
+$$
+\small
+\begin{aligned}
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} & \mathtt{invOp}\\\hline
-\quad\mathtt{3} & \mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{0\ } & \mathtt{3^{-1}}\\\hline
-\quad\mathtt{0} &\mathtt{3} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{(-3)^{-1}}\\\hline
-\quad\mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3} & \mathtt{\alpha}\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
-\quad\mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{1}\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{0} & \mathtt{\alpha}\\\hline
+\mathtt{op} & \mathtt{isZero} & \mathtt{doJMP} & \mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'} & \mathtt{invOp}\\\hline
+\text{ }\mathtt{3} & \mathtt{0} & \mathtt{0} & \quad\mathtt{3} & \mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{0\ } & \mathtt{3^{-1}}\\\hline
+\mathtt{-3} &\mathtt{0} & \mathtt{0} & \quad\mathtt{0} &\mathtt{3} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{(-3)^{-1}}\\\hline
+\text{ }\mathtt{0} & \mathtt{1} & \mathtt{0} & \quad\mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
+\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1} & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
+\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1} & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3} & \mathtt{\alpha}\\\hline
+\text{ }\mathtt{0} &\mathtt{1} & \mathtt{1} & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{\alpha}\\\hline
+\text{ }\mathtt{1} & \mathtt{0} & \mathtt{0} & \quad\mathtt{1} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ } & \mathtt{1}\\\hline
+\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1} & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{0} & \mathtt{\alpha}\\\hline
 \end{array}
-\hspace{0.02cm}
-\\
+\end{aligned}
 $$
 
 In conclusion, our Assembly program uses jumps to create a loop in its execution. That is, at the right point of the execution, when the registry values of interest have been attained, the executor retains these values until the execution trace is in the last but one row. This way, the result of the computations can be reflected in the last position of the registry $\mathtt{A}$, in the last row of the execution trace, which is the output of the mFibonacci state machine.
 
 Note that in cases where the jumps are such that $\mathtt{offset}$ is one of the previous addresses, the length of the execution trace can turn out to be much bigger than the final value of the Program Counter. i.e., $\mathtt{zkPC \leq 2^N - 1}$ where $\mathtt{2^N -1}$ is the degree of the state machine polynomials.  
 
-## Publics Placed at Known Steps
+## Publics placed at known steps
 
 Regarding the $\texttt{publics}$, it is best to place these at specific and known steps.
 

@@ -138,7 +138,7 @@ It consists of a **Main State Machine Executor**, a collection of **secondary St
 
 ![Skeletal Overview of zkProver](../../img/zkEVM/fig4-zkProv-arch.png)
 
-In a nutshell, **the zkEVM expresses state changes in a polynomial form**. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. To put it another way, all valid batches must satisfy specific polynomial constraints. Check out the detailed architecture of zkProver [here](zkprover/zkprover-overview.md).
+In a nutshell, **the zkEVM expresses state changes in a polynomial form**. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. To put it another way, all valid batches must satisfy specific polynomial constraints. Check out the detailed architecture of zkProver [here](zkprover/index.md).
 
 ## zkEVM bridge
 
@@ -171,7 +171,7 @@ Before getting into a transaction flow in L2, users need some funds to perform a
   - Aggregator will take pending transactions to be verified and build a Proof in order to achieve finality on L1
   - Once the Proof is validated, user's transactions will attain L1 finality (important for withdrawals). This is called the **consolidated state**.
 
-The above process is a summarized version of how transactions are processed in zkEVM. We recommend you to take a look at the complete [transaction life cycle](../protocol/submit-transaction.md) document.
+The above process is a summarized version of how transactions are processed in zkEVM. We recommend you to take a look at the complete [transaction life cycle](protocol/transaction-life-cycle/submit-transaction.md) document.
 
 ## Design characteristics
 

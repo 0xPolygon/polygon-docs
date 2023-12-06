@@ -1,6 +1,6 @@
-The **Arithmetic State Machine** is a secondary state machine that also **has an executor (the Arithmetic SM Executor)** and **an internal Arithmetic program (a set of verification rules written in the PIL language)**. The Arithmetic SM Executor is available in two languages: Javascript and C/C++.
+The Arithmetic State Machine is a secondary state machine that also has an executor (the Arithmetic SM Executor) and an internal Arithmetic program (a set of verification rules written in the PIL language). The Arithmetic SM Executor is available in two languages: Javascript and C/C++.
 
-It is **one of the six secondary state machines** receiving instructions from the Main SM Executor. The main purpose of the Arithmetic SM is to carry out elliptic curve arithmetic operations, such as Point Addition and Point Doubling as well as performing 256-bit operations like addition, product or division.
+It is one of the six secondary state machines receiving instructions from the Main SM Executor. The main purpose of the Arithmetic SM is to carry out elliptic curve arithmetic operations, such as Point Addition and Point Doubling as well as performing 256-bit operations like addition, product or division.
 
 ## Standard elliptic curve arithmetic
 
@@ -55,7 +55,7 @@ For instance, if $C = 0$, then $\bf{Eqn\ A}$ states that the result of multiplyi
 
 Or, if $B = 1$,  $\bf{Eqn\ A}$ states that the result of adding $A$ and $C$ is the same as before: $E$ with a carry of $D$. Similarly, division and modular reductions can also be expressed as derivatives of $\bf{Eqn\ A}$.
 
-**These operations are performed in the Arithmetic State Machine, with registers satisfying the following PIL relation**,
+These operations are performed in the Arithmetic State Machine, with registers satisfying the following PIL relation,
 
 $$
 \text{EQ}_0 \colon \quad x_1 \cdot y_1 + x_2 - y_2 \cdot 2^{256} - y_3 = 0
@@ -81,7 +81,7 @@ $$
 
 where $q_0,q_1,q_2 \in \mathbb{Z}$, implying that these equations hold true over the integers.
 
-This approach is taken because of the need to compute divisions by $p$. Note that **only three possible computation scenarios can arise**:
+This approach is taken because of the need to compute divisions by $p$. Note that only three possible computation scenarios can arise:
 
 1. $\text{EQ}_0$ is activated while the rest are deactivated,
 2. $\text{EQ}_1$, $\text{EQ}_3$ and $\text{EQ}_4$ are activated but $\text{EQ}_0$ and $\text{EQ}_2$ are deactivated,
@@ -175,6 +175,6 @@ $$
 
 The Polygon zkEVM repository is available on [GitHub](https://github.com/0xPolygonHermez).
 
-**Arithmetic SM Executor**: [sm_arith folder](https://github.com/0xPolygonHermez/zkevm-proverjs/tree/main/src/sm/sm_arith)
+Arithmetic SM Executor: [sm_arith folder](https://github.com/0xPolygonHermez/zkevm-proverjs/tree/main/src/sm/sm_arith)
 
-**Arithmetic SM PIL**: [arith.pil](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/arith.pil)
+Arithmetic SM PIL: [arith.pil](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/arith.pil)
