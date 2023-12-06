@@ -51,7 +51,7 @@ theme:
 nav:
   - Home: index.md
   - CDK:
-      - Welcome: cdk/index.md # marketing landing page
+      - cdk/index.md
       - Get started:
         - Get started: cdk/get-started/index.md
         - Quickstart:
@@ -62,12 +62,13 @@ nav:
           - Rollup: cdk/get-started/deploy-rollup.md
       - How to:
         - How to: cdk/how-to/index.md
-        - Manage policies - allowlists, denylists: cdk/how-to/manage-allowlists.md
+        - Manage policies: cdk/how-to/manage-policies.md
       #- Architecture:
       - Specification:
         - Specification: cdk/spec/index.md
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
+        - Concepts: cdk/concepts/index.md
         - Rollup: cdk/concepts/rollup.md
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
@@ -75,7 +76,7 @@ nav:
       - Additional resources:
         - Additional resources: cdk/troubleshooting/index.md
   - zkEVM:
-      - Welcome: zkEVM/index.md # marketing landing page
+      - zkEVM/index.md # marketing landing page
       - Get started:
         - Get started: zkEVM/get-started/index.md
         - Quick start:
@@ -205,7 +206,7 @@ nav:
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
-      - Welcome: pos/index.md # marketing landing page
+      - pos/index.md # marketing landing page
       - Get started: 
         - Get started: pos/get-started/index.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
@@ -284,7 +285,7 @@ nav:
       - API:
           - pos/api/index.md
   - Miden:
-      - Welcome: miden/index.md # marketing landing page
+      - miden/index.md # marketing landing page
       - Get started: miden/get-started/index.md
       - Miden playground: https://0xpolygonmiden.github.io/examples/
       - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
