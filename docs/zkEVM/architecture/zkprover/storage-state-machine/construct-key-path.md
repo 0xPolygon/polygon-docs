@@ -96,7 +96,7 @@ The quadruple structure of the path bits and the level of leaves therefore have 
 
 Since **addition modulo n** is an expensive computation in the state machine context, it is important to find a more efficient algorithm to achieve the same result.
 
-## Alternate Cyclic Group Of Order 4
+## Alternate cyclic group of order 4
 
 In order to explore cyclic groups of order 4, take the vector  $\mathbf{x} = (1,0,0,0)$ , and rotate the components of $\mathbf{x}$ one position to the left.
 
@@ -129,7 +129,7 @@ $$
 \text{00} \mapsto (1,0,0,0),\ \ \text{01} \mapsto (0,1,0,0),\ \ \text{10} \mapsto (0,0,1,0)\  \text{ and }\ \text{11} \mapsto (0,0,0,1).
 $$
 
-## Special Cyclic Register For Leaf Levels
+## Special cyclic register for leaf levels
 
 Define a register called `LEVEL` which is vector of four bits, three **0** bits and one **1** bit. And the operation  `ROTATE_LEVEL`  which is the **left rotation** of `LEVEL`'s bits by one position.
 
@@ -141,7 +141,7 @@ $$
 
 Therefore, `LEVEL` is cyclic under `ROTATE_LEVEL`, and is in fact algebraically the same as the cyclic group $\mathbf{G_4}$ described above.
 
-### Using `LEVEL` Register in Key Reconstruction
+### Using `LEVEL` register in key reconstruction
 
 First note that, when navigating the tree, the leaf level can be indicated by one of the four possible states of the `LEVEL` register. And this works for all possible leaf levels because, for any positive integer $j$:
 

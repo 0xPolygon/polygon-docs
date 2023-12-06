@@ -10,7 +10,7 @@ These gradual _changes in governance_ will follow Polygon Improvement Proposals 
 
 Presently, centralization is seen in the form of the _Admin Multisig Contract_ and the [_Security Council Multisig_](security-council.md).
 
-## Deploying Battle-tested Contracts
+## Deploying battle-tested contracts
 
 To allow for future updates to the zkEVM Protocol implementation (either in the case of adding new features, fixing bugs, or optimizations upgrades), the following contracts are deployed using a **Transparent Upgradeable Proxy (TUP)** pattern:
 

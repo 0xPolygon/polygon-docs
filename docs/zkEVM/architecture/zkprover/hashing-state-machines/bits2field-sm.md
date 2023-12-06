@@ -1,16 +1,16 @@
-The **Bits2Field State Machine** is one of the auxiliary state machines used specifically for parallelizing the implementation of KECCAK-F SM. Its source code is available [here](https://github.com/0xPolygonHermez/zkevm-prover/blob/main/src/sm/bits2field/bits2field_executor.cpp).
+The Bits2Field state machine is one of the auxiliary state machines used specifically for parallelizing the implementation of KECCAK-F SM. Its source code is available [here](https://github.com/0xPolygonHermez/zkevm-prover/blob/main/src/sm/bits2field/bits2field_executor.cpp).
 
-The Bits2Field state machine ensures correct packing of $\mathtt{44}$ bits from $\mathtt{44}$ different $\mathtt{1600}$-row blocks of the Padding-KK-Bit SM into a single field element. Therefore, **it operates like a (44 bits to 1 field element) multiplexer between the Padding-KK-Bit SM and the Keccak-F SM**.
+The Bits2Field state machine ensures correct packing of $\mathtt{44}$ bits from $\mathtt{44}$ different $\mathtt{1600}$-row blocks of the Padding-KK-Bit SM into a single field element. Therefore, it operates like a (44 bits to 1 field element) multiplexer between the Padding-KK-Bit SM and the Keccak-F SM.
 
-In simpler terms, it takes bits from $\mathtt{44}$ different blocks, places them into the first 44 bit-positions of a single field element, whereupon the KECCAK-F circuit runs. **The name Bits2Field State Machine refers to the processing where $44$ **bits** from $44$ different blocks of the Padding-KK-Bit SM are inserted into a single field element**.
+In simpler terms, it takes bits from $\mathtt{44}$ different blocks, places them into the first 44 bit-positions of a single field element, whereupon the KECCAK-F circuit runs. The name Bits2Field state machine refers to the processing where $44$ bits from $44$ different blocks of the Padding-KK-Bit SM are inserted into a single field element.
 
-Although the KECCAK-F SM is a binary circuit, instead of executing on a bit-by-bit basis, **it is implemented to execute KECCAK-F operations on a 44bits-by-44bits basis**. This is tantamount to running $\mathtt{44}$ KECCAK-F hashing circuits in parallel.
+Although the KECCAK-F SM is a binary circuit, instead of executing on a bit-by-bit basis, it is implemented to execute KECCAK-F operations on a 44bits-by-44bits basis. This is tantamount to running $\mathtt{44}$ KECCAK-F hashing circuits in parallel.
 
 ![The 44 bits to 1 field-element Multiplexing](../../../../img/zkEVM/01b2f-44-2-one-multiplex.png)
 
 ## Mapping 44 Bits To A 64-bit Field Element
 
-Suppose operations are carried out in a field $\mathbb{F}_p$ of $\mathtt{64}$-bit numbers. **The smallest field used in the zkProver is the Goldilocks Field $\mathbb{F}_p$ where $p = 2^{64} - 2^{32}+1$**.
+Suppose operations are carried out in a field $\mathbb{F}_p$ of $\mathtt{64}$-bit numbers. The smallest field used in the zkProver is the Goldilocks Field $\mathbb{F}_p$ where $p = 2^{64} - 2^{32}+1$.
 
 After multiplexing, the 44 bits are loaded into the first 44 least significant bit-positions of the field element as depicted in the figure below.
 

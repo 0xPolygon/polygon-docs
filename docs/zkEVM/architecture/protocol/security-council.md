@@ -7,7 +7,7 @@ That is, instead of employing the 2-out-of-3 _Admin Multisig Contract_ and waiti
 It is crucial, however, to emphasise that the _Security Council Multisig_ is a temporary measure, and will ultimately be phased-out once the Polygon zkEVM has been sufficiently battle-tested.
 z
 
-## Understanding Security Council Multisig
+## Understanding security council multisig
 
 The _security council_ is a committee that oversees the security of the Polygon zkEVM during its initial phase.
 
@@ -20,7 +20,7 @@ The _security council_ therefore utilises a special _multisig_ contract that ove
 
 ![Figure 1: Overview of the Security Council in relation to the Admin Contract](../../../img/zkEVM/security-council-overview.png)
 
-### Security Council Composition
+### Security council composition
 
 Security councils generally consist of a certain number of reputable community members, who are typically, individuals or representatives of public organizations who may remain anonymous.
 
@@ -43,7 +43,7 @@ Here is a list of the 8 addresses of the Polygon zkEVM's Security Council;
 - [0x9F7d…86A0](https://etherscan.io/address/0x9F7dfAb2222A473284205cdDF08a677726d786A0#code)
 - [0x2188…1C28](https://etherscan.io/address/0x21887c89368bf918346c62460e0c339113801C28#code)
 
-### Security Council Multisig?
+### Security council multisig?
 
 The Security Council Multisig is a _multisig contract_ deployed by the Polygon zkEVM Security Council when either an _emergency state_ is triggered or an _emergency upgrade_ needs to be executed.
 

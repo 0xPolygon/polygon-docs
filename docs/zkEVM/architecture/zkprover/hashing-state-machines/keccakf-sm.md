@@ -1,4 +1,4 @@
-The Keccak-F State Machine is one of the secondary zkProver state machines. It computes message string hashes and validates the accuracy of those computations upon the request of Main SM.
+The Keccak-F state machine is one of the secondary zkProver state machines. It computes message string hashes and validates the accuracy of those computations upon the request of Main SM.
 
 Although the architecture of the original Keccak hash function is simple, the Keccak-F SM is not just a state machine or a simple automated version of the cryptographic hash function.
 
@@ -10,7 +10,7 @@ Thirdly, the Keccak-F circuit is constructed in such a way that executing it onc
 
 The Keccak-F circuit is briefly described in this article, along with a thorough explanation of the widely used Keccak-256 hash function and its specific parameters as they apply to the Polygon zkEVM implementation.
 
-## Keccak-F Circuit
+## Keccak-F circuit
 
 The Keccak-F circuit has two types of gates, types $\mathtt{0}$ and $\mathtt{1}$, corresponding to the two binary operations it performs, the $\mathtt{XOR}$ and $\mathtt{ANDP}$.
 
@@ -49,11 +49,11 @@ for each $i \in \{ 0, 1, 2, 3 \}$.
 
 This covers the Keccak-F circuit in a nutshell together with its PIL code. See the codes of [sm_keccakf.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_keccakf/sm_keccakf.js) and [keccakf.pil](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/keccakf.pil) on GitHub.
 
-## Keccak-256 Hash Function
+## Keccak-256 hash function
 
 There are seven Keccak-F permutation functions, each indicated by $\texttt{Keccak}$-$f[b]$, where $b = 5\times 5\times 2^l$ is the size of the internal state of the hash function, for $0 \leq l \leq w$.
 
-The zkProver's Keccak State Machine is a verifiable automisation of a Keccak-F permutation function, which amounts to an irreversible scrambling of bits of a string $\mathbf{s} \in \mathbb{Z}_2^b$, where $b = 5\times 5\times 2^6 = 1600$.
+The zkProver's Keccak state machine is a verifiable automisation of a Keccak-F permutation function, which amounts to an irreversible scrambling of bits of a string $\mathbf{s} \in \mathbb{Z}_2^b$, where $b = 5\times 5\times 2^6 = 1600$.
 
 The EVM utilises the Keccak-256 hash function, which is a sponge construction with capacity $c = 512$ bits, and denoted by Keccak$[512]$. That is, the Keccak-256 notation puts emphasis on the $256$-bit security level, while the Keccak$[512]$ notation seeks to depict the actual capacity of $512$ bits.
 
@@ -155,7 +155,7 @@ $$
 
 ## Keccak-F rounds
 
-The Keccak-F State Machine runs 24 rounds, each of which is a composition of five step mappings; $\mathtt{\theta}$, $\mathtt{\rho}$, $\mathtt{\pi}$, $\mathtt{\chi}$, and $\mathtt{\iota}$, denoted by
+The Keccak-F state machine runs 24 rounds, each of which is a composition of five step mappings; $\mathtt{\theta}$, $\mathtt{\rho}$, $\mathtt{\pi}$, $\mathtt{\chi}$, and $\mathtt{\iota}$, denoted by
 
 $$
 \texttt{Rnd(A, ir)} = ι( χ( π( ρ( θ(A) ) ) ), \mathtt{ir})

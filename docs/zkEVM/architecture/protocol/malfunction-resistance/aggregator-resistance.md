@@ -15,7 +15,7 @@ function verifyBatches(
 ) public ifNotEmergencyState
 ```
 
-As previously stated, the `verifyBatches` function accepts the same arguments as the `trustedVerifyBatches` function. However, the `verifyBatches` function adds two additional constraints for a sequence to be aggregated, as well as a new L2 State stage called **Pending State**.
+As previously stated, the `verifyBatches` function accepts the same arguments as the `trustedVerifyBatches` function. However, the `verifyBatches` function adds two additional constraints for a sequence to be aggregated, as well as a new L2 State stage called Pending State.
 
 Along with the conditions required in the `trustedVerifyBatches` function, the following conditions must also be met in `verifyBatches`:
 
@@ -41,7 +41,7 @@ struct PendingState {
 }
 ```
 
-Verified batch sequences remain in an intermediate state known as **Pending state**, where their state transition has not yet been consolidated. While in this state, neither the new L2 State root nor the bridge's new `GlobalExitRoot` have been added to the `batchNumToStateRoot` mapping.
+Verified batch sequences remain in an intermediate state known as Pending state, where their state transition has not yet been consolidated. While in this state, neither the new L2 State root nor the bridge's new `GlobalExitRoot` have been added to the `batchNumToStateRoot` mapping.
 
 The `lastPendingState` storage variable is used to keep track of the number of pending state transitions that need to be consolidated and serves as the mapping's key of entry. The Aggregator will receive the aggregation reward once the Zero-Knowledge proof has been verified.
 
@@ -49,7 +49,7 @@ The below figure shows the L2 Stages timeline from a batch perspective, and the 
 
 ![L2 State stages timeline with pending state](../../../../img/zkEVM/11l2-stages-timeline-pending.png)
 
-The **presence of batch sequences in pending state has no effect on the correct and proper functioning of the protocol**. Non-forced batch sequences are verified before pending ones, and not all sequences enter the pending state.
+The presence of batch sequences in pending state has no effect on the correct and proper functioning of the protocol. Non-forced batch sequences are verified before pending ones, and not all sequences enter the pending state.
 
 The storage variable `lastVerifiedBatch` keeps track of the index of the most recently verified and aggregated batch. As a result, even if a batch sequence is pretentiously verified, the index of the last verified batch will be queried via a function called `getLastVerifiedBatch`.
 

@@ -100,7 +100,7 @@ nav:
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
         - zkEVM Protocol:
-          - Introduction: zkEVM/architecture/protocol/introduction.md
+          - zkEVM Protocol: zkEVM/architecture/protocol/index.md
           - State management: zkEVM/architecture/protocol/state-management.md
           - Trasaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
@@ -143,7 +143,7 @@ nav:
           - Storage state machine:
             - Storage state machine: zkEVM/architecture/zkprover/storage-state-machine/index.md
             - Creating keys and paths: zkEVM/architecture/zkprover/storage-state-machine/construct-key-path.md
-            - Storage SM mechanism: zkEVM/architecture/zkprover/storage-state-machine/storage-sm-mechanism.md
+            - Storage SM mechanism: zkEVM/architecture/zkprover/storage-state-machine/mechanism.md
             - Executor and PIL: zkEVM/architecture/zkprover/storage-state-machine/executor-pil.md
           - Arithmetic state machine: zkEVM/architecture/zkprover/arithmetic-sm.md
           - Binary state machine: zkEVM/architecture/zkprover/binary-sm.md

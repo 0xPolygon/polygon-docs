@@ -6,7 +6,7 @@ The LXLY Bridge SC (or [PolygonZkEVMBridgeV2](https://github.com/0xPolygonHermez
 
 Its modular design capacitates projects to deploy their own rollups and connect them to the Polygon ecosystem.
 
-## Ideal Attributes
+## Ideal attributes
 
 The LXLY Bridge is deployed in the Polygon ecosystem so as to attain the following features and functionalities;
 
@@ -31,7 +31,7 @@ Version-1 consists mainly of three (3) smart contracts;
 
 Interaction of these three contracts has been detailed [here](zkevm-bridge/flow-of-assets.md).
 
-### Global Exit Trees Review
+### Global exit trees Review
 
 Critical to the design of the LXLY Bridge are Exit Trees and the Global Exit Tree.
 
@@ -54,7 +54,7 @@ Observe, in the above figure, that the Consensus Contract (PolygonZkEVM.sol) is 
 - Retrieve the Global Exit Root from the mainnet, and make it available in L2, and
 - Update the Exit Tree Root in the Global Exit Tree Root manager.
 
-## LXLY Bridge Version-2 Design
+## LXLY bridge version-2 design
 
 Multiple zk-rollups such as zkEVMs, zk-Validiums or zk-VMs, can be created and connected through the same LXLY Bridge.
 
@@ -78,7 +78,7 @@ Once sequenced batches have been verified, the _Global Exit Tree_ gets updated, 
 
 ![Figure 2: New version of bridge](../../../img/zkEVM/lxly-2-new-bridge-design.png)
 
-### Rollup Manager's Role
+### Rollup manager's role
 
 The Rollup Manager manages the following lists of availability;
 
@@ -107,7 +107,7 @@ The [Rollup Manager SC](https://github.com/0xPolygonHermez/zkevm-contracts/blob/
   - Governance SC invokes the Rollup Manager's `AddNewRollupType()` function,
   - Once, a rollup is created, the transfer of assets can be processed in the usual manner.
 
-### Overall Flow of Events
+### Overall flow of events
 
 The below diagram captures the following flow of events, most of which are handled by the Rollup Manager SC;
 

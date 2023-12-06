@@ -28,7 +28,7 @@ are actually performed by the Storage Executor. The values being fetched are car
 
 Also, since all Storage Actions require some hashing, the Storage SM delegates all hashing actions to the POSEIDON SM. However, from within the Storage SM, it is best to treat the POSEIDON SM as a blackbox. The Storage Executor simply specifies the sets of twelve values to be digested. And the POSEIDON SM then returns the required digests of the values.
 
-## The Storage PIL
+## Storage PIL
 
 All computations executed in the Storage SM must be verifiable. A special Polynomial Identity Language (PIL) code is therefore used to set up all the polynomial constraints the verifier needs so as to validate correctness of execution.
 
@@ -61,7 +61,7 @@ Therefore, instead of performing some expensive computations in order to verify 
 
 The verifier takes the execution trace, and tests if it satisfies the polynomial constraints (or identities) in the PIL code. This technique helps the zkProver to achieve succintness as a zero-knowledge proof/verification system.
 
-## The Poseidon hash
+## Poseidon hash
 
 Poseidon SM is more straightforward once one understands the internal mechanism of the original Poseidon hash function. The hash function's permutation process translates readily to the Poseidon SM states.
 

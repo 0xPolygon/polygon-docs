@@ -40,6 +40,7 @@ $$
    \end{aligned}
 $$
 
+
 The question is: How (or when) to end the program when the trace has size $\mathtt{5}$ and the polynomials have are of degree $\mathtt{2^3 = 8}$?
 
 ## Naïve way to end a program
@@ -105,28 +106,15 @@ In this example, the free input is $\mathtt{FREE = 7}$. Focusing on $\texttt{lin
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|}
-\hline
-\texttt{ line } & \bf{Instructions } \text{ }\text{ }\text{ }\text{ } \\ \hline
-\quad\texttt{ 0 } & \text{ }\mathtt{\$\{getAFreeInput()\} => A} \text{ }\\ \hline
-\quad\texttt{ 1 } & \text{ }\mathtt{-3 => B} \qquad\qquad\qquad\quad\quad \\ \hline
-\quad\texttt{ 2 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
-\quad\texttt{ 3 } & \text{ }\mathtt{A : JMPZ(5) } \quad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
-\quad\texttt{ 4 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
-\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline
-\end{array}
-\hspace{0.1cm}
-
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'\ }\\\hline
-\quad\mathtt{7} & \mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0\ }\\\hline
-\quad\mathtt{0} &\mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{-3\ }\\\hline
-\quad\mathtt{0} & \mathtt{7} & \mathtt{4} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
-\quad\mathtt{0} & \mathtt{4} & \mathtt{4} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
-\quad\mathtt{0} & \mathtt{4} & \mathtt{1} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
-\quad\mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{-3\ } & \mathtt{0}\\\hline
+\texttt{ line } & \bf{Instructions }\text{ }\text{ }\text{ }\text{ } & \mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'\ }\\\hline
+\quad\texttt{ 0 } & \text{ }\mathtt{\$\{getAFreeInput()\} => A} \text{ } & \quad\mathtt{7} & \mathtt{0} & \mathtt{7} & \mathtt{0} & \mathtt{0\ }\\\hline
+\quad\texttt{ 1 } & \text{ }\mathtt{-3 => B} \qquad\qquad\qquad\quad\quad & \quad\mathtt{0} &\mathtt{7} & \mathtt{7} & \mathtt{0} & \mathtt{-3\ }\\\hline
+\quad\texttt{ 2 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } & \quad\mathtt{0} & \mathtt{7} & \mathtt{4} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
+\quad\texttt{ 3 } & \text{ }\mathtt{A : JMPZ(5) } \quad\qquad\quad\quad\quad\text{ }\text{ } & \quad\mathtt{0} & \mathtt{4} & \mathtt{4} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
+\quad\texttt{ 4 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } & \quad\mathtt{0} & \mathtt{4} & \mathtt{1} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
+\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \quad\mathtt{0} & \mathtt{1} & \mathtt{0} & \mathtt{-3\ } & \mathtt{0}\\\hline
 \end{array}
-
 \end{aligned}
 $$
 
@@ -136,27 +124,14 @@ In this case, the free input is $\mathtt{FREE = 3}$. Again, focusing on $\texttt
 
 $$
 \begin{aligned}
-\begin{array}{|l|c|}
-\hline
-\texttt{ line } & \bf{Instructions } \text{ }\text{ }\text{ }\text{ } \\ \hline
-\quad\texttt{ 0 } & \text{ }\mathtt{\$\{getAFreeInput()\} => A} \text{ }\\ \hline
-\quad\texttt{ 1 } & \text{ }\mathtt{-3 => B} \qquad\qquad\qquad\quad\quad \\ \hline
-\quad\texttt{ 2 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
-\quad\texttt{ 3 } & \text{ }\mathtt{A : JMPZ(5) } \quad\qquad\quad\quad\quad\text{ }\text{ } \\ \hline
-\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } \\ \hline
-\end{array}
-
-\hspace{0.1cm}
-
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'\ }\\\hline
-\quad\mathtt{3} & \mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{0\ }\\\hline
-\quad\mathtt{0} &\mathtt{3} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ }\\\hline
-\quad\mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
-\quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{0}\\\hline
+\texttt{ line } & \texttt{Instructions } \text{ }\text{ }\text{ }\text{ } & \mathtt{FREE} & \mathtt{A} & \mathtt{A'} & \mathtt{B} & \mathtt{B'\ }\\\hline
+\quad\texttt{ 0 } & \text{ }\mathtt{\$\{getAFreeInput()\} => A} \text{ } & \quad\mathtt{3} & \mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{0\ }\\\hline
+\quad\texttt{ 1 } & \text{ }\mathtt{-3 => B} \qquad\qquad\qquad\quad\quad & \quad\mathtt{0} &\mathtt{3} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ }\\\hline
+\quad\texttt{ 2 } & \text{ }\mathtt{:ADD } \qquad\qquad\qquad\quad\quad\quad\text{ }\text{ } & \quad\mathtt{0} & \mathtt{3} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
+\quad\texttt{ 3 } & \text{ }\mathtt{A : JMPZ(5) } \quad\qquad\quad\quad\quad\text{ }\text{ } & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{-3\ }\\\hline
+\quad\texttt{ 5 } & \text{ }\mathtt{:END } \qquad\qquad\qquad\quad\qquad\text{}\text{ }\text{ } & \quad\mathtt{0} & \mathtt{0} & \mathtt{0} & \mathtt{-3\ } & \mathtt{0}\\\hline
 \end{array}
-
 \end{aligned}
 $$
 
@@ -168,30 +143,31 @@ The dynamism brought about by the inclusion of jumps in our zkASM programs means
 
 Since the instructions require the executor to perform varied operations, and due to the presence of jumps, these operations are not sequentially executed, we then need to do a few more checks;
 
-1. **Check program operations**
+   1. **Check program operations**
+      
+      Every operation being executed needs to be checked if it is the correct one. That is, if the instruction is an $\texttt{ADD}$, then we must check that indeed an $\texttt{ADD}$ was performed and not a different operation.
 
-   Every operation being executed needs to be checked if it is the correct one. That is, if the instruction is an $\texttt{ADD}$, then we must check that indeed an $\texttt{ADD}$ was performed and not a different operation.
+   2. **Check instructions’ sequence**
+      
+      The sequence in which the operations are executed must tally with the instructions in the zkASM program, and not necessarily their usual chronological sequence of the lines of code. e.g., The lines of instructions executed in Example B above, are lines $\texttt{0, 1, 2, 3, 5}$ , where $\texttt{line}$ $\texttt{4}$ was skipped.
 
-2. **Check instructions’ sequence**
+      Note that more complicated programs can be built where, for instance, the SM execution jumps to a previous line of code, and thus repeating execution of some instructions.
 
-   The sequence in which the operations are executed must tally with the instructions in the zkASM program, and not necessarily their usual chronological sequence of the lines of code. e.g., The lines of instructions executed in Example B above, are lines $\texttt{0, 1, 2, 3, 5}$ , where $\texttt{line}$ $\texttt{4}$ was skipped.
+   3. **Check correct program ending**
+      
+      How the program ends also needs to be managed. Due to the presence of jumps, the length of the execution trace is no longer constant for the same program if the free inputs are varied.
 
-   Note that more complicated programs can be built where, for instance, the SM execution jumps to a previous line of code, and thus repeating execution of some instructions.
+   4. **Check positioning of Publics**
+      
+      We must ensure that all $\texttt{publics}$ (the inputs and the outputs) are in the expected positions. So, $\texttt{publics}$ should be placed at known steps. This ensures that the SM's PIL does not have to change with every execution.
 
-3. **Check correct program ending**
+      For this reason, $\texttt{publics}$ are going to be placed in either the first positions of the polynomial or the last positions of the polynomial (these are specified positions in the arrays representing the columns of the trace).
 
-   How the program ends also needs to be managed. Due to the presence of jumps, the length of the execution trace is no longer constant for the same program if the free inputs are varied.
+   5. **Check correct Program (ROM) Execution**
+      
+      Although the polynomial identities are there to monitor correct state transitions (checking that each instruction does what it is supposed to do), and also that the correct sequence of instructions is followed, one still needs to make sure the instruction being executed belongs to the program in the first place. So, if for instance, the third instruction is being executed, is it really the third instruction of the right program or not.
 
-4. **Check positioning of Publics**
+      One of the implications of a dynamic execution trace, due to the inclusion of jumps, is that some of the previously *constant* (or preprocessed) polynomials must now be *committed* polynomials.
 
-   We must ensure that all $\texttt{publics}$ (the inputs and the outputs) are in the expected positions. So, $\texttt{publics}$ should be placed at known steps. This ensures that the SM's PIL does not have to change with every execution.
-
-   For this reason, $\texttt{publics}$ are going to be placed in either the first positions of the polynomial or the last positions of the polynomial (these are specified positions in the arrays representing the columns of the trace).
-
-5. **Check correct Program (ROM) Execution**
-
-   Although the polynomial identities are there to monitor correct state transitions (checking that each instruction does what it is supposed to do), and also that the correct sequence of instructions is followed, one still needs to make sure the instruction being executed belongs to the program in the first place. So, if for instance, the third instruction is being executed, is it really the third instruction of the right program or not.
-
-   One of the implications of a dynamic execution trace, due to the inclusion of jumps, is that some of the previously *constant* (or preprocessed) polynomials must now be *committed* polynomials.
 
    If we are going to allow polynomials (i.e., columns in the execution trace) corresponding to the instructions to be committed, we need to be cautious that only instructions belonging to the right program are being executed. For this purpose, we use a tool called [Plookup](https://eprint.iacr.org/2020/315.pdf).

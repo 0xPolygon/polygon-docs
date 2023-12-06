@@ -1,12 +1,10 @@
-## Introduction
-
 A standard state machine is characterized by sets of states (as inputs) stored in registers, instructions on how the states should transition, and the resultant states (as outputs) stored as new values in the same registers. The below figure demonstrates a standard state machine.
 
 ![A Generic State Machine](../../../../img/zkEVM/fig1-gen-state-mchn.png)
 
 State machine can be monolithic, where it is a prototype of one particular computation, while others may specialise with certain types of computations. Depending on the computational algorithm, a state machine may have to run through a number of state transitions before producing the desired output. Iterations of the same sequence of operations may be required, to the extend that most common state machines are cyclic by nature.
 
-The **Storage State Machine** is one of the **secondary zkProver state machine responsible for all operations on data stored in the zkProver's storage**. It receives instructions from the Main State Machine, called **Storage Actions**. The Main State Machine performs typical database operations such as: **Create, Read, Update and Delete (CRUD)**; and then instructs the Storage State Machine to verify whether these were correctly performed.
+The **Storage state machine** is one of the **secondary zkProver state machine responsible for all operations on data stored in the zkProver's storage**. It receives instructions from the Main state machine, called **Storage Actions**. The Main state machine performs typical database operations such as: **Create, Read, Update and Delete (CRUD)**; and then instructs the Storage state machine to verify whether these were correctly performed.
 
 ## A microprocessor-type state machine
 
