@@ -65,7 +65,7 @@ In order to claim the bridged assets on the destination L2 network, the Global E
 
 It is possible for the transfer to go from an L2 Rollup to the Mainnet L1. In this case the same procedure as in the above example is followed, except in the reverse direction.
 
-That is, once a user commits to a transfer, an exit leaf is added to the L2 Exit Tree with corresponding transfer information. The transfer data in this case looks as follows: 
+That is, once a user commits to a transfer, an exit leaf is added to the L2 Exit Tree with corresponding transfer information. The transfer data in this case looks as follows:
 
 ```
 Origin network: 3 (L2)

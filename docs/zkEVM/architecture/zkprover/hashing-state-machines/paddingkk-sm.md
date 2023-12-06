@@ -150,13 +150,13 @@ By capturing the relationships between and among the columns (registers defined 
     $$
     \mathtt{connected' \cdot lastBlock = ( 1 - lastHash) \cdot lastBlock} \tag{Eqn.5}
     $$
-    
+
 4. The $\mathtt{len}$ register is constant within each string. It must therefore satisfy this relationship,
 
     $$
     \mathtt{ len'\cdot firstHash = len\cdot (1 - lastHash)} \tag{Eqn.6}
     $$
-    
+
 5. Checking that $\mathtt{len}$ and $\mathtt{rem}$ coincide at the first state of each string, use the constraint,
 
     $$
@@ -181,7 +181,7 @@ By capturing the relationships between and among the columns (registers defined 
       \text{  }\text{ }\text{ }\text{  }\text{ }\text{} \cdots & \cdots\\ \hline
     \end{array}
     $$
-    
+
 6. Let us now specify the relations that satisfy the $\mathtt{addr}$ register. As commented on before, $\mathtt{addr}$ is constant within each string. Hence, $\mathtt{(addr' - addr) = 0}$ if and only if $\mathtt{1 - lastHash \not= 0}$.
 
     The constraint for the $\mathtt{addr}$ register is therefore,
@@ -220,26 +220,26 @@ By capturing the relationships between and among the columns (registers defined 
       \text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ } 1 & 0 & 1 & 0  \\\hline
       \end{array}
     $$
-    
+
 7. In order to grapple with the increasing but cyclic sequence of $\mathtt{addr}$, the following constraint is used,
 
     $$
     \mathtt{ ( addr' - 1 - addr)\cdot lastHashLatch = 0} \tag{Eqn.10}
     $$
-    
+
 8. Now, checking whether $\mathtt{remIsZero}$ is 1 if and only if $\mathtt{rem}$ is 0, is done reversely by first committing the column $\mathtt{remInv}$, the inverse of $\mathtt{rem}$, and computing $\mathtt{remIsZero}$ as:
     $$
     \mathtt{remIsZero = 1 − rem · remInv} \tag{Eqn.11}
     $$
 
     And then, as usual, check the relation, $\mathtt{remIsZero \cdot rem = 0}$.
-    
+
 9. Next is the $\mathtt{aFreeIn}$ register which stores the input byte if and only if the current row does not corresponding to the padding. $\mathtt{aFreeIn}$ is computed from the $\mathtt{remIsZero}$, $\mathtt{spare}$ and $\mathtt{lastHash}$ registers. This ensures loading the padding bytes at their correct positions.
-    
+
     In fact, this register will be used in the Plookup of the next state machine.
 
     Observe that $\mathtt{aFreeIn}$ can be computed as
-    
+
     $$
     \mathtt{aFreeIn = (1 − (remIsZero + spare)) \cdot freeIn + remIsZero + lastHash \cdot 0x80} \tag{Eqn.12}
     $$

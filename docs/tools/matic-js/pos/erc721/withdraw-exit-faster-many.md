@@ -1,6 +1,5 @@
 The `withdrawExitFasterMany` method can be used to exit the withdraw process by using the `txHash` from `withdrawStartMany` method.
 
-
 It is fast because it generates proof in the back-end. You need to configure [setProofAPI](../../set-proof-api.md).
 
 **Note**- withdrawStart transaction must be checkpointed in order to exit the withdraw.

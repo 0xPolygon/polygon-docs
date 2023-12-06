@@ -5,7 +5,7 @@ Managing allowlists, denylists, and ACLs is done with policies.
 
 ## Policy overview
 
-A **policy** is a set of rules that govern what actions are allowed or denied in the transaction pool. 
+A **policy** is a set of rules that govern what actions are allowed or denied in the transaction pool.
 
 - **Fine-grained control**: Developers can specify policies at a granular level, allowing or denying specific actions for specific addresses.
 - **Dynamic updates**: Policies and ACLs can be updated on-the-fly without requiring a node restart.
@@ -21,7 +21,7 @@ Currently, there are two defined policies:
 - **SendTx**: governs whether an address may send transactions to the pool.
 - **Deploy**: governs whether an address may deploy a contract.
 
-The CDK validium node offers policy management features that include allowlisting[^1], denylisting[^2], and access control lists (ACLs)[^3]. These features are beneficial for validium-based app-chains that require fine-grained control over transaction pools. 
+The CDK validium node offers policy management features that include allowlisting[^1], denylisting[^2], and access control lists (ACLs)[^3]. These features are beneficial for validium-based app-chains that require fine-grained control over transaction pools.
 
 ### Code definitions
 
@@ -82,7 +82,6 @@ docker exec -it cdk-validium-aggregator /app/cdk-validium-node policy describe -
 # Describe all policies
 docker exec -it cdk-validium-aggregator /app/cdk-validium-node policy describe
 ```
-
 
 [^1]: **Allowlisting**: The process of explicitly allowing addresses to perform certain actions.
 [^2]: **Denylisting**: The process of explicitly denying addresses from performing certain actions.

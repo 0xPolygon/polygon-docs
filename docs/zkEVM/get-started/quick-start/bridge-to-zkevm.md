@@ -1,6 +1,6 @@
 
 !!!caution
-    Check the list of potential risks associated with the use of Polygon zkEVM in the [<ins>Disclosures</ins>]() section.
+    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures]() section.
 
 Users can deposit assets from Ethereum and transact off-chain on Polygon zkEVM. For moving assets across chains (L1 &harr; zkEVM), you will need to use the zkEVM Bridge. The bridge interface is available for both Mainnet Beta and Testnet in the [Polygon Wallet Suite](https://wallet.polygon.technology/zkEVM/bridge).
 

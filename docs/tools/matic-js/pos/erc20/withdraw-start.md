@@ -13,4 +13,3 @@ const txReceipt = await result.getReceipt();
 ```
 
 The received transaction hash will be used to exit the withdraw process. So we recommend to store it.
-

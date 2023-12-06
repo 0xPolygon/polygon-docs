@@ -121,7 +121,7 @@ You will be asked to set up a password for your account! After completing the st
 
 !!! note
 
-    Mnemonic phrases can be used to recover an account or import the account to other [<ins>non-custodial wallets</ins>](https://www.quicknode.com/guides/web3-sdks/how-to-do-a-non-custodial-transaction-with-quicknode). The account you see in the image above was just created for this guide.
+    Mnemonic phrases can be used to recover an account or import the account to other [non-custodial wallets](https://www.quicknode.com/guides/web3-sdks/how-to-do-a-non-custodial-transaction-with-quicknode). The account you see in the image above was just created for this guide.
 
 Copy the account address so that we can get some test MATIC, which will be required to deploy our contract.
 

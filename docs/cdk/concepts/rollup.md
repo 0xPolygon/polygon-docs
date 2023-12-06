@@ -1,4 +1,4 @@
-Rollups are blockchain layer 2 scaling solutions that speed up the network by *rolling up* multiple transactions into batches which are eventually committed to the layer 1. 
+Rollups are blockchain layer 2 scaling solutions that speed up the network by *rolling up* multiple transactions into batches which are eventually committed to the layer 1.
 
 CDK provides zkEVM rollup solutions.
 

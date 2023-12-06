@@ -1,5 +1,5 @@
 !!! caution "Content disclaimer"
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 **Particle Network** is the Intent-Centric, Modular Access Layer of Web3. With Particle's Wallet-as-a-Service, developers can curate unparalleled user experience through modular and customizable EOA/AA embedded wallet components. By utilizing MPC-TSS for key management, Particle can streamline onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
 
@@ -15,6 +15,7 @@ Particle Wallet itself is available either in an application-embedded format, de
 - **Key management mechanism**: MPC-TSS.
 
 ## Integrating Particle Auth
+
 The [Particle Auth](https://docs.particle.network/developers/auth-service/sdks/web) SDK represents the primary method of facilitating connection (wallet generation or login) and interaction with Particle.
 
 #### Install dependencies
@@ -22,7 +23,9 @@ The [Particle Auth](https://docs.particle.network/developers/auth-service/sdks/w
 ```js
 yarn add @particle-network/auth @particle-network/provider
 ```
+
 OR
+
 ```js
 npm install --save @particle-network/auth @particle-network/provider
 ```
@@ -61,6 +64,7 @@ window.web3 = new Web3(particleProvider);
 ````
 
 #### Facilitating login/connection
+
 ````js
 if (!particle.auth.isLogin()) {
     // Request user login if needed, returns current user info

@@ -1,10 +1,10 @@
-!!! note "Content disclaimer"   
+!!! note "Content disclaimer"
 
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 !!! tip "Quickstart"
 
-    Check out **[<ins>this introductory video</ins>](https://www.youtube.com/watch?v=qhibXxKANWE)**
+    Check out **[this introductory video](https://www.youtube.com/watch?v=qhibXxKANWE)**
     to get started.
 
 ## Supported endpoints
@@ -13,7 +13,7 @@ All [__Class A__](https://www.covalenthq.com/docs/api/#tag--Class-A) endpoints a
 
 !!! info "Endpoints"
 
-    A full list of all the requests you are able to do on the Polygon network using Covalent are available on the [<ins>Covalent API documentation</ins>](https://www.covalenthq.com/docs/api/).
+    A full list of all the requests you are able to do on the Polygon network using Covalent are available on the [Covalent API documentation](https://www.covalenthq.com/docs/api/).
 
 ## Appendix
 

@@ -87,6 +87,7 @@ Edit `~/zkevm/mainnet/config/environments/testnet/public.node.config.toml` with 
 ??? "Click to expand the <code>node.config.toml</code> file"
     ```bash
     vim ~/zkevm/mainnet/config/environments/testnet/public.node.config.toml
+
 ```
 
     ```bash

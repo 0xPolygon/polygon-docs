@@ -1,5 +1,5 @@
 !!! caution "Content disclaimer"
-    Please view the third-party content disclaimer [<ins>here</ins>](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
 
 This page demonstrates the process of configuring/adding custom tokens to Metamask.
 
@@ -16,7 +16,7 @@ First, choose the appropriate network for the new token on your Metamask's home 
 It will then navigate you to a new screen. On the Import Tokens screen, copy-paste an address in the Token Address field.
 
 !!! info
-    To illustrate this process, we are using an **ERC20-TESTV4** token on the **Goerli network**. Find other test tokens from other networks [<ins>here</ins>](#tokens-and-contract-adresses).
+    To illustrate this process, we are using an **ERC20-TESTV4** token on the **Goerli network**. Find other test tokens from other networks [here](#tokens-and-contract-adresses).
 
 <center>
 ![img](../../../img/tools/wallet/metamask/develop/token-contract-address.png){ width="50%" }
