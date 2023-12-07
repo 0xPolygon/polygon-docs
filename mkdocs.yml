@@ -184,7 +184,6 @@ nav:
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
-        - CIRCOM: zkEVM/concepts/circom-intro-brief.md
         - Sparse merkle trees:
           - Merkle trees: zkEVM/concepts/sparse-merkle-trees/sparse-merkle-tree.md
           - Constructing simple SMTs: zkEVM/concepts/sparse-merkle-trees/simple-smt.md
@@ -203,6 +202,7 @@ nav:
           - Ending programs: zkEVM/concepts/generic-state-machine/ending-program.md
           - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
           - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
+        - CIRCOM: zkEVM/concepts/circom-intro-brief.md
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:

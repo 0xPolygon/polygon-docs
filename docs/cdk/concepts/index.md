@@ -1,1 +1,1 @@
-Welcome to Concepts
+Welcome to the Concepts section.
