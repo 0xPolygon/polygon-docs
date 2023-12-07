@@ -1,5 +1,6 @@
-
 Developers who wish to test their own smart contracts, experiment with new code, or simply test a zk-rollup network on their local machines can do so by setting up Polygon zkEVM's local development environment.
+
+Developers can setup a node with either the Polygon zkEVM's mainnet or the testnet.
 
 This tutorial is a guide to setting up a local but single zkEVM node. It is _single_ because it has no connections to external peers. It is a sandbox environment existing only on the user's local machine.
 

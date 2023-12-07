@@ -425,7 +425,10 @@ nav:
           - zkEVM testnet: https://explorer-ui.mainnet.zkevm-test.net/
           - OKLink: https://www.oklink.com/polygon
   - Learn:
-      - learn/index.md
+      - Learn: learn/index.md
+      - Unified liquidity and scalability: learn/liquidity-and-scalability.md
+      - Polygon protocols: learn/polygon-protocols.md
+      - Polygon 2.0 architecture: learn/deep-dive-arch.md
 
 extra:
   generator: false
