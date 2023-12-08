@@ -16,8 +16,6 @@ theme:
   language: en
   favicon: img/favicon.ico
   logo: img/logo.png
-  font:
-    text: Generalsans
   features:
     - search.suggest
     - search.highlight

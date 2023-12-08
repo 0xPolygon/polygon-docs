@@ -14,6 +14,7 @@ h1 {
 	font-weight: 1000 !important;
 	line-height: 44px;
 	color: var(--main-black) !important;
+	font-family: Generalsans !important;
 }
 
 h2 {
@@ -23,6 +24,7 @@ h2 {
 	font-weight: 600 !important;
 	line-height: 36px;
 	color: var(--main-black) !important;
+	font-family: Generalsans !important;
 }
 
 div.main h3 {
@@ -35,6 +37,11 @@ h3 {
 	font-weight: 600 !important;
 	line-height: 1.2;
 	color: var(--main-black) !important;
+	font-family: Generalsans !important;
+}
+
+h4, h5 {
+	font-family: Generalsans !important;
 }
 
 div.main p {
