@@ -1,19 +1,23 @@
-If you are an Ethereum developer, you are already a Polygon developer. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All the tools you are familiar with on the Ethereum blockchain are supported on Polygon by default, such as Truffle, Remix, and Web3js.
+Ethereum developers are by default Polygon developers. Welcome. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All familiar tools used on Ethereum are supported on Polygon. Whether it is Truffle, Remix or Web3js, Polygon offers the same UX as Ethereum.
 
-You can deploy decentralized applications to either Polygon Mumbai Testnet or the Mainnet. The Polygon Mumbai Testnet connects with the Ethereum Goërli Testnet, which acts as its ParentChain. You can find all the network-related details in the [network documentation](https://github.com/0xPolygon/wiki/blob/master/docs/operate/network.md).
+Connect your wallet and deploy any decentralized application to either Polygon Mainnet or Polygon Mumbai Testnet. 
+
+Polygon Mumbai Testnet connects to Ethereum Goërli Testnet, which acts as its ParentChain, a testnet layer 1 (L1). 
+
+Find all the network-related details in the [network documentation](https://github.com/0xPolygon/wiki/blob/master/docs/pos/reference/rpc-endpoints.md).
+
 
 ## Overview
 
-Polygon consists of the three following layers:
+Polygon is a layer 2 (L2) network to Ethereum, employing a proof-of-stake (PoS) consensus mechanism, and thus composed of the following two layers:
 
-- Ethereum layer — a set of contracts on the Ethereum mainnet.
-- Heimdall layer — a set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
-- Bor layer — a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
+  - Heimdall layer, a consensus layer consisting of a set of proof-of-stake Heimdall nodes for monitoring staking contracts deployed on the Ethereum mainnet, and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
+  - Bor layer, an execution layer which  is made up of a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum (Geth).
 
-To be a validator on the Polygon Network, you must run:
+In order to be a validator on the Polygon Network, you need to:
 
-- Sentry node — a separate machine running a Heimdall node and a Bor node. A sentry node is open to all nodes on the Polygon Network.
-- Validator node — a separate machine running a Heimdall node and a Bor node. A validator node is only open to its sentry node and closed to the rest of the network.
+- Run a sentry node, which is a separate machine running a Heimdall node and a Bor node. A sentry node is open to all nodes on the Polygon Network.
+- Run a validator node, which is a separate machine running a Heimdall node and a Bor node. A validator node is only open to its sentry node and closed to the rest of the network.
 - Stake the MATIC tokens in the staking contracts deployed on the Ethereum mainnet.
 
 ## Wallets
