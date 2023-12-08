@@ -24,7 +24,7 @@ The CDK validium DAC is a secure consortium of nodes that ensures off-chain data
 
 ## DAC data flow
 
-![CDK validium DAC dataflow](../../img/cdk/zksupernets-dac.png)
+![CDK validium DAC dataflow](../../img/cdk/cdk-val-dac-02.png)
 
 The DAC works together with the sequencer to control the flow of data. The process can be broken down as follows:
 

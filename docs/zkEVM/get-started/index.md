@@ -1,4 +1,4 @@
-This documentation contains guides on how to connect wallets to the Polygon zkEVM network, deploy new or existing Ethereum smart contracts, and bridge assets between Polygon zkEVM and Ethereum.
+This section of the documentation contains guides on how to connect wallets to the Polygon zkEVM network, deploy new or existing Ethereum smart contracts, and bridge assets between Polygon zkEVM and Ethereum.
 
 Developers can herein find guides to setting up an RPC zkNode, spinning up a production zkNode, or even implementing their own fully-fledged zkEVM.
 
