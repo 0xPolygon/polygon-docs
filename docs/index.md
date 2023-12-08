@@ -10,7 +10,7 @@ hide:
 			<div class="section-wrapper">
 				<div class="hero-content-flex">
 					<div class="hero-left">
-						<h1 class="hero-heading">The Polygon Technical Knowledge Library</h1>
+						<h1 class="hero-heading">The Polygon Knowledge Layer</h1>
 						<p class="hero-subext">Welcome to the resource center for Polygon protocols and technology. Learn to build dApps, how to configure and launch blockchains as Layer 2s on Ethereum, and read the latest Polygon’s research on the zero-knowledge scaling technologies being built at Polygon Labs.</p>
 					</div>
 					<div class="hero-right"><img src="img/home/main-img.svg" loading="lazy" alt="" class="hero-image"></div>
