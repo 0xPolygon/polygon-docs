@@ -269,8 +269,8 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
-      - Specification:
-          - Specification: pos/spec/index.md
+      # - Specification:
+      #     - Specification: pos/spec/index.md
       - Concepts:
           - Concepts: pos/concepts/index.md
           - Tokens:
@@ -282,8 +282,8 @@ nav:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
-      - API:
-          - pos/api/index.md
+      # - API:
+      #     - pos/api/index.md
   - Miden:
       - Miden: miden/index.md # marketing landing page
       - Get started: miden/get-started/index.md
