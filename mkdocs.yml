@@ -10,23 +10,14 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   palette:
-    # Palette toggle for light mode
     - scheme: default
       primary: white
       accent: purple
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Palette toggle for dark mode
-    - scheme: slate
-      primary: black
-      accent: purple
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
   language: en
   favicon: img/favicon.ico
   logo: img/logo.png
+  font:
+    text: Generalsans
   features:
     - search.suggest
     - search.highlight
@@ -465,8 +456,8 @@ extra:
       make our documentation better.
 
 extra_css:
+  - _site_essentials/stylesheets/polygon-docs.webflow.css
   - _site_essentials/stylesheets/extra.css
-  - _site_essentials/stylesheets/section-nav.css
   - https://fonts.googleapis.com/icon?family=Material+Icons
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
@@ -518,10 +509,9 @@ validation:
   absolute_links: warn
 
 extra_javascript:
-  - js/mathjax.js
+  - _site_essentials/js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - js/katex.js 
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
