@@ -41,19 +41,4 @@ div.flex-figure div.flex-figure-left {
 div.flex-figure div.flex-figure-right {
 	flex-grow: 1;
 	flex-shrink: 1.5;
-<<<<<<< Updated upstream
 }
-=======
-}
-
-/*
-.md-footer, .md-footer__inner, .md-footer-meta {
-	background-color: black;
-}
-*/
-
-/* THIS CSS REMOVED THE NAVIGATION IN THE FOOTER
-.md-footer__inner {
-	display: none !important;
-}*/
->>>>>>> Stashed changes
