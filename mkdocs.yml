@@ -277,7 +277,7 @@ nav:
       - Get started: miden/get-started/index.md
       - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
   - Tools: 
-      - tools/index.md
+      - Tools: tools/index.md
       - Smart contract development: 
           - Hardhat: tools/smart-contracts/hardhat.md
           - Truffle: tools/smart-contracts/truffle.md
@@ -297,10 +297,10 @@ nav:
           - PARSIQ: tools/data/parsiq.md
       - Matic.js:
           - POS:
+              - Get started:  tools/matic-js/get-started.md
               - Installation:  tools/matic-js/installation.md
               - POS client:  tools/matic-js/pos/client.md
               - API overview:  tools/matic-js/api-architecture.md
-              - Get started:  tools/matic-js/get-started.md
               - Setup:
                   - Ethers:  tools/matic-js/setup/ethers.md
                   - Web3js:  tools/matic-js/setup/web3js.md
