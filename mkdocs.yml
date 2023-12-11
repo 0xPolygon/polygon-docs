@@ -201,6 +201,7 @@ nav:
         - Building on Polygon: pos/get-started/building-on-polygon.md
       - How to:
         - How to: pos/how-to/index.md
+        - Restore from snapshots: pos/how-to/snapshots.md
         - Operate a node:
           - Operate a node: pos/how-to/operating/index.md
           - Full node:
@@ -227,7 +228,6 @@ nav:
           - L1-L2 communication:
             - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
             - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
-            - Bridging with FxPortal: pos/how-to/bridging/l1-l2-communication/fx-portal.md
         - Work with smart contracts:
           - Work with smart contracts: pos/how-to/smart-contracts/index.md
           - Alchemy: pos/how-to/smart-contracts/alchemy.md
@@ -244,7 +244,6 @@ nav:
             - Bor: pos/architecture/bor/index.md
             - State sync: pos/architecture/bor/state-sync.md
             - Network configuration: pos/architecture/bor/network-config.md
-            - Snapshots: pos/architecture/bor/snapshots.md
             - Commands: pos/architecture/bor/commands.md
           - Heimdall:
             - Heimdall: pos/architecture/heimdall/index.md
