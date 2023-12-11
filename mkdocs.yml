@@ -88,7 +88,7 @@ nav:
           - Install dependencies: zkEVM/get-started/deploy-zkevm/install-dependencies.md
           - Create wallets: zkEVM/get-started/deploy-zkevm/create-wallets.md
           - Deploy zkNode: zkEVM/get-started/deploy-zkevm/deploy-zknode.md
-          - Configure prover: zkEVM/get-started/deploy-zkevm/configure-prover.md
+          - Configure Prover: zkEVM/get-started/deploy-zkevm/configure-prover.md
           - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
           - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
       - How to:
@@ -99,8 +99,8 @@ nav:
         - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
-        - zkEVM Protocol:
-          - zkEVM Protocol: zkEVM/architecture/protocol/index.md
+        - zkEVM protocol:
+          - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - State management: zkEVM/architecture/protocol/state-management.md
           - Trasaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
@@ -266,8 +266,8 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
-      # - Specification:
-      #     - Specification: pos/spec/index.md
+      #- Specification:
+      #    - Specification: pos/spec/index.md
       - Concepts:
           - Concepts: pos/concepts/index.md
           - Tokens:
@@ -279,12 +279,13 @@ nav:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
-      # - API:
-      #     - pos/api/index.md
+    #  - API:
+    #      - pos/api/index.md
   - Miden:
       - Miden: miden/index.md
       - Overview: miden/overview.md
       - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
+      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Tools: 
       - Tools: tools/index.md
       - Smart contract development: 

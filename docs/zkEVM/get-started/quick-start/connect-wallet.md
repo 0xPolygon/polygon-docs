@@ -1,10 +1,9 @@
-
 !!!caution
-    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures]() section.
+    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures](../../troubleshooting/risk-disclosures.md) section.
 
 Connect to either the Polygon zkEVM's mainnet or the testnet. 
 
-Add the Polygon zkEVM network of your choice to your wallet by navigating to `Add network`, and enter the respective network details as given in the below table:
+Add the Polygon zkEVM network of your choice to your wallet by navigating to the add network input, and enter the respective network details as given in the below table:
 
 | Network | RPC URL | ChainID | Block Explorer URL | Currency |
 | ------- | ------------------------------- | ---------------- | ---------------- | ----- |

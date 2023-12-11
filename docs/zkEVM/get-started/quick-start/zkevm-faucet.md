@@ -1,6 +1,5 @@
-
 !!!caution
-    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures]() section.
+    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures](../../troubleshooting/risk-disclosures.md) section.
 
 Polygon faucet is the official tool provided by Polygon Labs to obtain Testnet tokens. It is a faucet that is similar to what ecosystem partners like Alchemy provide.
 
@@ -20,11 +19,11 @@ Here is how to use the Polygon zkEVM faucet:
 
 - Select the type of Testnet token that you want to receive. In our case, we only have the option to receive **zkEVM ETH** which is also the default option.
 
-- Enter your **wallet address** (you can copy it from your MetaMask or any wallet that supports testnet tokens)
+- Enter your **wallet address** (you can copy it from your MetaMask or any wallet that supports testnet tokens).
 
-- Click on the **Submit** button to send your token request
+- Click on the **Submit** button to send your token request.
 
-- Click **Confirm** to finalize the transaction
+- Click **Confirm** to finalize the transaction.
 
 ![Figure: confirm-tx](../../../img/zkEVM/zkv-confirm-zketh.png)
 

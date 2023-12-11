@@ -1,9 +1,9 @@
 
 Hardhat is one of the popular smart contract development frameworks. It is the Polygon zkEVM's preferred framework, and therefore used in the zkEVM as a default for deploying and automatically verifying smart contracts.
 
-This document is a guide on how to deploy a smart contract on the Polygon zkEVM network using Hardhat. Feel free to check out the tutorial video available [here](https://www.youtube.com/watch?v=GNBHDCGFxtw)
+This document is a guide on how to deploy a smart contract on the Polygon zkEVM network using Hardhat. Feel free to check out the tutorial video available [here](https://www.youtube.com/watch?v=GNBHDCGFxtw).
 
-## Initial Setup
+## Initial setup
 
 !!!info
 
@@ -17,7 +17,7 @@ This document is a guide on how to deploy a smart contract on the Polygon zkEVM 
     git clone https://github.com/oceans404/fullstack-zkevm
     ```
 
-- Install dependencies and start React app (you can copy all three lines in one go)
+- Install dependencies and start React app (you can copy all three lines in one go).
 
     ```bash
     cd fullstack-zkevm
@@ -36,7 +36,7 @@ This document is a guide on how to deploy a smart contract on the Polygon zkEVM 
 - Populate the `.env.sample` file with your `ACCOUNT_PRIVATE_KEY`
 
 <details>
-<summary>How to get your Private Key in Metamask</summary>
+<summary>How to get your private key in MetaMask</summary>
 
 - Click the vertical 3 dots in the upper-right corner of Metamask window
 
@@ -54,7 +54,7 @@ This document is a guide on how to deploy a smart contract on the Polygon zkEVM 
     cp .env.sample .env
     ```
 
-## Hardhat Smart Contract
+## Hardhat smart contract
 
 Next is the initialization of a project using Hardhat. Hardhat cannot initialize a sample project if there is an existing README file. To avoid clashes, rename any existing `README.md` temporarily before initializing Hardhat.
 
@@ -62,9 +62,9 @@ Next is the initialization of a project using Hardhat. Hardhat cannot initialize
 mv README.md README-tutorial.md
 ```
 
-- Initialize a project with Hardhat: ```npx hardhat```
+- Initialize a project with Hardhat: ```npx hardhat```.
 
-- Next, (... *To avoid failure ... Please go slow with this CLi dialog*...),
+- Next, (... *To avoid failure ... please go slow with this cli dialogue*...),
 
     The aim here is to achieve the following outcome:
 
@@ -72,9 +72,9 @@ mv README.md README-tutorial.md
 
     So then,
 
-  - **Press** `<ENTER>` to set the project root
-  - **Press** `<ENTER>` again to accept addition of `.gitignore`
-  - **Type** `n` to reject installing `sample project's dependencies`
+  - Press `<ENTER>` to set the project root.
+  - Press `<ENTER>` again to accept addition of `.gitignore`.
+  - Type `n` to reject installing `sample project's dependencies`.
 
     The idea here is to postpone installing dependencies to later steps due to a possible version-related bug.
 
@@ -101,9 +101,9 @@ mv README.md README-tutorial.md
 
     Note that a different path to artifacts is added so that the React app will be able to read the contract ABI within the `src` folder.
 
-## Add Scripts
+## Add scripts
 
-- Create a new file, in the contracts folder, named `Counter.sol`: ```touch contracts/Counter.sol```
+- Create a new file, in the contracts folder, named `Counter.sol`: ```touch contracts/Counter.sol```.
 
 - Copy the below code and paste it in the Counter contract code:
 
@@ -124,7 +124,7 @@ mv README.md README-tutorial.md
     }
     ```
 
-- Create a new file in the scripts folder `deploy-counter.js`: ```touch scripts/deploy-counter.js```
+- Create a new file in the scripts folder `deploy-counter.js`: ```touch scripts/deploy-counter.js```.
 
 - Add the code below to the `deploy-counter.js` file:
 
@@ -151,7 +151,7 @@ mv README.md README-tutorial.md
     npm install --save-dev @nomicfoundation/hardhat-toolbox
     ```
 
-- Compile your contract code (i.e., go back to the project root in the CLI),
+- Compile your contract code (i.e., go back to the project root in the CLI):
 
     ```bash
     npx hardhat compile
@@ -167,7 +167,7 @@ mv README.md README-tutorial.md
 
     `Counter contract deployed to https://explorer.public.zkevm-test.net/address/0x5FbDB2315678afecb367f032d93F642f64180aa3`
 
-## Update Frontend
+## Update frontend
 
 The next step is to turn `Counter.sol` into a dApp by importing the `ethers` and the `Counter` file, as well as logging the contract's ABI.
 
@@ -182,9 +182,9 @@ The next step is to turn `Counter.sol` into a dApp by importing the `ethers` and
 
 - Update the `counterAddress` to your deployed address.
 
-    It is the hexadecimal number found at the tail-end of the output of the last `npx hardhat run ...` command and looks like this `0x5FbDB2315678afecb367f032d93F642f64180aa3`.
+    - It is the hexadecimal number found at the tail-end of the output of the last `npx hardhat run ...` command and looks like this `0x5FbDB2315678afecb367f032d93F642f64180aa3`.
 
-    It must be pasted in the `App.js` to replace `your-contract-address`. Be sure to use the deployed address from your own implementation!
+    - It must be pasted in the `App.js` to replace `your-contract-address`. Be sure to use the deployed address from your own implementation!
 
 - Update frontend counter to read from blockchain. Include the below code in the `App.js` file:
 
@@ -228,7 +228,7 @@ The next step is to turn `Counter.sol` into a dApp by importing the `ethers` and
     }
     ```
 
-- Also, to import `useEffect`, insert it like this
+- Also, to import `useEffect`, insert it like this:
 
     ```js
     import { useState, useEffect } from "react";
@@ -240,7 +240,7 @@ The next step is to turn `Counter.sol` into a dApp by importing the `ethers` and
     const [isLoading, setIsLoading] = useState(false);
     ```
 
-    This is within the `App()` function.
+    - This is within the `App()` function.
 
 - Let frontend counter write to the blockchain by adding the below `requestAccount` and `updateCounter` functions:
 
@@ -289,4 +289,4 @@ The next step is to turn `Counter.sol` into a dApp by importing the `ethers` and
 
 Now, run the Counter dApp by simply using `npm start` in CLI at the project root.
 
-**Congratulations** for reaching this far. You have successfully deployed a dApp on the Polygon zkEVM Testnet.
+Congratulations for reaching this far. You have successfully deployed a dApp on the Polygon zkEVM testnet.

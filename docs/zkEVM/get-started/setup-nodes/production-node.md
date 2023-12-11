@@ -17,7 +17,7 @@ Please check the [official docker-compose installation guide](https://docs.docke
 
 It is highly recommended that you create a separate folder for installing and working around the zkNode. We won't be cloning any repository (unlike [local zkNode setup](local-node.md)) so it's better to create a folder before starting the zkNode setup: ```mkdir -p /$HOME/zkevm-node```.
 
-### Minimum System Requirements
+### Minimum system requirements
 
 !!!caution
     The zkProver does not work on ARM-based Macs yet. For Windows users, the use of WSL/WSL2 is not recommended.
@@ -33,20 +33,18 @@ It is highly recommended that you create a separate folder for installing and wo
     Also, how frequent batches are closed is subject to change as it depends on the prevailing configurations.
     The batch rate will always need to be updated accordingly.
 
-### Network Components
+### Network components
 
 Here is a list of crucial network components that are required before you can run the production zkNode:
 
 - An Ethereum Node, which could be Geth or any service providing a JSON RPC interface for accessing the L1 network can be used.
-- zkEVM node (or zkNode), as the L2 Network
+- zkEVM node (or zkNode), as the L2 network.
 - Synchronizer, which is responsible for synchronizing data between L1 and L2.
 - A JSON RPC Server, which acts as an interface to the L2 network.
 
-Let's set up each of the above components!
+## Ethereum node setup
 
-## Ethereum Node Setup
-
-The Ethereum Node is the first component to be set up. And it is because the Ethereum network takes a long time to synchronise. So, we start synchronising the Ethereum Node, and then begin to setup other components while waiting for the synchronisation to complete.
+The Ethereum node is the first component to be set up. And it is because the Ethereum network takes a long time to synchronise. So, we start synchronising the Ethereum Node, and then begin to setup other components while waiting for the synchronisation to complete.
 
 There are numerous ways to set up an Ethereum L1 environment; we will use Geth for this. We recommend Geth, but a Goerli node will suffice.
 
@@ -54,7 +52,7 @@ Follow the instructions provided in this [guide to setup and install Geth](https
 
 If you plan to have more than one zkNode in your infrastructure, we advise using a machine that is specifically dedicated to this implementation.
 
-## zkNode Setup
+## zkNode setup
 
 Once the L1 installation is complete, we can start the zkNode setup. This is the most straightforward way to run a zkEVM node and it's fine for most use cases. However, if you want to provide service to a large number of users, you should modify the default configuration.
 
@@ -64,63 +62,63 @@ Let's start setting up our zkNode:
 
 1. Launch your command line/terminal and set the variables using below commands:
 
-  ```bash
-  # define the network("mainnet" or "testnet")
-  ZKEVM_NET=testnet
+    ```bash
+    # define the network("mainnet" or "testnet")
+    ZKEVM_NET=testnet
 
-  # define installation path
-  ZKEVM_DIR=./path_to_install
+    # define installation path
+    ZKEVM_DIR=./path_to_install
 
-  # define your config directory
-  ZKEVM_CONFIG_DIR=./path_to_config
-  ```
+    # define your config directory
+    ZKEVM_CONFIG_DIR=./path_to_config
+    ```
 
-2. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command.
+1. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command.
 
-  ```bash
-  curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/latest/download/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
-  ```
+    ```bash
+    curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/latest/download/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
+    ```
 
 3. Copy the `example.env` file with the environment parameters:
 
-```
-cp $ZKEVM_DIR/$ZKEVM_NET/example.env $ZKEVM_CONFIG_DIR/.env
+    ```sh
+    cp $ZKEVM_DIR/$ZKEVM_NET/example.env $ZKEVM_CONFIG_DIR/.env
 
-```
+    ```
 
 4. The `example.env` file must be modified according to your configurations.
 
-Edit the .env file with your favourite editor (we'll use nano in this guide): ```nano $ZKEVM_CONFIG_DIR/.env```
+    Edit the .env file with your favourite editor (we'll use nano in this guide): ```nano $ZKEVM_CONFIG_DIR/.env```
 
-  ```bash
-  # URL of a JSON RPC for Goerli
-  ZKEVM_NODE_ETHERMAN_URL = "http://your.L1node.url"
+      ```bash
+      # URL of a JSON RPC for Goerli
+      ZKEVM_NODE_ETHERMAN_URL = "http://your.L1node.url"
 
-  # PATH WHERE THE STATEDB POSTGRES CONTAINER WILL STORE PERSISTENT DATA
-  ZKEVM_NODE_STATEDB_DATA_DIR = "/path/to/persistent/data/stetedb"
+      # PATH WHERE THE STATEDB POSTGRES CONTAINER WILL STORE PERSISTENT DATA
+      ZKEVM_NODE_STATEDB_DATA_DIR = "/path/to/persistent/data/stetedb"
 
-  # PATH WHERE THE POOLDB POSTGRES CONTAINER WILL STORE PERSISTENT DATA
-  ZKEVM_NODE_POOLDB_DATA_DIR = "/path/to/persistent/data/pooldb"
-  ```
+      # PATH WHERE THE POOLDB POSTGRES CONTAINER WILL STORE PERSISTENT DATA
+      ZKEVM_NODE_POOLDB_DATA_DIR = "/path/to/persistent/data/pooldb"
+      ```
 
 5. To run the zkNode instance, run the following command:
 
-  ```bash
-  sudo docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d
-  ```
+    ```bash
+    sudo docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d
+    ```
 
 6. Run this command to check if everything went well and all the components are running properly:
 
-  ```bash
-  docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml ps
-  ```
+    ```bash
+    docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml ps
+    ```
 
-  You will see a list of the following containers:
-    - **zkevm-rpc**
-    - **zkevm-sync**
-    - **zkevm-state-db**
-    - **zkevm-pool-db**
-    - **zkevm-prover**
+    You will see a list of the following containers:
+      - **zkevm-rpc**
+      - **zkevm-sync**
+      - **zkevm-state-db**
+      - **zkevm-pool-db**
+      - **zkevm-prover**
 
 7. You should now be able to run queries to the JSON-RPC endpoint at `http://localhost:8545`.
 

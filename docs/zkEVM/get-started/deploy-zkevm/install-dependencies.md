@@ -1,5 +1,5 @@
 
-Continue with the **second step** of this deployment-guide where you install dependencies and download Mainnet files.
+Continue with the **second step** of this deployment-guide where you install dependencies and download mainnet files.
 
 ## Install dependencies
 
