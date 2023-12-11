@@ -3,4 +3,4 @@ Rollups are blockchain layer 2 scaling solutions that speed up the network by *r
 CDK provides zkEVM rollup solutions.
 
 !!! info "Recommended resource"
-    See Ethereum.org's detailed [description of zero-knowledge rollups](https://ethereum.org/en/developers/docs/scaling/zk-rollups/).
+    See [Ethereum.org's detailed description of zero-knowledge rollups](https://ethereum.org/en/developers/docs/scaling/zk-rollups/).
