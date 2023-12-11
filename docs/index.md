@@ -11,7 +11,7 @@ hide:
 				<div class="hero-content-flex">
 					<div class="hero-left">
 						<h1 class="hero-heading">The Polygon Knowledge Layer</h1>
-						<p class="hero-subext">Welcome to the resource center for Polygon protocols and technology. Learn to build dApps, how to configure and launch blockchains as Layer 2s on Ethereum, and read the latest Polygon’s research on the zero-knowledge scaling technologies being built at Polygon Labs.</p>
+						<p class="hero-subext">Welcome to the technical documentation and knowledge resources for Polygon protocols and scaling technologies. Here you can learn how to build and deploy dApps, launch ZK rollups and validiums as Layer 2s on Ethereum, spin up nodes, and learn all about the latest in ZK research.</p>
 					</div>
 					<div class="hero-right"><img src="img/home/main-img.svg" loading="lazy" alt="" class="hero-image"></div>
 				</div>
@@ -165,17 +165,9 @@ hide:
 						<p class="home-section-subtext">Are you ready to start building?</p>
 					</div>
 					<div class="flexbox">
-						<a href="pos/get-started/building-on-polygon/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+						<a href="zkEVM/get-started/deploy-zkevm/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
-								<div class="feature-content-name">Polygon PoS: Build a new dApp</div>
-								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
-										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
-									</svg></div>
-							</div>
-						</a>
-						<a href="pos/how-to/smart-contracts/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
-							<div class="feature-content-wrapper">
-								<div class="feature-content-name">Polygon PoS: Deploy an existing smart contract</div>
+								<div class="feature-content-name">Polygon CDK: Deploy a local test rollup</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
@@ -191,8 +183,24 @@ hide:
 								</div>
 							</div>
 						</a>
+						<a href="pos/get-started/building-on-polygon/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content-wrapper">
+								<div class="feature-content-name">Polygon PoS: Build a new dApp</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+							</div>
+						</a>
 					</div>
 					<div class="flexbox items-4">
+						<a href="pos/how-to/smart-contracts/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content-wrapper">
+								<div class="feature-content-name">Polygon PoS: Deploy an existing smart contract</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+							</div>
+						</a>
 						<a href="zkEVM/get-started/setup-nodes/production-node/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
 								<div class="feature-content-name">Polygon zkEVM: Set up a zkNode</div>
@@ -204,14 +212,6 @@ hide:
 						<a href="cdk/get-started/quickstart-validium/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
 								<div class="feature-content-name">Polygon CDK: Create your own validium</div>
-								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
-										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
-									</svg></div>
-							</div>
-						</a>
-						<a href="zkEVM/get-started/deploy-zkevm/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
-							<div class="feature-content-wrapper">
-								<div class="feature-content-name">Polygon CDK: Deploy a local test rollup</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>

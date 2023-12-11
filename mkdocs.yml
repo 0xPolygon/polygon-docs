@@ -14,8 +14,14 @@ theme:
       primary: white
       accent: purple
   language: en
+  custom_dir: overrides
   favicon: img/favicon.ico
-  logo: img/logo.png
+  icons:
+    logo: tkd/logo
+    repo: tkd/repo
+  font:
+    text: Roboto
+    code: Roboto Mono
   features:
     - search.suggest
     - search.highlight
@@ -41,6 +47,7 @@ nav:
   - Home: index.md
   - CDK:
       - CDK: cdk/index.md
+      - Overview: cdk/overview.md
       - Get started:
         - Get started: cdk/get-started/index.md
         - Quickstart:
@@ -65,7 +72,8 @@ nav:
       - Additional resources:
         - Additional resources: cdk/troubleshooting/index.md
   - zkEVM:
-      - zkEVM: zkEVM/index.md # marketing landing page
+      - zkEVM: zkEVM/index.md
+      - Overview: zkEVM/overview.md
       - Get started:
         - Get started: zkEVM/get-started/index.md
         - Quick start:
@@ -195,7 +203,8 @@ nav:
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
-      - PoS: pos/index.md # marketing landing page
+      - PoS: pos/index.md
+      - Overview: pos/overview.md
       - Get started: 
         - Get started: pos/get-started/index.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
@@ -273,8 +282,8 @@ nav:
       # - API:
       #     - pos/api/index.md
   - Miden:
-      - Miden: miden/index.md # marketing landing page
-      - Get started: miden/get-started/index.md
+      - Miden: miden/index.md
+      - Overview: miden/overview.md
       - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
   - Tools: 
       - tools/index.md
@@ -487,6 +496,12 @@ markdown_extensions:
   - meta
   - smarty
   - pymdownx.extra
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
 
 plugins:
   - search
@@ -509,4 +524,3 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
