@@ -3,11 +3,11 @@ Data availability in blockchain technology refers to whether or not transaction 
 If data is available on-chain, then each node has to store every piece of data related to every transaction. This can be costly for node operators as hardware and storage requirements are high. Moving data off-chain streamlines node architecture and operations.
 
 !!! info "Recommended resource"
-    See Ethereum.org's discussion on [data availability](https://ethereum.org/en/developers/docs/data-availability/).
+    See [Ethereum.org's discussion on data availability](https://ethereum.org/en/developers/docs/data-availability/).
 
-## Data availability committees
+## Data availability committee (DAC)
 
-Polygon's CDK validium has an optional data availability committee (DAC).
+Polygon's CDK validium has an optional DAC.
 
 A DAC is an off-chain network of nodes that implements a data storage layer in a modular chain architecture like CDK. Some advantages are:
 
@@ -24,7 +24,7 @@ The CDK validium DAC is a secure consortium of nodes that ensures off-chain data
 
 ## DAC data flow
 
-![CDK validium DAC dataflow](../../img/cdk/cdk-val-dac-02.png)
+![CDK validium data availability dataflow](../../img/cdk/cdk-val-dac-02.png)
 
 The DAC works together with the sequencer to control the flow of data. The process can be broken down as follows:
 
