@@ -83,34 +83,35 @@ With Docker running and storage prepared, it's time to set up Heimdall:
 
 1. Test Heimdall with Docker:
 
-   ```bash
-   docker run -it 0xpolygon/heimdall:1.0.3 heimdallcli version
-   ```
+      ```bash
+         docker run -it 0xpolygon/heimdall:1.0.3 heimdallcli version
+      ```
 
-2. Initialize Heimdall's home directory:
+   2. Initialize Heimdall's home directory:
 
-   ```bash
-   docker run -v /mnt/data/heimdall:/heimdall-home:rw --entrypoint /usr/bin/heimdalld -it 0xpolygon/heimdall:1.0.3 init --home=/heimdall-home
-   ```
+      ```bash
+         docker run -v /mnt/data/heimdall:/heimdall-home:rw --entrypoint /usr/bin/heimdalld -it 0xpolygon/heimdall:1.0.3 init --home=/heimdall-home
+      ```
 
-3. Edit `config.toml` in `/mnt/data/heimdall/config`:
+   3. Edit `config.toml` in `/mnt/data/heimdall/config`:
 
-   - Set `moniker` to a unique node name.
-   - Change `laddr` to `tcp://0.0.0.0:26657`.
-   - Update `seeds` with the latest list (found in the section on seed nodes and bootnodes).
+      - Set `moniker` to a unique node name.
+      - Change `laddr` to `tcp://0.0.0.0:26657`.
+      - Update `seeds` with the latest list (found in the section on seed nodes and bootnodes).
 
-4. Edit `heimdall-config.toml`:
+   4. Edit `heimdall-config.toml`:
 
-   - Set `eth_rpc_url` to your Ethereum Mainnet RPC URL.
-   - Change `bor_rpc_url` to `<http://bor:8545>
+      - Set `eth_rpc_url` to your Ethereum Mainnet RPC URL.
+      - Change `bor_rpc_url` to `<http://bor:8545>`.
 
-`.
+   5. Update the `genesis.json` for Mainnet:
 
-5. Update the `genesis.json` for Mainnet:
 
-   ```bash
-   sudo curl -o /mnt/data/heimdall/config/genesis.json https://raw.githubusercontent.com/maticnetwork/heimdall/master/builder/files/genesis-mainnet-v1.json
-   ```
+      ```bash
+         sudo curl -o /mnt/data/heimdall/config/genesis.json https://raw.githubusercontent.com/maticnetwork/heimdall/master/builder/files/genesis-mainnet-v1.json
+      ```
+
+      
 
    Verify the hash with `sha256sum genesis.json`.
 

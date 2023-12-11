@@ -6,8 +6,6 @@
 
     Polygon technical documentation serves as an industry public good and is made available under the [MIT License](https://opensource.org/license/mit/). In addition, please view the official [Polygon Labs Terms of Use](https://polygon.technology/terms-of-use).
 
-This tutorial is for developers who are either new to Ethereum blockchain development or want to understand the fundamentals of deploying and interacting with smart contracts. It will walk you through creating and deploying a smart contract on the Polygon Mumbai test network using a cryptocurrency wallet ([Metamask](https://metamask.io)), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org), and [Alchemy](https://alchemy.com/?a=polygon-docs).
-
 ## What you will learn
 
 To create a smart contract in this tutorial, you will learn how to use Alchemy's platform to:

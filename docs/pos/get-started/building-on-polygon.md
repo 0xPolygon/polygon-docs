@@ -22,15 +22,15 @@ In order to be a validator on the Polygon Network, you need to:
 
 ## Wallets
 
-To interact with the Polygon Network, you need to have an Ethereum-based wallet because Polygon runs on Ethereum Virtual Machine (EVM). You can choose to set up a [Metamask](https://github.com/0xPolygon/wiki/blob/master/docs/tools/wallets/metamask/overview.md) or [Arkane](https://github.com/0xPolygon/wiki/blob/master/docs/develop/wallets/arkane/intro_arkane.md) Wallet. More on wallet-related information and why you need one can be found in our [wallet documentation](https://docs.polygon.technology/docs/develop/wallets/getting-started).
+To interact with the Polygon Network, you need to have an Ethereum-based wallet because Polygon runs on Ethereum Virtual Machine (EVM). You can choose to set up a [Metamask](https://github.com/0xPolygon/wiki/blob/master/docs/tools/wallets/metamask/overview.md) or Arkane Wallet.
 
 ## Smart contracts
 
-Polygon supports many services you can use to test, compile, debug, and deploy decentralized applications onto the Polygon Network. These include deployment using [thirdweb](https://github.com/0xPolygon/wiki/blob/master/docs/develop/thirdweb.md), [Alchemy](https://github.com/0xPolygon/wiki/blob/master/docs/develop/alchemy.md), [Chainstack](https://github.com/0xPolygon/wiki/blob/master/docs/develop/chainstack.md), [QuickNode](https://github.com/0xPolygon/wiki/blob/master/docs/develop/quicknode.md), [Remix](https://github.com/0xPolygon/wiki/blob/master/docs/develop/remix.md), [Truffle](https://github.com/0xPolygon/wiki/blob/master/docs/develop/truffle.md), [Hardhat](https://github.com/0xPolygon/wiki/blob/master/docs/develop/hardhat.md), and [Replit](https://github.com/0xPolygon/wiki/blob/master/docs/develop/replit.md).
+Polygon supports many services you can use to test, compile, debug, and deploy decentralized applications onto the Polygon Network. These include deployment using thirdweb, Alchemy, Chainstack, QuickNode, Remix, Truffle, Hardhat, and Replit.
 
 ## Connecting to Polygon
 
-You can add Polygon to MetaMask or directly use Arkane, which allows you to connect to Polygon using [RPC](https://docs.polygon.technology/docs/tools/wallets/metamask/config-polygon-on-metamask/).
+You can add Polygon to MetaMask or directly use Arkane, which allows you to connect to Polygon using RPC.
 
 In order to connect with the Polygon network to read blockchain information, we recommend using the Alchemy SDK.
 
@@ -71,11 +71,11 @@ Suppose you have no prior experience building decentralized applications (dApps)
 - [Web3.js](https://www.dappuniversity.com/articles/web3-js-intro)
 - [Ethers.js](https://docs.ethers.io/v5/)
 - [thirdweb](https://portal.thirdweb.com)
-- [Remix](https://docs.polygon.technology/docs/develop/remix/)
-- [Truffle](https://docs.polygon.technology/docs/develop/truffle)
-- [Metamask](https://docs.polygon.technology/docs/tools/wallets/metamask/overview)
-- [Arkane](https://docs.polygon.technology/docs/develop/wallets/arkane/intro)
-- [Develop a dApp using Fauna, Polygon and React](https://docs.polygon.technology/docs/develop/dapp-fauna-polygon-react)
+- Remix
+- Truffle
+- Metamask
+- Arkane
+- Develop a dApp using Fauna, Polygon and React
 
 ## Already have a dApp?
 

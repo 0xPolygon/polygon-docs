@@ -4,7 +4,7 @@ The majority of developers use a node provider, or a third-party external servic
 
 !!! tip Recommended
 
-    New developers on the Polygon network can use Alchemy as their node provider because of it's reliability, scale, and [Enhanced APIs](https://docs.alchemy.com/reference/enhanced-apis-overview).
+    New developers on the Polygon network can use Alchemy as their node provider because of its reliability, scalability, and [Enhanced APIs](https://docs.alchemy.com/reference/enhanced-apis-overview).
 
 ## Send your first blockchain request
 
