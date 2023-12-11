@@ -8,13 +8,13 @@ However, in order to allow for in-between breaks, the process is aesthetically s
 
 - [**Second step**](install-dependencies.md): Installing dependencies and downloading mainnet files.
 
-- [**Third step**](create-wallets.md): Creating wallets and deploying Contracts.
+- [**Third step**](create-wallets.md): Creating wallets and deploying contracts.
 
 - [**Fourth step**](deploy-zknode.md): Deployment of the zkNode.
 
-- [**Fifth step**](configure-prover.md): Configuring the Prover and Services.
+- [**Fifth step**](configure-prover.md): Configuring the Prover and services.
 
-- [**Sixth step**](setup-goerli-node.md): Activating forced txs and Bridging/claiming Assets.
+- [**Sixth step**](setup-goerli-node.md): Activating forced txs and bridging/claiming assets.
 
 !!!caution
     Instructions in this document are subject to frequent updates as the zkEVM software is still in early development stages.
@@ -25,9 +25,9 @@ However, in order to allow for in-between breaks, the process is aesthetically s
 
 Implementing the full stack Polygon zkEVM involves more than just running an RPC zkNode or the Prover to validate batches, and deploying Smart Contracts. In its entirety, it encompasses all these processes and more.
 
-The common rollup actors, mainly from the zkNode view, are the **Sequencer**, the **Aggregator**, the **Synchroniser** and the JSON **RPC** node. All these affect the L2 **State**.
+The common rollup actors, mainly from the zkNode view, are the Sequencer, the Aggregator, the Synchroniser and the JSON RPC node. All these affect the L2 State.
 
-Also, the Aggregator uses the **Prover** to avail verifiable proofs of sequenced batches. And the sequenced batches are composed of transactions taken from the **Pool DB**.
+Also, the Aggregator uses the Prover to avail verifiable proofs of sequenced batches. And the sequenced batches are composed of transactions taken from the Pool DB.
 
 This highlights just a few main components. The rest of the zkEVM components and those working in the background, are listed in the next subsection.
 
@@ -70,14 +70,14 @@ Since the zkEVM implementation involves running Docker containers, ensure that a
 
 Here's how to get setup;
 
-For _Linux machines_, Install **Docker engine** directly on the machine.
+For Linux machines, install the Docker engine directly on the machine.
 
-For other _Operating Systems_ (MacOS, Windows), this is achieved in 4 steps, executed in the given sequential order;
+For other Operating Systems (MacOS, Windows), this is achieved in 4 steps, executed in the given sequential order;
 
-- Install a **Hypervisor**. (e.g., VirtualBox, VMware Fusion (MacOS), VMware Workstation (Windows), VMware ESXi (Bare Metal Hypervisor)).
-- Setup a **Virtual machine**. (e.g., If you are using VirtualBox, which is open-source, Vagrant is the quickest way to automatically setup a virtual machine and also set up ssh private/public keys.)
-- Install **Linux** as Guest OS, preferably the latest version of Ubuntu Linux.
-- Install [**Docker**](https://docs.docker.com/desktop/install/linux-install/).
+- Install a hypervisor, e.g., VirtualBox, VMware Fusion (MacOS), VMware Workstation (Windows), VMware ESXi (Bare Metal Hypervisor).
+- Setup a virtual machine, e.g., if you are using VirtualBox, which is open-source, Vagrant is the quickest way to automatically setup a virtual machine and also set up ssh private/public keys.
+- Install Linux as Guest OS, preferably the latest version of Ubuntu Linux.
+- Install [Docker](https://docs.docker.com/desktop/install/linux-install/).
 
 Search the internet for quick guides on creating virtual machines. Here's an example of a video on [How to Create a Linux Virtual Machine on a Mac](https://www.youtube.com/watch?v=KAd7FafXfJQ).
 
@@ -94,8 +94,8 @@ Next, ensure that you have checked your system specs, and have at hand all the v
 
 You'll need the following items to begin:
 
-- INFURA_PROJECT_ID // Same as API Key in your Infura account
-- ETHERSCAN_API_KEY
+- `INFURA_PROJECT_ID` // Same as API Key in your Infura account
+- `ETHERSCAN_API_KEY`
 - Public IP address
 - L1 Goërli node RPC
 - Goërli address with **0.5 GöETH**
@@ -108,12 +108,12 @@ Keep in mind that the mainnet files you will be downloading are 70GB big.
 
 If the Prover is the only container you will be running externally in a cloud, then it is preferable to have a minimum 300GB of storage in the primary machine.
 
-Depending on the user's resources, the zkEVM network can be implemented with either the actual _full prover_ or the _mock prover_.
+Depending on the user's resources, the zkEVM network can be implemented with either the actual full prover or the mock prover.
 
-The full prover is resource-intensive as it utilises the exact same proving stack employed in the real and live zkEVM network.
+The full prover is resource-intensive as it utilizes the exact same proving stack employed in the real and live zkEVM network.
 
 !!!info
-    The **full prover**'s system requirements are:
+    The full Prover's system requirements are:
 
     - 96-core CPU
     - Minimum 768GB RAM
@@ -121,15 +121,15 @@ The full prover is resource-intensive as it utilises the exact same proving stac
 The Mock Prover is a dummy prover which simply adds a "Valid ✅" checkmark to every batch.
 
 !!!info
-    The **mock prover**, on the other hand only requires:
+    The mock Prover, on the other hand, only requires:
 
     - 4-core CPU
     - 8GB RAM (16GB recommended)
 
 As an example, the equivalent [AWS EC2s](https://aws.amazon.com/ec2/instance-types/r6a/) for each of these two provers are as follows:
 
-- r6a.xlarge for **mock prover**
-- r6a.24xlarge for **full prover**
+- r6a.xlarge for mock Prover
+- r6a.24xlarge for full Prover
 
 The initial free disk space requirement is minimal (<2TB), but you should monitor available space as the network is always adding more data.
 

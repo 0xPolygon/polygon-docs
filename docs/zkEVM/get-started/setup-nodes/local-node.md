@@ -11,11 +11,11 @@ This tutorial is a guide to setting up a local but single zkEVM node. It is _sin
 
 At the end of this tutorial, the following components will be running:
 
-- zkEVM Node Databases
-- Explorers and their Databases
-- L1 Network
-- Prover
-- zkEVM Node components
+- zkEVM node databases.
+- Explorers and their databases.
+- L1 network.
+- Prover.
+- zkEVM node components.
 
 ## Prerequisites
 
@@ -27,10 +27,10 @@ The tutorial for current version of the environment requires `go`, `docker` and 
 
 ### System requirements
 
-- zkEVM Node: 16GB RAM with 4-core CPU
-- zkProver: 1TB RAM with 128-core CPU
+- zkEVM Node: 16GB RAM with 4-core CPU.
+- zkProver: 1TB RAM with 128-core CPU.
 
-Running a full-fledged zkProver requires at least 1TB of RAM. However, users with less memory can opt to use the Mock Prover.
+Running a full-fledged zkProver requires at least 1TB of RAM. However, users with less memory can opt to use the mock Prover.
 
 ## Setting up zkNode
 
@@ -51,7 +51,7 @@ The image is built only once and whenever the code has changed.
 !!!caution Building Docker Image
     Every testnet version needs to use configuration files from the correct and corresponding tag. For instance: Make sure to use configuration files from RC9 tag in order to build an RC9 image.
 
-    All tags can be found here: **https://github.com/0xPolygonHermez/zkevm-node/tags**
+    All tags can be found here: https://github.com/0xPolygonHermez/zkevm-node/tags.
 
 Certain commands on the `zkevm-node` can interact with smart contracts, run specific components, create encryption files, and print debug information.
 
@@ -115,30 +115,30 @@ make deploy-uniswap
 make run-approve-matic
 ```
 
-## Connecting to Metamask
+## Connecting to MetaMask
 
 !!!info
     Metamask requires the network to be running while configuring it, so make sure your network is up.
 
 MetaMask can be configured to use the local zkEVM environment by following the steps below:
 
-1. Log in to your MetaMask wallet
-2. Click on your account picture and then on **Settings**
-3. On the left menu, click on **Networks**
-4. Click on **Add Network** button
-5. Fill up the L2 network information
+1. Log in to your MetaMask wallet.
+2. Click on your account picture and then on **Settings**.
+3. On the left menu, click on **Networks**.
+4. Click on **Add Network** button.
+5. Fill up the L2 network information:
     - **Network Name:** Polygon zkEVM - Local
     - **New RPC URL:** <http://localhost:8123>
     - **ChainID:** 1001
     - **Currency Symbol:** ETH
     - **Block Explorer URL:** <http://localhost:4000>
-6. Click on **Save**
-7. Click on **Add Network** button
-8. Fill up the L1 network information
+6. Click on **Save**.
+7. Click on **Add Network** button.
+8. Fill up the L1 network information:
     - **Network Name:** Geth - Local
     - **New RPC URL:** <http://localhost:8545>
     - **ChainID:** 1337
     - **Currency Symbol:** ETH
-9. Click on **Save**
+9. Click on **Save**.
 
 You can now interact with your local zkEVM network and sign transactions from your MetaMask wallet.

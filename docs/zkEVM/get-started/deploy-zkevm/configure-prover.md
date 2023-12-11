@@ -28,7 +28,7 @@ GRANT ALL PRIVILEGES ON TABLE state.program TO prover_user;
 
 Save and exit the file once the changes have been made. The above SQL script will set up your databases for the zkEVM Node.
 
-## Configure the prover
+## Configure the Prover
 
 Create the `~/zkevm/config.json` and paste the configs below. Replace the `aggregatorClientHost` parameter with your **PUBLIC IP**:
 
@@ -650,7 +650,7 @@ docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-state-db
 ```
 
-### Start the prover (contains executor)
+### Start the Prover (contains executor)
 
 ```bash
 export ZKEVM_NET="mainnet"

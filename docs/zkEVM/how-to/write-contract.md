@@ -6,11 +6,11 @@ Navigate to the [OpenZeppelin Wizard](https://wizard.openzeppelin.com) in your b
 
 One can choose any of the following tabs to begin creating an out-of-box smart contract code in either Solidity (for EVM chains) or Cairo (useful for Starknet). These are:
 
-- **ERC20** for writing an ERC-20 token smart contract
-- **ERC721** for writing an NFT token smart contract
-- **ERC1155** for writing an ERC-1155 token smart contract
-- **Governor** for creating a DAO
-- **Custom** for writing a customized smart contract
+- **ERC20** for writing an ERC-20 token smart contract.
+- **ERC721** for writing an NFT token smart contract.
+- **ERC1155** for writing an ERC-1155 token smart contract.
+- **Governor** for creating a DAO.
+- **Custom** for writing a customized smart contract.
 
 ## Writing an NFT contract
 
