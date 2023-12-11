@@ -1,9 +1,3 @@
----
-hide:
-	- navigation
-	- toc
----
-
 The Polygon Knowledge Layer consists of two parts. Firstly, documents that developers need in order to build with Polygon protocols. Secondly, resources necessary for learning about Polygon technologies.
 
 The Learn section outlines scaling technologies, both live and in-development Polygon protocols, with the intention to display how they will all fit together. 
