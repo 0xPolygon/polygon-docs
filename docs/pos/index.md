@@ -1,4 +1,12 @@
+<div class="flex-figure" markdown="1">
+<div class="flex-figure-left" markdown="1">
+# Polygon PoS
 Polygon PoS, originally launched as Matic Network, has undergone significant transformations to address the evolving needs of blockchain scalability and security. Initially designed to scale Ethereum through a hybrid Plasma sidechain, the network is currently in the process of transitioning into a ZK-based validium solution on Ethereum. This evolution aims to offer enhanced scalability and robust security features.
+</div>
+<div class="flex-figure-right">
+<img src="../img/pos/pos.svg" class="figure figure-right" alt="" />
+</div>
+</div>
 
 In this transformation, Polygon PoS incorporates the execution environment of Polygon zkEVM along with a dedicated data availability layer. The architecture is inherently modular and composable, enabling it to seamlessly integrate into a broader fleet of layer-two scaling solutions. Despite its place in this diverse ecosystem, Polygon PoS will retain its role as a crucial "mainnet," serving as the foundational infrastructure for a wide array of decentralized applications and services.
 

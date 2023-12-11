@@ -4,7 +4,7 @@
 Polygon zkEVM is a Layer 2 network of the Ethereum Virtual Machine (EVM), a zero-knowledge (ZK) rollup scaling solution. Polygon zkEVM uses a cryptographic primitive called a ZK proof to validate state transitions.
 </div>
 <div class="flex-figure-right">
-<img src="../img/home/zkevm.svg" class="figure figure-right" alt="" />
+<img src="../img/zkEVM/zkevm.svg" class="figure figure-right" alt="" />
 </div>
 </div>
 
