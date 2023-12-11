@@ -51,7 +51,7 @@ You can check out the contents of the newly built project by switching to your I
     npm install @openzeppelin/contracts-upgradeable
     ```
 
-3. Remap dependencies to easy-to-read filenames with the command,
+3. Remap dependencies to easy-to-read filenames with the command:
 
     ```bash
     forge remappings > remappings.txt
@@ -63,13 +63,13 @@ You can check out the contents of the newly built project by switching to your I
 
 6. In the IDE, open a new `.sol` file, name it and paste the copied code to this file. This is in fact the actual smart contract for the NFT.
 
-## Add Control on Token Transfers
+## Add control on token transfers
 
-The aim here is to put rules in place stipulating that **the token cannot be transferred without burning it**.  
+The aim here is to put rules in place stipulating that the token cannot be transferred without burning it.  
 
-- Go to the [OpenZeppelin documentation](https://docs.openzeppelin.com/)
+- Go to the [OpenZeppelin documentation](https://docs.openzeppelin.com/).
 
-- Look up the signature by searching for `_beforetokentransfererc721`
+- Look up the signature by searching for `_beforetokentransfererc721`.
 
 - Scroll down to `ERC 721` and copy the corresponding text on the right side:
 
@@ -86,7 +86,7 @@ The aim here is to put rules in place stipulating that **the token cannot be tra
     }
     ```
 
-## Set a Token URI (optional)
+## Set a token URI (optional)
 
 A token URI is a function that returns the address where the metadata of a specific token is stored. The metadata is a `. json` file where all the data associated with the NFT is stored. Our aim here is to attach some image to the created token.
 
@@ -98,7 +98,7 @@ The stored data typically consists of the name of the token, brief description a
 
 - Upload the image to the storage using your GitHub account
 
-## Add URI .JSON File
+## Add URI json file
 
 This is the file that contains the metadata for the token which includes the image address (i.e., the IPFS address of the image).
 
@@ -120,7 +120,7 @@ This is the file that contains the metadata for the token which includes the ima
 
 - Remove the `uri` parameter so as to hardcode it. This makes all tokens to have the same `uri` image, but every consecutively minted pair of tokens will differ by 1 in numerical value of their `tokenId`.
 
-## Populate the `.env` File
+## Populate the `.env` file
 
 In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual way. That is,
 
@@ -143,7 +143,7 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
 
     Make sure `.env` is in the `.gitignore` file to avoid uploading your `ACCOUNT_PRIVATE_KEY`.
 
-## Deploy Your Contract
+## Deploy your contract
 
 1. In the CLI, use the following command to ensure grabbing variables from `.env`:
 
@@ -165,9 +165,9 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
 
     which executes the following:
 
-    - Does a `forge create`
-    - Passes the `RPC_URL` and `PVTKEY`
-    - References the actual smart contract
+    - Does a `forge create`.
+    - Passes the `RPC_URL` and `PVTKEY`.
+    - References the actual smart contract.
 
     For example, when deploying the `Sbt.sol` contract, the command will look like this:
 
@@ -179,7 +179,7 @@ The above command compiles and deploys the contract to the zkEVM Testnet. The ou
 
 ![Successful Deploy Sbt.sol](../../img/zkEVM/zkv-success-deploy-sbtdotsol.png)
 
-## Check Deployed Contract in Explorer
+## Check deployed contract in explorer
 
 - Copy the address of your newly deployed contract (i.e. the `Deployed to:` address as in the above example output).
 

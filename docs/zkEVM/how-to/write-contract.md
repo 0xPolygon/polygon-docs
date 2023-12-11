@@ -22,12 +22,12 @@ Suppose you wanted to create a `Mintable`, `Burnable` ERC721 token and specify a
 
 2. Give your NFT a name and a symbol by filling the `Name` and `Symbol` fields.
 
-3. Use the check-boxes on the left to select features of your token
+3. Use the check-boxes on the left to select features of your token.
 
-- Put a tick on the `Mintable` check-box
-- Put a tick on the `Auto Increment Ids` check-box, this ensures uniqueness of each minted NFT
-- Put a tick on the `Burnable` check-box
-- Either leave the **default MIT license** or type the license of your choice
+- Put a tick on the `Mintable` check-box.
+- Put a tick on the `Auto Increment Ids` check-box, this ensures uniqueness of each minted NFT.
+- Put a tick on the `Burnable` check-box.
+- Either leave the **default MIT license** or type the license of your choice.
 
   Notice that new lines of code are automatically written each time a feature is selected.
 

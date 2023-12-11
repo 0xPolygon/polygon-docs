@@ -6,11 +6,11 @@ Ensure that your wallet is connected while following this guide. We will use Met
 
 After successfully compiling a smart contract, follow the next steps to verify your smart contract.
 
-1. Copy the **Address** to which the smart contract is deployed.
+1. Copy the address to which the smart contract is deployed.
 
 2. Navigate to the [zkEVM Explorer](https://testnet-zkevm.polygonscan.com) and paste the contract address into the Search box. This opens a window with a box labelled **Contract Address Details**.
 
-3. Scroll down to the box with tabs labelled - **Transactions**, **Internal Transactions**, **Coin Balance History**, **Logs**, and **Code**.
+3. Scroll down to the box with tabs labelled **Transactions**, **Internal Transactions**, **Coin Balance History**, **Logs**, and **Code**.
 
 4. Click the **Transaction Hash** in the **Contract Creation** box, which is the _super long_ number.
 
@@ -76,37 +76,37 @@ We will be using the ready-made `Storage.sol` contract in Remix. Compile the con
 
 1. Deploy the `Storage.sol` contract:
 
-    - Click the **Deploy** icon on the left-side of the IDE window
-    - Change `ENVIRONMENT` to "Injected Provider - MetaMask" (ensure that your wallet is already connected to Goërli network)
-    - Confirm the connection request when MetaMask pops up
-    - Click the **Deploy** button and confirm
+    - Click the **Deploy** icon on the left-side of the IDE window.
+    - Change `ENVIRONMENT` to "Injected Provider - MetaMask" (ensure that your wallet is already connected to Goërli network).
+    - Confirm the connection request when MetaMask pops up.
+    - Click the **Deploy** button and confirm.
 
 2. Check the deployed smart contract on Etherscan:
 
-    - Copy the contract address below the **Deploy Contracts**
-    - Navigate to the [Goërli explorer](https://goerli.etherscan.io)
-    - Paste the contract address in the _Search by address_ field and press **ENTER**
+    - Copy the contract address below the **Deploy Contracts**.
+    - Navigate to the [Goërli explorer](https://goerli.etherscan.io).
+    - Paste the contract address in the _Search by address_ field and press **ENTER**.
     - Click on the **Transaction Hash** to see transaction details.
 
 3. You are going to need your **Etherscan API Key** in order to verify.
 
-    - Login to Etherscan
+    - Login to Etherscan.
     - Hover the cursor over your username for a drop-down menu.
-    - Select **API Keys**
+    - Select **API Keys**.
     - Click **API Keys** again below the **Others** option.
     - Copy the API Key.
 
 4. Next, in the Remix IDE:
 
-    - Click **Plugin Manager** icon on the bottom-left corner of the Remix IDE
+    - Click **Plugin Manager** icon on the bottom-left corner of the Remix IDE.
 
-    - Type **Etherscan** in the search field at the top
+    - Type **Etherscan** in the search field at the top.
 
     - Click **Activate** button as the Etherscan option appears. Etherscan icon will appear on the left-side of the IDE.
 
-    - Click on the Etherscan icon
+    - Click on the Etherscan icon.
 
-    - Ensure that **Goërli** is present in the **Selected Network** field
+    - Ensure that **Goërli** is present in the **Selected Network** field.
 
     - Click within the _Contract Name_ field and type in the name of your deployed contract, or select it if it appears.
 

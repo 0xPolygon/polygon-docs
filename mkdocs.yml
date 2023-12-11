@@ -91,8 +91,8 @@ nav:
         - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
-        - zkEVM Protocol:
-          - zkEVM Protocol: zkEVM/architecture/protocol/index.md
+        - zkEVM protocol:
+          - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - State management: zkEVM/architecture/protocol/state-management.md
           - Trasaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
