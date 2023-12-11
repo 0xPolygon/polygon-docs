@@ -59,7 +59,7 @@
       <div class="grid-item">
          <a href="./smart-contracts/hardhat">
             <div class="product-list-item-header">
-               <div class="feature-card-heading">Smart contract development</div>
+               <div class="feature-card-heading">Smart contracts</div>
             </div>
             <p class="feature-paragraph">Common software for designing, building, and deploying smart contracts.</p>
          </a>
