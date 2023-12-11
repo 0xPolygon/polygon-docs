@@ -16,9 +16,9 @@ theme:
   language: en
   custom_dir: overrides
   favicon: img/favicon.ico
-  icons:
-    logo: tkd/logo
-    repo: tkd/repo
+  icon:
+    logo: logo
+    repo: repo
   font:
     text: Roboto
     code: Roboto Mono
@@ -496,12 +496,6 @@ markdown_extensions:
   - meta
   - smarty
   - pymdownx.extra
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-      options:
-        custom_icons:
-          - overrides/.icons
 
 plugins:
   - search
