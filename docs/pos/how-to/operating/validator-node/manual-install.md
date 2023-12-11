@@ -8,7 +8,7 @@ Before starting, ensure your setup meets the criteria outlined in the [system re
 
 Syncing the **Heimdall** and **Bor** services from scratch can take several days. To expedite this, consider using a maintained snapshot, reducing sync time to just a few hours. Detailed instructions and snapshot download links are available at:
 
-- [Snapshot Instructions for Heimdall and Bor](../../../architecture/bor/snapshots.md)
+- [Snapshot Instructions for Heimdall and Bor](../../../how-to/snapshots.md)
 - [Polygon Chains Snapshots](https://snapshot.polygon.technology/)
 
 ### Port configuration
