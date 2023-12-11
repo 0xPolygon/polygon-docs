@@ -1,3 +1,3 @@
-This section covers some of the basic concepts needed to understand the CDK setting, which is a platform designed to allow developers to choose between validium and zk-rollup architectures.
+This section explores basic concepts underpinning CDK; a platform designed to allow developers to choose between validium and rollup architectures.
 
-Concepts such as a rollup, a validium and data availability committee (DAC) are defined. Implications of off-chain data availability are briefly discussed.
+The section currently defines concepts such as rollup, validium, and data availability committee (DAC). Some implications of off-chain data availability are mentioned.

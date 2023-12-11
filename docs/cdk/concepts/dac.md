@@ -32,7 +32,7 @@ The DAC works together with the sequencer to control the flow of data. The proce
 
 2. **Batch authentication**: Once the batches are assembled, they are authenticated. The sequencer forwards the batch data and its corresponding hash to the DAC.
 
-3. **Data validation and storage**:  The DAC nodes independently validate the batch data. Once validated, the hash is stored in each node's local database for future reference.
+3. **Data validation and storage**: The DAC nodes independently validate the batch data. Once validated, the hash is stored in each node's local database for future reference.
 
 4. **Signature generation**: Each DAC node generates a signature for the batch hash. This serves as an endorsement of the batch's integrity and authenticity.
 
