@@ -276,9 +276,7 @@ nav:
   - Miden:
       - Miden: miden/index.md # marketing landing page
       - Get started: miden/get-started/index.md
-      - Miden playground: https://0xpolygonmiden.github.io/examples/
       - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
-      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Tools: 
       - tools/index.md
       - Smart contract development: 
