@@ -23,10 +23,7 @@
 }
 
 img.figure {
-	border: 5px solid #ae6fdb !important;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	margin: 0 auto;
-	max-width: 80%;
 	display: block;
 }
 
@@ -35,10 +32,10 @@ div.flex-figure {
 }
 
 div.flex-figure div.flex-figure-left {
-	flex-grow: 2;
+	flex-grow: 1;
+	flex-shrink: 5;
 }
 
 div.flex-figure div.flex-figure-right {
-	flex-grow: 1;
-	flex-shrink: 1.5;
+	flex-grow: 2;
 }
