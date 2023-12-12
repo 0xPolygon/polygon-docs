@@ -185,4 +185,4 @@ truffle deploy --network matic
 !!! note
     Remember your `address`, `transaction_hash` and other details provided would differ. Above is just to provide an idea of the structure.
 
-**Congratulations! You have successfully deployed a Smart Contract using Truffle.** Now you can interact with the contract and also check its deployment status on [Polygonscan](https://mumbai.polygonscan.com/).
+Congratulations! You have successfully deployed a smart contract using Truffle. Now you can interact with the contract and also check its deployment status on [Polygonscan](https://mumbai.polygonscan.com/).

@@ -14,7 +14,7 @@ This article guides you to build and deploy a solidity smart contract on Polygon
 
 !!! tip
 
-    For additional examples about Solidity with Replit, you can read the article **[Get started with Replit](https://blog.replit.com/solidity)** or check **[Replit Solidity documentation and Escrow contract tutorial](https://docs.replit.com/tutorials/33-escrow-contract-with-solidity)**.
+    For additional examples about Solidity with Replit, you can read the article [Get started with Replit](https://blog.replit.com/solidity) or check [Replit Solidity documentation and Escrow contract tutorial](https://docs.replit.com/tutorials/33-escrow-contract-with-solidity).
 
 ## Prerequisites
 
@@ -51,9 +51,9 @@ Every Repl that you create is a fully functional development and production envi
 
 ## Deploy on Polygon
 
-Make sure that you have followed the list of **Prerequisites** above so that you are ready to deploy and interact with your smart contract.
+Make sure that you have followed the list of [prerequisites](#prerequisites) above so that you are ready to deploy and interact with your smart contract.
 
-1. Click on **Run** (at the Top) to install all relevant packages and start up the contract deployment UI.
+1. Click on **Run** (at the top) to install all relevant packages and start up the contract deployment UI.
 
 2. Connect your MetaMask wallet to the web interface and switch to the [Mumbai Testnet](../wallets/metamask/add-polygon-network.md).
 
@@ -65,7 +65,7 @@ Make sure that you have followed the list of **Prerequisites** above so that you
 
 4. From the dropdown list, select the contract that you want to deploy. Click on **Deploy**.
 
-5. You will receive a MetaMask popup window asking for your confirmation. Approve the transaction from your wallet to deploy your contract.
+5. You will see a MetaMask popup window asking for your confirmation. Approve the transaction from your wallet to deploy your contract.
 
 ## Verifying and testing your contract
 
