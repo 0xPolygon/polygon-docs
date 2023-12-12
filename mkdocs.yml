@@ -287,8 +287,8 @@ nav:
       - Overview: miden/overview.md
       - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
       - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
-  - Developer tools: 
-      - Developer tools: tools/index.md
+  - Tools: 
+      - Tools: tools/index.md
       - Smart contract development: 
           - Hardhat: tools/smart-contracts/hardhat.md
           - Truffle: tools/smart-contracts/truffle.md
