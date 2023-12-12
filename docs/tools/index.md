@@ -1,5 +1,5 @@
 <div class="section-wrapper product-section-head">
-	<div class="hero-image"><img src="../img/home/main-img.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
+	<div class="hero-image"><img src="../img/home/main-img.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;" alt=""></div>
 	<div class="hero-left">
 		<h1 class="hero-heading">Developer tools</h1>
 		<p class="hero-subtext">This section of the documentation describes some of the available third-party tools used by developers with Polygon products and services.</p>
@@ -71,5 +71,4 @@
 			<p class="feature-paragraph">Quick links to useful block explorers such as https://polygonscan.com/ for example.</p>
 		</a>
 	</div>
-</div>
 </div>
