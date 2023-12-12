@@ -82,6 +82,6 @@ An example JSON response will look like this.
 }
 ```
 
-- {`safelow`, `standard`, `fast`, `fastest`} are gas prices in Gwei, you can use these prices before sending the transaction off to Polygon zkEVM, depending upon your needs
+- {`safelow`, `standard`, `fast`, `fastest`} are gas prices in Gwei, you can use these prices before sending the transaction off to Polygon zkEVM, depending upon your needs.
 - `blockTime`, in seconds, gives the average block time of the network.
 - `blockNumber` provides the information of the latest block mined when the recommendation was made.
