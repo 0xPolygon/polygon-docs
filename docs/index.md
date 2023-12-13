@@ -129,15 +129,15 @@ hide:
 								<p class="paragraph-small">RPC providers, faucets, data indexing, Web3 dApp development SDKs, block explorers, storage, and more.</p>
 							</div>
 						</a>
-						<a href="#" class="home-feature-card w-inline-block"><img src="img/home/tutorial.svg" loading="lazy" alt="" class="feature-icon">
+						<a href="./zkEVM/how-to/write-contract" class="home-feature-card w-inline-block"><img src="img/home/tutorial.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content">
 								<div class="feature-content-wrapper">
-									<div class="feature-content-name">Tutorials</div>
+									<div class="feature-content-name">Write a zkEVM contract</div>
 									<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 											<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 										</svg></div>
 								</div>
-								<p class="paragraph-small">Step by step guidance for building dApps, running nodes, deploying ZK rollups, and more.</p>
+								<p class="paragraph-small">Step-by-step guidance for writing smart contracts with zkEVM.</p>
 							</div>
 						</a>
 						<a href="https://ecosystem.polygon.technology/spn/explore/?search=&competency=&chain=" class="home-feature-card w-inline-block"><img src="img/home/network.svg" loading="lazy" alt="" class="feature-icon">
@@ -148,7 +148,7 @@ hide:
 											<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 										</svg></div>
 								</div>
-								<p class="paragraph-small">Searchable catalog of tooling and infrastructure for developers, from oracles, bridges, RPC providers, wallets, and more.</p>
+								<p class="paragraph-small">Searchable catalog of tooling and infrastructure for developers.</p>
 							</div>
 						</a>
 					</div>
