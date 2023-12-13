@@ -140,7 +140,7 @@ hide:
 								<p class="paragraph-small">Step by step guidance for building dApps, running nodes, deploying ZK rollups, and more.</p>
 							</div>
 						</a>
-						<a href="#" class="home-feature-card w-inline-block"><img src="img/home/network.svg" loading="lazy" alt="" class="feature-icon">
+						<a href="https://ecosystem.polygon.technology/spn/explore/?search=&competency=&chain=" class="home-feature-card w-inline-block"><img src="img/home/network.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content">
 								<div class="feature-content-wrapper">
 									<div class="feature-content-name">Solution Provider Network</div>

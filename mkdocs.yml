@@ -286,7 +286,6 @@ nav:
       - Miden: miden/index.md
       - Overview: miden/overview.md
       - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
-      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
