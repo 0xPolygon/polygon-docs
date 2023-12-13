@@ -84,7 +84,6 @@ Whenever we are happy with `main`, a trigger can be manually done through GitHub
 
 For any queries or support, join our Polygon Slack channel at `#disc_tkd_techdocs`. Current team members:
 
-- Nadim Kobeissi (@nadimkobeissi)
+- Grace Torrellas (@0xgraciegrace)
 - Anthony Matlala (@EmpieichO)
 - Katharine Murphy (@kmurphypolygon)
-- Grace Torrellas (@0xgraciegrace)
