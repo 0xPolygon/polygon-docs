@@ -47,9 +47,9 @@ const proof = await exitUtil.buildPayloadForExit(
 
 ```
 
-### Generating proof using bridge client
+### Generating proof using a bridge client
 
-Every bridge client including **POSClient**, **PlasmaClient** exposes `exitUtil` property.
+Every bridge client including **POSClient** exposes `exitUtil` property.
 
 ```js
 import { POSClient,use } from "@maticnetwork/maticjs"
