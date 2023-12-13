@@ -58,7 +58,7 @@
    </div>
    <div class="grid-container">
       <div class="grid-item">
-         <a href="./introduction/introduction">
+         <a href="./introduction/">
             <div class="product-list-item-header">
                <div class="feature-card-heading">zkRollup docs</div>
             </div>

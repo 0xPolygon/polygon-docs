@@ -282,10 +282,9 @@ nav:
       - Miden: miden/index.md
       - Overview: miden/overview.md
       - Miden zkRollup docs:
-          - Roadmap:  miden/roadmap.md
-          - Introduction:
-              - Introduction:  miden/introduction/introduction.md
-              - Protocol:  miden/introduction/protocol.md
+          - Introduction:  
+              - Welcome: miden/introduction/index.md
+              - Roadmap:  miden/roadmap.md
           - Architecture:
               - Accounts:  miden/architecture/accounts.md
               - Architecture:  miden/architecture/architecture.md
