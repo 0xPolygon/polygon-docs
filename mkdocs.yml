@@ -267,8 +267,6 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
-      #- Specification:
-      #    - Specification: pos/spec/index.md
       - Concepts:
           - Concepts: pos/concepts/index.md
           - Tokens:
@@ -280,12 +278,25 @@ nav:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
-    #  - API:
-    #      - pos/api/index.md
   - Miden:
       - Miden: miden/index.md
       - Overview: miden/overview.md
-      - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
+      - Miden zkRollup docs:
+          - Roadmap:  miden/roadmap.md
+          - Introduction:
+              - Introduction:  miden/introduction/introduction.md
+              - Protocol:  miden/introduction/protocol.md
+          - Architecture:
+              - Accounts:  miden/architecture/accounts.md
+              - Architecture:  miden/architecture/architecture.md
+              - Assets:  miden/architecture/assets.md
+              - Execution:  miden/architecture/execution.md
+              - Notes:  miden/architecture/notes.md
+              - State:  miden/architecture/state.md
+              - Transactions:  miden/architecture/transactions.md
+          - Crypto primitives:
+              - Crypto primitives:  miden/crypto-primitives/crypto-primitives.md
+              - Tiered sparce Merkle tree (TSMT):  miden/crypto-primitives/tsmt.md
       - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Developer tools: 
       - Developer tools: tools/index.md

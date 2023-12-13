@@ -17,7 +17,7 @@
    align-items: stretch;
    }
    .grid-item {
-   background-color: hsla(0,0%,100%,0);
+   background-color: white;
    border-radius: 8px;
    -webkit-box-shadow: 0 8px 16px 0 rgb(17 17 17 / 8%);
    box-shadow: 0 8px 16px 0 rgb(17 17 17 / 8%);
