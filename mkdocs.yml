@@ -41,7 +41,6 @@ theme:
     - toc.follow
     - content.code.copy
     - content.action.edit
-    - content.action.view
 
 nav:
   - Home: index.md

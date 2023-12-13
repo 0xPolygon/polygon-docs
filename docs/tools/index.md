@@ -1,11 +1,12 @@
+---
+hide:
+- toc
+---
+
 <style>
     .feature-paragraph {
         text-align: left;
     }
-   .md-sidebar.md-sidebar--secondary,
-   .md-content__button {
-   display: none;
-   }
    * {
    box-sizing: border-box;
    }
@@ -122,4 +123,3 @@
       </div>
    </div>
    </div>
-   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6569b132e06e045d402ee3ac" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

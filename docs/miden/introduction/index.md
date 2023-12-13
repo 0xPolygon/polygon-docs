@@ -8,11 +8,11 @@ Polygon Miden is a zkRollup for high-throughput and private applications. Users 
 
 This documentation explains how to develop on Miden. Furthermore, it explains the Miden architecture and concepts, the network and its components, and the underlying cryptographic primitives.
 
-If you want to join the technical discussion, please check out
+### Useful resources
 
-* the [Discord](https://discord.gg/0xpolygondevs).
-* the [Repo](https://github.com/0xPolygonMiden).
-* the [Roadmap](../roadmap).  
+* [Discord](https://discord.gg/0xpolygondevs)
+* [Repo](https://github.com/0xPolygonMiden)
+* [Roadmap](../roadmap)
 
 ## Miden creates a new design space secured by Ethereum
 
