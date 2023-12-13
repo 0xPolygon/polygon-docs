@@ -429,8 +429,8 @@ nav:
 extra:
   generator: false
   analytics:
-  #  provider: google
-  #  property: G-XXXXXXXXXX
+    provider: google
+    property: G-RJ6JC0EEY5
   #  feedback:  # feedback form only works when Google Analytics is set up and working
   #    title: Was this page helpful?
   #    ratings:
