@@ -19,6 +19,9 @@ Here is what developers can expect when they build with Polygon CDK.
 5. **Near-instant finality**: Chains deployed using Polygon CDK rely on cryptographic security, ensuring transaction integrity without the need of full nodes. This approach guarantees near-instant finality and robust security.
 6. **Extensive Web3 support**: Polygon CDK chains leverage a comprehensive ecosystem with premium service providers offering essential tools for application integration, development, and deployment.
 
+!!! important "Why are there zkEVM docs in the CDK section?"
+     Several of the docs point to zkEVM specific deployment documentation because the rollup flavor of CDK uses zkEVM deployment defaults.
+
 The following diagram illustrates how Polygon CDK-developed chains may opt into a web of interoperable L2 chains: 
 
 ![](../img/cdk/overview-2.png)

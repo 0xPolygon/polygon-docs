@@ -26,7 +26,7 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-    - navigation.instant
+   # - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
     - navigation.expansion
@@ -49,7 +49,6 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Get started:
-        - Get started: cdk/get-started/index.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
@@ -57,20 +56,17 @@ nav:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: cdk/get-started/deploy-rollup.md
       - How to:
-        - How to: cdk/how-to/index.md
         - Manage policies: cdk/how-to/manage-policies.md
       #- Architecture:
       - Specification:
-        - Specification: cdk/spec/index.md
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
-        - Concepts: cdk/concepts/index.md
         - Rollup: cdk/concepts/rollup.md
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
-     # - API:
+     # - API/SDK:
       - Additional resources:
-        - Additional resources: cdk/troubleshooting/index.md
+        - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md

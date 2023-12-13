@@ -1,5 +1,9 @@
 This quickstart guides you through the process of setting up a CDK validium on your local machine.
 
+!!! note
+    - The documentation describes standard deployments. 
+    - Edit the configuration files to implement your own custom setups.
+
 ## Prerequisites
 
 ### System requirements

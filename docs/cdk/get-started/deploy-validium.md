@@ -1,6 +1,10 @@
 !!! important "Recommendation"
     Follow the [quickstart](quickstart-validium.md) for a hands-on introduction to CDK in validium mode.
 
+!!! note
+    - The documentation describes standard deployments. 
+    - Edit the configuration files to implement your own custom setups.
+
 Follow the steps below to deploy a CDK validium instance.
 
 ## 1. Deploy validium-specific contracts
