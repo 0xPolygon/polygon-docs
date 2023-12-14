@@ -516,7 +516,7 @@ plugins:
 #        - README.md
 
 validation:
-  absolute_links: warn
+  absolute_links: ignore
 
 extra_javascript:
   - _site_essentials/js/mathjax.js
