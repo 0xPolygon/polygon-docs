@@ -1,19 +1,18 @@
-
 Polygon zkEVM Mainnet Beta is provided on an **AS-IS** and **AS-AVAILABLE** basis. The documentation contains statements about technical specifications, some of which may relate to future versions of Polygon zkEVM rather than its current implementation.
 
-## Attack Vectors/Security
+## Attack vectors/security
 
-- This is a **Mainnet Beta** and **not a Mainnet release of Polygon zkEVM**, [<ins>security audits</ins>](https://polygon.technology/blog/polygon-zkevm-results-of-hexens-security-audit) and assessments are ongoing. Your data and crypto-assets may be at risk as a result of bugs or otherwise.
+- This is a **Mainnet Beta** and **not a Mainnet release of Polygon zkEVM**, [security audits](https://polygon.technology/blog/polygon-zkevm-results-of-hexens-security-audit) and assessments are ongoing. Your data and crypto-assets may be at risk as a result of bugs or otherwise.
 
 - **Polygon zkEVM technology is novel**. As such, there may be unanticipated issues and risks associated with your use of the technology. For example, there may be errors that result in losing data or crypto-assets.
 
 - **Cross-blockchain bridging may be subject to cyberattacks and exploits** including, without limitation, hacks that exploit a vulnerability in the software, hardware, systems or equipment associated with any bridge component, smart contracts, and related systems.
 
-## Network Availability/Performance
+## Network availability/performance
 
 As this is a Mainnet Beta, Polygon zkEVM may be slow or unavailable from time to time without notice, which could result in unexpected loss of use or data or crypto-assets. Before engaging in high value transactions, be mindful that there may be time delays before transactions are finalized.
 
-## Decentralization Progress
+## Decentralization progress
 
 Polygon Labs is in the process of further decentralizing Polygon zkEVM. This refers to the process of gradually increasing decentralization of the system over time.
 
@@ -25,17 +24,17 @@ Polygon Labs is in the process of further decentralizing Polygon zkEVM. This ref
 
 - During the initial phase of the Mainnet Beta release, users will not be able to force transactions on Layer 1.
 
-## Gas Fees
+## Gas fees
 
 If the gas fees associated with a proposed transaction are too low, it is possible that such transaction will not be sequenced and that those fees may be lost.
 
-## Security Audits
+## Security audits
 
-- Polygon Labs’ implementation of Polygon zkEVM has been carefully constructed, was audited by several internal and external parties, and is continuously being reviewed and tested against engineering best practices. It is, however, unlikely that all potential bugs or vulnerabilities were identified through these audits and thus there may be undiscovered vulnerabilities that may put user funds at risk. Users should consider this risk when deciding how much value to place onto the Polygon zkEVM Mainnet Beta. To see the audit reports, see [<ins>here</ins>](https://github.com/0xPolygonHermez/zkevm-rom/blob/main/audits/Hexens_Polygon_zkEVM_PUBLIC_27.02.23.pdf).
+- Polygon Labs’ implementation of Polygon zkEVM has been carefully constructed, was audited by several internal and external parties, and is continuously being reviewed and tested against engineering best practices. It is, however, unlikely that all potential bugs or vulnerabilities were identified through these audits and thus there may be undiscovered vulnerabilities that may put user funds at risk. Users should consider this risk when deciding how much value to place onto the Polygon zkEVM Mainnet Beta. To see the audit reports, see [here](https://github.com/0xPolygonHermez/zkevm-rom/blob/main/audits/Hexens_Polygon_zkEVM_PUBLIC_27.02.23.pdf).
 
-- There is a robust bug bounty program for Polygon zkEVM to help encourage the community to find critical bugs in the codebase. Head over to the [<ins>Polygon zkEVM Bug Bounty page on Immunefi</ins>](https://immunefi.com/bounty/polygonzkevm/).
+- There is a robust bug bounty program for Polygon zkEVM to help encourage the community to find critical bugs in the codebase. Head over to the [Polygon zkEVM Bug Bounty page on Immunefi](https://immunefi.com/bounty/polygonzkevm/).
 
-## Prover Infrastructure
+## Prover infrastructure
 
 - Currently the Polygon zkEVM zkProver does not run on ARM-powered Macs. For Windows users, using WSL/WSL2 is not recommended. Apple M1 chips are not supported for now, since some optimizations on the zkProver require specific Intel instructions. This means some non-M1 computers won't work regardless of the OS, for example: AMD.
 

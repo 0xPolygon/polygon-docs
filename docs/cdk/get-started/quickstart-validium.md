@@ -1,5 +1,9 @@
 This quickstart guides you through the process of setting up a CDK validium on your local machine.
 
+!!! note
+    - The documentation describes standard deployments. 
+    - Edit the configuration files to implement your own custom setups.
+
 ## Prerequisites
 
 ### System requirements
@@ -26,6 +30,7 @@ cd zkValidium-quickstart
 ```
 
 Create the `.env` file by copying the example:
+
 ```bash
 cp .env.example .env
 ```
@@ -93,6 +98,7 @@ zkevm-bridge-service             /bin/sh -c /app/zkevm-brid ...   Up            
                                                                                  0.0.0.0:9090->9090/tcp,:::9090->9090/tcp                     
 zkevm-bridge-ui                  /bin/sh /app/scripts/deploy.sh   Up             0.0.0.0:8088->80/tcp,:::8088->80/tcp 
 ```
+
 </details>
 
 2.3.1 If a service isn't running (i.e. it is in `Exit 1` state), investigate further using the logs:
@@ -123,7 +129,7 @@ sudo make restart
 
 ## 3. Test validium
 
-3.1 Verify the block explorer is running by navigating to [localhost:4001](http://localhost:4001/). 
+3.1 Verify the block explorer is running by navigating to [localhost:4001](http://localhost:4001/).
 
 You should see a page similar to this:
 
@@ -135,8 +141,8 @@ You should see a page similar to this:
 
 4.1 Follow MetaMask's instructions on [how to set up a network manually](https://support.metamask.io/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC).
 
-- Set the chain ID to **1001**. 
-- The currency symbol can be anything but we will use **POL** by default. 
+- Set the chain ID to **1001**.
+- The currency symbol can be anything but we will use **POL** by default.
 - The RPC node and block explorer containers can be found at ports **8123** and **4001**, respectively.
 
 <div align="center">
@@ -191,7 +197,7 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
 
 5.1.2 Switch to the L1 network and you will see the previously imported account with ~999 POL on the L1 chain.
 
-5.1.3 Verify the bridge UI by navigating to [localhost:8088](http://localhost:8088/). 
+5.1.3 Verify the bridge UI by navigating to [localhost:8088](http://localhost:8088/).
 
 5.1.4 Click on **Connect a wallet > MetaMask**.
 
@@ -205,7 +211,7 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
   <img src="/img/cdk/cdk-bridge-connected.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-5.1.6 Enter the amount (e.g. 5) to bridge and click **Continue**, you will see the **Confirm Bridge** page. 
+5.1.6 Enter the amount (e.g. 5) to bridge and click **Continue**, you will see the **Confirm Bridge** page.
 
 5.1.7 Click **Bridge** and approve the transaction on the MetaMask pop-up:
 
@@ -221,7 +227,7 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
 
 ### 5.2 L2 to L1
 
-5.2.1 Switch network on MetaMask to your validium chain and navigate back to [localhost:8088](http://localhost:8088/). 
+5.2.1 Switch network on MetaMask to your validium chain and navigate back to [localhost:8088](http://localhost:8088/).
 
 5.2.2 You should see both the updated L1 and L2 balances:
 

@@ -1,7 +1,7 @@
-site_name: Polygon docs
+site_name: Polygon Knowledge Layer
 site_author: Polygon Labs
 copyright: Copyright &copy; 2023 Polygon Labs
-repo_name: Polygon docs
+repo_name: Polygon Knowledge Layer
 repo_url: https://github.com/0xPolygon/polygon-docs
 edit_uri: edit/main/docs/
 #remote_branch: gh-pages
@@ -10,31 +10,23 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   palette:
-    # Palette toggle for light mode
     - scheme: default
       primary: white
       accent: purple
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Palette toggle for dark mode
-    - scheme: slate
-      primary: black
-      accent: purple
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-  font:
-    text: Tahoma
-    code: roboto
   language: en
+  custom_dir: overrides
   favicon: img/favicon.ico
-  logo: img/logo.png
+  icon:
+    logo: logo
+    repo: repo
+  font:
+    text: Roboto
+    code: Roboto Mono
   features:
     - search.suggest
     - search.highlight
     - search.share
-    - navigation.instant
+   # - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
     - navigation.expansion
@@ -53,179 +45,223 @@ theme:
 nav:
   - Home: index.md
   - CDK:
-      - Welcome: 
-        - cdk/index.md # marketing landing page
+      - CDK: cdk/index.md
+      - Overview: cdk/overview.md
       - Get started:
-        - Overview: cdk/get-started/overview.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: cdk/get-started/deploy-rollup.md
-      - How to: 
-        - Manage policies - allowlists, denylists, ACLs: cdk/how-to/manage-allowlists.md
+      - How to:
+        - Manage policies: cdk/how-to/manage-policies.md
       #- Architecture:
       - Specification:
-        - Validium vs rollup: cdk/specification/validium-vs-rollup.md
-        - Performance benchmarks: cdk/specification/performance-benchmarks.md
+        - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
+        - Rollup: cdk/concepts/rollup.md
+        - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
-     # - API:
-      - Troubleshooting:
-        - CDK component repos: cdk/troubleshooting/component-repos.md
+     # - API/SDK:
+      - Additional resources:
+        - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
-      - zkEVM/index.md # marketing landing page
+      - zkEVM: zkEVM/index.md
+      - Overview: zkEVM/overview.md
       - Get started:
-        - Welcome: zkEVM/welcome.md
-        - Quickstart:
-          - Connecting to zkEVM: zkEVM/connect-wallet.md
-          - Using Polygon faucet: zkEVM/zkevm-faucet.md
-          - Bridging assets to zkEVM: zkEVM/bridge-to-zkevm.md
+        - Get started: zkEVM/get-started/index.md
+        - Quick start:
+          - Connecting to zkEVM: zkEVM/get-started/quick-start/connect-wallet.md
+          - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
+          - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
+        - Gas station: zkEVM/get-started/zkevm-gas-station.md
         - Setup nodes:
-          - Setup local zkNode: zkEVM/setup-local-node.md
-          - Setup production zkNode: zkEVM/setup-production-node.md
-        - Deploy full zkEVM:
-          - Start here: zkEVM/deployzkevm/step1-fullzkevm.md
-          - Install dependencies: zkEVM/deployzkevm/step2-fullzkevm.md
-          - Create wallets: zkEVM/deployzkevm/step3-fullzkevm.md
-          - Deploy zkNode: zkEVM/deployzkevm/step4-fullzkevm.md
-          - Configure prover: zkEVM/deployzkevm/step5-fullzkevm.md
-          - Activate forced transactions: zkEVM/deployzkevm/step6-fullzkevm.md
-          - Setup a Goërli node: zkEVM/deployzkevm/setup-goerlinode.md
+          - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
+          - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
+        - Deploy zkEVM:
+          - Deploy zkEVM: zkEVM/get-started/deploy-zkevm/index.md
+          - Install dependencies: zkEVM/get-started/deploy-zkevm/install-dependencies.md
+          - Create wallets: zkEVM/get-started/deploy-zkevm/create-wallets.md
+          - Deploy zkNode: zkEVM/get-started/deploy-zkevm/deploy-zknode.md
+          - Configure Prover: zkEVM/get-started/deploy-zkevm/configure-prover.md
+          - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
+          - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
       - How to:
-        - Write a contract: zkEVM/autocode-smart-contract.md
-        - Deploy a contract with Foundry: zkEVM/using-foundry.md
-        - Deploy a contract with Hardhat: zkEVM/using-hardhat.md
-        - Verify a contract: zkEVM/verify-smart-contract.md
-      - Architectural design:
-        - Architecture: zkEVM/architecture/architecture.md
-        - zkEVM Protocol:
-          - Introduction: zkEVM/protocol/introduction.md
-          - State management: zkEVM/protocol/state-management.md
+        - How to: zkEVM/how-to/index.md
+        - Write a contract: zkEVM/how-to/write-contract.md
+        - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
+        - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
+        - Verify a contract: zkEVM/how-to/verify-contract.md
+      - Architecture:
+        - Architecture: zkEVM/architecture/index.md
+        - zkEVM protocol:
+          - zkEVM protocol: zkEVM/architecture/protocol/index.md
+          - State management: zkEVM/architecture/protocol/state-management.md
           - Trasaction life cycle:
-            - Submit transactions: zkEVM/protocol/submit-trasaction.md
-            - Transaction execution: zkEVM/protocol/transaction-execution.md
-            - Transaction batching: zkEVM/protocol/transaction-batching.md
-            - Batch sequencing: zkEVM/protocol/batch-sequencing.md
-            - Batch aggregation: zkEVM/protocol/batch-aggregation.md
-          - Incentive mechanism: zkEVM/protocol/incentive-mechanism.md
-          - Protocol upgradability: zkEVM/protocol/upgradability.md
-          - Admin role and governance: zkEVM/protocol/admin-role.md
-          - Upgrade process: zkEVM/protocol/zkevm-upgrades-process.md
-          - Security council: zkEVM/protocol/security-council.md
+            - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
+            - Transaction execution: zkEVM/architecture/protocol/transaction-life-cycle/transaction-execution.md
+            - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
+            - Batch sequencing: zkEVM/architecture/protocol/transaction-life-cycle/batch-sequencing.md
+            - Batch aggregation: zkEVM/architecture/protocol/transaction-life-cycle/batch-aggregation.md
+          - Incentive mechanism: zkEVM/architecture/protocol/incentive-mechanism.md
+          - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
+          - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
+          - Upgrade process: zkEVM/architecture/protocol/upgrade-process.md
+          - Security council: zkEVM/architecture/protocol/security-council.md
           - Malfunction resistance:
-            - Force batches: zkEVM/protocol/sequencer-resistance.md
-            - Force verification: zkEVM/protocol/aggregator-resistance.md
-            - Emergency state: zkEVM/protocol/emergency-state.md
-          - zkEVM bridge:
-            - Bridge introduction: zkEVM/protocol/zkevm-bridge.md
-            - Exit trees: zkEVM/protocol/exit-tree.md
-            - Smart contracts: zkEVM/protocol/bridge-smart-contract.md
-            - Flow of assets: zkEVM/protocol/flow-of-assets.md
-          - LXLY bridge: zkEVM/protocol/lxly-bridge.md
-        - zkNode: zkEVM/zknode/zknode-overview.md
+            - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
+            - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
+            - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
+          - zkEVM Bridge:
+            - zkEVM Bridge: zkEVM/architecture/protocol/zkevm-bridge/index.md
+            - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
+            - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
+            - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
+          - LXLY bridge: zkEVM/architecture/protocol/lxly-bridge.md
+        - zkNode: zkEVM/architecture/zknode/index.md
         - zkProver:
-          - zkProver Overview: zkEVM/zkprover/zkprover-overview.md
-          - Main state machaine: 
-            - Introducing Main SM: zkEVM/zkprover/intro-main-sm.md
-            - As a processor: zkEVM/zkprover/the-processor.md
+          - zkProver: zkEVM/architecture/zkprover/index.md
+          - Main state machine: 
+            - Main state machine: zkEVM/architecture/zkprover/main-state-machine/index.md
+            - As a processor: zkEVM/architecture/zkprover/main-state-machine/processor.md
           - STARK recursion:
-            - Introducing STARK recursion: zkEVM/zkprover/intro-stark-recursion.md
-            - Proving tools and techniques: zkEVM/zkprover/proving-tools.md
-            - Composition, Recursion and Aggregation: zkEVM/zkprover/stark-recursion-detail.md
-            - Recursion sub-process: zkEVM/zkprover/recursion-sub-process.md
-            - Proving architecture: zkEVM/zkprover/proving-architecture.md
-            - CIRCOM in zkProver: zkEVM/zkprover/circom-in-zkprover.md
-            - Proving setup phase: zkEVM/zkprover/proving-setup-phase.md
-            - Intermediate steps: zkEVM/zkprover/intermediate-recursion.md
-            - Final recursion step: zkEVM/zkprover/final-recursion-step.md
-            - Proof generation phase: zkEVM/zkprover/proof-generation-phase.md
-      - Specifications:
-        - EVM vs. zkEVM: zkEVM/specifications/evm-differences.md
+            - STARK recursion: zkEVM/architecture/zkprover/stark-recursion/index.md
+            - Proving tools and techniques: zkEVM/architecture/zkprover/stark-recursion/proving-tools.md
+            - Composition, Recursion and Aggregation: zkEVM/architecture/zkprover/stark-recursion/composition-recursion-aggregation.md
+            - Recursion sub-process: zkEVM/architecture/zkprover/stark-recursion/recursion-sub-process.md
+            - Proving architecture: zkEVM/architecture/zkprover/stark-recursion/proving-architecture.md
+            - CIRCOM in zkProver: zkEVM/architecture/zkprover/stark-recursion/circom-in-zkprover.md
+            - Proving setup phase: zkEVM/architecture/zkprover/stark-recursion/proving-setup-phase.md
+            - Intermediate steps: zkEVM/architecture/zkprover/stark-recursion/intermediate-recursion.md
+            - Final recursion step: zkEVM/architecture/zkprover/stark-recursion/final-recursion-step.md
+            - Proof generation phase: zkEVM/architecture/zkprover/stark-recursion/proof-generation-phase.md
+          - Storage state machine:
+            - Storage state machine: zkEVM/architecture/zkprover/storage-state-machine/index.md
+            - Creating keys and paths: zkEVM/architecture/zkprover/storage-state-machine/construct-key-path.md
+            - Storage SM mechanism: zkEVM/architecture/zkprover/storage-state-machine/mechanism.md
+            - Executor and PIL: zkEVM/architecture/zkprover/storage-state-machine/executor-pil.md
+          - Arithmetic state machine: zkEVM/architecture/zkprover/arithmetic-sm.md
+          - Binary state machine: zkEVM/architecture/zkprover/binary-sm.md
+          - Memory state machine: zkEVM/architecture/zkprover/memory-sm.md
+          - Memory-Align state machine: zkEVM/architecture/zkprover/mem-align-sm.md
+          - Hashing state machines:
+            - Hashing state machines: zkEVM/architecture/zkprover/hashing-state-machines/index.md
+            - Keccak framework: zkEVM/architecture/zkprover/hashing-state-machines/keccak-framework.md
+            - Padding-kk state machine: zkEVM/architecture/zkprover/hashing-state-machines/paddingkk-sm.md
+            - Padding-kk-bit state machine: zkEVM/architecture/zkprover/hashing-state-machines/paddingkk-bit-sm.md
+            - Bits2Field state machine: zkEVM/architecture/zkprover/hashing-state-machines/bits2field-sm.md
+            - Keccak-f state machine: zkEVM/architecture/zkprover/hashing-state-machines/keccakf-sm.md
+            - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
+      - Specification:
+        - Specification: zkEVM/spec/index.md
+        - Polynomial Identity Language:
+          - Polynomial Identity Language: zkEVM/spec/pil/index.md
+          - Simple example: zkEVM/spec/pil/simple-example.md
+          - Modular programs: zkEVM/spec/pil/modular-programs.md
+          - Connection arguments: zkEVM/spec/pil/connection-arguments.md
+          - Cyclicity in PIL: zkEVM/spec/pil/cyclicity-in-pil.md
+          - Filling polynomials: zkEVM/spec/pil/filling-polynomials.md
+          - Generating proofs: zkEVM/spec/pil/generating-proofs.md
+          - Permutation arguments: zkEVM/spec/pil/permutation-arguments.md
+          - Inclusion arguments: zkEVM/spec/pil/inclusion-arguments.md
+          - Compiling using PILCOM: zkEVM/spec/pil/compiling-using-pilcom.md
+          - Configuration files: zkEVM/spec/pil/configuration-files.md
+          - PLONK in PIL: zkEVM/spec/pil/plonk-in-pil.md
+          - Public values: zkEVM/spec/pil/public-values.md
+        - zkASM:
+          - zkASM: zkEVM/spec/zkasm/index.md
+          - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
+          - Examples: zkEVM/spec/zkasm/examples.md
+        - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
       - Concepts:
+        - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
+        - Sparse merkle trees:
+          - Merkle trees: zkEVM/concepts/sparse-merkle-trees/sparse-merkle-tree.md
+          - Constructing simple SMTs: zkEVM/concepts/sparse-merkle-trees/simple-smt.md
+          - SMT concepts: zkEVM/concepts/sparse-merkle-trees/detailed-smt.md
+          - Operations on SMTs: zkEVM/concepts/sparse-merkle-trees/basic-smt-ops.md
         - mFibonnaci state machine:
-          - Design approach: zkEVM/concepts/mfibonacci.md
-          - An example: zkEVM/concepts/mfibonacci-example.md
-          - Commitment scheme: zkEVM/concepts/commitment-scheme.md
-          - Verification scheme: zkEVM/concepts/verification-scheme.md
-          - PIL-STARK process: zkEVM/concepts/pil-stark.md
-          - PIL-STARK demo: zkEVM/concepts/pil-stark-demo.md
+          - Design approach: zkEVM/concepts/mfibonacci/mfibonacci.md
+          - An example: zkEVM/concepts/mfibonacci/mfibonacci-example.md
+          - Commitment scheme: zkEVM/concepts/mfibonacci/commitment-scheme.md
+          - Verification scheme: zkEVM/concepts/mfibonacci/verification-scheme.md
+          - PIL-STARK process: zkEVM/concepts/mfibonacci/pil-stark.md
+          - PIL-STARK demo: zkEVM/concepts/mfibonacci/pil-stark-demo.md
         - Generic state machine: 
-          - Generic SM introduction: zkEVM/concepts/intro-generic-sm.md
-          - Execution trace: zkEVM/concepts/exec-trace-correct.md
-          - Ending programs: zkEVM/concepts/ending-program.md
-          - Program counter: zkEVM/concepts/program-counter.md
-          - Plookup: zkEVM/concepts/plookup.md
+          - Generic SM introduction: zkEVM/concepts/generic-state-machine/intro-generic-sm.md
+          - Execution trace: zkEVM/concepts/generic-state-machine/exec-trace-correct.md
+          - Ending programs: zkEVM/concepts/generic-state-machine/ending-program.md
+          - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
+          - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
-      - Welcome: 
-        - pos/index.md
+      - PoS: pos/index.md
+      - Overview: pos/overview.md
       - Get started: 
         - Get started: pos/get-started/index.md
-      - How-tos:
-        - How-tos: pos/howto/index.md
-        - Operating:
-          - Operating: pos/howto/operating/index.md
-          - Full Node:
-            - Full Node: pos/howto/operating/full-node/index.md
-            - Manual Install: pos/howto/operating/full-node/manual-install.md
-            - Ansible: pos/howto/operating/full-node/ansible.md
-            - Docker: pos/howto/operating/full-node/docker.md
-            - Google Cloud: pos/howto/operating/full-node/gcp.md
-          - Validator Node:
-            - Validator Node: pos/howto/operating/validator-node/index.md
-            - Manual Install: pos/howto/operating/validator-node/manual-install.md
-            - Ansible: pos/howto/operating/validator-node/ansible.md
-            - Staking: pos/howto/operating/validator-node/staking.md
-          - Access Node: pos/howto/operating/access-node.md
-          - Archive Node: pos/howto/operating/archive-node.md
-          - Erigon Node: pos/howto/operating/erigon-node.md
-        - Bridging:
-          - Bridging: pos/howto/bridging/index.md
-          - Ethereum-Polygon: pos/howto/bridging/ethereum-polygon/index.md
-          - L1-L2 Communication: pos/howto/bridging/l1-l2-communication/index.md
-        - Smart Contracts:
-          - Smart Contracts: pos/howto/smart-contracts/index.md
-          - Alchemy: pos/howto/smart-contracts/alchemy.md
-          - ChainIDE: pos/howto/smart-contracts/chainide.md
-          - ChainStack: pos/howto/smart-contracts/chainstack.md
-          - GetBlock: pos/howto/smart-contracts/getblock.md
-          - QuickNode: pos/howto/smart-contracts/quicknode.md
-          - SmartPress: pos/howto/smart-contracts/smartpress.md
-          - ThirdWeb: pos/howto/smart-contracts/thirdweb.md
-        - Polygon DID: pos/howto/polygon-did.md
+        - Building on Polygon: pos/get-started/building-on-polygon.md
+      - How to:
+        - How to: pos/how-to/index.md
+        - Restore from snapshots: pos/how-to/snapshots.md
+        - Operate a node:
+          - Operate a node: pos/how-to/operating/index.md
+          - Full node:
+            - Full node: pos/how-to/operating/full-node/index.md
+            - Manual install: pos/how-to/operating/full-node/manual-install.md
+            - Ansible: pos/how-to/operating/full-node/ansible.md
+            - Docker: pos/how-to/operating/full-node/docker.md
+            - Google cloud: pos/how-to/operating/full-node/gcp.md
+          - Validator node:
+            - Validator node: pos/how-to/operating/validator-node/index.md
+            - Manual install: pos/how-to/operating/validator-node/manual-install.md
+            - Ansible: pos/how-to/operating/validator-node/ansible.md
+            - Staking: pos/how-to/operating/validator-node/staking.md
+          - Access node: pos/how-to/operating/access-node.md
+          - Archive node: pos/how-to/operating/archive-node.md
+          - Erigon node: pos/how-to/operating/erigon-node.md
+        - Bridge layers:
+          - Bridge layers: pos/how-to/bridging/index.md
+          - Ethereum-Polygon:
+            - Ethereum-Polygon: pos/how-to/bridging/ethereum-polygon/index.md
+            - Ethereum to MATIC: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
+            - MATIC to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
+            - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
+          - L1-L2 communication:
+            - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
+            - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
+        - Work with smart contracts:
+          - Work with smart contracts: pos/how-to/smart-contracts/index.md
+          - Alchemy: pos/how-to/smart-contracts/alchemy.md
+          - ChainIDE: pos/how-to/smart-contracts/chainide.md
+          - ChainStack: pos/how-to/smart-contracts/chainstack.md
+          - GetBlock: pos/how-to/smart-contracts/getblock.md
+          - QuickNode: pos/how-to/smart-contracts/quicknode.md
+          - SmartPress: pos/how-to/smart-contracts/smartpress.md
+          - ThirdWeb: pos/how-to/smart-contracts/thirdweb.md
+        - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
-          - pos/architecture/index.md
+          - Architecture: pos/architecture/index.md
           - Bor:
             - Bor: pos/architecture/bor/index.md
-            - Consensus: pos/architecture/bor/consensus.md
-            - State Sync: pos/architecture/bor/state-sync.md
-            - Network Configuration: pos/architecture/bor/network-config.md
-            - Snapshots: pos/architecture/bor/snapshots.md
+            - State sync: pos/architecture/bor/state-sync.md
+            - Network configuration: pos/architecture/bor/network-config.md
+            - Commands: pos/architecture/bor/commands.md
           - Heimdall:
             - Heimdall: pos/architecture/heimdall/index.md
-            - Checkpoint: pos/architecture/heimdall/checkpoint.md
+            - Heimdall and Bor: pos/architecture/heimdall/heimdall-and-bor.md
+            - Authentication: pos/architecture/heimdall/authentication.md
+            - Key management: pos/architecture/heimdall/key-management.md
+            - Validation: pos/architecture/heimdall/validation.md
+            - Balance transfers: pos/architecture/heimdall/balance-transfers.md
+            - Staking: pos/architecture/heimdall/staking.md
+            - Checkpoints: pos/architecture/heimdall/checkpoints.md
+            - Topup: pos/architecture/heimdall/topup.md
+            - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
-            - Key Management: pos/architecture/heimdall/key-management.md
-            - Stdtx: pos/architecture/heimdall/stdtx.md
-            - Modules:
-              - Modules: pos/architecture/heimdall/modules/index.md
-              - Ante Handler: pos/architecture/heimdall/modules/antehandler.md
-              - Auth: pos/architecture/heimdall/modules/auth.md
-              - Bank: pos/architecture/heimdall/modules/bank.md
-              - Bor: pos/architecture/heimdall/modules/bor.md
-              - Chain Manager: pos/architecture/heimdall/modules/chain-manager.md
-              - Checkpoint: pos/architecture/heimdall/modules/checkpoint.md
-              - Clerk: pos/architecture/heimdall/modules/clerk.md
-              - Staking: pos/architecture/heimdall/modules/staking.md
-              - Topup: pos/architecture/heimdall/modules/topup.md
-            - FAQ: pos/architecture/heimdall/faq.md
-      - Specification:
-          - pos/spec/index.md
       - Concepts:
           - Concepts: pos/concepts/index.md
           - Tokens:
@@ -236,31 +272,171 @@ nav:
             - Transactions: pos/concepts/transactions/index.md
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
-            - Meta-Transactions: pos/concepts/transactions/meta-transactions.md
-      - API:
-          - pos/api/index.md
+            - Meta-transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
-      - Overview: miden/index.md
-      - Miden playground: https://0xpolygonmiden.github.io/examples/
-      - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
+      - Miden: miden/index.md
+      - Overview: miden/overview.md
+      - Miden zkRollup docs:
+          - Introduction:  
+              - Welcome: miden/introduction/index.md
+              - Roadmap:  miden/roadmap.md
+          - Architecture:
+              - Architecture:  miden/architecture/index.md
+              - Accounts:  miden/architecture/accounts.md
+              - Assets:  miden/architecture/assets.md
+              - Execution:  miden/architecture/execution.md
+              - Notes:  miden/architecture/notes.md
+              - State:  miden/architecture/state.md
+              - Transactions:  miden/architecture/transactions.md
+          - Crypto primitives:
+              - Crypto primitives:  miden/crypto-primitives/crypto-primitives.md
+              - Tiered sparce Merkle tree (TSMT):  miden/crypto-primitives/tsmt.md
       - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
-  - Tools: 
-      - tools/index.md
-      - Using Web3Modal SDK: tools/using-web3modal.md
-  - Tutorials:
-      - Tutorials: tutorials/index.md
-      - Build a Validium-based App-chain: tutorials/build-validium.md
-      - Deploy a zkEVM Rollup: tutorials/deploy-zkEVM.md
-      - Deploy a Miden Rollup: tutorials/deploy-miden.md
-      - Build a dApp on zkEVM: tutorials/build-zkEVM-dapp.md
-      - Run a PoS node: tutorials/run-pos-node.md
-      - Become a PoS Validator: tutorials/become-pos-validator.md
+  - Developer tools: 
+      - Developer tools: tools/index.md
+      - Smart contract development: 
+          - Hardhat: tools/smart-contracts/hardhat.md
+          - Truffle: tools/smart-contracts/truffle.md
+          - Remix: tools/smart-contracts/remix.md
+          - Replit: tools/smart-contracts/replit.md
+      - Gas:
+          - Polygon MATIC faucet: tools/gas/matic-faucet.md
+          - Polygon gas station: tools/gas/polygon-gas-station.md
+      - Data:
+          - The Graph: 
+              - Overview: tools/data/the-graph/overview.md
+              - Data: tools/data/the-graph/data.md
+              - Entities: tools/data/the-graph/entities.md
+              - Queries: tools/data/the-graph/queries.md
+          - Covalent: tools/data/covalent.md
+          - Flair: tools/data/flair.md
+          - PARSIQ: tools/data/parsiq.md
+      - Matic.js:
+          - POS:
+              - Get started:  tools/matic-js/get-started.md
+              - Installation:  tools/matic-js/installation.md
+              - POS client:  tools/matic-js/pos/client.md
+              - API overview:  tools/matic-js/api-architecture.md
+              - Setup:
+                  - Ethers:  tools/matic-js/setup/ethers.md
+                  - Web3js:  tools/matic-js/setup/web3js.md
+              - Set proof API:  tools/matic-js/set-proof-api.md
+              - Advanced:
+                  - ABI manager:  tools/matic-js/advanced/abi-manager.md
+                  - Exit util:  tools/matic-js/advanced/exit-util.md
+                  - Plugin:  tools/matic-js/advanced/plugin.md
+              - ERC20:
+                  - Overview: tools/matic-js/pos/erc20/index.md
+                  - approveMax:  tools/matic-js/pos/erc20/approve-max.md
+                  - approve:  tools/matic-js/pos/erc20/approve.md
+                  - deposit:  tools/matic-js/pos/erc20/deposit.md
+                  - getAllowance:  tools/matic-js/pos/erc20/get-allowance.md
+                  - getBalance:  tools/matic-js/pos/erc20/get-balance.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc20/is-withdraw-exited.md
+                  - transfer:  tools/matic-js/pos/erc20/transfer.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc20/withdraw-exit-faster.md
+                  - withdrawExit:  tools/matic-js/pos/erc20/withdraw-exit.md
+                  - withdrawStart:  tools/matic-js/pos/erc20/withdraw-start.md
+              - ERC721:
+                  - Overview:  tools/matic-js/pos/erc721/index.md
+                  - approveAll:  tools/matic-js/pos/erc721/approve-all.md
+                  - approve:  tools/matic-js/pos/erc721/approve.md
+                  - depositMany:  tools/matic-js/pos/erc721/deposit-many.md
+                  - deposit:  tools/matic-js/pos/erc721/deposit.md
+                  - getAllTokens:  tools/matic-js/pos/erc721/get-all-tokens.md
+                  - getTokenIdAtIndexForUser:  tools/matic-js/pos/erc721/get-token-id-at-index-for-user.md
+                  - getTokensCount:  tools/matic-js/pos/erc721/get-tokens-count.md
+                  - isApprovedAll:  tools/matic-js/pos/erc721/is-approved-all.md
+                  - isApproved:  tools/matic-js/pos/erc721/is-approved.md
+                  - isWithdrawExitedMany:  tools/matic-js/pos/erc721/is-withdraw-exited-many.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc721/is-withdraw-exited.md
+                  - transfer:  tools/matic-js/pos/erc721/transfer.md
+                  - withdrawExitFasterMany:  tools/matic-js/pos/erc721/withdraw-exit-faster-many.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc721/withdraw-exit-faster.md
+                  - withdrawExitMany:  tools/matic-js/pos/erc721/withdraw-exit-many.md
+                  - withdrawExit:  tools/matic-js/pos/erc721/withdraw-exit.md
+                  - withdrawStartMany:  tools/matic-js/pos/erc721/withdraw-start-many.md
+                  - withdrawStartWithMetaData:  tools/matic-js/pos/erc721/withdraw-start-with-meta-data.md
+                  - withdrawStart:  tools/matic-js/pos/erc721/withdraw-start.md
+              - ERC1155:
+                  - approve-all-for-mintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
+                  - approve-all:  tools/matic-js/pos/erc1155/approve-all.md
+                  - deposit-many:  tools/matic-js/pos/erc1155/deposit-many.md
+                  - deposit:  tools/matic-js/pos/erc1155/deposit.md
+                  - get-balance:  tools/matic-js/pos/erc1155/get-balance.md
+                  - index:  tools/matic-js/pos/erc1155/index.md
+                  - is-approved-all:  tools/matic-js/pos/erc1155/is-approved-all.md
+                  - is-withdraw-exited-many:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
+                  - is-withdraw-exited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
+                  - transfer:  tools/matic-js/pos/erc1155/transfer.md
+                  - withdraw-exit-faster-many:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
+                  - withdraw-exit-faster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
+                  - withdraw-exit-many:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
+                  - withdraw-exit:  tools/matic-js/pos/erc1155/withdraw-exit.md
+                  - withdraw-start-many:  tools/matic-js/pos/erc1155/withdraw-start-many.md
+                  - withdraw-start:  tools/matic-js/pos/erc1155/withdraw-start.md
+              - Common methods:
+                  - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
+                  - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
+                  - isDeposited:  tools/matic-js/pos/is-deposited.md
+          - zkEVM:
+              - Initialize:  tools/matic-js/zkevm/initialize.md
+              - ERC20:  tools/matic-js/zkevm/erc20.md
+              - Common methods:  tools/matic-js/zkevm/common-methods.md
+      - Storage: 
+          - IPFS: tools/storage/ipfs.md
+          - Filecoin: tools/storage/filecoinhelpers.md
+          - Crust network: tools/storage/crusthelpers.md
+          - Mint NFTs: tools/storage/nftstorage.md
+      - Oracles:
+          - Getting started: tools/oracles/getting-started.md
+          - API3: tools/oracles/api3.md
+          - Bandchain: tools/oracles/bandchain.md
+          - Band standard dataset: tools/oracles/bandstandarddataset.md
+          - Chainlink: tools/oracles/chainlink.md
+          - DIA: tools/oracles/diadataoracles.md
+          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
+          - Razor: tools/oracles/razor.md
+          - Tellor: tools/oracles/tellor.md
+          - Umbrella: tools/oracles/umbrella.md
+      - Wallets:
+          - Getting started:  tools/wallets/getting-started.md
+          - Metamask:
+              - Overview: tools/wallets/metamask/index.md
+              - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
+              - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
+              - Configure custom tokens:  tools/wallets/metamask/custom-tokens.md
+              - Create and import accounts:  tools/wallets/metamask/multiple-accounts.md
+          - Venly:
+              - Intro:  tools/wallets/venly/index.md
+              - Create wallet:  tools/wallets/venly/create-wallet.md
+              - Add network:  tools/wallets/venly/add-network.md
+              - Add custom token:  tools/wallets/venly/custom-tokens.md
+          - Wallet link: tools/wallets/wallet-link.md
+          - Fortmatic: tools/wallets/fortmatic.md
+          - Portis:  tools/wallets/portis.md
+          - Torus:  tools/wallets/torus.md          
+          - WalletConnect:  tools/wallets/walletconnect.md
+          - SlashAuth:  tools/wallets/slashauth.md
+          - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
+          - Particle network:  tools/wallets/particle-network.md
+          - Web3Modal: tools/wallets/using-web3modal.md
+      - Block explorers:
+          - Polygon: https://polygonscan.com/ 
+          - zkEVM: https://zkevm.polygonscan.com/
+          - zkEVM testnet: https://explorer-ui.mainnet.zkevm-test.net/
+          - OKLink: https://www.oklink.com/polygon
+  - Learn:
+      - Learn: learn/index.md
+      - Unified liquidity and scalability: learn/liquidity-and-scalability.md
+      - Polygon protocols: learn/polygon-protocols.md
+      - Polygon 2.0 architecture: learn/deep-dive-arch.md
 
 extra:
   generator: false
   analytics:
-  #  provider: google
-  #  property: G-XXXXXXXXXX
+    provider: google
+    property: G-RJ6JC0EEY5
   #  feedback:  # feedback form only works when Google Analytics is set up and working
   #    title: Was this page helpful?
   #    ratings:
@@ -291,9 +467,10 @@ extra:
       make our documentation better.
 
 extra_css:
+  - _site_essentials/stylesheets/polygon-docs.webflow.css
   - _site_essentials/stylesheets/extra.css
-  - _site_essentials/stylesheets/section-nav.css
   - https://fonts.googleapis.com/icon?family=Material+Icons
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 markdown_extensions:
   - toc:
@@ -310,7 +487,8 @@ markdown_extensions:
   - abbr
   - pymdownx.tabbed
   - pymdownx.superfences
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.keys
@@ -339,4 +517,11 @@ plugins:
 #        - README.md
 
 validation:
-  absolute_links: ignore
+  absolute_links: warn
+
+extra_javascript:
+  - _site_essentials/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
