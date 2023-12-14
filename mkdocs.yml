@@ -276,21 +276,21 @@ nav:
   - Miden:
       - Miden: miden/index.md
       - Overview: miden/overview.md
-      - Miden zkRollup docs:
+      - Roadmap:  miden/roadmap.md
+      - Miden rollup docs:
           - Introduction:  
               - Welcome: miden/introduction/index.md
-              - Roadmap:  miden/roadmap.md
           - Architecture:
               - Architecture:  miden/architecture/index.md
               - Accounts:  miden/architecture/accounts.md
-              - Assets:  miden/architecture/assets.md
-              - Execution:  miden/architecture/execution.md
               - Notes:  miden/architecture/notes.md
-              - State:  miden/architecture/state.md
+              - Assets:  miden/architecture/assets.md
               - Transactions:  miden/architecture/transactions.md
+              - State:  miden/architecture/state.md
+              - Execution:  miden/architecture/execution.md
           - Crypto primitives:
               - Tiered sparce Merkle tree (TSMT):  miden/crypto-primitives/tsmt.md
-     # - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
+      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
