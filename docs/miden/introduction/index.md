@@ -12,7 +12,7 @@ This documentation explains how to develop on Miden. Furthermore, it explains th
 
 * [Discord](https://discord.gg/0xpolygondevs)
 * [Repo](https://github.com/0xPolygonMiden)
-* [Roadmap](../roadmap)
+* [Roadmap](../roadmap.md)
 
 ## Miden creates a new design space secured by Ethereum
 
@@ -27,9 +27,9 @@ Unlike most other rollups, Polygon Miden prioritizes ZK-friendliness over EVM co
 * Ethereum security.
 * Developers can build applications infeasible on other systems, for example:
 
-    * *On-chain order book exchanges* due to parallel tx exectuion and updatable transactions.
-    * *Complex, incomplete information games* due to client-side proving and cheap complex computations.
-    * *Safe wallets* due to assets being stored in the accounts and account state can be hidden.
+    * On-chain order book exchanges due to parallel tx execution and updatable transactions.
+    * Complex, incomplete information games due to client-side proving and cheap complex computations.
+    * Safe wallets due to assets being stored in the accounts and account state can be hidden.
 
 * Better privacy properties than on Ethereum - first web2 privacy, later even stronger privacy guarantees.
 * Transactions can be recalled and updated.
