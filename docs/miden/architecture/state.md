@@ -1,4 +1,3 @@
-# State
 The state of the Miden rollup describes the current condition of all accounts and note states. It describes what is currently the case. With its state model, using concurrent offchain state, Polygon Miden aims to realise private transactions, and execution and state bloat minimization.
 
 Privacy is realised from a UTXO-like state model consisting of notes and nullifiers combined with offchain execution using zero-knowledge proofs. Execution bloat happens when transactions get re-executed by all participants of the network. State bloat describes the ever growing state stored in blockchain nodes. Polygon Miden addresses these challenges via its state model that enables concurrent offchain execution and offchain storage.
@@ -16,9 +15,10 @@ The Miden Node(s) maintain three databases to describe the state:
 2. A database of notes.
 3. A database of nullifiers for already consumed notes.
 
-<p align="center">
-  <img src="../diagrams/architecture/state/State.png" width="80%">
-</p>
+
+<center>
+![State](../../img/miden/architecture/state/state.png){ width="80%" }
+</center>
 
 These databases are represented by authenticated data structures, such that we can easily prove that items were added to or removed from a database, and a commitment to the database would be very small.
 
@@ -27,9 +27,9 @@ Polygon Miden has two databases to capture the note states. The note database is
 ### Account database
 The latest account states - and data for onchain accounts - are recorded in a [tiered sparse Merkle tree](https://0xpolygonmiden.github.io/miden-base/crypto-primitives/tsmt.html) which maps account IDs to account hashes and account data if needed.
 
-<p align="center">
-  <img src="../diagrams/architecture/state/Account_DB.png" width="80%">
-</p>
+<center>
+![Account DB](../../img/miden/architecture/state/account_DB.png){ width="80%" }
+</center>
 
 As described in [Accounts](http://localhost:3000/architecture/accounts.html#account-storage-modes), there are three types of accounts:
 * **Public accounts** where all account data is stored onchain.
@@ -45,9 +45,9 @@ Private accounts significantly reduce the storage overhead for nodes. A private 
 ### Note database
 Notes are recorded in an append-only accumulator, a [Merkle Mountain Range](https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md). Each leaf is a block header which contains the commitment to all notes created in that block. The size of the Merkle Mountain Range grows logarithmically with the number of items in it.
 
-<p align="center">
-  <img src="../diagrams/architecture/state/Note_DB.png" width="80%">
-</p>
+<center>
+![Note DB](../../img/miden/architecture/state/note_DB.png){ width="80%" }
+</center>
 
 As described in [Notes](http://localhost:3000/architecture/notes.html#note-storage-modes), there are two types of [notes](https://0xpolygonmiden.github.io/miden-base/architecture/notes.html):
 
@@ -68,9 +68,9 @@ However, the size of the note database does not grow indefinitely. Theoretically
 ### Nullifier database
 Nullifiers are stored in a [Tiered Sparse Merkle Tree](https://0xpolygonmiden.github.io/miden-base/crypto-primitives/tsmt.html), which maps [Note Nullifiers](https://0xpolygonmiden.github.io/miden-base/architecture/notes.html#note-nullifier) to `0` or `1`. Nullifiers provide information on whether a specific note has been consumed yet. The database allows proving that a given nullifier is not in the database.
 
-<p align="center">
-  <img src="../diagrams/architecture/state/Nullifier_DB.png">
-</p>
+<center>
+![Nullifier DB](../../img/miden/architecture/state/nullifier_DB.png){ width="80%" }
+</center>
 
 To prove that a note has not been consumed previously, the operator needs to provide a Merkle path to its node, and then show that the value in that node is `0`. In our case nullifiers are $32$ bytes each, and thus, the height of the Sparse Merkle tree need to be $256$.
 
@@ -81,6 +81,7 @@ To be able to add new nullifiers to the database, Operators needs to maintain th
 There will be one tree per epoch (~3 months), and Miden nodes always store trees for at least two epochs. However, the roots of the old trees are still stored. If a user wants to consume a note that is more than $6$ month old, there must be a merkle path provided to the Miden Node for verification.
 
 ## State bloat minimization
+
 Operators don’t need to know the entire state to verify or produce a new block. No operator is required to store the entire state.
 
 At its core, the idea is simple: Instead of storing the full state data with the operators, the users store their data, and the rollup only keeps track of commitments to the data. At least for private accounts, some smart contracts need to be publicly visible. This minimizes state bloat—as the operator doesn’t need to store an ever-growing database—and provides privacy because all other users and the operator only see a hash of other users’ data.

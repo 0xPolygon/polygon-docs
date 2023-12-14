@@ -281,8 +281,8 @@ nav:
               - Welcome: miden/introduction/index.md
               - Roadmap:  miden/roadmap.md
           - Architecture:
+              - Architecture:  miden/architecture/index.md
               - Accounts:  miden/architecture/accounts.md
-              - Architecture:  miden/architecture/architecture.md
               - Assets:  miden/architecture/assets.md
               - Execution:  miden/architecture/execution.md
               - Notes:  miden/architecture/notes.md
