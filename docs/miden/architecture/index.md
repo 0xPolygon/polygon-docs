@@ -16,19 +16,19 @@ In Miden, there are accounts and notes which can hold assets. Accounts consume a
 
 ### Accounts
 
-[Accounts](./accounts) can hold assets and define rules how assets can be transferred. Accounts can represent users or autonomous smart contracts. This chapter describes the design, the storage types, and the creation of an account.
+[Accounts](accounts.md) can hold assets and define rules how assets can be transferred. Accounts can represent users or autonomous smart contracts. This chapter describes the design, the storage types, and the creation of an account.
 
 ### Notes
 
-[Notes](./notes) are messages that accounts send to each other. A note stores assets and a script that defines how this note can be consumed. This chapter describes the design, the storage types, and the creation of a note.
+[Notes](notes.md) are messages that accounts send to each other. A note stores assets and a script that defines how this note can be consumed. This chapter describes the design, the storage types, and the creation of a note.
 
 ### Assets
 
-[Assets](./assets) can be fungible and non-fungible. They are stored in the owner’s account itself or in a note. This chapter describes asset issuance, customization, and storage.
+[Assets](assets.md) can be fungible and non-fungible. They are stored in the owner’s account itself or in a note. This chapter describes asset issuance, customization, and storage.
 
 ### Transactions
 
-[Transactions](./transactions) describe production and consumption of notes by a single account. Executing a transaction always results in a STARK proof. This chapter describes the transaction design and the different transaction types.
+[Transactions](transactions.md) describe production and consumption of notes by a single account. Executing a transaction always results in a STARK proof. This chapter describes the transaction design and the different transaction types.
 
 ##### Accounts produce and consume notes to communicate 
 
@@ -37,13 +37,16 @@ In Miden, there are accounts and notes which can hold assets. Accounts consume a
 </center>
 
 ## State and Execution
+
 The state model captures all individual states of all accounts and notes. Finally, the execution model describes state progress in a sequence of blocks.
 
 ### State model
-[State](./state) describes everything that is the case at a certain point in time. Individual states of accounts or notes can be stored onchain and offchain. This chapter describes the three different state databases in Miden.
+
+[State](state.md) describes everything that is the case at a certain point in time. Individual states of accounts or notes can be stored onchain and offchain. This chapter describes the three different state databases in Miden.
 
 ### Execution model
-[Execution](./execution) describes how the state progresses - on an individual level via transactions and at the global level expressed as aggregated state updates in blocks. This chapter describes the execution model and how blocks are built.
+
+[Execution](execution.md) describes how the state progresses - on an individual level via transactions and at the global level expressed as aggregated state updates in blocks. This chapter describes the execution model and how blocks are built.
 
 ##### Operators capture and progress state 
 
