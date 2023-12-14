@@ -70,7 +70,7 @@ Yes, the migration contract includes a feature known as "unmigration." This allo
 
 ### How does the modified bridge function?
 
-The Bridge will undergo modifications, with community approval, to change the native token of Polygon PoS to the new POL token. Specifically, the following changes are being proposed:
+The bridge will undergo modifications, with community approval, to change the native token of Polygon PoS to the new POL token. Specifically, the following changes are being proposed:
 
 - Bridging POL to Polygon PoS: if you bridge POL tokens to Polygon PoS, you will receive
 an equal amount of native tokens (POL) on Polygon PoS.
