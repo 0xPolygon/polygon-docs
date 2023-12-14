@@ -289,9 +289,8 @@ nav:
               - State:  miden/architecture/state.md
               - Transactions:  miden/architecture/transactions.md
           - Crypto primitives:
-              - Crypto primitives:  miden/crypto-primitives/crypto-primitives.md
               - Tiered sparce Merkle tree (TSMT):  miden/crypto-primitives/tsmt.md
-      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
+     # - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
