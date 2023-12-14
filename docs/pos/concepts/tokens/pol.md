@@ -68,7 +68,7 @@ Yes, the migration contract includes a feature known as "unmigration." This allo
 
 ## Bridging mechanisms
 
-### How does the modified Bridge function?
+### How does the modified bridge function?
 
 The Bridge will undergo modifications, with community approval, to change the native token of Polygon PoS to the new POL token. Specifically, the following changes are being proposed:
 
