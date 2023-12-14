@@ -21,7 +21,7 @@ Asset container for a note. A note vault can contain up to `255` assets stored i
 
 ### Script
 
-Unlike an account, a note has a single executable script. This script will be executed in a [transaction](./transactions). This script is also the root of a [Miden program MAST](https://0xpolygonmiden.github.io/miden-vm/user_docs/assembly/main.html). A script is always executed in the context of a single account, and thus, may invoke account's functions. A note's script can call zero or more of an account's function.
+Unlike an account, a note has a single executable script. This script will be executed in a [transaction](transactions.md). This script is also the root of a [Miden program MAST](https://0xpolygonmiden.github.io/miden-vm/user_docs/assembly/main.html). A script is always executed in the context of a single account, and thus, may invoke account's functions. A note's script can call zero or more of an account's function.
 
 !!! note
     Since code in Miden is expressed as MAST, every function is a commitment to the underlying code. The code cannot change unnoticed to the user because its hash would change.*
@@ -44,7 +44,7 @@ For every note the Miden operator stores metadata in the note DB. This metadata 
 
 ## Note storage modes
 
-Similar to accounts, there are two storage modes for notes in Miden. Notes can be stored privately in the [Notes DB](./state/#note-database) with only the note hash. Or notes can be stored publicly with all data.
+Similar to accounts, there are two storage modes for notes in Miden. Notes can be stored privately in the [Notes DB](state.md/#note-database) with only the note hash. Or notes can be stored publicly with all data.
 
 Privately stored notes can only be consumed if the note data is known to the consumer. That means, there must be some off-chain communication to transmit the note's data from the sender to the recipient.
 
@@ -65,7 +65,7 @@ the VM.
 
 ## Note nullifier
 
-The nullifier is the note's index in the [Nullifier DB](./notes/#note-nullifier). The Nullifier DB stores the information whether a note was already consumed.
+The nullifier is the note's index in the [Nullifier DB](notes.md/#note-nullifier). The Nullifier DB stores the information whether a note was already consumed.
 
 The nullifier is computed as `hash(serial_num, script_hash, input_hash, vault_hash)`.
 
@@ -83,14 +83,14 @@ To know a note’s nullifier, one needs to know all details of the note. That me
 
 ## Note lifecycle
 
-For a note to exist it must be present in the [Notes DB](./state/#note-database) kept by the Miden node(s). New notes are being produced when executing a transaction. They can be produced locally by users in local transactions or by the operator in a network transaction.
+For a note to exist it must be present in the [Notes DB](state.md/#note-database) kept by the Miden node(s). New notes are being produced when executing a transaction. They can be produced locally by users in local transactions or by the operator in a network transaction.
 
-The lifcycle of a note is as follows:
+The life-cycle of a note is as follows:
 
-* A new note is produced when a transaction is executed - regardless of the transaction type
-* Operator will receive the note hash and if the note is public, it'll also receive the corresponding note's data
-* Operator verifies the correctness of the underlying transaction before adding the note hash to the Notes DB
-* The note can now be consumed in a seperate transaction - to consume the note, the note's data must be known
-* A note is consumed when the its nullifier in the [Nullifier DB](./state/#nullifier-database) is set to `1`
-* Operator will receive the note's nullifier together with a transaction proof
-* After successful verification, the Operator sets the corresponding entry in the Nullifier DB to `1`
+* A new note is produced when a transaction is executed - regardless of the transaction type.
+* Operator will receive the note hash and if the note is public, it'll also receive the corresponding note's data.
+* Operator verifies the correctness of the underlying transaction before adding the note hash to the Notes DB.
+* The note can now be consumed in a separate transaction - to consume the note, the note's data must be known.
+* A note is consumed when the its nullifier in the [Nullifier DB](state.md/#nullifier-database) is set to `1`.
+* Operator will receive the note's nullifier together with a transaction proof.
+* After successful verification, the Operator sets the corresponding entry in the Nullifier DB to `1`.

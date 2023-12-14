@@ -8,7 +8,7 @@ Polygon Miden is an Ethereum rollup. It batches transactions - or more precisely
 
 Every transaction will result in a zkProof that attests to its correctness.
 
-As mentioned in [transactions](./transactions), there are two types of transactions: local and network. For every transaction there is a proof which is either created by the user in the Miden Client or by the Operator using the Miden Node.
+As mentioned in [transactions](transactions.md), there are two types of transactions: local and network. For every transaction there is a proof which is either created by the user in the Miden Client or by the Operator using the Miden Node.
 
 ## Transaction batching
 
@@ -37,6 +37,7 @@ A block produced by the Miden Node looks somewhat like this:
 * The block also contains full account and note data for public accounts and notes. For example, if account `123` is a public account which was updated, in the state updates section we'd have a records for it as `(123, 0x456..)`. The full new state of this account (which should hash to `0x456..`) would be included in a separate section.
 
 To verify that a block describes a valid state transition, we do the following:
+
 1. Compute hashes of public account and note states.
 2. Make sure these hashes match records in the *state updates* section.
 3. Verify the included ZKP against the following public inputs:

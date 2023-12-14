@@ -17,7 +17,7 @@ Native assets are data structures that follow the Miden asset model (encoding, i
 
 ### Issuance
 
-Only specialized accounts called faucets can issue assets. Just like with regular accounts, anyone can create a faucet account. Faucets can issue only either fungible or non-fungible assets - but not both. The `faucet_id` identifies the faucet and is starts with a different sequence depending on the asset type, see [here](./accounts/#account-id). The faucet's code defines rules for how assets can be minted, who can mint them etc. Conceptually, faucet accounts on Miden are similar to ERC20 contracts on Ethereum. But, there is no ownership tracking in Miden faucets.
+Only specialized accounts called faucets can issue assets. Just like with regular accounts, anyone can create a faucet account. Faucets can issue only either fungible or non-fungible assets - but not both. The `faucet_id` identifies the faucet and is starts with a different sequence depending on the asset type, see [here](accounts.md/#account-id). The faucet's code defines rules for how assets can be minted, who can mint them etc. Conceptually, faucet accounts on Miden are similar to ERC20 contracts on Ethereum. But, there is no ownership tracking in Miden faucets.
 
 Faucets can create assets and immediately distribute them by producing notes. However, assets can also stay in the faucet after creation to be sent later, e.g., in a bundle. That way, one can mint a million NFTs locally in a single transaction and then send them out as needed in separate transactions in the future.
 
@@ -39,7 +39,7 @@ Examples of non-fungible assets are all NFTs, e.g., a DevCon ticket. The ticket'
 
 ### Storage
 
-[Accounts](./accounts) and [notes](./notes) contain asset vaults that are used to store assets. Accounts can keep unlimited assets in a [tiered sparse Merkle tree](../crypto-primitives/tsmt) called `account vault`. Notes can only store up to `255` distinct assets.
+[Accounts](accounts.md) and [notes](notes.md) contain asset vaults that are used to store assets. Accounts can keep unlimited assets in a [tiered sparse Merkle tree](../crypto-primitives/tsmt.md) called `account vault`. Notes can only store up to `255` distinct assets.
 
 <center>
 ![Asset storage](../../img/miden/architecture/asset/asset_storage.png){ width="50%" }
