@@ -13,7 +13,7 @@ The following cyclical workflow outlines the operational mechanics of today's Po
 3. **Checkpoint creation and submission**: A checkpoint of the validated transactions is created and submitted to the core contracts on the Ethereum mainnet.
 4. **Verification by core contracts**: Core contracts verify the checkpoint's validity, with the added security of fraud proofs. 
 5. **Transaction execution**: Upon successful verification, the transaction is executed and state changes are committed to the Polygon sidechain.
-6. **Asset transfer (optional)**: If needed, assets can be transferred back to the Ethereum mainnet via the Exit Queue in the core contracts.
+6. **Asset transfer (optional)**: If needed, assets can be transferred back to the Ethereum mainnet via the exit queue in the core contracts.
 7. **Cycle reiteration**: The process can be initiated again by the user, returning to step 1.
 
 
