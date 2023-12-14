@@ -1,6 +1,6 @@
 When setting up a new sentry, validator, or full node server, it is recommended that you use snapshots for faster syncing without having to sync over the network. Using snapshots will save you several days for both Heimdall and Bor.
 
-For the latest snapshot, please visit [Polygon Chains Snapshots](https://snapshot.polygon.technology/).
+For the latest snapshot, please visit [Polygon Chains Snapshots](https://snapshots.polygon.technology/).
 
 !!! warning "Bor snapshots no longer supported"
     We no longer support bor archive snapshots due to unsustainable data growth.
