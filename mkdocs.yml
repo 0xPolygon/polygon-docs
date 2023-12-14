@@ -265,6 +265,29 @@ nav:
             - Governance: pos/architecture/heimdall/governance.md
       #- Specification:
       #    - Specification: pos/spec/index.md
+      - Operate a node:
+        - Operate a node: pos/operate-node/index.md
+        - System requirements: pos/operate-node/validator/validator-node-system-requirements.md
+        - Operators:
+          # - Operators: pos/operate-node/operate/index.md
+          - Node binaries: pos/operate-node/operate/full-node-binaries.md
+          - Node docker: pos/operate-node/operate/full-node-docker.md
+          - Node ansible: pos/operate-node/operate/full-node-ansible.md
+          - Node packages: pos/operate-node/operate/full-node-packages.md
+          - Node gcp: pos/operate-node/operate/full-node-gcp.md
+          - Erigon client: pos/operate-node/operate/run-erigon-node.md
+        - Validators:
+          # - Validators: pos/operate-node/validator/index.md
+          - Prerequisites: pos/operate-node/validator/kb/how-to.md
+          - Validator binaries: pos/operate-node/validator/run-validator/binaries.md
+          - Validator ansible: pos/operate-node/validator/run-validator/ansible.md
+          - Validator packages: pos/operate-node/validator/run-validator/packages.md
+          - Staking operations: pos/operate-node/validator/validator-staking-operations.md
+          - Commission operations: pos/operate-node/validator/validator-commission-operations.md
+          - Topup Heimdall fee: pos/operate-node/validator/topup-heimdall-fee.md
+          # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
+          - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
+          - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
       - Concepts:
           - Concepts: pos/concepts/index.md
           - Tokens:
@@ -507,7 +530,7 @@ plugins:
 #        - README.md
 
 validation:
-  absolute_links: warn
+  absolute_links: ignore
 
 extra_javascript:
   - _site_essentials/js/mathjax.js
