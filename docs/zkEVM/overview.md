@@ -5,7 +5,7 @@ Polygon zkEVM is compatible with the EVM, supporting the majority of Ethereum EI
 
 ## Protocol development highlights
 
-The Goërli testnet for Polygon zkEVM launched with a complete ZK proving system and full transaction data availability in October 2022. The proving system for Polygon zkEVM uses a combination of eSTARK proofs and FRI that are then compressed using FFLONK SNARKs to create the final ZK proof.
+The testnet for Polygon zkEVM launched with a complete ZK proving system and full transaction data availability in October 2022. The proving system for Polygon zkEVM uses a combination of eSTARK proofs and FRI that are then compressed using FFLONK SNARKs to create the final ZK proof.
 
 Following the launch of the testnet, the code base for Polygon zkEVM underwent several security audits. These were among the first audits ever performed on a complete, in-production ZK proving system. 
 
