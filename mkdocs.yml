@@ -26,7 +26,7 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-   # - navigation.instant
+    - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
     - navigation.expansion
@@ -41,6 +41,7 @@ theme:
     - toc.follow
     - content.code.copy
     - content.action.edit
+    - content.action.view
 
 nav:
   - Home: index.md
@@ -48,6 +49,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Get started:
+        - Get started: cdk/get-started/index.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
@@ -55,17 +57,20 @@ nav:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: cdk/get-started/deploy-rollup.md
       - How to:
+        - How to: cdk/how-to/index.md
         - Manage policies: cdk/how-to/manage-policies.md
       #- Architecture:
       - Specification:
+        - Specification: cdk/spec/index.md
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
+        - Concepts: cdk/concepts/index.md
         - Rollup: cdk/concepts/rollup.md
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
-     # - API/SDK:
+     # - API:
       - Additional resources:
-        - CDK repos: cdk/resources/cdk-repo-reference.md
+        - Additional resources: cdk/troubleshooting/index.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
@@ -262,6 +267,39 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
+      #- Specification:
+      #    - Specification: pos/spec/index.md
+      - Operating various nodes:
+        - Operate various nodes: pos/operate-node/index.md
+        - System requirements: pos/operate-node/validator/validator-node-system-requirements.md
+        - Operators:
+          # - Operators: pos/operate-node/operate/index.md
+          - Full node binaries: pos/operate-node/operate/full-node-binaries.md
+          - Full node docker: pos/operate-node/operate/full-node-docker.md
+          - Full node ansible: pos/operate-node/operate/full-node-ansible.md
+          - Full node packages: pos/operate-node/operate/full-node-packages.md
+          - Full node gcp: pos/operate-node/operate/full-node-gcp.md
+          - Erigon client: pos/operate-node/operate/run-erigon-node.md
+        - Validators:
+          # - Validators: pos/operate-node/validator/index.md
+          - Prerequisites: pos/operate-node/validator/kb/how-to.md
+          - Validator binaries: pos/operate-node/validator/run-validator/binaries.md
+          - Validator ansible: pos/operate-node/validator/run-validator/ansible.md
+          - Validator packages: pos/operate-node/validator/run-validator/packages.md
+          - Staking operations: pos/operate-node/validator/validator-staking-operations.md
+          - Commission operations: pos/operate-node/validator/validator-commission-operations.md
+        - Validator actions:
+          - Becoming a validator: pos/operate-node/validator/getting-started.md
+          - Validator Responsibilities: pos/operate-node/validator/responsibilities.md
+          - Topup Heimdall fee: pos/operate-node/validator/topup-heimdall-fee.md
+          - Change your signer address: pos/operate-node/validator/change-signer-address.md
+          - Move stake: pos/operate-node/validator/move-stake.md
+          # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
+        - Troubleshooting:
+          - Validator performance: pos/operate-node/validator/validator-performance.md
+          - Technical FAQs: pos/operate-node/validator/technical-faqs.md
+          - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
+          - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
       - Concepts:
           - Concepts: pos/concepts/index.md
           - Tokens:
@@ -273,24 +311,12 @@ nav:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
+    #  - API:
+    #      - pos/api/index.md
   - Miden:
       - Miden: miden/index.md
       - Overview: miden/overview.md
-      - Roadmap:  miden/roadmap.md
-      - Miden rollup docs:
-          - Introduction:  
-              - Welcome: miden/introduction/index.md
-          - Architecture:
-              - Architecture:  miden/architecture/index.md
-              - Accounts:  miden/architecture/accounts.md
-              - Notes:  miden/architecture/notes.md
-              - Assets:  miden/architecture/assets.md
-              - Transactions:  miden/architecture/transactions.md
-              - State:  miden/architecture/state.md
-              - Execution:  miden/architecture/execution.md
-          - Crypto primitives:
-              - Tiered sparce Merkle tree (TSMT):  miden/crypto-primitives/tsmt.md
-      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
+      - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
