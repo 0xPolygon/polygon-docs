@@ -21,7 +21,7 @@ The following cyclical workflow outlines the operational mechanics of today's Po
 
 Ethereum serves as the foundational layer upon which Polygon's PoS architecture is built. Within the Ethereum ecosystem, a set of core contracts play an important role connecting Polygon PoS to Ethereum. These core contracts are responsible for a range of functionalities, from anchoring the Polygon chain to handling asset transfers.
 
-The core contracts on the Ethereum mainnet incorporate two key features for security and functionality: fraud proofs and the Exit Queue. Fraud proofs act as a security layer, enabling the validation of transactions and state changes to ensure transparency and security across operations. The Exit Queue manages the safe and efficient transfer of assets back to the Ethereum mainnet, allowing users to seamlessly move assets between the Polygon PoS chain and Ethereum without compromising data integrity or security.
+The core contracts on the Ethereum mainnet incorporate two key features for security and functionality: fraud proofs and the exit queue. Fraud proofs act as a security layer, enabling the validation of transactions and state changes to ensure transparency and security across operations. The exit queue manages the safe and efficient transfer of assets back to the Ethereum mainnet, allowing users to seamlessly move assets between the Polygon PoS chain and Ethereum without compromising data integrity or security.
 
 
 ## Public checkpoint nodes
