@@ -46,7 +46,7 @@ Parent Chain: Goerli
 
 <TabItem value="mainnet">
 
-Parent Chain: Ethereum Mainnet
+Parent chain: Ethereum mainnet
 
 | Contracts             | [Address](https://etherscan.io/address/Address)                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------|
