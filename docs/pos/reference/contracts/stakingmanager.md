@@ -182,7 +182,7 @@ function checkSignatures(
 
 Checks if a given validator is active validator for the current epoch.
 
-## Timeline Data Structure
+## Timeline data structure
 
 ```solidity
 struct State {
