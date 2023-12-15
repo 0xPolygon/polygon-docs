@@ -37,7 +37,7 @@ bor attach .bor/data/bor.ipc <command>
 </TabItem>
 </Tabs>
 
-## Node Management Commands
+## Node management commands
 
 | Description                           | Command                                        |
 | ------------------------------------- | ---------------------------------------------- |
