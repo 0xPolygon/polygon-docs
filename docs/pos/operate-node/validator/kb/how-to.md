@@ -102,7 +102,7 @@ This document gives some additional details for setting up a new node based on [
 
     If the above 3 steps are not done correctly then even though Ansible is installed, it can’t recognize the Ansible packages. You might face something like the below screenshot:
 
-    <img src={useBaseUrl("img/knowledge-base/node-setup-1.png")} width="100%" height="100%"/>
+    ![Figure: Knowledge base - node setup 1](../../../../img/pos/node-setup-1.png)
 
 - Also make sure there are no Go packages and any previous setup of Bor or Heimdall.
 
@@ -120,11 +120,12 @@ This document gives some additional details for setting up a new node based on [
 
     Otherwise there will be error like below image whenever you try to run `ansible sentry -m ping`
 
-    <img src={useBaseUrl("img/knowledge-base/node-setup-2.png")} width="100%" height="100%"/>
+    ![Figure: Knowledge base - node setup 2](../../../../img/pos/node-setup-2.png)
+
 
 - Example of **inventory.yml**
 
-    <img src={useBaseUrl("img/knowledge-base/node-setup-3.png")} width="100%" height="100%"/>
+    ![Figure: Knowledge base - node setup 3](../../../../img/pos/node-setup-3.png)
 
 - Sentry Host IP and Validator Host IP have to be the same and colons should be provided at the end of the lines including IPs
 
@@ -138,7 +139,7 @@ This document gives some additional details for setting up a new node based on [
 
 - You may face this error if there is any issue with Heimdall's config
 
-    <img src={useBaseUrl("img/knowledge-base/node-setup-4.png")} width="100%" height="100%"/>
+    ![Figure: Knowledge base - node setup 4](../../../../img/pos/node-setup-4.png)
 
     This can be fixed by following steps:
 
@@ -163,7 +164,7 @@ This document gives some additional details for setting up a new node based on [
 
     - Copy the **https** endpoint provided under **ethereum → keys → endpoints**
 
-        <img src={useBaseUrl("img/knowledge-base/node-setup-5.png")} width="100%" height="100%"/>
+        ![Figure: Knowledge base - node setup 5](../../../../img/pos/node-setup-5.png)
 
         - Provide the copied **https** endpoint as `eth_rpc_url` in `/var/lib/heimdall/config/heimdall-config.toml`
 

@@ -99,4 +99,4 @@ It will take a couple of minutes to install all the required software and a coup
 
 At the end, you will get an instance as shown in the below diagram.
 
-<img src={useBaseUrl("img/mainnet/polygon-instance.svg")} />
+![Figure: Mainnet - Polygon instance](../../../img/pos/polygon-instance.svg)

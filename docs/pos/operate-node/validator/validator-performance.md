@@ -1,22 +1,3 @@
----
-id: validator-performance-overview
-title: Validator Performance Framework
-sidebar_label: Monitor Your Validator Performance
-description: Learn about the validator performance metrics that help validators self-regulate.
-keywords:
-  - docs
-  - wiki
-  - polygon
-  - validator
-  - performance
-  - behavior
-  - dashboard
-  - staking
-slug: validator-performance
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Validator performance framework
 
@@ -36,9 +17,7 @@ A validator’s performance is measured based on checkpoints it signed over a mo
 
 ### Performance Benchmark
 
-<div align="center">
-  <img src={useBaseUrl("img/validator-performance/performance-benchmark.png")}  width="300" />
-</div>
+![Figure: performance benchmark](../../../img/pos/performance-benchmark.png)
 
 To facilitate the transition, there will be a slightly lower benchmark around the first two months while validators become accustomed to the parameters.
 
@@ -55,30 +34,26 @@ Each GP is an additional 700 checkpoints, allowing a validator to bring their pe
 
 The validator will have a 700 checkpoint period to correct the deficiency in GP2. If the deficiency is fixed within the NOD period, then no further action will occur. However, the NOD would remain public. Failure to improve after GP2 would result in the issuance of an FN of the community's intent to implement a forced exit procedure by offboarding the validator from the network by unbonding their stake.
 
-:::tip Health Status
+!!!tip
+    Health Status
 
-You can quickly check a validator's health status, whether it is **Healthy**, on **Grace Period** or **Final Notice** on the **All Validators** table or on each validator page.
+    You can quickly check a validator's health status, whether it is **Healthy**, on **Grace Period** or **Final Notice** on the **All Validators** table or on each validator page.
 
-<div align="center">
-  <img src={useBaseUrl("img/validator-performance/health-status.png")}  width="1000" />
-</div>
+    <div align="center">
+    ![Figure: Health status](../../../img/pos/health-status.png)
+    </div>
 
-:::
 
 ### Public Notices
 
 The Public Notices page shows the recent notices and messages sent to the community of validators.
 
-<div align="center">
-  <img src={useBaseUrl("img/validator-performance/public-notices.png")}  width="1000" />
-</div>
-<br></br>
+![Figure: Topup Heimdall fee](../../../img/pos/public-notices.png)
 
 This is how a Notice message should look like:
 
-<div align="center">
-  <img src={useBaseUrl("img/validator-performance/notice.png")}  width="500" />
-</div>
+![Figure: Notice](../../../img/pos/notice.png)
+
 
 ### Forced Unstaking
 

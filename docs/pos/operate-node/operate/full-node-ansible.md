@@ -50,7 +50,7 @@ configure and manage a full node.
   ansible-playbook playbooks/network.yml --extra-var="bor_version=v1.1.0 heimdall_version=v1.0.3 network=mumbai node_type=sentry" --list-hosts
   ```
 
-  <img src={useBaseUrl("img/network/full-node-mumbai.png")} />
+![Figure: Full node mumbai](../../../img/pos/full-node-mumbai.png)
 
 - Next, set up the full node with this command:
 
