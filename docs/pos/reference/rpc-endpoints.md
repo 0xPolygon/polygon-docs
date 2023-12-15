@@ -1,6 +1,6 @@
 This guide provides an index of network details for the Polygon Mumbai Testnet and Polygon PoS Mainnet, including their associated RPC and node endpoints.
 
-## Network Details
+## Network details
 
 <Tabs
   defaultValue="mainnet"
