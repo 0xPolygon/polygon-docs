@@ -56,7 +56,7 @@ bor attach .bor/data/bor.ipc <command>
 | **Check Heimdall bridge logs**        | `tail -f heimdalld-bridge.log`                 |
 | **Check Bor logs**                    | `tail -f bor.log`                              |
 
-## Useful Configuration Commands
+## Useful configuration commands
 
 ### Sync Status of Heimdall
 
