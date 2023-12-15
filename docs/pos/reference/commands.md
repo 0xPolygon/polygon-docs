@@ -34,8 +34,6 @@ bor attach .bor/data/bor.ipc <command>
 | `heimdalld unsafe-reset-all` | Resets the database in case of issues. |
 | `curl localhost:26657/status` | Provides comprehensive information about Heimdall. |
 
-</TabItem>
-</Tabs>
 
 ## Node management commands
 
