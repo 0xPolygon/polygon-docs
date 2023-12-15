@@ -79,7 +79,7 @@ Parent chain: Ethereum mainnet
 | ERC721Predicate       | [0x54150f44c785d412ec262fe895cc3b689c72f49b](https://etherscan.io/address/0x54150f44c785d412ec262fe895cc3b689c72f49b) |
 
 
-**Child Chain: Polygon Mainnet**
+**Child chain: Polygon mainnet**
 
 | Contracts             | Address                                    |
 |-----------------------|--------------------------------------------|
