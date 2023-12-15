@@ -2,7 +2,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 
 ### Mumbai
 
-Parent Chain: Goerli
+Parent chain: Goerli
 
 | Contracts             | Address                                                                                                                      |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------|
