@@ -1,15 +1,8 @@
 Here you will find a list of contracts deployed on Polygon together with their initial address, that is, their location on the blockchain. 
 
-<Tabs
-  defaultValue="mainnet"
-  values={[
-    { label: 'Polygon-Mainnet', value: 'mainnet', },
-    { label: 'Mumbai-Testnet', value: 'mumbai', },
-  ]
-}>
-<TabItem value="mumbai">
+### Mumbai
 
-Parent Chain: Goerli
+Parent chain: Goerli
 
 | Contracts             | Address                                                                                                                      |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -49,11 +42,9 @@ Parent Chain: Goerli
 |-----------------------|--------------------------------------------|
 | ChildChain            | [0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e](https://mumbai.polygonscan.com/address/0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e/) |
 
-</TabItem>
+### Mainnet
 
-<TabItem value="mainnet">
-
-Parent Chain: Ethereum Mainnet
+Parent chain: Ethereum mainnet
 
 | Contracts             | [Address](https://etherscan.io/address/Address)                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -88,7 +79,7 @@ Parent Chain: Ethereum Mainnet
 | ERC721Predicate       | [0x54150f44c785d412ec262fe895cc3b689c72f49b](https://etherscan.io/address/0x54150f44c785d412ec262fe895cc3b689c72f49b) |
 
 
-**Child Chain: Polygon Mainnet**
+**Child chain: Polygon mainnet**
 
 | Contracts             | Address                                    |
 |-----------------------|--------------------------------------------|

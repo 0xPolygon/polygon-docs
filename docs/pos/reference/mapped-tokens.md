@@ -6,14 +6,7 @@
     If you want to get your token mapped then please send your mapping request via [<ins>mapper.polygon.technology</ins>](https://mapper.polygon.technology/).
 
 
-<Tabs
-defaultValue="mainnet"
-values={[
-{ label: 'PoS mainnet', value: 'mainnet', },
-{ label: 'Mumbai testnet', value: 'mumbai', },
-]
-}>
-<TabItem value="mumbai">
+### Mumbai
 
 | Token Name        | Bridge | Parent Chain Address: Goerli                                                                                                 | Child Chain: MUMBAI                                                                                                                  |
 | ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -22,10 +15,10 @@ values={[
 | DummyERC721Token  | PoS    | [0x084297B12F204Adb74c689be08302FA3f12dB8A7](https://goerli.etherscan.io/address/0x084297B12F204Adb74c689be08302FA3f12dB8A7) | [0x757b1BD7C12B81b52650463e7753d7f5D0565C0e](https://mumbai.polygonscan.com/address/0x757b1BD7C12B81b52650463e7753d7f5D0565C0e) |
 | DummyERC1155Token | PoS    | [0x2e3Ef7931F2d0e4a7da3dea950FF3F19269d9063](https://goerli.etherscan.io/address/0x2e3Ef7931F2d0e4a7da3dea950FF3F19269d9063) | [0xA07e45A987F19E25176c877d98388878622623FA](https://mumbai.polygonscan.com/address/0xA07e45A987F19E25176c877d98388878622623FA) |
 
-</TabItem>
-<TabItem value="mainnet">
+### Mainnet
 
-| Token Name        | Bridge | Parent Chain Address: Ethereum Mainnet                                                                                | Child Chain: Polygon Network                                                                                                      |
+| Token name        | Bridge | Parent chain address: Ethereum mainnet                                                                                | Child chain: Polygon network                                                                                                      |
+
 | ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | PoS\-WETH         | PoS    | [0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE](https://etherscan.io/address/0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE) | [0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619](https://polygonscan.com/address/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619) |
 | PoS\-USDC         | PoS    | [0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) | [0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174](https://polygonscan.com/address/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174) |
@@ -46,5 +39,3 @@ values={[
 | DummyERC1155Token | PoS    | [0x556f501CF8a43216Df5bc9cC57Eb04D4FFAA9e6D](https://etherscan.io/address/0x556f501CF8a43216Df5bc9cC57Eb04D4FFAA9e6D) | [0xA0c68C638235ee32657e8f720a23ceC1bFc77C77](https://polygonscan.com/address/0xA0c68C638235ee32657e8f720a23ceC1bFc77C77) |
 | WDEV | PoS    | [0x4a5df63b0c37b38515e4ee51baf40edd420bf7d5](https://etherscan.io/address/0x4a5df63b0c37b38515e4ee51baf40edd420bf7d5) | [0xa5577d1cec2583058a6bd6d5deac44797c205701](https://polygonscan.com/address/0xa5577d1cec2583058a6bd6d5deac44797c205701) |
 
-</TabItem>
-</Tabs>

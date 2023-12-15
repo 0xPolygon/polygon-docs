@@ -9,7 +9,7 @@ For the Polygon's Proof of Security based consensus, all the ⅔+1 proof verific
     From one Ethereum address, a **Staker can only be a validator or delegator** (it's just a design choice, no hard reasons).
 
 
-## Validator Admissions / Replacement
+## Validator admissions / replacement
 
 ### Admissions
 At present, there are no open validator slots available on Polygon PoS. There is also a waitlist to become a validator. In the future, if slots become available, validators may apply to be considered and removed off of the waitlist.
@@ -23,7 +23,7 @@ PIP4 introduced the concept of showcasing validator performance for community vi
     Currently, [<ins>Phase 2 of PART C in PIP4</ins>](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956/24) is being implemented. This is where the community decides on validator prospect evaluation criteria. In time, this exercise will produce an application and admissions process.
 
 
-## Methods and Variables
+## Methods and variables
 
 !!!caution
     Slashing Implementation
@@ -182,7 +182,7 @@ function checkSignatures(
 
 Checks if a given validator is active validator for the current epoch.
 
-## Timeline Data Structure
+## Timeline data structure
 
 ```solidity
 struct State {

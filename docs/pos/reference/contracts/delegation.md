@@ -10,7 +10,7 @@ When a validator gets rewarded with more `MATIC` tokens, new tokens are added to
 
 `VATIC`: Validator specific minted validator share tokens (ERC20 tokens)
 
-## Technical Specification
+## Technical specification
 
 ```solidity
 uint256 public validatorId; // Delegation contract for validator
@@ -29,7 +29,7 @@ Exchange rate is calculated as below:
 ExchangeRate = (totalDelegatedPower + delegatorRewardPool) / totalDelegatorShares
 ```
 
-## Methods and Variables
+## Methods and variables
 
 ### buyVoucher
 
