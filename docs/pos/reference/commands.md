@@ -126,7 +126,7 @@ admin.peers.forEach(function(value){
 exit
 ```
 
-### Stop Heimdall and Bor Services
+### Stop Heimdall and Bor services
 
 **For Linux packages:**
 
