@@ -135,7 +135,7 @@ sudo service heimdalld stop
 sudo service bor stop
 ```
 
-**For Binaries:**
+**For binaries:**
 
 ```bash
 pkill heimdalld
