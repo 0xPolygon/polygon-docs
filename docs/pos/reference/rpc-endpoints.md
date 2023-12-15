@@ -2,15 +2,7 @@ This guide provides an index of network details for the Polygon Mumbai Testnet a
 
 ## Network details
 
-<Tabs
-  defaultValue="mainnet"
-  values={[
-    { label: 'PoS Mainnet', value: 'mainnet' },
-    { label: 'Mumbai Testnet', value: 'mumbai' },
-  ]}
->
-
-<TabItem value="mumbai">
+### Mumbai
 
 The Mumbai Testnet serves as a replica of the Polygon Mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
 
