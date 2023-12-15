@@ -22,8 +22,7 @@ bor attach .bor/data/bor.ipc <command>
 | `eth.getBlock("latest").number` | `curl http://YourIP:8545 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0", "id":1, "method":"bor_getSigners", "params":["0x98b3ea"]}'` | Queries the height of the latest Bor block. |
 |  | `curl http://YourIP:8545 -X POST -H "Content-Type: application/json" --data '{"method":"eth_chainId","params":[],"id":1,"jsonrpc":"2.0"}'` | Retrieves the `chainID`. |
 
-</TabItem>
-<TabItem value="heimdall">
+### Heimdall
 
 | Command | Description |
 | ------- | ----------- |
