@@ -18,7 +18,7 @@ The Polygon Network is broadly divided into three layers:
 * **Heimdall layer** — a set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
 * **Bor layer** — a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
 
-![Figure: Ethereum, Bor and Heimdall archictecture](../../../img/pos/architecture.png)
+![Figure: Ethereum, Bor and Heimdall archictecture](../../img/pos/architecture.png)
 
 ## Staking smart contracts on Ethereum
 

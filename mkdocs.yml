@@ -26,7 +26,7 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-    - navigation.instant
+   # - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
     - navigation.expansion
@@ -41,7 +41,6 @@ theme:
     - toc.follow
     - content.code.copy
     - content.action.edit
-    - content.action.view
 
 nav:
   - Home: index.md
@@ -49,7 +48,6 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Get started:
-        - Get started: cdk/get-started/index.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
@@ -57,20 +55,17 @@ nav:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: cdk/get-started/deploy-rollup.md
       - How to:
-        - How to: cdk/how-to/index.md
         - Manage policies: cdk/how-to/manage-policies.md
       #- Architecture:
       - Specification:
-        - Specification: cdk/spec/index.md
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
-        - Concepts: cdk/concepts/index.md
         - Rollup: cdk/concepts/rollup.md
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
-     # - API:
+     # - API/SDK:
       - Additional resources:
-        - Additional resources: cdk/troubleshooting/index.md
+        - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
@@ -316,7 +311,37 @@ nav:
   - Miden:
       - Miden: miden/index.md
       - Overview: miden/overview.md
-      - Miden zkRollup docs: https://0xpolygonmiden.github.io/miden-base/introduction.html
+      - Roadmap:  miden/roadmap.md
+      - Miden rollup docs:
+          - Introduction:  
+              - Welcome: miden/introduction/index.md
+          - Architecture:
+              - Architecture:  miden/architecture/index.md
+              - Accounts:  miden/architecture/accounts.md
+              - Notes:  miden/architecture/notes.md
+              - Assets:  miden/architecture/assets.md
+              - Transactions:  miden/architecture/transactions.md
+              - State:  miden/architecture/state.md
+              - Execution:  miden/architecture/execution.md
+          - Specification:
+              - AirScript: 
+                  - Introduction: miden/specification/airscript/introduction.md
+                  - Language description:
+                      - Syntax overview: miden/specification/airscript/syntax.md
+                      - Code organization: miden/specification/airscript/code-organization.md
+                      - Type declarations: miden/specification/airscript/type-declarations.md
+                      - Constraints: miden/specification/airscript/constraints.md
+                      - Variables: miden/specification/airscript/variables.md
+                      - Evaluators: miden/specification/airscript/evaluators.md
+                      - Convenience: miden/specification/airscript/convenience.md
+                      - Example AIR definition: miden/specification/airscript/example.md
+                      - Keywords: miden/specification/airscript/keywords.md
+                      - Appendix: miden/specification/airscript/appendix.md
+                  - Backends: miden/specification/airscript/backends.md
+          - Concepts:
+              - Crypto primitives:
+                  - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
+      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 

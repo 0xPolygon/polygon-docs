@@ -39,7 +39,7 @@ Examples of non-fungible assets are all NFTs, e.g., a DevCon ticket. The ticket'
 
 ### Storage
 
-[Accounts](accounts.md) and [notes](notes.md) contain asset vaults that are used to store assets. Accounts can keep unlimited assets in a [tiered sparse Merkle tree](../crypto-primitives/tsmt.md) called `account vault`. Notes can only store up to `255` distinct assets.
+[Accounts](accounts.md) and [notes](notes.md) contain asset vaults that are used to store assets. Accounts can keep unlimited assets in a [tiered sparse Merkle tree](../concepts/crypto-primitives/tsmt.md) called `account vault`. Notes can only store up to `255` distinct assets.
 
 <center>
 ![Asset storage](../../img/miden/architecture/asset/asset_storage.png){ width="50%" }
