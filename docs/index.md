@@ -4,6 +4,14 @@ hide:
 - toc
 ---
 
+<style>
+
+.hero-content-flex {
+	bottom: 5px;
+}
+
+</style>
+
 <div class="main">
 	<header class="section">
 		<div class="container-global">
@@ -11,7 +19,8 @@ hide:
 				<div class="hero-content-flex">
 					<div class="hero-left">
 						<h1 class="hero-heading">The Polygon Knowledge Layer</h1>
-						<p class="hero-subext">Welcome to the technical documentation and knowledge resources for Polygon protocols and scaling technologies. Here you can learn how to build and deploy dApps, launch ZK rollups and validiums as Layer 2s on Ethereum, spin up nodes, and learn all about the latest in ZK research.</p>
+						<p class="hero-subext">Welcome to the technical documentation and knowledge resources for Polygon protocols and scaling technologies.</p>
+						<p> Learn how to build and deploy dApps, launch ZK rollups and validiums as Layer 2s on Ethereum, spin up nodes, and find out about the latest in zero-knowledge research.</p>
 					</div>
 					<div class="hero-right"><img src="img/home/main-img.svg" loading="lazy" alt="" class="hero-image"></div>
 				</div>
@@ -88,7 +97,7 @@ hide:
 						</a>
 						<a href="learn" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">Unified Liquidity</div>
+								<div class="feature-card-heading">Unified liquidity</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
@@ -114,7 +123,7 @@ hide:
 			<div class="section-wrapper">
 				<div class="home-dev-resources">
 					<div class="section-header-wrapper">
-						<h2 class="heading-h2">Developer Resources</h2>
+						<h2 class="heading-h2">Developer resources</h2>
 						<p class="home-section-subtext">For developers who know what they want to build and are ready to go.</p>
 					</div>
 					<div class="flexbox">
@@ -185,7 +194,7 @@ hide:
 						</a>
 						<a href="pos/get-started/building-on-polygon/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
-								<div class="feature-content-name">Polygon PoS: Build a new dApp</div>
+								<div class="feature-content-name">Polygon PoS: Build a new web3 dApp</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
@@ -195,7 +204,7 @@ hide:
 					<div class="flexbox items-4">
 						<a href="pos/how-to/smart-contracts/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
-								<div class="feature-content-name">Polygon PoS: Deploy an existing smart contract</div>
+								<div class="feature-content-name">Polygon PoS: Deploy an existing contract</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
