@@ -222,6 +222,7 @@ nav:
             - Google cloud: pos/how-to/operating/full-node/gcp.md
           - Validator node:
             - Validator node: pos/how-to/operating/validator-node/index.md
+            - Rewards and staking incentives: pos/how-to/operating/validator-node/rewards.md
             - Manual install: pos/how-to/operating/validator-node/manual-install.md
             - Ansible: pos/how-to/operating/validator-node/ansible.md
             - Staking: pos/how-to/operating/validator-node/staking.md
@@ -300,7 +301,19 @@ nav:
           - Technical FAQs: pos/operate-node/validator/technical-faqs.md
           - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
           - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
-      - Concepts:
+      - Reference:
+        - Contracts:
+          - Genesis contracts: pos/reference/contracts/genesis-contracts.md
+          - Delegation via validator shares: pos/reference/contracts/delegation.md
+          - Staking manager: pos/reference/contracts/stakingmanager.md
+        - Heimdall and Bor snapshots: pos/reference/snapshot-instructions-heimdall-bor.md
+        - Default ports for nodes: pos/reference/port-management.md
+        - Common commands: pos/reference/commands.md
+        - Node errors: pos/reference/errors.md
+        - RPC endpoints: pos/reference/rpc-endpoints.md
+        - PoS mainnet multi-signatures: pos/reference/commit-chain-multisigs.md
+        - Mapped tokens: pos/reference/mapped-tokens.md
+      - Concepts: 
           - Concepts: pos/concepts/index.md
           - Tokens:
             - Tokens: pos/concepts/tokens/index.md
