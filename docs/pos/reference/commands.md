@@ -74,7 +74,7 @@ To check the latest block height on Heimdall, run:
 curl localhost:26657/status
 ```
 
-### Latest Block Height on Bor
+### Latest block height on Bor
 
 To check the latest block height on Bor, use:
 
