@@ -11,11 +11,11 @@ You can also do it manually by following the steps below; this requires basic Et
 
 3. Under the **Code** menu, select the **Write as Proxy** tab. Connect your Web3 wallet using the **Connect to Web3** button.
 
-    <img src={useBaseUrl("img/connect-wallet-etherscan.png")} />
+    ![Figure: Connect wallet etherscan](../../../img/pos/connect-wallet-etherscan.png)
 
 4. Scroll down to the `topUpForFee` method (#26 in the list) and select it. You will see something like the below screenshot.
 
-    <img src={useBaseUrl("img/topup-heimdall-fee.png")} />
+    ![Figure: Topup Heimdall fee](../../../img/pos/topup-heimdall-fee.png)
 
 5. Fill in the details:
 

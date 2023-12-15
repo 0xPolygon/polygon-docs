@@ -270,7 +270,7 @@ nav:
       #- Specification:
       #    - Specification: pos/spec/index.md
       - Operating various nodes:
-        - Operate various nodes: pos/operate-node/index.md
+        # - Operate various nodes: pos/operate-node/index.md
         - System requirements: pos/operate-node/validator/validator-node-system-requirements.md
         - Operators:
           # - Operators: pos/operate-node/operate/index.md

@@ -17,9 +17,7 @@ A validator’s performance is measured based on checkpoints it signed over a mo
 
 ### Performance Benchmark
 
-<div align="center">
-  <img src={useBaseUrl("img/validator-performance/performance-benchmark.png")}  width="300" />
-</div>
+![Figure: performance benchmark](../../../img/pos/performance-benchmark.png)
 
 To facilitate the transition, there will be a slightly lower benchmark around the first two months while validators become accustomed to the parameters.
 
@@ -42,7 +40,7 @@ The validator will have a 700 checkpoint period to correct the deficiency in GP2
     You can quickly check a validator's health status, whether it is **Healthy**, on **Grace Period** or **Final Notice** on the **All Validators** table or on each validator page.
 
     <div align="center">
-    <img src={useBaseUrl("img/validator-performance/health-status.png")}  width="1000" />
+    ![Figure: Health status](../../../img/pos/health-status.png)
     </div>
 
 
@@ -50,16 +48,12 @@ The validator will have a 700 checkpoint period to correct the deficiency in GP2
 
 The Public Notices page shows the recent notices and messages sent to the community of validators.
 
-<div align="center">
-  <img src={useBaseUrl("img/validator-performance/public-notices.png")}  width="1000" />
-</div>
-<br></br>
+![Figure: Topup Heimdall fee](../../../img/pos/public-notices.png)
 
 This is how a Notice message should look like:
 
-<div align="center">
-  <img src={useBaseUrl("img/validator-performance/notice.png")}  width="500" />
-</div>
+![Figure: Notice](../../../img/pos/notice.png)
+
 
 ### Forced Unstaking
 
