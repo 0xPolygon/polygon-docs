@@ -42,9 +42,7 @@ Parent chain: Goerli
 |-----------------------|--------------------------------------------|
 | ChildChain            | [0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e](https://mumbai.polygonscan.com/address/0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e/) |
 
-</TabItem>
-
-<TabItem value="mainnet">
+### Mainnet
 
 Parent chain: Ethereum mainnet
 
