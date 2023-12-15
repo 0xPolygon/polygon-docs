@@ -6,14 +6,7 @@
     If you want to get your token mapped then please send your mapping request via [<ins>mapper.polygon.technology</ins>](https://mapper.polygon.technology/).
 
 
-<Tabs
-defaultValue="mainnet"
-values={[
-{ label: 'PoS mainnet', value: 'mainnet', },
-{ label: 'Mumbai testnet', value: 'mumbai', },
-]
-}>
-<TabItem value="mumbai">
+### Mumbai
 
 | Token Name        | Bridge | Parent Chain Address: Goerli                                                                                                 | Child Chain: MUMBAI                                                                                                                  |
 | ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
