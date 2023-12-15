@@ -5,7 +5,7 @@ When setting up a new sentry, validator, or full node server, it is recommended 
     For the latest snapshot, please visit [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
 
 
-## Client Snapshots
+## Client snapshots
 
 To begin, ensure that your node environment meets the **prerequisites** outlined [here](https://docs.polygon.technology/pos/operate-node/operate/full-node-binaries/). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. In our example, we will be using an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
 To transfer the correct chaindata to your disk, follow these steps:
