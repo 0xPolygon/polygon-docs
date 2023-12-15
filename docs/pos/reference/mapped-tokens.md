@@ -15,8 +15,7 @@
 | DummyERC721Token  | PoS    | [0x084297B12F204Adb74c689be08302FA3f12dB8A7](https://goerli.etherscan.io/address/0x084297B12F204Adb74c689be08302FA3f12dB8A7) | [0x757b1BD7C12B81b52650463e7753d7f5D0565C0e](https://mumbai.polygonscan.com/address/0x757b1BD7C12B81b52650463e7753d7f5D0565C0e) |
 | DummyERC1155Token | PoS    | [0x2e3Ef7931F2d0e4a7da3dea950FF3F19269d9063](https://goerli.etherscan.io/address/0x2e3Ef7931F2d0e4a7da3dea950FF3F19269d9063) | [0xA07e45A987F19E25176c877d98388878622623FA](https://mumbai.polygonscan.com/address/0xA07e45A987F19E25176c877d98388878622623FA) |
 
-</TabItem>
-<TabItem value="mainnet">
+### Mainnet
 
 | Token Name        | Bridge | Parent Chain Address: Ethereum Mainnet                                                                                | Child Chain: Polygon Network                                                                                                      |
 | ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
