@@ -61,7 +61,7 @@ Developers can interact with on-chain data and execute various types of transact
     To explore API requests without any setup, fix failing requests, or discover new methods on the Polygon network, try the [**Composer App**](https://composer.alchemyapi.io).
 
 
-### Infrastructure Providers
+### Infrastructure providers
 
 Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC URLs, consider the following providers:
 
