@@ -269,3 +269,4 @@ cd ~/node/bor
 bash setup.sh
 service bor start
 ```
+
