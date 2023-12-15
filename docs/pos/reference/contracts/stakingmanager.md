@@ -23,7 +23,7 @@ PIP4 introduced the concept of showcasing validator performance for community vi
     Currently, [<ins>Phase 2 of PART C in PIP4</ins>](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956/24) is being implemented. This is where the community decides on validator prospect evaluation criteria. In time, this exercise will produce an application and admissions process.
 
 
-## Methods and Variables
+## Methods and variables
 
 !!!caution
     Slashing Implementation
