@@ -33,7 +33,7 @@ Save and exit the file once the changes have been made. The above SQL script wil
 Create the `~/zkevm/config.json` and paste the configs below. Replace the `aggregatorClientHost` parameter with your **PUBLIC IP**:
 
 ```bash
-vim ~/zkevm/config.json
+vim ~/zkevm/mainnet/config/environments/testnet/public.prover.config.json
 ```
 
 ??? "Click to expand the <code>config.json</code> file"
