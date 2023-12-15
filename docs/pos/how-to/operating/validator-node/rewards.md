@@ -1,4 +1,3 @@
-
 In Polygon, validators stake their MATIC tokens as collateral to work for the security of the network, and in exchange for their service, earn rewards.
 
 To leverage Polygon's economics, you should either become a validator or a delegator.
