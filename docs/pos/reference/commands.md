@@ -1,6 +1,6 @@
 This guide provides a curated list of common commands and Polygon-specific operations essential for node operators. Whether you're setting up a full node, validator node or troubleshooting, these commands will assist you in managing your Polygon PoS environment effectively.
 
-## Frequently Used Commands for Bor & Heimdall
+## Frequently used commands for Bor & Heimdall
 
 Use the tabs below to switch between commands for Bor and Heimdall:
 
