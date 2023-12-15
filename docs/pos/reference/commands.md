@@ -144,7 +144,7 @@ cd CS-2001/bor
 bash stop.sh
 ```
 
-### Remove Heimdall and Bor Directories
+### Remove Heimdall and Bor directories
 
 **For Linux packages:**
 
