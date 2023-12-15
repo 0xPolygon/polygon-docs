@@ -13,7 +13,7 @@ This guide provides a detailed list of default ports used across Polygon nodes, 
 | Pprof Server            | 7071  | Internal, Monitoring      | Pprof server for collecting Bor metrics.                                                                        |
 | UDP Discovery           | 30301 | Can be Public, Internal   | Default port for Bootnode peer discovery.                                                                       |
 
-## Heimdall Node
+## Heimdall node
 
 | Name                    | Port  | Tags                      | Description                                                                                                    |
 |-------------------------|-------|---------------------------|----------------------------------------------------------------------------------------------------------------|
