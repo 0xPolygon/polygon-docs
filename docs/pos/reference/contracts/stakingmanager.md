@@ -9,7 +9,7 @@ For the Polygon's Proof of Security based consensus, all the ⅔+1 proof verific
     From one Ethereum address, a **Staker can only be a validator or delegator** (it's just a design choice, no hard reasons).
 
 
-## Validator Admissions / Replacement
+## Validator admissions / replacement
 
 ### Admissions
 At present, there are no open validator slots available on Polygon PoS. There is also a waitlist to become a validator. In the future, if slots become available, validators may apply to be considered and removed off of the waitlist.
