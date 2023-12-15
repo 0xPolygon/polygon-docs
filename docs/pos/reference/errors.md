@@ -1,6 +1,6 @@
 This guide aims to provide solutions for common errors you might encounter while interacting with Polygon PoS. If you come across an error that is not listed here, please consult Polygon Support or community forums for additional help.
 
-## Table of Node Errors
+## Table of node errors
 
 | Error                                         | Component  | Description                                                      | Cause                                           | Solution                                                                                     |
 |-----------------------------------------------|------------|------------------------------------------------------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------|
