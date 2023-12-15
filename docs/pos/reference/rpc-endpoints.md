@@ -8,13 +8,13 @@ The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily u
 
 | Properties       | Network Details                                                                                     |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
-| Network Name     | **Mumbai**                                                                                          |
-| Parent Chain     | **[Goërli](https://goerli.net/)**                                                                   |
+| Network name     | **Mumbai**                                                                                          |
+| Parent chain     | **[Goërli](https://goerli.net/)**                                                                   |
 | Chain ID         | `80001`                                                                                            |
-| Gas Token        | MATIC                                                                                  |
-| Gas Station      | [Mumbai Gas Station](https://gasstation-mumbai.matic.today/v2)                                       |
-| RPC Endpoint     | [https://rpc-mumbai.matic.today](https://rpc-mumbai.matic.today)                                     |
-| Node Endpoint    | [wss://rpc-mumbai.matic.today](wss://rpc-mumbai.matic.today)                                        |
+| Gas token        | MATIC                                                                                  |
+| Gas station      | [Mumbai gas station](https://gasstation-mumbai.matic.today/v2)                                       |
+| RPC endpoint     | [https://rpc-mumbai.matic.today](https://rpc-mumbai.matic.today)                                     |
+| Node endpoint    | [wss://rpc-mumbai.matic.today](wss://rpc-mumbai.matic.today)                                        |
 | Heimdall API     | [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology)   |
 | Block Explorer   | [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)                                   |
 
