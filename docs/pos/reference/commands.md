@@ -98,7 +98,7 @@ sudo rm -rf /etc/bor
 sudo rm /etc/heimdall
 ```
 
-### Terminate Bor Process
+### Terminate Bor process
 
 **For Linux:**
 
