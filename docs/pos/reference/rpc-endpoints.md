@@ -19,7 +19,7 @@ The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily u
 | Block Explorer   | [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)                                   |
 
 !!!note
-    Additional Information
+    Additional information
 
     For more details, refer to this [**JSON data**](https://static.polygon.technology/network/testnet/mumbai/index.json).
 
