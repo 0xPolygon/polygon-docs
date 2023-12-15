@@ -24,9 +24,7 @@ The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily u
     For more details, refer to this [**JSON data**](https://static.polygon.technology/network/testnet/mumbai/index.json).
 
 
-</TabItem>
-
-<TabItem value="mainnet">
+### Mainnet
 
 The native token for the Polygon PoS Mainnet is MATIC, which is used for transaction fees.
 
