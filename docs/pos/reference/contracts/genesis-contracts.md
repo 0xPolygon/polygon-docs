@@ -1,13 +1,6 @@
 Here you will find a list of contracts deployed on Polygon together with their initial address, that is, their location on the blockchain. 
 
-<Tabs
-  defaultValue="mainnet"
-  values={[
-    { label: 'Polygon-Mainnet', value: 'mainnet', },
-    { label: 'Mumbai-Testnet', value: 'mumbai', },
-  ]
-}>
-<TabItem value="mumbai">
+### Mumbai
 
 Parent Chain: Goerli
 
