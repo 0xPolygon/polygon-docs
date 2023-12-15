@@ -1,16 +1,3 @@
----
-id: technical-faqs
-title: Technical FAQs
-description: Frequently asked questions related to running a Validator on the Polygon network.
-keywords:
-  - docs
-  - polygon
-  - polygon wiki
-  - faqs
-  - technical
-slug: technical-faqs
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
 
 ### 1. Are the private keys same for Heimdall and Bor keystore?
 
@@ -339,10 +326,8 @@ Delete Bor: `sudo rm -rf /var/lib/bor`
 
 This error usually occurs due to Infura requests getting exhausted. When you setup a node on Polygon, you add an Infura Key to the Config file (Heimdall). By default you are allowed 100k Requests per day, if this limit is crossed, then you would face such problems. To resolve this you can create a new API key and add it to the `config.toml` file.
 
-:::tip Stay in the know
+!!!tip
+    Stay in the know
 
-Keep up with the latest node and validator updates from the Polygon
-team and the community by subscribing to the
-[Polygon notification groups](https://polygon.technology/notifications/).
+    Keep up with the latest node and validator updates from the Polygon team and the community by subscribing to the [Polygon notification groups](https://polygon.technology/notifications/).
 
-:::

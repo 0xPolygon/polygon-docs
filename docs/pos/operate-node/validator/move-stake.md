@@ -1,25 +1,11 @@
----
-id: move-stake
-title: Moving Stake
-description: Moving your stake on polygon network
-keywords:
-  - docs
-  - polygon
-  - matic
-  - stake
-  - move stake
-  - validator
-  - delegator
-slug: move-stake
-image: https://wiki.polygon.technology/img/polygon-logo.png
----
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Moving Stake from Foundation nodes to External Nodes
 
+Watch the below muted video on how to move your stake. 
+
 <video loop autoplay width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="/img/staking/MoveStakeDemo.mp4"></source>
-  <source type="video/quicktime" src="/img/staking/MoveStakeDemo.mov"></source>
+  <source type="video/mp4" src="/img/pos/MoveStakeDemo.mp4"></source>
+  <source type="video/quicktime" src="/img/pos/MoveStakeDemo.mov"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -39,23 +25,23 @@ In order to Move stake, first you will need to login to the [Staking UI](https:/
 
 Once logged in, you will see a list of Validators.
 
-<img src={useBaseUrl("img/staking/validator-list.png")} />
+![Figure: validator list](../../../img/pos/validator-list.png)
 
 Now go to your Delegator Profile by clicking on the **Show Delegator Details** button or the **My Delegator Details** option on the left.
 
-<img src={useBaseUrl("img/staking/show-delegator-details.png")} />
+![Figure: show validator details](../../../img/pos/show-delegator-details.png)
 
 Here you will find a new button called **Move Stake**.
 
-<img src={useBaseUrl("img/staking/move-stake-button.png")} />
+![Figure: move stake button](../../../img/pos/move-stake-button.png)
 
 Clicking on that button would navigate you to a page with a list of validators that you can delegate to. You can delegate to any Validator on this list.
 
-<img src={useBaseUrl("img/staking/move-stake-validator.png")} />
+![Figure: move stake button](../../../img/pos/move-stake-validator.png)
 
 Now after choosing your validator that you want to delegate to, click on the **Delegate Here** button. Clicking on that button would open up a popup window.
 
-<img src={useBaseUrl("img/staking/stake-funds.png")} />
+![Figure: move stake button](../../../img/pos/stake-funds.png)
 
 Here you would see an **Amount** field which would automatically populate with entire amount for Delegation. You can also use a partial amount to delegate to a validator.
 
