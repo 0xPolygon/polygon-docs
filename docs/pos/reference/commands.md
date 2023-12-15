@@ -82,7 +82,7 @@ To check the latest block height on Bor, use:
 curl http://<your ip>:8545 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0", "id":1, "method":"bor_getSigners", "params":["0x98b3ea"]}'
 ```
 
-### Cleanup: Deleting Remnants of Heimdall and Bor
+### Cleanup: deleting remnants of Heimdall and Bor
 
 **For Linux package:**
 
