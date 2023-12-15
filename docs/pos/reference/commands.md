@@ -66,7 +66,7 @@ To check if Heimdall is synced, run:
 curl http://localhost:26657/status
 ```
 
-### Latest Block Height on Heimdall
+### Latest block height on Heimdall
 
 To check the latest block height on Heimdall, run:
 
