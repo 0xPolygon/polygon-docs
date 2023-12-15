@@ -4,7 +4,7 @@ This guide provides an index of network details for the Polygon Mumbai Testnet a
 
 ### Mumbai
 
-The Mumbai Testnet serves as a replica of the Polygon Mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
+The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
 
 | Properties       | Network Details                                                                                     |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
