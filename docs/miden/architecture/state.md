@@ -1,4 +1,4 @@
-giThe state of the Miden rollup describes the current condition of all accounts and note states. It describes what is currently the case. With its state model, using concurrent off-chain state, Polygon Miden aims to realize private transactions, and execution and state bloat minimization.
+The state of the Miden rollup describes the current condition of all accounts and note states. It describes what is currently the case. With its state model, using concurrent off-chain state, Polygon Miden aims to realize private transactions, and execution and state bloat minimization.
 
 Privacy is realized from a UTXO-like state model consisting of notes and nullifiers combined with off-chain execution using zero-knowledge proofs. Execution bloat happens when transactions get re-executed by all participants of the network. State bloat describes the ever growing state stored in blockchain nodes. Polygon Miden addresses these challenges via its state model that enables concurrent off-chain execution and off-chain storage.
 
