@@ -17,7 +17,8 @@
 
 ### Mainnet
 
-| Token Name        | Bridge | Parent Chain Address: Ethereum Mainnet                                                                                | Child Chain: Polygon Network                                                                                                      |
+| Token name        | Bridge | Parent chain address: Ethereum mainnet                                                                                | Child chain: Polygon network                                                                                                      |
+
 | ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | PoS\-WETH         | PoS    | [0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE](https://etherscan.io/address/0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE) | [0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619](https://polygonscan.com/address/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619) |
 | PoS\-USDC         | PoS    | [0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) | [0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174](https://polygonscan.com/address/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174) |
