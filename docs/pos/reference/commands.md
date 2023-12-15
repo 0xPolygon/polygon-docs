@@ -153,7 +153,7 @@ sudo rm -rf /etc/heimdall/*
 sudo rm -rf /etc/bor/*
 ```
 
-**For Binaries:**
+**For binaries:**
 
 ```bash
 sudo rm -rf /var/lib/heimdalld/
