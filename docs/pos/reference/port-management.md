@@ -1,6 +1,6 @@
 This guide provides a detailed list of default ports used across Polygon nodes, including Bor and Heimdall. Understanding these ports is crucial for network configuration and effective communication between nodes.
 
-## Bor Node
+## Bor node
 
 | Name                    | Port  | Tags                      | Description                                                                                                    |
 |-------------------------|-------|---------------------------|----------------------------------------------------------------------------------------------------------------|
