@@ -26,19 +26,19 @@ The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily u
 
 ### Mainnet
 
-The native token for the Polygon PoS Mainnet is MATIC, which is used for transaction fees.
+The native token for the Polygon PoS mainnet is MATIC, which is used for transaction fees.
 
-| Properties       | Network Details                                                                                     |
+| Properties       | Network details                                                                                     |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
-| Network Name     | **Polygon**                                                                                         |
-| Parent Chain     | **Ethereum**                                                                                        |
+| Network name     | **Polygon**                                                                                         |
+| Parent chain     | **Ethereum**                                                                                        |
 | Chain ID         | `137`                                                                                               |
-| Gas Token        | MATIC                                                                                               |
-| Gas Station      | [PolygonScan Gas Tracker](https://polygonscan.com/gastracker)                                        |
-| RPC Endpoint     | [https://polygon-rpc.com/](https://polygon-rpc.com/)                                                |
-| Node Endpoint    | [wss://rpc-mainnet.matic.network](wss://rpc-mainnet.matic.network)                                  |
+| Gas token        | MATIC                                                                                               |
+| Gas station      | [PolygonScan Gas Tracker](https://polygonscan.com/gastracker)                                        |
+| RPC endpoint     | [https://polygon-rpc.com/](https://polygon-rpc.com/)                                                |
+| Node endpoint    | [wss://rpc-mainnet.matic.network](wss://rpc-mainnet.matic.network)                                  |
 | Heimdall API     | [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)                   |
-| Block Explorer   | [https://polygonscan.com/](https://polygonscan.com/)                                                 |
+| Block explorer   | [https://polygonscan.com/](https://polygonscan.com/)                                                 |
 
 !!!note
     Additional Information
