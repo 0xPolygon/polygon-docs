@@ -45,7 +45,7 @@ sudo dpkg -i rabbitmq-server_3.10.8-1_all.deb
     | **Install Ansible** | No | Yes (only on one machine) | No |
     | **Install Bash** | No | No | Yes |
     | **Run Build Essential** | Yes | No | No |
-    | **Node Setup** | [Using Binaries](/run-validator/binaries.md) | [Using Ansible](/run-validator/ansible.md) | [Using Packages](/run-validator/packages) |
+    | **Node Setup** | [Using Binaries](../run-validator/binaries.md) | [Using Ansible](../run-validator/ansible.md) | [Using Packages](../run-validator/packages.md) |
 
 2. Once your Sentry and Validator nodes are synced and running, head over to our [Discord server](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes. You may check the logs by using the following commands:
 
