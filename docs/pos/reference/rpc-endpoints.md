@@ -54,7 +54,7 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 Developers can interact with on-chain data and execute various types of transactions using network endpoints. These APIs adhere to the JSON-RPC standard, a stateless, lightweight remote procedure call (RPC) protocol.
 
 !!!info
-    Getting Started with RPC Calls
+    Getting started with RPC calls
 
     For a comprehensive list of API documentation, visit [**Polygon JSON-RPC calls**](https://edge-docs.polygon.technology/docs/get-started/json-rpc-commands/).
 
