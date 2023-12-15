@@ -7,7 +7,7 @@ A major issue with SMTs is the fact that operations scale with the size of the k
 A common solution to this issue is to keep only non-empty leaves in the tree, which in practice means that sub-trees with only one non-empty child are replaced with the sub-tree rooted at that non-empty child. Here's an example of this:
 
 <center>
-![tsmt compaction example](../../img/miden/crypto-primitives/tsmt/tsmt_compaction_example.svg){ width="80%" }
+![tsmt compaction example](../../../img/miden/crypto-primitives/tsmt/tsmt_compaction_example.svg){ width="80%" }
 </center>
 
 Compaction implies then that the tree depth is logarithmic in the size of the dictionary entries as opposed to the size of the key space. This, in turn, means that the number of hashing required for executing operations on the key-value map scales logarithmically in the size of the map.
@@ -19,19 +19,19 @@ A disadvantage of this implementation, as well as all known implementations of c
 Tiered sparse Merkle trees (TSMT) are a result of the idea that one can trade hashing for more efficient bit-wise operations. More precisely, in TSMT, compaction happens only at certain pre-specified tiers and this leads to simpler bit-wise manipulations. In the case of Miden VM, compaction happens at depths `16`, `32`, `48` and `64`. To illustrate this, consider the following example where the keys have length 4, i.e. the SMT has depth 4.
 
 <center>
-![tsmt non compact](../../img/miden/crypto-primitives/tsmt/tsmt_non_compact.svg){ width="80%" }
+![tsmt non compact](../../../img/miden/crypto-primitives/tsmt/tsmt_non_compact.svg){ width="80%" }
 </center>
 
 If we choose the tiers to be at depths 2 and 4 then the compact version of the above tree will look like
 
 <center>
-![tsmt compact 2](../../img/miden/crypto-primitives/tsmt/tsmt_compact_2.svg){ width="80%" }
+![tsmt compact 2](../../../img/miden/crypto-primitives/tsmt/tsmt_compact_2.svg){ width="80%" }
 </center>
 
 If, however, we choose compaction at all possible depths we get a compact SMT that is similar to the [Jellyfish SMT](https://developers.diem.com/papers/jellyfish-merkle-tree/2021-01-14.pdf)
 
 <center>
-![tsmt compact 2](../../img/miden/crypto-primitives/tsmt/tsmt_compact_1.svg){ width="80%" }
+![tsmt compact 2](../../../img/miden/crypto-primitives/tsmt/tsmt_compact_1.svg){ width="80%" }
 </center>
 
 We can see that a TSMT is a parametrized SMT, where the parameter is the number of tiers, that interpolates between a plain SMT with no compaction and a  (fully) compact SMT with compaction allowed at evey depth.

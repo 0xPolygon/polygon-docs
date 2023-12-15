@@ -288,8 +288,24 @@ nav:
               - Transactions:  miden/architecture/transactions.md
               - State:  miden/architecture/state.md
               - Execution:  miden/architecture/execution.md
-          - Crypto primitives:
-              - Tiered sparce Merkle tree (TSMT):  miden/crypto-primitives/tsmt.md
+          - Specification:
+              - AirScript: 
+                  - Introduction: miden/specification/airscript/introduction.md
+                  - Language description:
+                      - Syntax overview: miden/specification/airscript/syntax.md
+                      - Code organization: miden/specification/airscript/code-organization.md
+                      - Type declarations: miden/specification/airscript/type-declarations.md
+                      - Constraints: miden/specification/airscript/constraints.md
+                      - Variables: miden/specification/airscript/variables.md
+                      - Evaluators: miden/specification/airscript/evaluators.md
+                      - Convenience: miden/specification/airscript/convenience.md
+                      - Example AIR definition: miden/specification/airscript/example.md
+                      - Keywords: miden/specification/airscript/keywords.md
+                      - Appendix: miden/specification/airscript/appendix.md
+                  - Backends: miden/specification/airscript/backends.md
+          - Concepts:
+              - Crypto primitives:
+                  - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
       - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
   - Developer tools: 
       - Developer tools: tools/index.md

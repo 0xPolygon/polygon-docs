@@ -26,7 +26,7 @@ Polygon Miden has two databases to capture the note states. The note database is
 
 ### Account database
 
-The latest account states - and data for onchain accounts - are recorded in a [tiered sparse Merkle tree](../crypto-primitives/tsmt.md) which maps account IDs to account hashes and account data if needed.
+The latest account states - and data for onchain accounts - are recorded in a [tiered sparse Merkle tree](../concepts/crypto-primitives/tsmt.md) which maps account IDs to account hashes and account data if needed.
 
 <center>
 ![Account DB](../../img/miden/architecture/state/account_DB.png){ width="80%" }
@@ -69,7 +69,7 @@ However, the size of the note database does not grow indefinitely. Theoretically
 
 ### Nullifier database
 
-Nullifiers are stored in a [Tiered Sparse Merkle Tree](../crypto-primitives/tsmt.md), which maps [Note Nullifiers](notes.md#note-nullifier) to `0` or `1`. Nullifiers provide information on whether a specific note has been consumed yet. The database allows proving that a given nullifier is not in the database.
+Nullifiers are stored in a [Tiered Sparse Merkle Tree](../concepts/crypto-primitives/tsmt.md), which maps [Note Nullifiers](notes.md#note-nullifier) to `0` or `1`. Nullifiers provide information on whether a specific note has been consumed yet. The database allows proving that a given nullifier is not in the database.
 
 <center>
 ![Nullifier DB](../../img/miden/architecture/state/nullifier_DB.png){ width="80%" }
