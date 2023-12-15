@@ -29,7 +29,7 @@ Exchange rate is calculated as below:
 ExchangeRate = (totalDelegatedPower + delegatorRewardPool) / totalDelegatorShares
 ```
 
-## Methods and Variables
+## Methods and variables
 
 ### buyVoucher
 
