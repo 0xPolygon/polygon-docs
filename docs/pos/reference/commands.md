@@ -114,7 +114,7 @@ cd CS-2003/bor
 bash stop.sh
 ```
 
-### Retrieve Latest Peer Details
+### Retrieve latest peer details
 
 To retrieve the latest peer details, run:
 
