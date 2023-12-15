@@ -58,7 +58,7 @@ bor attach .bor/data/bor.ipc <command>
 
 ## Useful configuration commands
 
-### Sync Status of Heimdall
+### Sync status of Heimdall
 
 To check if Heimdall is synced, run:
 
