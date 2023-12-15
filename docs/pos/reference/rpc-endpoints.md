@@ -41,7 +41,7 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 | Block explorer   | [https://polygonscan.com/](https://polygonscan.com/)                                                 |
 
 !!!note
-    Additional Information
+    Additional information
 
     For more details, refer to this [**JSON data**](https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json).
 
