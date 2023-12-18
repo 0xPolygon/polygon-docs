@@ -11,27 +11,38 @@ follow the [Validator Node System Requirements](/pos/validator/validator-node-sy
     For snapshot download links, see [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
 
 
-
-??? "Port Configuration Details"
+## Port Configuration Details
     
-    Here are a few instructions on how to configure ports for Sentry and Validator nodes.
+Here are a few instructions on how to configure ports for Sentry and Validator nodes.
 
-    ## For Sentry nodes
-    - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
-    - **Port 30303**: To be opened to the public for Bor p2p discovery.
-    - **Port 26656**: To be opened to the public for Heimdall/Tendermint p2p discovery.
-    - **Port 26660**: Prometheus port for Tendermint/Heimdall. Not required to be opened to the public. Only allow for the monitoring systems (Prometheus/Datadog).
-    - **Port 7071**: Metric port for Bor. Only needs to be opened for the Monitoring system.
-    - **Ports 8545, 8546, 1317**: Can be opened for Bor HTTP RPC, Bor WS RPC, and Heimdall API respectively; but only if really necessary.
+### For Sentry nodes
 
-    ## For Validator nodes
-    - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
-    - **Port 30303**: To be opened to only Sentry to which the validator is connected for Bor p2p discovery.
-    - **Port 26656**: To be opened to only Sentry to which the validator is connected for Heimdall/Tendermint p2p discovery.
-    - **Port 26660**: Prometheus port for Tendermint/Heimdall. Not required to be opened to the public. Only allow for the monitoring systems (Prometheus/Datadog).
-    - **Port 7071**: Metric port for Bor. Only needs to be opened for the monitoring system.
+  - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
 
-    
+  - **Port 30303**: To be opened to the public for Bor p2p discovery.
+
+  - **Port 26656**: To be opened to the public for Heimdall/Tendermint p2p discovery.
+  
+  - **Port 26660**: Prometheus port for Tendermint/Heimdall. Not required to be opened to the public. Only allow for the monitoring systems (Prometheus/Datadog).
+
+  - **Port 7071**: Metric port for Bor. Only needs to be opened for the Monitoring system.
+
+  - **Ports 8545, 8546, 1317**: Can be opened for Bor HTTP RPC, Bor WS RPC, and Heimdall API respectively; but only if really necessary.
+
+
+### For Validator nodes
+
+  - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
+
+  - **Port 30303**: To be opened to only Sentry to which the validator is connected for Bor p2p discovery.
+
+  - **Port 26656**: To be opened to only Sentry to which the validator is connected for Heimdall/Tendermint p2p discovery.
+
+  - **Port 26660**: Prometheus port for Tendermint/Heimdall. Not required to be opened to the public. Only allow for the monitoring systems (Prometheus/Datadog).
+
+  - **Port 7071**: Metric port for Bor. Only needs to be opened for the monitoring system.
+
+
 This guide will walk you through running a Polygon validator node from binaries.
 
 For system requirements, follow the [Validator Node System Requirements](/pos/validator/validator-node-system-requirements.md) guide.
@@ -72,10 +83,12 @@ For system requirements, follow the [Validator Node System Requirements](/pos/va
   sudo apt install erlang
   wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.10.8/rabbitmq-server_3.10.8-1_all.deb
   sudo dpkg -i rabbitmq-server_3.10.8-1_all.deb
-
   ```
-  !!!tip
-      Check more information about downloading and installing RabbitMQ [<ins>here</ins>](https://www.rabbitmq.com/download.html).
+
+  
+!!!tip
+    Check more information about downloading and installing RabbitMQ [<ins>here</ins>](https://www.rabbitmq.com/download.html).
+
 
 
 ## Overview

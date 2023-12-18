@@ -87,6 +87,8 @@ nav:
           - Configure Prover: zkEVM/get-started/deploy-zkevm/configure-prover.md
           - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
           - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
+        - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+          # - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
       - How to:
         - How to: zkEVM/how-to/index.md
         - Write a contract: zkEVM/how-to/write-contract.md
@@ -290,9 +292,13 @@ nav:
           - Topup Heimdall fee: pos/operate-node/validator/topup-heimdall-fee.md
           - Change your signer address: pos/operate-node/validator/change-signer-address.md
           - Move stake: pos/operate-node/validator/move-stake.md
+        - Delegate:
+          - How to delegate: pos/operate-node/delegate/delegate.md
+          - Delegator FAQs: pos/operate-node/delegate/delegator-faq.md
           # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
         - Troubleshooting:
           - Validator performance: pos/operate-node/validator/validator-performance.md
+          - Staking FAQs: pos/operate-node/validator/staking-faq.md
           - Technical FAQs: pos/operate-node/validator/technical-faqs.md
           - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
           - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md

@@ -13,73 +13,129 @@ keep updating this list regularly for more convenience.
 **For Linux packages**
 
 ####A. Where to find heimdall genesis file
+  
+  ```bash
+  $CONFIGPATH/heimdall/config/genesis.json
+  ```
 
-`$CONFIGPATH/heimdall/config/genesis.json`
 
 ####B. Where to find heimdall-config.toml
+  
+  ```bash
+  /etc/heimdall/config/heimdall-config.toml
+  ```
 
-`/etc/heimdall/config/heimdall-config.toml`
 
 ####C. Where to find config.toml
+  
+  ```bash
+  /etc/heimdall/config/config.toml
+  ```
 
-`/etc/heimdall/config/config.toml`
 
 ####D. Where to find heimdall-seeds.txt
+  
+  ```bash
+  $CONFIGPATH/heimdall/heimdall-seeds.txt
+  ```
 
-`$CONFIGPATH/heimdall/heimdall-seeds.txt`
 
 ####E. Start Heimdall
+  
+  ```bash
+  $ sudo service heimdalld start
+  ```
 
-`$ sudo service heimdalld start`
 
 ####F. Start Heimdall rest-server
+  
+  ```bash
+  $ sudo service heimdalld-rest-server start
+  ```
 
-`$ sudo service heimdalld-rest-server start`
 
 ####G. Start Heimdall bridge-server
+  
+  ```bash
+  $ sudo service heimdalld-bridge start
+  ```
 
-`$ sudo service heimdalld-bridge start`
 
 ####H. Heimdall logs
+  
+  ```bash
+  /var/log/matic-logs/
+  ```
 
-`/var/log/matic-logs/`
 
 ####I. Where to find Bor genesis file
+  
+  ```bash
+  $CONFIGPATH/bor/genesis.json
+  ```
 
-`$CONFIGPATH/bor/genesis.json`
 
 ####J. Start Bor
+  
+  ```bash
+  sudo service bor start
+  ```
 
-`sudo service bor start`
 
 ####K Check heimdall logs
+  
+  ```bash
+  tail -f heimdalld.log
+  ```
 
-`tail -f heimdalld.log`
 
 ####L. Check Heimdall rest-server
-
-`tail -f heimdalld-rest-server.log`
+  ```bash
+  tail -f heimdalld-rest-server.log
+  ```
+  
 
 ####M. Check Heimdall bridge logs
+  
+  ```bash
+  tail -f heimdalld-bridge.log
+  ```
 
-`tail -f heimdalld-bridge.log`
 
 ####N. Check bor logs
+  
+  ```bash
+  tail -f bor.log
+  ```
 
-`tail -f bor.log`
 
 ####O. Kill Bor process
 
 **For linux**:
 
-1. `ps -aux | grep bor`. Get the PID for Bor and then run the following command.
-2. `sudo kill -9 PID`
+1. 
+```bash
+ps -aux | grep bor
+```
+ Get the PID for Bor and then run the following command.
+2. 
+```bash
+sudo kill -9 PID
+```
 
 **For Binaries**:
 
-Go to `CS-2003/bor` and then run, `bash stop.sh`
+Go to 
+```bash
+CS-2003/bor
+```
+ and then run,
+```bash
+bash stop.sh
+```
 
-### 3. Error: Failed to unlock account (0x...) No key for given address or file
+
+### 3. `Error: Failed to unlock account (0x...) No key for given address or file`
 
 This error occurs because the path for the password.txt file is incorrect. You can follow the below steps to rectify this:
 
@@ -87,13 +143,14 @@ This error occurs because the path for the password.txt and Keystore file is inc
 
 1. Copy the bor keystore file to
 
-    /etc/bor/dataDir/keystore
+    `/etc/bor/dataDir/keystore`
 
 2. And password.txt to
 
-    /etc/bor/dataDir/
+    `/etc/bor/dataDir/`
 
 3. Make sure you have added correct address in `/etc/bor/metadata`
+
 
 For Binaries:
 
@@ -106,15 +163,16 @@ For Binaries:
     `/var/lib/bor/password.txt`
 
 
-### 4. Error: Wrong Block.Header.AppHash. Expected xxxx
+### 4. `Error: Wrong Block.Header.AppHash. Expected xxxx`
 
 This usually occurs due to an incorrect installation of heimdall. You can follow the steps below to rectify this:
 
-run
+  Run
+   ```bash
+   heimdalld unsafe-reset-all
+   ```
+and start Heimdall services again. You can refer to this [guide](kb/how-to.md).
 
-    ```heimdalld unsafe-reset-all```
-
-and start Heimdall services again. You can refer to this guide - https://docs.polygon.technology/docs/maintain/validate/run-validator
 
 ### 5. From where do I create the API key?
 
@@ -209,7 +267,7 @@ Check the value of catching_up. If it is false then the node is all synced up.
 
 ### 15. What if someone become a Top 10 staker, how he will receive his MATIC reward at the end?
 
-Stage 1 rewards are not based on stake. Please refer to https://blog.matic.network/counter-stake-stage-1-stake-on-the-beach-full-details-matic-network/ for the reward details. Participants with high stake don't automatically qualify for a reward in this stage.
+Stage 1 rewards are not based on stake. Please refer to this document [here](../../how-to/operating/validator-node/rewards.md) for the reward details. Participants with high stake don't automatically qualify for a reward in this stage.
 
 
 ### 16. What should be my heimdall version?
