@@ -54,7 +54,7 @@ To get your custom Polygon RPC URL from Alchemy, go to your **Hello World** app 
 
 ![img](../../../img/pos/view-key.png)
 
-You can download and create a MetaMask account for free [here](https://metamask.io/download.html). Once you've created an account, follow these steps to set up the Polygon PoS network on your wallet.
+You can download and create a MetaMask account for free [here](https://metamask.io/download/). Once you've created an account, follow these steps to set up the Polygon PoS network on your wallet.
 
 1. Select **Settings** from the drop-down menu in the top right corner of your MetaMask wallet.
 2. Select **Networks** from the menu to the left.
@@ -356,7 +356,7 @@ We’ve adopted the Hardhat team explanations to what each of these lines of cod
 const HelloWorld = await ethers.getContractFactory("HelloWorld");
 ```
 
-A `ContractFactory` in ethers.js is an abstraction used to deploy new smart contracts, so `HelloWorld` here is a [factory](https://en.wikipedia.org/wiki/Factory\_\(object-oriented\_programming\)) for instances of our hello world contract. When using the `hardhat-ethers` plugin `ContractFactory` and `Contract`, instances are connected to the first signer (owner) by default.
+A `ContractFactory` in ethers.js is an abstraction used to deploy new smart contracts, so `HelloWorld` here is a [factory](https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)) for instances of our hello world contract. When using the `hardhat-ethers` plugin `ContractFactory` and `Contract`, instances are connected to the first signer (owner) by default.
 
 ```javascript
 const hello_world = await HelloWorld.deploy();

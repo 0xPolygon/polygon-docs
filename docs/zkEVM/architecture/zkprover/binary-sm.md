@@ -474,7 +474,7 @@ The binary operations it executes, together with their specific opcodes, are:
 
 **Secondly,** it executes the Binary Actions.
 
-**And thirdly,** it uses the [Binary PIL program](https://github.com/hermeznetwork/zkproverjs/blob/main/pil/binary.pil), to check correct execution of the Binary Actions using Plookup.
+**And thirdly,** it uses the [Binary PIL program](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/binary.pil), to check correct execution of the Binary Actions using Plookup.
 
 #### Translation to PIL language
 

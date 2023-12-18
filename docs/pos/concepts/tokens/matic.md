@@ -16,4 +16,4 @@ For testing purposes on the Mumbai Testnet, test MATIC can be obtained, which do
 3. Choose the Mumbai network
 4. Enter your account address and confirm
 
-For interactions between Goerli and Mumbai, consider using tools like [Matic.js](https://maticnetwork.github.io/matic.js/) or the [Polygon Web Wallet](https://wallet-dev.polygon.technology/).
+For interactions between Goerli and Mumbai, consider using tools like [Matic.js](https://maticnetwork.github.io/matic.js/) or use the the [Polygon wallet page](https://wallet.polygon.technology/).
