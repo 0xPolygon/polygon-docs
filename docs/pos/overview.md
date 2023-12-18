@@ -1,10 +1,10 @@
 The Polygon Proof-of-Stake (PoS) network, originally launched as Matic Network in June 2020, has been upgraded a number of times since inception. Initially designed to scale Ethereum through a sidechain, a new discussion on the Polygon forum proposes upgrading Polygon PoS into a zero-knowledge (ZK)-based validium on Ethereum.
 
-If passed, Polygon PoS would adopt the execution environment of Polygon zkEVM along with a dedicated data availability layer. The new architecture would be inherently interoperable, through an in-development interop-layer, with a broader network of ZK-powered Layer 2 (L2) chains on Ethereum. 
+If passed, Polygon PoS would adopt the execution environment of Polygon zkEVM along with a dedicated data availability layer. The new architecture would be inherently interoperable, through an in-development interop-layer, with a broader network of ZK-powered Layer 2 (L2) chains on Ethereum.
 
-Polygon PoS will continue to be foundational infrastructure for a wide array of decentralized applications and services. More details about the overarching vision of a unified ecosystem of L2s on Ethereum can be found in the Learn section. 
+Polygon PoS will continue to be foundational infrastructure for a wide array of decentralized applications and services. More details about the overarching vision of a unified ecosystem of L2s on Ethereum can be found in the Learn section.
 
-## Transaction Lifecycle
+## Transaction lifecycle
 
 The following cyclical workflow outlines the operational mechanics of today's Polygon PoS architecture:
 

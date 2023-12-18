@@ -5,9 +5,11 @@ For the latest snapshot, please visit [Polygon Chains Snapshots](https://snapsho
 !!! warning "Bor snapshots no longer supported"
     We no longer support bor archive snapshots due to unsustainable data growth.
 
-## Client Snapshots
+## Client snapshots
 
-To begin, ensure that your node environment meets the **prerequisites** outlined [here](https://wiki.polygon.technology/docs/operate/full-node-binaries/). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. In our example, we will be using an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
+To begin, ensure that your node environment meets the **prerequisites** outlined [here](
+  ../operate-node/operate/full-node-binaries.md). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. In our example, we will be using an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
+
 To transfer the correct chaindata to your disk, follow these steps:
 
 - All one has to do is specify the network ("mainnet" or "mumbai") and client type ("heimdall" or "bor" or "erigon") of your desired snapshot and run the following command:
