@@ -1,4 +1,4 @@
-Heimdall's governance operates identically to the Cosmos-sdk `x/gov` module, as detailed in [Cosmos-sdk documentation](https://docs.cosmos.network/master/modules/gov/).
+Heimdall's governance operates identically to the Cosmos-sdk `x/gov` module, as detailed in [Cosmos-sdk documentation](https://docs.cosmos.network/main/build/modules/gov).
 
 ## Overview
 
