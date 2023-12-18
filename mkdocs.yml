@@ -575,9 +575,6 @@ plugins:
       strict: false
       exclude:
         - index.md
-  - git-authors:
-      exclude:
-        - index.md
 
 validation:
   absolute_links: ignore
