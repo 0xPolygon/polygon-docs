@@ -84,7 +84,7 @@ You can claim your rewards instantly by clicking on the **Withdraw Reward** butt
 ![Figure: Withdraw-reward](../../../img/pos/withdraw-reward.png)
 
 
-### What is the Unbonding period?
+### What is the unbonding period?
 
 The unbonding period on Polygon is 80 checkpoints. This period applies to the originally delegated amount and re-delegated amounts - it does not apply to any rewards that were not re-delegated.
 
