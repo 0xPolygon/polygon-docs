@@ -105,7 +105,7 @@ Redelegating your rewards simply means that you want to increase your stake by r
 ### Can I stake to any validator?
 Yes, you can delegate to any validator except the ones which are offline.
 
-### Which browser is compatible with Staking Dashboard?
+### Which browser is compatible with the Polygon earnings calculator?
 
 Chrome, Firefox, and Brave
 
