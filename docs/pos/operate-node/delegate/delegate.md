@@ -1,5 +1,5 @@
 
-# How to Delegate
+# How to delegate
 
 This is a step-by-step guide to help you become a delegator on the Polygon Network.
 
