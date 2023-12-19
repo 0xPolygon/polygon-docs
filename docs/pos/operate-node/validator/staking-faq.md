@@ -111,7 +111,7 @@ Please watch the video for a graphical illustration of how this works:
   <p>Your browser does not support the video element.</p>
 </video>
 
-### I want to Withdraw Rewards but I am unable to.
+### I want to withdraw rewards but I am unable to.
 
 You would need to have a minimum of **2 Matic** to withdraw rewards.
 
