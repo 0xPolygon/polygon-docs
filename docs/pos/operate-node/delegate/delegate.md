@@ -80,7 +80,7 @@ This will withdraw the MATIC token rewards to your Ethereum address.
 
 This will restake the MATIC token rewards to the validator and increase your delegation stake.
 
-## Unbond from a Validator
+## Unbond from a validator
 
   1. Click [My Account](https://staking.polygon.technology/account).
     
