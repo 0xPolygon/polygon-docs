@@ -45,7 +45,7 @@ It depends on your understanding and research on which validator you would want 
 
 ### How to unbond?
 
-To Unbond from a Validator, navigate to MyAccount, where you find "Your Delegations".
+To unbond from a validator, navigate to MyAccount, where you find **Your Delegations**.
 There you will see an Unbond button for each of the validators. Click on the Unbond button for whichever validator that you want to unbond from.
 
 ![img](../../../img/pos/unbond-from-validator.png)
