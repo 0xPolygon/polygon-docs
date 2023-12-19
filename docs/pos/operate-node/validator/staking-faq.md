@@ -151,7 +151,7 @@ Staking through Binance is not yet supported. There will be an announcement if a
 
 
 ### Do I need to deposit Matic to the Polygon mainnet network for staking?
-No. All your funds need to be on the Main Ethereum Network.
+No. All your funds need to be on the Ethereum mainnet.
 
 
 ### When do rewards get distributed?
