@@ -9,7 +9,7 @@ There is no minimum stake amount to delegate. However, you can always start with
 
 ### How many rewards will I get if I delegate?
 
-Please use the [Staking Rewards Calculator](https://staking.polygon.technology/rewards-calculator) to determine your estimates.
+Please use the [Polygon earnings calculator](https://staking.polygon.technology/rewards-calculator) to determine your estimates.
 
 ### Why does my transaction take so long?
 
