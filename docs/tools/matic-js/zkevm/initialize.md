@@ -1,7 +1,7 @@
 !!! important
     Make sure you have followed the [installation](../installation.md) and [get started](../get-started.md) documentation.
 
-The `ZkEvmClient` interacts with the POS bridge.
+The `ZkEvmClient` interacts with the zkEVM bridge.
 
 ```js
 import { ZkEvmClient, use } from "@maticnetwork/maticjs"
