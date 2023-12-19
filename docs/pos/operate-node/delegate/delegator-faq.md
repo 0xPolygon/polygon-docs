@@ -1,5 +1,5 @@
 
-### What is the Staking Dashboard URL?
+### What is the staking dashboard URL?
 
 The staking dashboard URL is https://staking.polygon.technology/.
 
