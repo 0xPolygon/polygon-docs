@@ -9,7 +9,7 @@ A blockchain validator is someone who is responsible for validating transactions
 
 !!!info
     
-    Currently, there is a limit of 100 active validators at a time. For a detailed description on what a validator is, see [<ins>Validator</ins>](../../index.md).
+    Currently, there is a limit of 100 active validators at a time. For a detailed description on what a validator is, see [<ins>Validator</ins>](./getting-started.md).
 
     Also, after the [<ins>PIP4 governance proposal</ins>](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956) is implemented on the contract-level, the minimum staking amount will increase to 10,000 MATIC.
 
