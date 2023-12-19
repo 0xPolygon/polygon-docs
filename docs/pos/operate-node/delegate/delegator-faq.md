@@ -55,7 +55,7 @@ Yes. You should provision for ~0.05-0.1 ETH to be safe.
 
 No. All your funds need to be on the Main Ethereum Network.
 
-### When I try to do the transaction my Confirm button is disabled, why so?
+### When I try to do the transaction my **Confirm** button is disabled.
 
 Please check if you have enough ETH for the gas fees.
 
