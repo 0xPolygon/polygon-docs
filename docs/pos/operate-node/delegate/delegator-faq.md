@@ -198,6 +198,6 @@ Yes, the foundation nodes had been turned off.
 
 No, there won't be any Foundation nodes in the future.
 
-### How many transactions do I need to pay for Gas when I do a Move Stake?
+### How many transactions do I need to pay for gas when I do a "move stake"?
 
 The Move Stake is a single transaction only. All transactions would be on the Ethereum Blockchain so you would need to spend some ETH while doing the Move Stake transaction.
