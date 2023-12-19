@@ -360,7 +360,39 @@ nav:
           - Concepts:
               - Crypto primitives:
                   - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
-      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
+      - Miden VM:
+          - Intro:
+              - Introduction: miden/vm/intro/index.md
+              - Overview: miden/vm/intro/overview.md
+              - Usage: miden/vm/intro/usage.md
+              - Performance: miden/vm/intro/performance.md
+          - Development tooling:
+              - Overview: miden/vm/tools/index.md
+              - Debugger: miden/vm/tools/debugger.md
+              - REPL: miden/vm/tools/repl.md
+          - Miden programming reference:
+              - miden/vm/user_docs/index.md
+              - Assembly:
+                  - main:  miden/vm/user_docs/assembly/index.md
+                  - Code organization:  miden/vm/user_docs/assembly/code_organization.md
+                  - Execution contexts:  miden/vm/user_docs/assembly/execution_contexts.md
+                  - Flow control:  miden/vm/user_docs/assembly/flow_control.md
+                  - Field operations:  miden/vm/user_docs/assembly/field_operations.md
+                  - u32 operations:  miden/vm/user_docs/assembly/u32_operations.md
+                  - Stack manipulation:  miden/vm/user_docs/assembly/stack_manipulation.md
+                  - IO operations:  miden/vm/user_docs/assembly/io_operations.md
+                  - Cryptographic operations:  miden/vm/user_docs/assembly/cryptographic_operations.md
+                  - Debugging:  miden/vm/user_docs/assembly/debugging.md
+              - Standard library:
+                  - miden/vm/user_docs/stdlib/index.md
+                  - std::collections:  miden/vm/user_docs/stdlib/collections.md
+                  - std::crypto::dsa:  miden/vm/user_docs/stdlib/crypto/dsa.md
+                  - std::fri:  miden/vm/user_docs/stdlib/crypto/fri.md
+                  - std::hashes:  miden/vm/user_docs/stdlib/crypto/hashes.md
+                  - std::math::u64:  miden/vm/user_docs/stdlib/math/u64.md
+                  - std::mem:  miden/vm/user_docs/stdlib/mem.md
+                  - sys:  miden/vm/user_docs/stdlib/sys.md
+      #docs: https://0xpolygonmiden.github.io/miden-vm/
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
@@ -428,22 +460,22 @@ nav:
                   - withdrawStartWithMetaData:  tools/matic-js/pos/erc721/withdraw-start-with-meta-data.md
                   - withdrawStart:  tools/matic-js/pos/erc721/withdraw-start.md
               - ERC1155:
-                  - approve-all-for-mintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
-                  - approve-all:  tools/matic-js/pos/erc1155/approve-all.md
-                  - deposit-many:  tools/matic-js/pos/erc1155/deposit-many.md
+                  - approveAllForMintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
+                  - approveAll:  tools/matic-js/pos/erc1155/approve-all.md
+                  - depositMany:  tools/matic-js/pos/erc1155/deposit-many.md
                   - deposit:  tools/matic-js/pos/erc1155/deposit.md
-                  - get-balance:  tools/matic-js/pos/erc1155/get-balance.md
+                  - getBalance:  tools/matic-js/pos/erc1155/get-balance.md
                   - index:  tools/matic-js/pos/erc1155/index.md
-                  - is-approved-all:  tools/matic-js/pos/erc1155/is-approved-all.md
-                  - is-withdraw-exited-many:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
-                  - is-withdraw-exited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
+                  - isApprovedAll:  tools/matic-js/pos/erc1155/is-approved-all.md
+                  - isWithdrawExitedMany:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
                   - transfer:  tools/matic-js/pos/erc1155/transfer.md
-                  - withdraw-exit-faster-many:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
-                  - withdraw-exit-faster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
-                  - withdraw-exit-many:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
-                  - withdraw-exit:  tools/matic-js/pos/erc1155/withdraw-exit.md
-                  - withdraw-start-many:  tools/matic-js/pos/erc1155/withdraw-start-many.md
-                  - withdraw-start:  tools/matic-js/pos/erc1155/withdraw-start.md
+                  - withdrawExitFasterMany:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
+                  - withdrawExitMany:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
+                  - withdrawExit:  tools/matic-js/pos/erc1155/withdraw-exit.md
+                  - withdrawStartMany:  tools/matic-js/pos/erc1155/withdraw-start-many.md
+                  - withdrawStart:  tools/matic-js/pos/erc1155/withdraw-start.md
               - Common methods:
                   - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
                   - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
