@@ -142,7 +142,7 @@ In case you dont want that to happen, re-delegate your rewards before delegating
 
 No. Once your delegation transactions are confirmed, and you can see your tokens reflected in the **Total Stake** and **New Reward** sections, then you are done. There is no need to keep your system or device on.
 
-### I have unbonded, how long will it take to Unbond?
+### I have unbonded, how long will it take to unbond?
 
 The unbonding period is currently set to 80 checkpoints. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
