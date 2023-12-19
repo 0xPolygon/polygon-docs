@@ -146,7 +146,7 @@ No. Once your delegation transactions are confirmed, and you can see your tokens
 
 The unbonding period is currently set to 80 checkpoints. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
-### I have unbonded, and I now see the Claim Stake button, but it is disabled, why is that?
+### I have unbonded, and I now see the **Claim Stake** button, but it is disabled.
 
 The Claim Stake button will only be enabled when your unbonding period is complete. The unbonding period is currently set at 80 checkpoints.
 
