@@ -152,7 +152,7 @@ The Claim Stake button will only be enabled when your unbonding period is comple
 
 ### When will the **Claim Stake** button be enabled?
 
-Yes, under the Claim Stake button you would see a note on how many checkpoints are pending before the Claim Stake button would be enabled. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
+Under the **Claim Stake** button you should see a note on how many checkpoints are pending before the **Claim Stake** button is enabled. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
 ![Figure: Unbound ](../../../img/pos/unbond.png)
 
