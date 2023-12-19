@@ -157,27 +157,6 @@ Under the **Claim Stake** button you should see a note on how many checkpoints a
 ![Figure: Unbound ](../../../img/pos/unbond.png)
 
 
-<!-->Hiding questions pertaining to foundation nodes, since there are no foundation nodes anymore<!-->
-<!--
-### How do I switch my delegation from Foundation Nodes to External nodes?
-
-You can switch your Delegation using the **Move Stake** option on the Staking UI. This will switch your Delegation from the Foundation node to any other external node of your choice.
-
-<div align="center">
-  <img src={useBaseUrl("/img/delegator-faq/move-stake.png")} width="500" />
-</div>
-
-You will see a list of other validators:
-
-<div>
-  <img src={useBaseUrl("/img/delegator-faq/validators.png")} />
-</div>
-
-
-### Will there be any ubonding period when I switch Delegation from Foundation nodes to external nodes?
-
-There will be no Unbonding period when you switch Delegation from foundation nodes to external nodes. It will be a direct switch without any delays. However, if you are unbonding from a Foundation Node or an External node there will be an Unbonding period for that.
-
 ### Are they any specifics to choose an external node during switch delegation?
 
 No. You can choose any node of your choice.
