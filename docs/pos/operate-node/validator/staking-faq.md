@@ -143,7 +143,7 @@ Please watch the video for a graphical illustration of how this works:
 
 ### Are hardware wallets supported?
 
-Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on MetaMask and connect your Hardware wallet and then continue the delegation process.
+Yes, hardware wallets are supported. You can use the **Connect Hardware Wallet** option on MetaMask and connect your Hardware wallet and then continue the delegation process.
 
 ### Why can’t I stake directly from Binance?
 
