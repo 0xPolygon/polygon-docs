@@ -157,30 +157,6 @@ Under the **Claim Stake** button you should see a note on how many checkpoints a
 ![Figure: Unbound ](../../../img/pos/unbond.png)
 
 
-### Are they any specifics to choose an external node during switch delegation?
-
-No. You can choose any node of your choice.
-
-### What happens to my rewards that are accumalated if I switch delegation from Foundation to External node?
-
-If you haven't already claimed your rewards before switching delegation, then upon successful switch of your delegation from Foundation to External the Rewards that were accumalated till then will be transferred back to your account.
-
-### Will delegation on the External Nodes work the same as Foundation Nodes?
-
-Yes, it will work the same as Foundation nodes.
-
-### Will I still get rewards after delegating to an External Node?
-
-Yes, rewards will be distributed the same as earlier with the Foundation nodes. Every successful submission of a checkpoint will yield in rewards. Rewards will be distributed and calculated at every checkpoint relative to the stake ratio, as currently implemented.
-
-### Will there be any unbonding period if I unbond from an External Node?
-
-Yes, the unbonding period will stay the same as currently implemented. 82 Checkpoints.
-
-### Will there be any locking period after I switch my Delegation from Foundation to External node?
-
-No. There won't be any locking period after you switch your delegation.
-
 
 ### Have the foundations nodes been turned off?
 
