@@ -190,7 +190,7 @@ Yes, you will have the option to partially move your stake from Foundation node 
 No, the **Move Stake** option is only available on the Foundation Nodes. If you want to switch your delegation from an external node to another external node, you will have to unbond first and then delegate to another external node.
 <!-->
 
-### Have the Foundations nodes been turned off?
+### Have the foundations nodes been turned off?
 
 Yes, the foundation nodes had been turned off.
 
