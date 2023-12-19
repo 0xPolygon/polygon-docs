@@ -150,7 +150,7 @@ Yes, hardware wallets are supported. You can use the **Connect Hardware Wallet**
 Staking through Binance is not yet supported. There will be an announcement if and when Binance starts supporting it.
 
 
-### Do I need to deposit Matic to the Polygon Mainnet network for staking?
+### Do I need to deposit Matic to the Polygon mainnet network for staking?
 No. All your funds need to be on the Main Ethereum Network.
 
 
