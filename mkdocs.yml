@@ -371,27 +371,29 @@ nav:
               - Debugger: miden/vm/tools/debugger.md
               - REPL: miden/vm/tools/repl.md
           - Miden programming reference:
-              - miden/vm/user_docs/index.md
+              - miden/vm/user-docs/index.md
               - Assembly:
-                  - main:  miden/vm/user_docs/assembly/index.md
-                  - Code organization:  miden/vm/user_docs/assembly/code_organization.md
-                  - Execution contexts:  miden/vm/user_docs/assembly/execution_contexts.md
-                  - Flow control:  miden/vm/user_docs/assembly/flow_control.md
-                  - Field operations:  miden/vm/user_docs/assembly/field_operations.md
-                  - u32 operations:  miden/vm/user_docs/assembly/u32_operations.md
-                  - Stack manipulation:  miden/vm/user_docs/assembly/stack_manipulation.md
-                  - IO operations:  miden/vm/user_docs/assembly/io_operations.md
-                  - Cryptographic operations:  miden/vm/user_docs/assembly/cryptographic_operations.md
-                  - Debugging:  miden/vm/user_docs/assembly/debugging.md
+                  - main:  miden/vm/user-docs/assembly/index.md
+                  - Code organization:  miden/vm/user-docs/assembly/code-organization.md
+                  - Execution contexts:  miden/vm/user-docs/assembly/execution-contexts.md
+                  - Flow control:  miden/vm/user-docs/assembly/flow-control.md
+                  - Field operations:  miden/vm/user-docs/assembly/field-operations.md
+                  - u32 operations:  miden/vm/user-docs/assembly/u32-operations.md
+                  - Stack manipulation:  miden/vm/user-docs/assembly/stack-manipulation.md
+                  - IO operations:  miden/vm/user-docs/assembly/io-operations.md
+                  - Cryptographic operations:  miden/vm/user-docs/assembly/cryptographic-operations.md
+                  - Debugging:  miden/vm/user-docs/assembly/debugging.md
               - Standard library:
-                  - miden/vm/user_docs/stdlib/index.md
-                  - std::collections:  miden/vm/user_docs/stdlib/collections.md
-                  - std::crypto::dsa:  miden/vm/user_docs/stdlib/crypto/dsa.md
-                  - std::fri:  miden/vm/user_docs/stdlib/crypto/fri.md
-                  - std::hashes:  miden/vm/user_docs/stdlib/crypto/hashes.md
-                  - std::math::u64:  miden/vm/user_docs/stdlib/math/u64.md
-                  - std::mem:  miden/vm/user_docs/stdlib/mem.md
-                  - sys:  miden/vm/user_docs/stdlib/sys.md
+                  - miden/vm/user-docs/stdlib/index.md
+                  - std::collections:  miden/vm/user-docs/stdlib/collections.md
+                  - Crypto:
+                      - std::crypto::dsa:  miden/vm/user-docs/stdlib/crypto/dsa.md
+                      - std::fri:  miden/vm/user-docs/stdlib/crypto/fri.md
+                      - std::hashes:  miden/vm/user-docs/stdlib/crypto/hashes.md
+                  - Math:
+                      - std::math::u64:  miden/vm/user-docs/stdlib/math/u64.md
+                  - std::mem:  miden/vm/user-docs/stdlib/mem.md
+                  - sys:  miden/vm/user-docs/stdlib/sys.md
       #docs: https://0xpolygonmiden.github.io/miden-vm/
   - Developer tools: 
       - Developer tools: tools/index.md
