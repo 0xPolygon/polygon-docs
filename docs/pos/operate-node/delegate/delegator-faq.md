@@ -150,7 +150,7 @@ The unbonding period is currently set to 80 checkpoints. Every checkpoint takes 
 
 The Claim Stake button will only be enabled when your unbonding period is complete. The unbonding period is currently set at 80 checkpoints.
 
-### Do I know when will the Claim Stake button be enabled?
+### When will the **Claim Stake** button be enabled?
 
 Yes, under the Claim Stake button you would see a note on how many checkpoints are pending before the Claim Stake button would be enabled. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
