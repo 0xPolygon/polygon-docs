@@ -51,7 +51,7 @@ On the Dashboard, you can click on the **My Account** option on the left-hand si
 
 Yes. You should provision for ~0.05-0.1 ETH to be safe.
 
-### Do I need to deposit MATIC tokens to the Polygon Mainnet network for staking?
+### Do I need to deposit MATIC tokens to the Polygon mainnet network for staking?
 
 No. All your funds need to be on the Main Ethereum Network.
 
