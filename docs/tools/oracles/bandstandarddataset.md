@@ -6,7 +6,7 @@ Developers building on Polygon can now leverage Band Protocol's decentralized or
 
 ## Supported tokens
 
-Currently, the list of supported symbols can be found at [data.bandprotocol.com](http://data.bandprotcool.com). Going forward, this list will continue to expand based on developer needs and community feedback.
+Currently, the list of supported symbols can be found at [https://data.bandprotocol.com/](https://data.bandprotocol.com/). Going forward, this list will continue to expand based on developer needs and community feedback.
 
 ## Price pairs
 

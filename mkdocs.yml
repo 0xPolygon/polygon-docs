@@ -576,14 +576,14 @@ markdown_extensions:
 plugins:
   - search
   - open-in-new-tab
-#  - git-revision-date-localized:
-#      enable_creation_date: true
-#      fallback_to_build_date: true
-#  - git-committers:
-#      repository: 0xPolygon/polygon-docs
-#      #branch: main
-#      exclude:
-#        - README.md
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      strict: false
+      exclude:
+        - index.md
+  - git-authors:
+      exclude:
+        - index.md
 
 validation:
   absolute_links: ignore

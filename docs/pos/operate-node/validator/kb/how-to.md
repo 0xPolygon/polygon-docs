@@ -96,7 +96,7 @@ sudo dpkg -i rabbitmq-server_3.10.8-1_all.deb
 
 This document gives some additional details for setting up a new node based on [Full Node Deployment](/operate/full-node-binaries.md) guide.
 
-- VPN setup is required before proceeding with any of these steps can be done by referring [Bastillion user guide](https://www.notion.so/Bastillion-VPN-user-guide-c04f5f26afda4fa59d5d9f6041327f43).
+- VPN setup is required before proceeding with any of these steps.
 - If you are using Macbook, it has native Python 2.7 available which **needs to be replaced by with anything Python 3.x**.
 - Make sure if pip3 packages are installed correctly
 

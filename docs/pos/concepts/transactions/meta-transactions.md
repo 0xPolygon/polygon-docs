@@ -102,7 +102,7 @@ Under the hood, user signs on an intent to execute a transaction, which is relay
 
 ## What is enabling transaction execution?
 
-The client that the user interacts with (web browser, mobile apps, etc) never interacts with the blockchain, instead it interacts with a simple relayer server (or a network of relayers), similar to the way GSN or any meta-transaction solution works ( see: [Meta Transactions: An Introduction](https://www.notion.so/Meta-Transactions-An-Introduction-8f54cf75321e4ec3b6d755e18e406590)).
+The client that the user interacts with (web browser, mobile apps, etc) never interacts with the blockchain, instead it interacts with a simple relayer server (or a network of relayers), similar to the way GSN or any meta-transaction solution works.
 
 For any action that requires blockchain interaction,
 
@@ -115,7 +115,7 @@ For any action that requires blockchain interaction,
 
 - Choose between a custom simple relayer node/biconomy.
 
-  - For biconomy, setup a dapp from the dashboard and save the api-id and api-key, see: [Tutorial: Biconomy](https://www.notion.so/Tutorial-Biconomy-7f578bfb4e7d4904b8c79522085ba568) or [https://docs.biconomy.io/](https://docs.biconomy.io/)
+  - For biconomy, setup a dapp from the dashboard and save the api-id and api-key, see: [https://docs.biconomy.io/](https://docs.biconomy.io/)
 
     **Steps:**
 

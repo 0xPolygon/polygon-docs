@@ -310,8 +310,6 @@ You can expect to see the following output:
 NFT minted to: 0x<YOUR_WALLET_ADDRESS>
 ```
 
-Looking for the sample code from this tutorial? You can find it in the polygon-nft.storage-demo [link](https://github.com/itsPiyushMaheshwari/Polygon-nft.storage-demo) Github repo.
-
 ## Conclusion
 
 In this tutorial, we learned how to mint a NFT end-to-end with Polygon and NFT.Storage. This technology combination results in proper decentralization and guarantees *scalability*, *durability*, and *immutability*.
