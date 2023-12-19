@@ -381,9 +381,9 @@ nav:
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
       - Matic.js:
+          - Installation:  tools/matic-js/installation.md
+          - Get started:  tools/matic-js/get-started.md
           - POS:
-              - Get started:  tools/matic-js/get-started.md
-              - Installation:  tools/matic-js/installation.md
               - POS client:  tools/matic-js/pos/client.md
               - API overview:  tools/matic-js/api-architecture.md
               - Setup:
@@ -449,7 +449,7 @@ nav:
                   - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
                   - isDeposited:  tools/matic-js/pos/is-deposited.md
           - zkEVM:
-              - Initialize:  tools/matic-js/zkevm/initialize.md
+              - zkEVM client:  tools/matic-js/zkevm/initialize.md
               - ERC20:  tools/matic-js/zkevm/erc20.md
               - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 

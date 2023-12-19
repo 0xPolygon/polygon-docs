@@ -1,5 +1,7 @@
+!!! important
+    Make sure you have followed the [installation](../installation.md) and [get started](../get-started.md) documentation.
 
-Matic.js library also provides the **ZkEvmClient** to interact with the Polygon zkEVM network.
+The `ZkEvmClient` interacts with the POS bridge.
 
 ```js
 import { ZkEvmClient, use } from "@maticnetwork/maticjs"
