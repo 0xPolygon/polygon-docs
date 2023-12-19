@@ -24,7 +24,7 @@ The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainn
     If you are a validator, use a different non-validating address to log in as delegator.
 
 
-## Delegate to a Validator
+## Delegate to a validator
 
   1. Click **Become a Delegator** or scroll down to a specific validator and click **Delegate**.
     
