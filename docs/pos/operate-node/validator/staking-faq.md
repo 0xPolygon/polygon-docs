@@ -117,7 +117,7 @@ You would need to have a minimum of **2 Matic** to withdraw rewards.
 
 ### How to claim stake?
 
-Once the **unbonding period is complete**, the Claim Stake button will be enabled and you can then claim your staked tokens. The tokens will be transferred to your account.
+Once the unbonding period is complete, the **Claim Stake** button will be enabled and you can then claim your staked tokens. The tokens will be transferred to your account.
 
 `Step 1` <br/>
 <center>
