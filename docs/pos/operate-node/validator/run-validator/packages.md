@@ -517,7 +517,7 @@ will start the Bor service on the validator machine.
     The Heimdall service takes several days to sync from scratch fully.
 
     Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours.
-    For detailed instructions, see [Snapshot Instructions for Heimdall and Bor](https://forum.matic.network/t/snapshot-instructions-for-heimdall-and-bor/2278).
+    For detailed instructions, see [Snapshot Instructions for Heimdall and Bor](https://forum.polygon.technology/t/snapshot-instructions-for-heimdall-and-bor/9233).
 
     For snapshot download links, see [Polygon Chains Snapshots](https://snapshot.polygon.technology/).
 

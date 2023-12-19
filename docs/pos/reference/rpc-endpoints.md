@@ -12,7 +12,7 @@ The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily u
 | Parent chain     | **[Goërli](https://goerli.net/)**                                                                   |
 | Chain ID         | `80001`                                                                                            |
 | Gas token        | MATIC                                                                                  |
-| Gas station      | [Mumbai gas station](https://gasstation-mumbai.matic.today/v2)                                       |
+| Gas station      | [Mumbai gas station](https://gasstation-testnet.polygon.technology/v2)                                       |
 | RPC endpoint     | [https://rpc-mumbai.matic.today](https://rpc-mumbai.matic.today)                                     |
 | Node endpoint    | [wss://rpc-mumbai.matic.today](wss://rpc-mumbai.matic.today)                                        |
 | Heimdall API     | [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology)   |
@@ -56,7 +56,7 @@ Developers can interact with on-chain data and execute various types of transact
 !!!info
     Getting started with RPC calls
 
-    For a comprehensive list of API documentation, visit [**Polygon JSON-RPC calls**](https://edge-docs.polygon.technology/docs/get-started/json-rpc-commands/).
+    For a comprehensive list of API documentation, visit [**Polygon JSON-RPC calls**](https://github.com/0xPolygon/polygon-edge/tree/develop/docs/docs/api).
 
     To explore API requests without any setup, fix failing requests, or discover new methods on the Polygon network, try the [**Composer App**](https://composer.alchemyapi.io).
 
@@ -70,7 +70,6 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 - [Ankr](https://www.ankr.com/)
 - [Blast (Bware Labs)](https://blastapi.io/)
 - [BlockPI](https://blockpi.io/)
-- [BlockSpaces](https://www.blockspaces.com/web3-infrastructure)
 - [Chainnodes](https://www.chainnodes.org/)
 - [Chainstack](https://chainstack.com/build-better-with-polygon/)
 - [DataHub (Figment)](https://datahub.figment.io)
@@ -79,7 +78,6 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 - [Moralis](https://moralis.io)
 - [NodeReal](https://nodereal.io)
 - [OnFinality](https://onfinality.io/)
-- [Pocket Network](https://www.portal.pokt.network/)
 - [QuickNode](https://www.quicknode.com/chains/matic)
 - [SettleMint](https://docs.settlemint.com/docs/polygon-connect-to-a-node)
 - [Tatum](https://tatum.io/)
