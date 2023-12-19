@@ -47,7 +47,7 @@ On the Dashboard, you can click on the **My Account** option on the left-hand si
 ![Figure: My account](../../../img/pos/my-account.png)
 
 
-### Do I need ETH to pay for Gas fees?
+### Do I need ETH to pay for gas fees?
 
 Yes. You should provision for ~0.05-0.1 ETH to be safe.
 
