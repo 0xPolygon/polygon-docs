@@ -138,7 +138,7 @@ If you have not re-delegated your rewards before delegating additional funds to 
 
 In case you dont want that to happen, re-delegate your rewards before delegating additional funds.
 
-### I have delegated my tokens via MetaMask on the Staking dashboard. Do I need to keep my system or device on?
+### I have delegated my tokens via MetaMask on the dashboard. Do I need to keep my system or device on?
 
 No. Once your Delegation transactions are confirmed, and you can see your tokens reflected in the **Total Stake** and **New Reward** sections, then you are done. There is no need to keep your system or device on.
 
