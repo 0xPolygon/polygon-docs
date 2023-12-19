@@ -15,7 +15,7 @@ follow the [Validator Node System Requirements](/pos/validator/validator-node-sy
     
 Here are a few instructions on how to configure ports for sentry and validator nodes.
 
-### For Sentry nodes
+### For sentry nodes
 
   - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
 
