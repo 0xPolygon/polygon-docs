@@ -98,8 +98,6 @@ Delegation requires 2 transactions, one after the other. One to **Approve** the 
 
 ![Figure: Delegate ](../../../img/pos/delegate.png) 
 
-
-
 ### What does Redelegate Rewards mean?
 
 Redelegating your rewards simply means that you want to increase your stake by restaking the rewards you have accumulated.
