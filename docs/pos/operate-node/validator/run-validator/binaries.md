@@ -11,7 +11,7 @@ follow the [Validator Node System Requirements](/pos/validator/validator-node-sy
     For snapshot download links, see [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
 
 
-## Port Configuration Details
+## Port configuration details
     
 Here are a few instructions on how to configure ports for Sentry and Validator nodes.
 
