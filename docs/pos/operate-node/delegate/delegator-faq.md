@@ -194,7 +194,7 @@ No, the **Move Stake** option is only available on the Foundation Nodes. If you 
 
 Yes, the foundation nodes had been turned off.
 
-### Will there be any Foundation nodes in the future?
+### Will there be any foundation nodes in the future?
 
 No, there won't be any Foundation nodes in the future.
 
