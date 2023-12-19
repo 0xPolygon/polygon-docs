@@ -176,7 +176,7 @@ Rewards will be higher, to begin with, and will keep decreasing as the locked su
 No. Once you unbond you stop receiving rewards.
 
 ### Can I move the stake to another validator?
- Yes, you just have to reach "Your Delegations", click on "Move Stake", and then choose your new validator.
+ Yes, you just have to access **Your Delegations**, click on **Move Stake**, and then choose your new validator.
 
 Please watch the video for a graphical illustration of how this works:
 
