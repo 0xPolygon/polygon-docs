@@ -181,14 +181,6 @@ Yes, the unbonding period will stay the same as currently implemented. 82 Checkp
 
 No. There won't be any locking period after you switch your delegation.
 
-### Can I partially switch my delegation from Foundation to External nodes?
-
-Yes, you will have the option to partially move your stake from Foundation node to an external node. The remaining partial stake will remain on the Foundation node. You can then move that to another node of your choice or the same node.
-
-### Can I switch delegation from an external node to another external node?
-
-No, the **Move Stake** option is only available on the Foundation Nodes. If you want to switch your delegation from an external node to another external node, you will have to unbond first and then delegate to another external node.
-<!-->
 
 ### Have the foundations nodes been turned off?
 
