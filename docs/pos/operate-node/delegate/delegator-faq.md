@@ -140,7 +140,7 @@ In case you dont want that to happen, re-delegate your rewards before delegating
 
 ### I have delegated my tokens via MetaMask on the dashboard. Do I need to keep my system or device on?
 
-No. Once your Delegation transactions are confirmed, and you can see your tokens reflected in the **Total Stake** and **New Reward** sections, then you are done. There is no need to keep your system or device on.
+No. Once your delegation transactions are confirmed, and you can see your tokens reflected in the **Total Stake** and **New Reward** sections, then you are done. There is no need to keep your system or device on.
 
 ### I have unbonded, how long will it take to Unbond?
 
