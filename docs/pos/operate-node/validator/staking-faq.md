@@ -185,7 +185,7 @@ Please watch the video for a graphical illustration of how this works:
   <p>Your browser does not support the video element.</p>
 </video>
 
-### Which browsers are compatible with the Staking Dashboard?
+### Which browsers are compatible with the staking dashboard?
 
 Chrome, Firefox, and Brave.
 
