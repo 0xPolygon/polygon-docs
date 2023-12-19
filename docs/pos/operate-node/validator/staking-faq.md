@@ -92,7 +92,7 @@ You would need to have a minimum of **2 Matic** to restake rewards.
 
 ### How to withdraw rewards?
 
-You can claim your rewards by clicking on the “My Account”, all the delegators for a validator are displayed. Click on the “Withdraw Reward” button and the rewards will be transferred to your delegated account in wallet.
+You can claim your rewards by clicking on the **My Account**, all the delegators for a validator are displayed. Click on the **Withdraw Reward** button and the rewards will be transferred to your delegated account in wallet.
 
 `Step 1` <br/>
 <center>
