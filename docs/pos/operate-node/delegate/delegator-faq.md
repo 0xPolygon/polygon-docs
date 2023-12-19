@@ -120,7 +120,7 @@ Check for the following:
 
 ### How do I send funds from Binance or other exchanges to Polygon wallet?
 
-Technically, the Polygon Wallet Suite/Staking interface is just a web application. Currently it supports the following wallets - Metamask, WalletConnect, and WalletLink.
+The Polygon Wallet Suite is a web application. 
 
 First, you must withdraw your funds from Binance or any other exchange to your Ethereum address on Metamask. If you don't know how to use Metamask, google it a bit. There are plenty of videos and blogs to get started with it.
 
