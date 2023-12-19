@@ -39,7 +39,7 @@ You just need to access **https://staking.polygon.technology/**, where you will 
 ![img](../../../img/pos/staking-lp.png)
 
 
-### How do I know which Validator to select for better rewards?
+### How do I know which validator to select for better rewards?
 
 It depends on your understanding and research on which validator you would want to stake on. You can find the list of validators here : https://staking.polygon.technology/validators
 
