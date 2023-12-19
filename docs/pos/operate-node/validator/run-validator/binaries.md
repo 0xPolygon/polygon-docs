@@ -30,7 +30,7 @@ Here are a few instructions on how to configure ports for sentry and validator n
   - **Ports 8545, 8546, 1317**: Can be opened for Bor HTTP RPC, Bor WS RPC, and Heimdall API respectively; but only if really necessary.
 
 
-### For Validator nodes
+### For validator nodes
 
   - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
 
