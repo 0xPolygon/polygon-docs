@@ -66,7 +66,7 @@ This period applies to the originally delegated amount and re-delegated amounts.
 
 ### How to restake rewards?
 
-Go to “My Account” to check "Your Delegations".
+Go to **My Account** to check **Your Delegations**.
 Clicking on "Restake Reward" will ask you for confirmation from your wallet account. Once you confirm the transaction, only then the restake transaction would be complete.
 
 `Step 1` 
