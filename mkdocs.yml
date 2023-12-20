@@ -500,6 +500,7 @@ nav:
           - DIA: tools/oracles/diadataoracles.md
           - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Razor: tools/oracles/razor.md
+          - Supra: tools/oracles/supra.md
           - Tellor: tools/oracles/tellor.md
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
