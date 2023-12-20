@@ -7,10 +7,6 @@ The staking dashboard URL is https://staking.polygon.technology/.
 
 There is no minimum stake amount to delegate. However, you can always start with 1 MATIC token.
 
-### How many rewards will I get if I delegate?
-
-Please use the [Polygon earnings calculator](https://staking.polygon.technology/rewards-calculator) to determine your estimates.
-
 ### Why does my transaction take so long?
 
 All staking transactions of Polygon happen on Ethereum for security reasons.
