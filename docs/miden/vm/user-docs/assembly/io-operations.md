@@ -1,4 +1,3 @@
-## Input / output operations
 Miden assembly provides a set of instructions for moving data between the operand stack and several other sources. These sources include:
 
 * **Program code**: values to be moved onto the operand stack can be hard-coded in a program's source code.
@@ -6,7 +5,7 @@ Miden assembly provides a set of instructions for moving data between the operan
 * **Advice provider**: values can be moved onto the operand stack from the advice provider by popping them from the advice stack (see more about the advice provider [here](../../intro/overview.md#nondeterministic-inputs)). The VM can also inject new data into the advice provider via *advice injector* instructions.
 * **Memory**: values can be moved between the stack and random-access memory. The memory is word-addressable, meaning, four elements are located at each address, and we can read and write elements to/from memory in batches of four. Memory can be accessed via absolute memory references (i.e., via memory addresses) as well as via local procedure references (i.e., local index). The latter approach ensures that a procedure does not access locals of another procedure.
 
-### Constant inputs
+## Constant inputs
 
 | Instruction                                                               | Stack_input | Stack_output                                     | Notes                                                                                                                                                                                               |
 | ------------------------------------------------------------------------- | ----------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -21,7 +20,7 @@ push.4660.22136.36882.43981
 ```
 In both case the values must still encode valid field elements.
 
-### Environment inputs
+## Environment inputs
 
 | Instruction                     | Stack_input  | Stack_output | Notes                                                                                                                                                                                                             |
 | ------------------------------- | ------------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -30,7 +29,7 @@ In both case the values must still encode valid field elements.
 | caller <br> - *(1 cycle)*       | [A, b, ... ] | [H, b, ... ] | $H \leftarrow context.fn\_hash()$ <br> Overwrites the top four stack items with the hash of a function which initiated the current SYSCALL. <br> Executing this instruction outside of SYSCALL context will fail. |
 | locaddr.*i* <br> - *(2 cycles)* | [ ... ]      | [a, ... ]    | $a \leftarrow address\_of(i)$ <br> Pushes the absolute memory address of local memory at index $i$ onto the stack.                                                                                                |
 
-### Nondeterministic inputs
+## Nondeterministic inputs
 
 As mentioned above, nondeterministic inputs are provided to the VM via the advice provider. Instructs which access the advice provider fall into two categories. The first category consists of instructions which move data from the advice stack onto the operand stack and/or memory.
 
@@ -61,9 +60,9 @@ Advice injectors fall into two categories: (1) injectors which push new data ont
 | adv.insert_hdword <br> adv.insert_hdword.*d* | [B, A, ... ]               | [B, A, ... ]               | Reads top two words from the stack, computes a key as $K \leftarrow hash(A || b, d)$, and saves the data into $advice\_map[K] \leftarrow [A, B]$. $d$ is an optional domain value which can be between $0$ and $255$, default value $0$. |
 | adv.insert_hperm                             | [B, A, C, ...]             | [B, A, C, ...]             | Reads top three words from the stack, computes a key as $K \leftarrow permute(C, A, B).digest$, and saves data into $advice\_mpa[K] \leftarrow [A, B]$. |
 
-### Random access memory
+## Random access memory
 
- As mentioned above, there are two ways to access memory in Miden VM. The first way is via memory addresses using the instructions listed below. The addresses are absolute - i.e., they don't depend on the procedure context. Memory addresses can be in the range $[0, 2^{32})$.
+As mentioned above, there are two ways to access memory in Miden VM. The first way is via memory addresses using the instructions listed below. The addresses are absolute - i.e., they don't depend on the procedure context. Memory addresses can be in the range $[0, 2^{32})$.
 
 Memory is guaranteed to be initialized to zeros. Thus, when reading from memory address which hasn't been written to previously, zero elements will be returned.
 
@@ -75,7 +74,7 @@ Memory is guaranteed to be initialized to zeros. Thus, when reading from memory 
 | mem_storew <br> - *(1 cycle)*  <br> mem_storew.*a* <br> - *(2-3 cycles)* | [a, A, ... ]          | [A, ... ]           | $A \rightarrow mem[a]$ <br> Stores the top four elements of the stack in memory at address $a$. If $a$ is provided via the stack, it is removed from the stack first. <br> Fails if $a \ge 2^{32}$                                                                                             |
 | mem_stream <br> - *(1 cycle)*                                            | [C, B, A, a, ... ]    | [E, D, A, a', ... ] | $[E, D] \leftarrow [mem[a], mem[a+1]]$ <br> $a' \leftarrow a + 2$ <br> Read two sequential words from memory starting at address $a$ and overwrites the first two words in the operand stack.                                                                                                  |
 
-The second way to access memory is via procedure locals using the instructions listed below. These instructions are available only in procedure context. The number of locals available to a given procedure must be specified at [procedure declaration](./code_organization.md#procedures) time, and trying to access more locals than was declared will result in a compile-time error. The number of locals per procedure is not limited, but the total number of locals available to all procedures at runtime must be smaller than $2^{32}$.
+The second way to access memory is via procedure locals using the instructions listed below. These instructions are available only in procedure context. The number of locals available to a given procedure must be specified at [procedure declaration](./code-organization.md#procedures) time, and trying to access more locals than was declared will result in a compile-time error. The number of locals per procedure is not limited, but the total number of locals available to all procedures at runtime must be smaller than $2^{32}$.
 
 | Instruction                          | Stack_input        | Stack_output | Notes                                                                                                                                                                                             |
 | ------------------------------------ | ------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

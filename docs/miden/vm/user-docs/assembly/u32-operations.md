@@ -1,4 +1,3 @@
-## u32 operations
 Miden assembly provides a set of instructions which can perform operations on regular two-complement 32-bit integers. These instructions are described in the tables below.
 
 Most instructions have _checked_ variants. These variants ensure that input values are 32-bit integers, and fail if that's not the case. All other variants do not perform these checks, and thus, should be used only if the inputs are known to be 32-bit integers. Supplying inputs which are greater than or equal to $2^{32}$ to unchecked operations results in undefined behavior.
@@ -9,7 +8,7 @@ For instructions where one or more operands can be provided as immediate paramet
 
 In all the table below, the number of cycles it takes for the VM to execute each instruction is listed beneath the instruction.
 
-### Conversions and tests
+## Conversions and tests
 
 | Instruction                                    | Stack input | Stack output  | Notes                                                                                                                          |
 | ---------------------------------------------- | ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -21,14 +20,16 @@ In all the table below, the number of cycles it takes for the VM to execute each
 | u32cast <br> - *(2 cycles)*                    | [a, ...]    | [b, ...]      | $b \leftarrow a \mod 2^{32}$                                                                                                   |
 | u32split <br> - *(1 cycle)*                    | [a, ...]    | [c, b, ...]   | $b \leftarrow a \mod 2^{32}$, $c \leftarrow \lfloor{a / 2^{32}}\rfloor$                                                        |
 
-The instructions `u32assert`, `u32assert2` and `u32assertw` can also be parametrized with an error code which can be any 32-bit value specified either directly or via a [named constant](./code_organization.md#constants). For example:
-```
+The instructions `u32assert`, `u32assert2` and `u32assertw` can also be parametrized with an error code which can be any 32-bit value specified either directly or via a [named constant](./code-organization.md#constants). For example:
+
+```sh
 u32assert.err=123
 u32assert.err=MY_CONSTANT
 ```
+
 If the error code is omitted, the default value of $0$ is assumed.
 
-### Arithmetic operations
+## Arithmetic operations
 
 | Instruction                                                                               | Stack input    | Stack output  | Notes                                                                                                                                                                                  |
 | ----------------------------------------------------------------------------------------- | -------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -52,7 +53,7 @@ If the error code is omitted, the default value of $0$ is assumed.
 | u32checked_divmod <br> - *(2 cycles)* <br> u32checked_divmod.*b* <br> - *(3-4 cycles)*    | [b, a, ...]    | [d, c, ...]   | $c \leftarrow \lfloor a / b\rfloor$ <br> $d \leftarrow a \mod b$ <br> Fails if $max(a, b) \ge 2^{32}$ or $b = 0$                                                                       |
 | u32unchecked_divmod <br> - *(1 cycle)* <br> u32unchecked_divmod.*b* <br> - *(2-3 cycles)* | [b, a, ...]    | [d, c, ...]   | $c \leftarrow \lfloor a / b\rfloor$ <br> $d \leftarrow a \mod b$ <br> Fails if $b = 0$ <br> Undefined if $max(a, b) \ge 2^{32}$                                                        |
 
-### Bitwise operations
+## Bitwise operations
 
 | Instruction                                                                           | Stack input    | Stack output  | Notes                                                                                                                          |
 | ------------------------------------------------------------------------------------- | -------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -71,7 +72,7 @@ If the error code is omitted, the default value of $0$ is assumed.
 | u32checked_popcnt <br> - *(36 cycles)*                                                | [a, ...]       | [b, ...]      | Computes $b$ by counting the number of set bits in $a$ (hamming weight of $a$). <br> Fails if $a \ge 2^{32}$                   |
 | u32unchecked_popcnt <br> - *(33 cycles)*                                              | [a, ...]       | [b, ...]      | Computes $b$ by counting the number of set bits in $a$ (hamming weight of $a$). <br> Undefined if $a \ge 2^{32}$               |
 
-### Comparison operations
+## Comparison operations
 
 | Instruction                                                                      | Stack input  | Stack output    | Notes                                                                                                                                                                                                                  |
 | -------------------------------------------------------------------------------- | ------------ | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

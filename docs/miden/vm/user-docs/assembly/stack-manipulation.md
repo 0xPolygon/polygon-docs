@@ -1,7 +1,8 @@
-## Stack manipulation
 Miden VM stack is a push-down stack of field elements. The stack has a maximum depth of $2^{32}$, but only the top $16$ elements are directly accessible via the instructions listed below.
 
 In addition to the typical stack manipulation instructions such as `drop`, `dup`, `swap` etc., Miden assembly provides several conditional instructions which can be used to manipulate the stack based on some condition - e.g., conditional swap `cswap` or conditional drop `cdrop`.
+
+## Stack manipulation
 
 | Instruction                      | Stack_input        | Stack_output       | Notes                                                                                                                                |
 | -------------------------------- | ------------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -18,7 +19,7 @@ In addition to the typical stack manipulation instructions such as `drop`, `dup`
 | movdn.*n* <br> - *(1-4 cycles)*  | [a, ... ]          | [ ..., a, ... ]    | Moves the top stack item to the $n$th position of the stack. Valid for $n \in \{2, ..., 15\}$                                        |
 | movdnw.*n* <br> - *(2-3 cycles)* | [A, ... ]          | [ ..., A, ... ]    | Moves the top stack word to the $n$th word position of the stack. Valid for $n \in \{2, 3\}$                                         |
 
-### Conditional manipulation
+## Conditional manipulation
 
 | Instruction                 | Stack_input       | Stack_output       | Notes                                                                                                                                                                                       |
 | --------------------------- | ----------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -1,4 +1,3 @@
-# System procedures
 Module `std::sys` contains a set of system-level utility procedures.
 
 | Procedure      | Description   |

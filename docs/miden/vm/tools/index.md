@@ -1,5 +1,3 @@
-# Development Tools and Resources
-
 The following tools are available for interacting with Miden VM:
 
 * Via the [miden-vm](https://crates.io/crates/miden-vm) crate (or within the Miden VM repo):

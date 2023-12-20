@@ -1,5 +1,5 @@
-# Performance
 The benchmarks below should be viewed only as a rough guide for expected future performance. The reasons for this are twofold:
+
 1. Not all constraints have been implemented yet, and we expect that there will be some slowdown once constraint evaluation is completed.
 2. Many optimizations have not been applied yet, and we expect that there will be some speedup once we dedicate some time to performance optimizations.
 
@@ -13,6 +13,7 @@ A few general notes on performance:
 * Both proof generation and proof verification times are greatly influenced by the hash function used in the STARK protocol. In the benchmarks below, we use BLAKE3, which is a really fast hash function.
 
 ## Single-core prover performance
+
 When executed on a single CPU core, the current version of Miden VM operates at around 20 - 25 KHz. In the benchmarks below, the VM executes a Fibonacci calculator program on Apple M1 Pro CPU in a single thread. The generated proofs have a target security level of 96 bits.
 
 | VM cycles       | Execution time | Proving time | RAM consumed  | Proof size |

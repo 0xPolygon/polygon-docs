@@ -1,4 +1,3 @@
-# Memory procedures
 Module `std::mem` contains a set of utility procedures for working with random access memory.
 
 | Procedure   | Description   |

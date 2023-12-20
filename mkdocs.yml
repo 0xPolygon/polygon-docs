@@ -361,7 +361,7 @@ nav:
               - Crypto primitives:
                   - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
       - Miden VM:
-          - Intro:
+          - Introduction:
               - Introduction: miden/vm/intro/index.md
               - Overview: miden/vm/intro/overview.md
               - Usage: miden/vm/intro/usage.md
@@ -371,9 +371,9 @@ nav:
               - Debugger: miden/vm/tools/debugger.md
               - REPL: miden/vm/tools/repl.md
           - Miden programming reference:
-              - miden/vm/user-docs/index.md
+              - Miden programming reference: miden/vm/user-docs/index.md
               - Assembly:
-                  - main:  miden/vm/user-docs/assembly/index.md
+                  - Miden assembly:  miden/vm/user-docs/assembly/index.md
                   - Code organization:  miden/vm/user-docs/assembly/code-organization.md
                   - Execution contexts:  miden/vm/user-docs/assembly/execution-contexts.md
                   - Flow control:  miden/vm/user-docs/assembly/flow-control.md
@@ -384,17 +384,42 @@ nav:
                   - Cryptographic operations:  miden/vm/user-docs/assembly/cryptographic-operations.md
                   - Debugging:  miden/vm/user-docs/assembly/debugging.md
               - Standard library:
-                  - miden/vm/user-docs/stdlib/index.md
-                  - std::collections:  miden/vm/user-docs/stdlib/collections.md
+                  - Miden standard library: miden/vm/user-docs/stdlib/index.md
+                  - Collections:  miden/vm/user-docs/stdlib/collections.md
                   - Crypto:
-                      - std::crypto::dsa:  miden/vm/user-docs/stdlib/crypto/dsa.md
-                      - std::fri:  miden/vm/user-docs/stdlib/crypto/fri.md
-                      - std::hashes:  miden/vm/user-docs/stdlib/crypto/hashes.md
+                      - Digital signatures:  miden/vm/user-docs/stdlib/crypto/dsa.md
+                      - FRI verification procedures:  miden/vm/user-docs/stdlib/crypto/fri.md
+                      - Cryptographic hashes:  miden/vm/user-docs/stdlib/crypto/hashes.md
                   - Math:
-                      - std::math::u64:  miden/vm/user-docs/stdlib/math/u64.md
-                  - std::mem:  miden/vm/user-docs/stdlib/mem.md
-                  - sys:  miden/vm/user-docs/stdlib/sys.md
-      #docs: https://0xpolygonmiden.github.io/miden-vm/
+                      - Unsigned 64-bit integer operations:  miden/vm/user-docs/stdlib/math/u64.md
+                  - Memory procedures:  miden/vm/user-docs/stdlib/mem.md
+                  - System procedures:  miden/vm/user-docs/stdlib/sys.md
+          - Design:
+              - Design: miden/vm/design/index.md
+              - Programs:  miden/vm/design/programs.md
+              - Decoder:
+                  - Decoder: miden/vm/design/decoder/index.md
+                  - Constraints:  miden/vm/design/decoder/constraints.md
+              - Operand stack:
+                  - Operand stack: miden/vm/design/stack/index.md
+                  - Operation constraints:  miden/vm/design/stack/op-constraints.md
+                  - System operations:  miden/vm/design/stack/system-ops.md
+                  - Field operations:  miden/vm/design/stack/field-ops.md
+                  - u32 operations:  miden/vm/design/stack/u32-ops.md
+                  - Stack manipulation:  miden/vm/design/stack/stack-ops.md
+                  - Input/output operations:  miden/vm/design/stack/io-ops.md
+                  - Cryptographic operations:  miden/vm/design/stack/crypto-ops.md
+              - Range checker:  miden/vm/design/range.md
+              - Chiplets:
+                  - miden/vm/design/chiplets/index.md
+                  - Hash chiplet:  miden/vm/design/chiplets/hasher.md
+                  - Bitwise chiplet:  miden/vm/design/chiplets/bitwise.md
+                  - Memory chiplet:  miden/vm/design/chiplets/memory.md
+                  - Kernel ROM chiplet:  miden/vm/design/chiplets/kernel_rom.md 
+              - Lookups:
+                  - miden/vm/design/lookups/index.md
+                  - Multiset checks:  miden/vm/design/lookups/multiset.md
+          - Background material: miden/vm/background.md
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 

@@ -1,19 +1,21 @@
-## Flow control
 As mentioned above, Miden assembly provides high-level constructs to facilitate flow control. These constructs are:
 
 - *if-else* expressions for conditional execution.
 - *repeat* expressions for bounded counter-controlled loops.
 - *while* expressions for unbounded condition-controlled loops.
 
-### Conditional execution
+## Conditional execution
+
 Conditional execution in Miden VM can be accomplished with *if-else* statements. These statements look like so:
-```
+
+```sh
 if.true
     <instructions>
 else
     <instructions>
 end
 ```
+
 where `instructions` can be a sequence of any instructions, including nested control structures; the `else` clause is optional. The above does the following:
 
 1. Pops the top item from the stack.
@@ -21,9 +23,10 @@ where `instructions` can be a sequence of any instructions, including nested con
 3. If the value of the item is $0$, instructions in the `else` branch are executed.
 4. If the value is not binary, the execution fails.
 
-A note on performance: using *if-else* statements incurs a small, but non-negligible overhead. Thus, for simple conditional statements, it may be more efficient to compute the result of both branches, and then select the result using [conditional drop](./stack_manipulation.md#conditional-manipulation) instructions.
+A note on performance: using *if-else* statements incurs a small, but non-negligible overhead. Thus, for simple conditional statements, it may be more efficient to compute the result of both branches, and then select the result using [conditional drop](stack-manipulation.md#conditional-manipulation) instructions.
 
-### Counter-controlled loops
+## Counter-controlled loops
+
 Executing a sequence of instructions a predefined number of times can be accomplished with *repeat* statements. These statements look like so:
 ```
 repeat.<count>
@@ -35,15 +38,19 @@ where:
 * `instructions` can be a sequence of any instructions, including nested control structures.
 * `count` is the number of times the `instructions` sequence should be repeated (e.g. `repeat.10`). `count` must be an integer greater than $0$.
 
-> **Note**: During compilation the `repeat.<count>` blocks are unrolled and expanded into `<count>` copies of its inner block, there is no additional cost for counting variables in this case.
+!!! note
+    During compilation the `repeat.<count>` blocks are unrolled and expanded into `<count>` copies of its inner block, there is no additional cost for counting variables in this case.
 
-### Condition-controlled loops
+## Condition-controlled loops
+
 Executing a sequence of instructions zero or more times based on some condition can be accomplished with *while loop* expressions. These expressions look like so:
-```
+
+```sh
 while.true
     <instructions>
 end
 ```
+
 where `instructions` can be a sequence of any instructions, including nested control structures. The above does the following:
 
 1. Pops the top item from the stack.
@@ -56,7 +63,7 @@ where `instructions` can be a sequence of any instructions, including nested con
 
 Example:
 
-```
+```sh
 # push the boolean true to the stack
 push.1
 

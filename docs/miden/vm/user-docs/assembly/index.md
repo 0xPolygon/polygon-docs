@@ -1,11 +1,11 @@
-# Miden Assembly
 Miden assembly is a simple, low-level language for writing programs for Miden VM. It stands just above raw Miden VM instruction set, and in fact, many instructions of Miden assembly map directly to raw instructions of Miden VM.
 
 Before Miden assembly can be executed on Miden VM, it needs to be compiled into a [Program MAST](../../design/programs.md) (Merkelized Abstract Syntax Tree) which is a binary tree of code blocks each containing raw Miden VM instructions.
 
-![assembly_to_VM](../../assets/user_docs/assembly/assembly_to_VM.png)
+![assembly_to_VM](../../../../img/miden/vm/user-docs/assembly/assembly_to_VM.png)
 
 As compared to raw Miden VM instructions, Miden assembly has several advantages:
+
 1. Miden assembly is intended to be a more stable external interface for the VM. That is, while we plan to make significant changes to the underlying VM to optimize it for stability, performance etc., we intend to make very few breaking changes to Miden assembly.
 2. Miden assembly natively supports control flow expressions which the assembler automatically transforms into a program MAST. This greatly simplifies writing programs with complex execution logic.
 3. Miden assembly supports *macro instructions*. These instructions expand into short sequences of raw Miden VM instructions making it easier to encode common operations.
@@ -13,7 +13,8 @@ As compared to raw Miden VM instructions, Miden assembly has several advantages:
 
 The last two points also make Miden assembly much more concise as compared to the raw program MAST. This may be important in the blockchain context where pubic programs need to be stored on chain.
 
-### Terms and notations
+## Terms and notations
+
 In this document we use the following terms and notations:
 
 - $p$ is the modulus of the VM's base field which is equal to $2^{64} - 2^{32} + 1$.
@@ -22,7 +23,7 @@ In this document we use the following terms and notations:
 
 Throughout this document, we use lower-case letters to refer to individual field elements (e.g., $a$). Sometimes it is convenient to describe operations over groups of elements. For these purposes we define a *word* to be a group of four elements. We use upper-case letters to refer to words (e.g., $A$). To refer to individual elements within a word, we use numerical subscripts. For example, $a_0$ is the first element of word $A$, $b_3$ is the last element of word $B$, etc.
 
-### Design goals
+## Design goals
 
 The design of Miden assembly tries to achieve the following goals:
 

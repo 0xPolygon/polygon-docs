@@ -1,12 +1,19 @@
-# Introduction
+## Welcome to Polygon Miden VM
+
 Miden VM is a zero-knowledge virtual machine written in Rust. For any program executed on Miden VM, a STARK-based proof of execution is automatically generated. This proof can then be used by anyone to verify that the program was executed correctly without the need for re-executing the program or even knowing the contents of the program.
 
+!!! warning
+    - Miden is currently in development.
+    - A public testnet for Polygon Miden is expected in Q1 2024.
+
 ## Status and features
+
 Miden VM is currently on release v0.7. In this release, most of the core features of the VM have been stabilized, and most of the STARK proof generation has been implemented. While we expect to keep making changes to the VM internals, the external interfaces should remain relatively stable, and we will do our best to minimize the amount of breaking changes going forward.
 
 At this point, Miden VM is good enough for experimentation, and even for real-world applications, but it is not yet ready for production use. The codebase has not been audited and contains known and unknown bugs and security flaws.
 
 ### Feature highlights
+
 Miden VM is a fully-featured virtual machine. Despite being optimized for zero-knowledge proof generation, it provides all the features one would expect from a regular VM. To highlight a few:
 
 * **Flow control.** Miden VM is Turing-complete and supports familiar flow control structures such as conditional statements and counter/condition-controlled loops. There are no restrictions on the maximum number of loop iterations or the depth of control flow logic.
@@ -20,14 +27,16 @@ Miden VM is a fully-featured virtual machine. Despite being optimized for zero-k
 * **Customizable hosts.** Miden VM can be instantiated with user-defined hosts. These hosts are used to supply external data to the VM during execution/proof generation (via nondeterministic inputs) and can connect the VM to arbitrary data sources (e.g., a database or RPC calls).
 
 ### Planned features
+
 In the coming months we plan to finalize the design of the VM and implement support for the following features:
 
 * **Recursive proofs.** Miden VM will soon be able to verify a proof of its own execution. This will enable infinitely recursive proofs, an extremely useful tool for real-world applications.
 * **Better debugging.** Miden VM will provide a better debugging experience including the ability to place breakpoints, better source mapping, and more complete program analysis info.
 * **Faulty execution.** Miden VM will support generating proofs for programs with faulty execution (a notoriously complex task in ZK context). That is, it will be possible to prove that execution of some program resulted in an error.
 
-## Structure of this document
-This document is meant to provide an in-depth description of Miden VM. It is organized as follows:
+## Structure of the documentation
+
+This documentation is meant to provide an in-depth description of Miden VM. It is organized as follows:
 
 * In the introduction, we provide a high-level overview of Miden VM and describe how to run simple programs.
 * In the user documentation section, we provide developer-focused documentation useful to those who want to develop on Miden VM or build compilers from higher-level languages to Miden assembly (the native language of Miden VM).
@@ -35,4 +44,5 @@ This document is meant to provide an in-depth description of Miden VM. It is org
 * Finally, in the background material section, we provide references to materials which could be useful for learning more about STARKs - the proving system behind Miden VM.
 
 ## License
+
 Licensed under the [MIT license](http://opensource.org/licenses/MIT).
