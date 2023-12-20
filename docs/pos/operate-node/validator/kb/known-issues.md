@@ -2,58 +2,91 @@
 ### Error: Bad block/Invalid Merkle
 
 **Description:**
-A Bad Block or Invalid Merkle root error occurs when your Heimdall and Bor are not in sync with each other. Heimdall is the consensus layer for Polygon POS chain, which means that Heimdall directs Bor to create blocks accordingly. A Bad Block occurs when Bor moves ahead to create a block which has not been directed by Heimdall and hence there is an invalid hash been created, which causes the error, Bad Block, or Invalid Merkle root.
+A bad block or invalid Merkle root error occurs when the Heimdall and Bor layers are not in sync. Heimdall, as the consensus layer for Polygon POS chain, directs Bor to create blocks accordingly. A bad block error occurs when the Bor moves ahead to create a block which has not been directed by Heimdall. This causes an invalid hash being created, and hence results in an invalid Merkle root.
 
 **Solution 1**:
-Typically a restart of the Bor service should resolve the problem. This would ensure your Bor connects with Heimdall again and start syncing and creating blocks correctly.
+    Restart the Bor service by using the following command,
+    ```bash
+        sudo service bor restart
+    ```
 
-To restart your Bor service you can use the following command, `sudo service bor restart`.
+Typically a restart of the Bor service should resolve the problem, and that's because restarting causes Bor to reconnect with Heimdall, start syncing, and create blocks correctly.
 
-**Solution 2**:
-If a restart does not fix your problem, then the first thing you need to check is your Heimdall and REST server. Most of the time, your Heimdall service might have stopped which has caused the Bad block issue on Bor.
+If restarting the Bor service does not fix the problem, then try the next option.
 
-Check the logs for your Heimdall first, `journalctl -u heimdalld -f` and check if everything is working correctly.
+**Solution 2**: Make the following checks.
 
-Additionally, also check your REST server logs, `journalctl -u heimdalld-rest-server -f`.
+- Check if your Heimdall and REST servers are running.
 
-If you find that any of these services are not running correctly, then please restart the above services and let them sync. Your Bor should automatically resolve the problem.
+    The Heimdall service might have stopped, and thus causing the bad block issue on Bor.
 
-**Solution 3**:
-If a restart of your Bor and Heimdall services don't resolve the problem, then its probably that your Bor is stuck on a block. The block number will be evident in the logs. To check your logs for Bor you can run this command, `journalctl -u bor -f`.
+- Check the logs for your Heimdall first,
 
-The Bad block would be displayed this way in your logs:
+    ```bash
+        journalctl -u heimdalld -f
+    ```
 
-<img src={useBaseUrl("img/knowledge-base/bad_block.png")}/>
+- Check if everything is working correctly.
 
-Once you know the Bad block number, you could roll back your Blockchain by a few hundred blocks and resync from a previous block. In order to do this, you will first need to convert the Block number to hexadecimal. You can use [this tool](https://www.rapidtables.com/convert/number/decimal-to-hex.html) for converting decimals to hexadecimals.
+- Additionally, check your REST server logs,
 
-Once you have your Hexadecimal ready, you can run the following commands;
+    ```bash
+        journalctl -u heimdalld-rest-server -f
+    ```
+
+- Restart the services not running.
+
+    This should cause Bor to automatically resolve the problem
+    
+
+If restarting both the Bor and Heimdall services doesn't solve the problem, it could be that Bor is stuck on some block.
+
+**Solution 3**: Check the bad block in logs for Bor.
+
+- Check Bor logs with this command
+    ```bash
+        journalctl -u bor -f
+    ```
+
+    The bad block is typically displayed in the logs as shown in the below figure:
+
+![Figure: Bad block](../../../../img/pos/bad_block.png)
+
+- Note the bad block number.
+- Convert the block number to a hexadecimal number.
+
+!!!info
+    
+    Use this [tool](https://www.rapidtables.com/convert/number/decimal-to-hex.html) to convert the block number to a hexadecimal number. 
+
+
+- Roll back the Blockchain by a few hundred blocks. That is, set Bor at the right block height, with the `debug.setHead()` function. Use the following command
 
 ```bash
-bor attach ./.bor/data/bor.ipc
-> debug.setHead("0xE92570")
+    bor attach ./.bor/data/bor.ipc
+    > debug.setHead("0xE92570")
 ```
 
-`debug.setHead()` is the function that will allow your Bor to set the tip at a particular Block height.
+The `debug.setHead()` function allows Bor to set the tip at a particular block height, resyncing from a previous block.
 
-Once you run these commands, the output for this would be `null` . Null means good and it is intended. You can now start monitoring your logs for Bor again and see if it passes that block number.
+A successful output of the above command is a `null`. Once this is achieved, monitoring of the Bor can resume and see if the blochain goes passed the previously bad block number.
 
-If in any case, none of these solutions work for you, please contact the Polygon Support team immediately.
+If none of these solutions works for you, please contact the Polygon Support team immediately.
 
 ### Log: Error validating checkpoint module=checkpoint startBlock
 
-If your node throws up these logs, please check the following:
+If the node throws these logs, check the following:
 
-- Ensure that the **Bor node is in sync**. To check, run the following command:
+- Check if the Bor node is in sync by running the following command
 
     ```bash
     bor attach .bor/data/bor.ipc
     eth.syncing
     ```
 
-    If the output is **false**, then the Bor node is in sync.
+    If the output is "false", then the Bor node is in sync.
 
-- Another possible cause of this issue is that **your node might be on the wrong fork**. To check, run the following command to find the current block on your node:
+- Check if the Bor node is on the wrong fork by running this command
 
     ```bash
     bor attach .bor/data/bor.ipc
@@ -67,24 +100,25 @@ If your node throws up these logs, please check the following:
     eth.getBlockByNumber("<Block Number>").hash
     ```
 
-    Now, you can inspect the block number to identify if you are running on the right fork. One way to do this is to search for the block number on an explorer like [PolygonScan](https://polygonscan.com/).
+    Inspect the block number to identify if you are running on the right fork. One way to do this is to search for the block number on an explorer like [PolygonScan](https://polygonscan.com/).
 
-    <img src={useBaseUrl("img/knowledge-base/block_number.png")}/>
+    ![Figure: Bad block](../../../../img/pos/block_number.png)
 
     If the hashes match, then the node is on the right fork.
 
 ### Log: Error dialing seed
 
-Please check whether your Heimdall node is configured with the latest seeds as listed on the [node setup documents](../../operate/full-node-binaries.md).
+- Check whether your Heimdall node is configured with the latest seeds as listed on the [node setup documents](../../operate/full-node-binaries.md).
 
-If you're still encountering the error after either updating to the latest seeds or confirming that you are using the right seeds, you may need to clear the `addrbook.json` file. To do this, follow the steps below.
+If you're still encountering the error, after either updating to the latest seeds or confirming that you are using the right seeds, you may need to clear the `addrbook.json` file. To do this, follow the steps below.
+
 
 1. Open the `config.toml` file in your terminal: ```vi /var/lib/heimdall/config/config.toml```
 
 2. Stop `heimdalld` service: ```sudo service heimdalld stop```
 
 3. Clear your `addrbook`
-
+    
     ```
     sudo service heimdalld stop
     cp /var/lib/heimdall/config/addrbook.json /var/lib/heimdall/config/addrbook.json.bkp
@@ -92,17 +126,22 @@ If you're still encountering the error after either updating to the latest seeds
     ```
 
 4. Increase `max_num_inbound_peers` and `max_num_outbound_peers` in `/var/lib/heimdall/config/config.toml`:
-
+    
     ```
     max_num_inbound_peers = 300
     max_num_outbound_peers = 100
     ```
 
-5. Start `heimdalld` service: ```sudo service heimdalld start```
+5. Start `heimdalld` service with the following command
+    
+    ```bash
+        sudo service heimdalld start
+    ```
+    
 
 ### Log: Demoting invalidated transaction 
 
-This log is not an error. It is a process in **txpool** which rearranges the transactions and removes some of them (as per specific conditions).
+This log is not an error but a process in the transactinos pool `txpool` which rearranges the transactions and removes some of them (as per specified conditions).
 
 It should in **no way affect the checkpointing mechanism**.
 
@@ -162,6 +201,7 @@ Check if your Heimdall Bridge is running or not or if it has any errors in the l
 This typically means that your Sentry Heimdall is running into issues.
 
 **Solution:**
+
 - Check your Sentry Heimdall and see if the service is running fine.
 - If the service is stopped then restarting the service on your Sentry should resolve this issue.
 - Similarly, after fixing your sentry, a restart of your Heimdall service should also resolve the problem.
@@ -462,36 +502,37 @@ To fix this issue, the signer address that is used to mine must be added inside 
 Please use the below steps:
 
 1. Check your Bor data size before pruning
-
-```bash
-du -sh /usr/bin/bor
-```
+    
+    ```bash
+    du -sh /usr/bin/bor
+    ```
 
 2. Stop Bor
+    
+    ```bash
+    sudo service bor stop
+    ```
 
-```bash
-sudo service bor stop
-```
+3. Start `tmux` to ensure that even if your SSH connection is reset, the process is running on the remote machine
+`tmux`.
 
-3. Start **tmux** to ensure that even if your SSH connection is reset, the process is running on the remote machine
-tmux.
+4. Start pruning.
+    
+    ```bash
+    sudo bor snapshot prune-state --datadir  /usr/bin/bor
+    ```
 
-4. Start pruning
+    The default --datadir is `/usr/bin/bor`.
 
-```bash
-sudo bor snapshot prune-state --datadir  /usr/bin/bor
-```
+5. Once the pruning is completed, you will see success logs and details. Then start Bor again.
+    
+    ```bash
+    sudo service bor start
+    ```
 
-The default --datadir is `/usr/bin/bor`.
 
-5. Once the pruning is completed, you will see success logs and details. Then start Bor again:
-
-```bash
-sudo service bor start
-```
-
-6. Check your Bor data size after pruning:
-
-```bash
-du -sh  /usr/bin/bor
-```
+6. Check your Bor data size after pruning.
+    
+    ```bash
+    du -sh  /usr/bin/bor
+    ```
