@@ -265,12 +265,12 @@ You can run the following command to check it:
 Check the value of catching_up. If it is false then the node is all synced up.
 
 
-### 15. Deprecated FAQ: What if someone become a Top 10 staker, how he will receive his MATIC reward at the end?
+### 15. If someone becomes a top 10 staker, how do they receive their MATIC reward?
 
 Stage 1 rewards are not based on stake. Participants with high stake don't automatically qualify for a reward in this stage.
 
 
-### 16. What should be my heimdall version?
+### 16. What should the Heimdall version be?
 
 To check your Heimdall version you can simply run:
 

@@ -32,21 +32,21 @@ Please watch this video for a graphical illustration of how this works:
 
 Check if you have funds on the Main Ethereum Network, to delegate your tokens. All staking happens on the Ethereum Network only.
 
-### I am unable to view the Staking tab. How do I access Staking?
+### I am unable to view the staking tab. How do I access staking?
 
 You just need to access **https://staking.polygon.technology/**, where you will see the following landing page:
 
 ![img](../../../img/pos/staking-lp.png)
 
 
-### How do I know which Validator to select for better rewards?
+### How do I know which validator to select for better rewards?
 
 It depends on your understanding and research on which validator you would want to stake on. You can find the list of validators here : https://staking.polygon.technology/validators
 
 ### How to unbond?
 
-To Unbond from a Validator, navigate to MyAccount, where you find "Your Delegations".
-There you will see an Unbond button for each of the validators. Click on the Unbond button for whichever validator that you want to unbond from.
+To unbond from a validator, navigate to MyAccount, where you find **Your Delegations**.
+There you will see an **Unbond** button for each of the validators. Click on the **Unbond** button for whichever validator that you want to unbond from.
 
 ![img](../../../img/pos/unbond-from-validator.png)
 
@@ -66,8 +66,8 @@ This period applies to the originally delegated amount and re-delegated amounts.
 
 ### How to restake rewards?
 
-Go to “My Account” to check "Your Delegations".
-Clicking on "Restake Reward" will ask you for confirmation from your wallet account. Once you confirm the transaction, only then the restake transaction would be complete.
+Go to **My Account** to check **Your Delegations**.
+Clicking on **Restake Reward** will ask you for confirmation from your wallet account. Once you confirm the transaction, only then the restake transaction would be complete.
 
 `Step 1` 
   <center>
@@ -86,13 +86,13 @@ Please watch the video for a graphical illustration of how this works:
   <p>Your browser does not support the video element.</p>
 </video>
 
-### I want to Restake Rewards but I am unable to.
+### I want to restake rewards but I am unable to.
 
 You would need to have a minimum of **2 Matic** to restake rewards.
 
 ### How to withdraw rewards?
 
-You can claim your rewards by clicking on the “My Account”, all the delegators for a validator are displayed. Click on the “Withdraw Reward” button and the rewards will be transferred to your delegated account in wallet.
+You can claim your rewards by clicking on the **My Account**, all the delegators for a validator are displayed. Click on the **Withdraw Reward** button and the rewards will be transferred to your delegated account in wallet.
 
 `Step 1` <br/>
 <center>
@@ -111,13 +111,13 @@ Please watch the video for a graphical illustration of how this works:
   <p>Your browser does not support the video element.</p>
 </video>
 
-### I want to Withdraw Rewards but I am unable to.
+### I want to withdraw rewards but I am unable to.
 
 You would need to have a minimum of **2 Matic** to withdraw rewards.
 
 ### How to claim stake?
 
-Once the **unbonding period is complete**, the Claim Stake button will be enabled and you can then claim your staked tokens. The tokens will be transferred to your account.
+Once the unbonding period is complete, the **Claim Stake** button will be enabled and you can then claim your staked tokens. The tokens will be transferred to your account.
 
 `Step 1` <br/>
 <center>
@@ -143,15 +143,15 @@ Please watch the video for a graphical illustration of how this works:
 
 ### Are hardware wallets supported?
 
-Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on MetaMask and connect your Hardware wallet and then continue the delegation process.
+Yes, hardware wallets are supported. You can use the **Connect Hardware Wallet** option on MetaMask and connect your Hardware wallet and then continue the delegation process.
 
 ### Why can’t I stake directly from Binance?
 
 Staking through Binance is not yet supported. There will be an announcement if and when Binance starts supporting it.
 
 
-### Do I need to deposit Matic to the Polygon Mainnet network for staking?
-No. All your funds need to be on the Main Ethereum Network.
+### Do I need to deposit Matic to the Polygon mainnet network for staking?
+No. All your funds need to be on the Ethereum mainnet.
 
 
 ### When do rewards get distributed?
@@ -176,7 +176,7 @@ Rewards will be higher, to begin with, and will keep decreasing as the locked su
 No. Once you unbond you stop receiving rewards.
 
 ### Can I move the stake to another validator?
- Yes, you just have to reach "Your Delegations", click on "Move Stake", and then choose your new validator.
+ Yes, you just have to access **Your Delegations**, click on **Move Stake**, and then choose your new validator.
 
 Please watch the video for a graphical illustration of how this works:
 
@@ -185,14 +185,14 @@ Please watch the video for a graphical illustration of how this works:
   <p>Your browser does not support the video element.</p>
 </video>
 
-### Which browsers are compatible with the Staking Dashboard?
+### Which browsers are compatible with the staking dashboard?
 
 Chrome, Firefox, and Brave.
 
 ### Nothing happens when I try to log in or my MetaMask is stuck at confirming after logging in. What do I do?
 
 Check for the following:
-- If you’re using Brave, please turn off the option for “Use Crypto Wallets” in the settings panel.
+- If you’re using Brave, please turn off the option for **Use Crypto Wallets** in the settings panel.
 - Check if you are logged into Metamask.
 - Check if you are logged into MetaMask with Trezor/Ledger. You need to additionally turn on permission to call contracts on your Ledger device, if not enabled already.
 - Check your system timestamp. If the system time is not correct, you will need to correct it.

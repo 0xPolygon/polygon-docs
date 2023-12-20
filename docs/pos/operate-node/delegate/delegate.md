@@ -1,5 +1,5 @@
 
-# How to Delegate
+# How to delegate
 
 This is a step-by-step guide to help you become a delegator on the Polygon Network.
 
@@ -24,7 +24,7 @@ The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainn
     If you are a validator, use a different non-validating address to log in as delegator.
 
 
-## Delegate to a Validator
+## Delegate to a validator
 
   1. Click **Become a Delegator** or scroll down to a specific validator and click **Delegate**.
     
@@ -80,7 +80,7 @@ This will withdraw the MATIC token rewards to your Ethereum address.
 
 This will restake the MATIC token rewards to the validator and increase your delegation stake.
 
-## Unbond from a Validator
+## Unbond from a validator
 
   1. Click [My Account](https://staking.polygon.technology/account).
     

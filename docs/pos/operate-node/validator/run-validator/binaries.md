@@ -11,11 +11,11 @@ follow the [Validator Node System Requirements](/pos/validator/validator-node-sy
     For snapshot download links, see [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
 
 
-## Port Configuration Details
+## Port configuration details
     
-Here are a few instructions on how to configure ports for Sentry and Validator nodes.
+Here are a few instructions on how to configure ports for sentry and validator nodes.
 
-### For Sentry nodes
+### For sentry nodes
 
   - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
 
@@ -30,7 +30,7 @@ Here are a few instructions on how to configure ports for Sentry and Validator n
   - **Ports 8545, 8546, 1317**: Can be opened for Bor HTTP RPC, Bor WS RPC, and Heimdall API respectively; but only if really necessary.
 
 
-### For Validator nodes
+### For validator nodes
 
   - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
 
