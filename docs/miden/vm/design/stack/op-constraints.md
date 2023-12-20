@@ -69,11 +69,11 @@ This group contains $32$ operations which do not shift the stack (this is almost
 | Operation    | Opcode value | Binary encoding | Operation group               | Flag degree |
 | ------------ | :----------: | :-------------: | :---------------------------: | :---------: |
 | `NOOP`       | $0$          | `000_0000`      | [System ops](system-ops.md) | $7$         |
-| `EQZ `       | $1$          | `000_0001`      | [Field ops](field_ops.md)   | $7$         |
-| `NEG`        | $2$          | `000_0010`      | [Field ops](field_ops.md)   | $7$         |
-| `INV`        | $3$          | `000_0011`      | [Field ops](field_ops.md)   | $7$         |
-| `INCR`       | $4$          | `000_0100`      | [Field ops](field_ops.md)   | $7$         |
-| `NOT`        | $5$          | `000_0101`      | [Field ops](field_ops.md)   | $7$         |
+| `EQZ `       | $1$          | `000_0001`      | [Field ops](field-ops.md)   | $7$         |
+| `NEG`        | $2$          | `000_0010`      | [Field ops](field-ops.md)   | $7$         |
+| `INV`        | $3$          | `000_0011`      | [Field ops](field-ops.md)   | $7$         |
+| `INCR`       | $4$          | `000_0100`      | [Field ops](field-ops.md)   | $7$         |
+| `NOT`        | $5$          | `000_0101`      | [Field ops](field-ops.md)   | $7$         |
 | `FMPADD`     | $6$          | `000_0110`      | [System ops](system-ops.md) | $7$         |
 | `MLOAD`      | $7$          | `000_0111`      | [I/O ops](io-ops.md)        | $7$         |
 | `SWAP`       | $8$          | `000_1000`      | [Stack ops](stack-ops.md)   | $7$         |
@@ -83,7 +83,7 @@ This group contains $32$ operations which do not shift the stack (this is almost
 | `MOVUP3`     | $12$         | `000_1100`      | [Stack ops](stack-ops.md)   | $7$         |
 | `MOVDN3`     | $13$         | `000_1101`      | [Stack ops](stack-ops.md)   | $7$         |
 | `ADVPOPW`    | $14$         | `000_1110`      | [I/O ops](io-ops.md)        | $7$         |
-| `EXPACC`     | $15$         | `000_1111`      | [Field ops](field_ops.md)   | $7$         |
+| `EXPACC`     | $15$         | `000_1111`      | [Field ops](field-ops.md)   | $7$         |
 | `MOVUP4`     | $16$         | `001_0000`      | [Stack ops](stack-ops.md)   | $7$         |
 | `MOVDN4`     | $17$         | `001_0001`      | [Stack ops](stack-ops.md)   | $7$         |
 | `MOVUP5`     | $18$         | `001_0010`      | [Stack ops](stack-ops.md)   | $7$         |
@@ -93,7 +93,7 @@ This group contains $32$ operations which do not shift the stack (this is almost
 | `MOVUP7`     | $22$         | `001_0110`      | [Stack ops](stack-ops.md)   | $7$         |
 | `MOVDN7`     | $23$         | `001_0111`      | [Stack ops](stack-ops.md)   | $7$         |
 | `SWAPW`      | $24$         | `001_1000`      | [Stack ops](stack-ops.md)   | $7$         |
-| `EXT2MUL`    | $25$         | `001_1001`      | [Field ops](field_ops.md)   | $7$         |
+| `EXT2MUL`    | $25$         | `001_1001`      | [Field ops](field-ops.md)   | $7$         |
 | `MOVUP8`     | $26$         | `001_1010`      | [Stack ops](stack-ops.md)   | $7$         |
 | `MOVDN8`     | $27$         | `001_1011`      | [Stack ops](stack-ops.md)   | $7$         |
 | `SWAPW2`     | $28$         | `001_1100`      | [Stack ops](stack-ops.md)   | $7$         |
@@ -108,11 +108,11 @@ This group contains $16$ operations which shift the stack to the left (i.e., rem
 | Operation    | Opcode value | Binary encoding | Operation group               | Flag degree |
 | ------------ | :----------: | :-------------: | :---------------------------: | :---------: |
 | `ASSERT`     | $32$         | `010_0000`      | [System ops](system-ops.md) | $7$         |
-| `EQ`         | $33$         | `010_0001`      | [Field ops](field_ops.md)   | $7$         |
-| `ADD`        | $34$         | `010_0010`      | [Field ops](field_ops.md)   | $7$         |
-| `MUL`        | $35$         | `010_0011`      | [Field ops](field_ops.md)   | $7$         |
-| `AND`        | $36$         | `010_0100`      | [Field ops](field_ops.md)   | $7$         |
-| `OR`         | $37$         | `010_0101`      | [Field ops](field_ops.md)   | $7$         |
+| `EQ`         | $33$         | `010_0001`      | [Field ops](field-ops.md)   | $7$         |
+| `ADD`        | $34$         | `010_0010`      | [Field ops](field-ops.md)   | $7$         |
+| `MUL`        | $35$         | `010_0011`      | [Field ops](field-ops.md)   | $7$         |
+| `AND`        | $36$         | `010_0100`      | [Field ops](field-ops.md)   | $7$         |
+| `OR`         | $37$         | `010_0101`      | [Field ops](field-ops.md)   | $7$         |
 | `U32AND`     | $38$         | `010_0110`      | [u32 ops](u32-ops.md)       | $7$         |
 | `U32XOR`     | $39$         | `010_0111`      | [u32 ops](u32-ops.md)       | $7$         |
 | `FRIE2F4`    | $40$         | `010_1000`      | [Crypto ops](crypto-ops.md) | $7$         |

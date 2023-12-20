@@ -4,7 +4,7 @@ In this section we describe the AIR constraints for Miden VM field operations (i
 
 Assume $a$ and $b$ are the elements at the top of the stack. The `ADD` operation computes $c \leftarrow (a + b)$. The diagram below illustrates this graphically.
 
-![add](../../../../../img/miden/vm/design/stack/field-operations/ADD.png)
+![add](../../../../img/miden/vm/design/stack/field-operations/ADD.png)
 
 Stack transition for this operation must satisfy the following constraints:
 

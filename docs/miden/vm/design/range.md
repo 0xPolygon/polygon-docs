@@ -6,7 +6,7 @@ Thus, it is very important for the VM to be able to perform a large number of 16
 
 First, let's define a construction for the simplest possible 8-bit range-check. This can be done with a single column as illustrated below.
 
-![rc_8_bit_range_check](../../../../img/miden/vm/design/range/rc_8_bit_range_check.png)
+![rc_8_bit_range_check](../../../img/miden/vm/design/range/rc_8_bit_range_check.png)
 
 For this to work as a range-check we need to enforce a few constraints on this column:
 
@@ -47,7 +47,7 @@ We can get rid of both requirements by including the _multiplicity_ of the value
 
 Let's add one more column $m$ to our table to keep track of how many times each value should be range-checked.
 
-![rc_8_bit_logup](../../../../img/miden/vm/design/range/rc_8_bit_logup.png)
+![rc_8_bit_logup](../../../img/miden/vm/design/range/rc_8_bit_logup.png)
 
 The transition constraint for $b$ is now as follows:
 
@@ -66,7 +66,7 @@ Additionally, the constraint degree has not increased versus the naive approach,
 
 To support 16-bit range checks, let's try to extend the idea of the 8-bit table. Our 16-bit table would look like so (the only difference is that column $v$ now has to end with value $65535$):
 
-![rc_16_bit_logup](../../../../img/miden/vm/design/range/rc_16_bit_logup.png)
+![rc_16_bit_logup](../../../img/miden/vm/design/range/rc_16_bit_logup.png)
 
 While this works, it is rather wasteful. In the worst case, we'd need to enumerate over 65K values, most of which we may not actually need. It would be nice if we could "skip over" the values that we don't want. One way to do this could be to add bridge rows between two values to be range checked and add constraints to enforce the consistency of the gap between these bridge rows.
 
@@ -139,12 +139,12 @@ In addition to the transition constraints described above, we also need to enfor
 
 ### Communication bus
 
-$b_{range}$ is the [bus](./lookups/index.md#communication-buses-in-miden-vm) that connects components which require 16-bit range checks to the values in the range checker. The bus constraints are defined by the components that use it to communicate.
+$b_{range}$ is the [bus](lookups/index.md#communication-buses-in-miden-vm) that connects components which require 16-bit range checks to the values in the range checker. The bus constraints are defined by the components that use it to communicate.
 
 Requests are sent to the range checker bus by the following components:
 
-- The Stack sends requests for 16-bit range checks during some [`u32` operations](./stack/u32-ops.md#range-checks).
-- The [Memory chiplet](./chiplets/memory.md) sends requests for 16-bit range checks against the values in the $d_0$ and $d_1$ trace columns to enforce internal consistency.
+- The Stack sends requests for 16-bit range checks during some [`u32` operations](stack/u32-ops.md#range-checks).
+- The [Memory chiplet](chiplets/memory.md) sends requests for 16-bit range checks against the values in the $d_0$ and $d_1$ trace columns to enforce internal consistency.
 
 Responses are provided by the range checker using the transition constraint for the LogUp construction described above.
 

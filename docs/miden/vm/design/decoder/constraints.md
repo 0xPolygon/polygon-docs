@@ -23,7 +23,7 @@ AIR constraints for the decoder involve operations listed in the table below. Fo
 | `HALT`    | $f_{halt}$    | 4      | Stack remains unchanged.                                                                         |
 | `PUSH`    | $f_{push}$    | 4      | An immediate value is pushed onto the stack.                                                     |
 
-We also use the [control flow flag](../stack/op_constraints.md#control-flow-flag) $f_{ctrl}$ exposed by the VM, which is set when any one of the above control flow operations is being executed. It has degree $5$.
+We also use the [control flow flag](../stack/op-constraints.md#control-flow-flag) $f_{ctrl}$ exposed by the VM, which is set when any one of the above control flow operations is being executed. It has degree $5$.
 
 As described [previously](index.md#program-decoding), the general idea of the decoder is that the prover provides the program to the VM by populating some of cells in the trace non-deterministically. Values in these are then used to update virtual tables (represented via multiset checks) such as block hash table, block stack table etc. Transition constraints are used to enforce that the tables are updates correctly, and we also apply boundary constraints to enforce the correct initial and final states of these tables. One of these boundary constraints binds the execution trace to the hash of the program being executed. Thus, if the virtual tables were updated correctly and boundary constraints hold, we can be convinced that the prover executed the claimed program on the VM.
 

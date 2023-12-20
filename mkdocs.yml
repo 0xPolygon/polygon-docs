@@ -419,6 +419,7 @@ nav:
               - Lookups:
                   - miden/vm/design/lookups/index.md
                   - Multiset checks:  miden/vm/design/lookups/multiset.md
+                  - LogUp: miden/vm/design/lookups/logup.md
           - Background material: miden/vm/background.md
   - Developer tools: 
       - Developer tools: tools/index.md

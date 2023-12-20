@@ -46,7 +46,7 @@ The system component does not yet have a dedicated documentation section, since 
 * `clk` which is used to keep track of the current VM cycle. Values in this column start out at $0$ and are incremented by $1$ with each cycle.
 * `fmp` which contains the value of the free memory pointer used for specifying the region of memory available to procedure locals.
 
-AIR constraints for the `fmp` column are described in [system operations](./stack/system_ops.md) section. For the `clk` column, the constraints are straightforward:
+AIR constraints for the `fmp` column are described in [system operations](./stack/system-ops.md) section. For the `clk` column, the constraints are straightforward:
 
 $$
 clk' - (clk + 1) = 0 \text{ | degree} = 1

@@ -129,7 +129,7 @@ To simplify constraint descriptions, we'll assume that the VM exposes two binary
 | $f_{shr}$ | 6      | When this flag is set to $1$, the instruction executing on the VM is performing a "right shift". |
 | $f_{shl}$ | 5      | When this flag is set to $1$, the instruction executing on the VM is performing a "left shift".  |
 
-These flags are mutually exclusive. That is, if $f_{shl}=1$, then $f_{shr}=0$ and vice versa. However, both flags can be set to $0$ simultaneously. This happens when the executed instruction does not shift the stack. How these flags are computed is described [here](./op_constraints.md).
+These flags are mutually exclusive. That is, if $f_{shl}=1$, then $f_{shr}=0$ and vice versa. However, both flags can be set to $0$ simultaneously. This happens when the executed instruction does not shift the stack. How these flags are computed is described [here](./op-constraints.md).
 
 ### Stack overflow flag
 

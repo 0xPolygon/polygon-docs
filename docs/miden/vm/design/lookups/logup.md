@@ -1,4 +1,4 @@
-# LogUp: multivariate lookups with logarithmic derivatives
+## Multivariate lookups with logarithmic derivatives
 
 The description of LogUp can be found [here](https://eprint.iacr.org/2022/1530.pdf). In MidenVM, LogUp is used to implement efficient [communication buses](./index.md#communication-buses-in-miden-vm). 
 
@@ -9,6 +9,7 @@ $$
 $$
 
 In the above:
+
 - $l$ is the number of values in $a$, which must be smaller than the size of the field. (The prime field used for Miden VM has modulus $p = 2^{64} - 2^{32} + 1$, so $l < p$ must be true.)
 - $n$ is the number of values in $b$, which must be smaller than the size of the field. ($n < p$, for Miden VM)
 - $m_i$ is the multiplicity of $b_i$, which is expected to match the number of times the value $b_i$ is duplicated in column $a$. It must be smaller than the size of the set of lookup values. ($m_i < n$)
@@ -20,9 +21,9 @@ Thus, instead of needing to compute running products, we are able to assert corr
 
 The generalized trace columns and constraints for this construction are as follows, where component $X$ is some component in the trace and lookup table $T$ contains the values $v$ which need to be looked up from $X$ and how many times they are looked up (the multiplicity $m$).
 
-![logup_component_x](../../../img/miden/vm/design/lookups/logup_component.png)
+![logup_component_x](../../../../img/miden/vm/design/lookups/logup_component.png)
 
-![logup_table_t](../../../img/miden/vm/design/lookups/logup_table.png)
+![logup_table_t](../../../../img/miden/vm/design/lookups/logup_table.png)
 
 ### Constraints
 
