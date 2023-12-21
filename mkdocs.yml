@@ -88,7 +88,7 @@ nav:
           - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
           - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
         - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
-          # - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+        - Historical data: zkEVM/get-started/historical-data.md
       - How to:
         - How to: zkEVM/how-to/index.md
         - Write a contract: zkEVM/how-to/write-contract.md
@@ -298,7 +298,7 @@ nav:
           # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
         - Troubleshooting:
           - Validator performance: pos/operate-node/validator/validator-performance.md
-          - Staking FAQs: pos/operate-node/validator/staking-faq.md
+          # - Staking FAQs: pos/operate-node/validator/staking-faq.md
           - Technical FAQs: pos/operate-node/validator/technical-faqs.md
           - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
           - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
