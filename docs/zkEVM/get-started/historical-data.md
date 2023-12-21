@@ -5,7 +5,7 @@ Join discussions or ask questions on Telegram: https://t.me/polygonzkevm_technic
 
 ### 13th Dec, 2023
 
-Scheduled zkEVM mainnet update
+**zkEVM mainnet update**
 
 This update included a reduced number of RPC logs and aligned error messages to match geth error messages pertaining to gas estimation for unsigned transactions.
 
@@ -20,7 +20,7 @@ This update included a reduced number of RPC logs and aligned error messages to 
 
 ### 23rd Nov, 2023
 
-Scheduled zkEVM mainnet update
+**zkEVM mainnet update**
 
 The changes made in this update were mainly in the node (Additional CORS header fix and features in v0.4.0).
 
@@ -37,7 +37,7 @@ Infrastructure partners were instructed to update, and then use instructions giv
 
 ### 21st Nov, 2023
 
-Scheduled zkEVM mainnet update
+**zkEVM mainnet update**
 
 This update brought several significant changes to zkEVM node, bridge, prover infrastructure, including changes to RPC, sequencer, synchroniser, database. It also includes WS improvements, along with other fixes.
 
@@ -52,7 +52,7 @@ This update brought several significant changes to zkEVM node, bridge, prover in
 
 ### 9th Nov, 2023
 
-zkEVM mainnet upgrade: Incaberry hardfork
+**zkEVM mainnet upgrade: Incaberry hardfork**
 
 The changes made in this update brought cryptographic optimisations and bug fixes to Polygon zkEVM mainnet.
 
@@ -67,7 +67,7 @@ The changes made in this update brought cryptographic optimisations and bug fixe
 
 ### 7th Nov, 2023
 
-zkEVM mainnet: Upcoming Incaberry hardfork preparation
+**zkEVM mainnet: Upcoming Incaberry hardfork preparation**
 
 The changes made in this update were the node and prover versions, as well as updates to the RPC, sequencer, and synchroniser.
 
@@ -80,9 +80,9 @@ The changes made in this update were the node and prover versions, as well as up
 
 
 
-### 24th Oct 2023
+### 24th Oct, 2023
 
-zkEVM testnet upgrade: Incaberry hardfork
+**zkEVM testnet upgrade: Incaberry hardfork**
 
 The changes made in this upgrade were cryptographic optimisations and some bug fixes.
 
@@ -97,7 +97,7 @@ The changes made in this upgrade were cryptographic optimisations and some bug f
 
 ### 26th Sep, 2023
 
-Mainnet beta update
+**Mainnet beta update**
 
 The changes made in this update were new version updates of the prover and node.
 
@@ -109,10 +109,9 @@ The changes made in this update were new version updates of the prover and node.
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.1 |
 
 
+### 20th Sep, 2023
 
-### 20th Sept 2023
-
-Mainnet beta Dragonfruit (ForkID5) upgrade
+**Mainnet beta Dragonfruit (ForkID5) upgrade**
 
 The changes made in this update were a range of improvements to the network, including support for the latest Ethereum opcode, PUSH0.
 
@@ -125,9 +124,9 @@ The changes made in this update were a range of improvements to the network, inc
 
 
 
-### Sept, 18th. 2023
+###  18th Sep, 2023
 
-Mainnet beta event
+**Mainnet beta event**
 
 The main changes made in this update were the mainnet beta rehashing and L2 bridge resync.
 
@@ -140,9 +139,9 @@ The main changes made in this update were the mainnet beta rehashing and L2 brid
 
 
 
-### Sept, 6th. 2023
+### 6th Sep, 2023
 
-zkEVM mainnet beta update
+**zkEVM mainnet beta update**
 
 The changes made in this update were new versions of the node and prover.
 
@@ -155,9 +154,9 @@ The changes made in this update were new versions of the node and prover.
 
 
 
-### Aug 31, 2023
+### 31st Aug, 2023
 
-Scheduled zkEVM mainnet update
+**zkEVM mainnet update**
 
 The changes made in this update were new versions of the node and the prover.
 
@@ -170,9 +169,9 @@ The changes made in this update were new versions of the node and the prover.
 
 
 
-### Jul 27, 2023
+### 27th Jul, 2023
 
-zkEVM mainnet beta update
+**zkEVM mainnet beta update**
 
 The changes made in this update were version upgrades for the prover, node and bridge. 
 
@@ -185,9 +184,9 @@ The changes made in this update were version upgrades for the prover, node and b
 
 
 
-### June 8, 2023
+### 8th Jun, 2023
 
-Mainnet beta update
+**Mainnet beta update**
 
 The changes made in this update are detailed in the `change logs`.
 
@@ -199,9 +198,11 @@ The changes made in this update are detailed in the `change logs`.
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/v0.1.2 |
 
 
-### May 2nd, 2023
+### 2nd May, 2023
 
-https://github.com/0xPolygonHermez/zkevm-node/tree/v0.0.7 
+**First node update**
+
+Corresponding commits found here https://github.com/0xPolygonHermez/zkevm-node/tree/v0.0.7 
 
 |                 |                           Version                            |
 | :-------------: | :----------------------------------------------------------: |
@@ -214,7 +215,7 @@ https://github.com/0xPolygonHermez/zkevm-node/tree/v0.0.7
 
 ### 25th Apr, 2023
 
-Mainnet update
+**Mainnet update**
 
 The changes made in this update were new versions of the node and prover containers. The prover had some new config parameters.  
 
