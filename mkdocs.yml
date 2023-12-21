@@ -366,11 +366,40 @@ nav:
               - Overview: miden/vm/intro/overview.md
               - Usage: miden/vm/intro/usage.md
               - Performance: miden/vm/intro/performance.md
-          - Development tooling:
-              - Overview: miden/vm/tools/index.md
-              - Debugger: miden/vm/tools/debugger.md
-              - REPL: miden/vm/tools/repl.md
-          - Miden programming reference:
+              - Background material: miden/vm/background.md
+          - Architecture:
+              - Design:
+                  - Design: miden/vm/design/index.md
+                  - Programs:  miden/vm/design/programs.md
+                  - Decoder:
+                      - Decoder: miden/vm/design/decoder/index.md
+                      - Constraints:  miden/vm/design/decoder/constraints.md
+                  - Operand stack:
+                      - Operand stack: miden/vm/design/stack/index.md
+                      - Operation constraints:  miden/vm/design/stack/op-constraints.md
+                      - System operations:  miden/vm/design/stack/system-ops.md
+                      - Field operations:  miden/vm/design/stack/field-ops.md
+                      - u32 operations:  miden/vm/design/stack/u32-ops.md
+                      - Stack manipulation:  miden/vm/design/stack/stack-ops.md
+                      - Input/output operations:  miden/vm/design/stack/io-ops.md
+                      - Cryptographic operations:  miden/vm/design/stack/crypto-ops.md
+                  - Range checker:  miden/vm/design/range.md
+                  - Chiplets:
+                      - miden/vm/design/chiplets/index.md
+                      - Hash chiplet:  miden/vm/design/chiplets/hasher.md
+                      - Bitwise chiplet:  miden/vm/design/chiplets/bitwise.md
+                      - Memory chiplet:  miden/vm/design/chiplets/memory.md
+                      - Kernel ROM chiplet:  miden/vm/design/chiplets/kernel_rom.md 
+                  - Lookups:
+                      - miden/vm/design/lookups/index.md
+                      - Multiset checks:  miden/vm/design/lookups/multiset.md
+                      - LogUp: miden/vm/design/lookups/logup.md
+          - Specification:
+                - Development tooling:
+                    - Overview: miden/vm/tools/index.md
+                    - Debugger: miden/vm/tools/debugger.md
+                    - REPL: miden/vm/tools/repl.md
+          - API:
               - Miden programming reference: miden/vm/user-docs/index.md
               - Assembly:
                   - Miden assembly:  miden/vm/user-docs/assembly/index.md
@@ -394,33 +423,6 @@ nav:
                       - Unsigned 64-bit integer operations:  miden/vm/user-docs/stdlib/math/u64.md
                   - Memory procedures:  miden/vm/user-docs/stdlib/mem.md
                   - System procedures:  miden/vm/user-docs/stdlib/sys.md
-          - Design:
-              - Design: miden/vm/design/index.md
-              - Programs:  miden/vm/design/programs.md
-              - Decoder:
-                  - Decoder: miden/vm/design/decoder/index.md
-                  - Constraints:  miden/vm/design/decoder/constraints.md
-              - Operand stack:
-                  - Operand stack: miden/vm/design/stack/index.md
-                  - Operation constraints:  miden/vm/design/stack/op-constraints.md
-                  - System operations:  miden/vm/design/stack/system-ops.md
-                  - Field operations:  miden/vm/design/stack/field-ops.md
-                  - u32 operations:  miden/vm/design/stack/u32-ops.md
-                  - Stack manipulation:  miden/vm/design/stack/stack-ops.md
-                  - Input/output operations:  miden/vm/design/stack/io-ops.md
-                  - Cryptographic operations:  miden/vm/design/stack/crypto-ops.md
-              - Range checker:  miden/vm/design/range.md
-              - Chiplets:
-                  - miden/vm/design/chiplets/index.md
-                  - Hash chiplet:  miden/vm/design/chiplets/hasher.md
-                  - Bitwise chiplet:  miden/vm/design/chiplets/bitwise.md
-                  - Memory chiplet:  miden/vm/design/chiplets/memory.md
-                  - Kernel ROM chiplet:  miden/vm/design/chiplets/kernel_rom.md 
-              - Lookups:
-                  - miden/vm/design/lookups/index.md
-                  - Multiset checks:  miden/vm/design/lookups/multiset.md
-                  - LogUp: miden/vm/design/lookups/logup.md
-          - Background material: miden/vm/background.md
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
