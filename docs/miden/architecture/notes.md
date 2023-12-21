@@ -21,7 +21,7 @@ Asset container for a note. A note vault can contain up to `255` assets stored i
 
 ### Script
 
-Unlike an account, a note has a single executable script. This script will be executed in a [transaction](transactions.md). This script is also the root of a [Miden program MAST](https://0xpolygonmiden.github.io/miden-vm/user-docs/assembly/main.html). A script is always executed in the context of a single account, and thus, may invoke account's functions. A note's script can call zero or more of an account's function.
+Unlike an account, a note has a single executable script. This script will be executed in a [transaction](transactions.md). This script is also the root of a [Miden program MAST](https://0xpolygonmiden.github.io/miden-vm/specification/assembly/main.html). A script is always executed in the context of a single account, and thus, may invoke account's functions. A note's script can call zero or more of an account's function.
 
 !!! note
     Since code in Miden is expressed as MAST, every function is a commitment to the underlying code. The code cannot change unnoticed to the user because its hash would change.*
