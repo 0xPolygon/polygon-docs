@@ -8,7 +8,7 @@ Miden REPL can be started via the CLI [repl](../intro/usage.md#cli-interface) co
 
 ## Miden assembly instruction
 
-All Miden instructions mentioned in the [Miden Assembly sections](../user-docs/assembly/index.md) are valid. One can either input instructions one by one or multiple instructions in one input.
+All Miden instructions mentioned in the [Miden Assembly sections](../specification/assembly/index.md) are valid. One can either input instructions one by one or multiple instructions in one input.
 
 For example, the below two commands will result in the same output.
 

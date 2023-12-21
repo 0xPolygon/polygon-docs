@@ -398,29 +398,29 @@ nav:
                     - Debugger: miden/vm/tools/debugger.md
                     - REPL: miden/vm/tools/repl.md
           - API:
-              - Miden programming reference: miden/vm/user-docs/index.md
+              - Miden programming reference: miden/vm/specification/index.md
               - Assembly:
-                  - Miden assembly:  miden/vm/user-docs/assembly/index.md
-                  - Code organization:  miden/vm/user-docs/assembly/code-organization.md
-                  - Execution contexts:  miden/vm/user-docs/assembly/execution-contexts.md
-                  - Flow control:  miden/vm/user-docs/assembly/flow-control.md
-                  - Field operations:  miden/vm/user-docs/assembly/field-operations.md
-                  - u32 operations:  miden/vm/user-docs/assembly/u32-operations.md
-                  - Stack manipulation:  miden/vm/user-docs/assembly/stack-manipulation.md
-                  - IO operations:  miden/vm/user-docs/assembly/io-operations.md
-                  - Cryptographic operations:  miden/vm/user-docs/assembly/cryptographic-operations.md
-                  - Debugging:  miden/vm/user-docs/assembly/debugging.md
+                  - Miden assembly:  miden/vm/specification/assembly/index.md
+                  - Code organization:  miden/vm/specification/assembly/code-organization.md
+                  - Execution contexts:  miden/vm/specification/assembly/execution-contexts.md
+                  - Flow control:  miden/vm/specification/assembly/flow-control.md
+                  - Field operations:  miden/vm/specification/assembly/field-operations.md
+                  - u32 operations:  miden/vm/specification/assembly/u32-operations.md
+                  - Stack manipulation:  miden/vm/specification/assembly/stack-manipulation.md
+                  - IO operations:  miden/vm/specification/assembly/io-operations.md
+                  - Cryptographic operations:  miden/vm/specification/assembly/cryptographic-operations.md
+                  - Debugging:  miden/vm/specification/assembly/debugging.md
               - Standard library:
-                  - Miden standard library: miden/vm/user-docs/stdlib/index.md
-                  - Collections:  miden/vm/user-docs/stdlib/collections.md
+                  - Miden standard library: miden/vm/specification/stdlib/index.md
+                  - Collections:  miden/vm/specification/stdlib/collections.md
                   - Crypto:
-                      - Digital signatures:  miden/vm/user-docs/stdlib/crypto/dsa.md
-                      - FRI verification procedures:  miden/vm/user-docs/stdlib/crypto/fri.md
-                      - Cryptographic hashes:  miden/vm/user-docs/stdlib/crypto/hashes.md
+                      - Digital signatures:  miden/vm/specification/stdlib/crypto/dsa.md
+                      - FRI verification procedures:  miden/vm/specification/stdlib/crypto/fri.md
+                      - Cryptographic hashes:  miden/vm/specification/stdlib/crypto/hashes.md
                   - Math:
-                      - Unsigned 64-bit integer operations:  miden/vm/user-docs/stdlib/math/u64.md
-                  - Memory procedures:  miden/vm/user-docs/stdlib/mem.md
-                  - System procedures:  miden/vm/user-docs/stdlib/sys.md
+                      - Unsigned 64-bit integer operations:  miden/vm/specification/stdlib/math/u64.md
+                  - Memory procedures:  miden/vm/specification/stdlib/mem.md
+                  - System procedures:  miden/vm/specification/stdlib/sys.md
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 

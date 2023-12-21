@@ -2,7 +2,7 @@ Miden assembly is a simple, low-level language for writing programs for Miden VM
 
 Before Miden assembly can be executed on Miden VM, it needs to be compiled into a [Program MAST](../../architecture/programs.md) (Merkelized Abstract Syntax Tree) which is a binary tree of code blocks each containing raw Miden VM instructions.
 
-![assembly_to_VM](../../../../img/miden/vm/user-docs/assembly/assembly_to_VM.png)
+![assembly_to_VM](../../../../img/miden/vm/specification/assembly/assembly_to_VM.png)
 
 As compared to raw Miden VM instructions, Miden assembly has several advantages:
 
