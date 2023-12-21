@@ -298,7 +298,7 @@ nav:
           # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
         - Troubleshooting:
           - Validator performance: pos/operate-node/validator/validator-performance.md
-          - Staking FAQs: pos/operate-node/validator/staking-faq.md
+          # - Staking FAQs: pos/operate-node/validator/staking-faq.md
           - Technical FAQs: pos/operate-node/validator/technical-faqs.md
           - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
           - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
