@@ -48,7 +48,7 @@ end
 
 ### Dynamic procedure invocation
 
-It is also possible to invoke procedures dynamically - i.e., without specifying target procedure labels at compile time. There are two instructions, `dynexec` and `dyncall`, which can be used to execute dynamically-specified code targets. Both instructions expect [MAST root](../../design/programs.md) of the target to be provided via the stack. The difference between `dynexec` and `dyncall` is that `dyncall` will [change context](execution-contexts.md) before executing the dynamic code target, while `dynexec` will cause the code target to be executed in the current context.
+It is also possible to invoke procedures dynamically - i.e., without specifying target procedure labels at compile time. There are two instructions, `dynexec` and `dyncall`, which can be used to execute dynamically-specified code targets. Both instructions expect [MAST root](../../architecture/programs.md) of the target to be provided via the stack. The difference between `dynexec` and `dyncall` is that `dyncall` will [change context](execution-contexts.md) before executing the dynamic code target, while `dynexec` will cause the code target to be executed in the current context.
 
 Dynamic code execution in the same context is achieved by setting the top $4$ elements of the stack to the hash of the dynamic code block and then executing the following instruction:
 
