@@ -1,4 +1,4 @@
-The kernel ROM enables executing predefined kernel procedures. These procedures are always executed in the root context and can only be accessed by a `SYSCALL` operation. The chiplet tracks and enforces correctness of all kernel procedure calls as well as maintaining a list of all the procedures defined for the kernel, whether they are executed or not. More background about Miden VM execution contexts can be found [here](../../user-docs/assembly/execution-contexts.md).
+The kernel ROM enables executing predefined kernel procedures. These procedures are always executed in the root context and can only be accessed by a `SYSCALL` operation. The chiplet tracks and enforces correctness of all kernel procedure calls as well as maintaining a list of all the procedures defined for the kernel, whether they are executed or not. More background about Miden VM execution contexts can be found [here](../../specification/assembly/execution-contexts.md).
 
 ## Kernel ROM trace
 

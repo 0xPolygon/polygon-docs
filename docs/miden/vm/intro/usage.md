@@ -79,7 +79,7 @@ Currently, Miden VM can be executed with the following subcommands:
 * `run`: Executes a Miden assembly program and output the result, but will not generate a proof of execution.
 * `prove`: Executes a Miden assembly program, and will also generate a STARK proof of execution.
 * `verify`: Verifies a previously generated proof of execution for a given program.
-* `compile`: Compiles a Miden assembly program (i.e., build a program [MAST](../design/programs.md)) and outputs stats about the compilation process.
+* `compile`: Compiles a Miden assembly program (i.e., build a program [MAST](../architecture/programs.md)) and outputs stats about the compilation process.
 * `debug`: Instantiates a [Miden debugger](../tools/debugger.md) against the specified Miden assembly program and inputs.
 * `analyze`: Runs a Miden assembly program against specific inputs and will output stats about its execution.
 * `repl`: Initiates the [Miden REPL](../tools/repl.md) tool.
@@ -115,7 +115,7 @@ As described [here](overview.md#inputs-and-outputs) the Miden VM can consume pub
 !!! info
     Check out the [comparison example](https://github.com/0xPolygonMiden/examples/blob/main/examples/comparison.masm) to see how secret inputs work.
 
-After a program finishes executing, the elements that remain on the stack become the outputs of the program, along with the overflow addresses (`overflow_addrs`) that are required to reconstruct the [stack overflow table](../design/stack/index.md#overflow-table).
+After a program finishes executing, the elements that remain on the stack become the outputs of the program, along with the overflow addresses (`overflow_addrs`) that are required to reconstruct the [stack overflow table](../architecture/stack/index.md#overflow-table).
 
 ## Fibonacci example
 
