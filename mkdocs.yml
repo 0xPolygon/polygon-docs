@@ -5,8 +5,6 @@ repo_name: Polygon Knowledge Layer
 repo_url: https://github.com/0xPolygon/polygon-docs
 edit_uri: edit/main/docs/
 site_url: https://docs.polygon.technology/
-#remote_branch: gh-pages
-#remote_name: gh-deploy
 
 theme:
   name: material
