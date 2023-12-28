@@ -4,7 +4,7 @@ Connect your wallet and deploy any decentralized application to either Polygon M
 
 Polygon Mumbai Testnet connects to Ethereum Goërli Testnet, which acts as its ParentChain, a testnet layer 1 (L1).
 
-Find all the network-related details in the [network documentation](https://github.com/0xPolygon/wiki/blob/master/docs/pos/reference/rpc-endpoints.md).
+Find all the network-related details in the [network documentation](https://docs.polygon.technology/pos/reference/rpc-endpoints/).
 
 ## Overview
 
