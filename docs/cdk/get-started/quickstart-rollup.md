@@ -1,52 +1,57 @@
+The following quick start guide shows you how to deploy a CDK rollup (zkevm-node) on your local machine and runs the following components:
+
+- zkEVM node databases
+- Explorer databases
+- L1 network
+- Prover
+- zkEVM node components
+- Explorers
+
 !!! note
     - The documentation describes standard deployments.
     - Edit the configuration files to implement your own custom setups.
 
-## Run a CDK rollup locally
+## Prerequisites
 
-The following is a quickstart guide for deploying a CDK rollup (zkevm-node) on your local machine.
+!!! warning
+    - Currently the executor/prover does not run on ARM-powered Macs.
+    - For Windows users, WSL/WSL2 use is not recommended. 
 
-# Steps to run/develop on the environment locally
+Make sure you have installed the following:
 
-# Warning:
+- [`go`](https://go.dev/doc/install)
+- [`docker`](https://www.docker.com/get-started)
+- [`docker-compose`](https://docs.docker.com/compose/install/)
 
->Currently the Executor/Prover does not run on ARM-powered Macs. For Windows users, WSL/WSL2 use is not recommended. 
+## Set up
 
-## Overview
+Clone the repo:
 
-This documentation will help run the following components:
+```sh
+git clone https://github.com/0xPolygonHermez/zkevm-node.git
+cd zkevm-node
+```
 
-- zkEVM Node Databases
-- Explorer Databases
-- L1 Network
-- Prover
-- zkEVM Node components
-- Explorers
-
-## Requirements
-
-The current version of the environment requires `go`, `docker` and `docker-compose` to be previously installed, check the links below to understand how to install them:
-
-- <https://go.dev/doc/install>
-- <https://www.docker.com/get-started>
-- <https://docs.docker.com/compose/install/>
-
-The `zkevm-node` docker image must be built at least once and every time a change is made to the code.
-If you haven't build the `zkevm-node` image yet, you must run:
+Build the `zkevm-node` docker image:
 
 ```bash
 make build-docker
 ```
 
-## A look at how the binary works:
+!!! info
+    The `zkevm-node` docker image must be built at least once and every time a change is made to the code.
 
-The `zkevm-node` allows certain commands to interact with smart contracts, run certain components, create encryption files and print out debug information.
+!!! important "What's happening under the hood"
 
-To interact with the binary program we provide docker compose files, and a Makefile to spin up/down the different services and components, ensuring a smooth deployment locally and better interface in command line for developers.
+    The `zkevm-node` has commands that interact with smart contracts, run components, create encryption files, and print out debug information.
+
+    To interact with the binary program we provide docker compose files, and a Makefile to spin up/down the different services and components, ensuring a smooth deployment locally with a command line interface.
 
 ## Controlling the environment
 
-> All the data is stored inside of each docker container, this means once you remove the container, the data will be lost.
+!!! important
+    - All the data is stored inside Docker containers. 
+    - This means that you lose all the data when you remove the container.
 
 To run the environment:
 
@@ -76,23 +81,23 @@ make restart
 
 ## Sample data
 
-The `make run` will execute the containers needed to run the environment but this will not execute anything else, so the L2 will be basically empty.
+`make run` spins up the containers needed to run the environment but this doesn't do anything else, so the L2 is empty at this stage.
 
-If you need sample data already deployed to the network, we have the following scripts:
+To deploy sample data, use the following scripts:
 
-**To add some examples of transactions and smart contracts:**
+### Add example transactions and smart contracts
 
 ```bash
 make deploy-sc
 ```
 
-**To deploy a full uniswap environment:**
+### Deploy a full Uniswap environment
 
 ```bash
 make deploy-uniswap
 ```
 
-**To grant the Pol smart contract a set amount of tokens, run:**
+### Grant the Pol smart contract a set amount of tokens
 
 ```bash
 make run-approve-pol
@@ -100,7 +105,8 @@ make run-approve-pol
 
 ## Accessing the environment
 
-- **Databases**:
+### Databases
+
   - zkEVM Node *State* Database 
     - `Type:` Postgres DB
     - `User:` state_user
@@ -108,7 +114,7 @@ make run-approve-pol
     - `Database:` state-db
     - `Host:` localhost
     - `Port:` 5432
-    - `Url:` <postgres://state_user:srare_password@localhost:5432/state-db>
+    - `URL:` <postgres://state_user:srare_password@localhost:5432/state-db>
   - zkEVM Node *Pool* Database 
     - `Type:` Postgres DB
     - `User:` pool_user
@@ -116,7 +122,7 @@ make run-approve-pol
     - `Database:` pool_db
     - `Host:` localhost
     - `Port:` 5433
-    - `Url:` <postgres://pool_user:pool_password@localhost:5433/pool_db>
+    - `URL:` <postgres://pool_user:pool_password@localhost:5433/pool_db>
   - zkEVM Node *JSON-RPC* Database 
     - `Type:` Postgres DB
     - `User:` rpc_user
@@ -124,7 +130,7 @@ make run-approve-pol
     - `Database:` rpc_db
     - `Host:` localhost
     - `Port:` 5434
-    - `Url:` <postgres://rpc_user:rpc_password@localhost:5434/rpc_db>
+    - `URL:` <postgres://rpc_user:rpc_password@localhost:5434/rpc_db>
   - Explorer L1 Database
     - `Type:` Postgres DB
     - `User:` l1_explorer_user
@@ -132,7 +138,7 @@ make run-approve-pol
     - `Database:` l1_explorer_db
     - `Host:` localhost
     - `Port:` 5435
-    - `Url:` <postgres://l1_explorer_user:l1_explorer_password@localhost:5435/l1_explorer_db>
+    - `URL:` <postgres://l1_explorer_user:l1_explorer_password@localhost:5435/l1_explorer_db>
   - Explorer L2 Database
     - `Type:` Postgres DB
     - `User:` l2_explorer_user
@@ -140,78 +146,84 @@ make run-approve-pol
     - `Database:` l2_explorer_db
     - `Host:` localhost
     - `Port:` 5436
-    - `Url:` <postgres://l2_explorer_user:l2_explorer_password@localhost:5436/l2_explorer_db>
-- **Networks**:
+    - `URL:` <postgres://l2_explorer_user:l2_explorer_password@localhost:5436/l2_explorer_db>
+
+### Networks
+
   - L1 Network
     - `Type:` Geth
     - `Host:` localhost
     - `Port:` 8545
-    - `Url:` <http://localhost:8545>
+    - `URL:` <http://localhost:8545>
   - zkEVM Node
     - `Type:` JSON RPC
     - `Host:` localhost
     - `Port:` 8123
-    - `Url:` <http://localhost:8123>
-- **Explorers**:
+    - `URL:` <http://localhost:8123>
+
+### Explorers
+
   - Explorer L1
     - `Type:` Web
     - `Host:` localhost
     - `Port:` 4000
-    - `Url:` <http://localhost:4000>
+    - `URL:` <http://localhost:4000>
   - Explorer L2
     - `Type:` Web
     - `Host:` localhost
     - `Port:` 4001
-    - `Url:` <http://localhost:4001>
-- Prover
-  - `Type:` Mock
-  - `Host:` localhost
-  - `Port:` Depending on the prover image, if it's mock or not: 
-    - Prod prover: 50052 for Prover, 50061 for Merkle Tree, 50071 for Executor
-    - Mock prover: 43061 for MT, 43071 for Executor
-  - `Url:` <http://localhost:50001>
-## Metamask
+    - `URL:` <http://localhost:4001>
+  - Prover
+    - `Type:` Mock
+    - `Host:` localhost
+    - `Port:` Depending on the prover image, if it's mock or not: 
+        - Prod prover: 50052 for Prover, 50061 for Merkle Tree, 50071 for Executor
+        - Mock prover: 43061 for MT, 43071 for Executor
+    - `URL:` <http://localhost:50001>
 
-> Metamask requires the network to be running while configuring it, so make sure your network is running before starting.
+## MetaMask
 
-To configure your Metamask to use your local environment, follow these steps:
+!!! info
+    Metamask requires the network to be running while configuring it, so make sure your network is running before starting.
 
-1. Log in to your Metamask wallet
-2. Click on your account picture and then on Settings
-3. On the left menu, click on Networks
-4. Click on `Add Network` button
-5. Fill up the L2 network information
+To configure MetaMask to use your local environment, follow these steps:
+
+1. Log in to your MetaMask wallet.
+2. Click your account picture and then on **Settings**.
+3. On the left menu, click **Networks**.
+4. Click the **Add Network** button.
+5. Enter the following L2 network information:
     1. `Network Name:` Polygon zkEVM - Local
     2. `New RPC URL:` <http://localhost:8123>
     3. `ChainID:` 1001
     4. `Currency Symbol:` ETH
     5. `Block Explorer URL:` <http://localhost:4000>
-6. Click on Save
-7. Click on `Add Network` button
-8. Fill up the L1 network information
+6. Click **Save**.
+7. Click the **Add Network** button,
+8. Enter the following L1 network information:
     1. `Network Name:` Geth - Local
     2. `New RPC URL:` <http://localhost:8545>
     3. `ChainID:` 1337
     4. `Currency Symbol:` ETH
-9. Click on Save
+9. Click **Save**.
 
-## L1 Addresses
+## L1 addresses
 
 | Address | Description |
 |---|---|
-| 0x8dAF17A20c9DBA35f005b6324F493785D239719d | Polygon ZKEVM |
-| 0x40E0576c0A7dff9dc460B29ba73e79aBf73dD2a9 | Polygon Bridge |
+| 0x8dAF17A20c9DBA35f005b6324F493785D239719d | Polygon zkEVM |
+| 0x40E0576c0A7dff9dc460B29ba73e79aBf73dD2a9 | Polygon bridge |
 | 0x5FbDB2315678afecb367f032d93F642f64180aa3 | Pol token |
 | 0x8A791620dd6260079BF849Dc5567aDC3F2FdC318 | Polygon GlobalExitRootManager |
 | 0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e | Polygon RollupManager |
 
-## Deployer Account
+## Deployer account
 
 | Address | Private Key |
 |---|---|
 | 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 | 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 |
 
-## Sequencer Account
+## Sequencer account
 
 | Address | Private Key |
 |---|---|
@@ -241,6 +253,9 @@ To configure your Metamask to use your local environment, follow these steps:
 | 0xdD2FD4581271e230360230F9337D5c0430Bf44C0 | 0xde9be858da4a475276426320d5e9262ecfc3ba460bfac56360bfa6c4c28b4ee0 |
 | 0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199 | 0xdf57089febbacf7ba0bc227dafbffa9fc08a93fdc68e1e42411a14efcf23656e |
 
-
-
+<!--
+This quick start is from here:
 [https://github.com/0xPolygonHermez/zkevm-node/blob/develop/docs/running_local.md](https://github.com/0xPolygonHermez/zkevm-node/blob/develop/docs/running_local.md)
+Need to remove it from there and add a link to docs.
+>
+
