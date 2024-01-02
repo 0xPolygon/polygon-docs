@@ -6,6 +6,10 @@ hide:
 
 <style>
 
+.md-content__button.md-icon {
+	display: none;
+}
+
 .hero-content-flex {
 	bottom: 5px;
 }
