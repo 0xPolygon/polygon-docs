@@ -1,4 +1,14 @@
 
+### What is the Staking Dashboard URL?
+
+The staking dashboard URL is https://staking.polygon.technology/.
+
+
+### What is the minimum stake amount?​
+
+There is no minimum stake amount to delegate. However, you can always start with 1 MATIC token.
+
+
 ### How to stake tokens on Polygon?
 
 For Staking you would need to have funds on the Ethereum Mainnet (more information [here](https://etherscan.io/gastracker)). Log into your wallet on the Ethereum network using the Staking Dashboard. https://staking.polygon.technology/
@@ -9,6 +19,13 @@ Please watch this video for a graphical illustration of how this works:
   <source type="video/mp4" src="../../../../img/pos/staking.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
+
+
+### Why does my transaction take so long?
+
+All staking transactions of Polygon happen on Ethereum for security reasons.
+The time taken to complete a transaction depends on the gas fees that you have allowed, and the network congestion on Ethereum at that time.
+The “Speed Up” option is to increase the gas fees you are willing to spend.
 
 
 ### I've staked my Matic tokens. How can I stake more?
@@ -184,6 +201,7 @@ Please watch the video for a graphical illustration of how this works:
   <source type="video/mp4" src="../../../../img/pos/moving.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
+
 
 ### Which browsers are compatible with the staking dashboard?
 

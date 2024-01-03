@@ -1,11 +1,10 @@
 site_name: Polygon Knowledge Layer
 site_author: Polygon Labs
-copyright: Copyright &copy; 2023 Polygon Labs
+copyright: Copyright &copy; 2024 Polygon Labs
 repo_name: Polygon Knowledge Layer
 repo_url: https://github.com/0xPolygon/polygon-docs
 edit_uri: edit/main/docs/
-#remote_branch: gh-pages
-#remote_name: gh-deploy
+site_url: https://docs.polygon.technology/
 
 theme:
   name: material
@@ -88,7 +87,7 @@ nav:
           - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
           - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
         - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
-          # - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+        - Historical data: zkEVM/get-started/historical-data.md
       - How to:
         - How to: zkEVM/how-to/index.md
         - Write a contract: zkEVM/how-to/write-contract.md
@@ -298,7 +297,7 @@ nav:
           # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
         - Troubleshooting:
           - Validator performance: pos/operate-node/validator/validator-performance.md
-          - Staking FAQs: pos/operate-node/validator/staking-faq.md
+          # - Staking FAQs: pos/operate-node/validator/staking-faq.md
           - Technical FAQs: pos/operate-node/validator/technical-faqs.md
           - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
           - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
@@ -342,8 +341,44 @@ nav:
               - Transactions:  miden/architecture/transactions.md
               - State:  miden/architecture/state.md
               - Execution:  miden/architecture/execution.md
+          - Concepts:
+              - Crypto primitives:
+                  - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
+      - Miden VM:
+          - Introduction:
+              - Introduction: miden/vm/intro/index.md
+              - Overview: miden/vm/intro/overview.md
+              - Usage: miden/vm/intro/usage.md
+              - Performance: miden/vm/intro/performance.md
+              - Background material: miden/vm/background.md
+          - Architecture:
+              - Design: miden/vm/architecture/introduction.md
+              - Programs: miden/vm/architecture/programs.md
+              - Decoder:
+                  - Decoder: miden/vm/architecture/decoder/index.md
+                  - Constraints:  miden/vm/architecture/decoder/constraints.md
+              - Operand stack:
+                  - Operand stack: miden/vm/architecture/stack/index.md
+                  - Operation constraints:  miden/vm/architecture/stack/op-constraints.md
+                  - System operations:  miden/vm/architecture/stack/system-ops.md
+                  - Field operations:  miden/vm/architecture/stack/field-ops.md
+                  - u32 operations:  miden/vm/architecture/stack/u32-ops.md
+                  - Stack manipulation:  miden/vm/architecture/stack/stack-ops.md
+                  - Input/output operations:  miden/vm/architecture/stack/io-ops.md
+                  - Cryptographic operations:  miden/vm/architecture/stack/crypto-ops.md
+              - Range checker:  miden/vm/architecture/range.md
+              - Chiplets:
+                  - Chiplets: miden/vm/architecture/chiplets/index.md
+                  - Hash chiplet:  miden/vm/architecture/chiplets/hasher.md
+                  - Bitwise chiplet:  miden/vm/architecture/chiplets/bitwise.md
+                  - Memory chiplet:  miden/vm/architecture/chiplets/memory.md
+                  - Kernel ROM chiplet:  miden/vm/architecture/chiplets/kernel_rom.md 
+              - Lookups:
+                  - Lookups: miden/vm/architecture/lookups/index.md
+                  - Multiset checks:  miden/vm/architecture/lookups/multiset.md
+                  - LogUp: miden/vm/architecture/lookups/logup.md
           - Specification:
-              - AirScript: 
+                - AirScript: 
                   - Introduction: miden/specification/airscript/introduction.md
                   - Language description:
                       - Syntax overview: miden/specification/airscript/syntax.md
@@ -357,70 +392,34 @@ nav:
                       - Keywords: miden/specification/airscript/keywords.md
                       - Appendix: miden/specification/airscript/appendix.md
                   - Backends: miden/specification/airscript/backends.md
-          - Concepts:
-              - Crypto primitives:
-                  - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
-      - Miden VM:
-          - Introduction:
-              - Introduction: miden/vm/intro/index.md
-              - Overview: miden/vm/intro/overview.md
-              - Usage: miden/vm/intro/usage.md
-              - Performance: miden/vm/intro/performance.md
-          - Development tooling:
-              - Overview: miden/vm/tools/index.md
-              - Debugger: miden/vm/tools/debugger.md
-              - REPL: miden/vm/tools/repl.md
-          - Miden programming reference:
-              - Miden programming reference: miden/vm/user-docs/index.md
+                - Development tooling:
+                    - Overview: miden/vm/tools/index.md
+                    - Debugger: miden/vm/tools/debugger.md
+                    - REPL: miden/vm/tools/repl.md
+          - API:
+              - Miden programming reference: miden/vm/specification/index.md
               - Assembly:
-                  - Miden assembly:  miden/vm/user-docs/assembly/index.md
-                  - Code organization:  miden/vm/user-docs/assembly/code-organization.md
-                  - Execution contexts:  miden/vm/user-docs/assembly/execution-contexts.md
-                  - Flow control:  miden/vm/user-docs/assembly/flow-control.md
-                  - Field operations:  miden/vm/user-docs/assembly/field-operations.md
-                  - u32 operations:  miden/vm/user-docs/assembly/u32-operations.md
-                  - Stack manipulation:  miden/vm/user-docs/assembly/stack-manipulation.md
-                  - IO operations:  miden/vm/user-docs/assembly/io-operations.md
-                  - Cryptographic operations:  miden/vm/user-docs/assembly/cryptographic-operations.md
-                  - Debugging:  miden/vm/user-docs/assembly/debugging.md
+                  - Miden assembly:  miden/vm/specification/assembly/index.md
+                  - Code organization:  miden/vm/specification/assembly/code-organization.md
+                  - Execution contexts:  miden/vm/specification/assembly/execution-contexts.md
+                  - Flow control:  miden/vm/specification/assembly/flow-control.md
+                  - Field operations:  miden/vm/specification/assembly/field-operations.md
+                  - u32 operations:  miden/vm/specification/assembly/u32-operations.md
+                  - Stack manipulation:  miden/vm/specification/assembly/stack-manipulation.md
+                  - IO operations:  miden/vm/specification/assembly/io-operations.md
+                  - Cryptographic operations:  miden/vm/specification/assembly/cryptographic-operations.md
+                  - Debugging:  miden/vm/specification/assembly/debugging.md
               - Standard library:
-                  - Miden standard library: miden/vm/user-docs/stdlib/index.md
-                  - Collections:  miden/vm/user-docs/stdlib/collections.md
+                  - Miden standard library: miden/vm/specification/stdlib/index.md
+                  - Collections:  miden/vm/specification/stdlib/collections.md
                   - Crypto:
-                      - Digital signatures:  miden/vm/user-docs/stdlib/crypto/dsa.md
-                      - FRI verification procedures:  miden/vm/user-docs/stdlib/crypto/fri.md
-                      - Cryptographic hashes:  miden/vm/user-docs/stdlib/crypto/hashes.md
+                      - Digital signatures:  miden/vm/specification/stdlib/crypto/dsa.md
+                      - FRI verification procedures:  miden/vm/specification/stdlib/crypto/fri.md
+                      - Cryptographic hashes:  miden/vm/specification/stdlib/crypto/hashes.md
                   - Math:
-                      - Unsigned 64-bit integer operations:  miden/vm/user-docs/stdlib/math/u64.md
-                  - Memory procedures:  miden/vm/user-docs/stdlib/mem.md
-                  - System procedures:  miden/vm/user-docs/stdlib/sys.md
-          - Design:
-              - Design: miden/vm/design/index.md
-              - Programs:  miden/vm/design/programs.md
-              - Decoder:
-                  - Decoder: miden/vm/design/decoder/index.md
-                  - Constraints:  miden/vm/design/decoder/constraints.md
-              - Operand stack:
-                  - Operand stack: miden/vm/design/stack/index.md
-                  - Operation constraints:  miden/vm/design/stack/op-constraints.md
-                  - System operations:  miden/vm/design/stack/system-ops.md
-                  - Field operations:  miden/vm/design/stack/field-ops.md
-                  - u32 operations:  miden/vm/design/stack/u32-ops.md
-                  - Stack manipulation:  miden/vm/design/stack/stack-ops.md
-                  - Input/output operations:  miden/vm/design/stack/io-ops.md
-                  - Cryptographic operations:  miden/vm/design/stack/crypto-ops.md
-              - Range checker:  miden/vm/design/range.md
-              - Chiplets:
-                  - miden/vm/design/chiplets/index.md
-                  - Hash chiplet:  miden/vm/design/chiplets/hasher.md
-                  - Bitwise chiplet:  miden/vm/design/chiplets/bitwise.md
-                  - Memory chiplet:  miden/vm/design/chiplets/memory.md
-                  - Kernel ROM chiplet:  miden/vm/design/chiplets/kernel_rom.md 
-              - Lookups:
-                  - miden/vm/design/lookups/index.md
-                  - Multiset checks:  miden/vm/design/lookups/multiset.md
-                  - LogUp: miden/vm/design/lookups/logup.md
-          - Background material: miden/vm/background.md
+                      - Unsigned 64-bit integer operations:  miden/vm/specification/stdlib/math/u64.md
+                  - Memory procedures:  miden/vm/specification/stdlib/mem.md
+                  - System procedures:  miden/vm/specification/stdlib/sys.md
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
@@ -431,6 +430,8 @@ nav:
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
+      - Third-party tutorials:
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Data:
           - The Graph: 
               - Overview: tools/data/the-graph/overview.md

@@ -35,7 +35,7 @@ A *dyn* block must always have one (dynamically-specified) child. Thus, it canno
 
 ### Call block
 
-A **call** block is used to describe a function call which is executed in a [user context](../user-docs/assembly/execution-contexts.md). When the VM encounters a *call* block, it creates a new user context, then executes a program which hashes to the target specified by the *call* block in the new context. Thus, in order to execute a *call* block, the VM must be aware of a program with the specified hash. Otherwise, the execution fails. At the end of the *call* block, execution returns to the previous context.
+A **call** block is used to describe a function call which is executed in a [user context](../specification/assembly/execution-contexts.md). When the VM encounters a *call* block, it creates a new user context, then executes a program which hashes to the target specified by the *call* block in the new context. Thus, in order to execute a *call* block, the VM must be aware of a program with the specified hash. Otherwise, the execution fails. At the end of the *call* block, execution returns to the previous context.
 
 
 When executing a *call* block, the VM does the following:
@@ -49,7 +49,7 @@ A *call* block does not have any children. Thus, it must be leaf node in the tre
 
 ### Syscall block
 
-A **syscall** block is used to describe a function call which is executed in the [root context](../user-docs/assembly/execution-contexts.md). When the VM encounters a *syscall* block, it returns to the root context, then executes a program which hashes to the target specified by the *syscall* block. Thus, in order to execute a *syscall* block, the VM must be aware of a program with the specified hash, and that program must belong to the kernel against which the code is compiled. Otherwise, the execution fails. At the end of the *syscall* block, execution returns to the previous context.
+A **syscall** block is used to describe a function call which is executed in the [root context](../specification/assembly/execution-contexts.md). When the VM encounters a *syscall* block, it returns to the root context, then executes a program which hashes to the target specified by the *syscall* block. Thus, in order to execute a *syscall* block, the VM must be aware of a program with the specified hash, and that program must belong to the kernel against which the code is compiled. Otherwise, the execution fails. At the end of the *syscall* block, execution returns to the previous context.
 
 When executing a *syscall* block, the VM does the following:
 1. Checks if a *syscall* is already being executed and fails if so.

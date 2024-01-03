@@ -5,7 +5,7 @@ All programs start executing in a *root* context. Thus, the main procedure of a 
 While executing in a user context, we can request to execute some procedures in the root context. This can be done via the `syscall` instruction. The set of procedures which can be invoked via the `syscall` instruction is limited by the [kernel](#kernels) against which a program is compiled. Once the procedure called via `syscall` returns, the execution moves back to the user context from which it was invoked. The diagram below illustrates this graphically:
 
 <center>
-![context transitions](../../../../img/miden/vm/user-docs/assembly/execution_contexts/context_transitions.png)
+![context transitions](../../../../img/miden/vm/specification/assembly/execution_contexts/context_transitions.png)
 </center>
 
 ## Procedure invocation semantics
@@ -52,7 +52,7 @@ For user contexts we have the following:
 - The next $2^{30}$ words are reserved for memory locals of procedures executed in the same context (i.e., via the `exec` instruction).
 - The remaining address space has no special meaning.
 
-![user memory layout](../../../../img/miden/vm/user-docs/assembly/execution_contexts/user_mem_layout.png)
+![user memory layout](../../../../img/miden/vm/specification/assembly/execution_contexts/user_mem_layout.png)
 
 For the root context we have the following:
 
@@ -61,7 +61,7 @@ For the root context we have the following:
 - The next $2^{30}$ words are reserved for memory locals of procedures executed from within a `syscall`.
 - The remaining address space has no special meaning.
 
-![root memory layout](../../../../img/miden/vm/user-docs/assembly/execution_contexts/root_mem_layout.png)
+![root memory layout](../../../../img/miden/vm/specification/assembly/execution_contexts/root_mem_layout.png)
 
 For both types of contexts, writing directly into regions of memory reserved for procedure locals is not advisable. Instead, `loc_load`, `loc_store` and other similar dedicated instructions should be used to access procedure locals.
 

@@ -1,5 +1,5 @@
 !!! caution "Content disclaimer"
-    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
 Depending on which Arkane environment your application connect, your transactions will be directed to a specific blockchain network. Connect to the Venly (prev. Arkane) production environment and you will be contacting the Polygon Mainnet, whereas connecting to the Venly staging environment will connect you to the Polygon Mumbai testnet.
 
