@@ -85,7 +85,6 @@ Parent chain: Ethereum mainnet
 |-----------------------|--------------------------------------------|
 | ChildChain            | [0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861](https://polygonscan.com/address/0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861) |
 
-
 ### Amoy
 
 **Parent chain: Sepolia**
