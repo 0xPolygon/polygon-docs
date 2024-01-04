@@ -129,5 +129,4 @@ Child chain: Amoy
 | MaticWeth             | [0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102](https://amoy.polygonscan.com/address/0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102/) |
 | RootERC721            | [0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e](https://amoy.polygonscan.com/address/0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e/) |
 
-</TabItem>
 </Tabs>
