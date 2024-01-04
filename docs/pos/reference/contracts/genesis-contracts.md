@@ -118,7 +118,6 @@ Parent chain: Ethereum mainnet
 | MaticWeth             | [0x700dDE29De87ed2c01c27C896dc8Badb4f671302](https://sepolia.etherscan.io/address/0x700dDE29De87ed2c01c27C896dc8Badb4f671302) |
 | RootERC721            | [0x13B0Edd9312886Ac0C73116e767208bEd1199679](https://sepolia.etherscan.io/address/0x13B0Edd9312886Ac0C73116e767208bEd1199679) |
 
-
 **Child Chain: Amoy**
 
 | Contracts             | Address                                    |
