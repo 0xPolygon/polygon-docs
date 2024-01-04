@@ -23,8 +23,8 @@ hide:
 				<div class="hero-content-flex">
 					<div class="hero-left">
 						<h1 class="hero-heading">The Polygon Knowledge Layer</h1>
-						<p class="hero-subext">Welcome to the technical documentation and knowledge resources for Polygon protocols and scaling technologies.</p>
-						<p> Learn how to build and deploy dApps, launch ZK rollups and validiums as Layer 2s on Ethereum, spin up nodes, and find out about the latest in zero-knowledge research.</p>
+						<p class="hero-subtext">Welcome to the technical documentation and knowledge resources for Polygon protocols and scaling technologies.</p>
+						<p class="hero-subtext"> Learn how to build and deploy dApps, launch ZK rollups and validiums as Layer 2s on Ethereum, spin up nodes, and find out about the latest in zero-knowledge research.</p>
 					</div>
 					<div class="hero-right"><img src="img/home/main-img.svg" loading="lazy" alt="" class="hero-image"></div>
 				</div>
