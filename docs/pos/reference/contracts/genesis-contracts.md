@@ -87,7 +87,7 @@ Parent chain: Ethereum mainnet
 
 ### Amoy
 
-**Parent chain: Sepolia**
+Parent chain: Sepolia
 
 | Contracts             | Address                                                                                                                      |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------|
