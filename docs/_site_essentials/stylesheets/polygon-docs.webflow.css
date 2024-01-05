@@ -264,9 +264,9 @@ div.main .nav-content {
 	line-height: 1.6;
 }
 
-.feature-card-heading, .md-typeset a {
+.feature-card-heading {
 	color: --purple;
-	/*font-size: 18px;*/
+	font-size: 18px;
 	font-weight: 600;
 }
 
