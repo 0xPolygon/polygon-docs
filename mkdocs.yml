@@ -9,18 +9,14 @@ site_url: https://docs.polygon.technology/
 theme:
   name: material
   palette:
-    - scheme: default
       primary: white
-      accent: purple
+      accent: deep purple
   language: en
   custom_dir: overrides
   favicon: img/favicon.ico
   icon:
     logo: logo
     repo: repo
-  font:
-    text: Roboto
-    code: Roboto Mono
   features:
     - search.suggest
     - search.highlight
@@ -324,8 +320,6 @@ nav:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
-    #  - API:
-    #      - pos/api/index.md
   - Miden:
       - Miden: miden/index.md
       - Overview: miden/overview.md
