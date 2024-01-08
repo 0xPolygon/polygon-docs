@@ -1,3 +1,7 @@
+.md-source-file__fact {
+	display: none;
+}
+
 img.figure {
 	margin: 0 auto;
 	display: block;
