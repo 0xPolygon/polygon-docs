@@ -421,6 +421,7 @@ nav:
           - Truffle: tools/smart-contracts/truffle.md
           - Remix: tools/smart-contracts/remix.md
           - Replit: tools/smart-contracts/replit.md
+          - Crossmint: tools//smart-contracts/crossmint.md
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
