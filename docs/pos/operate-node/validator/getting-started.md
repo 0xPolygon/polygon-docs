@@ -2,9 +2,12 @@ Validators are the key actor in maintaining the Polygon network. Validators run 
 
 !!!info
     
-    There is limited space for accepting new validators. New validators can only join the active set when a currently active validator unbonds.
+    There is limited space for accepting new validators. New validators can only join the active set when a currently active validator unbonds/is removed due to low performance. 
+    If you are interested in becoming a validator on the PoS network, you can submit an application here: https://polygoncommunity.typeform.com/validatorshub
 
-    A new auction process for validator replacement will be rolled out.
+    * Submitting an application does not guarantee you a validator slot.
+
+    
 
 
 ## Overview

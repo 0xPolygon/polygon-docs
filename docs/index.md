@@ -6,6 +6,10 @@ hide:
 
 <style>
 
+.md-content__button.md-icon {
+	display: none;
+}
+
 .hero-content-flex {
 	bottom: 5px;
 }
@@ -19,8 +23,8 @@ hide:
 				<div class="hero-content-flex">
 					<div class="hero-left">
 						<h1 class="hero-heading">The Polygon Knowledge Layer</h1>
-						<p class="hero-subext">Welcome to the technical documentation and knowledge resources for Polygon protocols and scaling technologies.</p>
-						<p> Learn how to build and deploy dApps, launch ZK rollups and validiums as Layer 2s on Ethereum, spin up nodes, and find out about the latest in zero-knowledge research.</p>
+						<p class="hero-subtext">Welcome to the technical documentation and knowledge resources for Polygon protocols and scaling technologies.</p>
+						<p class="hero-subtext"> Learn how to build and deploy dApps, launch ZK rollups and validiums as Layer 2s on Ethereum, spin up nodes, and find out about the latest in zero-knowledge research.</p>
 					</div>
 					<div class="hero-right"><img src="img/home/main-img.svg" loading="lazy" alt="" class="hero-image"></div>
 				</div>
@@ -68,7 +72,7 @@ hide:
 							</div>
 							<p class="feature-paragraph">Build and test a zero-knowledge Layer 2 blockchain on Ethereum. Learn about validium and rollup modes, custom native gas tokens, and more.</p>
 						</a>
-						<a href="miden" class="flex-card-item last-item w-inline-block">
+						<a href="miden" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
 								<div class="feature-card-heading">Polygon Miden</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
@@ -77,6 +81,16 @@ hide:
 								<div class="status-tag">COMING SOON</div>
 							</div>
 							<p class="feature-paragraph">Test the Miden VM and learn about Polygon Miden, the novel ZK rollup designed to extend the EVM’s feature-set, including for privacy.</p>
+						</a>
+						<a href="https://github.com/0xPolygon/polygon-edge/tree/develop/docs" class="flex-card-item last-item w-inline-block">
+							<div class="product-list-item-header">
+								<div class="feature-card-heading">Polygon Edge</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+								<div class="status-tag">DEPRECATING</div>
+							</div>
+							<p class="feature-paragraph">Polygon will shortly be removing support for Edge. The documentation is now managed in the Edge repo.</p>
 						</a>
 					</div>
 					<div class="flex-card-child">

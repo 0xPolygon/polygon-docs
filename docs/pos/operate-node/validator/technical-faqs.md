@@ -267,7 +267,7 @@ Check the value of catching_up. If it is false then the node is all synced up.
 
 ### 15. If someone becomes a top 10 staker, how do they receive their MATIC reward?
 
-Stage 1 rewards are not based on stake. Please refer to this document [here](../../how-to/operating/validator-node/rewards.md) for the reward details. Participants with high stake don't automatically qualify for a reward in this stage.
+Stage 1 rewards are not based on stake. Participants with high stake don't automatically qualify for a reward in this stage.
 
 
 ### 16. What should the Heimdall version be?

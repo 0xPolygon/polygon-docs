@@ -1,27 +1,22 @@
 site_name: Polygon Knowledge Layer
 site_author: Polygon Labs
-copyright: Copyright &copy; 2023 Polygon Labs
+copyright: Copyright &copy; 2024 Polygon Labs
 repo_name: Polygon Knowledge Layer
 repo_url: https://github.com/0xPolygon/polygon-docs
 edit_uri: edit/main/docs/
-#remote_branch: gh-pages
-#remote_name: gh-deploy
+site_url: https://docs.polygon.technology/
 
 theme:
   name: material
   palette:
-    - scheme: default
       primary: white
-      accent: purple
+      accent: deep purple
   language: en
   custom_dir: overrides
   favicon: img/favicon.ico
   icon:
     logo: logo
     repo: repo
-  font:
-    text: Roboto
-    code: Roboto Mono
   features:
     - search.suggest
     - search.highlight
@@ -48,6 +43,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Get started:
+        - Connect testnet: cdk/get-started/connect-testnet.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
@@ -63,7 +59,6 @@ nav:
         - Rollup: cdk/concepts/rollup.md
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
-     # - API/SDK:
       - Additional resources:
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
@@ -88,7 +83,7 @@ nav:
           - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
           - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
         - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
-          # - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+        - Historical data: zkEVM/get-started/historical-data.md
       - How to:
         - How to: zkEVM/how-to/index.md
         - Write a contract: zkEVM/how-to/write-contract.md
@@ -298,7 +293,7 @@ nav:
           # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
         - Troubleshooting:
           - Validator performance: pos/operate-node/validator/validator-performance.md
-          - Staking FAQs: pos/operate-node/validator/staking-faq.md
+          # - Staking FAQs: pos/operate-node/validator/staking-faq.md
           - Technical FAQs: pos/operate-node/validator/technical-faqs.md
           - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
           - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
@@ -325,8 +320,6 @@ nav:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
-    #  - API:
-    #      - pos/api/index.md
   - Miden:
       - Miden: miden/index.md
       - Overview: miden/overview.md
@@ -342,8 +335,44 @@ nav:
               - Transactions:  miden/architecture/transactions.md
               - State:  miden/architecture/state.md
               - Execution:  miden/architecture/execution.md
+          - Concepts:
+              - Crypto primitives:
+                  - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
+      - Miden VM:
+          - Introduction:
+              - Introduction: miden/vm/intro/index.md
+              - Overview: miden/vm/intro/overview.md
+              - Usage: miden/vm/intro/usage.md
+              - Performance: miden/vm/intro/performance.md
+              - Background material: miden/vm/background.md
+          - Architecture:
+              - Design: miden/vm/architecture/introduction.md
+              - Programs: miden/vm/architecture/programs.md
+              - Decoder:
+                  - Decoder: miden/vm/architecture/decoder/index.md
+                  - Constraints:  miden/vm/architecture/decoder/constraints.md
+              - Operand stack:
+                  - Operand stack: miden/vm/architecture/stack/index.md
+                  - Operation constraints:  miden/vm/architecture/stack/op-constraints.md
+                  - System operations:  miden/vm/architecture/stack/system-ops.md
+                  - Field operations:  miden/vm/architecture/stack/field-ops.md
+                  - u32 operations:  miden/vm/architecture/stack/u32-ops.md
+                  - Stack manipulation:  miden/vm/architecture/stack/stack-ops.md
+                  - Input/output operations:  miden/vm/architecture/stack/io-ops.md
+                  - Cryptographic operations:  miden/vm/architecture/stack/crypto-ops.md
+              - Range checker:  miden/vm/architecture/range.md
+              - Chiplets:
+                  - Chiplets: miden/vm/architecture/chiplets/index.md
+                  - Hash chiplet:  miden/vm/architecture/chiplets/hasher.md
+                  - Bitwise chiplet:  miden/vm/architecture/chiplets/bitwise.md
+                  - Memory chiplet:  miden/vm/architecture/chiplets/memory.md
+                  - Kernel ROM chiplet:  miden/vm/architecture/chiplets/kernel_rom.md 
+              - Lookups:
+                  - Lookups: miden/vm/architecture/lookups/index.md
+                  - Multiset checks:  miden/vm/architecture/lookups/multiset.md
+                  - LogUp: miden/vm/architecture/lookups/logup.md
           - Specification:
-              - AirScript: 
+                - AirScript: 
                   - Introduction: miden/specification/airscript/introduction.md
                   - Language description:
                       - Syntax overview: miden/specification/airscript/syntax.md
@@ -357,10 +386,34 @@ nav:
                       - Keywords: miden/specification/airscript/keywords.md
                       - Appendix: miden/specification/airscript/appendix.md
                   - Backends: miden/specification/airscript/backends.md
-          - Concepts:
-              - Crypto primitives:
-                  - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
-      - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
+                - Development tooling:
+                    - Overview: miden/vm/tools/index.md
+                    - Debugger: miden/vm/tools/debugger.md
+                    - REPL: miden/vm/tools/repl.md
+          - API:
+              - Miden programming reference: miden/vm/specification/index.md
+              - Assembly:
+                  - Miden assembly:  miden/vm/specification/assembly/index.md
+                  - Code organization:  miden/vm/specification/assembly/code-organization.md
+                  - Execution contexts:  miden/vm/specification/assembly/execution-contexts.md
+                  - Flow control:  miden/vm/specification/assembly/flow-control.md
+                  - Field operations:  miden/vm/specification/assembly/field-operations.md
+                  - u32 operations:  miden/vm/specification/assembly/u32-operations.md
+                  - Stack manipulation:  miden/vm/specification/assembly/stack-manipulation.md
+                  - IO operations:  miden/vm/specification/assembly/io-operations.md
+                  - Cryptographic operations:  miden/vm/specification/assembly/cryptographic-operations.md
+                  - Debugging:  miden/vm/specification/assembly/debugging.md
+              - Standard library:
+                  - Miden standard library: miden/vm/specification/stdlib/index.md
+                  - Collections:  miden/vm/specification/stdlib/collections.md
+                  - Crypto:
+                      - Digital signatures:  miden/vm/specification/stdlib/crypto/dsa.md
+                      - FRI verification procedures:  miden/vm/specification/stdlib/crypto/fri.md
+                      - Cryptographic hashes:  miden/vm/specification/stdlib/crypto/hashes.md
+                  - Math:
+                      - Unsigned 64-bit integer operations:  miden/vm/specification/stdlib/math/u64.md
+                  - Memory procedures:  miden/vm/specification/stdlib/mem.md
+                  - System procedures:  miden/vm/specification/stdlib/sys.md
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
@@ -371,6 +424,8 @@ nav:
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
+      - Third-party tutorials:
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Data:
           - The Graph: 
               - Overview: tools/data/the-graph/overview.md
@@ -428,22 +483,22 @@ nav:
                   - withdrawStartWithMetaData:  tools/matic-js/pos/erc721/withdraw-start-with-meta-data.md
                   - withdrawStart:  tools/matic-js/pos/erc721/withdraw-start.md
               - ERC1155:
-                  - approve-all-for-mintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
-                  - approve-all:  tools/matic-js/pos/erc1155/approve-all.md
-                  - deposit-many:  tools/matic-js/pos/erc1155/deposit-many.md
+                  - approveAllForMintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
+                  - approveAll:  tools/matic-js/pos/erc1155/approve-all.md
+                  - depositMany:  tools/matic-js/pos/erc1155/deposit-many.md
                   - deposit:  tools/matic-js/pos/erc1155/deposit.md
-                  - get-balance:  tools/matic-js/pos/erc1155/get-balance.md
+                  - getBalance:  tools/matic-js/pos/erc1155/get-balance.md
                   - index:  tools/matic-js/pos/erc1155/index.md
-                  - is-approved-all:  tools/matic-js/pos/erc1155/is-approved-all.md
-                  - is-withdraw-exited-many:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
-                  - is-withdraw-exited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
+                  - isApprovedAll:  tools/matic-js/pos/erc1155/is-approved-all.md
+                  - isWithdrawExitedMany:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
                   - transfer:  tools/matic-js/pos/erc1155/transfer.md
-                  - withdraw-exit-faster-many:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
-                  - withdraw-exit-faster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
-                  - withdraw-exit-many:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
-                  - withdraw-exit:  tools/matic-js/pos/erc1155/withdraw-exit.md
-                  - withdraw-start-many:  tools/matic-js/pos/erc1155/withdraw-start-many.md
-                  - withdraw-start:  tools/matic-js/pos/erc1155/withdraw-start.md
+                  - withdrawExitFasterMany:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
+                  - withdrawExitMany:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
+                  - withdrawExit:  tools/matic-js/pos/erc1155/withdraw-exit.md
+                  - withdrawStartMany:  tools/matic-js/pos/erc1155/withdraw-start-many.md
+                  - withdrawStart:  tools/matic-js/pos/erc1155/withdraw-start.md
               - Common methods:
                   - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
                   - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
@@ -466,6 +521,7 @@ nav:
           - DIA: tools/oracles/diadataoracles.md
           - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Razor: tools/oracles/razor.md
+          - Supra: tools/oracles/supra.md
           - Tellor: tools/oracles/tellor.md
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
@@ -504,8 +560,8 @@ nav:
 extra:
   generator: false
   analytics:
-    provider: google
-    property: G-RJ6JC0EEY5
+    provider: custom
+    property: google    
   #  feedback:  # feedback form only works when Google Analytics is set up and working
   #    title: Was this page helpful?
   #    ratings:
@@ -579,6 +635,10 @@ plugins:
   - git-revision-date-localized:
       fallback_to_build_date: true
       strict: false
+      exclude:
+        - index.md
+  - git-authors:
+      show_contribution: true
       exclude:
         - index.md
 

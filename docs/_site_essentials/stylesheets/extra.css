@@ -1,27 +1,3 @@
-[data-md-color-scheme="slate"] {
-	--md-footer-bg-color: black;
-
-	.md-footer,
-	.md-footer__inner,
-	.md-footer-meta {
-		background-color: black;
-	}
-}
-
-[data-md-color-scheme="default"] {
-	--md-footer-bg-color: white;
-	--md-footer-fg-color: charcoal;
-	--md-default-bg-color: white;
-	--md-footer-fg-color--light: charcoal;
-	--md-footer-fg-color--lighter: charcoal;
-
-	.md-footer,
-	.md-footer__inner,
-	.md-footer-meta {
-		background-color: white;
-	}
-}
-
 img.figure {
 	margin: 0 auto;
 	display: block;
