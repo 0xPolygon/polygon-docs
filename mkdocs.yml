@@ -43,6 +43,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Get started:
+        - Connect testnet: cdk/get-started/connect-testnet.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
@@ -58,7 +59,6 @@ nav:
         - Rollup: cdk/concepts/rollup.md
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
-     # - API/SDK:
       - Additional resources:
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
