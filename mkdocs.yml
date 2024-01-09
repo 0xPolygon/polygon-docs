@@ -52,7 +52,8 @@ nav:
           - Rollup: cdk/get-started/deploy-rollup.md
       - How to:
         - Manage policies: cdk/how-to/manage-policies.md
-      #- Architecture:
+      - Architecture:
+        - DAC: cdk/architecture/dac.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
