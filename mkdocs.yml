@@ -53,7 +53,7 @@ nav:
       - How to:
         - Manage policies: cdk/how-to/manage-policies.md
       - Architecture:
-        - Data availability committee: cdk/architecture/dac.md
+        - DAC: cdk/architecture/dac.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
