@@ -46,6 +46,14 @@
 	padding: 0 !important;
 }
 
+.md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
+	box-shadow: none;
+}
+
+.md-nav--secondary .md-nav__title {
+	box-shadow: none;
+}
+
 h1 {
 	margin-top: 0;
 	margin-bottom: 0 !important;
