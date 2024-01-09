@@ -18,7 +18,7 @@ Welcome to your step-by-step guide to implementing a full CDK zkRollup EVM-compa
 
 ## Overview and setting up
 
-Implementing the full stack Polygon CDK zkRollup EVM-compatible network involves more than just running an RPC zkNode or the Prover to validate batches and deploy smart contracts. In its entirety, it encompasses all these processes and more.
+Implementing the full stack Polygon CDK zkRollup EVM-compatible network involves more than just running a node and the prover to validate batches and deploy smart contracts. In its entirety, it encompasses all these processes and more.
 
 The common rollup actors are the sequencer, the aggregator, the synchroniser and the JSON RPC node. All these affect the L2 state.
 
@@ -32,32 +32,29 @@ The modular design of the CDK zkRollup EVM-compatible network allows for most co
 
 The below table enlists all the CDK zkRollup EVM-compatible components/services and their corresponding container-names.
 
-Our CDK zkRollup EVM-compatible network deployment-guide provides CLI commands to automatically create these Docker containers.
+Our CDK zkRollup deployment-guide provides CLI commands to automatically create these Docker containers.
 
 | Component         | Container            | Brief\ Description                                           |
 | :---------------- | :------------------- | ------------------------------------------------------------ |
-| Sequencer         | zkevm-sequencer      | Fetches txs from Pool DB, checks if valid, then puts valid ones into a batch. |
-| Aggregator        | zkevm-aggregator     | Validates sequenced batches by generating verifiable Zero Knowledge proofs. |
+| Sequencer         | zkevm-sequencer      | Fetches txs from the pool DB, checks if valid, then puts valid ones into a batch. |
+| Aggregator        | zkevm-aggregator     | Validates sequenced batches by generating verifiable zero-knowledge proofs. |
 | Synchronizer      | zkevm-sync           | Updates the state by fetching data from Ethereum through the Etherman. |
-| JSON RPC          | zkevm-rpc            | An interface for interacting with the zkEVM. e.g., Metamask, Etherscan or Bridge. |
+| JSON RPC          | zkevm-rpc            | An interface for interacting with the network. e.g., Metamask, Etherscan or Bridge. |
 | State DB          | zkevm-state-db       | A database for permanently storing state data (apart from the Merkle tree). |
-| Prover            | zkevm-prover-server  | Used by the Aggregator to create ZK proofs. Runs on an external cloud server. |
-| Pool DB           | zkevm-pool-db        | Stores txs from the RPC nodes, waiting to be put in a batch by the Sequencer. |
+| Prover            | zkevm-prover-server  | Used by the aggregator to create zk-proofs. Runs on an external cloud server. |
+| Pool DB           | zkevm-pool-db        | Stores txs from the RPC nodes, waiting to be put in a batch by the sequencer. |
 | Executor          | zkevm-executor       | Executes all processes. Collects results’ metadata (state root, receipts, logs) |
 | Etherman          | zkevm-eth-tx-manager | Implements methods for all interactions with the L1 network and smart contracts. |
-| Bridge UI         | zkevm-bridge-ui      | User-Interface for bridging ERC-20 tokens between L2 and L1 or another L2. |
-| Bridge DB         | zkevm-bridge-db      | A database for storing Bridge-related transactions data.     |
-| Bridge service    | zkevm-bridge-service | A backend service enabling clients like the web UI to interact with Bridge smart contracts. |
-| zkEVM explorer    | zkevm-explorer-l2    | L2 network's Block explorer. i.e., The zkEVM Etherscan [Explorer](https://zkevm.polygonscan.com). |
-| zkEVM explorer DB | zkevm-explorer-l2-db | Database for the L2 network's Block explorer. i.e., Where all the zkEVM Etherscan Explorer queries are made. |
+| Bridge UI         | zkevm-bridge-ui      | User-interface for bridging ERC-20 tokens between L2 and L1 or another L2. |
+| Bridge DB         | zkevm-bridge-db      | A database for storing bridge-related transactions data.     |
+| Bridge service    | zkevm-bridge-service | A backend service enabling clients like the web UI to interact with bridge smart contracts. |
+| zkEVM explorer    | zkevm-explorer-l2    | L2 network's block explorer. i.e., The zkRollup Etherscan [rxplorer](https://zkevm.polygonscan.com). |
+| zkEVM explorer DB | zkevm-explorer-l2-db | Database for the L2 network's Block explorer. i.e., Where all the zkRollup Etherscan explorer queries are made. |
 | Gas pricer        | zkevm-l2gaspricer    | Responsible for suggesting the gas price for the L2 network fees. |
 | Goërli execution  | goerli-execution     | L1 node's execution layer.                                   |
 | Goërli consensus  | goerli-consensus     | L1 node's consensus layer.                                   |
 
-!!!info
-    The **first step** of this deployment-guide begins here!
-
-### Preliminary setup
+## Preliminary setup
 
 Implementing the Polygon CDK zkRollup EVM-compatible network requires either a Linux machine or a virtual machine running Linux as a Guest OS.
 
@@ -76,7 +73,7 @@ For other operating systems (MacOS, Windows), this is achieved in 4 steps, execu
 
 Search the internet for quick guides on creating virtual machines. Here's an example of a video on [how to create a Linux VM on a Mac](https://www.youtube.com/watch?v=KAd7FafXfJQ).
 
-In order to run multiple Docker containers, an extra tool called **docker compose** needs to be [downloaded and installed](https://docs.docker.com/compose/install/linux/). As you will see, a YAML file is used for configuring all CDK zkRollup services.
+In order to run multiple Docker containers, an extra tool called `docker compose` needs to be [downloaded and installed](https://docs.docker.com/compose/install/linux/). As you will see, a YAML file is used for configuring all CDK zkRollup services.
 
 !!!info
     One more thing, since the prover is resource-heavy, you will need to run its container externally. Access to cloud computing services such as AWS EC2 or DigitalOcean will be required.
@@ -105,7 +102,7 @@ If the prover is the only container you will be running externally in a cloud, t
 
 Depending on the user's resources, the zkEVM network can be implemented with either the actual full prover or the mock prover.
 
-The full prover is resource-intensive as it utilizes the exact same proving stack employed in the real and live zkEVM network.
+The full prover is resource-intensive as it utilizes the exact same proving stack employed in the real and live CDK zkRollup network.
 
 !!!info
     The full prover's system requirements are:
@@ -123,8 +120,8 @@ The mock prover is a dummy prover which simply adds a "Valid ✅" checkmark to e
 
 As an example, the equivalent [AWS EC2s](https://aws.amazon.com/ec2/instance-types/r6a/) for each of these two provers are as follows:
 
-- r6a.xlarge for mock prover.
-- r6a.24xlarge for full prover.
+- `r6a.xlarge` for mock prover.
+- `r6a.24xlarge` for full prover.
 
 The initial free disk space requirement is minimal (<2TB), but you should monitor available space as the network is always adding more data.
 

@@ -29,7 +29,7 @@ ZKEVM_NODE_STATEDB_DATA_DIR = "~/zkevm/data/statedb"
 ZKEVM_NODE_POOLDB_DATA_DIR = "~/zkevm/data/pooldb"
 ```
 
-### Approve MATIC token for sequencer
+## Approve MATIC token for sequencer
 
 Run the below command to launch a Hardhat console connected to the Goerli network.
 
@@ -54,7 +54,7 @@ maticTokenContractWallet = maticTokenContract.connect(wallet);
 await maticTokenContractWallet.approve("", ethers.utils.parseEther("100.0")); // From ~/zkevm-contracts/deployments/goerli_*/deploy_output.json polygonZkEVMAddress
 ```
 
-### Configure genesis
+## Configure genesis
 
 Run the below commands to copy `genesis.json` file into appropriate location and open for editing:
 
@@ -63,7 +63,10 @@ cp ~/zkevm-contracts/deployments/goerli_*/genesis.json ~/zkevm/mainnet/config/en
 vim ~/zkevm/mainnet/config/environments/testnet/public.genesis.config.json
 ```
 
-Edit the file changing the following parameters from `~/zkevm/zkevm-contracts/deployments/goerli_***/deploy_output.json`. **Keep in mind that `genesisBlockNumber` is called `deploymentBlockNumber` in `deploy_output.json`**.
+Edit the file changing the following parameters from `~/zkevm/zkevm-contracts/deployments/goerli_***/deploy_output.json`. 
+
+!!! important
+    The `genesisBlockNumber` is called `deploymentBlockNumber` in `deploy_output.json`.
 
 ```json
 "l1Config" : {
@@ -76,17 +79,13 @@ Edit the file changing the following parameters from `~/zkevm/zkevm-contracts/de
 # add above to head of file, leave all remaining fields intact
 ```
 
-### Update node config file
+## Update node config file
 
 Edit `~/zkevm/mainnet/config/environments/testnet/public.node.config.toml` with the following values. The config file is large and we'll update the documentation in the future to list only the updated parameters.
 
 ??? "Click to expand the <code>node.config.toml</code> file"
     ```bash
     vim ~/zkevm/mainnet/config/environments/testnet/public.node.config.toml
-
-```
-
-    ```bash
     IsTrustedSequencer = true
     [Log]
     Environment = "development"
@@ -263,7 +262,7 @@ Edit `~/zkevm/mainnet/config/environments/testnet/public.node.config.toml` with 
     Enabled = true
     ```
 
-### Add wallets
+## Add wallets
 
 Copy/paste keystore value from wallets.txt for sequencer/aggregator respectively:
 

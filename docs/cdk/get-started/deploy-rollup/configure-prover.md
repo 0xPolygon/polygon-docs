@@ -1,6 +1,3 @@
-
-Continue with this deployment guide's **fifth step** where you configure the Prover and Services.
-
 ## Edit DBs
 
 Edit `~/zkevm/mainnet/db/scripts/init_prover_db.sql` to match this:
@@ -28,7 +25,7 @@ GRANT ALL PRIVILEGES ON TABLE state.program TO prover_user;
 
 Save and exit the file once the changes have been made. The above SQL script will set up your databases for the zkEVM Node.
 
-## Configure the Prover
+## Configure the prover
 
 Create the `~/zkevm/config.json` and paste the configs below. Replace the `aggregatorClientHost` parameter with your **PUBLIC IP**:
 
@@ -131,7 +128,7 @@ vim ~/zkevm/config.json
     }
     ```
 
-### Configure services
+## Configure services
 
 Edit the `~/zkevm/mainnet/docker-compose.yml` file with the following content:
 
@@ -650,7 +647,7 @@ docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker
 docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs -f zkevm-state-db
 ```
 
-### Start the Prover (contains executor)
+### Start the prover (contains executor)
 
 ```bash
 export ZKEVM_NET="mainnet"

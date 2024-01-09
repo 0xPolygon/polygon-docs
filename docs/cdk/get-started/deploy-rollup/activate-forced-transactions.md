@@ -1,7 +1,4 @@
-
-Continue with the **sixth step** of this deployment-guide where you activate forced transactions, as well as bridging and claiming assets.
-
-## Activate forced transactions
+Set up Hardhat and run the JavaScript code below to activate forced transactions.
 
 ```bash
 cd ~/zkevm-contracts
@@ -97,5 +94,5 @@ go run main.go
 ```
 
 !!!congratulations
-    Congratulations on reaching this far in setting up your own zkEVM network.
-    **Your network is live on the Testnet** and you can send transactions to verify the same. Also, we have provided a Goerli full node setup guide below in case you are looking for one.
+    - Congratulations on reaching this far in setting up your own CDK zkRollup EVM-compatible network network.
+    - Your network is live on the testnet and you can send transactions to verify the same. Also, we have provided a Goerli full node setup guide next in case you are looking for one.
