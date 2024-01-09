@@ -49,7 +49,8 @@ nav:
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
           - Validium: cdk/get-started/deploy-validium.md
-          - Rollup: cdk/get-started/deploy-rollup.md
+          - Rollup: 
+              - Introduction: cdk/get-started/deploy-rollup.md
       - How to:
         - Manage policies: cdk/how-to/manage-policies.md
       - Architecture:
