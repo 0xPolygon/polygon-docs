@@ -247,7 +247,7 @@ nav:
           - GetBlock: pos/how-to/smart-contracts/getblock.md
           - QuickNode: pos/how-to/smart-contracts/quicknode.md
           - SmartPress: pos/how-to/smart-contracts/smartpress.md
-          - ThirdWeb: pos/how-to/smart-contracts/thirdweb.md
+          - thirdweb: pos/how-to/smart-contracts/thirdweb.md
         - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
           - Architecture: pos/architecture/index.md
