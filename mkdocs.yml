@@ -643,6 +643,12 @@ plugins:
       show_contribution: true
       exclude:
         - index.md
+        - cdk/index.md
+        - zkEVM/index.md
+        - pos/index.md
+        - miden/index.md
+        - tools/index.md
+        - learn/index.md
 
 validation:
   absolute_links: ignore
