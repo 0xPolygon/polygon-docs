@@ -40,51 +40,51 @@ mkdir -p ~/goerli-node/docker-volumes/{geth,prysm}
 3. Copy and paste the following content into the `docker-compose.yml` file:
 
 ```yaml
- services:
-   geth:
-     image: "ethereum/client-go:stable"
-     container_name: goerli-execution
-     command: |
-       --goerli
-       --http
-       --http.vhosts=*
-       --http.rpcprefix=/
-       --http.corsdomain=*
-       --http.addr 0.0.0.0
-       --http.api eth,net,engine,admin
-       --config=/app/config.toml
-     volumes:
-       - "./docker-volumes/geth:/root/.ethereum"
-       - "./config.toml:/app/config.toml"
-     ports:
-       - "0.0.0.0:${L1_RPC_PORT}:8545"
-       - "0.0.0.0:30303:30303/udp"
+services:
+  geth:
+    image: "ethereum/client-go:stable"
+    container_name: goerli-execution
+    command: |
+      --goerli
+      --http
+      --http.vhosts=*
+      --http.rpcprefix=/
+      --http.corsdomain=*
+      --http.addr 0.0.0.0
+      --http.api eth,net,engine,admin
+      --config=/app/config.toml
+    volumes:
+      - "./docker-volumes/geth:/root/.ethereum"
+      - "./config.toml:/app/config.toml"
+    ports:
+      - "0.0.0.0:${L1_RPC_PORT}:8545"
+      - "0.0.0.0:30303:30303/udp"
 
- prysm:
-   image: "gcr.io/prysmaticlabs/prysm/beacon-chain:stable"
+  prysm:
+    image: "gcr.io/prysmaticlabs/prysm/beacon-chain:stable"
 
-   container_name: goerli-consensus
-   command: |
-     --prater
-     --datadir=/data
-     --jwt-secret=/geth/goerli/geth/jwtsecret
-     --rpc-host=0.0.0.0
-     --grpc-gateway-host=0.0.0.0
-     --monitoring-host=0.0.0.0
-     --execution-endpoint=/geth/goerli/geth.ipc
-     --accept-terms-of-use
-     --suggested-fee-recipient=${L1_SUGGESTED_FEE_RECIPIENT_ADDR}
-     --checkpoint-sync-url=${L1_CHECKPOINT_URL}
-   volumes:
-     - "./docker-volumes/prysm:/data"
-     - "./docker-volumes/geth:/geth"
-   ports:
-     - "0.0.0.0:3500:3500"
-     - "0.0.0.0:4000:4000"
-     - "0.0.0.0:12000:12000/udp"
-     - "0.0.0.0:13000:13000"
-   depends_on:
-     - geth
+    container_name: goerli-consensus
+    command: |
+      --prater
+      --datadir=/data
+      --jwt-secret=/geth/goerli/geth/jwtsecret
+      --rpc-host=0.0.0.0
+      --grpc-gateway-host=0.0.0.0
+      --monitoring-host=0.0.0.0
+      --execution-endpoint=/geth/goerli/geth.ipc
+      --accept-terms-of-use
+      --suggested-fee-recipient=${L1_SUGGESTED_FEE_RECIPIENT_ADDR}
+      --checkpoint-sync-url=${L1_CHECKPOINT_URL}
+    volumes:
+      - "./docker-volumes/prysm:/data"
+      - "./docker-volumes/geth:/geth"
+    ports:
+      - "0.0.0.0:3500:3500"
+      - "0.0.0.0:4000:4000"
+      - "0.0.0.0:12000:12000/udp"
+      - "0.0.0.0:13000:13000"
+    depends_on:
+      - geth
 ```
 
 4. Save and Close the `docker-compose.yml` file.
