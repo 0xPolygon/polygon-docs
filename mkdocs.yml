@@ -50,7 +50,10 @@ nav:
         - Deploy:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: 
-              - Introduction: cdk/get-started/deploy-rollup.md
+              - Introduction: cdk/get-started/deploy-rollup/intro.md
+              - Install dependencies: cdk/get-started/deploy-rollup/install-dependencies.md
+              - Create wallets: cdk/get-started/deploy-rollup/create-wallets.md
+              - Deploy node: cdk/get-started/deploy-rollup/deploy-node.md
       - How to:
         - Manage policies: cdk/how-to/manage-policies.md
       - Architecture:

@@ -1,43 +1,38 @@
-Welcome to your step-by-step guide to implementing a full Polygon zkEVM network on the Goërli testnet as the L1 network.
+Welcome to your step-by-step guide to implementing a full CDK zkRollup EVM-compatible network on the Goërli testnet as the L1 network.
 
-Users with good internet connection can schedule a 2-hour window for completing the entire process in one go.
-
-However, in order to allow for in-between breaks, the process is aesthetically split into 6 steps.
-
-- [**First step**](index.md): Preliminary setup, checking system requirements and prerequisites variables.
+- [**First step**](intro.md): Preliminary setup, checking system requirements, and prerequisite variables.
 
 - [**Second step**](install-dependencies.md): Installing dependencies and downloading mainnet files.
 
 - [**Third step**](create-wallets.md): Creating wallets and deploying contracts.
 
-- [**Fourth step**](deploy-zknode.md): Deployment of the zkNode.
+- [**Fourth step**](deploy-node.md): Deployment of the zkRollup EVM-compatible node.
 
-- [**Fifth step**](configure-prover.md): Configuring the Prover and services.
+- [**Fifth step**](configure-prover.md): Configuring the prover and services.
 
 - [**Sixth step**](setup-goerli-node.md): Activating forced txs and bridging/claiming assets.
 
 !!!caution
-    Instructions in this document are subject to frequent updates as the zkEVM software is still in early development stages.
-
-    Please report [here](https://support.polygon.technology/support/tickets/new) or reach out to our [support team on Discord](https://discord.com/invite/0xPolygon) if you encounter any issues.
+    - Instructions in this document are subject to frequent updates as the software is still in early development stages.
+    - Please [open a ticket](https://support.polygon.technology/support/tickets/new) or reach out to our [support team on Discord](https://discord.com/invite/0xPolygon) if you encounter any issues.
 
 ## Overview and setting up
 
-Implementing the full stack Polygon zkEVM involves more than just running an RPC zkNode or the Prover to validate batches, and deploying Smart Contracts. In its entirety, it encompasses all these processes and more.
+Implementing the full stack Polygon CDK zkRollup EVM-compatible network involves more than just running an RPC zkNode or the Prover to validate batches and deploy smart contracts. In its entirety, it encompasses all these processes and more.
 
-The common rollup actors, mainly from the zkNode view, are the Sequencer, the Aggregator, the Synchroniser and the JSON RPC node. All these affect the L2 State.
+The common rollup actors are the sequencer, the aggregator, the synchroniser and the JSON RPC node. All these affect the L2 state.
 
-Also, the Aggregator uses the Prover to avail verifiable proofs of sequenced batches. And the sequenced batches are composed of transactions taken from the Pool DB.
+Also, the aggregator uses the prover to avail verifiable proofs of sequenced batches. And the sequenced batches are composed of transactions taken from the pool database.
 
-This highlights just a few main components. The rest of the zkEVM components and those working in the background, are listed in the next subsection.
+This highlights just a few main components. The rest of the components and those working in the background, are listed in the next subsection.
 
-### Why you need docker
+### Why you need Docker
 
-The modular design of the zkEVM allows for most components to be separately instantiated, and we therefore run each of these instances in a separate Docker container.
+The modular design of the CDK zkRollup EVM-compatible network allows for most components to be separately instantiated, and we therefore run each of these instances in a separate Docker container.
 
-The below table enlists all the zkEVM components/services and their corresponding container-names.
+The below table enlists all the CDK zkRollup EVM-compatible components/services and their corresponding container-names.
 
-Our zkEVM deployment-guide provides CLI commands to automatically create these Docker containers.
+Our CDK zkRollup EVM-compatible network deployment-guide provides CLI commands to automatically create these Docker containers.
 
 | Component         | Container            | Brief\ Description                                           |
 | :---------------- | :------------------- | ------------------------------------------------------------ |
@@ -52,39 +47,39 @@ Our zkEVM deployment-guide provides CLI commands to automatically create these D
 | Etherman          | zkevm-eth-tx-manager | Implements methods for all interactions with the L1 network and smart contracts. |
 | Bridge UI         | zkevm-bridge-ui      | User-Interface for bridging ERC-20 tokens between L2 and L1 or another L2. |
 | Bridge DB         | zkevm-bridge-db      | A database for storing Bridge-related transactions data.     |
-| Bridge Service    | zkevm-bridge-service | A backend service enabling clients like the web UI to interact with Bridge smart contracts. |
-| zkEVM Explorer    | zkevm-explorer-l2    | L2 network's Block explorer. i.e., The zkEVM Etherscan [Explorer](https://zkevm.polygonscan.com). |
-| zkEVM Explorer DB | zkevm-explorer-l2-db | Database for the L2 network's Block explorer. i.e., Where all the zkEVM Etherscan Explorer queries are made. |
-| Gas Pricer        | zkevm-l2gaspricer    | Responsible for suggesting the gas price for the L2 network fees. |
-| Goërli Execution  | goerli-execution     | L1 node's execution layer.                                   |
-| Goërli Consensus  | goerli-consensus     | L1 node's consensus layer.                                   |
+| Bridge service    | zkevm-bridge-service | A backend service enabling clients like the web UI to interact with Bridge smart contracts. |
+| zkEVM explorer    | zkevm-explorer-l2    | L2 network's Block explorer. i.e., The zkEVM Etherscan [Explorer](https://zkevm.polygonscan.com). |
+| zkEVM explorer DB | zkevm-explorer-l2-db | Database for the L2 network's Block explorer. i.e., Where all the zkEVM Etherscan Explorer queries are made. |
+| Gas pricer        | zkevm-l2gaspricer    | Responsible for suggesting the gas price for the L2 network fees. |
+| Goërli execution  | goerli-execution     | L1 node's execution layer.                                   |
+| Goërli consensus  | goerli-consensus     | L1 node's consensus layer.                                   |
 
 !!!info
     The **first step** of this deployment-guide begins here!
 
 ### Preliminary setup
 
-Implementing the Polygon zkEVM requires either a Linux machine or a virtual machine running Linux as a Guest OS.
+Implementing the Polygon CDK zkRollup EVM-compatible network requires either a Linux machine or a virtual machine running Linux as a Guest OS.
 
-Since the zkEVM implementation involves running Docker containers, ensure that a Docker daemon is installed on your machine.
+Since the CDK zkRollup implementation involves running Docker containers, ensure that a Docker daemon is installed on your machine.
 
 Here's how to get setup;
 
 For Linux machines, install the Docker engine directly on the machine.
 
-For other Operating Systems (MacOS, Windows), this is achieved in 4 steps, executed in the given sequential order;
+For other operating systems (MacOS, Windows), this is achieved in 4 steps, executed in the given sequential order;
 
 - Install a hypervisor, e.g., VirtualBox, VMware Fusion (MacOS), VMware Workstation (Windows), VMware ESXi (Bare Metal Hypervisor).
 - Setup a virtual machine, e.g., if you are using VirtualBox, which is open-source, Vagrant is the quickest way to automatically setup a virtual machine and also set up ssh private/public keys.
 - Install Linux as Guest OS, preferably the latest version of Ubuntu Linux.
 - Install [Docker](https://docs.docker.com/desktop/install/linux-install/).
 
-Search the internet for quick guides on creating virtual machines. Here's an example of a video on [How to Create a Linux Virtual Machine on a Mac](https://www.youtube.com/watch?v=KAd7FafXfJQ).
+Search the internet for quick guides on creating virtual machines. Here's an example of a video on [how to create a Linux VM on a Mac](https://www.youtube.com/watch?v=KAd7FafXfJQ).
 
-In order to run multiple Docker containers, an extra tool called **docker compose** needs to be [downloaded and installed](https://docs.docker.com/compose/install/linux/). As you will see, a YAML file is used for configuring all zkEVM services.
+In order to run multiple Docker containers, an extra tool called **docker compose** needs to be [downloaded and installed](https://docs.docker.com/compose/install/linux/). As you will see, a YAML file is used for configuring all CDK zkRollup services.
 
 !!!info
-    One more thing, since the Prover is resource-heavy, you will need to run its container externally. Access to cloud computing services such as AWS EC2 or DigitalOcean will be required.
+    One more thing, since the prover is resource-heavy, you will need to run its container externally. Access to cloud computing services such as AWS EC2 or DigitalOcean will be required.
 
 ### Prerequisites
 
@@ -104,32 +99,32 @@ See this guide here for [**setting up your own Goërli node**](setup-goerli-node
 
 #### Computing requirements
 
-Keep in mind that the mainnet files you will be downloading are 70GB big.
+Keep in mind that the mainnet files you will be downloading are 70GB in size.
 
-If the Prover is the only container you will be running externally in a cloud, then it is preferable to have a minimum 300GB of storage in the primary machine.
+If the prover is the only container you will be running externally in a cloud, then it is preferable to have a minimum 300GB of storage in the primary machine.
 
 Depending on the user's resources, the zkEVM network can be implemented with either the actual full prover or the mock prover.
 
 The full prover is resource-intensive as it utilizes the exact same proving stack employed in the real and live zkEVM network.
 
 !!!info
-    The full Prover's system requirements are:
+    The full prover's system requirements are:
 
     - 96-core CPU
     - Minimum 768GB RAM
 
-The Mock Prover is a dummy prover which simply adds a "Valid ✅" checkmark to every batch.
+The mock prover is a dummy prover which simply adds a "Valid ✅" checkmark to every batch.
 
 !!!info
-    The mock Prover, on the other hand, only requires:
+    The mock prover, on the other hand, only requires:
 
     - 4-core CPU
     - 8GB RAM (16GB recommended)
 
 As an example, the equivalent [AWS EC2s](https://aws.amazon.com/ec2/instance-types/r6a/) for each of these two provers are as follows:
 
-- r6a.xlarge for mock Prover
-- r6a.24xlarge for full Prover
+- r6a.xlarge for mock prover.
+- r6a.24xlarge for full prover.
 
 The initial free disk space requirement is minimal (<2TB), but you should monitor available space as the network is always adding more data.
 

@@ -1,7 +1,4 @@
-
-Continue with the **third step** of this deployment-guide where you create wallets and deploy contracts.
-
-## Deploying contracts
+## Clone the contracts
 
 Clone the contracts from our [github repository](https://github.com/0xPolygonHermez/zkevm-contracts):
 
@@ -12,7 +9,7 @@ cd ~/zkevm-contracts
 npm i
 ```
 
-### Create wallets
+## Create wallets
 
 Next, create a `wallets.js` file with the following content:
 
@@ -54,7 +51,7 @@ Generate the wallets using below command:
 node wallets.js | tee wallets.txt
 ```
 
-### Prepare deploy configuration
+## Prepare deploy configuration
 
 Edit the environment variables:
 
@@ -119,7 +116,7 @@ Only fill in the commented fields in your `deploy_parameters.json` file:
 !!!caution
     Get some GöETH
 
-    You will need to send 0.5 GöETH to the Deployment Address wallet listed in `wallets.txt`.
+    You will need to send 0.5 GöETH to the deployment address wallet listed in `wallets.txt`.
 
 Adjust the `gasPrice` according to the network status. For Goerli, you can check it with the following command, where you insert your Etherscan API key, note this can sometimes be 0 for testnet:
 
@@ -134,7 +131,7 @@ vim ~/zkevm-contracts/deployment/helpers/deployment-helpers.js
 const gasPriceKeylessDeployment = "50"; // 50 gwei
 ```
 
-### Deploy contracts
+## Deploy contracts
 
 ```bash
 cd ~/zkevm-contracts/

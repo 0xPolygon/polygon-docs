@@ -1,8 +1,4 @@
 
-Continue with the **fourth step** of this deployment-guide where you deploy the zkNode.
-
-## zkNode deployment
-
 First, create the following directories:
 
 ```bash

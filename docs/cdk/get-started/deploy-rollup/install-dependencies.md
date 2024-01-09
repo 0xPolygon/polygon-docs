@@ -1,8 +1,3 @@
-
-Continue with the **second step** of this deployment-guide where you install dependencies and download mainnet files.
-
-## Install dependencies
-
 First, install base dependencies:
 
 ```bash
@@ -43,7 +38,7 @@ Lastly, confirm the installation of Golang by running this command: `$ go versio
 
 ## Download/extract mainnet files
 
-Next step in the process is to download the zkEVM Mainnet files. This download is over **70GB**, so it's recommended to run the download in a tmux/screen session to handle any network interruptions.
+Next step in the process is to download the mainnet files. This download is over **70GB**, so it's recommended to run the download in a tmux/screen session to handle any network interruptions.
 
 The files are located in several urls, so a script can be used as shown below:
 
@@ -67,11 +62,6 @@ for url in "${urls[@]}"; do
   aria2c -x6 -s6 "$url"
 done
 ```
-
-<!-- ```bash
-aria2c -x6 -s6 "https://de012a78750e59b808d922b39535e862.s3.eu-west-1.amazonaws.com/v1.1.0-rc.1-fork.4.tgz"
-pv v1.1.0-rc.1-fork.4.tgz | tar xzf -
-``` -->
 
 Once the download is finished, you should extract the files using the following command:
 
