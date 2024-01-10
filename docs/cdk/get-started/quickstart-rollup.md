@@ -1,4 +1,4 @@
-This quick start guide shows you how to deploy a CDK rollup (zkevm-node) environment on your local machine that sets up and runs the following components:
+This quick start guide shows you how to deploy a CDK rollup (EVM compatible) environment on your local machine that sets up and runs the following components:
 
 - zkEVM node databases
 - Explorer databases
