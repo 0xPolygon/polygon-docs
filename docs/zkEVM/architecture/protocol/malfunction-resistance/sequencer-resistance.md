@@ -17,7 +17,7 @@ mapping(uint64 => bytes32) public forcedBatches;
 
 Although the Trusted Sequencer is incentivized to sequence the forced batches published in the `forcedBatches` mapping, this does not guarantee finality of the transactions' execution in those batches.
 
-In order to ensure finality in the case of Trusted Sequencer's malfunction, the L1 `PolygonZkEVM.sol` contract has an alternative batch sequencing function called `sequenceForceBatches`. This function allows anyone to sequence forced batches that have been published in the `multiplierBatchFee` mapping for a time period, specified by the public constant `FORCE_BATCH_TIMEOUT`, yet they have not been sequenced. The timeout is set to 5 days.
+In order to ensure finality in the case of Trusted Sequencer's malfunction, the L1 `PolygonZkEVM.sol` contract has an alternative batch sequencing function called `sequenceForceBatches`. This function allows anyone to sequence forced batches that have been published for a time period, specified by the public constant `forceBatchTimeout`, yet they have not been sequenced. The timeout is set to 5 days.
 
 Any user can publish a batch to be forced by directly calling `forceBatch` function:
 
@@ -38,7 +38,7 @@ In order to successfully publish forced batch to the `forcedBatches` mapping, th
 - The contract must not be in emergency state,
 - The force batches must be allowed,
 - The `maticAmount` argument must be higher than the MATIC fee per batch,
-- The length of the transactions byte array must be less than the value of `MAX_TRANSACTIONS_BYTE_LENGTH` constant (which is set at 300000).
+- The length of the transactions byte array must be less than the value of `MAX_TRANSACTIONS_BYTE_LENGTH` constant (which is set at 120000).
 
 The forced batch is entered in `forcedBatches` mapping keyed by its force batch index.
 
@@ -76,7 +76,7 @@ function sequenceForceBatches(
 
 The `sequenceForceBatches` function is similar to the `sequenceBatches` function, but it can be called by anyone if batch forcing is enabled.
 
-The `sequenceForceBatches` function determines whether each batch in the submitted sequence has been published to the `forcedBatches` mapping for a period of time greater than the `FORCE BATCH TIMEOUT`.
+The `sequenceForceBatches` function determines whether each batch in the submitted sequence has been published to the `forcedBatches` mapping for a period of time greater than the `forceBatchTimeout`.
 
 Because the MATIC batch fee was paid at the time of publication, it will not be required to be paid again.
 
