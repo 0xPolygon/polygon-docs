@@ -3,6 +3,7 @@ Consider a proof/verification scheme, using an arbitrary Polynomial Commitment S
 ## What is a multiplicative Fibonacci series?
 
 The multiplicative Fibonacci Series (or simply mFibonacci Series), denoted by
+
 $$
 \mathbf{a_0, a_1, a_2, \dots , a_n}
 $$
@@ -24,12 +25,14 @@ The task therefore, is to first build a state machine that would enable anyone t
 ## Constructing mFibonacci state machine
 
 Consider a state machine with two registries $\mathbf{A}$ and $\mathbf{B}$ where
+
 $$
 \begin{aligned}
-\mathbf{A} = [A_0, A_1, \dots , A_T ], \\
-\mathbf{B} = [B_0, B_ 1, \dots , B_T]
+    &\mathbf{A} = [A_0, A_1, \dots , A_T ], \\
+    &\mathbf{B} = [B_0, B_ 1, \dots , B_T]
 \end{aligned}
 $$
+
 such that the i-th state is the pair $\big( A_i , B_i \big)$.
 
 Such a state machine is an **mFibonacci state machine** if indeed the registry values conform to the format of the mFibonnacci Series. See Figure 4 below, for an mFibonacci state machine with the initial conditions, $A_0 = 2$ and $B_0 = 1$.
@@ -52,9 +55,11 @@ The aim here is to; express the evolution of the execution trace in terms of pol
 The polynomials that represent the two registries are taken from the set of polynomials $\mathbb{F}_p [X]$, where the coefficients are elements of a prime field $\mathbb{F}_p$ and $p = 2^{64} − 2^{32} + 1$.
 
 The polynomials are evaluated over the subgroup
+
 $$
 {\mathcal{H}} = \{ \omega, \omega^2, \omega^3, \dots , \omega^7, \omega^8 = 1 = \omega^0 \} = \langle \omega \rangle \subseteq \mathbb{F}_p^*
 $$
+
 of order $8$.
 
 Define two polynomials $P(X)$ and $Q(X)$ such that:
@@ -129,6 +134,7 @@ Hence the mFibonacci SM is as depicted in Figure 5 below.
 ![mFibonacci SM with three registries](../../../img/zkEVM/fib7-mfibon-sm-3-regs.png)
 
 The corresponding polynomial $R(x)$ is defined as follows;
+
 $$
 R(\omega^i) = C[i]
 $$
@@ -195,7 +201,9 @@ In addition to transition constraints, are **boundary constraints**. A **boundar
 
 ### Varied initial conditions
 
-Note that instead of being restricted to the given initial conditions $\big( A_0 , B_0 \big) = \big( 2 , 1 \big)\$, the mFibonacci state machine together with its polynomial identities can be adjusted to any initial conditions $\big( A_0 , B_0 \big)\$.
+Note that instead of being restricted to the given initial conditions 
+$\big(A_0, B_0\big) = \big(2, 1\big)$
+the mFibonacci state machine together with its polynomial identities can be adjusted to any initial conditions $\big(A_0, B_0\big)$.
 
 For example, for $A_0 = 23$ and $B_0 = 46$, the constraints should be;
 
@@ -206,7 +214,7 @@ $$
 \end{aligned}
 $$
 
-In the context of our mFibonacci SM, the verifier can set the initial conditions $\big( A_0 , B_0 \big)\$ to values of his or her own choice, and generate the state machine while keeping $\A_0\$ and $\B_0\$ secret. The prover's task is therefore, to prove knowledge of $\A_0\$ and $\B_0\$ that led to a given N-th term of the mFibonacci Series.
+In the context of our mFibonacci SM, the verifier can set the initial conditions $\big( A_0 , B_0 \big)$ to values of his or her own choice, and generate the state machine while keeping $A_0$ and $B_0$ secret. The prover's task is therefore, to prove knowledge of $A_0$ and $B_0$ that led to a given N-th term of the mFibonacci Series.
 
 ### Boundary constraints
 
