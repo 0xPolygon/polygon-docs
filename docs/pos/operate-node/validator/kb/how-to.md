@@ -94,7 +94,7 @@ sudo dpkg -i rabbitmq-server_3.10.8-1_all.deb
     Below are some additional information to the official documentation which might help while setting up a new node.
 
 
-This document gives some additional details for setting up a new node based on [Full Node Deployment](/operate/full-node-binaries.md) guide.
+This document gives some additional details for setting up a new node based on [full node deployment](/operate-node/operate/full-node-binaries) guide.
 
 - VPN setup is required before proceeding with any of these steps.
 - If you are using Macbook, it has native Python 2.7 available which **needs to be replaced by with anything Python 3.x**.

@@ -25,7 +25,7 @@ The below figure shows the logic structure of a sequence of batches.
 
 ## Max & min batch size bounds
 
-The contract's public constant, `MAX_TRANSACTIONS_BYTE_LENGTH`, determines the maximum number of transactions that can be included in a batch (300000).
+The contract's public constant, `MAX_TRANSACTIONS_BYTE_LENGTH`, determines the maximum number of transactions that can be included in a batch (120000).
 
 Similarly, the number of batches in a sequence is limited by the contract's public constant `MAX_VERIFY_BATCHES` (1000). The batches array must contain at least one batch and no more than the value of the constant `MAX_VERIFY_BATCHES`.
 

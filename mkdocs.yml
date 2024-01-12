@@ -1,27 +1,22 @@
 site_name: Polygon Knowledge Layer
 site_author: Polygon Labs
-copyright: Copyright &copy; 2023 Polygon Labs
+copyright: Copyright &copy; 2024 Polygon Labs
 repo_name: Polygon Knowledge Layer
 repo_url: https://github.com/0xPolygon/polygon-docs
 edit_uri: edit/main/docs/
-#remote_branch: gh-pages
-#remote_name: gh-deploy
+site_url: https://docs.polygon.technology/
 
 theme:
   name: material
   palette:
-    - scheme: default
       primary: white
-      accent: purple
+      accent: deep purple
   language: en
   custom_dir: overrides
   favicon: img/favicon.ico
   icon:
     logo: logo
     repo: repo
-  font:
-    text: Roboto
-    code: Roboto Mono
   features:
     - search.suggest
     - search.highlight
@@ -48,22 +43,30 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Get started:
+        - Connect testnet: cdk/get-started/connect-testnet.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
           - Validium: cdk/get-started/deploy-validium.md
-          - Rollup: cdk/get-started/deploy-rollup.md
+          - Rollup: 
+              - Introduction: cdk/get-started/deploy-rollup/intro.md
+              - Install dependencies: cdk/get-started/deploy-rollup/install-dependencies.md
+              - Create wallets: cdk/get-started/deploy-rollup/create-wallets.md
+              - Deploy node: cdk/get-started/deploy-rollup/deploy-node.md
+              - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
+              - Activate forced transactions: cdk/get-started/deploy-rollup/activate-forced-transactions.md
+              - Set up Goerli node: cdk/get-started/deploy-rollup/setup-goerli-node.md
       - How to:
         - Manage policies: cdk/how-to/manage-policies.md
-      #- Architecture:
+      - Architecture:
+        - DAC: cdk/architecture/dac.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
         - Rollup: cdk/concepts/rollup.md
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
-     # - API/SDK:
       - Additional resources:
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
@@ -244,7 +247,7 @@ nav:
           - GetBlock: pos/how-to/smart-contracts/getblock.md
           - QuickNode: pos/how-to/smart-contracts/quicknode.md
           - SmartPress: pos/how-to/smart-contracts/smartpress.md
-          - ThirdWeb: pos/how-to/smart-contracts/thirdweb.md
+          - thirdweb: pos/how-to/smart-contracts/thirdweb.md
         - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
           - Architecture: pos/architecture/index.md
@@ -325,8 +328,6 @@ nav:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
-    #  - API:
-    #      - pos/api/index.md
   - Miden:
       - Miden: miden/index.md
       - Overview: miden/overview.md
@@ -428,9 +429,12 @@ nav:
           - Truffle: tools/smart-contracts/truffle.md
           - Remix: tools/smart-contracts/remix.md
           - Replit: tools/smart-contracts/replit.md
+          - Crossmint: tools//smart-contracts/crossmint.md
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
+      - Third-party tutorials:
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Data:
           - The Graph: 
               - Overview: tools/data/the-graph/overview.md
@@ -565,8 +569,8 @@ nav:
 extra:
   generator: false
   analytics:
-    provider: google
-    property: G-RJ6JC0EEY5
+    provider: custom
+    property: google    
   #  feedback:  # feedback form only works when Google Analytics is set up and working
   #    title: Was this page helpful?
   #    ratings:
@@ -642,6 +646,16 @@ plugins:
       strict: false
       exclude:
         - index.md
+  - git-authors:
+      show_contribution: true
+      exclude:
+        - index.md
+        - cdk/index.md
+        - zkEVM/index.md
+        - pos/index.md
+        - miden/index.md
+        - tools/index.md
+        - learn/index.md
 
 validation:
   absolute_links: ignore

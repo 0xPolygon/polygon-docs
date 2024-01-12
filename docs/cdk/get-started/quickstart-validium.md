@@ -1,4 +1,4 @@
-This quickstart guides you through the process of setting up a CDK validium on your local machine.
+This quick start guide shows you how to set up a CDK validium on your local machine.
 
 !!! note
     - The documentation describes standard deployments. 
@@ -6,7 +6,7 @@ This quickstart guides you through the process of setting up a CDK validium on y
 
 ## Prerequisites
 
-### System requirements
+### Hardware
 
 - A Linux-based OS (e.g., Ubuntu Server 22.04 LTS).
 - At least 16GB RAM with a 4-core CPU.
@@ -15,7 +15,7 @@ This quickstart guides you through the process of setting up a CDK validium on y
 !!! warning
     CDK does not support ARM-based Macs.
 
-### Software requirements
+### Software
 
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)

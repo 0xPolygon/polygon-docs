@@ -55,6 +55,52 @@ Here you will find a list of contracts deployed on Polygon together with their i
 | MaticWeth             | [0x8cc8538d60901d19692F5ba22684732Bc28F54A3](https://polygonscan.com/address/0x8cc8538d60901d19692F5ba22684732Bc28F54A3) |
 
 
+### Amoy
+
+**Parent chain: Sepolia**
+
+| Contracts             | Address                                                                                                                      |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Governance            | [0x7ebDeC03873994A02acA5dbfac665e5e39287D77](https://sepolia.etherscan.io/address/0x7ebDeC03873994A02acA5dbfac665e5e39287D77) |
+| GovernanceProxy       | [0xB7086eda3180c728C1536B35c4d54F6A2B33D6aC](https://sepolia.etherscan.io/address/0xB7086eda3180c728C1536B35c4d54F6A2B33D6aC) |
+| Registry              | [0xfE92F7c3a701e43d8479738c8844bCc555b9e5CD](https://sepolia.etherscan.io/address/0xfE92F7c3a701e43d8479738c8844bCc555b9e5CD) |
+| RootChain             | [0xD23E7ebB837de8625F16F575077D176b9d6B9b39](https://sepolia.etherscan.io/address/0xD23E7ebB837de8625F16F575077D176b9d6B9b39) |
+| RootChainProxy        | [0xbd07D7E1E93c8d4b2a261327F3C28a8EA7167209](https://sepolia.etherscan.io/address/0xbd07D7E1E93c8d4b2a261327F3C28a8EA7167209) |
+| ValidatorShareFactory | [0xF5f09458Ecc701Dd93fa4C88b67d550289Ae6805](https://sepolia.etherscan.io/address/0xF5f09458Ecc701Dd93fa4C88b67d550289Ae6805) |
+| StakingInfo           | [0x5E3111a5d928D24718c1A7897261D0B9087002ed](https://sepolia.etherscan.io/address/0x5E3111a5d928D24718c1A7897261D0B9087002ed) |
+| StakingNFT            | [0x72CF5618142Eb369E75ec6529A907e9A6Fe99bB7](https://sepolia.etherscan.io/address/0x72CF5618142Eb369E75ec6529A907e9A6Fe99bB7) |
+| StakeManager          | [0xE3104cC25C94b21a162d316064fe50fDDA0635aC](https://sepolia.etherscan.io/address/0xE3104cC25C94b21a162d316064fe50fDDA0635aC) |
+| StakeManagerProxy     | [0x4AE8f648B1Ec892B6cc68C89cc088583964d08bE](https://sepolia.etherscan.io/address/0x4AE8f648B1Ec892B6cc68C89cc088583964d08bE) |
+| SlashingManager       | [0x9e699267858ce513eACF3b66420334785f9c8E4c](https://sepolia.etherscan.io/address/0x9e699267858ce513eACF3b66420334785f9c8E4c) |
+| ValidatorShare        | [0xa37F2A3dF304a7C6AbA3492146Bc8B89170bEAb1](https://sepolia.etherscan.io/address/0xa37F2A3dF304a7C6AbA3492146Bc8B89170bEAb1) |
+| StateSender           | [0x49E307Fa5a58ff1834E0F8a60eB2a9609E6A5F50](https://sepolia.etherscan.io/address/0x49E307Fa5a58ff1834E0F8a60eB2a9609E6A5F50) |
+| DepositManager        | [0x7270E1fa2f0569d50dCd1D038D940135bDE6167F](https://sepolia.etherscan.io/address/0x7270E1fa2f0569d50dCd1D038D940135bDE6167F) |
+| DepositManagerProxy   | [0x44Ad17990F9128C6d823Ee10dB7F0A5d40a731A4](https://sepolia.etherscan.io/address/0x44Ad17990F9128C6d823Ee10dB7F0A5d40a731A4) |
+| WithdrawManager       | [0xE1D0DdD817CA39301c9E4F5A7218BbDAf59D248D](https://sepolia.etherscan.io/address/0xE1D0DdD817CA39301c9E4F5A7218BbDAf59D248D) |
+| ExitNFT               | [0x68EB9202b48D3980832aDE89d580bA883b313B40](https://sepolia.etherscan.io/address/0x68EB9202b48D3980832aDE89d580bA883b313B40) |
+| WithdrawManagerProxy  | [0x822db7e79096E7247d9273E5782ecAec464Eb96C](https://sepolia.etherscan.io/address/0x822db7e79096E7247d9273E5782ecAec464Eb96C) |
+| ERC20Predicate        | [0x15EA6c538cF4b4A4f51999F433557285D5639820](https://sepolia.etherscan.io/address/0x15EA6c538cF4b4A4f51999F433557285D5639820) |
+| ERC721Predicate       | [0x0059bBF8E5b9b071acc7682B6fe198c32AAA2A97](https://sepolia.etherscan.io/address/0x0059bBF8E5b9b071acc7682B6fe198c32AAA2A97) |
+| EventsHubProxy        | [0x700e0f2AfBd92e2b3fF91CAD8C62A564690ddf39](https://sepolia.etherscan.io/address/0x700e0f2AfBd92e2b3fF91CAD8C62A564690ddf39) |
+| EIP1559Burn           | [0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9](https://sepolia.etherscan.io/address/0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9) |
+| **Tokens**            | |
+| MaticToken            | [0x3fd0A53F4Bf853985a95F4Eb3F9C9FDE1F8e2b53](https://sepolia.etherscan.io/address/0x3fd0A53F4Bf853985a95F4Eb3F9C9FDE1F8e2b53) |
+| MaticWeth             | [0x700dDE29De87ed2c01c27C896dc8Badb4f671302](https://sepolia.etherscan.io/address/0x700dDE29De87ed2c01c27C896dc8Badb4f671302) |
+| RootERC721            | [0x13B0Edd9312886Ac0C73116e767208bEd1199679](https://sepolia.etherscan.io/address/0x13B0Edd9312886Ac0C73116e767208bEd1199679) |
+
+**Child chain: Amoy**
+
+| Contracts             | Address                                    |
+|-----------------------|--------------------------------------------|
+| ChildChain            | [0x4f9cd8a945EE035523979D7A120a23999D17D8C0](https://amoy.polygonscan.com/address/0x4f9cd8a945EE035523979D7A120a23999D17D8C0/) |
+| EIP1559Burn           | [0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9](https://amoy.polygonscan.com/address/0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9/) |
+| **Tokens**            | |
+| MaticToken            | [0x0000000000000000000000000000000000001010](https://amoy.polygonscan.com/address/0x0000000000000000000000000000000000001010/) |
+| MaticWeth             | [0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102](https://amoy.polygonscan.com/address/0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102/) |
+| RootERC721            | [0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e](https://amoy.polygonscan.com/address/0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e/) |
+
+
+
 ### Mumbai
 
 **Parent chain: Goerli**
@@ -97,5 +143,3 @@ Here you will find a list of contracts deployed on Polygon together with their i
 |-----------------------|--------------------------------------------|
 | ChildChain            | [0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e](https://mumbai.polygonscan.com/address/0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e/) |
 
-</TabItem>
-</Tabs>

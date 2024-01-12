@@ -1,6 +1,6 @@
 !!! info "Content disclaimer"
 
-    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
 **Razor network** is a decentralized oracle providing data to the smart contracts using a network of stakers. The network consists of validators who lock in their tokens as a **stake** and provide data to the network. The honest validators are rewarded and those who report incoherently are penalized.
 
