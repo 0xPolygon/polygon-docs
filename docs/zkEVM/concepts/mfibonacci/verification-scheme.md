@@ -60,6 +60,7 @@ See the figure below for a description of the mFibonacci SM in PIL, as an $\text
 
 ![The .pil file of the mFibonacci State Machine](../../../img/zkEVM/fib10-pil-eg-mfibonacci.png)
 
+
 The value of the polynomial $\mathtt{a}$ in the next step (or state) of the state machine, is denoted by $\mathtt{a'}$ and it is read "a"-prime. i.e., If $\mathtt{a = P(\omega^i)}$ then $\mathtt{a' = P(\omega^{i+1})}$.
 
 Note that the current version of the PIL language only accepts degree-two expressions. That is, a single multiplication such as $\texttt{(a-1)*a}$ and $\texttt{a*b}$, but not $\texttt{(a-1)*b*c}$.
@@ -80,57 +81,81 @@ We demonstrate compiling the $\texttt{mFibonacci.pil}$ file into a $\texttt{.jso
 
 Here's how to achieve the compilation of the $\texttt{mFibonacci.pil}$ file;
 
-1. Clone the $\texttt{PILCOM}$ [repo](https://github.com/0xPolygonHermez/pilcom),
-   $$
-   \texttt{git clone https://github.com/0xPolygonHermez/pilcom}
-   $$
+   1. Clone the $\texttt{PILCOM}$ [repo](https://github.com/0xPolygonHermez/pilcom),
 
-2. Once cloned, switch directory to $\texttt{pilcom/}$, and install the module and build the parser,
-   $$
-   \texttt{pilcom\$ npm install}\text{ }\text{ }\text{ }\text{ } \\
-    \texttt{pilcom\$ npm run build}
-   $$
+      ```bash
+      git clone https://github.com/0xPolygonHermez/pilcom
+      ```
 
-3. Type the lines of code, the $\texttt{mFibonacci.pil}$, into your code editor as it appears in Figure 7 above. You will need to Save it in some temporary folder. Whatever filename you give to the file, remember to use the "$\texttt{.pil}$" extension.
+   2. Once cloned, switch directory to $\texttt{pilcom/}$, and install the module and build the parser,
 
-   In our case, we saved it in a folder named  $\texttt{myproject}$, and named the file  $\texttt{mFibonacci.pil}$
+      ```bash
+         pilcom\$ npm install
+         pilcom\$ npm run build
+      ```
 
-4. Compile the $\texttt{mFibonacci.pil}$ either at the $\texttt{pilcom}$ directory or the $\texttt{pilcom/src}$ subdirectory, using the command,
-   $$
-   \texttt{pilcom}\text{\$} \texttt{ node src/pil.js myproject/mfibonacci.pil -o myproject/mfibonacci.pil.json }\qquad\qquad\qquad\qquad\text{ }\\
-   \text{or }\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad\\
-   \texttt{pilcom/src}{\$ } \texttt{ node pil.js myproject/mfibonacci.pil -o myproject/mfibonacci.pil.json \qquad\qquad\qquad\qquad}\\
-   \text{ }
-   $$
-   You might need to prefix the path "$\texttt{myproject/mfibonacci.pil}$" with "~/"  
+   3. Create a new file in some folder. Give it a filename with the "$\texttt{.pil}$" extension. Then copy the following lines of code into the file.
 
-5. If successful, the output report (printed in the terminal) looks like this, ![PILCOM Result For mFibonacci SM](../../../img/zkEVM/fib11-pilcom-res-mfibon.png)
+      ```bash
+         % mFibonacci.pil
 
-   It provides information on the number of polynomials used (both constant and committed), the number of polynomial identities to be checked, and other information pertaining to the number of identities checked with; $\texttt{Plookup}$ tables, $\texttt{Permutation}$ checks and $\texttt{Connection}$ checks.
+         constant %N = 1024;
 
-6. The $\texttt{.json}$ file that $\texttt{PILCOM}$ produces has the name speciified in Step 4, and can be found in the folder (subdirectory) specified in Step 4.
+         namespace mFibonacci(%N);
 
-   In our case, the $\texttt{.json}$ file produced by $\texttt{PILCOM}$ appears in the "MYPROJECT" folder as $\texttt{\{ \} fibonacci.pil.json}$ and its content looks like this (Well, after removing the many newlines),
+         pol constant ISLAST; // 0,0, ... ,1
+         pol constant commit a, b;
+         pol ab = a*b;
 
-   ![Contents of the {} fibonacci.pil.json file](../../../img/zkEVM/fib12-inside-parsed-pil.png)
+         (1 - ISLAST)*(a' - b) = 0;
+         (1 - ISLAST)*(b' - (ab)) = 0;
 
-   The $\texttt{\{ \} fibonacci.pil.json}$ file contains much more detail than the results seen in Step 5 above. For instance, it reflects the polynomial names prefixed with the state machine namespace $\texttt{mFibonacci}$ as stipulated to in the $\texttt{mFibonacci.pil}$ file.
+         // boundary onstraint
+         ISLAST*(a - 144115188042301440) = 0;
+      ```
+   
+      In our case, we saved it in a folder named $\texttt{myproject}$, and named the file $\texttt{mFibonacci.pil}$
 
-   Each polynomial is further described with four (4) attributes;
+   4. Compile the $\texttt{mFibonacci.pil}$ either at the $\texttt{pilcom}$ directory or the $\texttt{pilcom/src}$ subdirectory, using one of the following commands,
 
-   (a)  $\texttt{type}$ which specifies whether the polynomial is committed, constant or intermediate.
+      ```bash
+         pilcom\$ node src/pil.js myproject/mfibonacci.pil -o myproject/mfibonacci.pil.json
+      ```
+      or
+      ```bash
+         pilcom\$ node pil.js myproject/mfibonacci.pil -o myproject/mfibonacci.pil.json
+      ```
 
-   (b)  $\texttt{id}$ is a unique identity associated to with the polynomial
+      You might need to prefix the path "$\texttt{myproject/mfibonacci.pil}$" with "~/"
 
-   (c)  $\texttt{polDeg}$ reflects the degree of the polynomial
+   5. If successful, the output report (printed in the terminal) looks like this, ![PILCOM Result For mFibonacci SM](../../../img/zkEVM/fib11-pilcom-res-mfibon.png)
 
-   (d) $\texttt{isArray}$ is a flag used to control array-based polynomial definitions.
+      It provides information on the number of polynomials used (both constant and committed), the number of polynomial identities to be checked, and other information pertaining to the number of identities checked with; $\texttt{Plookup}$ tables, $\texttt{Permutation}$ checks and $\texttt{Connection}$ checks.
 
-Among all the contents of the $\texttt{\{ \} fibonacci.pil.json}$ file, there is a key called $\texttt{expressions}$ which is an array containing all the identities and operations among the corresponding polynomials.
+   6. The $\texttt{.json}$ file that $\texttt{PILCOM}$ produces has the name speciified in Step 4, and can be found in the folder (subdirectory) specified in Step 4.
 
-Moreover, the $\texttt{\{ \} fibonacci.pil.json}$ file contains other keys representing all inclusion, permutation and copy constraint arguments.
+      In our case, the $\texttt{.json}$ file produced by $\texttt{PILCOM}$ appears in the "MYPROJECT" folder as $\texttt{\{ \} fibonacci.pil.json}$ and its content looks like this (Well, after removing the many newlines),
 
-Other fields, important for debugging purposes, are
+      ![Contents of the {} fibonacci.pil.json file](../../../img/zkEVM/fib12-inside-parsed-pil.png)
 
-- $\texttt{nCommitments}$: which specifies the total number of committed polynomials.
-- $\texttt{Constants}$: which specifies the total number of constant polynomials referenced in the PIL file.
+      The $\texttt{\{ \} fibonacci.pil.json}$ file contains much more detail than the results seen in Step 5 above. For instance, it reflects the polynomial names prefixed with the state machine namespace $\texttt{mFibonacci}$ as stipulated to in the $\texttt{mFibonacci.pil}$ file.
+
+      Each polynomial is further described with four (4) attributes;
+
+      (a)  $\texttt{type}$ which specifies whether the polynomial is committed, constant or intermediate.
+
+      (b)  $\texttt{id}$ is a unique identity associated to with the polynomial.
+
+      (c\)  $\texttt{polDeg}$ reflects the degree of the polynomial.
+
+      (d) $\texttt{isArray}$ is a flag used to control array-based polynomial definitions.
+
+      Among all the contents of the $\texttt{\{ \} fibonacci.pil.json}$ file, there is a key called $\texttt{expressions}$ which is an array containing all the identities and operations among the corresponding polynomials.
+
+      Moreover, the $\texttt{\{ \} fibonacci.pil.json}$ file contains other keys representing all inclusion, permutation and copy constraint arguments.
+
+      Other fields, important for debugging purposes, are
+
+      - $\texttt{nCommitments}$: which specifies the total number of committed polynomials.
+
+      - $\texttt{Constants}$: which specifies the total number of constant polynomials referenced in the PIL file.
