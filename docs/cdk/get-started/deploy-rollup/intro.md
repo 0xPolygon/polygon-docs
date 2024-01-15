@@ -1,6 +1,8 @@
-Welcome to your step-by-step guide to implementing a full CDK zkRollup EVM-compatible network on the Goërli testnet as the L1 network.
+This quick start takes you through the process of deploying a full CDK zkRollup EVM-compatible network on the Goërli testnet as the L1 network.
 
-- [**First step**](intro.md): Preliminary setup, checking system requirements, and prerequisite variables.
+The quickstart is split into separate sections.
+
+1. Prerequisites(prerequisites.md): Preliminary setup, checking system requirements, and prerequisite variables.
 
 - [**Second step**](install-dependencies.md): Installing dependencies and downloading mainnet files.
 
