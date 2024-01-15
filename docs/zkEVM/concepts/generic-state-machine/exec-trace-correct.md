@@ -200,8 +200,10 @@ As far as **boundary constraints** are concerned, we can, for instance,
 - set boundary constraints,
 
     $$
-    \mathtt{L1(x) \cdot \big(FREE(\omega^0) - input\big) = 0} \\
-    \mathtt{L2(x) \cdot \big(A(\omega^{3}) - output\big) = 0}\quad \\
+    \begin{aligned}
+    &\mathtt{L1(x) \cdot \big(FREE(\omega^0) - input\big) = 0} \\
+    &\mathtt{L2(x) \cdot \big(A(\omega^{3}) - output\big) = 0}
+    \end{aligned}
     $$
 
     where $\mathtt{L1(x)}$ and $\mathtt{L2(x)}$ are precomputed constant polynomials.
