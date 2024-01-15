@@ -20,3 +20,56 @@ Polygon zkEVM achieves this by utilizing several actors. Here is a list of the m
 - The **Prover** is a complex cryptographic tool capable of producing ZK-proofs of hundreds of batches, and aggregating these into a single ZK-proof which is published as the validity proof.
 
 Users can set up their own _local zkNode_ by following this guide [here](../../get-started/setup-nodes/local-node.md), or a production zkNode as detailed [here](../../get-started/setup-nodes/production-node.md).
+
+## zkNode roles
+
+The zkNode software is designed to support execution of multiple roles. Each role requires different services to work. Although most of the services can run in different instances, the JSON RPC can run in many instances (all the other services must have a single instance).
+
+### RPC endpoints
+
+Any user can participate in this role, as an RPC node.
+
+Required services and components:
+
+- JSON RPC: can run in a separated instance, and can have multiple instances
+- Synchronizer: single instance that can run on a separate instance
+- Executor & Merkletree: service that can run on a separate instance
+- State DB: Postgres SQL that can be run in a separate instance
+
+There must be only one synchronizer, and it's recommended that it must have exclusive access to an executor instance, though not necessarily.
+
+ The synchronizer role can be run perfectly in a single instance, but the JSON RPC and executor services can benefit from running in multiple instances, if the performance decreases due to the number of received requests.
+
+- [`zkEVM RPC endpoints`](https://github.com/0xPolygonHermez/zkevm-node/blob/develop/docs/json-rpc-endpoints.md)
+- [`zkEVM RPC Custom endpoints documentation`](https://github.com/0xPolygonHermez/zkevm-node/blob/develop/docs/zkEVM-custom-endpoints.md)
+
+### Trusted sequencer
+
+This role can only be performed by a single entity. This is enforced in the smart contract, as the related methods of the trusted sequencer can only be performed by the owner of a particular private key.
+
+Required services and components:
+
+- JSON RPC: can run in a separated instance, and can have multiple instances
+- Sequencer & Synchronizer: single instance that needs to run together
+- Executor & Merkletree: service that can run on a separate instance
+- Pool DB: Postgres SQL that can be run in a separate instance
+- State DB: Postgres SQL that can be run in a separate instance
+
+Note that the JSON RPC is required to receive transactions. It's recommended that the JSON RPC runs on separated instances, and potentially more than one (depending on the load of the network). It's also recommended that the JSON RPC and the Sequencer don't share the same executor instance, to make sure that the sequencer has exclusive access to an executor
+
+### Aggregator
+
+This role can be performed by anyone.
+
+Required services and components:
+
+- Synchronizer: single instance that can run on a separated instance
+- Executor & Merkletree: service that can run on a separate instance
+- State DB: Postgres SQL that can be run in a separate instance
+- Aggregator: single instance that can run on a separated instance
+- Prover: single instance that can run on a separated instance
+- Executor: single instance that can run on a separated instance
+
+It's recommended that the prover is run on a separate instance, as it has important hardware requirements. On the other hand, all the other components can run on a single instance.
+
+
