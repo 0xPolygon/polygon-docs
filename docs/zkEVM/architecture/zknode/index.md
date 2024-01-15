@@ -40,8 +40,8 @@ There must be only one synchronizer, and it's recommended that it must have excl
 
  The synchronizer role can be run perfectly in a single instance, but the JSON RPC and executor services can benefit from running in multiple instances, if the performance decreases due to the number of received requests.
 
-- [`zkEVM RPC endpoints`](./docs/json-rpc-endpoints.md)
-- [`zkEVM RPC Custom endpoints documentation`](./docs/zkEVM-custom-endpoints.md)
+- [`zkEVM RPC endpoints`](https://github.com/0xPolygonHermez/zkevm-node/blob/develop/docs/json-rpc-endpoints.md)
+- [`zkEVM RPC Custom endpoints documentation`](https://github.com/0xPolygonHermez/zkevm-node/blob/develop/docs/zkEVM-custom-endpoints.md)
 
 ### Trusted sequencer
 
