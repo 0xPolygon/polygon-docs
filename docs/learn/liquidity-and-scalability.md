@@ -17,4 +17,4 @@ Polygon CDK is an open source toolkit that allows developers to design and launc
 
 Existing approaches to an ecosystem of L2s often provide new blockspace at the expense of a chain’s sovereignty. In contrast, Polygon CDK helps developers preserve a chain’s self-determination. The tools available in Polygon CDK are modular: Chains may use any parts of the stack they need, and none that they don’t. Configs will include, but are not limited to, customizable gas tokens, rollup and validium modes, support for different data availability solutions, and more.  
 
-Even as the Polygon ecosystem feels like a single chain, each specific chain will be distinctive, with Polygon PoS, Polygon zkEVM, each Polygon CDK chain, and, eventually, Polygon Miden, providing differentiated feature-sets that will suit some projects more than others.
+Even as the Polygon ooecosystem feels like a single chain, each specific chain will be distinctive, with Polygon PoS, Polygon zkEVM, each Polygon CDK chain, and, eventually, Polygon Miden, providing differentiated feature-sets that will suit some projects more than others.
