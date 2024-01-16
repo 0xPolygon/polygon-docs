@@ -118,7 +118,7 @@ The below diagram captures the following flow of events, most of which are handl
 - Verification of batches,
 - Updating the Global Exit Root.
 
-![Figure 3: Events flow related to RollupManager.sol](../../../img/zkEVM/lxly-3-flow-rollupmanager.png)
+![Figure 3: Events flow related to RollupManager.sol](../../../img/zkEVM/lxly-bridge-diagram.png)
 
 ## Conclusion
 
