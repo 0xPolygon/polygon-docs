@@ -10,6 +10,8 @@ We have listed three faucet tools you can use to receive MATIC testnet tokens, a
 - [Polygon faucet](https://faucet.polygon.technology/)
 - [Alchemy MATIC faucet](https://mumbaifaucet.com/)
 - [QuickNode multi-chain faucet](https://faucet.quicknode.com/drip)
+- [LearnWeb3 Mumbai MATIC Faucet](https://learnweb3.io/faucets/polygon_mumbai)
+- [LearnWeb3 zkEVM MATIC Faucet](https://learnweb3.io/faucets/polygon_zkevm)
 
 In addition, Polygon faucet also provides Polygon zkEVM testnet ETH tokens.
 
@@ -76,3 +78,11 @@ In order to receive MATIC Mumbai tokens using QuickNode faucet,
    ![img](../../img/tools/gas/quicknode-faucet3.png)
 
 - You can also view your transaction details on [Polygonscan](https://mumbai.polygonscan.com/) by clicking on the TxHash.
+
+## LearnWeb3 Faucets
+
+In order to receive MATIC tokens on Mumbai or zkEVM using the LearnWeb3 Faucet:
+
+- Head over to the [Mumbai Faucet](https://learnweb3.io/faucets/polygon_mumbai) or [zkEVM Faucet](https://learnweb3.io/faucets/polygon_zkevm)
+- Sign in to LearnWeb3 by clicking **Sign In** in the top-right. Connect your GitHub if you haven't already done so to gain access to the faucet.
+- Enter your wallet address and request MATIC tokens
