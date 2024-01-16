@@ -83,6 +83,6 @@ In order to receive MATIC Mumbai tokens using QuickNode faucet,
 
 In order to receive MATIC tokens on Mumbai or zkEVM using the LearnWeb3 Faucet:
 
-- Head over to the [Mumbai Faucet](https://learnweb3.io/faucets/polygon_mumbai) or [zkEVM Faucet](https://learnweb3.io/faucets/polygon_zkevm)
+- Head over to the [Mumbai Faucet](https://learnweb3.io/faucets/polygon_mumbai) or the [zkEVM Faucet](https://learnweb3.io/faucets/polygon_zkevm).
 - Sign in to LearnWeb3 by clicking **Sign In** in the top-right. Connect your GitHub if you haven't already done so to gain access to the faucet.
 - Enter your wallet address and request MATIC tokens
