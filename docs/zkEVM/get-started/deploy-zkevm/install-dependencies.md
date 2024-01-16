@@ -36,7 +36,7 @@ Next, add these to your `.profile`:
    
     [ -d "/usr/local/go/bin" ] && PATH="/usr/local/go/bin:$PATH"
     ' >> ~/.profile
-    source .profile
+    source ~/.profile
    ```
 
 Lastly, confirm the installation of Golang by running this command: `$ go version`
