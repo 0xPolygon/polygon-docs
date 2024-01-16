@@ -6,6 +6,7 @@ Welcome to the Polygon Knowledge Layer! This documentation is built using [the M
 - Polygon zkEVM
 - Polygon PoS
 - Polygon Miden
+- Dev Tools 
 
 In addition, we include top-level sections for Tools and Tutorials to support developers in their journey with Polygon technology.
 
@@ -82,8 +83,10 @@ Whenever we are happy with `main`, a trigger can be manually done through GitHub
 
 ## Contact and support
 
-For any queries or support, join our Polygon Slack channel at `#disc_tkd_techdocs`. Current team members:
+For any queries or support, pplease open a ticket at https://support.polygon.technology/support/home. 
 
-- Grace Torrellas (@0xgraciegrace)
+## Current Technical Knowledge Documentation (TKD) team members
+
 - Anthony Matlala (@EmpieichO)
 - Katharine Murphy (@kmurphypolygon)
+- Hans (@hsutaiyu) 
