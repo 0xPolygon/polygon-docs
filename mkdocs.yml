@@ -104,7 +104,7 @@ nav:
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - State management: zkEVM/architecture/protocol/state-management.md
-          - Trasaction life cycle:
+          - Transaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
             - Transaction execution: zkEVM/architecture/protocol/transaction-life-cycle/transaction-execution.md
             - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
