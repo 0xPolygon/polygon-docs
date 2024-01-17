@@ -239,15 +239,6 @@ nav:
           - L1-L2 communication:
             - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
             - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
-        - Work with smart contracts:
-          - Work with smart contracts: pos/how-to/smart-contracts/index.md
-          - Alchemy: pos/how-to/smart-contracts/alchemy.md
-          - ChainIDE: pos/how-to/smart-contracts/chainide.md
-          - ChainStack: pos/how-to/smart-contracts/chainstack.md
-          - GetBlock: pos/how-to/smart-contracts/getblock.md
-          - QuickNode: pos/how-to/smart-contracts/quicknode.md
-          - SmartPress: pos/how-to/smart-contracts/smartpress.md
-          - thirdweb: pos/how-to/smart-contracts/thirdweb.md
         - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
           - Architecture: pos/architecture/index.md
@@ -430,6 +421,15 @@ nav:
           - Remix: tools/smart-contracts/remix.md
           - Replit: tools/smart-contracts/replit.md
           - Crossmint: tools//smart-contracts/crossmint.md
+          - PoS:
+              - Work with smart contracts: pos/how-to/smart-contracts/index.md
+              - Alchemy: pos/how-to/smart-contracts/alchemy.md
+              - ChainIDE: pos/how-to/smart-contracts/chainide.md
+              - ChainStack: pos/how-to/smart-contracts/chainstack.md
+              - GetBlock: pos/how-to/smart-contracts/getblock.md
+              - QuickNode: pos/how-to/smart-contracts/quicknode.md
+              - SmartPress: pos/how-to/smart-contracts/smartpress.md
+              - thirdweb: pos/how-to/smart-contracts/thirdweb.md
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
