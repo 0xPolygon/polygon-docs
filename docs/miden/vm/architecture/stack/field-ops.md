@@ -232,7 +232,7 @@ The effect on the rest of the stack is:
 
 ## `EXT2MUL`
 
-The `EXT2MUL` operation pops top $4$ values from the top of the stack, performs mulitplication between the two extension field elements, and pushes the resulting $4$ values onto the stack. The diagram below illustrates this graphically.
+The `EXT2MUL` operation pops top $4$ values from the top of the stack, performs multiplication between the two extension field elements, and pushes the resulting $4$ values onto the stack. The diagram below illustrates this graphically.
 
 ![ext2mul](../../../../img/miden/vm/design/stack/field-operations/EXT2MUL.png)
 

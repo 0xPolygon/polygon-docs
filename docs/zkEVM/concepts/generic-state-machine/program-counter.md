@@ -15,9 +15,11 @@ Unlike the $\texttt{JMPZ(addr)}$ instruction, when the state machine executes $\
 ### Program Counter constraint related to JMP
 
 This is how the $\texttt{JMP(addr)}$ instruction is implemented: A new selector called $\texttt{JMP}$ is added, as a column to the execution trace. And, the Program Counter $\texttt{zkPC}$ now uses the following identity to keep track of the correct line of the assembly program to be executed next;
+
 $$
 \mathtt{zkPC' = (zkPC+1)+JMP \cdot \big(addr−(zkPC+1)\big)} \tag{Eqn 0*}
 $$
+
 $\texttt{JMP}$ therefore acts as a 'flag' where;
 
 - $\mathtt{zkPC' =  (zkPC+1)+ 0 \cdot \big(addr−(zkPC+1)\big) = zkPC+1}$, if $\texttt{JMP}$ is not activated (i.e., if $\texttt{JMP}$ is $\mathtt{0}$), or
@@ -154,12 +156,12 @@ $$
 \mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (0+1) + 0 \cdot \big( addr−(0+1) \big) = 0+1 = 1}.
 $$
 
-### Step 1: "−3=>B−3=>B"
+### Step 1: "−3=>B, −3=>B"
 
 In this step, a constant  $\mathtt{CONST = -3}$  is moved into the $\texttt{B}$ registry. Hence $\mathtt{setB = 1}$, $\mathtt{B' = -3}$, but $\mathtt{inB = 0}$, $\mathtt{inA = 0}$ and $\mathtt{inFREE = 0}$. This yields,
 
 $$
-\mathtt{op =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot A\ +\ 0 \cdot B\ +\ 0 \cdot FREE\ + (-3)    = -3}
+\mathtt{op =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot A\ +\ 0 \cdot B\ +\ 0 \cdot FREE\ + (-3)  = -3}
 $$
 
 and $\mathtt{invOp = (-3)^{-1}}$.
@@ -211,25 +213,31 @@ $$
 Here the sum of the registry values $\mathtt{A = 3}$ and $\mathtt{B = -3}$ is computed, and the result is moved into the registry $\mathtt{A}$. That is, $\mathtt{A' = 3 + (-3) = 0}$  and  $\mathtt{setA = 1}$. Also, $\mathtt{inA = 1}$ , $\mathtt{inB = 1}$ and $\mathtt{inFREE = 0}$.
 
 These values yield the following value of $\mathtt{op}$,
+
 $$
-\mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 1 \cdot 3\ +\ 1 \cdot (-3)\ +\ 0 \cdot FREE\ +\ 0\  =\ 0}.
+\mathtt{op\ = inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST = 1 \cdot 3 + 1 \cdot (-3) + 0 \cdot FREE + 0  = 0}.
 $$
+
 So, $\mathtt{invOp}$ is set to a randomly chosen non-zero $\mathtt{\alpha}$ in $\mathbb{F}_p$ , used to pass the identities related to $\texttt{isZero}$.
 
-And, $\mathtt{isZero\ := (1 − op \cdot invOp) = \big(1 − 0\cdot \alpha \big)\ =\ 1}$.
+And, $\mathtt{isZero := (1 − op \cdot invOp) = \big(1 − 0\cdot \alpha \big) = 1}$.
 
 Note that there are no jumps in the instruction, so $\mathtt{JMP = 0}$ and $\mathtt{JMPZ = 0}$. And therefore $\mathtt{zkPC′ = zkPC + 1}$.
 
 In order to verify that $\mathtt{zkPC′ = zkPC + 1 = 2 + 1 = 3}$, we use the constraints given as Eqn 4* above.
 
 Firstly, check $\mathtt{doJMP}$ as follows,
+
 $$
 \mathtt{doJMP\ :=\ JPMZ \cdot isZero + JMP\ = 0 \cdot 1\ +\ 0\ =\ 0}. \qquad\qquad\qquad\qquad\qquad \\
 $$
+
 Then,
+
 $$
-\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (2+1)\ +\ 0 \cdot \big( addr - (2+1)\big)\ =\ 3}.
+\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (2+1) + 0 \cdot \big( addr - (2+1)\big) = 3}.
 $$
+
 The Program Counter therefore moves to the subsequent line of instruction. That is, the next instruction to be executed must the one in $\texttt{line}$ $\texttt{3}$ of the Assembly code.
 
 ### Step 3: "A :JMPZ(finalWait)"
@@ -241,10 +249,10 @@ As mentioned above, the implicit address label "$\mathtt{finalWait}$" is compute
 Note that, $\mathtt{inB = 0}$ , $\mathtt{inFREE = 0}$ and $\mathtt{CONST = 0}$. Therefore,
 
 $$
-\mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 1 \cdot 0\ +\ 0 \cdot (-3)\ +\ 0 \cdot FREE\ +\ 0\  =\ 0}.
+\mathtt{op = inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST = 1 \cdot 0 + 0 \cdot (-3) + 0 \cdot FREE + 0 = 0}.
 $$
 
-Consequently,  $\mathtt{isZero\ := (1 − op \cdot invOp) = \big(1 − 0 \big)\ =\ 1}$. And since there are no unconditional jumps, $\mathtt{JMP = 0}$.  
+Consequently,  $\mathtt{isZero := (1 − op \cdot invOp) = \big(1 − 0 \big) = 1}$. And since there are no unconditional jumps, $\mathtt{JMP = 0}$.  
 
 We use Eqn 4 to check whether $\mathtt{zkPC′ = 5}$. Note that,
 
@@ -255,16 +263,18 @@ $$
 The next value of the Program Counter, according to Eqn 4, is
 
 $$
-\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)\ =\ (3+1)\ +\ 1 \cdot \big(5−(3+1)\big)\ =\ 4 + (5-4)\ =\ 5.}
+\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (3+1) + 1 \cdot \big(5−(3+1)\big) = 4 + (5-4) = 5.}
 $$
 
 ### Step 4:  "{beforeLast()} :JMPZ(finalWait)"
 
 The $\texttt{beforeLast()}$ function, which keeps track of the number of steps being executed, reads the current step-number as a free input. Since the execution trace is currently at step $\mathtt{4}$ and not $\mathtt{6}$, then the executor returns a zero. And thus, $\mathtt{inFREE = 1}$ and $\mathtt{JMPZ = 1}$ but $\mathtt{inA = 0}$, $\mathtt{inB =0}$, $\mathtt{FREE = 0}$ and $\mathtt{CONST = 0}$. Consequently,
+
 $$
-\mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot A\ +\ 0 \cdot B\ +\ 1 \cdot 0\ +\ 0\  =\ 0}.
+\mathtt{op = inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST = 0 \cdot A + 0 \cdot B + 1 \cdot 0 + 0 = 0}.
 $$
-Therefore $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$.
+
+Therefore $\mathtt{isZero := (1 − op \cdot invOp) = (1 − 0 \cdot \alpha) = 1}$.
 
 Hence according to $\texttt{JMPZ(finalWait)}$, a jump is executed. This means the executor must jump to the $\mathtt{offset = 5}$ address, as computed by the Assembly compiler. It follows that $\mathtt{zkPC′}$ must be $\mathtt{5}$.
 
@@ -277,7 +287,7 @@ $$
 The next value of the Program Counter is given by,
 
 $$
-\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)\ =\ (5+1)\ +\ 1 \cdot \big(5−(5+1)\big)\ =\ 6 + (5-6)\ =\ 5.}
+\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (5+1) + 1 \cdot \big(5−(5+1)\big) = 6 + (5-6) = 5.}
 $$
 
 The execution trace is currently as follows,
@@ -317,7 +327,7 @@ As seen in Step 4, the $\texttt{beforeLast()}$ function checks if the execution 
 Similarly, $\mathtt{inFREE = 1}$ and $\mathtt{JMPZ = 1}$ but $\mathtt{inA = 0}$, $\mathtt{inB =0}$, $\mathtt{FREE = 0}$ and $\mathtt{CONST = 0}$. As a result,
 
 $$
-\mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot A\ +\ 0 \cdot B\ +\ 1 \cdot 0\ +\ 0\  =\ 0},
+\mathtt{op = inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST = 0 \cdot A + 0 \cdot B + 1 \cdot 0 + 0  = 0},
 $$
 
 which means  $\mathtt{FREE = 0}$ and $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$. So, again $\texttt{JMPZ(finalWait)}$ gets executed.
@@ -333,25 +343,29 @@ $$
 and use Eqn 4,
 
 $$
-\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)\ =\ (5+1)\ +\ 1 \cdot \big(5−(5+1)\big)\ =\ 6 + (5-6)\ =\ 5.}
+\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (5+1) + 1 \cdot \big(5−(5+1)\big) = 6 + (5-6) = 5.}
 $$
 
 ### Step 6: "{beforeLast()} :JMPZ(finalWait)"
 
 In this case, the current step is the last but one step. That is, the $\texttt{beforeLast()}$ function holds true, and hence the executor must return a $\mathtt{1}$. So, $\mathtt{inFREE = 1}$ and $\mathtt{JMPZ = 1}$ while $\mathtt{inA = 0}$, $\mathtt{inB =0}$ and $\mathtt{CONST = 0}$. Then,
+
 $$
-\mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot A\ +\ 0 \cdot B\ +\ 1 \cdot 1\ +\ 0\  =\ 1}.
+\mathtt{op = inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST = 0 \cdot A + 0 \cdot B + 1 \cdot 1 + 0  = 1}.
 $$
+
 This means  $\mathtt{FREE = 1}$ and $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 1 \cdot 1) = 0}$. And, this time $\texttt{JMPZ(finalWait)}$ is not executed, implying the next Program Counter, $\mathtt{zkPC′ = zkPC + 1}$.
 
 Since there are no jumps in this step, $\mathtt{JMP = 0}$ and $\mathtt{JMPZ = 0}$, yielding
+
 $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 0 \cdot 1 + 0 = 0}, \\
 $$
+
 and with a quick verification using Eqn 4*, we obtain
 
 $$
-\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)\ =\ (5+1)\ +\ 0 \cdot \big(addr −(5+1)\big)\ =\ 6.}
+\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (5+1) + 0 \cdot \big(addr −(5+1)\big) = 6.}
 $$
 
 ### Step 7: "0=>A,B :JMP(start)"
@@ -363,10 +377,10 @@ It ends the execution by setting $\texttt{A}$ and $\texttt{B}$ to zero, and jump
 Hence, $\mathtt{setA = 1}$, $\mathtt{setB = 1}$ and $\mathtt{JMP = 1}$ but $\mathtt{inFREE = 0}$, $\mathtt{inA =0}$, $\mathtt{inB =0}$ and $\mathtt{CONST = 0}$. Consequently,
 
 $$
-\mathtt{op\ =\ inA \cdot A\ +\ inB \cdot B\ +\ inFREE \cdot FREE\ +\ CONST\ =\ 0 \cdot 0\ +\ 0 \cdot (-3)\ +\ 0 \cdot 1\ +\ 0\  =\ 0}.
+\mathtt{op = inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST = 0 \cdot 0 + 0 \cdot (-3) + 0 \cdot 1 + 0  = 0}.
 $$
 
-Therefore $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$.
+Therefore $\mathtt{isZero := (1 − op \cdot invOp) = (1 − 0 \cdot \alpha) = 1}$.
 
 There are no conditional jumps, so $\mathtt{JMPZ = 0}$. Then, as a consequence of this,
 
@@ -382,26 +396,7 @@ $$
 
 This instruction, as the last step the Assembly program, achieves two things; Firstly, the program ends correctly with the specified size of the execution trace. Secondly, resetting $\texttt{A}$, $\texttt{B}$ and $\texttt{zkPC}$ to zero causes the execution trace to attain cyclicity.
 
-See the complete execution trace below,  
-
-<!-- $$
-\begin{aligned}
-\begin{array}{|l|c|}
-\hline
-\texttt{step} & \bf{instructions} \\ \hline
-\quad\texttt{0} & \mathtt{{getAFreeInput()} => A}\quad\qquad\qquad\\ \hline
-\quad\texttt{1} & \mathtt{-3 => B}\qquad\qquad\qquad\qquad\qquad\qquad\text{ }\text{ } \\ \hline
-\quad\texttt{2} & \mathtt{:ADD}\qquad\quad\qquad\qquad\qquad\qquad\qquad\ \\ \hline
-\quad\texttt{3} & \mathtt{A \qquad :JMPZ(finalWait)}\qquad\qquad \\ \hline
-\quad\texttt{4} & \mathtt{\{beforeLast()\}\quad:JMPZ(finalWait)} \\ \hline
-\quad\texttt{5} & \mathtt{\{beforeLast()\}\quad:JMPZ(finalWait)}\\ \hline
-\quad\texttt{6} & \mathtt{\{beforeLast()\}\quad:JMPZ(finalWait)}\\ \hline
-\quad\texttt{7} & \mathtt{0 => A,B \quad\qquad\ \ :JMP(start)}\qquad \\ \hline
-\end{array}
-\end{aligned}
-$$ -->
-
-<!-- \hspace{0.02cm} -->
+See the complete execution trace below,
 
 $$
 \small
@@ -419,26 +414,6 @@ $$
 \end{array}
 \end{aligned}
 $$
-
-<!-- \hspace{0.02cm} -->
-
-<!-- $$
-\begin{aligned}
-\begin{array}{|l|c|c|c|c|c|c|c|}\hline
-\mathtt{op} & \mathtt{isZero} & \mathtt{doJMP} \\\hline
-\text{ }\mathtt{3} & \mathtt{0} & \mathtt{0} \\\hline
-\mathtt{-3} &\mathtt{0} & \mathtt{0}\\\hline
-\text{ }\mathtt{0} & \mathtt{1} & \mathtt{0} \\\hline
-\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1}\\\hline
-\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1} \\\hline
-\text{ }\mathtt{0} &\mathtt{1} & \mathtt{1} \\\hline
-\text{ }\mathtt{1} & \mathtt{0} & \mathtt{0} \\\hline
-\text{ }\mathtt{0} & \mathtt{1} & \mathtt{1}\\\hline
-\end{array}
-\end{aligned}
-$$ -->
-
-<!-- \hspace{0.02cm} -->
 
 $$
 \small
