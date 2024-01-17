@@ -83,7 +83,7 @@ Whenever we are happy with `main`, a trigger can be manually done through GitHub
 
 ## Contact and support
 
-For any queries or support, pplease open a ticket at https://support.polygon.technology/support/home. 
+For any queries or support, please open a ticket at https://support.polygon.technology/support/home. 
 
 ## Current Technical Knowledge Documentation (TKD) team members
 
