@@ -24,7 +24,6 @@ theme:
    # - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
-    - navigation.expansion
     - navigation.integration
     - navigation.tabs
     - navigation.tabs.sticky
@@ -416,20 +415,21 @@ nav:
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
-          - Hardhat: tools/smart-contracts/hardhat.md
-          - Truffle: tools/smart-contracts/truffle.md
-          - Remix: tools/smart-contracts/remix.md
-          - Replit: tools/smart-contracts/replit.md
-          - Crossmint: tools//smart-contracts/crossmint.md
+          - Common tools:
+              - Hardhat: tools/smart-contracts/hardhat.md
+              - Truffle: tools/smart-contracts/truffle.md
+              - Remix: tools/smart-contracts/remix.md
+              - Replit: tools/smart-contracts/replit.md
           - PoS:
-              - Work with smart contracts: pos/how-to/smart-contracts/index.md
-              - Alchemy: pos/how-to/smart-contracts/alchemy.md
-              - ChainIDE: pos/how-to/smart-contracts/chainide.md
-              - ChainStack: pos/how-to/smart-contracts/chainstack.md
-              - GetBlock: pos/how-to/smart-contracts/getblock.md
-              - QuickNode: pos/how-to/smart-contracts/quicknode.md
-              - SmartPress: pos/how-to/smart-contracts/smartpress.md
-              - thirdweb: pos/how-to/smart-contracts/thirdweb.md
+              - Work with smart contracts: tools/smart-contracts/pos/index.md
+              - Alchemy: tools/smart-contracts/pos/alchemy.md
+              - ChainIDE: tools/smart-contracts/pos/chainide.md
+              - ChainStack: tools/smart-contracts/pos/chainstack.md
+              - GetBlock: tools/smart-contracts/pos/getblock.md
+              - QuickNode: tools/smart-contracts/pos/quicknode.md
+              - SmartPress: tools/smart-contracts/pos/smartpress.md
+              - Thirdweb: tools/smart-contracts/pos/thirdweb.md
+              - Crossmint: tools/smart-contracts/crossmint.md
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
