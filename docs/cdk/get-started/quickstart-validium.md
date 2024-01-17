@@ -225,7 +225,7 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
   <img src="/img/cdk/cdk-bridge-connected.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-5.1.6 Enter the amount (e.g. 5) to bridge and click **Continue**, after verifying you understand what you're doing, you will see the **Confirm Bridge** page.
+5.1.6 Enter the amount (e.g. 5) to bridge and click **Continue**, after confirming you understood what you're doing, you will see the **Confirm Bridge** page.
 
 5.1.7 Click **Bridge** and approve the transaction on the MetaMask pop-up:
 
