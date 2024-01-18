@@ -56,7 +56,7 @@ Below is a list of the changes we have made to opcodes in zkEVM in comparison to
 
 ### Precompiled contracts
 
-Among Ethereum's precompiled contracts, the zkEVM currrently supports: **ecRecover** and **identity**.
+Among Ethereum's precompiled contracts, the zkEVM currrently supports: [`ecRecover`](https://www.evm.codes/precompiled?fork=shanghai) and [`identity`](https://www.evm.codes/precompiled?fork=shanghai).
 
 Other precompiled contracts have no effect on the zkEVM state tree and are treated as reverts, returning all gas to the previous context and setting the `success` flag to "0".
 
