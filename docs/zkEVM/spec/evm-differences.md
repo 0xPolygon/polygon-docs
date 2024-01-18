@@ -34,7 +34,7 @@ The following differences have no impact on the developer's experience on the zk
 
    - Gas optimization techniques.
    - Interacting with libraries, like Web3.js and Ethers.js.
-   - Deploying contracts works seamlessly on the zkEVM without any overhead.
+   - Deploying contracts seamlessly on the zkEVM without any overhead.
 
 
 ### Opcodes
