@@ -39,7 +39,7 @@ The following differences have no impact on the developer's experience on the zk
 
 ### Opcodes
 
-Below is a list of the changes we have made with Opcodes in zkEVM in comparison to the EVM.
+Below is a list of the changes we have made to opcodes in zkEVM in comparison to the EVM.
    
    - **SELFDESTRUCT** &rarr; removed and replaced by **SENDALL**.
 
