@@ -31,14 +31,14 @@ Any user can participate in this role, as an RPC node.
 
 Required services and components:
 
-- JSON RPC: can run in a separated instance, and can have multiple instances
-- Synchronizer: single instance that can run on a separate instance
-- Executor & Merkletree: service that can run on a separate instance
-- State DB: Postgres SQL that can be run in a separate instance
+- JSON RPC: can run on a separated instance, and can have multiple instances.
+- Synchronizer: single instance that can run on a separate instance.
+- Executor & Merkletree: service that can run on a separate instance.
+- State DB: Postgres SQL that can run on a separate instance.
 
 There must be only one synchronizer, and it's recommended that it must have exclusive access to an executor instance, though not necessarily.
 
- The synchronizer role can be run perfectly in a single instance, but the JSON RPC and executor services can benefit from running in multiple instances, if the performance decreases due to the number of received requests.
+ The synchronizer role can run perfectly in a single instance, but the JSON RPC and executor services can benefit from running in multiple instances, if the performance decreases due to the number of received requests.
 
 - [`zkEVM RPC endpoints`](https://github.com/0xPolygonHermez/zkevm-node/blob/develop/docs/json-rpc-endpoints.md)
 - [`zkEVM RPC Custom endpoints documentation`](https://github.com/0xPolygonHermez/zkevm-node/blob/develop/docs/zkEVM-custom-endpoints.md)
@@ -49,13 +49,13 @@ This role can only be performed by a single entity. This is enforced in the smar
 
 Required services and components:
 
-- JSON RPC: can run in a separated instance, and can have multiple instances
-- Sequencer & Synchronizer: single instance that needs to run together
-- Executor & Merkletree: service that can run on a separate instance
-- Pool DB: Postgres SQL that can be run in a separate instance
-- State DB: Postgres SQL that can be run in a separate instance
+- JSON RPC: can run on a separated instance, and can have multiple instances.
+- Sequencer & synchronizer: single instance that needs to run them together.
+- Executor & Merkletree: service that can run on a separate instance.
+- Pool DB: Postgres SQL that can run on a separate instance.
+- State DB: Postgres SQL that can run on a separate instance.
 
-Note that the JSON RPC is required to receive transactions. It's recommended that the JSON RPC runs on separated instances, and potentially more than one (depending on the load of the network). It's also recommended that the JSON RPC and the Sequencer don't share the same executor instance, to make sure that the sequencer has exclusive access to an executor
+Note that the JSON RPC is required to receive transactions. It's recommended that the JSON RPC runs on separated instances, and potentially more than one (depending on the load of the network). It's also recommended that the JSON RPC and the sequencer don't share the same executor instance, to make sure that the sequencer has exclusive access to an executor
 
 ### Aggregator
 
@@ -63,13 +63,12 @@ This role can be performed by anyone.
 
 Required services and components:
 
-- Synchronizer: single instance that can run on a separated instance
-- Executor & Merkletree: service that can run on a separate instance
-- State DB: Postgres SQL that can be run in a separate instance
-- Aggregator: single instance that can run on a separated instance
-- Prover: single instance that can run on a separated instance
-- Executor: single instance that can run on a separated instance
+- Synchronizer: single instance that can run on a separate instance.
+- Executor & Merkletree: service that can run on a separate instance.
+- State DB: Postgres SQL that can be run on a separate instance.
+- Aggregator: single instance that can run on a separate instance.
+- Prover: single instance that can run on a separate instance.
+- Executor: single instance that can run on a separate instance.
 
 It's recommended that the prover is run on a separate instance, as it has important hardware requirements. On the other hand, all the other components can run on a single instance.
-
 
