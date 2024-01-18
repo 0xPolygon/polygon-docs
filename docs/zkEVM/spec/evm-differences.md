@@ -6,7 +6,7 @@ Polygon zkEVM is designed to be EVM-equivalent rather than just compatible.
 
 The difference between EVM-compatibility and EVM-equivalence is that;
    
-   - Solutions that are compatible, enable most of the existing applications to work, but sometimes with code changes. Additionally, compatibility may lead to the breaking of developer toolings.
+   - Solutions that are compatible support most of the existing applications, but sometimes with code changes. Additionally, compatibility may lead to breaking developer tooling.
 
    - Polygon zkEVM strives for EVM-equivalence which means most applications, tools, and infrastructure built on Ethereum can immediately port over to Polygon zkEVM, with limited to no changes needed. Things are designed to work 100% on day one. 
 
