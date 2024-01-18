@@ -84,10 +84,10 @@
 
 ## Update node config
 
-Add the missing parameters in `~/zkevm/mainnet/config/environments/mainnet/public.node.config.toml`.
+Add the missing parameters in the `~/zkevm/mainnet/config/environments/mainnet/public.node.config.toml` file.
 
-- `ApiKey` // for Etherscan
-- `URL` // for Goerli node
+- `ApiKey`  # for Etherscan
+- `URL`     # for Goerli node
 
 ## Add wallet keystores
 

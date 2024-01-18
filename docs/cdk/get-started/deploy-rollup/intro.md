@@ -14,8 +14,8 @@ The process is split into the following sections:
 
 4. [Create wallets](create-wallets.md): Create wallets and deploy contracts.
 
-5. [Deploy node](deploy-node.md): Deploy the zkRollup EVM-compatible node.
+5. [Configure node deployment](configure-node-deployment.md): Deploy the zkRollup EVM-compatible node.
 
-6. [Configure prover](configure-prover.md): Configure the prover and services.
+6. [Configure prover](configure-prover.md): Configure the prover database and the prover service.
 
-7. [Activate forced transactions](activate-forced-transactions.md): Activate forced transactions, and bridge/claim assets.
+7. [Start services](start-services.md): Start the services.

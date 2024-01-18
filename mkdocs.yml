@@ -55,10 +55,9 @@ nav:
               - Prerequisites: cdk/get-started/deploy-rollup/prerequisites.md
               - Install dependencies: cdk/get-started/deploy-rollup/install-dependencies.md
               - Create wallets: cdk/get-started/deploy-rollup/create-wallets.md
-              - Configure node deployment: cdk/get-started/deploy-rollup/deploy-node.md
+              - Configure node deployment: cdk/get-started/deploy-rollup/configure-node-deployment.md
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
               - Start services: cdk/get-started/deploy-rollup/start-services.md
-              - Activate forced transactions: cdk/get-started/deploy-rollup/activate-forced-transactions.md
       - How to:
         - Manage policies: cdk/how-to/manage-policies.md
       - Architecture:
