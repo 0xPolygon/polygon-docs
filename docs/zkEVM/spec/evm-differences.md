@@ -70,7 +70,7 @@ Other precompiled contracts have no effect on the zkEVM state tree and are treat
    
    - zkEVM doesn't clean storage when a contract is deployed at an address due to the zkEVM state tree specification.
 
-   - **JUMPDEST** opcode is allowed in push bytes to avoid runtime bytecode analysis.
+   - `JUMPDEST` is allowed in push bytes to avoid runtime bytecode analysis.
 
    - The zkEVM implements [EIP-3541](https://eips.ethereum.org/EIPS/eip-3541) from the [London hardfork](https://ethereum.org/en/history/#london).
 
