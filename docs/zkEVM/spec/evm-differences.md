@@ -43,7 +43,7 @@ Below is a list of the changes we have made with Opcodes in zkEVM in comparison 
    
    - **SELFDESTRUCT** &rarr; removed and replaced by **SENDALL**.
 
-   - **EXTCODEHASH** &rarr; returns the hash of the contract bytecode from the zkEVM state tree without checking if the account is empty.
+   - `EXTCODEHASH` returns the hash of the contract bytecode from the zkEVM state tree without checking if the account is empty.
 
    - **DIFFICULTY** &rarr;  returns "0" instead of a random number as in the EVM.
 
