@@ -74,7 +74,7 @@ Other precompiled contracts have no effect on the zkEVM state tree and are treat
 
    - The zkEVM implements [EIP-3541](https://eips.ethereum.org/EIPS/eip-3541) from the [London hardfork](https://ethereum.org/en/history/#london).
 
-   - [EIP-2718](https://eips.ethereum.org/EIPS/eip-2718) which defines **Typed Transaction Envelope**, is not supported
+   - [EIP-2718](https://eips.ethereum.org/EIPS/eip-2718) which defines the Typed Transaction Envelope, is not supported
 
    - [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930), which defines the Optional Access Lists transaction type, is not supported.
 
