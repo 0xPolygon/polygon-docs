@@ -12,7 +12,7 @@ The difference between EVM-compatibility and EVM-equivalence is that;
 
 EVM-equivalence is critical to Polygon zkEVM for several reasons, including the following:
    
-   1. Development teams don't have to make changes to their code, and this eliminates any chance for security vulnerabilities to be introduced.
+   1. Development teams don't have to make changes to their code, and this eliminates the possibility of introducing new security vulnerabilities.
 
    2. No code changes means no need for additional audits. This saves time and money.
 
