@@ -416,10 +416,10 @@ nav:
       - Developer tools: tools/index.md
       - Smart contract development: 
           - Common tools:
-              - Hardhat: tools/smart-contracts/hardhat.md
-              - Truffle: tools/smart-contracts/truffle.md
-              - Remix: tools/smart-contracts/remix.md
-              - Replit: tools/smart-contracts/replit.md
+              - Hardhat: tools/smart-contracts/common-tools/hardhat.md
+              - Truffle: tools/smart-contracts/common-tools/truffle.md
+              - Remix: tools/smart-contracts/common-tools/remix.md
+              - Replit: tools/smart-contracts/common-tools/replit.md
           - PoS:
               - Work with smart contracts: tools/smart-contracts/pos/index.md
               - Alchemy: tools/smart-contracts/pos/alchemy.md
@@ -429,7 +429,7 @@ nav:
               - QuickNode: tools/smart-contracts/pos/quicknode.md
               - SmartPress: tools/smart-contracts/pos/smartpress.md
               - Thirdweb: tools/smart-contracts/pos/thirdweb.md
-              - Crossmint: tools/smart-contracts/crossmint.md
+              - Crossmint: tools/smart-contracts/pos/crossmint.md
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md

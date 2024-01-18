@@ -1,32 +1,29 @@
 ## Overview
 
-Hardhat is an Ethereum development environment that provides an easy way to deploy smart contracts, run tests and debug Solidity code locally.
+Hardhat is an Ethereum development environment for deploying smart contracts, running tests, and debugging Solidity code locally.
 
-In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract.
+In this tutorial, you will learn how to set up Hardhat and use it to build, test, and deploy a simple smart contract.
 
-### What you will do
+## Set up
 
-- Set up Hardhat.
-- Create a simple smart contract.
-- Compile the contract.
-- Test the contract.
-- Deploy the contract.
+1. Ensure you have installed the following:
 
-## Setting up the development environment
+- [Node.js v10+ LTS and npm](https://nodejs.org/en/).
+- [Git](https://git-scm.com/).
 
-There are a few technical requirements before we start. Please install the following:
+2. Create an npm project
 
-- [Node.js v10+ LTS and npm](https://nodejs.org/en/) (comes with Node)
-- [Git](https://git-scm.com/)
-
-Once we have those installed, you need to create an npm project by going to an empty folder, running `npm init`, and following its instructions to install Hardhat. Once your project is ready, you should run:
-
-```bash
-npm install --save-dev hardhat
+```sh
+mkdir hardhat-test
+cd hardhat-test/
+npm init
 ```
 
-To create your Hardhat project, run `npx hardhat` in your project folder.
-Let’s create the sample project and go through these steps to try out a sample task and compile, test and deploy the sample contract.
+3. Now install Hardhat.
+
+```sh
+npm install --save-dev hardhat
+```
 
 !!! note
     The sample project used here comes from the [Hardhat Quickstart guide](https://hardhat.org/getting-started/#quick-start), as well as its instructions.
