@@ -2,7 +2,7 @@ This document provides a comprehensive list of differences between the EVM and t
 
 ### EVM-equivalence
 
-Polygon zkEVM is designed to be EVM-equivalent rather than just being compatible.
+Polygon zkEVM is designed to be EVM-equivalent rather than just compatible.
 
 The difference between EVM-compatibility and EVM-equivalence is that;
    
