@@ -14,7 +14,7 @@ EVM-equivalence is critical to Polygon zkEVM for several reasons, including the 
    
    1. Development teams don't have to make changes to their code, and this eliminates any chance for security vulnerabilities to be introduced.
 
-   2. No code changes, means no need for additional audits. This saves time and money.
+   2. No code changes means no need for additional audits. This saves time and money.
 
    3. Since consolidation of batches and finality of transactions is achieved via smart contracts on Ethereum, Polygon zkEVM benefits from the security of Ethereum.
 
