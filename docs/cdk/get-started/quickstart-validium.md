@@ -183,6 +183,17 @@ You should see a page similar to this:
   <img src="/img/cdk/cdk-tx-view-on-block-explorer.png" alt="bridge" width="90%" height="30%" />
 </div>
 
+!!! warning "Troubleshooting stuck transactions with MetaMask"
+    If you encounter a stuck transaction, it is likely due to an incorrect nonce setting. 
+    
+    To resolve this issue, follow the steps below:
+
+      1. Open Metamask and navigate to your account.
+      2. Click on **Settings**.
+      3. In the **Settings** menu, select **Advanced**.
+      4. Locate the option **Clear activity and nonce data** and click on it.
+      5. This resets the nonce data associated with the account, which often resolves transaction-related issues. 
+
 ## 5. Test the bridge
 
 CDK has a native bridge with UI that allows you to transfer funds between the L1 and the L2 validium.
@@ -201,6 +212,9 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
 
 5.1.4 Click on **Connect a wallet > MetaMask**.
 
+!!! note
+    You won't see this view the second time around.
+
 <div align="center">
   <img src="/img/cdk/cdk-bridge.png" alt="bridge" width="90%" height="30%" />
 </div>
@@ -211,7 +225,7 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
   <img src="/img/cdk/cdk-bridge-connected.png" alt="bridge" width="90%" height="30%" />
 </div>
 
-5.1.6 Enter the amount (e.g. 5) to bridge and click **Continue**, you will see the **Confirm Bridge** page.
+5.1.6 Enter the amount (e.g. 5) to bridge and click **Continue**, after confirming you understood what you're doing, you will see the **Confirm Bridge** page.
 
 5.1.7 Click **Bridge** and approve the transaction on the MetaMask pop-up:
 
