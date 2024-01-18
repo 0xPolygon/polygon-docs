@@ -22,7 +22,7 @@ EVM-equivalence is critical to Polygon zkEVM for several reasons, including the 
 
    5. It also allows for significant and quick dApp adoption, because applications built on Ethereum are automatically compatible.
 
-Ultimately, Polygon zkEVM offers developers the exact same UX as on Ethereum, with significantly improved scalability.
+Ultimately, Polygon zkEVM offers developers the same UX as on Ethereum, with significantly improved scalability.
 
 
 !!!info
