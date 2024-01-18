@@ -78,4 +78,4 @@ Other precompiled contracts have no effect on the zkEVM state tree and are treat
 
    - [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930), which defines the **Optional Access Lists** transaction type, is not supported.
 
-   - [**BASEFEE**](https://ethereum-org-fork.netlify.app/en/developers/docs/gas#base-fee)  opcode is not supported. The zkEVM implements Berlin hardfork, but not the London hardfork.
+   - [`BASEFEE`](https://ethereum-org-fork.netlify.app/en/developers/docs/gas#base-fee) opcode is not supported. The zkEVM implements the Berlin hardfork, but not the London hardfork.
