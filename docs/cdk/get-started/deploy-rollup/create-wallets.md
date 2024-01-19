@@ -1,9 +1,8 @@
-## Clone the contracts
+## Set up wallet contracts
 
-Clone the contracts from our [github repository](https://github.com/0xPolygonHermez/zkevm-contracts):
+Clone the wallet contracts from the [`zkevm-contracts` repository](https://github.com/0xPolygonHermez/zkevm-contracts) and install the `npm` libraries.
 
-```bash
-cd ~
+```sh
 git clone https://github.com/0xPolygonHermez/zkevm-contracts.git
 cd ~/zkevm-contracts
 npm i
@@ -11,12 +10,14 @@ npm i
 
 ## Create wallets
 
-Next, create a `wallets.js` file with the following content:
+Next, create a `wallets.js` file.
 
-```bash
+```sh
 cd ~/zkevm-contracts
-vim wallets.js
+nano wallets.js
 ```
+
+Copy/paste the JavaScript code below.
 
 ```js
 const ethers = require("ethers");
@@ -47,106 +48,77 @@ main().catch((e) => {
 
 Generate the wallets using below command:
 
-```bash
+```sh
 node wallets.js | tee wallets.txt
 ```
 
-## Prepare deploy configuration
+## Prepare environment variables
 
-Edit the environment variables:
+1. Edit the environment variables file.
 
-```bash
-cp .env.example .env        # copies .env.example file into .env
-nano .env                   # opens .env file for editing
-```
+    ```bash
+    cp .env.example .env        # copies .env.example file into .env
+    nano .env                   # opens .env file for editing
+    ```
 
-Set these variables:
+2. Set the following variables.
 
-```bash
-cd ~/zkevm-contracts
-cp .env.example .env
-vim .env
-```
+    ```sh
+    `MNEMONIC`="..."            # from wallets.txt Deployment Address mnemonic
+    `INFURA_API_KEY`="..."      # your API Key from Infura account
+    `ETHERSCAN_API_KEY`="..."   # your Etherscan API key
+    ```
 
-Set these variables within your .env file:
+3. Send 0.5 GöETH to the deployment address wallet listed in `wallets.txt`.
 
-```bash
-MNEMONIC="..."              # from wallets.txt Deployment Address mnemonic
-INFURA_PROJECT_ID="..."     # your API Key from Infura account
-ETHERSCAN_API_KEY="..."     # your Etherscan API key
-```
+## Edit deployment configuration
 
-Next, open the `deploy_parameters.json` file in vim editor:
+1. Open the `deploy-parameters.json` file.
 
-```bash
-cd ~/zkevm-contracts/deployment
-cp deploy_parameters.json.example deploy_parameters.json
-vim deploy_parameters.json
-```
+    ```sh
+    cd ~/zkevm-contracts/deployment
+    cp deploy_parameters.json.example deploy_parameters.json
+    nano deploy_parameters.json
+    ```
 
-Only fill in the commented fields in your `deploy_parameters.json` file:
+2. Edit the following parameters to match the generated wallet parameters.
 
-```json
-{
-  "realVerifier": true,
-  "trustedSequencerURL": "<http://X.X.X.X:8545>", // your public IP
-  "networkName": "zkevm",
-  "version": "0.0.1",
-  "trustedSequencer": "", // from wallets.txt Trusted Sequencer address
-  "chainID": 42069, // put any id you prefer
-  "trustedAggregator": "", // from wallets.txt Trusted Aggregator address
-  "trustedAggregatorTimeout": 604799,
-  "pendingStateTimeout": 604799,
-  "forkID": 4,
-  "admin": "", // from wallets.txt Deployment Address  address
-  "zkEVMOwner": "", // from wallets.txt Deployment Address address
-  "timelockAddress": "", // from wallets.txt Deployment Address address
-  "minDelayTimelock": 1,
-  "salt": "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "initialZkEVMDeployerOwner": "", // from wallets.txt Deployment Address address
-  "maticTokenAddress": "", // put existing contract address or leave empty to auto-deploy a new contract
-  "zkEVMDeployerAddress": "", // put existing contract address or leave empty to auto-deploy a new contract
-  "deployerPvtKey": "",
-  "maxFeePerGas": "",
-  "maxPriorityFeePerGas": "",
-  "multiplierGas": ""
-}
-```
-
-!!!caution
-    Get some GöETH
-
-    You will need to send 0.5 GöETH to the deployment address wallet listed in `wallets.txt`.
-
-Adjust the `gasPrice` according to the network status. For Goerli, you can check it with the following command, where you insert your Etherscan API key, note this can sometimes be 0 for testnet:
-
-```bash
-ETHERSCAN_API_KEY="YOUR_ETHERSCAN_API_KEY" echo "$(($(printf "%d\\n" $(curl -s "https://api-goerli.etherscan.io/api?module=proxy&action=eth_gasPrice&apikey=$ETHERSCAN_API_KEY" | jq -r .result))/1000000000)) Gwei"
-```
-
-Edit `~/zkevm/zkevm-contracts/deployment/helpers/deployment-helpers.js` to adjust the `gasPrice` according to network status. It is recommended to add 50 Gwei to the current `gasPrice` to ensure transactions are processed quickly.
-
-```js
-vim ~/zkevm-contracts/deployment/helpers/deployment-helpers.js
-const gasPriceKeylessDeployment = "50"; // 50 gwei
-```
+    - `trustedSequencer`: trusted sequencer address in `wallets.txt`.
+    - `trustedAggregator`: trusted aggregated address in `wallets.txt`.
+    - `admin`: deployment address in `wallets.txt`.
+    - `zkEVMOwner`: deployment address in `wallets.txt`.
+    - `timelockAddress`: deployment address in `wallets.txt`.
+    - `initialZkEVMDeployer`: deployment address in `wallets.txt`.  
 
 ## Deploy contracts
 
-```bash
-cd ~/zkevm-contracts/
-npm i @openzeppelin/hardhat-upgrades
-npm run deploy:deployer:ZkEVM:goerli
-npm run verify:deployer:ZkEVM:goerli
-npm run deploy:testnet:ZkEVM:goerli
-npm run verify:ZkEVM:goerli
-```
+1. `cd` back to `zkevm-contract` root directory and run the deployment scripts.
 
-The previous scripts will auto-deploy the MATIC token contract and the `zkEVMDeployer` contract if required.
+    ```sh
+    cd ..
+    npm i @openzeppelin/hardhat-upgrades
+    npm run deploy:deployer:ZkEVM:goerli
+    npm run verify:deployer:ZkEVM:goerli
+    npm run prepare:testnet:ZkEVM:goerli && npm run deploy:ZkEVM:test:goerli
+    npm run verify:ZkEVM:goerli
+    ```
 
-You will see in the logs the verification of each smart contract deployed, but you can check it on etherscan too.
+    You should output that looks something like this at the start each time:
 
-```html
-https://goerli.etherscan.io/address/0x -> Put the Deployment Address wallet from
-wallets.txt
-```
+    ```sh
+    > @0xpolygonhermez/zkevm-contracts@3.0.0 deploy:deployer:ZkEVM:goerli
+    > npx hardhat run deployment/2_deployPolygonZKEVMDeployer.js --network goerli
+
+    #######################
+
+    polygonZkEVMDeployer deployed on:  0x8c4e69A65f84D5Ee0d83095916706Be74C133571
+    ```
+
+    !!! info
+        The scripts auto-deploy the MATIC token contract and the `zkEVMDeployer` contract if required.
+
+2. Check the deployment was successful on Etherscan.
+
+    ```html
+    https://goerli.etherscan.io/address/[deployment-address] <!-- from `wallets.txt` -->
+    ```
