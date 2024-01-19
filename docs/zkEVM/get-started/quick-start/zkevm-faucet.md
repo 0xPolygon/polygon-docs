@@ -12,7 +12,7 @@ The faucet allows anyone to request ETH testnet tokens, such as Sepolia testnet 
 
 Here is how to use the Polygon zkEVM faucet:
 
-- Navigate to [`faucet.polygon.technology``](https://faucet.polygon.technology/)
+- Navigate to [`faucet.polygon.technology`](https://faucet.polygon.technology/)
 ![Figure: faucet-zk](../../../img/zkEVM/zkv-faucet-zketh.png)
 
 - Select the network where you want to receive the test tokens. In our case, we will select `Polygon zkEVM`.
