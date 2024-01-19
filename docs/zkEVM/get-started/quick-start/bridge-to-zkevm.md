@@ -19,7 +19,7 @@ Follow this step-by-step guide on how to bridge assets from Ethereum to Polygon 
 
 ![Figure: wallet](../../../img/zkEVM/zkv-zkwallet-1.jpg)
 
-- Click on the Bridge module to access the zkEVM environment.
+- Click on the Bridge wallet feature to access the zkEVM environment.
 
 - Set the amount of tokens to transfer from Ethereum network to zkEVM Mainnet (Or, from an Ethereum testnet to zkEVM testnet).
 
