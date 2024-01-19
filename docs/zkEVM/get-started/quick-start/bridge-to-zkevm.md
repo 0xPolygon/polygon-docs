@@ -19,21 +19,21 @@ Follow this step-by-step guide on how to bridge assets from Ethereum to Polygon 
 
 ![Figure: wallet](../../../img/zkEVM/zkv-zkwallet-1.jpg)
 
-- Click on the **Bridge** module to access the zkEVM environment.
+- Click on the Bridge module to access the zkEVM environment.
 
 - Set the amount of tokens to transfer from Ethereum network to zkEVM Mainnet (Or, from an Ethereum testnet to zkEVM testnet).
 
 ![Figure: bridge2](../../../img/zkEVM/zkv-bridge2.jpg)
 
 - Recent transactions and pending transactions can be viewed on the right hand side of the page.
-- Click the **Bridge ETH to zkEVM testnet** button to proceed. This is followed by Metamask's prompt to approve gas to be spent.
+- Click the `Bridge ETH to zkEVM testnet` button to proceed. This is followed by Metamask's prompt to approve gas to be spent.
 
 ![Figure: metamask1](../../../img/zkEVM/zkv-metamask1.jpg)
 
-- Click **Confirm** to approve the bridge transaction.
+- Click `Confirm` to approve the bridge transaction.
 
 - And allow a few moments for your transaction to be processed.
 
-- Once it is completed, past and pending transactions can be viewed by clicking the **Transactions** button located on the left side of the menu.
+- Once it is completed, past and pending transactions can be viewed by clicking the `Transactions` button located on the left side of the menu.
 
 ![Figure: tx-history](../../../img/zkEVM/zkv-transaction-history.jpg)
