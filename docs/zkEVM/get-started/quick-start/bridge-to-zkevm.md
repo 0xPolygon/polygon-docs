@@ -26,7 +26,7 @@ Follow this step-by-step guide on how to bridge assets from Ethereum to Polygon 
 ![Figure: bridge2](../../../img/zkEVM/zkv-bridge2.jpg)
 
 - Recent transactions and pending transactions can be viewed on the right hand side of the page.
-- Click the `Bridge ETH to zkEVM testnet` button to proceed. This is followed by Metamask's prompt to approve gas to be spent.
+- Click the **Bridge ETH to zkEVM testnet** button to proceed. This is followed by Metamask's prompt to approve gas to be spent.
 
 ![Figure: metamask1](../../../img/zkEVM/zkv-metamask1.jpg)
 
