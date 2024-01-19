@@ -34,6 +34,6 @@ Follow this step-by-step guide on how to bridge assets from Ethereum to Polygon 
 
 - And allow a few moments for your transaction to be processed.
 
-- Once it is completed, past and pending transactions can be viewed by clicking the `Transactions` button located on the left side of the menu.
+- Once it is completed, past and pending transactions can be viewed by clicking the **Transactions** button located on the left side of the menu.
 
 ![Figure: tx-history](../../../img/zkEVM/zkv-transaction-history.jpg)
