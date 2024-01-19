@@ -6,7 +6,6 @@ Inbound oracles bring off-chain or real-world data to the blockchain, whereas th
 
 ## Resources
 
-1. [What is the blockchain oracle problem?](https://blog.chain.link/what-is-the-blockchain-oracle-problem/).
-1. [What is Blockchain Oracle](https://cryptobriefing.com/what-is-blockchain-oracle/).
-2. [Types of Blockchain Oracle](http://blockchainhub.net/blockchain-oracles/).
-3. [Tutorial: Getting decentralized price data](https://docs.chain.link/docs/get-the-latest-price).
+1. [What is the blockchain oracle problem?](https://blog.chain.link/what-is-the-blockchain-oracle-problem/)
+1. [What is a blockchain oracle](https://cryptobriefing.com/what-is-blockchain-oracle/).
+1. [Tutorial: Getting decentralized price data](https://docs.chain.link/docs/get-the-latest-price).

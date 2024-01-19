@@ -520,7 +520,6 @@ nav:
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md
           - Crust network: tools/storage/crusthelpers.md
-          - Mint NFTs: tools/storage/nftstorage.md
       - Oracles:
           - Getting started: tools/oracles/getting-started.md
           - API3: tools/oracles/api3.md
@@ -552,7 +551,6 @@ nav:
           - Torus:  tools/wallets/torus.md          
           - WalletConnect:  tools/wallets/walletconnect.md
           - SlashAuth:  tools/wallets/slashauth.md
-          - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
           - Particle network:  tools/wallets/particle-network.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
