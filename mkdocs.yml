@@ -43,8 +43,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Get started:
-        - Connect testnet: cdk/get-started/connect-testnet.md
-        - Quickstart:
+        - Quickstart: 
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
@@ -57,8 +56,9 @@ nav:
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
               - Activate forced transactions: cdk/get-started/deploy-rollup/activate-forced-transactions.md
               - Set up Goerli node: cdk/get-started/deploy-rollup/setup-goerli-node.md
+        - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
-        - Manage policies: cdk/how-to/manage-policies.md
+        - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
         - DAC: cdk/architecture/dac.md
       - Specification:
