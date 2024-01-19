@@ -115,7 +115,7 @@ $$
 Since  $p_i(X) = 0$  for all  $X \in \mathcal{H} = \{ \omega, \omega^2, \omega^3, \dots , \omega^n = 1 \}$, then;
 
 $$
-p_i(X)\ =\ \big((X-1)\cdot(X-\omega)\cdot(X-\omega^2)\cdots(X-\omega^{n-1})\big)\cdot q_i(X)\ =\ \big( X^{n} - 1 \big) \cdot q_i(X)
+    p_i(X)\ =\ \big((X-1)\cdot(X-\omega)\cdot(X-\omega^2)\cdots(X-\omega^{n-1})\big)\cdot q_i(X)\ =\ \big( X^{n} - 1 \big) \cdot q_i(X)
 $$
 
 for some quotient polynomial $q_i(X)$, for each $i \in \{ 1, 2, 3 \}$.
@@ -123,9 +123,15 @@ for some quotient polynomial $q_i(X)$, for each $i \in \{ 1, 2, 3 \}$.
 The polynomial identities of our mFibonacci state machine can therefore be rewritten as:
 
 $$
-\big( 1 − R(X) \big) \cdot \big[ P(X\cdot \omega) − Q(X) \big] = \mathtt{Z}_{\mathcal{H}}(X)\cdot q_1(X) \qquad\quad\text{ }\text{ }\text{ }\text{ } \\
-\big(1 − R(X)\big) · [Q(X\cdot \omega) − (P(X) · Q(X))] = \mathtt{Z}_{\mathcal{H}}(X)\cdot q_2(X) \text{}\text{ }\\
-\big(P(\omega^{\mathtt{T}}) - \mathcal{K} \big)\cdot R(X) = \mathtt{Z}_{\mathcal{H}}(X)\cdot q_3(X) \qquad\text{}\text{}\quad\qquad\qquad\qquad\text{ }
+    \big( 1 − R(X) \big) \cdot \big[ P(X\cdot \omega) − Q(X) \big] = \mathtt{Z}_{\mathcal{H}}(X)\cdot q_1(X) \qquad\quad\text{ }\text{ }\text{ }\text{ } \\
+$$
+
+$$
+    \big(1 − R(X)\big) · [Q(X\cdot \omega) − (P(X) · Q(X))] = \mathtt{Z}_{\mathcal{H}}(X)\cdot q_2(X) \text{}\text{ }\\
+$$
+
+$$
+    \big(P(\omega^{\mathtt{T}}) - \mathcal{K} \big)\cdot R(X) = \mathtt{Z}_{\mathcal{H}}(X)\cdot q_3(X) \qquad\text{}\text{}\quad\qquad\qquad\qquad\text{ }
 $$
 
 The representatives $R(X)$ and $Z_{\mathcal{H}}(X)$ in the PCS, can be preprocessed and be made public (i.e., known to both the Prover and the Verifier). The Verifier can check specific openings of these polynomials, $R(X)$ and $Z_{\mathcal{H}}(X)$.

@@ -1,10 +1,57 @@
 :root {
 	--smoke-white: #f8f8f8;
 	--main-black: #110c22;
-	--gray-light: #8d8a95;
+	--gray-light: #110c22;
 	--white: white;
 	--gray: #4f4b5c;
 	--purple: #773ef0;
+
+	--md-text-font: Generalsans;
+	--md-code-font: roboto mono;
+
+	--md-primary-bg-color: #f8f8f8;
+	--md-primary-bg-color--light: white;
+	--md-primary-fg-color: #110c22;
+}
+
+.md-footer, .md-footer__inner, .md-footer-meta, .md-copyright__highlight, .md-social__link {
+	background-color: white;
+	color: var(--main-black) !important;
+}
+
+.md-search__input {
+	background-color: var(--smoke-white) !important;
+}
+
+.md-nav>.md-nav__title {
+	color: var(--purple) !important;
+	background-color: var(--smoke-white) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.md-sidebar__scrollwrap, .md-sidebar__inner {
+	background-color: var(--smoke-white) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.md-nav__link, .md-nav__link>.md-ellipsis {
+	color: var(--main-black) !important;
+	background-color: var(--smoke-white) !important;
+}
+
+.md-nav__link>.md-nav__link--active {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
+	box-shadow: none;
+}
+
+.md-nav--secondary .md-nav__title {
+	box-shadow: none;
 }
 
 h1 {
@@ -31,7 +78,7 @@ div.main h1 {
 	margin-top: 0 !important;
 }
 
-div.main h3 {
+div.main h2 {
 	margin-top: 0 !important;
 }
 
@@ -73,7 +120,7 @@ div.main div.flexbox a {
 }
 
 div.main .nav-bar {
-	background-color: var(--white);
+	background-color: var(--smoke-white);
 	border-bottom: 1px solid rgba(0, 0, 0, .12);
 	padding: 10px 108px;
 }
@@ -114,10 +161,6 @@ div.main .nav-content {
 	justify-content: space-between;
 	align-items: flex-start;
 	display: flex;
-}
-
-div.main .section {
-
 }
 
 .hero-content-flex {
@@ -162,7 +205,7 @@ div.main .section {
 	max-width: 400px;
 }
 
-.hero-subext {
+.hero-subtext {
 	color: var(--gray);
 	font-weight: 500;
 }
@@ -230,6 +273,7 @@ div.main .section {
 }
 
 .feature-card-heading {
+	color: --purple;
 	font-size: 18px;
 	font-weight: 600;
 }
@@ -510,7 +554,7 @@ div.main .section {
 
 	.nav-menu {
 		width: 90vw;
-		background-color: var(--white);
+		background-color: var(--smoke-white);
 		flex-direction: column;
 		padding: 80px 24px 24px;
 	}
@@ -597,7 +641,7 @@ div.main .section {
 
 	.nav-menu-btn.w--open {
 		z-index: 5;
-		background-color: var(--white);
+		background-color: var(--smoke-white);
 	}
 
 	.menu-icon {
@@ -750,37 +794,4 @@ div.main .section {
 	.nav-brand.w--current {
 		padding-left: 0;
 	}
-}
-
-
-@font-face {
-	font-family: 'Generalsans';
-	src: url('../fonts/GeneralSans-Semibold.woff2') format('woff2');
-	font-weight: 600;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Generalsans';
-	src: url('../fonts/GeneralSans-Medium.woff2') format('woff2');
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Generalsans';
-	src: url('../fonts/GeneralSans-Bold.woff2') format('woff2');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Generalsans';
-	src: url('../fonts/GeneralSans-Regular.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
 }

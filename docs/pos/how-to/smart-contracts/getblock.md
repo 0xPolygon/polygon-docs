@@ -34,7 +34,7 @@ In this tutorial, you will:
 
   ![img](https://storage.getblock.io/web/blog/article-images/imga3.png)
 
-If you don't have any tokens in your account, you can request some from the Mumbai faucet through the [faucet website](https://chat.openai.com/develop/tools/matic-faucet.md).
+If you don't have any tokens in your account, you can request some from the Mumbai faucet through the [faucet website](https://faucet.polygon.technology/).
 
 ## Smart Contract Development
 

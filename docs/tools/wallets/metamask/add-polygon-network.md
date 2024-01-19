@@ -1,5 +1,5 @@
 !!! caution "Content disclaimer"
-    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
 In order to view the flow of funds in your accounts, on the Polygon Network, you will need to configure Polygon testnet and mainnet URLs on Metamask.
 

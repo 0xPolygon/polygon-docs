@@ -1,8 +1,8 @@
-## Introduction
+## Introduction (in-development)
 
-The LXLY Bridge is an interoperability solution developed to enable cross-chain communication among Polygon chains. It enables communication between two L2 chains or between an L2 chain and Ethereum as the L1.
+The LXLY Bridge is an interoperability solution aimed at enabling cross-chain communication among Polygon chains. It will enable communication between two L2 chains or between an L2 chain and Ethereum as the L1.
 
-The LXLY Bridge SC (or [PolygonZkEVMBridgeV2](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/v2/PolygonZkEVMBridgeV2.sol)) is an improved and a more robust version of the [zkEVM Bridge](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMBridge.sol) deployed in the Polygon zkEVM _beta version_.
+The LXLY Bridge SC (or [PolygonZkEVMBridgeV2](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/v2/PolygonZkEVMBridgeV2.sol)) is an improved and a more robust version of the [zkEVM Bridge](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMBridge.sol) deployed in the Polygon zkEVM mainnet_beta version_.
 
 Its modular design capacitates projects to deploy their own rollups and connect them to the Polygon ecosystem.
 
@@ -66,7 +66,7 @@ In the LXLY Bridge context, the _Rollup Manager_ SC verifies sequenced batches f
 
 In addition to verification of sequenced batches, the _Rollup Manager_ SC also creates consensus contracts for networks connecting via the LXLY Bridge.
 
-### What remains unchanged?
+### What remains unchanged from version-1?
 
 The strategy to separate the _Bridge logic_ from the _Global Exit Root logic_ remains intact. This is key to achieving interoperability.
 
@@ -82,7 +82,7 @@ Once sequenced batches have been verified, the _Global Exit Tree_ gets updated, 
 
 The Rollup Manager manages the following lists of availability;
 
-- Rollup consensus mechanisms. The list may consists of Consensus contracts such as PolygonZkEVM.sol or zkValidium.sol.
+- Rollup consensus mechanisms. The list may consist of Consensus contracts such as PolygonZkEVM.sol or zkValidium.sol.
 - Verifier contracts. For example, the PolygonZkEVM.sol uses the _Verifier.sol_ SC for verification of batches.
 
 Governance SC oversees Consensus mechanisms and Verifiers that can be added to the respective lists.
@@ -104,7 +104,7 @@ The [Rollup Manager SC](https://github.com/0xPolygonHermez/zkevm-contracts/blob/
 
   - The developer selects the Consensus and Verifier for the required rollup amongst those available in the Rollup Manager's lists,
   - Requests creation of a rollup with the selected specifications,
-  - Governance SC invokes the Rollup Manager's `AddNewRollupType()` function,
+  - Governance SC invokes the Rollup Manager's `addNewRollupType()` function,
   - Once, a rollup is created, the transfer of assets can be processed in the usual manner.
 
 ### Overall flow of events
@@ -118,11 +118,11 @@ The below diagram captures the following flow of events, most of which are handl
 - Verification of batches,
 - Updating the Global Exit Root.
 
-![Figure 3: Events flow related to RollupManager.sol](../../../img/zkEVM/lxly-3-flow-rollupmanager.png)
+![Figure 3: Events flow related to RollupManager.sol](../../../img/zkEVM/lxly-bridge-diagram.png)
 
 ## Conclusion
 
-Although the LXLY Bridge is still a work in progress, it is designed to be Polygon's talisman for accomplishing multi-chain interoperability.
+Although the LXLY Bridge is still in development, it is a central component to Polygon's aggregaton layer which offers multi-chain interoperability.
 
 The LXLY Bridge currently works with the Polygon zkEVM as the L2 and the Ethereum network as L1.
 

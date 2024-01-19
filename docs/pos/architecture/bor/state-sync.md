@@ -1,4 +1,4 @@
-`State Sync` is the native mechanism to read Ethereum data from Matic EVM chain.
+`State Sync` is the native mechanism for a user in the Polygon PoS chain to read the latest Ethereum data.
 
 Validators on the Heimdall layer pickup the [StateSynced](https://github.com/maticnetwork/contracts/blob/a4c26d59ca6e842af2b8d2265be1da15189e29a4/contracts/root/stateSyncer/StateSender.sol#L24) event and pass it on to the Bor layer.
 
@@ -76,7 +76,8 @@ Only `0x0000000000000000000000000000000000001001` — `StateReceiver.sol`, must 
 
 ## System call
 
-Only system address, `2^160-2`, allows making a system call. Bor calls it internally with the system address as `msg.sender`. It changes the contract state and updates the state root for a particular block. Inspired from [https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md) and [https://wiki.parity.io/Validator-Set#contracts](https://wiki.parity.io/Validator-Set#contracts)
+Only system address, `2^160-2`, allows making a system call. Bor calls it internally with the system address as `msg.sender`. It changes the contract state and updates the state root for a particular block. Inspired by [https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md). 
+<!-- and [https://wiki.parity.io/Validator-Set#contracts](https://wiki.parity.io/Validator-Set#contracts) -->
 
 System call is helpful to change state to contract without making any transaction.
 

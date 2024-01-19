@@ -1,15 +1,14 @@
-This document aims to explain how the Polygon zkEVM protocol manages the L2 rollup's states while providing state transition verifiability and security.
+This document aims to explain how the Polygon zkEVM protocol manages the L2 rollup state while providing state transition verifiability and security.
 
 ## Trustless L2 state management
 
-The trusted sequencer generates batches, but in order to achieve fast finality of L2 transactions and avoid the need to wait for the next L1 block, they are shared with L2 network nodes via a broadcasting channel. Each node will run the batches to compute the resulting L2 state locally.
+The trusted sequencer generates batches and broadcasts the batches to all L2 nodes. Each L2 node can then run the batches to compute the resulting L2 state locally, and thus achieve faster finality of L2 transactions.
 
-Once the trusted sequencer has committed the sequences of batches fetched directly from L1, L2 network nodes will execute them again, and they will no longer have to trust it.
+But the trusted sequencer also commits the batches to L1, allowing L2 nodes who rely on the Ethereum security to fetch the batches from there, execute them, and thus compute the L2 state.
 
-The off-chain execution of the batches will eventually be verified on-chain via a zero-knowledge proof, and the resulting L2 state root will be committed. As the zkEVM protocol progresses, new L2 state roots will be synchronized directly from L1 by L2 network nodes.
+Nodes requiring stringent security can wait for correct transactional computations to be proved and verified, before syncing state. Zero-knowledge proofs are computed off-chain as required by the L1 smart contract and proofs are verified by another verifier smart contract.
 
-!!!info
-    Both data availability and verification of transaction execution rely only on L1 security assumptions and at the final stage of the protocol, the nodes will only rely on data present in L1 to stay synchronized with each L2 state transition.
+This way both data availability and verification of transaction execution rely only on L1 security assumptions.
 
 ![figure 1](../../../img/zkEVM/01L2-overview-l2-state-management.png)
 

@@ -198,12 +198,17 @@ As far as **boundary constraints** are concerned, we can, for instance,
 - create public 'variables'; $\texttt{input}$ and $\texttt{output}$,
 
 - set boundary constraints,
-  $$
-  \mathtt{L1(x) \cdot \big(FREE(\omega^0) - input\big) = 0} \\
-  \mathtt{L2(x) \cdot \big(A(\omega^{3}) - output\big) = 0}\quad \\
-  $$
-  where $\mathtt{L1(x)}$ and $\mathtt{L2(x)}$ are precomputed constant polynomials.
-   In fact, $\mathtt{L1(x) = [1,0,0,0]}$ and  $\mathtt{L2(x) = [0,0,0,1]}$.
+
+    $$
+    \begin{aligned}
+    &\mathtt{L1(x) \cdot \big(FREE(\omega^0) - input\big) = 0} \\
+    &\mathtt{L2(x) \cdot \big(A(\omega^{3}) - output\big) = 0}
+    \end{aligned}
+    $$
+
+    where $\mathtt{L1(x)}$ and $\mathtt{L2(x)}$ are precomputed constant polynomials.
+
+    In fact, $\mathtt{L1(x) = [1,0,0,0]}$ and  $\mathtt{L2(x) = [0,0,0,1]}$.
 
 In the big scheme of things, these are Lagrange polynomials emanating from interpolation. Verification relies on the fact that: these polynomial identities, including the boundary constraints, hold true *if, and only if* the execution trace is correct and faithful to the instructions in the zkASM program.
 

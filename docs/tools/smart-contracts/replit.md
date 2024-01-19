@@ -1,6 +1,6 @@
 ## Overview
 
-[Replit](https://docs.replit.com/tutorials/01-introduction-to-the-repl-it-ide) is a coding platform that allows you to write code and host apps. Replit supports [Solidity programming language](https://replit.com/@replit/Solidity-starter-beta?v=1) so it provides all of the features and functionality for Web3 developers to create and deploy smart contracts.
+[Replit](https://docs.replit.com/) is a coding platform that allows you to write code and host apps. Replit supports Solidity so it provides all of the features and functionality for Web3 developers to create and deploy smart contracts.
 
 This article guides you to build and deploy a solidity smart contract on Polygon using [Replit IDE](https://replit.com/signup) and [Replit Solidity development template (Solidity starter beta)](https://replit.com/@replit/Solidity-starter-beta?v=1).
 
@@ -14,7 +14,7 @@ This article guides you to build and deploy a solidity smart contract on Polygon
 
 !!! tip
 
-    For additional examples about Solidity with Replit, you can read the article [Get started with Replit](https://blog.replit.com/solidity) or check [Replit Solidity documentation and Escrow contract tutorial](https://docs.replit.com/tutorials/33-escrow-contract-with-solidity).
+    For additional examples about Solidity with Replit, you can read the article [Get started with Replit](https://blog.replit.com/solidity).
 
 ## Prerequisites
 

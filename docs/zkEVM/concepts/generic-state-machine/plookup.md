@@ -81,7 +81,8 @@ The above concepts defined for multisets apply similarly to vectors, and the Plo
 
 A **vector** is a collection of ordered field elements, for some finite field $\mathbb{F}$, and it is denoted by $\mathbf{a} = ( a_1 , a_2 , \dots , a_n )$.
 
-A vector $\mathbf{a} = ( a_1 , a_2 , \dots , a_n )$ is **contained** in a vector $\mathbf{b} = ( b_1 , b_2 , \dots , b_d )$, denoted by $\mathbf{a} \sub \mathbf{b}$ , if each $a_i \in  \{ b_1 , b_2 , \dots , b_d \}$ for  $i \in \{ 1 , 2 , \dots , n \}$.
+A vector $\mathbf{a} = ( a_1 , a_2 , \dots , a_n )$ is **contained** in a vector $\mathbf{b} = ( b_1 , b_2 , \dots , b_d )$, denoted by 
+${\mathbf{a}} \subset {\mathbf{b}}$, if each $a_i \in  \{ b_1 , b_2 , \dots , b_d \}$ for  $i \in \{ 1 , 2 , \dots , n \}$.
 
 The **vector of differences** of a given vector $\mathbf{a} = ( a_1 , a_2 , \dots , a_n )$  is defined as the vector $\mathbf{a'} = (a_2 - a_1, a_3 - a_2, \dots , a_n - a_{n-1})$, which has one less component (or element) compared to $\mathbf{a}$. That is, $|\mathbf{a'}| = n - 1$  because $|\mathbf{a}| = n$.
 

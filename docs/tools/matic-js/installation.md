@@ -1,16 +1,16 @@
-Matic.js is made up of two parts:
+Matic.js is made up of a main library and an Ethereum library:
 
-## 1. Main library
+## Main library
 
-The Main library has the core logic and provides different APIs. The user interacts mostly with this library.
+The main library has the core logic and provides different APIs. The user interacts mostly with this library.
 
-```
+```sh
 npm i @maticnetwork/maticjs
 ```
 
-## 2. Ethereum library
+## Ethereum library
 
-Ethereum library allows us to use any favourite ether library. It is injected into maticjs using plugins.
+The Ethereum library allows us to use any favorite ether library. It is injected into maticjs using plugins.
 
 matic.js supports two popular library -
 
@@ -19,12 +19,12 @@ matic.js supports two popular library -
 
 ### Web3.js
 
-```
+```sh
 npm install @maticnetwork/maticjs-web3
 ```
 
 ### ethers
 
-```
+```sh
 npm install @maticnetwork/maticjs-ethers
 ```

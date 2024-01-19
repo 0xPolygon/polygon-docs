@@ -1,27 +1,22 @@
 site_name: Polygon Knowledge Layer
 site_author: Polygon Labs
-copyright: Copyright &copy; 2023 Polygon Labs
+copyright: Copyright &copy; 2024 Polygon Labs
 repo_name: Polygon Knowledge Layer
 repo_url: https://github.com/0xPolygon/polygon-docs
 edit_uri: edit/main/docs/
-#remote_branch: gh-pages
-#remote_name: gh-deploy
+site_url: https://docs.polygon.technology/
 
 theme:
   name: material
   palette:
-    - scheme: default
       primary: white
-      accent: purple
+      accent: deep purple
   language: en
   custom_dir: overrides
   favicon: img/favicon.ico
   icon:
     logo: logo
     repo: repo
-  font:
-    text: Roboto
-    code: Roboto Mono
   features:
     - search.suggest
     - search.highlight
@@ -48,22 +43,30 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Get started:
+        - Connect testnet: cdk/get-started/connect-testnet.md
         - Quickstart:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
           - Validium: cdk/get-started/deploy-validium.md
-          - Rollup: cdk/get-started/deploy-rollup.md
+          - Rollup: 
+              - Introduction: cdk/get-started/deploy-rollup/intro.md
+              - Install dependencies: cdk/get-started/deploy-rollup/install-dependencies.md
+              - Create wallets: cdk/get-started/deploy-rollup/create-wallets.md
+              - Deploy node: cdk/get-started/deploy-rollup/deploy-node.md
+              - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
+              - Activate forced transactions: cdk/get-started/deploy-rollup/activate-forced-transactions.md
+              - Set up Goerli node: cdk/get-started/deploy-rollup/setup-goerli-node.md
       - How to:
         - Manage policies: cdk/how-to/manage-policies.md
-      #- Architecture:
+      - Architecture:
+        - DAC: cdk/architecture/dac.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
         - Rollup: cdk/concepts/rollup.md
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
-     # - API/SDK:
       - Additional resources:
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
@@ -87,6 +90,8 @@ nav:
           - Configure Prover: zkEVM/get-started/deploy-zkevm/configure-prover.md
           - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
           - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
+        - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+        - Historical data: zkEVM/get-started/historical-data.md
       - How to:
         - How to: zkEVM/how-to/index.md
         - Write a contract: zkEVM/how-to/write-contract.md
@@ -98,7 +103,7 @@ nav:
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - State management: zkEVM/architecture/protocol/state-management.md
-          - Trasaction life cycle:
+          - Transaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
             - Transaction execution: zkEVM/architecture/protocol/transaction-life-cycle/transaction-execution.md
             - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
@@ -217,6 +222,7 @@ nav:
             - Google cloud: pos/how-to/operating/full-node/gcp.md
           - Validator node:
             - Validator node: pos/how-to/operating/validator-node/index.md
+            - Rewards and staking incentives: pos/how-to/operating/validator-node/rewards.md
             - Manual install: pos/how-to/operating/validator-node/manual-install.md
             - Ansible: pos/how-to/operating/validator-node/ansible.md
             - Staking: pos/how-to/operating/validator-node/staking.md
@@ -241,7 +247,7 @@ nav:
           - GetBlock: pos/how-to/smart-contracts/getblock.md
           - QuickNode: pos/how-to/smart-contracts/quicknode.md
           - SmartPress: pos/how-to/smart-contracts/smartpress.md
-          - ThirdWeb: pos/how-to/smart-contracts/thirdweb.md
+          - thirdweb: pos/how-to/smart-contracts/thirdweb.md
         - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
           - Architecture: pos/architecture/index.md
@@ -262,7 +268,56 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
-      - Concepts:
+      #- Specification:
+      #    - Specification: pos/spec/index.md
+      - Operating various nodes:
+        # - Operate various nodes: pos/operate-node/index.md
+        - System requirements: pos/operate-node/validator/validator-node-system-requirements.md
+        - Operators:
+          # - Operators: pos/operate-node/operate/index.md
+          - Full node binaries: pos/operate-node/operate/full-node-binaries.md
+          - Full node docker: pos/operate-node/operate/full-node-docker.md
+          - Full node ansible: pos/operate-node/operate/full-node-ansible.md
+          - Full node packages: pos/operate-node/operate/full-node-packages.md
+          - Full node gcp: pos/operate-node/operate/full-node-gcp.md
+          - Erigon client: pos/operate-node/operate/run-erigon-node.md
+        - Validators:
+          # - Validators: pos/operate-node/validator/index.md
+          - Prerequisites: pos/operate-node/validator/kb/how-to.md
+          - Validator binaries: pos/operate-node/validator/run-validator/binaries.md
+          - Validator ansible: pos/operate-node/validator/run-validator/ansible.md
+          - Validator packages: pos/operate-node/validator/run-validator/packages.md
+          - Staking operations: pos/operate-node/validator/validator-staking-operations.md
+          - Commission operations: pos/operate-node/validator/validator-commission-operations.md
+        - Validator actions:
+          - Becoming a validator: pos/operate-node/validator/getting-started.md
+          - Validator Responsibilities: pos/operate-node/validator/responsibilities.md
+          - Topup Heimdall fee: pos/operate-node/validator/topup-heimdall-fee.md
+          - Change your signer address: pos/operate-node/validator/change-signer-address.md
+          - Move stake: pos/operate-node/validator/move-stake.md
+        - Delegate:
+          - How to delegate: pos/operate-node/delegate/delegate.md
+          - Delegator FAQs: pos/operate-node/delegate/delegator-faq.md
+          # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
+        - Troubleshooting:
+          - Validator performance: pos/operate-node/validator/validator-performance.md
+          # - Staking FAQs: pos/operate-node/validator/staking-faq.md
+          - Technical FAQs: pos/operate-node/validator/technical-faqs.md
+          - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
+          - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
+      - Reference:
+        - Contracts:
+          - Genesis contracts: pos/reference/contracts/genesis-contracts.md
+          - Delegation via validator shares: pos/reference/contracts/delegation.md
+          - Staking manager: pos/reference/contracts/stakingmanager.md
+        - Heimdall and Bor snapshots: pos/reference/snapshot-instructions-heimdall-bor.md
+        - Default ports for nodes: pos/reference/port-management.md
+        - Common commands: pos/reference/commands.md
+        - Node errors: pos/reference/errors.md
+        - RPC endpoints: pos/reference/rpc-endpoints.md
+        - PoS mainnet multi-signatures: pos/reference/commit-chain-multisigs.md
+        - Mapped tokens: pos/reference/mapped-tokens.md
+      - Concepts: 
           - Concepts: pos/concepts/index.md
           - Tokens:
             - Tokens: pos/concepts/tokens/index.md
@@ -276,21 +331,97 @@ nav:
   - Miden:
       - Miden: miden/index.md
       - Overview: miden/overview.md
-      - Miden zkRollup docs:
+      - Roadmap:  miden/roadmap.md
+      - Miden rollup docs:
           - Introduction:  
               - Welcome: miden/introduction/index.md
-              - Roadmap:  miden/roadmap.md
           - Architecture:
               - Architecture:  miden/architecture/index.md
               - Accounts:  miden/architecture/accounts.md
-              - Assets:  miden/architecture/assets.md
-              - Execution:  miden/architecture/execution.md
               - Notes:  miden/architecture/notes.md
-              - State:  miden/architecture/state.md
+              - Assets:  miden/architecture/assets.md
               - Transactions:  miden/architecture/transactions.md
-          - Crypto primitives:
-              - Tiered sparce Merkle tree (TSMT):  miden/crypto-primitives/tsmt.md
-     # - Miden VM docs: https://0xpolygonmiden.github.io/miden-vm/
+              - State:  miden/architecture/state.md
+              - Execution:  miden/architecture/execution.md
+          - Concepts:
+              - Crypto primitives:
+                  - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
+      - Miden VM:
+          - Introduction:
+              - Introduction: miden/vm/intro/index.md
+              - Overview: miden/vm/intro/overview.md
+              - Usage: miden/vm/intro/usage.md
+              - Performance: miden/vm/intro/performance.md
+              - Background material: miden/vm/background.md
+          - Architecture:
+              - Design: miden/vm/architecture/introduction.md
+              - Programs: miden/vm/architecture/programs.md
+              - Decoder:
+                  - Decoder: miden/vm/architecture/decoder/index.md
+                  - Constraints:  miden/vm/architecture/decoder/constraints.md
+              - Operand stack:
+                  - Operand stack: miden/vm/architecture/stack/index.md
+                  - Operation constraints:  miden/vm/architecture/stack/op-constraints.md
+                  - System operations:  miden/vm/architecture/stack/system-ops.md
+                  - Field operations:  miden/vm/architecture/stack/field-ops.md
+                  - u32 operations:  miden/vm/architecture/stack/u32-ops.md
+                  - Stack manipulation:  miden/vm/architecture/stack/stack-ops.md
+                  - Input/output operations:  miden/vm/architecture/stack/io-ops.md
+                  - Cryptographic operations:  miden/vm/architecture/stack/crypto-ops.md
+              - Range checker:  miden/vm/architecture/range.md
+              - Chiplets:
+                  - Chiplets: miden/vm/architecture/chiplets/index.md
+                  - Hash chiplet:  miden/vm/architecture/chiplets/hasher.md
+                  - Bitwise chiplet:  miden/vm/architecture/chiplets/bitwise.md
+                  - Memory chiplet:  miden/vm/architecture/chiplets/memory.md
+                  - Kernel ROM chiplet:  miden/vm/architecture/chiplets/kernel_rom.md 
+              - Lookups:
+                  - Lookups: miden/vm/architecture/lookups/index.md
+                  - Multiset checks:  miden/vm/architecture/lookups/multiset.md
+                  - LogUp: miden/vm/architecture/lookups/logup.md
+          - Specification:
+                - AirScript: 
+                  - Introduction: miden/specification/airscript/introduction.md
+                  - Language description:
+                      - Syntax overview: miden/specification/airscript/syntax.md
+                      - Code organization: miden/specification/airscript/code-organization.md
+                      - Type declarations: miden/specification/airscript/type-declarations.md
+                      - Constraints: miden/specification/airscript/constraints.md
+                      - Variables: miden/specification/airscript/variables.md
+                      - Evaluators: miden/specification/airscript/evaluators.md
+                      - Convenience: miden/specification/airscript/convenience.md
+                      - Example AIR definition: miden/specification/airscript/example.md
+                      - Keywords: miden/specification/airscript/keywords.md
+                      - Appendix: miden/specification/airscript/appendix.md
+                  - Backends: miden/specification/airscript/backends.md
+                - Development tooling:
+                    - Overview: miden/vm/tools/index.md
+                    - Debugger: miden/vm/tools/debugger.md
+                    - REPL: miden/vm/tools/repl.md
+          - API:
+              - Miden programming reference: miden/vm/specification/index.md
+              - Assembly:
+                  - Miden assembly:  miden/vm/specification/assembly/index.md
+                  - Code organization:  miden/vm/specification/assembly/code-organization.md
+                  - Execution contexts:  miden/vm/specification/assembly/execution-contexts.md
+                  - Flow control:  miden/vm/specification/assembly/flow-control.md
+                  - Field operations:  miden/vm/specification/assembly/field-operations.md
+                  - u32 operations:  miden/vm/specification/assembly/u32-operations.md
+                  - Stack manipulation:  miden/vm/specification/assembly/stack-manipulation.md
+                  - IO operations:  miden/vm/specification/assembly/io-operations.md
+                  - Cryptographic operations:  miden/vm/specification/assembly/cryptographic-operations.md
+                  - Debugging:  miden/vm/specification/assembly/debugging.md
+              - Standard library:
+                  - Miden standard library: miden/vm/specification/stdlib/index.md
+                  - Collections:  miden/vm/specification/stdlib/collections.md
+                  - Crypto:
+                      - Digital signatures:  miden/vm/specification/stdlib/crypto/dsa.md
+                      - FRI verification procedures:  miden/vm/specification/stdlib/crypto/fri.md
+                      - Cryptographic hashes:  miden/vm/specification/stdlib/crypto/hashes.md
+                  - Math:
+                      - Unsigned 64-bit integer operations:  miden/vm/specification/stdlib/math/u64.md
+                  - Memory procedures:  miden/vm/specification/stdlib/mem.md
+                  - System procedures:  miden/vm/specification/stdlib/sys.md
   - Developer tools: 
       - Developer tools: tools/index.md
       - Smart contract development: 
@@ -298,9 +429,12 @@ nav:
           - Truffle: tools/smart-contracts/truffle.md
           - Remix: tools/smart-contracts/remix.md
           - Replit: tools/smart-contracts/replit.md
+          - Crossmint: tools//smart-contracts/crossmint.md
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
+      - Third-party tutorials:
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Data:
           - The Graph: 
               - Overview: tools/data/the-graph/overview.md
@@ -311,9 +445,9 @@ nav:
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
       - Matic.js:
+          - Installation:  tools/matic-js/installation.md
+          - Get started:  tools/matic-js/get-started.md
           - POS:
-              - Get started:  tools/matic-js/get-started.md
-              - Installation:  tools/matic-js/installation.md
               - POS client:  tools/matic-js/pos/client.md
               - API overview:  tools/matic-js/api-architecture.md
               - Setup:
@@ -358,28 +492,28 @@ nav:
                   - withdrawStartWithMetaData:  tools/matic-js/pos/erc721/withdraw-start-with-meta-data.md
                   - withdrawStart:  tools/matic-js/pos/erc721/withdraw-start.md
               - ERC1155:
-                  - approve-all-for-mintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
-                  - approve-all:  tools/matic-js/pos/erc1155/approve-all.md
-                  - deposit-many:  tools/matic-js/pos/erc1155/deposit-many.md
+                  - approveAllForMintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
+                  - approveAll:  tools/matic-js/pos/erc1155/approve-all.md
+                  - depositMany:  tools/matic-js/pos/erc1155/deposit-many.md
                   - deposit:  tools/matic-js/pos/erc1155/deposit.md
-                  - get-balance:  tools/matic-js/pos/erc1155/get-balance.md
+                  - getBalance:  tools/matic-js/pos/erc1155/get-balance.md
                   - index:  tools/matic-js/pos/erc1155/index.md
-                  - is-approved-all:  tools/matic-js/pos/erc1155/is-approved-all.md
-                  - is-withdraw-exited-many:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
-                  - is-withdraw-exited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
+                  - isApprovedAll:  tools/matic-js/pos/erc1155/is-approved-all.md
+                  - isWithdrawExitedMany:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
                   - transfer:  tools/matic-js/pos/erc1155/transfer.md
-                  - withdraw-exit-faster-many:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
-                  - withdraw-exit-faster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
-                  - withdraw-exit-many:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
-                  - withdraw-exit:  tools/matic-js/pos/erc1155/withdraw-exit.md
-                  - withdraw-start-many:  tools/matic-js/pos/erc1155/withdraw-start-many.md
-                  - withdraw-start:  tools/matic-js/pos/erc1155/withdraw-start.md
+                  - withdrawExitFasterMany:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
+                  - withdrawExitMany:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
+                  - withdrawExit:  tools/matic-js/pos/erc1155/withdraw-exit.md
+                  - withdrawStartMany:  tools/matic-js/pos/erc1155/withdraw-start-many.md
+                  - withdrawStart:  tools/matic-js/pos/erc1155/withdraw-start.md
               - Common methods:
                   - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
                   - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
                   - isDeposited:  tools/matic-js/pos/is-deposited.md
           - zkEVM:
-              - Initialize:  tools/matic-js/zkevm/initialize.md
+              - zkEVM client:  tools/matic-js/zkevm/initialize.md
               - ERC20:  tools/matic-js/zkevm/erc20.md
               - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 
@@ -396,6 +530,7 @@ nav:
           - DIA: tools/oracles/diadataoracles.md
           - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Razor: tools/oracles/razor.md
+          - Supra: tools/oracles/supra.md
           - Tellor: tools/oracles/tellor.md
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
@@ -434,8 +569,8 @@ nav:
 extra:
   generator: false
   analytics:
-    provider: google
-    property: G-RJ6JC0EEY5
+    provider: custom
+    property: google    
   #  feedback:  # feedback form only works when Google Analytics is set up and working
   #    title: Was this page helpful?
   #    ratings:
@@ -506,17 +641,24 @@ markdown_extensions:
 plugins:
   - search
   - open-in-new-tab
-#  - git-revision-date-localized:
-#      enable_creation_date: true
-#      fallback_to_build_date: true
-#  - git-committers:
-#      repository: 0xPolygon/polygon-docs
-#      #branch: main
-#      exclude:
-#        - README.md
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      strict: false
+      exclude:
+        - index.md
+  - git-authors:
+      show_contribution: true
+      exclude:
+        - index.md
+        - cdk/index.md
+        - zkEVM/index.md
+        - pos/index.md
+        - miden/index.md
+        - tools/index.md
+        - learn/index.md
 
 validation:
-  absolute_links: warn
+  absolute_links: ignore
 
 extra_javascript:
   - _site_essentials/js/mathjax.js

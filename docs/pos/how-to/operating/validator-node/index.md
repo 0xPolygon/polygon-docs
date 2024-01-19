@@ -1,5 +1,3 @@
-# Operating a Polygon Validator Node
-
 Operating as a validator on the Polygon Network involves playing a pivotal role in validating transactions within the blockchain. This guide provides details on how to run a Validator Node (including Sentry and Validator components) on the Polygon Network, the responsibilities involved, and the technical and operational aspects to consider.
 
 ## Eligibility and responsibilities

@@ -1,4 +1,4 @@
-For hashing, the zkEVM utilizes two state machines: the **Keccak state machine** and the **Poseidon state machine**. The Keccak-256 hash function is used for seamless EVM compatibility, whereas [Poseidon](https://eprint.iacr.org/2019/458.pdf) is best suited for the zkProver context because it is a [**STARK-friendly hash (SFH)**](https://starkware.co/hash-challenge/) function.
+For hashing, the zkEVM utilizes two state machines: the **Keccak state machine** and the **Poseidon state machine**. The Keccak-256 hash function is used for seamless EVM compatibility, whereas [Poseidon](https://eprint.iacr.org/2019/458.pdf) is best suited for the zkProver context because it is a [**STARK-friendly hash (SFH)**](https://eips.ethereum.org/assets/eip-5988/papers/report_security_stark_friendly_hash.pdf) function.
 
 ## The sponge construction
 

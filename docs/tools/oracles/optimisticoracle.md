@@ -1,6 +1,6 @@
 !!! info "Content disclaimer"
 
-    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/wiki/blob/master/CONTENT_DISCLAIMER.md).
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
 UMA's Optimistic Oracle allows contracts to quickly request and receive any kind of data. UMA's oracle system is comprised of two core components:
 
