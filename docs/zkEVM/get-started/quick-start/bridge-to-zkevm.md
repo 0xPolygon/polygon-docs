@@ -30,7 +30,7 @@ Follow this step-by-step guide on how to bridge assets from Ethereum to Polygon 
 
 ![Figure: metamask1](../../../img/zkEVM/zkv-metamask1.jpg)
 
-- Click `Confirm` to approve the bridge transaction.
+- Click **Confirm** to approve the bridge transaction.
 
 - And allow a few moments for your transaction to be processed.
 
