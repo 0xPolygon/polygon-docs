@@ -92,12 +92,12 @@ Here you will find a list of contracts deployed on Polygon together with their i
 
 | Contracts             | Address                                    |
 |-----------------------|--------------------------------------------|
-| ChildChain            | [0x4f9cd8a945EE035523979D7A120a23999D17D8C0](https://amoy.polygonscan.com/address/0x4f9cd8a945EE035523979D7A120a23999D17D8C0/) |
-| EIP1559Burn           | [0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9](https://amoy.polygonscan.com/address/0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9/) |
+| ChildChain            | [0x4f9cd8a945EE035523979D7A120a23999D17D8C0](https://www.oklink.com/amoy/address/0x4f9cd8a945EE035523979D7A120a23999D17D8C0/) |
+| EIP1559Burn           | [0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9](https://www.oklink.com/amoy/address/0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9/) |
 | **Tokens**            | |
-| MaticToken            | [0x0000000000000000000000000000000000001010](https://amoy.polygonscan.com/address/0x0000000000000000000000000000000000001010/) |
-| MaticWeth             | [0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102](https://amoy.polygonscan.com/address/0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102/) |
-| RootERC721            | [0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e](https://amoy.polygonscan.com/address/0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e/) |
+| MaticToken            | [0x0000000000000000000000000000000000001010](https://www.oklink.com/amoy/address/0x0000000000000000000000000000000000001010/) |
+| MaticWeth             | [0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102](https://www.oklink.com/amoy/address/0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102/) |
+| RootERC721            | [0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e](https://www.oklink.com/amoy/address/0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e/) |
 
 
 
