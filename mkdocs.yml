@@ -255,6 +255,7 @@ nav:
       #    - Specification: pos/spec/index.md
       - Run a node:
         # - Operate various nodes: pos/operate-node/index.md
+        - Run a node: pos/operate-node/index.md
         - System requirements: pos/operate-node/validator/validator-node-system-requirements.md
         - Operators:
           # - Operators: pos/operate-node/operate/index.md
