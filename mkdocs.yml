@@ -211,6 +211,7 @@ nav:
         - Building on Polygon: pos/get-started/building-on-polygon.md
       - How to:
         - How to: pos/how-to/index.md
+        - Sync node using snapshots: pos/how-to/snapshots.md
         - Bridge layers:
           - Bridge layers: pos/how-to/bridging/index.md
           - Ethereum-Polygon:
@@ -294,7 +295,6 @@ nav:
           - Delegation via validator shares: pos/reference/contracts/delegation.md
           - Staking manager: pos/reference/contracts/stakingmanager.md
         - Rewards and staking incentives: pos/reference/rewards.md
-        - Heimdall and Bor snapshots: pos/reference/snapshot-instructions-heimdall-bor.md
         - Default ports for nodes: pos/reference/port-management.md
         - Common commands: pos/reference/commands.md
         - Node errors: pos/reference/errors.md
