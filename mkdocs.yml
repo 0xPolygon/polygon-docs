@@ -253,7 +253,7 @@ nav:
             - Governance: pos/architecture/heimdall/governance.md
       #- Specification:
       #    - Specification: pos/spec/index.md
-      - Operating various nodes:
+      - Run a node:
         # - Operate various nodes: pos/operate-node/index.md
         - System requirements: pos/operate-node/validator/validator-node-system-requirements.md
         - Operators:
