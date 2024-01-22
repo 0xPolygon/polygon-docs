@@ -33,7 +33,7 @@ sudo apt-get update
 sudo apt-get install build-essential
 ```
 
-## Install Binaries
+## Install binaries
 
 Polygon node consists of 2 layers: Heimdall and Bor. Heimdall is a tendermint fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
 
@@ -72,14 +72,14 @@ That will install the `heimdalld` and `heimdallcli` binaries. Verify the install
 heimdalld version --long
 ```
 
-### Configure heimdall seeds (Mainnet)
+### Configure Heimdall seeds (Mainnet)
 
 ```bash
 sed -i 's|^seeds =.*|seeds = "1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656,6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656"|g' /var/lib/heimdall/config/config.toml
 chown heimdall /var/lib/heimdall
 ```
 
-### Configure heimdall seeds (Mumbai)
+### Configure Heimdall seeds (Mumbai)
 
 ```bash
 sed -i 's|^seeds =.*|seeds = "9df7ae4bf9b996c0e3436ed4cd3050dbc5742a28@43.200.206.40:26656,d9275750bc877b0276c374307f0fd7eae1d71e35@54.216.248.9:26656,1a3258eb2b69b235d4749cf9266a94567d6c0199@52.214.83.78:26656"|g' /var/lib/heimdall/config/config.toml
@@ -104,7 +104,7 @@ That will install the `bor` binary. Verify the installation by checking the Bor 
 bor version
 ```
 
-### Configure bor seeds (mainnet)
+### Configure Bor seeds (mainnet)
 
 ```bash
 sed -i 's|.*\[p2p.discovery\]|  \[p2p.discovery\] |g' /var/lib/bor/config.toml
@@ -112,7 +112,7 @@ sed -i 's|.*bootnodes =.*|    bootnodes = ["enode://b8f1cc9c5d4403703fbf37711646
 chown bor /var/lib/bor
 ```
 
-### Configure bor seeds (mumbai)
+### Configure Bor seeds (mumbai)
 
 ```bash
 sed -i 's|.*\[p2p.discovery\]|  \[p2p.discovery\] |g' /var/lib/bor/config.toml
@@ -127,7 +127,7 @@ sed -i 's/User=heimdall/User=root/g' /lib/systemd/system/heimdalld.service
 sed -i 's/User=bor/User=root/g' /lib/systemd/system/bor.service
 ```
 
-## Start Services
+## Start services
 
 Run the full Heimdall node with these commands on your Sentry Node:
 
@@ -157,19 +157,19 @@ Logs can be managed by the `journalctl` linux tool. Here is a tutorial for advan
 journalctl -u heimdalld.service -f
 ```
 
-**Check Heimdall Rest-server logs**
+**Check Heimdall rest-server logs**
 
 ```bash
 journalctl -u heimdalld-rest-server.service -f
 ```
 
-**Check Bor Rest-server logs**
+**Check Bor rest-server logs**
 
 ```bash
 journalctl -u bor.service -f
 ```
 
-## Ports and Firewall Setup
+## Ports and firewall setup
 
 Open ports 22, 26656 and 30303 to world (0.0.0.0/0) on sentry node firewall.
 
