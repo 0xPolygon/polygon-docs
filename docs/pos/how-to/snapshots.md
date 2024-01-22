@@ -176,11 +176,13 @@ curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --
 
 </details>
 
-**Note:** If experiencing intermittent aria2c download errors, try reducing concurrency as exampled here:
+!!! note
 
-```bash
-aria2c -c -m 0 -x6 -s6 -i $client-$network-parts.txt --max-concurrent-downloads=1
-```
+    If experiencing intermittent `aria2c` download errors, try reducing concurrency as shown here:
+
+    ```bash
+    aria2c -c -m 0 -x6 -s6 -i $client-$network-parts.txt --max-concurrent-downloads=1
+    ```
 
 Once the extraction is complete, ensure that you update the datadir configuration of your client to point to the path where the extracted data is located. This ensures that the systemd services can correctly register the snapshot data when the client starts. 
 If you wish to preserve the default client configuration settings, you can use symbolic links (symlinks).
@@ -235,8 +237,9 @@ sudo service bor start
 | approx. total extracted size | 875 GB (erigon) + 50 GB (heimdall) | 925 GB |
 | suggested disk size (2.5x buffer) | 925 GB * 2.5 (natural chain growth) | 2.5 TB | 
 
-**Note:** 
-PoS Network is deprecating Archive Node snapshots we request users to move to the Erigon Client and make use of Erigon Snapshots.
+!!! note
+
+    PoS Network is deprecating Archive Node snapshots we request users to move to the Erigon Client and make use of Erigon Snapshots.
 
 **Polygon Mainnet Erigon Archive**
 
