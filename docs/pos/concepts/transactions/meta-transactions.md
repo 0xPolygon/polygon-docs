@@ -3,13 +3,13 @@ DApps are starting to realize their utility but are becoming victims of their su
 success due to gas fees. Not to mention, the onboarding hurdles of users and the challenges of current
 UX are no easy fix.
 
-## Servicing Smart Contracts
+## Servicing smart contracts
 
 By design, smart contracts are deterministic state machines that execute when transaction fees are
 paid to service the contract’s logic by using the network’s computational resources.
 This is accomplished by a gas-metered model on Ethereum (and Polygon).
 
-## The Current State of Transacting
+## The current state of sransacting
 
 There are limitations to this traditional transaction model on Ethereum (and other blockchains alike).
 A common limitation is a user not having the means to pay for gas. By default, the sender of the
@@ -25,7 +25,7 @@ experience.
 Instead of direct transaction execution, a middleware would exist (via a third party) to handle the gas.
 This is where meta transactions come in.
 
-## What are Meta Transactions?
+## What are meta transactions?
 
 Meta transactions allow anyone to interact with the blockchain. They do not require users to have
 tokens to pay for the network’s services through transaction fees. This is done by decoupling the
@@ -60,7 +60,7 @@ the “sender”, the “sender” becomes more like an “intender” - the sen
 they would like executed on the blockchain by signing a message containing specific parameters related to
 their message, and not an entirely constructed transaction.
 
-## Use Cases
+## Use cases
 
 One can imagine the capabilities of meta transactions for scaling dApps and interactions with smart contracts.
 Not only can a user create a gasless transaction, but they can also do so many times, and with an automation
@@ -81,7 +81,7 @@ validates that this transaction is a priority vote, wraps the voting request int
 pays the gas fees, and broadcasts it to the voting contract. Everything checks out on the voting contract’s
 end, and the vote executes on behalf of the user.
 
-## Try Them Out
+## Try 'em out
 
 Assuming your familiarity with the different approaches you can take to integrate meta transactions in your
 dApp, and depending on whether you're migrating to meta transactions or building fresh dApp on using it.
@@ -111,7 +111,7 @@ For any action that requires blockchain interaction,
 - The relayer interacts with the blockchain to submit user's signature to the contract. A function on the contract called `executeMetaTransaction` processes the signature and executes the requested transaction (via an internal call).
 - The relayer pays for the gas making the transaction effectively free 🤑
 
-## Integrate Network Agnostic Transactions in your dApp
+## Integrate network agnostic transactions in your dApp
 
 - Choose between a custom simple relayer node/biconomy.
 
@@ -310,7 +310,7 @@ Contract accounts offer numerous benefits, including:
 - **Account security:** Contract accounts enable social recovery and security features such as time-locks and withdraw limits.
 - **Atomic multi-operations:** Users can perform multiple operations simultaneously, such as trading in a single click instead of approving and swapping separately.
 
-## Using Account Abstraction on Polygon
+## Using account abstraction on Polygon
 
 There are two primary ways users can use account abstraction on Polygon: by sending ERC-4337 transactions or with third party meta transaction services.
 
@@ -318,6 +318,6 @@ There are two primary ways users can use account abstraction on Polygon: by send
 
 ERC-4337, also known is EIP-4337, brings account abstraction to the Polygon ecosystem and all EVM-compatible chains.
 
-### Meta Transactions
+### Meta transactions
 
 Meta transactions are bespoke third party services for achieving account abstraction.
