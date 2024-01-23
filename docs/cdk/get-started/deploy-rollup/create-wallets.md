@@ -94,6 +94,9 @@ npm i
 
 1. `cd` back to `zkevm-contract` root directory and run the deployment scripts.
 
+    !!! tip
+        It might be helpful to run these one at a time.
+
     ```sh
     cd ..
     npm i @openzeppelin/hardhat-upgrades
@@ -103,7 +106,7 @@ npm i
     npm run verify:ZkEVM:goerli
     ```
 
-    You should output that looks something like this at the start each time:
+    You should see output that looks something like this at the start each time:
 
     ```sh
     > @0xpolygonhermez/zkevm-contracts@3.0.0 deploy:deployer:ZkEVM:goerli

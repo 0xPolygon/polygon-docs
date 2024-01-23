@@ -4,13 +4,7 @@
 - At least 16GB RAM with a 4-core CPU.
 - An AMD64 architecture system.
 
-!!! info "Setting up a Linux VM on Windows or Mac"
-    - Install a hypervisor, e.g., VirtualBox, VMware Fusion (MacOS), VMware Workstation (Windows), VMware ESXi (Bare Metal Hypervisor).
-    - Setup a virtual machine, e.g., if you are using VirtualBox, which is open-source, Vagrant is the quickest way to automatically setup a virtual machine and also set up ssh private/public keys.
-    - Install Linux as Guest OS, preferably the latest version of Ubuntu Linux.
-
 !!! info "Computing resources"
-    - The downloaded mainnet files are 70GB in size.
     - Running a full prover is an enterprise level installation and extremely resource-heavy. 
     - These instructions run the mock prover instead.
 

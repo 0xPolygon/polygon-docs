@@ -3,7 +3,7 @@
 1. Create some working directories.
 
     !!! info
-        The following commands takes care of directory placements where non-obvious.
+        The following commands take care of directory placements where non-obvious.
 
     ```sh
     mkdir -p ~/zkevm/data/{statedb,pooldb} ~/zkevm/zkevm-config ~/zkevm/zkevm-node
@@ -17,13 +17,17 @@
     curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/latest/download/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
     ```
 
-3. Copy the `example.env` file into `.env` file and open it for editing.
+3. Go to the `zkevm/zkevm-config` directory and copy the `example.env` file into `.env` file and open it for editing.
+
+    !!! warning
+        - There is no `zkevm/mainnet` dir!
+        - Stopped here today.
+        - Last week, I hacked this and got the node up but it was also failing on lack of verified contracts.
 
     ```sh
-    export ZKEVM_CONFIG_DIR="/root/zkevm/zkevm-config"
-    cd ~/zkevm/mainnet
-    cp example.env .env
-    nano .env
+    cd ../zkevm-config/
+    cp ~/$ZKEVM_DIR/$ZKEVM_NET/example.env $ZKEVM_CONFIG_DIR/.env
+    vim $ZKEVM_CONFIG_DIR/.env
     ```
 
 4. In the `.env` file, set the following:

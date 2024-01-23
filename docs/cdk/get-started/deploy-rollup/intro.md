@@ -1,8 +1,8 @@
 This quick start takes you through the process of deploying a full CDK zkRollup, EVM-compatible network on Goerli.
 
-!!!caution
-    - This quick start is subject to frequent updates as the software remains at an early development stage.
-    - Please [open a ticket](https://support.polygon.technology/support/tickets/new) or reach out to the [support team on Discord](https://discord.com/invite/0xPolygon) if you encounter any issues.
+!!! warning
+    - These instructions are subject to frequent updates as the software remains at an early development stage.
+    - Report any issues on our docs repo: https://github.com/0xPolygon/polygon-docs
 
 The process is split into the following sections:
 
