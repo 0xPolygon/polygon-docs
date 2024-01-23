@@ -1,4 +1,4 @@
-In addition to the previously mentioned governance issues and security measures, one more component was essential, especially to a young zkRollup such as the Polygon zkEVM. That component is, the _Security Council Multisig_.
+In addition to the previously mentioned governance issues and security measures, one more component was essential, especially to a young zk-rollup such as the Polygon zkEVM. That component is, the _Security Council Multisig_.
 
 Since critical bugs or other security issues may occur, and hence warrant instant upgrades, it is good security practice to allow for emergency upgrades.
 
