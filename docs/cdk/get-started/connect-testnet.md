@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Stavanger
 
 The [CDK Stavanger testnet](https://polygon.technology/cdk-stavanger-testnet) is a validium testnet based on Sepolia.
