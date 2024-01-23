@@ -33,7 +33,7 @@ You must set up all of the following prerequisites to be able to deploy your sol
 
 Every Repl that you create is a fully functional development and production environment. Follow the steps to create a solidity starter Replit:
 
-1. [Log in](https://replit.com/login) or [create an account](https://replit.com/signup). After creating your [Replit account](https://docs.replit.com/tutorials/01-introduction-to-the-repl-it-ide), your home screen will include a dashboard where you can view, create projects, and manage your account.
+1. [Log in](https://replit.com/login) or [create an account](https://replit.com/signup). After creating your account, your home screen will include a dashboard where you can view, create projects, and manage your account.
 
     ![img](../../img/tools/replit/dashboard.png)
 

@@ -28,7 +28,7 @@ hide:
        </a>
     </div>
     <div class="grid-item">
-       <a href="./how-to/operating/">
+       <a href="./operate-node/">
           <div class="product-list-item-header">
              <div class="feature-card-heading">Run a PoS node</div>
           </div>

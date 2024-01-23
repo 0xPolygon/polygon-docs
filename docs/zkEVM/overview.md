@@ -1,11 +1,11 @@
 Polygon zkEVM is a Layer 2 network of the Ethereum Virtual Machine (EVM), a zero-knowledge (ZK) rollup scaling solution. Polygon zkEVM uses a cryptographic primitive called a ZK proof to validate state transitions.
 
-Polygon zkEVM is compatible with the EVM, supporting the majority of Ethereum EIPs, pre-compiles, and opcodes. Developers benefit from the seamless deployment of smart contracts, developer tools, and wallets that already work on Ethereum, but in an environment with significantly lower costs. 
+Polygon zkEVM is EVM-equivalent. It supports the majority of Ethereum EIPs, precompiles, and opcodes. Developers benefit from the seamless deployment of smart contracts, developer tools, and wallets that already work on Ethereum, but in an environment with significantly lower costs.
 
 
 ## Protocol development highlights
 
-The testnet for Polygon zkEVM launched with a complete ZK proving system and full transaction data availability in October 2022. The proving system for Polygon zkEVM uses a combination of eSTARK proofs and FRI that are then compressed using FFLONK SNARKs to create the final ZK proof.
+The Polygon zkEVM testnet launched with a complete ZK proving system and full transaction data availability in October 2022. The proving system uses a combination of eSTARK proofs and FRI, that are then compressed using FFLONK SNARKs to create the final ZK proof.
 
 Following the launch of the testnet, the code base for Polygon zkEVM underwent several security audits. These were among the first audits ever performed on a complete, in-production ZK proving system. 
 
@@ -13,10 +13,10 @@ After the audits, Polygon zkEVM Mainnet Beta [launched in March 2023](https://ww
 
 ## Security measures
 
-The security measures taken by the zkEVM team for an upgrade are on par with Ethereum's security standards as they involve the deployment of:
+zkEVM's upgrades are on par with Ethereum's security standards as they involve deployment of the following contracts:
 
-- An admin multisig contract to avoid having one account controlling upgrades,
-- A timelock contract to give users sufficient time delay to withdraw before execution, and
+- An admin multisig contract to avoid having one account controlling upgrades.
+- A timelock contract to give users sufficient time delay to withdraw before execution.
 - A transparent upgradeable proxy, from OpenZeppelin’s libraries of audited and battle-tested contracts.
 
 The activation of the 10-day timelock for upgrading zkEVM's smart contracts on Ethereum requires approval by the network's [Admin](https://etherscan.io/address/0x242daE44F5d8fb54B198D03a94dA45B5a4413e21), a three-participant multisig that acts as a [governance tool](https://wiki.polygon.technology/docs/zkevm/protocol/admin-role/#:~:text=Governance%20of%20zKEVM%20Contracts%E2%80%8B&text=sol%20contract%20instance%20is%20assigned,of%20Polygon%20zkEVM%20L1%20contracts.) for the protocol. This is a Gnosis Safe with a 2/3 threshold.

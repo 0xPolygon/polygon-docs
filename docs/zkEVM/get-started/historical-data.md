@@ -15,6 +15,8 @@ This update included a reduced number of RPC logs and aligned error messages to 
 |     Prover      |                            v3.0.2                            |
 |     Bridge      |                            v0.3.1                            |
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.4.4 |
+| Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6.  Testnet: ForkIDs 1, 2, 3, 4, 5 & 6. |
+
 
 
 
@@ -30,8 +32,9 @@ The changes made in this update were mainly in the node (Additional CORS header 
 |     Prover      |                            v3.0.2                            |
 |     Bridge      |                            v0.3.0                            |
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.4.1 |
+| Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5, 6. |
 
-Infrastructure partners were instructed to update, and then use instructions given here (https://polygontechnology.notion.site/Instructions-zkEVM-Mainnet-Node-v0-4-1-Prover-v3-0-2-7a585f394cd24b90b90283086276533c)
+Infrastructure partners were instructed to update, and then use instructions given [here](https://polygontechnology.notion.site/Instructions-zkEVM-Mainnet-Node-v0-4-1-Prover-v3-0-2-7a585f394cd24b90b90283086276533c).
 
 
 
@@ -47,6 +50,7 @@ This update brought several significant changes to zkEVM node, bridge, prover in
 |     Prover      |                            v3.0.2                            |
 |     Bridge      |                            v0.3.0                            |
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.4.0 |
+| Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5, 6. |
 
 
 
@@ -62,6 +66,7 @@ The changes made in this update brought cryptographic optimisations and bug fixe
 |     Prover      |                            v3.0.0                            |
 |     Bridge      |                            v0.2.0                            |
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.3 |
+| Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5 & 6. |
 
 
 
@@ -77,6 +82,7 @@ The changes made in this update were the node and prover versions, as well as up
 |     Prover      |                            v3.0.0                            |
 |     Bridge      |                            v0.2.0                            |
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.3 |
+| Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5 & 6. |
 
 
 
@@ -92,6 +98,7 @@ The changes made in this upgrade were cryptographic optimisations and some bug f
 |     Prover      |                            v3.0.0                            |
 |     Bridge      |                            v0.2.0                            |
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.2 |
+| Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5 & 6. |
 
 
 
@@ -107,6 +114,7 @@ The changes made in this update were new version updates of the prover and node.
 |     Prover      |                            v2.2.2                            |
 |     Bridge      |                            v0.2.0                            |
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.1 |
+| Supported ForkIDs | Mainnet: ForkIDs 4 & 5. Testnet: ForkIDs 1, 2, 3, 4, & 5. |
 
 
 ### 20th Sep, 2023
