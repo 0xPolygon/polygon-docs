@@ -1,11 +1,16 @@
 # Polygon aggregation layer
 
-Polygon 2.0 envisions a protocol layer that seamslessly connects any ZK-enabled Layer-2 (L2) or Layer-1 (L1) chain. This layer of interoperability is referred to as the **aggregation layer**, or **AggLayer**.
+!!! info
+
+    This post is a direct reproduction of [**the original blog post**](https://hackmd.io/@QOKsDTFRSd-1oYqrNQ3fIA/Hkx9X3jah) made by Brendan Farmer, Co-founder @ Polygon
+
+Polygon 2.0 envisions a protocol layer that seamlessly connects any ZK-enabled Layer-2 (L2) or Layer-1 (L1) chain. This layer of interoperability is referred to as the **aggregation layer**, or **AggLayer**.
 
 In this post, we'll be looking at:
-- what AggLayer is and the problems it addresses
-- a brief overview of how the AggLayer is implemented
-- the advantages of using an aggregated solution
+
+* what AggLayer is and the problems it addresses
+* a brief overview of how the AggLayer is implemented
+* the advantages of using an aggregated solution
 
 ## Overview
 
