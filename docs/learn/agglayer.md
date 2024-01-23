@@ -173,11 +173,3 @@ Similar to the liveness attack, this will cause degradation of UX, but it's not 
 Aggregation presents a solution to the monolothic vs. modular chain design dilemma. It takes the performance gains and efficient resource usage of modular architecture and combines it with the unified experience of a monolothic system.
 
 The AggLayer will allow a single ZK proof to verify state across all chains in the ecosystem and use Ethereum as the settlement layer. Once any chain publishes a ZK proof of its latest state to the AggLayer, all other chains can trust the value (state) of that chain.
-
-
-# Outline
-
-- What is the aggregation layer and why is it necessary?
-- How is it different from monolithic and modular architecture?
-- How is it implemented?
-- 
