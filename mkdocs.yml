@@ -50,13 +50,13 @@ nav:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
+              - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
+              - Prerequisites: cdk/get-started/deploy-rollup/prerequisites.md
               - Install dependencies: cdk/get-started/deploy-rollup/install-dependencies.md
               - Create wallets: cdk/get-started/deploy-rollup/create-wallets.md
-              - Deploy node: cdk/get-started/deploy-rollup/deploy-node.md
+              - Configure node deployment: cdk/get-started/deploy-rollup/configure-node-deployment.md
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
-              - Activate forced transactions: cdk/get-started/deploy-rollup/activate-forced-transactions.md
-              - Set up Goerli node: cdk/get-started/deploy-rollup/setup-goerli-node.md
-        - Connect to CDK testnet: cdk/get-started/connect-testnet.md
+              - Start services: cdk/get-started/deploy-rollup/start-services.md
       - How to:
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
