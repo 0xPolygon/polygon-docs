@@ -1,6 +1,6 @@
 # Aggregation layer
 
-Polygon 2.0 envisions a protocol layer that seamlessly connects any ZK-enabled L2 or L1 chain. This layer of interoperability is referred to as the **aggregation layer**, or **AggLayer**.
+Solving the scalability problem in blockchains means scaling access to shared state and liquidity across many chains. To do so requires a new approach to blockchain architecture, namely, aggregated blockchains. Polygon Labs researchers and engineers have designed a solution–the **aggregation layer**, or **AggLayer**–which will seamlessly connect any ZK-enabled L2 or L1 chain.
 
 In this document, we look at:
 
