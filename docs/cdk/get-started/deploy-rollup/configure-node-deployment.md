@@ -17,17 +17,11 @@
     curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/latest/download/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
     ```
 
-3. Go to the `zkevm/zkevm-config` directory and copy the `example.env` file into `.env` file and open it for editing.
-
-    !!! warning
-        - There is no `zkevm/mainnet` dir!
-        - Stopped here today.
-        - Last week, I hacked this and got the node up but it was also failing on lack of verified contracts.
+3. Go to the `zkevm/zkevm-config` directory and create an `.env` file and open it for editing.
 
     ```sh
     cd ../zkevm-config/
-    cp ~/$ZKEVM_DIR/$ZKEVM_NET/example.env $ZKEVM_CONFIG_DIR/.env
-    vim $ZKEVM_CONFIG_DIR/.env
+    nano .env
     ```
 
 4. In the `.env` file, set the following:
@@ -38,6 +32,11 @@
     ZKEVM_NODE_POOLDB_DATA_DIR = "~/zkevm/data/pooldb"
     ```
 
+    !!! warning
+        - You may have to hardcode these variables into the `mainnet/docker-compose.yaml` file.
+        - Also, the `ZKEVM_NETWORK` variable which you can set to `mainnet`.
+        - Note, there are more than one references to hardcode in.
+
 ## Approve MATIC token for sequencer
 
 1. Launch a Hardhat console connected to the Goerli network.
@@ -47,20 +46,20 @@
     npx hardhat console --network goerli
     ```
 
-2. Add the extra data and copy/paste the following code into the open console.
+2. Add the missing data as directed and copy/paste the following code into the open console.
 
     ```js
     const provider = ethers.getDefaultProvider("<GOERLI_RPC_NODE>"); // set Goerli RPC node
-    const privateKey = "<TRUSTED_SEQUENCER_PK>"; // from wallet.txt 
+    const privateKey = "<TRUSTED_SEQUENCER_PK>"; // from wallets.txt 
     const wallet = new ethers.Wallet(privateKey, provider);
 
     const maticTokenFactory = await ethers.getContractFactory(
     "ERC20PermitMock",
     provider
     );
-    maticTokenContract = maticTokenFactory.attach("<maticTokenAddress>"); // from ~/zkevm-contracts/deployments/goerli_*/deploy_output.json 
+    maticTokenContract = maticTokenFactory.attach("<maticTokenAddress>"); // from ~/zkevm-contracts/deployments/deploy_output.json 
     maticTokenContractWallet = maticTokenContract.connect(wallet);
-    await maticTokenContractWallet.approve("<polygonZkEVMAddress>", ethers.utils.parseEther("100.0")); // from ~/zkevm-contracts/deployments/goerli_*/deploy_output.json 
+    await maticTokenContractWallet.approve("<polygonZkEVMAddress>", ethers.utils.parseEther("100.0")); // from ~/zkevm-contracts/deployments/deploy_output.json 
     ```
 
 ## Configure genesis
@@ -71,7 +70,7 @@
     cp ~/zkevm-contracts/deployment/genesis.json ~/zkevm/mainnet/config/environments/mainnet/public.genesis.config.json
     ```
 
-2. Copy/paste the json below to the head of the file inputting the data from `~/zkevm/zkevm-contracts/deployments/deploy_output.json`. 
+2. Copy/paste the json below to the head of the `public.genesis.config.json` file inputting the data from `~/zkevm/zkevm-contracts/deployments/deploy_output.json`. 
 
     !!! important
         The `genesisBlockNumber` is called `deploymentBlockNumber` in `deploy_output.json`.
@@ -90,8 +89,11 @@
 
 Add the missing parameters in the `~/zkevm/mainnet/config/environments/mainnet/public.node.config.toml` file.
 
+!!! warning
+    Rename the file if necessary.
+
 - `ApiKey`  # for Etherscan
-- `URL`     # for Goerli node
+- `URL`     # for Goerli node, under [ETHERMAN]
 
 ## Add wallet keystores
 
