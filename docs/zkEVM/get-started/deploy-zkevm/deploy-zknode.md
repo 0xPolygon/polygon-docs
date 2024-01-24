@@ -84,11 +84,12 @@ Edit the file changing the following parameters from `~/zkevm/zkevm-contracts/de
 
 Edit `~/zkevm/mainnet/config/environments/testnet/public.node.config.toml` with the following values. The config file is large and we'll update the documentation in the future to list only the updated parameters.
 
+
 ??? "Click to expand the <code>node.config.toml</code> file"
+    
     ```bash
     vim ~/zkevm/mainnet/config/environments/testnet/public.node.config.toml
-
-```
+    ```
 
     ```bash
     IsTrustedSequencer = true
