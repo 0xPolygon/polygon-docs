@@ -106,7 +106,7 @@ The solution that enables validium users to circumvent 'data withholding' attack
 
 #### Proof aggregation interface
 
-The `submitBatch` data interface used to transmit proofs between chains and the AggLayer, involves the following data elements. The below table records the interface data elements, their types and brief descriptions.
+The `submitBatch` data interface is used to transmit proofs between chains and the AggLayer, involves the following data elements. The below table records the interface data elements, their types and brief descriptions.
 
 |          Field           |      Type       | Description                                                               |
 | :----------------------: | :-------------: | ------------------------------------------------------------------------- |
