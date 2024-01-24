@@ -22,7 +22,7 @@ Reliance on bridging in order to connect what are essentially isolated networks,
 
 Let's take a deeper look at cross-chain transfers.
 
-First of all, we understand execution of atomic cross-chain transactions to mean that, with every set of transactions a user submits to multiple chains, the user has the guarantee that either all transactions are execute succesfully or none of them is included in any chain.[^1]
+First of all, we understand execution of atomic cross-chain transactions to mean that, with every set of transactions a user submits to multiple chains, the user has the guarantee that either all transactions are execute successfully or none of them is included in any chain.[^1]
 
 Consider the following example as a typical cross-chain transfer.
 
@@ -42,7 +42,7 @@ Critical in this is to guarantee that it should be impossible for Alice to do an
 
 The security of atomic transactions is based on this critical guarantee that users do not lose their funds and cannot double spend their tokens.
 
-Therefore, key to realising a unified Polygon ecosystem is atomic guarantees. 
+Therefore, key to realizing a unified Polygon ecosystem is atomic guarantees. 
 
 
 ## AggLayer design
@@ -125,7 +125,7 @@ The `submitBatch` data interface used to transmit proofs between chains and the 
 
 The problem with the aggregation layer, as described, is that it suffers from high latency. For a user to trust a message from another chain, they must have a proof that the message is the output of a valid batch, and a guarantee that the batch that produced the message has either already been, or will be finalized on Ethereum.
     
-Currently, proving time for a batch is a few minutes, and batches are posted to Ethereum every 30-60 minutes, which prohibits fast cross-chain messaging and interopability.
+Currently, proving time for a batch is a few minutes, and batches are posted to Ethereum every 30-60 minutes, which prohibits fast cross-chain messaging and interoperability.
     
 In order to reduce latency to levels that make cross-chain interactions feel like using a single chain, we need to safely confirm batches before:    
 1. A proof is generated (validity).
@@ -234,7 +234,7 @@ Similar to the liveness attack, this will cause degradation of UX, but it's not 
 
 ## Aggregation vs. Modularity
 
-Aggregation presents a solution to the monolothic vs. modular chain design dilemma. It takes the performance gains and efficient resource usage of modular architecture and combines it with the unified experience of a monolothic system.
+Aggregation presents a solution to the monolithic vs. modular chain design dilemma. It takes the performance gains and efficient resource usage of modular architecture and combines it with the unified experience of a monolithic system.
 
 The AggLayer will allow a single ZK proof to verify state across all chains in the ecosystem and use Ethereum as the settlement layer. Once any chain publishes a ZK proof of its latest state to the AggLayer, all other chains can trust the value (state) of that chain.
 
