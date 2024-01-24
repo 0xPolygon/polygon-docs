@@ -122,8 +122,10 @@ div.main p {
 	box-shadow: none;
 }
 
-.md-nav--secondary .md-nav__title {
-	box-shadow: none;
+.md-sidebar__scrollwrap, .md-sidebar__inner, .md-nav--secondary, .md-nav__title {
+	box-shadow: none !important;
+	background-color: var(--smoke-white) !important;
+
 }
 /** END OF PAGE ELEMENTS **/
 
