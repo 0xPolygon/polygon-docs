@@ -82,7 +82,7 @@ Here's what happens in the AggLayer when users interact with individual Polygon 
   
   7. Optionally, the aggregated proof can also guarantee that a list of updated state roots $S_i$ is valid.
 
-After producing the aggregated proof $\pi_{\text{final}}'$, the AggLayer posts that proof to Ethereum, along with a commitment to the message lists $M_i$.
+After producing the aggregated proof $\pi_{\text{final}}'$, the AggLayer posts that proof to Ethereum, along with a commitment to the message lists $\{M_i\}$.
 
 The above procedure is depicted in the simplified diagram below.
 
@@ -95,7 +95,7 @@ The above procedure is depicted in the simplified diagram below.
 
 There's a subtle detail about validiums that needs to be noted.
 
-For all rollup chains, we have all data necessary to retrieve the proof of inclusion for a particular message in some list $M_i$.
+For all rollup chains, we have all data necessary to retrieve the proof of inclusion for a particular message in some list $\{M_i\}$.
 
 But this is not so with validium chains. For instance, there could be a 'data withholding' attack.
 
