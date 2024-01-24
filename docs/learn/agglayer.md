@@ -8,31 +8,15 @@ In this document, we look at:
 * A brief overview of how the AggLayer is implemented.
 * The advantages of using an aggregated solution.
 
-## Polygon's networks topology
-
-Polygon Labs currently runs two main chains in production.
-
-The first is[ Polygon POS chain](https://docs.polygon.technology/pos/overview/), which is basically the rebranded and upgraded version of the former Matic network. A network that brings with it a massive ecosystem, where top brands such as Starbucks and Nike exist.
-
-The second is[ Polygon zkEVM](https://docs.polygon.technology/zkEVM/overview/), a rollup aiming at becoming a Type-2 zkEVM, where users have the same UX as in Ethereum, enjoy the security of Ethereum, and partners have access to a huge developer community.
-
-The experience gained since launching Polygon zkEVM in March 2023, has culminated in the POS chain upgraded to a zero-knowledge validium as announced in[ June, 2023](https://polygon.technology/blog/polygon-2-0-polygon-pos-zk-layer-2).
-
-Polygon Labs further harnessed its ZK-technology by introducing the Chain Development Kit ([CDK](https://docs.polygon.technology/cdk/overview/)), and thus allowing businesses to build their own customizable blockchains. With the CDK, builders can pick and choose between a zk-rollup and a validium, as well as select either a Type-2 or Type-1 prover.
-
-
-
 **![img](https://lh7-eu.googleusercontent.com/gusTl_jWu_eVU4RF32Y3LvQYG63nR9Ydi_qZQDNxTGyuhjlNsWvuRNMXJvr05bWZznFfedIu1smvHJsGP9nQgxbHipfpmrhQfN9dmvED20B4BSRI5fSP3MV3ztoYuqEAVIStTR-_Aynv7zVGLOPox9o)**
-
 
 ### Fragmented liquidity
 
-Although the above setting gives developers the freedom to build on chains that suit their needs, or design their own chains, such a setup lacks cross-chain interoperability.
+Although developers have now the freedom to build on chains that suit their needs, or design their own chains, the current setup lacks cross-chain interoperability.
 
 As seen in the above diagram, each chain connects directly to Ethereum. Since every chain has its separate and exclusive bridge contract, any transfer of assets from Chain A to Chain B must go via Ethereum. This means a simple cross-chain transfer of assets involves more chain interactions than necessary.
 
 Reliance on bridging in order to connect what are essentially isolated networks, is a common interoperability solution. But it translates to fragmented liquidity, and a less than ideal user experience.
-
 
 ### Atomic guarantees
 
@@ -63,9 +47,7 @@ Therefore, key to realising a unified Polygon ecosystem is atomic guarantees.
 
 ## AggLayer design
 
-As mentioned above, the Polygon network topology consists of several L2 chains that are somewhat fragmented when it comes to liquidity.
-
-The solution to this fragmentation is a single AggLayer, which can be setup as either centralized or decentralized.
+The solution to the current fragmentation is a single AggLayer, which can be setup as either centralized or decentralized.
 
 This means L2 chains submit proofs and state updates to the AggLayer, where the proofs are aggregated and submitted to Ethereum. 
 
@@ -259,7 +241,7 @@ The AggLayer will allow a single ZK proof to verify state across all chains in t
 
 !!! credits
 
-    The contents of this document were sourced from [a blog post](https://hackmd.io/@QOKsDTFRSd-1oYqrNQ3fIA/Hkx9X3jah) originally written by Brendan Farmer, Co-founder @ Polygon
+    The contents of this document were sourced from [a blog post](https://hackmd.io/@QOKsDTFRSd-1oYqrNQ3fIA/Hkx9X3jah) originally written by Brendan Farmer, Co-founder @ Polygon on Sep 2023.
 
 
 [^1]: Definition taken from "Shared Sequencing: Defragmenting the L2 Rollup Ecosystem" https://hackmd.io/@EspressoSystems/SharedSequencing by Espresso Systems
