@@ -48,7 +48,8 @@ nav:
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
           - Validium: 
-              - Introduction: cdk/get-started/deploy-validium.md
+              - Introduction: cdk/get-started/deploy-validium/deploy-validium.md
+              - Prerequisites: cdk/get-started/deploy-validium/prerequisites.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
               - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
