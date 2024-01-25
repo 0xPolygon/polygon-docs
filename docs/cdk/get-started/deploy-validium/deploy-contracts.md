@@ -1,8 +1,3 @@
-# Setup & Deployment
-
-
-## 3. Deploying the contracts
-
 First, we must navigate into the `deployment/` directory and create a new `deploy_parameters.json` by copying the example
 
 ```bash
@@ -118,7 +113,7 @@ We will take the outputs of `genesis.json` and `deploy_output.json` and use them
 
 Congrats! You’ve deployed the CDK Validium contracts!
 
-### Verifying contracts
+### 2. Verifying contracts
 
 If deploying to Sepolia, the contracts should be automatically verified based on other live deployments on the network with similar bytecode. If you see that the contracts have not been verified on Etherscan. Run the following commands:
 
