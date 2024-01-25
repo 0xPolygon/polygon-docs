@@ -22,22 +22,26 @@ You will need the following:
 - A Sepolia node RPC URL: e.g. https://goerli.infura.io/v3/YOUR-INFURA-API-KEY
 - An account address holding minimum 2 Sepolia ETH.
 
-Use a public faucet to get Sepolia test ETH:
+### Faucets
 
-- [Infura faucet](https://www.infura.io/faucet/sepolia)
-- [Chainstack faucet](https://chainstack.com/sepolia-faucet/)
-- [Quicknode faucet](https://faucet.quicknode.com/ethereum/sepoli)
+Use a public faucet to get Sepolia test ETH. 
 
-## Configuration files and environment variables
+- [Infura faucet](https://www.infura.io/faucet/sepolia).
+- [Chainstack faucet](https://chainstack.com/sepolia-faucet/).
+- [Quicknode faucet](https://faucet.quicknode.com/ethereum/sepoli).
 
-1. Create a folder inside `/tmp/` named `/cdk/` to store all configuration files.
+## Configuration files
 
-    ```bash
-    mkdir /tmp/cdk/
-    ```
+Create a folder inside `/tmp/` named `/cdk/` that will store all the configuration files.
 
-2. Create a `.env` file to store environment variables.
+```bash
+mkdir /tmp/cdk/
+```
 
-    ```bash
-    nano /tmp/cdk/.env
-    ```
+## Environment variables
+
+Create a `.env` file to store environment variables.
+
+```bash
+nano /tmp/cdk/.env
+```
