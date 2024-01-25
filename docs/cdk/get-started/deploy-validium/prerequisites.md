@@ -1,39 +1,43 @@
-## Dependency Checking
-Dependencies required for this section:
+## Hardware
 
-| Dependency | Version | Version Check Command |
+- A Linux-based OS (e.g., Ubuntu Server 22.04 LTS).
+- At least 16GB RAM with a 4-core CPU.
+- An AMD64 architecture system.
+
+## Software
+
+Make sure you have the following software:
+
+| Download link | Version | Check version |
 | --- | --- | --- |
-| node | ^20 | git —version |
-| npm | ^10 | npm —version |
-| foundry | ^0.2 | forge —version |
-| jq | ^1.6 | jq -V |
+| [Node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) | ^20 | `node --version` |
+| npm | ^10 | `npm --version` |
+| [Foundry](https://book.getfoundry.sh/getting-started/installation) | ^0.2 | `forge --version` |
+| [jq](https://jqlang.github.io/jq/download/) | ^1.6 | `jq -V` |
 
-## Sepolia Access
+## Sepolia access
 
-For Polygon CDK to function properly, it needs connection to a layer 1 EVM blockchain. For the purpose of this guide, we will be deploying the CDK contracts to [Sepolia testnet](https://www.alchemy.com/overviews/sepolia-testnet).
+You will need the following:
 
-You have a couple options on connecting to the Sepolia testnet
+- A Sepolia node RPC URL: e.g. https://goerli.infura.io/v3/YOUR-INFURA-API-KEY
+- An account address holding minimum 2 Sepolia ETH.
 
-1. Node Provider (easiest)
-2. Run your own node (recommended for a production setup)
+Use a public faucet to get Sepolia test ETH:
 
-For the sake of simplicity, we will use a node provider ([Infura](https://www.infura.io)) for this guide.
+- [Infura faucet](https://www.infura.io/faucet/sepolia)
+- [Chainstack faucet](https://chainstack.com/sepolia-faucet/)
+- [Quicknode faucet](https://faucet.quicknode.com/ethereum/sepoli)
 
-You can use a different provider by modifying your hardhat config (see here)
+## Configuration files and environment variables
 
-The deployment is expected to use up to **2 Sepolia ETH**. You can get Sepolia ETH from public faucets such as the ones listed here:
+1. Create a folder inside `/tmp/` named `/cdk/` to store all configuration files.
 
-[Infura Faucet](https://www.infura.io/faucet/sepolia)
+    ```bash
+    mkdir /tmp/cdk/
+    ```
 
-[Chainstack Faucet](https://chainstack.com/sepolia-faucet/)
+2. Create a `.env` file to store environment variables.
 
-[Quicknode Faucet](https://faucet.quicknode.com/ethereum/sepoli)
-
-## Configuration Environment
-
-For this guide we will create a new folder inside `/tmp/` named `/cdk/` this will store all our configuration files along with a `.env` to store important values. This will also allow us to streamline the processs using `jq` and `tomlq`
-
-```bash
-mkdir /tmp/cdk/
-touch /tmp/cdk/.env
-```
+    ```bash
+    nano /tmp/cdk/.env
+    ```

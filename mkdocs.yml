@@ -50,6 +50,7 @@ nav:
           - Validium: 
               - Introduction: cdk/get-started/deploy-validium/deploy-validium.md
               - Prerequisites: cdk/get-started/deploy-validium/prerequisites.md
+              - Set up: cdk/get-started/deploy-validium/set-up.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
               - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
