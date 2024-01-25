@@ -1,6 +1,6 @@
 # Aggregation layer
 
-Polygon 2.0 envisions a protocol layer that seamlessly connects any ZK-enabled L2 or L1 chain. This layer of interoperability is referred to as the **aggregation layer**, or **AggLayer**.
+Solving the scalability problem in blockchains means scaling access to shared state and liquidity across many chains. To do so requires a new approach to blockchain architecture, namely, aggregated blockchains. Polygon Labs researchers and engineers have designed a solution–the **aggregation layer**, or **AggLayer**–which will seamlessly connect any ZK-enabled L2 or L1 chain.
 
 In this document, we look at:
 
@@ -22,7 +22,7 @@ Reliance on bridging in order to connect what are essentially isolated networks,
 
 Let's take a deeper look at cross-chain transfers.
 
-First of all, we understand execution of atomic cross-chain transactions to mean that, with every set of transactions a user submits to multiple chains, the user has the guarantee that either all transactions are execute successfully or none of them is included in any chain.[^1]
+First of all, we understand execution of atomic cross-chain transactions to mean that, with every set of transactions a user submits to multiple chains, the user has the guarantee that either all transactions are executed successfully or none of them is included in any chain.[^1]
 
 Consider the following example as a typical cross-chain transfer.
 
@@ -97,7 +97,7 @@ There's a subtle detail about validiums that needs to be noted.
 
 For all rollup chains, we have all data necessary to retrieve the proof of inclusion for a particular message in some list $M_i$.
 
-But this is not so validium chains. For instance, there could be a 'data withholding' attack.
+But this is not so with validium chains. For instance, there could be a 'data withholding' attack.
 
 So we need to ensure that 'data withholding' attacks do no affect validium users' ability to process an exit or message from a rollup.
 
@@ -106,7 +106,7 @@ The solution that enables validium users to circumvent 'data withholding' attack
 
 #### Proof aggregation interface
 
-The `submitBatch` data interface used to transmit proofs between chains and the AggLayer, involves the following data elements. The below table records the interface data elements, their types and brief descriptions.
+The `submitBatch` data interface is used to transmit proofs between chains and the AggLayer, involves the following data elements. The below table records the interface data elements, their types and brief descriptions.
 
 |          Field           |      Type       | Description                                                               |
 | :----------------------: | :-------------: | ------------------------------------------------------------------------- |
@@ -241,7 +241,7 @@ The AggLayer will allow a single ZK proof to verify state across all chains in t
 
 !!! credits
 
-    The contents of this document were sourced from [a blog post](https://hackmd.io/@QOKsDTFRSd-1oYqrNQ3fIA/Hkx9X3jah) originally written by Brendan Farmer, Co-founder @ Polygon on Sep 2023.
+    The contents of this document were sourced from [a blog post](https://mirror.xyz/0xfa892B19c72c2D2C6B10dFce8Ff8E7a955b58A61/TXMyZhhRFa-bjr7YHwmJpKBwt2-_ysirbh_VpNy3qZY) originally written by Brendan Farmer, Co-founder @ Polygon on Sep 2023.
 
 
 [^1]: Definition taken from "Shared Sequencing: Defragmenting the L2 Rollup Ecosystem" https://hackmd.io/@EspressoSystems/SharedSequencing by Espresso Systems
