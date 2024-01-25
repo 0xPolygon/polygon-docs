@@ -3,10 +3,16 @@
 From the `zkevm` root directory, run the following:
 
 ```sh
-docker-compose -f mainnet/docker-compose.yaml up
+docker-compose -f mainnet/docker-compose.yml up
 ```
 
-This command spins up the RPC node, the synchronizer, the state DB, the pool DB, and the mock prover.
+This command spins up the following services:
+
+- RPC node
+- Synchronizer
+- State DB
+- Pool DB
+- Mock prover
 
 ## Log sample
 
