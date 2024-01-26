@@ -102,6 +102,7 @@ nav:
         - Architecture: zkEVM/architecture/index.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
+          - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
           - State management: zkEVM/architecture/protocol/state-management.md
           - Transaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
