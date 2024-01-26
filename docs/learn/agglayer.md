@@ -1,6 +1,6 @@
 # Aggregation layer
 
-Solving the scalability problem in blockchains means scaling access to shared state and liquidity across many chains. To do so requires a new approach to blockchain architecture, namely, aggregated blockchains. Polygon Labs researchers and engineers have designed a solution–the **aggregation layer**, or **AggLayer**–which will seamlessly connect any ZK-enabled L2 or L1 chain.
+Solving the scalability problem in blockchains means scaling access to shared state and liquidity across many chains. To do so requires a new approach to blockchain architecture, namely, aggregated blockchains. Polygon Labs researchers and engineers have designed a solution -- the **aggregation layer**, or **AggLayer** -- which will seamlessly connect any ZK-enabled L2 or L1 chain.
 
 In this document, we look at:
 
@@ -82,7 +82,7 @@ Here's what happens in the AggLayer when users interact with individual Polygon 
   
   7. Optionally, the aggregated proof can also guarantee that a list of updated state roots $S_i$ is valid.
 
-After producing the aggregated proof $\pi_{\text{final}}'$, the AggLayer posts that proof to Ethereum, along with a commitment to the message lists $M_i$.
+After producing the aggregated proof $\pi_{\text{final}}'$, the AggLayer posts that proof to Ethereum, along with a commitment to the message lists $\{M_i\}$.
 
 The above procedure is depicted in the simplified diagram below.
 
@@ -95,7 +95,7 @@ The above procedure is depicted in the simplified diagram below.
 
 There's a subtle detail about validiums that needs to be noted.
 
-For all rollup chains, we have all data necessary to retrieve the proof of inclusion for a particular message in some list $M_i$.
+For all rollup chains, we have all data necessary to retrieve the proof of inclusion for a particular message in some list $\{M_i\}$.
 
 But this is not so with validium chains. For instance, there could be a 'data withholding' attack.
 
@@ -106,7 +106,7 @@ The solution that enables validium users to circumvent 'data withholding' attack
 
 #### Proof aggregation interface
 
-The `submitBatch` data interface is used to transmit proofs between chains and the AggLayer, involves the following data elements. The below table records the interface data elements, their types and brief descriptions.
+The `submitBatch` data interface, used to transmit proofs between chains and the AggLayer, involves the following data elements. The below table records the interface data elements, their types and brief descriptions.
 
 |          Field           |      Type       | Description                                                               |
 | :----------------------: | :-------------: | ------------------------------------------------------------------------- |
@@ -114,8 +114,8 @@ The `submitBatch` data interface is used to transmit proofs between chains and t
 |      New State Root      |      u256       | Commitment to the updated chain state                                     |
 |       Batch Proof        | Plonky2/3 Proof | Proof guaranteeing validity of batch of tx                                |
 |     Consensus Proof      | Plonky2/3 Proof | Proof of consensus for decentralized sequencers/signature for centralized |
-|      Message Queue       |  Vec<Message>   | LxLy message queue resulting from batch                                   |
-|         Calldata         |  Vec<Calldata>  | Calldata that must be posted to Ethereum                                  |
+|      Message Queue       |  Vec&lt;Message&gt;   | LxLy message queue resulting from batch                                   |
+|         Calldata         |  Vec&lt;Calldata&gt;  | Calldata that must be posted to Ethereum                                  |
 | Cross-Chain Dependencies |     Vec<*>      | Cross-chain state root dependencies and bundles that the batch builds on. |
 
 
@@ -127,9 +127,10 @@ The problem with the aggregation layer, as described, is that it suffers from hi
     
 Currently, proving time for a batch is a few minutes, and batches are posted to Ethereum every 30-60 minutes, which prohibits fast cross-chain messaging and interoperability.
     
-In order to reduce latency to levels that make cross-chain interactions feel like using a single chain, we need to safely confirm batches before:    
-1. A proof is generated (validity).
-2. A batch is posted to Ethereum (finality).
+In order to reduce latency to levels that make cross-chain interactions feel like using a single chain, we need to safely confirm batches before:
+
+  1. A proof is generated (validity).
+  2. A batch is posted to Ethereum (finality).
 
 
 #### Finality
@@ -164,9 +165,9 @@ The `SubmitBatchWithoutProof` data interface is used to post batches to the Aggl
 | :------------------------: | :------------: | :-------------------------------------------------------------------------- |
 |          Chain ID          |      Int       | Identifier for chain submitting a batch and proof                           |
 |       New State Root       |      u256      | Commitment to the updated chain state                                       |
-|     Consensus Witness      | Vec<Signature> | Witness required to verify consensus for a chain                            |
-|       Message Queue        |  Vec<Message>  | LxLy message queue resulting from batch                                     |
-|          Calldata          | Vec<Calldata>  | Calldata that must be posted to Ethereum                                    |
+|     Consensus Witness      | Vec&lt;Signature&gt; | Witness required to verify consensus for a chain                            |
+|       Message Queue        |  Vec&lt;Message&gt;  | LxLy message queue resulting from batch                                     |
+|          Calldata          | Vec&lt;Calldata&gt;  | Calldata that must be posted to Ethereum                                    |
 | *Cross-Chain Dependencies* |     Vec<*>     | *Cross-chain state root dependencies and bundles that the batch builds on.* |
 
 
