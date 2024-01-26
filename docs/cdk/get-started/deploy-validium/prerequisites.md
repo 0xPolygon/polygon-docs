@@ -19,8 +19,8 @@ Make sure you have the following software:
 
 You will need the following:
 
-- A Sepolia node RPC URL: e.g. https://goerli.infura.io/v3/YOUR-INFURA-API-KEY
-- An account address holding minimum 2 Sepolia ETH.
+- A Sepolia node RPC URL: e.g. https://sepolia.infura.io/v3/YOUR-INFURA-API-KEY
+- An account holding minimum 2 Sepolia ETH that you can send to a generated address within CDK.
 
 ### Faucets
 
@@ -32,7 +32,7 @@ Use a public faucet to get Sepolia test ETH.
 
 ## Configuration files
 
-Create a folder inside `/tmp/` named `/cdk/` that will store all the configuration files.
+Create a folder in `/tmp/cdk/` to store configuration files.
 
 ```bash
 mkdir /tmp/cdk/
@@ -40,7 +40,7 @@ mkdir /tmp/cdk/
 
 ## Environment variables
 
-Create a `.env` file to store environment variables.
+Create a `.env` file to store environment variables we will use later on.
 
 ```bash
 nano /tmp/cdk/.env
