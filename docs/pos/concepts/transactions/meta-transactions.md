@@ -3,13 +3,13 @@ DApps are starting to realize their utility but are becoming victims of their su
 success due to gas fees. Not to mention, the onboarding hurdles of users and the challenges of current
 UX are no easy fix.
 
-## Servicing Smart Contracts
+## Servicing smart contracts
 
 By design, smart contracts are deterministic state machines that execute when transaction fees are
 paid to service the contract’s logic by using the network’s computational resources.
 This is accomplished by a gas-metered model on Ethereum (and Polygon).
 
-## The Current State of Transacting
+## The current state of sransacting
 
 There are limitations to this traditional transaction model on Ethereum (and other blockchains alike).
 A common limitation is a user not having the means to pay for gas. By default, the sender of the
@@ -25,7 +25,7 @@ experience.
 Instead of direct transaction execution, a middleware would exist (via a third party) to handle the gas.
 This is where meta transactions come in.
 
-## What are Meta Transactions?
+## What are meta transactions?
 
 Meta transactions allow anyone to interact with the blockchain. They do not require users to have
 tokens to pay for the network’s services through transaction fees. This is done by decoupling the
@@ -60,7 +60,7 @@ the “sender”, the “sender” becomes more like an “intender” - the sen
 they would like executed on the blockchain by signing a message containing specific parameters related to
 their message, and not an entirely constructed transaction.
 
-## Use Cases
+## Use cases
 
 One can imagine the capabilities of meta transactions for scaling dApps and interactions with smart contracts.
 Not only can a user create a gasless transaction, but they can also do so many times, and with an automation
@@ -81,7 +81,7 @@ validates that this transaction is a priority vote, wraps the voting request int
 pays the gas fees, and broadcasts it to the voting contract. Everything checks out on the voting contract’s
 end, and the vote executes on behalf of the user.
 
-## Try Them Out
+## Try 'em out
 
 Assuming your familiarity with the different approaches you can take to integrate meta transactions in your
 dApp, and depending on whether you're migrating to meta transactions or building fresh dApp on using it.
@@ -89,7 +89,7 @@ dApp, and depending on whether you're migrating to meta transactions or building
 To integrate your dApp with Meta Transactions on Polygon, you can choose to go with one of the following
 relayers or spin up a custom solution:
 
-- [Biconomy](https://docs.biconomy.io/products/enable-gasless-transactions)
+- [Biconomy](https://docs.biconomy.io/Account/transactions/gasless)
 - [Gas Station Network (GSN)](https://docs.opengsn.org/#ethereum-gas-station-network-gsn)
 - [Infura](https://infura.io/product/ethereum/transactions-itx)
 - [Gelato](https://docs.gelato.network/developer-products/gelato-relay-sdk)
@@ -106,23 +106,24 @@ The client that the user interacts with (web browser, mobile apps, etc) never in
 
 For any action that requires blockchain interaction,
 
-- Client requests an EIP712 formatted signature from the user
+- Client requests an EIP-712 formatted signature from the user
 - The signature is sent to a simple relayer server (should have a simple auth/spam protection if used for production, or biconomy's mexa sdk can be used: [https://github.com/bcnmy/mexa-sdk](https://github.com/bcnmy/mexa-sdk))
 - The relayer interacts with the blockchain to submit user's signature to the contract. A function on the contract called `executeMetaTransaction` processes the signature and executes the requested transaction (via an internal call).
 - The relayer pays for the gas making the transaction effectively free 🤑
 
-## Integrate Network Agnostic Transactions in your dApp
+## Integrate network agnostic transactions in your dApp
 
 - Choose between a custom simple relayer node/biconomy.
 
-  - For biconomy, setup a dapp from the dashboard and save the api-id and api-key, see: [https://docs.biconomy.io/](https://docs.biconomy.io/)
+  - For Biconomy, setup a dapp from the dashboard and save the api-id and api-key, see: [https://docs.biconomy.io/](https://docs.biconomy.io/)
 
     **Steps:**
 
-    1. Let's Register our contracts to biconomy dashboard
-       1. Visit the [official documents of biconomy](https://docs.biconomy.io/biconomy-dashboard).
-       2. While registering the dapp, select `Polygon Mumbai`
-    2. Copy the`API key` to use in frontend
+    1. Let's register our contracts to Biconomy dashboard
+       1. Visit [Biconomy's offical docs](https://docs.biconomy.io/dashboard)
+       2. Navigate and login to the Dashboard
+       3. Select `Polygon Mumbai` when registering your dapp
+    2. Copy the`API key` to use for you dapp's frontend
     3. And Add function `executeMetaTransaction` in Manage-Api and make sure to enable meta-tx. (Check 'native-metatx' option)
 
   - If you'd like to use your own custom API that sends signed transactions on the blockchain, you can refer to the server code here: [https://github.com/angelagilhotra/ETHOnline-Workshop/tree/master/2-network-agnostic-transfer](https://github.com/angelagilhotra/ETHOnline-Workshop/tree/master/2-network-agnostic-transfer)
@@ -163,140 +164,140 @@ let data = await web3.eth.abi.encodeFunctionCall({
     params: msgParams
   });
 
-  ```
+```
 
-- Once you have a relayer and the contracts setup, what is required is for the client to be able to fetch an EIP712 formatted signature and simply call the API with the required parameters
+- Once you have a relayer and the contracts set up, what is required is for the client to be able to fetch an EIP-712 formatted signature and simply call the API with the required parameters
 
-    ref: [https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L47](https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L47)
+ref: [https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L47](https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L47)
 
-    ```jsx
+```jsx
 
-    let data = await web3.eth.abi.encodeFunctionCall({
-        name: 'getNonce',
-        type: 'function',
-        inputs: [{
-            name: "user",
-            type: "address"
-          }]
-      }, [accounts[0]]);
+let data = await web3.eth.abi.encodeFunctionCall({
+    name: 'getNonce',
+    type: 'function',
+    inputs: [{
+        name: "user",
+        type: "address"
+      }]
+  }, [accounts[0]]);
 
-      let _nonce = await web3.eth.call ({
-        to: token["80001"],
-        data
-      });
+  let _nonce = await web3.eth.call ({
+    to: token["80001"],
+    data
+  });
 
-      const dataToSign = getTypedData({
-        name: token["name"],
-        version: '1',
-        salt: '0x0000000000000000000000000000000000000000000000000000000000013881',
-        verifyingContract: token["80001"],
-        nonce: parseInt(_nonce),
-        from: accounts[0],
-        functionSignature: functionSig
-      });
-      const msgParams = [accounts[0], JSON.stringify(dataToSign)];
+  const dataToSign = getTypedData({
+    name: token["name"],
+    version: '1',
+    salt: '0x0000000000000000000000000000000000000000000000000000000000013881',
+    verifyingContract: token["80001"],
+    nonce: parseInt(_nonce),
+    from: accounts[0],
+    functionSignature: functionSig
+  });
+  const msgParams = [accounts[0], JSON.stringify(dataToSign)];
 
-      let sig = await eth.request ({
-        method: 'eth_signTypedData_v3',
-        params: msgParams
-      });
-    ```
+  let sig = await eth.request ({
+    method: 'eth_signTypedData_v3',
+    params: msgParams
+  });
+```
 
-    Calling the API, ref: [https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L110](https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L110)
+Calling the API, ref: [https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L110](https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L110)
 
-    ```jsx
-    const response = await request.post(
-        'http://localhost:3000/exec', {
-          json: txObj,
-        },
-        (error, res, body) => {
-          if (error) {
-            console.error(error)
-            return
-          }
-          document.getElementById(el).innerHTML =
-          `response:`+ JSON.stringify(body)
-        }
-      )
-    ```
-
-    If using Biconomy, the following should be called:
-
-    ```jsx
-    const response = await request.post(
-        'https://api.biconomy.io/api/v2/meta-tx/native', {
-          json: txObj,
-        },
-        (error, res, body) => {
-          if (error) {
-            console.error(error)
-            return
-          }
-          document.getElementById(el).innerHTML =
-          `response:`+ JSON.stringify(body)
-        }
-      )
-    ```
-
-    where the `txObj` should look something like:
-
-    ```json
-    {
-        "to": "0x2395d740789d8C27C139C62d1aF786c77c9a1Ef1",
-        "apiId": <API ID COPIED FROM THE API PAGE>,
-        "params": [
-            "0x2173fdd5427c99357ba0dd5e34c964b08079a695",
-            "0x2e1a7d4d000000000000000000000000000000000000000000000000000000000000000a",
-            "0x42da8b5ac3f1c5c35c3eb38d639a780ec973744f11ff75b81bbf916300411602",
-            "0x32bf1451a3e999b57822bc1a9b8bfdfeb0da59aa330c247e4befafa997a11de9",
-            "27"
-        ],
-        "from": "0x2173fdd5427c99357ba0dd5e34c964b08079a695"
+```jsx
+const response = await request.post(
+    'http://localhost:3000/exec', {
+      json: txObj,
+    },
+    (error, res, body) => {
+      if (error) {
+        console.error(error)
+        return
+      }
+      document.getElementById(el).innerHTML =
+      `response:`+ JSON.stringify(body)
     }
-    ```
+  )
+```
+
+If using Biconomy, the following should be called:
+
+```jsx
+const response = await request.post(
+    'https://api.biconomy.io/api/v2/meta-tx/native', {
+      json: txObj,
+    },
+    (error, res, body) => {
+      if (error) {
+        console.error(error)
+        return
+      }
+      document.getElementById(el).innerHTML =
+      `response:`+ JSON.stringify(body)
+    }
+  )
+```
+
+where the `txObj` should look something like:
+
+```json
+{
+    "to": "0x2395d740789d8C27C139C62d1aF786c77c9a1Ef1",
+    "apiId": <API ID COPIED FROM THE API PAGE>,
+    "params": [
+        "0x2173fdd5427c99357ba0dd5e34c964b08079a695",
+        "0x2e1a7d4d000000000000000000000000000000000000000000000000000000000000000a",
+        "0x42da8b5ac3f1c5c35c3eb38d639a780ec973744f11ff75b81bbf916300411602",
+        "0x32bf1451a3e999b57822bc1a9b8bfdfeb0da59aa330c247e4befafa997a11de9",
+        "27"
+    ],
+    "from": "0x2173fdd5427c99357ba0dd5e34c964b08079a695"
+}
+```
 
 - If you use the custom API it executes the `executeMetaTransaction` function on the contract:
 
-    (ref: [https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/server/index.js#L40](https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/server/index.js#L40))
+(ref: [https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/server/index.js#L40](https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/server/index.js#L40))
 
-    ```jsx
-    try {
-        let tx = await contract.methods.executeMetaTransaction(
-          txDetails.from, txDetails.fnSig, r, s, v
-        ).send ({
-          from: user,
-          gas: 800000
-        })
-        req.txHash = tx.transactionHash
-      } catch (err) {
-        console.log (err)
-        next(err)
-      }
-    ```
+```jsx
+try {
+    let tx = await contract.methods.executeMetaTransaction(
+      txDetails.from, txDetails.fnSig, r, s, v
+    ).send ({
+      from: user,
+      gas: 800000
+    })
+    req.txHash = tx.transactionHash
+  } catch (err) {
+    console.log (err)
+    next(err)
+  }
+```
 
-    is using biconomy, the client side call looks like:
+is using biconomy, the client side call looks like:
 
-    ```jsx
-    // client/src/App.js
-    import React from "react";
-    import Biconomy from "@biconomy/mexa";
+```jsx
+// client/src/App.js
+import React from "react";
+import Biconomy from "@biconomy/mexa";
 
-    const getWeb3 = new Web3(biconomy);
-    biconomy
-        .onEvent(biconomy.READY, () => {
-          // Initialize your dapp here like getting user accounts etc
-          console.log("Mexa is Ready");
-        })
-        .onEvent(biconomy.ERROR, (error, message) => {
-          // Handle error while initializing mexa
-       console.error(error);
-        });
+const getWeb3 = new Web3(biconomy);
+biconomy
+    .onEvent(biconomy.READY, () => {
+      // Initialize your dapp here like getting user accounts etc
+      console.log("Mexa is Ready");
+    })
+    .onEvent(biconomy.ERROR, (error, message) => {
+      // Handle error while initializing mexa
+    console.error(error);
+    });
 
-    /**
-    * use the getWeb3 object to define a contract and calling the function directly
-    */
+/**
+* use the getWeb3 object to define a contract and calling the function directly
+*/
 
-    ```
+```
 
 Account Abstraction is a blockchain technology that enables users to utilize smart contracts as their accounts. While the default account for most users is an Externally Owned Account (EOA), which is controlled by an external private key, it requires users to have a considerable understanding of blockchain technology to use them securely. Fortunately, smart contract accounts can create superior user experiences.
 
@@ -309,7 +310,7 @@ Contract accounts offer numerous benefits, including:
 - **Account security:** Contract accounts enable social recovery and security features such as time-locks and withdraw limits.
 - **Atomic multi-operations:** Users can perform multiple operations simultaneously, such as trading in a single click instead of approving and swapping separately.
 
-## Using Account Abstraction on Polygon
+## Using account abstraction on Polygon
 
 There are two primary ways users can use account abstraction on Polygon: by sending ERC-4337 transactions or with third party meta transaction services.
 
@@ -317,6 +318,6 @@ There are two primary ways users can use account abstraction on Polygon: by send
 
 ERC-4337, also known is EIP-4337, brings account abstraction to the Polygon ecosystem and all EVM-compatible chains.
 
-### Meta Transactions
+### Meta transactions
 
 Meta transactions are bespoke third party services for achieving account abstraction.

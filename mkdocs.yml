@@ -42,22 +42,24 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Get started:
-        - Connect testnet: cdk/get-started/connect-testnet.md
-        - Quickstart:
+        - Quickstart: 
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
+              - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
+              - Prerequisites: cdk/get-started/deploy-rollup/prerequisites.md
               - Install dependencies: cdk/get-started/deploy-rollup/install-dependencies.md
               - Create wallets: cdk/get-started/deploy-rollup/create-wallets.md
-              - Deploy node: cdk/get-started/deploy-rollup/deploy-node.md
+              - Configure node deployment: cdk/get-started/deploy-rollup/configure-node-deployment.md
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
-              - Activate forced transactions: cdk/get-started/deploy-rollup/activate-forced-transactions.md
-              - Set up Goerli node: cdk/get-started/deploy-rollup/setup-goerli-node.md
+              - Start node: cdk/get-started/deploy-rollup/start-node.md
+              - Start services: cdk/get-started/deploy-rollup/start-services.md
+        - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
-        - Manage policies: cdk/how-to/manage-policies.md
+        - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
         - DAC: cdk/architecture/dac.md
       - Specification:
@@ -210,24 +212,7 @@ nav:
         - Building on Polygon: pos/get-started/building-on-polygon.md
       - How to:
         - How to: pos/how-to/index.md
-        - Restore from snapshots: pos/how-to/snapshots.md
-        - Operate a node:
-          - Operate a node: pos/how-to/operating/index.md
-          - Full node:
-            - Full node: pos/how-to/operating/full-node/index.md
-            - Manual install: pos/how-to/operating/full-node/manual-install.md
-            - Ansible: pos/how-to/operating/full-node/ansible.md
-            - Docker: pos/how-to/operating/full-node/docker.md
-            - Google cloud: pos/how-to/operating/full-node/gcp.md
-          - Validator node:
-            - Validator node: pos/how-to/operating/validator-node/index.md
-            - Rewards and staking incentives: pos/how-to/operating/validator-node/rewards.md
-            - Manual install: pos/how-to/operating/validator-node/manual-install.md
-            - Ansible: pos/how-to/operating/validator-node/ansible.md
-            - Staking: pos/how-to/operating/validator-node/staking.md
-          - Access node: pos/how-to/operating/access-node.md
-          - Archive node: pos/how-to/operating/archive-node.md
-          - Erigon node: pos/how-to/operating/erigon-node.md
+        - Sync node using snapshots: pos/how-to/snapshots.md
         - Bridge layers:
           - Bridge layers: pos/how-to/bridging/index.md
           - Ethereum-Polygon:
@@ -260,8 +245,9 @@ nav:
             - Governance: pos/architecture/heimdall/governance.md
       #- Specification:
       #    - Specification: pos/spec/index.md
-      - Operating various nodes:
+      - Run a node:
         # - Operate various nodes: pos/operate-node/index.md
+        - Run a node: pos/operate-node/index.md
         - System requirements: pos/operate-node/validator/validator-node-system-requirements.md
         - Operators:
           # - Operators: pos/operate-node/operate/index.md
@@ -270,6 +256,7 @@ nav:
           - Full node ansible: pos/operate-node/operate/full-node-ansible.md
           - Full node packages: pos/operate-node/operate/full-node-packages.md
           - Full node gcp: pos/operate-node/operate/full-node-gcp.md
+          - Access node: pos/operate-node/operate/access-node.md
           - Erigon client: pos/operate-node/operate/run-erigon-node.md
         - Validators:
           # - Validators: pos/operate-node/validator/index.md
@@ -300,7 +287,7 @@ nav:
           - Genesis contracts: pos/reference/contracts/genesis-contracts.md
           - Delegation via validator shares: pos/reference/contracts/delegation.md
           - Staking manager: pos/reference/contracts/stakingmanager.md
-        - Heimdall and Bor snapshots: pos/reference/snapshot-instructions-heimdall-bor.md
+        - Rewards and staking incentives: pos/reference/rewards.md
         - Default ports for nodes: pos/reference/port-management.md
         - Common commands: pos/reference/commands.md
         - Node errors: pos/reference/errors.md
@@ -520,7 +507,6 @@ nav:
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md
           - Crust network: tools/storage/crusthelpers.md
-          - Mint NFTs: tools/storage/nftstorage.md
       - Oracles:
           - Getting started: tools/oracles/getting-started.md
           - API3: tools/oracles/api3.md
@@ -552,7 +538,6 @@ nav:
           - Torus:  tools/wallets/torus.md          
           - WalletConnect:  tools/wallets/walletconnect.md
           - SlashAuth:  tools/wallets/slashauth.md
-          - Plaid wallet onboard:  tools/wallets/plaid-wallet-onboard.md
           - Particle network:  tools/wallets/particle-network.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
@@ -563,6 +548,7 @@ nav:
   - Learn:
       - Learn: learn/index.md
       - Unified liquidity and scalability: learn/liquidity-and-scalability.md
+      - Aggregation layer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
       - Polygon 2.0 architecture: learn/deep-dive-arch.md
 

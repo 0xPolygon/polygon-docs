@@ -1,3 +1,5 @@
+# Manage allowlists, and more, with policies
+
 !!! important
     Policies are currently only available in validium mode.
 

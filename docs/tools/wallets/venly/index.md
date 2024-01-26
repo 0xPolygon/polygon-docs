@@ -1,11 +1,11 @@
 !!! caution "Content disclaimer"
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
-**Venly (prev. Arkane Network)** allows you to easily integrate your app to the Polygon blockchain, whether you already have an app integrated with Web3 or are building a new app from scratch. Venly provides a smooth and delightful experience for you and your users on both web & mobile.
+Venly (prev. Arkane Network) allows you to easily integrate your app to the Polygon blockchain, whether you already have an app integrated with Web3 or are building a new app from scratch. Venly provides a smooth and delightful experience for you and your users on both web & mobile.
 
 Venly will help you in interacting with the Polygon network, create blockchain wallets, create different asset types such as fungible (ERC20), and non-fungible tokens (ERC721 and ERC1155) and interact with smart contracts. Next to a superior developer experience, you can give your users a user-friendly interface.
 
-Each application is unique and has different needs, therefore they provide different ways of interacting with Venly. Applications that have support for Web3 are recommendated to integrate the [Venly Web3 provider](https://docs.venly.io/widget/web3-provider/getting-started), others are suggested to use the [Venly Widget](https://docs.venly.io/widget/widget/introduction).
+Each application is unique and has different needs, therefore they provide different ways of interacting with Venly. We recommend that web3 applications integrate the [Venly web3 provider](https://docs.venly.io/widget/web3-provider/getting-started), others may use the [Venly Widget](https://docs.venly.io/docs/widget-overview).
 
 ## Key Features
 

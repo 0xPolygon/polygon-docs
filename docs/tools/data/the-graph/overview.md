@@ -36,7 +36,7 @@ The Graph, a decentralized protocol for indexing and querying chain data, suppor
       The <GITHUB_USER> is your github user or organization name, <SUBGRAPH_NAME> is the name for your subgraph, and <DIRECTORY> is the optional name of the directory where graph init will put the example subgraph manifest.
       ```
 
-    >Note: More details are here: <https://thegraph.com/docs/define-a-subgraph#create-a-subgraph-project>
+    >Note: More details are here: <https://thegraph.com/docs/en/developing/creating-a-subgraph/>
 
 1. Authenticate with the hosted service.
 
