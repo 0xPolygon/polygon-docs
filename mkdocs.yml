@@ -401,22 +401,24 @@ nav:
                   - System procedures:  miden/vm/specification/stdlib/sys.md
   - Developer tools: 
       - Developer tools: tools/index.md
-      - Smart contract development: 
+      - dApp development: 
           - Common tools:
-              - Hardhat: tools/smart-contracts/common-tools/hardhat.md
-              - Truffle: tools/smart-contracts/common-tools/truffle.md
-              - Remix: tools/smart-contracts/common-tools/remix.md
-              - Replit: tools/smart-contracts/common-tools/replit.md
-          - PoS:
-              - Work with smart contracts: tools/smart-contracts/pos/index.md
-              - Alchemy: tools/smart-contracts/pos/alchemy.md
-              - ChainIDE: tools/smart-contracts/pos/chainide.md
-              - ChainStack: tools/smart-contracts/pos/chainstack.md
-              - GetBlock: tools/smart-contracts/pos/getblock.md
-              - QuickNode: tools/smart-contracts/pos/quicknode.md
-              - SmartPress: tools/smart-contracts/pos/smartpress.md
-              - Thirdweb: tools/smart-contracts/pos/thirdweb.md
-              - Crossmint: tools/smart-contracts/pos/crossmint.md
+              - Hardhat: tools/dApp-development/common-tools/hardhat.md
+              - Truffle: tools/dApp-development/common-tools/truffle.md
+              - Remix: tools/dApp-development/common-tools/remix.md
+              - Replit: tools/dApp-development/common-tools/replit.md
+          - Develop on PoS:
+              - Work with smart contracts: tools/dApp-development/pos/index.md
+              - Alchemy: tools/dApp-development/pos/alchemy.md
+              - ChainIDE: tools/dApp-development/pos/chainide.md
+              - ChainStack: tools/dApp-development/pos/chainstack.md
+              - GetBlock: tools/dApp-development/pos/getblock.md
+              - QuickNode: tools/dApp-development/pos/quicknode.md
+              - SmartPress: tools/dApp-development/pos/smartpress.md
+              - Thirdweb: tools/dApp-development/pos/thirdweb.md
+              - Crossmint: tools/dApp-development/pos/crossmint.md
+          - Polygon in-house tools:
+              - dApp launchpad: tools/dApp-development/dApp-launchpad.md
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md

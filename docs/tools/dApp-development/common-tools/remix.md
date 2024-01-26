@@ -19,7 +19,7 @@ This tutorial guides you to implement a Hello World dApp which echoes a message 
 
 Remix is a Ethereum-focused IDE: an online platform to develop and deploy smart contracts. To start building a smart contract, click on **New File** and name it `HelloWorld.sol`.
 
-![](../../img/tools/remix/new-file.png)
+![](../../../img/tools/remix/new-file.png)
 
 ## Smart contract
 
@@ -75,7 +75,7 @@ The `update` function is another public function that is similar to the constr
 
 Now, we have to deploy our smart contract on Mumbai, Polygon Network's Testnet. Not only does it cost money (e.g., gas fees) to deploy a smart contract on Polygon Mainnet, but also, the contract is immutable and can't be changed once deployed. Therefore, it's best to first deploy your smart contract to the Testnet first.
 
-To deploy to the Mumbai testnet, we have to connect to the Web3 world which can be accomplished by using any of the services like Metamask, Brave, Portis, etc. We will be using MetaMask in this tutorial. Please follow this [guide to set up a MetaMask Account](../wallets/metamask/index.md).
+To deploy to the Mumbai testnet, we have to connect to the Web3 world which can be accomplished by using any of the services like Metamask, Brave, Portis, etc. We will be using MetaMask in this tutorial. Please follow this [guide to set up a MetaMask Account](../../wallets/metamask/index.md).
 
 - Open Metamask. Click on the network dropdown menu (set to **Ethereum Mainnet** by default) and click on the **Add Network** button. MaticVigil provides a public endpoint and is rate-limited. Therefore, most developers use a free blockchain provider like [Alchemy](https://docs.alchemy.com/docs/how-to-add-polygon-to-metamask) or [Quicknode](https://www.quicknode.com/guides/smart-contract-development/how-to-deploy-a-smart-contract-on-maticpolygon#setting-up-metamask-with-polygon-node) to have a dedicated RPC endpoint with faster throughput AKA computing units per second (CUPs). You need to create a free account to get your private API key from one of these providers to put into the dedicated RPC endpoint URL below.
 
@@ -122,13 +122,13 @@ In both Testnet and Mainnet, you do the below to deploy your smart contract usin
 
 - Select **Injected Provider** MetaMask in the **Environment** dropdown and your contract
 
-  ![RemixIDE_Step1](../../img/tools/remix/injected-provider.png)
+  ![RemixIDE_Step1](../../../img/tools/remix/injected-provider.png)
 
 - Accept the **Connect** request received in MetaMask. If the popup doesn't open by default, you can also try manually launching the MetaMask extension
 
 - Once MetaMask is connected to Remix, the `Deploy` transaction would generate another MetaMask popup that requires transaction confirmation. Simply confirm the transaction!
 
-  ![RemixIDE_Step1](../../img/tools/remix/confirm_tx.png)
+  ![RemixIDE_Step1](../../../img/tools/remix/confirm_tx.png)
 <br/>
 
 Congratulations! You have successfully deployed the HelloWorld smart contract to the Polygon Mumbai Testnet. You can start interacting with your smart contract. Check the deployment status at <https://mumbai.polygonscan.com/>.
@@ -149,7 +149,7 @@ sol-merger \"./contracts/*.sol\" ./build
 
 - Navigate to your contract's Polygonscan page and click on **Verify and Publish**.
 
-  ![RemixIDE_Step1](../../img/tools/remix/verify-publish.png)
+  ![RemixIDE_Step1](../../../img/tools/remix/verify-publish.png)
 
 - Select **Solidity (Single File)** in compiler type
 
