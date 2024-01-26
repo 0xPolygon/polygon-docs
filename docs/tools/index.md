@@ -19,7 +19,7 @@ hide:
 </div>
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./smart-contracts/hardhat">
+      <a href="./dApp-development/common-tools/hardhat">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Smart contracts</div>
          </div>

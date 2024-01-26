@@ -402,28 +402,28 @@ nav:
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
-          - Common tools:
-              - Hardhat: tools/dApp-development/common-tools/hardhat.md
-              - Truffle: tools/dApp-development/common-tools/truffle.md
-              - Remix: tools/dApp-development/common-tools/remix.md
-              - Replit: tools/dApp-development/common-tools/replit.md
+          #- dApp launchpad: tools/dApp-development/dApp-launchpad.md
           - Develop on PoS:
               - Work with smart contracts: tools/dApp-development/pos/index.md
               - Alchemy: tools/dApp-development/pos/alchemy.md
               - ChainIDE: tools/dApp-development/pos/chainide.md
               - ChainStack: tools/dApp-development/pos/chainstack.md
+              - Crossmint: tools/dApp-development/pos/crossmint.md
               - GetBlock: tools/dApp-development/pos/getblock.md
               - QuickNode: tools/dApp-development/pos/quicknode.md
               - SmartPress: tools/dApp-development/pos/smartpress.md
               - Thirdweb: tools/dApp-development/pos/thirdweb.md
-              - Crossmint: tools/dApp-development/pos/crossmint.md
-          - Polygon in-house tools:
-              - dApp launchpad: tools/dApp-development/dApp-launchpad.md
+          - Common tools:
+              - Hardhat: tools/dApp-development/common-tools/hardhat.md
+              - Truffle: tools/dApp-development/common-tools/truffle.md
+              - Remix: tools/dApp-development/common-tools/remix.md
+              - Replit: tools/dApp-development/common-tools/replit.md
+      - Third-party tutorials:
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
+
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
-      - Third-party tutorials:
-          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Data:
           - The Graph: 
               - Overview: tools/data/the-graph/overview.md
