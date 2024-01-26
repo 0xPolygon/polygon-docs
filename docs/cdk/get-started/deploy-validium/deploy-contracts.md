@@ -114,9 +114,10 @@ The address of the contracts it creates depends on the salt and the `initialCDKV
   }
   ```
 
-4. In addition to the `deploy_output.json` file, you should see a `genesis.json` file in `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/`.
+4. In the  `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/` folder, you should also see a `genesis.json` file. 
 
-  We will take the outputs of `genesis.json` and `deploy_output.json` and use them to configure the `cdk-validium-node` node.
+!!! info
+    We use the info in `genesis.json` and `deploy_output.json` to configure the `cdk-validium-node` node.
 
 !!! warning "Deployment failure"
     - Since there are deterministic addresses, you cannot deploy twice on the same network using the same `salt` and `initialCDKValidiumDeployerOwner` inside `deploy_parameters.json`. Changing one of them is enough to make a new deployment.
