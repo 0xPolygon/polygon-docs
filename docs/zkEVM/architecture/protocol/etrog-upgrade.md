@@ -2,11 +2,9 @@
 
 This document provides details of the Etrog upgrade, which is Polygon zkEVM's upgrade that succeeds the dragonfruit upgrade.
 
-Although the Dragonfruit upgrade had some advantages over previous zkEVM versions, it has its own pain points.
+Although the Dragonfruit upgrade had some advantages over previous zkEVM versions, it has its own pain points. We take a look at what these pain points are, and how the Etrog upgrade resolves them.
 
-We take a look at what these pain points are, and how the Etrog upgrade resolves them.
-
-Before all these, we present the newly launched testnet to coincide with the Etrog upgrade.
+Before discussing all these, we present the newly launched testnet that coincides with the Etrog upgrade.
 
 
 
@@ -87,7 +85,7 @@ The below figure displays blocks of the Etrog upgrade vis-à-vis those of the Dr
 
 In order to circumvent the above-mentioned issue related to the _one timestamp for many blocks_ problem, each block in the Etrog upgrade's batch receives its own unique timestamp. This is in addition to allowing more than one transaction per block.
 
-This is achieved by enabling the sequencer to change the timestamp for different blocks within a batch. To do so, a special transaction or marker called `changeL2Block`, is introduced within a batch to mark whenever there is a block change.
+The solution is achieved by enabling the sequencer to change the timestamp for different blocks within a batch. To do so, a special transaction or marker called `changeL2Block`, is introduced within a batch to mark whenever there is a block change.
 
 The below figure shows how `changeL2Block` is used to change the timestamp whenever a new block is formed.
 
