@@ -65,7 +65,7 @@ The crucial alterations made in the Etrog upgrade are therefore on; the _one blo
 
 
 
-## Blocks in the Etrog upgrade
+## Etrog Blocks
 
 Up until the dragonfruit upgrade, each L2 block contains a single transaction. The same approach taken by Optimism.
 
@@ -81,7 +81,7 @@ The below figure displays blocks of the Etrog upgrade vis-à-vis those of the Dr
 
 
 
-## Timestamps in Etrog upgrade
+## Etrog Timestamps
 
 In order to circumvent the above-mentioned issue related to the _one timestamp for many blocks_ problem, each block in the Etrog upgrade's batch receives its own unique timestamp. This is in addition to allowing more than one transaction per block.
 
