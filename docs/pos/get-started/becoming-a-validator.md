@@ -1,13 +1,72 @@
+Validators are the key actor in maintaining the Polygon network. Validators run a full node, secure the network by staking MATIC to produce blocks, validate and participate in PoS consensus.
 
-!!!tip
-    Stay in the know
+!!!info
+    
+    There is limited space for accepting new validators. New validators can only join the active set when a currently active validator unbonds/is removed due to low performance. 
+    If you are interested in becoming a validator on the PoS network, you can submit an application here: https://polygoncommunity.typeform.com/validatorshub
 
-    Keep up with the latest node and validator updates from the Polygon team and the community by subscribing to the [Polygon notification groups](https://polygon.technology/notifications/).
+    * Submitting an application does not guarantee you a validator slot.
+
+
+## Overview
+
+Polygon consists of the three following layers:
+
+* Ethereum layer — a set of contracts on the Ethereum mainnet.
+* Heimdall layer — a set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
+* Bor layer — a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
+
+To be a validator on the Polygon Network, you must run:
+
+* Sentry node — a separate machine running a Heimdall node and a Bor node. A sentry node is open to all nodes on the Polygon Network.
+* Validator node — a separate machine running a Heimdall node and a Bor node. A validator node is only open to its sentry node and closed to the rest of the network.
+* Stake the MATIC tokens in the staking contracts deployed on the Ethereum mainnet.
+
+## Components
+
+### Heimdall
+
+Heimdall does the following:
+
+* Monitors the staking contracts on the Ethereum mainnet.
+* Verifies all state transitions on the Bor chain.
+* Commits the Bor chain state checkpoints to the Ethereum mainnet.
+
+Heimdall is based on Tendermint.
+
+!!!info
+    See Also
+
+    * GitHub repository: [Heimdall](https://github.com/maticnetwork/heimdall)
+    * GitHub repository: [Staking contracts](https://github.com/maticnetwork/contracts/tree/master/contracts/staking)
+    * Blog post: [Heimdall](https://polygon.technology/blog/heimdall-vaibhav-chellani-the-all-seeing-all-hearing-protector-of-matic)
+
+
+### Bor
+
+Bor does the following:
+
+* Produces blocks on the Polygon Network.
+
+Bor is the Block producer node and layer for the Polygon Network. It is based on Go Ethereum. Blocks produced on Bor are validated by Heimdall nodes.
+
+!!!info
+    See Also
+
+    * GitHub repository: [Bor](https://github.com/maticnetwork/bor)
+    * Blog post: [Heimdall and Bor](https://blog.polygon.technology/heimdall-and-bor/)
+
+
+## Validator responsiblities
+
+!!!tip "Stay in the know"
+
+    Keep up with the latest node and validator updates from the Polygon team and the community by keeping an eye on the [announcements posed to Polygon forums](https://forum.polygon.technology/c/announcement/6).
 
 
 A blockchain validator is someone who is responsible for validating transactions within a blockchain. On the Polygon Network, any participant can be qualified to become a Polygon's validator by running a **Validator Node (Sentry + Validator)** to earn rewards and collect transaction fees. To ensure the good participation by validators, they lock up at least 1 MATIC token as a stake in the ecosystem.
 
-!!!info
+!!!info "Active validator limit"
     
     Currently, there is a limit of 100 active validators at a time. For a detailed description on what a validator is, see [<ins>Validator</ins>](./getting-started.md).
 
@@ -29,7 +88,7 @@ Any validator on the Polygon Network has the following responsibilities:
   * Provide feedback and suggestions
 * Earn staking rewards for validate blocks on the blockchain
 
-## Technical node operations
+### Technical node operations
 
 The following technical node operations are **done automatically by the nodes:**
 
@@ -43,17 +102,17 @@ The following technical node operations are **done automatically by the nodes:**
   * If more than 2/3 of the active validators reach consensus on the checkpoint, the checkpoint is submitted to the Ethereum mainnet.
 * Sync changes to Polygon staking contracts on Ethereum:
   * Continuing from the checkpoint submission step, since this is an external network call, the checkpoint transaction on Ethereum may or may not be confirmed, or may be pending due to Ethereum congestion issues.
-  * In this case, there is an `ack/no-ack` process that is followed to ensure that the next checkpoint contains a snapshot of the previous Bor blocks as well. For example, if checkpoint 1 is for Bor blocks 1-256, and it failed for some reason, the next checkpoint 2 will be for Bor blocks 1-512. See also [Heimdall architecture: Checkpoint](/pos/design/heimdall/checkpoint.md).
+  * In this case, there is an `ack/no-ack` process that is followed to ensure that the next checkpoint contains a snapshot of the previous Bor blocks as well. For example, if checkpoint 1 is for Bor blocks 1-256, and it failed for some reason, the next checkpoint 2 will be for Bor blocks 1-512. See also [Heimdall architecture: Checkpoint](/pos/architecture/heimdall/checkpoints).
 * State sync from the Ethereum mainnet to Bor:
   * Contract state can be moved between Ethereum and Polygon, specifically through Bor:
   * A DApp contract on Ethereum calls a function on a special Polygon contract on Ethereum.
   * The corresponding event is relayed to Heimdall and then Bor.
   * A state-sync transaction gets called on a Polygon smart contract and the DApp can get the value on Bor via a function call on Bor itself.
-  * A similar mechanism is in place for sending state from Polygon to Ethereum. See also [State Sync Mechanism](/docs/pos/state-sync/state-sync).
+  * A similar mechanism is in place for sending state from Polygon to Ethereum. See also [State Sync Mechanism](/pos/how-to/bridging/l1-l2-communication/state-transfer).
 
-## Operations
+### Operations
 
-### Maintain high uptime
+#### Maintain high uptime
 
 The node uptime on the Polygon Network is based on the number of checkpoint transactions that the validator node has signed.
 
@@ -61,11 +120,11 @@ Approximately every 34 minutes a proposer submits a checkpoint transaction to th
 
 The process of signing the checkpoint transactions is automated. To ensure your validator node is signing all valid checkpoint transactions, you must maintain and monitor your node health.
 
-### Check node services and processes daily
+#### Check node services and processes daily
 
 You must check daily the services and processes associated with Heimdall and Bor. Also, pruning of the nodes should be done regularly to reduce disk usage.
 
-### Run node monitoring
+#### Run node monitoring
 
 You must run either:
 
@@ -73,7 +132,7 @@ You must run either:
 * Or, use your own monitoring tools for the validator and sentry nodes
 * Ethereum endpoint used on nodes should be monitored to ensure the node is within the request limits
 
-### Keep an ETH balance
+#### Maintain ETH balance
 
 You must maintain an adequate amount of ETH (should be always around the threshold value i.e., 0.5 to 1) on your validator signer address on the Ethereum Mainnet.
 
@@ -88,22 +147,22 @@ Not maintaining an adequate amount of ETH on the signer address will result in:
 * Delays in the finality of transactions included in the checkpoints.
 * Delays in subsequent checkpoint transactions.
 
-## Delegation
+### Delegation
 
-### Be open for delegation
+#### Be open for delegation
 
 All validators must be open for delegation from the community. Each validator has the choice of setting their own commission rate. There is no upper limit to the commission rate.
 
-### Communicate commission rates
+#### Communicate commission rates
 
 It is the moral duty of the validators to communicate the commission rates and the commission rate changes to the community. The preferred platforms to communicate the commission rates are:
 
 * [Discord](https://discord.com/invite/0xPolygon)
 * [Forum](https://forum.polygon.technology/)
 
-## Communication
+### Communication
 
-### Communicate issues
+#### Communicate issues
 
 Communicating issues as early as possible ensures that the community and the Polygon team can rectify the problems as soon as possible. The preferred platforms to communicate the commission rates are:
 
@@ -111,6 +170,26 @@ Communicating issues as early as possible ensures that the community and the Pol
 * [Forum](https://forum.polygon.technology/)
 * [GitHub](https://github.com/maticnetwork)
 
-### Provide feedback and suggestions
+#### Provide feedback and suggestions
 
 At Polygon, we value your feedback and suggestions on any aspect of the validator ecosystem. [Forum](https://forum.polygon.technology/) is the preferred platform to provide feedback and suggestions.
+
+## Run and maintain a node
+
+The following step-by-step guides will take you through the process of running a new validator node, or performing necessary maintenance actions for an existing node you've deployed.
+
+### Join the network as a validator
+
+* [Start and run the nodes with Ansible](/pos/how-to/validator/validator-ansible)
+* [Start and run the nodes with binaries](/pos/how-to/validator/validator-binaries)
+* [Stake as a validator](/pos/how-to/operate-maintain-node/validator-staking-operations)
+
+### Maintain your validator nodes
+
+* [Change the signer address](/pos/how-to/operate-maintain-node/change-signer-address)
+* [Change the commission](/pos/how-to/operate-maintain-node/validator-commission-operations)
+
+### Community assistance
+
+* [Discord](https://discord.com/invite/0xPolygon)
+* [Forum](https://forum.polygon.technology/)
