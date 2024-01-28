@@ -12,7 +12,7 @@ To create a new smart contract using Crossmint's Developer Console, follow the s
     - Crossmint has two developer console environments, they are `Staging`, which works with contracts deployed on a testnet and `Production` which works with contracts deployed on a mainnet. 
     - Please use the staging environment to familiarize yourself with Crossmint before proceeding with the Production environment. 
 
-1. Navigate to the [Crossmint's developer console page:](https://staging.crossmint.com/console/overview/?utm_source=backlinks)
+1. Navigate to the [Crossmint's developer console page:](https://staging.crossmint.com/console/overview/?utm_source=backlinks&utm_medium=docs&utm_campaign=polygon)
 
     ![img](../../img/tools/crossmint/screenshot1.jpg)
 
@@ -64,12 +64,12 @@ To create a new smart contract using Crossmint's Developer Console, follow the s
     ![img](../../img/tools/crossmint/screenshot9.png)
 
 !!! note
-    For additional information on Deploy, please refer [Crossmint’s documentation](https://docs.crossmint.com/docs/create-an-nft-collection/?utm_source=backlinks).
+    For additional information on Deploy, please refer to [Crossmint’s documentation](https://docs.crossmint.com/minting/guides/create-collections/?utm_source=backlinks&utm_medium=docs&utm_campaign=polygon).
 
 ## Verify the contract
 
-Contracts deployed to [Polygon](https://docs.crossmint.com/docs/minting-quickstart/?utm_source=backlinks) are automatically verified by **Crossmint**. You can check the status on the Polygonscan. 
+Contracts deployed to [Polygon](https://docs.crossmint.com/minting/introduction/?utm_source=backlinks&utm_medium=docs&utm_campaign=polygon) are automatically verified by **Crossmint**. You can check the status on the Polygonscan. 
 
 ## Need more help?
 
-If you have any questions or encounter any issues during the process, please reach out to the [official Crossmint support](https://help.crossmint.com/hc/en-us/?utm_source=backlinks) or to us on our [official Discord server](https://discord.com/invite/crossmint/?utm_source=backlinks).
+If you have any questions or encounter any issues during the process, please reach out to the [official Crossmint support](https://help.crossmint.com/hc/en-us/?utm_source=backlinks&utm_medium=docs&utm_campaign=polygon) or to us on our [official Discord server](https://discord.com/invite/crossmint/?utm_source=backlinks&utm_medium=docs&utm_campaign=polygon).
