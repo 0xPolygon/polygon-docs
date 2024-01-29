@@ -171,7 +171,7 @@ This usually occurs due to an incorrect installation of heimdall. You can follow
    ```bash
    heimdalld unsafe-reset-all
    ```
-and start Heimdall services again. You can refer to this [guide](kb/how-to.md).
+and start Heimdall services again. You can refer to this [guide](../validator/prerequisites.md).
 
 
 ### 5. From where do I create the API key?

@@ -2,7 +2,7 @@
 This guide will walk you through running a Polygon validator node from packages.
 
 For system requirements,
-follow the [Validator Node System Requirements](/pos/validator/validator-node-system-requirements.md) guide.
+follow the [Validator Node System Requirements](./validator-system-requirements.md) guide.
 
 !!!tip Snapshots
     Steps in this guide involve waiting for the **Heimdall** and **Bor** services to fully sync.
@@ -45,7 +45,7 @@ Here are a few instructions on how to configure ports for sentry and validator n
 
 This guide will walk you through running a Polygon validator node from binaries.
 
-For system requirements, follow the [Validator Node System Requirements](/pos/validator/validator-node-system-requirements.md) guide.
+For system requirements, follow the [Validator Node System Requirements](./validator-system-requirements.md) guide.
 
 !!!caution
     

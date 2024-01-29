@@ -9,13 +9,13 @@ The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainn
 
   1. In your wallet (e.g. MetaMask), choose the Ethereum mainnet.
     
-    ![Figure: Choose ERTHh mainnet ](../../../img/pos/choose-eth-mainnet.png)
+    ![Figure: Choose ERTHh mainnet ](../../img/pos/choose-eth-mainnet.png)
   
   2. Log in to [Polygon Staking](https://staking.polygon.technology/).
 
   3. Once you log in, you will see overall statistics along with the list of validators.
     
-    ![img](../../../img/pos/home.png)
+    ![img](../../img/pos/home.png)
 
     
 
@@ -28,39 +28,39 @@ The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainn
 
   1. Click "Become a Delegator" or scroll down to a specific validator and click "Delegate".
     
-    ![img](../../../img/pos/home.png)
+    ![img](../../img/pos/home.png)
 
   2. Provide the amount of MATIC to delegate.
     
-    ![img](../../../img/pos/delegateB.png)
+    ![img](../../img/pos/delegateB.png)
 
     
   3. Approve the delegation transaction and click "Delegate".
     
-    ![img](../../../img/pos/delegate2.png)
+    ![img](../../img/pos/delegate2.png)
 
     
 After the delegation transaction completes, you will see the `Delegation Completed` message.
   
-  ![img](../../../img/pos/delegate3.png)
+  ![img](../../img/pos/delegate3.png)
   
 
 ## View your delegations
 
 To view your delegations, click "My Account".
 
-![img](../../../img/pos/myAccount.png)
+![img](../../img/pos/myAccount.png)
 
 ## Withdraw rewards
 
   1. Click "My Account".
     
-    ![img](../../../img/pos/click-my-account.png)
+    ![img](../../img/pos/click-my-account.png)
 
     
   2. Under your delegated validator, click "Withdraw Rewards".
     
-    ![img](../../../img/pos/withdraw-reward.png)
+    ![img](../../img/pos/withdraw-reward.png)
     
 
 This will withdraw the MATIC token rewards to your Ethereum address.
@@ -69,12 +69,12 @@ This will withdraw the MATIC token rewards to your Ethereum address.
 
   1. Click "My Account".
     
-    ![img](../../../img/pos/click-my-account.png)
+    ![img](../../img/pos/click-my-account.png)
 
 
   2. Under your delegated validator, click "Restake Reward".
     
-    ![img](../../../img/pos/restake-rewards.png)
+    ![img](../../img/pos/restake-rewards.png)
 
     
 
@@ -84,12 +84,12 @@ This will restake the MATIC token rewards to the validator and increase your del
 
   1. Click "My Account".
     
-    ![img](../../../img/pos/click-my-account.png)
+    ![img](../../img/pos/click-my-account.png)
 
 
   2. Under your delegated validator, click "Unbond".
     
-    ![img](../../../img/pos/unbond-from-validator.png)
+    ![img](../../img/pos/unbond-from-validator.png)
 
 
   This will withdraw your rewards from the validator and your entire stake from the validator.
@@ -98,7 +98,7 @@ This will restake the MATIC token rewards to the validator and increase your del
 
   Your withdrawn stake funds will be locked for 80 checkpoints.
     
-    ![img](../../../img/pos/unbond.png)
+    ![img](../../img/pos/unbond.png)
 
 
 !!!note
@@ -116,12 +116,12 @@ Moving stake from one node to another node is a single transaction. There are no
 
   3. Select an external validator and click "Stake here".
     
-    ![img](../../../img/pos/move.png)
+    ![img](../../img/pos/move.png)
 
 
   4. Provide the stake amount and click "Move Stake".
     
-    ![img](../../../img/pos/move2.png)
+    ![img](../../img/pos/move2.png)
     
 
 This will move the stake. The dashboard will update after 12 block confirmations.
@@ -144,7 +144,7 @@ For Staking you would need to have funds on the Ethereum Mainnet (more informati
 Please watch this video for a graphical illustration of how this works:
 
 <video loop width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="../../../../img/pos/staking.mp4"></source>
+  <source type="video/mp4" src="../../../img/pos/staking.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -163,13 +163,13 @@ Navigate to "Your Delegations", choose one of the stakes and click on "Stake Mor
 Please watch this video for a graphical illustration of how this works:
 
 <video loop width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="../../../../img/pos/staking-more.mov"></source>
+  <source type="video/mp4" src="../../../img/pos/staking-more.mov"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
 <!-- 
 <video width="70%" height="70%" controls="true" >
-  <source type="video/mp4" src="../../../../img/pos/staking-more.mov"></source>
+  <source type="video/mp4" src="../../../img/pos/staking-more.mov"></source>
   <p>Your browser does not support the video element.</p>
 </video> -->
 
@@ -183,7 +183,7 @@ Check if you have funds on the Main Ethereum Network, to delegate your tokens. A
 
 You just need to access **https://staking.polygon.technology/**, where you will see the following landing page:
 
-![img](../../../img/pos/staking-lp.png)
+![img](../../img/pos/staking-lp.png)
 
 
 
@@ -196,13 +196,13 @@ It depends on your understanding and research on which validator you would want 
 To unbond from a validator, navigate to MyAccount, where you find **Your Delegations**.
 There you will see an **Unbond** button for each of the validators. Click on the **Unbond** button for whichever validator that you want to unbond from.
 
-![img](../../../img/pos/unbond-from-validator.png)
+![img](../../img/pos/unbond-from-validator.png)
 
 
 Please watch the video for a graphical illustration of how this works:
 
 <video loop width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="../../../../img/pos/unbond.mp4"></source>
+  <source type="video/mp4" src="../../../img/pos/unbond.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -220,18 +220,18 @@ Clicking on **Restake Reward** will ask you for confirmation from your wallet ac
 
 `Step 1` 
   <center>
-  ![img](../../../img/pos/restake-rewards1.png)
+  ![img](../../img/pos/restake-rewards1.png)
   </center>
 
 `Step 2` <br/>
   <center>
-  ![img](../../../img/pos/restake-rewards2.png)
+  ![img](../../img/pos/restake-rewards2.png)
   </center>
 
 Please watch the video for a graphical illustration of how this works:
 
 <video width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="../../../../img/pos/restake.mp4"></source>
+  <source type="video/mp4" src="../../../img/pos/restake.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -245,18 +245,18 @@ You can claim your rewards by clicking on the **My Account**, all the delegators
 
 `Step 1` <br/>
 <center>
-  ![img](../../../img/pos/withdraw1.png)
+  ![img](../../img/pos/withdraw1.png)
 </center>
 
 `Step 2` <br/>
 <center>
-  ![img](../../../img/pos/withdraw2.png)
+  ![img](../../img/pos/withdraw2.png)
 </center>
 
 Please watch the video for a graphical illustration of how this works:
 
 <video width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="../../../../img/pos/claim-rewards.mp4"></source>
+  <source type="video/mp4" src="../../../img/pos/claim-rewards.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -270,23 +270,23 @@ Once the unbonding period is complete, the **Claim Stake** button will be enable
 
 `Step 1` <br/>
 <center>
-  ![img](../../../img/pos/claim-stake1.png)
+  ![img](../../img/pos/claim-stake1.png)
 </center>
 
 `Step 2` <br/>
 <center>
-  ![img](../../../img/pos/claim-stake2.png)
+  ![img](../../img/pos/claim-stake2.png)
 </center>
 
 `Step 3` <br/>
 <center>
-  ![img](../../../img/pos/claim-stake3.png)
+  ![img](../../img/pos/claim-stake3.png)
 </center>
 
 Please watch the video for a graphical illustration of how this works:
 
 <video width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="../../../../img/pos/claiming-stake.mov"></source>
+  <source type="video/mp4" src="../../../img/pos/claiming-stake.mov"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -296,7 +296,7 @@ Please watch the video for a graphical illustration of how this works:
 We have recently upgraded the wallet support to WalletConnect v2.0. Now you can choose from a plethora of wallets, including Metamask, Coinbase, and others, on both desktop and mobile devices to log in.
   
   <center>
-  ![Figure: Supported wallet](../../../img/pos/supported-wallet.png)
+  ![Figure: Supported wallet](../../img/pos/supported-wallet.png)
   </center>
  
 ### Are hardware wallets supported?
@@ -311,14 +311,14 @@ Staking through Binance is not yet supported. There will be an announcement if a
 
 Once you have completed your delegation, wait for 12 block confirmations on Ethereum (approx. 3-5 minutes), then on the Dashboard, you can click on **My Account**.
 
-![Figure: My account](../../../img/pos/my-account.png)
+![Figure: My account](../../img/pos/my-account.png)
 
 
 ### Where can I check my rewards?
 
 On the Dashboard, you can click on the **My Account** option on the left-hand side.
 
-![Figure: My account](../../../img/pos/my-account.png)
+![Figure: My account](../../img/pos/my-account.png)
 
 
 ### Do I need ETH to pay for gas fees?
@@ -355,7 +355,7 @@ Rewards will be higher, to begin with, and will keep decreasing as the locked su
 
 You can claim your rewards instantly by clicking on the **Withdraw Reward** button. This will transfer the rewards accumulated to your delegated account on Metamask.
 
-![Figure: Withdraw-reward](../../../img/pos/withdraw-reward.png)
+![Figure: Withdraw-reward](../../img/pos/withdraw-reward.png)
 
 <!-- 
 ### What is the unbonding period?
@@ -370,7 +370,7 @@ No. Once you unbond, you will stop receiving rewards.
 
 Delegation requires 2 transactions, one after the other. One to **Approve** the request and another to **Deposit**.
 
-![Figure: Delegate ](../../../img/pos/delegate.png) 
+![Figure: Delegate ](../../img/pos/delegate.png) 
 
 ### What does redelegate rewards mean?
 
@@ -386,7 +386,7 @@ Yes, you can delegate to any validator except the ones which are offline.
 Please watch the video for a graphical illustration of how this works:
 
 <video width="100%" height="100%" controls="true" >
-  <source type="video/mp4" src="../../../../img/pos/moving.mp4"></source>
+  <source type="video/mp4" src="../../../img/pos/moving.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
 
@@ -441,7 +441,7 @@ The Claim Stake button will only be enabled when your unbonding period is comple
 
 Under the **Claim Stake** button you should see a note on how many checkpoints are pending before the **Claim Stake** button is enabled. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
-![Figure: Unbound ](../../../img/pos/unbond.png)
+![Figure: Unbound ](../../img/pos/unbond.png)
 
 
 

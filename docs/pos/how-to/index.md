@@ -33,4 +33,4 @@ Depending on the extent to which you're looking to participate in different netw
 
 Included in the section is an elaborate startup guide for users who wish to implement the Polygon DID, which is a three-part package consisting of an identity-registrar, identity-resolver, and identity-registry-contract.
 
-* [Polygon DID integration guide](polygon-did/)
+* [Polygon DID integration guide](./polygon-did.md)

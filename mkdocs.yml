@@ -247,7 +247,7 @@ nav:
           - Using packages: pos/how-to/full-node/full-node-packages.md
           - Using GCP: pos/how-to/full-node/full-node-gcp.md
         - Run an access node: pos/how-to/access-node.md
-        - Run an Erigon archive node: pos/how-to/erigon-node.md
+        - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
         - Operate and maintain nodes:
           - Staking: pos/how-to/operate-maintain-node/validator-staking-operations.md
           - Commission: pos/how-to/operate-maintain-node/validator-commission-operations.md
@@ -255,8 +255,8 @@ nav:
           - Change signer address: pos/how-to/operate-maintain-node/change-signer-address.md
           - Top up Heimdall fee: pos/how-to/operate-maintain-node/topup-heimdall-fee.md
           - Validator performance requirements: pos/how-to/operate-maintain-node/validator-performance.md
-          - Technical FAQs: pos/how-to/operate-maintain-node/technical-faqs.md
         - Troubleshoot nodes:
+          - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
           - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
           - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
         - Polygon DID: pos/how-to/polygon-did.md
