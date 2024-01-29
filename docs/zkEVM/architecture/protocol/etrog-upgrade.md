@@ -12,7 +12,7 @@ In addition to the Goërli testnet, we launched a second testnet on Sepolia dubb
 
 Due to the looming deprecation of the Goërli testnet, the Polygon team had to put in place a second testnet. This ensures that the zkEVM can continue running even beyond the Goërli's discontinuation.
 
-Cardona testnet is ready for developers and users to connect wallets, and begin testing the Etrog upgrade of Polygon zkEVM.
+The Cardona testnet is ready for developers and users to connect wallets, and begin testing the Etrog upgrade of Polygon zkEVM.
 
 Use the following details to connect wallets to Cardona:
 
