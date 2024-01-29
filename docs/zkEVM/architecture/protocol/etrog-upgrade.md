@@ -40,8 +40,6 @@ The below table displays Polygon zkEVM's precompiled status.
 
 ![Figure: etrog-precompiled](../../../img/zkEVM/etrog-precompiled.png)
 
-
-
 ## Dragonfruit issues
 
 Dragonfruit upgrade inherited from its predecessors the configuration that each block in the zkEVM is equivalent to one L2 transaction.
