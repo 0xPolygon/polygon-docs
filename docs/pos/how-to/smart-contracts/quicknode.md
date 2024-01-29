@@ -133,7 +133,7 @@ Copy the address of your account which we generated in this tutorial, paste it i
 
 ![img](../../../img/pos/faucet.png)
 
-## Deploying your Smart Contract
+## Deploying your smart contract
 
 Before deploying the contract, you need to compile it using:
 
