@@ -12,7 +12,7 @@ keep updating this list regularly for more convenience.
 
 **For Linux packages**
 
-#### A. Where to find heimdall genesis file
+#### A. Where to find Heimdall genesis file
   
   ```bash
   $CONFIGPATH/heimdall/config/genesis.json
