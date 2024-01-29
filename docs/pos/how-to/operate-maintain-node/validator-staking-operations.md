@@ -3,7 +3,7 @@
 
 ### Full node set up
 
-Your validator node fully set up and synced. See also: [Run a Validator Node](../validator/run-validator/binaries.md)
+Your validator node fully set up and synced. See also: [Run a Validator Node](../validator/validator-binaries.md)
 
 ### Account setup
 
