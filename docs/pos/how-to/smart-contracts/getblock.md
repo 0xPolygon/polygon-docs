@@ -77,7 +77,7 @@ Smart contract URL: <https://mumbai.polygonscan.com/address/0xa4d552dce0e26564ec
 
 If your smart contract has been successfully deployed, you should see the contract details including its address, balance, and transaction history. Congratulations, you have successfully deployed a smart contract on the Mumbai Testnet!
 
-## Testing and Verification
+## Testing and verification
 
 Once you have deployed your smart contract on the Polygon test network using GetBlock, it is important to test and verify its functionality to ensure that it works as intended. Here are some steps you can take for testing and verification:
 
