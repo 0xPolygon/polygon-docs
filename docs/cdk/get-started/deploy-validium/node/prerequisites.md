@@ -1,28 +1,25 @@
 !!! important
     - You have already followed the [deploy contracts section](../contracts/prerequisites.md).
-    - Make sure you have at least `~0.3 Sepolia ETH` ready for deploying more contracts and various contract calls.
+    - Make sure you have at least `~0.3 Sepolia ETH` for deploying more contracts and various contract calls.
 
 ## Software requirements
 
-!!! important
-    The specified software versions are required.
-
 | Software | Version | Installation link |
 | --- | --- | --- |
-| git | 2.18.0 | https://git-scm.com/book/en/v2/Getting-Started-Installing-Git |
-| node | 16.0.0 | https://nodejs.org/en/download |
-| npm | 6.0.0 | https://docs.npmjs.com/downloading-and-installing-node-js-and-npm |
-| golang | 1.18.0 | https://go.dev/doc/install |
-| cast | 0.2.0 | https://book.getfoundry.sh/getting-started/installation |
-| jq | 1.0 | https://jqlang.github.io/jq/download/ |
-| tomlq | 3.0.0 | https://kislyuk.github.io/yq/#installation |
-| postgres | 15 | https://www.postgresql.org/download/ |
-| psql | 15.0 | https://www.postgresql.org/download/ |
-| make | 3.80.0 | https://www.gnu.org/software/make/ |
-| docker | 24.0.0 | https://docs.docker.com/engine/install/ |
-| pip3 | 20.0.0 | https://pip.pypa.io/en/stable/installation/ |
-| [For Testing] python3 | 3.8.0 | https://www.python.org/downloads/ |
-| [For Testing] polycli | 0.1.39 | https://github.com/maticnetwork/polygon-cli/tree/main |
+| `git` | 2.18.0 | https://git-scm.com/book/en/v2/Getting-Started-Installing-Git |
+| `node` | 16.0.0 | https://nodejs.org/en/download |
+| `npm` | 6.0.0 | https://docs.npmjs.com/downloading-and-installing-node-js-and-npm |
+| `golang` | 1.18.0 | https://go.dev/doc/install |
+| `cast` | 0.2.0 | https://book.getfoundry.sh/getting-started/installation |
+| `jq` | 1.0 | https://jqlang.github.io/jq/download/ |
+| `tomlq` | 3.0.0 | https://kislyuk.github.io/yq/#installation |
+| `postgres` | 15 | https://www.postgresql.org/download/ |
+| `psql` | 15.0 | https://www.postgresql.org/download/ |
+| `make` | 3.80.0 | https://www.gnu.org/software/make/ |
+| `docker` | 24.0.0 | https://docs.docker.com/engine/install/ |
+| `pip3` | 20.0.0 | https://pip.pypa.io/en/stable/installation/ |
+| `python3` | 3.8.0 | https://www.python.org/downloads/ |
+| [For testing] `polycli` | 0.1.39 | https://github.com/maticnetwork/polygon-cli/tree/main |
 
 1. Create a `version-check.sh` file and copy and paste the script below. 
 
@@ -86,11 +83,11 @@
     done
     ```
     
-2. Run the script:
+2. Run the script to see what you have already and what is missing from your set up.
     
     ```bash
     chmod +x version-check.sh
     ./version-check.sh
     ```
 
- 
+3. Install any missing or out-of-date software.

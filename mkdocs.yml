@@ -54,6 +54,7 @@ nav:
                   - Deploy contracts: cdk/get-started/deploy-validium/contracts/deploy-contracts.md
               - Deploy node:
                   - Prerequisites: cdk/get-started/deploy-validium/node/prerequisites.md
+                  - Set up: cdk/get-started/deploy-validium/node/set-up.md
                   - Deploy node: cdk/get-started/deploy-validium/node/deploy-node.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
