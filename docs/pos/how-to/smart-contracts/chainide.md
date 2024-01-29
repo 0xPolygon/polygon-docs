@@ -26,7 +26,7 @@ The following are general steps for deploying an ERC-721 smart contract:
 6. Verify a Smart Contract
 7. NFT Minting
 
-## Setting up a Wallet
+## Setting up a wallet
 
 ### Install MetaMask
 
