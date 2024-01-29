@@ -6,8 +6,6 @@ Although the Dragonfruit upgrade had some advantages over previous zkEVM version
 
 Before discussing all these, we present the newly launched testnet that coincides with the Etrog upgrade.
 
-
-
 ## Cardona testnet
 
 In addition to the Goërli testnet, a second testnet is launched on Sepolia and it is dubbed Cardona.
