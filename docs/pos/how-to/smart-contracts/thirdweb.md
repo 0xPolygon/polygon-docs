@@ -98,7 +98,7 @@ Deploy allows you to deploy a smart contract to any EVM-compatible network witho
 
 For additional information on Deploy, please reference [thirdweb’s documentation](https://portal.thirdweb.com/deploy).
 
-## Verify the Contract
+## Verify the contract
 
 Contracts deployed to [Polygon](https://thirdweb.com/polygon) are automatically verified by thirdweb. You can check the status on the "Sources" view in the thirdweb dashboard.
 
