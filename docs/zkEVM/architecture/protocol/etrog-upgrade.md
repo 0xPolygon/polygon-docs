@@ -44,7 +44,7 @@ The below table displays Polygon zkEVM's precompiled status.
 
 ## Dragonfruit issues
 
-Dragonfruit upgrade inherited from its predecessors, the configuration that each block in the zkEVM is equivalent to one L2 transaction.
+Dragonfruit upgrade inherited from its predecessors the configuration that each block in the zkEVM is equivalent to one L2 transaction.
 
 The justification for the _one block per transaction_ configuration was that it achieves minimum delay when creating blocks.
 
