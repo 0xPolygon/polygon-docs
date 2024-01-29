@@ -1,28 +1,13 @@
-| Repo | Version |
-| --- | --- |
-| https://github.com/0xPolygon/cdk-validium-contracts/releases/tag/v0.0.2 | v0.0.2 |
-| https://github.com/0xPolygon/cdk-validium-node/releases/tag/v0.0.3 | v0.0.3 |
-| https://github.com/0xPolygonHermez/zkevm-prover | v3.0.2 |
-| https://github.com/0xPolygon/cdk-data-availability.git | v0.0.3 |
-| https://github.com/0xPolygonHermez/zkevm-bridge-service | v0.3.1 |
+!!! important
+    - You have already followed the [deploy contracts section](../contracts/prerequisites.md).
+    - Make sure you have at least `~0.3 Sepolia ETH` ready for deploying more contracts and various contract calls.
 
-The listed version may not be the most recent, but this will give a general idea of how the deployment process works.
+## Software requirements
 
-# Prerequisites
+!!! important
+    The specified software versions are required.
 
-### Minimum Requirements:
-
-| Minimum Disk Size | vCPUs | Memory (GB) | CPU Type | Architecture | OS |
-| --- | --- | --- | --- | --- | --- |
-| 32GB | 2 | 8 | Intel or AMD | x86/64 | Ubuntu 22.04 |
-
-Your operating system should be Linux-based (preferably Ubuntu 22.04), and it must have an AMD or Intel chip.
-
-Lastly, make sure you have at least `~0.3 Sepolia ETH` ready for deploying contracts and various contract calls.
-
-## Dependency Checking
-
-| Dependency | Version | Installation links |
+| Software | Version | Installation link |
 | --- | --- | --- |
 | git | 2.18.0 | https://git-scm.com/book/en/v2/Getting-Started-Installing-Git |
 | node | 16.0.0 | https://nodejs.org/en/download |
@@ -38,9 +23,10 @@ Lastly, make sure you have at least `~0.3 Sepolia ETH` ready for deploying contr
 | pip3 | 20.0.0 | https://pip.pypa.io/en/stable/installation/ |
 | [For Testing] python3 | 3.8.0 | https://www.python.org/downloads/ |
 | [For Testing] polycli | 0.1.39 | https://github.com/maticnetwork/polygon-cli/tree/main |
-- You can run the following script to validate that dependency requirements are met:
-    
-    ```bash
+
+1. Create a `version-check.sh` file and copy and paste the script below. 
+
+   ```bash
     #!/bin/bash
     
     declare -A commands
@@ -100,10 +86,11 @@ Lastly, make sure you have at least `~0.3 Sepolia ETH` ready for deploying contr
     done
     ```
     
-    You can create a `version-check.sh` file, then copy and paste the script into that file. Then run the following to execute the script:
+2. Run the script:
     
     ```bash
     chmod +x version-check.sh
     ./version-check.sh
     ```
-    
+
+ 

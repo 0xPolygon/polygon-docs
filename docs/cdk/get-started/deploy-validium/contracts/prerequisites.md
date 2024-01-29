@@ -1,7 +1,7 @@
 ## Hardware
 
 - A Linux-based OS (e.g., Ubuntu Server 22.04 LTS).
-- At least 16GB RAM with a 4-core CPU.
+- At least 8GB RAM with a 2-core CPU.
 - An AMD64 architecture system.
 
 ## Software
