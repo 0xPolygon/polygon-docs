@@ -24,7 +24,6 @@ theme:
    # - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
-    - navigation.expansion
     - navigation.integration
     - navigation.tabs
     - navigation.tabs.sticky
@@ -224,15 +223,6 @@ nav:
           - L1-L2 communication:
             - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
             - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
-        - Work with smart contracts:
-          - Work with smart contracts: pos/how-to/smart-contracts/index.md
-          - Alchemy: pos/how-to/smart-contracts/alchemy.md
-          - ChainIDE: pos/how-to/smart-contracts/chainide.md
-          - ChainStack: pos/how-to/smart-contracts/chainstack.md
-          - GetBlock: pos/how-to/smart-contracts/getblock.md
-          - QuickNode: pos/how-to/smart-contracts/quicknode.md
-          - SmartPress: pos/how-to/smart-contracts/smartpress.md
-          - thirdweb: pos/how-to/smart-contracts/thirdweb.md
         - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
           - Architecture: pos/architecture/index.md
@@ -411,17 +401,29 @@ nav:
                   - System procedures:  miden/vm/specification/stdlib/sys.md
   - Developer tools: 
       - Developer tools: tools/index.md
-      - Smart contract development: 
-          - Hardhat: tools/smart-contracts/hardhat.md
-          - Truffle: tools/smart-contracts/truffle.md
-          - Remix: tools/smart-contracts/remix.md
-          - Replit: tools/smart-contracts/replit.md
-          - Crossmint: tools//smart-contracts/crossmint.md
+      - dApp development: 
+          #- dApp launchpad: tools/dApp-development/dApp-launchpad.md
+          - Develop on PoS:
+              - Work with smart contracts: tools/dApp-development/pos/index.md
+              - Alchemy: tools/dApp-development/pos/alchemy.md
+              - ChainIDE: tools/dApp-development/pos/chainide.md
+              - ChainStack: tools/dApp-development/pos/chainstack.md
+              - Crossmint: tools/dApp-development/pos/crossmint.md
+              - GetBlock: tools/dApp-development/pos/getblock.md
+              - QuickNode: tools/dApp-development/pos/quicknode.md
+              - SmartPress: tools/dApp-development/pos/smartpress.md
+              - Thirdweb: tools/dApp-development/pos/thirdweb.md
+          - Common tools:
+              - Hardhat: tools/dApp-development/common-tools/hardhat.md
+              - Truffle: tools/dApp-development/common-tools/truffle.md
+              - Remix: tools/dApp-development/common-tools/remix.md
+              - Replit: tools/dApp-development/common-tools/replit.md
+      - Third-party tutorials:
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
+
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
-      - Third-party tutorials:
-          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Data:
           - The Graph: 
               - Overview: tools/data/the-graph/overview.md
