@@ -27,7 +27,7 @@ Create a Hello World contract, using Chainstack to deploy a Polygon node and Fou
 3. Create the smart contract
 4. Deploy the smart contract.
 
-## Deploy a Polygon Mumbai Node
+## Deploy a Polygon Mumbai node
 
 You need a node to deploy a smart contract to the blockchain network. Follow the steps below to get your node up and running:
 
