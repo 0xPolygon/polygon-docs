@@ -12,4 +12,4 @@ The process is split into the following sections:
 
 3. [Deploy wallets](deploy-contracts.md): Create wallets and deploy contracts.
 
-4. [Deploy node](): Deploy the zkRollup EVM-compatible node.
+4. [Deploy node](deploy-node.md): Deploy the zkRollup EVM-compatible node.

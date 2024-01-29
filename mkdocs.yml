@@ -50,6 +50,7 @@ nav:
           - Validium: 
               - Introduction: cdk/get-started/deploy-validium/intro.md
               - Prerequisites: cdk/get-started/deploy-validium/prerequisites.md
+              - Environment overview: cdk/get-started/deploy-validium/environment-overview.md
               - Set up: cdk/get-started/deploy-validium/set-up.md
               - Deploy contracts: cdk/get-started/deploy-validium/deploy-contracts.md
           - Rollup: 

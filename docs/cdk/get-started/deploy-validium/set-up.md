@@ -46,6 +46,9 @@ npm install
     ETHERSCAN_API_KEY="<ETHERSCAN_API_KEY>" # Generate an API key on [Etherscan](https://etherscan.io)
     ```
 
+    !!! info
+        Check our documentation if you want to [use a different node provider](deploy-contracts.md#use-a-different-node-provider).
+
 3. Generate a new mnemonic using `cast`.
 
     ```bash
