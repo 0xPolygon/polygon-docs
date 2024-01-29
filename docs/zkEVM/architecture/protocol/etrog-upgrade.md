@@ -94,10 +94,9 @@ The below figure shows how `changeL2Block` is used to change the timestamp whene
 
 ## Conclusion
 
-The Etrog upgrade comes with groundbreaking amendments aimed at improving UX and developer experience. The most important additions with this upgrade are the two adjustments that solve the above two issues:
+The Etrog upgrade comes with groundbreaking amendments aimed at improving UX and developer experience. The most important additions with this upgrade are the two adjustments that solve the two issues mentioned-above:
 
 - Being able to add multiple transactions to one block.
 - Allowing granularity on the timestamp within a batch.
 
-
-
+Attaining the Type-2 status is remarkable.
