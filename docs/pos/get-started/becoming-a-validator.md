@@ -61,7 +61,6 @@ Bor is the Block producer node and layer for the Polygon Network. It is based on
 
     Keep up with the latest node and validator updates from the Polygon team and the community by keeping an eye on the [announcements posed to Polygon forums](https://forum.polygon.technology/c/announcement/6).
 
-
 A blockchain validator is someone who is responsible for validating transactions within a blockchain. On the Polygon Network, any participant can be qualified to become a Polygon's validator by running a **Validator Node (Sentry + Validator)** to earn rewards and collect transaction fees. To ensure the good participation by validators, they lock up at least 1 MATIC token as a stake in the ecosystem.
 
 !!!info "Active validator limit"
