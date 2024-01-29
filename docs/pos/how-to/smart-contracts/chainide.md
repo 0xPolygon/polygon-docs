@@ -46,7 +46,7 @@ After adding the Mumbai testnet on MetaMask, visit the [Polygon Faucet](https://
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/Polygon_PR_get_tokens.png" width="100%" height="100%" />
 
-## Write an ERC-721 Smart Contract
+## Write an ERC-721 smart contract
 
 You need to write down all the required functions that you want to implement in your ERC-721 smart contract. A general ERC-721 smart contract has the following functions:
 
