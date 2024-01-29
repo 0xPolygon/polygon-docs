@@ -57,7 +57,7 @@ forge init PROJECT_NAME
 // PROJECT_NAME - name of project
 ```
 
-## Fund Your Account
+## Fund your account
 
 You will need a wallet account to deploy the smart contract. You can use [Metamask](https://metamask.io/) for that. You also need to pay gas on the network to deploy the contract. Just copy your wallet address and get Mumbai MATIC token [through the faucet](https://faucet.polygon.technology/).
 
