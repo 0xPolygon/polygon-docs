@@ -75,7 +75,7 @@ After creating the project, click on the **Unconnected** button in the upper rig
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+polygon/connect+mumbai.png" width="100%" height="100%" />
 
-## Compile an ERC-721 Smart Contract
+## Compile an ERC-721 smart contract
 
 After you have completed your smart contract, it is time to compile it. To compile, navigate to "compile the module", choose an appropriate compiler according to your source code, and press the "compile" button. An ABI and bytecode for the source code are generated upon successful compilation. If there are any errors in your source code, they will be displayed in the "Logger module" under the output panel. You may need to carefully read the error, resolve it, and recompile the contract.
 
