@@ -55,7 +55,7 @@ The second being, the approach lacks a way to provide different timestamps for b
 The crucial alterations made in the Etrog upgrade are therefore on; the _one block per transaction_ approach, and the _one timestamp for many blocks_ problem.
 ## Etrog blocks
 
-Up until the dragonfruit upgrade, each L2 block contains a single transaction. The same approach taken by Optimism.
+Up until the Dragonfruit upgrade, each L2 block contained a single transaction. This is the same approach taken by Optimism.
 
 Since a block is formed when the sequencer decides to include a transaction in a batch, prior to the Etrog upgrade, every batch contained as many blocks as transactions. As mentioned above, this resulted in bloated databases.
 
