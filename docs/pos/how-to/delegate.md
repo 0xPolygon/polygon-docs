@@ -57,7 +57,6 @@ To view your delegations, click "My Account".
   2. Under your delegated validator, click "Withdraw Rewards".
     
     ![img](../../img/pos/withdraw-reward.png)
-    
 
 This will withdraw the MATIC token rewards to your Ethereum address.
 
