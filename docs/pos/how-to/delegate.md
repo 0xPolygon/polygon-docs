@@ -40,7 +40,6 @@ The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainn
 After the delegation transaction completes, you will see the `Delegation Completed` message.
   
   ![img](../../img/pos/delegate3.png)
-  
 
 ## View your delegations
 
