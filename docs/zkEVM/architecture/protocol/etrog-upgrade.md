@@ -63,7 +63,7 @@ Due to this problem, blocks in the Etrog upgrade have been reconstructed to cont
 
 Blocks with several transactions are achieved by using a small timeout of a few seconds, or a number of milliseconds, when creating the block and waiting for transactions to be added.
 
-The below figure displays blocks of the Etrog upgrade vis-à-vis those of the Dragonfruit upgrade.
+The figure below shows the structure of the blocks in Etrog versus those of the Dragonfruit upgrade.
 
 ![Figure: etrog-blocks-vs-dragonfruit](../../../img/zkEVM/etrog-blocks-vs-dragonfruit.png)
 
