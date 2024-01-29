@@ -8,7 +8,7 @@ Before discussing all these, we present the newly launched testnet that coincide
 
 ## Cardona testnet
 
-In addition to the Goërli testnet, a second testnet is launched on Sepolia and it is dubbed Cardona.
+In addition to the Goërli testnet, we launched a second testnet on Sepolia dubbed Cardona.
 
 Due to the looming deprecation of the Goërli testnet, the Polygon team had to put in place a second testnet. This ensures that the zkEVM can continue running even beyond the Goërli's discontinuation.
 
