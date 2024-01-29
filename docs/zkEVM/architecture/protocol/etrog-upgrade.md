@@ -60,7 +60,7 @@ The crucial alterations made in the Etrog upgrade are therefore on; the _one blo
 
 
 
-## Etrog Blocks
+## Etrog blocks
 
 Up until the dragonfruit upgrade, each L2 block contains a single transaction. The same approach taken by Optimism.
 
