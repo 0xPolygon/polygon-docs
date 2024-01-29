@@ -141,7 +141,7 @@ When deploying to Sepolia, the contracts should automatically verify based on ot
 
 ## Use a different node provider
 
-Modify the contents of `~/cdk-validium/cdk-validium-contracts-0.0.2/hardhat.config.js` and `cdk-validium-contracts-0.0.2/.env` if you prefer to use a different node provider than Infura.
+If you would rather use a different node provider than Infura, modify the contents of `~/cdk-validium/cdk-validium-contracts-0.0.2/hardhat.config.js` and `cdk-validium-contracts-0.0.2/.env` .
 
 For example, using Alchemy:
 

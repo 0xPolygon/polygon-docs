@@ -1,27 +1,32 @@
-1. Navigate back to the working directory we created earlier, `~/cdk-validium`
+## Set up the environment variables
 
-```bash
-cd ~/cdk-validium
-```
+1. Navigate to `~/cdk-validium`.
 
-For this setup, we will also need our information from `deploy_output.json` inside `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment`. Navigate back to `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment` and run the following script to fill the required parameters into the `/tmp/cdk/.env` we created in the previous steps:
+    ```bash
+    cd cdk-validium
+    ```
 
-```bash
-cd ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment
-echo "GEN_BLOCK_NUMBER=$(jq -r '.deploymentBlockNumber' deploy_output.json)" >> /tmp/cdk/.env
-echo "CDK_VALIDIUM_ADDRESS=$(jq -r '.cdkValidiumAddress' deploy_output.json)" >> /tmp/cdk/.env
-echo "POLYGON_ZKEVM_BRIDGE_ADDRESS=$(jq -r '.polygonZkEVMBridgeAddress' deploy_output.json)" >> /tmp/cdk/.env
-echo "POLYGON_ZKEVM_GLOBAL_EXIT_ROOT_ADDRESS=$(jq -r '.polygonZkEVMGlobalExitRootAddress' deploy_output.json)" >> /tmp/cdk/.env
-echo "CDK_DATA_COMMITTEE_CONTRACT_ADDRESS=$(jq -r '.cdkDataCommitteeContract' deploy_output.json)" >> /tmp/cdk/.env
-echo "MATIC_TOKEN_ADDRESS=$(jq -r '.maticTokenAddress' deploy_output.json)" >> /tmp/cdk/.env
-```
+    !!! info
+        For the setup, we need the information from the `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/deploy_output.json` file. 
 
-Source our new environment and navigate back to `~/cdk-validium`:
+2. Navigate to `cdk-validium-contracts-0.0.2/deployment` and run the following script that inputs the required parameters into `/tmp/cdk/.env`.
 
-```bash
-source /tmp/cdk/.env
-cd ~/cdk-validium
-```
+    ```bash
+    cd cdk-validium-contracts-0.0.2/deployment
+    echo "GEN_BLOCK_NUMBER=$(jq -r '.deploymentBlockNumber' deploy_output.json)" >> /tmp/cdk/.env
+    echo "CDK_VALIDIUM_ADDRESS=$(jq -r '.cdkValidiumAddress' deploy_output.json)" >> /tmp/cdk/.env
+    echo "POLYGON_ZKEVM_BRIDGE_ADDRESS=$(jq -r '.polygonZkEVMBridgeAddress' deploy_output.json)" >> /tmp/cdk/.env
+    echo "POLYGON_ZKEVM_GLOBAL_EXIT_ROOT_ADDRESS=$(jq -r '.polygonZkEVMGlobalExitRootAddress' deploy_output.json)" >> /tmp/cdk/.env
+    echo "CDK_DATA_COMMITTEE_CONTRACT_ADDRESS=$(jq -r '.cdkDataCommitteeContract' deploy_output.json)" >> /tmp/cdk/.env
+    echo "MATIC_TOKEN_ADDRESS=$(jq -r '.maticTokenAddress' deploy_output.json)" >> /tmp/cdk/.env
+    ```
+
+3. Save the new environment and navigate back to `~/cdk-validium`.
+
+    ```bash
+    source /tmp/cdk/.env
+    cd ~/cdk-validium
+    ```
 
 ## 1. Downloading cdk-validium-node, cdk-data-availability, and cdk-bridge-service
 

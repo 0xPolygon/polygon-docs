@@ -43,5 +43,5 @@ mkdir /tmp/cdk/
 Create a `.env` file to store environment variables we will use later on.
 
 ```bash
-nano /tmp/cdk/.env
+nano /var/tmp/.env
 ```

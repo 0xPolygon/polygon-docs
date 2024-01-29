@@ -73,7 +73,7 @@ npm install
 
 5. Send 2 Sepolia ETH to the generated address.
 
-6. Add the following variables to `/tmp/cdk/.env`. 
+6. Add the following variables to `/var/tmp/.env`. 
 
     ```bash
     # /tmp/cdk/.env
