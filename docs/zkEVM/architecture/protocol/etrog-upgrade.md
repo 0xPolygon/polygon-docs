@@ -53,9 +53,6 @@ The first issue is that it generates a lot of data in the database due to the hu
 The second being, the approach lacks a way to provide different timestamps for blocks within a batch. So, all blocks in a batch have the same timestamp. However, attaching one timestamp to several blocks causes breaks in dApps that rely on timestamps for proper timing of smart contracts' actions.
 
 The crucial alterations made in the Etrog upgrade are therefore on; the _one block per transaction_ approach, and the _one timestamp for many blocks_ problem.
-
-
-
 ## Etrog blocks
 
 Up until the dragonfruit upgrade, each L2 block contains a single transaction. The same approach taken by Optimism.
