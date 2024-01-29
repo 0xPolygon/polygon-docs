@@ -26,7 +26,7 @@ To deploy your smart contract on Polygon PoS:
 1. After creation, connect your wallet and switch your network to either Mumbai testnet or Polygon PoS.
 2. Press the 'Deploy' button. If you lack transaction gas, use the provided faucet links to obtain some.
 
-## Verify the Contract
+## Verify the contract
 
 To verify your new contract, follow these steps:
 
