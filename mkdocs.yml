@@ -24,7 +24,6 @@ theme:
    # - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
-    - navigation.expansion
     - navigation.integration
     - navigation.tabs
     - navigation.tabs.sticky
@@ -50,12 +49,14 @@ nav:
           - Validium: cdk/get-started/deploy-validium.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
+              - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
+              - Prerequisites: cdk/get-started/deploy-rollup/prerequisites.md
               - Install dependencies: cdk/get-started/deploy-rollup/install-dependencies.md
               - Create wallets: cdk/get-started/deploy-rollup/create-wallets.md
-              - Deploy node: cdk/get-started/deploy-rollup/deploy-node.md
+              - Configure node deployment: cdk/get-started/deploy-rollup/configure-node-deployment.md
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
-              - Activate forced transactions: cdk/get-started/deploy-rollup/activate-forced-transactions.md
-              - Set up Goerli node: cdk/get-started/deploy-rollup/setup-goerli-node.md
+              - Start node: cdk/get-started/deploy-rollup/start-node.md
+              - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
@@ -400,17 +401,29 @@ nav:
                   - System procedures:  miden/vm/specification/stdlib/sys.md
   - Developer tools: 
       - Developer tools: tools/index.md
-      - Smart contract development: 
-          - Hardhat: tools/smart-contracts/hardhat.md
-          - Truffle: tools/smart-contracts/truffle.md
-          - Remix: tools/smart-contracts/remix.md
-          - Replit: tools/smart-contracts/replit.md
-          - Crossmint: tools//smart-contracts/crossmint.md
+      - dApp development: 
+          #- dApp launchpad: tools/dApp-development/dApp-launchpad.md
+          - Develop on PoS:
+              - Work with smart contracts: tools/dApp-development/pos/index.md
+              - Alchemy: tools/dApp-development/pos/alchemy.md
+              - ChainIDE: tools/dApp-development/pos/chainide.md
+              - ChainStack: tools/dApp-development/pos/chainstack.md
+              - Crossmint: tools/dApp-development/pos/crossmint.md
+              - GetBlock: tools/dApp-development/pos/getblock.md
+              - QuickNode: tools/dApp-development/pos/quicknode.md
+              - SmartPress: tools/dApp-development/pos/smartpress.md
+              - Thirdweb: tools/dApp-development/pos/thirdweb.md
+          - Common tools:
+              - Hardhat: tools/dApp-development/common-tools/hardhat.md
+              - Truffle: tools/dApp-development/common-tools/truffle.md
+              - Remix: tools/dApp-development/common-tools/remix.md
+              - Replit: tools/dApp-development/common-tools/replit.md
+      - Third-party tutorials:
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
+
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
-      - Third-party tutorials:
-          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Data:
           - The Graph: 
               - Overview: tools/data/the-graph/overview.md
@@ -537,6 +550,7 @@ nav:
   - Learn:
       - Learn: learn/index.md
       - Unified liquidity and scalability: learn/liquidity-and-scalability.md
+      - Aggregation layer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
       - Polygon 2.0 architecture: learn/deep-dive-arch.md
 
