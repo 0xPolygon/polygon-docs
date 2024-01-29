@@ -97,7 +97,7 @@ QuickNode has a global network of Polygon Mainnet and Mumbai testnet nodes. They
 
 Copy the **HTTP URL**, which will be useful later in the tutorial.
 
-## Network and Account setup
+## Network and account setup
 
 We need to set up our QuickNode endpoint with Brownie. To do so, type the following in your command line:
 
