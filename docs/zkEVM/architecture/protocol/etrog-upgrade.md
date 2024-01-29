@@ -73,7 +73,7 @@ The figure below shows the structure of the blocks in Etrog versus those of the 
 
 In order to circumvent the above-mentioned issue related to the _one timestamp for many blocks_ problem, each block in the Etrog upgrade's batch receives its own unique timestamp. This is in addition to allowing more than one transaction per block.
 
-The solution is achieved by enabling the sequencer to change the timestamp for different blocks within a batch. To do so, a special transaction or marker called `changeL2Block`, is introduced within a batch to mark whenever there is a block change.
+The solution is achieved by enabling the sequencer to change the timestamp for different blocks within a batch. To do so, a special transaction or marker, called `changeL2Block`, is introduced within a batch to mark whenever there is a block change.
 
 The below figure shows how `changeL2Block` is used to change the timestamp whenever a new block is formed.
 
