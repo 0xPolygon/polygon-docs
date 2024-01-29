@@ -101,7 +101,7 @@ contract HelloWorld {
 }
 ```
 
-## Deploy the Contract
+## Deploy the contract
 
 At this point, you are ready to deploy your contract:
 
