@@ -22,12 +22,12 @@ Depending on the extent to which you're looking to participate in different netw
 
 |                       Validator node                       |                          Full node                          |        Access node         | Archive node |
 | :--------------------------------------------------------: | :---------------------------------------------------------: | :------------------------: | :----------: |
-| [Prerequisites](validator/prerequisites.md) **(Read me!)** | [Requirements](/full-node/full-node-system-requirements.md) | [Full guide](access-node.md) |   [Full guide](erigon-archive-node.md)   |
-|        [Binaries](validator/validator-binaries.md)         |        [Binaries](/full-node/full-node-binaries.md)         |             -              |      -       |
-|         [Ansible](validator/validator-ansible.md)          |         [Ansible](/full-node/full-node-ansible.md)          |             -              |      -       |
-|        [Packages](validator/validator-packages.md)         |        [Packages](/full-node/full-node-packages.md)         |             -              |      -       |
-|                             -                              |          [Docker](/full-node/full-node-docker.md)           |             -              |      -       |
-|                             -                              |             [GCP](/full-node/full-node-gcp.md)              |             -              |      -       |
+| [Prerequisites](validator/prerequisites.md) **(Read me!)** | [Requirements](full-node/full-node-system-requirements.md) | [Full guide](access-node.md) |   [Full guide](erigon-archive-node.md)   |
+|        [Binaries](validator/validator-binaries.md)         |        [Binaries](full-node/full-node-binaries.md)         |             -              |      -       |
+|         [Ansible](validator/validator-ansible.md)          |         [Ansible](full-node/full-node-ansible.md)          |             -              |      -       |
+|        [Packages](validator/validator-packages.md)         |        [Packages](full-node/full-node-packages.md)         |             -              |      -       |
+|                             -                              |          [Docker](full-node/full-node-docker.md)           |             -              |      -       |
+|                             -                              |             [GCP](full-node/full-node-gcp.md)              |             -              |      -       |
 
 ## Polygon DID
 
