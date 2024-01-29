@@ -75,7 +75,7 @@ In order to circumvent the above-mentioned issue related to the _one timestamp f
 
 The solution is achieved by enabling the sequencer to change the timestamp for different blocks within a batch. To do so, a special transaction or marker, called `changeL2Block`, is introduced within a batch to mark whenever there is a block change.
 
-The below figure shows how `changeL2Block` is used to change the timestamp whenever a new block is formed.
+The figure below shows how `changeL2Block` is used to change the timestamp whenever a new block is formed.
 
 ![Figure: etrog-changel2block](../../../img/zkEVM/etrog-changel2block.png)
 
