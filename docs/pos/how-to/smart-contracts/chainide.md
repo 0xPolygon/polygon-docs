@@ -117,7 +117,7 @@ The saved flattened file can be accessed under the explorer module.
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/image+(10).png" width="100%" height="100%" />
 
-## Verify a Smart Contract
+## Verify a smart contract
 
 To verify a smart contract, you need to visit [Mumbai Polygonscan](https://mumbai.polygonscan.com/), and search for the deployed smart contract using the contract address.
 
