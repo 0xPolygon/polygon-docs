@@ -93,7 +93,7 @@ Navigate to the **Deploy & Interaction** module and choose among the compiled sm
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/image+(2).png" width="100%" height="100%" />
 
-### Check Functions from the Deployed Contract
+### Check functions from the deployed contract
 
 After successful deployment, an output message should state that your smart contract was deployed successfully. You can now verify the deployed contract. All the functions in the deployed smart contract can be seen in the **INTERACT** panel.
 
