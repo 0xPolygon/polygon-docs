@@ -67,8 +67,6 @@ The figure below shows the structure of the blocks in Etrog versus those of the 
 
 ![Figure: etrog-blocks-vs-dragonfruit](../../../img/zkEVM/etrog-blocks-vs-dragonfruit.png)
 
-
-
 ## Etrog timestamps
 
 In order to circumvent the above-mentioned issue related to the _one timestamp for many blocks_ problem, each block in the Etrog upgrade's batch receives its own unique timestamp. This is in addition to allowing more than one transaction per block.
