@@ -17,9 +17,6 @@ The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainn
     
     ![img](../../img/pos/home.png)
 
-    
-
-
 !!!note
     If you are a validator, use a different non-validating address to log in as delegator.
 
