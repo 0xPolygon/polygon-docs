@@ -99,7 +99,7 @@ After successful deployment, an output message should state that your smart cont
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/image+(3).png" width="100%" height="100%" />
 
-## Create a Flattened File using Flattener Library
+## Create a flattened file using flattener library
 
 To verify a smart contract that imports other smart contracts, we need to create a flattened file. A flattened file includes all the source codes of imported contracts in a single file. To create a flattened file, you need to add a **Flattener** plug-in.
 
