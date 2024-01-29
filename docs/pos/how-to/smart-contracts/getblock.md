@@ -36,7 +36,7 @@ In this tutorial, you will:
 
 If you don't have any tokens in your account, you can request some from the Mumbai faucet through the [faucet website](https://faucet.polygon.technology/).
 
-## Smart Contract Development
+## Smart contract development
 
 1. Visit the [official Remix website](https://remix.ethereum.org/). Remix is a Web-based IDE for Ethereum smart contract development in Solidity.
 
