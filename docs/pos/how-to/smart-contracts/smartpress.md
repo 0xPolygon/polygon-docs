@@ -10,7 +10,7 @@ SmartPress is an AI tool that crafts custom smart contracts from language prompt
 
 > For details on the variety of contracts SmartPress can create, check out [SmartPress’s website](https://smartpress.ai).
 
-## Create a Smart Contract using SmartPress
+## Create a smart contract using SmartPress
 
 To create a new smart contract with SmartPress, follow these steps:
 
