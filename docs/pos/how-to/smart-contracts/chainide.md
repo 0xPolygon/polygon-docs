@@ -85,7 +85,7 @@ After you have completed your smart contract, it is time to compile it. To compi
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/image+(1).png" width="100%" height="100%" />
 
-## Deploy an ERC-721 Smart Contract
+## Deploy an ERC-721 smart contract
 
 After successful compilation, it's time to deploy your compiled ERC-721 smart contract to the Polygon Mumbai Testnet. Before you deploy, you need to have MetaMask installed, the Mumbai test network added to your wallet, and some testnet MATIC tokens to pay for the transaction fees.
 
