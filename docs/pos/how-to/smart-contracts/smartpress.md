@@ -19,7 +19,7 @@ To create a new smart contract with SmartPress, follow these steps:
 3. Let SmartPress generate the contract for you; no need for an IDE or code editor.
 4. Review the output. If satisfied, proceed to validation and testing. If not, modify your input and repeat the process.
 
-## Deploy your Contract using SmartPress
+## Deploy your contract using SmartPress
 
 To deploy your smart contract on Polygon PoS:
 
