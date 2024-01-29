@@ -125,7 +125,7 @@ You will be asked to set up a password for your account! After completing the st
 
 Copy the account address so that we can get some test MATIC, which will be required to deploy our contract.
 
-## Getting Testnet MATIC
+## Getting testnet MATIC
 
 We will need some test MATIC tokens to pay for gas fees to deploy our smart contract.
 
