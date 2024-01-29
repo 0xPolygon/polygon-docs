@@ -79,7 +79,6 @@ The figure below shows how `changeL2Block` is used to change the timestamp whene
 
 ![Figure: etrog-changel2block](../../../img/zkEVM/etrog-changel2block.png)
 
-
 ## Conclusion
 
 The Etrog upgrade comes with groundbreaking amendments aimed at improving UX and developer experience. The most important additions with this upgrade are the two adjustments that solve the two issues mentioned-above:
