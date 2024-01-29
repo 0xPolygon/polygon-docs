@@ -102,7 +102,7 @@ keep updating this list regularly for more convenience.
   ```
 
 
-#### N. Check bor logs
+#### N. Check Bor logs
   
   ```bash
   tail -f bor.log
