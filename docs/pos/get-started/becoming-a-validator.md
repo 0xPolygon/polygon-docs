@@ -40,7 +40,6 @@ Heimdall is based on Tendermint.
     * GitHub repository: [Heimdall](https://github.com/maticnetwork/heimdall)
     * GitHub repository: [Staking contracts](https://github.com/maticnetwork/contracts/tree/master/contracts/staking)
     * Blog post: [Heimdall](https://polygon.technology/blog/heimdall-vaibhav-chellani-the-all-seeing-all-hearing-protector-of-matic)
-
 ### Bor
 
 Bor does the following:
