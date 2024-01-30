@@ -75,7 +75,7 @@ The solution is achieved by enabling the sequencer to change the timestamp for d
 
 The figure below shows how `changeL2Block` is used to change the timestamp whenever a new block is formed.
 
-![Figure: etrog-changel2block](../../../img/zkEVM/etrog-changel2block.png)
+![Figure: etrog-changel2block](../../../img/zkEVM/changel2block-etrog.png)
 
 ## Conclusion
 
