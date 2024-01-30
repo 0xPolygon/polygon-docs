@@ -32,10 +32,10 @@ Use a public faucet to get Sepolia test ETH.
 
 ## Configuration files
 
-Create a folder in `/tmp/cdk/` to store configuration files.
+Create a folder in `/var/tmp/cdk/` to store configuration files.
 
 ```bash
-mkdir /tmp/cdk/
+mkdir /var/tmp/cdk/
 ```
 
 ## Environment variables
@@ -43,5 +43,5 @@ mkdir /tmp/cdk/
 Create a `.env` file to store environment variables we will use later on.
 
 ```bash
-nano /var/tmp/.env
+nano /var/tmp/cdk.env
 ```

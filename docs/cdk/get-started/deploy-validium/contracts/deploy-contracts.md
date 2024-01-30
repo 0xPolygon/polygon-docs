@@ -3,23 +3,14 @@
 1. `cd` to the `deployment/` directory and create a new `deploy_parameters.json` by copying the example
 
     ```bash
-    cd /cdk-validium/cdk-validium-contracts-0.0.2/deployment
+    cd deployment/
     cp deploy_parameters.json.example deploy_parameters.json
     ```
-
-    !!! info "Parameters updates at step 3 in `deploy_parameters.json`"
-          - `trustedSequencer`
-          - `trustedAggregator`
-          - `admin`
-          - `cdkValidiumOwner`
-          - `initialCDKValidiumDeployerOwner`
-          - `trustedSequencerURL`
-          - `forkID`
 
 2. Run the following `jq` script to streamline the process of replacing these fields:
 
     ```bash
-    source /tmp/cdk/.env
+    source /var/tmp/cdk/.env
     jq --arg TEST_ADDRESS "$TEST_ADDRESS" '.trustedSequencerURL = "http://127.0.0.1:8123" | .trustedSequencer = $TEST_ADDRESS | .trustedAggregator = $TEST_ADDRESS | .admin = $TEST_ADDRESS | .cdkValidiumOwner = $TEST_ADDRESS | .initialCDKValidiumDeployerOwner = $TEST_ADDRESS | .timelockAddress = $TEST_ADDRESS | .forkID = 6' ./deploy_parameters.json.example > ./deploy_parameters.json
     ```
 
@@ -64,7 +55,7 @@ This contract is a factory that deploys the deterministic contracts required by 
 
 The address of the contracts it creates depends on the salt and the `initialCDKValidiumDeployerOwner` inside `deploy_parameters.json`.
 
-1. Run the deploy script.
+1. From the same `deployment` directory, run the deploy script.
 
     ```bash 
     npm run deploy:deployer:CDKValidium:sepolia
