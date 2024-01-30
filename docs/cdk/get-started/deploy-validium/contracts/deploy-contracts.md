@@ -32,7 +32,7 @@
         "forkID": 6,
         "admin":"0x8Ea797e7f349dA91078B1d833C534D2c392BB7FE",
         "cdkValidiumOwner": "0x8Ea797e7f349dA91078B1d833C534D2c392BB7FE",
-        "timelockAddress": "0x617b3a3528F9cDd6630fd3301B9c8911F7Bf063D",
+        "timelockAddress": "0x8Ea797e7f349dA91078B1d833C534D2c392BB7FE",
         "minDelayTimelock": 3600,
         "salt": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "initialCDKValidiumDeployerOwner" :"0x8Ea797e7f349dA91078B1d833C534D2c392BB7FE",
