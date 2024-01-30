@@ -15,7 +15,7 @@ A validator’s performance is measured based on checkpoints it signed over a mo
 * Multiply the median average by an agreed multiple = Performance Benchmark (“PB”).
 * At each checkpoint, calculate the % of checkpoints signed in the MP by single validators and measure against the PB.
 
-### Performance Benchmark
+### Performance benchmark
 
 ![Figure: performance benchmark](../../../img/pos/performance-benchmark.png)
 
@@ -24,7 +24,7 @@ To facilitate the transition, there will be a slightly lower benchmark around th
 * PB1 → 95% of the median average of the last 700 checkpoints signed by the validator set (first 2,800 checkpoints))
 * PB2 → 98% of the median average of last checkpoints signed by validator set (continues thereafter)
 
-### Deficient Validator Process
+### Deficient validator process
 
 * If validator <PB in the MP → Grace Period 1 (“GP1”).
 * If validator is in GP and <PB after 700 checkpoints → Notice of Deficiency (“NOD”), validator enters into Grace Period 2 (“GP2”).
@@ -44,7 +44,7 @@ The validator will have a 700 checkpoint period to correct the deficiency in GP2
     </div>
 
 
-### Public Notices
+### Public notices
 
 The Public Notices page shows the recent notices and messages sent to the community of validators.
 
@@ -55,7 +55,7 @@ This is how a Notice message should look like:
 ![Figure: Notice](../../../img/pos/notice.png)
 
 
-### Forced Unstaking
+### Forced unstaking
 
 The unstaking of the deficient validator would be done as follows:
 

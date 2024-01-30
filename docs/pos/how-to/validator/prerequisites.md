@@ -37,15 +37,15 @@ sudo dpkg -i rabbitmq-server_3.10.8-1_all.deb
 
 1. Please follow the below checklist in order to set up your Validator node using Binaries, Ansible or Packages.
 
-    | Checklist | Binaries | Ansible | Packages |
-    |----------------------------|---------------|--------------|-----------|
-    | **Machines Required** | 2 Machines - **Sentry** & **Validator** | 3 Machines - **Local Machine**, **Sentry** and **Validator** | 2 Machines - **Sentry** & **Validator** |
-    | **Install Go Packages** | Yes | No | No |
-    | **Install Python** | No | Yes (only on the **Local Machine** where the **Ansible Playbook** runs) | No |
-    | **Install Ansible** | No | Yes (only on one machine) | No |
-    | **Install Bash** | No | No | Yes |
-    | **Run Build Essential** | Yes | No | No |
-    | **Node Setup** | [Using Binaries](../run-validator/binaries.md) | [Using Ansible](../run-validator/ansible.md) | [Using Packages](../run-validator/packages.md) |
+    | Checklist               | Binaries                                       | Ansible                                                                 | Packages                                       |
+    | ----------------------- | ---------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------- |
+    | **Machines Required**   | 2 Machines - **Sentry** & **Validator**        | 3 Machines - **Local Machine**, **Sentry** and **Validator**            | 2 Machines - **Sentry** & **Validator**        |
+    | **Install Go Packages** | Yes                                            | No                                                                      | No                                             |
+    | **Install Python**      | No                                             | Yes (only on the **Local Machine** where the **Ansible Playbook** runs) | No                                             |
+    | **Install Ansible**     | No                                             | Yes (only on one machine)                                               | No                                             |
+    | **Install Bash**        | No                                             | No                                                                      | Yes                                            |
+    | **Run Build Essential** | Yes                                            | No                                                                      | No                                             |
+    | **Node Setup**          | [Using Binaries](../validator/validator-binaries.md) | [Using Ansible](../validator/validator-ansible.md)                            | [Using Packages](../validator/validator-packages.md) |
 
 2. Once your Sentry and Validator nodes are synced and running, head over to our [Discord server](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes. You may check the logs by using the following commands:
 
@@ -94,7 +94,7 @@ sudo dpkg -i rabbitmq-server_3.10.8-1_all.deb
     Below are some additional information to the official documentation which might help while setting up a new node.
 
 
-This document gives some additional details for setting up a new node based on [full node deployment](/operate-node/operate/full-node-binaries) guide.
+This document gives some additional details for setting up a new node based on [full node deployment](/pos/how-to/full-node/full-node-binaries) guide.
 
 - VPN setup is required before proceeding with any of these steps.
 - If you are using Macbook, it has native Python 2.7 available which **needs to be replaced by with anything Python 3.x**.
@@ -102,7 +102,7 @@ This document gives some additional details for setting up a new node based on [
 
     If the above 3 steps are not done correctly then even though Ansible is installed, it can’t recognize the Ansible packages. You might face something like the below screenshot:
 
-    ![Figure: Knowledge base - node setup 1](../../../../img/pos/node-setup-1.png)
+    ![Figure: Knowledge base - node setup 1](../../../img/pos/node-setup-1.png)
 
 - Also make sure there are no Go packages and any previous setup of Bor or Heimdall.
 
@@ -120,12 +120,12 @@ This document gives some additional details for setting up a new node based on [
 
     Otherwise there will be error like below image whenever you try to run `ansible sentry -m ping`
 
-    ![Figure: Knowledge base - node setup 2](../../../../img/pos/node-setup-2.png)
+    ![Figure: Knowledge base - node setup 2](../../../img/pos/node-setup-2.png)
 
 
 - Example of **inventory.yml**
 
-    ![Figure: Knowledge base - node setup 3](../../../../img/pos/node-setup-3.png)
+    ![Figure: Knowledge base - node setup 3](../../../img/pos/node-setup-3.png)
 
 - Sentry Host IP and Validator Host IP have to be the same and colons should be provided at the end of the lines including IPs
 
@@ -139,7 +139,7 @@ This document gives some additional details for setting up a new node based on [
 
 - You may face this error if there is any issue with Heimdall's config
 
-    ![Figure: Knowledge base - node setup 4](../../../../img/pos/node-setup-4.png)
+    ![Figure: Knowledge base - node setup 4](../../../img/pos/node-setup-4.png)
 
     This can be fixed by following steps:
 
@@ -164,7 +164,7 @@ This document gives some additional details for setting up a new node based on [
 
     - Copy the **https** endpoint provided under **ethereum → keys → endpoints**
 
-        ![Figure: Knowledge base - node setup 5](../../../../img/pos/node-setup-5.png)
+        ![Figure: Knowledge base - node setup 5](../../../img/pos/node-setup-5.png)
 
         - Provide the copied **https** endpoint as `eth_rpc_url` in `/var/lib/heimdall/config/heimdall-config.toml`
 

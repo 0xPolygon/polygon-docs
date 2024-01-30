@@ -11,7 +11,7 @@ When setting up a new sentry, validator, or full node server, it is recommended 
 
 ## Client snapshots
 
-To begin, ensure that your node environment meets the **prerequisites** outlined [here](https://docs.polygon.technology/pos/operate-node/operate/full-node-binaries/). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. In our example, we will be using an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
+To begin, ensure that your node environment meets the **prerequisites** outlined [here](/pos/how-to/full-node/full-node-binaries). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. In our example, we will be using an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
 To transfer the correct chaindata to your disk, follow these steps:
 
 - All one has to do is specify the network ("mainnet" or "mumbai") and client type ("heimdall" or "bor" or "erigon") of your desired snapshot and run the following command:

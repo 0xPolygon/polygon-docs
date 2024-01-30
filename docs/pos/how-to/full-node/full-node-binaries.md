@@ -1,5 +1,5 @@
 
-This deployment guide walks you through starting and running a full node through various methods. For the system requirements, see the [Minimum Technical Requirements](../validator/validator-node-system-requirements.md) guide.
+This deployment guide walks you through starting and running a full node through various methods. For the system requirements, see the [Minimum Technical Requirements](../validator/validator-system-requirements.md) guide.
 
 !!!tip "Snapshots"
     

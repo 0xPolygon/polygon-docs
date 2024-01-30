@@ -220,6 +220,7 @@ nav:
       - Get started: 
         - Get started: pos/get-started/index.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
+        - Becoming a validator: pos/get-started/becoming-a-validator.md
       - How to:
         - How to: pos/how-to/index.md
         - Sync node using snapshots: pos/how-to/snapshots.md
@@ -233,6 +234,42 @@ nav:
           - L1-L2 communication:
             - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
             - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
+        - Work with smart contracts:
+          - Work with smart contracts: pos/how-to/smart-contracts/index.md
+          - Alchemy: pos/how-to/smart-contracts/alchemy.md
+          - ChainIDE: pos/how-to/smart-contracts/chainide.md
+          - ChainStack: pos/how-to/smart-contracts/chainstack.md
+          - GetBlock: pos/how-to/smart-contracts/getblock.md
+          - QuickNode: pos/how-to/smart-contracts/quicknode.md
+          - SmartPress: pos/how-to/smart-contracts/smartpress.md
+          - thirdweb: pos/how-to/smart-contracts/thirdweb.md
+        - Delegate tokens: pos/how-to/delegate.md
+        - Run a validator node:
+          - System requirements: pos/how-to/validator/validator-system-requirements.md
+          - Prerequisites: pos/how-to/validator/prerequisites.md
+          - Using binaries: pos/how-to/validator/validator-binaries.md
+          - Using Ansible: pos/how-to/validator/validator-ansible.md
+          - Using packages: pos/how-to/validator/validator-packages.md
+        - Run a full node:
+          - System requirements: pos/how-to/full-node/full-node-system-requirements.md
+          - Using binaries: pos/how-to/full-node/full-node-binaries.md
+          - Using Docker: pos/how-to/full-node/full-node-docker.md
+          - Using Ansible: pos/how-to/full-node/full-node-ansible.md
+          - Using packages: pos/how-to/full-node/full-node-packages.md
+          - Using GCP: pos/how-to/full-node/full-node-gcp.md
+        - Run an access node: pos/how-to/access-node.md
+        - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
+        - Operate and maintain nodes:
+          - Staking: pos/how-to/operate-maintain-node/validator-staking-operations.md
+          - Commission: pos/how-to/operate-maintain-node/validator-commission-operations.md
+          - Move stake: pos/how-to/operate-maintain-node/move-stake.md
+          - Change signer address: pos/how-to/operate-maintain-node/change-signer-address.md
+          - Top up Heimdall fee: pos/how-to/operate-maintain-node/topup-heimdall-fee.md
+          - Validator performance requirements: pos/how-to/operate-maintain-node/validator-performance.md
+        - Troubleshoot nodes:
+          - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
+          - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
+          - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
         - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
           - Architecture: pos/architecture/index.md
@@ -255,43 +292,6 @@ nav:
             - Governance: pos/architecture/heimdall/governance.md
       #- Specification:
       #    - Specification: pos/spec/index.md
-      - Run a node:
-        # - Operate various nodes: pos/operate-node/index.md
-        - Run a node: pos/operate-node/index.md
-        - System requirements: pos/operate-node/validator/validator-node-system-requirements.md
-        - Operators:
-          # - Operators: pos/operate-node/operate/index.md
-          - Full node binaries: pos/operate-node/operate/full-node-binaries.md
-          - Full node docker: pos/operate-node/operate/full-node-docker.md
-          - Full node ansible: pos/operate-node/operate/full-node-ansible.md
-          - Full node packages: pos/operate-node/operate/full-node-packages.md
-          - Full node gcp: pos/operate-node/operate/full-node-gcp.md
-          - Access node: pos/operate-node/operate/access-node.md
-          - Erigon client: pos/operate-node/operate/run-erigon-node.md
-        - Validators:
-          # - Validators: pos/operate-node/validator/index.md
-          - Prerequisites: pos/operate-node/validator/kb/how-to.md
-          - Validator binaries: pos/operate-node/validator/run-validator/binaries.md
-          - Validator ansible: pos/operate-node/validator/run-validator/ansible.md
-          - Validator packages: pos/operate-node/validator/run-validator/packages.md
-          - Staking operations: pos/operate-node/validator/validator-staking-operations.md
-          - Commission operations: pos/operate-node/validator/validator-commission-operations.md
-        - Validator actions:
-          - Becoming a validator: pos/operate-node/validator/getting-started.md
-          - Validator Responsibilities: pos/operate-node/validator/responsibilities.md
-          - Topup Heimdall fee: pos/operate-node/validator/topup-heimdall-fee.md
-          - Change your signer address: pos/operate-node/validator/change-signer-address.md
-          - Move stake: pos/operate-node/validator/move-stake.md
-        - Delegate:
-          - How to delegate: pos/operate-node/delegate/delegate.md
-          - Delegator FAQs: pos/operate-node/delegate/delegator-faq.md
-          # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
-        - Troubleshooting:
-          - Validator performance: pos/operate-node/validator/validator-performance.md
-          # - Staking FAQs: pos/operate-node/validator/staking-faq.md
-          - Technical FAQs: pos/operate-node/validator/technical-faqs.md
-          - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
-          - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
       - Reference:
         - Contracts:
           - Genesis contracts: pos/reference/contracts/genesis-contracts.md
