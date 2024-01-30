@@ -50,7 +50,7 @@ If restarting both the Bor and Heimdall services doesn't solve the problem, it c
 
     The bad block is typically displayed in the logs as shown in the below figure:
 
-![Figure: Bad block](../../../../img/pos/bad_block.png)
+![Figure: Bad block](../../../img/pos/bad_block.png)
 
 - Note the bad block number.
 - Convert the block number to a hexadecimal number.
@@ -102,13 +102,13 @@ If the node throws these logs, check the following:
 
     Inspect the block number to identify if you are running on the right fork. One way to do this is to search for the block number on an explorer like [PolygonScan](https://polygonscan.com/).
 
-    ![Figure: Bad block](../../../../img/pos/block_number.png)
+    ![Figure: Bad block](../../../img/pos/block_number.png)
 
     If the hashes match, then the node is on the right fork.
 
 ### Log: Error dialing seed
 
-- Check whether your Heimdall node is configured with the latest seeds as listed on the [node setup documents](../../operate/full-node-binaries.md).
+- Check whether your Heimdall node is configured with the latest seeds as listed on the [node setup documents](../full-node/full-node-binaries.md).
 
 If you're still encountering the error, after either updating to the latest seeds or confirming that you are using the right seeds, you may need to clear the `addrbook.json` file. To do this, follow the steps below.
 

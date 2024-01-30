@@ -12,104 +12,104 @@ keep updating this list regularly for more convenience.
 
 **For Linux packages**
 
-####A. Where to find heimdall genesis file
+#### A. Where to find Heimdall genesis file
   
   ```bash
   $CONFIGPATH/heimdall/config/genesis.json
   ```
 
 
-####B. Where to find heimdall-config.toml
+#### B. Where to find heimdall-config.toml
   
   ```bash
   /etc/heimdall/config/heimdall-config.toml
   ```
 
 
-####C. Where to find config.toml
+#### C. Where to find config.toml
   
   ```bash
   /etc/heimdall/config/config.toml
   ```
 
 
-####D. Where to find heimdall-seeds.txt
+#### D. Where to find heimdall-seeds.txt
   
   ```bash
   $CONFIGPATH/heimdall/heimdall-seeds.txt
   ```
 
 
-####E. Start Heimdall
+#### E. Start Heimdall
   
   ```bash
   $ sudo service heimdalld start
   ```
 
 
-####F. Start Heimdall rest-server
+#### F. Start Heimdall rest-server
   
   ```bash
   $ sudo service heimdalld-rest-server start
   ```
 
 
-####G. Start Heimdall bridge-server
+#### G. Start Heimdall bridge-server
   
   ```bash
   $ sudo service heimdalld-bridge start
   ```
 
 
-####H. Heimdall logs
+#### H. Heimdall logs
   
   ```bash
   /var/log/matic-logs/
   ```
 
 
-####I. Where to find Bor genesis file
+#### I. Where to find Bor genesis file
   
   ```bash
   $CONFIGPATH/bor/genesis.json
   ```
 
 
-####J. Start Bor
+#### J. Start Bor
   
   ```bash
   sudo service bor start
   ```
 
 
-####K Check heimdall logs
+#### K Check heimdall logs
   
   ```bash
   tail -f heimdalld.log
   ```
 
 
-####L. Check Heimdall rest-server
+#### L. Check Heimdall rest-server
   ```bash
   tail -f heimdalld-rest-server.log
   ```
   
 
-####M. Check Heimdall bridge logs
+#### M. Check Heimdall bridge logs
   
   ```bash
   tail -f heimdalld-bridge.log
   ```
 
 
-####N. Check bor logs
+#### N. Check Bor logs
   
   ```bash
   tail -f bor.log
   ```
 
 
-####O. Kill Bor process
+#### O. Kill Bor process
 
 **For linux**:
 
@@ -171,7 +171,7 @@ This usually occurs due to an incorrect installation of heimdall. You can follow
    ```bash
    heimdalld unsafe-reset-all
    ```
-and start Heimdall services again. You can refer to this [guide](kb/how-to.md).
+and start Heimdall services again. You can refer to this [guide](../validator/prerequisites.md).
 
 
 ### 5. From where do I create the API key?

@@ -25,8 +25,8 @@ You need a browser-based Web3 wallet to interact with the Polygon Mumbai Testnet
 You must set up all of the following prerequisites to be able to deploy your solidity smart contract on Polygon:
 
 1. [Create a Replit account](https://replit.com/signup).
-2. [Download MetaMask wallet](../wallets/metamask/index.md).
-3. [Configure Polygon on MetaMask](../wallets/metamask/add-polygon-network.md).
+2. [Download MetaMask wallet](../../wallets/metamask/index.md).
+3. [Configure Polygon on MetaMask](../../wallets/metamask/add-polygon-network.md).
 4. [Get testnet tokens](https://faucet.polygon.technology).
 
 ## Working with a Repl
@@ -35,11 +35,11 @@ Every Repl that you create is a fully functional development and production envi
 
 1. [Log in](https://replit.com/login) or [create an account](https://replit.com/signup). After creating your account, your home screen will include a dashboard where you can view, create projects, and manage your account.
 
-    ![img](../../img/tools/replit/dashboard.png)
+    ![img](../../../img/tools/replit/dashboard.png)
 
 2. Once logged in, create a Solidity starter repl, Select **+ Create Repl** from the left panel or **+** in the top right corner of the screen.
 
-    ![img](../../img/tools/replit/solidity.png)
+    ![img](../../../img/tools/replit/solidity.png)
 
 3. Select the [**Solidity starter (beta)**](https://replit.com/@replit/Solidity-starter-beta?v=1) template and give your project a title.
 
@@ -55,13 +55,13 @@ Make sure that you have followed the list of [prerequisites](#prerequisites) abo
 
 1. Click on **Run** (at the top) to install all relevant packages and start up the contract deployment UI.
 
-2. Connect your MetaMask wallet to the web interface and switch to the [Mumbai Testnet](../wallets/metamask/add-polygon-network.md).
+2. Connect your MetaMask wallet to the web interface and switch to the [Mumbai Testnet](../../wallets/metamask/add-polygon-network.md).
 
-    ![img](../../img/tools/replit/connect.png)
+    ![img](../../../img/tools/replit/connect.png)
 
 3. Click on **Connect wallet**, select your account, then choose **Connect**.
 
-    ![img](../../img/tools/replit/deploy-list.png)
+    ![img](../../../img/tools/replit/deploy-list.png)
 
 4. From the dropdown list, select the contract that you want to deploy. Click on **Deploy**.
 

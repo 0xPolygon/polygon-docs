@@ -27,7 +27,7 @@ Create a Hello World contract, using Chainstack to deploy a Polygon node and Fou
 3. Create the smart contract
 4. Deploy the smart contract.
 
-## Deploy a Polygon Mumbai node
+## Deploy a Polygon Mumbai Node
 
 You need a node to deploy a smart contract to the blockchain network. Follow the steps below to get your node up and running:
 
@@ -57,7 +57,7 @@ forge init PROJECT_NAME
 // PROJECT_NAME - name of project
 ```
 
-## Fund your account
+## Fund Your Account
 
 You will need a wallet account to deploy the smart contract. You can use [Metamask](https://metamask.io/) for that. You also need to pay gas on the network to deploy the contract. Just copy your wallet address and get Mumbai MATIC token [through the faucet](https://faucet.polygon.technology/).
 
@@ -101,7 +101,7 @@ contract HelloWorld {
 }
 ```
 
-## Deploy the contract
+## Deploy the Contract
 
 At this point, you are ready to deploy your contract:
 
@@ -131,7 +131,7 @@ forge create HelloWorld --constructor-args "Hello" --contracts /root/foundry/src
 
     You can always check the contract's deployment on [Mumbai Polygonscan](https://mumbai.polygonscan.com/) using the newly-generated hash from the last step.
 
-## Test the contract
+## Test the Contract
 
 There is a `forge test` command in case you need to check whether the contract is working fine. Foundry provides many [options](https://book.getfoundry.sh/reference/forge/forge-test) (flags) for more specific tests. Learn more about writing tests, advanced testing and other features at [Foundry's documentation](https://book.getfoundry.sh/forge/tests).
 

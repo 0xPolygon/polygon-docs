@@ -1,4 +1,4 @@
-Ethereum developers are by default Polygon developers. Welcome. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All familiar tools used on Ethereum are supported on Polygon. Whether it is Truffle, Remix or Web3js, Polygon offers the same UX as Ethereum.
+Ethereum developers are by default Polygon developers. Welcome. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All familiar tools used on Ethereum are supported on Polygon. Whether it is Truffle, Remix or Web3.js, Polygon offers the same UX as Ethereum.
 
 Connect your wallet and deploy any decentralized application to either Polygon Mainnet or Polygon Mumbai Testnet.
 
@@ -11,7 +11,7 @@ Find all the network-related details in the [network documentation](../referenc
 Polygon is a layer 2 (L2) network to Ethereum, employing a proof-of-stake (PoS) consensus mechanism, and thus composed of the following two layers:
 
   - Heimdall layer, a consensus layer consisting of a set of proof-of-stake Heimdall nodes for monitoring staking contracts deployed on the Ethereum mainnet, and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
-  - Bor layer, an execution layer which  is made up of a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum (Geth).
+  - Bor layer, an execution layer which is made up of a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum (Geth).
 
 In order to be a validator on the Polygon Network, you need to:
 

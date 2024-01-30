@@ -26,7 +26,7 @@ The following are general steps for deploying an ERC-721 smart contract:
 6. Verify a Smart Contract
 7. NFT Minting
 
-## Setting up a wallet
+## Setting up a Wallet
 
 ### Install MetaMask
 
@@ -40,13 +40,13 @@ After installing MetaMask, you need to add the Polygon Mumbai Testnet to MetaMas
   <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/image.png" />
 </div>
 
-### Obtaining MATIC tokens on testnet
+### Obtaining MATIC tokens on Testnet
 
 After adding the Mumbai testnet on MetaMask, visit the [Polygon Faucet](https://faucet.polygon.technology/) to request testnet tokens. These tokens are required to pay gas fees in order to deploy and interact with the smart contract. On the faucet page, select **Mumbai** as the network, **MATIC** as the token, and paste your MetaMask wallet address. Then, click **Submit** and the faucet will send you some test MATIC within a minute.
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/Polygon_PR_get_tokens.png" width="100%" height="100%" />
 
-## Write an ERC-721 smart contract
+## Write an ERC-721 Smart Contract
 
 You need to write down all the required functions that you want to implement in your ERC-721 smart contract. A general ERC-721 smart contract has the following functions:
 
@@ -75,7 +75,7 @@ After creating the project, click on the **Unconnected** button in the upper rig
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+polygon/connect+mumbai.png" width="100%" height="100%" />
 
-## Compile an ERC-721 smart contract
+## Compile an ERC-721 Smart Contract
 
 After you have completed your smart contract, it is time to compile it. To compile, navigate to "compile the module", choose an appropriate compiler according to your source code, and press the "compile" button. An ABI and bytecode for the source code are generated upon successful compilation. If there are any errors in your source code, they will be displayed in the "Logger module" under the output panel. You may need to carefully read the error, resolve it, and recompile the contract.
 
@@ -85,7 +85,7 @@ After you have completed your smart contract, it is time to compile it. To compi
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/image+(1).png" width="100%" height="100%" />
 
-## Deploy an ERC-721 smart contract
+## Deploy an ERC-721 Smart Contract
 
 After successful compilation, it's time to deploy your compiled ERC-721 smart contract to the Polygon Mumbai Testnet. Before you deploy, you need to have MetaMask installed, the Mumbai test network added to your wallet, and some testnet MATIC tokens to pay for the transaction fees.
 
@@ -93,13 +93,13 @@ Navigate to the **Deploy & Interaction** module and choose among the compiled sm
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/image+(2).png" width="100%" height="100%" />
 
-### Check functions from the deployed contract
+### Check Functions from the Deployed Contract
 
 After successful deployment, an output message should state that your smart contract was deployed successfully. You can now verify the deployed contract. All the functions in the deployed smart contract can be seen in the **INTERACT** panel.
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/image+(3).png" width="100%" height="100%" />
 
-## Create a flattened file using flattener library
+## Create a Flattened File using Flattener Library
 
 To verify a smart contract that imports other smart contracts, we need to create a flattened file. A flattened file includes all the source codes of imported contracts in a single file. To create a flattened file, you need to add a **Flattener** plug-in.
 
@@ -117,7 +117,7 @@ The saved flattened file can be accessed under the explorer module.
 
 <img src="https://d3gvnlbntpm4ho.cloudfront.net/ERC+721+Deployment+on++Mumbai/image+(10).png" width="100%" height="100%" />
 
-## Verify a smart contract
+## Verify a Smart Contract
 
 To verify a smart contract, you need to visit [Mumbai Polygonscan](https://mumbai.polygonscan.com/), and search for the deployed smart contract using the contract address.
 
