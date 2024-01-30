@@ -24,9 +24,7 @@ Note that, for the sake of efficiency, the $S_1$ and $S_2$ tables are first redu
 
 And thus, this check is tantamount to ensuring that the rows of the $S_1$ table involving $Op$ are but permutations of the rows of $S_2$ that carry out $Op$.
 
-
 ![Figure: CTL permutation check](../../img/learn/t1-prover-ctl-perm-check.png)
-
 
 
 ### How the CLT proof works
@@ -99,19 +97,17 @@ The above three steps turn the CTL argument into a [LogUp lookup argument](https
 
 which checks for equality between $S_1'$ and $S_2'$.
 
-    
-
 
 ### CTL protocol summary
 
-The cross-table protocol can be surmised as follows. 
+The cross-table protocol can be summarized as follows. 
 
 For any STARK table $S$, the prover:
   
 -  Constructs the `looking sums`, which are the running sums $\{Z_j^l\}$ for each table looking into $S$.
 - Constructs the `looked sum`, which is the running sum $Z^S$ for $S$.
-- Sends the all final values $\{Z_{j,0}^l\}$ and $Z_0^S$ to the verifier.
-- Sends a commitment to the `looking sums` $\{Z_{j}^l\}$ and the `looked sum` $Z^S$ to the verifier.   
+- Sends all the final values $\{Z_{j,0}^l\}$ and $Z_0^S$ to the verifier.
+- Sends a commitment to the `looking sums` $\{Z_{j}^l\}$ and the `looked sum` $Z^S$ to the verifier.
 
 On the other side, and for the same STARK table $S$, the verifier:
   

@@ -22,8 +22,7 @@ Some of the challenges stem from the way the EVM is implemented. Here are some o
 
     While Keccak is fairly efficient on a CPU, since Plonky2 implements polynomials of degree 3, Keccak operations would need to be expressed as constraints of degree 3. This results in an extremely heavy Algebraic Intermediate Representation (AIR) compared to some of the most recent [STARK-friendly](https://eprint.iacr.org/2020/948.pdf) hash functions, tailored specifically for zero-knowledge proving systems.
 
-    Although the EVM supports precompiles of hash functions such as SHA2-256, RIPEMD-160, and Blake2f, they are all quite heavy for our proving system.
+    Although the EVM supports precompiles of hash functions such as SHA2-256, RIPEMD-160, and Blake2f, they are all quite heavy for a ZK proving system.
   
   4. **State representation**: Ethereum uses Merkle Patricia Tries with RLP encoding. Both of these are not zero-knowledge-friendly primitives, and incur huge overheads on transaction processing within a zkEVM context.
-
   

@@ -1,12 +1,3 @@
-This document provides details of the Polygon Zero's Type-1 zkEVM prover, which is a proving scheme deployed for the Type-1 zkEVM developed in collaboration with the Toposware team.
-
-As per definition of zkEVM types, the Polygon Zero's zkEVM is a type-1 as it aims at proving and enabling verification of the EVM's computational integrity.
-
-Since the design of a prover used in any zkEVM is closely related to the type of the zkEVM, this document starts with a brief discussion on the different types of zkEVMs.
-
-
-## Types of zkEVMs
-
 The emergence of various zkEVMs ignited the debate of how 'equivalent' is a given zkEVM to the Ethereum virtual machine (EVM).
 
 Vitalik Buterin has since introduced some calibration to EVM-equivalence in his article, "[The different types of zkEVMs](https://vitalik.eth.limo/general/2022/08/04/zkevm.html)". He made a distinction among five types of zkEVMs, which boils down to the inevitable trade-off between Ethereum equivalence and the efficacy of the zero-knowledge proving scheme involved. For brevity, we refer to this proving scheme as the zk-prover or simply, prover.

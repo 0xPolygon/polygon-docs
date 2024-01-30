@@ -1,4 +1,4 @@
-The CPU is the central component of the Polygon Zero zkEVM. Like any central processing unit, it reads instructions, executes them, and modifies the state (registers and the memory) accordingly. 
+The CPU is the central component of Polygon Zero zkEVM. Like any central processing unit, it reads instructions, executes them, and modifies the state (registers and the memory) accordingly. 
 
 Other complex instructions, such as Keccak hashing, are delegated to specialist STARK tables. 
 
