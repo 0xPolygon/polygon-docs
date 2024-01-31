@@ -24,7 +24,8 @@ docker run -v "/tmp/cdk/test.prover.config.json:/usr/src/app/config.json" -p 500
 ## Run the node
 
 ```bash
-~/cdk-validium/cdk-validium-node % ./dist/zkevm-node run --network custom --custom-network-file /tmp/cdk/genesis.json --cfg /tmp/cdk/node-config.toml \
+cd ~/cdk-validium/cdk-validium-node 
+./dist/zkevm-node run --network custom --custom-network-file /tmp/cdk/genesis.json --cfg /tmp/cdk/node-config.toml \
 	--components sequencer \
 	--components sequence-sender \
 	--components aggregator \
@@ -37,7 +38,7 @@ docker run -v "/tmp/cdk/test.prover.config.json:/usr/src/app/config.json" -p 500
 ### Run the additional approval scripts for the node
 
 ```bash
-~/cdk-validium/cdk-validium-node % ./dist/zkevm-node approve --network custom \
+./dist/zkevm-node approve --network custom \
 	--custom-network-file /tmp/cdk/genesis.json \
 	--cfg /tmp/cdk/node-config.toml \
 	--amount 1000000000000000000000000000 \
@@ -47,11 +48,13 @@ docker run -v "/tmp/cdk/test.prover.config.json:/usr/src/app/config.json" -p 500
 ## Run the DAC
 
 ```bash
-~/cdk-validium/cdk-data-availability-0.0.3 % ./dist/cdk-data-availability run --cfg /tmp/cdk/dac-config.toml
+cd ~/cdk-validium/cdk-data-availability-0.0.3
+./dist/cdk-data-availability run --cfg /tmp/cdk/dac-config.toml
 ```
 
 ## Run the bridge service
 
 ```bash
-~/cdk-validium/cdk-bridge-service % ./dist/zkevm-bridge run --cfg /tmp/cdk/bridge-config.toml
+cd ~/cdk-validium/cdk-bridge-service 
+./dist/zkevm-bridge run --cfg /tmp/cdk/bridge-config.toml
 ```
