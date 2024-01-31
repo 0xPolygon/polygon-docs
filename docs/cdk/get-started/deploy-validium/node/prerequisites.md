@@ -21,7 +21,7 @@
 | `make` | 3.80.0 | https://www.gnu.org/software/make/ |
 | `docker` | 24.0.0 | https://docs.docker.com/engine/install/ |
 | `pip3` | 20.0.0 | https://pip.pypa.io/en/stable/installation/ |
-| `python3` | 3.8.0 | https://www.python.org/downloads/ |
+| [For testing] `python3` | 3.8.0 | https://www.python.org/downloads/ |
 | [For testing] `polycli` | 0.1.39 | https://github.com/maticnetwork/polygon-cli/tree/main |
 
 1. Create a `version-check.sh` file and copy and paste the script below. 
