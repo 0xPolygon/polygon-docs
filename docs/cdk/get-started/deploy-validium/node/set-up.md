@@ -1,15 +1,6 @@
 ## Set up the environment variables
 
-1. Navigate to `~/cdk-validium`.
-
-    ```bash
-    cd cdk-validium
-    ```
-
-    !!! info
-        For the setup, we need the information from the `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/deploy_output.json` file. 
-
-2. Navigate to `cdk-validium-contracts-0.0.2/deployment` and run the following script that inputs the required parameters into `/tmp/cdk/.env`.
+1. Navigate to `cdk-validium-contracts-0.0.2/deployment` and run the following script that inputs the required parameters from `deploy_output.json` into `/tmp/cdk/.env`.
 
     ```bash
     cd cdk-validium-contracts-0.0.2/deployment
@@ -21,7 +12,7 @@
     echo "MATIC_TOKEN_ADDRESS=$(jq -r '.maticTokenAddress' deploy_output.json)" >> /tmp/cdk/.env
     ```
 
-3. Save the new environment and navigate back to `~/cdk-validium`.
+2. Save the new environment and navigate back to `~/cdk-validium`.
 
     ```bash
     source /tmp/cdk/.env
@@ -38,15 +29,12 @@
 
 2. Download and extract version `0.0.3` of `cdk-data-availability` as a tar.gz file. 
 
-    !!! info
-        The release file is available here: [Untitled Database](https://www.notion.so/b329e3b1511943ae979cc2b4c73a35e8?pvs=21)
-
     ```bash
     curl -L -o cdk-data-availability.tar.gz https://github.com/0xPolygon/cdk-data-availability/archive/refs/tags/v0.0.3.tar.gz
     \tar -xzf cdk-data-availability.tar.gz
     ```
 
-3. Finally, download the `cdk-bridge-service` release `0.3.1`. The release file can be found here:
+3. Finally, download the `cdk-bridge-service` release `0.3.1`. 
 
     ```bash
     curl -L -o cdk-bridge-service.tar.gz https://github.com/0xPolygonHermez/zkevm-bridge-service/archive/refs/tags/v0.3.1.tar.gz
@@ -87,7 +75,6 @@ Navigate to the node directory we cloned at the previous step: `cdk-validium-nod
 
     ```bash
     PGPASSWORD=cdk_password psql -h localhost -U cdk_user -d postgres -p 5432
-    #=> \q
     ```
 
     You should have: 
@@ -106,7 +93,7 @@ The `cdk-validium-node` directory contains a script called `single_db_server.sql
     PGPASSWORD=cdk_password psql -h localhost -U cdk_user -d postgres -p 5432 -a -q -f ./db/scripts/single_db_server.sql
     ```
 
-2. In addition to the provisions required for the Data Availability Committee (DAC). We can set this up now to use later.
+2. Set up the database for the Data Availability Committee (DAC).
 
     ```bash
     PGPASSWORD=cdk_password psql -h localhost -U cdk_user -d postgres -p 5432 -c "CREATE DATABASE committee_db;"
