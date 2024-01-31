@@ -11,7 +11,7 @@ The process requires two separate flows with different software requirements. Fo
 
 ## Git repos
 
-These are code bases for setting everything up in this order.
+These are code bases we use to set everything up, and in this order.
 
 | Repo | Version |
 | --- | --- |

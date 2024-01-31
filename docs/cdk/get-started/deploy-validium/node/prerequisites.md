@@ -4,6 +4,9 @@
 
 ## Software requirements
 
+!!! important
+    These are the minimum versions.
+
 | Software | Version | Installation link |
 | --- | --- | --- |
 | `git` | 2.18.0 | https://git-scm.com/book/en/v2/Getting-Started-Installing-Git |

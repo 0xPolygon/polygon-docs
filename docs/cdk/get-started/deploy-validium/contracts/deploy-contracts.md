@@ -10,7 +10,7 @@
 2. Run the following `jq` script to streamline the process of replacing these fields:
 
     ```bash
-    source /var/tmp/cdk/.env
+    source /tmp/cdk/.env
     jq --arg TEST_ADDRESS "$TEST_ADDRESS" '.trustedSequencerURL = "http://127.0.0.1:8123" | .trustedSequencer = $TEST_ADDRESS | .trustedAggregator = $TEST_ADDRESS | .admin = $TEST_ADDRESS | .cdkValidiumOwner = $TEST_ADDRESS | .initialCDKValidiumDeployerOwner = $TEST_ADDRESS | .timelockAddress = $TEST_ADDRESS | .forkID = 6' ./deploy_parameters.json.example > ./deploy_parameters.json
     ```
 
