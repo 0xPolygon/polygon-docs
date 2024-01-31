@@ -28,7 +28,7 @@
 
    ```bash
     #!/bin/bash
-    
+
     declare -A commands
     commands["git"]="2.18.0"
     commands["node"]="16.0.0"
@@ -43,19 +43,19 @@
     commands["pip3"]="20.0.2"
     commands["python3"]="3.8.0"
     commands["polycli"]="0.1.39"
-    
+
     # Function to check command version
     check_version() {
         local command=$1
         local min_version=$2
         local version
         local status
-    
+
         if ! command -v "$command" &> /dev/null; then
             printf "| %-15s | %-20s | %-20s |\n" "$command" "Not Found" "$min_version"
             return
         fi
-    
+
         case "$command" in
             git) version=$(git --version | awk '{print $3}') ;;
             node) version=$(node --version | cut -d v -f 2) ;;
@@ -72,14 +72,14 @@
             polycli) version=$(polycli version | awk '{print $4}' | cut -d '-' -f 1 | sed 's/v//') ;;
             *) version="Found" ;;
         esac
-    
+
         printf "| %-15s | %-20s | %-20s |\n" "$command" "$version" "$min_version"
     }
-    
+
     echo "+-----------------+----------------------+----------------------+"
     printf "| %-15s | %-20s | %-20s |\n" "CLI Command" "Found Version" "Minimum Version"
     echo "+-----------------+----------------------+----------------------+"
-    
+
     for cmd in "${!commands[@]}"; do
         check_version "$cmd" "${commands[$cmd]}"
         echo "+-----------------+----------------------+----------------------+"

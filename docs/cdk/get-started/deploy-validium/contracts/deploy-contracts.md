@@ -14,10 +14,10 @@
     jq --arg TEST_ADDRESS "$TEST_ADDRESS" '.trustedSequencerURL = "http://127.0.0.1:8123" | .trustedSequencer = $TEST_ADDRESS | .trustedAggregator = $TEST_ADDRESS | .admin = $TEST_ADDRESS | .cdkValidiumOwner = $TEST_ADDRESS | .initialCDKValidiumDeployerOwner = $TEST_ADDRESS | .timelockAddress = $TEST_ADDRESS | .forkID = 6' ./deploy_parameters.json.example > ./deploy_parameters.json
     ```
 
-3. The complete `deploy_parameters.json` should look something like this:
+3. The complete `deploy_parameters.json` should look something like this, where all the addresses are equal to the generated address except for `maticTokenAddress`:
 
     ```bash
-    cat ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/deploy_parameters.json
+    nano ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/deploy_parameters.json
     # ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/deploy_parameters.json
     {
         "realVerifier": false,
@@ -51,7 +51,7 @@
 
 ### `CDKValidiumDeployer`
 
-This contract is a factory that deploys the deterministic contracts required by the system and must be deployed first. 
+This is a factory contract that deploys the deterministic contracts required by the system and must be deployed first. 
 
 The address of the contracts it creates depends on the salt and the `initialCDKValidiumDeployerOwner` inside `deploy_parameters.json`.
 
@@ -75,6 +75,13 @@ The address of the contracts it creates depends on the salt and the `initialCDKV
 
     !!! info
         This may take several minutes depending on network conditions.
+
+    !!! warning
+        If you see this message, you can safely ignore it:
+        
+        ```sh
+        cp: cannot stat '.openzeppelin/sepolia.json': No such file or directory
+        ```
 
 3. On successful deployment, you should see a new directory named `deployments` containing a directory storing the information about your deployment. For example:
 

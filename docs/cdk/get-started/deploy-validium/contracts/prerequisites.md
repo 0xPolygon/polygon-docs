@@ -32,7 +32,7 @@ Use a public faucet to get Sepolia test ETH.
 
 ## Configuration files
 
-Create a folder in `/var/tmp/cdk/` to store configuration files.
+Create a folder `/tmp/cdk/` to store configuration files.
 
 ```bash
 mkdir /tmp/cdk/
