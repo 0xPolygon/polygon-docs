@@ -6,6 +6,21 @@ Since the prover is large and compute-expensive to build, we will use a docker c
 docker run -v "/tmp/cdk/test.prover.config.json:/usr/src/app/config.json" -p 50061:50061 -p 50071:50071 --network host hermeznetwork/zkevm-prover:v3.0.2 zkProver -c /usr/src/app/config.json
 ```
 
+!!! important
+    The database logs may output an error while they wait for a node. For example:
+
+    ```txt
+    2024-01-31 12:18:30.329 UTC [675] ERROR:  relation "state.nodes" does not exist at character 15
+    2024-01-31 12:18:30.329 UTC [675] STATEMENT:  SELECT * FROM state.nodes WHERE hash = E'\\xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
+    ```
+
+    The node log may also output an error while they wait for services to come online. For example:
+
+    ```txt
+    aggregatorClientMockThread() channel broken; will retry in 5 seconds
+    aggregatorClientMockThread() failed calling readerWriter->Read(&aggregatorMessage)
+    ```
+
 ## Run the node
 
 ```bash
