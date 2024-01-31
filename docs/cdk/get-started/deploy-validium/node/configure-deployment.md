@@ -19,9 +19,9 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 2. Create a keystore for reference in the `config.toml` configuration file. Use the private key we generated previously and stored in the `/tmp/cdk/.env` file and encrypt it with a basic password. For example:
 
 	```bash
-	$ source /tmp/cdk/.env
-	$ ./dist/zkevm-node encryptKey --pk=$TEST_PRIVATE_KEY --pw="testonly" --output=/tmp/cdk/account.keystore
-	$ find /tmp/cdk/account.keystore -type f -name 'UTC--*' | head -n 1 | xargs -I xxx mv xxx /tmp/cdk/account.key
+	source /tmp/cdk/.env
+	./dist/zkevm-node encryptKey --pk=$TEST_PRIVATE_KEY --pw="testonly" --output=/tmp/cdk/account.keystore
+	find /tmp/cdk/account.keystore -type f -name 'UTC--*' | head -n 1 | xargs -I xxx mv xxx /tmp/cdk/account.key
 	```
 
 	!!!	important
@@ -31,8 +31,7 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 
 3. Create a file `node-config.toml` inside `/tmp/cdk/` and paste in the following content.
 
-???     "`node-config.toml`"
-		```bash
+???     "`node-config.toml`"		
 		#/tmp/cdk/node-config.toml
 		IsTrustedSequencer = true
 
@@ -209,7 +208,6 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 		Port = "5432"
 		EnableLog = false
 		MaxConns = 200
-		```
 
 4. Modify the `URL` parameter in`[Etherman]` to the URL of the RPC Provider, along with the parameters `L2Coinbase` in `[SequenceSender]` and `SenderAddress` in `[Aggregator]` to the address we generated earlier by running the following script.
 
@@ -337,17 +335,16 @@ Now let’s configure the Data Availability Committee.
 
 ## Configure bridge service
 
-1. Navigate into the `cdk-bridge-service-0.3.1` directory and build the files.
+1. Navigate into the `zkevm-bridge-service-0.3.1` directory and build the files.
 
 	```bash
-	cd ~/cdk-validium/cdk-bridge-service-0.3.1/
+	cd ~/cdk-validium/zkevm-bridge-service-0.3.1/
 	make build
 	```
 
 2. Create a starter bridge config `bridge-config.toml` inside `/tmp/cdk` using the following config file:
 
 	```bash
-	nano /tmp/cdk/bridge-config.toml
 	#/tmp/cdk/bridge-config.toml
 	[Log]
 	Level = "info"
