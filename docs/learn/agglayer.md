@@ -242,7 +242,11 @@ The AggLayer will allow a single ZK proof to verify state across all chains in t
 
 !!! credits
 
-    The contents of this document were sourced from [a blog post] originally written by Brendan Farmer, Co-founder @ Polygon on Sep 2023.
+    The contents of this document have been sourced from blog posts originally written by Brendan Farmer, Co-founder @ Polygon.
+
+    - [The original blog post](https://hackmd.io/@QOKsDTFRSd-1oYqrNQ3fIA/Hkx9X3jah) made on October 2023
+    - A more recently [updated blog post](https://mirror.xyz/0xfa892B19c72c2D2C6B10dFce8Ff8E7a955b58A61/TXMyZhhRFa-bjr7YHwmJpKBwt2-_ysirbh_VpNy3qZY) with additional details.
+
 
 
 [^1]: Definition taken from "Shared Sequencing: Defragmenting the L2 Rollup Ecosystem" https://hackmd.io/@EspressoSystems/SharedSequencing by Espresso Systems
