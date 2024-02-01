@@ -99,7 +99,7 @@ paladin-worker --runtime amqp --amqp-uri=amqp://localhost:5672
 This will start the worker and have it await tasks. Depending on the
 size of your machine, you may be able to run several workers on the
 same operating system. An example [systemd
-service](./deploy/paladin-worker@.service) is included. Once that
+service](https://github.com/0xPolygonZero/eth-tx-proof/blob/jhilliard/deployment/deploy/paladin-worker@.service) is included. Once that
 service is installed, you could enable and start 16 workers on the
 same VM like this:
 

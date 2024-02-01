@@ -557,6 +557,7 @@ nav:
           - Type-1 design challenges: learn/type-1-prover/t1-design-challenge.md
           - Architectural overview: learn/type-1-prover/t1-architecture.md
           - How to run the type-1 prover: learn/type-1-prover/deploy-t1-prover.md
+          - Running type-1 prover in Devnet: learn/type-1-prover/run-t1-prover-devnet.md
           - CPU component: learn/type-1-prover/t1-cpu-component.md
           - CTL protocol: learn/type-1-prover/t1-ctl-protocol.md
           - Range checks: learn/type-1-prover/t1-rangechecks.md
