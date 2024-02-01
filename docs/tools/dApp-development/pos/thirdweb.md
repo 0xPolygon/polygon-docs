@@ -10,7 +10,7 @@ thirdweb is a complete web3 development framework that provides everything you n
 
 ## Create a contract using thirdweb
 
-To create a new smart contract using thirdweb CLI, follow the steps below.
+To create a new smart contract using thirdweb CLI, follow the step below.
 
 1. In your CLI, run the following command to create a contract:
 
@@ -19,17 +19,11 @@ To create a new smart contract using thirdweb CLI, follow the steps below.
    ```
 
 2. Enter your preferred values for the command line prompts:
-   
    i. Give your project a name.
-   
    ii. Choose your preferred framework: [Hardhat](https://hardhat.org/) or [Foundry](https://getfoundry.sh/).
-   
    iii. Name your smart contract.
-   
    iv. Choose the type of base contract: Empty, [ERC20](https://portal.thirdweb.com/solidity/base-contracts/erc20base), [ERC721](https://portal.thirdweb.com/solidity/base-contracts/erc721base), or [ERC1155](https://portal.thirdweb.com/solidity/base-contracts/erc1155base).
-   
    v. Add any desired [extensions](https://portal.thirdweb.com/solidity/extensions).
-
 3. Once created, navigate to your project’s root directory and open your project in your preferred code editor.
 4. If you open the `contracts` folder, you will find your smart contract; the contract you see is your smart contract written in Solidity.
 
@@ -98,7 +92,7 @@ Deploy allows you to deploy a smart contract to any EVM-compatible network witho
 
 For additional information on Deploy, please reference [thirdweb’s documentation](https://portal.thirdweb.com/deploy).
 
-## Verify the contract
+## Verify the Contract
 
 Contracts deployed to [Polygon](https://thirdweb.com/polygon) are automatically verified by thirdweb. You can check the status on the "Sources" view in the thirdweb dashboard.
 

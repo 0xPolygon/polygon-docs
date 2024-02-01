@@ -97,7 +97,7 @@ QuickNode has a global network of Polygon Mainnet and Mumbai testnet nodes. They
 
 Copy the **HTTP URL**, which will be useful later in the tutorial.
 
-## Network and account setup
+## Network and Account setup
 
 We need to set up our QuickNode endpoint with Brownie. To do so, type the following in your command line:
 
@@ -125,7 +125,7 @@ You will be asked to set up a password for your account! After completing the st
 
 Copy the account address so that we can get some test MATIC, which will be required to deploy our contract.
 
-## Getting testnet MATIC
+## Getting Testnet MATIC
 
 We will need some test MATIC tokens to pay for gas fees to deploy our smart contract.
 
@@ -133,7 +133,7 @@ Copy the address of your account which we generated in this tutorial, paste it i
 
 ![img](../../../img/pos/faucet.png)
 
-## Deploying your smart contract
+## Deploying your Smart Contract
 
 Before deploying the contract, you need to compile it using:
 
@@ -174,7 +174,7 @@ You can check out the deployed contract by copy-pasting the contract address at 
 
 ![img](../../../img/pos/polygonscan.png)
 
-## Testing the contract
+## Testing the Contract
 
 Brownie also offers the option of testing smart contracts functionalities. It uses the `pytest` framework to easily generate unit tests. You can find more information about writing tests on Bronwnie [on their documentation](https://eth-brownie.readthedocs.io/en/latest/tests-pytest-intro.html#).
 
