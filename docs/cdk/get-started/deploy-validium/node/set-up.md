@@ -50,9 +50,9 @@
 
 Navigate to the node directory we cloned at the previous step: `cdk-validium-node/`.
 
-    ```bash
-    cd cdk-validium-node/
-    ```
+```bash
+cd cdk-validium-node/
+```
 
 ## Set up the database
 
