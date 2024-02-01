@@ -35,18 +35,3 @@ rm -rf go1.20.4.linux-amd64.tar.gz
 ```
 
 Confirm the Golang installation with `$ go version`.
-
-## Update profile configuration
-
-Add the following environment variables to your `~/.profile`.
-
-```bash
-echo '
-  export ZKEVM_NET=mainnet
-  export ZKEVM_DIR=~/zkevm/zkevm-node
-  export ZKEVM_CONFIG_DIR=~/zkevm/zkevm-config
- 
-  [ -d "/usr/local/go/bin" ] && PATH="/usr/local/go/bin:$PATH"
-  ' >> ~/.profile
-  source .profile
-```

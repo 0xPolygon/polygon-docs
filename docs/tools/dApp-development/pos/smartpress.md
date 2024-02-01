@@ -10,7 +10,7 @@ SmartPress is an AI tool that crafts custom smart contracts from language prompt
 
 > For details on the variety of contracts SmartPress can create, check out [SmartPress’s website](https://smartpress.ai).
 
-## Create a smart contract using SmartPress
+## Create a Smart Contract using SmartPress
 
 To create a new smart contract with SmartPress, follow these steps:
 
@@ -19,14 +19,14 @@ To create a new smart contract with SmartPress, follow these steps:
 3. Let SmartPress generate the contract for you; no need for an IDE or code editor.
 4. Review the output. If satisfied, proceed to validation and testing. If not, modify your input and repeat the process.
 
-## Deploy your contract using SmartPress
+## Deploy your Contract using SmartPress
 
 To deploy your smart contract on Polygon PoS:
 
 1. After creation, connect your wallet and switch your network to either Mumbai testnet or Polygon PoS.
 2. Press the 'Deploy' button. If you lack transaction gas, use the provided faucet links to obtain some.
 
-## Verify the contract
+## Verify the Contract
 
 To verify your new contract, follow these steps:
 

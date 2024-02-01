@@ -5,7 +5,7 @@ A validator is entitled to charge any commission rate. The minimum commission wo
 
 You are allowed to change the commission rates as many times as you would like.
 
-As a validator, it is one of your responsibilities to inform the community on commission changes. See [Validator Responsibilities](../../operate-node/validator/responsibilities.md).
+As a validator, it is one of your responsibilities to inform the community on commission changes. See [Validator Responsibilities](../../get-started/becoming-a-validator.md#validator-responsibilities).
 
 ## Set up your commission rate as a validator
 

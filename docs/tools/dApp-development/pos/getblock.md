@@ -36,7 +36,7 @@ In this tutorial, you will:
 
 If you don't have any tokens in your account, you can request some from the Mumbai faucet through the [faucet website](https://faucet.polygon.technology/).
 
-## Smart contract development
+## Smart Contract Development
 
 1. Visit the [official Remix website](https://remix.ethereum.org/). Remix is a Web-based IDE for Ethereum smart contract development in Solidity.
 
@@ -77,7 +77,7 @@ Smart contract URL: <https://mumbai.polygonscan.com/address/0xa4d552dce0e26564ec
 
 If your smart contract has been successfully deployed, you should see the contract details including its address, balance, and transaction history. Congratulations, you have successfully deployed a smart contract on the Mumbai Testnet!
 
-## Testing and verification
+## Testing and Verification
 
 Once you have deployed your smart contract on the Polygon test network using GetBlock, it is important to test and verify its functionality to ensure that it works as intended. Here are some steps you can take for testing and verification:
 
