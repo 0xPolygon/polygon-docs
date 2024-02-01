@@ -26,7 +26,7 @@
 
 1. Create a `version-check.sh` file and copy and paste the script below. 
 
-   ```bash
+    ```bash
     #!/bin/bash
 
     declare -A commands

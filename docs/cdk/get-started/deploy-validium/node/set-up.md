@@ -30,8 +30,7 @@
 2. Download and extract version `0.0.3` of `cdk-data-availability` as a tar.gz file. 
 
     ```bash
-    curl -L -o cdk-data-availability.tar.gz https://github.com/0xPolygon/cdk-data-availability/archive/refs/tags/v0.0.3.tar.gz
-    \tar -xzf cdk-data-availability.tar.gz
+    git clone --depth 1 --branch v0.0.3 https://github.com/0xPolygon/cdk-data-availability.git
     ```
 
 3. Finally, download the `cdk-bridge-service` release `0.3.1`. 
