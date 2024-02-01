@@ -31,185 +31,185 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 
 3. Create a file `node-config.toml` inside `/tmp/cdk/` and paste in the following content.
 
-???     "`node-config.toml`"		
-		#/tmp/cdk/node-config.toml
-		IsTrustedSequencer = true
+	???     "`node-config.toml`"		
+			#/tmp/cdk/node-config.toml
+			IsTrustedSequencer = true
 
-		[Log]
-		Environment = "development" # "production" or "development"
-		Level = "debug"
-		Outputs = ["stderr"]
+			[Log]
+			Environment = "development" # "production" or "development"
+			Level = "debug"
+			Outputs = ["stderr"]
 
-		[State]
-			[State.DB]
+			[State]
+				[State.DB]
+				User = "cdk_user"
+				Password = "cdk_password"
+				Name = "state_db"
+				Host = "localhost"
+				Port = "5432"
+				EnableLog = false	
+				MaxConns = 200
+				[State.Batch]
+					[State.Batch.Constraints]
+					MaxTxsPerBatch = 300
+					MaxBatchBytesSize = 120000
+					MaxCumulativeGasUsed = 30000000
+					MaxKeccakHashes = 2145
+					MaxPoseidonHashes = 252357
+					MaxPoseidonPaddings = 135191
+					MaxMemAligns = 236585
+					MaxArithmetics = 236585
+					MaxBinaries = 473170
+					MaxSteps = 7570538
+
+			[Pool]
+			FreeClaimGasLimit = 1500000
+			IntervalToRefreshBlockedAddresses = "5m"
+			IntervalToRefreshGasPrices = "5s"
+			MaxTxBytesSize=100132
+			MaxTxDataBytesSize=100000
+			DefaultMinGasPriceAllowed = 0
+			MinAllowedGasPriceInterval = "5m"
+			PollMinAllowedGasPriceInterval = "15s"
+			AccountQueue = 64
+			GlobalQueue = 1024
+				[Pool.EffectiveGasPrice]
+					Enabled = false
+					L1GasPriceFactor = 0.25
+					ByteGasCost = 16
+					ZeroByteGasCost = 4
+					NetProfit = 1
+					BreakEvenFactor = 1.1			
+					FinalDeviationPct = 10
+					L2GasPriceSuggesterFactor = 0.5
+				[Pool.DB]
+				User = "cdk_user"
+				Password = "cdk_password"
+				Name = "pool_db"
+				Host = "localhost"
+				Port = "5432"
+				EnableLog = false
+				MaxConns = 200
+
+			[Etherman]
+			URL = "https://sepolia.infura.io/v3/bd6164d34c324fa08ca5b6dc1d3ed3a2"
+			ForkIDChunkSize = 20000
+			MultiGasProvider = false
+				[Etherscan]
+					ApiKey = ""
+
+			[RPC]
+			Host = "0.0.0.0"
+			Port = 8123
+			ReadTimeout = "60s"
+			WriteTimeout = "60s"
+			MaxRequestsPerIPAndSecond = 5000
+			SequencerNodeURI = ""
+			BatchRequestsEnabled = true
+			EnableL2SuggestedGasPricePolling = true
+				[RPC.WebSockets]
+					Enabled = true
+					Port = 8133
+
+			[Synchronizer]
+			SyncInterval = "1s"
+			SyncChunkSize = 100
+			TrustedSequencerURL = "" # If it is empty or not specified, then the value is read from the smc.
+			L1SynchronizationMode = "sequential" # "sequential" or "parallel"
+				[Synchronizer.L1ParallelSynchronization]
+					MaxClients = 10
+					MaxPendingNoProcessedBlocks = 25
+					RequestLastBlockPeriod = "5s"
+					RequestLastBlockTimeout = "5s"
+					RequestLastBlockMaxRetries = 3
+					StatisticsPeriod = "5m"
+					TimeoutMainLoop = "5m"
+					RollupInfoRetriesSpacing= "5s"
+					FallbackToSequentialModeOnSynchronized = false
+					[Synchronizer.L1ParallelSynchronization.PerformanceWarning]
+						AceptableInacctivityTime = "5s"
+						ApplyAfterNumRollupReceived = 10
+
+			[Sequencer]
+			WaitPeriodPoolIsEmpty = "1s"
+			LastBatchVirtualizationTimeMaxWaitPeriod = "10s"
+			BlocksAmountForTxsToBeDeleted = 100
+			FrequencyToCheckTxsForDelete = "12h"
+			TxLifetimeCheckTimeout = "10m"
+			MaxTxLifetime = "3h"
+				[Sequencer.Finalizer]
+					GERDeadlineTimeout = "2s"
+					ForcedBatchDeadlineTimeout = "5s"
+					SleepDuration = "100ms"
+					ResourcePercentageToCloseBatch = 10
+					GERFinalityNumberOfBlocks = 0
+					ClosingSignalsManagerWaitForCheckingL1Timeout = "10s"
+					ClosingSignalsManagerWaitForCheckingGER = "10s"
+					ClosingSignalsManagerWaitForCheckingForcedBatches = "10s"
+					ForcedBatchesFinalityNumberOfBlocks = 0
+					TimestampResolution = "10s"
+					StopSequencerOnBatchNum = 0
+				[Sequencer.DBManager]
+					PoolRetrievalInterval = "500ms"
+					L2ReorgRetrievalInterval = "5s"
+
+			[SequenceSender]
+			WaitPeriodSendSequence = "15s"
+			LastBatchVirtualizationTimeMaxWaitPeriod = "10s"
+			MaxTxSizeForL1 = 131072
+			L2Coinbase = "0xf100D00c376D62682Faf28FeE5cF603AAED75e13"
+			PrivateKey = {Path = "/tmp/cdk/account.key", Password = "testonly"}
+
+			[Aggregator]
+			Host = "0.0.0.0"
+			Port = 50081
+			RetryTime = "5s"
+			VerifyProofInterval = "10s"
+			TxProfitabilityCheckerType = "acceptall"
+			TxProfitabilityMinReward = "1.1"
+			ProofStatePollingInterval = "5s"
+			SenderAddress = "0xf100D00c376D62682Faf28FeE5cF603AAED75e13"
+			CleanupLockedProofsInterval = "2m"
+			GeneratingProofCleanupThreshold = "10m"
+
+			[EthTxManager]
+			ForcedGas = 0
+			PrivateKeys = [
+				{Path = "/tmp/cdk/account.key", Password = "testonly"}
+			]
+
+			[L2GasPriceSuggester]
+			Type = "default"
+			UpdatePeriod = "10s"
+			Factor = 0.5
+			DefaultGasPriceWei = 0
+			MaxGasPriceWei = 0
+
+			[MTClient]
+			URI  = "localhost:50061"
+
+			[Executor]
+			URI = "localhost:50071"
+			MaxGRPCMessageSize = 100000000
+
+			[Metrics]
+			Host = "0.0.0.0"
+			Port = 9091
+			Enabled = true
+			ProfilingHost = "0.0.0.0"
+			ProfilingPort = 6060
+			ProfilingEnabled = true
+
+			[HashDB]
 			User = "cdk_user"
 			Password = "cdk_password"
-			Name = "state_db"
-			Host = "localhost"
-			Port = "5432"
-			EnableLog = false	
-			MaxConns = 200
-			[State.Batch]
-				[State.Batch.Constraints]
-				MaxTxsPerBatch = 300
-				MaxBatchBytesSize = 120000
-				MaxCumulativeGasUsed = 30000000
-				MaxKeccakHashes = 2145
-				MaxPoseidonHashes = 252357
-				MaxPoseidonPaddings = 135191
-				MaxMemAligns = 236585
-				MaxArithmetics = 236585
-				MaxBinaries = 473170
-				MaxSteps = 7570538
-
-		[Pool]
-		FreeClaimGasLimit = 1500000
-		IntervalToRefreshBlockedAddresses = "5m"
-		IntervalToRefreshGasPrices = "5s"
-		MaxTxBytesSize=100132
-		MaxTxDataBytesSize=100000
-		DefaultMinGasPriceAllowed = 0
-		MinAllowedGasPriceInterval = "5m"
-		PollMinAllowedGasPriceInterval = "15s"
-		AccountQueue = 64
-		GlobalQueue = 1024
-			[Pool.EffectiveGasPrice]
-				Enabled = false
-				L1GasPriceFactor = 0.25
-				ByteGasCost = 16
-				ZeroByteGasCost = 4
-				NetProfit = 1
-				BreakEvenFactor = 1.1			
-				FinalDeviationPct = 10
-				L2GasPriceSuggesterFactor = 0.5
-			[Pool.DB]
-			User = "cdk_user"
-			Password = "cdk_password"
-			Name = "pool_db"
+			Name = "prover_db"
 			Host = "localhost"
 			Port = "5432"
 			EnableLog = false
 			MaxConns = 200
 
-		[Etherman]
-		URL = "https://sepolia.infura.io/v3/bd6164d34c324fa08ca5b6dc1d3ed3a2"
-		ForkIDChunkSize = 20000
-		MultiGasProvider = false
-			[Etherscan]
-				ApiKey = ""
-
-		[RPC]
-		Host = "0.0.0.0"
-		Port = 8123
-		ReadTimeout = "60s"
-		WriteTimeout = "60s"
-		MaxRequestsPerIPAndSecond = 5000
-		SequencerNodeURI = ""
-		BatchRequestsEnabled = true
-		EnableL2SuggestedGasPricePolling = true
-			[RPC.WebSockets]
-				Enabled = true
-				Port = 8133
-
-		[Synchronizer]
-		SyncInterval = "1s"
-		SyncChunkSize = 100
-		TrustedSequencerURL = "" # If it is empty or not specified, then the value is read from the smc.
-		L1SynchronizationMode = "sequential" # "sequential" or "parallel"
-			[Synchronizer.L1ParallelSynchronization]
-				MaxClients = 10
-				MaxPendingNoProcessedBlocks = 25
-				RequestLastBlockPeriod = "5s"
-				RequestLastBlockTimeout = "5s"
-				RequestLastBlockMaxRetries = 3
-				StatisticsPeriod = "5m"
-				TimeoutMainLoop = "5m"
-				RollupInfoRetriesSpacing= "5s"
-				FallbackToSequentialModeOnSynchronized = false
-				[Synchronizer.L1ParallelSynchronization.PerformanceWarning]
-					AceptableInacctivityTime = "5s"
-					ApplyAfterNumRollupReceived = 10
-
-		[Sequencer]
-		WaitPeriodPoolIsEmpty = "1s"
-		LastBatchVirtualizationTimeMaxWaitPeriod = "10s"
-		BlocksAmountForTxsToBeDeleted = 100
-		FrequencyToCheckTxsForDelete = "12h"
-		TxLifetimeCheckTimeout = "10m"
-		MaxTxLifetime = "3h"
-			[Sequencer.Finalizer]
-				GERDeadlineTimeout = "2s"
-				ForcedBatchDeadlineTimeout = "5s"
-				SleepDuration = "100ms"
-				ResourcePercentageToCloseBatch = 10
-				GERFinalityNumberOfBlocks = 0
-				ClosingSignalsManagerWaitForCheckingL1Timeout = "10s"
-				ClosingSignalsManagerWaitForCheckingGER = "10s"
-				ClosingSignalsManagerWaitForCheckingForcedBatches = "10s"
-				ForcedBatchesFinalityNumberOfBlocks = 0
-				TimestampResolution = "10s"
-				StopSequencerOnBatchNum = 0
-			[Sequencer.DBManager]
-				PoolRetrievalInterval = "500ms"
-				L2ReorgRetrievalInterval = "5s"
-
-		[SequenceSender]
-		WaitPeriodSendSequence = "15s"
-		LastBatchVirtualizationTimeMaxWaitPeriod = "10s"
-		MaxTxSizeForL1 = 131072
-		L2Coinbase = "0xf100D00c376D62682Faf28FeE5cF603AAED75e13"
-		PrivateKey = {Path = "/tmp/cdk/account.key", Password = "testonly"}
-
-		[Aggregator]
-		Host = "0.0.0.0"
-		Port = 50081
-		RetryTime = "5s"
-		VerifyProofInterval = "10s"
-		TxProfitabilityCheckerType = "acceptall"
-		TxProfitabilityMinReward = "1.1"
-		ProofStatePollingInterval = "5s"
-		SenderAddress = "0xf100D00c376D62682Faf28FeE5cF603AAED75e13"
-		CleanupLockedProofsInterval = "2m"
-		GeneratingProofCleanupThreshold = "10m"
-
-		[EthTxManager]
-		ForcedGas = 0
-		PrivateKeys = [
-			{Path = "/tmp/cdk/account.key", Password = "testonly"}
-		]
-
-		[L2GasPriceSuggester]
-		Type = "default"
-		UpdatePeriod = "10s"
-		Factor = 0.5
-		DefaultGasPriceWei = 0
-		MaxGasPriceWei = 0
-
-		[MTClient]
-		URI  = "localhost:50061"
-
-		[Executor]
-		URI = "localhost:50071"
-		MaxGRPCMessageSize = 100000000
-
-		[Metrics]
-		Host = "0.0.0.0"
-		Port = 9091
-		Enabled = true
-		ProfilingHost = "0.0.0.0"
-		ProfilingPort = 6060
-		ProfilingEnabled = true
-
-		[HashDB]
-		User = "cdk_user"
-		Password = "cdk_password"
-		Name = "prover_db"
-		Host = "localhost"
-		Port = "5432"
-		EnableLog = false
-		MaxConns = 200
-
-4. Modify the `URL` parameter in`[Etherman]` to the URL of the RPC Provider, along with the parameters `L2Coinbase` in `[SequenceSender]` and `SenderAddress` in `[Aggregator]` to the address we generated earlier by running the following script.
+4. Run the following script to modify the `URL` parameter in`[Etherman]` to the URL of the RPC Provider, along with the parameters `L2Coinbase` in `[SequenceSender]` and `SenderAddress` in `[Aggregator]` to the address we generated earlier.
 
 	```bash
 	source /tmp/cdk/.env

@@ -55,6 +55,6 @@ cd ~/cdk-validium/cdk-data-availability-0.0.3
 ## Run the bridge service
 
 ```bash
-cd ~/cdk-validium/cdk-bridge-service 
+cd ~/cdk-validium/zkevm-bridge-service 
 ./dist/zkevm-bridge run --cfg /tmp/cdk/bridge-config.toml
 ```

@@ -27,7 +27,7 @@
     git clone --depth 1 --branch v0.0.3 https://github.com/0xPolygon/cdk-validium-node.git
     ```
 
-2. Download and extract version `0.0.3` of `cdk-data-availability` as a tar.gz file. 
+2. Clone the `0.0.3` release of `cdk-data-availability`. 
 
     ```bash
     git clone --depth 1 --branch v0.0.3 https://github.com/0xPolygon/cdk-data-availability.git
