@@ -1,6 +1,6 @@
-### Testing the zkEVM 
+### Testing Polygon type-1 zkEVM 
 
-Find a parser and test runner for testing compatible and common Ethereum full node tests against Polygon type-1 zkEVM, here https://github.com/0xPolygonZero/evm-tests.
+Find a parser and test runner for testing compatible and common Ethereum full node tests against Polygon type-1 zkEVM [here](https://github.com/0xPolygonZero/evm-tests).
 
 Polygon type-1 zkEVM passes all relevant and official [Ethereum tests](https://github.com/ethereum/tests/).
 
@@ -20,7 +20,7 @@ Take the example of a t2d-standard-60 GCP instance, where each vCPU has 4GB memo
 - 0.000463 USD / GB hour
 
 We obtain the following hourly cost, $(60 \times 0.00346) + (240 \times 0.000463) = 0.31872$ USD per hour. 
-The total cost per block is given by: $\texttt{(Proving time per hr)} \times 0.31872$.
+The total cost per block is given by: $\texttt{(Proving time per hr)} \times 0.31872$ USD.
 
 The table below displays proving costs per transaction per hour.
 
