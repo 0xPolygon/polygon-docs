@@ -48,7 +48,7 @@ Logs of launched services can be inspected with this command:
 docker logs eth-pos-devnet-geth-1 -f
 ```
 
-# Available Features
+# Available features
 
 -   Starts from the Capella Ethereum hard fork.
 -   The network launches with a [Validator Deposit Contract](https://github.com/ethereum/consensus-specs/blob/dev/solidity_deposit_contract/deposit_contract.sol) deployed at the address `0x4242424242424242424242424242424242424242`. This can be used to onboard new validators into the network by depositing 32 ETH into the contract.
@@ -58,7 +58,7 @@ docker logs eth-pos-devnet-geth-1 -f
 -   The Prysm client's REST APIs are available at `http://beacon-chain:3500`. For more info on what these APIs are, see [here](https://ethereum.github.io/beacon-APIs/)
 -   The Prysm client also exposes a gRPC API at `http://beacon-chain:4000`.
 
-# Type 1 Prover Testing Procedure
+# Type 1 prover testing procedure
 
 The aim of this devnet setup is to use Polygon Type-1 Prover to test Erigon state witnesses.
 
@@ -125,7 +125,7 @@ Next is a procedure for creating some test data.
     ```
 
 
-## Operational Notes
+## Operational notes
 
 - Pay attention to memory usage on the system running
   `zero-bin`. Certain transactions can consume a lot of memory and
@@ -146,7 +146,7 @@ We expect that the following transaction types or use-cases should to be proved 
 - ERC-20 mints & transfers
 - ERC-721 mintes & transfers
 
-### Short Cuts
+### Short cuts
 
 This is a shortcut to create the genesis file allocations for our
 mnemonic. This has already been hard-coded into the genesis file. 
