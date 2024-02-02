@@ -3,11 +3,11 @@ So, it is similar to [`eth-proof`](https://github.com/wborgeaud/eth-proof) but f
 
 ## Quick Start
 
-There two ways to run this prover. The simplest way to get started is
+There are two ways to run this prover. The simplest way to get started is
 to use the `in-memory` runtime of
 [Paladin](https://github.com/0xPolygonZero/paladin). This requires
-very little setup, but it's not really suitable for a large scale
-test. 
+very little setup, but it's not really suitable for large scale
+testing. 
 
 The other method for testing the prover is to leverage an
 [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol)
