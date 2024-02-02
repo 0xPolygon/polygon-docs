@@ -1,6 +1,0 @@
-[submodule "docs/miden-base"]
-	path = docs/miden-base
-	url = https://github.com/0xPolygonMiden/miden-base.git
-[submodule "docs/miden-vm"]
-	path = docs/miden-vm
-	url = https://github.com/0xPolygonMiden/miden-vm.git
