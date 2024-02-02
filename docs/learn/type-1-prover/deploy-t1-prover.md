@@ -1,7 +1,7 @@
 This document provides guidelines on how to run Polygon Type-1 prover, specifically for proving transactions, but with the option to test full blocks of less than 4M gas.
 So, it is similar to [`eth-proof`](https://github.com/wborgeaud/eth-proof) but for transaction proofs.
 
-## Quick Start
+## Quick start
 
 There are two ways to run this prover. The simplest way to get started is
 to use the `in-memory` runtime of
@@ -52,7 +52,7 @@ is the _last_ transaction hash in the block.
 Once you've successfully generated a witness, you're ready to start
 proving either with the `in-memory` run time or the `amqp` runtime.
 
-### In Memory Proving
+### In-memory proving
 
 Running the prover with the `in-memory` setup requires no setup. You
 can attempt to generate a proof with a command like this.
@@ -78,7 +78,7 @@ state root of the preceding block. You can adjust the `--num-workers`
 flag based on the number of available compute resources. As a rule of
 thumb, you'd probably want at least 8 cores per worker.
 
-### AMQP Proving
+### AMQP proving
 
 Proving in a distributed compute environment depends on an AMQP
 server. We're not going to cover the setup of RabbitMQ, but assuming
@@ -100,11 +100,10 @@ MEMORY_CIRCUIT_SIZE="17..30" \
 paladin-worker --runtime amqp --amqp-uri=amqp://localhost:5672
 ```
 
-This will start the worker and have it await tasks. Depending on the
-size of your machine, you may be able to run several workers on the
+This will start the worker and have it await tasks. Depending on your machine's system capacity, you can run several workers on the
 same operating system. An example [systemd
 service](https://github.com/0xPolygonZero/eth-tx-proof/blob/jhilliard/deployment/deploy/paladin-worker@.service) is included. Once that
-service is installed, you could enable and start 16 workers on the
+service is installed, you'll be able to enable up to 16 workers on the
 same VM like this:
 
 ```bash
