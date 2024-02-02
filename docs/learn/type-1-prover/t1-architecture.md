@@ -11,7 +11,7 @@ A naïve design strategy would be to utilize a single table, which is solely ded
 
 Since most of the operations involved in the EVM can be independently executed, the execution trace is split into separate STARK modules, where each is responsible for ensuring integrity of its own computations. 
 
-These STARK modules are; 
+These STARK modules are: 
 
 - **Arithmetic module** handles binary operations including ordinary addition, multiplication, subtraction and division, comparison operations such as 'Less than' and 'Greater than', as well as ternary operations like modular operations. 
 - **Keccak module** is responsible for computing a Keccak permutation.
@@ -63,7 +63,7 @@ This innovative approach holds the promise of a succinct, verifiable chain state
 
 ### Documentation remarks
 
-The documentation of Polygon Type-1 zkEVM is still WIP, some of the documents are in the Github repo.
+The documentation of Polygon Type-1 zkEVM is still WIP, and some of the documents are in the Github repo.
 
 The STARK modules, which are also referred to as **STARK tables**, have been documented in the Github repo [here](https://github.com/0xPolygonZero/plonky2/tree/main/evm/spec/tables). The **CPU component** is documented below, while the **CPU logic** is in the [repo](https://github.com/0xPolygonZero/plonky2/blob/main/evm/spec/cpulogic.tex).
 
