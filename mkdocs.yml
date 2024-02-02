@@ -9,8 +9,20 @@ site_url: https://docs.polygon.technology/
 theme:
   name: material
   palette:
+    # Palette toggle for light mode
+    - scheme: default
       primary: white
-      accent: deep purple
+      accent: purple
+      toggle:
+        icon: material/eye
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      accent: purple
+      toggle:
+        icon: material/eye-outline
+        name: Switch to light mode
   language: en
   custom_dir: overrides
   favicon: img/favicon.ico
@@ -590,7 +602,6 @@ extra:
       make our documentation better.
 
 extra_css:
-  - _site_essentials/stylesheets/polygon-docs.webflow.css
   - _site_essentials/stylesheets/extra.css
   - https://fonts.googleapis.com/icon?family=Material+Icons
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
