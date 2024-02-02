@@ -63,7 +63,7 @@ Let's start setting up our zkNode:
 1. Launch your command line/terminal and set the variables using below commands:
 
     ```bash
-    # define the network("mainnet" or "testnet")
+    # define the network("mainnet" or "cardona" or "testnet")
     ZKEVM_NET=testnet
 
     # define installation path
