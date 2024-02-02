@@ -58,7 +58,17 @@ nav:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
-          - Validium: cdk/get-started/deploy-validium.md
+          - Validium: 
+              - Introduction: cdk/get-started/deploy-validium/index.md
+              - Deploy contracts:
+                  - Prerequisites: cdk/get-started/deploy-validium/contracts/prerequisites.md
+                  - Set up: cdk/get-started/deploy-validium/contracts/set-up.md
+                  - Deploy contracts: cdk/get-started/deploy-validium/contracts/deploy-contracts.md
+              - Deploy node:
+                  - Prerequisites: cdk/get-started/deploy-validium/node/prerequisites.md
+                  - Set up: cdk/get-started/deploy-validium/node/set-up.md
+                  - Configure the deployment: cdk/get-started/deploy-validium/node/configure-deployment.md
+                  - Run node and services: cdk/get-started/deploy-validium/node/run-node-services.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
               - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
