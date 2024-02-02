@@ -26,7 +26,7 @@ Use the following details to connect wallets to Cardona:
 
 - Currency symbol: ETH
 
-- Block Explorer: https://explorer-ui.cardona.zkevm-rpc.com
+- Explorer: https://cardona-zkevm.polygonscan.com/
 
 We use the same faucet for testnet tokens, here: https://faucet.polygon.technology/
 
