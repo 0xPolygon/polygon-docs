@@ -1,3 +1,16 @@
+<style>
+  [data-md-color-scheme="default"] {
+    .md-main, .md-sidebar__scrollwrap {
+          background-color: #ebf5fa !important;
+    }
+   }
+  [data-md-color-scheme="slate"] {
+      .md-main, .md-sidebar__scrollwrap {
+            background-color: #b292f7 !important;
+      }
+   }
+</style>
+
 # Aggregation layer
 
 Solving the scalability problem in blockchains means scaling access to shared state and liquidity across many chains. To do so requires a new approach to blockchain architecture, namely, aggregated blockchains. Polygon Labs researchers and engineers have designed a solution -- the **aggregation layer**, or **AggLayer** -- which will seamlessly connect any ZK-enabled L2 or L1 chain.

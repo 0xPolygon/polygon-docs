@@ -1,9 +1,19 @@
+<style>
+  [data-md-color-scheme="default"] {
+    .md-main, .md-sidebar__scrollwrap {
+          background-color: #ebf5fa !important;
+    }
+   }
+  [data-md-color-scheme="slate"] {
+      .md-main, .md-sidebar__scrollwrap {
+            background-color: #b292f7 !important;
+      }
+   }
+</style>
+
 The Polygon Knowledge Layer consists of two parts. Firstly, documents that developers need in order to build with Polygon protocols. Secondly, resources necessary for learning about Polygon technologies.
 
-The Learn section outlines scaling technologies, both live and in-development Polygon protocols, with the intention to display how they will all fit together. 
-As these scaling technologies go live, details of the concepts will in tandem be documented and published.
-
-This section gives you a peek into the future, the Polygon 2.0 vision which is community-driven.
+The Learn section gives you a peek into the future, the Polygon 2.0 vision which is community-driven.
 
 ## Polygon 2.0: The basics
 

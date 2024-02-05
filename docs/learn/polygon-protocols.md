@@ -1,3 +1,16 @@
+<style>
+  [data-md-color-scheme="default"] {
+    .md-main, .md-sidebar__scrollwrap {
+          background-color: #ebf5fa !important;
+    }
+   }
+  [data-md-color-scheme="slate"] {
+      .md-main, .md-sidebar__scrollwrap {
+            background-color: #b292f7 !important;
+      }
+   }
+</style>
+
 ## Polygon PoS 
 
 Polygon PoS is a widely-adopted EVM-compatible sidechain designed for low transaction costs and fast transaction times.

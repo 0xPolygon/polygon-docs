@@ -1,85 +1,72 @@
 ---
 hide:
+- navigation
 - toc
 ---
 
 <style>
    .git-revision-date-localized-plugin, .md-source-file, .md-content__button.md-icon {
-      display: none;
+        display: none;
+   }
+  [data-md-color-scheme="default"] {
+      .md-main, .md-sidebar__scrollwrap {
+            background-color: #ebf5fa !important;
+      }
+   }
+  [data-md-color-scheme="slate"] {
+      .md-main, .md-sidebar__scrollwrap {
+            background-color: #b292f7 !important;
+      }
    }
 </style>
 
 <div class="section-wrapper product-section-head">
       <div class="hero-image"><img src="../img/home/main-img.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
    <div class="hero-left">
-      <h1 class="hero-heading">Developer tools</h1>
-      <p class="hero-subtext">This section describes some of the in-house and third-party tools that are used by developers to work with Polygon products and services.</p>
-      <p class="hero-subtext">Find out how to access data, code against blockchain networks, use oracles, and much more. </p>
+      <h1 class="hero-heading">Learn</h1>
+      <p class="hero-subtext">The Learn section of docs contains resources, articles, papers, and protocol definitions for learning about Polygon and with specific emphasis on technology in development and the Polygon future vision.</p>
+      <p class="hero-subtext">Find out about scaling technologies, both live and in-development Polygon protocols, and how everything fits together. </p>
    </div>
 </div>
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./dApp-development/common-tools/hardhat">
+      <a href="./agglayer">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Smart contracts</div>
+            <div class="feature-card-heading">What is the AggLayer?</div>
          </div>
-         <p class="feature-paragraph">Common software for designing, building, and deploying smart contracts.</p>
+         <p class="feature-paragraph">Polygon's new aggregation layer is the holy grail of seamless chain interoperability.</p>
       </a>
    </div>
    <div class="grid-item">
-      <a href="./gas/matic-faucet">
+      <a href="./liquidity-and-scalability">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Gas</div>
+            <div class="feature-card-heading">Unified liquidity & scalability</div>
          </div>
-         <p class="feature-paragraph">The Polygon MATIC gas faucet and gas estimation tools.</p>
+         <p class="feature-paragraph">Read about Polygon's vision of unlimited network liquidity and scalability.</p>
       </a>
    </div>
    <div class="grid-item">
-      <a href="./data/the-graph/overview">
+      <a href="https://polygon.technology/blog/polygon-2-0-protocol-vision-and-architecture">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Data</div>
+            <div class="feature-card-heading">Architecture deep-dive</div>
          </div>
-         <p class="feature-paragraph">Software tools, such as Graph, used for efficient data manipulation on Polygon networks.</p>
+         <p class="feature-paragraph">Check out the blog post for a deep-dive into Polygon's architecture vision.</p>
+      </a>
+   </div>
+    <div class="grid-item">
+      <a href="./welcome.md">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Welcome</div>
+         </div>
+         <p class="feature-paragraph">Introduction to the Learn section.</p>
       </a>
    </div>
    <div class="grid-item">
-      <a href="./matic-js/get-started">
+      <a href="./polygon-protocols.md">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">MaticJS</div>
+            <div class="feature-card-heading">Polygon 2.0</div>
          </div>
-         <p class="feature-paragraph">The <code>matic.js</code> library used to interact with Polygon networks and services.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./storage/ipfs">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Storage</div>
-         </div>
-         <p class="feature-paragraph">Interact with blockchain storage services such as IPFS.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./oracles/getting-started">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Oracles</div>
-         </div>
-         <p class="feature-paragraph">Oracle services used for accessing accurate offline data.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./wallets/getting-started">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Wallets</div>
-         </div>
-         <p class="feature-paragraph">Using Polygon-compatible external wallets, such as MetaMask, with Polygon networks.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="https://polygonscan.com/">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Block explorers</div>
-         </div>
-         <p class="feature-paragraph">Quick links to useful block explorers such as https://polygonscan.com/ for example.</p>
+         <p class="feature-paragraph">What is Polygon 2.0?</p>
       </a>
    </div>
 </div>
