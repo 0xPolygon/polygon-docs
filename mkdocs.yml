@@ -443,7 +443,6 @@ nav:
               - Replit: tools/dApp-development/common-tools/replit.md
       - Third-party tutorials:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
-
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
@@ -572,6 +571,7 @@ nav:
           - OKLink: https://www.oklink.com/polygon
   - Learn:
       - Learn: learn/index.md
+      - Welcome: learn/welcome.md
       - Unified liquidity and scalability: learn/liquidity-and-scalability.md
       - Aggregation layer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
