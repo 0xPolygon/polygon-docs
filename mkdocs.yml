@@ -425,9 +425,7 @@ nav:
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
-          #- dApp launchpad: tools/dApp-development/dApp-launchpad.md
-          - Develop on PoS:
-              - Work with smart contracts: tools/dApp-development/pos/index.md
+          - Smart contract development on PoS:
               - Alchemy: tools/dApp-development/pos/alchemy.md
               - ChainIDE: tools/dApp-development/pos/chainide.md
               - ChainStack: tools/dApp-development/pos/chainstack.md
@@ -443,7 +441,6 @@ nav:
               - Replit: tools/dApp-development/common-tools/replit.md
       - Third-party tutorials:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
-
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
