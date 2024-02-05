@@ -1,30 +1,26 @@
-!!! warning "Third-party content"
+!!! note "Content disclaimer"
 
-    Polygon technical documentation may contain third-party content, including websites, products, and services, that are provided for informational purposes only.
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
-    Polygon Labs does not endorse, warrant, or make any representations regarding the accuracy, quality, reliability, or legality of any third-party websites, products, or services. If you decide to access any third-party content, you do so entirely at your own risk and subject to the terms and conditions of use for such websites. Polygon Labs reserves the right to withdraw such references and links without notice.
+## Summary
 
-    Polygon technical documentation serves as an industry public good and is made available under the [MIT License](https://opensource.org/license/mit/). In addition, please view the official [Polygon Labs Terms of Use](https://polygon.technology/terms-of-use).
+### What you will learn
 
-## What you will learn
+You will learn how to use Alchemy's platform to:
 
-To create a smart contract in this tutorial, you will learn how to use Alchemy's platform to:
+- Create a smart contract application.
+- Check a wallet's balance.
+- Verify contract calls on a blockchain explorer.
 
-- Create a smart contract application
-- Check a wallet's balance
-- Verify contract calls in a blockchain explorer
+### What you will do
 
-## What you will do
+1. Create an app on Alchemy.
+2. Create a wallet address with MetaMask.
+3. Add balance to the wallet (using test tokens).
+4. Use Hardhat and Ethers.js to compile and deploy the project.
+5. Check contract status on Alchemy's platform.
 
-Following the tutorial, you will:
-
-1. Get started creating an app on Alchemy
-2. Create a wallet address with Metamask
-3. Add balance to the wallet (using test tokens)
-4. Use Hardhat and Ethers.js to compile and deploy the project
-5. Check contract status on Alchemy's platform
-
-## Create and Deploy your Smart Contract
+## Create and deploy smart contract
 
 ### Connect to the Polygon network
 
