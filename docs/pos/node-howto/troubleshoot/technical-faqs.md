@@ -382,10 +382,13 @@ Delete Bor: `sudo rm -rf /var/lib/bor`
 
 ### 28. What to do when you get "Wrong Block.Header.AppHash." error
 
-This error usually occurs due to Infura requests getting exhausted. When you setup a node on Polygon, you add an Infura Key to the Config file (Heimdall). By default you are allowed 100k Requests per day, if this limit is crossed, then you would face such problems. To resolve this you can create a new API key and add it to the `config.toml` file.
+If your node fails with an appHash error, you'll need to restore it using a snapshot. See the [guide available here](/pos/node-howto/snapshots).
 
-!!!tip
-    Stay in the know
+Please make sure you are either using the chain flag in your service file, or the chain flag is set in your `config/heimdall-config.toml` file.
 
-    Keep up with the latest node and validator updates from the Polygon team and the community by subscribing to the [Polygon notification groups](https://polygon.technology/notifications/).
+If you are using Docker, please specify the chain flag in your `config/heimdall-config.toml` file.
+
+!!! tip "Stay in the know"
+
+    Keep up with the latest node and validator updates from the Polygon team and the community by subscribing to the [announcements made on the Polygon forum](https://forum.polygon.technology/c/announcement/6).
 

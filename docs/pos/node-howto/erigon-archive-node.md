@@ -9,7 +9,7 @@
     - Mumbai testnet archive node: 2TB
     - SSD or NVMe. Bear in mind that SSD performance deteriorates when close to capacity
 - **Golang:** >= v1.20
-- **C++:** GCC 10+ 
+- **GCC:** >= v10
 
 !!! note "HDD not recommended"
 
