@@ -17,9 +17,8 @@
 
 ### Mainnet
 
-| Token name        | Bridge | Parent chain address: Ethereum mainnet                                                                                | Child chain: Polygon network                                                                                                      |
-
-| ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Token name        | Bridge | Parent chain address: Ethereum mainnet                                                                                | Child chain: Polygon network                                                                                                        |
+| ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | PoS\-WETH         | PoS    | [0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE](https://etherscan.io/address/0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE) | [0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619](https://polygonscan.com/address/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619) |
 | PoS\-USDC         | PoS    | [0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) | [0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174](https://polygonscan.com/address/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174) |
 | PoS\-COMP         | PoS    | [0xc00e94cb662c3520282e6f5717214004a7f26888](https://etherscan.io/address/0xc00e94cb662c3520282e6f5717214004a7f26888) | [0x8505b9d2254A7Ae468c0E9dd10Ccea3A837aef5c](https://polygonscan.com/address/0x8505b9d2254A7Ae468c0E9dd10Ccea3A837aef5c) |
@@ -37,5 +36,5 @@
 | DummyERC20Token   | PoS    | [0xf2F3bD7Ca5746C5fac518f67D1BE87805a2Be82A](https://etherscan.io/address/0xf2F3bD7Ca5746C5fac518f67D1BE87805a2Be82A) | [0xeFfdCB49C2D0EF813764B709Ca3c6fe71f230E3e](https://polygonscan.com/address/0xeFfdCB49C2D0EF813764B709Ca3c6fe71f230E3e) |
 | DummyERC721Token  | PoS    | [0x71B821aa52a49F32EEd535fCA6Eb5aa130085978](https://etherscan.io/address/0x71B821aa52a49F32EEd535fCA6Eb5aa130085978) | [0x6EBEAC13f6403D19C95b6B75008B12fd21a93Aab](https://polygonscan.com/address/0x6EBEAC13f6403D19C95b6B75008B12fd21a93Aab) |
 | DummyERC1155Token | PoS    | [0x556f501CF8a43216Df5bc9cC57Eb04D4FFAA9e6D](https://etherscan.io/address/0x556f501CF8a43216Df5bc9cC57Eb04D4FFAA9e6D) | [0xA0c68C638235ee32657e8f720a23ceC1bFc77C77](https://polygonscan.com/address/0xA0c68C638235ee32657e8f720a23ceC1bFc77C77) |
-| WDEV | PoS    | [0x4a5df63b0c37b38515e4ee51baf40edd420bf7d5](https://etherscan.io/address/0x4a5df63b0c37b38515e4ee51baf40edd420bf7d5) | [0xa5577d1cec2583058a6bd6d5deac44797c205701](https://polygonscan.com/address/0xa5577d1cec2583058a6bd6d5deac44797c205701) |
+| WDEV              | PoS    | [0x4a5df63b0c37b38515e4ee51baf40edd420bf7d5](https://etherscan.io/address/0x4a5df63b0c37b38515e4ee51baf40edd420bf7d5) | [0xa5577d1cec2583058a6bd6d5deac44797c205701](https://polygonscan.com/address/0xa5577d1cec2583058a6bd6d5deac44797c205701) |
 
