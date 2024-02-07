@@ -63,7 +63,7 @@ Let's start setting up our zkNode:
 1. Launch your command line/terminal and set the variables using below commands:
 
     ```bash
-    # define the network("mainnet" or "cardona" or "testnet")
+    # define the network("mainnet" or "testnet")
     ZKEVM_NET=testnet
 
     # define installation path
@@ -91,6 +91,8 @@ Let's start setting up our zkNode:
     Edit the .env file with your favourite editor (we'll use nano in this guide): ```nano $ZKEVM_CONFIG_DIR/.env```
 
       ```bash
+      # ZKEVM_NETWORK = "mainnet" or ZKEVM_NETWORK = "cardona" or ZKEVM_NETWORK = "testnet"
+      
       # URL of a JSON RPC for Goerli
       ZKEVM_NODE_ETHERMAN_URL = "http://your.L1node.url"
 
