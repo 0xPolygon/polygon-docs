@@ -50,6 +50,12 @@ theme:
 
 nav:
   - Home: index.md
+  - Learn:
+    - Learn: learn/index.md
+    - Introduction: learn/introduction.md
+    - Unified liquidity and scalability: learn/liquidity-and-scalability.md
+    - Polygon protocols: learn/polygon-protocols.md
+    - Polygon 2.0 architecture: learn/deep-dive-arch.md
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
@@ -92,6 +98,7 @@ nav:
         - Data availability: cdk/concepts/dac.md
       - Additional resources:
         - CDK repos: cdk/resources/cdk-repo-reference.md
+
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
