@@ -81,7 +81,7 @@ nav:
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
-        - Manage allowlists with policies: cdk/node-howto/manage-policies.md
+        - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
         - DAC: cdk/architecture/dac.md
       - Specification:
