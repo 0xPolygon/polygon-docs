@@ -67,7 +67,7 @@ Let's go over each part in detail.
 
 <!-- Multiple chains post proofs to the AggLayer that are then aggregated before being published to Ethereum. This way, the Polygon ecosystem can post an unlimited number of chain updates for the cost of a single chain’s update, amortizing the cost of proof verification across many more transactions, and allowing for more frequent finalization. -->
 
-Here's what happens in the AggLayer when users interact with individual Polygon chains $C_i$.
+Here's what happens in the AggLayer when users interact with individual chains $C_i$.
 
 <!-- These can be thought of as copies of the Polygon zkEVM chain.  -->
   
@@ -124,11 +124,11 @@ The `submitBatch` data interface, used to transmit proofs between chains and the
 
 ### Batch confirmation and finalization
 
-The Aggregation Layer functions in three phases. Suppose that Chain A is a ZK-powered chain running in the Polygon ecosystem.
+AggLayer functions in three phases. Suppose that Chain A is a ZK-powered chain running in the Polygon ecosystem.
 
-1. **Pre-Confirmation:** Chain A submits a header for a new block/batch A1 to the AggLayer along with a light client proof. The header includes commitments to all other blocks and bundles that A1 depends on (Bi, Ci, etc). When the new batch is accepted without a validity proof, it’s considered “pre-confirmed” by the AggLayer.
-2. **Confirmation:** Chain A, or any full node of A, generates a proof for A1 and submits it to the AggLayer. Once the proof is verified by the AggLayer, A1 is confirmed if all batches that it depends on are also confirmed.
-3. **Finalization:** After A1 is confirmed, its proof is aggregated alongside batches from other rollups into a single proof that is posted to Ethereum. The aggregated proof enforces that dependent chain states and bundles are consistent.
+1. **Pre-Confirmation:** Chain A submits a header for a new block/batch $A_1$ to the AggLayer along with a light client proof. The header includes commitments to all other blocks and bundles that $A_1$ depends on ($B_i$, $C_i$, etc). When the new batch is accepted without a validity proof, it’s considered “pre-confirmed” by the AggLayer.
+2. **Confirmation:** Chain A, or any full node of A, generates a proof for $A_1$ and submits it to the AggLayer. Once the proof is verified by the AggLayer, $A_1$ is confirmed if all batches that it depends on are also confirmed.
+3. **Finalization:** After $A_1$ is confirmed, its proof is aggregated alongside batches from other rollups into a single proof that is posted to Ethereum. The aggregated proof enforces that dependent chain states and bundles are consistent.
 
 Chains can navigate the tradeoff space between latency and liveness guarantees for themselves. A chain might choose to interoperate with another chain after the pre-confirmation step for super low-latency cross-chain transactions, but fundamentally, this model is compatible with chains waiting for confirmation, or even for finalization. The safety guarantee for cross-chain transactions is enforced at the third step. 
 
