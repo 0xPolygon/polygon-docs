@@ -63,7 +63,7 @@ Let's start setting up our zkNode:
 1. Launch your command line/terminal and set the variables using below commands:
 
     ```bash
-    # define the network("mainnet" or "testnet")
+    # define the network("mainnet" or "cardona" or "testnet")
     ZKEVM_NET=testnet
 
     # define installation path
@@ -73,20 +73,28 @@ Let's start setting up our zkNode:
     ZKEVM_CONFIG_DIR=./path_to_config
     ```
 
-1. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command.
+2. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command. Also, unlike the mainnet and the Goerli testnet that use the latest version, Cardona testnet uses a specific version.
 
-    ```bash
+   So use the next `curl` command specifically for Cardona:
+   
+   ```bash
+    curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/download/v0.5.5/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
+   ```
+
+   And use this second command for either mainnet or testnet (Goerli):
+   
+   ```bash
     curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/latest/download/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
     ```
 
-3. Copy the `example.env` file with the environment parameters:
+4. Copy the `example.env` file with the environment parameters:
 
     ```sh
     cp $ZKEVM_DIR/$ZKEVM_NET/example.env $ZKEVM_CONFIG_DIR/.env
 
     ```
 
-4. The `example.env` file must be modified according to your configurations.
+5. The `example.env` file must be modified according to your configurations.
 
     Edit the .env file with your favourite editor (we'll use nano in this guide): ```nano $ZKEVM_CONFIG_DIR/.env```
 
@@ -103,13 +111,13 @@ Let's start setting up our zkNode:
       ZKEVM_NODE_POOLDB_DATA_DIR = "/path/to/persistent/data/pooldb"
       ```
 
-5. To run the zkNode instance, run the following command:
+6. To run the zkNode instance, run the following command:
 
     ```bash
     sudo docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml up -d
     ```
 
-6. Run this command to check if everything went well and all the components are running properly:
+7. Run this command to check if everything went well and all the components are running properly:
 
     ```bash
     docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml ps
@@ -122,7 +130,7 @@ Let's start setting up our zkNode:
       - **zkevm-pool-db**
       - **zkevm-prover**
 
-7. You should now be able to run queries to the JSON-RPC endpoint at `http://localhost:8545`.
+8. You should now be able to run queries to the JSON-RPC endpoint at `http://localhost:8545`.
 
 ## Testing
 
