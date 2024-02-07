@@ -1,6 +1,6 @@
 # Aggregation layer
 
-Solving the scalability problem in blockchains means scaling access to shared state and liquidity across many chains. To do so requires a new approach to blockchain architecture, namely, aggregated blockchains. Polygon Labs researchers and engineers have designed a solution -- the **aggregation layer**, or **AggLayer** -- which will seamlessly connect any ZK-enabled L2 or L1 chain.
+Solving the scalability problem in blockchains means scaling access to shared state and liquidity across multiple chains. To do so requires a new approach to blockchain architecture, namely, aggregated blockchains. Polygon Labs researchers and engineers have designed a solution -- the **aggregation layer**, or **AggLayer** -- which will seamlessly connect any ZK-enabled L2 or L1 chain for near-instant cross-chain transactions, and shared state and liquidity across chains.
 
 In this document, we look at:
 
@@ -12,9 +12,9 @@ In this document, we look at:
 
 ### Fragmented liquidity
 
-Although developers have now the freedom to build on chains that suit their needs, or design their own chains, the current setup lacks cross-chain interoperability.
+Although developers today have the freedom to build on chains that suit their needs, or design their own chains, the current setup lacks cross-chain interoperability.
 
-As seen in the above diagram, each chain connects directly to Ethereum. Since every chain has its separate and exclusive bridge contract, any transfer of assets from Chain A to Chain B must go via Ethereum. This means a simple cross-chain transfer of assets involves more chain interactions than necessary.
+As seen in the above diagram, each chain connects directly to Ethereum via a bridge contract, and so any transfer of assets from Chain A to Chain B must go via Ethereum. 
 
 Reliance on bridging in order to connect what are essentially isolated networks, is a common interoperability solution. But it translates to fragmented liquidity, and a less than ideal user experience.
 
@@ -42,19 +42,22 @@ Critical in this is to guarantee that it should be impossible for Alice to do an
 
 The security of atomic transactions is based on this critical guarantee that users do not lose their funds and cannot double spend their tokens.
 
-Therefore, key to realizing a unified Polygon ecosystem is atomic guarantees. 
-
+Therefore, atomic guarantees are key to enable low-latency interactions between chains and realizing a unified Polygon ecosystem that feels like using a single chain.
 
 ## AggLayer design
 
-The solution to the current fragmentation is a single AggLayer, which can be setup as either centralized or decentralized.
+The solution to the current fragmentation is an ecosystem of interconnected, ZK-powered L2s. The infrastructure that connects them, the AggLayer, is a decentralized aggregation protocol operated by staked nodes that ensure safety for low-latency, cross-chain transactions and a unified bridge. 
 
-This means L2 chains submit proofs and state updates to the AggLayer, where the proofs are aggregated and submitted to Ethereum. 
+!!! note
+    In this context, “safety” means the following:
+    It’s impossible for a rollup’s state to be finalized/settled on Ethereum if that chain state relies on an invalid or non-finalized state from another chain, or if it includes a transaction from an atomic bundle that has not executed successfully on all other chains.
+
+These chains submit proofs and state updates to the AggLayer, where the proofs are aggregated, and then settled on Ethereum. With atomic cross-chain guarantees, chains can safely interoperate at super-low latencies without having to wait for state finalization on Ethereum.
 
 The overall design of AggLayer is outlined in three parts:
 
 - Proof aggregation.
-- Optimistic batch confirmation.
+- Batch confirmation and finalization.
 - Atomic cross-chain interaction.
 
 Let's go over each part in detail.
@@ -119,25 +122,28 @@ The `submitBatch` data interface, used to transmit proofs between chains and the
 | Cross-Chain Dependencies |     Vec<*>      | Cross-chain state root dependencies and bundles that the batch builds on. |
 
 
+### Batch confirmation and finalization
 
+The Aggregation Layer functions in three phases. Suppose that Chain A is a ZK-powered chain running in the Polygon ecosystem.
 
-### Optimistic confirmation
+1. **Pre-Confirmation:** Chain A submits a header for a new block/batch A1 to the AggLayer along with a light client proof. The header includes commitments to all other blocks and bundles that A1 depends on (Bi, Ci, etc). When the new batch is accepted without a validity proof, it’s considered “pre-confirmed” by the AggLayer.
+2. **Confirmation:** Chain A, or any full node of A, generates a proof for A1 and submits it to the AggLayer. Once the proof is verified by the AggLayer, A1 is confirmed if all batches that it depends on are also confirmed.
+3. **Finalization:** After A1 is confirmed, its proof is aggregated alongside batches from other rollups into a single proof that is posted to Ethereum. The aggregated proof enforces that dependent chain states and bundles are consistent.
 
-The problem with the aggregation layer, as described, is that it suffers from high latency. For a user to trust a message from another chain, they must have a proof that the message is the output of a valid batch, and a guarantee that the batch that produced the message has either already been, or will be finalized on Ethereum.
-    
-Currently, proving time for a batch is a few minutes, and batches are posted to Ethereum every 30-60 minutes, which prohibits fast cross-chain messaging and interoperability.
-    
+Chains can navigate the tradeoff space between latency and liveness guarantees for themselves. A chain might choose to interoperate with another chain after the pre-confirmation step for super low-latency cross-chain transactions, but fundamentally, this model is compatible with chains waiting for confirmation, or even for finalization. The safety guarantee for cross-chain transactions is enforced at the third step. 
+
 In order to reduce latency to levels that make cross-chain interactions feel like using a single chain, we need to safely confirm batches before:
 
   1. A proof is generated (validity).
   2. A batch is posted to Ethereum (finality).
 
+Let’s dig further into how this design enables safe cross-chain interaction.
 
 #### Finality
     
 We can derive the finality property from the aggregation layer: as soon as a batch is pre-confirmed by the aggregation layer, it is considered weakly finalized, meaning that it's only possible to revert a pre-confirmed batch and post a conflicting batch to Ethereum if both the aggregator layer and the chain collude. 
 
-While it's possible that a chain could collude with the aggregation layer to fork, it's possible to slash both the aggregation layer and the chain for equivocation. Moreover, this attack already exists ith a single L2, as the sequencer RPC can confirm transactions for users before the transactions are posted to L1 and then publish a conflicting batch.
+While it's possible that a chain could collude with the aggregation layer to fork, it's possible to slash both the aggregation layer and the chain for equivocation. Moreover, this attack already exists with a single L2, as the sequencer RPC can confirm transactions for users before the transactions are posted to L1 and then publish a conflicting batch.
     
 #### Validity
     
