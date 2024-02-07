@@ -427,9 +427,7 @@ nav:
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
-          #- dApp launchpad: tools/dApp-development/dApp-launchpad.md
-          - Develop on PoS:
-              - Work with smart contracts: tools/dApp-development/pos/index.md
+          - Smart contract development on PoS:
               - Alchemy: tools/dApp-development/pos/alchemy.md
               - ChainIDE: tools/dApp-development/pos/chainide.md
               - ChainStack: tools/dApp-development/pos/chainstack.md
@@ -444,8 +442,7 @@ nav:
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
       - Third-party tutorials:
-          - Alchemy subgraphs: https://docs.alchemy.com/docs/node-howto-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
-
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
@@ -575,9 +572,19 @@ nav:
   - Learn:
       - Learn: learn/index.md
       - Unified liquidity and scalability: learn/liquidity-and-scalability.md
-      - Aggregation layer: learn/agglayer.md
+      # - Aggregation layer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
       - Polygon 2.0 architecture: learn/deep-dive-arch.md
+      # - Polygon type-1 zkEVM:
+      #     - Polygon type-1 zkEVM: learn/type-1-prover/index.md 
+      #     - Types of zkEVMs: learn/type-1-prover/intro-t1-prover.md
+      #     - Type-1 design challenges: learn/type-1-prover/t1-design-challenge.md
+      #     - Architectural overview: learn/type-1-prover/t1-architecture.md
+      #     - How to run the type-1 prover: learn/type-1-prover/deploy-t1-prover.md
+      #     - Tests and proving costs: learn/type-1-prover/testing-and-proving-costs.md
+      #     - CPU component: learn/type-1-prover/t1-cpu-component.md
+      #     - CTL protocol: learn/type-1-prover/t1-ctl-protocol.md
+      #     - Range checks: learn/type-1-prover/t1-rangechecks.md
 
 extra:
   generator: false
