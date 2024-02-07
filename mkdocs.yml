@@ -573,16 +573,16 @@ nav:
       - Aggregation layer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
       - Polygon 2.0 architecture: learn/deep-dive-arch.md
-      - Polygon type-1 zkEVM:
-          - Polygon type-1 zkEVM: learn/type-1-prover/index.md 
-          - Types of zkEVMs: learn/type-1-prover/intro-t1-prover.md
-          - Type-1 design challenges: learn/type-1-prover/t1-design-challenge.md
-          - Architectural overview: learn/type-1-prover/t1-architecture.md
-          - How to run the type-1 prover: learn/type-1-prover/deploy-t1-prover.md
-          - Tests and proving costs: learn/type-1-prover/testing-and-proving-costs.md
-          - CPU component: learn/type-1-prover/t1-cpu-component.md
-          - CTL protocol: learn/type-1-prover/t1-ctl-protocol.md
-          - Range checks: learn/type-1-prover/t1-rangechecks.md
+      # - Polygon type-1 zkEVM:
+      #     - Polygon type-1 zkEVM: learn/type-1-prover/index.md 
+      #     - Types of zkEVMs: learn/type-1-prover/intro-t1-prover.md
+      #     - Type-1 design challenges: learn/type-1-prover/t1-design-challenge.md
+      #     - Architectural overview: learn/type-1-prover/t1-architecture.md
+      #     - How to run the type-1 prover: learn/type-1-prover/deploy-t1-prover.md
+      #     - Tests and proving costs: learn/type-1-prover/testing-and-proving-costs.md
+      #     - CPU component: learn/type-1-prover/t1-cpu-component.md
+      #     - CTL protocol: learn/type-1-prover/t1-ctl-protocol.md
+      #     - Range checks: learn/type-1-prover/t1-rangechecks.md
 
 extra:
   generator: false
