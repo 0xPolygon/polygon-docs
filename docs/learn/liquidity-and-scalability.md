@@ -1,3 +1,5 @@
+### Vision
+
 Polygon 2.0 envisions a network of ZK-powered L2s on Ethereum that unify liquidity across the ecosystem and can scale on demand. Here is how that vision comes into focus.
 
 ### Unified liquidity

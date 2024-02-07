@@ -37,7 +37,7 @@ hide:
 				<div class="flexbox-2-col">
 					<div class="flex-card-child">
 						<div class="flex-card-item header-item">
-							<div class="product-list-header"><img src="img/home/build-icon.svg" loading="lazy" alt="">
+							<div class="product-list-header"><img width="24px" src="img/home/build-icon.svg" loading="lazy" alt="">
 								<h3 class="heading-h3 margin-none">BUILD</h3>
 							</div>
 							<p class="feature-paragraph">Build today using Polygon technology. Select the protocol that best fits your needs.</p>
@@ -95,11 +95,29 @@ hide:
 					</div>
 					<div class="flex-card-child">
 						<div class="flex-card-item header-item">
-							<div class="product-list-header"><img src="img/home/learn-icon.svg" loading="lazy" alt="">
+							<div class="product-list-header"><img width="24px" src="img/home/learn-icon.svg" loading="lazy" alt="">
 								<h3 class="heading-h3 margin-none">LEARN</h3>
 							</div>
 							<p class="feature-paragraph">Deep dives only. Further your understanding of Polygon scaling technology.</p>
 						</div>
+						<a href="learn" class="flex-card-item w-inline-block">
+							<div class="product-list-item-header">
+								<div class="feature-card-heading">Learn Section</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+							</div>
+							<p class="feature-paragraph"> Resources focused on both current and future Polygon technologies. It features detailed guides, foundational concepts, and previews of upcoming innovations. </p>
+						</a>
+						<a href="learn" class="flex-card-item w-inline-block">
+							<div class="product-list-item-header">
+								<div class="feature-card-heading">Introduction</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+							</div>
+							<p class="feature-paragraph"> This segment aims to educate users about the intricacies of ZK-powered L2s on Ethereum, offering a blend of theoretical understanding and practical application.</p>
+						</a>
 						<a href="learn" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
 								<div class="feature-card-heading">Polygon 2.0</div>
@@ -125,7 +143,7 @@ hide:
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
 							</div>
-							<p class="feature-paragraph">The Polygon protocol that’s best for you. A guide and decision matrix.</p>
+							<p class="feature-paragraph">The Polygon protocol that’s best for you. A guide and decision matrix designed to empower users to navigate the evolving world of decentralized technologies.</p>
 						</a>
 					</div>
 				</div>

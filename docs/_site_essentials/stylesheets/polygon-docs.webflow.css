@@ -84,6 +84,7 @@ div.main h2 {
 
 h3 {
 	margin-bottom: 0 !important;
+	margin-top: 0px;
 	font-size: 24px;
 	font-weight: 600 !important;
 	line-height: 1.2;
@@ -263,6 +264,7 @@ div.main .nav-content {
 
 .heading-h3.margin-none {
 	margin-bottom: 0;
+	margin-block-start: 0px;
 }
 
 .feature-paragraph {
@@ -270,6 +272,7 @@ div.main .nav-content {
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 1.6;
+	margin-block-start: 0px;
 }
 
 .feature-card-heading {
@@ -513,6 +516,7 @@ div.main .nav-content {
 	align-items: center;
 	margin-bottom: 8px;
 	display: flex;
+
 }
 
 .status-tag {
@@ -520,17 +524,18 @@ div.main .nav-content {
 	background-color: #ebe1ff;
 	border-radius: 4px;
 	margin-left: 10px;
-	padding-left: 8px;
-	padding-right: 8px;
-	font-size: 12px;
-	font-weight: 500;
+	padding-left: 4px;
+	padding-right: 4px;
+	font-size: 10px;
+	font-weight: 600;
+
 }
 
 .product-list-item-header {
 	grid-row-gap: 12px;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	margin-bottom: 8px;
+	margin-bottom: 4px;
 	display: flex;
 	position: relative;
 }
@@ -543,6 +548,7 @@ div.main .nav-content {
 	width: 16px;
 	min-width: 16px;
 	margin-left: 8px;
+	margin-right: -24px;
 	display: inline-block;
 }
 
