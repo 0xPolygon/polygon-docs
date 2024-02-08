@@ -1,4 +1,4 @@
-This document provides a [docker-compose file](https://github.com/0xPolygonZero/eth-pos-devnet-provable/blob/959da56673c25c2094b1a23bc9e1fa9ae9a9db6e/docker-compose.yml) for running a fully-functional, local development network (devnet) for Ethereum with proof-of-stake enabled.
+This document shows you how to deploy a [docker-compose file](https://github.com/0xPolygonZero/eth-pos-devnet-provable/blob/959da56673c25c2094b1a23bc9e1fa9ae9a9db6e/docker-compose.yml) for running a fully-functional, local development network (devnet) for Ethereum with proof-of-stake enabled.
 
 The configuration uses [Prysm](https://github.com/prysmaticlabs/prysm) as a consensus client, with either [geth](https://github.com/ethereum/go-ethereum) or [erigon](https://github.com/ledgerwatch/erigon) as an execution client.
 
@@ -10,45 +10,45 @@ The devnet is fully functional and allows for deployment of smart contracts and 
 
 Running a devnet like this provides the best way to understand Ethereum proof-of-stake under the hood, and gives allowance for devs to tinker with various settings that suit their system design.
 
-# Running the devnet
+## Running the devnet
 
-First, checkout this [repository](https://github.com/0xPolygonZero/eth-pos-devnet-provable/tree/344fff4ee1032a0b095ab0c8d757e0ede72da156) and install docker. 
+1. Checkout this [repository](https://github.com/0xPolygonZero/eth-pos-devnet-provable/tree/344fff4ee1032a0b095ab0c8d757e0ede72da156) and install docker. 
 
-Then run the following command to fire up the devnet containers:
+2. Run the following command to fire up the devnet containers:
 
-``` bash
-docker compose up -d
-```
+    ``` bash
+    docker compose up -d
+    ```
 
-The statuses of the containers will be displayed as shown below:
+    You should see the statuses of the containers as shown below:
 
-``` example
-$ docker compose up -d
-[+] Running 7/7
-[+] Running 10/10
- ✔ Container eth-pos-devnet-create-beacon-chain-genesis-1  Exited
- ✔ Container eth-pos-devnet-create-beacon-node-keys-1      Exited
- ✔ Container eth-pos-devnet-beacon-chain-2-1               Started
- ✔ Container eth-pos-devnet-beacon-chain-1-1               Started
- ✔ Container eth-pos-devnet-geth-genesis-1                 Exited
- ✔ Container eth-pos-devnet-geth-import-1                  Exited
- ✔ Container eth-pos-devnet-erigon-genesis-1               Started
- ✔ Container eth-pos-devnet-validator-1                    Started
- ✔ Container eth-pos-devnet-erigon-1                       Started
- ✔ Container eth-pos-devnet-geth-1                         Started
-```
+    ``` example
+    $ docker compose up -d
+    [+] Running 7/7
+    [+] Running 10/10
+    ✔ Container eth-pos-devnet-create-beacon-chain-genesis-1  Exited
+    ✔ Container eth-pos-devnet-create-beacon-node-keys-1      Exited
+    ✔ Container eth-pos-devnet-beacon-chain-2-1               Started
+    ✔ Container eth-pos-devnet-beacon-chain-1-1               Started
+    ✔ Container eth-pos-devnet-geth-genesis-1                 Exited
+    ✔ Container eth-pos-devnet-geth-import-1                  Exited
+    ✔ Container eth-pos-devnet-erigon-genesis-1               Started
+    ✔ Container eth-pos-devnet-validator-1                    Started
+    ✔ Container eth-pos-devnet-erigon-1                       Started
+    ✔ Container eth-pos-devnet-geth-1                         Started
+    ```
 
-The containers can be stopped with this command: `docker compose stop`.
+3. Stop the containers with this command: `docker compose stop`.
 
-It's advisable for each restart to be preceded with wiping old data. Use `make clean` for that.
+4. Before each restart, wiping old data with `make clean`.
 
-Logs of launched services can be inspected with this command:
+5. Inspect the logs of launched services with this command:
 
-``` bash
-docker logs eth-pos-devnet-geth-1 -f
-```
+    ``` bash
+    docker logs eth-pos-devnet-geth-1 -f
+    ```
 
-# Available features
+## Available features
 
 -   Starts from the Capella Ethereum hard fork.
 -   The network launches with a [Validator Deposit Contract](https://github.com/ethereum/consensus-specs/blob/dev/solidity_deposit_contract/deposit_contract.sol) deployed at the address `0x4242424242424242424242424242424242424242`. This can be used to onboard new validators into the network by depositing 32 ETH into the contract.
@@ -58,11 +58,11 @@ docker logs eth-pos-devnet-geth-1 -f
 -   The Prysm client's REST APIs are available at `http://beacon-chain:3500`. For more info on what these APIs are, see [here](https://ethereum.github.io/beacon-APIs/)
 -   The Prysm client also exposes a gRPC API at `http://beacon-chain:4000`.
 
-# Type 1 prover testing procedure
+## Type-1 prover testing procedure
 
-The aim of this devnet setup is to use Polygon Type-1 Prover to test Erigon state witnesses.
+The aim of this devnet setup is to use Polygon CDK type-1 prover to test Erigon state witnesses.
 
-Next is a procedure for creating some test data.
+The following steps create some test data.
 
 1. Start the devnet up with `docker compose up`. If you had previously run this command, you might want to wipe old data with a `make clean` to avoid running from a previous state.
 2. Wait for blocks to start being produced. This should only take a few seconds. You can use `polycli monitor` to quickly check that blocks are being created.
@@ -124,37 +124,29 @@ Next is a procedure for creating some test data.
     seq 2 240 | awk '{print "./leader --arithmetic 16..23 --byte-packing 9..21 --cpu 12..25 --keccak 14..20 --keccak-sponge 9..15 --logic 12..18 --memory 17..28  --runtime in-memory -n 4 jerigon --rpc-url http://127.0.0.1:8545 --block-number " $1 " --proof-output-path " $1 ".json --previous-proof " ($1 - 1) ".json"}'
     ```
 
+### Operational notes
 
-## Operational notes
-
-- Pay attention to memory usage on the system running
-  `zero-bin`. Certain transactions can consume a lot of memory and
-  lead to an out-of-memory (OOM) error.
+- Pay attention to memory usage on the system running `zero-bin`. Certain transactions can consume a lot of memory and lead to an out-of-memory (OOM) error.
 - You'll want to run `zero-bin` on a system with at least 32GB of RAM.
-- When you run `zero-bin`, a local file will be created with a name
-  like `prover_state_*`. This file needs to be deleted if any of the
-  [circuit sizes are changed](https://github.com/0xPolygonZero/zero-bin#leader-usage).
+- When you run `zero-bin`, a local file will be created with a name like `prover_state_*`. This file needs to be deleted if any of the [circuit sizes are changed](https://github.com/0xPolygonZero/zero-bin#leader-usage).
 - There is a [useful script](https://github.com/0xPolygonZero/zero-bin/blob/assorted_fixes/tools/prove_blocks.sh) in `zero-bin` to run a range of proofs.
 
+!!! important
+    Both the state witness generation and decoding logic are actively being improved. 
 
-Both the state witness generation and decoding logic are actively being improved. 
-
-We expect that the following transaction types or use-cases should to be proved without any issues:
+We expect that the following transaction types or use-cases to prove without any issues:
 
 - Empty blocks (important use case)
 - EOA transfers
 - ERC-20 mints & transfers
 - ERC-721 mintes & transfers
 
-### Short cuts
+### Shortcuts
 
-This is a shortcut to create the genesis file allocations for our
-mnemonic. This has already been hard-coded into the genesis file. 
+1. There is a shortcut that creates the genesis file allocations for our mnemonic which has already been hard-coded into the genesis file. However, if you want to use a different testing account, use the one below.
 
-But if you want to use a different testing account, you can use the one below.
-
-``` bash
-polycli wallet inspect --mnemonic "code code code code code code code code code code code quality" | jq '.Addresses[] | {"key": .ETHAddress, "value": { "balance": "0x21e19e0c9bab2400000"}}' | jq -s 'from_entries'
-```
+    ``` bash
+    polycli wallet inspect --mnemonic "code code code code code code code code code code code quality" | jq '.Addresses[] | {"key": .ETHAddress, "value": { "balance": "0x21e19e0c9bab2400000"}}' | jq -s 'from_entries'
+    ```
 
 [^1]: See Line# 11 of the docker-compose.yml https://github.com/0xPolygonZero/eth-pos-devnet-provable/blob/959da56673c25c2094b1a23bc9e1fa9ae9a9db6e/docker-compose.yml#L11 
