@@ -82,18 +82,18 @@ nav:
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
         - Deploy type-1 prover: cdk/how-to/deploy-t1-prover.md
+        - Deploy type-1 prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
-        - DAC: cdk/architecture/dac.md
         - Polgon CDK type-1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - Type-1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
           - Architectural overview: cdk/architecture/type-1-prover/t1-architecture.md
-          - How to run the type-1 prover: cdk/architecture/type-1-prover/deploy-t1-prover.md
           - Tests and proving costs: cdk/architecture/type-1-prover/testing-and-proving-costs.md
           - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
           - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
           - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
+        - DAC: cdk/architecture/dac.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:

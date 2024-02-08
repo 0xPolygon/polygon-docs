@@ -27,4 +27,4 @@ The figure below gives a visual summary of the types, contrasting compatibility 
 
 Ultimately, choosing which type of ZK-EVM to develop involves a trade-off between EVM-equivalence and performance.
 
-The challenge this poses for developers who favor exact Ethereum-equivalence is to devise ingenious designs and clever techniques to implement faster zk-provers. Vitalik mentions one mitigation strategy to improve proof generation times: Cleverly engineered, and massively parallelized provers.
+The challenge this poses for developers who favor exact Ethereum-equivalence is to devise ingenious designs and clever techniques to implement faster zk-provers. Vitalik mentions one mitigation strategy to improve proof generation times: cleverly engineered, and massively parallelized provers.

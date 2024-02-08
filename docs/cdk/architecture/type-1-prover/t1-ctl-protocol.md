@@ -4,11 +4,11 @@ For each STARK table, ordinary STARK proof and verification are used to check if
 
 However, there are input and output values shared among the tables. These values need to be checked for possible alterations while being shared among tables. For this purpose, _cross-table lookups_ (CTLs) are used in verifying that the shared values are not tampered with.
 
-### How CTLs work
+## How CTLs work
 
-The CLT protocol is based on the [logUP argment](https://eprint.iacr.org/2022/1530.pdf), which works similar to how range-checks work. Range-checks are discussed in a subsequent document to this one.
+The CTL protocol is based on the [logUP argment](https://eprint.iacr.org/2022/1530.pdf), which works similar to how range-checks work. Range-checks are discussed in a subsequent document to this one.
 
-#### Example (CTL)
+### Example (CTL)
 
 Consider the following scenario as an example. Suppose STARK $S_2$ requires an operation -- say $Op$ -- that is carried out by another STARK $S_1$.
 
@@ -26,8 +26,7 @@ And thus, this check is tantamount to ensuring that the rows of the $S_1$ table 
 
 ![Figure: CTL permutation check](../../../img/cdk/t1-prover-ctl-perm-check.png)
 
-
-### How the CLT proof works
+## How the CTL proof works
 
 As outlined in the above example, verifying that shared values among STARK tables are not tampered with amounts to proving that rows of reduced STARK tables are permutations of each other.
 
@@ -40,7 +39,7 @@ The proof therefore is achieved in three steps;
    - Checking correct construction and equality of 'running sums'.
 
 
-#### Table filtering
+### Table filtering
 
 Define filters $f^1$ and $f^2$ for STARK tables $S_1$ and $S_2$ , respectively, such that
 
@@ -65,8 +64,7 @@ Next create subtables $S_1'$ and $S_2'$ of STARK tables $S_1$ and $S_2$ , respec
 
     Filters are limited to (at most) degree 2 combinations of columns.
 
-
-#### Computing running sums
+### Computing running sums
 
 For each $i \in \{0,1\}$, let $\{ c^{i,j} \}$ denote the columns of $S_i'$.
 
@@ -86,7 +84,7 @@ for $0 < l < n-1$.
 
 Note that $Z_l^{S_i}$ is computed backwards. i.e., It starts with $Z_{n-1}^{S_i}$ and goes down to $Z_0^{S_i}$ as the final sum.
 
-#### Checking running sums
+### Checking running sums
 
 After computing running sums, check equality of the final sums $Z_0^{S_1} =?\ Z_0^{S_2}$ and whether the running sums were correctly constructed.
 
@@ -97,8 +95,7 @@ The above three steps turn the CTL argument into a [LogUp lookup argument](https
 
 which checks for equality between $S_1'$ and $S_2'$.
 
-
-### CTL protocol summary
+## CTL protocol summary
 
 The cross-table protocol can be summarized as follows. 
 
@@ -114,4 +111,3 @@ On the other side, and for the same STARK table $S$, the verifier:
 - Computes the sum $Z = \sum_j Z_{j}^l$.
 - Checks equality, $Z =?\ Z_0^S$.
 - Checks whether each of the running sums $Z_{j}^l$ and $Z^S$ were correctly constructed. 
-
