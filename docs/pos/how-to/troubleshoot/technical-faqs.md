@@ -382,7 +382,7 @@ Delete Bor: `sudo rm -rf /var/lib/bor`
 
 ### 28. What to do when you get "Wrong Block.Header.AppHash." error
 
-If your node fails with an appHash error, you'll need to restore it using a snapshot. See the [guide available here](/pos/node-howto/snapshots).
+If your node fails with an `appHash` error, you'll need to restore it using a snapshot. See the [guide available here](/pos/node-howto/snapshots).
 
 Please make sure you are either using the chain flag in your service file, or the chain flag is set in your `config/heimdall-config.toml` file.
 

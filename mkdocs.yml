@@ -116,11 +116,11 @@ nav:
         - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
         - Historical data: zkEVM/get-started/historical-data.md
       - How to:
-        - How to: zkEVM/node-howto/index.md
-        - Write a contract: zkEVM/node-howto/write-contract.md
-        - Deploy a contract with Foundry: zkEVM/node-howto/using-foundry.md
-        - Deploy a contract with Hardhat: zkEVM/node-howto/using-hardhat.md
-        - Verify a contract: zkEVM/node-howto/verify-contract.md
+        - How to: zkEVM/how-to/index.md
+        - Write a contract: zkEVM/how-to/write-contract.md
+        - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
+        - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
+        - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
         - zkEVM protocol:
@@ -235,57 +235,47 @@ nav:
         - Building on Polygon: pos/get-started/building-on-polygon.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
       - Builder how-tos:
-        - Builder how-tos: pos/builder-howto/index.md
         - Bridge layers:
-          - Bridge layers: pos/builder-howto/bridging/index.md
+          - Bridge layers: pos/how-to/bridging/index.md
           - Ethereum-Polygon:
-            - Ethereum-Polygon: pos/builder-howto/bridging/ethereum-polygon/index.md
-            - Ethereum to MATIC: pos/builder-howto/bridging/ethereum-polygon/ethereum-to-matic.md
-            - MATIC to Ethereum: pos/builder-howto/bridging/ethereum-polygon/matic-to-ethereum.md
-            - Submit mapping request: pos/builder-howto/bridging/ethereum-polygon/submit-mapping-request.md
+            - Ethereum-Polygon: pos/how-to/bridging/ethereum-polygon/index.md
+            - Ethereum to MATIC: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
+            - MATIC to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
+            - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
           - L1-L2 communication:
-            - L1-L2 communication: pos/builder-howto/bridging/l1-l2-communication/index.md
-            - State transfer: pos/builder-howto/bridging/l1-l2-communication/state-transfer.md
-        - Work with smart contracts:
-          - Work with smart contracts: pos/builder-howto/smart-contracts/index.md
-          - Alchemy: pos/builder-howto/smart-contracts/alchemy.md
-          - ChainIDE: pos/builder-howto/smart-contracts/chainide.md
-          - ChainStack: pos/builder-howto/smart-contracts/chainstack.md
-          - GetBlock: pos/builder-howto/smart-contracts/getblock.md
-          - QuickNode: pos/builder-howto/smart-contracts/quicknode.md
-          - SmartPress: pos/builder-howto/smart-contracts/smartpress.md
-          - thirdweb: pos/builder-howto/smart-contracts/thirdweb.md
-        - Integrate Polygon DID: pos/builder-howto/polygon-did.md
+            - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
+            - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
+        - Integrate Polygon DID: pos/how-to/polygon-did.md
       - Node how-tos:
-        - Node how-tos: pos/node-howto/index.md
-        - Delegate tokens: pos/node-howto/delegate.md
-        - Sync node using snapshots: pos/node-howto/snapshots.md
+        - Node how-tos: pos/how-to/index.md
+        - Delegate tokens: pos/how-to/delegate.md
+        - Sync node using snapshots: pos/how-to/snapshots.md
         - Run a validator node:
-          - System requirements: pos/node-howto/validator/validator-system-requirements.md
-          - Prerequisites: pos/node-howto/validator/prerequisites.md
-          - Using binaries: pos/node-howto/validator/validator-binaries.md
-          - Using Ansible: pos/node-howto/validator/validator-ansible.md
-          - Using packages: pos/node-howto/validator/validator-packages.md
+          - System requirements: pos/how-to/validator/validator-system-requirements.md
+          - Prerequisites: pos/how-to/validator/prerequisites.md
+          - Using binaries: pos/how-to/validator/validator-binaries.md
+          - Using Ansible: pos/how-to/validator/validator-ansible.md
+          - Using packages: pos/how-to/validator/validator-packages.md
         - Operate validator nodes:
-          - Stake tokens: pos/node-howto/operate-validator-node/validator-staking-operations.md
-          - Set commission rate: pos/node-howto/operate-validator-node/validator-commission-operations.md
-          - Move stake: pos/node-howto/operate-validator-node/move-stake.md
-          - Change signer address: pos/node-howto/operate-validator-node/change-signer-address.md
-          - Top up Heimdall fee: pos/node-howto/operate-validator-node/topup-heimdall-fee.md
-          - Validator performance requirements: pos/node-howto/operate-validator-node/validator-performance.md
+          - Stake tokens: pos/how-to/operate-validator-node/validator-staking-operations.md
+          - Set commission rate: pos/how-to/operate-validator-node/validator-commission-operations.md
+          - Move stake: pos/how-to/operate-validator-node/move-stake.md
+          - Change signer address: pos/how-to/operate-validator-node/change-signer-address.md
+          - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
+          - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md
         - Run a full node:
-          - System requirements: pos/node-howto/full-node/full-node-system-requirements.md
-          - Using binaries: pos/node-howto/full-node/full-node-binaries.md
-          - Using Docker: pos/node-howto/full-node/full-node-docker.md
-          - Using Ansible: pos/node-howto/full-node/full-node-ansible.md
-          - Using packages: pos/node-howto/full-node/full-node-packages.md
-          - Using GCP: pos/node-howto/full-node/full-node-gcp.md
-        - Run an access node: pos/node-howto/access-node.md
-        - Run an Erigon archive node: pos/node-howto/erigon-archive-node.md
+          - System requirements: pos/how-to/full-node/full-node-system-requirements.md
+          - Using binaries: pos/how-to/full-node/full-node-binaries.md
+          - Using Docker: pos/how-to/full-node/full-node-docker.md
+          - Using Ansible: pos/how-to/full-node/full-node-ansible.md
+          - Using packages: pos/how-to/full-node/full-node-packages.md
+          - Using GCP: pos/how-to/full-node/full-node-gcp.md
+        - Run an access node: pos/how-to/access-node.md
+        - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
         - Troubleshoot nodes:
-          - Technical FAQs: pos/node-howto/troubleshoot/technical-faqs.md
-          - Known issues and errors: pos/node-howto/troubleshoot/known-issues.md
-          - Reporting issues: pos/node-howto/troubleshoot/reporting-issues.md
+          - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
+          - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
+          - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
       - Architecture:
           - Architecture: pos/architecture/index.md
           - Bor:
