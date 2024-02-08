@@ -1,4 +1,4 @@
-The EVM wasn't designed with zero-knowledge proving and verification in mind, and this makes the design of an efficient Type-1 zkEVM extremely challenging.
+The EVM wasn't designed with zero-knowledge proving and verification in mind, and this makes the design of an efficient type-1 prover extremely challenging.
 
 Some of the challenges stem from the way the EVM is implemented. Here are some of the discrepancies that occur when deploying the most common zero-knowledge primitives to the EVM.
   
@@ -24,5 +24,5 @@ Some of the challenges stem from the way the EVM is implemented. Here are some o
 
     Although the EVM supports precompiles of hash functions such as SHA2-256, RIPEMD-160, and Blake2f, they are all quite heavy for a ZK proving system.
   
-  4. **State representation**: Ethereum uses Merkle Patricia Tries with RLP encoding. Both of these are not zero-knowledge-friendly primitives, and incur huge overheads on transaction processing within a zkEVM context.
+  4. **State representation**: Ethereum uses Merkle Patricia Tries with RLP encoding. Both of these are not zero-knowledge-friendly primitives, and incur huge overheads on transaction processing within a ZK-EVM context.
   
