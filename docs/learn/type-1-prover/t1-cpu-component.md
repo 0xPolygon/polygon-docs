@@ -1,13 +1,13 @@
 The CPU is the central component of Polygon Zero zkEVM. Like any central processing unit, it reads instructions, executes them, and modifies the state (registers and the memory) accordingly. 
 
-Other complex instructions, such as Keccak hashing, are delegated to specialist STARK tables. 
+Other complex instructions, such as Keccak hashing, are delegated to specialized STARK tables. 
 
 This section briefly presents the CPU and its columns. However, details on the CPU logic can be found [here](https://github.com/0xPolygonZero/plonky2/blob/main/evm/spec/cpulogic.tex).
 
 
 ### CPU flow
 
-CPU execution can be decomposed into two distinct phases; CPU cycles, and Padding.
+CPU execution can be decomposed into two distinct phases; CPU cycles, and padding.
 
 This first phase of the CPU execution is a lot bulkier than the second, more so that padding comes only at the end of the execution.
 

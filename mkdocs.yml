@@ -9,8 +9,20 @@ site_url: https://docs.polygon.technology/
 theme:
   name: material
   palette:
+    # Palette toggle for light mode
+    - scheme: default
       primary: white
-      accent: deep purple
+      accent: purple
+      toggle:
+        icon: material/eye
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      accent: purple
+      toggle:
+        icon: material/eye-outline
+        name: Switch to light mode
   language: en
   custom_dir: overrides
   favicon: img/favicon.ico
@@ -46,7 +58,17 @@ nav:
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
-          - Validium: cdk/get-started/deploy-validium.md
+          - Validium: 
+              - Introduction: cdk/get-started/deploy-validium/index.md
+              - Deploy contracts:
+                  - Prerequisites: cdk/get-started/deploy-validium/contracts/prerequisites.md
+                  - Set up: cdk/get-started/deploy-validium/contracts/set-up.md
+                  - Deploy contracts: cdk/get-started/deploy-validium/contracts/deploy-contracts.md
+              - Deploy node:
+                  - Prerequisites: cdk/get-started/deploy-validium/node/prerequisites.md
+                  - Set up: cdk/get-started/deploy-validium/node/set-up.md
+                  - Configure the deployment: cdk/get-started/deploy-validium/node/configure-deployment.md
+                  - Run node and services: cdk/get-started/deploy-validium/node/run-node-services.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
               - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
@@ -212,9 +234,7 @@ nav:
         - Get started: pos/get-started/index.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
-      - How to:
-        - How to: pos/how-to/index.md
-        - Sync node using snapshots: pos/how-to/snapshots.md
+      - Builder how-tos:
         - Bridge layers:
           - Bridge layers: pos/how-to/bridging/index.md
           - Ethereum-Polygon:
@@ -225,22 +245,24 @@ nav:
           - L1-L2 communication:
             - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
             - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
-        - Work with smart contracts:
-          - Work with smart contracts: pos/how-to/smart-contracts/index.md
-          - Alchemy: pos/how-to/smart-contracts/alchemy.md
-          - ChainIDE: pos/how-to/smart-contracts/chainide.md
-          - ChainStack: pos/how-to/smart-contracts/chainstack.md
-          - GetBlock: pos/how-to/smart-contracts/getblock.md
-          - QuickNode: pos/how-to/smart-contracts/quicknode.md
-          - SmartPress: pos/how-to/smart-contracts/smartpress.md
-          - thirdweb: pos/how-to/smart-contracts/thirdweb.md
+        - Integrate Polygon DID: pos/how-to/polygon-did.md
+      - Node how-tos:
+        - Node how-tos: pos/how-to/index.md
         - Delegate tokens: pos/how-to/delegate.md
+        - Sync node using snapshots: pos/how-to/snapshots.md
         - Run a validator node:
           - System requirements: pos/how-to/validator/validator-system-requirements.md
           - Prerequisites: pos/how-to/validator/prerequisites.md
           - Using binaries: pos/how-to/validator/validator-binaries.md
           - Using Ansible: pos/how-to/validator/validator-ansible.md
           - Using packages: pos/how-to/validator/validator-packages.md
+        - Operate validator nodes:
+          - Stake tokens: pos/how-to/operate-validator-node/validator-staking-operations.md
+          - Set commission rate: pos/how-to/operate-validator-node/validator-commission-operations.md
+          - Move stake: pos/how-to/operate-validator-node/move-stake.md
+          - Change signer address: pos/how-to/operate-validator-node/change-signer-address.md
+          - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
+          - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md
         - Run a full node:
           - System requirements: pos/how-to/full-node/full-node-system-requirements.md
           - Using binaries: pos/how-to/full-node/full-node-binaries.md
@@ -250,18 +272,10 @@ nav:
           - Using GCP: pos/how-to/full-node/full-node-gcp.md
         - Run an access node: pos/how-to/access-node.md
         - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
-        - Operate and maintain nodes:
-          - Staking: pos/how-to/operate-maintain-node/validator-staking-operations.md
-          - Commission: pos/how-to/operate-maintain-node/validator-commission-operations.md
-          - Move stake: pos/how-to/operate-maintain-node/move-stake.md
-          - Change signer address: pos/how-to/operate-maintain-node/change-signer-address.md
-          - Top up Heimdall fee: pos/how-to/operate-maintain-node/topup-heimdall-fee.md
-          - Validator performance requirements: pos/how-to/operate-maintain-node/validator-performance.md
         - Troubleshoot nodes:
           - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
           - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
           - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
-        - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
           - Architecture: pos/architecture/index.md
           - Bor:
@@ -403,9 +417,7 @@ nav:
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
-          #- dApp launchpad: tools/dApp-development/dApp-launchpad.md
-          - Develop on PoS:
-              - Work with smart contracts: tools/dApp-development/pos/index.md
+          - Smart contract development on PoS:
               - Alchemy: tools/dApp-development/pos/alchemy.md
               - ChainIDE: tools/dApp-development/pos/chainide.md
               - ChainStack: tools/dApp-development/pos/chainstack.md
@@ -421,7 +433,6 @@ nav:
               - Replit: tools/dApp-development/common-tools/replit.md
       - Third-party tutorials:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
-
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
@@ -551,7 +562,7 @@ nav:
   - Learn:
       - Learn: learn/index.md
       - Unified liquidity and scalability: learn/liquidity-and-scalability.md
-      - Aggregation layer: learn/agglayer.md
+      # - Aggregation layer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
       - Polygon 2.0 architecture: learn/deep-dive-arch.md
       - Polygon type-1 zkEVM:
@@ -601,7 +612,6 @@ extra:
       make our documentation better.
 
 extra_css:
-  - _site_essentials/stylesheets/polygon-docs.webflow.css
   - _site_essentials/stylesheets/extra.css
   - https://fonts.googleapis.com/icon?family=Material+Icons
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css

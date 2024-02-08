@@ -2,13 +2,13 @@ This quick start takes you through the process of deploying a full CDK zkRollup,
 
 !!! warning
     - These instructions are subject to frequent updates as the software remains at an early development stage.
-    - Report any issues on our docs repo: https://github.com/0xPolygon/polygon-docs
+    - Report any content issues on our docs repo: https://github.com/0xPolygon/polygon-docs
 
 The process is split into the following sections:
 
 1. [Overview of the full environment](environment-overview.md).
 
-2. [Prerequisites steps](prerequisites.md): Preliminary setup, checking system requirements, and prerequisite variables.
+2. [Prerequisite steps](prerequisites.md): Preliminary setup, checking system requirements, and prerequisite variables.
 
 3. [Install dependencies](install-dependencies.md): Install required dependencies and downloading mainnet files.
 

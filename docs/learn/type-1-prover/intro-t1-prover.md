@@ -14,6 +14,6 @@ The below figure gives a visual summary of the zkEVM types, contrasting compatib
 
 ![Figure: zkEVM types](../../img/learn/zkevm-types-vitalik.png)
 
-Ultimately, choosing which type of a zkEVM to develop involves a trade-off between EVM-equivalence and performance.
+Ultimately, choosing which type of zkEVM to develop involves a trade-off between EVM-equivalence and performance.
 
-The challenge to developers who favor exact Ethereum-equivalence is to devise ingenious designs and clever techniques to implement faster zk-provers. Vitalik mentions one mitigation strategy to improving proof generation times: Cleverly engineered and massively parallelized provers.
+The challenge this poses for developers who favor exact Ethereum-equivalence is to devise ingenious designs and clever techniques to implement faster zk-provers. Vitalik mentions one mitigation strategy to improve proof generation times: Cleverly engineered, and massively parallelized provers.
