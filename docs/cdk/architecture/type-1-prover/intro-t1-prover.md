@@ -1,4 +1,4 @@
-The Polygon Type-1 Prover is a zk-evm proving component used for creating proofs on your ZK-EVM chain. It has been developed in collaboration with the Toposware team.
+The Polygon Type 1 Prover is a zk-evm proving component used for creating proofs on your ZK-EVM chain. It has been developed in collaboration with the Toposware team.
 
 ## Get started
 
@@ -15,7 +15,7 @@ Vitalik Buterin has since introduced some calibration to EVM-equivalence in his 
 
 The types, as outlined by Vitalik, are as follows;
 
-- **Type-1** ZK-EVMs strive for full Ethereum-equivalence. These types do not change anything in the Ethereum stack except adding a zk-prover. They can therefore verify Ethereum and environments that are exactly like Ethereum.
+- **Type 1** ZK-EVMs strive for full Ethereum-equivalence. These types do not change anything in the Ethereum stack except adding a zk-prover. They can therefore verify Ethereum and environments that are exactly like Ethereum.
 - **Type-2** ZK-EVMs aim at full EVM-equivalence instead of Ethereum-equivalence. These ZK-EVMs make some minor changes to the Ethereum stack with the exception of the Application layer. As a result, they are fully compatible with almost all Ethereum apps, and thus offer the same UX as with Ethereum.
 - **Type-2.5** ZK-EVMs endeavor for EVM-equivalence but make changes to gas costs. These ZK-EVMs achieve fast generation of proofs but introduces a few incompatibles.
 - **Type-3** ZK-EVMs seek to be EVM-equivalent but make a few minor changes to the Application layer. These type of ZK-EVMs achieve faster generation of proofs, and are not compatible with most Ethereum apps.

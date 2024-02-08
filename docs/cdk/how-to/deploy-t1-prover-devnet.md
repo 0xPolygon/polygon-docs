@@ -58,9 +58,9 @@ Running a devnet like this provides the best way to understand Ethereum proof-of
 -   The Prysm client's REST APIs are available at `http://beacon-chain:3500`. For more info on what these APIs are, see [here](https://ethereum.github.io/beacon-APIs/)
 -   The Prysm client also exposes a gRPC API at `http://beacon-chain:4000`.
 
-## Type-1 prover testing procedure
+## Type 1 prover testing procedure
 
-The aim of this devnet setup is to use Polygon Type-1 Prover to test Erigon state witnesses.
+The aim of this devnet setup is to use Polygon Type 1 Prover to test Erigon state witnesses.
 
 The following steps create some test data.
 
