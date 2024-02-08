@@ -12,7 +12,7 @@ Since Polygon type-1 zkEVM is more like a 'CPU' for the EVM, it makes sense to l
 
 Consider the table below for prices of GCP's specific instances, taken from [here](https://cloud.google.com/compute/all-pricing), and webpage accessed on the 29th January, 2024. 
 
-![Figure: GCP's vm instance price](../../img/learn/gcp-vm-instance-price.png)
+![Figure: GCP's vm instance price](../../../img/cdk/gcp-vm-instance-price.png)
 
 Take the example of a t2d-standard-60 GCP instance, where each vCPU has 4GB memory, based on GCP's Spot prices:
 

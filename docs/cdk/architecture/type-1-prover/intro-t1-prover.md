@@ -12,7 +12,7 @@ The types of zkEVMs, as outlined by Vitalik, are as follows;
 
 The below figure gives a visual summary of the zkEVM types, contrasting compatibility with performance.
 
-![Figure: zkEVM types](../../img/learn/zkevm-types-vitalik.png)
+![Figure: zkEVM types](../../../img/cdk/zkevm-types-vitalik.png)
 
 Ultimately, choosing which type of zkEVM to develop involves a trade-off between EVM-equivalence and performance.
 

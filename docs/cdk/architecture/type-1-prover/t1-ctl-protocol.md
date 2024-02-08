@@ -24,7 +24,7 @@ Note that, for the sake of efficiency, the $S_1$ and $S_2$ tables are first redu
 
 And thus, this check is tantamount to ensuring that the rows of the $S_1$ table involving $Op$ are but permutations of the rows of $S_2$ that carry out $Op$.
 
-![Figure: CTL permutation check](../../img/learn/t1-prover-ctl-perm-check.png)
+![Figure: CTL permutation check](../../../img/cdk/t1-prover-ctl-perm-check.png)
 
 
 ### How the CLT proof works
