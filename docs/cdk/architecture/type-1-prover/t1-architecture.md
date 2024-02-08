@@ -49,20 +49,20 @@ Ultimately, this SNARK proof can stand alone or be combined with preceding block
 
 ### Plonky2 SNARK for verification
 
-The CDK type-1 prover implements a SNARK called [Plonky2](https://github.com/0xPolygonZero/plonky2), which is a SNARK designed for fast recursive proofs composition. Although the math is based on [TurboPLONK](https://docs.zkproof.org/pages/standards/accepted-workshop3/proposal-turbo_plonk.pdf), it replaces the polynomial commitment scheme of [PLONK](https://eprint.iacr.org/2019/953) with a scheme based on [FRI](https://drops.dagstuhl.de/storage/00lipics/lipics-vol107-icalp2018/LIPIcs.ICALP.2018.14/LIPIcs.ICALP.2018.14.pdf). This allows encoding the witness in 64-bit words, represented as field elements of a low-characteristic field.
+The Polygon Type-1 Prover implements a SNARK called [Plonky2](https://github.com/0xPolygonZero/plonky2), which is a SNARK designed for fast recursive proofs composition. Although the math is based on [TurboPLONK](https://docs.zkproof.org/pages/standards/accepted-workshop3/proposal-turbo_plonk.pdf), it replaces the polynomial commitment scheme of [PLONK](https://eprint.iacr.org/2019/953) with a scheme based on [FRI](https://drops.dagstuhl.de/storage/00lipics/lipics-vol107-icalp2018/LIPIcs.ICALP.2018.14/LIPIcs.ICALP.2018.14.pdf). This allows encoding the witness in 64-bit words, represented as field elements of a low-characteristic field.
 
 The field used, denoted by $\mathbb{F}_p$ , is called Goldilocks. It is a prime field where the prime $p$ is of the form $p = 2^{64} - 2^{32} + 1$.
 
 Since SNARKs are succinct, a Plonky2 proof is published as the validity proof that attests to the integrity of a number of aggregated STARK proofs. This results in reduced verification costs.
 
-This innovative approach holds the promise of a succinct, verifiable chain state, marking a significant milestone in the quest for blockchain verifiability, scalability, and integrity. It is the very innovation that plays a central role in the CDK type-1 prover.
+This innovative approach holds the promise of a succinct, verifiable chain state, marking a significant milestone in the quest for blockchain verifiability, scalability, and integrity. It is the very innovation that plays a central role in the Polygon Type-1 Prover.
 
 !!! info "Further reading"
 
     - The STARK modules, which are also referred to as **STARK tables**, have been documented in the Github repo [here](https://github.com/0xPolygonZero/plonky2/tree/main/evm/spec/tables). 
     - We have documented [the CPU component](t1-cpu-component.md) while the CPU logic documentation can be found in the [repo](https://github.com/0xPolygonZero/plonky2/blob/main/evm/spec/cpulogic.tex).
     - In order to complete the STARK framework, read more about the [cross-table lookups (CTLs) and the CTL protocol](t1-ctl-protocol.md) and [range-checks](t1-rangechecks.md).
-    - Details on **Merkle Patricia tries** and how they are used in the CDK type-1 prover can be found [here](https://github.com/0xPolygonZero/plonky2/blob/main/evm/spec/mpts.tex). Included are outlines on the prover's internal memory, data encoding and hashing, and prover input format.
+    - Details on **Merkle Patricia tries** and how they are used in the Polygon Type-1 Prover can be found [here](https://github.com/0xPolygonZero/plonky2/blob/main/evm/spec/mpts.tex). Included are outlines on the prover's internal memory, data encoding and hashing, and prover input format.
 
 [^1]: STARK is short for Scalable Transparent Argument of Knowledge
 [^2]: SNARK is short for Succinct Non-interactive Argument of Knowledge.
