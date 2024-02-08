@@ -1,71 +1,77 @@
 
-## System Requirements
+## System requirements
 
-- 16-core CPU
-- 64 GB RAM
-- Basically io1 or above with at least 20k+ iops and RAID-0 based disk structure
+- **CPU:** 16-core, 64-bit architecture
+- **RAM:** 64GB
+- **Storage**
+    - Basically **io1** or above with at least 20k+ iops and RAID-0 based disk structure
+    - Mainnet archive node: 10TB
+    - Mumbai testnet archive node: 2TB
+    - SSD or NVMe. Bear in mind that SSD performance deteriorates when close to capacity
+- **Golang:** >= v1.20
+- **GCC:** >= v10
 
-## System Requirements
+!!! note "HDD not recommended"
 
-- For an Archive node of Polygon Mainnet: 8TB
-- For an Archive node of Mumbai Testnet: 1TB
-- SSD or NVMe. Bear in mind that SSD performance deteriorates when close to capacity
-- RAM: >= 32GB, 64-bit architecture
-- Golang version >= 1.18, GCC 10+ 
-
-!!!note
-    HDD not recommended
-
-    On HDDs, Erigon will always stay N blocks behind the chain tip, but will not fall behind. 
+    On HDDs, Erigon will always stay *N* blocks behind the chain tip, but will not fall behind. 
 
 
-## Install Erigon Client
+## Install Erigon client
 
 Run the following commands to install Erigon:
 
 ```bash
-git clone --recurse-submodules -j8 https://github.com/maticnetwork/erigon.git
+git clone --recurse-submodules -j8 https://github.com/ledgerwatch/erigon
 cd erigon
-git checkout v0.0.8
+git checkout v2.57.3
 make erigon
 ```
 
 This should create the binary at `./build/bin/erigon`
 
-Use the tag `v0.0.8` on our forked repo to have a stable version. 
+## Start Erigon client
 
-## Start Erigon Client
-
-To start Erigon, run:
+When connecting to Mumbai testnet, use the following command to start your Erigon client:
 
 ```bash
 erigon --chain=mumbai
 ```
 
-- Use `chain=mumbai` for Mumbai testnet
-- Use `chain=bor-mainnet` for Polygon Mainnet
+If you're deploying to mainnet, run the following command:
 
-## Configure Erigon Client
+```bash
+erigon --chain=bor-mainnet --db.size.limit=12TB --db.pagesize=16KB # remaining flags follow
+```
 
-- If you want to store Erigon files in a non-default location, use `-datadir`
-    
-    ```
-    erigon --chain=mumbai --datadir=<your_data_dir>
-    ```
-    
-- If you are not using local **heimdall**, use `-bor.heimdall=<your heimdall url>`. By default, it will try to connect to `localhost:1317`.
-    
-    ```makefile
-    erigon --chain=mumbai --bor.heimdall=<your heimdall url> --datadir=<your_data_dir>
-    ```
-    
-    - If you want to connect to Polygon Mumbai Testnet use: [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology)
-    
-    - For Polygon Mainnet: [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)
+## Configure Erigon client
 
-**Note:** Remote heimdall is not recommended for production use, Only use it for testing purposes.
+If you want to store Erigon files in a non-default location, use `-datadir` to specify a new location:
+    
+```bash
+erigon --chain=mumbai --datadir=<your_data_dir>
+```
+    
+If you are not using local **heimdall**, use `-bor.heimdall=<your heimdall url>`. By default, it will try to connect to `localhost:1317`.
+    
+```makefile
+erigon --chain=mumbai --bor.heimdall=<your heimdall url> --datadir=<your_data_dir>
+```
 
-## Tips for Faster Sync
+!!! note
+
+    - If you want to connect to Polygon Mumbai Testnet, use: [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology)
+
+    - For Polygon mainnet, use: [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)
+
+!!! tip 
+
+    Remote heimdall is better suited for testing, and is not recommended for production use. 
+
+## Tips for faster sync
 
 - Use the machine with high IOPS and RAM for the faster initial sync
-- Memory optimized nodes are recommended for faster sync, For example, AWS EC2 `r5` or `r6` series instances.
+- Memory optimized nodes are recommended for faster sync. For example, AWS EC2 `r5` or `r6` series instances.
+
+## Reporting issues
+
+In case you encounter any issues and are looking for support, please get in touch with the Erigon team. More details available in [this GitHub README](https://github.com/ledgerwatch/erigon?tab=readme-ov-file#getting-in-touch).

@@ -21,15 +21,45 @@ In order to be a validator on the Polygon Network, you need to:
 
 ## Wallets
 
-To interact with the Polygon Network, you need to have an Ethereum-based wallet because Polygon runs on Ethereum Virtual Machine (EVM). You can choose to set up a [Metamask](https://github.com/0xPolygon/wiki/blob/master/docs/tools/wallets/metamask/overview.md) or Arkane Wallet.
+You'll need an Ethereum-based wallet to interact with Polygon because the network runs on Ethereum Virtual Machine (EVM). You can choose to set up a [Metamask](../../tools/wallets/metamask/create-metamask-wallet.md), or [Venly](../../tools/wallets/venly/create-wallet.md) (Arkane) Wallet. 
+
+There are several other third-party wallet options available to choose from, and you'll find them listed out on [this page here](../../tools/wallets/getting-started.md).
+
+!!! tip "Set up web3 provider"
+
+    Refer to the following guides and follow along to set up your wallet for making web3 function calls:
+    
+    - [MetaMask](../../tools/wallets/metamask/index.md#1-set-up-web3)
+    - [Venly](../../tools/wallets/venly/index.md#initialize-the-web3-provider)
+
+## Common tasks
+
+Token bridging between Polygon PoS and Ethereum and vice-versa, and inter-layer communication are basic and essential actions that most dApps need to perform. Use the links below to navigate to guides that'll help you get started with these tasks.
+
+* [Bridge tokens from Ethereum to PoS](../how-to/bridging/ethereum-polygon/ethereum-to-matic.md)
+* [Bridge tokens from PoS to Ethereum](../how-to/bridging/ethereum-polygon/matic-to-ethereum.md)
+* [L1 - L2 communication](../how-to/bridging/l1-l2-communication/state-transfer.md)
 
 ## Smart contracts
 
-Polygon supports many services you can use to test, compile, debug, and deploy decentralized applications onto the Polygon Network. These include deployment using thirdweb, Alchemy, Chainstack, QuickNode, Remix, Truffle, Hardhat, and Replit.
+Polygon supports many popular frameworks and tools that you can choose from to deploy, debug, compile, and test smart contracts on Polygon PoS. This helps ensure your dApp development experience on Polygon is virtually the same as it would be if you were deploying to Ethereum. These frameworks and tools include:
+
+- [Alchemy](../../tools/dApp-development/pos/alchemy.md)
+- [thirdweb](../../tools/dApp-development/pos/thirdweb.md)
+- [ChainIDE](../../tools/dApp-development/pos/chainide.md)
+- [Chainstack](../../tools/dApp-development/pos/chainstack.md)
+- [QuickNode](../../tools/dApp-development/pos/quicknode.md)
+- [GetBlock](../../tools/dApp-development/pos/quicknode.md)
+- [Crossmint](../../tools/dApp-development/pos/crossmint.md)
+- [SmartPress](../../tools/dApp-development/pos/crossmint.md)
+- [Remix](../../tools/dApp-development/common-tools/remix.md)
+- [Hardhat](../../tools/dApp-development/common-tools/hardhat.md)
+- [Truffle](../../tools/dApp-development/common-tools/hardhat.md)
+- [Replit](../../tools/dApp-development/common-tools/replit.md)
 
 ## Connecting to Polygon
 
-You can add Polygon to MetaMask or directly use Arkane, which allows you to connect to Polygon using RPC.
+You can add Polygon to MetaMask, or directly use Venly (Arkane), which allows you to connect to Polygon using RPC.
 
 In order to connect with the Polygon network to read blockchain information, we recommend using the Alchemy SDK.
 
@@ -75,6 +105,12 @@ Suppose you have no prior experience building decentralized applications (dApps)
 - Metamask
 - Arkane
 - Develop a dApp using Fauna, Polygon and React
+
+## Polygon DID
+
+You can refer to the elaborate startup guide for users who wish to implement the Polygon DID, which is a three-part package consisting of an identity-registrar, identity-resolver, and identity-registry-contract.
+
+* [Polygon DID integration guide](../how-to/polygon-did.md)
 
 ## Already have a dApp?
 
