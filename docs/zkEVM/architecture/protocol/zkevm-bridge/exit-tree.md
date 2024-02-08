@@ -2,7 +2,7 @@ The zkEVM's Bridge SC utilizes a special Merkle Tree called Exit Tree for each o
 
 The term Exit Tree refers to an append-only Sparse Merkle Tree (SMT) whose leaf nodes record information about assets being transferred out of the network. Exit Trees of depth 32 are used by Polygon zkEVM.
 
-From now on, a leaf of an exit tree is referred to as a exit leaf. Exit leaves are classified into two types: type 0 for recording asset(s) information and type 1 for recording messaging information.
+From now on, a leaf of an exit tree is referred to as a exit leaf. Exit leaves are classified into two types: type 0 for recording asset(s) information and Type 1 for recording messaging information.
 
 An exit leaf, in particular, is a Keccak256 hash of the ABI encoded packed structure with the following parameters:
 
