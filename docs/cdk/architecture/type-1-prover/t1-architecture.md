@@ -1,4 +1,4 @@
-The Polygon CDK type-1 prover is designed for efficient implementation of STARK proofs and verification of Ethereum transactions. It achieves efficiency by restricting the Algebraic Intermediate Representation (AIR) to constraints of degree 3.
+The Polygon Type-1 Prover is designed for efficient implementation of STARK proofs and verification of Ethereum transactions. It achieves efficiency by restricting the Algebraic Intermediate Representation (AIR) to constraints of degree 3.
 
 The execution trace needed to generate a STARK proof can be assimilated to a large matrix, where columns are registers and each row represents a view of the registers at a given time.
 
@@ -25,19 +25,19 @@ In addition to the constraints of each module, this design requires an additiona
 
 For this reason, this design utilizes _Cross-table lookups_ (CTLs), based on a [logUp argument](https://eprint.iacr.org/2022/1530.pdf) designed by Ulrich Haböck, to cheaply add copy-constraints in the overall system.
 
-The Polygon CDK type-1 prover uses a central component dubbed the **CPU** to orchestrate the entire flow of data that occurs among the STARK modules during execution of EVM transactions. The CPU dispatches instructions and inputs to specific STARK modules, as well as fetches their corresponding outputs.
+The Polygon Type-1 Prover uses a central component dubbed the **CPU** to orchestrate the entire flow of data that occurs among the STARK modules during execution of EVM transactions. The CPU dispatches instructions and inputs to specific STARK modules, as well as fetches their corresponding outputs.
 
 Note here that “dispatching” and “fetching” means that initial values and final values resulting from a given operation are being copied with the CTLs to and from the targeted STARK module.
 
 ## Prover primitives
 
-We now look at the cryptographic primitives used to engineer the Polygon CDK type-1 prover, which is a custom-built prover capable of tracing, proving, and verifying the execution of the EVM through all state changes.
+We now look at the cryptographic primitives used to engineer the Polygon Type-1 Prover, which is a custom-built prover capable of tracing, proving, and verifying the execution of the EVM through all state changes.
 
 The proving and verification process is made possible by the zero-knowledge (ZK) technology. In particular, a combination of STARK[^1] and SNARK[^2], proving and verification schemes, respectively.
 
 ### STARK for proving
 
-The Polygon CDK type-1 prover implements a STARK proving scheme, a robust cryptographic technique with fast proving time.
+The Polygon Type-1 Prover implements a STARK proving scheme, a robust cryptographic technique with fast proving time.
 
 Such a scheme has a proving component, called the STARK prover, and a verifying component called the STARK verifier. A proof produced by the STARK prover is referred to as a STARK proof.
 

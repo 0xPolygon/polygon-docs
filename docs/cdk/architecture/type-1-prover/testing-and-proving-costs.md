@@ -1,12 +1,12 @@
 ### Testing the prover
 
-Find a parser and test runner for testing compatible and common Ethereum full node tests against the Polygon CDK type-1 prover [here](https://github.com/0xPolygonZero/evm-tests).
+Find a parser and test runner for testing compatible and common Ethereum full node tests against the Polygon Type-1 Prover [here](https://github.com/0xPolygonZero/evm-tests).
 
 The prover passes all relevant and official [Ethereum tests](https://github.com/ethereum/tests/).
 
 ### Proving costs
 
-Instead of presenting gas costs, we focus on the cost of proving EVM transactions with the Polygon CDK type-1 prover.
+Instead of presenting gas costs, we focus on the cost of proving EVM transactions with the Polygon Type-1 Prover.
 
 Since the prover is more like a 'CPU' for the EVM, it makes sense to look at proving costs per VM instance used, as opposed to TPS or other benchmarks.
 

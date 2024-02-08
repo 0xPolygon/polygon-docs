@@ -60,7 +60,7 @@ Running a devnet like this provides the best way to understand Ethereum proof-of
 
 ## Type-1 prover testing procedure
 
-The aim of this devnet setup is to use Polygon CDK type-1 prover to test Erigon state witnesses.
+The aim of this devnet setup is to use Polygon Type-1 Prover to test Erigon state witnesses.
 
 The following steps create some test data.
 

@@ -1,4 +1,4 @@
-The Polygon CDK type-1 prover is a zk-evm proving component used for creating proofs on your ZK-EVM chain. It has been developed in collaboration with the Toposware team.
+The Polygon Type-1 Prover is a zk-evm proving component used for creating proofs on your ZK-EVM chain. It has been developed in collaboration with the Toposware team.
 
 ## Get started
 
