@@ -2,7 +2,7 @@ The Polygon Type-1 Prover is a zk-evm proving component used for creating proofs
 
 ## Get started
 
-If you want to get up and running quickly, follow the [how to deploy the type-1 prover guide](../../how-to/deploy-t1-prover.md).
+If you want to get up and running quickly, follow the [how to deploy the Type 1 Prover guide](../../how-to/deploy-t1-prover.md).
 
 !!! warning
     Throughout this section, we refer to ZK-EVM chains in a general sense and this should not be confused with Polygon's zkEVM product which is a specific example of a ZK-EVM.
