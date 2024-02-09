@@ -143,7 +143,7 @@ hide:
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
 							</div>
-							<p class="feature-paragraph">The Polygon protocol that’s best for you. A guide and decision matrix designed to empower users to navigate the evolving world of decentralized.</p>
+							<p class="feature-paragraph">The Polygon protocol that’s best for you. A guide and decision matrix designed to empower users to navigate the evolving world of decentralization.</p>
 						</a>
 					</div>
 				</div>

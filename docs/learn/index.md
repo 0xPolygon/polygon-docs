@@ -24,7 +24,7 @@ hide:
       <div class="hero-image"><img src="../img/learn/learn.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
    <div class="hero-left">
       <h1 class="hero-heading">Learn</h1>
-      <p class="hero-subtext">The Polygon Knowledge Layer consists of two parts. Firstly, documents that developers need in order to build with Polygon protocols. Secondly, resources necessary for learning about Polygon technologies.</p>
+      <p class="hero-subtext">The Polygon Knowledge Layer consists of two parts. Firstly, tech docs that developers need in order to build with Polygon protocols. Secondly, resources necessary for learning about Polygon technologies.</p>
 <p class="hero-subtext">This section gives you a peek into the future, the Polygon 2.0 vision which is community-driven.
  </p>
    </div>
