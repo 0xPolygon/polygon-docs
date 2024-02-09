@@ -73,11 +73,19 @@ Let's start setting up our zkNode:
     ZKEVM_CONFIG_DIR=./path_to_config
     ```
 
-1. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command.
+2. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command. Also, unlike the mainnet and the Goerli testnet that use the latest version, Cardona testnet uses a specific version.
 
-    ```bash
+   So use the next `curl` command specifically for Cardona, which uses version 0.5.5 (Note that the latest version, [Cardona v0.5.6](https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.6), is available and can equally be used.):
+
+   ```bash
+    curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/download/v0.5.5/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
+   ```
+
+   And use this second command for either mainnet or testnet (Goerli):
+
+   ```bash
     curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/latest/download/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
-    ```
+   ```
 
 3. Copy the `example.env` file with the environment parameters:
 
@@ -91,6 +99,8 @@ Let's start setting up our zkNode:
     Edit the .env file with your favourite editor (we'll use nano in this guide): ```nano $ZKEVM_CONFIG_DIR/.env```
 
       ```bash
+      # ZKEVM_NETWORK = "mainnet" or ZKEVM_NETWORK = "cardona" or ZKEVM_NETWORK = "testnet"
+      
       # URL of a JSON RPC for Goerli
       ZKEVM_NODE_ETHERMAN_URL = "http://your.L1node.url"
 
