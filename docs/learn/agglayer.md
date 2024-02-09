@@ -49,8 +49,7 @@ Therefore, atomic guarantees are key to enable low-latency interactions between 
 The solution to the current fragmentation is an ecosystem of interconnected, ZK-powered L2s. The infrastructure that connects them, the AggLayer, is a decentralized aggregation protocol operated by staked nodes that ensure safety for low-latency, cross-chain transactions and a unified bridge. 
 
 !!! note
-    In this context, “safety” means the following:
-    It’s impossible for a rollup’s state to be finalized/settled on Ethereum if that chain state relies on an invalid or non-finalized state from another chain, or if it includes a transaction from an atomic bundle that has not executed successfully on all other chains.
+    In this context, “safety” implies that it is impossible for a rollup’s state to be finalized/settled on Ethereum if that chain state relies on an invalid or non-finalized state from another chain, or if it includes a transaction from an atomic bundle that has not executed successfully on all other chains.
 
 These chains submit proofs and state updates to the AggLayer, where the proofs are aggregated, and then settled on Ethereum. With atomic cross-chain guarantees, chains can safely interoperate at super-low latencies without having to wait for state finalization on Ethereum.
 
@@ -132,20 +131,35 @@ AggLayer functions in three phases. Suppose that Chain A is a ZK-powered chain r
 
 Chains can navigate the tradeoff space between latency and liveness guarantees for themselves. A chain might choose to interoperate with another chain after the pre-confirmation step for super low-latency cross-chain transactions, but fundamentally, this model is compatible with chains waiting for confirmation, or even for finalization. The safety guarantee for cross-chain transactions is enforced at the third step. 
 
-In order to reduce latency to levels that make cross-chain interactions feel like using a single chain, we need to safely confirm batches before:
+Let’s dig further into how this design enables safe cross-chain interaction under different interoperability scenarios.
 
-  1. A proof is generated (validity).
-  2. A batch is posted to Ethereum (finality).
+#### Asynchronous interoperability
 
-Let’s dig further into how this design enables safe cross-chain interaction.
+In this case, chains decide to temporarily assume that transactions and state transitions from other chains are going to be settled on Ethereum prior to validity proofs being submitted to the AggLayer. For example, in the case of the atomic cross-chain transfer between Alice (on chain A) and Bob (on chain B):
 
-#### Finality
+1. Alice needs to lock or burn tokens in block $A_1$ in order to mint and transfer them to Bob on chain B. Chain A submits a batch and message queue without a validity proof.
+
+2. When the message from Chain A is read, Chain B refers to the **pre-confirmed** state of Chain A, temporarily assuming $A_1$ is valid and will eventually be finalized on Ethereum and commits to the state root $A_1$, turning it into a dependency to generate $B_1$ (as ${B_1}^{A_1}$).
+
+3. $B_1$ is then submitted to AggLayer, including a claimed batch root and the message queue for chain Chain A.
+
+4. The AggLayer generates a recursive proof and checks for consistency between claimed message queues, building a dependency graph for each batch of transactions it receives as part of the **confirmation** process.
+
+5. At this point, if the proof submitted by Chain A is consistent with the pre-confirmed batch, the recursive proof can be successfully generated. If it is not, or if Chain A fails to submit a proof altogether, Chain B rolls back the transaction that depends on $A_1$.
+
+!!! info
+
+    Relying on Chain A's pre-confirmed state from AggLayer to generate $B_1$ brings down the total processing time from 20 or so minutes, to a few seconds.
+
+For instance, if $A_1$ depends on $B_1$, which in turn depends on $C_1$, $C_1$ can be confirmed as soon as its respective proof ${\pi_{C_1}}$ is submitted to AggLayer. But this is not the case for $A_1$ as ${\pi_{A_1}}$ is not enough to confirm its validity. The same can only be confirmed with both ${\pi_{B_1}}$ and ${\pi_{C_1}}$.
+
+The critical aspect of this design is that the proof aggregation circuit enforces consistency across dependencies. If ${B_1}^{A_1'}$ is inconsistent with the block $A_1$ that Chain A submits, or a proof is missing for ${A_1'}$, then B1 cannot be included in the aggregated batch finalized on Ethereum. If Chain A equivocates, or submits an invalid batch ${A_1'}$, then any batch that depends on it's state root also cannot be finalized on Ethereum.
+
+In a situation where even the AggLayer equivocates, chain have a cryptographic guarantee that invalid or inconsistent proofs cannot be aggregated in the proof aggregation circuit.
+
+
     
-We can derive the finality property from the aggregation layer: as soon as a batch is pre-confirmed by the aggregation layer, it is considered weakly finalized, meaning that it's only possible to revert a pre-confirmed batch and post a conflicting batch to Ethereum if both the aggregator layer and the chain collude. 
-
-While it's possible that a chain could collude with the aggregation layer to fork, it's possible to slash both the aggregation layer and the chain for equivocation. Moreover, this attack already exists with a single L2, as the sequencer RPC can confirm transactions for users before the transactions are posted to L1 and then publish a conflicting batch.
-    
-#### Validity
+#### Atomic interoperability
     
 We can allow batches to be optimistically confirmed without proofs if we ensure that chains can safely receive messages. We do so as follows.
     
@@ -161,11 +175,11 @@ We can allow batches to be optimistically confirmed without proofs if we ensure 
 
 Fundamentally, this approach provides safety because it guarantees that a batch from Chain B that relies on a pre-confirmed batch from Chain A cannot be submitted to Ethereum if Chain A equivocates or has pre-confirmed an invalid batch. 
     
-This is critical, because otherwise Chain B could read a message from Chain A, mint some number of tokens, and then Chain A could equivocate and mint the same number of tokens on Chain C, undercollateralizing the bridge. Using this approach, we can obtain both low latency and safety.
+This is critical, because otherwise Chain B could read a message from Chain A, mint some number of tokens, and then Chain A could equivocate and mint the same number of tokens on Chain C, undercollateralizing the bridge. Using this approach, we can achieve both low latency and safety.
 
 #### Optimistic-case interface
 
-The `SubmitBatchWithoutProof` data interface is used to post batches to the Agglayer without a validity proof, and is of the form:
+The `SubmitBatchWithoutProof` data interface is used to post batches to the AggLayer without a validity proof, and is of the form:
 
 |           Field            |      Type      | Description                                                                 |
 | :------------------------: | :------------: | :-------------------------------------------------------------------------- |
@@ -175,9 +189,6 @@ The `SubmitBatchWithoutProof` data interface is used to post batches to the Aggl
 |       Message Queue        |  Vec&lt;Message&gt;  | LxLy message queue resulting from batch                                     |
 |          Calldata          | Vec&lt;Calldata&gt;  | Calldata that must be posted to Ethereum                                    |
 | *Cross-Chain Dependencies* |     Vec<*>     | *Cross-chain state root dependencies and bundles that the batch builds on.* |
-
-
-
 
 ### Atomic Cross-Chain Interaction
     
