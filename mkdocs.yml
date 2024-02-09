@@ -571,6 +571,7 @@ nav:
           - OKLink: https://www.oklink.com/polygon
   - Learn:
       - Learn: learn/index.md
+      - Welcome: learn/welcome.md
       - Unified liquidity and scalability: learn/liquidity-and-scalability.md
       - Polygon protocols: learn/polygon-protocols.md
       - Polygon 2.0 architecture: learn/deep-dive-arch.md
