@@ -1,17 +1,16 @@
-The CPU is the central component of Polygon Zero zkEVM. Like any central processing unit, it reads instructions, executes them, and modifies the state (registers and the memory) accordingly. 
+The CPU is the central component of the Polygon Type 1 Prover. Like any central processing unit, it reads instructions, executes them, and modifies the state (registers and the memory) accordingly. 
 
 Other complex instructions, such as Keccak hashing, are delegated to specialized STARK tables. 
 
 This section briefly presents the CPU and its columns. However, details on the CPU logic can be found [here](https://github.com/0xPolygonZero/plonky2/blob/main/evm/spec/cpulogic.tex).
 
-
-### CPU flow
+## CPU flow
 
 CPU execution can be decomposed into two distinct phases; CPU cycles, and padding.
 
 This first phase of the CPU execution is a lot bulkier than the second, more so that padding comes only at the end of the execution.
 
-#### CPU cycles
+### CPU cycles
 
 In each row, the CPU reads code at a given program counter (PC) address, executes it, and writes outputs to memory. The code could be kernel code or any context-based code.
 
@@ -28,7 +27,7 @@ Subsequent contexts are created when executing user code.
 
 Syscalls, which are specific instructions written in the kernel, may be executed in a non-zero user context. They don't change the context but the code context, which is where the instructions are read from.
 
-#### Padding
+### Padding
 
 At the end of any execution, the length of the CPU trace is padded to the next power of two.
 
@@ -36,15 +35,13 @@ When the program counter reaches the special halting label in the kernel, execut
 
 There are special constraints responsible for ensuring that every row subsequent to execution halting is a padded row, and that execution does not automatically resume. That is, execution cannot resume without further instructions.
 
+## CPU columns
 
-
-### CPU columns
-
-This document discusses CPU columns as they relate to all relevant operations being executed, as well as how some of the constraints are checked.  
+We now have a look at CPU columns as they relate to all relevant operations being executed, as well as how some of the constraints are checked.  
 
 These are the register columns, operation flags, memory columns, and general columns.  
 
-#### Registers
+### Registers
 
 - $\texttt{context}$: Indicates the current context at any given time. So, $\texttt{context}\ 0$ is for the kernel, while any context specified with a positive integer indicates a user context. A user context is incremented by $1$ at every call.
 - $\texttt{code_context}$: Indicates the context in which the executed code resides.   
@@ -55,7 +52,7 @@ These are the register columns, operation flags, memory columns, and general col
 - $\texttt{clock}$: Monotonic counter which starts at 0 and is incremented by 1 at each row. It is used to enforce correct ordering of memory accesses.
 - $\texttt{opcode_bits}$  These are 8 boolean columns, indicating the bit decomposition of the opcode being read at the current PC.
 
-#### Operation flags
+### Operation flags
 
 Operation flags are boolean flags indicating whether an operation is executed or not.
 
@@ -85,8 +82,7 @@ $$
   \texttt{eq_iszero * opcode_bits[0]}
 $$
 
-
-#### Memory columns
+### Memory columns
 
 The CPU interacts with the EVM memory via its memory channels. 
 
@@ -101,7 +97,7 @@ A full memory channel is composed of the following:
 
 The last memory channel is a partial channel. It doesn't have its own $\texttt{value}$ columns but shares them with the first full memory channel. This allows saving eight columns.
 
-#### General columns
+### General columns
 
 There are eight ($8$) shared general columns. Depending on the instruction, they are used differently:
 
@@ -127,4 +123,3 @@ While the `pushing-only` instruction uses the $\text{Stack}$ columns to check if
 
 $\texttt{stack_len_bounds_aux}$ is used to check that the Stack doesn't overflow in user mode. The last four columns are used to prevent conflicts with other general columns.
 See the $\text{Stack Handling}$ subsection of this [document](https://github.com/0xPolygonZero/plonky2/blob/main/evm/spec/cpulogic.tex) for more details.
-

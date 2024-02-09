@@ -1,26 +1,25 @@
-### Testing Polygon type-1 zkEVM 
+### Testing the prover
 
-Find a parser and test runner for testing compatible and common Ethereum full node tests against Polygon type-1 zkEVM [here](https://github.com/0xPolygonZero/evm-tests).
+Find a parser and test runner for testing compatible and common Ethereum full node tests against the Polygon Type 1 Prover [here](https://github.com/0xPolygonZero/evm-tests).
 
-Polygon type-1 zkEVM passes all relevant and official [Ethereum tests](https://github.com/ethereum/tests/).
+The prover passes all relevant and official [Ethereum tests](https://github.com/ethereum/tests/).
 
 ### Proving costs
 
-Instead of presenting gas costs, we focus on the cost of proving EVM transactions with Polygon type-1 prover.
+Instead of presenting gas costs, we focus on the cost of proving EVM transactions with the Polygon Type 1 Prover.
 
-Since Polygon type-1 zkEVM is more like a 'CPU' for the EVM, it makes sense to look at proving costs per VM instance used, as opposed to TPS or other benchmarks.
+Since the prover is more like a 'CPU' for the EVM, it makes sense to look at proving costs per VM instance used, as opposed to TPS or other benchmarks.
 
 Consider the table below for prices of GCP's specific instances, taken from [here](https://cloud.google.com/compute/all-pricing), and webpage accessed on the 29th January, 2024. 
 
-![Figure: GCP's vm instance price](../../img/learn/gcp-vm-instance-price.png)
+![Figure: GCP's vm instance price](../../../img/cdk/gcp-vm-instance-price.png)
 
 Take the example of a t2d-standard-60 GCP instance, where each vCPU has 4GB memory, based on GCP's Spot prices:
 
 - 0.00346 USD / vCPU hour
 - 0.000463 USD / GB hour
 
-We obtain the following hourly cost, $(60 \times 0.00346) + (240 \times 0.000463) = 0.31872$ USD per hour. 
-The total cost per block is given by: $\texttt{(Proving time per hr)} \times 0.31872$ USD.
+We obtain the following hourly cost, $(60 \times 0.00346) + (240 \times 0.000463) = 0.31872$ USD per hour. The total cost per block is given by: $\texttt{(Proving time per hr)} \times 0.31872$ USD.
 
 The table below displays proving costs per transaction per hour.
 

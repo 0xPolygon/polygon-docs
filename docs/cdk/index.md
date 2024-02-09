@@ -20,6 +20,14 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
+      <a href="./architecture/type-1-prover/intro-t1-prover">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Polygon Type 1 Prover</div>
+         </div>
+         <p class="feature-paragraph">Find out about the Polygon Type 1 Prover component.</p>
+      </a>
+   </div>
+   <div class="grid-item">
       <a href="./get-started/quickstart-rollup">
          <div class="product-list-item-header">
             <div class="feature-card-heading">CDK rollups</div>

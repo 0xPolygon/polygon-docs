@@ -599,4 +599,4 @@ Now that your sentry and validator nodes are in sync and running, head over to
 ## Next Steps: Staking
 
 Now that you have your sentry and validator nodes are health-checked, proceed to
-the [Staking](../operate-maintain-node/validator-staking-operations.md) guide to start backing the network.
+the [Staking](../operate-validator-node/validator-staking-operations.md) guide to start backing the network.
