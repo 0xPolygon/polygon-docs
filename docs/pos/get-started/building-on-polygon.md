@@ -6,6 +6,8 @@ Polygon Mumbai Testnet connects to Ethereum Goërli Testnet, which acts as its P
 
 Find all the network-related details in the [network documentation](../reference/rpc-endpoints.md).
 
+SEntance with misstakkes.
+
 ## Overview
 
 Polygon is a layer 2 (L2) network to Ethereum, employing a proof-of-stake (PoS) consensus mechanism, and thus composed of the following two layers:
