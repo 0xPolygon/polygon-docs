@@ -1,16 +1,3 @@
-<style>
-  [data-md-color-scheme="default"] {
-    .md-main, .md-sidebar__scrollwrap {
-          background-color: #ebf5fa !important;
-    }
-   }
-  [data-md-color-scheme="slate"] {
-      .md-main, .md-sidebar__scrollwrap {
-            background-color: #b292f7 !important;
-      }
-   }
-</style>
-
 Polygon 2.0 envisions a network of ZK-powered L2s on Ethereum that unify liquidity across the ecosystem and can scale on demand. Here is how that vision comes into focus.
 
 ### Unified liquidity

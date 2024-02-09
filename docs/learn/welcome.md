@@ -1,16 +1,3 @@
-<style>
-  [data-md-color-scheme="default"] {
-    .md-main, .md-sidebar__scrollwrap {
-          background-color: #ebf5fa !important;
-    }
-   }
-  [data-md-color-scheme="slate"] {
-      .md-main, .md-sidebar__scrollwrap {
-            background-color: #b292f7 !important;
-      }
-   }
-</style>
-
 The Polygon Knowledge Layer consists of two parts. Firstly, documents that developers need in order to build with Polygon protocols. Secondly, resources necessary for learning about Polygon technologies.
 
 The Learn section gives you a peek into the future, the Polygon 2.0 vision which is community-driven.
