@@ -20,7 +20,7 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./architecture/Type 1-prover/intro-t1-prover">
+      <a href="./architecture/type-1-prover/intro-t1-prover">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Polygon Type 1 Prover</div>
          </div>
