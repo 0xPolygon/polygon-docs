@@ -10,7 +10,7 @@ In this document, we look at:
 
 **![img](https://lh7-eu.googleusercontent.com/gusTl_jWu_eVU4RF32Y3LvQYG63nR9Ydi_qZQDNxTGyuhjlNsWvuRNMXJvr05bWZznFfedIu1smvHJsGP9nQgxbHipfpmrhQfN9dmvED20B4BSRI5fSP3MV3ztoYuqEAVIStTR-_Aynv7zVGLOPox9o)**
 
-### Fragmented liquidity
+## Fragmented liquidity
 
 Although developers today have the freedom to build on chains that suit their needs, or design their own chains, the current setup lacks cross-chain interoperability.
 
@@ -18,31 +18,31 @@ As seen in the above diagram, each chain connects directly to Ethereum via a bri
 
 Reliance on bridging in order to connect what are essentially isolated networks, is a common interoperability solution. But it translates to fragmented liquidity, and a less than ideal user experience.
 
-### Atomic guarantees
+## Atomic guarantees
 
 Let's take a deeper look at cross-chain transfers.
 
 First of all, we understand execution of atomic cross-chain transactions to mean that, with every set of transactions a user submits to multiple chains, the user has the guarantee that either all transactions are executed successfully or none of them is included in any chain.[^1]
 
-Consider the following example as a typical cross-chain transfer.
+Consider the following example as a typical cross-chain transfer:
 
-#### Atomic transfer example
-
-Suppose Alice, who is on rollup A, wants to send 1 ETH to Bob who is on rollup B.
-
-Assuming a shared native bridge for both rollups; 
+Suppose Alice, who is on rollup A, wants to send 1 ETH to Bob who is on rollup B. Assuming a shared native bridge for both rollups; 
 
 - Alice burns her 1 ETH on rollup A and mints 1 ETH on rollup B.
 - The 1 ETH minted by Alice gets transferred to Bob.
 
-Critical in this is to guarantee that it should be impossible for Alice to do any of the following two things:
-  
-  1. Mint 1 ETH on rollup B without burning 1 ETH on rollup A.
-  2. Burn 1 ETH on rollup A without being able to mint 1 ETH on B.
+Two things are required for Chain B to safely credit those tokens to Bob.
 
-The security of atomic transactions is based on this critical guarantee that users do not lose their funds and cannot double spend their tokens.
+1. The batch containing Alice’s transaction must be finalized on Ethereum L1.
+2. Chain B must be able to verify that the resulting state of Chain A is valid after Alice’s transaction.
 
-Therefore, atomic guarantees are key to enable low-latency interactions between chains and realizing a unified Polygon ecosystem that feels like using a single chain.
+This means trustless cross-chain transactions can’t have low-latency. (1) currently requires 12 minutes, while (2) requires waiting for the duration of the challenge period in ORs and a few minutes for proof generation on ZKRs.
+
+![img](../img/learn/agglayer-4.png)
+
+The security of atomic transactions is based on this critical guarantee that users do not lose their funds and cannot double spend their tokens. Therefore, atomic guarantees are key to enable low-latency interactions between chains and realizing a unified Polygon ecosystem that feels like using a single chain. 
+
+Good UX is incompatible with 20-minute latency. The Aggregation Layer is designed to solve this problem.
 
 ## AggLayer design
 
@@ -55,12 +55,11 @@ These chains submit proofs and state updates to the AggLayer, where the proofs a
 
 The overall design of AggLayer is outlined in three parts:
 
-- Proof aggregation.
-- Batch confirmation and finalization.
-- Atomic cross-chain interaction.
+- [Proof aggregation](#proof-aggregation).
+- [Batch confirmation and finalization](#batch-confirmation-and-finalization).
+- [Cross-chain interoperability mechanism](#interoperability-scenarios).
 
 Let's go over each part in detail.
-
 
 ### Proof aggregation
 
@@ -91,8 +90,6 @@ The above procedure is depicted in the simplified diagram below.
 
 **![img](https://lh7-eu.googleusercontent.com/5GJavrjHtRP1LC-N-MmG6yZjaN9QG0N4Xk8hl_lRAMIuuKl1KKLB2pQJz9AMX5u19renKi7acrVMQ2aos5X2bAmEFBnADlVTKpbHOxvny7luASdK_qYI-3L5u4GFb8PBjRpI2KOjYNFh-C-UoLdBbpE)**
 
-
-
 #### Validium-case caveat
 
 There's a subtle detail about validiums that needs to be noted.
@@ -104,22 +101,6 @@ But this is not so with validium chains. For instance, there could be a 'data wi
 So we need to ensure that 'data withholding' attacks do no affect validium users' ability to process an exit or message from a rollup.
 
 The solution that enables validium users to circumvent 'data withholding' attacks is, segmentation of rollup and validium message lists, as well as optionally posting the commitment to the message list for all validium nodes to Ethereum.  
-
-
-#### Proof aggregation interface
-
-The `submitBatch` data interface, used to transmit proofs between chains and the AggLayer, involves the following data elements. The below table records the interface data elements, their types and brief descriptions.
-
-|          Field           |      Type       | Description                                                               |
-| :----------------------: | :-------------: | ------------------------------------------------------------------------- |
-|         Chain ID         |       Int       | Identifier for chain submitting a batch and proof                         |
-|      New State Root      |      u256       | Commitment to the updated chain state                                     |
-|       Batch Proof        | Plonky2/3 Proof | Proof guaranteeing validity of batch of tx                                |
-|     Consensus Proof      | Plonky2/3 Proof | Proof of consensus for decentralized sequencers/signature for centralized |
-|      Message Queue       |  Vec&lt;Message&gt;   | LxLy message queue resulting from batch                                   |
-|         Calldata         |  Vec&lt;Calldata&gt;  | Calldata that must be posted to Ethereum                                  |
-| Cross-Chain Dependencies |     Vec<*>      | Cross-chain state root dependencies and bundles that the batch builds on. |
-
 
 ### Batch confirmation and finalization
 
@@ -133,9 +114,11 @@ Chains can navigate the tradeoff space between latency and liveness guarantees f
 
 Let’s dig further into how this design enables safe cross-chain interaction under different interoperability scenarios.
 
-#### Asynchronous interoperability
+### Interoperability scenarios
 
-In this case, chains decide to temporarily assume that transactions and state transitions from other chains are going to be settled on Ethereum prior to validity proofs being submitted to the AggLayer. For example, in the case of the atomic cross-chain transfer between Alice (on chain A) and Bob (on chain B):
+#### Asynchronous case
+
+In this case, chains decide to temporarily assume that transactions and state transitions from other chains are going to be settled on Ethereum before validity proofs are submitted to the AggLayer. For example, in the case of the atomic cross-chain transfer between Alice (on chain A) and Bob (on chain B):
 
 1. Alice needs to lock or burn tokens in block $A_1$ in order to mint and transfer them to Bob on chain B. Chain A submits a batch and message queue without a validity proof.
 
@@ -147,86 +130,25 @@ In this case, chains decide to temporarily assume that transactions and state tr
 
 5. At this point, if the proof submitted by Chain A is consistent with the pre-confirmed batch, the recursive proof can be successfully generated. If it is not, or if Chain A fails to submit a proof altogether, Chain B rolls back the transaction that depends on $A_1$.
 
+![img](../img/learn/agglayer-3.png)
+
 !!! info
 
     Relying on Chain A's pre-confirmed state from AggLayer to generate $B_1$ brings down the total processing time from 20 or so minutes, to a few seconds.
 
 For instance, if $A_1$ depends on $B_1$, which in turn depends on $C_1$, $C_1$ can be confirmed as soon as its respective proof ${\pi_{C_1}}$ is submitted to AggLayer. But this is not the case for $A_1$ as ${\pi_{A_1}}$ is not enough to confirm its validity. The same can only be confirmed with both ${\pi_{B_1}}$ and ${\pi_{C_1}}$.
 
-The critical aspect of this design is that the proof aggregation circuit enforces consistency across dependencies. If ${B_1}^{A_1'}$ is inconsistent with the block $A_1$ that Chain A submits, or a proof is missing for ${A_1'}$, then B1 cannot be included in the aggregated batch finalized on Ethereum. If Chain A equivocates, or submits an invalid batch ${A_1'}$, then any batch that depends on it's state root also cannot be finalized on Ethereum.
+The critical aspect of this design is that the proof aggregation circuit enforces consistency across dependencies. If ${B_1}^{A_1'}$ is inconsistent with the block $A_1$ that Chain A submits, or a proof is missing for ${A_1'}$, then B1 cannot be included in the aggregated batch finalized on Ethereum. If Chain A equivocates, or submits an invalid batch ${A_1'}$, then any batch that depends on it's state root also cannot be finalized on Ethereum. 
 
-In a situation where even the AggLayer equivocates, chain have a cryptographic guarantee that invalid or inconsistent proofs cannot be aggregated in the proof aggregation circuit.
-
-
-    
-#### Atomic interoperability
-    
-We can allow batches to be optimistically confirmed without proofs if we ensure that chains can safely receive messages. We do so as follows.
-    
-1. Chain A submits a batch and message queue without a validity proof to the AggLayer.
-2. A user on Chain B submits a transaction that reads a message from Chain A before the validity proof is generated.
-3. Chain B can confirm with the AggLayer the current pre-confirmed state of Chain A.
-4. Chain B submits a batch and includes a claimed Batch Root and Message Queue for Chain A.
-5. The validity proof for Chain B commits to the claimed Message Queue for Chain A.
-6. The recursive proof generated by the AggLayer checks that the Message Queue for Chain A is consistent with the *claimed* Message Queue for Chain A by Chain B.
-7. Either:
-    - Chain A submits a validity proof that is consistent with the pre-confirmed batch, in which case the recursive proof can be generated.
-    - Chain A fails to submit a validity proof. Chain B must roll back the transaction that depends on Chain A. Chain A is slashed. 
-
-Fundamentally, this approach provides safety because it guarantees that a batch from Chain B that relies on a pre-confirmed batch from Chain A cannot be submitted to Ethereum if Chain A equivocates or has pre-confirmed an invalid batch. 
-    
 This is critical, because otherwise Chain B could read a message from Chain A, mint some number of tokens, and then Chain A could equivocate and mint the same number of tokens on Chain C, undercollateralizing the bridge. Using this approach, we can achieve both low latency and safety.
 
-#### Optimistic-case interface
-
-The `SubmitBatchWithoutProof` data interface is used to post batches to the AggLayer without a validity proof, and is of the form:
-
-|           Field            |      Type      | Description                                                                 |
-| :------------------------: | :------------: | :-------------------------------------------------------------------------- |
-|          Chain ID          |      Int       | Identifier for chain submitting a batch and proof                           |
-|       New State Root       |      u256      | Commitment to the updated chain state                                       |
-|     Consensus Witness      | Vec&lt;Signature&gt; | Witness required to verify consensus for a chain                            |
-|       Message Queue        |  Vec&lt;Message&gt;  | LxLy message queue resulting from batch                                     |
-|          Calldata          | Vec&lt;Calldata&gt;  | Calldata that must be posted to Ethereum                                    |
-| *Cross-Chain Dependencies* |     Vec<*>     | *Cross-chain state root dependencies and bundles that the batch builds on.* |
-
-### Atomic Cross-Chain Interaction
+In the event where let's say the AggLayer equivocates, chain have a cryptographic guarantee that invalid or inconsistent proofs cannot be aggregated in the proof aggregation circuit.
     
-The final part of the unified liquidity vision is to enable cross-chain atomic interactions. Cross-chain interactions as we've described them are only asynchronous - Chain A must submit a batch and message queue, then Chain B must submit a transaction in a new batch that reads from Chain A's message queue, and so on.
-    
-We want to instead provide truly seamless interaction and give users the experience of using a multi-chain ecosystem that feels like using a single chain. We can achieve this with atomicity. Users can submit a bundle of transactions to many chains in the Polygon ecosystem, with the guarantee that all transactions will be successfully executed, or none will be included.
-    
-#### AggLayer data interfaces 
-    
-**`SubmitBundle`**
+#### Atomic case
 
-|    Field     |               Type                | Description                                              |
-| :----------: | :-------------------------------: | :------------------------------------------------------- |
-| Bundle Root  |               u256                | Unique identifier or commitment for a transaction bundle |
-| Transactions | Vec&lt;(ChainID, Transaction)&gt; | Chain, Transaction pairs                                 |
+The final part of the unified liquidity vision is to enable cross-chain atomic interactions. With AggLayer, we want to provide truly seamless interaction and give users the experience of using a multi-chain ecosystem that feels like using a single chain. We can achieve that with atomicity. Users can submit a bundle of transactions to many chains in the Polygon ecosystem, with the guarantee that all transactions will be successfully executed, or none will be included.
 
-**`ConfirmBundle`**
-
-|    Field    | Type  | Description                                              |
-| :---------: | :---: | :------------------------------------------------------- |
-| Bundle Root | u256  | Unique identifier or commitment for a transaction bundle |
-    
-#### Chain Interface
-    
-**`SubmitBundleTransaction`**
-
-|    Field    |    Type     | Description                                              |
-| :---------: | :---------: | :------------------------------------------------------- |
-| Bundle Root |    u256     | Unique identifier or commitment for a transaction bundle |
-| Transaction | Transaction | EVM Transaction                                          |
-    
-**`ConfirmBundleTransaction`**
-
-|    Field    |     Type      | Description                                              |
-| :---------: | :-----------: | :------------------------------------------------------- |
-| Bundle Root |     u256      | Unique identifier or commitment for a transaction bundle |
-| Transaction | TransactionID | Transaction Identifier                                   |
-
+Let's consider a scenario where a user submits an atomic bundle of transactions to multiple chains. The bundle is ordered, so let's say the execution starts on Chain A, and the result is passed to Chain B. Likewise, the execution result from Chain B is passed to Chain C, and so on.
 
 The atomic mode for cross-chain interaction largely follows the Shared Validity Sequencing approach, with the caveat that no shared sequencer is required for all chains. 
     
@@ -236,19 +158,110 @@ The atomic mode for cross-chain interaction largely follows the Shared Validity 
 4. If each transaction in the bundle executed correctly and the resulting message queues are consistent (ie tokens minted matches tokens burned), then the bundle is included by the aggregation layer.
 5. Each chain generates a validity proof for the block containing the bundle. When all validity proofs are received by the AggLayer, chains can release the lock on affected state and execute queued transactions.
 
+![img](../img/learn/agglayer-2.png)
 
-![](../img/learn/agglayer-1.png)
+It would be ideal to provide the ability to include atomic transactions without:
+- Requiring the operator of Chain B to run a full node for all other chains included in a bundle; or
+- Accepting the risk that the bundle might be partially included on Ethereum (harming participating chains).
 
+The mechanism that is used to guard against equivocation, or an invalid state in the asynchronous case can also be used here to mitigate the above. Chain B commits to the bundles and the execution results it receives from other chains. The AggLayer and the proof aggregation circuit then check for bundle consistency across chains. So for instance, a bundle on Chain B can only be finalized/settled on Ethereum if all the transactions in the bundle are executed successfully across all chains. Otherwise, it is rejected.
 
-#### Failure Modes
+## Cross-chain contract interaction
+
+The Aggregation Layer enables super low-latency cross-chain composability through **asynchronous cross-chain calls**. This is an incredibly powerful primitive: contracts can safely call contracts on other chains at super low latency, without waiting for Ethereum finality. 
+
+For instance, a user could onramp via the OKX chain on Polygon and immediately deposit into a highly-liquid lending market on Aave on a different chain in one click, without needing to swap out of a wrapped synthetic asset.
+
+## Chain co-ordination infrastructure
+
+AggLayer guarantees safety for near-instant atomic cross-chain interactions. But chain operators that are part of Polygon ecosystem also need to be able to share and trust each others' chain states, and co-ordinate with each other when generating atomic transaction bundles.
+
+The design goal for AggLayer is to keep it minimal, and allow chains to freely choose between the different emergent co-ordination mechanisms depending on the respective trust assumptions and how they want to handle cross-chain interoperability and risk of liveness failures. Chains can run their own modified execution environments, use their own tokens for staking and gas fees, choose their own data availability mechanisms, etc. There are several options:
+
+1. Chain B can opt out of fast interoperability and the aggregator layer entirely. It can simply submit batches and proofs directly to Ethereum and finalization is never delayed.
+2. Chain B can accept Chain A’s state only when Chain A’s state is confirmed by the AggLayer. Chain B will be delayed only if the AggLayer equivocates.
+3. Chain B can accept Chain A’s state when Chain A is pre-confirmed by the AggLayer. Chain B will be delayed if the AggLayer equivocates or Chain A fails to produce a proof.
+4. Chain B can accept Chain A’s state in a peer-to-peer setting, without checking that Chain A is pre-confirmed on the AggLayer. Chain B will be delayed if Chain A equivocates or fails to produce a proof.
+
+The mechanism by which chains coordinate to accept atomic bundles is also flexible. For instance, a subset of chains could interoperate in a shared validity sequencing cluster for extremely low latency, or they could rely on relays.
+
+![img](../img/learn/agglayer-5.png)
+
+A cryptoeconomically-secured relayer could enable interoperability between Chains A and B by running a full node for both chains, and attesting that states from each chain are valid. Even if Chain A or B pre-confirms a new batch and then goes offline, shared prover infrastructure can step in to generate a proof.
+
+You can imagine novel coordination infrastructure emerging on top of the foundation of safety provided by the AggLayer, enabling new and better forms of interoperability and shared liquidity. Crucially, the entire Polygon ecosystem **does not** need to share the same infrastructure or trust assumptions. It doesn’t need to operate under a single shared validity sequencer or prover. This is an extremely important advantage relative to Optimistic Rollups.
+
+## Failure modes
     
 **Liveness**: A malicious user can collude with a malicious chain and submit a bundle that's known to fail on a specific chain. The colluding chain will claim successful execution, the remaining chains will generate proofs, but the colluding chain will never submit a proof, causing the bundle to time out. 
     
-This is an attack, but it's not unique to the atomic case. It also exists in the optimistic interop case, where Chain A might have a pre-confirmed batch that Chain B relies on for messages, but this batch is invalid or Chain A never submits a proof. Ultimately, the solution is to blacklist the colluding or unreliable chain from participating in atomic bundles or optimistic pre-confirmations.
+This is an attack, but it's not unique to the atomic case. It also exists in the pre-confirmation case, where Chain A might have a pre-confirmed batch that Chain B relies on for messages, but this batch is invalid or Chain A never submits a proof. Ultimately, the solution is to blacklist the colluding or unreliable chain from participating in atomic bundles or pre-confirmation interop. Chains could also rely on third parties running full nodes to ensure that if a chain goes offline before it can produce a proof, there’s a backup prover.
+
+!!! note "Users cannot cause liveness faults!"
+    An important thing to note is that users cannot cause liveness faults, only misbehaving or malfunctioning chains. Equivocation and the submission of an invalid block can be heavily penalized, either via slashing or by ejecting chains from the AggLayer and precluding their ability to seamlessly interoperate. Therefore, a liveness fault should be extremely rare.
     
 **Griefing**: A malicious user and colluding chain can submit a bundle that touches a large amount of state on another chain, and then run the same liveness attack, preventing fast confirmations for many transactions on that chain.
     
-Similar to the liveness attack, this will cause degradation of UX, but it's not a directly profitable attack, and it comes with a significant penalty for the misbehaving chain. Possible mitigation approaches include only allowing slashable chains to participate in atomic interop and optimistic confirmations.
+Similar to the liveness attack, this will cause degradation of UX, but it's not a directly profitable attack, and it comes with a significant penalty for the misbehaving chain. Possible mitigation approaches include only allowing slashable chains to participate in atomic and pre-confirmation based interop.
+
+## AggLayer data interface 
+
+### **`submitBatch`**
+
+The `submitBatch` data interface, used to transmit proofs between chains and the AggLayer, involves the following data elements. The below table records the interface data elements, their types and brief descriptions.
+
+|          Field           |      Type       | Description                                                               |
+| :----------------------: | :-------------: | ------------------------------------------------------------------------- |
+|         Chain ID         |       Int       | Identifier for chain submitting a batch and proof                         |
+|      New State Root      |      u256       | Commitment to the updated chain state                                     |
+|       Batch Proof        | Plonky2/3 Proof | Proof guaranteeing validity of batch of tx                                |
+|     Consensus Proof      | Plonky2/3 Proof | Proof of consensus for decentralized sequencers/signature for centralized |
+|      Message Queue       |  Vec&lt;Message&gt;   | LxLy message queue resulting from batch                                   |
+|         Calldata         |  Vec&lt;Calldata&gt;  | Calldata that must be posted to Ethereum                                  |
+| Cross-Chain Dependencies |     Vec<*>      | Cross-chain state root dependencies and bundles that the batch builds on. |
+
+### **`SubmitBatchWithoutProof`**
+
+The `SubmitBatchWithoutProof` data interface is used to post batches and commit to new states to the AggLayer without a validity proof, and is of the form:
+
+|           Field            |      Type      | Description                                                                 |
+| :------------------------: | :------------: | :-------------------------------------------------------------------------- |
+|          Chain ID          |      Int       | Identifier for chain submitting a batch and proof                           |
+|       New State Root       |      u256      | Commitment to the updated chain state                                       |
+|     Consensus Witness      | Vec&lt;Signature&gt; | Witness required to verify consensus for a chain                            |
+|       Message Queue        |  Vec&lt;Message&gt;  | LxLy message queue resulting from batch                                     |
+|          Calldata          | Vec&lt;Calldata&gt;  | Calldata that must be posted to Ethereum                                    |
+| *Cross-Chain Dependencies* |     Vec<*>     | *Cross-chain state root dependencies and bundles that the batch builds on.* |
+    
+### **`SubmitBundle`**
+
+|    Field     |               Type                | Description                                              |
+| :----------: | :-------------------------------: | :------------------------------------------------------- |
+| Bundle Root  |               u256                | Unique identifier or commitment for a transaction bundle |
+| Transactions | Vec&lt;(ChainID, Transaction)&gt; | Chain, Transaction pairs                                 |
+
+### **`ConfirmBundle`**
+
+|    Field    | Type  | Description                                              |
+| :---------: | :---: | :------------------------------------------------------- |
+| Bundle Root | u256  | Unique identifier or commitment for a transaction bundle |
+    
+## Chain interface
+    
+### **`SubmitBundleTransaction`**
+
+|    Field    |    Type     | Description                                              |
+| :---------: | :---------: | :------------------------------------------------------- |
+| Bundle Root |    u256     | Unique identifier or commitment for a transaction bundle |
+| Transaction | Transaction | EVM Transaction                                          |
+    
+### **`ConfirmBundleTransaction`**
+
+|    Field    |     Type      | Description                                              |
+| :---------: | :-----------: | :------------------------------------------------------- |
+| Bundle Root |     u256      | Unique identifier or commitment for a transaction bundle |
+| Transaction | TransactionID | Transaction Identifier                                   |
+
 
 ## Aggregation vs. Modularity
 
@@ -256,13 +269,24 @@ Aggregation presents a solution to the monolithic vs. modular chain design dilem
 
 The AggLayer will allow a single ZK proof to verify state across all chains in the ecosystem and use Ethereum as the settlement layer. Once any chain publishes a ZK proof of its latest state to the AggLayer, all other chains can trust the value (state) of that chain.
 
+## Aggregation in ZK vs OR systems
 
-!!! credits
+AggLayer's vision is fundamentally only available to ZK-based systems. Optimistic ecosystems that wish to enable fast interoperability must rely on shared validity sequencers. This isn't optimal for chains, because:
 
-    The contents of this document have been sourced from blog posts originally written by Brendan Farmer, Co-founder @ Polygon.
+- It restricts them from redistributing sequencer fees and MEV, shared validity sequencers force chains to potentially accept restrictions on their execution environments.
+- Interoperability in OR-based systems force chains to accept additional trust assumptions in exchange for low latency.
+- Anyone can run a full node in single-chain OR networks and immediately confirm that transactions are valid and finalized as soon as they’re posted to L1s. This is no longer true in the multi-chain case, and thus it would be necessary to run a full node for every chain with which the OR interoperates.
 
-    - [The original blog post](https://hackmd.io/@QOKsDTFRSd-1oYqrNQ3fIA/Hkx9X3jah) made on October 2023
-    - A more recently [updated blog post](https://mirror.xyz/0xfa892B19c72c2D2C6B10dFce8Ff8E7a955b58A61/TXMyZhhRFa-bjr7YHwmJpKBwt2-_ysirbh_VpNy3qZY) with additional details.
+By contrast, Polygon’s vision is one where chains are sovereign. They can use any execution environment, can rely on any centralized or decentralized sequencers, and can navigate tradeoffs between cross-chain latency and liveness for themselves.
+
+This is a vision that mirrors the existing Internet. The Internet is an elastically scalable, permissionless, and unified environment. Likewise, the AggLayer is scalable and permissionless - it imposes no restrictions on participating chains - and allows users to move assets and state seamlessly across the ecosystem, presenting a unified interface for the value layer of the Internet.
+
+This is the future of Polygon: not monolithic, not fully modular, but aggregated.
+
+
+!!! Credits
+
+    The contents of this document were sourced from [a blog post](https://hackmd.io/@QOKsDTFRSd-1oYqrNQ3fIA/Hkx9X3jah) originally written by Brendan Farmer, Co-founder @ Polygon on Sep 2023, as updated with a more [recent blog post](https://mirror.xyz/0xfa892B19c72c2D2C6B10dFce8Ff8E7a955b58A61/TXMyZhhRFa-bjr7YHwmJpKBwt2-_ysirbh_VpNy3qZY) with additional details.
 
 
 
