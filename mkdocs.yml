@@ -81,8 +81,18 @@ nav:
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
+        - Run Type 1 Prover quickly: cdk/how-to/deploy-t1-prover.md
+        - Deploy Type 1 Prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
+        - Polygon Type 1 Prover:
+          - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
+          - Type 1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
+          - Architectural overview: cdk/architecture/type-1-prover/t1-architecture.md
+          - Tests and proving costs: cdk/architecture/type-1-prover/testing-and-proving-costs.md
+          - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
+          - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
+          - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
         - DAC: cdk/architecture/dac.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
@@ -234,9 +244,7 @@ nav:
         - Get started: pos/get-started/index.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
-      - How to:
-        - How to: pos/how-to/index.md
-        - Sync node using snapshots: pos/how-to/snapshots.md
+      - Builder how-tos:
         - Bridge layers:
           - Bridge layers: pos/how-to/bridging/index.md
           - Ethereum-Polygon:
@@ -247,22 +255,24 @@ nav:
           - L1-L2 communication:
             - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
             - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
-        - Work with smart contracts:
-          - Work with smart contracts: pos/how-to/smart-contracts/index.md
-          - Alchemy: pos/how-to/smart-contracts/alchemy.md
-          - ChainIDE: pos/how-to/smart-contracts/chainide.md
-          - ChainStack: pos/how-to/smart-contracts/chainstack.md
-          - GetBlock: pos/how-to/smart-contracts/getblock.md
-          - QuickNode: pos/how-to/smart-contracts/quicknode.md
-          - SmartPress: pos/how-to/smart-contracts/smartpress.md
-          - thirdweb: pos/how-to/smart-contracts/thirdweb.md
+        - Integrate Polygon DID: pos/how-to/polygon-did.md
+      - Node how-tos:
+        - Node how-tos: pos/how-to/index.md
         - Delegate tokens: pos/how-to/delegate.md
+        - Sync node using snapshots: pos/how-to/snapshots.md
         - Run a validator node:
           - System requirements: pos/how-to/validator/validator-system-requirements.md
           - Prerequisites: pos/how-to/validator/prerequisites.md
           - Using binaries: pos/how-to/validator/validator-binaries.md
           - Using Ansible: pos/how-to/validator/validator-ansible.md
           - Using packages: pos/how-to/validator/validator-packages.md
+        - Operate validator nodes:
+          - Stake tokens: pos/how-to/operate-validator-node/validator-staking-operations.md
+          - Set commission rate: pos/how-to/operate-validator-node/validator-commission-operations.md
+          - Move stake: pos/how-to/operate-validator-node/move-stake.md
+          - Change signer address: pos/how-to/operate-validator-node/change-signer-address.md
+          - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
+          - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md
         - Run a full node:
           - System requirements: pos/how-to/full-node/full-node-system-requirements.md
           - Using binaries: pos/how-to/full-node/full-node-binaries.md
@@ -272,18 +282,10 @@ nav:
           - Using GCP: pos/how-to/full-node/full-node-gcp.md
         - Run an access node: pos/how-to/access-node.md
         - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
-        - Operate and maintain nodes:
-          - Staking: pos/how-to/operate-maintain-node/validator-staking-operations.md
-          - Commission: pos/how-to/operate-maintain-node/validator-commission-operations.md
-          - Move stake: pos/how-to/operate-maintain-node/move-stake.md
-          - Change signer address: pos/how-to/operate-maintain-node/change-signer-address.md
-          - Top up Heimdall fee: pos/how-to/operate-maintain-node/topup-heimdall-fee.md
-          - Validator performance requirements: pos/how-to/operate-maintain-node/validator-performance.md
         - Troubleshoot nodes:
           - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
           - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
           - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
-        - Polygon DID: pos/how-to/polygon-did.md
       - Architecture:
           - Architecture: pos/architecture/index.md
           - Bor:
@@ -569,20 +571,10 @@ nav:
           - OKLink: https://www.oklink.com/polygon
   - Learn:
       - Learn: learn/index.md
+      - Welcome: learn/welcome.md
       - Unified liquidity and scalability: learn/liquidity-and-scalability.md
-      - Aggregation layer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
       - Polygon 2.0 architecture: learn/deep-dive-arch.md
-      - Polygon type-1 zkEVM:
-          - Polygon type-1 zkEVM: learn/type-1-prover/index.md 
-          - Types of zkEVMs: learn/type-1-prover/intro-t1-prover.md
-          - Type-1 design challenges: learn/type-1-prover/t1-design-challenge.md
-          - Architectural overview: learn/type-1-prover/t1-architecture.md
-          - How to run the type-1 prover: learn/type-1-prover/deploy-t1-prover.md
-          - Tests and proving costs: learn/type-1-prover/testing-and-proving-costs.md
-          - CPU component: learn/type-1-prover/t1-cpu-component.md
-          - CTL protocol: learn/type-1-prover/t1-ctl-protocol.md
-          - Range checks: learn/type-1-prover/t1-rangechecks.md
 
 extra:
   generator: false
