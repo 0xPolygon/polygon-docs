@@ -195,9 +195,9 @@ You can imagine novel coordination infrastructure emerging on top of the foundat
     
 **Liveness**: A malicious user can collude with a malicious chain and submit a bundle that's known to fail on a specific chain. The colluding chain will claim successful execution, the remaining chains will generate proofs, but the colluding chain will never submit a proof, causing the bundle to time out. 
     
-This is an attack, but it's not unique to the atomic case. It also exists in the pre-confirmation case, where Chain A might have a pre-confirmed batch that Chain B relies on for messages, but this batch is invalid or Chain A never submits a proof. Ultimately, the solution is to blacklist the colluding or unreliable chain from participating in atomic bundles or pre-confirmation interop. Chains could also rely on third parties running full nodes to ensure that if a chain goes offline before it can produce a proof, there’s a backup prover.
+This is an attack, but it's not unique to the atomic case. It also exists in the async interop case, where Chain A might have a pre-confirmed batch that Chain B relies on for messages, but this batch is invalid or Chain A never submits a proof. Ultimately, the solution is to blacklist the colluding or unreliable chain from participating in atomic bundles or pre-confirmation interop. Chains could also rely on third parties running full nodes to ensure that if a chain goes offline before it can produce a proof, there’s a backup prover.
 
-!!! note "Users cannot cause liveness faults!"
+!!! info "Users cannot cause liveness faults!"
     An important thing to note is that users cannot cause liveness faults, only misbehaving or malfunctioning chains. Equivocation and the submission of an invalid block can be heavily penalized, either via slashing or by ejecting chains from the AggLayer and precluding their ability to seamlessly interoperate. Therefore, a liveness fault should be extremely rare.
     
 **Griefing**: A malicious user and colluding chain can submit a bundle that touches a large amount of state on another chain, and then run the same liveness attack, preventing fast confirmations for many transactions on that chain.
