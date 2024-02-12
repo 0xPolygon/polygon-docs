@@ -8,7 +8,8 @@ Add the Polygon zkEVM network of your choice to your wallet by navigating to the
 | Network | RPC URL | ChainID | Block Explorer URL | Currency |
 | ------- | ------------------------------- | ---------------- | ---------------- | ----- |
 | Polygon zkEVM | `https://zkevm-rpc.com` | `1101` | `https://zkevm.polygonscan.com/` | **ETH** |
-| zkEVM Testnet | `https://rpc.public.zkevm-test.net` | `1442` | `https://testnet-zkevm.polygonscan.com` | **ETH** |
+| Cardona Testnet | `https://rpc.cardona.zkevm-rpc.com` | `2442` | `https://cardona-zkevm.polygonscan.com/` | **ETH** |
+| zkEVM Testnet (Deprecating soon!) | `https://rpc.public.zkevm-test.net` | `1442` | `https://testnet-zkevm.polygonscan.com` | **ETH** |
 
 Here is a video tutorial on how to add Polygon zkEVM Testnet to MetaMask and deploy smart contracts:
 
