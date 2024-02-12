@@ -63,11 +63,11 @@ hide:
       </a>
    </div>
    <div class="grid-item">
-      <a href="./deep-dive-arch">
+      <a href="https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Deep dive into the architecture</div>
+            <div class="feature-card-heading">Understanding chain reorgs in PoS</div>
          </div>
-         <p class="feature-paragraph">Read the blog for a deeper dive into the upcoming technologies.</p>
+         <p class="feature-paragraph">Find out more about reorgs in PoS; why they happen and how they work.</p>
       </a>
    </div>
 </div>

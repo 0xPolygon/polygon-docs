@@ -579,7 +579,7 @@ nav:
               - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
               - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
       - Polygon protocols: learn/polygon-protocols.md
-      - Polygon 2.0 architecture: learn/deep-dive-arch.md
+      - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
 
 extra:
   generator: false
