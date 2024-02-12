@@ -31,9 +31,9 @@ hide:
 </div>
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./liquidity-and-scalability">
+      <a href="./agglayer">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Liquidity and scalability</div>
+            <div class="feature-card-heading">Polygon AggLayer</div>
          </div>
          <p class="feature-paragraph">ZK-powered L2s to unify liquidity across ecosystem and scale on demand.</p>
       </a>
