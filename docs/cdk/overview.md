@@ -38,4 +38,4 @@ Here is what developers can expect when they build with Polygon CDK.
 
 The following diagram illustrates how Polygon CDK-developed chains may opt into a web of interoperable L2 chains: 
 
-![](../img/cdk/overview-2.png)
+![img](https://lh7-eu.googleusercontent.com/5GJavrjHtRP1LC-N-MmG6yZjaN9QG0N4Xk8hl_lRAMIuuKl1KKLB2pQJz9AMX5u19renKi7acrVMQ2aos5X2bAmEFBnADlVTKpbHOxvny7luASdK_qYI-3L5u4GFb8PBjRpI2KOjYNFh-C-UoLdBbpE)
