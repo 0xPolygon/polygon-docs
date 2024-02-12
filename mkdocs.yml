@@ -87,9 +87,22 @@ nav:
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
-        - Rollup: cdk/concepts/rollup.md
-        - Validium: cdk/concepts/validium.md
-        - Data availability: cdk/concepts/dac.md
+        - Polygon Type 1 Prover:
+          - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
+          - How to:
+              - Run Type 1 Prover quickly: cdk/how-to/deploy-t1-prover.md
+              - Deploy Type 1 Prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
+          - Architecture:
+              - Overview: cdk/architecture/type-1-prover/t1-architecture.md
+              - Type 1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
+              - Tests and proving costs: cdk/architecture/type-1-prover/testing-and-proving-costs.md
+          - Specification:
+              - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
+              - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
+              - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
+          - Rollup: cdk/concepts/rollup.md
+          - Validium: cdk/concepts/validium.md
+          - Data availability: cdk/concepts/dac.md
       - Additional resources:
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
@@ -563,19 +576,6 @@ nav:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
       - Polygon AggLayer: learn/agglayer.md
-      - Polygon Type 1 Prover:
-          - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
-          - How to:
-              - Run Type 1 Prover quickly: cdk/how-to/deploy-t1-prover.md
-              - Deploy Type 1 Prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
-          - Architecture:
-              - Overview: cdk/architecture/type-1-prover/t1-architecture.md
-              - Type 1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
-              - Tests and proving costs: cdk/architecture/type-1-prover/testing-and-proving-costs.md
-          - Specification:
-              - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
-              - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
-              - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
       - Polygon protocols: learn/polygon-protocols.md
       - Polygon 2.0 architecture: learn/deep-dive-arch.md
 
