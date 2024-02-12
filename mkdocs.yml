@@ -576,7 +576,6 @@ nav:
       - Welcome: learn/welcome.md
       - Polygon AggLayer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
-      - Polygon 2.0 architecture: learn/deep-dive-arch.md
 
 extra:
   generator: false
