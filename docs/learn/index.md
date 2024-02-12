@@ -31,11 +31,19 @@ hide:
 </div>
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./liquidity-and-scalability">
+      <a href="./agglayer">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Liquidity and scalability</div>
+            <div class="feature-card-heading">Polygon AggLayer</div>
          </div>
          <p class="feature-paragraph">ZK-powered L2s to unify liquidity across ecosystem and scale on demand.</p>
+      </a>
+   </div>
+   <div class="grid-item">
+      <a href="../cdk/architecture/type-1-prover/intro-t1-prover">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Polygon Type 1 Prover</div>
+         </div>
+         <p class="feature-paragraph">Driven by innovation, the Polygon Type 1 Prover is fully Ethereum equivalent.</p>
       </a>
    </div>
     <div class="grid-item">
@@ -46,7 +54,15 @@ hide:
          <p class="feature-paragraph">Widely-adopted EVM-compatible sidechain designed for low transaction costs and fast transaction times.</p>
       </a>
    </div>
-         <div class="grid-item">
+   <div class="grid-item">
+      <a href="./welcome">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Welcome to Polygon innovation and design</div>
+         </div>
+         <p class="feature-paragraph">Find out what to expect from the Polygon Knowledge Layer Learn section.</p>
+      </a>
+   </div>
+   <div class="grid-item">
       <a href="./deep-dive-arch">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Deep dive into the architecture</div>

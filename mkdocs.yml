@@ -133,9 +133,11 @@ nav:
         - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
+        - Upgrades:
+          - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
-          - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
+          
           - State management: zkEVM/architecture/protocol/state-management.md
           - Transaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
@@ -572,7 +574,7 @@ nav:
   - Learn:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
-      - Unified liquidity and scalability: learn/liquidity-and-scalability.md
+      - Polygon AggLayer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
       - Polygon 2.0 architecture: learn/deep-dive-arch.md
 
