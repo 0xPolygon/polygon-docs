@@ -576,6 +576,7 @@ nav:
       - Welcome: learn/welcome.md
       - Polygon AggLayer: learn/agglayer.md
       - Polygon protocols: learn/polygon-protocols.md
+      - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
 
 extra:
   generator: false
