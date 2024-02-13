@@ -528,7 +528,7 @@ journalctl -u bor.service -f
   ```
 
 !!! tip
-    The following heimdall seed can be used for both mainnet and Mumbai testnet: `8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656`
+    The following Heimdall seed can be used for both mainnet and Mumbai testnet: `8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656`
 
 - Bootnodes:
 
