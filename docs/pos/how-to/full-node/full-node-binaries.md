@@ -86,6 +86,9 @@ sed -i 's|^seeds =.*|seeds = "9df7ae4bf9b996c0e3436ed4cd3050dbc5742a28@43.200.20
 chown heimdall /var/lib/heimdall
 ```
 
+!!! tip
+    The following heimdall seed can be used for both mainnet and Mumbai testnet: `8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656`
+
 ### Bor install
 
 Install the latest version of Bor, based on valid v1.0+ [released version](https://github.com/maticnetwork/bor/releases).

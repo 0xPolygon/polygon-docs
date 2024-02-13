@@ -202,13 +202,13 @@ The Private key to be used is your Wallet's ETH address where your Matic testnet
 
 For Binaries: `~/.heimdalld/config folder`
 
-```jsx
+```bash
 /var/lib/heimdall/config folder
 ```
 
 For Linux package:
 
-```jsx
+```bash
 /etc/heimdall/config
 ```
 
@@ -263,7 +263,7 @@ Bor supports the `--cache` parameter which can reduce the cache to avoid running
 
 ### 13. How to delete the Bor DB data?
 
-```
+```bash
 bor --datadir  /var/lib/bor/data removedb
 cd ~/node/bor
 bash setup.sh

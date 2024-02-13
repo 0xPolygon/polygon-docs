@@ -21,7 +21,7 @@ The key ecosystem stakeholders involved in implementing a change are:
 - Full nodes
 - Core developers
 
-The PoS chain uses an improvement proposal-based framework to meet these coordination requirements. This framework acts as a signaling mechanism for stakeholder, and is not binding.
+The PoS chain uses an improvement proposal-based framework to meet these coordination requirements. This framework acts as a signaling mechanism for stakeholders, and is not binding.
 
 ## Ecosystem consensus
 
