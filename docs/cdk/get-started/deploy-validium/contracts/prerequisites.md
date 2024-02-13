@@ -64,4 +64,4 @@ nano /tmp/cdk/.env
 ```
 
 !!! danger
-    Don't forget: the system removes this file on shutdown.
+    Don't forget, the system removes this file on shutdown.
