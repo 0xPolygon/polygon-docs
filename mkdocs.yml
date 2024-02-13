@@ -246,6 +246,7 @@ nav:
         - Get started: pos/get-started/index.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
+        - Governance fundamentals: pos/get-started/governance.md
       - Builder how-tos:
         - Bridge layers:
           - Bridge layers: pos/how-to/bridging/index.md
@@ -313,7 +314,7 @@ nav:
         - Contracts:
           - Genesis contracts: pos/reference/contracts/genesis-contracts.md
           - Delegation via validator shares: pos/reference/contracts/delegation.md
-          - Staking manager: pos/reference/contracts/stakingmanager.md
+          - Staking manager: pos/reference/contracts/stakingmanager.md 
         - Rewards and staking incentives: pos/reference/rewards.md
         - Default ports for nodes: pos/reference/port-management.md
         - Common commands: pos/reference/commands.md
