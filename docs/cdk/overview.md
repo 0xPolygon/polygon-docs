@@ -16,7 +16,7 @@ A chain tailored for a specific application might leverage the zkEVM execution e
      A CDK zkEVM rollup L2 chain dedicated to running a game has lower security requirements than a high-value DeFi application. This could also use a validium mode for off-chain data availability to further reduce transaction costs.
 
 !!! info "Coming soon"
-     Upon the completion of the aggregation layer every chain will have the option to be interoperable with other Polygon network chains. For now the aggregation layer in the CDK kit allows for independent chains (1 to 1) to settle independently.
+     Upon the completion of the aggregation layer, every chain will have the option to be interoperable with other Polygon network chains. For now, the aggregation layer in the CDK kit allows for independent chains (1-to-1) to settle independently.
 
 ## Sovereign and modular chain design
 
