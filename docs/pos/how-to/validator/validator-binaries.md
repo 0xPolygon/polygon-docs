@@ -6,7 +6,7 @@ follow the [Validator Node System Requirements](./validator-system-requirements.
 
 !!!tip Snapshots
     Steps in this guide involve waiting for the **Heimdall** and **Bor** services to fully sync.
-    This process takes several days to complete. Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours. For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](/pos/how-to/snapshots.md).
+    This process takes several days to complete. Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours. For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](../../how-to/snapshots.md).
 
     For snapshot download links, see [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
 
@@ -550,4 +550,4 @@ Now that your sentry and validator nodes are in sync and running, head over to
 ## Next Steps: Staking
 
 Now that you have your sentry and validator nodes are health-checked, proceed to
-the [Staking](/how-to/operating/validator-node/staking.md) guide to start backing the network.
+the [Staking](../../how-to/operate-validator-node/validator-staking-operations.md) guide to start backing the network.

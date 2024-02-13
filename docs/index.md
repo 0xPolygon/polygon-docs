@@ -98,7 +98,7 @@ hide:
 							<div class="product-list-header"><img width="24px" src="img/home/learn-icon.svg" loading="lazy" alt="">
 								<h3 class="heading-h3 margin-none">LEARN</h3>
 							</div>
-							<p class="feature-paragraph">Deep dives only. Further your understanding of Polygon scaling technology.</p>
+							<p class="feature-paragraph">Deep dives only. Further your understanding of Polygon scaling technology.</p></br>
 						</div>
 						<a href="learn" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
@@ -109,34 +109,34 @@ hide:
 							</div>
 							<p class="feature-paragraph"> Resources focused on both current and future Polygon technologies. It features detailed guides, foundational concepts, and previews of upcoming innovations. </p>
 						</a>
-						<a href="learn/welcome" class="flex-card-item w-inline-block">
+						<a href="cdk/architecture/type-1-prover/intro-t1-prover" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">Welcome</div>
+								<div class="feature-card-heading">Type 1 Prover</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
 							</div>
-							<p class="feature-paragraph"> This segment aims to educate users about the intricacies of ZK-powered L2s on Ethereum, offering a blend of theoretical understanding and practical application.</p>
+							<p class="feature-paragraph">The Polygon Type 1 proving component used for creating proofs on your ZK-EVM chain.</p>
 						</a>
-						<a href="learn/deep-dive-arch" class="flex-card-item w-inline-block">
+						<a href="learn/agglayer" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">Polygon 2.0</div>
+								<div class="feature-card-heading">Agg Layer</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
 							</div>
-							<p class="feature-paragraph">A vision for a unified web of ZK-powered L2s on Ethereum, built using Polygon technology. Unlimited scale, unified liquidity, and blockspace on demand.</p>
+							<p class="feature-paragraph">Introducing the multi-chain, multi-transaction Polygon Agg Layer; what it is and how it works.</p>
 						</a>
-						<a href="learn/liquidity-and-scalability" class="flex-card-item w-inline-block">
+						<a href="https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">Unified liquidity</div>
+								<div class="feature-card-heading">Understanding reorgs</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
 							</div>
-							<p class="feature-paragraph">Level up your understanding of zero-knowledge with whitepapers by the researchers at Polygon Labs.</p>
+							<p class="feature-paragraph">Reorgs demystified: insights from monitoring with a sensor network.</p>
 						</a>
-						<a href="learn/polygon-protocols" class="flex-card-item w-inline-block">
+						<a href="learn/polygon-protocols" class="flex-card-item last-item  w-inline-block">
 							<div class="product-list-item-header">
 								<div class="feature-card-heading">Polygon protocols</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
