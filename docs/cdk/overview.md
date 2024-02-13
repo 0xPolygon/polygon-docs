@@ -6,7 +6,7 @@ Polygon Chain Development Kit (CDK) is a modular, open source software toolkit f
 
 ## CDK options
 
-With Polygon CDK, developers can select a chain architecture specific to their needs from a set of supported, open source components. Alternatively, developers can select custom components for specific requirements. The diagram below shows the two supported configuration options, zkEVM rollup or validium. zkEVM rollups post transaction data from Polygon CDK directly onto Ethereum whereas validiums only post the transaction hash.
+With Polygon CDK, developers can select a chain architecture specific to their needs from a set of supported, open source components. Alternatively, developers can select custom components for specific requirements. The diagram below shows the two supported configuration options, zkEVM rollup or validium. zkEVM rollups post transaction data from Polygon CDK directly onto Ethereum, whereas validiums only post the transaction hashes, while storing transaction data off-chain.
 
 ![](../img/cdk/overview-1.png)
 
