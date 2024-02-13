@@ -1,4 +1,4 @@
-This document provides a comprehensive list of differences between the EVM and the Polygon zkEVM. The list includes supported EIPs, opcodes, and additional changes made when building the Polygon zkEVM.
+This document provides brief remarks on the differences between the EVM and the Polygon zkEVM. Lists of supported and unsupported EIPs, opcodes, and additional changes made when building the Polygon zkEVM, can be found [here](../architecture/protocol/etrog-upgrade.md).
 
 ### EVM-equivalence
 
@@ -24,12 +24,6 @@ EVM-equivalence is critical to Polygon zkEVM for several reasons, including the 
 
 Ultimately, Polygon zkEVM offers developers the same UX as on Ethereum, with significantly improved scalability.
 
-
-!!!info
-    No impact on developer experience
-
-    Note that the following differences have no impact on the developer experience with the zkEVM as compared to the EVM. Gas optimization techniques, interacting with libraries like Web3.js and Ethers.js, and deploying contracts work seamlessly on the zkEVM without any overhead.
-
 The following differences have no impact on the developer's experience on the zkEVM compared to the EVM:
 
    - Gas optimization techniques.
@@ -37,6 +31,7 @@ The following differences have no impact on the developer's experience on the zk
    - Deploying contracts seamlessly on the zkEVM without any overhead.
 
 
+<!-- 
 ### Opcodes
 
 Below is a list of the changes we have made to opcodes in zkEVM in comparison to the EVM.
@@ -78,4 +73,4 @@ Other precompiled contracts have no effect on the zkEVM state tree and are treat
 
    - [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930), which defines the Optional Access Lists transaction type, is not supported.
 
-   - [`BASEFEE`](https://ethereum-org-fork.netlify.app/en/developers/docs/gas#base-fee) opcode is not supported. The zkEVM implements the Berlin hardfork, but not the London hardfork.
+   - [`BASEFEE`](https://ethereum-org-fork.netlify.app/en/developers/docs/gas#base-fee) opcode is not supported. The zkEVM implements the Berlin hardfork, but not the London hardfork. -->

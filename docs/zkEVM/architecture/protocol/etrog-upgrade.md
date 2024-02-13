@@ -40,6 +40,42 @@ The below table displays Polygon zkEVM's precompiled status.
 
 ![Figure: etrog-precompiled](../../../img/zkEVM/etrog-precompiled.png)
 
+
+
+
+
+#### Supported opcodes
+
+
+
+| Opcodes          | Support status | Details                                                      |
+| ---------------- | -------------- | ------------------------------------------------------------ |
+| **SELFDESTRUCT** | Not supported  | Replaced by **SENDALL**.                                     |
+| **EXTCODEHASH**  | Supported      | It returns the hash of the contract bytecode from the zkEVM state tree without checking if the account is empty. |
+| **DIFFICULTY**   | Supported      | It returns "0" instead of a random number as in the EVM.     |
+| **BLOCKHASH**    | Supported      | It is the state root at the end of a processable transaction and is stored on the system smart contract. It returns all previous block hashes instead of just the last 256 blocks. |
+| **NUMBER**       | Supported      | It returns the number of processable transactions.           |
+| **JUMPDEST**     | Supported      | It is allowed in PUSH bytes to avoid runtime bytecode analysis. |
+| **BASEFEE**      | Not supported  | The zkEVM implements the Berlin hardfork, but not the London hardfork. |
+
+
+
+#### EIPs support
+
+
+
+| EIPs     | Hardfork | Support status | Description                                                  |
+| -------- | -------- | -------------- | ------------------------------------------------------------ |
+| EIP-2718 | Berlin   | Not supported. | Defines a new transaction type that is an envelope for future transaction types.[^e1] |
+| EIP-2930 | Berlin   | Not supported. | Defines the Optional Access Lists transaction type.[^e2]     |
+| EIP-3541 | London   | Supported.     | Reject new contract code starting with the 0xEF byte.[^e3]   |
+
+
+#### Additions
+
+**zk-counters** indicate batch resources that are available, linked to state-machine components, as a supplementary addition to gas computation.
+
+
 ## Dragonfruit issues
 
 Dragonfruit upgrade inherited from its predecessors the configuration that each block in the zkEVM is equivalent to one L2 transaction.
@@ -85,3 +121,9 @@ The Etrog upgrade comes with groundbreaking amendments aimed at improving UX and
 - Allowing granularity on the timestamp within a batch.
 
 Attaining the Type-2 status is remarkable.
+
+
+
+[^e1]: https://eips.ethereum.org/EIPS/eip-2718
+[^e2]: https://eips.ethereum.org/EIPS/eip-2930 
+[^e3]: https://eips.ethereum.org/EIPS/eip-3541 
