@@ -1,3 +1,7 @@
+!!!	warning
+	- Use a separate terminal window to run the node and each service separately.
+	- Whenever you need to restart the process, make sure you stop and delete all running Docker containers and images.
+
 ## Run the prover
 
 Since the prover is large and compute-expensive to build, we will use a docker container.
@@ -58,3 +62,7 @@ cd ~/cdk-validium/cdk-data-availability-0.0.3
 cd ~/cdk-validium/zkevm-bridge-service 
 ./dist/zkevm-bridge run --cfg /tmp/cdk/bridge-config.toml
 ```
+
+## Congratulations
+
+You have now set up and deployed a full CDK validium network.

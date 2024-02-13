@@ -93,4 +93,4 @@
     ./version-check.sh
     ```
 
-3. Install any missing or out-of-date software.
+3. Install any missing or out-of-date software using the links provided above.

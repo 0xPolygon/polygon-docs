@@ -161,3 +161,7 @@ sepolia: {
       },
     },
 ```
+
+## Steps to run the node and services
+
+You are now ready to begin the [CDK validum node and services deployment steps](../node/prerequisites.md).
