@@ -225,17 +225,17 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 
 	The values to append to `genesis.json` are something like:
 
-		```bash
-		#~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/genesis.json
-		"L1Config": {
-		"chainId": 11155111,
-		"maticTokenAddress": "0xd76B50509c1693C7BA35514103a0A156Ca57980c",
-		"polygonZkEVMAddress": "0x52C8f9808246eF2ce992c0e1f04fa54ec3378dD1",
-		"cdkDataCommitteeContract": "0x8346026951978bd806912d0c93FB0979D8E3436a",
-		"polygonZkEVMGlobalExitRootAddress": "0xE3A721c20B30213FEC306dd60f6c7F2fCB8b46D2"
-		},
-		"genesisBlockNumber": 5098088
-		```
+	```bash
+	#~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/genesis.json
+	"L1Config": {
+	"chainId": 11155111,
+	"maticTokenAddress": "0xd76B50509c1693C7BA35514103a0A156Ca57980c",
+	"polygonZkEVMAddress": "0x52C8f9808246eF2ce992c0e1f04fa54ec3378dD1",
+	"cdkDataCommitteeContract": "0x8346026951978bd806912d0c93FB0979D8E3436a",
+	"polygonZkEVMGlobalExitRootAddress": "0xE3A721c20B30213FEC306dd60f6c7F2fCB8b46D2"
+	},
+	"genesisBlockNumber": 5098088
+	```
 
 6. Run the following script that automates the process of appending those values:
 
@@ -248,6 +248,10 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 	.L1Config.polygonZkEVMGlobalExitRootAddress = $data.polygonZkEVMGlobalExitRootAddress | 
 	.genesisBlockNumber = $data.deploymentBlockNumber' ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/genesis.json > /tmp/cdk/genesis.json
 	```
+
+	You should see something like this:
+
+	![DAC configuration output](../../../../img/cdk/dac-output.png)
 
 ## Configure the DAC
 

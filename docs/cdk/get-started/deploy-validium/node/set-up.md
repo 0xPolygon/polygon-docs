@@ -3,7 +3,7 @@
 1. Navigate to `cdk-validium-contracts-0.0.2/deployment` and run the following script that inputs the required parameters from `deploy_output.json` into `/tmp/cdk/.env`.
 
     ```bash
-    cd cdk-validium-contracts-0.0.2/deployment
+    cd ~/cdk-validium-contracts-0.0.2/deployment
     echo "GEN_BLOCK_NUMBER=$(jq -r '.deploymentBlockNumber' deploy_output.json)" >> /tmp/cdk/.env
     echo "CDK_VALIDIUM_ADDRESS=$(jq -r '.cdkValidiumAddress' deploy_output.json)" >> /tmp/cdk/.env
     echo "POLYGON_ZKEVM_BRIDGE_ADDRESS=$(jq -r '.polygonZkEVMBridgeAddress' deploy_output.json)" >> /tmp/cdk/.env
@@ -46,17 +46,15 @@
     - `cdk-validium-node`
     - `zkevm-bridge-service-0.3.1`
 
-## Prepare the environment
-
-Navigate to the node directory we cloned at the previous step: `cdk-validium-node/`.
-
-```bash
-cd cdk-validium-node/
-```
-
 ## Set up the database
 
-1. Run the docker command below to start an instance of the `psql` database. The database is used for many of the services, such as the node, prover, DAC, and bridge service.
+1. Navigate to the node directory we cloned at the previous step: `cdk-validium-node/`.
+
+    ```bash
+    cd cdk-validium-node/
+    ```
+
+2. Run the docker command below to start an instance of the `psql` database. The database is used for many of the services, such as the node, prover, DAC, and bridge service.
 
     ```bash
     docker run -e POSTGRES_USER=cdk_user -e POSTGRES_PASSWORD=cdk_password -e POSTGRES_DB=postgres -p 5432:5432 postgres:15
@@ -70,7 +68,7 @@ cd cdk-validium-node/
         kill -9 <PID>
         ```
 
-2.  Use the following command to validate the setup (`\q` to exit).
+3.  Use the following command to validate the setup (`\q` to exit).
 
     ```bash
     PGPASSWORD=cdk_password psql -h localhost -U cdk_user -d postgres -p 5432
@@ -85,10 +83,10 @@ cd cdk-validium-node/
 
 The `cdk-validium-node` directory contains a script called `single_db_server.sql` that provisions all the databases required for the prover, state, and pool to operate. 
 
-1. Run the script to provision all the necessary databases and schemas used for the prover and node:
+1. In a new terminal window, run the script to provision all the necessary databases and schemas used for the prover and node:
 
     ```bash
-    cd /cdk-validium/cdk-validium-node
+    cd cdk-validium/cdk-validium-node
     PGPASSWORD=cdk_password psql -h localhost -U cdk_user -d postgres -p 5432 -a -q -f ./db/scripts/single_db_server.sql
     ```
 
