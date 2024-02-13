@@ -2,7 +2,7 @@ Polygon Chain Development Kit (CDK) is a modular, open source software toolkit f
 
 !!! warning "ZK-EVM versus zkEVM - term usage"
     -  **ZK-EVM**: The capitalized and hyphenated usage of the term **refers to any zero-knowledge rollup chain in general**.
-    - Whenever we are specifically referring to the Polygon zkEVM product, we use **zkEVM**.
+    - **zkEVM** refers to Polygon's zero-knowledge rollup and validium scaling solution.
 
 ## CDK options
 
