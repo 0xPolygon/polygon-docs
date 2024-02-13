@@ -246,7 +246,6 @@ nav:
         - Get started: pos/get-started/index.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
-        - Governance fundamentals: pos/get-started/governance.md
       - Builder how-tos:
         - Bridge layers:
           - Bridge layers: pos/how-to/bridging/index.md
@@ -289,6 +288,8 @@ nav:
           - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
           - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
           - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
+      - Governance:
+        - Governance fundamentals: pos/governance/governance-fundamentals.md
       - Architecture:
           - Architecture: pos/architecture/index.md
           - Bor:
