@@ -53,7 +53,6 @@ Assuming that the change or upgrade agreed upon via community consensus requires
 
     In contrast, a **soft fork** is backward-compatible with the pre-fork blocks. This type of protocol change does not require nodes to upgrade before a deadline, therefore, multiple versions of the node software can be running at once and be able to validate transactions. 
 
-
 ## On-chain consensus
 
 The parameters that define on-chain consensus are inherited from Tendermint BFT, which requires **at least ${2/3}rd$** of the total validating stake to be in favour of the upgrade.
@@ -77,10 +76,3 @@ The current voting parameters (denominated in staked MATIC):
 - Veto: 33.4%	
 
 A list of the changeable parameters is available [here](https://github.com/maticnetwork/heimdall/blob/develop/auth/types/params.go).
-
-
-
-
-
-
-
