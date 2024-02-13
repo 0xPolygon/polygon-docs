@@ -278,6 +278,8 @@ nav:
           - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
           - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
           - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
+      - Governance:
+        - Governance fundamentals: pos/governance/governance-fundamentals.md
       - Architecture:
           - Architecture: pos/architecture/index.md
           - Bor:
@@ -303,7 +305,7 @@ nav:
         - Contracts:
           - Genesis contracts: pos/reference/contracts/genesis-contracts.md
           - Delegation via validator shares: pos/reference/contracts/delegation.md
-          - Staking manager: pos/reference/contracts/stakingmanager.md
+          - Staking manager: pos/reference/contracts/stakingmanager.md 
         - Rewards and staking incentives: pos/reference/rewards.md
         - Default ports for nodes: pos/reference/port-management.md
         - Common commands: pos/reference/commands.md
