@@ -44,7 +44,7 @@ Assuming that the change or upgrade agreed upon via community consensus requires
 5. Finally, once confirmed that the upgrade doesn't break anything, it is scheduled to be released to mainnet on a PPGC. At this point, the tag version is marked as "**final**".
 6. Validators upgrade their nodes to the latest version after considering the changes. The upgrade is now made canonical via on-chain consensus of the validating stake, including that delegated by token holders. 
 
-!!! info "Hard forks vs. Soft forks"
+!!! info "Hard forks vs. soft forks"
     A **hard fork** happens when the node software changes in such a way that the new version is no longer backward-compatible with earlier blocks. This is usually the result of a change in the consensus logic, meaning that blocks validated using the latest software will produce a different hash.
 
     A block number is selected, before which all nodes in the network should have upgraded to the new version; nodes running the old version will be disconnected from the canonical chain after the hard fork block.
