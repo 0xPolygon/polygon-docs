@@ -48,15 +48,15 @@ The below table displays Polygon zkEVM's precompiled status.
 
 
 
-| Opcodes          | Support status | Details                                                      |
+| `OPCODE`          | Support status | Details                                                      |
 | ---------------- | -------------- | ------------------------------------------------------------ |
-| **SELFDESTRUCT** | Not supported  | Replaced by **SENDALL**.                                     |
-| **EXTCODEHASH**  | Supported      | It returns the hash of the contract bytecode from the zkEVM state tree without checking if the account is empty. |
-| **DIFFICULTY**   | Supported      | It returns "0" instead of a random number as in the EVM.     |
-| **BLOCKHASH**    | Supported      | It is the state root at the end of a processable transaction and is stored on the system smart contract. It returns all previous block hashes instead of just the last 256 blocks. |
-| **NUMBER**       | Supported      | It returns the number of processable transactions.           |
-| **JUMPDEST**     | Supported      | It is allowed in PUSH bytes to avoid runtime bytecode analysis. |
-| **BASEFEE**      | Not supported  | The zkEVM implements the Berlin hardfork, but not the London hardfork. |
+| `SELFDESTRUCT` | Not supported  | Replaced by **SENDALL**.                                     |
+| `EXTCODEHASH`  | Supported      | It returns the hash of the contract bytecode from the zkEVM state tree without checking if the account is empty. |
+| `DIFFICULTY`   | Supported      | It returns "0" instead of a random number as in the EVM.     |
+| `BLOCKHASH`    | Supported      | It is the state root at the end of a processable transaction and is stored on the system smart contract. It returns all previous block hashes instead of just the last 256 blocks. |
+| `NUMBER`      | Supported      | It returns the number of processable transactions.           |
+| `JUMPDEST`     | Supported      | It is allowed in PUSH bytes to avoid runtime bytecode analysis. |
+| `BASEFEE`      | Not supported  | The zkEVM implements the Berlin hardfork, but not the London hardfork. |
 
 
 
