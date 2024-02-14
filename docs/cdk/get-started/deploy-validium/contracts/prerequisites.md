@@ -39,8 +39,8 @@ Use a public faucet to get Sepolia test ETH.
 
 We will be working with two separate `.env` files.
 
-- One `.env` file resides in the contracts project directory. We will set this up in the [contract set up](set-up.md#create-the-env-configuration) section.
-- Another `.env` resides in a shared system directory so that it is accessible to the node and all running processes. We will populate this file as we go along.
+- One `.env` file resides in the contracts project directory. We will set this up in the [contract set up](set-up.md#create-the-contracts-env-configuration) section.
+- Another `.env` resides in a shared system directory so that it is accessible to the node and all running processes.
 
 Create a folder `/tmp/cdk/` to store the shared `.env` file which will be used by all running processes.
 
@@ -56,11 +56,11 @@ mkdir /tmp/cdk/
 
 Create a `.env` file to store the environment variables that all running processes will share. This shared `.env` file allows us to use `jq` and `tomlq` to easily setup the configuration for the node and running processes.
 
-This file will be populated throughout the [deploy node](../node/prerequisites.md) instructions.
+After adding a few variables to this file in the next [set up section](set-up.md#create-the-shared-system-env-configuration), this file is populated with more environment variables during the [node set up step](../node/set-up.md) and is then accessed by the system throughout the [deploy node configuration step](../node/configure-deployment.md) and [node and services run step](../node/run-node-services.md).
 
 ```bash
 nano /tmp/cdk/.env
 ```
 
 !!! danger
-    Don't forget, the system removes this file on shutdown.
+    Don't forget: The system removes this file on shutdown.
