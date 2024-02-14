@@ -37,11 +37,10 @@ Use a public faucet to get Sepolia test ETH.
 
 ## Configuration files
 
-!!! warning
-    We will be working with two separate `.env` files.
+We will be working with two separate `.env` files.
 
-    - One `.env` file resides in the contracts project directory. We will set this up in the [contract set up](set-up.md#create-the-env-configuration) section.
-    - Another `.env` resides in a shared system directory so that it is accessible to the node and all running processes. We will populate this file as we go along.
+- One `.env` file resides in the contracts project directory. We will set this up in the [contract set up](set-up.md#create-the-env-configuration) section.
+- Another `.env` resides in a shared system directory so that it is accessible to the node and all running processes. We will populate this file as we go along.
 
 Create a folder `/tmp/cdk/` to store the shared `.env` file which will be used by all running processes.
 
