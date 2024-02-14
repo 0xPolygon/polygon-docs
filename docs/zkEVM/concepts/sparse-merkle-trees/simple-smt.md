@@ -38,7 +38,7 @@ There are three distinct cases of how corresponding SMTs can be built, each dete
 
 The keys are such that the $\text{lsb}(K_{\mathbf{a}}) = 0$ and the $\text{lsb}(K_{\mathbf{b}}) = 1$.
 
-Suppose that the keys are given as $K_{\mathbf{a}} = 11010110$ and $K_{\mathbf{b}} = 11010101$.
+Suppose that the keys are given as $K_{\mathbf{a}} = 11010110$ and $K_{\mathbf{b}} = 11010111$.
 
 To build a binary SMT with this two key-values, $(K_{\mathbf{a}}, \text{V}_{\mathbf{a}})$ and $(K_{\mathbf{b}}, \text{V}_{\mathbf{b}})$,
 
