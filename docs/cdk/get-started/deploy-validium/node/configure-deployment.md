@@ -249,10 +249,6 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 	.genesisBlockNumber = $data.deploymentBlockNumber' ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/genesis.json > /tmp/cdk/genesis.json
 	```
 
-	You should see something like this:
-
-	![DAC configuration output](../../../../img/cdk/dac-output.png)
-
 ## Configure the DAC
 
 At this point we should have setup and provisioned the psql database and configured the zk prover and node. 
@@ -334,8 +330,12 @@ Now let’s configure the Data Availability Committee.
 			$TEST_ADDRESS
 	```
 
-!!!	note
-	This can take a few minutes.
+	!!!	note
+		This can take a few minutes.
+	
+	You should see something like this:
+
+	![DAC configuration output](../../../../img/cdk/dac-output.png)
 
 ## Configure bridge service
 
