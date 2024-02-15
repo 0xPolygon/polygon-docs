@@ -14,6 +14,26 @@ This command spins up the following services:
 - Pool DB
 - Mock prover
 
+### Configuration issues
+
+If you have errors related to configuration issues, see the warning at step 4 in the [configure node deployment](configure-node-deployment.md#set-up) section.
+
+### Process binding issue
+
+If you  need to restart, make sure you kill any db processes hanging with the following commands.
+
+```sh
+sudo lsof -t -i:5432
+kill -9 <PID>
+```
+
+### Kill all Docker containers and images 
+
+```sh
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
+```
+
 ## Log sample
 
 ???     "Logs sample"
