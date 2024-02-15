@@ -59,7 +59,7 @@ nav:
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
           - Validium: 
-              - Introduction: cdk/get-started/deploy-validium/index.md
+              - Introduction: cdk/get-started/deploy-validium/intro.md
               - Deploy contracts:
                   - Prerequisites: cdk/get-started/deploy-validium/contracts/prerequisites.md
                   - Set up: cdk/get-started/deploy-validium/contracts/set-up.md
@@ -81,18 +81,8 @@ nav:
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
-        - Run Type 1 Prover quickly: cdk/how-to/deploy-t1-prover.md
-        - Deploy Type 1 Prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
-        - Polygon Type 1 Prover:
-          - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
-          - Type 1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
-          - Architectural overview: cdk/architecture/type-1-prover/t1-architecture.md
-          - Tests and proving costs: cdk/architecture/type-1-prover/testing-and-proving-costs.md
-          - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
-          - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
-          - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
         - DAC: cdk/architecture/dac.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
@@ -135,6 +125,7 @@ nav:
         - Architecture: zkEVM/architecture/index.md
         - Upgrades:
           - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
+        - User fees: zkEVM/architecture/user-fees.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           
@@ -288,6 +279,8 @@ nav:
           - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
           - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
           - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
+      - Governance:
+        - Governance fundamentals: pos/governance/governance-fundamentals.md
       - Architecture:
           - Architecture: pos/architecture/index.md
           - Bor:
@@ -313,7 +306,7 @@ nav:
         - Contracts:
           - Genesis contracts: pos/reference/contracts/genesis-contracts.md
           - Delegation via validator shares: pos/reference/contracts/delegation.md
-          - Staking manager: pos/reference/contracts/stakingmanager.md
+          - Staking manager: pos/reference/contracts/stakingmanager.md 
         - Rewards and staking incentives: pos/reference/rewards.md
         - Default ports for nodes: pos/reference/port-management.md
         - Common commands: pos/reference/commands.md
@@ -575,8 +568,21 @@ nav:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
       - Polygon AggLayer: learn/agglayer.md
+      - Polygon Type 1 Prover:
+          - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
+          - How to:
+              - Run Type 1 Prover quickly: cdk/how-to/deploy-t1-prover.md
+              - Deploy Type 1 Prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
+          - Architecture:
+              - Overview: cdk/architecture/type-1-prover/t1-architecture.md
+              - Type 1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
+              - Tests and proving costs: cdk/architecture/type-1-prover/testing-and-proving-costs.md
+          - Specification:
+              - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
+              - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
+              - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
       - Polygon protocols: learn/polygon-protocols.md
-      - Polygon 2.0 architecture: learn/deep-dive-arch.md
+      - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
 
 extra:
   generator: false

@@ -6,7 +6,7 @@ follow the [Validator Node System Requirements](./validator-system-requirements.
 
 !!!tip Snapshots
     Steps in this guide involve waiting for the **Heimdall** and **Bor** services to fully sync.
-    This process takes several days to complete. Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours. For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](/pos/how-to/snapshots.md).
+    This process takes several days to complete. Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours. For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](../../how-to/snapshots.md).
 
     For snapshot download links, see [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
 
@@ -526,6 +526,10 @@ journalctl -u bor.service -f
   # Testnet:
   seeds="9df7ae4bf9b996c0e3436ed4cd3050dbc5742a28@43.200.206.40:26656,d9275750bc877b0276c374307f0fd7eae1d71e35@54.216.248.9:26656,1a3258eb2b69b235d4749cf9266a94567d6c0199@52.214.83.78:26656"
   ```
+
+!!! tip
+    The following Heimdall seed can be used for both mainnet and Mumbai testnet: `8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656`
+
 - Bootnodes:
 
   ```bash
@@ -550,4 +554,4 @@ Now that your sentry and validator nodes are in sync and running, head over to
 ## Next Steps: Staking
 
 Now that you have your sentry and validator nodes are health-checked, proceed to
-the [Staking](/how-to/operating/validator-node/staking.md) guide to start backing the network.
+the [Staking](../../how-to/operate-validator-node/validator-staking-operations.md) guide to start backing the network.

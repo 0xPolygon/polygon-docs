@@ -1,7 +1,7 @@
 
 This section guides you through starting and running the validator node through an Ansible playbook.
 
-For the system requirements, see [Validator Node System Requirements](/validator-node-system-requirements.md).
+For the system requirements, see [Validator Node System Requirements](validator-system-requirements.md).
 
 If you would like to start and run the validator node from binaries, see the guide on [spinning up a Validator node using binaries](./validator-binaries.md).
 
@@ -548,6 +548,10 @@ journalctl -u bor.service -f
   # Testnet:
   seeds="9df7ae4bf9b996c0e3436ed4cd3050dbc5742a28@43.200.206.40:26656,d9275750bc877b0276c374307f0fd7eae1d71e35@54.216.248.9:26656,1a3258eb2b69b235d4749cf9266a94567d6c0199@52.214.83.78:26656"
   ```
+
+!!! tip
+    The following Heimdall seed can be used for both mainnet and Mumbai testnet: `8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656`
+
 - Bootnodes:
 
   ```bash
@@ -568,4 +572,4 @@ Now that your Sentry and Validator nodes are synced and running, head over to [D
 
 ## Proceed to staking
 
-Now that you have your Sentry and Validator nodes health-checked, proceed to [Staking](/how-to/operating/validator-node/staking.md).
+Now that you have your Sentry and Validator nodes health-checked, proceed to [Staking](../../how-to/operate-validator-node/validator-staking-operations.md).
