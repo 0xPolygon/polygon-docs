@@ -419,6 +419,7 @@ nav:
                       - Unsigned 64-bit integer operations:  miden/vm/specification/stdlib/math/u64.md
                   - Memory procedures:  miden/vm/specification/stdlib/mem.md
                   - System procedures:  miden/vm/specification/stdlib/sys.md
+          - Test import: '!import https://github.com/Dominik1999/test-docs?branch=main&docs_dir=docs&multi_docs=True&config=mkdocs.yml&keep_docs_dir=True'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
@@ -656,6 +657,9 @@ markdown_extensions:
   - pymdownx.extra
 
 plugins:
+  - multirepo:
+      cleanup: true
+      keep_docs_dir: true
   - search
   - open-in-new-tab
   - git-revision-date-localized:
