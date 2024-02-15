@@ -1,4 +1,4 @@
-The aim with this document is to describe the Effective gas price (EGP), a mechanism by which the Polygon zkEVM network charges gas fees in a more fair and accurate manner. These fees cover L1 data-availability and L2 execution costs. It is meant to help users set the $\texttt{gasPrice}$ such that there's little chance for a transaction revert or failure.
+The aim with this document is to describe the Effective Gas Price (EGP), a mechanism by which the Polygon zkEVM network charges gas fees in a more fair and accurate manner. These fees cover L1 data-availability and L2 execution costs. It is meant to help users set the $\texttt{gasPrice}$ such that there's little chance for a transaction revert or failure.
 
 
 
