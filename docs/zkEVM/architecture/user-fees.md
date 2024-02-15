@@ -155,7 +155,7 @@ As depicted in the figure below, the $\texttt{L2GasPrice}$ could be refreshed in
 
 The above scenario is undesirable. And thus needs to be remedied.
 
-One solution to the above situation is to, instead of comparing the user's $\texttt{GasPriceSigned}$ with the current $\texttt{L2GasPrice}$, rather compare it with the least $\texttt{L2GasPrice}$ among the suggested gas prices in the given time interval.
+One solution to the above situation is to, instead of comparing the user's $\texttt{GasPriceSigned}$ with the current $\texttt{L2GasPrice}$, rather compare it with the minimum $\texttt{L2GasPrice}$ among the suggested gas prices in the given time interval.
 
 That is, allow transactions from users that have signed any $\texttt{SignedGasPrice}$ above the minimum L2 gas price recorded during a given time interval. 
 
