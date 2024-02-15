@@ -10,7 +10,7 @@ Firstly, gas is a unit that accounts for resources used when processing a transa
 
 - $\texttt{gasLimit}$ is the maximum amount of gas units that a user is willing to buy in order to complete a transaction.
 
-- $\texttt{gasPrice}$ refers to the amount of Wei a user is willing to pay for $1$ gas unit.
+- $\texttt{gasPrice}$ refers to the amount of wei a user is willing to pay for $1$ gas unit.
 
 Note that transactions with higher $\texttt{gasPrice}$ receive faster confirmation. So, if a user wants their transactions to be prioritized, then they would have to set a high $\texttt{gasPrice}$ for their transactions.
 
