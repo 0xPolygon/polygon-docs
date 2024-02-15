@@ -73,7 +73,7 @@ Let's think about the following aspects:
 2. High $\texttt{gasPrice}$ values work as incentives for prioritization of transactions in L1.
 3. The L1 $\texttt{gas/gasPrice}$ schema may not be aligned with the actual resources spent by the L2 solution.
 
-Their corresponding pertinent question are:
+Their corresponding pertinent questions are:
 
 - How does the zkEVM's transaction processing mechanism mitigate against L1 $\texttt{gasPrice}$ fluctuations?
 
