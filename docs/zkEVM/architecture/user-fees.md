@@ -183,7 +183,7 @@ Whereas, if the user signs with only $\texttt{SignedGasPrice} = 19$, then the tr
 These parameters can be configured in the Polygon zkEVM node:
 
 - $\texttt{DefaultMinGasPriceAllowed}$ which is the default minimum gas price to suggest.
-- $\texttt{MinAllowedGasPriceInterval}$, as explained above, is the interval within which to find the least suggested gas price and compare it with the user's gas price in the transaction.
+- $\texttt{MinAllowedGasPriceInterval}$, as explained above, is the interval within which to find the lowest suggested gas price and compare it with the user's gas price in the transaction.
 - $\texttt{PollMinAllowedGasPriceInterval}$ is the interval to poll L1 in order to find the suggested L2 minimum gas price.
 - $\texttt{IntervalToRefreshGasPrices}$ is the interval to refresh L2 gas prices.
 
