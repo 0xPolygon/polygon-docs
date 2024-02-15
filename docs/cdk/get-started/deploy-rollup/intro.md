@@ -18,4 +18,6 @@ The process is split into the following sections:
 
 6. [Configure prover](configure-prover.md): Configure the prover database and the prover service.
 
-7. [Start services](start-services.md): Start the services.
+7. [Start node](start-node.md): Start the node.
+
+8. [Start services](start-services.md): Start the services.

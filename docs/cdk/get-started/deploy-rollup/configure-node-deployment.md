@@ -20,7 +20,7 @@
 3. Go to the `zkevm/zkevm-config` directory and create an `.env` file and open it for editing.
 
     ```sh
-    cd ../zkevm-config/
+    cd ~/zkevm/zkevm-config/
     nano .env
     ```
 
@@ -32,7 +32,7 @@
     ZKEVM_NODE_POOLDB_DATA_DIR = "~/zkevm/data/pooldb"
     ```
 
-    !!! warning
+    !!! warning "Workaround if you have configuration issues"
         - You may have to hardcode these variables into the `mainnet/docker-compose.yaml` file.
         - Also, the `ZKEVM_NETWORK` variable which you can set to `mainnet`.
         - Note, there are more than one references to hardcode in.
@@ -90,7 +90,7 @@
 Add the missing parameters in the `~/zkevm/mainnet/config/environments/mainnet/public.node.config.toml` file.
 
 !!! warning
-    Rename the file if necessary.
+    Rename the file from `node.config.toml` to `public.node.config.toml` if necessary.
 
 - `ApiKey`  # for Etherscan
 - `URL`     # for Goerli node, under [ETHERMAN]

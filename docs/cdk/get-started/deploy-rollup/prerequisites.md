@@ -17,6 +17,9 @@ The commands on the [install dependencies page](install-dependencies.md) fulfill
 !!! info
     The mock prover is a light resource by skipping validation and instead adding a `Valid ✅` checkmark to every batch.
 
+    
+<!-- TODO: Add link to full prover instructions -->
+
 - 4-core CPU
 - 8GB RAM (16GB recommended)
 
