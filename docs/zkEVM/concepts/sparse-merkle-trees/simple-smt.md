@@ -52,7 +52,9 @@ To build a binary SMT with this two key-values, $(K_{\mathbf{a}}, \text{V}_{\mat
 
 5. One can then compute the root as, $\mathbf{root}_{\mathbf{ab}} = \mathbf{H}(\mathbf{L}_{\mathbf{a}} \| \mathbf{L}_{\mathbf{b}})$.
 
-Note that the leaf $\mathbf{L}_{\mathbf{a}}$ is on the left because the $\text{lsb}(K_{\mathbf{a}}) = 0$, but $\mathbf{L}_{\mathbf{b}}$ is on the right because the $\text{lsb}(K_{\mathbf{b}}) = 1$. That is, between **the two edges leading up to the $\mathbf{root}_{\mathbf{ab}}$**, the leaf $\mathbf{L}_{\mathbf{a}}$ must be on the edge from the left, while $\mathbf{L}_{\mathbf{b}}$ is on the edge from the right.
+Note that the leaf $\mathbf{L}_{\mathbf{a}}$ is on the left because the $\text{lsb}(K_{\mathbf{a}}) = 0$, but $\mathbf{L}_{\mathbf{b}}$ is on the right because the $\text{lsb}(K_{\mathbf{b}}) = 1$. That is, between **the two edges leading up to the $\mathbf{root}_{\mathbf{ab}}$**, the leaf $\mathbf{L}_{\mathbf{a}}$ must be on the edge from the left, while $\mathbf{L}_{\mathbf{b}}$ is on the edge from the right. 
+
+Note that in this particular example, any second key $K_{\mathbf{b}}$ with its LSB being $1$ would result in the corresponding values being siblings. The algorithm unfolds as we build Merkle trees with more key-value pairs.
 
 See the below figure for the SMT representing the two key-value pairs $(K_{\mathbf{a}}, \text{V}_{\mathbf{a}})$ and $(K_{\mathbf{b}}, \text{V}_{\mathbf{b}})$, where $K_{\mathbf{a}} = 11010110$ and $K_{\mathbf{b}} = 11010101$.
 
