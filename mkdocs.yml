@@ -125,6 +125,7 @@ nav:
         - Architecture: zkEVM/architecture/index.md
         - Upgrades:
           - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
+        - User fees: zkEVM/architecture/user-fees.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           
