@@ -170,7 +170,7 @@ $$
 
 **Example** 
 
-The figure below shows the case where $\texttt{MinAllowedPriceInterval} = 5 \texttt{\ minutes}$ and the least suggested $\texttt{L2GasPrice} = 18$. 
+The figure below shows the case where $\texttt{MinAllowedPriceInterval} = 5 \texttt{\ minutes}$ and the lowest suggested $\texttt{L2GasPrice} = 18$. 
 
 So, if the user signed with $\texttt{SignedGasPrice} = 18$, then the transaction gets rejected because it will not cover costs as it is not above the $\texttt{L2MinGasPrice}$.
 
