@@ -1002,7 +1002,7 @@ Recall how we previously ended up computing the $\texttt{BreakEvenGasPriceRPC}$ 
     $$
 
     $$
-    \texttt{EffectivePercentageByte} = \texttt{EffectivePercentage} · 256 − 1 = 148
+    \texttt{EffectivePercentageByte} = \lfloor \texttt{EffectivePercentage} · 256 \rfloor − 1 = 158
     $$
 
     Observe that the user has been charged $62.3\%$ of the gas price they signed at the time of sending the transaction.
