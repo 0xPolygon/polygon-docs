@@ -20,7 +20,7 @@ If you have errors related to configuration issues, see the warning at step 4 in
 
 ### Process binding issue
 
-If you  need to restart, make sure you kill any db processes hanging with the following commands.
+If you need to restart, make sure you kill any db processes hanging with the following commands.
 
 ```sh
 sudo lsof -t -i:5432
