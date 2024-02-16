@@ -14,26 +14,6 @@ This command spins up the following services:
 - Pool DB
 - Mock prover
 
-### Configuration issues
-
-If you have errors related to configuration issues, see the warning at step 4 in the [configure node deployment](configure-node-deployment.md#set-up) section.
-
-### Process binding issue
-
-If you  need to restart, make sure you kill any db processes hanging with the following commands.
-
-```sh
-sudo lsof -t -i:5432
-kill -9 <PID>
-```
-
-### Kill all Docker containers and images 
-
-```sh
-docker rm $(docker ps -aq)
-docker rmi $(docker images -q)
-```
-
 ## Log sample
 
 ???     "Logs sample"
@@ -64,3 +44,30 @@ docker rmi $(docker images -q)
         zkevm-rpc         | /src/cmd/run.go:263 main.checkStateMigrations()
         zkevm-rpc         | /src/cmd/run.go:70 main.start()
         zkevm-state-db    | 2024-01-24 13:49:21.909 UTC [78] ERROR:  relation "public.gorp_migrations" does not exist at character 22
+
+## Troubleshooting
+
+### Configuration issues
+
+If you have errors related to configuration issues, see the warning at step 4 in the [configure node deployment](configure-node-deployment.md#set-up) section.
+
+### Process binding issue
+
+If you  need to restart, make sure you kill any hanging db processes with the following commands.
+
+!!! info
+    You can find the port number from the log warnings.
+
+```sh
+sudo lsof -t -i:<DB_PORT>
+kill -9 <PID>
+```
+
+### Kill all Docker containers and images 
+
+You can fix many restart issues and persistent errors by stopping and deleting all Docker containers and images.
+
+```sh
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
+```
