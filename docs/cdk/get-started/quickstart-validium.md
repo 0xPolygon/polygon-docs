@@ -1,4 +1,14 @@
-This quick start guide shows you how to set up a CDK validium on your local machine.
+This quick start guide shows you how to set up a CDK validium on your local machine that sets up and runs the following components:
+
+- zkEVM databases: data node, event, explorer L1 and L2, pool, state, and bridge service
+- zkEVM node components: aggregator, approve service, sequencer and sequence sender, sync
+- L1 network (mock)
+- Prover
+- Explorers L1, L2
+- JSON RPC explorer
+- L2 gas pricer
+- DAC: data availability service, dac setup committee
+- zkEVM bridge service and UI
 
 !!! note
     - The documentation describes standard deployments. 
