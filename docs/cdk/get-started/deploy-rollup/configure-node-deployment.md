@@ -90,8 +90,7 @@
 Add the following missing parameters to the `~/zkevm/mainnet/config/environments/mainnet/public.node.config.toml` file.
 
 !!! warning
-    - You may find this file is called `node.config.toml` only.
-    - Rename the file from `node.config.toml` to `public.node.config.toml` if necessary.
+    If you're having trouble locating the configuration file, try looking for `node.config.toml`, since it may exist under that name in some cases. Once you've added the missing parameters, rename the file to `public.node.config.toml`.
 
 - `ApiKey`  # for Etherscan
 - `URL`     # for Goerli node, under [ETHERMAN]
