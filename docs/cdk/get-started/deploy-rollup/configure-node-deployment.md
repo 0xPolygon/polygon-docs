@@ -87,10 +87,11 @@
 
 ## Update node config
 
-Add the missing parameters in the `~/zkevm/mainnet/config/environments/mainnet/public.node.config.toml` file.
+Add the following missing parameters to the `~/zkevm/mainnet/config/environments/mainnet/public.node.config.toml` file.
 
 !!! warning
-    Rename the file from `node.config.toml` to `public.node.config.toml` if necessary.
+    - You may find this file is called `node.config.toml` only.
+    - Rename the file from `node.config.toml` to `public.node.config.toml` if necessary.
 
 - `ApiKey`  # for Etherscan
 - `URL`     # for Goerli node, under [ETHERMAN]
