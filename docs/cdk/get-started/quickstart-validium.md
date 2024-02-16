@@ -129,7 +129,7 @@ sudo make restart
 
 ## 3. Test validium
 
-3.1 Verify the block explorer is running by navigating to [localhost:4001](http://localhost:4001/).
+3.1 Verify the block explorer is running by navigating to [localhost](http://localhost/).
 
 You should see a page similar to this:
 
