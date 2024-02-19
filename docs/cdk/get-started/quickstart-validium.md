@@ -82,10 +82,21 @@ cdk-validium-eth-tx-manager      /bin/sh -c /app/cdk-validi ...   Up            
 cdk-validium-event-db            docker-entrypoint.sh postg ...   Up             0.0.0.0:5435->5432/tcp,:::5435->5432/tcp                     
 cdk-validium-explorer-json-rpc   /bin/sh -c /app/cdk-validi ...   Up             8123/tcp, 0.0.0.0:8124->8124/tcp,:::8124->8124/tcp,          
                                                                                  0.0.0.0:8134->8134/tcp,:::8134->8134/tcp                     
-cdk-validium-explorer-l1         /bin/sh -c mix do ecto.cre ...   Up             0.0.0.0:4000->4000/tcp,:::4000->4000/tcp                     
-cdk-validium-explorer-l1-db      docker-entrypoint.sh postg ...   Up             0.0.0.0:5436->5432/tcp,:::5436->5432/tcp                     
-cdk-validium-explorer-l2         /bin/sh -c mix do ecto.cre ...   Up             0.0.0.0:4001->4000/tcp,:::4001->4000/tcp                     
-cdk-validium-explorer-l2-db      docker-entrypoint.sh postg ...   Up             0.0.0.0:5437->5432/tcp,:::5437->5432/tcp                     
+explorer-sig-provider            ./sig-provider-serv ...          Up             0.0.0.0:8151->8050/tcp        
+visualizer-proxy                 /docker-entrypoint ...           Up             80/tcp, 0.0.0.0:8083->8081/tcp        
+explorer-visualizer              ./visualizer-server ...          Up             0.0.0.0:8152->8050/tcp        
+explorer-smart-contract-verifier ./smart-contract-ve ...          Up             0.0.0.0:8150->8050/tcp        
+explorer-stats-l1                ./stats-server                   Up             0.0.0.0:8153->8050/tcp        
+explorer-stats-db-l1             docker-entrypoint.s ...          Up             0.0.0.0:7433->5432/tcp        
+explorer-frontend-l1             sh -c 'bin/blocksco ...          Up             0.0.0.0:3000->3000/tcp        
+explorer-backend-l1              sh -c 'bin/blocksco ...          Up             0.0.0.0:4000->4000/tcp                   
+explorer-backend-l1-db           docker-entrypoint.sh postg ...   Up             0.0.0.0:5436->5432/tcp                     
+explorer-proxy-l2                /docker-entrypoint ...           Up             0.0.0.0:80->80/tcp, 0.0.0.0:8084->8080/tcp        
+explorer-stats-l2                ./stats-server                   Up             0.0.0.0:8154->8050/tcp        
+explorer-stats-db-l2             docker-entrypoint.s ...          Up             0.0.0.0:7434->5432/tcp        
+explorer-frontend-l2             sh -c 'bin/blocksco ...          Up             0.0.0.0:3001->3000/tcp        
+explorer-backend-l2              sh -c 'bin/blocksco ...          Up             0.0.0.0:4001->4000/tcp                    
+explorer-backend-l2-db           docker-entrypoint.sh postg ...   Up             0.0.0.0:5437->5432/tcp                     
 cdk-validium-json-rpc            /bin/sh -c /app/cdk-validi ...   Up             0.0.0.0:8123->8123/tcp,:::8123->8123/tcp,                    
                                                                                  0.0.0.0:8133->8133/tcp,:::8133->8133/tcp,                    
                                                                                  0.0.0.0:9091->9091/tcp,:::9091->9091/tcp                     
@@ -139,7 +150,7 @@ sudo make restart
 
 ## 3. Test validium
 
-3.1 Verify the block explorer is running by navigating to [localhost:4001](http://localhost:4001/).
+3.1 Verify the block explorer is running by navigating to [localhost](http://localhost/).
 
 You should see a page similar to this:
 
@@ -153,7 +164,7 @@ You should see a page similar to this:
 
 - Set the chain ID to **1001**.
 - The currency symbol can be anything but we will use **POL** by default.
-- The RPC node and block explorer containers can be found at ports **8123** and **4001**, respectively.
+- The RPC node and block explorer containers can be found at ports **8123** and **80**, respectively.
 
 <div align="center">
   <img src="/img/cdk/cdk-metamask-add-network.png" alt="bridge" width="90%" height="30%" />
