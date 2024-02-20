@@ -312,7 +312,7 @@ Now let’s configure the Data Availability Committee.
 	tomlq -i -t --arg L1_URL "$L1_URL" '.L1.RpcURL = $L1_URL' /tmp/cdk/dac-config.toml
 	tomlq -i -t --arg L1_WS_URL "$L1_WS_URL" '.L1.WsURL = $L1_WS_URL' /tmp/cdk/dac-config.toml
 	tomlq -i -t --arg CDK_VALIDIUM_ADDRESS "$CDK_VALIDIUM_ADDRESS" '.L1.CDKValidiumAddress = $CDK_VALIDIUM_ADDRESS' /tmp/cdk/dac-config.toml
-	tomlq -i -t --arg CDK_VALIDIUM_ADDRESS "$CDK_VALIDIUM_ADDRESS" '.L1.DataCommitteeAddress = $CDK_VALIDIUM_ADDRESS' /tmp/cdk/dac-config.toml
+	tomlq -i -t --arg CDK_DATA_COMMITTEE_CONTRACT_ADDRESS "$CDK_DATA_COMMITTEE_CONTRACT_ADDRESS" '.L1.DataCommitteeAddress = $CDK_DATA_COMMITTEE_CONTRACT_ADDRESS' /tmp/cdk/dac-config.toml
 	```
 
 6. Update the contracts on Sepolia with information about our DAC.
@@ -417,6 +417,6 @@ Now let’s configure the Data Availability Committee.
 	tomlq -i -t --arg POLYGON_ZKEVM_BRIDGE_ADDRESS "$POLYGON_ZKEVM_BRIDGE_ADDRESS" '.NetworkConfig.PolygonBridgeAddress = $POLYGON_ZKEVM_BRIDGE_ADDRESS' /tmp/cdk/bridge-config.toml
 	tomlq -i -t --arg POLYGON_ZKEVM_GLOBAL_EXIT_ROOT_ADDRESS "$POLYGON_ZKEVM_GLOBAL_EXIT_ROOT_ADDRESS" '.NetworkConfig.PolygonZkEVMGlobalExitRootAddress = $POLYGON_ZKEVM_GLOBAL_EXIT_ROOT_ADDRESS' /tmp/cdk/bridge-config.toml
 	tomlq -i -t --arg MATIC_TOKEN_ADDRESS "$MATIC_TOKEN_ADDRESS" '.NetworkConfig.MaticTokenAddress = $MATIC_TOKEN_ADDRESS' /tmp/cdk/bridge-config.toml
-	tomlq -i -t --arg CDK_DATA_COMMITTEE_CONTRACT_ADDRESS "$CDK_DATA_COMMITTEE_CONTRACT_ADDRESS" '.NetworkConfig.L2PolygonBridgeAddresses = [$CDK_DATA_COMMITTEE_CONTRACT_ADDRESS]' /tmp/cdk/bridge-config.toml
+	tomlq -i -t --arg POLYGON_ZKEVM_BRIDGE_ADDRESS "$POLYGON_ZKEVM_BRIDGE_ADDRESS" '.NetworkConfig.L2PolygonBridgeAddresses = [$POLYGON_ZKEVM_BRIDGE_ADDRESS]' /tmp/cdk/bridge-config.toml
 	```
 

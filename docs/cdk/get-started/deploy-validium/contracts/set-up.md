@@ -66,7 +66,7 @@ npm install
         You should still be in the `cdk-validium-contracts-0.0.2/` directory from the previous step.
 
     ```sh
-    nano `.env`
+    nano .env
     ```
 
 4. This is what the `.env` file will more or less look like, although you may see actual data in there from a previous run. 
