@@ -61,7 +61,7 @@
 Open a new terminal window and run the following command.
 
 ```bash
-cd ~/cdk-validium/cdk-data-availability-0.0.3
+cd ~/cdk-validium/cdk-data-availability
 ./dist/cdk-data-availability run --cfg /tmp/cdk/dac-config.toml
 ```
 
