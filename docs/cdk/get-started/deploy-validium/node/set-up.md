@@ -42,7 +42,7 @@
 
     You should see three new directories in `cdk-validium/`: 
 
-    - `cdk-data-availability-0.0.3`
+    - `cdk-data-availability`
     - `cdk-validium-node`
     - `zkevm-bridge-service-0.3.1`
 
