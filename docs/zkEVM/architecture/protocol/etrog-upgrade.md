@@ -30,11 +30,11 @@ Use the following details to connect wallets to Cardona:
 
 We use the same faucet for testnet tokens, here: https://faucet.polygon.technology/
 
-## zkEVM is type-2
+## zkEVM is almost type 2
 
 The Etrog upgrade comes with support for most of the EVM's [precompiled contracts](https://www.evm.codes/precompiled?fork=shanghai); ecRecover, SHA-256, identity, modexp, ecAdd, ecMul, and ecPairing. This only leaves out the barely used RIPEMD-160 and blake2f.
 
-Owing to this fact, the Etrog upgrade therefore helps Polygon zkEVM reach one of its major milestones, becoming a type-2 zkEVM.
+Owing to this fact, the Etrog upgrade therefore helps Polygon zkEVM inch closer to becoming a type 2 zkEVM.
 
 The below table displays Polygon zkEVM's precompiled status.
 
