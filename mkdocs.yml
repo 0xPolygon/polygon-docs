@@ -423,6 +423,10 @@ nav:
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
+          - dApp Launchpad:
+              - Introduction: tools/dApp-development/launchpad/intro.md
+              - Frontend: tools/dApp-development/launchpad/frontend.md
+              - Smart contracts: tools/dApp-development/launchpad/smart-contracts.md
           - Smart contract development on PoS:
               - Alchemy: tools/dApp-development/pos/alchemy.md
               - ChainIDE: tools/dApp-development/pos/chainide.md
