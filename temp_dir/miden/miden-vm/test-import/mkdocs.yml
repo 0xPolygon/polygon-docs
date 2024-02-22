@@ -1,0 +1,142 @@
+site_name: My Docs
+theme:
+  name: material
+  palette:
+      # Palette toggle for light mode
+      - scheme: default
+        primary: white
+        accent: purple
+        toggle:
+          icon: material/eye
+          name: Switch to dark mode
+      # Palette toggle for dark mode
+      - scheme: slate
+        primary: black
+        accent: purple
+        toggle:
+          icon: material/eye-outline
+          name: Switch to light mode
+  favicon: img/favicon.ico
+  icon:
+    logo: logo
+    repo: repo
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+    # - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.integration
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.action.edit
+nav:
+  - Interacting with the Client:
+      - CLI: 'cli.md'
+      - Using the client's crate: 'rust_crate.md'
+  - Develop using the Client:
+      - Getting Started: 'development.md'
+  - How Miden Client works:
+      - Overview: 'overview.md'
+extra:
+  generator: false
+  # FIXME: got a `jinja2.exceptions.TemplateNotFound: partials/integrations/analytics/custom.html` error with this uncommented
+  # analytics:
+  #   provider: custom
+  #   property: google    
+  #  feedback:  # feedback form only works when Google Analytics is set up and working
+  #    title: Was this page helpful?
+  #    ratings:
+  #      - icon: fontawesome/regular/face-grin-stars
+  #        name: This page was helpful
+  #        data: 1
+  #        note: >-
+  #          Thanks for your feedback!
+  #      - icon: fontawesome/regular/face-grimace
+  #        name: This page could be improved
+  #        data: 0
+  #        note: >-
+  #          Thanks for your feedback! Help us improve this page by
+  #          using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+  social:
+    - icon: fontawesome/solid/circle-question
+      link: https://support.polygon.technology/support/solutions
+    - icon: fontawesome/solid/globe
+      link: https://polygon.technology/
+    - icon: fontawesome/brands/github
+      link: https://github.com/0xPolygon/polygon-docs
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+docs_dir: src
+
+extra_css:
+  - _site_essentials/stylesheets/extra.css
+  - https://fonts.googleapis.com/icon?family=Material+Icons
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+      toc_depth: 4
+  - codehilite
+  - markdown_include.include:
+      base_path: src
+  - admonition
+  - footnotes
+  - def_list
+  - attr_list
+  - abbr
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.caret
+  - meta
+  - smarty
+  - pymdownx.extra
+
+plugins:
+  - search
+  - open-in-new-tab
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      strict: false
+      exclude:
+        - index.md
+  - git-authors:
+      show_contribution: true
+
+validation:
+  absolute_links: ignore
+
+extra_javascript:
+  - _site_essentials/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
