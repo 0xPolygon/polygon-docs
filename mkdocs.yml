@@ -83,6 +83,7 @@ nav:
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
+        - Use a native token: cdk/how-to/use-native-token.md
       - Architecture:
         - DAC: cdk/architecture/dac.md
       - Specification:
