@@ -26,4 +26,4 @@ Open the deploy_parameters.json file and add a new entry:
 
 `TOKEN-ADDRESS` is the address of a deployed ERC20 L1 token.
 
-If you leave the value empty, the ETH token address is used as default.
+If you leave the value empty, the ETH token address is used as a default.
