@@ -2,7 +2,7 @@
 
 - [Node](https://nodejs.org/en/download) version 18.x.x is recommended.
 - Anything above Node version 16.14.x is supported.
-- We recommend [https://github.com/nvm-sh/nvm] for managing Node installations.
+- We recommend [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm) for managing Node installations.
 
 ## Install the app
 
@@ -36,7 +36,7 @@ dapp-launchpad list scaffold-templates
 
 ## Set up environment variables
 
-There are mandatory environment variables in both the frontend and smart contract directories. 
+There are mandatory environment variables in both the `frontend` and `smart-contracts` directories. 
 
 1. `cd` into your project directory.
 
@@ -81,11 +81,11 @@ There are mandatory environment variables in both the frontend and smart contrac
 
     You will see the local test blockchain running with deployed contracts and some pre-funded wallets you can use.
 
-    [Local test environment running](../../../img/tools/launchpad/running-example.png)
+    ![Local test environment running](../../../img/tools/launchpad/running-example.png)
 
 2. Open [http://localhost:3000](http://localhost:3000) in a browser.
 
-    [Web application running](../../../img/tools/launchpad/dev-startup.png)
+    ![Web application running](../../../img/tools/launchpad/dev-startup.png)
 
 You now have a fully integrated dev environment including a local dev blockchain and a local frontend dev server. Any changes to the code automatically updates both the frontend and the smart contracts. No manual reload is necessary.
 
@@ -97,13 +97,22 @@ You can start developing by forking an existing chain. To see the available opti
 dapp-launchpad dev -h
 ```
 
+The chain name options are in this section of the help output:
+
+```sh
+-n, --fork-network-name [NAME]        Name of the network to fork; optional. 
+                                        By default, it starts a new
+                                        chain from genesis block. (choices: "ethereum", "goerli",
+                                        "polygonPos", "polygonMumbai", "polygonZkevm", "polygonZkevmTestnet")
+```
+
 To fork Polygon zkEVM, for example, run the following command:
 
 ```sh
 dapp-launchpad dev -n polygonZkevm
 ```
 
-To fork at a particular block number run the command with the following optional flag:
+To fork at a particular block number run the command including the optional flag `-b`:
 
 ```sh
 dapp-launchpad dev -n polygonZkevm -b [BLOCK_NUMBER_TO_FORK_AT]
@@ -135,10 +144,10 @@ dapp-launchpad deploy -n CHAIN_NAME --only-frontend
 ```
 
 !!! important
-    The frontend deployment requires that smart contracts to have been deployed before, so if you are only deploying the frontend, make sure that you:
+    The frontend deployment requires that smart contracts to have already been deployed, so if you are only deploying the frontend, make sure that you:
 
     1. Have already run the smart contracts deploy command successfully.
-    2. OR, run the following wizard:
+    2. If not, run the following wizard command:
     
             `generate smart-contracts-config -e production -n CHAIN_NAME`
 

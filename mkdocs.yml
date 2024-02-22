@@ -429,6 +429,8 @@ nav:
               - Frontend: tools/dApp-development/launchpad/frontend.md
               - Smart contracts: tools/dApp-development/launchpad/smart-contracts.md
               - Commands: tools/dApp-development/launchpad/commands.md
+              - Contributing: tools/dApp-development/launchpad/contributing.md
+              - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
           - Smart contract development on PoS:
               - Alchemy: tools/dApp-development/pos/alchemy.md
               - ChainIDE: tools/dApp-development/pos/chainide.md

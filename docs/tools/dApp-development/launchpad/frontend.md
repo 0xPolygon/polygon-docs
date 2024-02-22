@@ -6,7 +6,7 @@ To get started, modify the component file at `./frontend/src/pages/index`.
 
 !!! info
     If you're new to Next.js but know React.js, getting used to Next.js is trivial. 
-    To learn more about Next.js, [read their docs](https://nextjs.org/docs).
+    To learn more about Next.js, [read the Next.js docs](https://nextjs.org/docs).
 
 ## Environment variables
 

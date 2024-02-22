@@ -6,9 +6,9 @@ Make sure you have followed the [steps in the quickstart](quickstart.md#set-up-e
 
 The smart contracts run on a [Hardhat](https://hardhat.org/) environment. They are written in [Solidity](https://docs.soliditylang.org/) and reside in the `smart-contracts` directory.
 
-Tests are written in JS/TS, and are in the `tests` directory. An example test is available.
+Tests are written in JavaScript and TypeScript, and are in the `tests` directory. An example test is available.
 
-Scripts are also written in JS/TS, and reside in the `scripts` directory. Some mandatory scripts are already there to get started with.
+Scripts are also written in JavaScript and TypeScript, and reside in the `scripts` directory. Some mandatory scripts are already there to get started with.
 
 ## Deploying on local test chain
 
