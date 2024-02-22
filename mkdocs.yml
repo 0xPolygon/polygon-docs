@@ -327,7 +327,7 @@ nav:
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
       - Miden VM:
-          - Test import: '!import https://github.com/0xPolygonMiden/miden-client/?branch=mFragaBA-add-mkdocs&docs_dir=docs&multi_docs=True&config=mkdocs.yml&keep_docs_dir=True'
+          - Test import: '!import https://github.com/0xPolygonMiden/miden-client/?branch=main&docs_dir=docs&multi_docs=True&config=mkdocs.yml&keep_docs_dir=True'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
