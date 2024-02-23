@@ -437,6 +437,9 @@ nav:
               - Truffle: tools/dApp-development/common-tools/truffle.md
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
+      - Chain indexer framework:
+          - Overview: tools/chain-indexer-framework/overview.md
+          - Usage: tools/chain-indexer-framework/usage.md
       - Third-party tutorials:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Gas:
