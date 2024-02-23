@@ -2,7 +2,7 @@
 
 Every time the dev environment starts, a new local test chain is started. Metamask maintains a cache of "latest block number" and "account transaction nonce". Since every run of `dev` creates a new chain, it never matches with this cache.
 
-To know how to clear the cache, [read this](https://support.metamask.io/hc/en-us/articles/360015488891-How-to-clear-your-account-activity-reset-account).
+To clear the cache, follow the [MetaMask documentation](https://support.metamask.io/hc/en-us/articles/360015488891-How-to-clear-your-account-activity-reset-account).
 
 ## MetaMask transactions fail with a nonce error when using the **reset on change** option in dev environment
 

@@ -20,7 +20,7 @@ For all available options run:
 dapp-launchpad dev -h
 ```
 
-Internally, the `dev` command runs the `scripts/deploy_localhost` script that deploys all contracts in the correct sequence. 
+Internally, the [`dev`](commands.md#dev) command runs the `scripts/deploy_localhost` script that deploys all contracts in the correct sequence. 
 
 !!! warning
     When working on your own smart contracts, make sure to update this script.
@@ -29,19 +29,17 @@ Internally, the `dev` command runs the `scripts/deploy_localhost` script that de
 
 Optionally, you can enable a local blockchain explorer, which auto-indexes all transactions, and provides a feature-loaded dashboard with an overview of the chain.
 
-To use it, run the `[dev]()` command with `-e`.
+To use it, run the [`dev`](commands.md#dev) command with `-e`.
 
 !!! info "Setting up an explorer"
     - Sign up on [Ethernal](https://app.tryethernal.com/), and create a workspace. 
     - Then, add your login email, password, and workspace details in the `.env` file in the `smart-contracts` directly.
 
-The above config can also be mentioned with [`dev`]() command params `--ethernal-login-email`, `--ethernal-login-password` and `--ethernal-workspace`, which override the preset environment variables.
-
-Once started, you can access the chain explorer at the same URL as mentioned before.
+The above config can also be mentioned with [`dev`](commands.md#dev) command params `--ethernal-login-email`, `--ethernal-login-password` and `--ethernal-workspace`, which override the preset environment variables.
 
 ## Deploying to production
 
-The [`deploy`]() command automates deploying to any EVM compatible chain. It runs the provided `scripts/deploy_prod` script to deploy all contracts in the correct sequence. When working on your own smart contracts, make sure to update this script.
+The [`deploy`](commands.md#deploy) command automates deploying to any EVM compatible chain. It runs the provided `scripts/deploy_prod` script to deploy all contracts in the correct sequence. When working on your own smart contracts, make sure to update this script.
 
 For all available options run:
 
