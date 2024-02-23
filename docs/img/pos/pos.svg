@@ -6,8 +6,8 @@
 <rect x="77" y="18" width="70" height="56" rx="5" fill="#E6E6E6" stroke="#333333" stroke-linejoin="round"/>
 <rect x="82" y="33" width="60" height="35" fill="white" stroke="#333333" stroke-linejoin="round"/>
 <path d="M331 30.6471L352.5 18L374 30.6471L352.5 43.2941L331 30.6471Z" fill="white" stroke="#333333" stroke-linejoin="round"/>
-<path d="M352.5 66.0587L331 54.103V30.647L352.5 42.6027V66.0587Z" fill="white" stroke="#333333" stroke-linejoin="round"/>
-<path d="M352.5 66.0587L374 54.103V30.647L352.5 42.6027V66.0587Z" fill="#E6E6E6" stroke="#333333" stroke-linejoin="round"/>
+<path d="M352.5 66.0589L331 54.1031V30.6471L352.5 42.6028V66.0589Z" fill="white" stroke="#333333" stroke-linejoin="round"/>
+<path d="M352.5 66.0589L374 54.1031V30.6471L352.5 42.6028V66.0589Z" fill="#E6E6E6" stroke="#333333" stroke-linejoin="round"/>
 <path d="M289 42.3529L301.5 35L314 42.3529L301.5 49.7059L289 42.3529Z" fill="white" stroke="#333333" stroke-linejoin="round"/>
 <path d="M301.5 63.294L289 56.343V42.7058L301.5 49.6568V63.294Z" fill="white" stroke="#333333" stroke-linejoin="round"/>
 <path d="M301.5 63.294L314 56.343V42.7058L301.5 49.6568V63.294Z" fill="#E6E6E6" stroke="#333333" stroke-linejoin="round"/>
