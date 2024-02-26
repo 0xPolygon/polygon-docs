@@ -133,7 +133,7 @@ In this tutorial, we'll cover how to:
 
     ![](../../img/tools/portal/portal-21.png)
 
-5. If the token contract address is valid, you'll see the option at the bottom to add it to the portal. Select the option and you'll be able to see the token appear in the token list on the Portal dashboard.
+5. If the token contract address is valid, you'll see the option at the bottom to add it to the portal. Select the option and the token will appear in the token list on the Portal dashboard.
 
     ![](../../img/tools/portal/portal-22.png)
 
