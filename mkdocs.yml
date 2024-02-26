@@ -552,6 +552,7 @@ nav:
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
           - Getting started:  tools/wallets/getting-started.md
+          - Polygon Portal: tools/wallets/portal.md
           - Metamask:
               - Overview: tools/wallets/metamask/index.md
               - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
