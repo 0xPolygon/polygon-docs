@@ -88,7 +88,7 @@ npm install
 
 ## Create the shared system `.env` configuration
 
-1.  Now open the *other* `.env` file residing in `/tmp/cdk/.env` which we created in the prerequisite steps.
+1.  Now create the *other* `.env` file residing in `/tmp/cdk/.env` which we created in the prerequisite steps.
 
     ```sh
     nano /tmp/cdk/.env

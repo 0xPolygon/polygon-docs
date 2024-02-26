@@ -3,7 +3,7 @@
 1. Navigate to `cdk-validium-contracts-0.0.2/deployment` and run the following script that inputs the required parameters from `deploy_output.json` into `/tmp/cdk/.env`.
 
     ```bash
-    cd ~/cdk-validium-contracts-0.0.2/deployment
+    cd ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment
     echo "GEN_BLOCK_NUMBER=$(jq -r '.deploymentBlockNumber' deploy_output.json)" >> /tmp/cdk/.env
     echo "CDK_VALIDIUM_ADDRESS=$(jq -r '.cdkValidiumAddress' deploy_output.json)" >> /tmp/cdk/.env
     echo "POLYGON_ZKEVM_BRIDGE_ADDRESS=$(jq -r '.polygonZkEVMBridgeAddress' deploy_output.json)" >> /tmp/cdk/.env
@@ -59,6 +59,13 @@
     ```bash
     docker run -e POSTGRES_USER=cdk_user -e POSTGRES_PASSWORD=cdk_password -e POSTGRES_DB=postgres -p 5432:5432 postgres:15
     ```
+
+    !!! note "Run containers in background"
+        Add the `-d` flag to the command to run the container in the background.
+        
+        ```bash
+        docker run -d -e POSTGRES_USER=cdk_user -e POSTGRES_PASSWORD=cdk_password -e POSTGRES_DB=postgres -p 5432:5432 postgres:15
+        ```
 
     !!! note "Port is in use"
         If you are unable to start the process because a port is in use, check the processes occupying the port then kill those processes.
