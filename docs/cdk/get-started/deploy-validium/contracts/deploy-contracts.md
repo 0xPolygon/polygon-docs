@@ -1,20 +1,13 @@
 ## Configure deployment parameters
 
-1. `cd` to the `deployment/` directory and create a new `deploy_parameters.json` by copying the example
-
-    ```bash
-    cd deployment/
-    cp deploy_parameters.json.example deploy_parameters.json
-    ```
-
-2. Run the following `jq` script to streamline the process of replacing these fields:
+1. Run the following `jq` script to streamline the process of replacing the fields with the `/tmp/cdk/.env` data:
 
     ```bash
     source /tmp/cdk/.env
     jq --arg TEST_ADDRESS "$TEST_ADDRESS" '.trustedSequencerURL = "http://127.0.0.1:8123" | .trustedSequencer = $TEST_ADDRESS | .trustedAggregator = $TEST_ADDRESS | .admin = $TEST_ADDRESS | .cdkValidiumOwner = $TEST_ADDRESS | .initialCDKValidiumDeployerOwner = $TEST_ADDRESS | .timelockAddress = $TEST_ADDRESS | .forkID = 6' ./deploy_parameters.json.example > ./deploy_parameters.json
     ```
 
-3. The complete `deploy_parameters.json` should look something like this, where all the addresses are equal to the generated address except for `maticTokenAddress`:
+2. The complete `deploy_parameters.json` should look something like this, where all the addresses are equal to the generated address except for `maticTokenAddress`:
 
     ```bash
     nano ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/deploy_parameters.json

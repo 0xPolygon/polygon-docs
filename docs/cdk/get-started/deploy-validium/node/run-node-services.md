@@ -8,6 +8,13 @@
 	docker run -v "/tmp/cdk/test.prover.config.json:/usr/src/app/config.json" -p 50061:50061 -p 50071:50071 --network host hermeznetwork/zkevm-prover:v3.0.2 zkProver -c /usr/src/app/config.json
 	```
 
+	!!! note "Run containers in background"
+        Add the `-d` flag to the command to run the container in the background.
+        
+        ```bash
+        docker run -d -v "/tmp/cdk/test.prover.config.json:/usr/src/app/config.json" -p 50061:50061 -p 50071:50071 --network host hermeznetwork/zkevm-prover:v3.0.2 zkProver -c /usr/src/app/config.json
+        ```
+
 	!!! important
 		The database logs may output an error while they wait for a node. For example:
 
@@ -70,7 +77,7 @@ cd ~/cdk-validium/cdk-data-availability
 Open a new terminal window and run the following command.
 
 ```bash
-cd ~/cdk-validium/zkevm-bridge-service 
+cd ~/cdk-validium/zkevm-bridge-service-0.3.1/
 ./dist/zkevm-bridge run --cfg /tmp/cdk/bridge-config.toml
 ```
 

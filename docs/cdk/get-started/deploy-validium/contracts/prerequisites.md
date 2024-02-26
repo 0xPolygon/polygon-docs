@@ -17,10 +17,12 @@ Make sure you have the following minimum software requirements.
 | [Foundry](https://book.getfoundry.sh/getting-started/installation) | ^0.2 | `forge --version` |
 | [jq](https://jqlang.github.io/jq/download/) | ^1.6 | `jq -V` |
 
-## Sepolia access
+## Access to a Sepolia node
 
-!!! info    
-    You can run your own Sepolia node if you wish and we recommend this for a production set up. However, for simplicity and brevity, we demonstrate by using a node provider.
+Use a node provider like Infura or Alchemy. We use Infura throughout but you can use any node provider you wish. 
+
+!!! important
+    We recommend running your own Sepolia node for a production set up. 
 
 You will need the following:
 
@@ -50,17 +52,13 @@ mkdir /tmp/cdk/
 
 !!! danger
     - Any files in the `tmp/` directory are deleted on shutdown.
-    - For this reason, we recommend that you save this folder in your home directory once the shared configuration set up is complete.
+    - For this reason, we recommend that you copy this folder and paste it into your home directory once the shared configuration set up is complete. That way, you can just paste it back after the `tmp` directory empties.
 
 ### Shared environment variables
 
-Create a `.env` file to store the environment variables that all running processes will share. This shared `.env` file allows us to use `jq` and `tomlq` to easily setup the configuration for the node and running processes.
+We will add a `.env` file to the `/tmp/cdk/` directory to store the environment variables that all running processes will share. This shared `.env` file allows us to use `jq` and `tomlq` to easily setup the configuration for the node and running processes.
 
 After adding a few variables to this file in the next [set up section](set-up.md#create-the-shared-system-env-configuration), this file is populated with more environment variables during the [node set up step](../node/set-up.md) and is then accessed by the system throughout the [deploy node configuration step](../node/configure-deployment.md) and [node and services run step](../node/run-node-services.md).
-
-```bash
-nano /tmp/cdk/.env
-```
 
 !!! danger
     Don't forget: The system removes this file on shutdown.

@@ -4,7 +4,7 @@ Copy and modify the contents of `test.prover.config.json` in `~/cdk-validium/cdk
 
 ```bash
 cd ~/cdk-validium/cdk-validium-node 
-jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:cdk_password@localhost:5432/postgres"' ./test/config/test.prover.config.json > /tmp/cdk/test.prover.config.json
+jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:cdk_password@localhost:5432/prover_db"' ./test/config/test.prover.config.json > /tmp/cdk/test.prover.config.json
 ```
 
 ## Configure the node
@@ -218,26 +218,7 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 	tomlq -i -t --arg TEST_ADDRESS "$TEST_ADDRESS" '.Aggregator.SenderAddress = $TEST_ADDRESS' /tmp/cdk/node-config.toml
 	```
 
-5. Now we will modify the `genesis.json` from the earlier contract deployment to include information about the newly configured chain.
-
-	!!!	info
-		`genesis.json` is in the `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/` directory
-
-	The values to append to `genesis.json` are something like:
-
-	```bash
-	#~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/genesis.json
-	"L1Config": {
-	"chainId": 11155111,
-	"maticTokenAddress": "0xd76B50509c1693C7BA35514103a0A156Ca57980c",
-	"polygonZkEVMAddress": "0x52C8f9808246eF2ce992c0e1f04fa54ec3378dD1",
-	"cdkDataCommitteeContract": "0x8346026951978bd806912d0c93FB0979D8E3436a",
-	"polygonZkEVMGlobalExitRootAddress": "0xE3A721c20B30213FEC306dd60f6c7F2fCB8b46D2"
-	},
-	"genesisBlockNumber": 5098088
-	```
-
-6. Run the following script that automates the process of appending those values:
+5. Now we will modify the `genesis.json` from the earlier contract deployment to include information about the newly configured chain. Run the following script that automates the process of appending those values:
 
 	```bash
 	jq --argjson data "$(jq '{maticTokenAddress, cdkValidiumAddress, cdkDataCommitteeContract, polygonZkEVMGlobalExitRootAddress, deploymentBlockNumber}' ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/deploy_output.json)" \
@@ -255,7 +236,7 @@ At this point we should have setup and provisioned the psql database and configu
 
 Now let’s configure the Data Availability Committee.
 
-1. Navigate to `~/cdk-validium/cdk-data-availability-0.0.3`.
+1. Navigate to `~/cdk-validium/cdk-data-availability`.
 
 2. Build the DAC
 
