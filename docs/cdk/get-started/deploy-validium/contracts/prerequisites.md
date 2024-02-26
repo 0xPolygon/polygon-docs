@@ -22,7 +22,7 @@ Make sure you have the following minimum software requirements.
 Use a node provider like Infura or Alchemy. We use Infura throughout but you can use any node provider you wish. 
 
 !!! important
-    We recommend running your owning Sepolia node for a production set up. 
+    We recommend running your own Sepolia node for a production set up. 
 
 You will need the following:
 
