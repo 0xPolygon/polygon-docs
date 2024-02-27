@@ -62,7 +62,7 @@ Next is the initialization of a project using Hardhat. Hardhat cannot initialize
 mv README.md README-tutorial.md
 ```
 
-- Initialize a project with Hardhat: ```npx hardhat```.
+- Initialize a project with Hardhat: ```npx hardhat init```.
 
 - Next, (... *To avoid failure ... please go slow with this cli dialogue*...),
 
