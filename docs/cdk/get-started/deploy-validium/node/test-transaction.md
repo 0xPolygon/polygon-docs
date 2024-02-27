@@ -1,15 +1,31 @@
 ## Test transactions
 
-Once everything is up and running you can test by sending a transaction.
+Once everything is up and running you can do a quick test of the running stack by sending a zero-value transaction.
 
-!!! warning
-    Work in progress.
+Run the following command where the mnemonic is for testing and the address can be any account address.
 
+```sh
+cast send --legacy --mnemonic 'code code code code code code code code code code code quality' --value 0 --gas-price 0 --rpc-url http://127.0.0.1:8123 0x0bb7AA0b4FdC2D2862c088424260e99ed6299148
+```
 
-<!--
-At the end of the tutorial, there should be some commands in order to verify that everything is working. If you follow the document as-is, you would probably need to do a bridge in order to get any value on L2. So it would probably be useful to show how to do that.
+You should see something like this as output:
 
-Alternatively, we should probably run the genesis creation step with the `--test` flag in order to start L2 with some pre-mined value. Users in Discord seem to be trying to modify the [1createGenesis.js](https://github.com/0xPolygon/cdk-validium-contracts/blob/c6743885226690788b3474fa216622023f48bd98/deployment/1_createGenesis.js#L297) file to get value on L2 by default. This should work as well.
+```sh
+blockHash               0x5d6d45f46e54c5d0890dd8a4ede989dc8042d7d3aeada375ea11d2e77c91a298
+blockNumber             1
+contractAddress        
+cumulativeGasUsed       21000
+effectiveGasPrice       0
+from                    0x85dA99c8a7C2C95964c8EfD687E95E632Fc533D6
+gasUsed                 21000
+logs                    []
+logsBloom               0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+root                    0x97b15537641583db08f1e3db15cb1e89212ed8d147670a11f93f368d5960e72f
+status                  1
+transactionHash         0xd5443cff8dcc1147ead09d978d3abe9179615aa3eecbe4819c6768390bc467a3
+transactionIndex        0
+type                    0
+to                      0x66ec…89fd
+```
 
-One quick way to verify that transactions can be mined is to send a zero-priced transaction. E.g
--->
+Status `1` signifies a successful transaction.

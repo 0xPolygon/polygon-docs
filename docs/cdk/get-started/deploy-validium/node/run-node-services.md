@@ -84,3 +84,5 @@ cd ~/cdk-validium/zkevm-bridge-service-0.3.1/
 ## Congratulations
 
 You have now set up and deployed a full CDK validium network.
+
+Check the next section to find out how to send a test transaction.
