@@ -65,7 +65,7 @@
 
 ## Run the DAC
 
-Open a new terminal window and run the following command.
+Navigate to the `cdk-data-availability` directory and run the following command.
 
 ```bash
 cd ~/cdk-validium/cdk-data-availability
@@ -84,3 +84,5 @@ cd ~/cdk-validium/zkevm-bridge-service-0.3.1/
 ## Congratulations
 
 You have now set up and deployed a full CDK validium network.
+
+Check the next section to find out how to send a test transaction.

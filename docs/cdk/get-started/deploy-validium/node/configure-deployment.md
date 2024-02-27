@@ -31,6 +31,10 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 
 3. Create a file `node-config.toml` inside `/tmp/cdk/` and paste in the following content.
 
+	```bash
+	nano /tmp/cdk/node-config.toml
+	```
+
 	???     "`node-config.toml`"		
 			#/tmp/cdk/node-config.toml
 			IsTrustedSequencer = true
@@ -238,6 +242,10 @@ Now let’s configure the Data Availability Committee.
 
 1. Navigate to `~/cdk-validium/cdk-data-availability`.
 
+	```sh
+	cd ~/cdk-validium/cdk-data-availability
+	```
+
 2. Build the DAC
 
 	```bash
@@ -245,6 +253,10 @@ Now let’s configure the Data Availability Committee.
 	```
 
 3. Create a `dac-config.toml` file inside `/tmp/cdk/`. 
+
+	```bash
+	nano /tmp/cdk/dac-config.toml
+	```
 
 4. Copy and paste the following example config below into `dac-config.toml`.
 
@@ -327,7 +339,11 @@ Now let’s configure the Data Availability Committee.
 	make build
 	```
 
-2. Create a starter bridge config `bridge-config.toml` inside `/tmp/cdk` using the following config file:
+2. Create a starter bridge config `bridge-config.toml` inside `/tmp/cdk` and copy/paste the file below.
+
+	```bash
+	nano /tmp/cdk/bridge-config.toml
+	```
 
 	```bash
 	#/tmp/cdk/bridge-config.toml

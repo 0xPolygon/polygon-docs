@@ -16,7 +16,7 @@ The process requires two separate flows with different software requirements. Fo
 
 ## Git repos and running order
 
-These are code bases we used to set everything up for this deployment guide, and in this order.
+These are the code bases we used to set everything up for this deployment guide, and in this order.
 
 !!! warning
     The versions below may not be the most recent.

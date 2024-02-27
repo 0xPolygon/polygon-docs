@@ -1,6 +1,6 @@
 ## Set up the environment variables
 
-1. Navigate to `cdk-validium-contracts-0.0.2/deployment` and run the following script that inputs the required parameters from `deploy_output.json` into `/tmp/cdk/.env`.
+1. Navigate to `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment` and run the following script that inputs the required parameters from `deploy_output.json` into `/tmp/cdk/.env`.
 
     ```bash
     cd ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment
@@ -54,6 +54,15 @@
     cd cdk-validium-node/
     ```
 
+    !!! warning 
+
+        Make sure to remove all previously running Docker containers and images.
+
+        ```sh
+        docker rm $(docker ps -aq)
+        docker rmi $(docker images -q)
+        ```
+
 2. Run the docker command below to start an instance of the `psql` database. The database is used for many of the services, such as the node, prover, DAC, and bridge service.
 
     ```bash
@@ -75,7 +84,7 @@
         kill -9 <PID>
         ```
 
-3.  Use the following command to validate the setup (`\q` to exit).
+3.  In a new terminal window, use the following command to validate the setup (`\q` to exit).
 
     ```bash
     PGPASSWORD=cdk_password psql -h localhost -U cdk_user -d postgres -p 5432
@@ -93,7 +102,7 @@ The `cdk-validium-node` directory contains a script called `single_db_server.sql
 1. In a new terminal window, run the script to provision all the necessary databases and schemas used for the prover and node:
 
     ```bash
-    cd cdk-validium/cdk-validium-node
+    cd ~/cdk-validium/cdk-validium-node
     PGPASSWORD=cdk_password psql -h localhost -U cdk_user -d postgres -p 5432 -a -q -f ./db/scripts/single_db_server.sql
     ```
 
