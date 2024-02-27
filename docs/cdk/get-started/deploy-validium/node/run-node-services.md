@@ -65,7 +65,7 @@
 
 ## Run the DAC
 
-Open a new terminal window and run the following command.
+Navigate to the `cdk-data-availability` directory and run the following command.
 
 ```bash
 cd ~/cdk-validium/cdk-data-availability
