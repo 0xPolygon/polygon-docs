@@ -1,9 +1,8 @@
 ﻿This document provides examples of token mappings on the Polygon PoS and Mumbai testnet.
 
-!!!tip
-    Mapping
+!!!tip "Token mapping"
 
-    If you want to get your token mapped then please send your mapping request via [<ins>mapper.polygon.technology</ins>](https://mapper.polygon.technology/).
+    Want to get a custom token mapped to Polygon PoS so it can be bridged over? Send in your mapping request via [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSeq8HTef2dYpRx35_WWYhyr4C146K9dfhyYJQcoD1RuTTVABg/viewform).
 
 
 ### Mumbai

@@ -1,6 +1,10 @@
 The mechanism to natively read Ethereum data from Polygon EVM chain is that of ‘State Sync’. In other words, this mechanism enables transfer of arbitrary data from Ethereum chain to Polygon chain. The procedure that makes it possible is: Validators on the Heimdall layer are listening for a particular event — `StateSynced` from a Sender contract, as soon as the event is picked, the `data` that was passed in the event is written on the Receiver contract. Read more [here](../../../architecture/bor/state-sync.md).
 
-The Sender and Receiver contract are required to be mapped on Ethereum — [StateSender.sol](https://github.com/maticnetwork/contracts/blob/release-betaV2/contracts/root/stateSyncer/StateSender.sol) needs to be aware of each sender and receiver. If you'd like to get the mapping done, please request a mapping [here](https://mapper.polygon.technology/).
+The Sender and Receiver contract are required to be mapped on Ethereum — [StateSender.sol](https://github.com/maticnetwork/contracts/blob/release-betaV2/contracts/root/stateSyncer/StateSender.sol) needs to be aware of each sender and receiver.
+
+!!! tip "Custom tokens"
+
+    Looking to bridge your custom token to Polygon PoS using the official bridge? Check out the guide on [how to submit a request to get your token mapped](../ethereum-polygon/submit-mapping-request.md).
 
 ---
 
@@ -109,7 +113,7 @@ Deploy  your Receiver.sol on Polygon's testnet and keep a note of the address an
 
 ### 3. Getting your Sender and Receiver mapped
 
-You can either use the already deployed addresses (mentioned above) for sender and receiver, or deploy your custom contracts and request a mapping done here: [https://mapper.polygon.technology/](https://mapper.polygon.technology/)
+You can either use the already deployed addresses (mentioned above) for sender and receiver, or deploy your custom contracts and request a mapping using [the Google form here](https://docs.google.com/forms/d/e/1FAIpQLSeq8HTef2dYpRx35_WWYhyr4C146K9dfhyYJQcoD1RuTTVABg/viewform).
 
 ### 4. Sending and Receiving data
 
