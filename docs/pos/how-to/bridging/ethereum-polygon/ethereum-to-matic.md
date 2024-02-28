@@ -115,7 +115,7 @@ Deploy  your Receiver.sol on Polygon's testnet and keep a note of the address an
 
 You can either use the already deployed addresses (mentioned above) for sender and receiver, or deploy your custom contracts and request a mapping using [the Google form here](https://docs.google.com/forms/d/e/1FAIpQLSeq8HTef2dYpRx35_WWYhyr4C146K9dfhyYJQcoD1RuTTVABg/viewform).
 
-### 4. Sending and Receiving data
+### 4. Sending and receiving data
 
 Now that we have our contracts in place and mapping done, we'll be writing a simple node script to send arbitrary hex bytes, receive them on Polygon and interpret the data!
 
