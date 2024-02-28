@@ -546,10 +546,10 @@ nav:
           - Band standard dataset: tools/oracles/bandstandarddataset.md
           - Chainlink: tools/oracles/chainlink.md
           - DIA: tools/oracles/diadataoracles.md
-          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Razor: tools/oracles/razor.md
           - Supra: tools/oracles/supra.md
           - Tellor: tools/oracles/tellor.md
+          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
           - Getting started:  tools/wallets/getting-started.md
@@ -565,13 +565,14 @@ nav:
               - Create wallet:  tools/wallets/venly/create-wallet.md
               - Add network:  tools/wallets/venly/add-network.md
               - Add custom token:  tools/wallets/venly/custom-tokens.md
-          - Wallet link: tools/wallets/wallet-link.md
-          - Fortmatic: tools/wallets/fortmatic.md
-          - Portis:  tools/wallets/portis.md
-          - Torus:  tools/wallets/torus.md          
-          - WalletConnect:  tools/wallets/walletconnect.md
-          - SlashAuth:  tools/wallets/slashauth.md
+          - Fortmatic: tools/wallets/fortmatic.md    
+          - Openfort: tools/wallets/openfort.md
           - Particle network:  tools/wallets/particle-network.md
+          - Portis:  tools/wallets/portis.md    
+          - SlashAuth:  tools/wallets/slashauth.md
+          - Torus:  tools/wallets/torus.md  
+          - Wallet link: tools/wallets/wallet-link.md
+          - WalletConnect:  tools/wallets/walletconnect.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 

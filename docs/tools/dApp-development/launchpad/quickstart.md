@@ -150,5 +150,3 @@ dapp-launchpad deploy -n CHAIN_NAME --only-frontend
     2. If not, run the following wizard command:
     
             `generate smart-contracts-config -e production -n CHAIN_NAME`
-
-
