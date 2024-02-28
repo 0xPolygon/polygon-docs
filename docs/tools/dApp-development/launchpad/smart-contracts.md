@@ -25,17 +25,24 @@ Internally, the [`dev`](commands.md#dev) command runs the `scripts/deploy_localh
 !!! warning
     When working on your own smart contracts, make sure to update this script.
 
-## Local test chain explorer
+## Local test chain explorer with Ethernal
 
 Optionally, you can enable a local blockchain explorer, which auto-indexes all transactions, and provides a feature-loaded dashboard with an overview of the chain.
 
+### Prerequisite steps
+
+To run the explorer, you first have to:
+
+- Sign up on [Ethernal](https://app.tryethernal.com/), and create a workspace. 
+- Then, add your login email, password, and workspace details in the `.env` file in the `smart-contracts` directly.
+
+Check and set the configs with [`dev`](commands.md#dev) command params `--ethernal-login-email`, `--ethernal-login-password` and `--ethernal-workspace`, which override the preset environment variables.
+
+### Run the local block explorer
+
 To use it, run the [`dev`](commands.md#dev) command with `-e`.
 
-!!! info "Setting up an explorer"
-    - Sign up on [Ethernal](https://app.tryethernal.com/), and create a workspace. 
-    - Then, add your login email, password, and workspace details in the `.env` file in the `smart-contracts` directly.
-
-The above config can also be mentioned with [`dev`](commands.md#dev) command params `--ethernal-login-email`, `--ethernal-login-password` and `--ethernal-workspace`, which override the preset environment variables.
+Access the chain explorer at the [Ethernal](https://app.tryethernal.com/) URL.
 
 ## Deploying to production
 
