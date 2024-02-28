@@ -11,7 +11,7 @@ There is no change to the circulating supply of your token when it crosses the b
 - When depositing, tokens that leave the Ethereum network are locked and the same number of tokens are minted on Polygon PoS as a pegged token (1:1).
 - When withdrawing tokens back to the Ethereum network, tokens are burned on Polygon PoS and unlocked on Ethereum during the process.
 
-## Additional Resources
+## Additional resources
 
 - [Introduction to Blockchain Bridges](https://ethereum.org/en/bridges/)
 - [What are Cross-Chain Bridges](https://www.alchemy.com/overviews/cross-chain-bridges)
