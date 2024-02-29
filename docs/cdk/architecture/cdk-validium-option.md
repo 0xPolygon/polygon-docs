@@ -4,7 +4,7 @@ As per [the definition](https://ethereum.org/developers/docs/scaling/validium), 
 
 The Polygon CDK validium is in fact a _zero-knowledge validium_ (zkValidium) because it utilises the Polygon zkEVM's off-chain prover to produce zero-knowledge proofs, which are published as _validity proofs_.
 
-The use of the above-mentioned Prover, to a certain extent, adds trustlessness to the Polygon CDK Validium.
+The use of the above-mentioned prover, to a certain extent, adds trustlessness to the Polygon CDK validium.
 
 The validium option inherits, not just the Prover, but all the Polygon zkEVM's components and their functionalities, except that it does not publish transaction data on L1.
 
