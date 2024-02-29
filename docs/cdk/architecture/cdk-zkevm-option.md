@@ -14,7 +14,7 @@ Polygon zkEVM achieves this by utilizing several actors. The diagram below depic
 
 Here is an outline of the most prominent rollup components:
 
-- The **Users**, who connect to the zkEVM network by means of an **RPC** node (e.g., MetaMask), submit their transactions to a database called Pool DB.
+- The **users**, who connect to the zkEVM network by means of an RPC node (e.g., Infura or Alchemy), submit their transactions to a database called the pool DB.
 - The **Pool DB** is the storage for transactions submitted by Users. These are kept in the pool waiting to be put in a batch by the Sequencer.
 - The **sequencer** is a node responsible for fetching transactions from the pool DB, checking if the transactions are valid, then putting valid ones into a batch. The sequencer submits all batches to the L1 and then sequences the batches. This process proposes the sequence of batches to be included in the L1 state.
 - The **state DB** is a database for permanently storing state data (but not the Merkle trees).
