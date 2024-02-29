@@ -1,36 +1,27 @@
-This page is a catalogue of third-party and partner quickstarts that explain how to spin up validium and rollup CDK stacks and much more.
+---
+hide:
+- toc
+---
+
+This page is a catalogue of third-party and partner quick starts and guides that explain how to spin up and deploy validium and rollup CDK stacks, and more.
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./architecture/type-1-prover/intro-t1-prover">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Polygon Type 1 Prover</div>
-         </div>
-         <p class="feature-paragraph">Find out about the Polygon Type 1 Prover component.</p>
+      <a href="https://docs.gelato.network/developer-services/deploy-your-l2-chain">
+         <div><img src="/img/cdk/gelato.png" loading="lazy" style="width: 150px; float;right" ></div>
+            <div class="product-list-item-header">
+               <div class="feature-card-heading">Gelato</div>
+            </div>
+         <p class="feature-paragraph">Deploy a CDK with Gelato.</p>
       </a>
    </div>
    <div class="grid-item">
-      <a href="./get-started/quickstart-rollup">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">CDK rollups</div>
-         </div>
-         <p class="feature-paragraph">Get started with the CDK zkRollup stack.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./get-started/quickstart-validium">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">CDK validiums</div>
-         </div>
-         <p class="feature-paragraph">Get started with the CDK validium stack.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./spec/validium-vs-rollup">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Rollup versus validium</div>
-         </div>
-         <p class="feature-paragraph">Discover the key differences between the rollup and validium infrastructure options.</p>
+      <a href="https://gateway.fm/polygon/">
+         <div><img src="/img/cdk/gateway.png" loading="lazy" style="width: 160px; float;right" ></div>
+            <div class="product-list-item-header">
+               <div class="feature-card-heading">Gateway</div>
+            </div>
+         <p class="feature-paragraph">Build a custom CDK chain with Gateway.</p>
       </a>
    </div>
 </div>
