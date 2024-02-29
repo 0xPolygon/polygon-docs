@@ -1,4 +1,4 @@
-main state machine is a component of the zkProver that can be instantiated with various computations pertaining to transactions submitted by users to the Polygon zkEVM network.
+Main state machine is a component of the zkProver that can be instantiated with various computations pertaining to transactions submitted by users to the Polygon zkEVM network.
 
 In addition to carrying out these computations, the main SM also generates fixed-length, easy-to-verify cryptographic proofs of Computational Integrity (CI). These proofs can be verified by spending only a minimal amount of computational resources.
 
