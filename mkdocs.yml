@@ -82,6 +82,7 @@ nav:
               - Start node: cdk/get-started/deploy-rollup/start-node.md
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
+        - Third-party quickstarts: cdk/get-started/third-party-quickstarts.md
       - How to:
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
