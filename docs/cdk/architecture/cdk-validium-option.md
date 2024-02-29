@@ -12,7 +12,7 @@ The validium configuration has one major advantage over the zkEVM rollup option:
 
 ## Data availability committee (DAC)
 
-In relation to storing transaction data off-chain, comes with it the requirement to manage the data.
+In relation to storing transaction data off-chain, the CDK validium comes with the requirement to manage the data.
 
 - First of all, the transaction data is not published to the L1 but only the hash of the data.
 - Secondly, a trusted-sequencer collects transactions from the Pool DB, puts them into batches and computes the hash of the transaction data. 
