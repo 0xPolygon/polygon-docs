@@ -1,22 +1,4 @@
----
-hide:
-- toc
----
-
-<style>
-   .git-revision-date-localized-plugin, .md-source-file, .md-content__button.md-icon {
-      display: none;
-   }
-</style>
-
-<div class="section-wrapper product-section-head">
-   <div class="hero-image"><img src="../img/cdk/cdk.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
-   <div class="hero-left">
-      <h1 class="hero-heading">Polygon CDK</h1>
-      <p class="hero-subtext">Polygon Chain Development Kit (CDK) is a modular, open source software toolkit allowing blockchain developers to launch new zero-knowledge proof (zkEVM plus optional validium) L2 chains chains on Ethereum.</p>
-   </div>
-   </br>
-</div>
+This page is a catalogue of third-party and partner quickstarts that explain how to spin up validium and rollup CDK stacks and much more.
 
 <div class="grid-container">
    <div class="grid-item">
@@ -52,3 +34,4 @@ hide:
       </a>
    </div>
 </div>
+
