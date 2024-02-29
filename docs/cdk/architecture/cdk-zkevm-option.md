@@ -2,7 +2,7 @@ Polygon zkEVM is a zero-knowledge rollup (or zk-rollup) designed to emulate the 
 
 It is a scaling-solution to Ethereum as it rolls up many transactions into one batch. 
 
-These batches are submitted to the L1, where their integrity is proved and verified before being included in the L1 State.
+These batches are submitted to the L1, where their integrity is proved and verified before being included in the L1 state.
 
 Proving, verification of batches, and state changes are all controlled by smart contracts.
 
