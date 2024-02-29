@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 This quick start guide shows you how to deploy a CDK rollup (EVM compatible) environment on your local machine that sets up and runs the following components:
 
 - zkEVM node databases
@@ -69,17 +73,13 @@ make run
 
 The `make run` command spins up the containers that run the environment, but nothing else. This means that the L2 has no data yet.
 
-### 3.2 Test with data
-
-Test a use case from the [test with sample data](#4-test-with-sample-data) section.
-
-### 3.3 Stop the environment
+### 3.2 Stop the environment
 
 ```bash
 make stop
 ```
 
-### 3.4 Restart the environment
+### 3.3 Restart the environment
 
 ```bash
 make restart

@@ -1,14 +1,13 @@
 ﻿This document provides examples of token mappings on the Polygon PoS and Mumbai testnet.
 
-!!!tip
-    Mapping
+!!!tip "Token mapping"
 
-    If you want to get your token mapped then please send your mapping request via [<ins>mapper.polygon.technology</ins>](https://mapper.polygon.technology/).
+    Want to get a custom token mapped to Polygon PoS so it can be bridged over? Send in your mapping request via [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSeq8HTef2dYpRx35_WWYhyr4C146K9dfhyYJQcoD1RuTTVABg/viewform).
 
 
 ### Mumbai
 
-| Token Name        | Bridge | Parent Chain Address: Goerli                                                                                                 | Child Chain: MUMBAI                                                                                                                          |
+| Token name        | Bridge | Parent chain address: Goerli                                                                                                 | Child chain: MUMBAI                                                                                                                          |
 | ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | PoS\-WETH         | PoS    | [0x60D4dB9b534EF9260a88b0BED6c486fe13E604Fc](https://goerli.etherscan.io/address/0x60D4dB9b534EF9260a88b0BED6c486fe13E604Fc) | [0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa](https://mumbai.polygonscan.com/address/0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa) |
 | DummyERC20Token   | PoS    | [0x655F2166b0709cd575202630952D71E2bB0d61Af](https://goerli.etherscan.io/address/0x655F2166b0709cd575202630952D71E2bB0d61Af) | [0xfe4F5145f6e09952a5ba9e956ED0C25e3Fa4c7F1](https://mumbai.polygonscan.com/address/0xfe4F5145f6e09952a5ba9e956ED0C25e3Fa4c7F1) |

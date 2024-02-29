@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 !!! important
     - You have already followed the [deploy contracts section](../contracts/prerequisites.md).
     - Make sure you have at least `~0.3 Sepolia ETH` for deploying more contracts and various contract calls.

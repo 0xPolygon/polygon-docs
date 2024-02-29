@@ -75,10 +75,10 @@ Let's start setting up our zkNode:
 
 2. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command. Also, unlike the mainnet and the Goerli testnet that use the latest version, Cardona testnet uses a specific version.
 
-   So use the next `curl` command specifically for Cardona, which uses version 0.5.5 (Note that the latest version, [Cardona v0.5.8](https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.8), is available and can equally be used.):
+   So use the next `curl` command specifically for Cardona, which uses version 0.5.12 (Recommended version of cardona can be changed, so please check the `Testnet/Mainnet versions` section of [0xPolygonHermez Github](https://github.com/0xPolygonHermez) ):
 
    ```bash
-    curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/download/v0.5.5/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
+    curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/download/v0.5.12/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
    ```
 
    And use this second command for either mainnet or testnet (Goerli):

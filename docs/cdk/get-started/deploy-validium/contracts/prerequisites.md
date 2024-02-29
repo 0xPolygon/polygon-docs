@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Hardware
 
 Make sure you have the following minimum hardware requirements.
@@ -17,10 +21,12 @@ Make sure you have the following minimum software requirements.
 | [Foundry](https://book.getfoundry.sh/getting-started/installation) | ^0.2 | `forge --version` |
 | [jq](https://jqlang.github.io/jq/download/) | ^1.6 | `jq -V` |
 
-## Sepolia access
+## Access to a Sepolia node
 
-!!! info    
-    You can run your own Sepolia node if you wish and we recommend this for a production set up. However, for simplicity and brevity, we demonstrate by using a node provider.
+Use a node provider like Infura or Alchemy. We use Infura throughout but you can [use a different node provider](deploy-contracts.md#use-a-different-node-provider) if you want.
+
+!!! important
+    We recommend running your own Sepolia node for a production set up. 
 
 You will need the following:
 
@@ -35,32 +41,13 @@ Use a public faucet to get Sepolia test ETH.
 - [Chainstack faucet](https://chainstack.com/sepolia-faucet/).
 - [Quicknode faucet](https://faucet.quicknode.com/ethereum/sepoli).
 
-## Configuration files
+## Configuration with environment variables
 
-We will be working with two separate `.env` files.
+We will be working with two separate `.env` files to manage the contracts and node configurations.
 
-- One `.env` file resides in the contracts project directory. We will set this up in the [contract set up](set-up.md#create-the-contracts-env-configuration) section.
-- Another `.env` resides in a shared system directory so that it is accessible to the node and all running processes.
-
-Create a folder `/tmp/cdk/` to store the shared `.env` file which will be used by all running processes.
-
-```bash
-mkdir /tmp/cdk/
-```
+- One `.env` file resides in the contracts project directory. We will set this up in the [contracts environment variables set up](set-up.md#create-the-contracts-env-configuration) section.
+- Another `.env` resides in a shared system directory, `/tmp/cdk/`, which is accessible to the node and all running processes. We set this up in the [system-wide environment variables set up](set-up.md#create-the-shared-system-env-configuration) section. This shared `.env` file allows us to use `jq` and `tomlq` to easily setup the configuration for the node and running processes.
 
 !!! danger
     - Any files in the `tmp/` directory are deleted on shutdown.
-    - For this reason, we recommend that you save this folder in your home directory once the shared configuration set up is complete.
-
-### Shared environment variables
-
-Create a `.env` file to store the environment variables that all running processes will share. This shared `.env` file allows us to use `jq` and `tomlq` to easily setup the configuration for the node and running processes.
-
-After adding a few variables to this file in the next [set up section](set-up.md#create-the-shared-system-env-configuration), this file is populated with more environment variables during the [node set up step](../node/set-up.md) and is then accessed by the system throughout the [deploy node configuration step](../node/configure-deployment.md) and [node and services run step](../node/run-node-services.md).
-
-```bash
-nano /tmp/cdk/.env
-```
-
-!!! danger
-    Don't forget: The system removes this file on shutdown.
+    - For this reason, we recommend that you copy this folder and paste it into your home directory once the shared configuration set up is complete. That way, you can just add it back when you need to.

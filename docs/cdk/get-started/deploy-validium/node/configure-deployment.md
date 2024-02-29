@@ -1,10 +1,14 @@
+---
+comments: true
+---
+
 ## Configure the prover
 
 Copy and modify the contents of `test.prover.config.json` in `~/cdk-validium/cdk-validium-node/test/config/` to the `/tmp/cdk/` directory using the following jq command:
 
 ```bash
 cd ~/cdk-validium/cdk-validium-node 
-jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:cdk_password@localhost:5432/postgres"' ./test/config/test.prover.config.json > /tmp/cdk/test.prover.config.json
+jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:cdk_password@localhost:5432/prover_db"' ./test/config/test.prover.config.json > /tmp/cdk/test.prover.config.json
 ```
 
 ## Configure the node
@@ -30,6 +34,10 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 	The output keystore is now stored in `/tmp/cdk/account.keystore`
 
 3. Create a file `node-config.toml` inside `/tmp/cdk/` and paste in the following content.
+
+	```bash
+	nano /tmp/cdk/node-config.toml
+	```
 
 	???     "`node-config.toml`"		
 			#/tmp/cdk/node-config.toml
@@ -218,26 +226,7 @@ jq '.aggregatorClientHost = "127.0.0.1" | .databaseURL = "postgresql://cdk_user:
 	tomlq -i -t --arg TEST_ADDRESS "$TEST_ADDRESS" '.Aggregator.SenderAddress = $TEST_ADDRESS' /tmp/cdk/node-config.toml
 	```
 
-5. Now we will modify the `genesis.json` from the earlier contract deployment to include information about the newly configured chain.
-
-	!!!	info
-		`genesis.json` is in the `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/` directory
-
-	The values to append to `genesis.json` are something like:
-
-	```bash
-	#~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/genesis.json
-	"L1Config": {
-	"chainId": 11155111,
-	"maticTokenAddress": "0xd76B50509c1693C7BA35514103a0A156Ca57980c",
-	"polygonZkEVMAddress": "0x52C8f9808246eF2ce992c0e1f04fa54ec3378dD1",
-	"cdkDataCommitteeContract": "0x8346026951978bd806912d0c93FB0979D8E3436a",
-	"polygonZkEVMGlobalExitRootAddress": "0xE3A721c20B30213FEC306dd60f6c7F2fCB8b46D2"
-	},
-	"genesisBlockNumber": 5098088
-	```
-
-6. Run the following script that automates the process of appending those values:
+5. Now we will modify the `genesis.json` from the earlier contract deployment to include information about the newly configured chain. Run the following script that automates the process of appending those values:
 
 	```bash
 	jq --argjson data "$(jq '{maticTokenAddress, cdkValidiumAddress, cdkDataCommitteeContract, polygonZkEVMGlobalExitRootAddress, deploymentBlockNumber}' ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment/deploy_output.json)" \
@@ -255,7 +244,11 @@ At this point we should have setup and provisioned the psql database and configu
 
 Now let’s configure the Data Availability Committee.
 
-1. Navigate to `~/cdk-validium/cdk-data-availability-0.0.3`.
+1. Navigate to `~/cdk-validium/cdk-data-availability`.
+
+	```sh
+	cd ~/cdk-validium/cdk-data-availability
+	```
 
 2. Build the DAC
 
@@ -264,6 +257,10 @@ Now let’s configure the Data Availability Committee.
 	```
 
 3. Create a `dac-config.toml` file inside `/tmp/cdk/`. 
+
+	```bash
+	nano /tmp/cdk/dac-config.toml
+	```
 
 4. Copy and paste the following example config below into `dac-config.toml`.
 
@@ -312,7 +309,7 @@ Now let’s configure the Data Availability Committee.
 	tomlq -i -t --arg L1_URL "$L1_URL" '.L1.RpcURL = $L1_URL' /tmp/cdk/dac-config.toml
 	tomlq -i -t --arg L1_WS_URL "$L1_WS_URL" '.L1.WsURL = $L1_WS_URL' /tmp/cdk/dac-config.toml
 	tomlq -i -t --arg CDK_VALIDIUM_ADDRESS "$CDK_VALIDIUM_ADDRESS" '.L1.CDKValidiumAddress = $CDK_VALIDIUM_ADDRESS' /tmp/cdk/dac-config.toml
-	tomlq -i -t --arg CDK_VALIDIUM_ADDRESS "$CDK_VALIDIUM_ADDRESS" '.L1.DataCommitteeAddress = $CDK_VALIDIUM_ADDRESS' /tmp/cdk/dac-config.toml
+	tomlq -i -t --arg CDK_DATA_COMMITTEE_CONTRACT_ADDRESS "$CDK_DATA_COMMITTEE_CONTRACT_ADDRESS" '.L1.DataCommitteeAddress = $CDK_DATA_COMMITTEE_CONTRACT_ADDRESS' /tmp/cdk/dac-config.toml
 	```
 
 6. Update the contracts on Sepolia with information about our DAC.
@@ -346,7 +343,11 @@ Now let’s configure the Data Availability Committee.
 	make build
 	```
 
-2. Create a starter bridge config `bridge-config.toml` inside `/tmp/cdk` using the following config file:
+2. Create a starter bridge config `bridge-config.toml` inside `/tmp/cdk` and copy/paste the file below.
+
+	```bash
+	nano /tmp/cdk/bridge-config.toml
+	```
 
 	```bash
 	#/tmp/cdk/bridge-config.toml
@@ -417,6 +418,6 @@ Now let’s configure the Data Availability Committee.
 	tomlq -i -t --arg POLYGON_ZKEVM_BRIDGE_ADDRESS "$POLYGON_ZKEVM_BRIDGE_ADDRESS" '.NetworkConfig.PolygonBridgeAddress = $POLYGON_ZKEVM_BRIDGE_ADDRESS' /tmp/cdk/bridge-config.toml
 	tomlq -i -t --arg POLYGON_ZKEVM_GLOBAL_EXIT_ROOT_ADDRESS "$POLYGON_ZKEVM_GLOBAL_EXIT_ROOT_ADDRESS" '.NetworkConfig.PolygonZkEVMGlobalExitRootAddress = $POLYGON_ZKEVM_GLOBAL_EXIT_ROOT_ADDRESS' /tmp/cdk/bridge-config.toml
 	tomlq -i -t --arg MATIC_TOKEN_ADDRESS "$MATIC_TOKEN_ADDRESS" '.NetworkConfig.MaticTokenAddress = $MATIC_TOKEN_ADDRESS' /tmp/cdk/bridge-config.toml
-	tomlq -i -t --arg CDK_DATA_COMMITTEE_CONTRACT_ADDRESS "$CDK_DATA_COMMITTEE_CONTRACT_ADDRESS" '.NetworkConfig.L2PolygonBridgeAddresses = [$CDK_DATA_COMMITTEE_CONTRACT_ADDRESS]' /tmp/cdk/bridge-config.toml
+	tomlq -i -t --arg POLYGON_ZKEVM_BRIDGE_ADDRESS "$POLYGON_ZKEVM_BRIDGE_ADDRESS" '.NetworkConfig.L2PolygonBridgeAddresses = [$POLYGON_ZKEVM_BRIDGE_ADDRESS]' /tmp/cdk/bridge-config.toml
 	```
 

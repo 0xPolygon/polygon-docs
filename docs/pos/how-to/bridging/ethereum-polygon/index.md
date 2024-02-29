@@ -1,15 +1,17 @@
-Polygon brings you a trustless two-way transaction channel between Polygon PoS and Ethereum by introducing the cross-chain bridge. With this users can transfer tokens across Polygon PoS without incurring third-party risks and market liquidity limitations. 
+Polygon brings you a trustless two-way transaction channel between Polygon PoS and Ethereum by introducing the cross-chain bridge. The official bridge allows you to transfer tokens between Ethereum and Polygon PoS without incurring third-party risks and market liquidity limitations. 
 
-The PoS Bridge is available on both Mumbai Testnet as well as Polygon PoS Mainnet. You can access it and bridge assets over to Polygon PoS using the [Polygon Wallet Suite](https://wallet.polygon.technology/polygon/bridge/deposit).
+The official bridge is available on both Mumbai Testnet as well as Polygon PoS Mainnet, and provides a near-instant, low-cost, and flexible bridging option for both users and dApp developers. You can access it and bridge assets from Ethereum over to Polygon PoS using [Polygon Portal](https://portal.polygon.technology).
 
-Polygon PoS bridge provides a bridging mechanism that is near-instant, low-cost, and quite flexible.
+!!! tip "Polygon Portal"
 
-There is no change to the circulating supply of your token when it crosses the bridge;
+    To learn more about the features that Polygon Portal offers, and a series of step-by-step reference guides that help you with using the platform, check out [the doc available here](../../../../tools/wallets/portal.md).
 
-- Tokens that leave the Ethereum network are locked and the same number of tokens are minted on Polygon PoS as a pegged token (1:1).
-- To move the tokens back to the Ethereum network, tokens are burned on Polygon PoS network and unlocked on Ethereum network during the process.
+There is no change to the circulating supply of your token when it crosses the bridge. This is what goes on in the background when you bridge your tokens over to Polygon PoS from Ethereum:
 
-## Additional Resources
+- When depositing, tokens that leave the Ethereum network are locked and the same number of tokens are minted on Polygon PoS as a pegged token (1:1).
+- When withdrawing tokens back to the Ethereum network, tokens are burned on Polygon PoS and unlocked on Ethereum during the process.
+
+## Additional resources
 
 - [Introduction to Blockchain Bridges](https://ethereum.org/en/bridges/)
 - [What are Cross-Chain Bridges](https://www.alchemy.com/overviews/cross-chain-bridges)

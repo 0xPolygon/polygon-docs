@@ -214,7 +214,7 @@ $$
 $$
 
 
-### Numerical example: $\texttt{L2MinGasPrice}$
+### Numerical example: L2MinGasPrice
 
 In the figure below, we observe that when the user queries the suggested gas price through the RPC, the network responds with the current suggested gas price computed as:
 
@@ -389,7 +389,7 @@ Observe that users must trust the sequencer in this schema.
 
 
 
-## Introducing $\texttt{BreakEvenGasPrice}$
+## Introducing BreakEvenGasPrice
 
 The aim here is for the Polygon zkEVM network to avoid accepting transactions that result in financial losses.
 
@@ -495,7 +495,7 @@ Observe that we still need to introduce gas price prioritization, which will be 
 
 
 
-### Numerical example: Computing $\texttt{BreakEvenGasPrice}$
+### Numerical example: Computing BreakEvenGasPrice
 
 Recall the example proposed before, where the $\texttt{GasPriceSuggested}$ provided by RPC was $2.85$ gwei per gas, but the user ended up setting $\texttt{GasPriceSigned}$ to $3.3$.
 
@@ -587,7 +587,7 @@ $$
 
 
 
-##  $\texttt{EffectiveGasPrice}$: Introducing Priority
+##  EffectiveGasPrice: Introducing Priority
 
 Prioritization of transactions in Ethereum is determined by $\texttt{GasPriceSigned}$ and transactions signed at a higher price are given priority.
 

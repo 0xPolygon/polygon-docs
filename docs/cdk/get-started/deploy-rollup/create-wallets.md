@@ -64,9 +64,9 @@ npm i
 2. Set the following variables.
 
     ```sh
-    `MNEMONIC`="..."            # from wallets.txt Deployment Address mnemonic
-    `INFURA_API_KEY`="..."      # your API Key from Infura account
-    `ETHERSCAN_API_KEY`="..."   # your Etherscan API key
+    MNEMONIC="..."            # from wallets.txt Deployment Address mnemonic
+    INFURA_API_KEY="..."      # your API Key from Infura account
+    ETHERSCAN_API_KEY="..."   # your Etherscan API key
     ```
 
 3. Send 0.5 GöETH to the deployment address wallet listed in `wallets.txt`.
@@ -88,7 +88,8 @@ npm i
     - `admin`: deployment address in `wallets.txt`.
     - `zkEVMOwner`: deployment address in `wallets.txt`.
     - `timelockAddress`: deployment address in `wallets.txt`.
-    - `initialZkEVMDeployer`: deployment address in `wallets.txt`.  
+    - `initialZkEVMDeployerAddress`: deployment address in `wallets.txt`.  
+    - `zkEVMDeployerAddress`: deployment address in `wallets.txt`.  
 
 ## Deploy contracts
 

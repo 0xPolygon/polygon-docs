@@ -53,6 +53,7 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
+      - Version compatibility matrix: cdk/version-matrix.md
       - Get started:
         - Quickstart: 
           - Validium: cdk/get-started/quickstart-validium.md
@@ -69,6 +70,7 @@ nav:
                   - Set up: cdk/get-started/deploy-validium/node/set-up.md
                   - Configure the deployment: cdk/get-started/deploy-validium/node/configure-deployment.md
                   - Run node and services: cdk/get-started/deploy-validium/node/run-node-services.md
+                  - Test transaction: cdk/get-started/deploy-validium/node/test-transaction.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
               - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
@@ -81,9 +83,11 @@ nav:
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
+        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
-        - DAC: cdk/architecture/dac.md
+        - CDK rollup option: cdk/architecture/cdk-zkevm-option.md
+        - CDK validium option: cdk/architecture/cdk-validium-option.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
@@ -91,6 +95,7 @@ nav:
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
       - Additional resources:
+        - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
@@ -331,6 +336,14 @@ nav:
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
+          - dApp Launchpad:
+              - Introduction: tools/dApp-development/launchpad/intro.md
+              - Quickstart: tools/dApp-development/launchpad/quickstart.md
+              - Frontend: tools/dApp-development/launchpad/frontend.md
+              - Smart contracts: tools/dApp-development/launchpad/smart-contracts.md
+              - Commands: tools/dApp-development/launchpad/commands.md
+              - Contributing: tools/dApp-development/launchpad/contributing.md
+              - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
           - Smart contract development on PoS:
               - Alchemy: tools/dApp-development/pos/alchemy.md
               - ChainIDE: tools/dApp-development/pos/chainide.md
@@ -345,6 +358,9 @@ nav:
               - Truffle: tools/dApp-development/common-tools/truffle.md
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
+      - Chain indexer framework:
+          - Overview: tools/chain-indexer-framework/overview.md
+          - Usage: tools/chain-indexer-framework/usage.md
       - Third-party tutorials:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Gas:
@@ -442,13 +458,14 @@ nav:
           - Band standard dataset: tools/oracles/bandstandarddataset.md
           - Chainlink: tools/oracles/chainlink.md
           - DIA: tools/oracles/diadataoracles.md
-          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Razor: tools/oracles/razor.md
           - Supra: tools/oracles/supra.md
           - Tellor: tools/oracles/tellor.md
+          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
           - Getting started:  tools/wallets/getting-started.md
+          - Polygon Portal: tools/wallets/portal.md
           - Metamask:
               - Overview: tools/wallets/metamask/index.md
               - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
@@ -460,13 +477,14 @@ nav:
               - Create wallet:  tools/wallets/venly/create-wallet.md
               - Add network:  tools/wallets/venly/add-network.md
               - Add custom token:  tools/wallets/venly/custom-tokens.md
-          - Wallet link: tools/wallets/wallet-link.md
-          - Fortmatic: tools/wallets/fortmatic.md
-          - Portis:  tools/wallets/portis.md
-          - Torus:  tools/wallets/torus.md          
-          - WalletConnect:  tools/wallets/walletconnect.md
-          - SlashAuth:  tools/wallets/slashauth.md
+          - Fortmatic: tools/wallets/fortmatic.md    
+          - Openfort: tools/wallets/openfort.md
           - Particle network:  tools/wallets/particle-network.md
+          - Portis:  tools/wallets/portis.md    
+          - SlashAuth:  tools/wallets/slashauth.md
+          - Torus:  tools/wallets/torus.md  
+          - Wallet link: tools/wallets/wallet-link.md
+          - WalletConnect:  tools/wallets/walletconnect.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
