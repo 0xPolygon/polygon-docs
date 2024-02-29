@@ -17,7 +17,7 @@ In relation to storing transaction data off-chain, the CDK validium comes with t
 - First of all, the transaction data is not published to the L1 but only the hash of the data.
 - Secondly, a trusted-sequencer collects transactions from the pool DB, puts them into batches and computes the hash of the transaction data. 
 
-It is due to the above two points that the Polygon CDK Validium has to have a set of _trusted actors_, who can monitor and even authenticate the hash values that the Sequencer proposes to be published on the L1. 
+It is due to the above two points that the Polygon CDK validium has to have a set of _trusted actors_, who can monitor and even authenticate the hash values that the sequencer proposes to be published on the L1. 
 
 The hash values need to be verified as true _footprints_ of the transaction data corresponding to all transactions in the sequenced batches.
 
