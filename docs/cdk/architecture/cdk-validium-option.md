@@ -6,7 +6,7 @@ The Polygon CDK validium is in fact a _zero-knowledge validium_ (zkValidium) bec
 
 The use of the above-mentioned prover, to a certain extent, adds trustlessness to the Polygon CDK validium.
 
-The validium option inherits, not just the Prover, but all the Polygon zkEVM's components and their functionalities, except that it does not publish transaction data on L1.
+The validium mode inherits, not just the prover, but all the Polygon zkEVM's components and their functionalities, except that it does not publish transaction data on L1.
 
 The validium configuration has one major advantage over the zkEVM rollup option: And that is, reduced gas fees due to the off-chain storage of transaction data, where only a hash of the transaction data gets stored on the Ethereum network.
 
