@@ -19,8 +19,8 @@ Here is an outline of the most prominent rollup components:
 - The **Users**, who connect to the zkEVM network by means of an **RPC** node (e.g., MetaMask), submit their transactions to a database called Pool DB.
 - The **Pool DB** is the storage for transactions submitted by Users. These are kept in the pool waiting to be put in a batch by the Sequencer.
 - The **Sequencer** is a node responsible for fetching transactions from Pool DB, checks if the transactions are valid, then puts valid ones into a batch. The Sequencer submits all batches to the L1 and then sequences the batches. By so doing, proposing the sequence of batches to be included in the L1 State.
-- The **State DB** is a database for permanently storing state data (but not the Merkle trees).
-- The **Synchronizer** is the component that updates the State DB by fetching data from Ethereum through the Etherman.
+- The **state DB** is a database for permanently storing state data (but not the Merkle trees).
+- The **synchronizer** is the component that updates the state DB by fetching data from Ethereum through the Etherman.
 - The **Etherman** is a low-level component that implements methods for all interactions with the L1 network and smart contracts.
-- The **Aggregator** is another node whose role is to produce proofs attesting to the integrity of the sequencer's proposed state-change. These proofs are zero-knowledge proofs (or ZK-proofs) and the Aggregator employs a cryptographic component called the Prover for this purpose.
-- The **Prover** is a complex cryptographic tool capable of producing ZK-proofs of hundreds of batches, and aggregating these into a single ZK-proof which is published as the validity proof.
+- The **aggregator** is another node whose role is to produce proofs attesting to the integrity of the sequencer's proposed state-change. These proofs are zero-knowledge proofs (or ZK-proofs) and the aggregator employs a cryptographic component called the prover for this purpose.
+- The **prover** is a complex cryptographic tool capable of producing ZK-proofs of hundreds of batches, and aggregating these into a single ZK-proof which is published as the validity proof.
