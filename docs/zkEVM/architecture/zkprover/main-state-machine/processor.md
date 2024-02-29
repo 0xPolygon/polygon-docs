@@ -83,7 +83,7 @@ $$
 so that,
 
 - if the setter $\texttt{setX} = 0$ then the output $\texttt{X}' \texttt{ = X}$. That is, the $\texttt{X}$ register value remains unchanged.
-- if the setter $\texttt{setX} = 1$ then the output $\texttt{X}'\ \mathtt{=}\ (\mathtt{op - X}) * \mathtt{setX} + \texttt{A} \ \mathtt{=}\ (\mathtt{op - A}) + \texttt{A} \ \mathtt{=}\ \texttt{op}$. That is, the $\texttt{X}$ register value changes to the new value of the $\mathtt{op}$.  
+- if the setter $\texttt{setX} = 1$ then the output $\texttt{X}'\ \mathtt{=}\ (\mathtt{op - X}) * \mathtt{setX} + \texttt{X} \ \mathtt{=}\ (\mathtt{op - A}) + \texttt{A} \ \mathtt{=}\ \texttt{op}$. That is, the $\texttt{X}$ register value changes to the new value of the $\mathtt{op}$.  
 
 #### Example
 
