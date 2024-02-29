@@ -52,4 +52,3 @@ hide:
       </a>
    </div>
 </div>
-</div>
