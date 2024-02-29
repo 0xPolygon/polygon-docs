@@ -12,7 +12,6 @@ Polygon zkEVM achieves this by utilizing several actors. The diagram below depic
 
 ![zkEVM option architecture](../../img/cdk/cdk-zkevm-arch-overview.png)
 
-
 Here is an outline of the most prominent rollup components:
 
 - The **Users**, who connect to the zkEVM network by means of an **RPC** node (e.g., MetaMask), submit their transactions to a database called Pool DB.
