@@ -10,7 +10,6 @@ The validium mode inherits, not just the prover, but all the Polygon zkEVM's com
 
 The validium configuration has one major advantage over the zkEVM rollup option: And that is, reduced gas fees due to the off-chain storage of transaction data, where only a hash of the transaction data gets stored on the Ethereum network.
 
-
 ### Data availability committee (DAC)
 
 In relation to storing transaction data off-chain, comes with it the requirement to manage the data.
