@@ -1,6 +1,6 @@
-Main State Machine is a component of the zkProver that can be instantiated with various computations pertaining to transactions submitted by users to the Polygon zkEVM network.
+main state machine is a component of the zkProver that can be instantiated with various computations pertaining to transactions submitted by users to the Polygon zkEVM network.
 
-In addition to carrying out these computations, the Main SM also generates fixed-length, easy-to-verify cryptographic proofs of Computational Integrity (CI). These proofs can be verified by spending only a minimal amount of computational resources.
+In addition to carrying out these computations, the main SM also generates fixed-length, easy-to-verify cryptographic proofs of Computational Integrity (CI). These proofs can be verified by spending only a minimal amount of computational resources.
 
 It achieves this by using cutting-edge zero-knowledge technology. In particular, these proofs are STARK proofs that are recursively aggregated into one STARK proof, which is in turn proved with a SNARK proof. This last SNARK proof is published as the validity proof. You can read a summary of the STARK proofs recursion [here](index.md), and its complete documentation [here](../stark-recursion/index.md).
 
@@ -8,24 +8,24 @@ It achieves this by using cutting-edge zero-knowledge technology. In particular,
 
 ## The ROM
 
-The ROM is a program written in zero-knowledge Assembly (zkASM) and contains all the instructions the Main SM must execute. It is to the Polygon zkEVM what the EVM Interpreter is to Ethereum. Since the ROM is in fact analogous to computer memory, it is named with a well-known acronym that stands for **Read-Only Memory**.
+The ROM is a program written in zero-knowledge Assembly (zkASM) and contains all the instructions the main SM must execute. It is to the Polygon zkEVM what the EVM Interpreter is to Ethereum. Since the ROM is in fact analogous to computer memory, it is named with a well-known acronym that stands for **Read-Only Memory**.
 
-The Main SM can be viewed as a processor capable of interpreting a set of instructions, and the ROM as the memory containing the firmware. The term firmware here refers to a piece of low-level software that is infrequently subjected to changes.
+The main SM can be viewed as a processor capable of interpreting a set of instructions, and the ROM as the memory containing the firmware. The term firmware here refers to a piece of low-level software that is infrequently subjected to changes.
 
 It is a piece of software, composed of a set of instructions, which implements a special EVM interpreter for Polygon zkEVM's L2 architecture.
 
-All EVM opcodes are interpreted in the ROM, as well as interpretation of batches and the execution logic of transactions. The ROM is therefore the interpreter of all opcodes to the Polygon zkEVM, allowing the Main SM to execute Polygon zkEVM's L2 state transitions with Computational Integrity (CI).
+All EVM opcodes are interpreted in the ROM, as well as interpretation of batches and the execution logic of transactions. The ROM is therefore the interpreter of all opcodes to the Polygon zkEVM, allowing the main SM to execute Polygon zkEVM's L2 state transitions with Computational Integrity (CI).
 
 !!!info
     In order to avoid any misunderstandings in the future, it is helpful to distinguish between the set of ROM instructions and EVM opcodes:
 
-    **ROM Instructions** &rarr; Set of instructions created and developed by Polygon to target a ”special” zero-knowledge virtual machine (Main SM) that can execute computations with probable Computational Integrity (CI).
+    **ROM Instructions** &rarr; Set of instructions created and developed by Polygon to target a ”special” zero-knowledge virtual machine (main SM) that can execute computations with probable Computational Integrity (CI).
 
     **EVM opcodes** &rarr; Set of instructions designed to target the EVM, used to define smart contract’s computations.
 
 Although zkASM instructions and EVM opcodes are different types of instructions, the Polygon zkEVM's ROM contains a piece of code written in zkASM instructions to implement each EVM opcode.
 
-## Public Parameters
+## Public parameters
 
 Polygon zkEVM's proofs of Computational Integrity (CI) are zero-knowledge proofs. That is, the proofs do not reveal any information about the executed computations to effect the state transition.
 
@@ -59,11 +59,11 @@ Here is a complete list of the public parameters;
 
 - `forkID`: the fork ID is a unique identifier of the version of the ROM that is currently being used. It ensures that computations can only be proved and verified for a specific version of the ROM code.
 
-## State Trie
+## State trie
 
 The state of a Blockchain is typically recorded in the form of a Merkle Tree. Both the EVM and the Polygon zkEVM store their states in their respective especially modified Merkle Trees.
 
-### EVM State Trie
+### EVM state trie
 
 An Ethereum state is stored in the form of a **Modified Patricia Merkle Tree**.
 
@@ -89,7 +89,7 @@ Here is how the tree in the EVM looks like:
 
 ![A simplified EVM's State Trie](../../../../img/zkEVM/06msm-eth-state-trie.png)
 
-### zkEVM State Trie
+### zkEVM state trie
 
 There are some differences between the zkEVM Merkle tree and EVM Merkle tree.
 
@@ -113,49 +113,49 @@ The figure below depicts the 5 leaf-types together with the corresponding keys:
 
 ![A simplified Polygon zkEVM's State Trie](../../../../img/zkEVM/07msm-zkevm-state-trie.png)
 
-## Memory Regions
+## Memory regions
 
 Memory is a volatile Read-Write data storage that exists only during the execution of a ROM instruction.
 
-In Ethereum, whenever a call is made, a new **Context** together with its new Stack and new Memory is created. Each created **Context** is referred to as volatile because it is temporarily available for the call being executed.
+In Ethereum, whenever a call is made, a new **context** together with its new stack and new Memory is created. Each created **context** is referred to as volatile because it is temporarily available for the call being executed.
 
-### zkEVM Memory map
+### zkEVM memory map
 
-The Polygon zkEVM uses Context-based Memory. And, by **Context** we refer to an environment of every Ethereum call.
+The Polygon zkEVM uses context-based Memory. And, by **context** we refer to an environment of every Ethereum call.
 
-As in Ethereum, when a transactions begins, a new Context is created for that transaction:
+As in Ethereum, when a transactions begins, a new context is created for that transaction:
 
 $$
 \texttt{msg.sender},\ \texttt{msg.value},\ \texttt{stack},\ \texttt{memory},\ \texttt{the\ smart\ contract\ to\ call},\ \texttt{and}\ \texttt{gas}.
 $$
 
-The `Stack` and `Memory` are each filled with relevant values in accordance with the call that has been made. Similar to how the EVM uses the Stack, zkEVM operations can be performed by pushing and popping values on and off the Stack.
+The `Stack` and `Memory` are each filled with relevant values in accordance with the call that has been made. Similar to how the EVM uses the stack, zkEVM operations can be performed by pushing and popping values on and off the stack.
 
-`Memory` is divided into different Contexts of $\mathtt{0x40000}$ words.
+`Memory` is divided into different contexts of $\mathtt{0x40000}$ words.
 
-Each word is $256$ bits in length, so each Context is $8$ Megabytes (MB) in size.
+Each word is $256$ bits in length, so each context is $8$ Megabytes (MB) in size.
 
-#### Contexts in Memory
+#### Contexts in memory
 
-There can be several Contexts within one transaction. Specific registers are used to handle any necessary switching between Contexts as pertaining to the made call.
+There can be several contexts within one transaction. Specific registers are used to handle any necessary switching between contexts as pertaining to the made call.
 
-As depicted in the figure below, each Context is divided into three word-blocks. And these are:
+As depicted in the figure below, each context is divided into three word-blocks. And these are:
 
-- `VARS`: contains the local Context's variables which are pre-defined in the language.
+- `VARS`: contains the local context's variables which are pre-defined in the language.
 
-  It has a relative offset of `0x00000` and a height of `0x10000` words (taking $2$ MB of the $8$ MB allocated for a Context).
+  It has a relative offset of `0x00000` and a height of `0x10000` words (taking $2$ MB of the $8$ MB allocated for a context).
 
-  The list of all Context variables can be found in the [`vars.zkasm`](https://github.com/0xPolygonHermez/zkevm-rom/blob/main/main/vars.zkasm) file.
+  The list of all context variables can be found in the [`vars.zkasm`](https://github.com/0xPolygonHermez/zkevm-rom/blob/main/main/vars.zkasm) file.
 
-- `STACK`: contains the stack of the EVM. So, a `STACK` is defined per Context.
+- `STACK`: contains the stack of the EVM. So, a `STACK` is defined per context.
 
-  It has a relative offset of `0x10000`, a height of `0x10000` words and takes $2$MB of the $8$MB allocated for a Context.
+  It has a relative offset of `0x10000`, a height of `0x10000` words and takes $2$MB of the $8$MB allocated for a context.
 
 - `MEM`: contains the free memory that can be freely used.
 
-  It has a relative offset of `0x20000`, a height of `0x20000` words and takes $4$ MB of the $8$ MB allocated for a Context.
+  It has a relative offset of `0x20000`, a height of `0x20000` words and takes $4$ MB of the $8$ MB allocated for a context.
 
-  `MEM`, like `STACK`, is also defined per Context.
+  `MEM`, like `STACK`, is also defined per context.
 
 ![Schema of contexts and memory regions of the zkEVM](../../../../img/zkEVM/08msm-zkevm-memory-regions.png)
 
@@ -167,13 +167,13 @@ $$
 
 where,
 
-- `CTX`: an integer variable indicating to the Context being accessed in the EVM’s memory.
-- `isStack`: a Boolean value indicating whether the Memory operation being performed is related to the EVM’s Stack or not.
-- `SP`: a variable referring to the current position of the Stack Pointer in the EVM’s stack. The Stack Pointer keeps track of the top of the Stack.
+- `CTX`: an integer variable indicating to the context being accessed in the EVM’s memory.
+- `isStack`: a Boolean value indicating whether the Memory operation being performed is related to the EVM’s stack or not.
+- `SP`: a variable referring to the current position of the stack Pointer in the EVM’s stack. The stack Pointer keeps track of the top of the stack.
 - `isMem`: a Boolean value indicating whether the Memory operation being performed is related to the EVM’s memory. Observe that `isStack` and `isMem` cannot be $1$ at the same time.
-- `offset`: a set `addr` in Memory to which the `zkPC` jumps to within the currently accessed Context.
+- `offset`: a set `addr` in Memory to which the `zkPC` jumps to within the currently accessed context.
 
-### Memory Alignment
+### Memory alignment
 
 There is a major difference between the EVM Memory and the zkEVM Memory.
 
@@ -181,25 +181,25 @@ That difference is the EVM Memory is created in the form of slots where each slo
 
 It was therefore necessary to align the EVM's $8$-bit slots with the zkEVM's $256$-bit slots.
 
-A mapping to synchronize the two Memories comes in the form a special state machine called the [**Mem-Align State Machine**](../mem-align-sm.md). It is a specialized SM solely dealing with the alignment of the EVM Memory with the zkEVM Memory.
+A mapping to synchronize the two Memories comes in the form a special state machine called the [**Mem-Align state machine**](../mem-align-sm.md). It is a specialized SM solely dealing with the alignment of the EVM Memory with the zkEVM Memory.
 
 ![Aligning the EVM Memory to the zkEVM Memory](../../../../img/zkEVM/09msm-evm-zkevm-mem-align.png)
 
-### zkEVM Stack
+### zkEVM stack
 
-The zkEVM Stack is exactly the same as the EVM Stack except for the number of steps. It has $65536$ steps instead of $1024$.
+The zkEVM stack is exactly the same as the EVM stack except for the number of steps. It has $65536$ steps instead of $1024$.
 
-Note that the EVM works with $256$-bit words, and thus the elements of the EVM Stack are also $256$-bit.
+Note that the EVM works with $256$-bit words, and thus the elements of the EVM stack are also $256$-bit.
 
-The zkEVM Stack therefore, with its $8 \times 32$-bits representation of values, naturally mimics the $256$-bit architecture of the EVM Stack.
+The zkEVM stack therefore, with its $8 \times 32$-bits representation of values, naturally mimics the $256$-bit architecture of the EVM stack.
 
-But since there are more steps in the zkEVM Stack than the $1024$ slots of the EVM Stack, only the first $1024$ slots of the zkEVM Stack are used for the EVM Stack.
+But since there are more steps in the zkEVM stack than the $1024$ slots of the EVM stack, only the first $1024$ slots of the zkEVM stack are used for the EVM stack.
 
-The rest of the zkEVM Stack slots are used to store `CALLDATA` and its interpretation.
+The rest of the zkEVM stack slots are used to store `CALLDATA` and its interpretation.
 
-The figure below displays a schematic representation of the zkEVM Stack and the EVM Stack:
+The figure below displays a schematic representation of the zkEVM stack and the EVM stack:
 
-![Schematic comparison of the zkEVM Stack and the EVM Stack](../../../../img/zkEVM/10msm-zkevm-stack-slots.png)
+![Schematic comparison of the zkEVM stack and the EVM stack](../../../../img/zkEVM/10msm-zkevm-stack-slots.png)
 
 ## TLDR
 
@@ -207,6 +207,6 @@ The figure below displays a schematic representation of the zkEVM Stack and the 
 
 &rarr; The zkEVM uses SMT with five different leaf types.
 
-&rarr; Memory alignment between the EVM and the zkEVM is handled by a specialist state machine, the [**Mem-Align State Machine**](../mem-align-sm.md).
+&rarr; Memory alignment between the EVM and the zkEVM is handled by a specialist state machine, the [**Mem-Align state machine**](../mem-align-sm.md).
 
-&rarr; The two Stacks are exactly the same except that the zkEVM has many more slots compared to the EVM.
+&rarr; The two stacks are exactly the same except that the zkEVM has many more slots compared to the EVM.
