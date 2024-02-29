@@ -72,6 +72,9 @@
 	.md-icon {
 		color: var(--gray);
 	}
+	.flex-card-item:hover {
+		background-color: var(--gray);
+	}
 }
 /** END OF COLOR SCHEMES **/
 
