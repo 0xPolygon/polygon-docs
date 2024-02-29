@@ -29,7 +29,6 @@ The sequencer uses a _multi-sig_, which is a custom-specified _m-out-of-n multi-
 
 Architecturally speaking, the Polygon CDK validium is therefore nothing but a zkEVM with a DAC. That is, **Polygon CDK validium =  Polygon zkEVM + DAC**.
 
-
 ### CDK Validium's data flow
 
 The DAC works together with the sequencer to control the flow of data and state changes. 
