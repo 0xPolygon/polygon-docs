@@ -8,7 +8,7 @@ Proving, verification of batches, and state changes are all controlled by smart 
 
 Most important to understand is the primary path taken by transactions from when users submit these transactions to the zkEVM network up until they are finalized and incorporated in the L1 State. 
 
-Polygon zkEVM achieves this by utilising several actors. The below diagram depicts the various actors and how they interact.
+Polygon zkEVM achieves this by utilizing several actors. The diagram below depicts the various actors and how they interact.
 
 
 ![zkEVM option architecture](../../img/cdk/cdk-zkevm-arch-overview.png)
