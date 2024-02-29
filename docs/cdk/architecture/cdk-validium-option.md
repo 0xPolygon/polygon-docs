@@ -27,7 +27,7 @@ After verifying the proposed hash values individually, each DAC member signs the
 
 The sequencer uses a _multi-sig_, which is a custom-specified _m-out-of-n multi-party protocol_, to attach the required _m_ signatures to the hash of the transaction data. The _multi-sig_ contract lives on the L1 network. 
 
-Architecturally speaking, the Polygon CDK Validium is therefore nothing but a zkEVM with a DAC. That is, **Polygon CDK Validium =  Polygon zkEVM + DAC**.
+Architecturally speaking, the Polygon CDK validium is therefore nothing but a zkEVM with a DAC. That is, **Polygon CDK validium =  Polygon zkEVM + DAC**.
 
 
 ### CDK Validium's data flow
