@@ -86,7 +86,8 @@ nav:
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
-        - DAC: cdk/architecture/dac.md
+        - CDK rollup option: cdk/architecture/cdk-zkevm-option.md
+        - CDK validium option: cdk/architecture/cdk-validium-option.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
