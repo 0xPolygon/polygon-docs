@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Run the prover
 
 1. Open a new terminal window.

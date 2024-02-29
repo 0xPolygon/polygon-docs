@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Configure the prover
 
 Copy and modify the contents of `test.prover.config.json` in `~/cdk-validium/cdk-validium-node/test/config/` to the `/tmp/cdk/` directory using the following jq command:

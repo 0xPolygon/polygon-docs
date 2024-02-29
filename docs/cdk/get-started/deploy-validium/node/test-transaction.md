@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Test transactions
 
 Once everything is up and running you can do a quick test of the running stack by sending a zero-value transaction.

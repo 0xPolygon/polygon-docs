@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Configure deployment parameters
 
 1. Navigate to the contracts deployment directory.

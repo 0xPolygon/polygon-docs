@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Set up the environment variables
 
 1. Navigate to `~/cdk-validium/cdk-validium-contracts-0.0.2/deployment` and run the following script that inputs the required parameters from `deploy_output.json` into `/tmp/cdk/.env`.

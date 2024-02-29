@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Download the validium repo
 
 1. Create a new directory and cd into it.
