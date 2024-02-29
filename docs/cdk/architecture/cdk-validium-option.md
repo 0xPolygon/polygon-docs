@@ -33,7 +33,7 @@ Architecturally speaking, the Polygon CDK validium is therefore nothing but a zk
 
 The DAC works together with the sequencer to control the flow of data and state changes. 
 
-The below diagram depicts a simplified outline of the Polygon CDK Validium architecture. It particularly shows how the DAC and the sequencer relate in the overall data flow.
+The diagram below depicts a simplified outline of the Polygon CDK validium architecture. It particularly shows how the DAC and the sequencer relate in the overall data flow.
 
 ![CDK validium data availability dataflow](../../img/cdk/cdk-val-dac-02.png)
 
