@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Hardware
 
 Make sure you have the following minimum hardware requirements.

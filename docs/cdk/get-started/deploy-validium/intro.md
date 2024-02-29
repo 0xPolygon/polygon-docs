@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 This guide takes you through the process of deploying a fully EVM-compatible, CDK validium on the Sepolia network.
 
 We have hidden most of the configuration complexity in scripts to make the process straightforward and easy to follow.
