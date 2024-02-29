@@ -1,24 +1,23 @@
-The Polygon CDK Validium is one of two configuration options of the Polygon CDK, the other being the Polygon zkEVM rollup.
+The Polygon CDK validium is one of two configuration options of the Polygon CDK, the other being the Polygon zkEVM rollup.
 
-As per [definition](https://ethereum.org/developers/docs/scaling/validium), the Polygon CDK Validium uses validity proofs to enforce integrity of state transitions, but it does not store transaction data on the Ethereum network.
+As per [the definition](https://ethereum.org/developers/docs/scaling/validium), the Polygon CDK validium uses validity proofs to enforce integrity of state transitions, but it does not store transaction data on the Ethereum network.
 
-The Polygon CDK Validium is in fact a _zero-knowledge validium_ (zkValidium) because it utilises the Polygon zkEVM's off-chain Prover to produce zero-knowledge proofs, which are published as _validity proofs_.
+The Polygon CDK validium is in fact a _zero-knowledge validium_ (zkValidium) because it utilises the Polygon zkEVM's off-chain prover to produce zero-knowledge proofs, which are published as _validity proofs_.
 
-The use of the above-mentioned Prover, to a certain extent, adds trustlessness to the Polygon CDK Validium.
+The use of the above-mentioned prover, to a certain extent, adds trustlessness to the Polygon CDK validium.
 
-The validium option inherits, not just the Prover, but all the Polygon zkEVM's components and their functionalities, except that it does not publish transaction data on L1.
+The validium mode inherits, not just the prover, but all the Polygon zkEVM's components and their functionalities, except that it does not publish transaction data on L1.
 
 The validium configuration has one major advantage over the zkEVM rollup option: And that is, reduced gas fees due to the off-chain storage of transaction data, where only a hash of the transaction data gets stored on the Ethereum network.
 
+## Data availability committee (DAC)
 
-### Data availability committee (DAC)
-
-In relation to storing transaction data off-chain, comes with it the requirement to manage the data.
+In relation to storing transaction data off-chain, the CDK validium comes with the requirement to manage the data.
 
 - First of all, the transaction data is not published to the L1 but only the hash of the data.
-- Secondly, a trusted-sequencer collects transactions from the Pool DB, puts them into batches and computes the hash of the transaction data. 
+- Secondly, a trusted-sequencer collects transactions from the pool DB, puts them into batches and computes the hash of the transaction data. 
 
-It is due to the above two points that the Polygon CDK Validium has to have a set of _trusted actors_, who can monitor and even authenticate the hash values that the Sequencer proposes to be published on the L1. 
+It is due to the above two points that the Polygon CDK validium has to have a set of _trusted actors_, who can monitor and even authenticate the hash values that the sequencer proposes to be published on the L1. 
 
 The hash values need to be verified as true _footprints_ of the transaction data corresponding to all transactions in the sequenced batches.
 
@@ -28,14 +27,13 @@ After verifying the proposed hash values individually, each DAC member signs the
 
 The sequencer uses a _multi-sig_, which is a custom-specified _m-out-of-n multi-party protocol_, to attach the required _m_ signatures to the hash of the transaction data. The _multi-sig_ contract lives on the L1 network. 
 
-Architecturally speaking, the Polygon CDK Validium is therefore nothing but a zkEVM with a DAC. That is, **Polygon CDK Validium =  Polygon zkEVM + DAC**.
+Architecturally speaking, the Polygon CDK validium is therefore nothing but a zkEVM with a DAC. That is, **Polygon CDK validium =  Polygon zkEVM + DAC**.
 
-
-### CDK Validium's data flow
+## Validium data flow
 
 The DAC works together with the sequencer to control the flow of data and state changes. 
 
-The below diagram depicts a simplified outline of the Polygon CDK Validium architecture. It particularly shows how the DAC and the sequencer relate in the overall data flow.
+The diagram below depicts a simplified outline of the Polygon CDK validium architecture. It particularly shows how the DAC and the sequencer relate in the overall data flow.
 
 ![CDK validium data availability dataflow](../../img/cdk/cdk-val-dac-02.png)
 
@@ -47,4 +45,4 @@ The entire process can be broken down as follows:
 4. **Signature generation**: Each DAC node generates a signature for each batch hash. This serves as an endorsement of the batch's integrity and authenticity.
 5. **Communication with Ethereum**: The sequencer collects the DAC members' signatures and the original batch hash, and submits them to the Ethereum network for verification.
 6. **Verification on Ethereum**: A designated _multi-sig_ smart contract on Ethereum verifies the submitted signatures against each DAC member's known signatures, and confirms that sufficient approval has been provided for the batch hash.
-7. **Final settlement with zero-knowledge proof**: The aggregator prepares a proof for the batch via the Prover and submits it to the Ethereum network. This proof confirms the validity of the transactions in the batch without revealing transaction details. The chain's state gets updated on Ethereum.
+7. **Final settlement with zero-knowledge proof**: The aggregator prepares a proof for the batch via the prover and submits it to the Ethereum network. This proof confirms the validity of the transactions in the batch without revealing transaction details. The chain's state gets updated on Ethereum.
