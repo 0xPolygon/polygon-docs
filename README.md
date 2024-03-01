@@ -1,14 +1,44 @@
 # Polygon Knowledge Layer
 
-Welcome to the Polygon Knowledge Layer! This documentation is built using [the Material theme for MkDocs](https://squidfunk.github.io/mkdocs-material/). Our goal is to establish a high-quality, curated, and comprehensive "source of truth" for technical knowledge surrounding Polygon's main technology. This includes detailed sections on:
+Welcome to the Polygon Knowledge Layer.
+
+These docs use [the Material theme for MkDocs](https://squidfunk.github.io/mkdocs-material/). Our goal is to establish a high-quality, curated, and comprehensive "source of truth" for Polygon's technology. 
+
+This includes sections on:
 
 - Polygon CDK
 - Polygon zkEVM
 - Polygon PoS
 - Polygon Miden
-- Dev Tools 
+- Developer tools 
 
-In addition, we include top-level sections for Tools and Tutorials to support developers in their journey with Polygon technology.
+## Run locally
+
+### Prerequisites
+
+1. [Python 3.12](https://www.python.org/downloads/).
+2. [`virtualenv`](https://pypi.org/project/virtualenv/): Install using `pip3 install virtualenv`.
+
+### Setup
+
+1. Clone the repository.
+2. cd to the root.
+3. Run the `run.sh` script. You may need to make the script executable: `chmod +x run.sh`
+
+```sh
+./run.sh
+```
+
+The site comes up at http://127.0.0.1:8000/ 
+
+### Docker 
+
+If you prefer Docker, you can build and run the site using the following commands:
+
+```sh
+docker build -t polygon-docs .
+docker compose up
+```
 
 ## Contributing
 
@@ -34,58 +64,12 @@ In addition, we include top-level sections for Tools and Tutorials to support de
 - **Engage with the community**: Participate in discussions and provide feedback on other contributions.
 - **Stay consistent**: Ensure your contributions are coherent with the rest of the documentation and do not overlap or contradict existing content.
 
-
-## Running locally
-
-### Prerequisites
-
-Before running the site locally, you need to have the following installed:
-
-1. [Python 3](https://www.python.org/downloads/).
-2. [`virtualenv`](https://pypi.org/project/virtualenv/): Install using `pip3 install virtualenv`.
-
-### Setup
-
-1. **Clone repository**: Clone the Polygon Knowledge Layer repository to your local machine.
-2. **Create a virtual environment**: Run `virtualenv venv; source venv/bin/activate` in the root directory.
-3. **Install dependencies**: Install required Python packages with `pip3 install -r requirements.txt`.
-
-### Running the website
-
-Before running the website, you'll need to first load the Python virtual environment in your current shell. To do this, type the following (depending on your shell):
-
-- **Bash**, **zsh** (most common): `virtualenv venv; source venv/bin/activate`
-- **Fish**: `virtualenv venv; source venv/bin/activate.fish`
-- **Nu**: `virtualenv venv; source venv/bin/activate.nu`
-
-You only need to do the above once per shell session. Then, pick one of the following:
-
-1. **MkDocs in strict mode**: Use `mkdocs serve --strict` for a production-like environment.
-2. **MkDocs in normal mode**: Use `mkdocs serve` for a less strict, more forgiving environment, suitable for debugging.
-
-### Docker alternative
-
-If you prefer Docker, you can build and run the site using the following commands:
-
-```sh
-docker build -t polygon-docs .
-docker compose up
-```
-
-## Automated deployments
-
-This repository uses GitHub Actions to automate some deployments from certain branches, which is useful for testing:
-
-- **`main`**: Staging branch. Changes are deployed per-commit to https://docs-staging.polygon.technology.
-- **`dev`**: Experimental branch. Updates with `main` every 24 hours. Changes are deployed per-commit to https://docs-dev.polygon.technology.
-
-Whenever we are happy with `main`, a trigger can be manually done through GitHub Actions which deploys staging to production at https://docs.polygon.technology.
-
 ## Contact and support
 
-For any queries or support, please open a ticket at https://support.polygon.technology/support/home. 
+- For docs issues (technical or language) open an issue here.
+- For technical issues with the software, either raise an issue here and we will follow up, or check https://support.polygon.technology/support/home. 
 
-## Current Technical Knowledge Documentation (TKD) team members
+## The team
 
 - Anthony Matlala (@EmpieichO)
 - Katharine Murphy (@kmurphypolygon)
