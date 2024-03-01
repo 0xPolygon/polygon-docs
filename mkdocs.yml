@@ -157,6 +157,10 @@ nav:
             - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
           - LXLY bridge: zkEVM/architecture/protocol/lxly-bridge.md
         - zkNode: zkEVM/architecture/zknode/index.md
+        - Data streamer:
+          - Overall design: zkEVM/data-streamer/architecture/data-streamer/data-streamer-design.md
+          - Bookmarks: zkEVM/data-streamer/architecture/data-streamer/bookmarks.md
+          - Data streamer protocols: zkEVM/data-streamer/architecture/data-streamer/data-streamer-protocols.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - Main state machine: 
