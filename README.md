@@ -22,7 +22,7 @@ This includes sections on:
 ### Setup
 
 1. Clone the repository.
-2. cd to the root.
+2. `cd` to the root.
 3. Run the `run.sh` script. You may need to make the script executable: `chmod +x run.sh`
 
 ```sh
