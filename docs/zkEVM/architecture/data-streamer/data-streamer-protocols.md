@@ -1,3 +1,4 @@
+This document explains the two data streamer protocols; server-source protocol, and client-server protocol.
 
 ### Server-source protocol
 
@@ -10,7 +11,6 @@ In a generic sense, the messages being sent from the stream source to the stream
 An operation is atomic if either all the entries of the operation are included in the flow and streamed, or none of them are streamed.
 
 The protocol starts with the stream source calling the $\texttt{StartAtomicOp()}$ function, which sends the corresponding message to the stream server, indicating that the stream source is ready to send entries associated with a particular atomic operation $\texttt{Op}$.
-
 
 ![Figure](../../../img/zkEVM/ds-source-server-protocol.png)
 

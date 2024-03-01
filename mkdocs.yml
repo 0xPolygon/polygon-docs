@@ -158,9 +158,12 @@ nav:
           - LXLY bridge: zkEVM/architecture/protocol/lxly-bridge.md
         - zkNode: zkEVM/architecture/zknode/index.md
         - Data streamer:
-          - Overall design: zkEVM/data-streamer/architecture/data-streamer/data-streamer-design.md
-          - Bookmarks: zkEVM/data-streamer/architecture/data-streamer/bookmarks.md
-          - Data streamer protocols: zkEVM/data-streamer/architecture/data-streamer/data-streamer-protocols.md
+          - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
+          - Data streamer protocols: zkEVM/architecture/data-streamer/data-streamer-protocols.md
+          - Bookmarks: zkEVM/architecture/data-streamer/bookmarks.md
+          - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
+          - Stream file: zkEVM/architecture/data-streamer/stream-file.md
+          - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - Main state machine: 
