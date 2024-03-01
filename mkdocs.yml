@@ -33,7 +33,7 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-   # - navigation.instant
+    - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
     - navigation.integration
@@ -305,8 +305,6 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
-      #- Specification:
-      #    - Specification: pos/spec/index.md
       - Reference:
         - Contracts:
           - Genesis contracts: pos/reference/contracts/genesis-contracts.md
@@ -607,20 +605,6 @@ extra:
   analytics:
     provider: custom
     property: google    
-  #  feedback:  # feedback form only works when Google Analytics is set up and working
-  #    title: Was this page helpful?
-  #    ratings:
-  #      - icon: fontawesome/regular/face-grin-stars
-  #        name: This page was helpful
-  #        data: 1
-  #        note: >-
-  #          Thanks for your feedback!
-  #      - icon: fontawesome/regular/face-grimace
-  #        name: This page could be improved
-  #        data: 0
-  #        note: >-
-  #          Thanks for your feedback! Help us improve this page by
-  #          using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
   social:
     - icon: fontawesome/solid/circle-question
       link: https://support.polygon.technology/support/solutions
