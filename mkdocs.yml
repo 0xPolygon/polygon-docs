@@ -331,8 +331,8 @@ nav:
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
-      - Miden VM:
-          - Test import: '!import https://github.com/0xPolygonMiden/miden-client/?branch=main&docs_dir=docs&multi_docs=True&config=mkdocs.yml&keep_docs_dir=True'
+      - Test import 1: '!import https://github.com/0xPolygonMiden/miden-client?branch=km/restructure-docs'
+      - Test import 2: '!import https://github.com/0xPolygonMiden/miden-client?branch=km/restructure-docs'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
@@ -585,7 +585,7 @@ markdown_extensions:
 plugins:
   - multirepo:
       cleanup: true
-      keep_docs_dir: true
+      keep_docs_dir: false
   - search
   - open-in-new-tab
   - git-revision-date-localized:
