@@ -1,11 +1,10 @@
-In addition to the previously mentioned governance issues and security measures, one more component was essential, especially to a young L2 system such as the Polygon zkEVM. That component is, the _Security Council Multisig_.
+In addition to the previously mentioned governance issues and security measures, one more component was essential, especially to a young zk-rollup such as the Polygon zkEVM. That component is, the _Security Council Multisig_.
 
 Since critical bugs or other security issues may occur, and hence warrant instant upgrades, it is good security practice to allow for emergency upgrades.
 
 That is, instead of employing the 2-out-of-3 _Admin Multisig Contract_ and waiting for the time-delay imposed by the _Timelock Contract_, these contracts get bypassed by deploying a so-called _Security Council Multisig_.
 
 It is crucial, however, to emphasise that the _Security Council Multisig_ is a temporary measure, and will ultimately be phased-out once the Polygon zkEVM has been sufficiently battle-tested.
-z
 
 ## Understanding security council multisig
 

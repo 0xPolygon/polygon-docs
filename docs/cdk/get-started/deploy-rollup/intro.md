@@ -1,14 +1,14 @@
 This quick start takes you through the process of deploying a full CDK zkRollup, EVM-compatible network on Goerli.
 
-!!!caution
-    - This quick start is subject to frequent updates as the software remains at an early development stage.
-    - Please [open a ticket](https://support.polygon.technology/support/tickets/new) or reach out to the [support team on Discord](https://discord.com/invite/0xPolygon) if you encounter any issues.
+!!! warning
+    - These instructions are subject to frequent updates as the software remains at an early development stage.
+    - Report any content issues on our docs repo: https://github.com/0xPolygon/polygon-docs
 
 The process is split into the following sections:
 
 1. [Overview of the full environment](environment-overview.md).
 
-2. [Prerequisites steps](prerequisites.md): Preliminary setup, checking system requirements, and prerequisite variables.
+2. [Prerequisite steps](prerequisites.md): Preliminary setup, checking system requirements, and prerequisite variables.
 
 3. [Install dependencies](install-dependencies.md): Install required dependencies and downloading mainnet files.
 
@@ -18,4 +18,6 @@ The process is split into the following sections:
 
 6. [Configure prover](configure-prover.md): Configure the prover database and the prover service.
 
-7. [Start services](start-services.md): Start the services.
+7. [Start node](start-node.md): Start the node.
+
+8. [Start services](start-services.md): Start the services.

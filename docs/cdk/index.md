@@ -13,12 +13,20 @@ hide:
    <div class="hero-image"><img src="../img/cdk/cdk.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
    <div class="hero-left">
       <h1 class="hero-heading">Polygon CDK</h1>
-      <p class="hero-subtext">Polygon Chain Development Kit (CDK) is a modular, open source software toolkit for blockchain developers to launch new L2 chains on Ethereum.</p>
+      <p class="hero-subtext">Polygon Chain Development Kit (CDK) is a modular, open source software toolkit allowing blockchain developers to launch new zero-knowledge proof (zkEVM plus optional validium) L2 chains chains on Ethereum.</p>
    </div>
    </br>
 </div>
 
 <div class="grid-container">
+   <div class="grid-item">
+      <a href="./architecture/type-1-prover/intro-t1-prover">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Polygon Type 1 Prover</div>
+         </div>
+         <p class="feature-paragraph">Find out about the Polygon Type 1 Prover component.</p>
+      </a>
+   </div>
    <div class="grid-item">
       <a href="./get-started/quickstart-rollup">
          <div class="product-list-item-header">
@@ -43,5 +51,4 @@ hide:
          <p class="feature-paragraph">Discover the key differences between the rollup and validium infrastructure options.</p>
       </a>
    </div>
-</div>
 </div>

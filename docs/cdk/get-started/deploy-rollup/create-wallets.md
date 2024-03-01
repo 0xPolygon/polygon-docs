@@ -64,9 +64,9 @@ npm i
 2. Set the following variables.
 
     ```sh
-    `MNEMONIC`="..."            # from wallets.txt Deployment Address mnemonic
-    `INFURA_API_KEY`="..."      # your API Key from Infura account
-    `ETHERSCAN_API_KEY`="..."   # your Etherscan API key
+    MNEMONIC="..."            # from wallets.txt Deployment Address mnemonic
+    INFURA_API_KEY="..."      # your API Key from Infura account
+    ETHERSCAN_API_KEY="..."   # your Etherscan API key
     ```
 
 3. Send 0.5 GöETH to the deployment address wallet listed in `wallets.txt`.
@@ -88,11 +88,15 @@ npm i
     - `admin`: deployment address in `wallets.txt`.
     - `zkEVMOwner`: deployment address in `wallets.txt`.
     - `timelockAddress`: deployment address in `wallets.txt`.
-    - `initialZkEVMDeployer`: deployment address in `wallets.txt`.  
+    - `initialZkEVMDeployerAddress`: deployment address in `wallets.txt`.  
+    - `zkEVMDeployerAddress`: deployment address in `wallets.txt`.  
 
 ## Deploy contracts
 
 1. `cd` back to `zkevm-contract` root directory and run the deployment scripts.
+
+    !!! tip
+        It might be helpful to run these one at a time.
 
     ```sh
     cd ..
@@ -103,7 +107,7 @@ npm i
     npm run verify:ZkEVM:goerli
     ```
 
-    You should output that looks something like this at the start each time:
+    You should see output that looks something like this at the start each time:
 
     ```sh
     > @0xpolygonhermez/zkevm-contracts@3.0.0 deploy:deployer:ZkEVM:goerli

@@ -33,10 +33,9 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-  #  - navigation.instant
-  #  - navigation.instant.progress
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.tracking
-    - navigation.expansion
     - navigation.integration
     - navigation.tabs
     - navigation.tabs.sticky
@@ -54,12 +53,24 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
+      - Version compatibility matrix: cdk/version-matrix.md
       - Get started:
         - Quickstart: 
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
         - Deploy:
-          - Validium: cdk/get-started/deploy-validium.md
+          - Validium: 
+              - Introduction: cdk/get-started/deploy-validium/intro.md
+              - Deploy contracts:
+                  - Prerequisites: cdk/get-started/deploy-validium/contracts/prerequisites.md
+                  - Set up: cdk/get-started/deploy-validium/contracts/set-up.md
+                  - Deploy contracts: cdk/get-started/deploy-validium/contracts/deploy-contracts.md
+              - Deploy node:
+                  - Prerequisites: cdk/get-started/deploy-validium/node/prerequisites.md
+                  - Set up: cdk/get-started/deploy-validium/node/set-up.md
+                  - Configure the deployment: cdk/get-started/deploy-validium/node/configure-deployment.md
+                  - Run node and services: cdk/get-started/deploy-validium/node/run-node-services.md
+                  - Test transaction: cdk/get-started/deploy-validium/node/test-transaction.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
               - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
@@ -68,11 +79,15 @@ nav:
               - Create wallets: cdk/get-started/deploy-rollup/create-wallets.md
               - Configure node deployment: cdk/get-started/deploy-rollup/configure-node-deployment.md
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
+              - Start node: cdk/get-started/deploy-rollup/start-node.md
               - Start services: cdk/get-started/deploy-rollup/start-services.md
+        - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
+        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
       - Architecture:
-        - DAC: cdk/architecture/dac.md
+        - CDK rollup option: cdk/architecture/cdk-zkevm-option.md
+        - CDK validium option: cdk/architecture/cdk-validium-option.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
@@ -80,6 +95,7 @@ nav:
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
       - Additional resources:
+        - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
@@ -112,8 +128,12 @@ nav:
         - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
+        - Upgrades:
+          - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
+        - User fees: zkEVM/architecture/user-fees.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
+          
           - State management: zkEVM/architecture/protocol/state-management.md
           - Transaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
@@ -221,9 +241,8 @@ nav:
       - Get started: 
         - Get started: pos/get-started/index.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
-      - How to:
-        - How to: pos/how-to/index.md
-        - Sync node using snapshots: pos/how-to/snapshots.md
+        - Becoming a validator: pos/get-started/becoming-a-validator.md
+      - Builder how-tos:
         - Bridge layers:
           - Bridge layers: pos/how-to/bridging/index.md
           - Ethereum-Polygon:
@@ -234,16 +253,39 @@ nav:
           - L1-L2 communication:
             - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
             - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
-        - Work with smart contracts:
-          - Work with smart contracts: pos/how-to/smart-contracts/index.md
-          - Alchemy: pos/how-to/smart-contracts/alchemy.md
-          - ChainIDE: pos/how-to/smart-contracts/chainide.md
-          - ChainStack: pos/how-to/smart-contracts/chainstack.md
-          - GetBlock: pos/how-to/smart-contracts/getblock.md
-          - QuickNode: pos/how-to/smart-contracts/quicknode.md
-          - SmartPress: pos/how-to/smart-contracts/smartpress.md
-          - thirdweb: pos/how-to/smart-contracts/thirdweb.md
-        - Polygon DID: pos/how-to/polygon-did.md
+        - Integrate Polygon DID: pos/how-to/polygon-did.md
+      - Node how-tos:
+        - Node how-tos: pos/how-to/index.md
+        - Delegate tokens: pos/how-to/delegate.md
+        - Sync node using snapshots: pos/how-to/snapshots.md
+        - Run a validator node:
+          - System requirements: pos/how-to/validator/validator-system-requirements.md
+          - Prerequisites: pos/how-to/validator/prerequisites.md
+          - Using binaries: pos/how-to/validator/validator-binaries.md
+          - Using Ansible: pos/how-to/validator/validator-ansible.md
+          - Using packages: pos/how-to/validator/validator-packages.md
+        - Operate validator nodes:
+          - Stake tokens: pos/how-to/operate-validator-node/validator-staking-operations.md
+          - Set commission rate: pos/how-to/operate-validator-node/validator-commission-operations.md
+          - Move stake: pos/how-to/operate-validator-node/move-stake.md
+          - Change signer address: pos/how-to/operate-validator-node/change-signer-address.md
+          - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
+          - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md
+        - Run a full node:
+          - System requirements: pos/how-to/full-node/full-node-system-requirements.md
+          - Using binaries: pos/how-to/full-node/full-node-binaries.md
+          - Using Docker: pos/how-to/full-node/full-node-docker.md
+          - Using Ansible: pos/how-to/full-node/full-node-ansible.md
+          - Using packages: pos/how-to/full-node/full-node-packages.md
+          - Using GCP: pos/how-to/full-node/full-node-gcp.md
+        - Run an access node: pos/how-to/access-node.md
+        - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
+        - Troubleshoot nodes:
+          - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
+          - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
+          - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
+      - Governance:
+        - Governance fundamentals: pos/governance/governance-fundamentals.md
       - Architecture:
           - Architecture: pos/architecture/index.md
           - Bor:
@@ -263,50 +305,11 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
-      #- Specification:
-      #    - Specification: pos/spec/index.md
-      - Run a node:
-        # - Operate various nodes: pos/operate-node/index.md
-        - Run a node: pos/operate-node/index.md
-        - System requirements: pos/operate-node/validator/validator-node-system-requirements.md
-        - Operators:
-          # - Operators: pos/operate-node/operate/index.md
-          - Full node binaries: pos/operate-node/operate/full-node-binaries.md
-          - Full node docker: pos/operate-node/operate/full-node-docker.md
-          - Full node ansible: pos/operate-node/operate/full-node-ansible.md
-          - Full node packages: pos/operate-node/operate/full-node-packages.md
-          - Full node gcp: pos/operate-node/operate/full-node-gcp.md
-          - Access node: pos/operate-node/operate/access-node.md
-          - Erigon client: pos/operate-node/operate/run-erigon-node.md
-        - Validators:
-          # - Validators: pos/operate-node/validator/index.md
-          - Prerequisites: pos/operate-node/validator/kb/how-to.md
-          - Validator binaries: pos/operate-node/validator/run-validator/binaries.md
-          - Validator ansible: pos/operate-node/validator/run-validator/ansible.md
-          - Validator packages: pos/operate-node/validator/run-validator/packages.md
-          - Staking operations: pos/operate-node/validator/validator-staking-operations.md
-          - Commission operations: pos/operate-node/validator/validator-commission-operations.md
-        - Validator actions:
-          - Becoming a validator: pos/operate-node/validator/getting-started.md
-          - Validator Responsibilities: pos/operate-node/validator/responsibilities.md
-          - Topup Heimdall fee: pos/operate-node/validator/topup-heimdall-fee.md
-          - Change your signer address: pos/operate-node/validator/change-signer-address.md
-          - Move stake: pos/operate-node/validator/move-stake.md
-        - Delegate:
-          - How to delegate: pos/operate-node/delegate/delegate.md
-          - Delegator FAQs: pos/operate-node/delegate/delegator-faq.md
-          # - Validator performance: pos/operate-node/validator/validator-performance-overview.md
-        - Troubleshooting:
-          - Validator performance: pos/operate-node/validator/validator-performance.md
-          # - Staking FAQs: pos/operate-node/validator/staking-faq.md
-          - Technical FAQs: pos/operate-node/validator/technical-faqs.md
-          - Known issues and errors: pos/operate-node/validator/kb/known-issues.md
-          - Reporting issues: pos/operate-node/validator/issues/reporting-issues.md
       - Reference:
         - Contracts:
           - Genesis contracts: pos/reference/contracts/genesis-contracts.md
           - Delegation via validator shares: pos/reference/contracts/delegation.md
-          - Staking manager: pos/reference/contracts/stakingmanager.md
+          - Staking manager: pos/reference/contracts/stakingmanager.md 
         - Rewards and staking incentives: pos/reference/rewards.md
         - Default ports for nodes: pos/reference/port-management.md
         - Common commands: pos/reference/commands.md
@@ -421,17 +424,37 @@ nav:
                   - System procedures:  miden/vm/specification/stdlib/sys.md
   - Developer tools: 
       - Developer tools: tools/index.md
-      - Smart contract development: 
-          - Hardhat: tools/smart-contracts/hardhat.md
-          - Truffle: tools/smart-contracts/truffle.md
-          - Remix: tools/smart-contracts/remix.md
-          - Replit: tools/smart-contracts/replit.md
-          - Crossmint: tools//smart-contracts/crossmint.md
+      - dApp development: 
+          - dApp Launchpad:
+              - Introduction: tools/dApp-development/launchpad/intro.md
+              - Quickstart: tools/dApp-development/launchpad/quickstart.md
+              - Frontend: tools/dApp-development/launchpad/frontend.md
+              - Smart contracts: tools/dApp-development/launchpad/smart-contracts.md
+              - Commands: tools/dApp-development/launchpad/commands.md
+              - Contributing: tools/dApp-development/launchpad/contributing.md
+              - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
+          - Smart contract development on PoS:
+              - Alchemy: tools/dApp-development/pos/alchemy.md
+              - ChainIDE: tools/dApp-development/pos/chainide.md
+              - ChainStack: tools/dApp-development/pos/chainstack.md
+              - Crossmint: tools/dApp-development/pos/crossmint.md
+              - GetBlock: tools/dApp-development/pos/getblock.md
+              - QuickNode: tools/dApp-development/pos/quicknode.md
+              - SmartPress: tools/dApp-development/pos/smartpress.md
+              - Thirdweb: tools/dApp-development/pos/thirdweb.md
+          - Common tools:
+              - Hardhat: tools/dApp-development/common-tools/hardhat.md
+              - Truffle: tools/dApp-development/common-tools/truffle.md
+              - Remix: tools/dApp-development/common-tools/remix.md
+              - Replit: tools/dApp-development/common-tools/replit.md
+      - Chain indexer framework:
+          - Overview: tools/chain-indexer-framework/overview.md
+          - Usage: tools/chain-indexer-framework/usage.md
+      - Third-party tutorials:
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
-      - Third-party tutorials:
-          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Data:
           - The Graph: 
               - Overview: tools/data/the-graph/overview.md
@@ -524,13 +547,14 @@ nav:
           - Band standard dataset: tools/oracles/bandstandarddataset.md
           - Chainlink: tools/oracles/chainlink.md
           - DIA: tools/oracles/diadataoracles.md
-          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Razor: tools/oracles/razor.md
           - Supra: tools/oracles/supra.md
           - Tellor: tools/oracles/tellor.md
+          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
           - Getting started:  tools/wallets/getting-started.md
+          - Polygon Portal: tools/wallets/portal.md
           - Metamask:
               - Overview: tools/wallets/metamask/index.md
               - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
@@ -542,13 +566,14 @@ nav:
               - Create wallet:  tools/wallets/venly/create-wallet.md
               - Add network:  tools/wallets/venly/add-network.md
               - Add custom token:  tools/wallets/venly/custom-tokens.md
-          - Wallet link: tools/wallets/wallet-link.md
-          - Fortmatic: tools/wallets/fortmatic.md
-          - Portis:  tools/wallets/portis.md
-          - Torus:  tools/wallets/torus.md          
-          - WalletConnect:  tools/wallets/walletconnect.md
-          - SlashAuth:  tools/wallets/slashauth.md
+          - Fortmatic: tools/wallets/fortmatic.md    
+          - Openfort: tools/wallets/openfort.md
           - Particle network:  tools/wallets/particle-network.md
+          - Portis:  tools/wallets/portis.md    
+          - SlashAuth:  tools/wallets/slashauth.md
+          - Torus:  tools/wallets/torus.md  
+          - Wallet link: tools/wallets/wallet-link.md
+          - WalletConnect:  tools/wallets/walletconnect.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
@@ -557,29 +582,29 @@ nav:
           - OKLink: https://www.oklink.com/polygon
   - Learn:
       - Learn: learn/index.md
-      - Unified liquidity and scalability: learn/liquidity-and-scalability.md
+      - Welcome: learn/welcome.md
+      - Polygon AggLayer: learn/agglayer.md
+      - Polygon Type 1 Prover:
+          - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
+          - How to:
+              - Run Type 1 Prover quickly: cdk/how-to/deploy-t1-prover.md
+              - Deploy Type 1 Prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
+          - Architecture:
+              - Overview: cdk/architecture/type-1-prover/t1-architecture.md
+              - Type 1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
+              - Tests and proving costs: cdk/architecture/type-1-prover/testing-and-proving-costs.md
+          - Specification:
+              - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
+              - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
+              - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
       - Polygon protocols: learn/polygon-protocols.md
-      - Polygon 2.0 architecture: learn/deep-dive-arch.md
+      - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
 
 extra:
   generator: false
   analytics:
     provider: custom
     property: google    
-  #  feedback:  # feedback form only works when Google Analytics is set up and working
-  #    title: Was this page helpful?
-  #    ratings:
-  #      - icon: fontawesome/regular/face-grin-stars
-  #        name: This page was helpful
-  #        data: 1
-  #        note: >-
-  #          Thanks for your feedback!
-  #      - icon: fontawesome/regular/face-grimace
-  #        name: This page could be improved
-  #        data: 0
-  #        note: >-
-  #          Thanks for your feedback! Help us improve this page by
-  #          using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
   social:
     - icon: fontawesome/solid/circle-question
       link: https://support.polygon.technology/support/solutions

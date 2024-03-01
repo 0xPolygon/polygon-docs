@@ -6,17 +6,17 @@ This guide provides an index of network details for the Polygon Mumbai Testnet a
 
 The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
 
-| Properties       | Network details                                                                                     |
+| Properties       | Network details                                                                                    |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
-| Network name     | **Mumbai**                                                                                          |
-| Parent chain     | **[Goërli](https://goerli.net/)**                                                                   |
+| Network name     | **Mumbai**                                                                                         |
+| Parent chain     | **[Goërli](https://goerli.net/)**                                                                  |
 | Chain ID         | `80001`                                                                                            |
-| Gas token        | MATIC                                                                                  |
-| Gas station      | [Mumbai gas station](https://gasstation-testnet.polygon.technology/v2)                                       |
-| RPC endpoint     | [https://rpc-mumbai.matic.today](https://rpc-mumbai.matic.today)                                     |
-| Node endpoint    | [wss://rpc-mumbai.matic.today](wss://rpc-mumbai.matic.today)                                        |
-| Heimdall API     | [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology)   |
-| Block Explorer   | [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)                                   |
+| Gas token        | MATIC                                                                                              |
+| Gas station      | [Mumbai gas station](https://gasstation-testnet.polygon.technology/v2)                             |
+| RPC endpoint     | [https://rpc-mumbai.polygon.technology](https://rpc-mumbai.polygon.technology)                     |
+| Node endpoint    | [wss://rpc-mumbai.matic.today](wss://rpc-mumbai.matic.today)                                       |
+| Heimdall API     | [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology) |
+| Block Explorer   | [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)                                 |
 
 !!!note
     Additional information
@@ -28,17 +28,17 @@ The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily u
 
 The native token for the Polygon PoS mainnet is MATIC, which is used for transaction fees.
 
-| Properties       | Network details                                                                                     |
+| Properties       | Network details                                                                                    |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
-| Network name     | **Polygon**                                                                                         |
-| Parent chain     | **Ethereum**                                                                                        |
-| Chain ID         | `137`                                                                                               |
-| Gas token        | MATIC                                                                                               |
-| Gas station      | [PolygonScan Gas Tracker](https://polygonscan.com/gastracker)                                        |
-| RPC endpoint     | [https://polygon-rpc.com/](https://polygon-rpc.com/)                                                |
-| Node endpoint    | [wss://rpc-mainnet.matic.network](wss://rpc-mainnet.matic.network)                                  |
-| Heimdall API     | [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)                   |
-| Block explorer   | [https://polygonscan.com/](https://polygonscan.com/)                                                 |
+| Network name     | **Polygon**                                                                                        |
+| Parent chain     | **Ethereum**                                                                                       |
+| Chain ID         | `137`                                                                                              |
+| Gas token        | MATIC                                                                                              |
+| Gas station      | [PolygonScan Gas Tracker](https://polygonscan.com/gastracker)                                      |
+| RPC endpoint     | [https://polygon-rpc.com/](https://polygon-rpc.com/)                                               |
+| Node endpoint    | [wss://rpc-mainnet.matic.network](wss://rpc-mainnet.matic.network)                                 |
+| Heimdall API     | [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)                 |
+| Block explorer   | [https://polygonscan.com/](https://polygonscan.com/)                                               |
 
 !!!note
     Additional information
@@ -67,12 +67,14 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 
 - [Alchemy](https://www.alchemy.com/)
 - [Allnodes](https://polygon.publicnode.com)
+- [Amazon Managed Blockchain](https://aws.amazon.com/managed-blockchain/)
 - [Ankr](https://www.ankr.com/)
 - [Blast (Bware Labs)](https://blastapi.io/)
 - [BlockPI](https://blockpi.io/)
 - [Chainnodes](https://www.chainnodes.org/)
 - [Chainstack](https://chainstack.com/build-better-with-polygon/)
 - [DataHub (Figment)](https://datahub.figment.io)
+- [Dwellir](https://www.dwellir.com/networks/polygon)
 - [GetBlock](https://getblock.io/en/)
 - [Infura](https://infura.io)
 - [Moralis](https://moralis.io)

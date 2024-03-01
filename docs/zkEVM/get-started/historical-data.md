@@ -3,6 +3,23 @@ Find in here a record of the zkEVM’s historical data. This document records ti
 Join discussions or ask questions on Telegram: https://t.me/polygonzkevm_technical_updates/31 
 
 
+
+### 13th Feb, 2024
+
+**zkEVM mainnet Upgrade: Etrog hardfork**
+
+This upgrade brings the Polygon zkEVM to being almost a type 2 ZK-EVM. See further details [here](../architecture/protocol/etrog-upgrade.md)
+
+|                 |                           Version                            |
+| :-------------: | :----------------------------------------------------------: |
+|      Node       |                            v0.5.8                            |
+|     Prover      |                            v4.0.8                            |
+|     Bridge      |                            v0.4.0                            |
+| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.8 |
+| Supported ForkIDs | Mainnet & Cardona: ForkIDs 4, 5, 6 & 7.  Testnet (Goerli): ForkIDs 1, 2, 3, 4, 5 & 6. |
+
+
+
 ### 13th Dec, 2023
 
 **zkEVM mainnet update**
