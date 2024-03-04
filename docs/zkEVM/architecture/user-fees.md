@@ -420,7 +420,7 @@ where $\texttt{TxNonZeroBytes}$ represents the count of non-zero bytes in a raw 
 
 Costs associated with transaction execution is denoted by $\texttt{ExecutionCost}$, and it is measured in gas.
 
-Observe that, in contrast to data availability costs, calculating computational costs requires execution of the transactions.
+In contrast to costs for data availability, calculating computational costs necessecitates transactions to be executed.
 
 So then,
 
@@ -428,10 +428,7 @@ $$
 \texttt{GasUsed} = \texttt{DataCost} + \texttt{ExecutionCost}
 $$
 
-
-
-
-Computational cost is calculated with the following formula:
+The total fees on L2 are calculated with the following formula:
 
 $$
 \texttt{GasUsed} \cdot \texttt{L2GasPrice}
@@ -445,7 +442,7 @@ $$
 
 In particular, we choose a factor of $0.04$.
 
-In contrast to costs for data availability, calculating computational costs necessecitates transactions to be executed.
+
 
 
 
