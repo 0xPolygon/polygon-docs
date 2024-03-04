@@ -25,7 +25,7 @@ A **bookmark** is used for this purpose by the stream client.
 
 A bookmark is an entry in a stream, and therefore has an entry number, denoted by $\texttt{entryNumber}$.
 
-A bookmark is essentially a string of bytes. It links an $\texttt{entryNumber}$ to a string of bytes, in a way that is meaningful to an application.
+A bookmark is essentially a string of bytes. It links an $\texttt{entryNumber}$ to a string of bytes in a way that is meaningful to an application.
 
 Stream clients can request stream servers to start the stream from a particular bookmark using the $\texttt{StartBookmark()}$ method.
 
