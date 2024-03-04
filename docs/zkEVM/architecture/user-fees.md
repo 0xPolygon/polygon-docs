@@ -1,7 +1,6 @@
 The aim with this document is to describe the Effective Gas Price (EGP), a mechanism by which the Polygon zkEVM network charges gas fees in a more fair and accurate manner. These fees cover L1 data-availability and L2 execution costs. It is meant to help users set the $\texttt{gasPrice}$ such that there's little chance for a transaction revert or failure.
 
 
-
 ## Basic Ethereum fee schema
 
 Let's make a quick recollection of the basic fee schema used in Ethereum.
@@ -38,8 +37,7 @@ $$
 \texttt{initialBalance} − \texttt{gasLimit} \cdot \texttt{gasPrice}
 $$
 
-where $\texttt{initialBalance}$ represents the balance of the source account before the execution of the transaction. 
-
+where $\texttt{initialBalance}$ represents the balance of the source account before the execution of the transaction.
 
 
 ## Generic gas fee strategy for L2s
@@ -63,7 +61,7 @@ $$
 \texttt{L2GasPrice} = 20 \text{ Gwei} \cdot 0.04 = 0.8 \text{ Gwei}
 $$
 
-Current L2 fees can be looked at here https://l2fees.info.
+Current L2 fees can be viewed here https://l2fees.info.
 
 However, setting an L2 gas fee is not as simple as choosing a factor to multiply with the L1 gas price. There are other aspects to be considered.
 
@@ -82,17 +80,13 @@ Their corresponding pertinent questions are:
 - How do L2 solutions address and reconcile any discrepancies between the L1 gas schema and the real resource utilization on L2?
 
 
-
 ### Time-related variations
 
 So, how can the fact that the L1 $\texttt{gasPrice}$ varies with time be taken into account?
 
 In order to obtain L1 gas prices, we can poll for it every 5 seconds. As shown in the timeline below, gas prices vary with time.
 
-
-
 ![Figure: Gas price timeline](../../img/zkEVM/gas-timeline-001.png)
-
 
 
 ## Gas price suggester
@@ -107,10 +101,7 @@ Pre-execution of a transaction involves the following stages:
 
 See the the picture below for an overview of the pre-execution process.
 
-
-
 ![Figure: RPC tx pre-execution](../../img/zkEVM/rpc-tx-preexec.png)
-
 
 
 ### Naïve approach
@@ -127,13 +118,13 @@ to sign a transaction with.
 
 ![Figure: User-RPC-sign](../../img/zkEVM/user-rpc-sign-011.png)
 
-After receiving the suggested gas price, the user sends the desired L2 transaction with gas price of their choice. Call it **signed gas price**, denoted by $\texttt{GasPriceSigned}$.
+After receiving the suggested gas price, the user sends the desired L2 transaction with gas price of their choice. Call it **signed gas price**, denoted by $\texttt{SignedGasPrice}$.
 
-Observe that the user's chosen gas price can be equal to, greater than, or lower than the suggested price, each resulting in one of the two scenarios: either transaction accepted or transaction rejected. See the below figure.
+Observe that the user's chosen gas price can be equal to, greater than, or lower than the suggested price, each resulting in one of the two scenarios: either the transaction is accepted or it is rejected. See the below figure.
 
 ![Figure: User-RPC signing - Step 2](../../img/zkEVM/user-rpc-sign-step2.png)
 
-If $\texttt{GasPriceSigned}$ provided by the user is less than the current $\texttt{L2GasPrice}$, the transaction is automatically rejected[^a] and not included into the pool (error $\texttt{ErrGasPrice}$).
+If $\texttt{SignedGasPrice}$ provided by the user is less than the current $\texttt{L2GasPrice}$, the transaction is automatically rejected[^a] and not included into the pool (error $\texttt{ErrGasPrice}$).
 
 
 
@@ -155,7 +146,7 @@ As depicted in the figure below, the $\texttt{L2GasPrice}$ could be refreshed in
 
 The above scenario is undesirable. And thus needs to be remedied.
 
-One solution to the above situation is to, instead of comparing the user's $\texttt{GasPriceSigned}$ with the current $\texttt{L2GasPrice}$, rather compare it with the minimum $\texttt{L2GasPrice}$ among the suggested gas prices in the given time interval.
+One solution to the above situation is to, instead of comparing the user's $\texttt{SignedGasPrice}$ with the current $\texttt{L2GasPrice}$, rather compare it with the minimum $\texttt{L2GasPrice}$ among the suggested gas prices in the given time interval.
 
 That is, allow transactions from users that have signed any $\texttt{SignedGasPrice}$ above the minimum L2 gas price recorded during a given time interval. 
 
@@ -170,13 +161,11 @@ $$
 
 **Example** 
 
-The figure below shows the case where $\texttt{MinAllowedPriceInterval} = 5 \texttt{\ minutes}$ and the lowest suggested $\texttt{L2GasPrice} = 18$. 
+The figure below shows the case where $\texttt{MinAllowedPriceInterval} = 5 \texttt{ minutes}$ and the lowest among suggested L2 gas prices is $18$. i.e., $\texttt{L2GasPrice} = 18$. 
 
 So, if the user signed with $\texttt{SignedGasPrice} = 18$, then the transaction gets rejected because it will not cover costs as it is not above the $\texttt{L2MinGasPrice}$.
 
-Whereas, if the user signs with only $\texttt{SignedGasPrice} = 19$, then the transaction would be accepted (though the risk of revert is not totally ruled out).
-
-
+Whereas, if the user signs with only $\texttt{SignedGasPrice} = 19$, then the transaction would be accepted.
 
 ![Figure: Minimum allowed gas price interval ](../../img/zkEVM/min-allowed-gas-interval.png)
 
@@ -187,13 +176,10 @@ These parameters can be configured in the Polygon zkEVM node:
 - $\texttt{PollMinAllowedGasPriceInterval}$ is the interval to poll L1 in order to find the suggested L2 minimum gas price.
 - $\texttt{IntervalToRefreshGasPrices}$ is the interval to refresh L2 gas prices.
 
-More specifically, these are configured in the $\texttt{[Pool]}$ section of the configuration file found [here](https://github.com/0xPolygonHermez/zkevm-node/blob/b938572f138ba6cc40ef6736153c469afeb11c96/config/default.go#L37)
-
+More specifically, these are configured in the $\texttt{[Pool]}$ section of the configuration file found [here](https://github.com/0xPolygonHermez/zkevm-node/blob/b938572f138ba6cc40ef6736153c469afeb11c96/config/default.go#L37).
 
 
 ![Figure: ](../../img/zkEVM/config-prev-parameter.png)
-
-
 
 
 
@@ -236,7 +222,7 @@ because the L1 gas price at the moment of sending the transaction is $21$.
 
 ![Figure: Suggested gas with final approach](../../img/zkEVM/num-eg-l2min-gasprice.png)
 
-However, using the final approach, at the time of sending the transaction, the RPC will accept the transaction as long as $\texttt{GasPriceSigned}$ is higher than the minimum suggested gas price from the $5$ minutes interval (as shown in the figure), which in this instance is:
+However, using the final approach, at the time of sending the transaction, the RPC will accept the transaction as long as $\texttt{SignedGasPrice}$ is higher than the minimum suggested gas price from the $5$ minutes interval (as shown in the figure), which in this instance is:
 
 $$
 19·0.15 = 2.85
@@ -245,7 +231,7 @@ $$
 In order to get his transaction accepted, the user must set the gas price of the transaction to:
 
 $$
-\texttt{GasPriceSigned} = 3.3 > 2.85 = \texttt{L2MinGasPrice} 
+\texttt{SignedGasPrice} = 3.3 > 2.85 = \texttt{L2MinGasPrice} 
 $$
 
 
@@ -333,7 +319,7 @@ So, the primary objective is to compute $\texttt{EffectivePercentage}$ exclusive
 The effective percentage is computed as follows:
 
 $$
-\texttt{EffectivePercentage} = \frac{ \texttt{GasPriceFinal}}{ \texttt{GasPriceSigned}}
+\texttt{EffectivePercentage} = \frac{ \texttt{GasPriceFinal}}{ \texttt{SignedGasPrice}}
 $$
 
 where $\texttt{GasPriceFinal}$ is the gas price charged at the end of the entire processing by the sequencer. 
@@ -366,7 +352,7 @@ Setting an $\texttt{EffectivePercentageByte}$ of $255\ (= \texttt{0xFF})$ means 
 In which case the user would pay the totality of the gas price they signed with, when sending the transaction. That is:
 
 $$
-\texttt{GasPriceFinal} = \texttt{GasPriceSigned}
+\texttt{GasPriceFinal} = \texttt{SignedGasPrice}
 $$
 
 In contrast, setting $\texttt{EffectivePercentageByte}$ to $127$ means:
@@ -378,7 +364,7 @@ $$
 so, only a half of the gas price the user signed with gets charged as the transaction cost:
 
 $$
-\texttt{GasPriceFinal} = \frac{\texttt{GasPriceSigned}}{2}
+\texttt{GasPriceFinal} = \frac{\texttt{SignedGasPrice}}{2}
 $$
 
 The user therefore gets a refund which is half of the price he initially signed with.
@@ -431,7 +417,18 @@ where $\texttt{TxNonZeroBytes}$ represents the count of non-zero bytes in a raw 
 
 ### Computational costs
 
-Computational cost is calculated with the following formula:
+
+Costs associated with transaction execution is denoted by $\texttt{ExecutionCost}$, and it is measured in gas.
+
+In contrast to costs for data availability, calculating computational costs necessecitates transactions to be executed.
+
+So then,
+
+$$
+\texttt{GasUsed} = \texttt{DataCost} + \texttt{ExecutionCost}
+$$
+
+The total fees received by L2 are calculated with the following formula:
 
 $$
 \texttt{GasUsed} \cdot \texttt{L2GasPrice}
@@ -445,7 +442,7 @@ $$
 
 In particular, we choose a factor of $0.04$.
 
-In contrast to costs for data availability, calculating computational costs necessecitates transactions to be executed.
+
 
 
 
@@ -497,7 +494,7 @@ Observe that we still need to introduce gas price prioritization, which will be 
 
 ### Numerical example: Computing BreakEvenGasPrice
 
-Recall the example proposed before, where the $\texttt{GasPriceSuggested}$ provided by RPC was $2.85$ gwei per gas, but the user ended up setting $\texttt{GasPriceSigned}$ to $3.3$.
+Recall the example proposed before, where the $\texttt{GasPriceSuggested}$ provided by RPC was $2.85$ gwei per gas, but the user ended up setting $\texttt{SignedGasPrice}$ to $3.3$.
 
 The figure below depicts the current situation.
 
@@ -530,7 +527,7 @@ We have introduced a $\texttt{NetProfit}$ value of $1.2$, indicating a target of
 At a first glance, we might conclude acceptance since:
 
 $$
- \texttt{GasPriceSigned} = 3.3 > 2.52
+ \texttt{SignedGasPrice} = 3.3 > 2.52
 $$
 
 but, recall that this is only an estimation, the gas consumed with the correct state root can differ.
@@ -538,7 +535,7 @@ but, recall that this is only an estimation, the gas consumed with the correct s
 To avoid this, we introduce a $\texttt{BreakEvenFactor}$ of $30\%$ to account for estimation uncertainties:
 
 $$
-\texttt{GasPriceSigned} = 3.3 > 3.276 = 2.52 · 1.3 = \texttt{BreakEvenGasPrice} \cdot \texttt{BreakEvenFactor}
+\texttt{SignedGasPrice} = 3.3 > 3.276 = 2.52 · 1.3 = \texttt{BreakEvenGasPrice} \cdot \texttt{BreakEvenFactor}
 $$
 
 Consequently, we decide to accept the transaction.
@@ -572,7 +569,7 @@ $$
 By introducing $\texttt{BreakEvenFactor}$, we are limiting the accepted transactions to the ones with,
 
 $$
-\texttt{GasPriceSigned} ≥ 3.27
+\texttt{SignedGasPrice} ≥ 3.27
 $$
 
 in order to compensate for such losses.
@@ -589,26 +586,26 @@ $$
 
 ##  EffectiveGasPrice: Introducing Priority
 
-Prioritization of transactions in Ethereum is determined by $\texttt{GasPriceSigned}$ and transactions signed at a higher price are given priority.
+Prioritization of transactions in Ethereum is determined by $\texttt{SignedGasPrice}$ and transactions signed at a higher price are given priority.
 
 In order to implement this, suppose users are only aware of two gas price values:
 
 - The current $\texttt{GasPriceSuggested}$, which is the one provided to the RPC.
-- The one signed with the transaction, called $\texttt{GasPriceSigned}$.
+- The one signed with the transaction, called $\texttt{SignedGasPrice}$.
 
 It is important to note that this part of the process is not computed in the RPC but in the sequencer.
 
 So it is possible for the suggested gas price at this moment to be different from the one suggested when the transaction was sent.
 
-When transactions are sequenced, we need to prioritize some over the others, depending on both $\texttt{GasPriceSigned}$ and current $\texttt{GasPriceSuggested}$.
+When transactions are sequenced, we need to prioritize some over the others, depending on both $\texttt{SignedGasPrice}$ and current $\texttt{GasPriceSuggested}$.
 
-In the case where $\texttt{GasPriceSigned} > \texttt{GasPriceSuggested}$, we establish a priority ratio as follows:
+In the case where $\texttt{SignedGasPrice} > \texttt{GasPriceSuggested}$, we establish a priority ratio as follows:
 
 $$
-\texttt{PriorityRatio} = \frac{\texttt{GasPriceSigned}}{\texttt{GasPriceSuggested}} − 1. 
+\texttt{PriorityRatio} = \frac{\texttt{SignedGasPrice}}{\texttt{GasPriceSuggested}} − 1. 
 $$
 
-If $\texttt{GasPriceSigned} ≤ \texttt{GasPriceSuggested}$, it means the user has chosen not to have their transactions prioritized, and the transaction maybe rejected due to low gas price. In this case, we establish a priority ratio to be $0$.
+If $\texttt{SignedGasPrice} ≤ \texttt{GasPriceSuggested}$, it means the user has chosen not to have their transactions prioritized, and the transaction maybe rejected due to low gas price. In this case, we establish a priority ratio to be $0$.
 
 Finally, the $\texttt{EffectiveGasPrice}$ will be computed as:
 
@@ -624,7 +621,7 @@ Recall that, in the previous example, we were signing a gas price of $3.3$ at th
 Suppose that, at the time of sequencing a transaction, the suggested gas price is $3$:
 
 $$
-\texttt{GasPriceSigned} = 3.3,\ \ \texttt{GasPriceSuggested} = 3
+\texttt{SignedGasPrice} = 3.3,\ \ \texttt{GasPriceSuggested} = 3
 $$
 
 The difference between the two values is taken into account in the priority ratio:
@@ -680,18 +677,18 @@ Let’s examine the above figure in detail:
 
     Observe that the suggested gas price varies over time as $\texttt{L1GasPrice}$ also does.
 
-2. The user selects the gas price to sign the transaction with, $\texttt{GasPriceSigned}$, then sends the transaction.
+2. The user selects the gas price to sign the transaction with, $\texttt{SignedGasPrice}$, then sends the transaction.
     
     Observe that there is a time interval between when the user asks for a suggested gas price and when they send the transaction,during which the L1 gas price could have increased.
 
-    And hence, if $\texttt{GasPriceSigned} < \texttt{GasPriceSuggested}$, then the transaction gets rejected. Resulting in a bad UX.
+    And hence, if $\texttt{SignedGasPrice} < \texttt{GasPriceSuggested}$, then the transaction gets rejected. Resulting in a bad UX.
 
     Alternatively, the user is given a margin of $5$ minutes, which is controlled by the $\texttt{MinAllowedGasPriceInterval}$ parameter.
 
     If the signed gas price does not exceed the minimum gas price among those suggested within the particular $5$ minutes interval, $\texttt{L2MinGasPrice}$,
 
     $$
-    \texttt{GasPriceSigned} \not> \texttt{L2MinGasPrice}
+    \texttt{SignedGasPrice} \not> \texttt{L2MinGasPrice}
     $$
 
     the transaction is automatically rejected, since it will not be possible to cover costs.
@@ -718,7 +715,7 @@ Let’s examine the above figure in detail:
     - If the gas price signed by the user at the time of sending the transaction is higher than the $\texttt{BreakEvenGasPriceRPC}$, increased by a factor $\texttt{BreakEvenFactor} ≥ 1$ (which is currently set at $1.3$ for the purpose of protecting the network against bad gas usage estimations in the RPC),
 
     $$
-    \texttt{GasPriceSigned} > \texttt{BreakEvenGasPriceRPC} \cdot \texttt{BreakEvenFactor}
+    \texttt{SignedGasPrice} > \texttt{BreakEvenGasPriceRPC} \cdot \texttt{BreakEvenFactor}
     $$
 
     then the transaction is immediately _accepted_ and stored in the pool.
@@ -726,7 +723,7 @@ Let’s examine the above figure in detail:
     - Otherwise, if
 
     $$
-    \texttt{GasPriceSigned} \leq \texttt{BreakEvenGasPriceRPC} \cdot \texttt{BreakEvenFactor}
+    \texttt{SignedGasPrice} \leq \texttt{BreakEvenGasPriceRPC} \cdot \texttt{BreakEvenFactor}
     $$
 
     we are in dangerous zone, because we may be facing losses due either high data availability costs or fluctuations in future computations.
@@ -736,12 +733,12 @@ Let’s examine the above figure in detail:
 6. In the later stage, we check if the gas price signed with the transaction exceeds the current suggested gas price:
     
     $$
-    \texttt{GasPriceSigned} ≥ \texttt{GasPriceSuggested}
+    \texttt{SignedGasPrice} ≥ \texttt{GasPriceSuggested}
     $$
 
     In this case, we take the risk of possible losses, sponsoring the difference if necessary, and so we introduce the transaction into the Pool.
 
-    However, if $\texttt{GasPriceSigned} < \texttt{GasPriceSuggested}$ we assume that is highly probable that we face a loss and we immediately reject the transaction.
+    However, if $\texttt{SignedGasPrice} < \texttt{GasPriceSuggested}$ we assume that is highly probable that we face a loss and we immediately reject the transaction.
 
 
 **Final Considerations**
@@ -776,7 +773,7 @@ In figure below, we indicate the current $\texttt{L1GasPrice}$ at the top of the
 2. Let's suppose that the user sends a transaction signed with a gas price of $3$:
     
     $$
-    \texttt{GasPriceSigned} = 3
+    \texttt{SignedGasPrice} = 3
     $$
 
     Observe that the signed gas price is strictly lower than the current suggested gas price, which is $\mathtt{3.15 = 21 \cdot 0.15}$.
@@ -786,7 +783,7 @@ In figure below, we indicate the current $\texttt{L1GasPrice}$ at the top of the
     Henceforth, since
 
     $$
-    \texttt{GasPriceSigned} = 3 > 2.85 = \texttt{L2MinGasPrice}
+    \texttt{SignedGasPrice} = 3 > 2.85 = \texttt{L2MinGasPrice}
     $$
 
     we accept the transaction at this point.
@@ -804,19 +801,19 @@ In figure below, we indicate the current $\texttt{L1GasPrice}$ at the top of the
 5. Notice that, in this particular scenario, despite having
     
     $$
-    \texttt{GasPriceSigned} < \texttt{BreakEvenGasPriceRPC}
+    \texttt{SignedGasPrice} < \texttt{BreakEvenGasPriceRPC}
     $$
 
     the introduction of the $\texttt{BreakEvenFactor}$, which acts as a protective measure as previously mentioned, results in the next check for failure:
 
     $$
-    \texttt{GasPriceSigned} < 3.276 = 2.52 \cdot 1.3 = \texttt{BreakEvenGasPrice} \cdot \texttt{BreakEvenFactor}
+    \texttt{SignedGasPrice} < 3.276 = 2.52 \cdot 1.3 = \texttt{BreakEvenGasPrice} \cdot \texttt{BreakEvenFactor}
     $$
 
 6. However, recall that we are currently sponsoring and accepting all transactions as long as 
     
     $$
-    \texttt{GasPriceSigned} = 3 ≥ 2.85 = \texttt{GasPriceSuggested}
+    \texttt{SignedGasPrice} = 3 ≥ 2.85 = \texttt{GasPriceSuggested}
     $$
 
     which is the current case.
@@ -843,21 +840,17 @@ Let’s examine the above figure in more detail.
     Recall that the $\texttt{GasUsedRPC}$ is obtained in the RPC pre-execution using;
 
     - A previous state root, which has now changed, and 
-    - The current $\texttt{L1GasPrice}$, which may also differ from the one used when sending the transaction to the RPC, for all the transactions stored in the Pool, and sequence the one having higher $\texttt{EEGP}$.
-
-    It is important to note that this should be done in this precise order.
-
-    We could have calculated the $\texttt{EEGP}$ just before storing the transactions in the Pool and sorting it by EEGP, but this would not yield the same result because the $\texttt{L1GasPrice}$ at that moment is different from the one at the time of sequencing a transaction, potentially changing the $\texttt{EEGP}$ as well as the prioritization order of transactions.
+    - The current $\texttt{L1GasPrice}$, which may also differ from the one used when sending the transaction to the RPC.
 
 2. At this point, we have two options:
     
-    - If $\texttt{GasPriceSigned} ≤ \texttt{EEGP}$, even with only an estimated effective gas price, there is a significant risk of loss.
+    - If $\texttt{SignedGasPrice} ≤ \texttt{EEGP}$, even with only an estimated effective gas price, there is a significant risk of loss.
 
     In such cases, we opt not to adjust the gas price any further, so as to reduce the number of executions needed to do so.
 
-    Henceforth, the user is charged the full $\texttt{GasPriceSigned}$, so the Executor will execute the transaction using it, concluding the sequencing process.
+    Henceforth, the user is charged the full $\texttt{SignedGasPrice}$, so the Executor will execute the transaction using it, concluding the sequencing process.
 
-    - Conversely, if $\texttt{GasPriceSigned} > \texttt{EEGP}$, there is a room for further adjustment of the gas price that will be charged to the user.
+    - Conversely, if $\texttt{SignedGasPrice} > \texttt{EEGP}$, there is a room for further adjustment of the gas price that will be charged to the user.
 
 3. In the previous case, it was necessary to compute a more precise effective gas price based on the accurate amount of gas, denoted as $\texttt{GasUsedNew}$, obtained during the transaction’s execution using the correct state root at the time of sequencing transactions (which was not known earlier for straightforward reasons).
 
@@ -890,14 +883,14 @@ Let’s examine the above figure in more detail.
     - If the gas price signed is less or equal than the accurate effective gas price computed with the correct state root
 
     $$
-    \texttt{GasPriceSigned} \leq \texttt{NEGP}
+    \texttt{SignedGasPrice} \leq \texttt{NEGP}
     $$
 
     the network suffers again a risk of loss.
 
-    Henceforth, the user is charged the full $\texttt{GasPriceSigned}$, so the Executor will execute the transaction using it, concluding the sequencing process.
+    Henceforth, the user is charged the full $\texttt{SignedGasPrice}$, so the Executor will execute the transaction using it, concluding the sequencing process.
 
-    - Otherwise, if $\texttt{GasPriceSigned} > \texttt{NEGP}$, then it means we have margin to adjust the gas price that is charged to the user.
+    - Otherwise, if $\texttt{SignedGasPrice} > \texttt{NEGP}$, then it means we have margin to adjust the gas price that is charged to the user.
 
     However, in order to save executions, we end the adjustment process in this iteration, so that we conclude the flow using a trick explained in the next point.
 
@@ -910,7 +903,7 @@ Let’s examine the above figure in more detail.
 
     - If the transaction contains the aforementioned opcodes, we impose a penalty on the user for security reasons.
 
-    In such cases, we simply proceed with executing the transaction using the entire $\texttt{GasPriceSigned}$ to minimize potential losses and conclude the flow, as mentioned earlier. 
+    In such cases, we simply proceed with executing the transaction using the entire $\texttt{SignedGasPrice}$ to minimize potential losses and conclude the flow, as mentioned earlier. 
 
     This precaution is employed to mitigate potential vulnerabilities in deployed Smart Contracts, that arise from creating a specific condition based on the gas price, for example, to manipulate execution costs.
 
@@ -944,7 +937,7 @@ Recall how we previously ended up computing the $\texttt{BreakEvenGasPriceRPC}$ 
 2. Since the signed gas price is bigger than the estimated effective gas price,
     
     $$
-    \texttt{GasPriceSigned} = 3.3 > 2.772 = \texttt{EEGP}
+    \texttt{SignedGasPrice} = 3.3 > 2.772 = \texttt{EEGP}
     $$
 
     we execute the transaction using the current and correct state and the computed $\texttt{EEGP}$ in order to obtain an accurate measure of the gas used, which we call $\texttt{GasUsedNew}$.
@@ -982,7 +975,7 @@ Recall how we previously ended up computing the $\texttt{BreakEvenGasPriceRPC}$ 
     This deviation penalizes the user a lot since
 
     $$
-    \texttt{GasPriceSigned}\ = 3.3 > 2.52 =\ \texttt{EEGP} ≫ 2.056 =\ \texttt{NEGP}
+    \texttt{SignedGasPrice}\ = 3.3 > 2.52 =\ \texttt{EEGP} ≫ 2.056 =\ \texttt{NEGP}
     $$
 
     So we try to charge $\texttt{NEGP}$ to the user to further adjust the gas price.
@@ -998,7 +991,7 @@ Recall how we previously ended up computing the $\texttt{BreakEvenGasPriceRPC}$ 
     We can now compute $\texttt{EffectivePercentage}$ and $\texttt{EffectivePercentageByte}$ as follows:
 
     $$
-    \texttt{EffectivePercentage} = \frac{\texttt{GasPriceFinal}}{\texttt{GasPriceSigned}} = \frac{2.056}{3.3} = 0.623.
+    \texttt{EffectivePercentage} = \frac{\texttt{GasPriceFinal}}{\texttt{SignedGasPrice}} = \frac{2.056}{3.3} = 0.623.
     $$
 
     $$
