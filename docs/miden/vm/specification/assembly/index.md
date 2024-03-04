@@ -40,3 +40,4 @@ In order to achieve the second and third goals, Miden assembly facilitates flow 
 In order to achieve the fourth goal, Miden assembly retains direct access to the VM stack rather than abstracting it away with higher-level constructs and named variables.
 
 Lastly, in order to achieve the fifth goal, each instruction of Miden assembly can be encoded using a single byte. The resulting byte-code is simply a one-to-one mapping of instructions to their binary values.
+Before Miden assembly can be executed on Miden VM, it needs to be compiled into a [Program MAST](../../architecture/programs.md) (Merkelized Abstract Syntax Tree) which is a binary tree of code blocks each containing raw Miden
