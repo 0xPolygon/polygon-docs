@@ -92,7 +92,7 @@ The contracts have been designed with various security measures, including rate 
 
 ## Implications and safeguards
 
-### How Is POL used to reward ecosystem participation?
+### How is POL used to reward ecosystem participation?
 
 POL's design aims to foster a sustainable and predictable growth model. This model primarily rewards active contributors and participants within the ecosystem.
 
