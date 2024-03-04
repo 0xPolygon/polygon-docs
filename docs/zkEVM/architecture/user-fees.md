@@ -1,7 +1,6 @@
 The aim with this document is to describe the Effective Gas Price (EGP), a mechanism by which the Polygon zkEVM network charges gas fees in a more fair and accurate manner. These fees cover L1 data-availability and L2 execution costs. It is meant to help users set the $\texttt{gasPrice}$ such that there's little chance for a transaction revert or failure.
 
 
-
 ## Basic Ethereum fee schema
 
 Let's make a quick recollection of the basic fee schema used in Ethereum.
@@ -38,8 +37,7 @@ $$
 \texttt{initialBalance} − \texttt{gasLimit} \cdot \texttt{gasPrice}
 $$
 
-where $\texttt{initialBalance}$ represents the balance of the source account before the execution of the transaction. 
-
+where $\texttt{initialBalance}$ represents the balance of the source account before the execution of the transaction.
 
 
 ## Generic gas fee strategy for L2s
@@ -82,17 +80,13 @@ Their corresponding pertinent questions are:
 - How do L2 solutions address and reconcile any discrepancies between the L1 gas schema and the real resource utilization on L2?
 
 
-
 ### Time-related variations
 
 So, how can the fact that the L1 $\texttt{gasPrice}$ varies with time be taken into account?
 
 In order to obtain L1 gas prices, we can poll for it every 5 seconds. As shown in the timeline below, gas prices vary with time.
 
-
-
 ![Figure: Gas price timeline](../../img/zkEVM/gas-timeline-001.png)
-
 
 
 ## Gas price suggester
@@ -107,10 +101,7 @@ Pre-execution of a transaction involves the following stages:
 
 See the the picture below for an overview of the pre-execution process.
 
-
-
 ![Figure: RPC tx pre-execution](../../img/zkEVM/rpc-tx-preexec.png)
-
 
 
 ### Naïve approach
@@ -425,6 +416,20 @@ where $\texttt{TxNonZeroBytes}$ represents the count of non-zero bytes in a raw 
 
 
 ### Computational costs
+
+
+Costs associated with transaction execution is denoted by $\texttt{ExecutionCost}$, and it is measured in gas.
+
+Observe that, in contrast to data availability costs, calculating computational costs requires execution of the transactions.
+
+So then,
+
+$$
+\texttt{GasUsed} = \texttt{DataCost} + \texttt{ExecutionCost}
+$$
+
+
+
 
 Computational cost is calculated with the following formula:
 
