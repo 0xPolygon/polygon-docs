@@ -428,7 +428,7 @@ $$
 \texttt{GasUsed} = \texttt{DataCost} + \texttt{ExecutionCost}
 $$
 
-The total fees on L2 are calculated with the following formula:
+The total fees to be received by L2 are calculated with the following formula:
 
 $$
 \texttt{GasUsed} \cdot \texttt{L2GasPrice}
@@ -840,11 +840,7 @@ Let’s examine the above figure in more detail.
     Recall that the $\texttt{GasUsedRPC}$ is obtained in the RPC pre-execution using;
 
     - A previous state root, which has now changed, and 
-    - The current $\texttt{L1GasPrice}$, which may also differ from the one used when sending the transaction to the RPC, for all the transactions stored in the Pool, and sequence the one having higher $\texttt{EEGP}$.
-
-    It is important to note that this should be done in this precise order.
-
-    We could have calculated the $\texttt{EEGP}$ just before storing the transactions in the Pool and sorting it by EEGP, but this would not yield the same result because the $\texttt{L1GasPrice}$ at that moment is different from the one at the time of sequencing a transaction, potentially changing the $\texttt{EEGP}$ as well as the prioritization order of transactions.
+    - The current $\texttt{L1GasPrice}$, which may also differ from the one used when sending the transaction to the RPC.
 
 2. At this point, we have two options:
     
