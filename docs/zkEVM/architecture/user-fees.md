@@ -428,7 +428,7 @@ $$
 \texttt{GasUsed} = \texttt{DataCost} + \texttt{ExecutionCost}
 $$
 
-The total fees to be received by L2 are calculated with the following formula:
+The total fees received by L2 are calculated with the following formula:
 
 $$
 \texttt{GasUsed} \cdot \texttt{L2GasPrice}
