@@ -928,6 +928,7 @@ Recall how we previously ended up computing the $\texttt{BreakEvenGasPriceRPC}$ 
 
 
 1. Suppose the user signed a gas price of $3.3\ \texttt{GWei/Gas}$. According to the above figure, the network recommends a gas price of $3$ at the time of transaction sequencing, which corresponds to an L1 gas price of $20$. This results in an $\texttt{EEGP}$ of
+    
     $$
     \texttt{EEGP} = 2.722\ \texttt{GWei/Gas}
     $$
