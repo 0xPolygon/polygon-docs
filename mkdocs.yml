@@ -336,8 +336,8 @@ nav:
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
-      - Test import 1: '!import https://github.com/0xPolygonMiden/miden-client?branch=km/restructure-docs'
-      - Test import 2: '!import https://github.com/0xPolygonMiden/miden-client?branch=km/restructure-docs'
+      - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=docs-migrate'
+      - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
