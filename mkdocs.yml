@@ -579,21 +579,11 @@ plugins:
       keep_docs_dir: false
   - search
   - open-in-new-tab
-  # - git-revision-date-localized:
-  #     fallback_to_build_date: true
-  #     strict: false
-  #     exclude:
-  #       - index.md
-  # - git-authors:
-  #     show_contribution: true
-  #     exclude:
-  #       - index.md
-  #       - cdk/index.md
-  #       - zkEVM/index.md
-  #       - pos/index.md
-  #       - miden/index.md
-  #       - tools/index.md
-  #       - learn/index.md
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      strict: false
+      exclude:
+        - index.md
 
 validation:
   absolute_links: ignore
