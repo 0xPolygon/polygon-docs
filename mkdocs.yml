@@ -574,6 +574,9 @@ markdown_extensions:
   - pymdownx.extra
 
 plugins:
+  - multirepo:
+      cleanup: true
+      keep_docs_dir: false
   - search
   - open-in-new-tab
   - git-revision-date-localized:
