@@ -579,11 +579,6 @@ plugins:
       keep_docs_dir: false
   - search
   - open-in-new-tab
-  - git-revision-date-localized:
-      fallback_to_build_date: true
-      strict: false
-      exclude:
-        - index.md
 
 validation:
   absolute_links: ignore

@@ -21,27 +21,27 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./introduction/">
+      <a href="./miden-base/introduction/roadmap/">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">zkRollup docs</div>
+            <div class="feature-card-heading">Roadmap</div>
          </div>
-         <p class="feature-paragraph">The Miden zkRollup docs detail the current state of the development and design.</p>
+         <p class="feature-paragraph">Check out the Miden roadmap for the latest updates.</p>
       </a>
    </div>
    <div class="grid-item">
-      <a href="./roadmap">
+      <a href="./miden-base/introduction/getting-started/">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">zkRollup roadmap</div>
+            <div class="feature-card-heading">Getting started</div>
          </div>
-         <p class="feature-paragraph">Check out the Miden zkRollup roadmap for the latest updates.</p>
+         <p class="feature-paragraph">Follow the Miden getting started guide to get up and running.</p>
       </a>
    </div>
    <div class="grid-item">
-      <a href="./vm/intro/">
+      <a href="./miden-base/architecture/overview/">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Miden VM</div>
+            <div class="feature-card-heading">Miden architecture</div>
          </div>
-         <p class="feature-paragraph">Check out the Miden zero-knowledge virtual machine documentation.</p>
+         <p class="feature-paragraph">Learn more about the Miden architecture.</p>
       </a>
    </div>
 </div>
