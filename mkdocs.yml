@@ -33,7 +33,7 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-   # - navigation.instant
+    - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
     - navigation.integration
@@ -70,6 +70,7 @@ nav:
                   - Set up: cdk/get-started/deploy-validium/node/set-up.md
                   - Configure the deployment: cdk/get-started/deploy-validium/node/configure-deployment.md
                   - Run node and services: cdk/get-started/deploy-validium/node/run-node-services.md
+                  - Test transaction: cdk/get-started/deploy-validium/node/test-transaction.md
           - Rollup: 
               - Introduction: cdk/get-started/deploy-rollup/intro.md
               - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
@@ -82,10 +83,12 @@ nav:
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
+        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Use a native token: cdk/how-to/use-native-token.md
       - Architecture:
-        - DAC: cdk/architecture/dac.md
+        - CDK rollup option: cdk/architecture/cdk-zkevm-option.md
+        - CDK validium option: cdk/architecture/cdk-validium-option.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
@@ -93,6 +96,7 @@ nav:
         - Validium: cdk/concepts/validium.md
         - Data availability: cdk/concepts/dac.md
       - Additional resources:
+        - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
@@ -154,6 +158,13 @@ nav:
             - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
           - LXLY bridge: zkEVM/architecture/protocol/lxly-bridge.md
         - zkNode: zkEVM/architecture/zknode/index.md
+        - Data streamer:
+          - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
+          - Data streamer protocols: zkEVM/architecture/data-streamer/data-streamer-protocols.md
+          - Bookmarks: zkEVM/architecture/data-streamer/bookmarks.md
+          - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
+          - Stream file: zkEVM/architecture/data-streamer/stream-file.md
+          - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - Main state machine: 
@@ -302,8 +313,6 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
-      #- Specification:
-      #    - Specification: pos/spec/index.md
       - Reference:
         - Contracts:
           - Genesis contracts: pos/reference/contracts/genesis-contracts.md
@@ -329,101 +338,19 @@ nav:
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
       - Miden: miden/index.md
-      - Overview: miden/overview.md
-      - Roadmap:  miden/roadmap.md
-      - Miden rollup docs:
-          - Introduction:  
-              - Welcome: miden/introduction/index.md
-          - Architecture:
-              - Architecture:  miden/architecture/index.md
-              - Accounts:  miden/architecture/accounts.md
-              - Notes:  miden/architecture/notes.md
-              - Assets:  miden/architecture/assets.md
-              - Transactions:  miden/architecture/transactions.md
-              - State:  miden/architecture/state.md
-              - Execution:  miden/architecture/execution.md
-          - Concepts:
-              - Crypto primitives:
-                  - Tiered sparce Merkle tree (TSMT):  miden/concepts/crypto-primitives/tsmt.md
-      - Miden VM:
-          - Introduction:
-              - Introduction: miden/vm/intro/index.md
-              - Overview: miden/vm/intro/overview.md
-              - Usage: miden/vm/intro/usage.md
-              - Performance: miden/vm/intro/performance.md
-              - Background material: miden/vm/background.md
-          - Architecture:
-              - Design: miden/vm/architecture/introduction.md
-              - Programs: miden/vm/architecture/programs.md
-              - Decoder:
-                  - Decoder: miden/vm/architecture/decoder/index.md
-                  - Constraints:  miden/vm/architecture/decoder/constraints.md
-              - Operand stack:
-                  - Operand stack: miden/vm/architecture/stack/index.md
-                  - Operation constraints:  miden/vm/architecture/stack/op-constraints.md
-                  - System operations:  miden/vm/architecture/stack/system-ops.md
-                  - Field operations:  miden/vm/architecture/stack/field-ops.md
-                  - u32 operations:  miden/vm/architecture/stack/u32-ops.md
-                  - Stack manipulation:  miden/vm/architecture/stack/stack-ops.md
-                  - Input/output operations:  miden/vm/architecture/stack/io-ops.md
-                  - Cryptographic operations:  miden/vm/architecture/stack/crypto-ops.md
-              - Range checker:  miden/vm/architecture/range.md
-              - Chiplets:
-                  - Chiplets: miden/vm/architecture/chiplets/index.md
-                  - Hash chiplet:  miden/vm/architecture/chiplets/hasher.md
-                  - Bitwise chiplet:  miden/vm/architecture/chiplets/bitwise.md
-                  - Memory chiplet:  miden/vm/architecture/chiplets/memory.md
-                  - Kernel ROM chiplet:  miden/vm/architecture/chiplets/kernel_rom.md 
-              - Lookups:
-                  - Lookups: miden/vm/architecture/lookups/index.md
-                  - Multiset checks:  miden/vm/architecture/lookups/multiset.md
-                  - LogUp: miden/vm/architecture/lookups/logup.md
-          - Specification:
-                - AirScript: 
-                  - Introduction: miden/specification/airscript/introduction.md
-                  - Language description:
-                      - Syntax overview: miden/specification/airscript/syntax.md
-                      - Code organization: miden/specification/airscript/code-organization.md
-                      - Type declarations: miden/specification/airscript/type-declarations.md
-                      - Constraints: miden/specification/airscript/constraints.md
-                      - Variables: miden/specification/airscript/variables.md
-                      - Evaluators: miden/specification/airscript/evaluators.md
-                      - Convenience: miden/specification/airscript/convenience.md
-                      - Example AIR definition: miden/specification/airscript/example.md
-                      - Keywords: miden/specification/airscript/keywords.md
-                      - Appendix: miden/specification/airscript/appendix.md
-                  - Backends: miden/specification/airscript/backends.md
-                - Development tooling:
-                    - Overview: miden/vm/tools/index.md
-                    - Debugger: miden/vm/tools/debugger.md
-                    - REPL: miden/vm/tools/repl.md
-          - API:
-              - Miden programming reference: miden/vm/specification/index.md
-              - Assembly:
-                  - Miden assembly:  miden/vm/specification/assembly/index.md
-                  - Code organization:  miden/vm/specification/assembly/code-organization.md
-                  - Execution contexts:  miden/vm/specification/assembly/execution-contexts.md
-                  - Flow control:  miden/vm/specification/assembly/flow-control.md
-                  - Field operations:  miden/vm/specification/assembly/field-operations.md
-                  - u32 operations:  miden/vm/specification/assembly/u32-operations.md
-                  - Stack manipulation:  miden/vm/specification/assembly/stack-manipulation.md
-                  - IO operations:  miden/vm/specification/assembly/io-operations.md
-                  - Cryptographic operations:  miden/vm/specification/assembly/cryptographic-operations.md
-                  - Debugging:  miden/vm/specification/assembly/debugging.md
-              - Standard library:
-                  - Miden standard library: miden/vm/specification/stdlib/index.md
-                  - Collections:  miden/vm/specification/stdlib/collections.md
-                  - Crypto:
-                      - Digital signatures:  miden/vm/specification/stdlib/crypto/dsa.md
-                      - FRI verification procedures:  miden/vm/specification/stdlib/crypto/fri.md
-                      - Cryptographic hashes:  miden/vm/specification/stdlib/crypto/hashes.md
-                  - Math:
-                      - Unsigned 64-bit integer operations:  miden/vm/specification/stdlib/math/u64.md
-                  - Memory procedures:  miden/vm/specification/stdlib/mem.md
-                  - System procedures:  miden/vm/specification/stdlib/sys.md
+      - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
+      - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
+          - dApp Launchpad:
+              - Introduction: tools/dApp-development/launchpad/intro.md
+              - Quickstart: tools/dApp-development/launchpad/quickstart.md
+              - Frontend: tools/dApp-development/launchpad/frontend.md
+              - Smart contracts: tools/dApp-development/launchpad/smart-contracts.md
+              - Commands: tools/dApp-development/launchpad/commands.md
+              - Contributing: tools/dApp-development/launchpad/contributing.md
+              - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
           - Smart contract development on PoS:
               - Alchemy: tools/dApp-development/pos/alchemy.md
               - ChainIDE: tools/dApp-development/pos/chainide.md
@@ -438,6 +365,9 @@ nav:
               - Truffle: tools/dApp-development/common-tools/truffle.md
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
+      - Chain indexer framework:
+          - Overview: tools/chain-indexer-framework/overview.md
+          - Usage: tools/chain-indexer-framework/usage.md
       - Third-party tutorials:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
       - Gas:
@@ -535,13 +465,14 @@ nav:
           - Band standard dataset: tools/oracles/bandstandarddataset.md
           - Chainlink: tools/oracles/chainlink.md
           - DIA: tools/oracles/diadataoracles.md
-          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Razor: tools/oracles/razor.md
           - Supra: tools/oracles/supra.md
           - Tellor: tools/oracles/tellor.md
+          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
           - Getting started:  tools/wallets/getting-started.md
+          - Polygon Portal: tools/wallets/portal.md
           - Metamask:
               - Overview: tools/wallets/metamask/index.md
               - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
@@ -553,13 +484,14 @@ nav:
               - Create wallet:  tools/wallets/venly/create-wallet.md
               - Add network:  tools/wallets/venly/add-network.md
               - Add custom token:  tools/wallets/venly/custom-tokens.md
-          - Wallet link: tools/wallets/wallet-link.md
-          - Fortmatic: tools/wallets/fortmatic.md
-          - Portis:  tools/wallets/portis.md
-          - Torus:  tools/wallets/torus.md          
-          - WalletConnect:  tools/wallets/walletconnect.md
-          - SlashAuth:  tools/wallets/slashauth.md
+          - Fortmatic: tools/wallets/fortmatic.md    
+          - Openfort: tools/wallets/openfort.md
           - Particle network:  tools/wallets/particle-network.md
+          - Portis:  tools/wallets/portis.md    
+          - SlashAuth:  tools/wallets/slashauth.md
+          - Torus:  tools/wallets/torus.md  
+          - Wallet link: tools/wallets/wallet-link.md
+          - WalletConnect:  tools/wallets/walletconnect.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
@@ -591,20 +523,6 @@ extra:
   analytics:
     provider: custom
     property: google    
-  #  feedback:  # feedback form only works when Google Analytics is set up and working
-  #    title: Was this page helpful?
-  #    ratings:
-  #      - icon: fontawesome/regular/face-grin-stars
-  #        name: This page was helpful
-  #        data: 1
-  #        note: >-
-  #          Thanks for your feedback!
-  #      - icon: fontawesome/regular/face-grimace
-  #        name: This page could be improved
-  #        data: 0
-  #        note: >-
-  #          Thanks for your feedback! Help us improve this page by
-  #          using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
   social:
     - icon: fontawesome/solid/circle-question
       link: https://support.polygon.technology/support/solutions
@@ -658,23 +576,11 @@ markdown_extensions:
   - pymdownx.extra
 
 plugins:
+  - multirepo:
+      cleanup: true
+      keep_docs_dir: false
   - search
   - open-in-new-tab
-  - git-revision-date-localized:
-      fallback_to_build_date: true
-      strict: false
-      exclude:
-        - index.md
-  - git-authors:
-      show_contribution: true
-      exclude:
-        - index.md
-        - cdk/index.md
-        - zkEVM/index.md
-        - pos/index.md
-        - miden/index.md
-        - tools/index.md
-        - learn/index.md
 
 validation:
   absolute_links: ignore

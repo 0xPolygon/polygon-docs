@@ -1,13 +1,16 @@
+---
+comments: true
+---
+
 ## Configure deployment parameters
 
-1. `cd` to the `deployment/` directory and create a new `deploy_parameters.json` by copying the example
+1. Navigate to the contracts deployment directory.
 
-    ```bash
-    cd deployment/
-    cp deploy_parameters.json.example deploy_parameters.json
+    ```sh
+    cd ~/cdk-validium/cdk-validium-contracts-0.0.2/deployment
     ```
 
-2. Run the following `jq` script to streamline the process of replacing these fields:
+2. Run the following `jq` script to streamline the process of replacing the fields with the `/tmp/cdk/.env` data:
 
     ```bash
     source /tmp/cdk/.env
@@ -55,7 +58,7 @@ This is a factory contract that deploys the deterministic contracts required by 
 
 The address of the contracts it creates depends on the salt and the `initialCDKValidiumDeployerOwner` inside `deploy_parameters.json`.
 
-1. From the same `deployment` directory, run the deploy script.
+1. From the same `deployment` directory you were already in, run the deploy script.
 
     ```bash 
     npm run deploy:deployer:CDKValidium:sepolia
@@ -144,10 +147,10 @@ If you would rather use a different node provider than Infura, modify the conten
 For example, using Alchemy:
 
 ```bash
-MNEMONIC="island debris exhaust typical clap debate exhaust little verify mean sausage entire"
-INFURA_PROJECT_ID="" # or blank if not using Infura
-ETHERSCAN_API_KEY="1234567890abcdefghijklmnopqr" # or blank if not verify contracts
-ALCHEMY_PROJECT_ID="dGPpsDzM9KpFTEnqMO44rvIXcc0fmgxr" # add this line
+MNEMONIC="test test test test test test test test test test test junk"
+INFURA_PROJECT_ID="" # leave blank when not using Infura
+ETHERSCAN_API_KEY="" # or blank if not verifying contracts
+ALCHEMY_PROJECT_ID="" # add the Alchemy data here
 ```
 
 ```bash
