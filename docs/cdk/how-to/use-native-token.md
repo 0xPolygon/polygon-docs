@@ -12,7 +12,12 @@ You have previously deployed a CDK using previous versions.
 
 ## Use a custom native token
 
-Open the deploy_parameters.json file and add a new entry:
+Go to the `...contracts/deployment` folder and find the `deploy_parameters.json` file.
+
+!!! warning
+    The directory naming is dependent on your build type (rollup or validium). 
+
+Open the `deploy_parameters.json` file and add a new entry:
 
 ```json
 {

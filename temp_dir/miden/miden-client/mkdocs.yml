@@ -1,0 +1,105 @@
+site_name: My Docs
+theme:
+  name: material
+  palette:
+      # Palette toggle for light mode
+      - scheme: default
+        primary: white
+        accent: purple
+        toggle:
+          icon: material/eye
+          name: Switch to dark mode
+      # Palette toggle for dark mode
+      - scheme: slate
+        primary: black
+        accent: purple
+        toggle:
+          icon: material/eye-outline
+          name: Switch to light mode
+  icon:
+    logo: logo
+    repo: repo
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+    # - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.integration
+    #- navigation.tabs
+    #- navigation.tabs.sticky
+    - navigation.indexes
+    #- navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.action.edit
+
+
+nav:
+  - Overview: index.md
+  - Design: design.md
+  - Installation: installation.md
+  - CLI: 'cli.md'
+  - Library: 'library.md'
+
+
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+      toc_depth: 4
+  - codehilite
+  - markdown_include.include:
+      base_path: src
+  - admonition
+  - footnotes
+  - def_list
+  - attr_list
+  - abbr
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.caret
+  - meta
+  - smarty
+  - pymdownx.extra
+
+plugins:
+  - search
+  - open-in-new-tab
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      strict: false
+      exclude:
+        - index.md
+  - git-authors:
+      show_contribution: true
+
+validation:
+  absolute_links: warn
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://fonts.googleapis.com/icon?family=Material+Icons
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
