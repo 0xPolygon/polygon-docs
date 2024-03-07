@@ -55,16 +55,6 @@ The table below shows the version compatibility for CDK releases and related com
     <td>Merged: <br>zkevm-contracts</td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.0">v0.4.0</a></td>
   </tr>
-  <tr>
-    <td>Etrog + uLxLy</td>
-    <td>?</td>
-    <td><a href="https://github.com/0xPolygonHermez/zkevm-node">zkevm-node@v0.5.0-RCXX (where XX=latest tag number)</a></td>
-    <td><a href="https://github.com/0xPolygon/cdk-validium-node">cdk-validium-node@v0.5.0-RC4 </a></td>
-    <td><a href="https://github.com/0xPolygon/cdk-data-availability">cdk-data-availability@ feature/etrog</a></td>
-    <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v4.0.4">zkevm-prover@v4.0.4</a></td>
-    <td><a href="https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/build-v4.0.0-rc.5-fork.7">zkevm-contracts@v4.0.0-rc.5-fork.7</a></td>
-    <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/tree/v0.4.0-RC4">zkevm-bridge-service@v0.4.0-rc4</a></td>
-  </tr>
 </tbody>
 </table>
 
