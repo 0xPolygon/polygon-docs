@@ -7,7 +7,6 @@
 !!! info "Computing resources"
     - Running a full prover is an enterprise level installation and extremely resource-heavy. 
     - These instructions run the mock prover instead.
-    - Check out the [configure prover](configure-prover.md#configure-the-prover) section for more information.
 
 ## Software
 
