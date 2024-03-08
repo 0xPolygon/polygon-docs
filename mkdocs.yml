@@ -83,9 +83,10 @@ nav:
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
+        - Use a native token: cdk/how-to/use-native-token.md
         - Integrate the AggLayer: cdk/how-to/integrate-agglayer.md
-        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
+        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
