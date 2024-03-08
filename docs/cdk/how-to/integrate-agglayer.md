@@ -30,9 +30,10 @@ Run the following command to bring up a zkEVM node, a prover, and a mock L1 netw
 make run-docker
 ```
 
-### Production
+### Production build - managed by Polygon
 
 !!! warning
+    - The AggLayer in production is currently managed by Polygon.
     - Currently only one instance of the AggLayer can run at one time.
     - The AggLayer should, therefore, automatically start in the case of failure using a containerized setup or an OS level service manager/monitoring system.
 
@@ -76,3 +77,6 @@ Add the chain configurations to the `../agglayer/docker/data/agglayer.toml` file
 * Configure `[FullNodeRPCs]` to point to the corresponding L2 full node.
 * Configure `[L1]` to point to the corresponding L1 chain.
 * Configure the `[DB]` section with the managed database details.
+
+
+</br>

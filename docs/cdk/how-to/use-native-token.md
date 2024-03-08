@@ -1,6 +1,7 @@
 ## Prerequisite steps
 
-You have previously deployed a CDK using previous versions.
+- You should have a running CDK stack. 
+- Follow one of the tutorials linked below if you haven't yet spun up a CDK stack.
 
 ### Deployment guides
 
@@ -12,23 +13,26 @@ You have previously deployed a CDK using previous versions.
 
 ## Use a custom native token
 
-Go to the `...contracts/deployment` folder and find the `deploy_parameters.json` file.
+1. Go to the `...contracts/deployment` folder and find the `deploy_parameters.json` file.
 
-!!! warning
-    The directory naming is dependent on your build type (rollup or validium). 
+    !!! warning
+        The directory naming is dependent on your build type (rollup or validium). 
 
-Open the `deploy_parameters.json` file and add a new entry:
+2. Open the `deploy_parameters.json` file and add a new entry:
 
-```json
-{
-    "":"",
-    "":"",
-    "maxPriorityFeePerGas":"",
-    "multiplierGas": ""
-    "gasTokenAddress": "<TOKEN-ADDRESS>"
-}
-```
+    ```json
+    {
+        "":"",
+        "":"",
+        "maxPriorityFeePerGas":"",
+        "multiplierGas": ""
+        "gasTokenAddress": "<TOKEN-ADDRESS>"
+    }
+    ```
 
-`TOKEN-ADDRESS` is the address of a deployed ERC20 L1 token.
+    `TOKEN-ADDRESS` is the address of a deployed ERC20 L1 token.
 
-If you leave the value empty, the ETH token address is used as a default.
+    If you leave the value as empty string, the ETH token address is used as a default.
+
+
+</br>
