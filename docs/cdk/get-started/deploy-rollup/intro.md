@@ -1,7 +1,9 @@
-This quick start takes you through the process of deploying a full CDK zkRollup, EVM-compatible network on Goerli.
+This tutorial takes you through the process of deploying a full CDK zkRollup, EVM-compatible network on Goerli.
+
+It relies on specific component versions so we have hidden most of the configuration complexity in scripts to make the process straightforward.
 
 !!! warning
-    - These instructions are subject to frequent updates as the software remains at an early development stage.
+    - The tutorial is for learning purposes only and is not intended to describe a latest stable version build.
     - Report any content issues on our docs repo: https://github.com/0xPolygon/polygon-docs
 
 The process is split into the following sections:
