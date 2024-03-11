@@ -63,7 +63,7 @@ Set up ADC in GCloud:
 gcloud auth application-default login
 ```
 
-In the `../agglayer/docker/data/agglayer.toml` file, add the `KMSKeyName` from GCloud.
+In the `../agglayer/docker/data/agglayer/agglayer.toml` file, add the `KMSKeyName` from GCloud.
 
 ## Setting up the AggLayer
 
@@ -72,11 +72,12 @@ Each CDK chain requires a corresponding RPC node configuration that is synced wi
 !!! info "Storage recommendations"
     - Use a durable HA PostgresDB for storage; ideally AWS Aurora PostgreSQL or Cloud SQL for PostgreSQL in GCP.
 
-Add the chain configurations to the `../agglayer/docker/data/agglayer.toml` file by amending the following details to add the required chain(s).
+Add the chain configurations to the `../agglayer/docker/data/agglayer/agglayer.toml` file by amending the following details to add the required chain(s).
 
 * Configure `[FullNodeRPCs]` to point to the corresponding L2 full node.
-* Configure `[L1]` to point to the corresponding L1 chain.
 * Configure the `[DB]` section with the managed database details.
+* Configure `[L1]` to point to the corresponding L1 chain.
+
 
 
 </br>
