@@ -38,7 +38,7 @@ The table below shows the version compatibility for CDK releases and related com
   <tr>
     <td>Upgraded validium</td>
     <td>6</td>
-    <td>zkevm-node@0.4.2</td>
+    <td>0.4.2</td>
     <td><a href="https://github.com/0xPolygon/cdk-validium-node/releases/tag/v0.0.3-hotfix6">v0.0.3-hotfix6</a></td>
     <td>v0.0.3</td>
     <td>zkevm-prover<br>@3.0.2<br>Config files version 3.0.0-RC3-fork.6</td>
