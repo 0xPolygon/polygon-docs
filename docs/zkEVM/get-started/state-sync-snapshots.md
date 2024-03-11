@@ -1,16 +1,16 @@
 Use snapshots for quick state syncing. 
 
 Find the zkEVM mainnet snapshots at the below urls.
+
     ```bash
-    https://zkevm-mai.s3.eu-west-1.amazonaws.com/mainnet-pooldb.sql.gz (65MB)
     https://zkevm-mai.s3.eu-west-1.amazonaws.com/mainnet-bridgedb.sql.gz (315MB)
     https://zkevm-mai.s3.eu-west-1.amazonaws.com/mainnet-statedb.sql.gz (6GB)
     https://zkevm-mai.s3.eu-west-1.amazonaws.com/mainnet-hashdb.sql.gz (160GB)
     ```
 
 Find the testnet snapshots at the below urls.
+
     ```bash
-    https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-pooldb.sql.gz (65MB)
     https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-bridgedb.sql.gz (312MB)
     https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-statedb.sql.gz (1.9GB)
     https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-hashdb.sql.gz (49GB)
