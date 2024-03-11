@@ -482,6 +482,7 @@ This implies that we need to multiply the result by a chosen factor before compa
 This ensures that the costs are covered in case more gas is ultimately required to execute the transaction. This factor is named $\texttt{BreakEvenFactor}$.
 
 Now we can conclude that if
+
 $$
 \texttt{SignedGasPrice} > \texttt{BreakEvenGasPrice} \cdot \texttt{BreakEvenFactor}
 $$
