@@ -22,20 +22,6 @@ The table below shows the version compatibility for CDK releases and related com
 </thead>
 <tbody>
   <tr>
-    <td>Rollup</td>
-    <td colspan="7">Follow zkEVM: <a href="https://github.com/0xPolygonHermez#testnetmainnet-versions">https://github.com/0xPolygonHermez#testnetmainnet-versions</a><br>Disclaimer: These versions are intended for permissionless nodes.</td>
-  </tr>
-  <tr>
-    <td>Validium</td>
-    <td>5</td>
-    <td>N/A</td>
-    <td><a href="https://github.com/0xPolygon/cdk-validium-node/releases/tag/v0.0.2-hotfix4">v.0.0.2-hotfix4</a></td>
-    <td>v0.0.3</td>
-    <td>v2.2.0</td>
-    <td>v0.0.1</td>
-    <td>v0.2.0</td>
-  </tr>
-  <tr>
     <td>Upgraded validium</td>
     <td>6</td>
     <td>0.4.2</td>
