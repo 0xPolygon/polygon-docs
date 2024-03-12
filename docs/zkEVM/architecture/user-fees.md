@@ -851,7 +851,7 @@ Let’s examine the above figure in more detail.
 
     Henceforth, the user is charged the full $\texttt{SignedGasPrice}$, so the Executor will execute the transaction using it, concluding the sequencing process.
 
-    - Conversely, if $\texttt{SignedGasPrice} > \texttt{EEGP}$, there is a room for further adjustment of the gas price that will be charged to the user.
+    - Conversely, if $\texttt{SignedGasPrice} > \texttt{EEGP}$, there's room for further adjustment of the gas price that will be charged to the user.
 
 3. In the previous case, it was necessary to compute a more precise effective gas price based on the accurate amount of gas, denoted as $\texttt{GasUsedNew}$, obtained during the transaction’s execution using the correct state root at the time of sequencing transactions (which was not known earlier for straightforward reasons).
 
