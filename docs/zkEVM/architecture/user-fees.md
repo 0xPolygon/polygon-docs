@@ -80,15 +80,6 @@ Their corresponding pertinent questions are:
 - How do L2 solutions address and reconcile any discrepancies between the L1 gas schema and the real resource utilization on L2?
 
 
-### Time-related variations
-
-So, how can the fact that the L1 $\texttt{gasPrice}$ varies with time be taken into account?
-
-In order to obtain L1 gas prices, we can poll for it every 5 seconds. As shown in the timeline below, gas prices vary with time.
-
-![Figure: Gas price timeline](../../img/zkEVM/gas-timeline-001.png)
-
-
 ## Gas price suggester
 
 Let's take a quick view of the initial phase of the process, which involves the RPC component of zkEVM.
@@ -102,6 +93,15 @@ Pre-execution of a transaction involves the following stages:
 See the the picture below for an overview of the pre-execution process.
 
 ![Figure: RPC tx pre-execution](../../img/zkEVM/rpc-tx-preexec.png)
+
+
+### Time-related variations
+
+So, how can the fact that the L1 $\texttt{gasPrice}$ varies with time be taken into account?
+
+In order to obtain L1 gas prices, we can poll for it every 5 seconds. As shown in the timeline below, gas prices vary with time.
+
+![Figure: Gas price timeline](../../img/zkEVM/gas-timeline-001.png)
 
 
 ### Naïve approach
