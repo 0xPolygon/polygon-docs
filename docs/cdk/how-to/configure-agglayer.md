@@ -1,4 +1,4 @@
-Polygon AggLayer is a web service that receives zero-knowledge proofs from different CDK chains and checks their soundness before sending the proof to L1 for verification.
+Polygon AggLayer is a web service that receives zero-knowledge proofs from different CDK chains and checks their soundness before sending the proof to L1 for verification. 
 
 !!! important
     Polygon manages the AggLayer in production at the current time.
