@@ -5,7 +5,7 @@ hide:
 
 ## CDK
 
-The table below shows the version compatibility for CDK releases and related components.
+The table below shows the version compatibility for CDK releases and related components. 
 
 <table>
 <thead>
