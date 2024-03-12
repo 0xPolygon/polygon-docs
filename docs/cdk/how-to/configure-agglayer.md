@@ -1,7 +1,7 @@
-Polygon AggLayer is a web service that receives zero-knowledge proofs from different CDK chains and checks their soundness before sending the proof to L1 for verification. 
+Polygon AggLayer is a web service that receives zero-knowledge proofs from multiple CDK chains and checks their soundness before sending them on to the L1 for verification. 
 
 !!! important
-    Polygon manages the AggLayer in production at the current time.
+    - Polygon manages the AggLayer in production at the current time.
 
 !!! warning
     - The AggLayer is in development and subject to architectural changes.
@@ -9,9 +9,9 @@ Polygon AggLayer is a web service that receives zero-knowledge proofs from diffe
 
 ## Configure the AggLayer
 
-To configure the AggLayer to integrate with external CDK chains, each one requires an RPC node configuration.
+The AggLayer integrates with external CDK chains using an RPC node configuration for each chain.
 
-Add the chain configurations to the `../agglayer/docker/data/agglayer.toml` file by amending the following details to add the required chain(s).
+Add the respective chain configurations to the [`../agglayer/docker/data/agglayer.toml`](https://github.com/0xPolygon/agglayer/blob/main/docker/data/agglayer/agglayer.toml) file by amending the following details to add the required chain(s).
 
 * Configure `[FullNodeRPCs]` to point to the corresponding L2 full node.
 * Configure `[L1]` to point to the corresponding L1 chain.
@@ -28,7 +28,6 @@ Make sure you have the following software installations.
 - [Docker](https://docs.docker.com/engine/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Golang](https://go.dev/doc/install)
-- [GCloud cli](https://cloud.google.com/sdk/docs/install) - production only.
 
 ### Clone the repo.
 
