@@ -29,7 +29,7 @@ The table below shows the version compatibility for CDK releases and related com
     <td>v0.0.3</td>
     <td>zkevm-prover<br>@3.0.2<br>Config files version 3.0.0-RC3-fork.6</td>
     <td><a href="https://github.com/0xPolygon/cdk-validium-contracts/releases/tag/v0.0.2">v0.0.2</a></td>
-    <td>v0.3.2-RC1</td>
+    <td>v0.3.2-RC1</td> 
   </tr>
   <tr>
     <td><a href="https://polygontechnology.notion.site/Instructions-zkEVM-Mainnet-Beta-Node-v0-5-7-Prover-v4-0-4-8f5b9d8e2f6a4048b21c608b49a93376" target="_blank" rel="noopener noreferrer">CDK-Etrog Release</a>- <br>BETA TESTING</td>
@@ -43,6 +43,11 @@ The table below shows the version compatibility for CDK releases and related com
   </tr>
 </tbody>
 </table>
+
+### Migrating
+
+- If you want to migrate from 6 to 7, we recommend waiting for the upcoming zkEVM Elderberry integration into CDK version 8.
+- Anyone on earlier versions who wants to migrate, we also recommend waiting for CDK version 8.
 
 ## zkEVM
 
