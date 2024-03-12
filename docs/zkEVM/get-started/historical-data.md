@@ -15,6 +15,7 @@ This upgrade brings the Polygon zkEVM to being almost a type 2 ZK-EVM. See furth
 |      Node       |                            v0.5.8                            |
 |     Prover      |                            v4.0.8                            |
 |     Bridge      |                            v0.4.0                            |
+|   Instruction   |    https://www.notion.so/polygontechnology/Instructions-zkEVM-Mainnet-Beta-Node-v0-5-8-Prover-v4-0-8-a43b5a50878d4d2f844cdf6d9a6674da  |
 | Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.8 |
 | Supported ForkIDs | Mainnet & Cardona: ForkIDs 4, 5, 6 & 7.  Testnet (Goerli): ForkIDs 1, 2, 3, 4, 5 & 6. |
 
@@ -31,7 +32,7 @@ This update included a reduced number of RPC logs and aligned error messages to 
 |      Node       |                            v0.4.4                            |
 |     Prover      |                            v3.0.2                            |
 |     Bridge      |                            v0.3.1                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.4.4 |
+| Change logs url |  https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.8#:~:text=Bridge%3A%20v0.4.0-,Changelog,-Version%20v0.5.8%20is |
 | Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6.  Testnet: ForkIDs 1, 2, 3, 4, 5 & 6. |
 
 
@@ -41,14 +42,15 @@ This update included a reduced number of RPC logs and aligned error messages to 
 
 **zkEVM mainnet update**
 
-The changes made in this update were mainly in the node (Additional CORS header fix and features in v0.4.0).
+The changes made in this update were mainly in the node (Additional CQRS header fix and features in v0.4.0).
 
 |                 |                           Version                            |
 | :-------------: | :----------------------------------------------------------: |
 |      Node       |                            v0.4.1                            |
 |     Prover      |                            v3.0.2                            |
 |     Bridge      |                            v0.3.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.4.1 |
+|   Instruction   |         https://www.notion.so/polygontechnology/Instructions-zkEVM-Mainnet-Node-v0-4-1-Prover-v3-0-2-7a585f394cd24b90b90283086276533c            |
+| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.4.1#:~:text=Bridge%3A%20v0.3.0-,Changelog,-Version%20v0.4.1%20is  |
 | Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5, 6. |
 
 Infrastructure partners were instructed to update, and then use instructions given [here](https://polygontechnology.notion.site/Instructions-zkEVM-Mainnet-Node-v0-4-1-Prover-v3-0-2-7a585f394cd24b90b90283086276533c).
@@ -66,7 +68,8 @@ This update brought several significant changes to zkEVM node, bridge, prover in
 |      Node       |                            v0.4.0                            |
 |     Prover      |                            v3.0.2                            |
 |     Bridge      |                            v0.3.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.4.0 |
+|   Instruction   |    https://www.notion.so/polygontechnology/Instructions-zkEVM-Testnet-Node-v0-4-0-Prover-v3-0-2-47751d4c80da4b30a9ef350258deb0ab     |
+| Change logs url |   https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.4.0#:~:text=Bridge%3A%20v0.3.1-,Changelog,-RPC   |
 | Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5, 6. |
 
 
@@ -82,7 +85,8 @@ The changes made in this update brought cryptographic optimisations and bug fixe
 |      Node       |                            v0.3.3                            |
 |     Prover      |                            v3.0.0                            |
 |     Bridge      |                            v0.2.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.3 |
+|   Instruction   |     https://www.notion.so/polygontechnology/Instructions-zkEVM-Mainnet-Node-v0-3-3-Prover-v3-0-0-b14faaf6e2f146f0961e3b1556adec34       |
+| Change logs url |  https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.3#:~:text=Bridge%3A%20v0.2.0-,Changelog,-Version%20v0.3.3%20is |
 | Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5 & 6. |
 
 
@@ -98,7 +102,8 @@ The changes made in this update were the node and prover versions, as well as up
 |      Node       |                            v0.3.3                            |
 |     Prover      |                            v3.0.0                            |
 |     Bridge      |                            v0.2.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.3 |
+|   Instruction   |      https://www.notion.so/polygontechnology/Instructions-zkEVM-Mainnet-Node-v0-3-3-Prover-v3-0-0-b14faaf6e2f146f0961e3b1556adec34        |
+| Change logs url |   https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.3#:~:text=Bridge%3A%20v0.2.0-,Changelog,-Version%20v0.3.3%20is  |
 | Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5 & 6. |
 
 
@@ -114,7 +119,8 @@ The changes made in this upgrade were cryptographic optimisations and some bug f
 |      Node       |                            v0.3.2                            |
 |     Prover      |                            v3.0.0                            |
 |     Bridge      |                            v0.2.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.2 |
+|   Instruction   |       https://www.notion.so/polygontechnology/Instructions-zkEVM-Testnet-Node-v0-3-2-Prover-v3-0-0-18d0b34840874e7cb9ded72e8a9e4e08       |
+| Change logs url |   https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.2#:~:text=Bridge%3A%20v0.2.0-,Changelog,-Version%20v0.3.2%20is   |
 | Supported ForkIDs | Mainnet: ForkIDs 4, 5 & 6. Testnet: ForkIDs 1, 2, 3, 4, 5 & 6. |
 
 
@@ -130,8 +136,9 @@ The changes made in this update were new version updates of the prover and node.
 |      Node       |                            v0.3.1                            |
 |     Prover      |                            v2.2.2                            |
 |     Bridge      |                            v0.2.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.1 |
+| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.1#:~:text=Bridge%3A%20v0.2.0-,Changelog,-Version%20v0.3.1%20is  |
 | Supported ForkIDs | Mainnet: ForkIDs 4 & 5. Testnet: ForkIDs 1, 2, 3, 4, & 5. |
+
 
 
 ### 20th Sep, 2023
@@ -145,7 +152,8 @@ The changes made in this update were a range of improvements to the network, inc
 |      Node       |                            v0.3.0                            |
 |     Prover      |                            v2.2.0                            |
 |     Bridge      |                            v0.2.0                            |
-| Change logs url | https://www.notion.so/polygontechnology/Mainnet-Beta-UPDATE-zkEVM-Node-version-0-3-0-Sep-6-e150867951cd46c088f6d6c03b2cb5db |
+|   Instruction   |        https://www.notion.so/polygontechnology/Mainnet-Beta-UPDATE-zkEVM-Node-version-0-3-0-Sep-6-e150867951cd46c088f6d6c03b2cb5db          |
+| Change logs url |  https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.0#:~:text=Bridge%3A%20v0.2.0-,Changelog,-RPC    |
 
 
 
@@ -160,7 +168,8 @@ The main changes made in this update were the mainnet beta rehashing and L2 brid
 |      Node       |                            v0.3.0                            |
 |     Prover      |                            v2.2.0                            |
 |     Bridge      |                            v0.2.0                            |
-| Change logs url | https://www.notion.so/polygontechnology/zkEVM-mainnet-beta-Instructions-for-permissionless-nodes-to-rehash-the-network-53b525498bc94c03ab02bba621f8d8e3 |
+|   Instruction   |     https://www.notion.so/polygontechnology/zkEVM-mainnet-beta-Instructions-for-permissionless-nodes-to-rehash-the-network-53b525498bc94c03ab02bba621f8d8e3       |
+| Change logs url |   https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.0#:~:text=Bridge%3A%20v0.2.0-,Changelog,-RPC    |
 
 
 
@@ -175,7 +184,7 @@ The changes made in this update were new versions of the node and prover.
 |      Node       |                            v0.3.0                            |
 |     Prover      |                            v2.2.0                            |
 |     Bridge      |                            v0.2.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.0 |
+| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.3.0#:~:text=Bridge%3A%20v0.2.0-,Changelog,-RPC  |
 
 
 
@@ -190,7 +199,7 @@ The changes made in this update were new versions of the node and the prover.
 |      Node       |                            v0.2.5                            |
 |     Prover      |                            v2.1.2                            |
 |     Bridge      |                            v0.2.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.2.5 |
+| Change logs url |  https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.2.5#:~:text=Bridge%3A%20v0.2.0-,Changelog,-Version%20v0.2.5%20is  |
 
 
 
@@ -205,7 +214,8 @@ The changes made in this update were version upgrades for the prover, node and b
 |      Node       |                            v0.2.0                            |
 |     Prover      |                            v2.0.1                            |
 |     Bridge      |                            v0.2.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.2.0 |
+|   Instruction   |     https://www.notion.so/polygontechnology/Polygon-zkEVM-Version-Updates-for-Node-Prover-and-Bridge-July-2023-273fe49d869347218923a66fa582aa72      |
+| Change logs url |  https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.2.0#:~:text=Bridge%3A%20v0.2.0-,Changelog,-%3A   |
 
 
 
@@ -220,7 +230,8 @@ The changes made in this update are detailed in the `change logs`.
 |      Node       |                            v0.1.2                            |
 |     Prover      |                        v1.1.4-fork.4                         |
 |     Bridge      |                            v0.1.0                            |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/v0.1.2 |
+| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/v0.1.2#:~:text=Bridge%3A%20v0.1.0-,Changelog,-%3A  |
+
 
 
 ### 2nd May, 2023
@@ -234,7 +245,7 @@ Corresponding commits found here https://github.com/0xPolygonHermez/zkevm-node/t
 |      Node       |                            v0.0.7                            |
 |     Prover      |                              -                               |
 |     Bridge      |                              -                               |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.0.7 |
+| Change logs url |  https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.0.7#:~:text=1ffaef7-,Changelog,-1ffaef7%20fix%20prover  |
 
 
 
@@ -249,7 +260,7 @@ The changes made in this update were new versions of the node and prover contain
 |      Node       |                            v0.0.6                            |
 |     Prover      |                              -                               |
 |     Bridge      |                              -                               |
-| Change logs url | https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.0.6. |
+| Change logs url |  https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.0.6#:~:text=5ed8e4c-,Changelog,-5ed8e4c%20Merge%20pull  |
 
 
 
