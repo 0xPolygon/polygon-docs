@@ -512,7 +512,10 @@ Recall that, since we are using a "wrong" state root, this gas is only an estima
 Hence, using the previously explained formulas, the total transaction cost is:
 
 $$
-\texttt{TotalTxPrice} = \texttt{DataCost} \cdot \texttt{L1GasPrice} + \texttt{GasUsed} \cdot \texttt{L1GasPrice} \cdot \texttt{L1GasPriceFactor}\\ \implies  \texttt{TotalTxPrice} = (200 · 16 + 100 · 4) · 21 + 60, 000 · 21 · 0.04 = 126, 000\ \texttt{GWei}
+\begin{aligned}
+&\texttt{TotalTxPrice} = \texttt{DataCost} \cdot \texttt{L1GasPrice} + \texttt{GasUsed} \cdot \texttt{L1GasPrice} \cdot \texttt{L1GasPriceFactor}\\
+&\implies  \texttt{TotalTxPrice} = (200 · 16 + 100 · 4) · 21 + 60, 000 · 21 · 0.04 = 126, 000\ \texttt{GWei}
+\end{aligned}
 $$
 
 Observe that the $21$ appearing in the substitution is the $\texttt{L1GasPrice}$ at the time of sending the transaction.
@@ -750,7 +753,7 @@ Hence, if something goes bad in later steps, and the gas consumption deviates si
 
 On the contrary, if the process goes as estimated and the consumed gas is similar to the estimated one, we can reward the user by modifying the previously introduced $\texttt{effectivePercentage}$.
 
-It's important to observe that, among all the transactions stored in the Pool, those that are prioritized at the time of sequencing are the ones with higher $\texttt{effectiveGasPrice}$, due to the prioritization introduced with $\texttt{ratioPriority}$.
+It's important to observe that, among all the transactions stored in the Pool, those that are prioritized at the time of sequencing are the ones with higher $\texttt{effectiveGasPrice}$, due to the prioritization introduced with $\texttt{PriorityRatio}$.
 
 Observe that $\texttt{effectiveGasPrice}$ is not computed in the RPC but in the sequencer. So, it is possible that the suggested gas price at this moment, differs from the one suggested when the user sent the transaction.
 
