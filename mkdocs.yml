@@ -84,7 +84,10 @@ nav:
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
         - Use a native token: cdk/how-to/use-native-token.md
-        - Configure the AggLayer: cdk/how-to/configure-agglayer.md
+        - Use the AggLayer: 
+            - Configure the AggLayer: cdk/how-to/agglayer/configure.md
+            - AggLayer OpenRPC: cdk/how-to/agglayer/openrpc.md
+            - Local installation: cdk/how-to/agglayer/local-install.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
       - Architecture:
