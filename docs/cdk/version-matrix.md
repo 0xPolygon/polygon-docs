@@ -41,16 +41,6 @@ The table below shows the version compatibility for CDK releases and related com
     <td> <a href="https://github.com/0xPolygonHermez/zkevm-rom/tree/v4.0.0-fork.7">v4.0.0-fork.7</a></td>
     <td>Bridge: <a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.2">v0.4.2</a></td>
   </tr>
-  <tr>
-    <td>Ares release Edlerberry + 2 weeks</td>
-    <td>8</td>
-    <td>Elderberry </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
 </tbody>
 </table>
 
