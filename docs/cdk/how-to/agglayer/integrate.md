@@ -130,7 +130,7 @@ RollupManagerContract = "{{ zkevm_l1_rollup_manager_addr }}"
 PrometheusAddr = "0.0.0.0:2223"
 ```
 
-## Step 3: External chain configuration
+## Step 3: External CDK chain configuration
 
 The last step is to update your node configuration to map to the Polygon Agglayer.
 
