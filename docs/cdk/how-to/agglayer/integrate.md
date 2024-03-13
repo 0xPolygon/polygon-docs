@@ -14,7 +14,7 @@ This document shows you how to integrate and configure the AggLayer into your st
 
 1. If you do not have a CDK chain set up with Polygon, [make a request to register your chain](https://discord.gg/XvpHAxZ). 
 
-    We will ask you for the following data:
+    You will be asked for the following data:
 
     ```json
     "rollupTypeID": 0,
