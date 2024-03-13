@@ -140,6 +140,6 @@ journalctl -u bor.service -f
 
 ## Ports and Firewall Setup
 
-Open ports 22, 26656 and 30303 to world (0.0.0.0/0) on sentry node firewall.
+Open ports 22, 26656, and 30303 to world (0.0.0.0/0) on sentry node firewall.
 
 You can use VPN to restrict access for port 22 as per your requirement and security guidelines.
