@@ -71,22 +71,31 @@ configure and manage a full node.
 
 - Please **ensure that the value of seeds and bootnodes mentioned below is the same value as mentioned in Heimdall and Bor `config.toml` files**. If not, change the values accordingly.
 
-  - Heimdall seed nodes:
+### Heimdall seed nodes
 
-    ```bash
-    moniker=<enter unique identifier>
+```bash
+moniker=<enter unique identifier>
+```
+**Mainnet**
 
-    # Mainnet:
-    seeds="1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656,6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656"
+- 1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656
+- dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656
+- 8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656
+- e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656
+- 6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656
 
-    # Testnet:
-    seeds="9df7ae4bf9b996c0e3436ed4cd3050dbc5742a28@43.200.206.40:26656,d9275750bc877b0276c374307f0fd7eae1d71e35@54.216.248.9:26656,1a3258eb2b69b235d4749cf9266a94567d6c0199@52.214.83.78:26656"
-    ```
+**Testnet**
+
+- 9df7ae4bf9b996c0e3436ed4cd3050dbc5742a28@43.200.206.40:26656
+- d9275750bc877b0276c374307f0fd7eae1d71e35@54.216.248.9:26656
+- 1a3258eb2b69b235d4749cf9266a94567d6c0199@52.214.83.78:26656
   
 !!! tip
-    The following Heimdall seed can be used for both mainnet and Mumbai testnet: `8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656`
 
-  - Bootnodes:
+  The following Heimdall seed can be used for both mainnet and Mumbai testnet:
+  - 8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656
+
+### Bootnodes
 
     ```bash
     # Mainnet:
