@@ -268,7 +268,7 @@ There is much more information and explanation in the code comments, so please t
 
 Here are some additional resources regarding the UMA DVM:
 
-- [Technical architecture](https://docs.umaproject.org/oracle/tech-architecture).
+- [Technical architecture](https://docs.uma.xyz/protocol-overview/how-does-umas-oracle-work).
 - [Economic architecture](https://docs.umaproject.org/oracle/econ-architecture).
 - [Blog post](https://medium.com/uma-project/umas-data-verification-mechanism-3c5342759eb8) on UMA’s DVM design.
 - [Whitepaper](https://github.com/UMAprotocol/whitepaper/blob/master/UMA-DVM-oracle-whitepaper.pdf) on UMA’s DVM design.

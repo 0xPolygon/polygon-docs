@@ -93,7 +93,7 @@ sudo -u heimdall heimdalld init --chain=mumbai --home /var/lib/heimdall
 
 ### Configure service files for bor and heimdall
 
-After successfully installing Bor and Heimdall through [packages](#install-with-packages-recommended), their service file could be found under `/lib/systemd/system`, and Bor's config
+After successfully installing Bor and Heimdall through [packages](#install-packages), their service file could be found under `/lib/systemd/system`, and Bor's config
 file could be found under `/var/lib/bor/config.toml`.
 You will need to check and modify these files accordingly.
 

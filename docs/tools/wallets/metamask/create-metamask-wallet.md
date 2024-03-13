@@ -7,7 +7,7 @@ MetaMask is a free and secure browser extension that allows web applications to 
 
 ## Step 1. Install MetaMask on your browser
 
-To create a new wallet with MetaMask you need to install the extension first. You can install MetaMask for [Chrome](https://chrome.google.com/webstore/detail/nkbihfbeogaeaoehlefnkodbefgpgknn), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/), Brave and [Opera](https://addons.opera.com/en/extensions/details/metamask/) browsers.
+To create a new wallet with MetaMask you need to install the extension first. You can install MetaMask for [Chrome](https://chrome.google.com/webstore/detail/nkbihfbeogaeaoehlefnkodbefgpgknn), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/), Brave and [Opera](https://addons.opera.com/en/extensions/details/metamask-10/) browsers.
 
 1. Open [https://metamask.io](https://metamask.io/) or search for “Metamask extension” using your favorite search engine.
 
