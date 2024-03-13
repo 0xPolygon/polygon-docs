@@ -69,7 +69,10 @@ This document shows you how to integrate and configure the AggLayer into your st
 
 7. Chain owners then need to add POL and ETH tokens to the sequencer on the CDK chain.
 
-## Configuring the Polygon managed AggLayer
+## Step 2: Polygon configuration
+
+!!! important
+    - These steps are done by Polygon.
 
 Once registered, Polygon creates a permissionless node that points to the corresponding L2 full node.
 
@@ -127,7 +130,7 @@ RollupManagerContract = "{{ zkevm_l1_rollup_manager_addr }}"
 PrometheusAddr = "0.0.0.0:2223"
 ```
 
-## Configuring the client-managed AggLayer
+## Step 3: External chain configuration
 
 The last step is to update your node configuration to map to the Polygon Agglayer.
 
