@@ -522,6 +522,11 @@ nav:
       - Polygon protocols: learn/polygon-protocols.md
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
 
+  - Security:
+      - Security Overview: security/overview.md
+      - Bug Bounty Programs: security/bugbounty.md
+      - Contact us: security/contact.md
+
 extra:
   generator: false
   analytics:
