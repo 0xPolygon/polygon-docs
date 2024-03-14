@@ -41,11 +41,12 @@ This document shows you how to integrate and configure the AggLayer into your st
 
     ```sh
     [NetworkConfig]
-    GenBlockNumber = "16896721"
-    PolygonBridgeAddress = "0x2a3DD3EB832aF982ec71669E178424b10Dca2EDe"
-    PolygonZkEVMGlobalExitRootAddress = "0x580bda1e7A0CFAe92Fa7F6c20A3794F169CE3CFb"
-    PolygonRollupManagerAddress = "0x5132a183e9f3cb7c848b0aac5ae0c4f0491b7ab2"
-    ...
+    GenBlockNumber = 1
+    PolygonBridgeAddress = "0xCca6ECD73932e49633B9307e1aa0fC174525F424"
+    PolygonZkEVMGlobalExitRootAddress = "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318"
+    PolygonRollupManagerAddress = "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e"
+    PolygonZkEvmAddress = "0x8dAF17A20c9DBA35f005b6324F493785D239719d"
+    L2PolygonBridgeAddresses = ["0xCca6ECD73932e49633B9307e1aa0fC174525F424"]
     ```
 
 5. Configure your nodes with the data.
