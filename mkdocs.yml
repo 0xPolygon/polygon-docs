@@ -524,6 +524,7 @@ nav:
 
   - Security:
       - Security Overview: security/overview.md
+      - Security Reports: security/reports.md
       - Bug Bounty Programs: security/bugbounty.md
       - Contact us: security/contact.md
 
