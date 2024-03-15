@@ -890,7 +890,7 @@ Let’s examine the above figure in more detail.
     \texttt{SignedGasPrice} \leq \texttt{NEGP}
     $$
 
-    the network runs the risk to incur a loss.
+    the network runs the risk of incurring a loss.
 
     Hence the user is charged the full $\texttt{SignedGasPrice}$, and the Executor therefore executes the transaction using the $\texttt{SignedGasPrice}$. And the sequencing process is concluded.
 
