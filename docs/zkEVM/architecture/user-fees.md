@@ -5,7 +5,7 @@ The aim with this document is to describe the Effective Gas Price (EGP), a mecha
 
 Let's make a quick recollection of the basic fee schema used in Ethereum.
 
-Firstly, gas is a unit that accounts for resources used when processing a transaction. At the time of sending a transaction, the user can decide two parameters; $\texttt{gasLimit}$ and $\texttt{gasPrice}$:
+Firstly, gas is a unit that accounts for resources used when processing a transaction. At the time of sending a transaction, the user can decide on two parameters; $\texttt{gasLimit}$ and $\texttt{gasPrice}$:
 
 - $\texttt{gasLimit}$ is the maximum amount of gas units that a user is willing to buy in order to complete a transaction.
 
@@ -860,9 +860,9 @@ Let’s examine the above figure in more detail.
 
     Henceforth, the Executor executes the transaction using $\texttt{EEGP}$, obtaining $\texttt{GasUsedNew}$, which the sequencer utilizes to compute a new effective gas price, referred to as $\texttt{NEGP}$.
 
-4. We have to paths:
+4. We have two paths:
     
-    - If the percentage deviation between $\texttt{EEGP}$ and $\texttt{NEGP}$ is higher than a fixed deviation parameter $\texttt{FinalDeviationPct}$, which is $10$ in the actual configuration, that is
+    - If the percentage deviation between $\texttt{EEGP}$ and $\texttt{NEGP}$ is higher than a fixed deviation parameter $\texttt{FinalDeviationParameter}$, which is $10$ in the actual configuration, that is
 
     $$
     \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 < \texttt{FinalDeviationParameter}
@@ -880,21 +880,21 @@ Let’s examine the above figure in more detail.
     \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 ≥ \texttt{FinalDeviationParameter}
     $$
 
-    there is a big difference between executions and we may better adjust gas price due to potential (and quite big) losses to the network or the user.
+    there is a big difference between executions and we may want to adjust gas price due to potential losses to the network or the user.
 
 5. In the latter case, two options arise:
     
-    - If the gas price signed is less or equal than the accurate effective gas price computed with the correct state root
+    - If the gas price signed is less than or equal to the accurately computed effective gas price, with the correct state root, and
 
     $$
     \texttt{SignedGasPrice} \leq \texttt{NEGP}
     $$
 
-    the network suffers again a risk of loss.
+    the network runs the risk of incurring a loss.
 
-    Henceforth, the user is charged the full $\texttt{SignedGasPrice}$, so the Executor will execute the transaction using it, concluding the sequencing process.
+    Hence the user is charged the full $\texttt{SignedGasPrice}$, and the executor therefore executes the transaction using the $\texttt{SignedGasPrice}$. And the sequencing process is concluded.
 
-    - Otherwise, if $\texttt{SignedGasPrice} > \texttt{NEGP}$, then it means we have margin to adjust the gas price that is charged to the user.
+    - Otherwise, if $\texttt{SignedGasPrice} > \texttt{NEGP}$, then there's sufficient margin to adjust the gas price and thus charge the user less than their $\texttt{SignedGasPrice}$.
 
     However, in order to save executions, we end the adjustment process in this iteration, so that we conclude the flow using a trick explained in the next point.
 
@@ -911,7 +911,7 @@ Let’s examine the above figure in more detail.
 
     This precaution is employed to mitigate potential vulnerabilities in deployed Smart Contracts, that arise from creating a specific condition based on the gas price, for example, to manipulate execution costs.
 
-    - If the transaction does not make use of the gas price-related opcodes, the Executor executes the transaction with the more adjusted gas price up to this point which is $\texttt{NEGP}$ and end up the sequencing process.
+    - If the transaction does not make use of the gas-price-related opcodes, the executor executes the transaction with the more adjusted gas price, which is $\texttt{NEGP}$, and ends the sequencing process.
 
 
 ### Numerical Example: Sequencer Flow
