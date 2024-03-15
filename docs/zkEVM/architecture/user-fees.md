@@ -892,7 +892,7 @@ Let’s examine the above figure in more detail.
 
     the network runs the risk of incurring a loss.
 
-    Hence the user is charged the full $\texttt{SignedGasPrice}$, and the Executor therefore executes the transaction using the $\texttt{SignedGasPrice}$. And the sequencing process is concluded.
+    Hence the user is charged the full $\texttt{SignedGasPrice}$, and the executor therefore executes the transaction using the $\texttt{SignedGasPrice}$. And the sequencing process is concluded.
 
     - Otherwise, if $\texttt{SignedGasPrice} > \texttt{NEGP}$, then there's sufficient margin to adjust the gas price and thus charge the user less than their $\texttt{SignedGasPrice}$.
 
