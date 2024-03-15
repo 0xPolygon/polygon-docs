@@ -911,7 +911,7 @@ Let’s examine the above figure in more detail.
 
     This precaution is employed to mitigate potential vulnerabilities in deployed Smart Contracts, that arise from creating a specific condition based on the gas price, for example, to manipulate execution costs.
 
-    - If the transaction does not make use of the gas-price-related opcodes, the Executor executes the transaction with the more adjusted gas price, which is $\texttt{NEGP}$, and ends the sequencing process.
+    - If the transaction does not make use of the gas-price-related opcodes, the executor executes the transaction with the more adjusted gas price, which is $\texttt{NEGP}$, and ends the sequencing process.
 
 
 ### Numerical Example: Sequencer Flow
