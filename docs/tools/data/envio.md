@@ -2,7 +2,6 @@
 
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
-
 # Envio HyperIndex
 
 [Envio](https://envio.dev/) HyperIndex is a feature-rich indexing solution that provides developers with a seamless and efficient way to index and aggregate real-time or historical blockchain data for any EVM. The indexed data is easily accessible through custom GraphQL queries, providing developers with the flexibility and power to retrieve specific information.
@@ -21,21 +20,20 @@ HyperSync is an accelerated data query layer for the Polygon networks, providing
 
 HyperSync is also available as a standalone API for data analytic use cases. Data analysts can interact with the HyperSync API using JavaScript, Python, or Rust clients and extract data in JSON, Arrow, or Parquet formats. For more information, visit the HyperSync documentation [here](https://docs.envio.dev/docs/overview-hypersync).
 
+## HyperIndex key features 
 
-## HyperIndex Key Features 
+- Contract import: Autogenerate the key boilerplate for an entire Indexer project off a single or multiple smart contracts. Deploy within minutes. 
 
-- Contract Import: Autogenerate the key boilerplate for an entire Indexer project off a single or multiple smart contracts. Deploy within minutes. 
+- Multi-chain support: Aggregate data across multiple networks into a single database. Query all your data with a unified GraphQL API. 
 
-- Multi-chain Support: Aggregate data across multiple networks into a single database. Query all your data with a unified GraphQL API. 
+- Asynchronous mode: Fetch data from off-chain storage such as IPFS, or contract state (e.g. smart contract view functions).
 
-- Asynchronous Mode: Fetch data from off-chain storage such as IPFS, or contract state (e.g. smart contract view functions).
+- Factory contracts: Automatically process events emitted by all child contracts that are created by the specified factory.
 
-- Factory Contracts: Automatically process events emitted by all child contracts that are created by the specified factory.
-
-- Quickstart Templates: Use pre-defined indexing logic for popular OpenZeppelin contracts (e.g. ERC-20).
+- Quickstart templates: Use pre-defined indexing logic for popular OpenZeppelin contracts (e.g. ERC-20).
 
 
-## Getting Started
+## Getting started
 
 Users can choose whether they want to start from a quickstart template, perform a subgraph migration, or use the contract import feature to get started with Envio HyperIndex.
 
@@ -47,7 +45,7 @@ The following files are required to run the Envio indexer:
 
 These files are auto-generated according to the template and language chosen by running the `envio init` command. 
 
-### Contract Import Tutorial
+### Contract import tutorial
 
 This walkthrough explains how to initialize an indexer using a single or multiple contracts that are already deployed on Polygon. This process allows a user to quickly and easily start up a basic indexer and a queryable GraphQL API for their application in less than 3 minutes.
 
@@ -104,7 +102,7 @@ v optimism
 [↑↓ to move, enter to select, type to filter]
 ```
 
-#### Enter in the address of the contract to import
+#### Enter the address of the contract to import
 
 ```bash
 ? What is the address of the contract?
@@ -140,12 +138,12 @@ The `Contract Import` process will prompt the user whether they would like to fi
 For more information on contract import feature, visit the documentation [here](https://docs.envio.dev/docs/contract-import).
 
 
-## Envio Examples
+## Envio examples
 
 Click [here](https://docs.envio.dev/docs/example-uniswap-v3) for Envio HyperIndex examples.
 Click [here](https://docs.envio.dev/docs/hypersync-clients) for Envio HyperSync examples.
 
-## Getting Help
+## Getting help
 
 Indexing can be a rollercoaster, especially for more complex use cases. Our engineers are available to help you with your data availability needs.
 
