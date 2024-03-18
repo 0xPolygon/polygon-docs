@@ -91,11 +91,19 @@ Open the `config.toml` file and include the following:
 
 ```sh
 [Aggregator]
+### Agglayer
 SettlementBackend = "agglayer"
 AggLayerURL = "http://agglayer-001.{{ base_dn }}:{{ zkevm_agglayer_server_port }}"
-AggLayerTxTimeout = "300s"
-SenderAddress = "0x0000000000000000000000000000000000000000"
+AggLayerTxTimeout = "30s"
+SequencerPrivateKey = {Path = "/etc/zkevm/sequencer.key", Password = "{{ zkevm_keystore_password }}"}
+SenderAddress = ""
 ```
+
+- `SettlementBackend` defines how a final zk-proof is settled. All chains connected to the AggLayer use the `agglayer` value.
+- `AggLayerTxTimeout` is the interval a transaction is mined on the AggLayer.
+- `AggLayerURL` is the url of the agglayer service. Supplied by Polygon.
+- `SequencerPrivateKey` is the private key of the trusted sequencer. Only a CDK trusted sequencer can interact with the AggLayer.
+- `SenderAddress` is the address specified by the aggregator when it creates a proof. Supplied by Polygon. Supplied by Polygon.
 
 You now have a fully integrated AggLayer in your Polygon CDK stack.
 
