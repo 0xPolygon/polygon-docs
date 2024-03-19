@@ -103,7 +103,7 @@ SenderAddress = ""
 - `AggLayerTxTimeout` is the interval a transaction is mined on the AggLayer.
 - `AggLayerURL` is the url of the agglayer service. Supplied by Polygon.
 - `SequencerPrivateKey` is the private key of the trusted sequencer. Only a CDK trusted sequencer can interact with the AggLayer.
-- `SenderAddress` is the address specified by the aggregator when it creates a proof. Supplied by Polygon. Supplied by Polygon.
+- `SenderAddress` is the address specified by the aggregator when it creates a proof. Supplied by Polygon.
 
 You now have a fully integrated AggLayer in your Polygon CDK stack.
 
