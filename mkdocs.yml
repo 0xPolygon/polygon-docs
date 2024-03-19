@@ -366,7 +366,6 @@ nav:
               - Thirdweb: tools/dApp-development/pos/thirdweb.md
           - Common tools:
               - Hardhat: tools/dApp-development/common-tools/hardhat.md
-              - Truffle: tools/dApp-development/common-tools/truffle.md
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
       - Chain indexer framework:
