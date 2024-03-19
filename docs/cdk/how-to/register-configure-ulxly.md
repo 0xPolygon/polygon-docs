@@ -1,10 +1,8 @@
-This document describes how to register and configure your CDK chain to use the Polygon uXLXY bridge.
+This document describes how to register with Polygon, and configure your CDK chain to use the Polygon uXLXY bridge.
 
-## Prerequisites
-
-You should have already deployed a CDK chain stack which has integrated the bridge service.
-
-Please check our [get started](../get-started/quickstart-validium.md) section for guidance, quickstarts, and deployment tutorials for more information.
+!!! tip "Prerequisites"
+    - You should have already deployed a CDK chain stack which has integrated the bridge service.
+    - Please check our [get started](../get-started/quickstart-validium.md) section for guidance, quickstarts, and deployment tutorials for more information.
 
 ## Step 1: Attach a chain to the uLXLY bridge
 
@@ -78,3 +76,7 @@ We then add your details to our AggLayer configuration file [`../agglayer/docker
 * `[FullNodeRPCs]` points to the corresponding L2 full node.
 * `[L1]` points to the corresponding L1 chain.
 * The `[DB]` section has the managed database details.
+
+Your chain is now set up on the Polygon uXLXY bridge.
+
+<br/>
