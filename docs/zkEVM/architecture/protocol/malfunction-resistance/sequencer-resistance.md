@@ -21,23 +21,24 @@ In order to ensure finality in the case of Trusted Sequencer's malfunction, the 
 
 Any user can publish a batch to be forced by directly calling `forceBatch` function:
 
-```
-function forceBatch(
- bytes memory transactions ,
- uint256 maticAmount
+```bash
+function sequenceForceBatches(
+    ForcedBatchData[] memory batches
 ) public ifNotEmergencyState isForceBatchAllowed
 ```
+in Etrog it is:
 
-​where,
-
-- `transactions` is the byte array containing the concatenated batch transactions (same as the normal batch transactions format)
-- `maticAmount` is the maximum amount of MATIC tokens the user is willing to pay as a forced batch publication fee. The fee for publishing a forced batch is the same as the fee for sequencing, and it is therefore set in the `batchFee` storage variable. Since the fee is paid when a forced batch is published, it will not be paid again when the batch is sequenced.
+```bash
+function sequenceForceBatches(
+    BatchData[] calldata batches
+) external virtual isSenderAllowedToForceBatches
+```
 
 In order to successfully publish forced batch to the `forcedBatches` mapping, the following conditions must be met, otherwise the transaction will revert;
 
 - The contract must not be in emergency state,
 - The force batches must be allowed,
-- The `maticAmount` argument must be higher than the MATIC fee per batch,
+- The `maticAmount` argument must be higher than the MATIC fee per batch. It is the maximum amount of MATIC tokens the user is willing to pay as a forced batch publication fee. The fee for publishing a forced batch is the same as the fee for sequencing, and it is therefore set in the `batchFee` storage variable. Since the fee is paid when a forced batch is published, it will not be paid again when the batch is sequenced.
 - The length of the transactions byte array must be less than the value of `MAX_TRANSACTIONS_BYTE_LENGTH` constant (which is set at 120000).
 
 The forced batch is entered in `forcedBatches` mapping keyed by its force batch index.
