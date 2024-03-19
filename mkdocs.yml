@@ -384,6 +384,7 @@ nav:
               - Entities: tools/data/the-graph/entities.md
               - Queries: tools/data/the-graph/queries.md
           - Covalent: tools/data/covalent.md
+          - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
       - Matic.js:
