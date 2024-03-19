@@ -12,21 +12,21 @@ Other advantages include superior performance with multiple RPC endpoint configu
 
 **Useful resources**:
 
-- SubQuery Docs: [SubQuery Academy (Documentation)](https://academy.subquery.network/)
+- SubQuery docs: [SubQuery Academy (Documentation)](https://academy.subquery.network/)
 
-- Intro Quick Start Guide: [1. Create a New Project](https://academy.subquery.network/quickstart/quickstart.html)
+- Intro quick start guide: [1. Create a New Project](https://academy.subquery.network/quickstart/quickstart.html)
 
 - [Polygon Quick Start Guide](https://academy.subquery.network/quickstart/quickstart_chains/polygon.html)
 
-- [Polygon ZKEVM Quick Start Guide](https://academy.subquery.network/quickstart/quickstart_chains/polygon-zkevm.html)
+- [Polygon ZKEVM quick start guide](https://academy.subquery.network/quickstart/quickstart_chains/polygon-zkevm.html)
 
-- [Polygon Plasma Bridge Multi-Chain Quick Start Guide](https://academy.subquery.network/quickstart/quickstart_multichain/polygon-plasma-bridge.html)
+- [Polygon Plasma bridge multi-chain quick start guide](https://academy.subquery.network/quickstart/quickstart_multichain/polygon-plasma-bridge.html)
 
-- [Polygon's Starter Projects Directory](https://github.com/subquery/ethereum-subql-starter/tree/main/Polygon)
+- [Polygon's starter projects directory](https://github.com/subquery/ethereum-subql-starter/tree/main/Polygon)
 
 For technical questions and support reach out to us start@subquery.network
 
-## Running and Hosting your Polygon SubQuery APIs
+## Running and hosting your Polygon SubQuery APIs
 
 SubQuery is open-source, meaning you have the freedom to run it in the following three ways:
 
