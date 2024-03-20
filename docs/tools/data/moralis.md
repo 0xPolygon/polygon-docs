@@ -35,6 +35,6 @@ With Moralis [<ins>NFT API</ins>](https://moralis.io/api/nft/?utm_source=polygon
 
 With Moralis [<ins>Token API</ins>](https://moralis.io/api/token/?utm_source=polygon-docs&utm_medium=partner-docs) you can get ERC20 token data like prices, ownership, metadata, transfers, approvals, liquidity, mints and burns. 
 
-### RPC Nodes
+### RPC nodes
 
 Get access to powerful RPC nodes on all major chains with [<ins>Moralis nodes</ins>](https://moralis.io/nodes/?utm_source=polygon-docs&utm_medium=partner-docs). 
