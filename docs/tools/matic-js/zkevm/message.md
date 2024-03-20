@@ -83,7 +83,7 @@ However, for the sake of maintaining consistency among wrapped tokens, strict st
 
 1. Adapter contracts need to implement the [Polygon bridge library](https://github.com/0xPolygonHermez/code-examples/blob/main/customERC20-bridge-example/contracts/base/PolygonERC20BridgeBase.sol) and expose `bridgeToken()` and `onMessageReceived()` functions.
 2. There should be two separate adapter contracts; `OriginChainBridgeAdapter` and `WrapperChainBridgeAdapter`.
-3. `bridgeToken()` function should match the exact function signature and be similar to [this](https://github.com/maticnetwork/static/blob/master/network/mainnet/cherry/artifacts/zkevm/ZkEVMBridgeAdapter.json) ABI.
+3. `bridgeToken` function should match the exact function signature and be similar to [this](https://github.com/maticnetwork/static/blob/master/network/mainnet/cherry/artifacts/zkevm/ZkEVMBridgeAdapter.json) ABI.
 
 **Good to have**:
 
