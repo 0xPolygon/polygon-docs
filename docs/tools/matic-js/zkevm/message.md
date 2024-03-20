@@ -85,7 +85,7 @@ However, for the sake of maintaining consistency among wrapped tokens, strict st
 2. There should be two separate adapter contracts; `OriginChainBridgeAdapter` and `WrapperChainBridgeAdapter`.
 3. `bridgeToken` function should match the exact function signature and be similar to [this](https://github.com/maticnetwork/static/blob/master/network/mainnet/cherry/artifacts/zkevm/ZkEVMBridgeAdapter.json) ABI.
 
-**Good to have**:
+### Nice to have
 
 Expose the following variables,
 
