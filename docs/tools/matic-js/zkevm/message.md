@@ -1,4 +1,4 @@
-This document entails customization of wrapped tokens using adapter contracts, transfer of tokens between Ethereum and Polygon zkEVM networks, and how Matic.js can be used to bridge assets from Ethereum to Polygon zkEVM and vice versa.
+This document shows you how to customize wrapped tokens using adapter contracts, transfer tokens between Ethereum and Polygon zkEVM networks, and how to use Matic.js to bridge assets from Ethereum to Polygon zkEVM and vice versa.
 
 ## Basic functions for error passing
 
