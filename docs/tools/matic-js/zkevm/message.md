@@ -71,7 +71,7 @@ const claimTx = zkEvmClient.rootChainBridge.claimMessage(
 
 The existing zkEVM bridge uses the ERC-20 standard contract for creating wrapped tokens depending on the token's native network.
 
-At often times organizations want to customise their wrapped tokens by extending some functionalities. 
+Often, organizations want to customise their wrapped tokens by extending some functionalities. 
 
 For instance, these functionalities could include: blacklisting, putting a cap on minting, or any sound auxiliary functionality.
 
