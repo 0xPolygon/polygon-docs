@@ -79,7 +79,6 @@ This can be done by deploying adapter contracts that use the messaging layer of 
 
 However, for the sake of maintaining consistency among wrapped tokens, strict standards must be followed when extending their functionalities.
 
-
 ## Standardizations
 
 
