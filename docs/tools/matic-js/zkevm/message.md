@@ -37,7 +37,7 @@ const claimTx = zkEvmClient.childChainBridge.claimMessage(
 // proof can be found from the proof gen API
 ```
 
-- For child to root
+- From child to root
 
 ```jsx
 const bridgeTx = zkEvmClient.childChainBridge.bridgeMessage(
