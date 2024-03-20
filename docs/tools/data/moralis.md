@@ -12,7 +12,8 @@
     Check out our popular **[Youtube channel](https://www.youtube.com/@MoralisWeb3/featured)** for many great tutorials on how to get started.
 
 ## Get started
-Get started with Moralis APIs on Polygon by signup up for a [free account](https://admin.moralis.io/register?utm_source=polygon-docs&utm_medium=partner-docs). Then you can check out our [Get Started Guide](https://docs.moralis.io/web3-data-api/evm/get-your-api-key/?utm_source=polygon-docs&utm_medium=partner-docs).
+
+Get started with Moralis APIs on Polygon by signup up for a [free account](https://admin.moralis.io/register?utm_source=polygon-docs&utm_medium=partner-docs). Then you can check out our [get started guide](https://docs.moralis.io/web3-data-api/evm/get-your-api-key/?utm_source=polygon-docs&utm_medium=partner-docs).
 
 ## Moralis APIs
 
