@@ -84,8 +84,9 @@ nav:
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
         - Use a native token: cdk/how-to/use-native-token.md
+        - Use the uXLXY bridge: cdk/how-to/register-configure-ulxly.md
         - Use the AggLayer: 
-            - Configure the AggLayer: cdk/how-to/agglayer/configure.md
+            - Integrate the AggLayer: cdk/how-to/agglayer/integrate.md
             - AggLayer OpenRPC: cdk/how-to/agglayer/openrpc.md
             - Local installation: cdk/how-to/agglayer/local-install.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
