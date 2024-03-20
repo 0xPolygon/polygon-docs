@@ -66,7 +66,6 @@ const claimTx = zkEvmClient.rootChainBridge.claimMessage(
 // proof can be found from the proof gen API
 ```
 
-
 ## Bridging customized ERC20 token
 
 The existing zkEVM bridge uses the ERC-20 standard contract for creating wrapped tokens depending on the token's native network.
