@@ -37,4 +37,4 @@ With Moralis [<ins>Token API</ins>](https://moralis.io/api/token/?utm_source=pol
 
 ### RPC Nodes
 
-Get access to powerful RPC nodes on all major chains with [<ins>Moralis Nodes</ins>](https://moralis.io/nodes/?utm_source=polygon-docs&utm_medium=partner-docs). 
+Get access to powerful RPC nodes on all major chains with [<ins>Moralis nodes</ins>](https://moralis.io/nodes/?utm_source=polygon-docs&utm_medium=partner-docs). 
