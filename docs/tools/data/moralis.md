@@ -4,6 +4,7 @@
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
 ## About Moralis
+
 **[Moralis](https://moralis.io/?utm_source=polygon-docs&utm_medium=partner-docs)** is a blockchain data platform that provides developers with all the data they need to build better blockchain applications. From NFT data, token data and price data, through to raw blockchain data and RPC nodes, Moralis offers a wide range of products that cover all major crypto and blockchain use cases, and it supports Polygon together with all other major EVM chains.
 
 !!! tip "Quickstart"
