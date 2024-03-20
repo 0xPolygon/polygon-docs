@@ -1,71 +1,5 @@
 This document shows you how to customize wrapped tokens using adapter contracts, transfer tokens between Ethereum and Polygon zkEVM networks, and how to use Matic.js to bridge assets from Ethereum to Polygon zkEVM and vice versa.
 
-## Basic functions for error passing
-
-We refer to Ethereum as the _root_ chain and zkEVM as the _child_ chain.
-
-Below we provide the two basic functions used for _error passing_ in each of the two directions: L1 --> L2 and L2 --> L1.
-
-**Message**
-
-- From root to child
-
-```jsx
-const bridgeTx = zkEvmClient.rootChainBridge.bridgeMessage(
-				destinationNetwork: number,
-        destinationAddress: string,
-        forceUpdateGlobalExitRoot: boolean,
-        permitData = '0x',
-        option?: ITransactionOption
-);
-
-const claimTx = zkEvmClient.childChainBridge.claimMessage(
-				smtProof: string[],
-        smtProofRollup: string[],
-        globalIndex: string,
-        mainnetExitRoot: string,
-        rollupExitRoot: string,
-        originNetwork: number,
-        originTokenAddress: string,
-        destinationNetwork: number,
-        destinationAddress: string,
-        amount: TYPE_AMOUNT,
-        metadata: string,
-        option: ITransactionOption
-);
-
-// proof can be found from the proof gen API
-```
-
-- From child to root
-
-```jsx
-const bridgeTx = zkEvmClient.childChainBridge.bridgeMessage(
-				destinationNetwork: number,
-        destinationAddress: string,
-        forceUpdateGlobalExitRoot: boolean,
-        permitData = '0x',
-        option?: ITransactionOption
-);
-
-const claimTx = zkEvmClient.rootChainBridge.claimMessage(
-				smtProof: string[],
-        smtProofRollup: string[],
-        globalIndex: string,
-        mainnetExitRoot: string,
-        rollupExitRoot: string,
-        originNetwork: number,
-        originTokenAddress: string,
-        destinationNetwork: number,
-        destinationAddress: string,
-        amount: TYPE_AMOUNT,
-        metadata: string,
-        option: ITransactionOption
-);
-
-// proof can be found from the proof gen API
-```
-
 ## Bridging customized ERC20 token
 
 The existing zkEVM bridge uses the ERC-20 standard contract for creating wrapped tokens depending on the token's native network.
@@ -254,3 +188,69 @@ Make sure you are using `matic.js version > 3.6.4`.
     const txHash = await claimTx.getTransactionHash();
     console.log("claimed txHash", ctxHash);
     ```
+
+
+## Basic functions for error passing
+
+We refer to Ethereum as the _root_ chain and zkEVM as the _child_ chain.
+
+Below we provide the two basic functions used for _error passing_ in each of the two directions: L1 --> L2 and L2 --> L1.
+
+
+- From root to child (L1 --> L2)
+
+```jsx
+const bridgeTx = zkEvmClient.rootChainBridge.bridgeMessage(
+				destinationNetwork: number,
+        destinationAddress: string,
+        forceUpdateGlobalExitRoot: boolean,
+        permitData = '0x',
+        option?: ITransactionOption
+);
+
+const claimTx = zkEvmClient.childChainBridge.claimMessage(
+				smtProof: string[],
+        smtProofRollup: string[],
+        globalIndex: string,
+        mainnetExitRoot: string,
+        rollupExitRoot: string,
+        originNetwork: number,
+        originTokenAddress: string,
+        destinationNetwork: number,
+        destinationAddress: string,
+        amount: TYPE_AMOUNT,
+        metadata: string,
+        option: ITransactionOption
+);
+
+// proof can be found from the proof gen API
+```
+
+- From child to root (L2 --> L1)
+
+```jsx
+const bridgeTx = zkEvmClient.childChainBridge.bridgeMessage(
+				destinationNetwork: number,
+        destinationAddress: string,
+        forceUpdateGlobalExitRoot: boolean,
+        permitData = '0x',
+        option?: ITransactionOption
+);
+
+const claimTx = zkEvmClient.rootChainBridge.claimMessage(
+				smtProof: string[],
+        smtProofRollup: string[],
+        globalIndex: string,
+        mainnetExitRoot: string,
+        rollupExitRoot: string,
+        originNetwork: number,
+        originTokenAddress: string,
+        destinationNetwork: number,
+        destinationAddress: string,
+        amount: TYPE_AMOUNT,
+        metadata: string,
+        option: ITransactionOption
+);
+
+// proof can be found from the proof gen API
+```
