@@ -22,14 +22,14 @@ The table below shows the version compatibility for CDK releases and related com
 </thead>
 <tbody>
   <tr>
-    <td>Upgraded validium</td>
-    <td>6</td>
-    <td>0.4.2</td>
-    <td><a href="https://github.com/0xPolygon/cdk-validium-node/releases/tag/v0.0.3-hotfix6">v0.0.3-hotfix6</a></td>
-    <td>v0.0.3</td>
-    <td>zkevm-prover<br>@3.0.2<br>Config files version 3.0.0-RC3-fork.6</td>
-    <td><a href="https://github.com/0xPolygon/cdk-validium-contracts/releases/tag/v0.0.2">v0.0.2</a></td>
-    <td>v0.3.2-RC1</td> 
+    <td>Ares release</td>
+    <td>8</td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.2">v0.6.2 Elderberry</a></td>
+    <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-validium-node/0.6.2-cdk/images/sha256-6393eebf06fae415549070001d118aeb886777e532858777ab52096b3c25e5f2?context=explore">0.6.2-cdk</a> </td>
+    <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.6/images/sha256-17590789a831259d7a07d8a042ea87e381c5708dec3a7daef6f3f782f50b2c00?context=explore">v0.0.6</a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v5.0.7">v5.0.7</a></td>
+    <td> <a href="https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v5.0.1-rc.2-fork.8">v5.0.1-rc.2-fork.8</a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.2">v0.4.2</a></td>
   </tr>
   <tr>
     <td><a href="https://polygontechnology.notion.site/Instructions-zkEVM-Mainnet-Beta-Node-v0-5-7-Prover-v4-0-4-8f5b9d8e2f6a4048b21c608b49a93376" target="_blank" rel="noopener noreferrer">CDK-Etrog Release</a>- <br>BETA TESTING</td>
@@ -41,13 +41,22 @@ The table below shows the version compatibility for CDK releases and related com
     <td> <a href="https://github.com/0xPolygonHermez/zkevm-rom/tree/v4.0.0-fork.7">v4.0.0</a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.2">v0.4.2</a></td>
   </tr>
+  <tr>
+    <td>Upgraded validium</td>
+    <td>6</td>
+    <td>0.4.2</td>
+    <td><a href="https://github.com/0xPolygon/cdk-validium-node/releases/tag/v0.0.3-hotfix6">v0.0.3-hotfix6</a></td>
+    <td>v0.0.3</td>
+    <td>zkevm-prover<br>@3.0.2<br>Config files version 3.0.0-RC3-fork.6</td>
+    <td><a href="https://github.com/0xPolygon/cdk-validium-contracts/releases/tag/v0.0.2">v0.0.2</a></td>
+    <td>v0.3.2-RC1</td> 
+  </tr>
 </tbody>
 </table>
 
 ### Migrating
 
-- If you want to migrate from 6 to 7, we recommend waiting for the upcoming zkEVM Elderberry integration into CDK version 8.
-- Anyone on earlier versions who wants to migrate, we also recommend waiting for CDK version 8.
+- Anyone on earlier versions, we recommend going straight to fork ID 8.
 
 ## zkEVM
 
@@ -64,10 +73,16 @@ The table below shows the version compatibility for Polygon zkEVM releases.
 </thead>
 <tbody>
   <tr>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.10">v0.6.2 </a></td>
+    <td>v0.4.2</td>
+    <td>v5.0.7</td>
+    <td>Mainnet &amp; Cardona: 4-8. <br>Testnet (Goerli): 1-6</td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.10">v0.5.10</a></td>
     <td>v0.4.0</td>
     <td>v4.0.4</td>
-    <td>Mainnet &amp; Cardona: 4-7. <br>Testnet (Goerli): 1- 6.</td>
+    <td>Mainnet &amp; Cardona: 4-7. <br>Testnet (Goerli): 1-6</td>
   </tr>
   <tr>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/v0.4.0">v0.4.0</a></td>
