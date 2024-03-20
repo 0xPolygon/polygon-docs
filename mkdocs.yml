@@ -455,6 +455,7 @@ nav:
           - zkEVM:
               - zkEVM client:  tools/matic-js/zkevm/initialize.md
               - ERC20:  tools/matic-js/zkevm/erc20.md
+              - Message: tools/matic-js/zkevm/message.md
               - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 
           - IPFS: tools/storage/ipfs.md
