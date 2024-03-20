@@ -3,7 +3,7 @@ hide:
 - toc
 ---
 
-This page is a catalogue of third-party and partner quick starts and guides that explain how to spin up and deploy validium and rollup CDK stacks, and more.
+This page links to full guides that some of [our solution providers](https://ecosystem.polygon.technology/spn/explore/) have developed, including quick starts and guides that explain how to spin up and deploy validium and rollup CDK stacks.
 
 <div class="grid-container">
    <div class="grid-item">
@@ -26,3 +26,4 @@ This page is a catalogue of third-party and partner quick starts and guides that
    </div>
 </div>
 
+Check out the [solution provider page](https://ecosystem.polygon.technology/spn/explore/) to see more info on our partners.

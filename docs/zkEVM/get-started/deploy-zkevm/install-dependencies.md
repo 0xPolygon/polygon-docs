@@ -61,6 +61,8 @@ urls=(
   "https://storage.googleapis.com/zkevm/zkproverc/v2.0.0-RC4-fork.5.tgz"
   "https://storage.googleapis.com/zkevm/zkproverc/v3.0.0-RC2-fork.6.tgz"
   "https://storage.googleapis.com/zkevm/zkproverc/v3.0.0-RC3-fork.6.tgz"
+  "https://storage.googleapis.com/zkevm/zkproverc/v4.0.0-rc.6-fork.7.tgz"
+  "https://storage.googleapis.com/zkevm/zkproverc/v5.0.0-rc.4-fork.8.tgz"
 )
 
 for url in "${urls[@]}"; do

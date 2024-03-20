@@ -58,7 +58,7 @@ nav:
         - Quickstart: 
           - Validium: cdk/get-started/quickstart-validium.md
           - Rollup: cdk/get-started/quickstart-rollup.md
-        - Deploy:
+        - Deployment tutorials:
           - Validium: 
               - Introduction: cdk/get-started/deploy-validium/intro.md
               - Deploy contracts:
@@ -83,11 +83,17 @@ nav:
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
-        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
+        - Use a native token: cdk/how-to/use-native-token.md
+        - Use the uXLXY bridge: cdk/how-to/register-configure-ulxly.md
+        - Use the AggLayer: 
+            - Integrate the AggLayer: cdk/how-to/agglayer/integrate.md
+            - AggLayer OpenRPC: cdk/how-to/agglayer/openrpc.md
+            - Local installation: cdk/how-to/agglayer/local-install.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
+        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
       - Architecture:
-        - CDK rollup option: cdk/architecture/cdk-zkevm-option.md
-        - CDK validium option: cdk/architecture/cdk-validium-option.md
+        - CDK rollup: cdk/architecture/cdk-zkevm.md
+        - CDK validium: cdk/architecture/cdk-validium.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Concepts:
@@ -336,7 +342,9 @@ nav:
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
+      - Miden: miden/index.md
       - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
+      - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
@@ -376,7 +384,9 @@ nav:
               - Data: tools/data/the-graph/data.md
               - Entities: tools/data/the-graph/entities.md
               - Queries: tools/data/the-graph/queries.md
+          - Moralis: tools/data/moralis.md
           - Covalent: tools/data/covalent.md
+          - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
       - Matic.js:
@@ -578,11 +588,6 @@ plugins:
       keep_docs_dir: false
   - search
   - open-in-new-tab
-  - git-revision-date-localized:
-      fallback_to_build_date: true
-      strict: false
-      exclude:
-        - index.md
 
 validation:
   absolute_links: ignore

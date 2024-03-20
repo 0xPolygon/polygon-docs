@@ -89,7 +89,7 @@ dApp, and depending on whether you're migrating to meta transactions or building
 To integrate your dApp with Meta Transactions on Polygon, you can choose to go with one of the following
 relayers or spin up a custom solution:
 
-- [Biconomy](https://docs.biconomy.io/Account/transactions/gasless)
+- [Biconomy](https://docs.biconomy.io/quickstart)
 - [Gas Station Network (GSN)](https://docs.opengsn.org/#ethereum-gas-station-network-gsn)
 - [Infura](https://infura.io/product/ethereum/transactions-itx)
 - [Gelato](https://docs.gelato.network/developer-products/gelato-relay-sdk)

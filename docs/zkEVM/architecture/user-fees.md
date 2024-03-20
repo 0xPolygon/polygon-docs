@@ -5,7 +5,7 @@ The aim with this document is to describe the Effective Gas Price (EGP), a mecha
 
 Let's make a quick recollection of the basic fee schema used in Ethereum.
 
-Firstly, gas is a unit that accounts for resources used when processing a transaction. At the time of sending a transaction, the user can decide two parameters; $\texttt{gasLimit}$ and $\texttt{gasPrice}$:
+Firstly, gas is a unit that accounts for resources used when processing a transaction. At the time of sending a transaction, the user can decide on two parameters; $\texttt{gasLimit}$ and $\texttt{gasPrice}$:
 
 - $\texttt{gasLimit}$ is the maximum amount of gas units that a user is willing to buy in order to complete a transaction.
 
@@ -80,15 +80,6 @@ Their corresponding pertinent questions are:
 - How do L2 solutions address and reconcile any discrepancies between the L1 gas schema and the real resource utilization on L2?
 
 
-### Time-related variations
-
-So, how can the fact that the L1 $\texttt{gasPrice}$ varies with time be taken into account?
-
-In order to obtain L1 gas prices, we can poll for it every 5 seconds. As shown in the timeline below, gas prices vary with time.
-
-![Figure: Gas price timeline](../../img/zkEVM/gas-timeline-001.png)
-
-
 ## Gas price suggester
 
 Let's take a quick view of the initial phase of the process, which involves the RPC component of zkEVM.
@@ -102,6 +93,15 @@ Pre-execution of a transaction involves the following stages:
 See the the picture below for an overview of the pre-execution process.
 
 ![Figure: RPC tx pre-execution](../../img/zkEVM/rpc-tx-preexec.png)
+
+
+### Time-related variations
+
+So, how can the fact that the L1 $\texttt{gasPrice}$ varies with time be taken into account?
+
+In order to obtain L1 gas prices, we can poll for it every 5 seconds. As shown in the timeline below, gas prices vary with time.
+
+![Figure: Gas price timeline](../../img/zkEVM/gas-timeline-001.png)
 
 
 ### Naïve approach
@@ -482,6 +482,7 @@ This implies that we need to multiply the result by a chosen factor before compa
 This ensures that the costs are covered in case more gas is ultimately required to execute the transaction. This factor is named $\texttt{BreakEvenFactor}$.
 
 Now we can conclude that if
+
 $$
 \texttt{SignedGasPrice} > \texttt{BreakEvenGasPrice} \cdot \texttt{BreakEvenFactor}
 $$
@@ -511,7 +512,10 @@ Recall that, since we are using a "wrong" state root, this gas is only an estima
 Hence, using the previously explained formulas, the total transaction cost is:
 
 $$
-\texttt{TotalTxPrice} = \texttt{DataCost} \cdot \texttt{L1GasPrice} + \texttt{GasUsed} \cdot \texttt{L1GasPrice} \cdot \texttt{L1GasPriceFactor}\\ \implies  \texttt{TotalTxPrice} = (200 · 16 + 100 · 4) · 21 + 60, 000 · 21 · 0.04 = 126, 000\ \texttt{GWei}
+\begin{aligned}
+&\texttt{TotalTxPrice} = \texttt{DataCost} \cdot \texttt{L1GasPrice} + \texttt{GasUsed} \cdot \texttt{L1GasPrice} \cdot \texttt{L1GasPriceFactor}\\
+&\implies  \texttt{TotalTxPrice} = (200 · 16 + 100 · 4) · 21 + 60, 000 · 21 · 0.04 = 126, 000\ \texttt{GWei}
+\end{aligned}
 $$
 
 Observe that the $21$ appearing in the substitution is the $\texttt{L1GasPrice}$ at the time of sending the transaction.
@@ -749,7 +753,7 @@ Hence, if something goes bad in later steps, and the gas consumption deviates si
 
 On the contrary, if the process goes as estimated and the consumed gas is similar to the estimated one, we can reward the user by modifying the previously introduced $\texttt{effectivePercentage}$.
 
-It's important to observe that, among all the transactions stored in the Pool, those that are prioritized at the time of sequencing are the ones with higher $\texttt{effectiveGasPrice}$, due to the prioritization introduced with $\texttt{ratioPriority}$.
+It's important to observe that, among all the transactions stored in the Pool, those that are prioritized at the time of sequencing are the ones with higher $\texttt{effectiveGasPrice}$, due to the prioritization introduced with $\texttt{PriorityRatio}$.
 
 Observe that $\texttt{effectiveGasPrice}$ is not computed in the RPC but in the sequencer. So, it is possible that the suggested gas price at this moment, differs from the one suggested when the user sent the transaction.
 
@@ -850,15 +854,15 @@ Let’s examine the above figure in more detail.
 
     Henceforth, the user is charged the full $\texttt{SignedGasPrice}$, so the Executor will execute the transaction using it, concluding the sequencing process.
 
-    - Conversely, if $\texttt{SignedGasPrice} > \texttt{EEGP}$, there is a room for further adjustment of the gas price that will be charged to the user.
+    - Conversely, if $\texttt{SignedGasPrice} > \texttt{EEGP}$, there's room for further adjustment of the gas price that will be charged to the user.
 
-3. In the previous case, it was necessary to compute a more precise effective gas price based on the accurate amount of gas, denoted as $\texttt{GasUsedNew}$, obtained during the transaction’s execution using the correct state root at the time of sequencing transactions (which was not known earlier for straightforward reasons).
+3. In the previous case, it was necessary to compute a more precise effective gas price based on the accurate amount of gas, denoted as $\texttt{GasUsedNew}$, obtained during the transaction’s execution using the correct state root at the time of sequencing transactions.
 
     Henceforth, the Executor executes the transaction using $\texttt{EEGP}$, obtaining $\texttt{GasUsedNew}$, which the sequencer utilizes to compute a new effective gas price, referred to as $\texttt{NEGP}$.
 
-4. We have to paths:
+4. We have two paths:
     
-    - If the percentage deviation between $\texttt{EEGP}$ and $\texttt{NEGP}$ is higher than a fixed deviation parameter $\texttt{FinalDeviationPct}$, which is $10$ in the actual configuration, that is
+    - If the percentage deviation between $\texttt{EEGP}$ and $\texttt{NEGP}$ is higher than a fixed deviation parameter $\texttt{FinalDeviationParameter}$, which is $10$ in the actual configuration, that is
 
     $$
     \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 < \texttt{FinalDeviationParameter}
@@ -876,21 +880,21 @@ Let’s examine the above figure in more detail.
     \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 ≥ \texttt{FinalDeviationParameter}
     $$
 
-    there is a big difference between executions and we may better adjust gas price due to potential (and quite big) losses to the network or the user.
+    there is a big difference between executions and we may want to adjust gas price due to potential losses to the network or the user.
 
 5. In the latter case, two options arise:
     
-    - If the gas price signed is less or equal than the accurate effective gas price computed with the correct state root
+    - If the gas price signed is less than or equal to the accurately computed effective gas price, with the correct state root, and
 
     $$
     \texttt{SignedGasPrice} \leq \texttt{NEGP}
     $$
 
-    the network suffers again a risk of loss.
+    the network runs the risk of incurring a loss.
 
-    Henceforth, the user is charged the full $\texttt{SignedGasPrice}$, so the Executor will execute the transaction using it, concluding the sequencing process.
+    Hence the user is charged the full $\texttt{SignedGasPrice}$, and the executor therefore executes the transaction using the $\texttt{SignedGasPrice}$. And the sequencing process is concluded.
 
-    - Otherwise, if $\texttt{SignedGasPrice} > \texttt{NEGP}$, then it means we have margin to adjust the gas price that is charged to the user.
+    - Otherwise, if $\texttt{SignedGasPrice} > \texttt{NEGP}$, then there's sufficient margin to adjust the gas price and thus charge the user less than their $\texttt{SignedGasPrice}$.
 
     However, in order to save executions, we end the adjustment process in this iteration, so that we conclude the flow using a trick explained in the next point.
 
@@ -907,7 +911,7 @@ Let’s examine the above figure in more detail.
 
     This precaution is employed to mitigate potential vulnerabilities in deployed Smart Contracts, that arise from creating a specific condition based on the gas price, for example, to manipulate execution costs.
 
-    - If the transaction does not make use of the gas price-related opcodes, the Executor executes the transaction with the more adjusted gas price up to this point which is $\texttt{NEGP}$ and end up the sequencing process.
+    - If the transaction does not make use of the gas-price-related opcodes, the executor executes the transaction with the more adjusted gas price, which is $\texttt{NEGP}$, and ends the sequencing process.
 
 
 ### Numerical Example: Sequencer Flow
