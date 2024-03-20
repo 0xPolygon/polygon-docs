@@ -197,9 +197,9 @@ Note that it is important to follow standardizations for easy listing.
     },
     ```
 
-
-    Note: If the token is ethereum native then `originTokenNetwork` should be `0`. If the token is zkEVM native, then `originTokenNetwork` should be `1`. Similarly for the `wrappedTokenNetwork`.
-    
+    !!!Note
+        
+        If the token is ethereum native then `originTokenNetwork` should be `0`. If the token is zkEVM native, then `originTokenNetwork` should be `1`. Similarly for the `wrappedTokenNetwork`.
 
 2. Raise a PR 🚀
 
