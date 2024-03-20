@@ -383,6 +383,7 @@ nav:
           - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
+          - SubQuery: tools/data/subquery.md
       - Matic.js:
           - Installation:  tools/matic-js/installation.md
           - Get started:  tools/matic-js/get-started.md
