@@ -25,7 +25,7 @@ All Moralis APIs have support for Polygon and across all other major EVM blockch
 
 ### Wallet API
 
-With Moralis [<ins>Wallet API</ins>](https://moralis.io/api/wallet/?utm_source=polygon-docs&utm_medium=partner-docs) you can get Wallet balances for tokens, NFTs and native assets, get full wallet history, net worth and a lot more. 
+With Moralis [<ins>Wallet API</ins>](https://moralis.io/api/wallet/?utm_source=polygon-docs&utm_medium=partner-docs) you can get wallet balances for tokens, NFTs and native assets, get full wallet history, net worth and a lot more. 
 
 ### NFT API
 
