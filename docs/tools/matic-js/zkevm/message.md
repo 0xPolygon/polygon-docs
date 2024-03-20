@@ -73,7 +73,7 @@ The existing zkEVM bridge uses the ERC-20 standard contract for creating wrapped
 
 Often, organizations want to customise their wrapped tokens by extending some functionalities. 
 
-For instance, these functionalities could include: blacklisting, putting a cap on minting, or any sound auxiliary functionality.
+These functionalities could include: blacklisting, putting a cap on minting, or any sound auxiliary functionality.
 
 This can be done by deploying adapter contracts that use the messaging layer of the bridge.
 
