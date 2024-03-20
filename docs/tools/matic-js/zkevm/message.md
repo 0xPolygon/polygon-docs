@@ -209,7 +209,7 @@ Deploy your `OriginChainBridgeAdapt` and `WrapperChainBridgeAdapter`.
 
 Make sure you are using `matic.js version > 3.6.4`.
 
-- Create an instance of the zkEVM client, passing the necessary parameters. Refer [here](https://docs.polygon.technology/tools/matic-js/zkevm/initialize/) for more info.
+- Create an instance of the zkEVM client, passing the necessary parameters. Refer [here](./initialize.md) for more info.
     
     ```jsx
     const client = new ZkEvmClient();
