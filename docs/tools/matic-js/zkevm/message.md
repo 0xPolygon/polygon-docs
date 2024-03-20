@@ -1,4 +1,4 @@
-This document entails customization of wrapped tokens using adapter contracts, transfer of tokens between Ethereum and Polygon zkEVM networks, and how Matic.js can be used to bridge assets from Ethereum to Polygon zkEVM and vice versa.
+This document shows you how to customize wrapped tokens using adapter contracts, transfer tokens between Ethereum and Polygon zkEVM networks, and how to use Matic.js to bridge assets from Ethereum to Polygon zkEVM and vice versa.
 
 ## Basic functions for error passing
 
@@ -8,7 +8,7 @@ Below we provide the two basic functions used for _error passing_ in each of the
 
 **Message**
 
-- For Root to child
+- From root to child
 
 ```jsx
 const bridgeTx = zkEvmClient.rootChainBridge.bridgeMessage(
@@ -37,7 +37,7 @@ const claimTx = zkEvmClient.childChainBridge.claimMessage(
 // proof can be found from the proof gen API
 ```
 
-- For child to root
+- From child to root
 
 ```jsx
 const bridgeTx = zkEvmClient.childChainBridge.bridgeMessage(
@@ -66,28 +66,25 @@ const claimTx = zkEvmClient.rootChainBridge.claimMessage(
 // proof can be found from the proof gen API
 ```
 
-
 ## Bridging customized ERC20 token
 
 The existing zkEVM bridge uses the ERC-20 standard contract for creating wrapped tokens depending on the token's native network.
 
-At often times organizations want to customise their wrapped tokens by extending some functionalities. 
+Often, organizations want to customise their wrapped tokens by extending some functionalities. 
 
-For instance, these functionalities could include: blacklisting, putting a cap on minting, or any sound auxiliary functionality.
+These functionalities could include: blacklisting, putting a cap on minting, or any sound auxiliary functionality.
 
 This can be done by deploying adapter contracts that use the messaging layer of the bridge.
 
 However, for the sake of maintaining consistency among wrapped tokens, strict standards must be followed when extending their functionalities.
 
-
 ## Standardizations
-
 
 1. Adapter contracts need to implement the [Polygon bridge library](https://github.com/0xPolygonHermez/code-examples/blob/main/customERC20-bridge-example/contracts/base/PolygonERC20BridgeBase.sol) and expose `bridgeToken()` and `onMessageReceived()` functions.
 2. There should be two separate adapter contracts; `OriginChainBridgeAdapter` and `WrapperChainBridgeAdapter`.
-3. `bridgeToken()` function should match the exact function signature and be similar to [this](https://github.com/maticnetwork/static/blob/master/network/mainnet/cherry/artifacts/zkevm/ZkEVMBridgeAdapter.json) ABI.
+3. `bridgeToken` function should match the exact function signature and be similar to [this](https://github.com/maticnetwork/static/blob/master/network/mainnet/cherry/artifacts/zkevm/ZkEVMBridgeAdapter.json) ABI.
 
-**Good to have**:
+### Nice to have
 
 Expose the following variables,
 
