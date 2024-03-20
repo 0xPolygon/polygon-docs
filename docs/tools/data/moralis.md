@@ -19,7 +19,7 @@ Get started with Moralis APIs on Polygon by signup up for a [free account](https
 
 All Moralis APIs have support for Polygon and across all other major EVM blockchains. All endpoints have powerful filtering capabilities. 
 
-!!! info Endpoints
+!!! info "Endpoints"
 
     Please check out the [<ins>Moralis API Reference</ins>](https://docs.moralis.io/?utm_source=polygon-docs&utm_medium=partner-docs) to see all the available API endpoints.
 
