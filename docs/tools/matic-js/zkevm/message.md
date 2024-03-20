@@ -8,7 +8,7 @@ Below we provide the two basic functions used for _error passing_ in each of the
 
 **Message**
 
-- For Root to child
+- From root to child
 
 ```jsx
 const bridgeTx = zkEvmClient.rootChainBridge.bridgeMessage(
