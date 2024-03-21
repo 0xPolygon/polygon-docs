@@ -19,6 +19,9 @@ The native bridge infrastructure of CDK chains that allows transfer of assets an
 ### LxLy messenger
 A contract on the LxLy bridge utilizes its message passing capabilities to pass arbitrary messages between L1 and L2.  This is not a separate component, and is part of the LxLy bridge's architecture.
 
+### POL (Token)
+The POL token powers the Polygon 2.0 ecosystem through a native re-staking protocol that allows token holders to validate multiple chains, and perform multiple roles on each of those chains (sequencing, ZK proof generation, participation in data availability committees, etc.) 
+
 ### Rollups
 Rollups refer to blockchain scaling solutions (in the context of Ethereum) that carry out transaction execution on L2, and then post updated state data to a contract on L1. There are different types rollups, two of the most popular being optimistic, and zero-knowledge (ZK) rollups. Follow the links below to learn more:
 
