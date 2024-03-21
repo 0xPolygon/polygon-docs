@@ -254,3 +254,4 @@ const claimTx = zkEvmClient.rootChainBridge.claimMessage(
 
 // proof can be found from the proof gen API
 ```
+
