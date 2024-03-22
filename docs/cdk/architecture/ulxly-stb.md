@@ -49,20 +49,20 @@ Let's briefly go over the specific actions and characteristics of each STB contr
 
 #### `L1Escrow`
 
-- Defines investment strategies
-- Sending token issuance messages to `L2Escrow`
-- Fulfilling redemption messages from `L2Escrow`
+- Defines investment strategies.
+- Sending token issuance messages to `L2Escrow`.
+- Fulfilling redemption messages from `L2Escrow`.
 
 #### `L2Escrow`
 
-- Receives minting instructions from `L1Escrow` via the unified bridge upon token deposit, and prompts `L2Token` contract to mint assets to a given address on L2
-- Burns the native asset on L2 and sends minting instructions to `L1Escrow` to release assets on L1
+- Receives minting instructions from `L1Escrow` via the unified bridge upon token deposit, and prompts `L2Token` contract to mint assets to a given address on L2.
+- Burns the native asset on L2 and sends minting instructions to `L1Escrow` to release assets on L1.
 
 
 #### `L2Token`
 
-- Natively mints L2 tokens and sends them to a designated address
-- Interfaces with the `L2TokenConverter` contract
+- Natively mints L2 tokens and sends them to a designated address.
+- Interfaces with the `L2TokenConverter` contract.
 
 #### `L2TokenConverter`
 
