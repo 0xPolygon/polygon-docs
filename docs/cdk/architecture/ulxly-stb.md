@@ -114,7 +114,7 @@ The STB contracts grant chain operators control over the token backing in the es
 
     Polygon Labs **does not** manage or facilitate the investing of the funds locked in the escrow contracts. The management of funds to implement any investment strategies and risk profiles is completely at the discretion of the chain operators and owners.
 
-Bridging tokens to L2 CDK chains using the STB contracts is particularly for the following use cases:
+Bridging tokens to L2 CDK chains using the STB contracts is ideal for the following use cases:
 
 - Coins that need to implement staking and yield generation mechanisms
 - Coins that need to implement custom L2 functionality
