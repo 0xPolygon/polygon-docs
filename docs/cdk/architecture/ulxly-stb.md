@@ -33,7 +33,7 @@ The ability to manage bridge reserves is crucial to implement restaking for yiel
 
 ### Design and implementation
 
-On L1, CDK chains enable STB for an asset by deploying STB contracts on L1 to create alternative **[`L1Escrow`](https://github.com/pyk/zkevm-stb/blob/main/src/L1Escrow.sol)** account that holds the asset, and allows the CDK chain operator to manage this token reserve.
+On L1, CDK chains enable STB for an asset by deploying STB contracts on L1 to create an alternative [`L1Escrow`](https://github.com/pyk/zkevm-stb/blob/main/src/L1Escrow.sol) account that holds the asset, and allows the CDK chain operator to manage this token reserve.
 
 On L2 (the CDK chain), there are three components needed to make this work:
 
