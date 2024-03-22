@@ -109,7 +109,7 @@ The `L2TokenConverter` facilitates conversion between **USDC.e** and **LxLy USDC
 
 The STB contracts grant chain operators control over the token backing in the escrow contracts for all the chains that connect to the Polygon ecosystem via the AggLayer.
 
-!!! note
+!!! warning
 
     Polygon Labs **does not** manage or facilitate the investing of the funds locked in the escrow contracts. The management of funds to implement any investment strategies and risk profiles is completely at the discretion of the chain operators and owners.
 
