@@ -116,8 +116,8 @@ The STB contracts grant chain operators control over the token backing in the es
 
 Bridging tokens to L2 CDK chains using the STB contracts is ideal for the following use cases:
 
-- Coins that need to implement staking and yield generation mechanisms
-- Coins that need to implement custom L2 functionality
-- Coins that possess native issuance capabilities
+- Coins that need to implement staking and yield generation mechanisms.
+- Coins that need to implement custom L2 functionality.
+- Coins that possess native issuance capabilities.
 
 Want to start testing with STB? The contracts are still being audited, but are ready to use on testnets, and can be found here: https://github.com/pyk/zkevm-stb. 
