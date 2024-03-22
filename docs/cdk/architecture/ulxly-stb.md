@@ -37,9 +37,9 @@ On L1, CDK chains enable STB for an asset by deploying STB contracts on L1 to cr
 
 On L2 (the CDK chain), there are three components needed to make this work:
 
-- **[`L2Token`](https://github.com/pyk/zkevm-stb/blob/main/src/L2Token.sol)**, which is a natively deployed ERC20 contract
-- **[`L2Escrow`](https://github.com/pyk/zkevm-stb/blob/main/src/L2Escrow.sol)**, a contract that manages the L2Token's supply
-- **[`L2TokenConverter`](https://github.com/pyk/zkevm-stb/blob/main/src/L2TokenConverter.sol)**, the contract that enables converting bridge wrapped tokens to natively minted tokens on L2
+- [`L2Token`](https://github.com/pyk/zkevm-stb/blob/main/src/L2Token.sol), which is a natively deployed ERC20 contract.
+- [`L2Escrow`](https://github.com/pyk/zkevm-stb/blob/main/src/L2Escrow.sol), a contract that manages the L2Token's supply.
+- **[`L2TokenConverter`](https://github.com/pyk/zkevm-stb/blob/main/src/L2TokenConverter.sol), the contract that enables converting bridge-wrapped tokens to natively-minted tokens on L2.
 
 !!! info
 
