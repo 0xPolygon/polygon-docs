@@ -51,4 +51,12 @@ hide:
          <p class="feature-paragraph">Discover the key differences between the rollup and validium infrastructure options.</p>
       </a>
    </div>
+   <div class="grid-item">
+      <a href="./glossary">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Glossary</div>
+         </div>
+         <p class="feature-paragraph">Learn about commonly used terminology and concepts relevant to the CDK tech stack.</p>
+      </a>
+   </div>
 </div>
