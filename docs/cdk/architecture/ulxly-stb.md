@@ -21,7 +21,7 @@ The new unified model of the LxLy bridge introduced as a part of the AggLayer v1
 
 !!! info
 
-    The Master Escrow contract is managed and governed by the Polygon zkEVM team.
+    The master escrow contract is managed and governed by the Polygon zkEVM team.
 
 Due to the shared nature of the bridge, chain operators will not have admin access to the funds locked in the master escrow contract, including the funds that belong to their own network. 
 
