@@ -23,7 +23,7 @@ The new unified model of the LxLy bridge introduced as a part of the AggLayer v1
 
     The Master Escrow contract is managed and governed by the Polygon zkEVM team.
 
-Due to the shared nature of the bridge, chain operators will not have Admin access to the funds locked in the Master Escrow contract, including the funds that belong to their own network. 
+Due to the shared nature of the bridge, chain operators will not have admin access to the funds locked in the master escrow contract, including the funds that belong to their own network. 
 
 The ability to manage bridge reserves is crucial to implement restaking for yield generation and other similar use cases. How does the unified bridge address this?
 
