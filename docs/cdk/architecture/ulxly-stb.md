@@ -66,17 +66,17 @@ Let's briefly go over the specific actions and characteristics of each STB contr
 
 #### `L2TokenConverter`
 
-- Supports 1:1 conversion between the STB minted native tokens, and the bridged tokens minted by depositing tokens to LxLy bridge directly on L1
-- Doesn't have a default cap on the token volume that can be converted, can be added by chain operators as necessary
-- An asset can have multiple token converters that can have different properties
+- Supports 1:1 conversion between the STB minted native tokens, and the bridged tokens minted by depositing tokens to LxLy bridge directly on L1.
+- Doesn't have a default cap on the token volume that can be converted, can be added by chain operators as necessary.
+- An asset can have multiple token converters that can have different properties.
 
 ## Roles and responsibilities
 
 There are three roles, each of which performs specific actions to manage the STB system:
 
-- **Admin:** Can upgrade and pause the system
-- **Escrow manager:** Can withdraw token backing from the respective escrow contract to invest using the `managerWithdraw()` function
-- **Risk manager:** Can invoke `setIssuanceCap()` multiple times to increase or reduce the issuance cap
+- Admin: Can upgrade and pause the system.
+- Escrow manager: Can withdraw token backing from the respective escrow contract to invest using the `managerWithdraw()` function.
+- Risk manager: Can invoke `setIssuanceCap()` multiple times to increase or reduce the issuance cap.
 
 ## STB transaction flow vs. existing LxLy flow
 
