@@ -101,7 +101,7 @@ The diagram above illustrates the following flow:
 
 With the introduction of STB, there are now two ways to deposit tokens to an L2 CDK chain, and two distinct resultant tokens:
 
-- The STB flow involves locking tokens in the L1Escrow contract, which is followed by the minting of **USDC.e** on L2.
+- The STB flow involves locking tokens in the L1Escrow contract, which is followed by the minting of USDC.e on L2.
 - On the other hand, if the tokens are deposited directly into the LxLy bridge contract, it results in the minting of **LxLy USDC** on L2.
 
 The `L2TokenConverter` facilitates conversion between **USDC.e** and **LxLy USDC**. The way it works is by locking (Deposit function) either of the tokens in the converter contract, and then sending (Withdraw function) the equivalent amount of the other token to the user's wallet.
