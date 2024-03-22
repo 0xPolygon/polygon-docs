@@ -58,7 +58,6 @@ Let's briefly go over the specific actions and characteristics of each STB contr
 - Receives minting instructions from `L1Escrow` via the unified bridge upon token deposit, and prompts `L2Token` contract to mint assets to a given address on L2.
 - Burns the native asset on L2 and sends minting instructions to `L1Escrow` to release assets on L1.
 
-
 #### `L2Token`
 
 - Natively mints L2 tokens and sends them to a designated address.
