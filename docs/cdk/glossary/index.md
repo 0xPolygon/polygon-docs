@@ -1,7 +1,7 @@
 This glossary provides definitions for technical terminology and concepts that commonly occur throughout the CDK docs space.
 
 ### AggLayer v1 (AL1)
-The AggLayer is the interoperability layer at the heart of Polygon 2.0. All CDK chains connect to the AggLayer to enable features such as seamless and efficient cross-chain communication, unified liquidity, and more. AggLayer v1, or **AL1**, is the first version of many planned iterations that relies on ZK checks to ensure operational soundness, and a unified bridge infrastructure.
+The AggLayer is the interoperability layer at the heart of Polygon 2.0. All CDK chains connect to the AggLayer to enable features such as seamless and efficient cross-chain communication, unified liquidity, and more. AggLayer v1 (AL1), is the first version of many planned iterations that relies on ZK checks to ensure operational soundness, and a unified bridge infrastructure.
 Read more on the AggLayer [here](../../learn/agglayer.md).
 
 ### Chain operator
