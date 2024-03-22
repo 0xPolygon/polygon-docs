@@ -95,7 +95,7 @@ The diagram above illustrates the following flow:
 3. The STB `L1Escrow` locks the USDC and passes a message to the unified messenger containing the user’s address and amount of USDC being bridged.  
 4. The `Messenger` contract validates the message and then sends it to the STB `L2Escrow`.    
 5. The STB `L2Escrow` receives the message and mints USDC.e from the `L2Token` contract. 
-6. The **USDC.e** is sent to the user's address on L2. 
+6. The USDC.e is sent to the user's address on L2. 
 
 ### Native token conversion
 
