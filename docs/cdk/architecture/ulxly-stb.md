@@ -14,7 +14,7 @@ All of this cool infrastructure needs a unified channel for easy transmission of
 
 !!! tip "Lxly vs unified bridging TL;DR"
 
-    - **LxLy bridge:** A ZK bridge that allows the transferring of assets, or messages between a zkEVM system and the L1, typically Ethereum.
+    - **LxLy bridge:** A ZK bridge that supports asset and message transfers between a zkEVM system and the L1, typically Ethereum.
     - **Unified bridge:** A specific instance of an LxLy bridge that allows several chains to connect to it.  This instance is specific to the AggLayer v1.  
 
 The new unified model of the LxLy bridge introduced as a part of the AggLayer v1 infrastructure has one significant difference from the existing LxLy bridge: any asset bridged onto a CDK chain using the unified bridge is held by the the **Unified Escrow** (also referred to as the **Master Escrow**) contract instead of a dedicated bridge contract.
