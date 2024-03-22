@@ -88,7 +88,7 @@ With the STB contracts set up on L1 and L2 for a particular CDK chain, the bridg
 
 ![](../../img/cdk/stb-1.png)
 
-The above diagram illustrates the following flow:
+The diagram above illustrates the following flow:
 
 1. A user initiates a **USDC** deposit from L1 to L2.
 2. Instead of being deposited directly to the unified bridge, the **USDC** is deposited into the STB `L1Escrow` contract.  
