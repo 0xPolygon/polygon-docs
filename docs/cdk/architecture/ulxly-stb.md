@@ -2,7 +2,7 @@ The LxLy bridge is the native bridging infrastructure for all CDK chains. The wa
 
 This changes as the AggLayer v1 goes online, and introduces an upgrade to the existing LxLy architecture in the form of a **unified instance** of the LxLy bridge that multiple chains can connect to.
 
-## What's "unified" LxLy bridge?
+## What's "unified" bridge?
 
 Polygon AggLayer envisions a scalability solution that leverages shared and state and unified liquidity across multiple ZK-powered chains within the Polygon ecosystem, all powered by the CDK infrastructure.
 
@@ -10,14 +10,14 @@ Polygon AggLayer envisions a scalability solution that leverages shared and stat
 
     Want to learn more about what AggLayer is and what it looks to achieve? Check out [this doc in the Learn space](../../learn/agglayer.md).
 
-All of this cool infrastructure needs a unified channel for easy transmission of assets and messages between the multiple chains connected via the AggLayer. And this is where the **unified LxLy (uLxLy) bridge** comes into play. It allows all chains to take advantage of the AggLayer's unified liquidity, lower transaction costs, and more.
+All of this cool infrastructure needs a unified channel for easy transmission of assets and messages between the multiple chains connected via the AggLayer. And this is where the **unified bridge** comes into play. It allows all chains to take advantage of the AggLayer's unified liquidity, lower transaction costs, and more.
 
-!!! tip "Lxly vs uLxLy bridging TL;DR"
+!!! tip "Lxly vs unified bridging TL;DR"
 
     - **LxLy bridge:** A ZK bridge that allows the transferring of assets, or messages between a zkEVM system and the L1, typically Ethereum.
-    - **uLxLy bridge:** A specific instance of an LxLy bridge that allows several chains to connect to it.  This instance is specific to the AggLayer v1.  
+    - **Unified bridge:** A specific instance of an LxLy bridge that allows several chains to connect to it.  This instance is specific to the AggLayer v1.  
 
-The new unified model of the LxLy bridge introduced as a part of the AggLayer v1 infrastructure has one significant difference from the existing LxLy bridge: any asset bridged onto a CDK chain using the uLxLy bridge is held by the the **LxLy Unified Escrow** (also referred to as the **Master Escrow**) contract instead of a dedicated bridge contract.
+The new unified model of the LxLy bridge introduced as a part of the AggLayer v1 infrastructure has one significant difference from the existing LxLy bridge: any asset bridged onto a CDK chain using the unified bridge is held by the the **Unified Escrow** (also referred to as the **Master Escrow**) contract instead of a dedicated bridge contract.
 
 !!! info
 
@@ -25,7 +25,7 @@ The new unified model of the LxLy bridge introduced as a part of the AggLayer v1
 
 Due to the shared nature of the bridge, chain operators will not have Admin access to the funds locked in the Master Escrow contract, including the funds that belong to their own network. 
 
-The ability to manage bridge reserves is crucial to implement restaking for yield generation and other similar use cases. How does the uLxLy bridge address this?
+The ability to manage bridge reserves is crucial to implement restaking for yield generation and other similar use cases. How does the unified bridge address this?
 
 ## Introducing "Stake the Bridge"
 
@@ -33,13 +33,13 @@ The ability to manage bridge reserves is crucial to implement restaking for yiel
 
 ### Design and implementation
 
-On L1, CDK chains enable STB for an asset by deploying STB contracts on L1 to create alternative **`L1Escrow`** account that holds the asset, and allows the CDK chain operator to manage this token reserve.
+On L1, CDK chains enable STB for an asset by deploying STB contracts on L1 to create alternative **[`L1Escrow`](https://github.com/pyk/zkevm-stb/blob/main/src/L1Escrow.sol)** account that holds the asset, and allows the CDK chain operator to manage this token reserve.
 
 On L2 (the CDK chain), there are three components needed to make this work:
 
-- **`L2Token`**, which is a natively deployed ERC20 contract
-- **`L2Escrow`**, a contract that manages the L2Token's supply
-- **`L2TokenConverter`**, the contract that enables converting bridge wrapped tokens to natively minted tokens on L2
+- **[`L2Token`](https://github.com/pyk/zkevm-stb/blob/main/src/L2Token.sol)**, which is a natively deployed ERC20 contract
+- **[`L2Escrow`](https://github.com/pyk/zkevm-stb/blob/main/src/L2Escrow.sol)**, a contract that manages the L2Token's supply
+- **[`L2TokenConverter`](https://github.com/pyk/zkevm-stb/blob/main/src/L2TokenConverter.sol)**, the contract that enables converting bridge wrapped tokens to natively minted tokens on L2
 
 !!! info
 
@@ -55,7 +55,7 @@ Let's briefly go over the specific actions and characteristics of each STB contr
 
 #### `L2Escrow`
 
-- Receives minting instructions from `L1Escrow` via the uLxLy bridge upon token deposit, and prompts `L2Token` contract to mint assets to a given address on L2
+- Receives minting instructions from `L1Escrow` via the unified bridge upon token deposit, and prompts `L2Token` contract to mint assets to a given address on L2
 - Burns the native asset on L2 and sends minting instructions to `L1Escrow` to release assets on L1
 
 
@@ -91,9 +91,9 @@ With the STB contracts set up on L1 and L2 for a particular CDK chain, the bridg
 The above diagram illustrates the following flow:
 
 1. A user initiates a **USDC** deposit from L1 to L2.
-2. Instead of being deposited directly to the uLxLy bridge, the **USDC** is deposited into the STB `L1Escrow` contract.  
-3. The STB `L1Escrow` locks the **USDC** and passes a message to the uLxLy Messenger containing the user’s address and amount of **USDC** being bridged.  
-4. The LxLy Messenger validates the message and then sends it to the STB `L2Escrow`.    
+2. Instead of being deposited directly to the unified bridge, the **USDC** is deposited into the STB `L1Escrow` contract.  
+3. The STB `L1Escrow` locks the **USDC** and passes a message to the unified Messenger containing the user’s address and amount of **USDC** being bridged.  
+4. The Messenger contract validates the message and then sends it to the STB `L2Escrow`.    
 5. The STB L2Escrow receives the message and mints **USDC.e** from the `L2Token` contract. 
 6. The **USDC.e** is sent to the user's address on L2. 
 
