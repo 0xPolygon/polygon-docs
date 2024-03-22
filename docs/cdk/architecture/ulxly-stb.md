@@ -29,7 +29,7 @@ The ability to manage bridge reserves is crucial to implement restaking for yiel
 
 ## Introducing "Stake the Bridge"
 
-**Stake the Bridge**, or **STB**, is a feature that lets CDK chain operators maintain control over the assets that are deposited to their respective networks.
+Stake the Bridge, or **STB**, is a feature that lets CDK chain operators maintain control over the assets that are deposited to their respective networks.
 
 ### Design and implementation
 
@@ -39,7 +39,7 @@ On L2 (the CDK chain), there are three components needed to make this work:
 
 - [`L2Token`](https://github.com/pyk/zkevm-stb/blob/main/src/L2Token.sol), which is a natively deployed ERC20 contract.
 - [`L2Escrow`](https://github.com/pyk/zkevm-stb/blob/main/src/L2Escrow.sol), a contract that manages the L2Token's supply.
-- **[`L2TokenConverter`](https://github.com/pyk/zkevm-stb/blob/main/src/L2TokenConverter.sol), the contract that enables converting bridge-wrapped tokens to natively-minted tokens on L2.
+- [`L2TokenConverter`](https://github.com/pyk/zkevm-stb/blob/main/src/L2TokenConverter.sol), the contract that enables converting bridge-wrapped tokens to natively-minted tokens on L2.
 
 !!! info
 
@@ -89,8 +89,8 @@ With the STB contracts set up on L1 and L2 for a particular CDK chain, the bridg
 
 The diagram above illustrates the following flow:
 
-1. A user initiates a **USDC** deposit from L1 to L2.
-2. Instead of being deposited directly to the unified bridge, the **USDC** is deposited into the STB `L1Escrow` contract.  
+1. A user initiates a USDC deposit from L1 to L2.
+2. Instead of being deposited directly to the unified bridge, the USDC is deposited into the STB `L1Escrow` contract.  
 3. The STB `L1Escrow` locks the USDC and passes a message to the unified messenger containing the user’s address and amount of USDC being bridged.  
 4. The `Messenger` contract validates the message and then sends it to the STB `L2Escrow`.    
 5. The STB `L2Escrow` receives the message and mints USDC.e from the `L2Token` contract. 
@@ -103,7 +103,7 @@ With the introduction of STB, there are now two ways to deposit tokens to an L2 
 - The STB flow involves locking tokens in the L1Escrow contract, which is followed by the minting of USDC.e on L2.
 - On the other hand, if the tokens are deposited directly into the LxLy bridge contract, it results in the minting of LxLy USDC on L2.
 
-The `L2TokenConverter` facilitates conversion between **USDC.e** and **LxLy USDC**. The way it works is by locking (Deposit function) either of the tokens in the converter contract, and then sending (Withdraw function) the equivalent amount of the other token to the user's wallet.
+The `L2TokenConverter` facilitates conversion between USDC.e and LxLy USDC. The way it works is by locking (`Deposit` function) either of the tokens in the converter contract, and then sending (`Withdraw` function) the equivalent amount of the other token to the user's wallet.
 
 ## Using the STB contracts
 
