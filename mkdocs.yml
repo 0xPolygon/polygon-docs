@@ -84,10 +84,6 @@ nav:
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
         - Use a native token: cdk/how-to/use-native-token.md
-        - Use the AggLayer: 
-            - Configure the AggLayer: cdk/how-to/agglayer/configure.md
-            - AggLayer OpenRPC: cdk/how-to/agglayer/openrpc.md
-            - Local installation: cdk/how-to/agglayer/local-install.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
       - Architecture:
@@ -96,10 +92,8 @@ nav:
         - uLxLy bridge - STB: cdk/architecture/ulxly-stb.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
-      - Concepts:
-        - Rollup: cdk/concepts/rollup.md
-        - Validium: cdk/concepts/validium.md
-        - Data availability: cdk/concepts/dac.md
+      - Glossary:
+        - Glossary: cdk/glossary/index.md
       - Additional resources:
         - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
@@ -367,7 +361,6 @@ nav:
               - Thirdweb: tools/dApp-development/pos/thirdweb.md
           - Common tools:
               - Hardhat: tools/dApp-development/common-tools/hardhat.md
-              - Truffle: tools/dApp-development/common-tools/truffle.md
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
       - Chain indexer framework:
@@ -384,7 +377,9 @@ nav:
               - Data: tools/data/the-graph/data.md
               - Entities: tools/data/the-graph/entities.md
               - Queries: tools/data/the-graph/queries.md
+          - Moralis: tools/data/moralis.md
           - Covalent: tools/data/covalent.md
+          - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
       - Matic.js:

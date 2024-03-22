@@ -2,26 +2,26 @@ This guide provides an index of network details for the Polygon Mumbai Testnet a
 
 ## Network details
 
-### Mumbai
+### Amoy
 
-The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
+The Amoy testnet serves as a replica of the Polygon mainnet and is primarily used for testing. **Amoy network will soon replace Mumbai Testnet**. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
 
 | Properties       | Network details                                                                                    |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
-| Network name     | **Mumbai**                                                                                         |
-| Parent chain     | **[Goërli](https://goerli.net/)**                                                                  |
-| Chain ID         | `80001`                                                                                            |
+| Network name     | **Amoy**                                                                                           |
+| Parent chain     | **Sepolia**                                                                                        |
+| Chain ID         | `80002`                                                                                            |
 | Gas token        | MATIC                                                                                              |
-| Gas station      | [Mumbai gas station](https://gasstation-testnet.polygon.technology/v2)                             |
-| RPC endpoint     | [https://rpc-mumbai.polygon.technology](https://rpc-mumbai.polygon.technology)                     |
-| Node endpoint    | [wss://rpc-mumbai.matic.today](wss://rpc-mumbai.matic.today)                                       |
-| Heimdall API     | [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology) |
-| Block Explorer   | [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)                                 |
+| Gas station      | [AMOY gas station](https://gasstation-testnet.polygon.technology/amoy)                             |
+| RPC endpoint     | [https://rpc-amoy.polygon.technology/](https://rpc-amoy.polygon.technology/)                       |
+| Node endpoint    | [wss://rpc-amoy.polygon.technology/](wss://rpc-amoy.polygon.technology/)                           |
+| Heimdall API     | [https://heimdall-api-amoy.polygon.technology](https://heimdall-api-amoy.polygon.technology)       |
+| Block Explorer   | [https://www.oklink.com/amoy](https://www.oklink.com/amoy)                                         |
 
 !!!note
     Additional information
 
-    For more details, refer to this [**JSON data**](https://static.polygon.technology/network/testnet/mumbai/index.json).
+    For more details, refer to this [**JSON data**](https://static.polygon.technology/network/testnet/amoy/index.json).
 
 
 ### Mainnet
@@ -45,6 +45,27 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 
     For more details, refer to this [**JSON data**](https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json).
 
+
+### Mumbai ( Deprecating Soon )
+
+The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
+
+| Properties       | Network details                                                                                    |
+| ---------------- | -------------------------------------------------------------------------------------------------- |
+| Network name     | **Mumbai**                                                                                         |
+| Parent chain     | **[Goërli](https://goerli.net/)**                                                                  |
+| Chain ID         | `80001`                                                                                            |
+| Gas token        | MATIC                                                                                              |
+| Gas station      | [Mumbai gas station](https://gasstation-testnet.polygon.technology/v2)                             |
+| RPC endpoint     | [https://rpc-mumbai.polygon.technology](https://rpc-mumbai.polygon.technology)                     |
+| Node endpoint    | [wss://rpc-mumbai.matic.today](wss://rpc-mumbai.matic.today)                                       |
+| Heimdall API     | [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology) |
+| Block Explorer   | [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)                                 |
+
+!!!note
+    Additional information
+
+    For more details, refer to this [**JSON data**](https://static.polygon.technology/network/testnet/mumbai/index.json).
 
 </TabItem>
 </Tabs>
