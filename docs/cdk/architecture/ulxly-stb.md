@@ -4,7 +4,7 @@ This changes as the AggLayer v1 goes online, and introduces an upgrade to the ex
 
 ## What's "unified" bridge?
 
-Polygon AggLayer envisions a scalability solution that leverages shared and state and unified liquidity across multiple ZK-powered chains within the Polygon ecosystem, all powered by the CDK infrastructure.
+Polygon AggLayer envisions a scalability solution that leverages shared state and unified liquidity across multiple ZK-powered chains within the Polygon ecosystem, all powered by the CDK infrastructure.
 
 !!! tip "What's AggLayer?"
 
