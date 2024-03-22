@@ -1,6 +1,6 @@
 The LxLy bridge is the native bridging infrastructure for all CDK chains. The way it works is each individual CDK chain deploys an instance of the LxLy bridge that connects to an L1 (Ethereum by default) by deploying contracts that carry out deposit and withdrawal of assets, along with escrow management. These contracts are managed by node operators corresponding to the respective CDK chains.
 
-This changes as the AggLayer v1 goes online, and introduces an upgrade to the existing LxLy architecture in the form of a **unified instance** of the LxLy bridge that multiple chains can connect to.
+This changes as the AggLayer v1 goes online, and introduces an upgrade to the existing LxLy architecture in the form of a _unified instance_ of the LxLy bridge that multiple chains can connect to.
 
 ## What's "unified" bridge?
 
