@@ -1,3 +1,8 @@
+!!! warning
+    - Due to Polygon's fast-moving technology, this guide is currently out of date and you will likely experience errors.
+    - The [CDK roll up deployment tutorial](../../../cdk/get-started/deploy-rollup/intro.md) may resolve some of these issues.
+    - We are working on updating this guide as a priority.
+
 Welcome to your step-by-step guide to implementing a full Polygon zkEVM network on the Goërli testnet as the L1 network.
 
 Users with good internet connection can schedule a 2-hour window for completing the entire process in one go.
