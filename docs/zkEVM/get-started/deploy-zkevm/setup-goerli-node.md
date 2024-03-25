@@ -1,3 +1,8 @@
+!!! warning
+    - Due to Polygon's fast-moving technology, this guide is currently out of date and you will likely experience errors.
+    - The [CDK roll up deployment tutorial](../../../cdk/get-started/deploy-rollup/intro.md) may resolve some of these issues.
+    - We are working on updating this guide as a priority.
+
 This is a step-by-step guide to setting up a full node on the Goërli Testnet to act as the Layer 1 (L1).
 
 Follow the steps below to get started.

@@ -1,3 +1,7 @@
+!!! warning
+    - Due to Polygon's fast-moving technology, this guide is currently out of date and you will likely experience errors.
+    - The [CDK roll up deployment tutorial](../../../cdk/get-started/deploy-rollup/intro.md) may resolve some of these issues.
+    - We are working on updating this guide as a priority.
 
 Continue with the **sixth step** of this deployment-guide where you activate forced transactions, as well as bridging and claiming assets.
 
