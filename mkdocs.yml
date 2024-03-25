@@ -493,6 +493,7 @@ nav:
           - Portis:  tools/wallets/portis.md    
           - SlashAuth:  tools/wallets/slashauth.md
           - Torus:  tools/wallets/torus.md  
+          - WalletKit:  tools/wallets/walletkit.md
           - Wallet link: tools/wallets/wallet-link.md
           - WalletConnect:  tools/wallets/walletconnect.md
           - Web3Modal: tools/wallets/using-web3modal.md
