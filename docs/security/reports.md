@@ -17,8 +17,8 @@ Following are the latest available reports:
 ## POS
  
  - Bor/Heimdal Milestones Audit by Least Authority: https://github.com/maticnetwork/bor/blob/develop/audit/audit-feature-milestones.pdf
- - Pos-Portal Audit by ChainSecurity: 
- - Staking Audit by ChainSecurity: 
+ - POS Portal Audits: https://github.com/maticnetwork/pos-portal/tree/master/audits
+ - POS Contracts: https://github.com/0xPolygon/pos-contracts/tree/main/audit 
 
 ## zkEVM
  
