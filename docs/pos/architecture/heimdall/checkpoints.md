@@ -83,44 +83,41 @@ rootHash := tree.Root().Hash
 `AccountRootHash` is the hash of the validator account-related information that needs to pass to the Ethereum chain at each checkpoint.
 
 ```jsx
-eachAccountHash := keccak256([validator id, withdraw fee, slash amount])
+eachAccountHash := keccak256([validator id, withdraw fee])
 ```
 
 Pseudocode for the account root hash for `1` to `n` Bor blocks:
 
 ```go
-B(1) := keccak256([validator id, withdraw fee, slash amount])
-B(2) := keccak256([validator id, withdraw fee, slash amount])
+B(1) := keccak256([validator id, withdraw fee])
+B(2) := keccak256([validator id, withdraw fee])
 .
 .
 .
-B(n) := keccak256([validator id, withdraw fee, slash amount])
+B(n) := keccak256([validator id, withdraw fee])
 
 // account root hash is Merkle root of all block hash
 checkpoint's account root hash = Merkel[B(1), B(2), ....., B(n)]
 ```
 
-Golang code for the account hash can be found here: [https://github.com/maticnetwork/heimdall/blob/develop/types/dividend-account.go#L91-L101](https://github.com/maticnetwork/heimdall/blob/develop/types/dividend-account.go#L91-L101)
+Golang code for the account hash can be found here: [https://github.com/maticnetwork/heimdall/blob/develop/types/dividend-account.go](https://github.com/maticnetwork/heimdall/blob/develop/types/dividend-account.go)
 
 ```go
-// DividendAccount contains Fee, Slashed amount
+// DividendAccount contains burned Fee amount
 type DividendAccount struct {
- ID            DividendAccountID `json:"ID"`
- FeeAmount     string            `json:"feeAmount"`     // string representation of big.Int
- SlashedAmount string            `json:"slashedAmount"` // string representation of big.Int
+	User      HeimdallAddress `json:"user"`
+	FeeAmount string          `json:"feeAmount"` // string representation of big.Int
 }
 
-// calculate hash for particular account
+// CalculateHash hashes the values of a DividendAccount
 func (da DividendAccount) CalculateHash() ([]byte, error) {
- fee, _ := big.NewInt(0).SetString(da.FeeAmount, 10)
- slashAmount, _ := big.NewInt(0).SetString(da.SlashedAmount, 10)
- divAccountHash := crypto.Keccak256(appendBytes32(
-  new(big.Int).SetUint64(uint64(da.ID)).Bytes(),
-  fee.Bytes(),
-  slashAmount.Bytes(),
- ))
+	fee, _ := big.NewInt(0).SetString(da.FeeAmount, 10)
+	divAccountHash := crypto.Keccak256(appendBytes32(
+		da.User.Bytes(),
+		fee.Bytes(),
+	))
 
- return divAccountHash, nil
+	return divAccountHash, nil
 }
 ```
 
