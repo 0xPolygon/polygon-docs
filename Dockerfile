@@ -3,6 +3,7 @@ FROM python:3.9-alpine
 RUN apk update
 RUN apk add rsync
 RUN apk add git
+RUN apk add bash
 RUN apk add nodejs npm
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt --no-cache-dir
