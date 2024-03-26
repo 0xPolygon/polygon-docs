@@ -524,7 +524,7 @@ nav:
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
       - Security:
           - Overview: security/overview.md
-          - Security Areas:
+          - Security areas:
             - Governance & management: security/governance.md
             - Risk management: security/risk.md
             - Human resources: security/hr.md
