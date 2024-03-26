@@ -532,7 +532,6 @@ nav:
             - Software development: security/sdlc.md
             - Vulnerability management: security/vulnerability.md
             - Security operations: security/operations.md
-          - Best practices: security/bestpractices.md
           - Security reports: security/reports.md
           - Bug bounty programs: security/bugbounty.md
           - Contact us: security/contact.md
