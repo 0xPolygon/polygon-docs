@@ -91,7 +91,6 @@ nav:
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
-        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
@@ -495,6 +494,7 @@ nav:
           - Portis:  tools/wallets/portis.md    
           - SlashAuth:  tools/wallets/slashauth.md
           - Torus:  tools/wallets/torus.md  
+          - WalletKit:  tools/wallets/walletkit.md
           - Wallet link: tools/wallets/wallet-link.md
           - WalletConnect:  tools/wallets/walletconnect.md
           - Web3Modal: tools/wallets/using-web3modal.md
