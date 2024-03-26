@@ -1,5 +1,11 @@
 Polygon Labs periodically assesses the security its products and applications through extensive internal testing and external engagements, such as code reviews, security audits and penetration testing. All products and applications have been assessed multiple times to date. Security assessments continue as the ecosystem matures.
 
+Following are the latest available reports:
+
+## ISO27001
+
+ - ISO27001 certificate: 
+
 ## Portal
 
  - Penetration Testing Assessment by Cobalt.io in Jan 2023
@@ -10,7 +16,9 @@ Polygon Labs periodically assesses the security its products and applications th
 
 ## POS
  
- - Security Audit by ChainSecurity
+ - Bor/Heimdal Milestones Audit by Least Authority: https://github.com/maticnetwork/bor/blob/develop/audit/audit-feature-milestones.pdf
+ - Pos-Portal Audit by ChainSecurity: 
+ - Staking Audit by ChainSecurity: 
 
 ## zkEVM
  
