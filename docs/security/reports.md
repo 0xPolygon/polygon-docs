@@ -4,7 +4,7 @@ Following are the latest available reports:
 
 ## ISO27001
 
- - ISO27001 certificate: 
+ - ISO27001 certificate: https://www.schellman.com/certificate-directory (search for Polygon Labs)
 
 ## Portal
 
@@ -29,7 +29,6 @@ Most of components have been reviewed as part of zkEVM's audits
 
  - **Bridge Service:** Penetration Testing Assessment by Cobalt.io in March 2023
  - **Bridge UI:** Penetration Testing Assessment by Cobalt.io in March 2023
-
 
 ## Zero
 
