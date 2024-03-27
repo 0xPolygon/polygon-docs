@@ -32,7 +32,7 @@ type CheckpointBlockHeader struct {
 
 #### Root hash calculation
 
-![Root Hash Image](../../../img/pos/checkpoint.svg)
+![Root Hash Image](../../../img/pos/checkpoint.png)
 
 The `RootHash` is calculated as a Merkle hash of Bor block hashes from `StartBlock` to `EndBlock`. The process involves hashing each block's number, time, transaction hash, and receipt hash, then creating a Merkle root of these hashes.
 
