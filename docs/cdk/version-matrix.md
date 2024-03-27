@@ -65,7 +65,7 @@ The table below shows the version compatibility for CDK releases and related com
 
 ### Migrating
 
-- Anyone on earlier versions, we recommend going straight to fork ID 8.
+- Anyone on earlier versions, we recommend going straight to fork ID 9.
 
 ## zkEVM
 
@@ -82,15 +82,21 @@ The table below shows the version compatibility for Polygon zkEVM releases.
 </thead>
 <tbody>
   <tr>
-    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.10">v0.6.2 </a></td>
-    <td>v0.4.2</td>
-    <td>v5.0.7</td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.4">v0.6.4 </a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.2">v0.4.2</a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v6.0.0">v6.0.0</a></td>
+    <td>Mainnet &amp; Cardona: 4-9 <br>Testnet (Goerli): 1-6</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.2">v0.6.2 </a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.2">v0.4.2</a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v5.0.7">v5.0.7</a></td>
     <td>Mainnet &amp; Cardona: 4-8. <br>Testnet (Goerli): 1-6</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.10">v0.5.10</a></td>
-    <td>v0.4.0</td>
-    <td>v4.0.4</td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.13">v0.5.13</a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.2">v0.4.2</a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v4.0.19">v4.0.19</a></td>
     <td>Mainnet &amp; Cardona: 4-7. <br>Testnet (Goerli): 1-6</td>
   </tr>
   <tr>
