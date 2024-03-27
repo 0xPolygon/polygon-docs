@@ -11,7 +11,9 @@ The [CDK Stavanger testnet](https://polygon.technology/cdk-stavanger-testnet) is
 - Bridge assets from Sepolia to Stavanger using the bridge.
 - Confirm your transactions with the block explorer.
 
-!!! tips "Setting up your wallet" - Click **Connect wallet** on the [Stavanger explorer](https://sn2-stavanger-blockscout.eu-north-2.gateway.fm/) to auto set up your wallet. - Check out the latest on [setting up a custom network with MetaMask](https://support.metamask.io/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC).
+!!! tips "Setting up your wallet"
+    - Click **Connect wallet** on the [Stavanger explorer](https://sn2-stavanger-blockscout.eu-north-2.gateway.fm/) to auto set up your wallet.
+    - Check out the latest on [setting up a custom network with MetaMask](https://support.metamask.io/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC).
 
 ### Stavanger network details
 
