@@ -28,17 +28,22 @@ The [CDK Stavanger testnet](https://polygon.technology/cdk-stavanger-testnet) is
 
 [Blackberry](https://raas.gelato.network/rollups/details/public/polygon-blackberry) is a ZK-powered Layer 2 testnet using Polygon CDK, that leverages ZK proofs for transaction validity while keeping transaction data off-chain with the use of Data Availability Committees (DACs) allowing for cost-efficient transaction and high-throughput.
 
-Blackberry is not just a testnet; it's a comprehensive ecosystem designed to lower development barriers and foster innovation. By offering Gelato Middleware and a broad range of fully-integrated partner services for free, Blackberry opens up a world of possibilities for developers, students, and innovators worldwide. Here’s a snapshot of what you can expect:
+## Expectations from Blackberry
 
-1.  Gelato Middleware Services: Dive into a suite of tools designed to enhance and automate your applications, including smart contract automation (Functions), gasless transactions (Relay), and verifiable on-chain randomness (VRF).
-2.  Fully-Integrated Partner Services: Blackberry seamlessly incorporates services from leading web3 infrastructure providers to offer a rich development environment. For the most up-to-date list of our partner integrations and to discover the breadth of tools available, please visit [here](https://raas.gelato.network/public-testnets).
+1. **Gelato Middleware Services:** Engage with an array of tools aimed at refining and streamlining your applications. This includes:
+
+   - **Smart contract automation (Functions)**
+   - **Gasless transactions (Relay)**
+   - **Verifiable on-chain randomness (VRF)**
+
+2. **Fully-Integrated Partner Services:** Blackberry incorporates a comprehensive suite of services from premier web3 infrastructure providers, enriching the development landscape. Visit [Gelato's partner integrations page](https://raas.gelato.network/public-testnets) for the latest list and to explore the available tools.
 
 ### Polygon Blackberry network details
 
 - To interact with the Blackberry testnet, add the RPC network details to your wallet by navigating to [this link](https://raas.gelato.network/rollups/details/public/polygon-blackberry) and clicking on "Add to wallet".
 - Obtain sepolia ETH from the public faucets available.
 - Bridge assets from the Ethereum Sepolia network to Blackberry using the bridge service.
-- Head over the Gelato Docs to learn more about the Blackberry testnet bridging and facuet servies. Check out more [here](https://docs.gelato.network/rollup-public-testnet/faucets-and-bridging).
+- **Learn More:** For detailed information on bridging and faucet services on Blackberry, head to [Gelato Docs](https://docs.gelato.network/rollup-public-testnet/faucets-and-bridging).
 
 | Name           | Value                                                     | Usage                                                  |
 | -------------- | --------------------------------------------------------- | ------------------------------------------------------ |
