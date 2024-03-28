@@ -84,7 +84,7 @@ nav:
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
         - Migrate:
-          - Fork 7 to 8: cdk/how-to/migrate/7-8.md
+          - Fork migration: cdk/how-to/migrate/fork.md
         - Use a native token: cdk/how-to/use-native-token.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
