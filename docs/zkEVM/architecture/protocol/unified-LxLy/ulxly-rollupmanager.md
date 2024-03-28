@@ -1,4 +1,4 @@
-Unified bridge is a more robust version of the LxLy bridge as it is designed for adding chains to the Polygon ecosystem, and thus allow interoperability of many chains, both L2 and L1 networks.
+Unified bridge is a specific instance of the LxLy bridge that allows several chains to connect to it. It is designed for adding chains to the Polygon ecosystem, and thus allow interoperability of many chains, both L2 and L1 networks.
 
 It aims at streamlining the creation and management of different L2 layers within the Polygon network. This includes rollups and validiums among the Polygon network, ensuring possible exchanges of messages among them.
 
