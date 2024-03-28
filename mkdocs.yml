@@ -154,7 +154,13 @@ nav:
             - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
             - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
             - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
-          - LXLY bridge: zkEVM/architecture/protocol/lxly-bridge.md
+          - LxLy bridge: zkEVM/architecture/protocol/lxly-bridge.md
+          - Unified bridge:
+            - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
+            - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
+            - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
+            - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
+            - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - zkNode: zkEVM/architecture/zknode/index.md
         - Data streamer:
           - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
