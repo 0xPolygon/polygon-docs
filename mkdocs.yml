@@ -89,7 +89,6 @@ nav:
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
-        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
@@ -218,6 +217,8 @@ nav:
           - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
+      - API: 
+        - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -382,6 +383,7 @@ nav:
           - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
+          - SubQuery: tools/data/subquery.md
       - Matic.js:
           - Installation:  tools/matic-js/installation.md
           - Get started:  tools/matic-js/get-started.md
@@ -490,6 +492,7 @@ nav:
           - Portis:  tools/wallets/portis.md    
           - SlashAuth:  tools/wallets/slashauth.md
           - Torus:  tools/wallets/torus.md  
+          - WalletKit:  tools/wallets/walletkit.md
           - Wallet link: tools/wallets/wallet-link.md
           - WalletConnect:  tools/wallets/walletconnect.md
           - Web3Modal: tools/wallets/using-web3modal.md
