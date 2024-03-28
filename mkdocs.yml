@@ -155,7 +155,7 @@ nav:
             - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
             - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
           - LxLy bridge: zkEVM/architecture/protocol/lxly-bridge.md
-          - Unified LxLy bridge:
+          - Unified bridge:
             - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
             - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
             - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
