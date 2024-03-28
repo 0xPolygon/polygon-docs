@@ -17,7 +17,7 @@ All of this cool infrastructure needs a unified channel for easy transmission of
     - **LxLy bridge:** A ZK bridge that supports asset and message transfers between a zkEVM system and the L1, typically Ethereum.
     - **Unified bridge:** A specific instance of an LxLy bridge that allows several chains to connect to it. This instance is specific to the AggLayer v1.  
 
-The new unified model of the LxLy bridge introduced as a part of the AggLayer v1 infrastructure has one significant difference from the existing LxLy bridge: any asset bridged onto a CDK chain using the unified bridge is held by the the **Unified Escrow** (also referred to as the **Master Escrow**) contract instead of a dedicated bridge contract.
+The new unified model of the LxLy bridge introduced as a part of the AggLayer v1 infrastructure has one significant difference from the existing LxLy bridge: any asset bridged onto a CDK chain using the unified bridge is held by the **Unified Escrow** (also referred to as the **Master Escrow**) contract instead of a dedicated bridge contract.
 
 Due to the shared nature of the bridge, chain operators will not have admin access to the funds locked in the master escrow contract, including the funds that belong to their own network. 
 
@@ -62,7 +62,7 @@ Let's briefly go over the specific actions and characteristics of each STB contr
 #### `L2TokenConverter`
 
 - Supports 1:1 conversion between the STB minted native tokens, and the bridged tokens minted by depositing tokens to LxLy bridge directly on L1.
-- Doesn't have a default cap on the token volume that can be converted, can be added by chain operators as necessary.
+- Doesn't have a default cap on the token volume that can be converted, but it can be added by chain operators as necessary.
 - An asset can have multiple token converters that can have different properties.
 
 ## Roles and responsibilities
