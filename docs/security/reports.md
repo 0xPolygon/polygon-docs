@@ -22,6 +22,7 @@ Following are the latest available reports:
 
 ## zkEVM
  
+ - zkEVM-Rom Security Audit by Verichains in Jan 2023: TBA
  - Security Audits by Hexens & Spearbit: https://github.com/0xPolygonHermez/zkevm-rom/tree/main/audits
 
 ## CDK
