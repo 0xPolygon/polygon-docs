@@ -2,9 +2,9 @@ The LxLy bridge is the native bridging infrastructure for all CDK chains. The wa
 
 This changes as the AggLayer v1 goes online, and introduces an upgrade to the existing LxLy architecture in the form of a _unified instance_ of the LxLy bridge that multiple chains can connect to.
 
-## What's "unified" bridge?
+## What's the "unified" bridge?
 
-Polygon AggLayer envisions a scalability solution that leverages shared state and unified liquidity across multiple ZK-powered chains within the Polygon ecosystem, all powered by the CDK infrastructure.
+AggLayer envisions a scalability solution that leverages shared state and unified liquidity across multiple ZK-powered chains within the Polygon ecosystem, all powered by the CDK infrastructure.
 
 !!! tip "What's AggLayer?"
 
@@ -19,13 +19,9 @@ All of this cool infrastructure needs a unified channel for easy transmission of
 
 The new unified model of the LxLy bridge introduced as a part of the AggLayer v1 infrastructure has one significant difference from the existing LxLy bridge: any asset bridged onto a CDK chain using the unified bridge is held by the the **Unified Escrow** (also referred to as the **Master Escrow**) contract instead of a dedicated bridge contract.
 
-!!! info
-
-    The master escrow contract is managed and governed by the Polygon zkEVM team.
-
 Due to the shared nature of the bridge, chain operators will not have admin access to the funds locked in the master escrow contract, including the funds that belong to their own network. 
 
-The ability to manage bridge reserves is crucial to implement restaking for yield generation and other similar use cases. How does the unified bridge address this?
+The ability to manage bridge reserves is crucial to implement staking/restaking and other similar use cases, and is managed by the respective chain operators. How does the unified bridge address this?
 
 ## Introducing "Stake the Bridge"
 
@@ -49,7 +45,7 @@ Let's briefly go over the specific actions and characteristics of each STB contr
 
 #### `L1Escrow`
 
-- Defines investment strategies.
+- Defines staking strategies to contribute to network security, or achieve other goals.
 - Sending token issuance messages to `L2Escrow`.
 - Fulfilling redemption messages from `L2Escrow`.
 
@@ -74,7 +70,7 @@ Let's briefly go over the specific actions and characteristics of each STB contr
 There are three roles, each of which performs specific actions to manage the STB system:
 
 - Admin: Can upgrade and pause the system.
-- Escrow manager: Can withdraw token backing from the respective escrow contract to invest using the `managerWithdraw()` function.
+- Escrow manager: Can withdraw token backing from the respective escrow contract to stake using the `managerWithdraw()` function and contribute to network security, or achieve other goals.
 - Risk manager: Can invoke `setIssuanceCap()` multiple times to increase or reduce the issuance cap.
 
 ## STB transaction flow vs. existing LxLy flow
@@ -111,12 +107,12 @@ The STB contracts grant chain operators control over the token backing in the es
 
 !!! warning
 
-    Polygon Labs **does not** manage or facilitate the investing of the funds locked in the escrow contracts. The management of funds to implement any investment strategies and risk profiles is completely at the discretion of the chain operators and owners.
+    Polygon Labs **does not** manage or facilitate the staking of the assets locked in the escrow contracts. Any decision to implement any staking strategies and contribute to network security, or otherwise, is completely at the discretion of the chain operators.
 
 Bridging tokens to L2 CDK chains using the STB contracts is ideal for the following use cases:
 
-- Coins that need to implement staking and yield generation mechanisms.
-- Coins that need to implement custom L2 functionality.
-- Coins that possess native issuance capabilities.
+- Tokens that need to implement staking/restaking or other mechanisms, or strategies.
+- Tokens that need to implement custom L2 functionality.
+- Tokens that possess native issuance capabilities.
 
 Want to start testing with STB? The contracts are still being audited, but are ready to use on testnets, and can be found here: https://github.com/pyk/zkevm-stb. 
