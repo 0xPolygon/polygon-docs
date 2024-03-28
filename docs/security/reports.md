@@ -1,6 +1,6 @@
-Polygon Labs periodically assesses the security its products and applications through extensive internal testing and external engagements, such as code reviews, security audits and penetration testing. All products and applications have been assessed multiple times to date. Security assessments continue as the ecosystem matures.
+Polygon Labs periodically assesses the security its products and applications through extensive internal testing and external (public & private) engagements, such as code reviews, security audits and penetration testing. All products and applications have been assessed multiple times to date. Security assessments continue as the ecosystem matures.
 
-Following are the latest available reports:
+Following information relates to the latest available (and public) external assessments:
 
 ## ISO27001
 
