@@ -11,7 +11,7 @@ This quick start guide shows you how to set up a CDK validium on your local mach
 - Explorers L1, L2
 - JSON RPC explorer
 - L2 gas pricer
-- DAC: data availability service, dac setup committee
+- DAC: data availability service
 - zkEVM bridge service and UI
 
 !!! note
@@ -117,7 +117,6 @@ cdk-validium-sequencer           /bin/sh -c /app/cdk-validi ...   Up            
                                                                                  0.0.0.0:9092->9091/tcp,:::9092->9091/tcp                     
 cdk-validium-state-db            docker-entrypoint.sh postg ...   Up             0.0.0.0:5432->5432/tcp,:::5432->5432/tcp                     
 cdk-validium-sync                /bin/sh -c /app/cdk-validi ...   Up             8123/tcp                                                     
-dac-setup-committee              docker-entrypoint.sh npm r ...   Exit 0                                                                      
 zkevm-bridge-db                  docker-entrypoint.sh postg ...   Up             0.0.0.0:5438->5432/tcp,:::5438->5432/tcp                     
 zkevm-bridge-service             /bin/sh -c /app/zkevm-brid ...   Up             0.0.0.0:8080->8080/tcp,:::8080->8080/tcp,                    
                                                                                  0.0.0.0:9090->9090/tcp,:::9090->9090/tcp                     
