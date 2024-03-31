@@ -51,22 +51,16 @@ cp .env.example .env
 
 ## 2. Launch validium locally
 
-2.1 Pull the required Docker images from Docker Hub:
-
-```bash
-sudo docker-compose pull
-```
-
-2.2 After pulling the images, start your local CDK validium:
+2.1 Start your local CDK validium:
 
 ```bash
 sudo make run
 ```
 
-2.3 To ensure all services are running properly, check the status of each container:
+2.2 To ensure all services are running properly, check the status of each container:
 
 ```bash
-docker-compose ps 
+docker compose ps
 ```
 
 You should see the following output:
@@ -77,14 +71,14 @@ You should see the following output:
 ```shell
              Name                           Command                  State                                   Ports                            
 ----------------------------------------------------------------------------------------------------------------------------------------------
-cdk-validium-aggregator          /bin/sh -c /app/cdk-validi ...   Up             0.0.0.0:50081->50081/tcp,:::50081->50081/tcp, 8123/tcp,      
+zkevm-aggregator          /bin/sh -c /app/cdk-validi ...   Up             0.0.0.0:50081->50081/tcp,:::50081->50081/tcp, 8123/tcp,      
                                                                                  0.0.0.0:9093->9091/tcp,:::9093->9091/tcp                     
-cdk-validium-approve             /bin/sh -c /app/cdk-validi ...   Exit 0                                                                      
-cdk-validium-data-availability   /bin/sh -c /app/cdk-data-a ...   Up             0.0.0.0:8444->8444/tcp,:::8444->8444/tcp                     
-cdk-validium-data-node-db        docker-entrypoint.sh postg ...   Up (healthy)   0.0.0.0:5444->5432/tcp,:::5444->5432/tcp                     
-cdk-validium-eth-tx-manager      /bin/sh -c /app/cdk-validi ...   Up             8123/tcp, 0.0.0.0:9094->9091/tcp,:::9094->9091/tcp           
-cdk-validium-event-db            docker-entrypoint.sh postg ...   Up             0.0.0.0:5435->5432/tcp,:::5435->5432/tcp                     
-cdk-validium-explorer-json-rpc   /bin/sh -c /app/cdk-validi ...   Up             8123/tcp, 0.0.0.0:8124->8124/tcp,:::8124->8124/tcp,          
+zkevm-approve             /bin/sh -c /app/cdk-validi ...   Exit 0                                                                      
+zkevm-data-availability   /bin/sh -c /app/cdk-data-a ...   Up             0.0.0.0:8444->8444/tcp,:::8444->8444/tcp                     
+zkevm-data-node-db        docker-entrypoint.sh postg ...   Up (healthy)   0.0.0.0:5444->5432/tcp,:::5444->5432/tcp                     
+zkevm-eth-tx-manager      /bin/sh -c /app/cdk-validi ...   Up             8123/tcp, 0.0.0.0:9094->9091/tcp,:::9094->9091/tcp           
+zkevm-event-db            docker-entrypoint.sh postg ...   Up             0.0.0.0:5435->5432/tcp,:::5435->5432/tcp                     
+zkevm-explorer-json-rpc   /bin/sh -c /app/cdk-validi ...   Up             8123/tcp, 0.0.0.0:8124->8124/tcp,:::8124->8124/tcp,          
                                                                                  0.0.0.0:8134->8134/tcp,:::8134->8134/tcp                     
 explorer-sig-provider            ./sig-provider-serv ...          Up             0.0.0.0:8151->8050/tcp        
 visualizer-proxy                 /docker-entrypoint ...           Up             80/tcp, 0.0.0.0:8083->8081/tcp        
@@ -101,22 +95,22 @@ explorer-stats-db-l2             docker-entrypoint.s ...          Up            
 explorer-frontend-l2             sh -c 'bin/blocksco ...          Up             0.0.0.0:3001->3000/tcp        
 explorer-backend-l2              sh -c 'bin/blocksco ...          Up             0.0.0.0:4001->4000/tcp                    
 explorer-backend-l2-db           docker-entrypoint.sh postg ...   Up             0.0.0.0:5437->5432/tcp                     
-cdk-validium-json-rpc            /bin/sh -c /app/cdk-validi ...   Up             0.0.0.0:8123->8123/tcp,:::8123->8123/tcp,                    
+zkevm-json-rpc            /bin/sh -c /app/cdk-validi ...   Up             0.0.0.0:8123->8123/tcp,:::8123->8123/tcp,                    
                                                                                  0.0.0.0:8133->8133/tcp,:::8133->8133/tcp,                    
                                                                                  0.0.0.0:9091->9091/tcp,:::9091->9091/tcp                     
-cdk-validium-l2gaspricer         /bin/sh -c /app/cdk-validi ...   Up             8123/tcp                                                     
-cdk-validium-mock-l1-network     geth --http --http.api adm ...   Up             30303/tcp, 30303/udp,                                        
+zkevm-l2gaspricer         /bin/sh -c /app/cdk-validi ...   Up             8123/tcp                                                     
+zkevm-mock-l1-network     geth --http --http.api adm ...   Up             30303/tcp, 30303/udp,                                        
                                                                                  0.0.0.0:8545->8545/tcp,:::8545->8545/tcp,                    
                                                                                  0.0.0.0:8546->8546/tcp,:::8546->8546/tcp                     
-cdk-validium-pool-db             docker-entrypoint.sh postg ...   Up             0.0.0.0:5433->5432/tcp,:::5433->5432/tcp                     
-cdk-validium-prover              zkProver -c /usr/src/app/c ...   Up             0.0.0.0:50052->50052/tcp,:::50052->50052/tcp,                
+zkevm-pool-db             docker-entrypoint.sh postg ...   Up             0.0.0.0:5433->5432/tcp,:::5433->5432/tcp                     
+zkevm-prover              zkProver -c /usr/src/app/c ...   Up             0.0.0.0:50052->50052/tcp,:::50052->50052/tcp,                
                                                                                  0.0.0.0:50061->50061/tcp,:::50061->50061/tcp,                
                                                                                  0.0.0.0:50071->50071/tcp,:::50071->50071/tcp                 
-cdk-validium-sequence-sender     /bin/sh -c /app/cdk-validi ...   Up             8123/tcp                                                     
-cdk-validium-sequencer           /bin/sh -c /app/cdk-validi ...   Up             0.0.0.0:6060->6060/tcp,:::6060->6060/tcp, 8123/tcp,          
+zkevm-sequence-sender     /bin/sh -c /app/cdk-validi ...   Up             8123/tcp                                                     
+zkevm-sequencer           /bin/sh -c /app/cdk-validi ...   Up             0.0.0.0:6060->6060/tcp,:::6060->6060/tcp, 8123/tcp,          
                                                                                  0.0.0.0:9092->9091/tcp,:::9092->9091/tcp                     
-cdk-validium-state-db            docker-entrypoint.sh postg ...   Up             0.0.0.0:5432->5432/tcp,:::5432->5432/tcp                     
-cdk-validium-sync                /bin/sh -c /app/cdk-validi ...   Up             8123/tcp                                                     
+zkevm-state-db            docker-entrypoint.sh postg ...   Up             0.0.0.0:5432->5432/tcp,:::5432->5432/tcp                     
+zkevm-sync                /bin/sh -c /app/cdk-validi ...   Up             8123/tcp                                                     
 zkevm-bridge-db                  docker-entrypoint.sh postg ...   Up             0.0.0.0:5438->5432/tcp,:::5438->5432/tcp                     
 zkevm-bridge-service             /bin/sh -c /app/zkevm-brid ...   Up             0.0.0.0:8080->8080/tcp,:::8080->8080/tcp,                    
                                                                                  0.0.0.0:9090->9090/tcp,:::9090->9090/tcp                     
@@ -125,16 +119,16 @@ zkevm-bridge-ui                  /bin/sh /app/scripts/deploy.sh   Up            
 
 </details>
 
-2.3.1 If a service isn't running (i.e. it is in `Exit 1` state), investigate further using the logs:
+2.2.1 If a service isn't running (i.e. it is in `Exit 1` state), investigate further using the logs:
 
 ```bash
-sudo docker-compose logs <container_name>
+sudo docker compose logs <container_name>
 ```
 
 !!! info
     Find the `<container_name>` in the log output.
 
-2.4 Useful commands
+2.3 Useful commands
 
 To stop CDK validium, use:
 
@@ -145,7 +139,20 @@ sudo make stop
 To restart all services:
 
 ```bash
-sudo make restart
+sudo make run-resume
+```
+
+To check all running or exited services, use:
+
+```bash
+sudo make ps
+sudo make ps-exited
+```
+
+In this guide, the L2 default is set to gasless. To disable gasless, use:
+
+```bash
+sudo make gasless off
 ```
 
 !!! note
