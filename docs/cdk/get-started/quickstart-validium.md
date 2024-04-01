@@ -149,11 +149,7 @@ sudo make ps
 sudo make ps-exited
 ```
 
-In this guide, the L2 default is set to gasless. To disable gasless, use:
-
-```bash
-sudo make gasless off
-```
+In this guide, the L2 is launched that allows gasless transactions. To enable transaction gas, you need to first bridge fund from the L1 to the L2 under gasless mode, then run `sudo make gasless off`, stop and restart the services.
 
 !!! note
     This local deployment runs on an L1 Geth instance.
