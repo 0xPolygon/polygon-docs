@@ -37,7 +37,7 @@ function onMessageReceived(
 ) external payable {}
 ```
 
-For the sake of maintaining consistency among wrapped tokens in terms of the bridging mechanism, there are certain standard functions and variables that need be included in the adapter contracts.
+For the sake of maintaining consistency among wrapped tokens in terms of the bridging mechanism, there are certain standard functions and variables that need to be included in the adapter contracts.
 
 ## Standardizations
 
