@@ -1,6 +1,6 @@
 Polygon zkEVM's Mainnet Beta is available for developers to launch smart contracts, execute transactions, and experiment with the network. This tutorial extends the exploration by allowing developers to launch their own production zkNode.
 
-Developers can setup a production node with either the Polygon zkEVM's mainnet or the testnet.
+Developers can setup a production node with either the Polygon zkEVM's mainnet or the Cardona testnet.
 
 After spinning up an instance of the production zkNode, you will be able to run the Synchronizer and utilize the JSON-RPC interface.
 
@@ -46,7 +46,7 @@ Here is a list of crucial network components that are required before you can ru
 
 The Ethereum node is the first component to be set up. And it is because the Ethereum network takes a long time to synchronise. So, we start synchronising the Ethereum Node, and then begin to setup other components while waiting for the synchronisation to complete.
 
-There are numerous ways to set up an Ethereum L1 environment; we will use Geth for this. We recommend Geth, but a Goerli node will suffice.
+There are numerous ways to set up an Ethereum L1 environment; we will use Geth for this. We recommend Geth, but a Sepolia node will suffice.
 
 Follow the instructions provided in this [guide to setup and install Geth](https://geth.ethereum.org/docs/getting-started/installing-geth).
 
@@ -63,8 +63,8 @@ Let's start setting up our zkNode:
 1. Launch your command line/terminal and set the variables using below commands:
 
     ```bash
-    # define the network("mainnet" or "cardona" or "testnet")
-    ZKEVM_NET=testnet
+    # define the network("mainnet" or "cardona")
+    ZKEVM_NET=cardona
 
     # define installation path
     ZKEVM_DIR=./path_to_install
@@ -73,7 +73,7 @@ Let's start setting up our zkNode:
     ZKEVM_CONFIG_DIR=./path_to_config
     ```
 
-2. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command. Also, unlike the mainnet and the Goerli testnet that use the latest version, Cardona testnet uses a specific version.
+2. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command. Also, the mainnet uses the latest version, and Cardona testnet uses a specific version.
     
     So use the next `curl` command specifically for Cardona, which uses version v0.6.3.
 
@@ -83,7 +83,7 @@ Let's start setting up our zkNode:
     curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/download/v0.6.3/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
     ```
 
-    And use this second command for either mainnet or testnet (Goerli):
+    And use this second command for the mainnet:
 
     ```bash
     curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/latest/download/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
@@ -100,9 +100,9 @@ Let's start setting up our zkNode:
     Edit the .env file with your favourite editor (we'll use nano in this guide): ```nano $ZKEVM_CONFIG_DIR/.env```
 
       ```bash
-      # ZKEVM_NETWORK = "mainnet" or ZKEVM_NETWORK = "cardona" or ZKEVM_NETWORK = "testnet"
+      # ZKEVM_NETWORK = "mainnet" or ZKEVM_NETWORK = "cardona"
       
-      # URL of a JSON RPC for Goerli
+      # URL of a JSON RPC for Sepolia
       ZKEVM_NODE_ETHERMAN_URL = "http://your.L1node.url"
 
       # PATH WHERE THE STATEDB POSTGRES CONTAINER WILL STORE PERSISTENT DATA
