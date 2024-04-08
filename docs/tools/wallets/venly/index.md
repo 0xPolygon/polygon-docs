@@ -35,7 +35,7 @@ Install the library by downloading it to your project via NPM.
 npm i @venly/web3-provider
 ```
 
-Alternatively, you could also include the library directly from a CDN
+Alternatively, you could also include the library directly from a CDN.
 
 ```javascript
 <script src="https://unpkg.com/@venly/web3-provider/umd/index.js"></script>
