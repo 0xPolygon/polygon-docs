@@ -49,7 +49,7 @@ Alternatively, you could also include the library directly from a CDN.
 
 Add the following lines of code to your project, it will load the Venly web3 provider.
 
-### Simple:
+### Simple
 
 ```javascript
 import Web3 from 'web3';
