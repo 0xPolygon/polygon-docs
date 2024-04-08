@@ -38,8 +38,8 @@ async function main() {
     const wallet = ethers.Wallet.createRandom();
     console.log(arrayNames[i]);
     console.log(`Address: ${wallet.address}`);
-    console.log(`PrvKey: ${wallet._signingKey().privateKey}`);
-    console.log(`mnemonic: "${wallet._mnemonic().phrase}"`);
+    console.log(`PrvKey: ${wallet.signingKey.privateKey}`);
+    console.log(`mnemonic: "${wallet.mnemonic.phrase}"`);
 
     const keystoreJson = await wallet.encrypt("password");
     console.log(`keystore: ${keystoreJson}`);

@@ -83,12 +83,15 @@ nav:
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
+        - Migrate:
+          - Fork migration: cdk/how-to/migrate/fork.md
         - Use a native token: cdk/how-to/use-native-token.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
+        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
@@ -154,7 +157,13 @@ nav:
             - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
             - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
             - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
-          - LXLY bridge: zkEVM/architecture/protocol/lxly-bridge.md
+          - LxLy bridge: zkEVM/architecture/protocol/lxly-bridge.md
+          - Unified bridge:
+            - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
+            - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
+            - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
+            - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
+            - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - zkNode: zkEVM/architecture/zknode/index.md
         - Data streamer:
           - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
@@ -455,6 +464,7 @@ nav:
           - zkEVM:
               - zkEVM client:  tools/matic-js/zkevm/initialize.md
               - ERC20:  tools/matic-js/zkevm/erc20.md
+              - Message passing: tools/matic-js/zkevm/message-passing.md
               - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 
           - IPFS: tools/storage/ipfs.md
