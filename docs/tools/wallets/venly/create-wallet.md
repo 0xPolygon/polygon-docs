@@ -56,7 +56,7 @@ Once you've pressed the button, Venly will ask you to confirm the new wallet cre
 
 **Congratulations!** You have now created your Polygon wallet using Venly to manage your digital assets on the Polygon network.
 
-## Resources:
+## Resources
 - [Use Venly in your Dapp](https://docs.bnbchain.org/docs/wallet/arkane-developer/)
 - [Venly Widget](https://docs.venly.io/docs/widget-overview)
 - [Web3 Wallet Providers](https://docs.venly.io/docs/ethersjs)
