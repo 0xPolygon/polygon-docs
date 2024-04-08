@@ -64,7 +64,7 @@ const provider = await Venly.createProvider(options);
 const web3 = new Web3(provider);
 ```
 
-### Advanced:
+### Advanced
 
 ```javascript
 import Web3 from 'web3';
