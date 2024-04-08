@@ -23,7 +23,7 @@ If you already support web3 technology, you can improve your application's UX by
 
 By using our [web3 provider](https://docs.venly.io/docs/web3js), you can leverage the full potential of Venly with minimal effort, and you will be able to onboard less tech-savvy users without making them leave your application or download third-party plugins. Integrating just takes two steps and 5 minutes!
 
-**Don't support Web3 yet?**
+**Don't support web3 yet?**
 
 > Don't worry we've got you covered with our 📦 [Venly - Widget](https://docs.venly.io/docs/widget-overview).
 
