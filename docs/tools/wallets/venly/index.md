@@ -100,11 +100,9 @@ Venly stands out because of its commitment to supporting not only their wallet u
 
 At Venly, we offer a diverse range of products spanning various categories, including Wallet Solutions, NFT Tools, and Marketplaces. Let's begin with a brief overview of these three product categories:
 
-[Wallet Solutions](https://docs.venly.io/docs/wallet-api-overview): Empower your users by providing them with a wallet or seamlessly integrating the Venly wallet into your application.
-
-[NFT Tools](https://docs.venly.io/docs/nft-api-overview): Facilitate the creation and distribution of NFTs, along with fetching comprehensive NFT data and information.
-
-[Marketplaces](https://docs.venly.io/docs/market-api-overview): Build your own NFT marketplace or list your NFT collection on our existing marketplace.
+- [Wallet solutions](https://docs.venly.io/docs/wallet-api-overview): Empower your users by providing them with a wallet or seamlessly integrating the Venly wallet into your application.
+- [NFT tools](https://docs.venly.io/docs/nft-api-overview): Facilitate the creation and distribution of NFTs, along with fetching comprehensive NFT data and information.
+- [Marketplaces](https://docs.venly.io/docs/market-api-overview): Build your own NFT marketplace or list your NFT collection on our existing marketplace.
 
 Even in their test environments, they add an in-app chat so that developers can directly communicate with the team behind the Venly platform. In case you want to learn more, check out their [detailed product documentation](https://docs.venly.io/docs/getting-started-with-venly).
 
