@@ -89,11 +89,9 @@ const web3 = new Web3(provider);
 
 You can fetch wallets, and sign transactions, and messages.
 
-> 👍 
-> 
-> Congratulations, your dapp now supports Venly 🎉
-> 
-> Ready to try out the Wallet-Widget? [Click here to get started](https://docs.venly.io/docs/widget-getting-started).
+Congratulations, your dapp now supports Venly.
+
+Ready to try out the Wallet-Widget? [Click here to get started](https://docs.venly.io/docs/widget-getting-started).
 
 > 📘 
 > 
