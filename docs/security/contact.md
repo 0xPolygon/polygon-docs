@@ -1,3 +1,3 @@
 # Contact us
-Polygon Labs Security Organization is happy to talk to you. Feel free to reach us out at:
+Polygon Labs Security organization is happy to talk to you. Feel free to reach out to us at:
 security@polygon.technology
