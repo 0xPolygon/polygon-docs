@@ -96,7 +96,7 @@ Want to know more about what Venly has to offer? [Check out the documentation](h
 
 ## More about Venly
 
-**Venly** stands out because of its commitment to supporting the ecosystem. Not only their wallet users, by explaining what gas is, or by helping them import an Ethereum wallet into Polygon, but also the developers that are using Venly to build new upcoming products.
+Venly stands out because of its commitment to supporting not only their wallet users by explaining what gas is, or by helping them import an Ethereum wallet into Polygon, but also the developers that are using Venly to build new products.
 
 At Venly, we offer a diverse range of products spanning various categories, including Wallet Solutions, NFT Tools, and Marketplaces. Let's begin with a brief overview of these three product categories:
 
