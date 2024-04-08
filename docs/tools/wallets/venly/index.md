@@ -19,7 +19,7 @@ Each application is unique and has different needs, providing different ways of 
 
 ## Getting started 
 
-If you already support Web3 technology, you can improve your application's UX by integrating the [Venly Web3 Provider](https://docs.venly.io/docs/web3js), a smart wrapper around the existing Web3 Ethereum JavaScript API.
+If you already support web3 technology, you can improve your application's UX by integrating the [Venly web3 provider](https://docs.venly.io/docs/web3js), a smart wrapper around the existing web3 Ethereum JavaScript API.
 
 By using our [Web3 provider](https://docs.venly.io/docs/web3js), you can leverage the full potential of Venly with minimal effort, and you will be able to onboard less tech-savvy users without making them leave your application or download third-party plugins. Integrating just takes two steps and 5 minutes!
 
