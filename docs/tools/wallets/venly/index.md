@@ -106,7 +106,7 @@ At Venly, we offer a diverse range of products spanning various categories, incl
 
 Even in their test environments, they add an in-app chat so that developers can directly communicate with the team behind the Venly platform. In case you want to learn more, check out their [detailed product documentation](https://docs.venly.io/docs/getting-started-with-venly).
 
-## Resources:
+## Resources
 
 - [Venly Widget](https://docs.venly.io/docs/widget-overview)
 - [Web3 Wallet Providers](https://docs.venly.io/docs/ethersjs)
