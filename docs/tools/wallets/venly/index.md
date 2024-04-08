@@ -29,7 +29,7 @@ By using our [web3 provider](https://docs.venly.io/docs/web3js), you can leverag
 
 ### Step 1: Add the library to your project
 
-Install the library by downloading it to your project via NPM
+Install the library by downloading it to your project via NPM.
 
 ```javascript
 npm i @venly/web3-provider
