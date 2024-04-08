@@ -17,7 +17,7 @@ Each application is unique and has different needs, providing different ways of 
 - Built for a mainstream audience.
 - Offers in-app customer support.
 
-## Getting Started 🎉
+## Getting started 
 
 If you already support Web3 technology, you can improve your application's UX by integrating the [Venly Web3 Provider](https://docs.venly.io/docs/web3js), a smart wrapper around the existing Web3 Ethereum JavaScript API.
 
