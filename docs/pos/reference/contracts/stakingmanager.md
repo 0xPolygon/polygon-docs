@@ -25,12 +25,6 @@ PIP4 introduced the concept of showcasing validator performance for community vi
 
 ## Methods and variables
 
-!!!caution
-    Slashing Implementation
-
-    `jail`, `unJail`, and `slash` functions are not used currently as part of the slashing implementation.
-
-
 ### validatorThreshold
 
 It stores the maximum number of validators accepted by the system, also called slots.
@@ -38,7 +32,7 @@ It stores the maximum number of validators accepted by the system, also called s
 ### AccountStateRoot
 
 - For various accounting done on Heimdall for validators and delegator, account root is submitted while submitting the `checkpoint`.
-- accRoot is used while `claimRewards` and `unStakeClaim`.
+- `accRoot` is used while `claimRewards` and `unStakeClaim`.
 
 ### stake / stakeFor
 
@@ -76,9 +70,7 @@ function stakeFor(
 ```solidity
 function unstakeClaim(uint256 validatorId) public;
 ```
-
-- After `unstaking`, validators are put into withdrawal period so that they can be slashed, if any fraud found after `unstaking`, for past frauds.
-- Once `WITHDRAWAL_DELAY` period is served, validators can call this function and do settlement with `stakeManager` (get rewards if any, get staked tokens back, burn NFT, etc).
+Once `WITHDRAWAL_DELAY` period is served, validators can call this function and do settlement with `stakeManager` (get rewards if any, get staked tokens back, burn NFT, etc).
 
 ### restake
 
@@ -127,7 +119,7 @@ function claimFee(
 
 This method is used to withdraw fees from Heimdall. `accountStateRoot` is updated on each checkpoint, so that validators can provide proof of inclusion in this root for account on Heimdall and withdraw fee.
 
-Note that `accountStateRoot` is re-written to prevent exits on multiple checkpoints (for old root and save accounting on `stakeManager`). `accumSlashedAmount` is unused at the moment and will be used for slashing on Heimdall if needed.
+Note that `accountStateRoot` is re-written to prevent exits on multiple checkpoints (for old root and save accounting on `stakeManager`).
 
 ### StakingNFT
 

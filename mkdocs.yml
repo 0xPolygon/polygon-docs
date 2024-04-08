@@ -83,18 +83,19 @@ nav:
               - Start services: cdk/get-started/deploy-rollup/start-services.md
         - Connect to CDK testnet: cdk/get-started/connect-testnet.md
       - How to:
+        - Migrate:
+          - Fork migration: cdk/how-to/migrate/fork.md
         - Use a native token: cdk/how-to/use-native-token.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
+        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
-      - Concepts:
-        - Rollup: cdk/concepts/rollup.md
-        - Validium: cdk/concepts/validium.md
-        - Data availability: cdk/concepts/dac.md
+      - Glossary:
+        - Glossary: cdk/glossary/index.md
       - Additional resources:
         - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
@@ -156,7 +157,13 @@ nav:
             - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
             - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
             - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
-          - LXLY bridge: zkEVM/architecture/protocol/lxly-bridge.md
+          - LxLy bridge: zkEVM/architecture/protocol/lxly-bridge.md
+          - Unified bridge:
+            - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
+            - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
+            - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
+            - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
+            - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - zkNode: zkEVM/architecture/zknode/index.md
         - Data streamer:
           - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
@@ -219,6 +226,8 @@ nav:
           - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
+      #- API: 
+      #  - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -455,6 +464,7 @@ nav:
           - zkEVM:
               - zkEVM client:  tools/matic-js/zkevm/initialize.md
               - ERC20:  tools/matic-js/zkevm/erc20.md
+              - Message passing: tools/matic-js/zkevm/message-passing.md
               - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 
           - IPFS: tools/storage/ipfs.md
@@ -492,6 +502,7 @@ nav:
           - Portis:  tools/wallets/portis.md    
           - SlashAuth:  tools/wallets/slashauth.md
           - Torus:  tools/wallets/torus.md  
+          - WalletKit:  tools/wallets/walletkit.md
           - Wallet link: tools/wallets/wallet-link.md
           - WalletConnect:  tools/wallets/walletconnect.md
           - Web3Modal: tools/wallets/using-web3modal.md
