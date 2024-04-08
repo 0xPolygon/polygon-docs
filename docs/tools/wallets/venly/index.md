@@ -108,6 +108,6 @@ Even in their test environments, they add an in-app chat so that developers can 
 
 ## Resources
 
-- [Venly Widget](https://docs.venly.io/docs/widget-overview)
-- [Web3 Wallet Providers](https://docs.venly.io/docs/ethersjs)
+- [Venly widget](https://docs.venly.io/docs/widget-overview)
+- [Web3 wallet providers](https://docs.venly.io/docs/ethersjs)
 - [Web3.js](https://docs.venly.io/docs/web3js)
