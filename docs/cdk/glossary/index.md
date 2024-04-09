@@ -2,7 +2,7 @@ This glossary provides definitions for technical terminology and concepts that c
 
 ### AggLayer v1 (AL1)
 The AggLayer is the interoperability layer at the heart of Polygon 2.0. All CDK chains connect to the AggLayer to enable features such as seamless and efficient cross-chain communication, unified liquidity, and more. AggLayer v1 (AL1), is the first version of many planned iterations that relies on ZK checks to ensure operational soundness, and a unified bridge infrastructure.
-Read more on the AggLayer [here](../../learn/agglayer.md).
+Read more on the AggLayer in the Polygon blog [here](https://polygon.technology/blog/wtf-is-polygon?utm_source=twitter&utm_medium=social&utm_content=wtf-is-polygon).
 
 ### Chain operator
 The IP, or individual(s), who own a chain and are responsible for chain operation and maintenance. This includes tasks such as transaction validation, block production, and ensuring the security and integrity of the chain, etc., any combination of which a chain operator may perform personally in varying degrees.

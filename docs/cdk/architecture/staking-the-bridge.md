@@ -8,7 +8,7 @@ AggLayer envisions a scalability solution that leverages shared state and unifie
 
 !!! tip "What's AggLayer?"
 
-    Want to learn more about what AggLayer is and what it looks to achieve? Check out [the AggLayer documentation in the Learn space](../../learn/agglayer.md).
+    Want to learn more about what AggLayer is and what it looks to achieve? Check out [the "WTF is Polygon" article in Polygon blog](https://polygon.technology/blog/wtf-is-polygon?utm_source=twitter&utm_medium=social&utm_content=wtf-is-polygon).
 
 All of this cool infrastructure needs a unified channel for easy transmission of assets and messages between the multiple chains connected via the AggLayer. And this is where the unified bridge comes into play. It allows all chains to take advantage of the AggLayer's unified liquidity, lower transaction costs, and more.
 
