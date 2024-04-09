@@ -112,5 +112,6 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 - [Stackup](https://www.stackup.sh/)
 - [1RPC](https://1rpc.io/)
 - [4EVERLAND](https://docs.4everland.org/rpc-beta/polygon)
+- [SubQuery](https://subquery.network/rpc)
 
 For a complete list of public endpoints, visit [Alchemy's Chain Connect](https://www.alchemy.com/chain-connect/chain/polygon-pos) and [Chainlist](https://chainlist.org/?search=Polygon+Mainnet).
