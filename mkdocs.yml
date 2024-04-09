@@ -81,7 +81,7 @@ nav:
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
               - Start node: cdk/get-started/deploy-rollup/start-node.md
               - Start services: cdk/get-started/deploy-rollup/start-services.md
-        - Connect to CDK testnet: cdk/get-started/connect-testnet.md
+        - Connect to CDK testnets: cdk/get-started/connect-testnet.md
       - How to:
         - Migrate:
           - Fork migration: cdk/how-to/migrate/fork.md
@@ -226,8 +226,8 @@ nav:
           - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
-      #- API: 
-      #  - JSON RPC endpoints: zkEVM/api/json-rpc.md
+      - API: 
+        - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -514,7 +514,6 @@ nav:
   - Learn:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
-      # - Polygon AggLayer: learn/agglayer.md
       - Polygon Type 1 Prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
