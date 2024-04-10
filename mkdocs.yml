@@ -509,7 +509,7 @@ nav:
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
-          - zkEVM testnet: https://explorer-ui.mainnet.zkevm-test.net/
+          - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
           - OKLink: https://www.oklink.com/polygon
   - Learn:
       - Learn: learn/index.md
