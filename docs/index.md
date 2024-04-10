@@ -111,16 +111,16 @@ hide:
 						</a>
 						<a href="cdk/architecture/type-1-prover/intro-t1-prover" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">Type 1 Prover</div>
+								<div class="feature-card-heading">Type 1 prover</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
 							</div>
-							<p class="feature-paragraph">The Polygon Type 1 proving component used for creating proofs on your ZK-EVM chain.</p>
+							<p class="feature-paragraph">The Polygon type 1 proving component used for creating proofs on your ZK-EVM chain.</p>
 						</a>
-						<a href="learn/agglayer" class="flex-card-item w-inline-block">
+						<a href="https://polygon.technology/blog/aggregated-blockchains-a-new-thesis" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">Agg Layer</div>
+								<div class="feature-card-heading">AggLayer</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
