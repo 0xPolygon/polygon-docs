@@ -49,7 +49,7 @@ The table below shows the version compatibility for CDK releases and related com
     <td>7</td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.13">v0.5.13 </a>(Etrog+uLxLy)</td>
     <td><a href="https://github.com/0xPolygon/cdk-validium-node/releases/tag/v0.5.13%2Bcdk.10">v0.5.13+cdk.10</a> </td>
-    <td><a href="https://github.com/0xPolygon/cdk-data-availability/releases/tag/v0.0.5">v0.0.5</a></td>
+    <td><a href="https://github.com/0xPolygon/cdk-data-availability/releases/tag/v0.0.5">v0.0.6</a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v4.0.19">v4.0.19</a></td>
     <td> <a href="https://github.com/0xPolygonHermez/zkevm-rom/tree/v4.0.0-fork.7">v4.0.0</a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.2">v0.4.2</a></td>
