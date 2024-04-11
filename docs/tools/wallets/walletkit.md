@@ -1,7 +1,7 @@
 !!! caution "Content disclaimer"
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
-![WalletKit](/img/tools/wallet/walletkit/walletkit-overview.png)
+![WalletKit](../../img/tools/wallet/walletkit/walletkit-overview.png)
 
 [WalletKit](https://walletkit.com) is an all-in-one platform for adding smart, gasless wallets to your app. WalletKit offers pre-built components for onboarding users with email and social logins, which can be integrated in under 15 minutes using their React SDK or the wagmi connector. Alternatively, build completely bespoke experiences for your users using WalletKit's Wallets API.
 
