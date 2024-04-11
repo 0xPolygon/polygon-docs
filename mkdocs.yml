@@ -595,7 +595,7 @@ plugins:
   - open-in-new-tab
 
 validation:
-  absolute_links: ignore
+  absolute_links: warn
 
 extra_javascript:
   - _site_essentials/js/mathjax.js
