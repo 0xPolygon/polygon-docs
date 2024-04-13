@@ -81,7 +81,7 @@ nav:
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
               - Start node: cdk/get-started/deploy-rollup/start-node.md
               - Start services: cdk/get-started/deploy-rollup/start-services.md
-        - Connect to CDK testnet: cdk/get-started/connect-testnet.md
+        - Connect to CDK testnets: cdk/get-started/connect-testnet.md
       - How to:
         - Migrate:
           - Fork migration: cdk/how-to/migrate/fork.md
@@ -172,6 +172,15 @@ nav:
           - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
           - Stream file: zkEVM/architecture/data-streamer/stream-file.md
           - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
+        - The proving system:
+          - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
+          - Executor: zkEVM/architecture/proving-system/the-executor-comp.md
+          - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
+          - Execution trace design: zkEVM/architecture/proving-system/execution-trace-design.md
+          - Selector columns: zkEVM/architecture/proving-system/exec-selector-columns.md
+          - zkEVM and execution traces: zkEVM/architecture/proving-system/exec-trace-and-zkevm.md
+          - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
+          - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - Main state machine: 
@@ -226,8 +235,8 @@ nav:
           - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
-      #- API: 
-      #  - JSON RPC endpoints: zkEVM/api/json-rpc.md
+      - API: 
+        - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -509,12 +518,11 @@ nav:
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
-          - zkEVM testnet: https://explorer-ui.mainnet.zkevm-test.net/
+          - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
           - OKLink: https://www.oklink.com/polygon
   - Learn:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
-      - Polygon AggLayer: learn/agglayer.md
       - Polygon Type 1 Prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
@@ -596,7 +604,7 @@ plugins:
   - open-in-new-tab
 
 validation:
-  absolute_links: ignore
+  absolute_links: warn
 
 extra_javascript:
   - _site_essentials/js/mathjax.js
