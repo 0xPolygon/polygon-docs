@@ -15,7 +15,7 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 3. Run `npm i` from the root.
 
-4. Go to the [validium smart contracts directory](https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/etrog/contracts/v2/consensus/validium). 
+4. Go to the [`contracts/v2/consensus/validium`](https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/etrog/contracts/v2/consensus/validium) directory. 
 
     !!! tip
         - Until further notice, these contracts run on the [etrog release](https://polygon.technology/blog/polygon-zkevm-the-etrog-upgrade-is-live-on-mainnet).
@@ -122,8 +122,8 @@ This section shows you how to deploy the Docker image containing your custom DAC
 6. Build the image with the following commands:
 
     ```sh
-    npx hardhat compile
-    npm run docker:contracts
+    sudo npx hardhat compile
+    sudo npm run docker:contracts
     ```
 
 7. Tag the image with the following command, where `XXXX` is custom: 
@@ -144,9 +144,10 @@ This section shows you how to set up your CDK node that sends and receives data 
     const (
         // DataAvailabilityCommittee is the DAC protocol backend
         DataAvailabilityCommittee DABackendType = "DataAvailabilityCommittee"
-        DataAvailabilityCommittee DABackendType = "MyAvailabilityProtocol"
     )
     ```
+
+    where `DataAvailabilityCommittee` matches the `_PROTOCOL_NAME` see in the [Set up contracts](#set-up-contracts) section.
 
 3. _OPTIONAL_: Add a config struct to the new package inside the main config.go file so that your package can receive custom configurations using the node’s main config file.
 
