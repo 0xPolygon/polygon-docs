@@ -105,7 +105,7 @@ nav:
       - Get started:
         - Get started: zkEVM/get-started/index.md
         - Quick start:
-          - Connecting to zkEVM: zkEVM/get-started/quick-start/connect-wallet.md
+          - zkEVM testnet & mainnet: zkEVM/get-started/quick-start/connect-wallet.md
           - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
           - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
         - Gas station: zkEVM/get-started/zkevm-gas-station.md
@@ -135,7 +135,6 @@ nav:
         - User fees: zkEVM/architecture/user-fees.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
-          
           - State management: zkEVM/architecture/protocol/state-management.md
           - Transaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
