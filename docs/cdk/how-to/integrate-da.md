@@ -15,18 +15,18 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 3. Run `npm i` from the root.
 
-4. Go to the [`contracts/v2/consensus/validium`](https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/etrog/contracts/v2/consensus/validium) directory. 
+4. Go to the [`contracts/v2/consensus/validium`](https://github.com/0xPolygonHermez/zkevm-contracts/tree/develop/contracts/v2/consensus/validium) directory. 
 
     !!! tip
         - Until further notice, these contracts run on the [etrog release](https://polygon.technology/blog/polygon-zkevm-the-etrog-upgrade-is-live-on-mainnet).
 
-5. Create your custom contract in the same directory, and make sure it implements the [IDataAvailabilityProtocol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/Optimizations/contracts/v2/interfaces/IDataAvailabilityProtocol.sol) interface.
+5. Create your custom contract in the same directory, and make sure it implements the [IDataAvailabilityProtocol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/contracts/v2/interfaces/IDataAvailabilityProtocol.sol) interface.
 
     !!! tip
-        - Use the Polygon DAC implementation contract: [PolygonDataCommittee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/v2/consensus/validium/PolygonDataCommittee.sol) as a guide.
+        - Use the Polygon DAC implementation contract: [PolygonDataCommittee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/contracts/v2/consensus/validium/PolygonDataCommittee.sol) as a guide.
         - The contract supports custom smart contract implementation and, through this, DACs can add their custom on-chain verification logic.
 
-6. You can leave the `verifyMessage` function empty but make sure the `getProcotolName` function returns a unique name (such as Avail, Celestia, etc). The following example code comes from the [PolygonDataCommitee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/Optimizations/contracts/v2/consensus/validium/PolygonDataCommittee.sol)  implementation.
+6. You can leave the `verifyMessage` function empty but make sure the `getProcotolName` function returns a unique name (such as Avail, Celestia, etc). The following example code comes from the [PolygonDataCommitee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/contracts/v2/consensus/validium/PolygonDataCommittee.sol)  implementation.
 
     ```solidity
     // Name of the data availability protocol
@@ -42,13 +42,13 @@ This section shows you how to create a custom CDK validium DAC contract.
     }
     ```
 
-7. Update the [/deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/Optimizations/deployment/v2/4_createRollup.ts#L76) script to add your protocol name.
+7. Update the [/deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/54f58c8b64806429bc4d5c52248f29cf80ba401c/deployment/v2/4_createRollup.ts#L77) script to add your protocol name.
 
     ```ts
     const supporteDataAvailabilityProtocols = ["<CONTRACT_NAME>"];
     ```
 
-8. Make your contract deployable by copying, editing for your custom implementation, and pasting back in, the `if` statement from the [/deployment/v2/4_createRollup.ts#L251](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/Optimizations/deployment/v2/4_createRollup.ts#L251) node creation script. 
+8. Make your contract deployable by copying, editing for your custom implementation, and pasting back in, the `if` statement from the [/deployment/v2/4_createRollup.ts#L251](https://github.com/0xPolygonHermez/zkevm-contracts/blob/54f58c8b64806429bc4d5c52248f29cf80ba401c/deployment/v2/4_createRollup.ts#L260) node creation script. 
 
 !!! info "`PolygonValidiumEtrog.sol` solution"
 
@@ -87,13 +87,13 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 This section shows you how to deploy the Docker image containing your custom DAC contract.
 
-1. Edit the following parameters in the [`docker/scripts/v2/deploy_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/Optimizations/docker/scripts/v2/create_rollup_parameters_docker.json) file:
+1. Edit the following parameters in the [`docker/scripts/v2/deploy_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/docker/scripts/v2/create_rollup_parameters_docker.json) file:
 
     ```json
     "minDelayTimelock": 3600, BECOMES "minDelayTimelock": 1,
     ```
 
-2. Edit the following parameters in the [`/docker/scripts/v2/create_rollup_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/Optimizations/docker/scripts/v2/create_rollup_parameters_docker.json) file:
+2. Edit the following parameters in the [`/docker/scripts/v2/create_rollup_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/docker/scripts/v2/create_rollup_parameters_docker.json) file:
 
     ```json
     "consensusContract": "PolygonValidiumEtrog",    # CHANGE THIS TO YOUR CONTRACT NAME
@@ -106,13 +106,13 @@ This section shows you how to deploy the Docker image containing your custom DAC
     cp docker/scripts/v2/hardhat.example.paris hardhat.config.ts
     ```
 
-4. Edit [docker/scripts/v2/deploy-docker.sh](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/Optimizations/docker/scripts/v2/deploy-docker.sh) to add the following line:
+4. Edit [docker/scripts/v2/deploy-docker.sh](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/docker/scripts/v2/deploy-docker.sh) to add the following line:
 
     ```sh
     sudo chmod -R go+rxw docker/gethData before docker build -t hermeznetwork/geth-zkevm-contracts -f docker/Dockerfile .  
     ```
 
-5. In the [deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/Optimizations/deployment/v2/4_createRollup.ts) file, uncomment the following:
+5. In the [deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/deployment/v2/4_createRollup.ts) file, uncomment the following:
 
     ```ts
     // // Setup data committee to 0
