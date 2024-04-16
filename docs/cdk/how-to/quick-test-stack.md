@@ -38,7 +38,7 @@ Status `1` signifies a successful transaction.
     zkevm-node-rpc-001    http-rpc: 8123/tcp -> http://127.0.0.1:32803
     ```
 
-2. Add the network details manually to MetaMask and except the defaults and autopopulating fields.
+2. Add the network details manually to MetaMask and accept the defaults and auto-populating fields.
 
     ![MetaMask manual network entry](../../img/cdk/manual-network-entry.png)
 
