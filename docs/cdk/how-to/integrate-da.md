@@ -112,11 +112,12 @@ This section shows you how to deploy the Docker image containing your custom DAC
     sudo chmod -R go+rxw docker/gethData before docker build -t hermeznetwork/geth-zkevm-contracts -f docker/Dockerfile .  
     ```
 
-5. In the [deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/deployment/v2/4_createRollup.ts) file, uncomment the following:
+5. In the [deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/deployment/v2/4_createRollup.ts) file, uncomment the following lines, and add a `console.log` output that grabs the address of the DAC:
 
     ```ts
-    // // Setup data committee to 0
-    // await (await polygonDataCommittee?.setupCommittee(0, [], "0x")).wait();
+    // Setup data committee to 0
+    await (await polygonDataCommittee?.setupCommittee(0, [], "0x")).wait();
+    console.log(dataAvailabilityProtocol, "deployed to:", polygonDataCommittee.target);
     ```
 
 6. Build the image with the following commands:
