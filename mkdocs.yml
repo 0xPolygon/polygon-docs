@@ -81,6 +81,7 @@ nav:
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
               - Start node: cdk/get-started/deploy-rollup/start-node.md
               - Start services: cdk/get-started/deploy-rollup/start-services.md
+        - Kurtosis [EXPERIMENTAL]: '!import https://github.com/kmurphypolygon/kurtosis-cdk?branch=docs/move-to-mkdocs'
         - Connect to CDK testnets: cdk/get-started/connect-testnet.md
       - How to:
         - Migrate:
