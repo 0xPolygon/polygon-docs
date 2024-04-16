@@ -1,6 +1,6 @@
 A quick and easy method for testing a running CDK stack, whether in validium or rollup mode, is by sending a zero-value transaction and examining the result.
 
-## Cast method
+## Send transaction with cast
 
 In a terminal window, run the following command where the mnemonic is used just for testing and the address can be any valid account address. 
 
@@ -30,6 +30,26 @@ to                      0x66ec…89fd
 
 Status `1` signifies a successful transaction.
 
-<!--
-## MetaMask method todo:
--->
+## Send transaction with MetaMask
+
+1. Whichever stack you're working with, inspect the logs to find the `zkevm-node-rpc` details and add the URL to MetaMask. For example, in the Kurtosis stack you should see something like:
+
+    ```sh
+    zkevm-node-rpc-001    http-rpc: 8123/tcp -> http://127.0.0.1:32803
+    ```
+
+2. Add the network details manually to MetaMask and except the defaults and autopopulating fields.
+
+    ![MetaMask manual network entry](../../img/cdk/manual-network-entry.png)
+
+3. In local/test setup you will find a pre-funded account with private key: `0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625`. Import the account into MetaMask.
+
+    <center>
+    ![Import pre-funded account](../../img/cdk/account.png){ width=45% }
+    </center>
+
+4. Send a transaction to another MetaMask account.
+
+    ![Transaction sending success](../../img/cdk/tx-success.png)
+
+</br>
