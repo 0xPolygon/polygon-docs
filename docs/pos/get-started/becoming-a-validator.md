@@ -98,13 +98,13 @@ The following technical node operations are **done automatically by the nodes:**
   * If more than 2/3 of the active validators reach consensus on the checkpoint, the checkpoint is submitted to the Ethereum mainnet.
 * Sync changes to Polygon staking contracts on Ethereum:
   * Continuing from the checkpoint submission step, since this is an external network call, the checkpoint transaction on Ethereum may or may not be confirmed, or may be pending due to Ethereum congestion issues.
-  * In this case, there is an `ack/no-ack` process that is followed to ensure that the next checkpoint contains a snapshot of the previous Bor blocks as well. For example, if checkpoint 1 is for Bor blocks 1-256, and it failed for some reason, the next checkpoint 2 will be for Bor blocks 1-512. See also [Heimdall architecture: Checkpoint](/pos/architecture/heimdall/checkpoints).
+  * In this case, there is an `ack/no-ack` process that is followed to ensure that the next checkpoint contains a snapshot of the previous Bor blocks as well. For example, if checkpoint 1 is for Bor blocks 1-256, and it failed for some reason, the next checkpoint 2 will be for Bor blocks 1-512. See also [Heimdall architecture: Checkpoint](../architecture/heimdall/checkpoints.md).
 * State sync from the Ethereum mainnet to Bor:
   * Contract state can be moved between Ethereum and Polygon, specifically through Bor:
   * A DApp contract on Ethereum calls a function on a special Polygon contract on Ethereum.
   * The corresponding event is relayed to Heimdall and then Bor.
   * A state-sync transaction gets called on a Polygon smart contract and the DApp can get the value on Bor via a function call on Bor itself.
-  * A similar mechanism is in place for sending state from Polygon to Ethereum. See also [State Sync Mechanism](/pos/how-to/bridging/l1-l2-communication/state-transfer).
+  * A similar mechanism is in place for sending state from Polygon to Ethereum. See also [State Sync Mechanism](../how-to/bridging/l1-l2-communication/state-transfer.md).
 
 ### Operations
 
@@ -176,14 +176,14 @@ The following step-by-step guides will take you through the process of running a
 
 ### Join the network as a validator
 
-* [Start and run the nodes with Ansible](/pos/how-to/validator/validator-ansible).
-* [Start and run the nodes with binaries](/pos/how-to/validator/validator-binaries).
-* [Stake as a validator](/pos/how-to/operate-validator-node/validator-staking-operations).
+* [Start and run the nodes with Ansible](../how-to/validator/validator-ansible.md).
+* [Start and run the nodes with binaries](../how-to/validator/validator-binaries.md).
+* [Stake as a validator](../how-to/operate-validator-node/validator-staking-operations.md).
 
 ### Maintain your validator nodes
 
-* [Change the signer address](/pos/how-to/operate-validator-node/change-signer-address).
-* [Change the commission](/pos/how-to/operate-validator-node/validator-commission-operations).
+* [Change the signer address](../how-to/operate-validator-node/change-signer-address.md).
+* [Change the commission](../how-to/operate-validator-node/validator-commission-operations.md).
 
 ### Community assistance
 

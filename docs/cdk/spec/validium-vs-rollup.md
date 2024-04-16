@@ -1,11 +1,11 @@
-Polygon CDK running in validium mode inherits the core functionalities of a zkEVM rollup node and adds a [data availability layer](../concepts/dac.md).
+Polygon CDK running in validium mode inherits the core functionalities of a zkEVM rollup node and adds a [data availability layer](../glossary/index.md#data-availability-committee-dac).
 
 ## Key differences
 
 |        | Rollup                                                    | Validium                                                                           |
 | ------------------------ | ----------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | **Node type**            | [zkEVM node](https://github.com/0xPolygonHermez/zkevm-node) | [Validium node](https://github.com/0xPolygon/cdk-validium-node): zkEVM node with validium extensions                  |
-| **Data availability**    | On-chain via L1                                            | Off-chain via a local option, or a [DAC](../concepts/dac.md) + [DA node](https://github.com/0xPolygon/cdk-data-availability) |
+| **Data availability**    | On-chain via L1                                            | Off-chain via a local option, or a [DAC](../glossary/index.md#data-availability-committee-dac) + [DA node](https://github.com/0xPolygon/cdk-data-availability) |
 | **Components**           | zkEVM components\*                                        | zkEVM components\* + PostgreSQL database + on-chain committees                   |
 | **Contracts** | [zkEVM smart contracts](https://github.com/0xPolygonHermez/zkevm-contracts)  <ul><li>`PolygonZkEVM` (main rollup contract)</li> <li> `PolygonZkEVMBridge`</li> <li>`PolygonZkEVMGlobalExitRoot`</li></ul>  | [Validium-specific DAC contract](https://github.com/0xPolygon/cdk-validium-contracts) <ul><li>`CDKDataCommittee.sol`</li><li> `CDKValidium.sol` </li></ul> |
 | **Infrastructure** | Standard infrastructure                                     | Dedicated infrastructure for data availability layer and DACs                      |

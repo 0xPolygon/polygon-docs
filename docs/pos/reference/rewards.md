@@ -4,7 +4,7 @@ To leverage Polygon's economics, you should either become a validator or a deleg
 
 To be a validator, you need to **run a full validator** node and stake MATIC.
 
-Also check the [Validator Responsibilities](/pos/design/validator/responsibilities) page.
+Also check the [Validator Responsibilities](../get-started/becoming-a-validator.md#validator-responsibilities) page.
 
 To be a delegator, you only need to **delegate MATIC to a validator**
 

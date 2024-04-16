@@ -81,25 +81,21 @@ nav:
               - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
               - Start node: cdk/get-started/deploy-rollup/start-node.md
               - Start services: cdk/get-started/deploy-rollup/start-services.md
-        - Connect to CDK testnet: cdk/get-started/connect-testnet.md
+        - Connect to CDK testnets: cdk/get-started/connect-testnet.md
       - How to:
+        - Migrate:
+          - Fork migration: cdk/how-to/migrate/fork.md
         - Use a native token: cdk/how-to/use-native-token.md
-        - Use the uXLXY bridge: cdk/how-to/register-configure-ulxly.md
-        - Use the AggLayer: 
-            - Integrate the AggLayer: cdk/how-to/agglayer/integrate.md
-            - AggLayer OpenRPC: cdk/how-to/agglayer/openrpc.md
-            - Local installation: cdk/how-to/agglayer/local-install.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
+        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
-      - Concepts:
-        - Rollup: cdk/concepts/rollup.md
-        - Validium: cdk/concepts/validium.md
-        - Data availability: cdk/concepts/dac.md
+      - Glossary:
+        - Glossary: cdk/glossary/index.md
       - Additional resources:
         - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
@@ -109,7 +105,7 @@ nav:
       - Get started:
         - Get started: zkEVM/get-started/index.md
         - Quick start:
-          - Connecting to zkEVM: zkEVM/get-started/quick-start/connect-wallet.md
+          - zkEVM testnet & mainnet: zkEVM/get-started/quick-start/connect-wallet.md
           - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
           - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
         - Gas station: zkEVM/get-started/zkevm-gas-station.md
@@ -139,7 +135,6 @@ nav:
         - User fees: zkEVM/architecture/user-fees.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
-          
           - State management: zkEVM/architecture/protocol/state-management.md
           - Transaction life cycle:
             - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
@@ -161,7 +156,13 @@ nav:
             - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
             - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
             - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
-          - LXLY bridge: zkEVM/architecture/protocol/lxly-bridge.md
+          - LxLy bridge: zkEVM/architecture/protocol/lxly-bridge.md
+          - Unified bridge:
+            - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
+            - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
+            - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
+            - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
+            - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - zkNode: zkEVM/architecture/zknode/index.md
         - Data streamer:
           - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
@@ -224,6 +225,8 @@ nav:
           - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
+      - API: 
+        - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -367,7 +370,6 @@ nav:
               - Thirdweb: tools/dApp-development/pos/thirdweb.md
           - Common tools:
               - Hardhat: tools/dApp-development/common-tools/hardhat.md
-              - Truffle: tools/dApp-development/common-tools/truffle.md
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
       - Chain indexer framework:
@@ -389,6 +391,7 @@ nav:
           - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
           - PARSIQ: tools/data/parsiq.md
+          - SubQuery: tools/data/subquery.md
       - Matic.js:
           - Installation:  tools/matic-js/installation.md
           - Get started:  tools/matic-js/get-started.md
@@ -460,6 +463,7 @@ nav:
           - zkEVM:
               - zkEVM client:  tools/matic-js/zkevm/initialize.md
               - ERC20:  tools/matic-js/zkevm/erc20.md
+              - Message passing: tools/matic-js/zkevm/message-passing.md
               - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 
           - IPFS: tools/storage/ipfs.md
@@ -497,18 +501,18 @@ nav:
           - Portis:  tools/wallets/portis.md    
           - SlashAuth:  tools/wallets/slashauth.md
           - Torus:  tools/wallets/torus.md  
+          - WalletKit:  tools/wallets/walletkit.md
           - Wallet link: tools/wallets/wallet-link.md
           - WalletConnect:  tools/wallets/walletconnect.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
-          - zkEVM testnet: https://explorer-ui.mainnet.zkevm-test.net/
+          - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
           - OKLink: https://www.oklink.com/polygon
   - Learn:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
-      - Polygon AggLayer: learn/agglayer.md
       - Polygon Type 1 Prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
@@ -603,7 +607,7 @@ plugins:
   - open-in-new-tab
 
 validation:
-  absolute_links: ignore
+  absolute_links: warn
 
 extra_javascript:
   - _site_essentials/js/mathjax.js

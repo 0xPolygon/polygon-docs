@@ -31,14 +31,6 @@ hide:
 </div>
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./agglayer">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Polygon AggLayer</div>
-         </div>
-         <p class="feature-paragraph">ZK-powered L2s to unify liquidity across ecosystem and scale on demand.</p>
-      </a>
-   </div>
-   <div class="grid-item">
       <a href="../cdk/architecture/type-1-prover/intro-t1-prover">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Polygon Type 1 Prover</div>

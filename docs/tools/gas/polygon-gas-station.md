@@ -9,9 +9,12 @@ Polygon gas station has been deployed both on the Polygon mainnet & Mumbai testn
 
 ## Usage
 
-### Mumbai
+### Testnet
 
-For getting gas price recommendation from this oracle (Polygon Mumbai), send a `GET` request to [https://gasstation-testnet.polygon.technology/v2](https://gasstation-testnet.polygon.technology/v2).
+You can send `GET` requests using the following URLs to fetch gas price recommendations from the gas oracle:
+
+- Mumbai: https://gasstation-testnet.polygon.technology/v2
+- zkEVM Cardona: https://gasstation-testnet.polygon.technology/zkevm/cardona
 
 #### cURL
 
@@ -36,7 +39,10 @@ requests.get('https://gasstation-testnet.polygon.technology/v2').json()
 
 ### Mainnet
 
-For getting a gas price recommendation from this oracle (Polygon Mainnet), send a **GET** request to the Polygon Gas Station V2 to get the gas fee estimates. Polygon Gas Station V2 Endpoint: [https://gasstation.polygon.technology/v2](https://gasstation.polygon.technology/v2).
+You can send `GET` requests using the following URLs to fetch gas price recommendations from the gas oracle:
+
+- PoS mainnet: https://gasstation.polygon.technology/v2
+- zkEVM mainnet: https://gasstation.polygon.technology/zkevm
 
 #### cURL
 

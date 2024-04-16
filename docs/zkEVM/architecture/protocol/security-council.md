@@ -2,7 +2,7 @@ In addition to the previously mentioned governance issues and security measures,
 
 Since critical bugs or other security issues may occur, and hence warrant instant upgrades, it is good security practice to allow for emergency upgrades.
 
-That is, instead of employing the 2-out-of-3 _Admin Multisig Contract_ and waiting for the time-delay imposed by the _Timelock Contract_, these contracts get bypassed by deploying a so-called _Security Council Multisig_.
+That is, instead of employing the 2-out-of-3 _Admin Multisig Contract_ and waiting for the time-delay imposed by the _Timelock Contract_, the _Security Council Multisig_ may actvate the [_emergency state_](malfunction-resistance/emergency-state.md) to bypass such time-delay.
 
 It is crucial, however, to emphasise that the _Security Council Multisig_ is a temporary measure, and will ultimately be phased-out once the Polygon zkEVM has been sufficiently battle-tested.
 
@@ -25,7 +25,7 @@ Security councils generally consist of a certain number of reputable community m
 
 These are individuals or organizations with vested interest in the welfare of the Ethereum ecosystem, and are normally selected from among well-known Ethereum developers and researchers.
 
-The Polygon zkEVM's Security Council is constituted of eight (8) members, four of whom are internal to the Polygon team, while the rest of the members must be from outside Polygon.
+The Polygon zkEVM's Security Council is constituted of eight (8) members, two (2) of whom are internal to the Polygon team, while the rest of the members must be from outside Polygon.
 
 The minimum requirement, even as mentioned in the L2Beat report downloadable [here](https://l2beat.com/multisig-report), is for these individuals to be adequately _knowledgeable and competent enough to make the best judgment about the actions approved by the multisig_.
 
@@ -44,11 +44,11 @@ Here is a list of the 8 addresses of the Polygon zkEVM's Security Council;
 
 ### Security council multisig?
 
-The Security Council Multisig is a _multisig contract_ deployed by the Polygon zkEVM Security Council when either an _emergency state_ is triggered or an _emergency upgrade_ needs to be executed.
+The Security Council Multisig is a _multisig contract_ deployed by the Polygon zkEVM Security Council that allows the _emergency state_ to be triggered, in the case an _emergency upgrade_ needs to be executed.
 
-The _multisig contract_ is a _6-out-of-8_ multisig, which requires six (6) signatures of the Security Council to be attached for the contract to be successfully deployed.
+The _multisig contract_ is a _6-out-of-8_ multisig, which requires six (6) signatures of the Security Council to be attached for the _emergency state_ to be triggered.
 
-There is a further stipulation that a minimum of 2 out of the 6 attached signatures must be from among the 4 members who are external to Polygon.
+There is a further stipulation that a minimum of 4 out of the 6 attached signatures must be from among the 6 members who are external to Polygon.
 
 ## Conclusion
 
@@ -56,4 +56,4 @@ Although the ultimate goal is to move towards a totally decentralized Polygon zk
 
 It is a trade-off between security and decentralization. So then, for the sake of long-term security, it is a deliberate decision to have more centralized early stages of development, in order to attain more decentralized later stages.
 
-Although there is always a possibility for the members of Security Council to go rogue and collude, the 75% threshold together with the minimum 33% of external members’ signatures significantly reduces the risk.
+Although there is always a possibility for the members of Security Council to go rogue and collude, the 75% threshold together with the minimum 66% of external members’ signatures significantly reduces the risk.

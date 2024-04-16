@@ -1,3 +1,7 @@
+!!! warning
+    - Due to Polygon's fast-moving technology, this guide is currently out of date and you will likely experience errors.
+    - The [CDK roll up deployment tutorial](../../../cdk/get-started/deploy-rollup/intro.md) may resolve some of these issues.
+    - We are working on updating this guide as a priority.
 
 Continue with the **third step** of this deployment-guide where you create wallets and deploy contracts.
 
@@ -34,8 +38,8 @@ async function main() {
     const wallet = ethers.Wallet.createRandom();
     console.log(arrayNames[i]);
     console.log(`Address: ${wallet.address}`);
-    console.log(`PrvKey: ${wallet._signingKey().privateKey}`);
-    console.log(`mnemonic: "${wallet._mnemonic().phrase}"`);
+    console.log(`PrvKey: ${wallet.signingKey.privateKey}`);
+    console.log(`mnemonic: "${wallet.mnemonic.phrase}"`);
 
     const keystoreJson = await wallet.encrypt("password");
     console.log(`keystore: ${keystoreJson}`);
