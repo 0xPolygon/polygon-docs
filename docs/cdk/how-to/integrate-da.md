@@ -96,8 +96,8 @@ This section shows you how to deploy the Docker image containing your custom DAC
 2. Edit the following parameters in the [`/docker/scripts/v2/create_rollup_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/docker/scripts/v2/create_rollup_parameters_docker.json) file:
 
     ```json
-    "consensusContract": "PolygonValidiumEtrog",    # CHANGE THIS TO YOUR CONTRACT NAME
-    "dataAvailabilityProtocol": "PolygonDataCommittee", # ADD THIS PARAMETER
+    "consensusContract": "PolygonValidiumEtrog",  // CHANGE THIS TO YOUR CONTRACT NAME
+    "dataAvailabilityProtocol": "PolygonDataCommittee", // ADD THIS PARAMETER
     ```
 
 3. Run the following command:
