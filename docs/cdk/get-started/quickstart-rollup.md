@@ -11,7 +11,7 @@ It sets up and runs the following components:
 - L1 network: `zkevm-mock-l1-network`
 - zkEVM node databases: `zkevm-event-db`, `zkevm-pool-db`, `zkevm-state-db`
 - Explorer databases: `zkevm-explorer-l1-db`, `zkevm-explorer-l2-db`
-- Explorers: `zkevm-explorer-l1`, 
+- Explorers: `zkevm-explorer-l1`
 
 !!! note
     - The documentation describes standard deployments. 
