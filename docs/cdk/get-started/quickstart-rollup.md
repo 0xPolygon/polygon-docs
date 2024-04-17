@@ -2,14 +2,16 @@
 comments: true
 ---
 
-This quick start guide shows you how to deploy a CDK rollup (EVM compatible) environment on your local machine that sets up and runs the following components:
+This quick start guide shows you how to deploy a CDK rollup (EVM compatible) environment on your local machine.
 
-- zkEVM node databases
-- Explorer databases
-- L1 network
-- Prover
-- zkEVM node components
-- Explorers
+It sets up and runs the following components:
+
+- Prover: `zkevm-prover`
+- zkEVM node components: `zkevm-sync`, `zkevm-eth-tx-manager`, `zkevm-sequencer`, `zkevm-sequence-sender`, `zkevm-l2gaspricer`, `zkevm-aggregator`, `zkevm-json-rpc`
+- L1 network: `zkevm-mock-l1-network`
+- zkEVM node databases: `zkevm-event-db`, `zkevm-pool-db`, `zkevm-state-db`
+- Explorer databases: `zkevm-explorer-l1-db`, `zkevm-explorer-l2-db`
+- Explorers: `zkevm-explorer-l1`, `zkevm-explorer-l2`, `zkevm-explorer-json-rpc`
 
 !!! note
     - The documentation describes standard deployments. 
@@ -24,8 +26,27 @@ This quick start guide shows you how to deploy a CDK rollup (EVM compatible) env
 - An AMD64 architecture system.
 
 !!! warning
-    - Currently the executor/prover does not run on ARM-powered Macs.
+    - Some of the components aren't set up to run on MacOS. Please check the workaround. The explorers and the bridge service probably won't come up.
     - For Windows users, WSL/WSL2 use is not recommended. 
+
+!!! tip "MacOS workaround"
+    You may see errors related to `amd64` such as:
+    
+    ```sh
+    ⠇ zkevm-prover 
+    no matching manifest for linux/arm64/v8 in the manifest list entries
+    make: *** [run] Error 18
+    ```
+
+    If so, go to the `docker-compose.yml` file in the `test` directory, search for the component details - in this case `zkevm-prover`, and add the `platform: linux/amd64` environment variable under the `environment` variable (which you should also add if it is not there):
+
+    ```sh
+    environment:
+      - EXPERIMENTAL_DOCKER_DESKTOP_FORCE_QEMU=1
+    platform: linux/amd64
+    ```
+
+    You may find the explorer components affected similarly.
 
 ### Software
 
@@ -73,6 +94,17 @@ make run
 
 The `make run` command spins up the containers that run the environment, but nothing else. This means that the L2 has no data yet.
 
+#### Run the explorers
+
+!!! warning
+    The L2 explorer may not come up on MacOS regardless of environment variables.
+
+You need to bring up the explorer databases and networks separately:
+
+```sh
+make run-explorer-db run-explorer
+```
+
 ### 3.2 Stop the environment
 
 ```bash
@@ -89,41 +121,74 @@ make restart
 
 ### 4.1 Add example transactions and smart contracts
 
+This example builds and deploys contracts, funds accounts, and sends some transactions.
+
 ```bash
 make deploy-sc
 ```
 
+You should see output similar to this:
+
+```sh
+2024-04-17T10:05:17.729+0200	INFO	deploy_sc/main.go:42	connecting to Local L1: http://localhost:8545	{"pid": 16869, "version": "v0.1.0"}
+2024-04-17T10:05:17.729+0200	INFO	deploy_sc/main.go:45	connected	{"pid": 16869, "version": "v0.1.0"}
+2024-04-17T10:05:17.735+0200	DEBUG	deploy_sc/main.go:54	ETH Balance for 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266: 999899846763612022461	{"pid": 16869, "version": "v0.1.0"}
+2024-04-17T10:05:17.735+0200	DEBUG	deploy_sc/main.go:57	Sending TX to deploy Counter SC	{"pid": 16869, "version": "v0.1.0"}
+2024-04-17T10:05:19.763+0200	DEBUG	operations/wait.go:101	Transaction successfully mined: 0xfac2ebc78eada5141cf3737fd5c6ad399d3d18ed7a026d60e87d00c2db0d6ed9	{"pid": 16869, "version": "v0.1.0"}
+...
+```
+
 ### 4.2 Deploy a full Uniswap environment
+
+This example builds out a Uniswap environment which creates token contracts and deploys them, mines tokens, and performs token swaps.
 
 ```bash
 make deploy-uniswap
 ```
 
+You should see output similar to this:
+
+```sh
+2024-04-17T10:07:56.298+0200	DEBUG	pkg/swap.go:40	after first swap aCoin.balanceOf[0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266]: 989999999999999999950	{"pid": 17666, "version": "v0.1.0"}
+2024-04-17T10:07:56.301+0200	DEBUG	pkg/swap.go:43	after first swap bCoin.balanceOf[0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266]: 980000000000000000009	{"pid": 17666, "version": "v0.1.0"}
+2024-04-17T10:07:56.305+0200	DEBUG	pkg/swap.go:46	after first swap cCoin.balanceOf[0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266]: 990000000000000000032	{"pid": 17666, "version": "v0.1.0"}
+2024-04-17T10:07:56.306+0200	DEBUG	pkg/swap.go:47	Swaping tokens from B <-> C	{"pid": 17666, "version": "v0.1.0"}
+2024-04-17T10:07:56.307+0200	DEBUG	pkg/swap.go:62	SwapExactTokensForTokens 0x70e0bA845a1A0F2DA3359C97E0285013525FFC49 <-> 0x4826533B4897376654Bb4d4AD88B7faFD0C98528 pair: 0x09dF250580cb3ba5D061f6dfcA783cDa4caa6461	{"pid": 17666, "version": "v0.1.0"}
+2024-04-17T10:07:56.308+0200	DEBUG	pkg/swap.go:67	SwapExactTokensForTokens 0x70e0bA845a1A0F2DA3359C97E0285013525FFC49 <-> 0x4826533B4897376654Bb4d4AD88B7faFD0C98528 reserves 0: 9999999999999999968 1: 10000000000000000036 Block Timestamp: 1713341274	{"pid": 17666, "version": "v0.1.0"}
+2024-04-17T10:07:56.309+0200	DEBUG	pkg/swap.go:70	SwapExactTokensForTokens 0x70e0bA845a1A0F2DA3359C97E0285013525FFC49 <-> 0x4826533B4897376654Bb4d4AD88B7faFD0C98528 exactAmountIn: 9 amountOut: 8	{"pid": 17666, "version": "v0.1.0"}
+2024-04-17T10:07:58.338+0200	DEBUG	operations/wait.go:101	Transaction successfully mined: 0x5c0a2fdb27f6c681b898101883f278dee1ee78dcdacb8471872e5b00603643fe	{"pid": 17666, "version": "v0.1.0"}
+```
+
 ### 4.3 Grant the Pol smart contract a set amount of tokens
 
-```bash
+This sets up accounts with POL and is run as part of the previous examples.
+
+```sh
 make run-approve-pol
 ```
 
 ## 5. Set up MetaMask
 
-!!! info
-    MetaMask requires the network to be running during set up.
-
 To configure MetaMask to use your local environment, make sure the network is running and follow these steps.
 
-- Log in to your MetaMask wallet.
-- Click your account picture and then on **Settings**.
-- On the left menu, click **Networks**.
-- Click the **Add Network** button.
+1. Log in to your MetaMask wallet.
+2. Click your account picture and then on **Settings**.
+3. On the left menu, click **Networks**.
+
+### Add zkEVM L2 network
+
+- Click the **Add Network** button and **Add a network manually**.
 - Enter the following L2 network information:
     1. `Network name:` Polygon zkEVM - local
     2. `New RPC URL:` <http://localhost:8123>
     3. `Chain ID:` 1001
-    4. `Currency symbol:` ETH
+    4. `Currency symbol:` (accept default)
     5. `Block explorer URL:` <http://localhost:4000>
 - Click **Save**.
-- Click the **Add Network** button,
+
+### Add Geth L1 network
+
+- Click the **Add Network** button and **Add a network manually**.
 - Enter the following L1 network information:
     1. `Network name:` Geth - local
     2. `New RPC URL:` <http://localhost:8545>
@@ -133,7 +198,8 @@ To configure MetaMask to use your local environment, make sure the network is ru
 
 ## Environment configurations
 
-Access the running components using the following details.
+- Use the following details for the running components to set up your applications and tests.
+- You can find these details in the running logs also.
 
 ### Databases
 
