@@ -84,6 +84,7 @@ nav:
         - Kurtosis [EXPERIMENTAL]: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
         - Connect to CDK testnets: cdk/get-started/connect-testnet.md
       - How to:
+        - Integrate a DAC: cdk/how-to/integrate-da.md
         - Migrate:
           - Fork migration: cdk/how-to/migrate/fork.md
         - Use a native token: cdk/how-to/use-native-token.md
