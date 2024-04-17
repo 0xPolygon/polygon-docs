@@ -11,26 +11,26 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 1. Clone [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts).
 
-2. Create a branch off `develop` in the [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts) repo and `cd` into it.
+2. `cd` into `zkevm-contracts` and checkout tag `v6.0.0-rc.1-fork.9`.
 
 3. Run `npm i` from the root.
 
-4. Go to the [`contracts/v2/consensus/validium`](https://github.com/0xPolygonHermez/zkevm-contracts/tree/develop/contracts/v2/consensus/validium) directory. 
+4. `cd` to the `contracts/v2/consensus/validium` directory. 
 
     !!! tip
         - Until further notice, these contracts run on the [etrog release](https://polygon.technology/blog/polygon-zkevm-the-etrog-upgrade-is-live-on-mainnet).
 
-5. Create your custom contract in the same directory, and make sure it implements the [IDataAvailabilityProtocol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/contracts/v2/interfaces/IDataAvailabilityProtocol.sol) interface.
+5. Create your custom contract in the same directory, and make sure it implements the [IDataAvailabilityProtocol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/contracts/v2/interfaces/IDataAvailabilityProtocol.sol) interface.
 
     !!! tip
-        - Use the Polygon DAC implementation contract: [PolygonDataCommittee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/contracts/v2/consensus/validium/PolygonDataCommittee.sol) as a guide.
+        - Use the Polygon DAC implementation contract: [PolygonDataCommittee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/contracts/v2/consensus/validium/PolygonDataCommittee.sol) as a guide.
         - The contract supports custom smart contract implementation and, through this, DACs can add their custom on-chain verification logic.
 
-6. You can leave the `verifyMessage` function empty but make sure the `getProcotolName` function returns a unique name (such as Avail, Celestia, etc). The following example code comes from the [PolygonDataCommitee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/contracts/v2/consensus/validium/PolygonDataCommittee.sol)  implementation.
+6. You can leave the `verifyMessage` function empty but make sure the `getProcotolName` function returns a unique name (such as Avail, Celestia, etc). The following example code comes from the [PolygonDataCommitee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/contracts/v2/consensus/validium/PolygonDataCommittee.sol)  implementation.
 
     ```solidity
     // Name of the data availability protocol
-    string internal constant _PROTOCOL_NAME = "DataAvailabilityCommittee";
+    string internal constant _PROTOCOL_NAME = "<MY_PROTOCOL_NAME>";
 
     ...
 
@@ -42,7 +42,7 @@ This section shows you how to create a custom CDK validium DAC contract.
     }
     ```
 
-7. Update the [/deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/54f58c8b64806429bc4d5c52248f29cf80ba401c/deployment/v2/4_createRollup.ts#L77) script to add your protocol name.
+7. Update the [/deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/54f58c8b64806429bc4d5c52248f29cf80ba401c/deployment/v2/4_createRollup.ts#L77) script to add your contract name.
 
     ```ts
     const supporteDataAvailabilityProtocols = ["<CONTRACT_NAME>"];
@@ -52,9 +52,9 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 !!! info "`PolygonValidiumEtrog.sol` solution"
 
-    The [Etrog DAC integration contract](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol) is still work-in-progress at the time of writing but there are some interesting things to note.
+    The [Etrog DAC integration contract](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol) is still work-in-progress at the time of writing but there are some interesting things to note.
 
-    1. It implements the function `verifyMessage` function. Check [lines 215-220](https://github.com/0xPolygonHermez/zkevm-contracts/blob/b2a62e6af5738366e7494e8312184b1d6fdf287c/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol#L215C1-L220C15):
+    1. It implements the function [`verifyMessage` function](https://github.com/0xPolygonHermez/zkevm-contracts/blob/54f58c8b64806429bc4d5c52248f29cf80ba401c/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol#L231):
 
         ```solidity
         // Validate that the data availability protocol accepts the dataAvailabilityMessage
@@ -67,7 +67,7 @@ This section shows you how to create a custom CDK validium DAC contract.
 
         where `accumulatedNonForcedTransactionsHash` is used for verification against the protocol and `dataAvailabilityMessage` is a byte array containing the signature and addresses of the committee in ascending order.
 
-    2. It also implements a function to set the data availability protocol. Check [lines 250-260](https://github.com/0xPolygonHermez/zkevm-contracts/blob/b2a62e6af5738366e7494e8312184b1d6fdf287c/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol#L250C1-L260C6) to see how they do this.
+    2. It also implements a function to set the data availability protocol at [line 287](https://github.com/0xPolygonHermez/zkevm-contracts/blob/54f58c8b64806429bc4d5c52248f29cf80ba401c/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol#L287) to see how they do this.
 
         ```solidity
         /**
@@ -87,13 +87,13 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 This section shows you how to deploy the Docker image containing your custom DAC contract.
 
-1. Edit the following parameters in the [`docker/scripts/v2/deploy_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/docker/scripts/v2/create_rollup_parameters_docker.json) file:
+1. Edit the following parameters in the [`docker/scripts/v2/deploy_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/docker/scripts/v2/deploy_parameters_docker.json) file:
 
     ```json
     "minDelayTimelock": 3600, BECOMES "minDelayTimelock": 1,
     ```
 
-2. Edit the following parameters in the [`/docker/scripts/v2/create_rollup_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/docker/scripts/v2/create_rollup_parameters_docker.json) file:
+2. Edit the following parameters in the [`/docker/scripts/v2/create_rollup_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/docker/scripts/v2/create_rollup_parameters_docker.json) file:
 
     ```json
     "consensusContract": "PolygonValidiumEtrog",    # CHANGE THIS TO YOUR CONTRACT NAME
@@ -106,13 +106,13 @@ This section shows you how to deploy the Docker image containing your custom DAC
     cp docker/scripts/v2/hardhat.example.paris hardhat.config.ts
     ```
 
-4. Edit [docker/scripts/v2/deploy-docker.sh](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/docker/scripts/v2/deploy-docker.sh) to add the following line:
+4. Edit [docker/scripts/v2/deploy-docker.sh](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/docker/scripts/v2/deploy-docker.sh) to add the following line:
 
     ```sh
     sudo chmod -R go+rxw docker/gethData before docker build -t hermeznetwork/geth-zkevm-contracts -f docker/Dockerfile .  
     ```
 
-5. In the [deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/develop/deployment/v2/4_createRollup.ts) file, uncomment the following lines, and add a `console.log` output that grabs the address of the DAC:
+5. In the [deployment/v2/4_createRollup.ts](https://github.com/0xPolygonHermez/zkevm-contracts/blob/54f58c8b64806429bc4d5c52248f29cf80ba401c/deployment/v2/4_createRollup.ts#L290) file, uncomment the 290-291, and add a `console.log` output that grabs the address of the DAC:
 
     ```ts
     // Setup data committee to 0
