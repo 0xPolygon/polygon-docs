@@ -90,7 +90,7 @@ This section shows you how to deploy the Docker image containing your custom DAC
 1. Edit the following parameters in the [`docker/scripts/v2/deploy_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/docker/scripts/v2/deploy_parameters_docker.json) file:
 
     ```json
-    "minDelayTimelock": 3600, BECOMES "minDelayTimelock": 1,
+    "minDelayTimelock": 3600, // BECOMES "minDelayTimelock": 1,
     ```
 
 2. Edit the following parameters in the [`/docker/scripts/v2/create_rollup_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/docker/scripts/v2/create_rollup_parameters_docker.json) file:
