@@ -378,6 +378,8 @@ nav:
           - Usage: tools/chain-indexer-framework/usage.md
       - Third-party tutorials:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
+          - Venly's NFT-API: https://docs.venly.io/docs/nft-api-getting-started
+          - Venly's Zapier Integration: https://docs.venly.io/docs/zapier-integration 
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
