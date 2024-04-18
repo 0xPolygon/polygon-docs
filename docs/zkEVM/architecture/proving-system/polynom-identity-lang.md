@@ -144,7 +144,7 @@ The initial cell of the execution trace (colored `red`) signifies a secret input
 
 Subsequently, the cryptographic backend generates a proof $\pi$ and public values, and these inputs to the verifier.
 
-## Next PIL version, PIL2
+## Next PIL version: PIL2
 
 Currently, we are in the process of developing a new version of PIL, referred to as **PIL2**. 
 
