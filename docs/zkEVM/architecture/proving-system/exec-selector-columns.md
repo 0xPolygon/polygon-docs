@@ -38,7 +38,7 @@ Selector columns are used to control whether the constraints of an operation app
 
 ## Selector columns and constraints
 
-Next we explain how correctness of the execution trace can be tested in each row with just one equation. 
+Next we explain how to test the correctness of the execution trace in each row with just one equation. 
 
 Firstly, note that:
 
