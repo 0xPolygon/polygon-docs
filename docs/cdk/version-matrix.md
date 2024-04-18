@@ -39,7 +39,7 @@ The table below shows the version compatibility for CDK releases and related com
     <td>8</td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.2">v0.6.2 Elderberry</a></td>
     <td><a href="https://github.com/0xPolygon/cdk-validium-node/releases/tag/v0.6.2%2Bcdk4">0.6.2+cdk.4</a> </td>
-    <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.6/images/sha256-17590789a831259d7a07d8a042ea87e381c5708dec3a7daef6f3f782f50b2c00?context=explore">v0.0.6</a></td>
+    <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.6-hotfix1/images/sha256-e95ef2cd9110aff8acdd29065f407f04ea6179f71a7848d78eaf0dd73c858207?context=explore">v0.0.6-hotfix1</a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v5.0.7">v5.0.7</a></td>
     <td> <a href="https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v5.0.1-rc.2-fork.8">v5.0.1</a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.2">v0.4.2</a></td>
@@ -49,7 +49,7 @@ The table below shows the version compatibility for CDK releases and related com
     <td>7</td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.5.13">v0.5.13 </a>(Etrog+uLxLy)</td>
     <td><a href="https://github.com/0xPolygon/cdk-validium-node/releases/tag/v0.5.13%2Bcdk.10">v0.5.13+cdk.10</a> </td>
-    <td><a href="https://github.com/0xPolygon/cdk-data-availability/releases/tag/v0.0.5">v0.0.6</a></td>
+    <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.6-hotfix1/images/sha256-e95ef2cd9110aff8acdd29065f407f04ea6179f71a7848d78eaf0dd73c858207?context=explore">v0.0.6-hotfix1</a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v4.0.19">v4.0.19</a></td>
     <td> <a href="https://github.com/0xPolygonHermez/zkevm-rom/tree/v4.0.0-fork.7">v4.0.0</a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-bridge-service/releases/tag/v0.4.2">v0.4.2</a></td>
