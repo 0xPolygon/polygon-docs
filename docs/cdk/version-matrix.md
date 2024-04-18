@@ -29,7 +29,7 @@ The table below shows the version compatibility for CDK releases and related com
     <td>CDK Elderberry 2 Release </td>
     <td>9</td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.4">v0.6.4 Elderberry 2</a></td>
-    <td><a href="<LINK HERE>">0.6.4+cdk.6</a> </td>
+    <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-validium-node/0.6.4-cdk.6/images/sha256-c0bcc13f32bb89e66917a10df049f6a6d6a4e2736b3e73b9c27eda85351ce723?context=explore">0.6.4+cdk.6</a> </td>
     <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.7/images/sha256-17590789a831259d7a07d8a042ea87e381c5708dec3a7daef6f3f782f50b2c00?context=explore">v0.0.7</a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v6.0.0">v6.0.0</a></td>
     <td> <a href="https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v5.0.1-rc.2-fork.8">v5.0.1</a></td>
