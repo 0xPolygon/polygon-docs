@@ -112,7 +112,7 @@ The zkASM program that processes EVM transactions is called **zkEVM ROM** (as in
 
 By changing the ROM, we can make the L2 zkEVM more and more closer to the L1 EVM. 
 
-Henceforth, we have different versions of the zkEVM ROM. Each of these versions will be denoted with a unique identifier called **forkID**. 
+Hence, we have different versions of the zkEVM ROM. Each of these versions will be denoted with a unique identifier called **forkID**. 
 
 It is worth mentioning that another advantage of using a ROM-based approach is that we can test small parts of the assembly program in isolation. 
 
