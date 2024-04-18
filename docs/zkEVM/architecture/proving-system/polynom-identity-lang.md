@@ -27,7 +27,7 @@ It can be observed that:
 
 Given the set of constraints (on the right) it is easy to examine whether the execution trace (on the left) correctly models the input program for the given initial input values.
 
-!!!warning
+!!! warning
     
     Throughout this document, concepts of the execution trace and the constraints are didactically explained. That is, explanations involve constructing examples, while gradually adding complexity.
 
