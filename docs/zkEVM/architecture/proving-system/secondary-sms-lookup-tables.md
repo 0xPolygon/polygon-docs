@@ -72,7 +72,7 @@ The correctness of the result will be validated in a _secondary execution matrix
 
 
 
-**Remark.** 
+**Remark** 
 
 An execution trace can be viewed as a set of states (in some state machine), where each row represents a state. For this reason, the terms _execution trace_ and _state machine_ are used interchangeably.
 
