@@ -11,7 +11,7 @@ The figure below depicts a typical state transition $\big(S_{i}^{L2_x} \to S_{i+
 
 ![Figure: Input state and batch, output new state and proof](../../../img/zkEVM/prover-input-batch-output-new.png)
 
-The initial step to producing a proof involves creation of an **execution matrix**, which is a matrix that records all intermediate computations constituting a larger computation. Such a matrix is also called an **execution trace**.
+The initial step to produce a proof involves creation of an **execution matrix**, which is a matrix that records all intermediate computations constituting a larger computation. Such a matrix is also called an **execution trace**.
 
 This larger computation can be thought of as the _state transition function_, while the smaller intermediate computations are like the zkEVM instructions or opcodes.
 
