@@ -4,7 +4,7 @@ However, we don't know beforehand the exact EVM opcodes that will be executed.
 
 Consequently, zkEVM operations to be executed are not known. This is so because these opcodes depend on the particular transactions included in L2 batches.
 
-Every transaction consists of multiple EVM Opcodes, and each EVM Opcode corresponds to multiple zkEVM Opcodes (i.e., The instructions that are in charge of what values are used to populate the execution trace).
+Every transaction consists of multiple EVM opcodes, and each EVM opcode corresponds to multiple zkEVM opcodes (i.e., The instructions that are in charge of what values are used to populate the execution trace).
 
 This dependence is depicted in the figure below.
 
