@@ -3,6 +3,8 @@ hide:
 - toc
 ---
 
+Endpoint details are listed in the [playground](#playground) doc below.
+
 ## Terminal
 
 Use the Cardona testnet https://rpc.cardona.zkevm-rpc.com to test the [endpoint methods](#playground) in a terminal. For example: 
