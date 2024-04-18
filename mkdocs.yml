@@ -173,6 +173,15 @@ nav:
           - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
           - Stream file: zkEVM/architecture/data-streamer/stream-file.md
           - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
+        - The proving system:
+          - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
+          - Executor: zkEVM/architecture/proving-system/the-executor-comp.md
+          - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
+          - Execution trace design: zkEVM/architecture/proving-system/execution-trace-design.md
+          - Selector columns: zkEVM/architecture/proving-system/exec-selector-columns.md
+          - zkEVM and execution traces: zkEVM/architecture/proving-system/exec-trace-and-zkevm.md
+          - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
+          - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - Main state machine: 
