@@ -80,7 +80,7 @@ Let’s take a step-by-step walk-through the above execution trace:
 
 Observe that we have only used the available instructions as proposed in our scenario.
 
-Notice that, for a specific computation and except for the entries in the matrix, the shape of the execution matrix remains the same irrespective of the variable input values $x = (x_0, x_1, x_2)$.
+Notice that for a specific computation, and except for the entries in the matrix, the shape of the execution matrix remains the same irrespective of the variable input values $x = (x_0, x_1, x_2)$.
 
 For example, if $x = (5, 3, 2)$ for the same program, the resulting execution matrix is as follows:
 
