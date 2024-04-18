@@ -25,7 +25,7 @@ It can be observed that:
 - The fifth equation checks for correct assignment of the third input value, $x_2 = 5$.
 - The last equation tests the output value of $\texttt{MUL}$      
 
-Given the set of constraints (on the Right) it is easy to examine whether the execution trace (on the Left) correctly models the input program, for the given initial input values.
+Given the set of constraints (on the right) it is easy to examine whether the execution trace (on the left) correctly models the input program for the given initial input values.
 
 !!!warning
     
