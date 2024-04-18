@@ -2,7 +2,7 @@ The **zkEVM prover** is a software component with which the zkEVM generates proo
 
 While the process of generating a proof is resource-intensive, the time required to verify the proof is significantly shorter, enabling verification to be carried out by a smart contract.
 
-On a highlevel, the prover takes the last batch and the current state as inputs in order to output the new state, together with a proof that attests to the computational integrity of the state transition.
+On a high level, the prover takes the last batch and the current state as inputs in order to calculate the new state, together with a proof that attests to the computational integrity of the state transition.
 
 The figure below depicts a typical state transition $\big(S_{i}^{L2_x} \to S_{i+1}^{L2_x}\big)$,
 
