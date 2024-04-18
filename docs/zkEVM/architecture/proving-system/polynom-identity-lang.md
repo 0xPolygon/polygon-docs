@@ -94,7 +94,7 @@ Since proofs are compact and their verification demands minimal resources, a sma
 
 In reality, a smart contract in L1 implements the verifier algorithm.
 
-The gas cost for this verification is approximately of 200,000 gas units.
+The gas cost for this verification is approximately 200,000 gas units.
 
 
 
