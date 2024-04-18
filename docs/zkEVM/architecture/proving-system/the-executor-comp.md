@@ -118,7 +118,7 @@ It is worth mentioning that another advantage of using a ROM-based approach is t
 
 Since each approach to executor design serves a different purpose, the zkEVM utilizes both approaches. 
 
-However, the single-computation executor is still work in progress.
+However, the single-computation executor is still a work in progress.
 
 
 [^1]: "zkASM" is read as 'zk-assembly'
