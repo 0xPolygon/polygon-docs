@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Use snapshots for quick state syncing. 
 
 Find the zkEVM mainnet snapshots at the below urls.

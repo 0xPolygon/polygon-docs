@@ -1,4 +1,8 @@
-This tutorial takes you through the process of deploying a full CDK zkRollup, EVM-compatible network on Goerli.
+---
+comments: true
+---
+
+This tutorial takes you through the process of deploying a full zkEVM stack on Goerli.
 
 It relies on specific component versions so we have hidden most of the configuration complexity in scripts to make the process straightforward.
 

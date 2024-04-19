@@ -1,4 +1,8 @@
-Deploying the full stack Polygon CDK zkRollup EVM-compatible network requires installing and deploying a number of different components.
+---
+comments: true
+---
+
+Deploying the full zkEVM stack requires installing and deploying a number of different components.
 
 !!! info
     Each component runs in its own Docker container.

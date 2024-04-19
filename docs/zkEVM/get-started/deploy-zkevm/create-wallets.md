@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Set up wallet contracts
 
 Clone the wallet contracts from the [`zkevm-contracts` repository](https://github.com/0xPolygonHermez/zkevm-contracts) and install the `npm` libraries.

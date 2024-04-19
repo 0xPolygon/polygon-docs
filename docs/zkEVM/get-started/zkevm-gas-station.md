@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 The goal of Polygon zkEVM Gas Station is to provide dApp developers with gas pricing suggestions so they can use them before sending transactions to the Polygon zkEVM network. The prediction method is modeled after the [Polygon Gas Station](https://docs.polygon.technology/tools/gas/polygon-gas-station/) but is unique in its own way.
 
 Polygon zkEVM Gas Station is currently deployed on the zkEVM Mainnet Beta and Blueberry Testnet, where it analyzes recent 1500 transactions and recommends gas prices.
