@@ -10,6 +10,8 @@ It relies on specific component versions so we have hidden most of the configura
     - The tutorial is for learning purposes only and is not intended to describe a latest stable version build.
     - Report any content issues on our docs repo: https://github.com/0xPolygon/polygon-docs
 
+## Step-by-step
+
 The process is split into the following sections:
 
 1. [Overview of the full environment](environment-overview.md).
