@@ -292,6 +292,7 @@ nav:
           - Using Ansible: pos/how-to/validator/validator-ansible.md
           - Using packages: pos/how-to/validator/validator-packages.md
         - Operate validator nodes:
+          - Validator best practices: pos/how-to/operate-validator-node/validator-best-practices.md
           - Stake tokens: pos/how-to/operate-validator-node/validator-staking-operations.md
           - Set commission rate: pos/how-to/operate-validator-node/validator-commission-operations.md
           - Move stake: pos/how-to/operate-validator-node/move-stake.md
