@@ -55,33 +55,7 @@ nav:
       - Overview: cdk/overview.md
       - Version compatibility matrix: cdk/version-matrix.md
       - Get started:
-        - Quickstart: 
-          - Validium: cdk/get-started/quickstart-validium.md
-          - Rollup: cdk/get-started/quickstart-rollup.md
-        - Deployment tutorials:
-          - Validium: 
-              - Introduction: cdk/get-started/deploy-validium/intro.md
-              - Deploy contracts:
-                  - Prerequisites: cdk/get-started/deploy-validium/contracts/prerequisites.md
-                  - Set up: cdk/get-started/deploy-validium/contracts/set-up.md
-                  - Deploy contracts: cdk/get-started/deploy-validium/contracts/deploy-contracts.md
-              - Deploy node:
-                  - Prerequisites: cdk/get-started/deploy-validium/node/prerequisites.md
-                  - Set up: cdk/get-started/deploy-validium/node/set-up.md
-                  - Configure the deployment: cdk/get-started/deploy-validium/node/configure-deployment.md
-                  - Run node and services: cdk/get-started/deploy-validium/node/run-node-services.md
-                  - Test transaction: cdk/get-started/deploy-validium/node/test-transaction.md
-          - Rollup: 
-              - Introduction: cdk/get-started/deploy-rollup/intro.md
-              - Environment overview: cdk/get-started/deploy-rollup/environment-overview.md
-              - Prerequisites: cdk/get-started/deploy-rollup/prerequisites.md
-              - Install dependencies: cdk/get-started/deploy-rollup/install-dependencies.md
-              - Create wallets: cdk/get-started/deploy-rollup/create-wallets.md
-              - Configure node deployment: cdk/get-started/deploy-rollup/configure-node-deployment.md
-              - Configure prover: cdk/get-started/deploy-rollup/configure-prover.md
-              - Start node: cdk/get-started/deploy-rollup/start-node.md
-              - Start services: cdk/get-started/deploy-rollup/start-services.md
-        - Kurtosis [EXPERIMENTAL]: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+        - Quick start: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
         - Connect to CDK testnets: cdk/get-started/connect-testnet.md
       - How to:
         - Integrate a DAC: cdk/how-to/integrate-da.md
@@ -110,18 +84,34 @@ nav:
           - zkEVM testnet & mainnet: zkEVM/get-started/quick-start/connect-wallet.md
           - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
           - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
+          - Spin up zkEVM environment: zkEVM/get-started/quick-start/quickstart-rollup.md
+          - Spin up zkEVM environment with a validium: zkEVM/get-started/quick-start/quickstart-rollup-plus-validium.md
         - Gas station: zkEVM/get-started/zkevm-gas-station.md
         - Setup nodes:
           - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
           - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
-        - Deploy zkEVM:
-          - Deploy zkEVM: zkEVM/get-started/deploy-zkevm/index.md
-          - Install dependencies: zkEVM/get-started/deploy-zkevm/install-dependencies.md
-          - Create wallets: zkEVM/get-started/deploy-zkevm/create-wallets.md
-          - Deploy zkNode: zkEVM/get-started/deploy-zkevm/deploy-zknode.md
-          - Configure Prover: zkEVM/get-started/deploy-zkevm/configure-prover.md
-          - Activate forced transactions: zkEVM/get-started/deploy-zkevm/activate-forced-transactions.md
-          - Setup a Goërli node: zkEVM/get-started/deploy-zkevm/setup-goerli-node.md
+          - Deploy zkEVM: 
+              - Introduction: zkEVM/get-started/deploy-zkevm/intro.md
+              - Environment overview: zkEVM/get-started/deploy-zkevm/environment-overview.md
+              - Prerequisites: zkEVM/get-started/deploy-zkevm/prerequisites.md
+              - Install dependencies: zkEVM/get-started/deploy-zkevm/install-dependencies.md
+              - Create wallets: zkEVM/get-started/deploy-zkevm/create-wallets.md
+              - Configure node deployment: zkEVM/get-started/deploy-zkevm/configure-node-deployment.md
+              - Configure prover: zkEVM/get-started/deploy-zkevm/configure-prover.md
+              - Start node: zkEVM/get-started/deploy-zkevm/start-node.md
+              - Start services: zkEVM/get-started/deploy-zkevm/start-services.md
+          - Deploy zkEVM plus DAC: 
+              - Introduction: zkEVM/get-started/deploy-zkevm-with-validium/intro.md
+              - Deploy contracts:
+                  - Prerequisites: zkEVM/get-started/deploy-zkevm-with-validium/contracts/prerequisites.md
+                  - Set up: zkEVM/get-started/deploy-zkevm-with-validium/contracts/set-up.md
+                  - Deploy contracts: zkEVM/get-started/deploy-zkevm-with-validium/contracts/deploy-contracts.md
+              - Deploy node:
+                  - Prerequisites: zkEVM/get-started/deploy-zkevm-with-validium/node/prerequisites.md
+                  - Set up: zkEVM/get-started/deploy-zkevm-with-validium/node/set-up.md
+                  - Configure the deployment: zkEVM/get-started/deploy-zkevm-with-validium/node/configure-deployment.md
+                  - Run node and services: zkEVM/get-started/deploy-zkevm-with-validium/node/run-node-services.md
+                  - Test transaction: zkEVM/get-started/deploy-zkevm-with-validium/node/test-transaction.md
         - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
         - Historical data: zkEVM/get-started/historical-data.md
       - How to:
