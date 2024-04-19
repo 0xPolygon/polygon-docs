@@ -6,7 +6,7 @@ This document explores best practices for running a Polygon PoS validator node.
 
 ## Owner and signer wallets
 
-The *signer wallet* is an address that is used for signing Heimdall blocks, checkpoints, and other signing-related activities. This wallet's private key will be on the validator node for signing purposes. It cannot manage staking, rewards, or delegations.
+The *signer wallet* is an address that is used for signing Heimdall blocks, checkpoints, and other signing-related activities. This wallet's private key is on the validator node for signing purposes. It cannot manage staking, rewards, or delegations.
 
 The validator must keep two types of balances in this wallet:
 
