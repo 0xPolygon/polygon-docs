@@ -2,7 +2,7 @@
 comments: true
 ---
 
-This quick start guide shows you how to set up a CDK validium on your local machine that sets up and runs the following components:
+This quick start guide shows you how to deploy a zkEVM rollup stack with a data access committee component on your local machine. Follow the instructions to set up and run these components:
 
 - zkEVM databases: data node, event, explorer L1 and L2, pool, state, and bridge service
 - zkEVM node components: aggregator, approve service, sequencer and sequence sender, sync
@@ -27,7 +27,7 @@ This quick start guide shows you how to set up a CDK validium on your local mach
 - An AMD64 architecture system.
 
 !!! warning
-    CDK does not support ARM-based Macs.
+    This guide does not fully support ARM-based Macs.
 
 ### Software
 
@@ -51,7 +51,7 @@ cp .env.example .env
 
 ## 2. Launch validium locally
 
-2.1 Start your local CDK validium:
+2.1 Start your local validium:
 
 ```bash
 sudo make run
@@ -161,7 +161,7 @@ In this guide, the L2 is launched that allows gasless transactions. To enable tr
 You should see a page similar to this:
 
 <div align="center">
-  <img src="/img/cdk/cdk-block-explorer-empty.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-block-explorer-empty.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 ## 4. Add the network to a Web3 wallet
@@ -173,13 +173,13 @@ You should see a page similar to this:
 - The RPC node and block explorer containers can be found at ports **8123** and **80**, respectively.
 
 <div align="center">
-  <img src="/img/cdk/cdk-metamask-add-network.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-metamask-add-network.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 4.2 Switch to the new network:
 
 <div align="center">
-  <img src="/img/cdk/cdk-metamask-switch-network.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-metamask-switch-network.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 !!! danger "Important"
@@ -189,25 +189,25 @@ You should see a page similar to this:
 4.3 [Import the account to MetaMask](https://support.metamask.io/hc/en-us/articles/360015489331-How-to-import-an-account). The balance shows up as 100000 POL:
 
 <div align="center">
-  <img src="/img/cdk/cdk-metamask-import-account.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-metamask-import-account.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 4.4 Transfer some tokens to another account:
 
 <div align="center">
-  <img src="/img/cdk/cdk-metamask-transfer.gif" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-metamask-transfer.gif" alt="bridge" width="90%" height="30%" />
 </div>
 
 4.5 After confirming the transaction, check the updated balances:
 
 <div align="center">
-  <img src="/img/cdk/cdk-metamask-transfer-result.gif" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-metamask-transfer-result.gif" alt="bridge" width="90%" height="30%" />
 </div>
 
 4.6 You can also view the transaction details in the block explorer by clicking on the transaction details in MetaMask:
 
 <div align="center">
-  <img src="/img/cdk/cdk-tx-view-on-block-explorer.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-tx-view-on-block-explorer.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 !!! warning "Troubleshooting stuck transactions with MetaMask"
@@ -230,7 +230,7 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
 5.1.1 Add the L1 RPC to MetaMask:
 
 <div align="center">
-  <img src="/img/cdk/cdk-metamask-add-l1.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-metamask-add-l1.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 5.1.2 Switch to the L1 network and you will see the previously imported account with ~999 POL on the L1 chain.
@@ -243,13 +243,13 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
     You won't see this view the second time around.
 
 <div align="center">
-  <img src="/img/cdk/cdk-bridge.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-bridge.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 5.1.5 Select the previously imported account (0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266). Once you are connected, you should see a page like this:
 
 <div align="center">
-  <img src="/img/cdk/cdk-bridge-connected.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-bridge-connected.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 5.1.6 Enter the amount (e.g. 5) to bridge and click **Continue**, after confirming you understood what you're doing, you will see the **Confirm Bridge** page.
@@ -257,13 +257,13 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
 5.1.7 Click **Bridge** and approve the transaction on the MetaMask pop-up:
 
 <div align="center">
-  <img src="/img/cdk/cdk-bridge-confirm.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-bridge-confirm.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 5.1.8 Once bridging is complete, you should see the **Activity** page:
 
 <div align="center">
-  <img src="/img/cdk/cdk-bridge-completed-l1-to-l2.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-bridge-completed-l1-to-l2.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 ### 5.2 L2 to L1
@@ -273,7 +273,7 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
 5.2.2 You should see both the updated L1 and L2 balances:
 
 <div align="center">
-  <img src="/img/cdk/cdk-bridge-l2-to-l1.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-bridge-l2-to-l1.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 5.2.3 Enter an amount and follow the same process to bridge the fund back to the L1.
@@ -284,11 +284,11 @@ CDK has a native bridge with UI that allows you to transfer funds between the L1
 The L2->L1 bridging is slightly different than L1->L2 and you will see the **Activity** page like this after the transaction is executed:
 
 <div align="center">
-  <img src="/img/cdk/cdk-bridge-l2-to-l1-on-hold.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-bridge-l2-to-l1-on-hold.png" alt="bridge" width="90%" height="30%" />
 </div>
 
 5.2.4 Click **Finalise** and approve the transaction (Note: MetaMask will pop up a window to ask you to switch to the L1 network first). Then you will see this once the bridging is completed:
 
 <div align="center">
-  <img src="/img/cdk/cdk-bridge-l2-to-l1-completed.png" alt="bridge" width="90%" height="30%" />
+  <img src="/img/zkevm/zkevm-rollup-plus-dac/cdk-bridge-l2-to-l1-completed.png" alt="bridge" width="90%" height="30%" />
 </div>

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Polygon zkEVM's Mainnet Beta is available for developers to launch smart contracts, execute transactions, and experiment with the network. This tutorial extends the exploration by allowing developers to launch their own production zkNode.
 
 Developers can setup a production node with either the Polygon zkEVM's mainnet or the Cardona testnet.

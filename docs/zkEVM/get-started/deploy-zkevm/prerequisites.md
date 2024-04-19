@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Hardware
 
 - A Linux-based OS (e.g., Ubuntu Server 22.04 LTS).

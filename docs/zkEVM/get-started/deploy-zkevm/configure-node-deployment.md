@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Set up
 
 1. Create some working directories.

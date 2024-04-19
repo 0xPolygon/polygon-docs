@@ -3,13 +3,8 @@
 - You should have a running CDK stack. 
 - Follow one of the tutorials linked below if you haven't yet spun up a CDK stack.
 
-### Deployment guides
-
-- [Deploy a validium CDK](../get-started/deploy-validium/intro.md)
-- [Deploy a zkEVM CDK](../get-started/deploy-rollup/intro.md)
-
 !!! warning
-    The rollup documentation is currently being updated.
+    This document is currently being updated for the Kurtosis stack.
 
 ## Use a custom native token
 

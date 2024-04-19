@@ -33,6 +33,10 @@ wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.10.8/rabbi
 sudo dpkg -i rabbitmq-server_3.10.8-1_all.deb
 ```
 
+## Validator best practices
+
+See the doc on [validator best practices](../operate-validator-node/validator-best-practices.md) for tips on how to keep your validator node secure and operational.
+
 ## Mandatory Checklist for Validator Setup
 
 1. Please follow the below checklist in order to set up your Validator node using Binaries, Ansible or Packages.
