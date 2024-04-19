@@ -2,7 +2,7 @@ This document explores best practices for running a Polygon PoS validator node.
 
 !!! info "Deploying a validator node"
 
-    Get started with the process of deploying a validator node by reading the doc on [prerequisites](../../how-to/validator/prerequisites.md).
+    Get started with the process of deploying a validator node by reading the doc on [validator node prerequisites](../../how-to/validator/prerequisites.md).
 
 ## Owner and signer wallets
 
