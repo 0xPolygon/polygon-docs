@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Start node
 
 From the `zkevm` root directory, run the following:

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Configure prover DB
 
 1. Copy/paste the following script into `~/zkevm/mainnet/db/scripts/init_prover_db.sql` to replace what's there.

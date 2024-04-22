@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Set up wallet contracts
 
 Clone the wallet contracts from the [`zkevm-contracts` repository](https://github.com/0xPolygonHermez/zkevm-contracts) and install the `npm` libraries.
@@ -69,7 +73,7 @@ npm i
     ETHERSCAN_API_KEY="..."   # your Etherscan API key
     ```
 
-3. Send 0.5 GöETH to the deployment address wallet listed in `wallets.txt`.
+3. Send 0.5 Sepolia ETH to the deployment address wallet listed in `wallets.txt`.
 
 ## Edit deployment configuration
 
