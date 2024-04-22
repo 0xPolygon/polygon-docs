@@ -22,7 +22,7 @@ Following information relates to the latest available (and public) external asse
 
 ## zkEVM
  
- - zkEVM-Rom Security Audit by Verichains in Jan 2023: TBA
+ - zkEVM-Rom Security Audit by Verichains in Jan 2023: [TBA](https://github.com/0xPolygonHermez/zkevm-rom/tree/main/audits)
  - Security Audits by Hexens & Spearbit: https://github.com/0xPolygonHermez/zkevm-rom/tree/main/audits
 
 ## CDK
