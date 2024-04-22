@@ -10,14 +10,14 @@ The monitoring infrastructure was developed both in-house and by vendors as need
 
 ### Multisig Security
 
-Specific requirements are followed by any Polygon Labs employee that is a signer on a corporate multisig contract. Multisig contacts are corporately owned  and control treasury assets or smart contract deployments. They consist of Safes (previously Gnosis Safes) and other smart contract multisig implementations. Hardware wallets are hardware-based cold storage such as Trezor or Ledger devices that store private keys and enable signing multisig transactions offline. Signer multisig requirement include:
+Specific requirements are followed by any Polygon Labs employee that is a signer on a corporate multisig contract. Multisig contacts are corporate-owned  and control treasury assets or smart contract deployments. They consist of Safes (previously Gnosis Safes) and other smart contract multisig implementations. Hardware wallets are hardware-based cold storage such as Trezor or Ledger devices that store private keys and enable signing multisig transactions offline. Signer multisig requirement include:
 
-- **Hardware Wallet:** Polygon requires Cold storage from an accepted vendor dedicated for company official use only and secured by a PIN
+- **Hardware Wallet:** Polygon requires cold storage from an accepted vendor dedicated for company official use only and secured by a PIN
 - **Hot Wallets:** Hot wallets are not allowed for use on Polygon multisigs
-- **Corporate Workstation:** Signing must be performed from a company system  managed by  our enterprise mobile device management (MDM) platform  complete with anti-virus (AV) and endpoint detection and device (EDR).
+- **Corporate Workstation:** Signing must be performed from a company system  managed by  our enterprise mobile device management (MDM) platform  complete with anti-virus (AV) and endpoint detection and device (EDR)
 - **Clean Key:** All signers are required to create a clean key that has never been exposed to a hot wallet
 - **Mnemonic Storage:** Polygon mandates safe storage of mnemonic passphrases and provides guidance to its employees
-- **Secure Communication:** All multisig signing events are coordinated using Polygon’s accepted communication protocols for multisigs.
+- **Secure Communication:** All multisig signing events are coordinated using Polygon’s accepted communication protocols for multisigs
 
 **All corporate multisigs are monitored 24/7 by the Polygon security team.**
 

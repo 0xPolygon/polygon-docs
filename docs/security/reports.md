@@ -1,10 +1,12 @@
-Polygon Labs periodically assesses the security its products and applications through extensive internal testing and external (public & private) engagements, such as code reviews, security audits and penetration testing. All products and applications have been assessed multiple times to date. Security assessments continue as the ecosystem matures.
+Polygon Labs periodically assesses the security of its products and applications through extensive internal testing and external (public & private) engagements, such as code reviews, security audits, red team assessments and penetration testing. All products and applications have been assessed multiple times to date. Security assessments continue as the ecosystem matures.
 
-Following information relates to the latest available (and public) external assessments:
+Following information relates to the latest available (and public) external assessments and certifications:
 
-## ISO27001
+## ISO/IEC 27001:2022 Certification
 
- - ISO27001 certificate: https://www.schellman.com/certificate-directory (search for Polygon Labs)
+ - Polygon Labs was awarded ISO 27001 certification in March of 2024
+    - **Certificate:** https://www.schellman.com/certificate-directory (search for "Polygon Labs")
+    - **Scope:** `The scope of the ISO/IEC 27001:2022 certification is limited to the information security management system (ISMS) supporting the Polygon Labs' business of developing blockchain scaling solutions, which includes personnel, policies, procedures, standards, systems, endpoint devices, applications, data, and controls, and in accordance with the statement of applicability, version 1.2, dated October 11, 2023.`
 
 ## Portal
 

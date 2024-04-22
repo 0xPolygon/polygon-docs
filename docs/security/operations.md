@@ -20,3 +20,11 @@ When an incident is identified the security operations team performs triage and 
 Polygon Labs carefully considers when, how and who to communicate with during incident response. Impacted stakeholders are sent notifications in a timely manner to ensure they can take reasonable steps to protect their information if necessary. Polygon Labs also makes every effort to work with law enforcement to the degree required by the laws of the jurisdictions that we operate in, which may be different depending on the nature of the cyber security incident.
 
 In order to ensure the incident response process remains relevant, we conduct regular incident response exercises if no real security incident has occurred after a given period.
+
+**Authentication & Access Control**
+
+Polygon Labs establishes standards for authentication & access control in its information security policy and information security standards documents.
+
+To ensure the security of our corporate systems, all employees must adhere to strict password requirements.  Passwords should be changed regularly according to our guidelines and two-factor authentication is mandatory for accessing sensitive systems. Default, shared, or easily guessable passwords are strictly prohibited.
+
+Polygon Labs performs entitlement reviews for sensitive systems on a yearly basis. Where applicable and available, systems are accessed via single sign-on (SSO).
