@@ -61,7 +61,10 @@ $$
 Thirdly, each operation is only checked if it was applied to the particular row. That is, only if a value $\texttt{Opx} = 1$ appears in the corresponding row. That is, with respect to each operation $\texttt{Opx}$, the following factor is tested:
 
 $$
-\texttt{Op1} \cdot \big( 1 - \texttt{Op2} \big) = 1\quad \text{only if}\quad \texttt{Op1} = 1  \\
+\texttt{Op1} \cdot \big( 1 - \texttt{Op2} \big) = 1\quad \text{only if}\quad \texttt{Op1} = 1
+$$
+
+$$
 \texttt{Op2} \cdot \big( 1 - \texttt{Op1} \big) = 1\quad \text{only if}\quad \texttt{Op2} = 1
 $$
 
