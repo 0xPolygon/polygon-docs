@@ -32,7 +32,7 @@ hide:
           <div class="product-list-item-header">
              <div class="feature-card-heading">Deploy zkEVM</div>
           </div>
-          <p class="feature-paragraph">Get started by deploying zkEVM on Cardona.</p>
+          <p class="feature-paragraph">Get started by deploying zkEVM.</p>
        </a>
     </div>
     <div class="grid-item">
