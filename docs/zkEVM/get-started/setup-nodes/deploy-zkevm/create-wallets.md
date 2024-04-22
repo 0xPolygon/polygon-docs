@@ -73,7 +73,7 @@ npm i
     ETHERSCAN_API_KEY="..."   # your Etherscan API key
     ```
 
-3. Send 0.5 GöETH to the deployment address wallet listed in `wallets.txt`.
+3. Send 0.5 Sepolia ETH to the deployment address wallet listed in `wallets.txt`.
 
 ## Edit deployment configuration
 

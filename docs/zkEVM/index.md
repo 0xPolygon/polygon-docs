@@ -28,11 +28,11 @@ hide:
        </a>
     </div>
     <div class="grid-item">
-       <a href="./get-started/deploy-zkevm/">
+       <a href="./get-started/setup-nodes/deploy-zkevm/intro">
           <div class="product-list-item-header">
              <div class="feature-card-heading">Deploy zkEVM</div>
           </div>
-          <p class="feature-paragraph">Get started by deploying zkEVM on Goerli.</p>
+          <p class="feature-paragraph">Get started by deploying zkEVM on Cardona.</p>
        </a>
     </div>
     <div class="grid-item">
