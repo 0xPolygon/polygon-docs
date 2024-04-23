@@ -8,11 +8,11 @@ Venly Widget is a JavaScript SDK created to streamline everyday blockchain tasks
 
 Venly Wallet allows you to create and manage wallets on the Polygon network. You can send and receive MATIC, Polygon NFTs, and ERC20 tokens. Apart from this, the Venly Wallet also supports:
 
-- Multiple blockchains
-- Native token swap functionality
-- Signing messages (including EIP712 message)
-- Calling smart contracts
-- Importing wallets
+- Multiple blockchains.
+- Native token swap functionality.
+- Signing messages (including EIP712 message).
+- Calling smart contracts.
+- Importing wallets.
 
 ## Look and feel
 
