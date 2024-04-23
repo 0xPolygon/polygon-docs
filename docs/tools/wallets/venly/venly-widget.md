@@ -22,13 +22,13 @@ As the Widget is a product that incorporates a user interface (UI), let's look a
 
 The application prompts users to transfer an NFT from their wallet to a different destination in this flow.
 
-![image](https://github.com/0xPolygon/polygon-docs/assets/139292301/da696d64-9dbc-4a1c-9527-ae91bfd19cb0)
+![Polygon NFT transfer](https://github.com/0xPolygon/polygon-docs/assets/139292301/da696d64-9dbc-4a1c-9527-ae91bfd19cb0)
 
 ### Token transfer
 
 The application prompts the user to transfer a token from their wallet to a different destination in this flow.
 
-![image](https://github.com/0xPolygon/polygon-docs/assets/139292301/ae45b544-8ee3-4cfc-94f6-0cc430658f98)
+![MATIC token transfer](https://github.com/0xPolygon/polygon-docs/assets/139292301/ae45b544-8ee3-4cfc-94f6-0cc430658f98)
 
 ## Integration options
 
@@ -40,7 +40,7 @@ Multiple integration options are available to incorporate the Venly Widget into 
 
 These are just a few integration options to incorporate the Venly Widget into your application. The choice of integration method depends on your specific requirements, preferences, and the existing infrastructure of your application.
 
-![image](https://github.com/0xPolygon/polygon-docs/assets/139292301/edcbb6b1-b17c-424f-bfa9-c8448cc8e441)
+![Venly widget integration options](https://github.com/0xPolygon/polygon-docs/assets/139292301/edcbb6b1-b17c-424f-bfa9-c8448cc8e441)
 
 ## When to choose what?
 
@@ -49,7 +49,7 @@ If you want to build your wallet app for users to interact with, you should use 
 If you want to integrate an existing and complete wallet solution, you can use the Venly Widget.  
 There are multiple ways to integrate it - natively or by using another library (which also uses the Venly Widget in the background):
 
-![image](https://github.com/0xPolygon/polygon-docs/assets/139292301/7a6a6f02-10d9-48d3-83db-250d86406fff)
+![Decision making flowchart for web3modal and widget](https://github.com/0xPolygon/polygon-docs/assets/139292301/7a6a6f02-10d9-48d3-83db-250d86406fff)
 
 | Integration type | Description                                                                                                                                                     | UI flexibility                                                                                                                                                                                                | Blockchains          |
 | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------- |
