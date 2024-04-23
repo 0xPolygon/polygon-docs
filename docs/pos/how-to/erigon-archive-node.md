@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 ## System requirements
 
@@ -6,7 +9,7 @@
 - **Storage**
     - Basically **io1** or above with at least 20k+ iops and RAID-0 based disk structure
     - Mainnet archive node: 10TB
-    - Mumbai testnet archive node: 2TB
+    - Amoy testnet archive node: 1TB
     - SSD or NVMe. Bear in mind that SSD performance deteriorates when close to capacity
 - **Golang:** >= v1.20
 - **GCC:** >= v10
@@ -31,10 +34,10 @@ This should create the binary at `./build/bin/erigon`
 
 ## Start Erigon client
 
-When connecting to Mumbai testnet, use the following command to start your Erigon client:
+When connecting to Amoy testnet, use the following command to start your Erigon client:
 
 ```bash
-erigon --chain=mumbai
+erigon --chain=amoy
 ```
 
 If you're deploying to mainnet, run the following command:
@@ -48,18 +51,18 @@ erigon --chain=bor-mainnet --db.size.limit=12TB --db.pagesize=16KB # remaining f
 If you want to store Erigon files in a non-default location, use `-datadir` to specify a new location:
     
 ```bash
-erigon --chain=mumbai --datadir=<your_data_dir>
+erigon --chain=amoy --datadir=<your_data_dir>
 ```
     
 If you are not using local **heimdall**, use `-bor.heimdall=<your heimdall url>`. By default, it will try to connect to `localhost:1317`.
     
-```makefile
-erigon --chain=mumbai --bor.heimdall=<your heimdall url> --datadir=<your_data_dir>
+```bash
+erigon --chain=amoy --bor.heimdall=<your heimdall url> --datadir=<your_data_dir>
 ```
 
 !!! note
 
-    - If you want to connect to Polygon Mumbai Testnet, use: [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology)
+    - If you want to connect to Polygon Amoy Testnet, use: [https://heimdall-api-amoy.polygon.technology](https://heimdall-api-amoy.polygon.technology)
 
     - For Polygon mainnet, use: [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)
 
@@ -74,4 +77,4 @@ erigon --chain=mumbai --bor.heimdall=<your heimdall url> --datadir=<your_data_di
 
 ## Reporting issues
 
-In case you encounter any issues and are looking for support, please get in touch with the Erigon team. More details available in [this GitHub README](https://github.com/ledgerwatch/erigon?tab=readme-ov-file#getting-in-touch).
+In case you encounter any issues and are looking for support, please get in touch with the Erigon team. More details available in [the Erigon GitHub README](https://github.com/ledgerwatch/erigon?tab=readme-ov-file#getting-in-touch).

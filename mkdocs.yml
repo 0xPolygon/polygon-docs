@@ -56,12 +56,9 @@ nav:
       - Version compatibility matrix: cdk/version-matrix.md
       - Get started:
         - Quick start: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
-        - Connect to CDK testnets: cdk/get-started/connect-testnet.md
-      - How to:
         - Integrate a DAC: cdk/how-to/integrate-da.md
         - Migrate:
           - Fork migration: cdk/how-to/migrate/fork.md
-        - Use a native token: cdk/how-to/use-native-token.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
       - Architecture:
@@ -87,32 +84,18 @@ nav:
         - Gas station: zkEVM/get-started/zkevm-gas-station.md
         - Setup nodes:
           - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
-          - Setup local node with DAC: zkEVM/get-started/setup-nodes/local-node-plus-dac.md
           - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
-          - Deployment tutorials:
-            - Deploy zkEVM: 
-                - Introduction: zkEVM/get-started/deploy-zkevm/intro.md
-                - Environment overview: zkEVM/get-started/deploy-zkevm/environment-overview.md
-                - Prerequisites: zkEVM/get-started/deploy-zkevm/prerequisites.md
-                - Install dependencies: zkEVM/get-started/deploy-zkevm/install-dependencies.md
-                - Create wallets: zkEVM/get-started/deploy-zkevm/create-wallets.md
-                - Configure node deployment: zkEVM/get-started/deploy-zkevm/configure-node-deployment.md
-                - Configure prover: zkEVM/get-started/deploy-zkevm/configure-prover.md
-                - Start node: zkEVM/get-started/deploy-zkevm/start-node.md
-                - Start services: zkEVM/get-started/deploy-zkevm/start-services.md
-            - Deploy zkEVM plus DAC: 
-                - Introduction: zkEVM/get-started/deploy-zkevm-with-validium/intro.md
-                - Deploy contracts:
-                    - Prerequisites: zkEVM/get-started/deploy-zkevm-with-validium/contracts/prerequisites.md
-                    - Set up: zkEVM/get-started/deploy-zkevm-with-validium/contracts/set-up.md
-                    - Deploy contracts: zkEVM/get-started/deploy-zkevm-with-validium/contracts/deploy-contracts.md
-                - Deploy node:
-                    - Prerequisites: zkEVM/get-started/deploy-zkevm-with-validium/node/prerequisites.md
-                    - Set up: zkEVM/get-started/deploy-zkevm-with-validium/node/set-up.md
-                    - Configure the deployment: zkEVM/get-started/deploy-zkevm-with-validium/node/configure-deployment.md
-                    - Run node and services: zkEVM/get-started/deploy-zkevm-with-validium/node/run-node-services.md
-                    - Test transaction: zkEVM/get-started/deploy-zkevm-with-validium/node/test-transaction.md
-        - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+          - Deploy zkEVM:
+              - Introduction: zkEVM/get-started/setup-nodes/deploy-zkevm/intro.md
+              - Environment overview: zkEVM/get-started/setup-nodes/deploy-zkevm/environment-overview.md
+              - Prerequisites: zkEVM/get-started/setup-nodes/deploy-zkevm/prerequisites.md
+              - Install dependencies: zkEVM/get-started/setup-nodes/deploy-zkevm/install-dependencies.md
+              - Create wallets: zkEVM/get-started/setup-nodes/deploy-zkevm/create-wallets.md
+              - Configure node deployment: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-node-deployment.md
+              - Configure prover: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-prover.md
+              - Start node: zkEVM/get-started/setup-nodes/deploy-zkevm/start-node.md
+              - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
+          - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
         - Historical data: zkEVM/get-started/historical-data.md
       - How to:
         - How to: zkEVM/how-to/index.md

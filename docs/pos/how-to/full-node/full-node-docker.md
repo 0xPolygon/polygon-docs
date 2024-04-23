@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 The Polygon team distributes official Docker images which can be used to run nodes on the Polygon Mainnet. These instructions are for running a Full Node, but they can be adapted for running sentry nodes and validators as well.
 

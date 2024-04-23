@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 ## Overview
 
@@ -26,7 +29,7 @@
     curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash
     ```
 
-    or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `mumbai`). All release versions can be found on
+    or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions can be found on
     [Heimdall GitHub repository](https://github.com/maticnetwork/heimdall/releases).
 
     ```shell
@@ -43,7 +46,7 @@
     curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash
     ```
 
-    or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `mumbai`). All release versions could be found on
+    or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions could be found on
     [Bor Github repository](https://github.com/maticnetwork/bor/releases).
 
     ```shell
@@ -75,7 +78,7 @@ In this section, we will go through steps to initialize and customize configurat
 sudo -u heimdall heimdalld init --chain=mainnet --home /var/lib/heimdall
 
 # For testnet
-sudo -u heimdall heimdalld init --chain=mumbai --home /var/lib/heimdall
+sudo -u heimdall heimdalld init --chain=amoy --home /var/lib/heimdall
 ```
 
 - You will need to add a few details in the `config.toml` file. To open the `config.toml` file run the following command `vi /var/lib/heimdall/config/config.toml`
@@ -99,13 +102,13 @@ You will need to check and modify these files accordingly.
 
 - Make sure the chain is set correctly in `/lib/systemd/system/heimdalld.service` file. Open the file with following command `sudo vi /lib/systemd/system/heimdalld.service`
 
-    - In the service file, set `--chain` to `mainnet` or `mumbai` accordingly
+    - In the service file, set `--chain` to `mainnet` or `amoy` accordingly
 
   Save the changes in `/lib/systemd/system/heimdalld.service`.
 
 - Make sure the chain is set correctly in `/var/lib/bor/config.toml` file. Open the file with following command `sudo vi /var/lib/bor/config.toml`
 
-    - In the config file, set `chain` to `mainnet` or `mumbai` accordingly.
+    - In the config file, set `chain` to `mainnet` or `amoy` accordingly.
 
     - To enable Archive mode you can optionally enable the following flags:
 

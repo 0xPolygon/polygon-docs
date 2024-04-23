@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Polygon validators continuously monitor a contract on Ethereum chain called `StateSender`. Each time a registered contract on Ethereum chain calls this contract, it emits an event. Using this event Polygon validators relay the data to another contract on Polygon chain. This **State Sync** mechanism is used to send data from Ethereum to Polygon.
 
 Additionally, Polygon validators send an Ethereum hash of each transaction on the Polygon chain on a regular basis. You can use this **checkpoint** to validate any transaction that took place on Polygon. Once a transaction has been verified to have occurred on the Polygon chain, Ethereum can then be used to carry out the appropriate action.
