@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html) is used to
 configure and manage a full node. 
