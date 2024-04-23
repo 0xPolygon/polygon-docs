@@ -106,7 +106,7 @@ That will install the `bor` binary. Verify the installation by checking the Bor 
 bor version
 ```
 
-### Configure Bor seeds (Mainnet)
+### Configure Bor seeds (mainnet)
 
 ```bash
 sed -i 's|.*\[p2p.discovery\]|  \[p2p.discovery\] |g' /var/lib/bor/config.toml
