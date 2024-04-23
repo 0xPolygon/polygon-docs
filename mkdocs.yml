@@ -482,6 +482,7 @@ nav:
               - Create wallet:  tools/wallets/venly/create-wallet.md
               - Add network:  tools/wallets/venly/add-network.md
               - Add custom token:  tools/wallets/venly/custom-tokens.md
+              - Venly widget: tools/wallets/venly/venly-widget.md
           - Fortmatic: tools/wallets/fortmatic.md    
           - Openfort: tools/wallets/openfort.md
           - Particle network:  tools/wallets/particle-network.md
