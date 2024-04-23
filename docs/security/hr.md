@@ -4,7 +4,7 @@ Polygon uses single sign-on technologies to automate the administration of user 
 
 When an employee exits the company, HR changes their status in our HRIS system, automatically removing their access to our SSO integrated SaaS platforms, and IT is immediately notified to initiate the wipe and recovery of their corporate system.  
 
-### Security Awareness Training
+### Security awareness training
 
 Polygon utilizes a SaaS platform to provide an integrated approach to email and security awareness training for all of our employees.  All employees are required to pass the training during their first weeks of employment.  The key features of the platform are:
   
