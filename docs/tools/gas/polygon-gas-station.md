@@ -2,7 +2,7 @@ Polygon gas station aims to help dApp developers with gas price recommendations,
 
 We received a lot of requests from dApp developers for building a gas price recommendation service. So we took some inspiration from Eth Gas Station and built one.
 
-Polygon gas station has been deployed both on the Polygon mainnet & Mumbai testnet. It queries the RPC for `eth_feeHistory` and fetches the 10th, 25th, and 50th percentiles of priority fees for transactions in each of the last 15 blocks. The average value of the 10th, 25th, and 50th percentiles become the `safeLow`, `standard`, and fast fee predictions.
+Polygon gas station has been deployed both on the Polygon mainnet & Amoy testnet. It queries the RPC for `eth_feeHistory` and fetches the 10th, 25th, and 50th percentiles of priority fees for transactions in each of the last 15 blocks. The average value of the 10th, 25th, and 50th percentiles become the `safeLow`, `standard`, and fast fee predictions.
 
 !!! important
     On Polygon PoS mainnet, it is mandatory to pass a minimum priority fees of 30 gwei.
@@ -13,7 +13,7 @@ Polygon gas station has been deployed both on the Polygon mainnet & Mumbai testn
 
 You can send `GET` requests using the following URLs to fetch gas price recommendations from the gas oracle:
 
-- Mumbai: https://gasstation-testnet.polygon.technology/v2
+- Amoy testnet: https://gasstation-testnet.polygon.technology/amoy
 - zkEVM Cardona: https://gasstation-testnet.polygon.technology/zkevm/cardona
 
 #### cURL
