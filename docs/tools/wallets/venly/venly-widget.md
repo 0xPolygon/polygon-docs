@@ -1,6 +1,6 @@
 # Venly Widget
 
-Venly Widget is a powerful javascript SDK created to streamline everyday blockchain tasks. Its purpose is to enable functionalities otherwise restricted due to security implications, such as creating signatures. By encapsulating Venly's extensive capabilities within a user-friendly JavaScript layer, Venly Widget empowers developers and simplifies the development process.
+Venly Widget is a JavaScript SDK created to streamline everyday blockchain tasks. Its purpose is to enable functionalities otherwise restricted due to security implications, such as creating signatures. By encapsulating Venly's extensive capabilities within a user-friendly JavaScript layer, Venly Widget empowers developers and simplifies the development process.
 
 > If you are new to Web3 and don't have experience with blockchain technologies, we recommend you use the Venly Widget natively for a better developer experience.
 
