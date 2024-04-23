@@ -2,7 +2,8 @@
 
 Venly Widget is a JavaScript SDK created to streamline everyday blockchain tasks. Its purpose is to enable functionalities otherwise restricted due to security implications, such as creating signatures. By encapsulating Venly's extensive capabilities within a user-friendly JavaScript layer, Venly Widget empowers developers and simplifies the development process.
 
-> If you are new to Web3 and don't have experience with blockchain technologies, we recommend you use the Venly Widget natively for a better developer experience.
+!!! tip "Please note"
+    If you are new to Web3 and don't have experience with blockchain technologies, we recommend you use the Venly Widget natively for a better developer experience.
 
 ## Create Polygon wallets with Venly Widget
 
@@ -51,7 +52,7 @@ There are multiple ways to integrate it - natively or by using another library (
 
 ![Decision making flowchart for web3modal and widget](https://github.com/0xPolygon/polygon-docs/assets/139292301/7a6a6f02-10d9-48d3-83db-250d86406fff)
 
-| Integration type | Description                                                                                                                                                     | UI flexibility                                                                                                                                                                                                | Blockchains          |
+| Integration type | Description | UI flexibility | Blockchains |
 | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------- |
 | **Native**       | A JavaScript SDK that seamlessly integrates with various API functionalities, empowering users to execute diverse blockchain operations effortlessly.           | The Widget delivers pre-designed screens tailored explicitly for end users, offering a ready-to-use solution. These screens are not customizable, ensuring consistency and simplicity in the user experience. | All supported chains |
 | **Ethers.js**    | A JavaScript library is used to interact with the EVM blockchains. It provides a wide range of functionality for developers to build decentralized applications | This integration ensures that the Widget is invoked when needed, allowing users to conveniently and securely perform the required actions within the context of your application.                             | Only EVM chains      |
@@ -59,4 +60,5 @@ There are multiple ways to integrate it - natively or by using another library (
 | **Web3-React**   | A JavaScript SDK based on ethers.js.                                                                                                                            | This integration ensures that the Widget is invoked when needed, allowing users to conveniently and securely perform the required actions within the context of your application.                             | Only EVM chains      |
 | **Web3Modal**    | Web3Modal is a library that simplifies the process of connecting to different wallet providers using standard protocols like WalletConnect                      | When users opt to log in with Venly, the modal will initiate the Venly Widget upon various user actions, facilitating seamless integration between your application and the Venly platform.                   | Only EVM chains      |
 
-> Ready to try out the Venly Widget? [Click here to read the getting started guide](https://docs.venly.io/docs/widget-getting-started).
+!!! success 
+    Ready to try out the Venly Widget? [Click here to read the getting started guide](https://docs.venly.io/docs/widget-getting-started).
