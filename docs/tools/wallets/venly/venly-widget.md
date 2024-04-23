@@ -34,9 +34,9 @@ The application prompts the user to transfer a token from their wallet to a diff
 
 Multiple integration options are available to incorporate the Venly Widget into your application. Here is a brief overview of some of these options:
 
-1. [Native Integration with Venly SDK](https://docs.venly.io/docs/widget-overview): This approach involves utilizing the Venly SDK directly within your application's codebase. It allows you to access the full functionality of the Venly Widget and customize its behavior according to your requirements.
-2. [Ethers.js Integration](https://docs.venly.io/docs/ethersjs): You can integrate the Venly Widget with your application using the popular Ethers.js library. This involves utilizing the Ethers.js API to interact with the Venly Widget and manage user wallets, transactions, and other blockchain-related operations.
-3. [Web3Modal Integration](https://docs.venly.io/docs/web3modal-walletconnect) (WalletConnect): Web3Modal is a library that simplifies connecting to different wallet providers using standard protocols like WalletConnect. Integrating Web3Modal and WalletConnect enables users to interact with the Venly Widget and connect their wallets to your application seamlessly.
+1. [Native integration with Venly SDK](https://docs.venly.io/docs/widget-overview): This approach involves utilizing the Venly SDK directly within your application's codebase. It allows you to access the full functionality of the Venly Widget and customize its behavior according to your requirements.
+2. [Ethers.js integration](https://docs.venly.io/docs/ethersjs): You can integrate the Venly Widget with your application using the popular Ethers.js library. This involves utilizing the Ethers.js API to interact with the Venly Widget and manage user wallets, transactions, and other blockchain-related operations.
+3. [Web3Modal integration](https://docs.venly.io/docs/web3modal-walletconnect) (WalletConnect): Web3Modal is a library that simplifies connecting to different wallet providers using standard protocols like WalletConnect. Integrating Web3Modal and WalletConnect enables users to interact with the Venly Widget and connect their wallets to your application seamlessly.
 
 These are just a few integration options to incorporate the Venly Widget into your application. The choice of integration method depends on your specific requirements, preferences, and the existing infrastructure of your application.
 
