@@ -1,5 +1,5 @@
 
-This deployment guide walks you through starting and running a full node through various methods. For the system requirements, see the [Minimum Technical Requirements](../validator/validator-system-requirements.md) guide.
+This deployment guide walks you through starting and running a full node through various methods. For the system requirements, see the [minimum technical requirements](../validator/validator-system-requirements.md) guide.
 
 !!!tip "Snapshots"
     
@@ -64,9 +64,11 @@ To install **Heimdall**, run the below commands:
 curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <heimdall_version> <network_type> <node_type>
 ```
 
-**heimdall_version**: `valid v1.0+ release tag from https://github.com/maticnetwork/heimdall/releases`
-**network_type**: `mainnet` and `mumbai`
-**node_type**: `sentry`
+You can run the above command with following options:
+
+- **heimdall_version**: `valid v1.0+ release tag from https://github.com/maticnetwork/heimdall/releases`
+- **network_type**: `mainnet` and `amoy`
+- **node_type**: `sentry`
 
 That will install the `heimdalld` and `heimdallcli` binaries. Verify the installation by checking the Heimdall version on your machine:
 
@@ -81,15 +83,9 @@ sed -i 's|^seeds =.*|seeds = "1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.
 chown heimdall /var/lib/heimdall
 ```
 
-### Configure Heimdall seeds (Mumbai)
+### Configure Heimdall seeds (Amoy)
 
-```bash
-sed -i 's|^seeds =.*|seeds = "9df7ae4bf9b996c0e3436ed4cd3050dbc5742a28@43.200.206.40:26656,d9275750bc877b0276c374307f0fd7eae1d71e35@54.216.248.9:26656,1a3258eb2b69b235d4749cf9266a94567d6c0199@52.214.83.78:26656"|g' /var/lib/heimdall/config/config.toml
-chown heimdall /var/lib/heimdall
-```
-
-!!! tip
-    The following Heimdall seed can be used for both mainnet and Mumbai testnet: `8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656`
+The Heimdall seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
 
 ### Bor install
 
@@ -98,10 +94,11 @@ Install the latest version of Bor, based on valid v1.0+ [released version](https
 ```bash
 curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- <bor_version> <network_type> <node_type>
 ```
+You can run the above command with following options:
 
-**bor_version**: `valid v1.0+ release tag from https://github.com/maticnetwork/bor/releases`
-**network_type**: `mainnet` and `mumbai`
-**node_type**: `sentry`
+- **bor_version**: `valid v1.0+ release tag from https://github.com/maticnetwork/bor/releases`
+- **network_type**: `mainnet` and `amoy`
+- **node_type**: `sentry`
 
 That will install the `bor` binary. Verify the installation by checking the Bor version on your machine:
 
@@ -109,7 +106,7 @@ That will install the `bor` binary. Verify the installation by checking the Bor 
 bor version
 ```
 
-### Configure Bor seeds (mainnet)
+### Configure Bor seeds (Mainnet)
 
 ```bash
 sed -i 's|.*\[p2p.discovery\]|  \[p2p.discovery\] |g' /var/lib/bor/config.toml
@@ -117,13 +114,9 @@ sed -i 's|.*bootnodes =.*|    bootnodes = ["enode://b8f1cc9c5d4403703fbf37711646
 chown bor /var/lib/bor
 ```
 
-### Configure Bor seeds (mumbai)
+### Configure Bor seeds (Amoy)
 
-```bash
-sed -i 's|.*\[p2p.discovery\]|  \[p2p.discovery\] |g' /var/lib/bor/config.toml
-sed -i 's|.*bootnodes =.*|    bootnodes = ["enode://bdcd4786a616a853b8a041f53496d853c68d99d54ff305615cd91c03cd56895e0a7f6e9f35dbf89131044e2114a9a782b792b5661e3aff07faf125a98606a071@43.200.206.40:30303", "enode://209aaf7ed549cf4a5700fd833da25413f80a1248bd3aa7fe2a87203e3f7b236dd729579e5c8df61c97bf508281bae4969d6de76a7393bcbd04a0af70270333b3@54.216.248.9:30303"]|g' /var/lib/bor/config.toml
-chown bor /var/lib/bor
-```
+The Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
 
 ### Update service config user permission
 
