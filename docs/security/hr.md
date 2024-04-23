@@ -2,7 +2,7 @@ Polygon supports onboarding and offboarding employees by following a process tha
 
 Polygon uses single sign-on technologies to automate the administration of user access and permissions across all of our SaaS tools. Automating the provisioning and removal of users' access privileges limits the risk of human error and supports efficient auditing procedures.
 
-When an employee exits the company, HR changes their status in our HRIS system,automatically removing their access to our SSO integrated SaaS platforms, and IT is immediately notified to initiate the wipe and recovery of their corporate system.  
+When an employee exits the company, HR changes their status in our HRIS system, automatically removing their access to our SSO integrated SaaS platforms, and IT is immediately notified to initiate the wipe and recovery of their corporate system.  
 
 ### Security Awareness Training
 
