@@ -30,7 +30,7 @@ The application prompts the user to transfer a token from their wallet to a diff
 
 ![image](https://github.com/0xPolygon/polygon-docs/assets/139292301/ae45b544-8ee3-4cfc-94f6-0cc430658f98)
 
-## Different integration options
+## Integration options
 
 Multiple integration options are available to incorporate the Venly Widget into your application. Here is a brief overview of some of these options:
 
