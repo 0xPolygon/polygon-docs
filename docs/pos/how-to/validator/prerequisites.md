@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 ## Before setting up the Validator node
 

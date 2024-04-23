@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 In this document, we will describe how to deploy Polygon nodes into a Virtual Machine instance on the Google Cloud Platform (GCP).
 

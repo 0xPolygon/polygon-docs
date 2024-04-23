@@ -1,4 +1,8 @@
-This guide provides an index of network details for the Polygon Mumbai Testnet and Polygon PoS Mainnet, including their associated RPC and node endpoints.
+---
+comments: true
+---
+
+This guide provides an index of network details for the Polygon Amoy testnet and Polygon PoS mainnet, including their associated RPC and node endpoints.
 
 ## Network details
 

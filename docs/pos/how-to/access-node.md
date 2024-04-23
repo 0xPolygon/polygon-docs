@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 If you're a new Web3 developer, it's unlikely that you'll need to run your own full node on Polygon.
 
 The majority of developers use a node provider, or a third-party external service that receives node requests and returns responses for you automatically. That's because the fastest way to get developing on Polygon is using a node provider rather than managing your own node.

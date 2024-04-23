@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 ### Error: Bad block/Invalid Merkle
 

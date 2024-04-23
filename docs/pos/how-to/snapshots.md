@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 When setting up a new sentry, validator, or full node server, it is recommended that you use snapshots for faster syncing without having to sync over the network. Using snapshots will save you several days for both Heimdall and Bor. 
 
 !!! note
