@@ -46,7 +46,7 @@ These are just a few integration options to incorporate the Venly Widget into yo
 
 If you want to build your wallet app for users to interact with, you should use the [Wallet API](https://venly.readme.io/docs/overview).
 
-If you want to integrate an existing, full-fletched wallet solution, you can use the Venly Widget.  
+If you want to integrate an existing and complete wallet solution, you can use the Venly Widget.  
 There are multiple ways to integrate it - natively or by using another library (which also uses the Venly Widget in the background):
 
 ![image](https://github.com/0xPolygon/polygon-docs/assets/139292301/7a6a6f02-10d9-48d3-83db-250d86406fff)
