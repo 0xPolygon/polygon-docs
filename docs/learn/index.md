@@ -43,7 +43,7 @@ hide:
          <div class="product-list-item-header">
             <div class="feature-card-heading">Polygon Type 1 Prover</div>
          </div>
-         <p class="feature-paragraph">Driven by innovation, the Polygon Type 1 Prover is fully Ethereum equivalent.</p>
+         <p class="feature-paragraph">Driven by innovation, the Polygon type 1 prover is fully Ethereum equivalent.</p>
       </a>
    </div>
    <div class="grid-item">
