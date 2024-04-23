@@ -12,5 +12,5 @@ https://hackenproof.com/polygon-technology/polygon-pos
 ### HackerOne
 https://hackerone.com/polygon-technology
 
-## Responsible Disclosure
+## Responsible disclosure
 security@polygon.technology
