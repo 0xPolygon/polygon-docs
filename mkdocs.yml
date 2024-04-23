@@ -54,8 +54,8 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Version compatibility matrix: cdk/version-matrix.md
-      - Get started:
-        - Quick start: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - Get started: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - How to:
         - Integrate a DAC: cdk/how-to/integrate-da.md
         - Migrate:
           - Fork migration: cdk/how-to/migrate/fork.md
