@@ -1,6 +1,6 @@
 Polygon Labs periodically assesses the security of its products and applications through extensive internal testing and external (public & private) engagements; such as code reviews, security audits, red team assessments and penetration testing. All products and applications have been assessed multiple times to date. Security assessments continue as the ecosystem matures.
 
-Following information relates to the latest available (and public) external assessments and certifications:
+The following information relates to the latest available (and public) external assessments and certifications:
 
 ## ISO/IEC 27001:2022 certification
 
