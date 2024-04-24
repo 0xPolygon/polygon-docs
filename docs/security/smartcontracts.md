@@ -1,4 +1,4 @@
-Polygon Labs follows the following approach in regards to smart contract security.
+Polygon Labs takes the following approach in regards to smart contract security.
 
 ## Secure Coding Guidelines
 Smart contract codebases must be organized, readable, and understandable across multiple developers and project phases.
