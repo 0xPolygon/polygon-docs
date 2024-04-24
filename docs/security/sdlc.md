@@ -4,4 +4,4 @@ Starting with activities such as threat modeling and risk assessments, Polygon L
 
 Continuous integration and continuous deployment (CI/CD) activities are enforced in all code repositories, which implement automated security testing and scanning tools into the CI/CD pipeline to detect vulnerabilities early in the development process.
 
-Following development and testing phases, all applications expected to go into production are further tested via internal or external assessments such as penetration testing, security audits  and bug bounty programs. These efforts help validate the effectiveness of our security controls, detect weaknesses, and address them before they can be exploited by malicious actors.
+Following development and testing phases, all applications expected to go into production are further tested via internal or external assessments such as penetration testing, security audits, and bug bounty programs. These efforts help validate the effectiveness of our security controls, detect weaknesses, and address them before they can be exploited by malicious actors.
