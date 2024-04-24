@@ -1,4 +1,8 @@
-Email to: security@polygon.technology
+Have you discovered a security flaw or CVE related to our technology? Please notify us before informing the outside world, so that we can first take action. Doing so is called ‘responsible disclosure’.
+
+Email us at security@polygon.technology, and please make use of the below PGP key o encrypt any sensitive data. 
+
+Looking for a reward or bounty related something you personally discovered, submit to one of our [Bug bounty programs](bugbounty.md).
 
 ## PGP public key
 
