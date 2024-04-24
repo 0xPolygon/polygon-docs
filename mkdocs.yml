@@ -54,13 +54,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Version compatibility matrix: cdk/version-matrix.md
-      - Get started:
-        - Quick start: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
-        - Integrate a DAC: cdk/how-to/integrate-da.md
-        - Migrate:
-          - Fork migration: cdk/how-to/migrate/fork.md
-        - Manage allowlists with policies: cdk/how-to/manage-policies.md
-        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
+      - Get started: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
@@ -517,20 +511,21 @@ nav:
       - Polygon protocols: learn/polygon-protocols.md
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
       - Security:
-          - Overview: security/overview.md
+          - Overview: learn/security/overview.md
+          - Best practices: learn/security/bestpractices.md
           - Security areas:
-            - Governance & management: security/governance.md
-            - Risk management: security/risk.md
-            - Human resources: security/hr.md
-            - Infrastructure: security/infrastructure.md
-            - Software development: security/sdlc.md
-            - Smart contracts: security/smartcontracts.md
-            - Vulnerability management: security/vulnerability.md
-            - Security operations: security/operations.md
-          - Security reports: security/reports.md
-          - Bug bounty programs: security/bugbounty.md
-          - Responsable disclosure: security/disclosure.md
-          - Contact us: security/contact.md
+            - Governance & management: learn/security/governance.md
+            - Risk management: learn/security/risk.md
+            - Human resources: learn/security/hr.md
+            - Infrastructure: learn/security/infrastructure.md
+            - Software development: learn/security/sdlc.md
+            - Smart contracts: learn/security/smartcontracts.md
+            - Vulnerability management: learn/security/vulnerability.md
+            - Security operations: learn/security/operations.md
+          - Security reports: learn/security/reports.md
+          - Bug bounty programs: learn/security/bugbounty.md
+          - Responsable disclosure: learn/security/disclosure.md
+          - Contact us: learn/security/contact.md
 
 extra:
   generator: false
