@@ -56,7 +56,7 @@ POST /api/wallets
 }
 ```
 
-### Response Body
+### Response body
 
 !!! success "Wallet created"
     The wallet has been created and linked to the specified user (`userId`).
