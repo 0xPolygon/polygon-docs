@@ -92,4 +92,4 @@ POST /api/wallets
 ```
 
 !!! success "Ready to try it out?"
-    [Click here to read the getting started guide for Wallet-API.](https://docs.venly.io/docs/wallet-api-getting-started)
+    Click to read the [getting started guide for Wallet API.](https://docs.venly.io/docs/wallet-api-getting-started)
