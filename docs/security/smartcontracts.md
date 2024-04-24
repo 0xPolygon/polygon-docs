@@ -14,4 +14,4 @@ Polygon Labs application security teams are composed of Sr. & Staff security eng
 
 After internal reviews, and based on a risk assessment, new smart contracts and major changes/upgrades are sent to reputable, tier 1 security consultancy organizations for a formal external security assessment. Polygon Labs periodically rotates vendors to ensure an unbiased view of the code.
 
-Polygon Labs public reports are located here: [Security reports](reports.md)
+Polygon Labs' public reports are located here: [Security reports](reports.md)
