@@ -6,7 +6,7 @@ Logs are reviewed automatically for anomalies to feed Polygon Labs' threat detec
 
 ## Monitoring
 
-Polygon Labs relies on a variety of sources generating alerts for potential security incidents. Those sources include, but are not limited to, Google Workspace, Falcon CrowdStrike, AWS GuardDuty, GCP Security Command Center, Cloudflare, and Okta. Every system with built in anomaly or threat detection directs their findings to a centralized SIEM, Coralogix, for our security analysts to review.
+Polygon Labs relies on a variety of sources that generate alerts for potential security incidents. Those sources include, but are not limited to, Google Workspace, Falcon CrowdStrike, AWS GuardDuty, GCP Security Command Center, Cloudflare, and Okta. Every system with built-in anomaly or threat detection directs its findings to a centralized SIEM, Coralogix, for our security analysts to review.
 
 Polygon Labs has security analysts distributed globally to help ensure timely triage of security alerts.
 
