@@ -10,7 +10,7 @@ The monitoring infrastructure was developed both in-house, and by vendors as nee
 
 ## Multisig security
 
-Specific requirements are followed by any Polygon Labs employee that is a signer on a corporate multisig contract. Multisig contacts are corporate-owned  and control treasury assets or smart contract deployments. They consist of Safes (previously Gnosis Safes) and other smart contract multisig implementations. Hardware wallets are hardware-based cold storage such as Trezor or Ledger devices that store private keys and enable signing multisig transactions offline. Signer multisig requirement include:
+Specific requirements are followed by any Polygon Labs employee that is a signer on a corporate multisig contract. Multisig contacts are corporate-owned and control treasury assets or smart contract deployments. They consist of Safes (previously Gnosis Safes) and other smart contract multisig implementations. Hardware wallets are hardware-based cold storage, such as Trezor or Ledger devices that store private keys and enable signing multisig transactions offline. Signer multisig requirement include:
 
 - Hardware wallet: Polygon requires cold storage from an accepted vendor dedicated for company official use only and secured by a PIN
 - Hot wallets: Hot wallets are not allowed for use on Polygon multisigs
