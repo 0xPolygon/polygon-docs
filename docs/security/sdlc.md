@@ -1,4 +1,4 @@
-Polygon engineering teams are trained and instructed to use secure coding guidelines, which follow industry standards for secure development such as OWASP. These  provide guidelines, tools, and resources to help our developers identify and mitigate security risks.
+Polygon engineering teams are trained and instructed to use secure coding guidelines and follow industry standards for secure development, such as OWASP, which provides guidelines, tools, and resources to help our developers identify and mitigate security risks.
 
 Starting with activities such as threat modeling and risk assessments, Polygon Labs can systematically identify and prioritize potential security threats and vulnerabilities in our systems and applications. These proactive measures enable us to allocate resources effectively, focusing on areas that pose the greatest risks.
 
