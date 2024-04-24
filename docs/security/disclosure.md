@@ -1,4 +1,4 @@
-Have you discovered a security flaw or CVE related to our technology? Please notify us before informing the outside world, so that we can first take action. Doing so is called ‘responsible disclosure’.
+Have you discovered a security flaw or CVE related to our technology? Please notify us before informing the outside world, so that we can take action. This is known as ‘responsible disclosure’.
 
 Email us at security@polygon.technology, and please make use of the below PGP key o encrypt any sensitive data. 
 
