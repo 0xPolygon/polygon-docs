@@ -12,7 +12,7 @@ Polygon Labs has security analysts distributed globally to help ensure timely tr
 
 ## Incident response
 
-Polygon Labs established an incident response policy and process modeled after industry best practices. We designate key people to act as subject matter experts to join the incident response team as needed depending on the nature of a given cyber security incident. We also leverage third-party agencies to complement our incident response team from top tier security vendors.
+Polygon Labs has established an incident response policy and process that is modeled on industry best practices. We designate key people to act as subject matter experts to join the incident response team as needed and depending on the nature of a given cyber security incident. We also use third-party agencies to complement our incident response team from top tier security vendors.
 
 The life cycle of a cyber security incident begins with detection and discovery. At Polygon Labs we leverage a variety of tools such as anti-virus, endpoint detection and response, network intrusion detection, phish screening and anomaly detection to help ensure we identify potential cyber security events early. We also provide our employees and community with mechanisms to proactively report suspicious activity including a ticketing system, instant messaging channels and a dedicated phone number for emergencies.
 
