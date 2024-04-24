@@ -1,6 +1,7 @@
 ## Logging
 
 Polygon Labs uses a variety of SaaS and bespoke infrastructure. Where audit logs are provided by those services, they are collected into a centralized repository and stored for a minimum of 30 days to support investigations should a security incident arise.
+
 Logs are reviewed automatically for anomalies to feed Polygon Labs' threat detection models.
 
 ## Monitoring
