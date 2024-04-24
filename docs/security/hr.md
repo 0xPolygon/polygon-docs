@@ -6,7 +6,7 @@ When an employee exits the company, HR changes their status in our HRIS system, 
 
 ## Security awareness training
 
-Polygon utilizes a SaaS platform to provide an integrated approach to email and security awareness training for all of our employees. All employees are required to pass the training during their first weeks of employment. The key features of the platform are:
+Polygon uses a SaaS platform to provide an integrated approach to email and security awareness training for all of our employees. All employees are required to pass the training during their first weeks of employment. The key features of the platform are:
   
 - Industry-specific modules: Reinforce critical concepts mapped to key industry standards and security frameworks, including ISO, NIST, PCI DSS, GDPR, and HIPAA
 - Real-world assessment:  Safely test employees on real-world threats with de-weaponized phishing attacks
