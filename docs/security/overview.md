@@ -8,7 +8,7 @@ Security comes first at Polygon Labs and our commitment is proven by our in-hous
 
 ### Continuous monitoring
 
-Polygon Labs monitors the bridge and related smart contracts for suspicious activities. Polygon’s in-house security team works alongside the Polygon development teams  and other industry experts to stay updated on known vulnerabilities in the space.
+Polygon Labs monitors the bridge and related smart contracts for suspicious activities. Polygon’s in-house security team works alongside the Polygon development teams and other industry experts to stay updated on known vulnerabilities in the space.
 
 ### Periodic security assessments
 
