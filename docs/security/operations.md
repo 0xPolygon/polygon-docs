@@ -24,7 +24,7 @@ In order to ensure the incident response process remains relevant, we conduct re
 
 ## Authentication & access control
 
-Polygon Labs establishes standards for authentication & access control in its information security policy and information security standards documents.
+Polygon Labs establishes standards for authentication and access control in its information security policy and information security standards documents.
 
 To ensure the security of our corporate systems, all employees must adhere to strict password requirements.  Passwords should be changed regularly according to our guidelines and two-factor authentication is mandatory for accessing sensitive systems. Default, shared, or easily guessable passwords are strictly prohibited.
 
