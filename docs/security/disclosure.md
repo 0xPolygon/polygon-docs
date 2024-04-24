@@ -1,4 +1,4 @@
-Email to: security@polygon.technology
+Email: security@polygon.technology
 
 ## PGP public key
 
