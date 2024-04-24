@@ -20,7 +20,7 @@ Developers working on Polygon enjoy ongoing bug bounty programs on leading platf
 
 ### Enable developer community
 
-Polygon Labs is committed to enabling the developer community, allowing them to surface vulnerabilities and patching them before they are exploited.  Polygon Labs has a strict focus on security in our development lifecycle, heavily testing all code and following best practices and standards such as the Secure Software Development Lifecycle.
+Polygon Labs is committed to enabling the developer community to surface vulnerabilities and patch them before they are exploited. Polygon Labs has a strict focus on security in our development lifecycle, heavily testing all code and following best practices and standards such as the Secure Software Development Lifecycle.
 
 ## Conclusion
 
