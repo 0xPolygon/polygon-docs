@@ -107,7 +107,15 @@ nav:
         - Architecture: zkEVM/architecture/index.md
         - Upgrades:
           - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
-        - User fees: zkEVM/architecture/user-fees.md
+        - Effective gas price:
+          - Effective gas price: zkEVM/architecture/effective-gas/index.md
+          - Effective gas price strategy: zkEVM/architecture/effective-gas/zkevm-egp-strat.md
+          - User transaction flow:
+            - User transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/index.md
+            - RPC transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/rpc-flow-egp.md
+            - Sequencer transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/sequencer-flow-egp.md
+          - Implementing EGP strategy: zkEVM/architecture/effective-gas/implement-egp-strat.md
+          - Transaction prioritization: zkEVM/architecture/effective-gas/tx-prioritization-egp.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - State management: zkEVM/architecture/protocol/state-management.md
@@ -190,6 +198,16 @@ nav:
             - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
       - Specification:
         - Specification: zkEVM/spec/index.md
+        - User fees:
+          - User fees: zkEVM/spec/user-fees/index.md
+          - Gas price suggestion: zkEVM/spec/user-fees/gas-price-suggest.md
+          - L1-L2 cost discrepancies: zkEVM/spec/user-fees/l1-l2-discrepancies.md
+          - Breakeven gas price: zkEVM/spec/user-fees/breakeven-technique.md
+          - Prioritizing transactions: zkEVM/spec/user-fees/prioritization-txs.md
+          - User fees flow:
+            - User fees flow: zkEVM/spec/user-fees/user-fees-flow/index.md 
+            - RPC flow: zkEVM/spec/user-fees/user-fees-flow/rpc-flow.md
+            - Sequencer flow: zkEVM/spec/user-fees/user-fees-flow/sequencer-flow.md
         - Polynomial Identity Language:
           - Polynomial Identity Language: zkEVM/spec/pil/index.md
           - Simple example: zkEVM/spec/pil/simple-example.md
