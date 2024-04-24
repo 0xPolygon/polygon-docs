@@ -4,7 +4,7 @@ Polygon develops and maintains bridges to transfer assets to-and-from the Ethere
 
 ## Bridge monitoring
 
-The bridge on-chain infrastructure is monitored for real-time events as a way to augment the application security efforts associated with product development (i.e. threat modeling, code auditing, library and supply-chain risk and bug bounties). The real time monitoring includes both on-chain machine learning models to detect unknown threats in real time as well as empirical rule-based algorithms to capture known adversarial or error scenarios. 
+The on-chain bridge infrastructure is monitored for real-time events as a way to augment the application security efforts associated with product development (i.e. threat modeling, code auditing, library and supply-chain risk, and bug bounties). The real time monitoring includes both on-chain machine learning models to detect unknown threats in real-time, as well as empirical rule-based algorithms to capture known adversarial or error scenarios. 
 
 The monitoring infrastructure was developed both in-house and by vendors as needed to augment our capabilities in specific analysis areas. Any adverse bridge events detected by our models and tools are evaluated, triaged and, if necessary, escalated to the proper team for further analysis. The monitoring process is integrated with our enterprise incident response process for seamless integration with internal processes.
 
