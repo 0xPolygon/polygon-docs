@@ -474,7 +474,7 @@ nav:
           - Venly:
               - Intro:  tools/wallets/venly/index.md
               - Create wallet:  tools/wallets/venly/create-wallet.md
-              - Wallet-API:  tools/wallets/venly/wallet-api.md
+              - Wallet API:  tools/wallets/venly/wallet-api.md
               - Add custom token:  tools/wallets/venly/custom-tokens.md
               - Venly widget: tools/wallets/venly/venly-widget.md
           - Fortmatic: tools/wallets/fortmatic.md    
