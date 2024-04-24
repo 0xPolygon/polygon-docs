@@ -24,7 +24,7 @@ Polygon Labs is committed to enabling the developer community to surface vulnera
 
 ## Conclusion
 
-In summary, our organization stands as one of the leaders in the web3 security sector. Our distinction arises from our commitment to not only implementing the best security practices but also dedicating substantial resources to this endeavor. Through tireless efforts, we have cultivated a culture of continuous improvement.
+In summary, our organization is one of the leaders in the web3 security sector. Our distinction arises from our commitment to not only implementing the best security practices but also dedicating substantial resources to this endeavor. Through tireless efforts, we have cultivated a culture of continuous improvement.
 
 Our success is related to our dedication to measuring our performance rigorously. This steadfast focus on self-assessment empowers us to not only maintain the highest standards but to push the boundaries of excellence in web3 security.
 
