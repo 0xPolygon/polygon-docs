@@ -476,6 +476,7 @@ nav:
               - Create wallet:  tools/wallets/venly/create-wallet.md
               - Add network:  tools/wallets/venly/add-network.md
               - Add custom token:  tools/wallets/venly/custom-tokens.md
+              - Venly widget: tools/wallets/venly/venly-widget.md
           - Fortmatic: tools/wallets/fortmatic.md    
           - Openfort: tools/wallets/openfort.md
           - Particle network:  tools/wallets/particle-network.md
@@ -509,6 +510,21 @@ nav:
               - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
       - Polygon protocols: learn/polygon-protocols.md
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
+      - Security:
+          - Overview: security/overview.md
+          - Security areas:
+            - Governance & management: security/governance.md
+            - Risk management: security/risk.md
+            - Human resources: security/hr.md
+            - Infrastructure: security/infrastructure.md
+            - Software development: security/sdlc.md
+            - Smart contracts: security/smartcontracts.md
+            - Vulnerability management: security/vulnerability.md
+            - Security operations: security/operations.md
+          - Security reports: security/reports.md
+          - Bug bounty programs: security/bugbounty.md
+          - Responsable disclosure: security/disclosure.md
+          - Contact us: security/contact.md
 
 extra:
   generator: false

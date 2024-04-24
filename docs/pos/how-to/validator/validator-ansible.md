@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 This section guides you through starting and running the validator node through an Ansible playbook.
 

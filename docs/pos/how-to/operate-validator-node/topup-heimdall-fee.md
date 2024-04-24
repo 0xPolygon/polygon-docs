@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 
 This document provides instructions on how to top up the Heimdall fee for a PoS Validator. 
 
