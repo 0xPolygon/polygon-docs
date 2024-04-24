@@ -4,7 +4,7 @@ At Polygon Labs, ensuring the security of our information systems, and safeguard
 
 ### Dedicated security team
 
-Security comes first at Polygon Labs and our commitment is proven by our in-house security team of 10+ full-time security engineers & leaders. The team remains involved in the web3 space and together with other major organizations is driving new innovations and best practices for all. 
+Security comes first at Polygon Labs and our commitment is proven by our in-house security team of 10+ full-time security engineers & leaders. The team remains involved in the web3 space and, together with other major organizations, is driving new innovations and best practices for all. 
 
 ### Continuous monitoring
 
