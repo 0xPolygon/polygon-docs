@@ -530,10 +530,12 @@ nav:
             - Human resources: security/hr.md
             - Infrastructure: security/infrastructure.md
             - Software development: security/sdlc.md
+            - Smart contracts: security/smartcontracts.md
             - Vulnerability management: security/vulnerability.md
             - Security operations: security/operations.md
           - Security reports: security/reports.md
           - Bug bounty programs: security/bugbounty.md
+          - Responsable disclosure: security/disclosure.md
           - Contact us: security/contact.md
 
 extra:

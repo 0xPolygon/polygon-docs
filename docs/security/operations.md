@@ -1,15 +1,15 @@
-**Logging**
+## Logging
 
 Polygon Labs leverages a variety of SaaS and bespoke infrastructure. Where audit logs are provided from those services, they are collected into a centralized repository and stored for a minimum of 30 days to support investigations should a security incident arise.
 Logs are reviewed automatically for anomalies to feed Polygon Labs' threat detection models.
 
-**Monitoring**
+## Monitoring
 
 Polygon Labs relies on a variety of sources generating alerts for potential security incidents. Those sources include, but are not limited to, Google Workspace, Falcon CrowdStrike, AWS GuardDuty, GCP Security Command Center, Cloudflare, and Okta. Every system with built in anomaly or threat detection directs their findings to a centralized SIEM, Coralogix, for our security analysts to review.
 
 Polygon Labs has security analysts distributed globally to help ensure timely triage of security alerts.
 
-**Incident Response**
+## Incident response
 
 Polygon Labs established an incident response policy and process modeled after industry best practices. We designate key people to act as subject matter experts to join the incident response team as needed depending on the nature of a given cyber security incident. We also leverage third-party agencies to complement our incident response team from top tier security vendors.
 
@@ -21,7 +21,7 @@ Polygon Labs carefully considers when, how and who to communicate with during in
 
 In order to ensure the incident response process remains relevant, we conduct regular incident response exercises if no real security incident has occurred after a given period.
 
-**Authentication & Access Control**
+## Authentication & access control
 
 Polygon Labs establishes standards for authentication & access control in its information security policy and information security standards documents.
 

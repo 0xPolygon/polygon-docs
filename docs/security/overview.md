@@ -2,23 +2,23 @@ At Polygon Labs, ensuring the security of our information systems and safeguardi
 
 ## Commitment to security
 
-**Dedicated security team**
+### Dedicated security team
 
 Security comes first at Polygon Labs and our commitment is proven by our in-house security team of 10+ full-time security engineers & leaders. The team remains involved in the web3 space and together with other major organizations is driving new innovations and best practices for all. 
 
-**Continuous Monitoring**
+### Continuous monitoring
 
 Polygon Labs monitors the bridge and related smart contracts for suspicious activities. Polygon’s in-house security team works alongside the Polygon development teams  and other industry experts to stay updated on known vulnerabilities in the space.
 
-**Periodic Security Assessments**
+### Periodic security assessments
 
 Polygon Labs periodically assesses the security its products and applications through extensive internal testing and external engagements, such as audits and penetration testing. All products and applications have been assessed multiple times to date. Security assessments continue as the ecosystem matures.
 
-**Bug Bounty Program**
+### Bug bounty program
 
 Developers of Polygon have ongoing bug bounty programs on leading Bug Bounty platforms with rewards of up to $1M for reported vulnerabilities in Polygon contracts. It was the most significant bounty program in the web3 community at the time of launch.
 
-**Enable developer community**
+### Enable developer community
 
 Polygon Labs is committed to enabling the developer community, allowing them to surface vulnerabilities and patching them before they are exploited.  Polygon Labs has a strict focus on security in our development lifecycle, heavily testing all code and following best practices and standards such as the Secure Software Development Lifecycle.
 
