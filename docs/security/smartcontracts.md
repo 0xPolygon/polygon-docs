@@ -1,6 +1,7 @@
 Polygon Labs takes the following approach in regards to smart contract security.
 
-## Secure Coding Guidelines
+## Secure coding guidelines
+
 Smart contract codebases must be organized, readable, and understandable across multiple developers and project phases.
 
 Engineers tasked with developing such codebases follow industry standard secure coding practices and style guides, such as https://docs.soliditylang.org/en/latest/style-guide.html and https://github.com/coinbase/solidity-style-guide.
