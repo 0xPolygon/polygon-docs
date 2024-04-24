@@ -26,7 +26,7 @@ The Wallet API allows developers to interact with blockchain networks and offer 
 
 ## Prerequisites
 
-1. You need a Venly business account, if you don't have one, click [here](https://portal.venly.io) to register in our Developer Portal, or follow our step-by-step guide, [Getting Started with Venly](https://venly.readme.io/docs/getting-started).
+1. You need a Venly business account. If you don't have one, click to register in our [Developer Portal](https://portal.venly.io), or follow our [Getting Started with Venly](https://venly.readme.io/docs/getting-started) guide.
 2. You need an active trial or paid subscription of the Wallet-API. You can start a 30-day free trial for the Wallet-API.
 3. You need your client ID and client secret which can be obtained from the [Portal](https://portal.venly.io/).
 
