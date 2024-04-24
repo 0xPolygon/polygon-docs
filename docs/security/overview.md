@@ -16,7 +16,7 @@ Polygon Labs periodically assesses the security of its products and applications
 
 ### Bug bounty program
 
-Developers of Polygon have ongoing bug bounty programs on leading Bug Bounty platforms with rewards of up to $1M for reported vulnerabilities in Polygon contracts. It was the most significant bounty program in the web3 community at the time of launch.
+Developers working on Polygon enjoy ongoing bug bounty programs on leading platforms with rewards of up to $1M for reported vulnerabilities in Polygon contracts. It was the most significant bounty program in the web3 community at the time of launch.
 
 ### Enable developer community
 
