@@ -14,29 +14,29 @@ The scope of the ISO/IEC 27001:2022 certification is limited to the information 
 
 ## Portal
 
- - Penetration testing assessment by Cobalt.io in Jan 2023
+ - Penetration testing assessment by Cobalt.io in Jan 2023.
 
 ## POL Token
  
- - Security audits by ChainSecurity & SigmaPrime: https://github.com/0xPolygon/pol-token/tree/main/audit
+ - Security audits by ChainSecurity & SigmaPrime: https://github.com/0xPolygon/pol-token/tree/main/audit.
 
 ## POS
  
- - Bor/Heimdal milestones audit by Least Authority: https://github.com/maticnetwork/bor/blob/develop/audit/audit-feature-milestones.pdf
- - POS portal audits: https://github.com/maticnetwork/pos-portal/tree/master/audits
- - POS contracts: https://github.com/0xPolygon/pos-contracts/tree/main/audit 
+ - Bor/Heimdal milestones audit by Least Authority: https://github.com/maticnetwork/bor/blob/develop/audit/audit-feature-milestones.pdf.
+ - POS portal audits: https://github.com/maticnetwork/pos-portal/tree/master/audits.
+ - POS contracts: https://github.com/0xPolygon/pos-contracts/tree/main/audit.
 
 ## zkEVM
  
- - zkEVM-Rom security audit by Verichains in Jan 2023: https://github.com/0xPolygonHermez/zkevm-rom/tree/main/audits
- - Security audits by Hexens & Spearbit: https://github.com/0xPolygonHermez/zkevm-rom/tree/main/audits
+ - zkEVM-Rom security audit by Verichains in Jan 2023: https://github.com/0xPolygonHermez/zkevm-rom/tree/main/audits.
+ - Security audits by Hexens & Spearbit: https://github.com/0xPolygonHermez/zkevm-rom/tree/main/audits.
 
 ## CDK
-Most of components have been reviewed as part of zkEVM's audits
+Most of components have been reviewed as part of zkEVM's audits.
 
- - Bridge Service: Penetration testing assessment by Cobalt.io in March 2023
- - Bridge UI: Penetration testing assessment by Cobalt.io in March 2023
+ - Bridge Service: Penetration testing assessment by Cobalt.io in March 2023.
+ - Bridge UI: Penetration testing assessment by Cobalt.io in March 2023.
 
 ## Zero
 
- - Security audits by Least Authority: https://github.com/0xPolygonZero/plonky2/tree/main/audits 
+ - Security audits by Least Authority: https://github.com/0xPolygonZero/plonky2/tree/main/audits.
