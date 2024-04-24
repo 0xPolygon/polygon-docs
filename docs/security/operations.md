@@ -18,7 +18,7 @@ The life cycle of a cyber security incident begins with detection and discovery.
 
 When an incident is identified, the security operations team performs triage and draws on our roster of subject matter experts to help with investigation and analysis. If an incident is declared a true positive we move from analysis to containment, remediation, and recovery. Along the way, we document the timeline of the incident and preserve evidence. Our incident response team works closely with our legal and compliance teams to help ensure we take the correct steps in handling information that may be required for legal or regulatory responses.
 
-Polygon Labs carefully considers when, how and who to communicate with during incident response. Impacted stakeholders are sent notifications in a timely manner to ensure they can take reasonable steps to protect their information if necessary. Polygon Labs also makes every effort to work with law enforcement to the degree required by the laws of the jurisdictions that we operate in, which may be different depending on the nature of the cyber security incident.
+Polygon Labs carefully considers when, how, and who to communicate with during incident response. Impacted stakeholders are sent notifications in a timely manner to ensure they can take reasonable steps to protect their information if necessary. Polygon Labs also makes every effort to work with law enforcement to the degree required by the laws of the jurisdictions that we operate in, which may be different depending on the nature of the cyber security incident.
 
 In order to ensure the incident response process remains relevant, we conduct regular incident response exercises if no real security incident has occurred after a given period.
 
