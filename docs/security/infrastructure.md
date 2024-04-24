@@ -1,6 +1,6 @@
 ## Polygon bridge security
 
-Polygon develops and maintains bridges to transfer assets to-and-from the Ethereum blockchain for both the Polygon PoS network and Polygon zkEVM scaling solution. These bridges implement a lock-and-mint architecture which results in assets being controlled (locked) by the bridge smart contract implementations. As the aggregate value of locked assets on Polygon bridges is significant, we apply a corresponding focus on bridge security. Much of the security efforts documented here are rigorously applied to bridge security, including risk management, secure software development practices, auditing, vulnerability management, CI/CI and bug bounties. We leverate dedicated on-chain bridge monitoring.
+Polygon develops and maintains bridges to transfer assets to-and-from the Ethereum blockchain for both the Polygon PoS network and Polygon zkEVM scaling solution. These bridges implement a lock-and-mint architecture which results in assets being controlled (locked) by the bridge smart contract implementations. As the aggregate value of locked assets on Polygon bridges is significant, we apply a corresponding focus on bridge security. Much of the security efforts documented here are rigorously applied to bridge security; including risk management, secure software development practices, auditing, vulnerability management, CI/CI and bug bounties. We use dedicated on-chain bridge monitoring.
 
 ## Bridge monitoring
 
