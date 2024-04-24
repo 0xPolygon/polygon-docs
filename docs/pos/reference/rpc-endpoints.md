@@ -86,7 +86,6 @@ Developers can interact with on-chain data and execute various types of transact
 
 Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC URLs, consider the following providers:
 
-- [Moralis](https://moralis.io/nodes/?utm_source=polygon-docs&utm_medium=partner-docs)
 - [Alchemy](https://www.alchemy.com/)
 - [Allnodes](https://polygon.publicnode.com)
 - [Amazon Managed Blockchain](https://aws.amazon.com/managed-blockchain/)
@@ -99,6 +98,7 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 - [Dwellir](https://www.dwellir.com/networks/polygon)
 - [GetBlock](https://getblock.io/en/)
 - [Infura](https://infura.io)
+- [Moralis](https://moralis.io/nodes/?utm_source=polygon-docs&utm_medium=partner-docs)
 - [NodeReal](https://nodereal.io)
 - [OnFinality](https://onfinality.io/)
 - [QuickNode](https://www.quicknode.com/chains/matic)
