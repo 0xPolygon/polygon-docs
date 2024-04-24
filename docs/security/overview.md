@@ -12,7 +12,7 @@ Polygon Labs monitors the bridge and related smart contracts for suspicious acti
 
 ### Periodic security assessments
 
-Polygon Labs periodically assesses the security of its products and applications through extensive internal testing and external engagements, such as audits and penetration testing. All products and applications have been assessed multiple times to date. Security assessments continue as the ecosystem matures.
+Polygon Labs periodically assesses the security of its products and applications through extensive internal testing and external engagements, such as audits and penetration testing. All products and applications have been assessed multiple times to date. Security assessments evolve as the ecosystem matures.
 
 ### Bug bounty program
 
