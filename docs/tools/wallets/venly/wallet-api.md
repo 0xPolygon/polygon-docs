@@ -47,7 +47,7 @@ POST /api/wallets
 | `userId`                 | Body       | The ID of the user who you want to link this wallet to | String    | ❌         |
 | `pincode` (_Deprecated_) | Body       | The pin that will encrypt and decrypt the wallet       | String    | ❌         |
 
-### Request Body
+### Request body
 
 ```json
 {
