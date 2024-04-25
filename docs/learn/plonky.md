@@ -2,7 +2,7 @@
 comments: true
 ---
 
-Plonky relates to active research and the development of libraries containing performant cryptographic functions for use in zero-knowledge proof systems.
+Plonky 2 & 3 are active research efforts into the development of libraries containing performant cryptographic functions for use in zero-knowledge proof systems.
 
 [Plonky](https://github.com/0xPolygonZero/plonky?tab=readme-ov-file) was Polygon's original implementation of a zk-SNARK computational cryptographic library based on [Plonk](https://eprint.iacr.org/2019/953) with some customizations. The original library was decommissioned in 2021 to be replaced by Plonky2.
 
@@ -31,7 +31,7 @@ The Polygon [Plonky2](https://github.com/0xPolygonZero/plonky2) repo provides so
 
 Plonky3 is an ongoing effort to provide a new and enhanced cryptographic library which aims to further improve on the speed and efficiency of recursive zero-knowledge proofs. It contains optimizations for newer CPU specifications.
 
-It implements polynomial IOPs, such as PLONK and STARKS, and commitment schemes such as Brakedown. Check out the [Plonky3 README](https://github.com/Plonky3/Plonky3) for an update on what is included.
+It implements polynomial IOPs, such as PLONK and STARKS, and commitment schemes such as [Brakedown](https://eprint.iacr.org/2021/1043.pdf). Check out the [Plonky3 README](https://github.com/Plonky3/Plonky3) for an update on what is included.
 
 Head over to the [Polygon Plonky3 repo](https://github.com/Plonky3/Plonky3) and try it out yourself.
 
