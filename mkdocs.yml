@@ -89,13 +89,13 @@ nav:
           - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
         - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
       - Architecture:
-        - Architecture: zkEVM/architecture/index.md
         - Prerequisite understanding: zkEVM/architecture/prerequisite-understanding.md
+        - High-level view of the topology: zkEVM/architecture/summary.md
+        - Aggregator: zkEVM/architecture/aggregator.md
+        - Communication layer: zkEVM/architecture/communication-layer.md
         - L2 state tree: 
           - Concept: zkEVM/architecture/l2-state-tree/concept.md
           - Keys and values: zkEVM/architecture/l2-state-tree/key-value-pairs.md
-        - Aggregator: zkEVM/architecture/aggregator.md
-        - Communication layer: zkEVM/architecture/communication-layer.md
         - The proving system:
           - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
           - Executor: zkEVM/architecture/proving-system/the-executor-comp.md

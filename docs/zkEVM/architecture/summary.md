@@ -1,3 +1,7 @@
+<!--
+todo: architectural diagram here
+-->
+
 Polygon zkEVM handles state transitions caused by Ethereum Layer 2 transaction executions (transactions that users send to the network). Following that, it creates validity proofs that attest to the accuracy of these off-chain state change calculations by utilizing zero-knowledge features.
 
 The major components of zkEVM are:
