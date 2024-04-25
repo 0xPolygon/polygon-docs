@@ -10,7 +10,7 @@ The Wallet API allows developers to interact with blockchain networks and offer 
 - You and your users have complete control over digital assets, without any third-party interference. Securely manage wallets with complete autonomy and privacy.
 - In case of lost login details, you and your users can recover access to wallets with a security code or biometric verification.
 
-![Wallet-API to create Polygon wallets](../../../img/tools/wallet/venly/07.png)
+![Wallet-API to create Polygon wallets](https://github.com/0xPolygon/polygon-docs/assets/139292301/e6be7eec-67e7-4234-89ba-98431c0ab754)
 
 ## Key features
 
