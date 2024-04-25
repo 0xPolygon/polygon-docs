@@ -72,22 +72,36 @@ nav:
       - Releases: 
         - Etrog: zkEVM/architecture/protocol/etrog-upgrade.md
         - Historical data: zkEVM/get-started/historical-data.md
+      - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
       - Get started:
-        - Get started: zkEVM/get-started/index.md
-        - Setup nodes:
-          - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
-          - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
-        - Deploy zkEVM:
-          - Introduction: zkEVM/get-started/setup-nodes/deploy-zkevm/intro.md
-          - Environment overview: zkEVM/get-started/setup-nodes/deploy-zkevm/environment-overview.md
-          - Prerequisites: zkEVM/get-started/setup-nodes/deploy-zkevm/prerequisites.md
-          - Install dependencies: zkEVM/get-started/setup-nodes/deploy-zkevm/install-dependencies.md
-          - Create wallets: zkEVM/get-started/setup-nodes/deploy-zkevm/create-wallets.md
-          - Configure node deployment: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-node-deployment.md
-          - Configure prover: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-prover.md
-          - Start node: zkEVM/get-started/setup-nodes/deploy-zkevm/start-node.md
-          - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
-        - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+        - Node developers:
+          - Setup nodes:
+            - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
+            - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
+          - Deploy zkEVM:
+            - Introduction: zkEVM/get-started/setup-nodes/deploy-zkevm/intro.md
+            - Environment overview: zkEVM/get-started/setup-nodes/deploy-zkevm/environment-overview.md
+            - Prerequisites: zkEVM/get-started/setup-nodes/deploy-zkevm/prerequisites.md
+            - Install dependencies: zkEVM/get-started/setup-nodes/deploy-zkevm/install-dependencies.md
+            - Create wallets: zkEVM/get-started/setup-nodes/deploy-zkevm/create-wallets.md
+            - Configure node deployment: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-node-deployment.md
+            - Configure prover: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-prover.md
+            - Start node: zkEVM/get-started/setup-nodes/deploy-zkevm/start-node.md
+            - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
+          - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+        - dApp developers:
+          - How to:
+            - zkEVM testnet & mainnet: zkEVM/get-started/quick-start/connect-wallet.md
+            - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
+            - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
+            - Gas station: zkEVM/get-started/zkevm-gas-station.md
+          - Tutorials:
+            - Write a contract: zkEVM/how-to/write-contract.md
+            - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
+            - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
+            - Verify a contract: zkEVM/how-to/verify-contract.md
+          - APIs: 
+            - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - Architecture:
         - Prerequisite understanding: zkEVM/architecture/prerequisite-understanding.md
         - High-level view of the topology: zkEVM/architecture/summary.md
@@ -96,7 +110,7 @@ nav:
         - L2 state tree: 
           - Concept: zkEVM/architecture/l2-state-tree/concept.md
           - Keys and values: zkEVM/architecture/l2-state-tree/key-value-pairs.md
-        - The proving system:
+        - Prover:
           - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
           - Executor: zkEVM/architecture/proving-system/the-executor-comp.md
           - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
@@ -201,7 +215,6 @@ nav:
             - zkASM: zkEVM/spec/zkasm/index.md
             - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
             - Examples: zkEVM/spec/zkasm/examples.md
-          - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
       - Concepts:
         - Ethereum state: zkEVM/concepts/ethereum-state.md
         - L2 scaling strategies: zkEVM/concepts/l2-scaling-strategies.md
@@ -227,19 +240,6 @@ nav:
             - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
             - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
           - CIRCOM: zkEVM/concepts/circom-intro-brief.md
-      - dApp developers:
-        - How to:
-          - zkEVM testnet & mainnet: zkEVM/get-started/quick-start/connect-wallet.md
-          - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
-          - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
-          - Gas station: zkEVM/get-started/zkevm-gas-station.md
-        - Tutorials:
-          - Write a contract: zkEVM/how-to/write-contract.md
-          - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
-          - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
-          - Verify a contract: zkEVM/how-to/verify-contract.md
-        - APIs: 
-          - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - Troubleshooting:
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
