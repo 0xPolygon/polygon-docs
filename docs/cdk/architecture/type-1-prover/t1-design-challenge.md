@@ -1,4 +1,4 @@
-The EVM wasn't designed with zero-knowledge proving and verification in mind, and this makes the design of an efficient Type 1 prover extremely challenging.
+The EVM wasn't designed with zero-knowledge proving and verification in mind, and this makes the design of an efficient type 1 prover extremely challenging.
 
 Some of the challenges stem from the way the EVM is implemented. Here are some of the discrepancies that occur when deploying the most common zero-knowledge primitives to the EVM.
   
