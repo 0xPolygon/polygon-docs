@@ -90,9 +90,9 @@ nav:
         - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
-        - Prerequisite understanding: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/pre-requisites.pdf
+        - Prerequisite understanding: zkEVM/architecture/prerequisite-understanding.md
         - L2 state tree: 
-          - Concept: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/l2-state-tree-concept.pdf
+          - Concept: zkEVM/architecture/l2-state-tree/concept.md
           - Keys and values: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/L2StateTree.pdf
         - Aggregator: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/aggregator.pdf
         - Communication layer: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/communication-layer.pdf
