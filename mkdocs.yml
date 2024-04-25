@@ -93,9 +93,9 @@ nav:
         - Prerequisite understanding: zkEVM/architecture/prerequisite-understanding.md
         - L2 state tree: 
           - Concept: zkEVM/architecture/l2-state-tree/concept.md
-          - Keys and values: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/L2StateTree.pdf
-        - Aggregator: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/aggregator.pdf
-        - Communication layer: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/communication-layer.pdf
+          - Keys and values: zkEVM/architecture/l2-state-tree/key-value-pairs.md
+        - Aggregator: zkEVM/architecture/aggregator.md
+        - Communication layer: zkEVM/architecture/communication-layer.md
         - The proving system:
           - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
           - Executor: zkEVM/architecture/proving-system/the-executor-comp.md
@@ -105,7 +105,7 @@ nav:
           - zkEVM and execution traces: zkEVM/architecture/proving-system/exec-trace-and-zkevm.md
           - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
           - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
-        - Sequencing batches: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/sequencing-batches.pdf
+        - Sequencing batches: zkEVM/architecture/sequencing-batches.md
         - Unified bridge:
           - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
           - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
@@ -113,7 +113,7 @@ nav:
           - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
           - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - User fees: zkEVM/architecture/user-fees.md
-        - zkEVM network: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/architecture/PDFs/zkevm-network.pdf
+        - zkEVM network: zkEVM/architecture/zkevm-network.md
         - OLD or wrong spot?:
           - zkEVM protocol:
             - zkEVM protocol: zkEVM/architecture/protocol/index.md
@@ -181,7 +181,7 @@ nav:
               - Keccak-f state machine: zkEVM/architecture/zkprover/hashing-state-machines/keccakf-sm.md
               - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
       - Specification:
-        - Estark: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/specs/PDFs/estark.pdf
+        - Estark: zkEVM/spec/estark.md
         - OLD or wrong spot?:
           - Polynomial Identity Language:
             - Polynomial Identity Language: zkEVM/spec/pil/index.md
@@ -203,9 +203,9 @@ nav:
             - Examples: zkEVM/spec/zkasm/examples.md
           - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
       - Concepts:
-        - Ethereum state: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/concepts/PDFs/ethereum-state.pdf
-        - L2 scaling strategies: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/concepts/PDFs/l2-scaling-strategies.pdf
-        - Road to scalability: https://github.com/0xPolygonHermez/zkevm-techdocs/blob/a6d46da98ad32ace544e5dbc31d34831f9cc1bdd/knowledge-layer/concepts/PDFs/road-to-scalability.pdf
+        - Ethereum state: zkEVM/concepts/ethereum-state.md
+        - L2 scaling strategies: zkEVM/concepts/l2-scaling-strategies.md
+        - Road to scalability: zkEVM/concepts/road-to-scalability.md
         - OLD or wrong spot?:
           - EVM basics: zkEVM/concepts/evm-basics.md
           - Sparse merkle trees:
