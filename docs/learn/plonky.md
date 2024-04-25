@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Plonky relates to active research and the development of libraries containing performant cryptographic functions for use in zero-knowledge proof systems.
 
 [Plonky](https://github.com/0xPolygonZero/plonky?tab=readme-ov-file) was Polygon's original implementation of a zk-SNARK computational cryptographic library based on [Plonk](https://eprint.iacr.org/2019/953) with some customizations. The original library was decommissioned in 2021 to be replaced by Plonky2.
