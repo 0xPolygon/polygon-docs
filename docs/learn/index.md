@@ -47,6 +47,14 @@ hide:
       </a>
    </div>
     <div class="grid-item">
+      <a href="./plonky">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Plonky 2 & 3</div>
+         </div>
+         <p class="feature-paragraph">State-of-the-art cryptography libraries for developers.</p>
+      </a>
+   </div>
+    <div class="grid-item">
       <a href="./polygon-protocols">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Polygon 2.0</div>
@@ -57,7 +65,7 @@ hide:
    <div class="grid-item">
       <a href="./welcome">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Welcome to Polygon innovation and design</div>
+            <div class="feature-card-heading">Polygon innovation and design</div>
          </div>
          <p class="feature-paragraph">Find out what to expect from the Polygon Knowledge Layer Learn section.</p>
       </a>

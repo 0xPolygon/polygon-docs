@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Polygon PoS 
 
 Polygon PoS is a widely-adopted EVM-compatible sidechain designed for low transaction costs and fast transaction times.
