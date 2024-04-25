@@ -1,4 +1,4 @@
-The Polygon type 1 prover is a zk-evm proving component used for creating proofs on your ZK-EVM chain. It has been developed in collaboration with the Toposware team.
+The Polygon type 1 prover is a ZK-EVM proving component capable of generating proofs for Ethereum blocks. It has been developed in collaboration with the Toposware team.
 
 !!! info
     The [Polygon type 1 prover](https://github.com/0xPolygonZero/zk_evm) is not yet ready for full implementation into a CDK stack.
