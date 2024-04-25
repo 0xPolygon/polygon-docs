@@ -1,4 +1,5 @@
 ---
+comments: true
 hide:
 - toc
 ---

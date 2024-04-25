@@ -508,11 +508,11 @@ nav:
   - Learn:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
-      - Polygon Type 1 Prover:
+      - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
-              - Run Type 1 Prover quickly: cdk/how-to/deploy-t1-prover.md
-              - Deploy Type 1 Prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
+              - Run prover quickly: cdk/how-to/deploy-t1-prover.md
+              - Deploy prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
           - Architecture:
               - Overview: cdk/architecture/type-1-prover/t1-architecture.md
               - Type 1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
@@ -521,11 +521,11 @@ nav:
               - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
               - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
               - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
+      - Plonky 2 & 3: learn/plonky.md
       - Polygon protocols: learn/polygon-protocols.md
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
       - Security:
           - Overview: learn/security/overview.md
-          - Best practices: learn/security/bestpractices.md
           - Security areas:
             - Governance & management: learn/security/governance.md
             - Risk management: learn/security/risk.md
