@@ -37,7 +37,7 @@ There are basically three measures put in place to avoid incurring losses in the
 
 ### Transaction pre-execution
 
-Pre-execution of transactions is used to estimate L2 resources each transaction will spent when processed.
+You can use pre-execution to estimate the L2 resources each transaction will spend when processed.
 
 These resources are measured in terms of counters in the zkEVM's ROM, but are converted to gas units for better UX.
 
