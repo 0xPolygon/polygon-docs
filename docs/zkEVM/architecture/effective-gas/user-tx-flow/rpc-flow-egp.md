@@ -26,7 +26,7 @@ Pre-execution of transactions, which happens at the RPC level, involves estimati
 
 This is internally measured (internal to the zkEVM) in terms of resources spent to execute the transactions. These resources are the numbers of counters used up in the zkEVM ROM. 
 
-A transaction is said to be _out of counters_ (OOC) if the signed gas price is insufficient to pay for all the required gas units.
+A transaction is said to be _out of counters_ (OOC) if the signed gas price is insufficient to pay for the required gas units.
 
 Transactions with OOC get rejected, while those with no OOC stand a chance to be added to the pool.
 
