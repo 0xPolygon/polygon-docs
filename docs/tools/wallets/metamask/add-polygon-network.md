@@ -95,7 +95,7 @@ MetaMask gives you the option to add a network profile manually. Let's look at h
 
     ![manual-4](../../../img/tools/wallet/metamask/manual-4.png){width=50%}
 
-5. This adds the network profile to your MetaMask wallet. Select the prompt to switch to your newly added network. You'll now be able to switch between your added network and other networks from the drop-down list on the wallet main page.
+5. This adds the network profile to your MetaMask wallet. Select the prompt to switch to your newly added network. You can now switch between your added network and other networks from the drop-down list on the wallet main page.
 
     ![manual-5](../../../img/tools/wallet/metamask/manual-5.png){width=50%}
 
