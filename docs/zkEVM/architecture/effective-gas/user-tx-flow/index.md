@@ -1,4 +1,4 @@
-Next, we provide a concise description of the Polygon zkEVM's approach to an effective gas price.
+Next, we provide a concise description of Polygon zkEVM's approach to calculating the effective gas price.
 
 It's an overview of the end-to-end flow of transactions, from when users sign transactions and submit them at the RPC level, to when the sequencer executes them.
 
