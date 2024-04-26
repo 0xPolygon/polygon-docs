@@ -40,7 +40,7 @@ This document presents an outline of the Polygon zkEVM's strategy toward executi
     
     Some users' signed gas prices may be sufficiently high for the user to deserve some savings. In such cases the sequencer can execute transactions with a much lower gas price.
 
-    Hence, there's a need for a criterion that determines whether a transaction gets executed with the user's signed gas price or the effective gas price according to the RPC-estimated gas price.
+    Hence, there's a need for a criterion that determines whether a transaction gets executed with the user's signed gas price, or the effective gas price as per the RPC estimation.
 
 
 - **Set a criterion for when to execute transactions with RPC-estimated EGP**
