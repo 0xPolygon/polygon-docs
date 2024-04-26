@@ -45,7 +45,7 @@ This document presents an outline of the Polygon zkEVM's strategy toward executi
 
 - **Set a criterion for when to execute transactions with RPC-estimated EGP**
     
-    The effective gas price computed with the RPC-estimated gas price could be a lot higher than the actual gas price, which is computed with the current state. In this case the user deserves further savings.
+    The effective gas price computed with the RPC-estimated gas price could be a lot higher than the actual gas price computed with the current state. In this case, the system can further optimize gas usage and help the user save on gas fees.
 
     The strategy here is to have a criterion that determines whether a transaction should get executed with the RPC-estimated effective gas price (EEGP) or the new effective gas price (NEGP), which results from the actual gas price.
 
