@@ -47,7 +47,7 @@ $$
 \texttt{gasLimit} \cdot \texttt{gasPrice}
 $$
 
-and success is guaranteed if $\texttt{gasLimit}$ is greater than $\texttt{gasUsed}$, the gas used is determined by the gas cost for data availability plus the gas cost for transaction execution in the L2.
+and success is guaranteed if $\texttt{gasLimit}$ is greater than $\texttt{gasUsed}$, the gas used is determined by the gas cost for data availability plus the gas cost for transaction execution in L2.
 
 That is, 
 
