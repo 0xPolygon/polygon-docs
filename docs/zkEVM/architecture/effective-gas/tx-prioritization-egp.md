@@ -1,4 +1,4 @@
-Users who want their transactions to be priotized for sequencing can sign their transactions with gas prices that are higher than the suggested gas price. That is,
+Users can sign transactions with gas prices higher than the suggested gas price for prioritized sequencing. That is,
 
 $$
 \texttt{SignedGasPrice} > \texttt{suggestedGasPrice}
