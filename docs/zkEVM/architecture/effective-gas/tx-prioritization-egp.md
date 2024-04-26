@@ -114,7 +114,7 @@ $$
 \texttt{GasPriceFinal} = \frac{\texttt{SignedGasPrice}}{2}
 $$
 
-The transaction execution takes only half of the signed gas price.
+The transaction execution incurs only half of the signed gas price.
 
 ## Concluding remarks
 
