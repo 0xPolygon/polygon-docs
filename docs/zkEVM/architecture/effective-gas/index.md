@@ -37,7 +37,7 @@ Transactions get reverted if the $\texttt{gasUsed}$ is greater than the $\texttt
 
 The L2 gas price cannot simply be set to be the same as the L1 gas price (especially in the case of rollups where the goal is to reduce gas fees).
 
-For this reason we henceforth distinguish between the two gas prices, and denote them as: $\texttt{L2GasPrice}$ and $\texttt{L1GasPrice}$.
+Hence, we make the distinction between the two gas prices, and denote them as $\texttt{L2GasPrice}$ and $\texttt{L1GasPrice}$ respectively.
 
 But how can you calculate the appropriate L2 gas price while ensuring that transactions are successfully executed?
 
