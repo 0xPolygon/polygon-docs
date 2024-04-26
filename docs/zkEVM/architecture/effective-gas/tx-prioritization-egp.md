@@ -20,7 +20,7 @@ $$
 \texttt{EffectiveGasPrice} = \texttt{BreakEvenGasPrice} \cdot \big(1 + \texttt{PriorityRatio}\big)
 $$
 
-It’s important to observe that, among all the transactions stored in the pool database, those that are prioritized at the time of sequencing are those with higher $\texttt{effectiveGasPrice}$, due to the added $\texttt{PriorityRatio}$.
+Among the transactions stored in the pool database, the transactions with higher $\texttt{effectiveGasPrice}$ are prioritized at the time of sequencing due to the added $\texttt{PriorityRatio}$.
 
 ### Gas consumption deviations
 
