@@ -24,7 +24,7 @@ Among the transactions stored in the pool database, the transactions with higher
 
 ### Gas consumption deviations
 
-Since the actual gas consumed can deviate from the estimated gas consumption, we can introduce the estimated $\texttt{EGP}$ and the 'new' $\texttt{EGP}$, and denote them as $\texttt{EEGP}$ and $\texttt{NEGP}$, respectively.
+Since the actual gas consumed can deviate from the estimated gas consumption, we denote the estimated $\texttt{EGP}$ and the 'new' $\texttt{EGP}$ as $\texttt{EEGP}$ and $\texttt{NEGP}$, respectively.
 
 The extent of the deviation can be computed as a percentage:
 
