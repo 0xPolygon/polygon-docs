@@ -8,7 +8,7 @@ Now that the EGP is in place, you can reduce any chance for a transaction revert
 
 In Ethereum, gas fees for a transaction are decided using two adjustable parameters:
 
-- The $\texttt{gasLimit}$, which is the maximum amount of gas units the user is willing to buy, in order for their transactions to be completed.
+- The $\texttt{gasLimit}$, which is the maximum amount of gas units the user is willing to buy in order for their transactions to be included in a block and processed on chain.
 - The $\texttt{gasPrice}$, that is, the amount of wei a user is willing to pay for 1 gas unit.
 
 At the beginning of each transaction, the amount of wei sufficient to cover transaction costs is deducted from the user's account balance. 
