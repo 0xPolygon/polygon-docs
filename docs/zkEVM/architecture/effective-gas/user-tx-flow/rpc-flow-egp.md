@@ -14,7 +14,7 @@ The L2 network (the zkEVM) polls for L1 gas price values and uses them to:
 
 The user then signs transactions with the appropriate gas price, called $\texttt{GasPriceSigned}$, based on the suggested L2 gas price, $\texttt{GasPriceSuggested}$.
 
-User's transactions are accepted for pre-execution only if
+Transactions are accepted for pre-execution only if
 
 $$
 \texttt{GasPriceSigned} > \texttt{L2MinGasPrice}
