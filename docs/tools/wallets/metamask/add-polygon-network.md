@@ -70,7 +70,7 @@ In this doc, we demonstrate a few ways to do this for Polygon PoS testnet (Amoy)
 
 ## Add a network manually
 
-MetaMask gives you the option to add a network profile manually. We'll look at how to input the valid network RPC URL, chain ID, and other information for the network you want to add to the wallet. The following table contains the mainnet and testnet network configurations for Polygon PoS and zkEVM.
+MetaMask gives you the option to add a network profile manually. Let's look at how to input the valid network RPC URL, chain ID, and other information for the network you want to add to the wallet. The following table contains the mainnet and testnet network configurations for Polygon PoS and zkEVM.
 
 |         Network         |                 RPC URL                  | Chain ID | Native token |             Explorer URL              |
 | :---------------------: | :--------------------------------------: | :------: | :----------: | :-----------------------------------: |
