@@ -7,7 +7,7 @@ Polygon zkEVM is EVM-equivalent. It supports the majority of Ethereum EIPs, prec
 
 The Polygon zkEVM testnet launched with a complete ZK proving system and full transaction data availability in October 2022. The proving system uses a combination of eSTARK proofs and FRI, that are then compressed using FFLONK SNARKs to create the final ZK proof.
 
-Following the launch of the testnet, the code base for Polygon zkEVM underwent several security audits. These were among the first audits ever performed on a complete, in-production ZK proving system. 
+Following the launch of the testnet, the code base for Polygon zkEVM underwent several security audits. These were among the first audits ever performed on a complete, in-production ZK proving system.  
 
 After the audits, Polygon zkEVM Mainnet Beta [launched in March 2023](https://www.youtube.com/watch?v=UvQIX5i09A4&ab_channel=ETHGlobal). Since then, the zkEVM network has had two major upgrades: [Dragon Fruit (ForkID5)](https://polygon.technology/blog/polygon-zkevm-dragon-fruit-upgrade-with-new-opcode-coming-to-mainnet-beta), in September 2023, and [Inca Berry (ForkID6)](https://polygon.technology/blog/polygon-zkevm-inca-berry-upgrade-coming-to-mainnet-beta), in November 2023.
 
