@@ -55,7 +55,7 @@ $$
 \texttt{suggestedL2GasPrice} = \texttt{L1GasPrice} \cdot \texttt{suggestedFactor}
 $$
 
-Such a factor is justifiable considering the fact that, the sequencer is obliged to process every transaction stored in the pool database, irrespective of its $\texttt{SignedGasPrice}$ and the prevailing L1 gas price.
+The need for such a factor originates from the fact that the sequencer is obliged to process every transaction stored in the pool database, irrespective of its $\texttt{SignedGasPrice}$ and the prevailing L1 gas price.
 
 ### Breakeven gas price
 
