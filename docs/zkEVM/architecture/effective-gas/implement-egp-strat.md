@@ -67,7 +67,7 @@ $$
 \texttt{BreakEvenGasPrice} = \frac{\texttt{TotalTxPrice}}{\texttt{GasUsed}}
 $$
 
-In order to attain some profit for processing transactions, a marginal profit factor called $\texttt{NetProfit}$ is incorporated in the $\texttt{BreakEvenGasPrice}$ formula as follows:
+A marginal profit factor called $\texttt{NetProfit}$ is incorporated in the $\texttt{BreakEvenGasPrice}$ formula as a means of generating a fixed proportion of profit from the total gas fees. It is calculated as follows:
 
 $$
 \texttt{BreakEvenGasPrice} = \frac{\texttt{TotalTxPrice}}{\texttt{GasUsed}} \cdot \texttt{NetProfit}
