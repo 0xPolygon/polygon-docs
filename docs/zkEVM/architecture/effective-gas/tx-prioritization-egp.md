@@ -108,7 +108,7 @@ $$
 \texttt{EffectivePercentage} = 0.5
 $$
 
-so, only half of the gas price the user signed with gets charged as the transaction cost:
+Thus, only half of the gas price the user signed with gets charged as the transaction cost:
 
 $$
 \texttt{GasPriceFinal} = \frac{\texttt{SignedGasPrice}}{2}
