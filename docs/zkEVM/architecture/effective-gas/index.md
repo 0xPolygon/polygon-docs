@@ -81,7 +81,9 @@ $$
 
 Current L2 fees can be viewed here [https://l2fees.info](https://l2fees.info/).
 
-Although this factor is used in the Polygon zkEVM network, in fact $\texttt{L1GasPriceFactor}$ is set to $0.04$​, there are a few complications that need to be carefully considered. 
+The $\texttt{L1GasPriceFactor}$ is used in the Polygon zkEVM network and is set to $0.04$​. 
+
+There are a few complications that need to be carefully considered. 
 
 So the question remains: What gas price should the user sign transactions with?
 
