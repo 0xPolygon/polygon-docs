@@ -11,7 +11,7 @@ This document presents an outline of Polygon zkEVM's strategy for executing tran
 
 - **Provide suggested gas prices**
     
-    The polled L1 gas price values are sent to users as per individual request.
+    The polled L1 gas price values are sent to users upon request individually.
 
     A grace time-interval of 5 minutes, called $\texttt{MinAllowedPriceInterval}$, is given to the user.
 
