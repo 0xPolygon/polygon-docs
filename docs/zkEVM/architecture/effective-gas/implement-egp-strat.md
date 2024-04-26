@@ -52,7 +52,7 @@ So then, if the use of $\texttt{L1GasPriceFactor = 0.04}$ is the only precaution
 A $\texttt{suggestedFactor = 0.15}$ is therefore used to calculate each suggested gas price:
 
 $$
-\texttt{suggestedL2GasPrice} = \texttt{L1GasPrice} \cdot \texttt{suggestFactor}
+\texttt{suggestedL2GasPrice} = \texttt{L1GasPrice} \cdot \texttt{suggestedFactor}
 $$
 
 Such a factor is justifiable considering the fact that, the sequencer is obliged to process every transaction stored in the pool database, irrespective of its $\texttt{SignedGasPrice}$ and the prevailing L1 gas price.
