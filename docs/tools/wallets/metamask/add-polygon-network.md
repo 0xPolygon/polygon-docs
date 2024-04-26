@@ -52,7 +52,7 @@ In this doc, we demonstrate a few ways to do this for Polygon PoS testnet (Amoy)
     ![polygonscan-1](../../../img/tools/wallet/metamask/polygonscan-1.png){width=50%}
 
 3. The explorer window refreshes and loads the explorer home page for the network you selected.
-4. Next, scroll down to the bottom of the page, and click on the button in the bottom-left corner prompting you to add the network your MetaMask wallet. For instance, in the case of Amoy testnet, the button says **Add Polygon Amoy Network**.
+4. Next, scroll down to the bottom of the page, and select the button in the bottom-left corner prompting you to add the network to your MetaMask wallet. For instance, in the case of Amoy testnet, the button says **Add Polygon Amoy Network**.
 
     ![polygonscan-2](../../../img/tools/wallet/metamask/polygonscan-2.png){width=50%}
 
