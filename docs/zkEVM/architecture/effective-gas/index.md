@@ -31,7 +31,7 @@ $$
 \texttt{gasLimit} \cdot \texttt{gasPrice} - \texttt{gasUsed} \cdot \texttt{gasPrice}
 $$
 
-Transactions get reverted if the $\texttt{gasUsed}$ is greater than the $\texttt{gasLimit}$. Otherwise, transaction succeed. 
+Transactions get reverted if the $\texttt{gasUsed}$ is greater than the $\texttt{gasLimit}$. Otherwise, the transaction is successful. 
 
 ## Computing L2 gas fees
 
