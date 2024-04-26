@@ -118,7 +118,7 @@ The transaction execution incurs only half of the signed gas price.
 
 ## Concluding remarks
 
-The effective gas price scheme as outlined above, although steeped in details, takes all necessary factors and eventualities into consideration.
+The effective gas price scheme, as outlined above, although steeped in details, takes all necessary factors and eventualities into consideration.
 
 Ultimately, the scheme is accurate and fair to both the users and the zkEVM network.
 
