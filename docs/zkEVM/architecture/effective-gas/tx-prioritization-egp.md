@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Users who want their transactions to be priotized for sequencing can sign their transactions with gas prices that are higher than the suggested gas price. That is,
 
 $$
@@ -37,23 +41,23 @@ The deviation percentage is compared to a parameter called $\texttt{FinalDeviati
 This presents 2 scenarios and their corresponding consequences:
 
 1. If the percentage deviation is higher than the fixed deviation parameter,
-   
-   $$
-   \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 < \texttt{FinalDeviationParameter} = 10,
-   $$
-   
-   it indicates that there is minimal distinction between charging the user with $\texttt{NEGP}$ compared to $\texttt{EEGP}$.
-   
-   Despite potential losses to the network, the user gets charged the $\texttt{EEGP}$ amount as the gas price. 
+    
+    $$
+    \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 < \texttt{FinalDeviationParameter} = 10,
+    $$
+
+    it indicates that there is minimal distinction between charging the user with $\texttt{NEGP}$ compared to $\texttt{EEGP}$.
+
+    Despite potential losses to the network, the user gets charged the $\texttt{EEGP}$ amount as the gas price.
 
 2. On the contrary, if the percentage deviation equals or exceeds the deviation parameter,
-   
-   $$
-   \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 ≥ \texttt{FinalDeviationParameter}  = 10,
-   $$
-   
-   the difference between executions can be so big it warrants adjustment of the gas price to be $\texttt{NEGP}$​, and thus mitigate for potential losses to the network.
-   
+    
+    $$
+    \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 ≥ \texttt{FinalDeviationParameter}  = 10,
+    $$
+
+    the difference between executions can be so big it warrants adjustment of the gas price to be $\texttt{NEGP}$​, and thus mitigate for potential losses to the network.
+    
 ### Effective percentage
 
 The last parameter called the $\texttt{EffectivePercentage}$ is for measuring the unused portion of the user's signed gas price. 
