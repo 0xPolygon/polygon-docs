@@ -13,7 +13,7 @@ This document presents an outline of Polygon zkEVM's strategy for executing tran
     
     The polled L1 gas price values are sent to users upon request individually.
 
-    A grace time-interval of 5 minutes, called $\texttt{MinAllowedPriceInterval}$, is given to the user.
+    A grace time interval of 5 minutes, called $\texttt{MinAllowedPriceInterval}$, is given to the user.
 
     It is recommended that the user sign their transactions with a gas price that is greater than the least of the gas prices in the 5-minute interval, otherwise is rejected for the RPC pre-execution stage.
 
