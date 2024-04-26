@@ -1,6 +1,6 @@
 In this section we provide an elaborate discussion on how Polygon zkEVM network ensures transactions are executed with the best gas price for the user, while incurring minimal or no losses.
 
-You will learn how to sign transations with the gas price that ensures:
+You will learn how to sign transactions with the appropriate gas price ensuring:
 
 - There is minimal likelihood for your transactions to be reverted.
 - The sequencer prioritizes your transactions for execution.
