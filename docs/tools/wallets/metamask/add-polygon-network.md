@@ -83,7 +83,7 @@ MetaMask gives you the option to add a network profile manually. Let's look at h
 
     ![manual-1](../../../img/tools/wallet/metamask/manual-1.png){width=50%}
 
-2. Select "Add network" option at the bottom of the drop-down list.
+2. Select **Add network** option at the bottom of the drop-down list.
 
     ![manual-2](../../../img/tools/wallet/metamask/manual-2.png){width=50%}
 
