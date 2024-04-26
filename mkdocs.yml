@@ -107,6 +107,15 @@ nav:
         - High-level view of the topology: zkEVM/architecture/summary.md
         - Aggregator: zkEVM/architecture/aggregator.md
         - Communication layer: zkEVM/architecture/communication-layer.md
+        - Effective gas price:
+          - Effective gas price: zkEVM/architecture/effective-gas/index.md
+          - Effective gas price strategy: zkEVM/architecture/effective-gas/zkevm-egp-strat.md
+          - User transaction flow:
+            - User transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/index.md
+            - RPC transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/rpc-flow-egp.md
+            - Sequencer transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/sequencer-flow-egp.md
+          - Implementing EGP strategy: zkEVM/architecture/effective-gas/implement-egp-strat.md
+          - Transaction prioritization: zkEVM/architecture/effective-gas/tx-prioritization-egp.md
         - L2 state tree: 
           - Concept: zkEVM/architecture/l2-state-tree/concept.md
           - Keys and values: zkEVM/architecture/l2-state-tree/key-value-pairs.md
@@ -126,15 +135,6 @@ nav:
           - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
           - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
           - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
-        - Effective gas price:
-          - Effective gas price: zkEVM/architecture/effective-gas/index.md
-          - Effective gas price strategy: zkEVM/architecture/effective-gas/zkevm-egp-strat.md
-          - User transaction flow:
-            - User transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/index.md
-            - RPC transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/rpc-flow-egp.md
-            - Sequencer transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/sequencer-flow-egp.md
-          - Implementing EGP strategy: zkEVM/architecture/effective-gas/implement-egp-strat.md
-          - Transaction prioritization: zkEVM/architecture/effective-gas/tx-prioritization-egp.md
         - zkEVM network: zkEVM/architecture/zkevm-network.md
         - OLD or wrong spot?:
           - zkEVM protocol:
@@ -204,17 +204,17 @@ nav:
               - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
       - Specification:
         - Estark: zkEVM/spec/estark.md
-        - User fees:
-          - User fees: zkEVM/spec/user-fees/index.md
-          - Gas price suggestion: zkEVM/spec/user-fees/gas-price-suggest.md
-          - L1-L2 cost discrepancies: zkEVM/spec/user-fees/l1-l2-discrepancies.md
-          - Breakeven gas price: zkEVM/spec/user-fees/breakeven-technique.md
-          - Prioritizing transactions: zkEVM/spec/user-fees/prioritization-txs.md
-          - User fees flow:
-            - User fees flow: zkEVM/spec/user-fees/user-fees-flow/index.md 
-            - RPC flow: zkEVM/spec/user-fees/user-fees-flow/rpc-flow.md
-            - Sequencer flow: zkEVM/spec/user-fees/user-fees-flow/sequencer-flow.md
         - OLD or wrong spot?:
+          - User fees:
+            - User fees: zkEVM/spec/user-fees/index.md
+            - Gas price suggestion: zkEVM/spec/user-fees/gas-price-suggest.md
+            - L1-L2 cost discrepancies: zkEVM/spec/user-fees/l1-l2-discrepancies.md
+            - Breakeven gas price: zkEVM/spec/user-fees/breakeven-technique.md
+            - Prioritizing transactions: zkEVM/spec/user-fees/prioritization-txs.md
+            - User fees flow:
+              - User fees flow: zkEVM/spec/user-fees/user-fees-flow/index.md 
+              - RPC flow: zkEVM/spec/user-fees/user-fees-flow/rpc-flow.md
+              - Sequencer flow: zkEVM/spec/user-fees/user-fees-flow/sequencer-flow.md
           - Polynomial Identity Language:
             - Polynomial Identity Language: zkEVM/spec/pil/index.md
             - Simple example: zkEVM/spec/pil/simple-example.md
@@ -233,8 +233,6 @@ nav:
             - zkASM: zkEVM/spec/zkasm/index.md
             - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
             - Examples: zkEVM/spec/zkasm/examples.md
-      - API: 
-        - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - Concepts:
         - Ethereum state: zkEVM/concepts/ethereum-state.md
         - L2 scaling strategies: zkEVM/concepts/l2-scaling-strategies.md
