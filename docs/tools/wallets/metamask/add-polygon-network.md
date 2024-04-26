@@ -64,7 +64,7 @@ In this doc, we demonstrate a few ways to do this for Polygon PoS testnet (Amoy)
 
     ![polygonscan-4](../../../img/tools/wallet/metamask/polygonscan-4.png){width=50%}
 
-7. You'll now be able to see your MATIC balance on Amoy. You'll also be able to switch between Amoy and other networks directly from the drop-down menu in the top-left corner.
+7. You can now see your MATIC balance on Amoy. You can also switch between Amoy and other networks directly from the drop-down menu in the top-left corner.
 
     ![polygonscan-5](../../../img/tools/wallet/metamask/chainlist-4.png){width=50%}
 
