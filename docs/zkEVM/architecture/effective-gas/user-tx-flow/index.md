@@ -6,4 +6,4 @@ It's a quicker way to go through all involved formulas or criteria, but without 
 
 You will find more elaborate discussions, with ample examples, in the [Specifications section](../../../spec/user-fees/index.md).
 
-The end-to-end flow of transactions has two phases: The RPC flow, and the sequencer flow.
+The end-to-end flow of transactions occurs in two phases: the RPC flow, and the sequencer flow.
