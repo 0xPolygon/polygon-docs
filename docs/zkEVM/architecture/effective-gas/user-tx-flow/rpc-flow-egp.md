@@ -1,4 +1,4 @@
-The RPC flow phase of transactions consists of two stages;
+The RPC flow phase of transactions consists of two stages:
 
 - The gas price suggestion.
 - Pre-execution of transactions. 
