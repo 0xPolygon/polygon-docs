@@ -15,10 +15,10 @@ In this phase of the end-to-end transaction flow, transactions go through differ
 
     Depending on whether $\texttt{GasPriceSigned} \leq \texttt{EEGP}$ or not, transactions get executed with either the $\texttt{GasPriceSigned}$ or the $\texttt{EEGP}$.
 
-3. Amongst the transactions that are computed with the $\texttt{EEGP}$, further savings can be made by:
+3. Amongst the transactions that are computed with the $\texttt{EEGP}$, further gas savings can be achieved by:
     
     - Computing the new effective gas price (NEGP), using the current state and the EEGP.
-    - Calculating the gas consumption deviation percentage and compare it to a fixed deviation parameter. i.e., $\texttt{FinalDeviationParameter} = 10$.
+    - Calculating the gas consumption deviation percentage and comparing it to a fixed deviation parameter. i.e., $\texttt{FinalDeviationParameter} = 10$.
     - There's no further execution if the gas consumption deviation percentage is less than the fixed parameter, $\texttt{FinalDeviationParameter} = 10$.
     - Otherwise, check if $\texttt{GasPriceSigned} \leq \texttt{NEGP}$. If true, then execute transactions again using the $\texttt{GasPriceSigned}$. If false, continue to the next stage.
 
@@ -27,7 +27,7 @@ In this phase of the end-to-end transaction flow, transactions go through differ
     - Transactions with these two opcodes get executed with the $\texttt{GasPriceSigned}$.
     - Otherwise, they are executed with the $\texttt{NEGP}$.
 
-   Since the sequencer is obliged to execute all transactions in the pool, any of the above stages leads to some execution of transactions.
+   Since the sequencer is obliged to execute all transactions in the pool, each transaction is executed during a particular stage of the flow described above.
 
    The entire sequencer flow is summarized in the figure below.
 

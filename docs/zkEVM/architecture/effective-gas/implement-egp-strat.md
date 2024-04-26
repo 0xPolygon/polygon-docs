@@ -1,6 +1,6 @@
 In this section we provide an elaborate discussion on how Polygon zkEVM network ensures transactions are executed with the best gas price for the user, while incurring minimal or no losses.
 
-You will learn how to sign transations with the gas price that ensures:
+You will learn how to sign transactions with the appropriate gas price ensuring:
 
 - There is minimal likelihood for your transactions to be reverted.
 - The sequencer prioritizes your transactions for execution.
@@ -20,8 +20,8 @@ The polled L1 gas prices are used to determine the appropriate L2 gas price to s
 Since the L1 gas price is likely to change between when a user signs a transaction and when the transaction is pre-executed, the following parameters are put in place:
 
 -  A $5$-minute interval of several suggested gas prices, called $\texttt{MinAllowedPriceInterval}$.
-- During the $\texttt{MinAllowedPriceInterval}$, the user's transactions can be accepted for pre-execution, provided the $\texttt{SignedGasPrice}$ is above the least among the suggested gas prices in the interval.
-- The least of the suggested gas prices is called $\texttt{L2MinGasPrice}$.
+- During the $\texttt{MinAllowedPriceInterval}$, the user's transactions can be accepted for pre-execution, provided the $\texttt{SignedGasPrice}$ is higher than the lowest suggested gas price in the interval.
+- The lowest among the suggested gas prices is called $\texttt{L2MinGasPrice}$.
 
 ![Figure: minimum allowed gas interval](../../../img/zkEVM/min-allowed-gas-interval.png)
 
@@ -29,7 +29,7 @@ All transactions such that $\texttt{SignedGasPrice} > \texttt{L2MinGasPrice}$ ar
 
 ## How to avoid incurring losses in L2
 
-There are basically three measures put in place to avoid incurring losses in the L2 network:
+There are three measures put in place to help avoid incurring gas price-induced losses in the L2 network:
 
 - Pre-execution of transactions. 
 - The breakeven gas price: $\texttt{BreakEvenGasPrice}$.
@@ -37,7 +37,7 @@ There are basically three measures put in place to avoid incurring losses in the
 
 ### Transaction pre-execution
 
-Pre-execution of transactions is used to estimate L2 resources each transaction will spent when processed.
+You can use pre-execution to estimate the L2 resources each transaction will spend when processed.
 
 These resources are measured in terms of counters in the zkEVM's ROM, but are converted to gas units for better UX.
 
@@ -52,10 +52,10 @@ So then, if the use of $\texttt{L1GasPriceFactor = 0.04}$ is the only precaution
 A $\texttt{suggestedFactor = 0.15}$ is therefore used to calculate each suggested gas price:
 
 $$
-\texttt{suggestedL2GasPrice} = \texttt{L1GasPrice} \cdot \texttt{suggestFactor}
+\texttt{suggestedL2GasPrice} = \texttt{L1GasPrice} \cdot \texttt{suggestedFactor}
 $$
 
-Such a factor is justifiable considering the fact that, the sequencer is obliged to process every transaction stored in the pool database, irrespective of its $\texttt{SignedGasPrice}$ and the prevailing L1 gas price.
+The need for such a factor originates from the fact that the sequencer is obliged to process every transaction stored in the pool database, irrespective of its $\texttt{SignedGasPrice}$ and the prevailing L1 gas price.
 
 ### Breakeven gas price
 
@@ -67,7 +67,7 @@ $$
 \texttt{BreakEvenGasPrice} = \frac{\texttt{TotalTxPrice}}{\texttt{GasUsed}}
 $$
 
-In order to attain some profit for processing transactions, a marginal profit factor called $\texttt{NetProfit}$ is incorporated in the $\texttt{BreakEvenGasPrice}$ formula as follows:
+A marginal profit factor called $\texttt{NetProfit}$ is incorporated in the $\texttt{BreakEvenGasPrice}$ formula as a means of generating a fixed proportion of profit from the total gas fees. It is calculated as follows:
 
 $$
 \texttt{BreakEvenGasPrice} = \frac{\texttt{TotalTxPrice}}{\texttt{GasUsed}} \cdot \texttt{NetProfit}
