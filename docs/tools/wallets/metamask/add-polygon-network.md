@@ -1,107 +1,104 @@
-!!! caution "Content disclaimer"
+---
+comments: true
+---
+
+!!! warning "Content disclaimer"
+
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
-In order to view the flow of funds in your accounts, on the Polygon Network, you will need to configure Polygon testnet and mainnet URLs on Metamask.
+!!! tip "Installing MetaMask"
 
-There are two ways to do it:
+    Please make sure you have already installed **[Metamask](https://metamask.io/)**!
 
+To track your assets and send transactions on any of the Polygon networks using MetaMask, you'll need to add the respective network configurations to the wallet.
+
+In this doc, we'll go over and demonstrate a few different ways to do this for Polygon PoS testnet (Amoy) and mainnet. You can use the same methods to add Polygon zkEVM to your MetaMask wallet.
+
+- [Using ChainList](../metamask/add-polygon-network.md#using-chainlist)
 - [Using Polygonscan](../metamask/add-polygon-network.md#using-polygonscan)
-- [Add the Polygon network manually](../metamask/add-polygon-network.md#add-the-polygon-network-manually)
+- [Adding a network manually](../metamask/add-polygon-network.md#add-a-network-manually)
+- [Importing other tokens](../metamask/add-polygon-network.md#importing-other-tokens)
 
-!!! tip
-    Find a tip at the end of this article on how to easily add **Polygon Mainnet** to Metamask.
+## Using ChainList
+
+1. Depending on the network profile that you want to add to your MetaMask wallet, use one of the following links to navigate to the respective ChainList page.
+
+    - [Polygon PoS testnet (Amoy)](https://chainlist.org/chain/80002)
+    - [Polygon PoS mainnet](https://chainlist.org/chain/137)
+    - [Polygon zkEVM testnet (Cardona)](https://chainlist.org/chain/2442)
+    - [Polygon zkEVM mainnet](https://chainlist.org/chain/1101)
+
+2. Select the "Add to Metamask" option on the page. This will bring up your MetaMask wallet.
+
+    ![chainlist-1](../../../img/tools/wallet/metamask/chainlist-1.png){width=50%}
+
+3. Select the "Approve" option. This lets ChainList add the network configuration such as the network RPC URL, the chain ID, etc. to your MetaMask wallet.
+
+    ![chainlist-2](../../../img/tools/wallet/metamask/chainlist-2.png){width=50%}
+
+4. Finally, select "Switch network" to switch to Amoy testnet in MetaMask.
+
+    ![chainlist-3](../../../img/tools/wallet/metamask/chainlist-3.png){width=50%}
+
+5. You should now be able to see your MATIC balance on Amoy. You'll also be able to switch between Amoy and other networks directly from the drop-down menu in the top-left corner.
+
+    ![chainlist-4](../../../img/tools/wallet/metamask/chainlist-4.png){width=50%}
 
 ## Using Polygonscan
 
-!!! note
-    Please make sure you have already installed **[Metamask](https://metamask.io/)**!
+1. Navigate to the [Polygonscan website](https://polygonscan.com/).
+2. Select the network you want to add to your MetaMask wallet from drop-down list in the top-right corner of the home page.
 
-### Mumbai
+    ![polygonscan-1](../../../img/tools/wallet/metamask/polygonscan-1.png){width=50%}
 
-Please follow the steps to add Polygon's Mumbai-Testnet:
+3. The explorer window should refresh and load the explorer home page for the network you selected.
+4. Next, scroll down to the bottom of the page, and click on the button in the bottom-left corner prompting you to add the network your MetaMask wallet. For instance, in the case of Amoy testnet, the button says "Add Polygon Amoy Network".
 
-1. Navigate to [mumbai.polygonscan.com](https://mumbai.polygonscan.com/)
-2. Scroll down to the bottom of the page and click on the button `Add Mumbai Network`
+    ![polygonscan-2](../../../img/tools/wallet/metamask/polygonscan-2.png){width=50%}
 
-      ![img](../../../img/tools/wallet/metamask/testnet-button.png)
+5. Select "Approve" from the MetaMask window. This allows the explorer to add the network configuration to your wallet.
 
-3. Once you click the button you will see a MetaMask Notification, now click on **Approve**.
+    ![polygonscan-3](../../../img/tools/wallet/metamask/polygonscan-3.png){width=50%}
 
-    <center>
-      ![img](../../../img/tools/wallet/metamask/testnet-addnetwork.png){ width="50%" }
-    </center>
+6. Finally, click on "Switch network" to switch to your selected network.
 
-You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
+    ![polygonscan-4](../../../img/tools/wallet/metamask/polygonscan-4.png){width=50%}
 
-### Mainnet
+7.  You should now be able to see your MATIC balance on Amoy. You'll also be able to switch between the current network and other networks directly from the drop-down menu in the top-left corner.
 
-Please follow the steps to add Polygon’s Mainnet:
+    ![polygonscan-5](../../../img/tools/wallet/metamask/chainlist-4.png){width=50%}
 
-1. Navigate to [polygonscan.com](https://polygonscan.com/)
-2. Scroll down to the bottom of the page and click on the button `Add Polygon Network`
+## Add a network manually
 
-      ![img](../../../img/tools/wallet/metamask/mainnet-button.png)
+MetaMask gives you the option to add a network profile manually. You'll need to input the valid network RPC URL, chain ID, and other information for the network you want to add to the wallet. The following table contains the mainnet and testnet network configurations for Polygon PoS and zkEVM.
 
-3. Once you click the button you will see a MetaMask Notification, now click on **Approve**. You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
+|         Network         |                 RPC URL                  | Chain ID | Native token |             Explorer URL              |
+| :---------------------: | :--------------------------------------: | :------: | :----------: | :-----------------------------------: |
+|       PoS mainnet       |    https://polygon-mainnet.infura.io     |   137    |    MATIC     |       https://polygonscan.com/        |
+|   PoS Amoy (testnet)    |   https://rpc-amoy.polygon.technology    |  80002   |    MATIC     |     https://amoy.polygonscan.com      |
+|      zkEVM mainnet      |          https://zkevm-rpc.com           |   1101   |     ETH      |     https://zkevm.polygonscan.com     |
+| zkEVM Cardona (testnet) | https://etherscan.cardona.zkevm-rpc.com/ |   2442   |     ETH      | https://cardona-zkevm.polygonscan.com |
 
-    <center>
-      ![img](../../../img/tools/wallet/metamask/mainnet-addnetwork.png){ width="50%" }
-    </center>
+1. Start by selecting the drop-down menu from the top-left corner in MetaMask.
 
-If you are facing any issue, **add the network manually** according to the steps given below.
+    ![manual-1](../../../img/tools/wallet/metamask/manual-1.png){width=50%}
 
-## Add the Polygon network manually
+2. Select "Add network" option at the bottom of the drop-down list.
 
-### Mumbai
+    ![manual-2](../../../img/tools/wallet/metamask/manual-2.png){width=50%}
 
-To add Polygon's Mumbai-Testnet, click on the Network selection dropdown and then click on Custom RPC.
+3. This will bring up the MetaMask settings page in your browser. Select the "Add a network manually" option at the bottom of the page.
 
-![img](../../../img/tools/wallet/metamask/select-network.png)
+    ![manual-3](../../../img/tools/wallet/metamask/manual-3.png)
 
-It will open up a form with 2 tabs on the top, Settings and Info. In the Settings tab you can add `Matic Mumbai` in the Network Name field, URL `https://rpc-mumbai.maticvigil.com/` in the New RPC URL field, `80001` in Chain ID field, `MATIC` in Currency Symbol field and `https://mumbai.polygonscan.com/` in Block Explorer URL field.
+4. This will take you to a form with multiple fields where you'll need to enter the network configuration (as highlighted in [the table above](#add-the-polygon-network-manually)) for the network you're looking to add in your MetaMask wallet. The following image shows the entries for PoS Amoy testnet. Once you've filled in network config, select "Save".
 
-<center>
-![img](../../../img/tools/wallet/metamask/metamask-settings-mumbai.png)
-</center>
+    ![manual-4](../../../img/tools/wallet/metamask/manual-4.png){width=50%}
 
-Once you’ve added the URL in the New Network field, click on Save. You will be directly switched to Polygon’s Mumbai-Testnet now in the network dropdown list. You can now close the dialog.
+5. This add the network profile to your MetaMask wallet. Select the prompt to switch to your newly added network. You should now be able to between your added network and other networks from the drop-down list on the wallet main page.
 
-### Mainnet
+    ![manual-5](../../../img/tools/wallet/metamask/manual-5.png){width=50%}
 
-To add Polygon’s Mainnet, click on the Network selection dropdown and then click on Custom RPC.
+## Importing other tokens
 
-![img](../../../img/tools/wallet/metamask/select-network.png)
-
-It will open up a form with 2 tabs on the top, Settings and Info. In the Settings tab you can add `Polygon Mainnet` in the Network Name field, URL `https://polygon-rpc.com/` in the New RPC URL field, `137` in Chain ID field, `MATIC` in Currency Symbol field and `https://polygonscan.com/` in Block Explorer URL field.
-
-<center>
-![img](../../../img/tools/wallet/metamask/metamask-settings-mainnet.png)
-</center>
-
-Once you’ve added the information click on Save. You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
-
-**You have successfully added Polygon Network to your Metamask!**
-
-!!! tip "Easy way to add Polygon mainnet"
-    If you just need to add Polygon Mainnet, you can follow these steps:
-
-    1. On Metamask, select the Network tab:
-        <center>
-        ![img](../../../img/tools/wallet/metamask/add-polygon-mainnet.png){ width="50%" }
-        </center>
-    2. Click on **Add Network**:
-        <center>
-        ![img](../../../img/tools/wallet/metamask/add-polygon-mainnet-2.png){ width="50%" }
-        </center>
-    3.  Find Polygon Mainnet on the list of available networks:
-        <center>
-        ![img](../../../img/tools/wallet/metamask/add-polygon-mainnet-3.png){ width="50%" }
-        </center>
-    4. Approve the network addition:
-        <center>
-        ![img](../../../img/tools/wallet/metamask/add-polygon-mainnet-4.png){ width="50%" }
-        </center>
-    Now you may see the Polygon Mainnet on the Networks tab:
-    <center>
-    ![img](../../../img/tools/wallet/metamask/add-polygon-mainnet-5.png){ width="50%" }       
-    </center>
+Looking for a token that didn't show up in the list once you switched networks? Check out MetaMask's guide on [importing tokens to the token list](https://support.metamask.io/managing-my-tokens/custom-tokens/how-to-display-tokens-in-metamask/).
