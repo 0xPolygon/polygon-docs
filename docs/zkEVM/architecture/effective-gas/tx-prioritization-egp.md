@@ -74,7 +74,7 @@ $$
 
 where $\texttt{GasPriceFinal}$ is the gas price charged at the end of the entire processing by the sequencer. 
 
-Observe that, by modifying $\texttt{GasPriceFinal}$, the amount of wei that the user is charged for processing their sent transactions can be adjusted.
+Note that the amount of wei that the user is charged for processing their transactions can be adjusted by modifying $\texttt{GasPriceFinal}$.
 
 This $\texttt{EffectivePercentage}$ is provided by the sequencer as a single byte:
 
