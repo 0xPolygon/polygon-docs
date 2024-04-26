@@ -20,7 +20,7 @@ The polled L1 gas prices are used to determine the appropriate L2 gas price to s
 Since the L1 gas price is likely to change between when a user signs a transaction and when the transaction is pre-executed, the following parameters are put in place:
 
 -  A $5$-minute interval of several suggested gas prices, called $\texttt{MinAllowedPriceInterval}$.
-- During the $\texttt{MinAllowedPriceInterval}$, the user's transactions can be accepted for pre-execution, provided the $\texttt{SignedGasPrice}$ is above the least among the suggested gas prices in the interval.
+- During the $\texttt{MinAllowedPriceInterval}$, the user's transactions can be accepted for pre-execution, provided the $\texttt{SignedGasPrice}$ is higher than the lowest suggested gas price in the interval.
 - The least of the suggested gas prices is called $\texttt{L2MinGasPrice}$.
 
 ![Figure: minimum allowed gas interval](../../../img/zkEVM/min-allowed-gas-interval.png)
