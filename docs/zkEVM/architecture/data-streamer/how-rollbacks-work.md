@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Recall that the server-source protocol begins with calling the $\texttt{StartAtomicOp}(\ )$, corresponding to which a message is sent to the stream server, preparing to receive entries related to a specific atomic operation.
 
 When the stream source sends the entries, the stream server appends the data of the entries to the stream file.

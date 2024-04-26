@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 This document presents an outline of Polygon zkEVM's strategy for executing transactions with the most accurate effective gas price.
 
 - **Poll for L1 gas price regularly**

@@ -52,7 +52,7 @@ This presents 2 scenarios and their corresponding consequences:
    \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 ≥ \texttt{FinalDeviationParameter}  = 10,
    $$
    
-   the difference between executions can be so big it warrants adjustment of the gas price to be $\texttt{NEGP}$ to mitigate potential losses to the network.
+   the difference between executions can be so big it warrants adjustment of the gas price to be $\texttt{NEGP}$​, and thus mitigate against potential losses to the network.
    
 ### Effective percentage
 
