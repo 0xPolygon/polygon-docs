@@ -35,7 +35,7 @@ Transactions get reverted if the $\texttt{gasUsed}$ is greater than the $\texttt
 
 ## Computing L2 gas fees
 
-The L2 gas price cannot be simply set to be the same as L1 gas price (more especially in the particular case of rollups, where the main benefit for using a rollup is to reduce gas fees).
+The L2 gas price cannot simply be set to be the same as the L1 gas price (especially in the case of rollups where the goal is to reduce gas fees).
 
 For this reason we henceforth distinguish between the two gas prices, and denote them as: $\texttt{L2GasPrice}$ and $\texttt{L1GasPrice}$.
 
