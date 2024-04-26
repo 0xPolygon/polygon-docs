@@ -28,7 +28,7 @@ This is internally measured (internal to the zkEVM) in terms of resources spent 
 
 A transaction is said to be _out of counters_ (OOC) if the signed gas price is insufficient to pay for the required gas units.
 
-Transactions with OOC get rejected, while those with no OOC stand a chance to be added to the pool.
+OOC transactions get rejected straight away, while those with no OOC stand a chance to be added to the pool.
 
 At this stage of the flow, the RPC also computes the "break-even-gas-price", denoted by $\texttt{BreakEvenGasPriceRPC}$. That is, 
 
