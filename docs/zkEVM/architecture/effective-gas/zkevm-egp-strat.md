@@ -15,7 +15,7 @@ This document presents an outline of Polygon zkEVM's strategy for executing tran
 
     A grace time interval of 5 minutes, called $\texttt{MinAllowedPriceInterval}$, is given to the user.
 
-    It is recommended that the user sign their transactions with a gas price that is greater than the least of the gas prices in the 5-minute interval, otherwise is rejected for the RPC pre-execution stage.
+    It is recommended that the user sign their transactions with a gas price *greater than the lowest* of the gas prices fetched within the 5-minute interval. Otherwise, the transaction is rejected at the RPC pre-execution stage.
 
 
 - **Pre-execute transactions at the RPC level**
@@ -26,19 +26,19 @@ This document presents an outline of Polygon zkEVM's strategy for executing tran
 
     (b) Checking user’s signed gas price against the expected $\texttt{MinL2GasPrice}$. Store the transaction in the pool if $\texttt{SignedGasPrice} < \texttt{MinL2GasPrice}$​. Otherwise discard it.
 
-    (c\) The Pool here refers to a collection of transactions waiting to be selected for execution by the sequencer.
+    (c) The pool here refers to a collection of transactions waiting to be selected for execution by the sequencer.
 
 
-- **Put in place a criterion for determining which transactions to store in the Pool**
+- **Put in place a criterion for determining which transactions to store in the pool**
     
-    Not all transactions qualify to be stored in the Pool, but only those that satisfy this criterion.
+    Only the transactions that satisfy the criterion are stored on the pool.
 
-    The user's signed gas price is checked against either some breakeven factor or the gas price suggested to the user.
+    The user's signed gas price is checked against either the breakeven factor, or the gas price suggested to the user.
 
 
 - **Establish a criterion for when to execute transactions with user's signed gas price**
     
-    Some users' signed gas prices may be sufficiently high for the user to deserve some savings. In such cases the sequencer can execute transactions with a much lower gas price.
+    Some users' signed gas prices may be significantly higher than the effective gas price. In such cases, the sequencer can execute transactions with a much lower gas price to help save gas fees.
 
     Hence, there's a need for a criterion that determines whether a transaction gets executed with the user's signed gas price, or the effective gas price as per the RPC estimation.
 
@@ -59,6 +59,6 @@ This document presents an outline of Polygon zkEVM's strategy for executing tran
 
 - **Enhancing prioritization of transactions**
     
-    Since transactions are sequenced according to the value they carry, with high preference given to large values, users need to provision sufficient gas price to allow for prioritization of transactions according to their needs.
+    Since transactions are sequenced in decreasing order of the specified gas price, with higher preference given to large values, users need to provision sufficient gas price to allow for prioritization of transactions according to their needs.
 
     ![Figure: Pre-excution scheme](../../../img/zkEVM/rpc-tx-preexec.png)
