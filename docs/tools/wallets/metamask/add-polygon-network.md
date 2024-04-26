@@ -32,7 +32,7 @@ In this doc, we'll go over and demonstrate a few different ways to do this for P
 
     ![chainlist-1](../../../img/tools/wallet/metamask/chainlist-1.png){width=50%}
 
-3. Select the "Approve" option. This lets ChainList add the network configuration such as the network RPC URL, the chain ID, etc. to your MetaMask wallet.
+3. Select the "Approve" option. This lets ChainList add the network configuration such as the network RPC URL, the chain ID, etc., to your MetaMask wallet.
 
     ![chainlist-2](../../../img/tools/wallet/metamask/chainlist-2.png){width=50%}
 
