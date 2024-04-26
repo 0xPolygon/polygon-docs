@@ -24,7 +24,7 @@ This document presents an outline of Polygon zkEVM's strategy for executing tran
         
     (a) Estimation of each transaction's possible consumption of L2 resources. That is, determining an approximate gas cost.
 
-    (b) Checking user’s signed gas price against the expected $\texttt{MinL2GasPrice}$. Store the transaction in the Pool if $\texttt{SignedGasPrice} < \texttt{MinL2GasPrice}$​. Otherwise discard it.
+    (b) Checking user’s signed gas price against the expected $\texttt{MinL2GasPrice}$. Store the transaction in the pool if $\texttt{SignedGasPrice} < \texttt{MinL2GasPrice}$​. Otherwise discard it.
 
     (c\) The Pool here refers to a collection of transactions waiting to be selected for execution by the sequencer.
 
