@@ -9,7 +9,7 @@ This flow ends with transactions being stored in a pool waiting to be executed b
 
 The L2 network (the zkEVM) polls for L1 gas price values and uses them to:
 
-- Suggest L2 gas price to users, at the users' request.
+- Suggest L2 gas price to users as per user requests.
 - Sets the minimum acceptable L2 gas price, denoted by $\texttt{L2MinGasPrice}$.
 
 The user then signs transactions with the appropriate gas price, called $\texttt{GasPriceSigned}$, based on the suggested L2 gas price, $\texttt{GasPriceSuggested}$.
