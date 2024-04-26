@@ -52,7 +52,7 @@ This document presents an outline of the Polygon zkEVM's strategy toward executi
 
 - **Checking whether transactions include special opcodes**
     
-    The presence of opcodes such as the $\texttt{GASPRICE}$ and $\texttt{BALANCE}$ opcodes in transactions can cost more than expected.
+    The presence of opcodes such as $\texttt{GASPRICE}$ and $\texttt{BALANCE}$ in transactions can result in higher gas usage.
 
     The zkEVM's approach to dealing with such transactions is to execute them with the user's signed gas price.
 
