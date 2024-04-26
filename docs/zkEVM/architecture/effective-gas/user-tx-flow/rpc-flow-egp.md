@@ -22,7 +22,7 @@ $$
 
 ## Pre-execution of transactions
 
-Pre-execution of transactions, which happens at the RPC level, involves estimating the gas required for processing user's transactions. 
+Pre-execution of transactions, which happens at the RPC level, involves estimating the gas required for processing the transactions submitted by the users. 
 
 This is internally measured (internal to the zkEVM) in terms of resources spent to execute the transactions. These resources are the numbers of counters used up in the zkEVM ROM. 
 
