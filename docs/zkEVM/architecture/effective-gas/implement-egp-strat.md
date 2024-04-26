@@ -29,7 +29,7 @@ All transactions such that $\texttt{SignedGasPrice} > \texttt{L2MinGasPrice}$ ar
 
 ## How to avoid incurring losses in L2
 
-There are basically three measures put in place to avoid incurring losses in the L2 network:
+There are three measures put in place to help avoid incurring gas price-induced losses in the L2 network:
 
 - Pre-execution of transactions. 
 - The breakeven gas price: $\texttt{BreakEvenGasPrice}$.
