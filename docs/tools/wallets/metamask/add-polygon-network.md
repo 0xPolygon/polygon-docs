@@ -12,7 +12,7 @@ comments: true
 
 To track your assets and send transactions on any of the Polygon networks using MetaMask, you need to add the respective network configurations to the wallet.
 
-In this doc, we go over and demonstrate a few different ways to do this for Polygon PoS testnet (Amoy) and mainnet. You can use the same methods to add Polygon zkEVM to your MetaMask wallet.
+In this doc, we demonstrate a few ways to do this for Polygon PoS testnet (Amoy) and mainnet. You can use the same methods to add Polygon zkEVM to your MetaMask wallet.
 
 - [Using ChainList](../metamask/add-polygon-network.md#using-chainlist)
 - [Using Polygonscan](../metamask/add-polygon-network.md#using-polygonscan)
