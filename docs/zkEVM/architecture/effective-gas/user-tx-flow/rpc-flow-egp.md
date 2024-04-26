@@ -3,7 +3,7 @@ The RPC flow phase of transactions consists of two stages:
 - The gas price suggestion.
 - Pre-execution of transactions. 
 
-This flow ends with storing transactions in the pool, which is a pool of transactions waiting to be executed by the sequencer.
+This flow ends with transactions being stored in a pool waiting to be executed by the sequencer.
 
 ## Gas price suggestion
 
