@@ -36,7 +36,7 @@ The deviation percentage is compared to a parameter called $\texttt{FinalDeviati
 
 This presents 2 scenarios and their corresponding consequences:
 
-1. If the percentage deviation is higher than the fixed deviation parameter,
+1. If the percentage deviation is lower than the final deviation parameter,
    
    $$
    \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 < \texttt{FinalDeviationParameter} = 10,
