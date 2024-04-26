@@ -85,7 +85,6 @@ The $\texttt{L1GasPriceFactor}$ is used in the Polygon zkEVM network and is set 
 
 There are a few complications that need to be carefully considered. 
 
-So the question remains: What gas price should the user sign transactions with?
 
 There are 3 scenarios we aim to avoid when determining the $\texttt{L2GasPrice}$ to sign transactions with:
 
