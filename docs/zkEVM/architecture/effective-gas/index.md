@@ -73,7 +73,7 @@ $$
 
 ### Example (L1 gas price factor)
 
-For a transaction with an L1 gas price of 20 Gwei, the L2 gas price in the Polygon zkEVM network is obtained with a 4% factor as follows:
+For a transaction with an L1 gas price of 20 Gwei, the L2 gas price in the Polygon zkEVM network is calculated using a 4% factor as follows:
 
 $$
 \texttt{L2GasPrice}\ =\ 20\ \text{Gwei}⋅0.04=0.8\ \text{Gwei}
