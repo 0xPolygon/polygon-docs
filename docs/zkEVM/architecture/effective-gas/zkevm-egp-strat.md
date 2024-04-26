@@ -54,7 +54,7 @@ This document presents an outline of the Polygon zkEVM's strategy toward executi
     
     The presence of opcodes such as $\texttt{GASPRICE}$ and $\texttt{BALANCE}$ in transactions can result in higher gas usage.
 
-    The zkEVM's approach to dealing with such transactions is to execute them with the user's signed gas price.
+    zkEVM executes such transactions with the user's signed gas price.
 
 
 - **Enhancing prioritization of transactions**
