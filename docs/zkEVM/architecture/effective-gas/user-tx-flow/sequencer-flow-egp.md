@@ -15,7 +15,7 @@ In this phase of the end-to-end transaction flow, transactions go through differ
 
     Depending on whether $\texttt{GasPriceSigned} \leq \texttt{EEGP}$ or not, transactions get executed with either the $\texttt{GasPriceSigned}$ or the $\texttt{EEGP}$.
 
-3. Amongst the transactions that are computed with the $\texttt{EEGP}$, further savings can be made by:
+3. Amongst the transactions that are computed with the $\texttt{EEGP}$, further gas savings can be achieved by:
     
     - Computing the new effective gas price (NEGP), using the current state and the EEGP.
     - Calculating the gas consumption deviation percentage and compare it to a fixed deviation parameter. i.e., $\texttt{FinalDeviationParameter} = 10$.
