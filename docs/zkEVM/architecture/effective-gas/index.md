@@ -39,7 +39,7 @@ The L2 gas price cannot simply be set to be the same as the L1 gas price (especi
 
 Hence, we make the distinction between the two gas prices, and denote them as $\texttt{L2GasPrice}$ and $\texttt{L1GasPrice}$ respectively.
 
-But how can you calculate the appropriate L2 gas price while ensuring that transactions are successfully executed?
+It is important to calculate the appropriate L2 gas price while ensuring that transactions are successfully executed.
 
 Although the same formula is used, that is,
 
