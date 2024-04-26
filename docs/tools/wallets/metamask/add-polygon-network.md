@@ -10,9 +10,9 @@ comments: true
 
     Please make sure you have already installed **[Metamask](https://metamask.io/)**!
 
-To track your assets and send transactions on any of the Polygon networks using MetaMask, you'll need to add the respective network configurations to the wallet.
+To track your assets and send transactions on any of the Polygon networks using MetaMask, you need to add the respective network configurations to the wallet.
 
-In this doc, we'll go over and demonstrate a few different ways to do this for Polygon PoS testnet (Amoy) and mainnet. You can use the same methods to add Polygon zkEVM to your MetaMask wallet.
+In this doc, we go over and demonstrate a few different ways to do this for Polygon PoS testnet (Amoy) and mainnet. You can use the same methods to add Polygon zkEVM to your MetaMask wallet.
 
 - [Using ChainList](../metamask/add-polygon-network.md#using-chainlist)
 - [Using Polygonscan](../metamask/add-polygon-network.md#using-polygonscan)
@@ -28,19 +28,19 @@ In this doc, we'll go over and demonstrate a few different ways to do this for P
     - [Polygon zkEVM testnet (Cardona)](https://chainlist.org/chain/2442)
     - [Polygon zkEVM mainnet](https://chainlist.org/chain/1101)
 
-2. Select the "Add to Metamask" option on the page. This will bring up your MetaMask wallet.
+2. Select the **Add to Metamask** option on the page. This brings up your MetaMask wallet.
 
     ![chainlist-1](../../../img/tools/wallet/metamask/chainlist-1.png){width=50%}
 
-3. Select the "Approve" option. This lets ChainList add the network configuration such as the network RPC URL, the chain ID, etc., to your MetaMask wallet.
+3. Select the **Approve** option. This lets ChainList add the network configuration such as the network RPC URL, the chain ID, etc., to your MetaMask wallet.
 
     ![chainlist-2](../../../img/tools/wallet/metamask/chainlist-2.png){width=50%}
 
-4. Finally, select "Switch network" to switch to Amoy testnet in MetaMask.
+4. Finally, select **Switch network** to switch to Amoy testnet in MetaMask.
 
     ![chainlist-3](../../../img/tools/wallet/metamask/chainlist-3.png){width=50%}
 
-5. You should now be able to see your MATIC balance on Amoy. You'll also be able to switch between Amoy and other networks directly from the drop-down menu in the top-left corner.
+5. You'll now be able to see your MATIC balance on Amoy. You'll also be able to switch between Amoy and other networks directly from the drop-down menu in the top-left corner.
 
     ![chainlist-4](../../../img/tools/wallet/metamask/chainlist-4.png){width=50%}
 
@@ -51,26 +51,26 @@ In this doc, we'll go over and demonstrate a few different ways to do this for P
 
     ![polygonscan-1](../../../img/tools/wallet/metamask/polygonscan-1.png){width=50%}
 
-3. The explorer window should refresh and load the explorer home page for the network you selected.
-4. Next, scroll down to the bottom of the page, and click on the button in the bottom-left corner prompting you to add the network your MetaMask wallet. For instance, in the case of Amoy testnet, the button says "Add Polygon Amoy Network".
+3. The explorer window refreshes and loads the explorer home page for the network you selected.
+4. Next, scroll down to the bottom of the page, and click on the button in the bottom-left corner prompting you to add the network your MetaMask wallet. For instance, in the case of Amoy testnet, the button says **Add Polygon Amoy Network**.
 
     ![polygonscan-2](../../../img/tools/wallet/metamask/polygonscan-2.png){width=50%}
 
-5. Select "Approve" from the MetaMask window. This allows the explorer to add the network configuration to your wallet.
+5. Select **Approve** from the MetaMask window. This allows the explorer to add the network configuration to your wallet.
 
     ![polygonscan-3](../../../img/tools/wallet/metamask/polygonscan-3.png){width=50%}
 
-6. Finally, click on "Switch network" to switch to your selected network.
+6. Finally, click on **Switch network** to switch to your selected network.
 
     ![polygonscan-4](../../../img/tools/wallet/metamask/polygonscan-4.png){width=50%}
 
-7.  You should now be able to see your MATIC balance on Amoy. You'll also be able to switch between the current network and other networks directly from the drop-down menu in the top-left corner.
+7. You'll now be able to see your MATIC balance on Amoy. You'll also be able to switch between Amoy and other networks directly from the drop-down menu in the top-left corner.
 
     ![polygonscan-5](../../../img/tools/wallet/metamask/chainlist-4.png){width=50%}
 
 ## Add a network manually
 
-MetaMask gives you the option to add a network profile manually. You'll need to input the valid network RPC URL, chain ID, and other information for the network you want to add to the wallet. The following table contains the mainnet and testnet network configurations for Polygon PoS and zkEVM.
+MetaMask gives you the option to add a network profile manually. We'll look at how to input the valid network RPC URL, chain ID, and other information for the network you want to add to the wallet. The following table contains the mainnet and testnet network configurations for Polygon PoS and zkEVM.
 
 |         Network         |                 RPC URL                  | Chain ID | Native token |             Explorer URL              |
 | :---------------------: | :--------------------------------------: | :------: | :----------: | :-----------------------------------: |
@@ -87,15 +87,15 @@ MetaMask gives you the option to add a network profile manually. You'll need to 
 
     ![manual-2](../../../img/tools/wallet/metamask/manual-2.png){width=50%}
 
-3. This will bring up the MetaMask settings page in your browser. Select the "Add a network manually" option at the bottom of the page.
+3. This will bring up the MetaMask settings page in your browser. Select the **Add a network manually** option at the bottom of the page.
 
     ![manual-3](../../../img/tools/wallet/metamask/manual-3.png)
 
-4. This will take you to a form with multiple fields where you'll need to enter the network configuration (as highlighted in [the table above](#add-the-polygon-network-manually)) for the network you're looking to add in your MetaMask wallet. The following image shows the entries for PoS Amoy testnet. Once you've filled in network config, select "Save".
+4. This will take you to a form with multiple fields where you'll need to enter the network configuration (as highlighted in [the table above](#add-the-polygon-network-manually)) for the network you're looking to add in your MetaMask wallet. The following image shows the entries for PoS Amoy testnet. Fill in the network config, and select **Save**.
 
     ![manual-4](../../../img/tools/wallet/metamask/manual-4.png){width=50%}
 
-5. This add the network profile to your MetaMask wallet. Select the prompt to switch to your newly added network. You should now be able to between your added network and other networks from the drop-down list on the wallet main page.
+5. This adds the network profile to your MetaMask wallet. Select the prompt to switch to your newly added network. You'll now be able to switch between your added network and other networks from the drop-down list on the wallet main page.
 
     ![manual-5](../../../img/tools/wallet/metamask/manual-5.png){width=50%}
 
