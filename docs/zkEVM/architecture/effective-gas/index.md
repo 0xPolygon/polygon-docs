@@ -1,6 +1,6 @@
 Here's how you can accurately determine the gas price to sign your transactions with when submitting transactions to the Polygon zkEVM network.
 
-Polygon zkEVM implements a mechanism called the Effective Gas Price (EGP), so as to guarantee fair gas fees for the benefit of both the user and the network.
+Polygon zkEVM implements a mechanism called the Effective Gas Price (EGP) that guarantees fair gas fees in the interest of both the user and the network.
 
 Now that the EGP is in place, you can reduce any chance for a transaction revert, while making sure that accepted transactions receive your preferred prioritization. Meanwhile, the zkEVM network incurs minimal or no loss.
 
