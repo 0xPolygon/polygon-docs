@@ -21,7 +21,7 @@ Since the L1 gas price is likely to change between when a user signs a transacti
 
 -  A $5$-minute interval of several suggested gas prices, called $\texttt{MinAllowedPriceInterval}$.
 - During the $\texttt{MinAllowedPriceInterval}$, the user's transactions can be accepted for pre-execution, provided the $\texttt{SignedGasPrice}$ is higher than the lowest suggested gas price in the interval.
-- The least of the suggested gas prices is called $\texttt{L2MinGasPrice}$.
+- The lowest among the suggested gas prices is called $\texttt{L2MinGasPrice}$.
 
 ![Figure: minimum allowed gas interval](../../../img/zkEVM/min-allowed-gas-interval.png)
 
