@@ -60,7 +60,7 @@ The last parameter called the $\texttt{EffectivePercentage}$ is used to measure 
 
 In order to calculate the $\texttt{EffectivePercentage}$, one option is to consider pricing resources based on the number of consumed counters within the Polygon zkEVM's proving system.
 
-However, understanding this metric can be challenging for users because stating the efficiency through counters is intricate.
+However, understanding this metric can be challenging for users because stating the efficiency through counters is a bit complicated.
 
 For positive UX's sake, a better alternative is taken. A formula involving gas is applied, as it is more user-friendly.
 
