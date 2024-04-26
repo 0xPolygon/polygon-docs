@@ -20,27 +20,19 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./architecture/type-1-prover/intro-t1-prover">
+      <a href="./get-started/quickstart/deploy-stack/">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Polygon type 1 prover</div>
+            <div class="feature-card-heading">Deploy the stack</div>
          </div>
-         <p class="feature-paragraph">Find out about the Polygon type 1 prover component.</p>
+         <p class="feature-paragraph">Get started on deploying a CDK stack.</p>
       </a>
    </div>
    <div class="grid-item">
-      <a href="./get-started/quickstart-rollup">
+      <a href="./get-started/how-to/use-native-token/">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">CDK rollups</div>
+            <div class="feature-card-heading">Bridge a token</div>
          </div>
-         <p class="feature-paragraph">Get started with the CDK zkRollup stack.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./get-started/quickstart-validium">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">CDK validiums</div>
-         </div>
-         <p class="feature-paragraph">Get started with the CDK validium stack.</p>
+         <p class="feature-paragraph">Find out how to use and bridge a token on CDK.</p>
       </a>
    </div>
    <div class="grid-item">
@@ -57,6 +49,14 @@ hide:
             <div class="feature-card-heading">Glossary</div>
          </div>
          <p class="feature-paragraph">Learn about commonly used terminology and concepts relevant to the CDK tech stack.</p>
+      </a>
+   </div>
+   <div class="grid-item">
+      <a href="./architecture/type-1-prover/intro-t1-prover">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Polygon type 1 prover</div>
+         </div>
+         <p class="feature-paragraph">Find out about the Polygon type 1 prover component.</p>
       </a>
    </div>
 </div>
