@@ -2,7 +2,7 @@ This document presents an outline of Polygon zkEVM's strategy for executing tran
 
 - **Poll for L1 gas price regularly**
     
-    Since the L1 gas price fluctuates and the L2 gas price relies on it, it is necessary to run frequent polls on the L1 gas price, and thus have the most recent value at a given point in time.
+    Since the L1 gas price fluctuates and the L2 gas price relies on it, it is necessary to query and fetch the L1 gas price frequently and thus have the most recent value at any given point in time.
 
     The Polygon zkEVM polls for the L1 gas price in regular intervals of 5 seconds.
 
