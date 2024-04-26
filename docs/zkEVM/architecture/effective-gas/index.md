@@ -63,7 +63,7 @@ $$
 
 Note that data availability is charged in L1 using the prevailing L1 gas price at the time of posting data.
 
-The main challenge is "How to adjust $\texttt{L2GasPrice}$ in terms of the $\texttt{L1GasPrice}$, so as to account for L2 resources spent when processing the user's transaction?"
+The main challenge is adjusting $\texttt{L2GasPrice}$ in terms of the $\texttt{L1GasPrice}$ to account for L2 resources spent when processing transactions.
 
 The general strategy is to use an $\texttt{L1GasPriceFactor}$ such that
 
