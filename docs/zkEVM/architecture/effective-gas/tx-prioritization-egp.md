@@ -56,7 +56,7 @@ This presents 2 scenarios and their corresponding consequences:
    
 ### Effective percentage
 
-The last parameter called the $\texttt{EffectivePercentage}$ is for measuring the unused portion of the user's signed gas price. 
+The last parameter called the $\texttt{EffectivePercentage}$ is used to measure the unused portion of the user's signed gas price. 
 
 In order to calculate the $\texttt{EffectivePercentage}$, one option is to consider pricing resources based on the number of consumed counters within the Polygon zkEVM's proving system.
 
