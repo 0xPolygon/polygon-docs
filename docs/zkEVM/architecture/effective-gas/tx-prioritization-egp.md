@@ -62,7 +62,7 @@ In order to calculate the $\texttt{EffectivePercentage}$, one option is to consi
 
 However, understanding this metric can be challenging for users because stating the efficiency through counters is a bit complicated.
 
-For positive UX's sake, a better alternative is taken. A formula involving gas is applied, as it is more user-friendly.
+In favor of better UX, a formula involving gas is applied as it is more user-friendly.
 
 The primary objective is to compute $\texttt{EffectivePercentage}$ exclusively using gas, while allowing users to prioritize their transactions through the use of gas price, without the need for complex considerations such as used ROM counters.
 
