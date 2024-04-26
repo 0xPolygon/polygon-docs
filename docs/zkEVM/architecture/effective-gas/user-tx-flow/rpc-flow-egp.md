@@ -30,7 +30,7 @@ A transaction is said to be _out of counters_ (OOC) if the signed gas price is i
 
 OOC transactions get rejected straight away, while those with no OOC stand a chance to be added to the pool.
 
-At this stage of the flow, the RPC also computes the "break-even-gas-price", denoted by $\texttt{BreakEvenGasPriceRPC}$. That is, 
+At this stage of the flow, the RPC also computes the "breakeven gas price", denoted by $\texttt{BreakEvenGasPriceRPC}$. That is, 
 
 $$
   \texttt{BreakEvenGasPrice} = \frac{\texttt{TotalTxPrice}}{\texttt{GasUsedRPC}} \cdot \texttt{NetProfit},
