@@ -91,7 +91,7 @@ MetaMask gives you the option to add a network profile manually. Let's look at h
 
     ![manual-3](../../../img/tools/wallet/metamask/manual-3.png)
 
-4. This will take you to a form with multiple fields where you'll need to enter the network configuration (as highlighted in [the table above](#add-the-polygon-network-manually)) for the network you're looking to add in your MetaMask wallet. The following image shows the entries for PoS Amoy testnet. Fill in the network config, and select **Save**.
+4. This takes you to a form with multiple fields. Enter the network configuration (as highlighted in [the table above](#add-the-polygon-network-manually)) for the network you want to add to your MetaMask wallet. The following image shows the entries for PoS Amoy testnet. Fill in the network config and select **Save**.
 
     ![manual-4](../../../img/tools/wallet/metamask/manual-4.png){width=50%}
 
