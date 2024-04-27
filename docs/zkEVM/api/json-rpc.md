@@ -24,6 +24,1455 @@ curl -X POST \
 {"jsonrpc":"2.0","id":1,"result":"0xe2ea2f0"}
 ```
 
+## JSON PRC API source 
+
+??? "JSON API source"
+    ```json
+    {
+        "openrpc": "1.0.0-rc1",
+        "info": {
+          "title": "zkEVM Endpoints",
+          "version": "2.0.0"
+        },
+        "methods": [
+          {
+            "name": "zkevm_consolidatedBlockNumber",
+            "summary": "Returns the latest block number that is connected to the latest batch verified.",
+            "params": [],
+            "result": {
+              "$ref": "#/components/contentDescriptors/BlockNumber"
+            },
+            "examples": [
+              {
+                "name": "example",
+                "description": "",
+                "params": [],
+                "result": {
+                  "name": "exampleResult",
+                  "description": "",
+                  "value": "0x1"
+                }
+              }
+            ]
+          },
+          {
+            "name": "zkevm_isBlockVirtualized",
+            "summary": "Returns true if the provided block number is already connected to a batch that was already virtualized, otherwise false.",
+            "params": [
+              {
+                "name": "blockNumber",
+                "schema": {
+                  "$ref": "#/components/contentDescriptors/BlockNumber"
+                }
+              }
+            ],
+            "result": {
+              "name": "result",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            "examples": [
+              {
+                "name": "example",
+                "description": "",
+                "params": [],
+                "result": {
+                  "name": "exampleResult",
+                  "description": "",
+                  "value": true
+                }
+              }
+            ]
+          },
+          {
+            "name": "zkevm_isBlockConsolidated",
+            "summary": "Returns true if the provided block number is already connected to a batch that was already verified, otherwise false.",
+            "params": [
+              {
+                "$ref": "#/components/contentDescriptors/BlockNumber"
+              }
+            ],
+            "result": {
+              "name": "result",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            "examples": [
+              {
+                "name": "example",
+                "description": "",
+                "params": [],
+                "result": {
+                  "name": "exampleResult",
+                  "description": "",
+                  "value": true
+                }
+              }
+            ]
+          },
+          {
+            "name": "zkevm_batchNumber",
+            "summary": "Returns the latest batch number.",
+            "params": [],
+            "result": {
+              "$ref": "#/components/contentDescriptors/BatchNumber"
+            },
+            "examples": [
+              {
+                "name": "example",
+                "description": "",
+                "params": [],
+                "result": {
+                  "name": "exampleResult",
+                  "description": "",
+                  "value": "0x1"
+                }
+              }
+            ]
+          },
+          {
+            "name": "zkevm_virtualBatchNumber",
+            "summary": "Returns the latest virtual batch number.",
+            "params": [],
+            "result": {
+              "$ref": "#/components/contentDescriptors/BatchNumber"
+            },
+            "examples": [
+              {
+                "name": "example",
+                "description": "",
+                "params": [],
+                "result": {
+                  "name": "exampleResult",
+                  "description": "",
+                  "value": "0x1"
+                }
+              }
+            ]
+          },
+          {
+            "name": "zkevm_verifiedBatchNumber",
+            "summary": "Returns the latest verified batch number.",
+            "params": [],
+            "result": {
+              "$ref": "#/components/contentDescriptors/BatchNumber"
+            },
+            "examples": [
+              {
+                "name": "example",
+                "description": "",
+                "params": [],
+                "result": {
+                  "name": "exampleResult",
+                  "description": "",
+                  "value": "0x1"
+                }
+              }
+            ]
+          },
+          {
+            "name": "zkevm_batchNumberByBlockNumber",
+            "summary": "Returns the batch number of the batch connected to the block.",
+            "params": [
+              {
+                "$ref": "#/components/contentDescriptors/BlockNumber"
+              }
+            ],
+            "result": {
+              "$ref": "#/components/contentDescriptors/BatchNumber"
+            },
+            "examples": [
+              {
+                "name": "example",
+                "description": "",
+                "params": [],
+                "result": {
+                  "name": "exampleResult",
+                  "description": "",
+                  "value": "0x1"
+                }
+              }
+            ]
+          },
+          {
+            "name": "zkevm_getBatchByNumber",
+            "summary": "Gets a batch for a given number",
+            "params": [
+              {
+                "$ref": "#/components/contentDescriptors/BatchNumberOrTag"
+              },
+              {
+                "name": "includeTransactions",
+                "description": "If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.",
+                "required": true,
+                "schema": {
+                  "title": "isTransactionsIncluded",
+                  "type": "boolean"
+                }
+              }
+            ],
+            "result": {
+              "$ref": "#/components/contentDescriptors/Batch"
+            },
+            "examples": [
+              {
+                "name": "batch without tx details",
+                "description": "Batch without transaction details",
+                "params": [
+                  {
+                    "name": "batch number",
+                    "value": "0x1"
+                  },
+                  {
+                    "name": "include txs",
+                    "value": "false"
+                  }
+                ],
+                "result": {
+                  "name": "Batch",
+                  "value": {
+                    "number": "0x1",
+                    "coinbase": "0x0000000000000000000000000000000000000001",
+                    "stateRoot": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "globalExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000002",
+                    "mainnetExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000003",
+                    "rollupExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000004",
+                    "localExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000005",
+                    "accInputHash": "0x0000000000000000000000000000000000000000000000000000000000000006",
+                    "timestamp": "0x642af31f",
+                    "sendSequencesTxHash": "0x0000000000000000000000000000000000000000000000000000000000000007",
+                    "verifyBatchTxHash": "0x0000000000000000000000000000000000000000000000000000000000000008",
+                    "transactions": [
+                      "0x0000000000000000000000000000000000000000000000000000000000000009",
+                      "0x0000000000000000000000000000000000000000000000000000000000000010",
+                      "0x0000000000000000000000000000000000000000000000000000000000000011"
+                    ]
+                  }
+                }
+              },
+              {
+                "name": "batch with tx detail",
+                "description": "Batch with transaction details",
+                "params": [
+                  {
+                    "name": "batch number",
+                    "value": "0x1"
+                  },
+                  {
+                    "name": "include txs",
+                    "value": "true"
+                  }
+                ],
+                "result": {
+                  "name": "Batch",
+                  "value": {
+                    "number": "0x1",
+                    "coinbase": "0x0000000000000000000000000000000000000001",
+                    "stateRoot": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "globalExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000002",
+                    "mainnetExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000003",
+                    "rollupExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000004",
+                    "localExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000005",
+                    "accInputHash": "0x0000000000000000000000000000000000000000000000000000000000000006",
+                    "timestamp": "0x642af31f",
+                    "sendSequencesTxHash": "0x0000000000000000000000000000000000000000000000000000000000000007",
+                    "verifyBatchTxHash": "0x0000000000000000000000000000000000000000000000000000000000000008",
+                    "transactions": [
+                      {
+                        "nonce": "0x1",
+                        "gasPrice": "0x123456",
+                        "gas": "0x59D8",
+                        "to": "0x0000000000000000000000000000000000000002",
+                        "value": "0x1",
+                        "input": "0x",
+                        "v": "0xAAA",
+                        "r": "0x0000000000000000000000000000000000000000000000000000000000000010",
+                        "s": "0x0000000000000000000000000000000000000000000000000000000000000011",
+                        "hash": "0x0000000000000000000000000000000000000000000000000000000000000012",
+                        "from": "0x0000000000000000000000000000000000000003",
+                        "blockHash": "0x0000000000000000000000000000000000000000000000000000000000000013",
+                        "blockNumber": "0x1",
+                        "transactionIndex": "0x0",
+                        "chainId": "0x539",
+                        "type": "0x0"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "zkevm_getFullBlockByNumber",
+            "summary": "Gets a block with extra information for a given number",
+            "params": [
+              {
+                "$ref": "#/components/contentDescriptors/BlockNumber"
+              },
+              {
+                "name": "includeTransactions",
+                "description": "If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.",
+                "required": true,
+                "schema": {
+                  "title": "isTransactionsIncluded",
+                  "type": "boolean"
+                }
+              }
+            ],
+            "result": {
+              "name": "getBlockByNumberResult",
+              "schema": {
+                "$ref": "#/components/schemas/FullBlockOrNull"
+              }
+            }
+          },
+          {
+            "name": "zkevm_getFullBlockByHash",
+            "summary": "Gets a block with extra information for a given hash",
+            "params": [
+              {
+                "name": "blockHash",
+                "required": true,
+                "schema": {
+                  "$ref": "#/components/schemas/BlockHash"
+                }
+              },
+              {
+                "name": "includeTransactions",
+                "description": "If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.",
+                "required": true,
+                "schema": {
+                  "title": "isTransactionsIncluded",
+                  "type": "boolean"
+                }
+              }
+            ],
+            "result": {
+              "name": "getBlockByHashResult",
+              "schema": {
+                "$ref": "#/components/schemas/FullBlockOrNull"
+              }
+            }
+          },
+          {
+            "name": "zkevm_getNativeBlockHashesInRange",
+            "summary": "Returns the list of native block hashes.",
+            "params": [
+              {
+                "name": "filter",
+                "schema": {
+                  "$ref": "#/components/schemas/NativeBlockHashBlockRangeFilter"
+                }
+              }
+            ],
+            "result": {
+              "name": "filter",
+                "schema": {
+                  "$ref": "#/components/schemas/NativeBlockHashes"
+                }
+            }
+          },
+          {
+            "name": "zkevm_getTransactionByL2Hash",
+            "summary": "Returns the information about a transaction requested by transaction l2 hash.",
+            "params": [
+              {
+                "$ref": "#/components/contentDescriptors/TransactionHash"
+              }
+            ],
+            "result": {
+              "$ref": "#/components/contentDescriptors/TransactionResult"
+            }
+          },
+          {
+            "name": "zkevm_getTransactionReceiptByL2Hash",
+            "summary": "Returns the receipt information of a transaction by its l2 hash.",
+            "params": [
+              {
+                "$ref": "#/components/contentDescriptors/TransactionHash"
+              }
+            ],
+            "result": {
+              "name": "transactionReceiptResult",
+              "description": "returns either a receipt or null",
+              "schema": {
+                "title": "transactionReceiptOrNull",
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Receipt"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Null"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "zkevm_getExitRootsByGER",
+            "summary": "Gets the exit roots accordingly to the provided Global Exit Root",
+            "params": [
+              {
+                "$ref": "#/components/schemas/Keccak"
+              }
+            ],
+            "result": {
+              "$ref": "#/components/schemas/ExitRoots"
+            },
+            "examples": [
+              {
+                "name": "exit roots",
+                "params": [
+                  {
+                    "name": "global exit root",
+                    "value": "0x0000000000000000000000000000000000000000000000000000000000000001"
+                  }
+                ],
+                "result": {
+                  "name": "Exit Roots",
+                  "value": {
+                    "blockNumber": "0x1",
+                    "timestamp": "0x642af31f",
+                    "mainnetExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000002",
+                    "rollupExitRoot": "0x0000000000000000000000000000000000000000000000000000000000000003"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "zkevm_getLatestGlobalExitRoot",
+            "summary": "Returns the latest global exit root used in a batch.",
+            "params": [
+            ],
+            "result": {
+              "name": "GER",
+                "schema": {
+                  "$ref": "#/components/schemas/Keccak"
+                }
+            }
+          },
+          {
+            "name": "zkevm_estimateCounters",
+            "summary": "Estimates the transaction ZK Counters",
+            "params": [
+              {
+                "$ref": "#/components/contentDescriptors/Transaction"
+              }
+            ],
+            "result": {
+              "name": "counters",
+              "description": "The counters used, limits and revert info when tx reverted",
+              "schema": {
+                "$ref": "#/components/schemas/ZKCountersResponse"
+              }
+            }
+          },
+          {
+            "name": "zkevm_estimateFee",
+            "summary": "Estimates the transaction Fee following the effective gas price rules",
+            "params": [
+              {
+                "$ref": "#/components/contentDescriptors/Transaction"
+              }
+            ],
+            "result": {
+              "name": "fee",
+              "description": "The amount of the fee",
+              "schema": {
+                "$ref": "#/components/schemas/Integer"
+              }
+            }
+          },
+          {
+            "name": "zkevm_estimateGasPrice",
+            "summary": "Estimates the transaction Gas Price following the effective gas price rules",
+            "params": [
+              {
+                "$ref": "#/components/contentDescriptors/Transaction"
+              }
+            ],
+            "result": {
+              "name": "gasPrice",
+              "description": "The amount of gas price",
+              "schema": {
+                "$ref": "#/components/schemas/Integer"
+              }
+            }
+          }
+        ],
+        "components": {
+          "contentDescriptors": {
+            "BlockNumber": {
+              "name": "blockNumber",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/BlockNumber"
+              }
+            },
+            "BatchNumber": {
+              "name": "batchNumber",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/BatchNumber"
+              }
+            },
+            "BatchNumberOrTag": {
+              "name": "batchNumberOrTag",
+              "required": true,
+              "schema": {
+                "title": "batchNumberOrTag",
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/BatchNumber"
+                  },
+                  {
+                    "$ref": "#/components/schemas/BatchNumberTag"
+                  }
+                ]
+              }
+            },
+            "Batch": {
+              "name": "batch",
+              "description": "batch",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/Batch"
+              }
+            },
+            "Block": {
+              "name": "block",
+              "summary": "A block",
+              "description": "A block object",
+              "schema": {
+                "$ref": "#/components/schemas/Block"
+              }
+            },
+            "Transaction": {
+              "required": true,
+              "name": "transaction",
+              "schema": {
+                "$ref": "#/components/schemas/Transaction"
+              }
+            },
+            "TransactionHash": {
+              "name": "transactionHash",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/TransactionHash"
+              }
+            },
+            "TransactionResult": {
+              "name": "transactionResult",
+              "description": "Returns a transaction or null",
+              "schema": {
+                "title": "TransactionOrNull",
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Transaction"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Null"
+                  }
+                ]
+              }
+            }
+          },
+          "schemas": {
+            "Null": {
+              "title": "null",
+              "type": "null",
+              "description": "Null"
+            },
+            "BatchNumberTag": {
+              "title": "batchNumberTag",
+              "type": "string",
+              "description": "The optional batch height description",
+              "enum": [
+                "earliest",
+                "latest"
+              ]
+            },
+            "Integer": {
+              "title": "integer",
+              "type": "string",
+              "pattern": "^0x[a-fA-F0-9]+$",
+              "description": "Hex representation of the integer"
+            },
+            "Keccak": {
+              "title": "keccak",
+              "type": "string",
+              "description": "Hex representation of a Keccak 256 hash",
+              "pattern": "^0x[a-fA-F\\d]{64}$"
+            },
+            "Address": {
+              "title": "address",
+              "type": "string",
+              "pattern": "^0x[a-fA-F\\d]{40}$"
+            },
+            "BlockHash": {
+              "title": "blockHash",
+              "type": "string",
+              "pattern": "^0x[a-fA-F\\d]{64}$",
+              "description": "The hex representation of the Keccak 256 of the RLP encoded block"
+            },
+            "BlockNumber": {
+              "title": "blockNumber",
+              "type": "string",
+              "description": "The hex representation of the block's height",
+              "$ref": "#/components/schemas/Integer"
+            },
+            "FullBlockOrNull": {
+              "title": "fullBlockOrNull",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/FullBlock"
+                },
+                {
+                  "$ref": "#/components/schemas/Null"
+                }
+              ]
+            },
+            "BatchNumber": {
+              "title": "batchNumber",
+              "type": "string",
+              "description": "The hex representation of the batch's height",
+              "$ref": "#/components/schemas/Integer"
+            },
+            "TransactionHash": {
+              "title": "transactionHash",
+              "type": "string",
+              "description": "Keccak 256 Hash of the RLP encoding of a transaction",
+              "$ref": "#/components/schemas/Keccak"
+            },
+            "NonceOrNull": {
+              "title": "nonceOrNull",
+              "description": "Randomly selected number to satisfy the proof-of-work or null when its the pending block",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Nonce"
+                },
+                {
+                  "$ref": "#/components/schemas/Null"
+                }
+              ]
+            },
+            "Nonce": {
+              "title": "nonce",
+              "description": "A number only to be used once",
+              "$ref": "#/components/schemas/Integer"
+            },
+            "From": {
+              "title": "From",
+              "description": "The sender of the transaction",
+              "$ref": "#/components/schemas/Address"
+            },
+            "BlockNumberOrNull": {
+              "title": "blockNumberOrNull",
+              "description": "The block number or null when its the pending block",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/BlockNumber"
+                },
+                {
+                  "$ref": "#/components/schemas/Null"
+                }
+              ]
+            },
+            "IntegerOrNull": {
+              "title": "integerOrNull",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                {
+                  "$ref": "#/components/schemas/Null"
+                }
+              ]
+            },
+            "AddressOrNull": {
+              "title": "addressOrNull",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Address"
+                },
+                {
+                  "$ref": "#/components/schemas/Null"
+                }
+              ]
+            },
+            "KeccakOrPending": {
+              "title": "keccakOrPending",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                {
+                  "$ref": "#/components/schemas/Null"
+                }
+              ]
+            },
+            "To": {
+              "title": "To",
+              "description": "Destination address of the transaction. Null if it was a contract create.",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Address"
+                },
+                {
+                  "$ref": "#/components/schemas/Null"
+                }
+              ]
+            },
+            "BlockHashOrNull": {
+              "title": "blockHashOrNull",
+              "description": "The block hash or null when its the pending block",
+              "$ref": "#/components/schemas/KeccakOrPending"
+            },
+            "TransactionIndex": {
+              "title": "transactionIndex",
+              "description": "The index of the transaction. null when its pending",
+              "$ref": "#/components/schemas/IntegerOrNull"
+            },
+            "Batch": {
+              "title": "Batch",
+              "type": "object",
+              "readOnly": true,
+              "properties": {
+                "number": {
+                  "$ref": "#/components/schemas/BlockNumber"
+                },
+                "globalExitRoot": {
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "mainnetExitRoot": {
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "rollupExitRoot": {
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "accInputHash": {
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "timestamp": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "sendSequencesTxHash": {
+                  "$ref": "#/components/schemas/TransactionHash"
+                },
+                "verifyBatchTxHash": {
+                  "$ref": "#/components/schemas/TransactionHash"
+                },
+                "closed": {
+                  "title": "closed",
+                  "type": "boolean",
+                  "description": "True if the batch is already closed, otherwise false"
+                },
+                "blocks": {
+                  "title": "blocksOrHashes",
+                  "description": "Array of block objects, or 32 Bytes block hashes depending on the last given parameter",
+                  "type": "array",
+                  "items": {
+                    "title": "blockOrBlockHash",
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/Block"
+                      },
+                      {
+                        "$ref": "#/components/schemas/BlockHash"
+                      }
+                    ]
+                  }
+                },
+                "transactions": {
+                  "title": "transactionsOrHashes",
+                  "description": "Array of transaction objects, or 32 Bytes transaction hashes depending on the last given parameter",
+                  "type": "array",
+                  "items": {
+                    "title": "transactionOrTransactionHash",
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/Transaction"
+                      },
+                      {
+                        "$ref": "#/components/schemas/TransactionHash"
+                      }
+                    ]
+                  }
+                },
+                "stateRoot": {
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "coinbase": {
+                  "$ref": "#/components/schemas/Address"
+                }
+              }
+            },
+            "Block": {
+              "title": "Block",
+              "type": "object",
+              "properties": {
+                "number": {
+                  "$ref": "#/components/schemas/BlockNumberOrNull"
+                },
+                "hash": {
+                  "$ref": "#/components/schemas/BlockHashOrNull"
+                },
+                "parentHash": {
+                  "$ref": "#/components/schemas/BlockHash"
+                },
+                "nonce": {
+                  "$ref": "#/components/schemas/NonceOrNull"
+                },
+                "sha3Uncles": {
+                  "title": "blockShaUncles",
+                  "description": "Keccak hash of the uncles data in the block",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "logsBloom": {
+                  "title": "blockLogsBloom",
+                  "type": "string",
+                  "description": "The bloom filter for the logs of the block or null when its the pending block",
+                  "pattern": "^0x[a-fA-F\\d]+$"
+                },
+                "transactionsRoot": {
+                  "title": "blockTransactionsRoot",
+                  "description": "The root of the transactions trie of the block.",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "stateRoot": {
+                  "title": "blockStateRoot",
+                  "description": "The root of the final state trie of the block",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "receiptsRoot": {
+                  "title": "blockReceiptsRoot",
+                  "description": "The root of the receipts trie of the block",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "miner": {
+                  "$ref": "#/components/schemas/AddressOrNull"
+                },
+                "difficulty": {
+                  "title": "blockDifficulty",
+                  "type": "string",
+                  "description": "Integer of the difficulty for this block"
+                },
+                "totalDifficulty": {
+                  "title": "blockTotalDifficulty",
+                  "description": "Integer of the total difficulty of the chain until this block",
+                  "$ref": "#/components/schemas/IntegerOrNull"
+                },
+                "extraData": {
+                  "title": "blockExtraData",
+                  "type": "string",
+                  "description": "The 'extra data' field of this block"
+                },
+                "size": {
+                  "title": "blockSize",
+                  "type": "string",
+                  "description": "Integer the size of this block in bytes"
+                },
+                "gasLimit": {
+                  "title": "blockGasLimit",
+                  "type": "string",
+                  "description": "The maximum gas allowed in this block"
+                },
+                "gasUsed": {
+                  "title": "blockGasUsed",
+                  "type": "string",
+                  "description": "The total used gas by all transactions in this block"
+                },
+                "timestamp": {
+                  "title": "blockTimeStamp",
+                  "type": "string",
+                  "description": "The unix timestamp for when the block was collated"
+                },
+                "transactions": {
+                  "title": "transactionsOrHashes",
+                  "description": "Array of transaction objects, or 32 Bytes transaction hashes depending on the last given parameter",
+                  "type": "array",
+                  "items": {
+                    "title": "transactionOrTransactionHash",
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/Transaction"
+                      },
+                      {
+                        "$ref": "#/components/schemas/TransactionHash"
+                      }
+                    ]
+                  }
+                },
+                "uncles": {
+                  "title": "uncleHashes",
+                  "description": "Array of uncle hashes",
+                  "type": "array",
+                  "items": {
+                    "title": "uncleHash",
+                    "description": "Block hash of the RLP encoding of an uncle block",
+                    "$ref": "#/components/schemas/Keccak"
+                  }
+                }
+              }
+            },
+            "FullBlock": {
+              "title": "fullBlock",
+              "type": "object",
+              "properties": {
+                "number": {
+                  "$ref": "#/components/schemas/BlockNumberOrNull"
+                },
+                "hash": {
+                  "$ref": "#/components/schemas/BlockHashOrNull"
+                },
+                "parentHash": {
+                  "$ref": "#/components/schemas/BlockHash"
+                },
+                "nonce": {
+                  "$ref": "#/components/schemas/NonceOrNull"
+                },
+                "sha3Uncles": {
+                  "title": "blockShaUncles",
+                  "description": "Keccak hash of the uncles data in the block",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "logsBloom": {
+                  "title": "blockLogsBloom",
+                  "type": "string",
+                  "description": "The bloom filter for the logs of the block or null when its the pending block",
+                  "pattern": "^0x[a-fA-F\\d]+$"
+                },
+                "transactionsRoot": {
+                  "title": "blockTransactionsRoot",
+                  "description": "The root of the transactions trie of the block.",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "stateRoot": {
+                  "title": "blockStateRoot",
+                  "description": "The root of the final state trie of the block",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "receiptsRoot": {
+                  "title": "blockReceiptsRoot",
+                  "description": "The root of the receipts trie of the block",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "miner": {
+                  "$ref": "#/components/schemas/AddressOrNull"
+                },
+                "difficulty": {
+                  "title": "blockDifficulty",
+                  "type": "string",
+                  "description": "Integer of the difficulty for this block"
+                },
+                "totalDifficulty": {
+                  "title": "blockTotalDifficulty",
+                  "description": "Integer of the total difficulty of the chain until this block",
+                  "$ref": "#/components/schemas/IntegerOrNull"
+                },
+                "extraData": {
+                  "title": "blockExtraData",
+                  "type": "string",
+                  "description": "The 'extra data' field of this block"
+                },
+                "size": {
+                  "title": "blockSize",
+                  "type": "string",
+                  "description": "Integer the size of this block in bytes"
+                },
+                "gasLimit": {
+                  "title": "blockGasLimit",
+                  "type": "string",
+                  "description": "The maximum gas allowed in this block"
+                },
+                "gasUsed": {
+                  "title": "blockGasUsed",
+                  "type": "string",
+                  "description": "The total used gas by all transactions in this block"
+                },
+                "timestamp": {
+                  "title": "blockTimeStamp",
+                  "type": "string",
+                  "description": "The unix timestamp for when the block was collated"
+                },
+                "transactions": {
+                  "title": "transactionsOrHashes",
+                  "description": "Array of transaction objects, or 32 Bytes transaction hashes depending on the last given parameter",
+                  "type": "array",
+                  "items": {
+                    "title": "transactionOrTransactionHash",
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/FullTransaction"
+                      },
+                      {
+                        "$ref": "#/components/schemas/TransactionHash"
+                      }
+                    ]
+                  }
+                },
+                "uncles": {
+                  "title": "uncleHashes",
+                  "description": "Array of uncle hashes",
+                  "type": "array",
+                  "items": {
+                    "title": "uncleHash",
+                    "description": "Block hash of the RLP encoding of an uncle block",
+                    "$ref": "#/components/schemas/Keccak"
+                  }
+                }
+              }
+            },
+            "Transaction": {
+              "title": "transaction",
+              "type": "object",
+              "required": [
+                "gas",
+                "gasPrice",
+                "nonce"
+              ],
+              "properties": {
+                "blockHash": {
+                  "$ref": "#/components/schemas/BlockHashOrNull"
+                },
+                "blockNumber": {
+                  "$ref": "#/components/schemas/BlockNumberOrNull"
+                },
+                "from": {
+                  "$ref": "#/components/schemas/From"
+                },
+                "gas": {
+                  "title": "transactionGas",
+                  "type": "string",
+                  "description": "The gas limit provided by the sender in Wei"
+                },
+                "gasPrice": {
+                  "title": "transactionGasPrice",
+                  "type": "string",
+                  "description": "The gas price willing to be paid by the sender in Wei"
+                },
+                "hash": {
+                  "$ref": "#/components/schemas/TransactionHash"
+                },
+                "l2Hash": {
+                  "$ref": "#/components/schemas/TransactionHash"
+                },
+                "input": {
+                  "title": "transactionInput",
+                  "type": "string",
+                  "description": "The data field sent with the transaction"
+                },
+                "nonce": {
+                  "title": "transactionNonce",
+                  "description": "The total number of prior transactions made by the sender",
+                  "$ref": "#/components/schemas/Nonce"
+                },
+                "to": {
+                  "$ref": "#/components/schemas/To"
+                },
+                "transactionIndex": {
+                  "$ref": "#/components/schemas/TransactionIndex"
+                },
+                "value": {
+                  "title": "transactionValue",
+                  "description": "Value of Ether being transferred in Wei",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "v": {
+                  "title": "transactionSigV",
+                  "type": "string",
+                  "description": "ECDSA recovery id"
+                },
+                "r": {
+                  "title": "transactionSigR",
+                  "type": "string",
+                  "description": "ECDSA signature r"
+                },
+                "s": {
+                  "title": "transactionSigS",
+                  "type": "string",
+                  "description": "ECDSA signature s"
+                }
+              }
+            },
+            "FullTransaction": {
+              "title": "fullTransaction",
+              "type": "object",
+              "required": [
+                "gas",
+                "gasPrice",
+                "nonce"
+              ],
+              "properties": {
+                "blockHash": {
+                  "$ref": "#/components/schemas/BlockHashOrNull"
+                },
+                "blockNumber": {
+                  "$ref": "#/components/schemas/BlockNumberOrNull"
+                },
+                "from": {
+                  "$ref": "#/components/schemas/From"
+                },
+                "gas": {
+                  "title": "transactionGas",
+                  "type": "string",
+                  "description": "The gas limit provided by the sender in Wei"
+                },
+                "gasPrice": {
+                  "title": "transactionGasPrice",
+                  "type": "string",
+                  "description": "The gas price willing to be paid by the sender in Wei"
+                },
+                "hash": {
+                  "$ref": "#/components/schemas/TransactionHash"
+                },
+                "input": {
+                  "title": "transactionInput",
+                  "type": "string",
+                  "description": "The data field sent with the transaction"
+                },
+                "nonce": {
+                  "title": "transactionNonce",
+                  "description": "The total number of prior transactions made by the sender",
+                  "$ref": "#/components/schemas/Nonce"
+                },
+                "to": {
+                  "$ref": "#/components/schemas/To"
+                },
+                "transactionIndex": {
+                  "$ref": "#/components/schemas/TransactionIndex"
+                },
+                "value": {
+                  "title": "transactionValue",
+                  "description": "Value of Ether being transferred in Wei",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "v": {
+                  "title": "transactionSigV",
+                  "type": "string",
+                  "description": "ECDSA recovery id"
+                },
+                "r": {
+                  "title": "transactionSigR",
+                  "type": "string",
+                  "description": "ECDSA signature r"
+                },
+                "s": {
+                  "title": "transactionSigS",
+                  "type": "string",
+                  "description": "ECDSA signature s"
+                },
+                "receipt": {
+                  "$ref": "#/components/schemas/Receipt"
+                }
+              }
+            },
+            "Transactions": {
+              "title": "transactions",
+              "description": "An array of transactions",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Transaction"
+              }
+            },
+            "Receipt": {
+              "title": "receipt",
+              "type": "object",
+              "description": "The receipt of a transaction",
+              "required": [
+                "blockHash",
+                "blockNumber",
+                "contractAddress",
+                "cumulativeGasUsed",
+                "from",
+                "gasUsed",
+                "logs",
+                "logsBloom",
+                "to",
+                "transactionHash",
+                "transactionIndex"
+              ],
+              "properties": {
+                "blockHash": {
+                  "$ref": "#/components/schemas/BlockHash"
+                },
+                "blockNumber": {
+                  "$ref": "#/components/schemas/BlockNumber"
+                },
+                "contractAddress": {
+                  "title": "ReceiptContractAddress",
+                  "description": "The contract address created, if the transaction was a contract creation, otherwise null",
+                  "$ref": "#/components/schemas/AddressOrNull"
+                },
+                "cumulativeGasUsed": {
+                  "title": "ReceiptCumulativeGasUsed",
+                  "description": "The gas units used by the transaction",
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "from": {
+                  "$ref": "#/components/schemas/From"
+                },
+                "gasUsed": {
+                  "title": "ReceiptGasUsed",
+                  "description": "The total gas used by the transaction",
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "logs": {
+                  "title": "logs",
+                  "type": "array",
+                  "description": "An array of all the logs triggered during the transaction",
+                  "items": {
+                    "$ref": "#/components/schemas/Log"
+                  }
+                },
+                "logsBloom": {
+                  "$ref": "#/components/schemas/BloomFilter"
+                },
+                "to": {
+                  "$ref": "#/components/schemas/To"
+                },
+                "transactionHash": {
+                  "$ref": "#/components/schemas/TransactionHash"
+                },
+                "transactionL2Hash": {
+                  "$ref": "#/components/schemas/TransactionHash"
+                },
+                "transactionIndex": {
+                  "$ref": "#/components/schemas/TransactionIndex"
+                },
+                "postTransactionState": {
+                  "title": "ReceiptPostTransactionState",
+                  "description": "The intermediate stateRoot directly after transaction execution.",
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "status": {
+                  "title": "ReceiptStatus",
+                  "description": "Whether or not the transaction threw an error.",
+                  "type": "boolean"
+                }
+              }
+            },
+            "BloomFilter": {
+              "title": "bloomFilter",
+              "type": "string",
+              "description": "A 2048 bit bloom filter from the logs of the transaction. Each log sets 3 bits though taking the low-order 11 bits of each of the first three pairs of bytes in a Keccak 256 hash of the log's byte series"
+            },
+            "Log": {
+              "title": "log",
+              "type": "object",
+              "description": "An indexed event generated during a transaction",
+              "properties": {
+                "address": {
+                  "title": "LogAddress",
+                  "description": "Sender of the transaction",
+                  "$ref": "#/components/schemas/Address"
+                },
+                "blockHash": {
+                  "$ref": "#/components/schemas/BlockHash"
+                },
+                "blockNumber": {
+                  "$ref": "#/components/schemas/BlockNumber"
+                },
+                "data": {
+                  "title": "LogData",
+                  "description": "The data/input string sent along with the transaction",
+                  "$ref": "#/components/schemas/Bytes"
+                },
+                "logIndex": {
+                  "title": "LogIndex",
+                  "description": "The index of the event within its transaction, null when its pending",
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "removed": {
+                  "title": "logIsRemoved",
+                  "description": "Whether or not the log was orphaned off the main chain",
+                  "type": "boolean"
+                },
+                "topics": {
+                  "$ref": "#/components/schemas/Topics"
+                },
+                "transactionHash": {
+                  "$ref": "#/components/schemas/TransactionHash"
+                },
+                "transactionIndex": {
+                  "$ref": "#/components/schemas/TransactionIndex"
+                }
+              }
+            },
+            "Topics": {
+              "title": "LogTopics",
+              "description": "Topics are order-dependent. Each topic can also be an array of DATA with 'or' options.",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Topic"
+              }
+            },
+            "Topic": {
+              "title": "topic",
+              "description": "32 Bytes DATA of indexed log arguments. (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256))",
+              "$ref": "#/components/schemas/DataWord"
+            },
+            "DataWord": {
+              "title": "dataWord",
+              "type": "string",
+              "description": "Hex representation of a 256 bit unit of data",
+              "pattern": "^0x([a-fA-F\\d]{64})?$"
+            },
+            "Bytes": {
+              "title": "bytes",
+              "type": "string",
+              "description": "Hex representation of a variable length byte array",
+              "pattern": "^0x([a-fA-F0-9]?)+$"
+            },
+            "NativeBlockHashes": {
+              "title": "native block hashes",
+              "description": "An array of hashes",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Keccak"
+              }
+            },
+            "NativeBlockHashBlockRangeFilter": {
+              "title": "NativeBlockHashBlockRangeFilter",
+              "type": "object",
+              "properties": {
+                "fromBlock": {
+                  "$ref": "#/components/schemas/BlockNumber"
+                },
+                "toBlock": {
+                  "$ref": "#/components/schemas/BlockNumber"
+                }
+              }
+            },
+            "ExitRoots": {
+              "title": "ExitRoots",
+              "type": "object",
+              "readOnly": true,
+              "properties": {
+                "blockNumber": {
+                  "$ref": "#/components/schemas/BlockNumber"
+                },
+                "timestamp": {
+                  "title": "timestamp",
+                  "type": "string",
+                  "description": "The unix timestamp of the block mentioned in the blockNumber field"
+                },
+                "mainnetExitRoot": {
+                  "$ref": "#/components/schemas/Keccak"
+                },
+                "rollupExitRoot": {
+                  "$ref": "#/components/schemas/Keccak"
+                }
+              }
+            },
+            "ZKCountersResponse": {
+              "title": "ZKCountersResponse",
+              "type": "object",
+              "readOnly": true,
+              "properties": {
+                "countersUsed": {
+                  "$ref": "#/components/schemas/ZKCountersUsed"
+                },
+                "countersLimits": {
+                  "$ref": "#/components/schemas/ZKCountersLimits"
+                },
+                "revertInfo": {
+                  "$ref": "#/components/schemas/RevertInfo"
+                },
+                "oocError": {
+                  "type": "string"
+                }
+              }
+            },
+            "ZKCountersUsed": {
+              "title": "ZKCountersUsed",
+              "type": "object",
+              "readOnly": true,
+              "properties": {
+                "gasUsed": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "usedKeccakHashes": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "usedPoseidonHashes": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "usedPoseidonPaddings": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "usedMemAligns": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "usedArithmetics": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "usedBinaries": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "usedSteps": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "usedSHA256Hashes": {
+                  "$ref": "#/components/schemas/Integer"
+                }
+              }
+            },
+            "ZKCountersLimits":{
+              "title": "ZKCountersLimits",
+              "type": "object",
+              "readOnly": true,
+              "properties": {
+                "maxGasUsed": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "maxUsedKeccakHashes": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "maxUsedPoseidonHashes": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "maxUsedPoseidonPaddings": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "maxUsedMemAligns": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "maxUsedArithmetics": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "maxUsedBinaries": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "maxUsedSteps": {
+                  "$ref": "#/components/schemas/Integer"
+                },
+                "maxUsedSHA256Hashes": {
+                  "$ref": "#/components/schemas/Integer"
+                }
+              }
+            },
+            "RevertInfo":{
+              "title": "RevertInfo",
+              "type": "object",
+              "readOnly": true,
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/Integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    ```
+
 ## Playground
 
 The available methods are detailed in the playground description below.
@@ -35,4 +1484,10 @@ Each method description provides:
 - Expected return.
 - Examples.
 
+### Instructions for use
+
 <embed type="text/html" src="https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/0xPolygon/polygon-docs/3eb44779e7380e91e5c92f160424159a3da1bdba/docs/zkEVM/api/zkevm.openrpc.json&uiSchema[appBar][ui:input]=false&uiSchema[appBar][ui:splitView]=false" width="100%" height="1000px">
+
+
+!!! tip "More information"
+    For more information on the playground, checkout the [open RPC playground repo](https://github.com/open-rpc/playground?tab=readme-ov-file).
