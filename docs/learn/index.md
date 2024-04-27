@@ -39,7 +39,7 @@ hide:
       </a>
    </div>
    <div class="grid-item">
-      <a href="./security/overview">
+      <a href="../security/overview">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Polygon security</div>
          </div>
