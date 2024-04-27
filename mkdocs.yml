@@ -531,6 +531,7 @@ nav:
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
       - Security:
           - Overview: learn/security/overview.md
+          - Best practices: learn/security/bestpractices.md
           - Security areas:
             - Governance & management: learn/security/governance.md
             - Risk management: learn/security/risk.md
