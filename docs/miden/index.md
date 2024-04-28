@@ -20,15 +20,7 @@ hide:
 </div>
 
 <div class="grid-container">
-   <div class="grid-item">
-      <a href="./miden-base/introduction/roadmap/">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Roadmap</div>
-         </div>
-         <p class="feature-paragraph">Check out the Miden roadmap for the latest updates.</p>
-      </a>
-   </div>
-   <div class="grid-item">
+    <div class="grid-item">
       <a href="./miden-base/introduction/get-started/prerequisites/">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Getting started</div>
@@ -36,12 +28,20 @@ hide:
          <p class="feature-paragraph">Follow the Miden getting started guide to get up and running.</p>
       </a>
    </div>
-   <div class="grid-item">
+      <div class="grid-item">
       <a href="./miden-base/architecture/overview/">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Miden architecture</div>
          </div>
          <p class="feature-paragraph">Learn more about the Miden architecture.</p>
+      </a>
+   </div>
+   <div class="grid-item">
+      <a href="./miden-base/introduction/roadmap/">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Roadmap</div>
+         </div>
+         <p class="feature-paragraph">Check out the Miden roadmap for the latest updates.</p>
       </a>
    </div>
 </div>
