@@ -29,7 +29,7 @@ hide:
       </a>
    </div>
    <div class="grid-item">
-      <a href="./miden-base/introduction/getting-started/">
+      <a href="./miden-base/introduction/get-started/prerequisites/">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Getting started</div>
          </div>
