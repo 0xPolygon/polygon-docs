@@ -15,7 +15,7 @@ hide:
       <h1 class="hero-heading">Polygon Miden</h1>
       <h2><code>Software in development</code></h2>
       <h2></h2>
-      <p class="hero-subtext">Polygon Miden is an in-development zero-knowledge (zk) rollup running on the Miden VM, a virtual machine that prioritizes zk-friendliness over EVM compatibility.</p>
+      <p class="hero-subtext">Polygon Miden is a zero-knowledge rollup for private, high-throughput applications.</p>
    </div>
 </div>
 
