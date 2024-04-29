@@ -24,7 +24,7 @@ curl -X POST \
 {"jsonrpc":"2.0","id":1,"result":"0xe2ea2f0"}
 ```
 
-## JSON PRC API source 
+## JSON RPC API source 
 
 ??? "JSON API source"
     ```json
