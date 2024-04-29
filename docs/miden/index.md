@@ -21,15 +21,7 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./miden-base/introduction/roadmap/">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Roadmap</div>
-         </div>
-         <p class="feature-paragraph">Check out the Miden roadmap for the latest updates.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./miden-base/introduction/getting-started/">
+      <a href="./miden-base/introduction/get-started/prerequisites/">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Getting started</div>
          </div>
@@ -42,6 +34,14 @@ hide:
             <div class="feature-card-heading">Miden architecture</div>
          </div>
          <p class="feature-paragraph">Learn more about the Miden architecture.</p>
+      </a>
+   </div>
+   <div class="grid-item">
+      <a href="./miden-base/introduction/roadmap/">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Roadmap</div>
+         </div>
+         <p class="feature-paragraph">Check out the Miden roadmap for the latest updates.</p>
       </a>
    </div>
 </div>
