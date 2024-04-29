@@ -28,7 +28,7 @@ hide:
          <p class="feature-paragraph">Follow the Miden getting started guide to get up and running.</p>
       </a>
    </div>
-      <div class="grid-item">
+   <div class="grid-item">
       <a href="./miden-base/architecture/overview/">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Miden architecture</div>
