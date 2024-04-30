@@ -30,7 +30,7 @@ This document presents an outline of Polygon zkEVM's strategy for executing tran
 
     (b) Checking user’s signed gas price against the expected $\texttt{MinL2GasPrice}$. Store the transaction in the pool if $\texttt{SignedGasPrice} < \texttt{MinL2GasPrice}$​. Otherwise discard it.
 
-    (c) The pool here refers to a collection of transactions waiting to be selected for execution by the sequencer.
+    (c\) The pool here refers to a collection of transactions waiting to be selected for execution by the sequencer.
 
 
 - **Put in place a criterion for determining which transactions to store in the pool**
