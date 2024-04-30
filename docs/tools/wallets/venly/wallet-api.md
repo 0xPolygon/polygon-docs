@@ -19,7 +19,7 @@ The Wallet API allows developers to interact with blockchain networks and offer 
 | Wallet management           | Developers can use the API to create, manage, and secure wallets for their users.                                                                                           |
 | Transaction services        | The API can enable the initiation and monitoring of blockchain transactions.                                                                                                |
 | Token support               | It may allow the handling of various tokens and assets on supported blockchain networks.                                                                                    |
-| Blockchain interactions     | Developers can integrate functionalities like reading data from the blockchain or writing data to it, more commonly known as creating and interacting with Smart Contracts. |
+| Blockchain interactions     | Developers can integrate functionalities like reading data from the blockchain or writing data to it, along with creating and interacting with smart contracts. |
 | Security features           | The API might offer features to enhance the security of user funds and transactions.                                                                                        |
 | User experience enhancement | It can contribute to a smoother and more user-friendly interaction with blockchain applications.                                                                            |
 | Multi-blockchain support    | Venly supports multiple blockchain networks, allowing developers to offer wallets for different cryptocurrencies. |
