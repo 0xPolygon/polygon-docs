@@ -16,9 +16,9 @@ When setting up a new sentry, validator, or full node server, it is recommended 
 ## Client snapshots
 
 To begin, ensure that your node environment meets the **prerequisites** outlined [here](../how-to/full-node/full-node-binaries.md). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. In our example, we will be using an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
-To transfer the correct chaindata to your disk, follow these steps:
+To transfer the correct chain data to your disk, follow these steps:
 
-- All one has to do is specify the network ("mainnet" or "mumbai") and client type ("heimdall" or "bor" or "erigon") of your desired snapshot and run the following command:
+- All one has to do is specify the network ("mainnet" or "amoy") and client type ("heimdall" or "bor" or "erigon") of your desired snapshot and run the following command:
 
 ```bash
 curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --network {{ network }} --client {{ client }} --extract-dir {{ extract_dir }} --validate-checksum {{ true / false }}
@@ -43,8 +43,8 @@ curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --
   #!/bin/bash
 
   function validate_network() {
-    if [[ "$1" != "mainnet" && "$1" != "mumbai" ]]; then
-      echo "Invalid network input. Please enter 'mainnet' or 'mumbai'."
+    if [[ "$1" != "mainnet" && "$1" != "amoy" ]]; then
+      echo "Invalid network input. Please enter 'mainnet' or 'amoy'."
       exit 1
     fi
   }
@@ -99,7 +99,7 @@ curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --
   done
 
   # Set default values if not provided through command-line arguments
-  network=${network:-mumbai}
+  network=${network:-amoy}
   client=${client:-heimdall}
   extract_dir=${extract_dir:-"${client}_extract"}
   checksum=${checksum:-false}
@@ -214,7 +214,7 @@ sudo service bor start
 
 ## Recommended disk size guidance
 
-**Polygon Mumbai Testnet**
+**Polygon Amoy testnet**
 
 | Metric | Calculation Breakdown | Value |
 | ------ | --------------------- | ----------- |
@@ -223,7 +223,7 @@ sudo service bor start
 | approx. total extracted size | 350 GB (bor) + 50 GB (heimdall) | 400 GB |
 | suggested disk size (2.5x buffer) | 400 GB * 2.5 (natural chain growth) | 1 TB | 
 
-**Polygon Mainnet**
+**Polygon mainnet**
 
 | Metric | Calculation Breakdown | Value |
 | ------ | --------------------- | ----------- |
@@ -232,7 +232,7 @@ sudo service bor start
 | approx. total extracted size | 2.1 TB (bor) + 300 GB (heimdall) | 2.4 TB |
 | suggested disk size (2.5x buffer) | 2.4 TB * 2.5 (natural chain growth) | 6 TB |
 
-**Polygon Mumbai Erigon Archive**
+**Polygon Amoy Erigon Archive**
 
 | Metric | Calculation Breakdown | Value |
 | ------ | --------------------- | ----------- |
