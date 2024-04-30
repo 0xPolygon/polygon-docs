@@ -475,6 +475,7 @@ nav:
           - Band standard dataset: tools/oracles/bandstandarddataset.md
           - Chainlink: tools/oracles/chainlink.md
           - DIA: tools/oracles/diadataoracles.md
+          - Pyth: tools/oracles/pyth.md
           - Razor: tools/oracles/razor.md
           - Supra: tools/oracles/supra.md
           - Tellor: tools/oracles/tellor.md
