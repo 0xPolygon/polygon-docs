@@ -53,31 +53,20 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
-      - Version compatibility matrix: cdk/version-matrix.md
-      - Get started: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
-      - Architecture:
-        - CDK rollup: cdk/architecture/cdk-zkevm.md
-        - CDK validium: cdk/architecture/cdk-validium.md
+      - Releases:
+        - Version compatibility matrix: cdk/version-matrix.md
+        - zkEVM:
+          - Etrog: zkEVM/architecture/protocol/etrog-upgrade.md
+          - Historical data: zkEVM/get-started/historical-data.md
+      - Features: 
         - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
-      - Specification:
-        - Validium vs rollup: cdk/spec/validium-vs-rollup.md
-      - Glossary:
-        - Glossary: cdk/glossary/index.md
-      - Additional resources:
-        - Third-party guides: cdk/resources/third-party-guides.md
-        - CDK repos: cdk/resources/cdk-repo-reference.md
-  - zkEVM:
-      - zkEVM: zkEVM/index.md
-      - Overview: zkEVM/overview.md
-      - Releases: 
-        - Etrog: zkEVM/architecture/protocol/etrog-upgrade.md
-        - Historical data: zkEVM/get-started/historical-data.md
-      - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
       - Get started:
-        - Node developers:
+        - Kurtosis stack: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+        - zkEVM rollup chain:
+          - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
           - Setup nodes:
-            - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
-            - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
+            - Setup local rollup node: zkEVM/get-started/setup-nodes/local-node.md
+            - Setup production rollup node: zkEVM/get-started/setup-nodes/production-node.md
           - Deploy zkEVM:
             - Introduction: zkEVM/get-started/setup-nodes/deploy-zkevm/intro.md
             - Environment overview: zkEVM/get-started/setup-nodes/deploy-zkevm/environment-overview.md
@@ -89,29 +78,27 @@ nav:
             - Start node: zkEVM/get-started/setup-nodes/deploy-zkevm/start-node.md
             - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
           - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
-        - dApp developers:
-          - How to:
-            - zkEVM testnet & mainnet: zkEVM/get-started/quick-start/connect-wallet.md
-            - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
-            - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
-            - Gas station: zkEVM/get-started/zkevm-gas-station.md
-          - Tutorials:
-            - Write a contract: zkEVM/how-to/write-contract.md
-            - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
-            - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
-            - Verify a contract: zkEVM/how-to/verify-contract.md
-          - APIs: 
-            - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - Architecture:
         - Prerequisite understanding: zkEVM/architecture/prerequisite-understanding.md
-        - High-level view of the topology: zkEVM/architecture/summary.md
+        - High-level view: 
+          - Validium vs rollup: cdk/spec/validium-vs-rollup.md
+          - CDK validium: cdk/architecture/cdk-validium.md
+          - CDK rollup:
+            - Summary: zkEVM/architecture/summary.md
+            - CDK rollup chain: cdk/architecture/cdk-zkevm.md
         - Aggregator: zkEVM/architecture/aggregator.md
         - Communication layer: zkEVM/architecture/communication-layer.md
+        - Data streamer:
+          - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
+          - Data streamer protocols: zkEVM/architecture/data-streamer/data-streamer-protocols.md
+          - Bookmarks: zkEVM/architecture/data-streamer/bookmarks.md
+          - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
+          - Stream file: zkEVM/architecture/data-streamer/stream-file.md
+          - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
         - Effective gas price:
           - Effective gas price: zkEVM/architecture/effective-gas/index.md
           - Effective gas price strategy: zkEVM/architecture/effective-gas/zkevm-egp-strat.md
           - User transaction flow:
-            - User transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/index.md
             - RPC transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/rpc-flow-egp.md
             - Sequencer transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/sequencer-flow-egp.md
           - Implementing EGP strategy: zkEVM/architecture/effective-gas/implement-egp-strat.md
@@ -136,129 +123,31 @@ nav:
           - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
           - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - zkEVM network: zkEVM/architecture/zkevm-network.md
-        - OLD or wrong spot?:
-          - zkEVM protocol:
-            - zkEVM protocol: zkEVM/architecture/protocol/index.md
-            - State management: zkEVM/architecture/protocol/state-management.md
-            - Transaction life cycle:
-              - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
-              - Transaction execution: zkEVM/architecture/protocol/transaction-life-cycle/transaction-execution.md
-              - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
-              - Batch sequencing: zkEVM/architecture/protocol/transaction-life-cycle/batch-sequencing.md
-              - Batch aggregation: zkEVM/architecture/protocol/transaction-life-cycle/batch-aggregation.md
-            - Incentive mechanism: zkEVM/architecture/protocol/incentive-mechanism.md
-            - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
-            - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
-            - Upgrade process: zkEVM/architecture/protocol/upgrade-process.md
-            - Security council: zkEVM/architecture/protocol/security-council.md
-            - Malfunction resistance:
-              - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
-              - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
-              - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
-            - zkEVM Bridge:
-              - zkEVM Bridge: zkEVM/architecture/protocol/zkevm-bridge/index.md
-              - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
-              - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
-              - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
-            - LxLy bridge: zkEVM/architecture/protocol/lxly-bridge.md
-          - zkNode: zkEVM/architecture/zknode/index.md
-          - Data streamer:
-            - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
-            - Data streamer protocols: zkEVM/architecture/data-streamer/data-streamer-protocols.md
-            - Bookmarks: zkEVM/architecture/data-streamer/bookmarks.md
-            - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
-            - Stream file: zkEVM/architecture/data-streamer/stream-file.md
-            - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
-          - zkProver:
-            - zkProver: zkEVM/architecture/zkprover/index.md
-            - Main state machine: 
-              - Main state machine: zkEVM/architecture/zkprover/main-state-machine/index.md
-              - As a processor: zkEVM/architecture/zkprover/main-state-machine/processor.md
-            - STARK recursion:
-              - STARK recursion: zkEVM/architecture/zkprover/stark-recursion/index.md
-              - Proving tools and techniques: zkEVM/architecture/zkprover/stark-recursion/proving-tools.md
-              - Composition, Recursion and Aggregation: zkEVM/architecture/zkprover/stark-recursion/composition-recursion-aggregation.md
-              - Recursion sub-process: zkEVM/architecture/zkprover/stark-recursion/recursion-sub-process.md
-              - Proving architecture: zkEVM/architecture/zkprover/stark-recursion/proving-architecture.md
-              - CIRCOM in zkProver: zkEVM/architecture/zkprover/stark-recursion/circom-in-zkprover.md
-              - Proving setup phase: zkEVM/architecture/zkprover/stark-recursion/proving-setup-phase.md
-              - Intermediate steps: zkEVM/architecture/zkprover/stark-recursion/intermediate-recursion.md
-              - Final recursion step: zkEVM/architecture/zkprover/stark-recursion/final-recursion-step.md
-              - Proof generation phase: zkEVM/architecture/zkprover/stark-recursion/proof-generation-phase.md
-            - Storage state machine:
-              - Storage state machine: zkEVM/architecture/zkprover/storage-state-machine/index.md
-              - Creating keys and paths: zkEVM/architecture/zkprover/storage-state-machine/construct-key-path.md
-              - Storage SM mechanism: zkEVM/architecture/zkprover/storage-state-machine/mechanism.md
-              - Executor and PIL: zkEVM/architecture/zkprover/storage-state-machine/executor-pil.md
-            - Arithmetic state machine: zkEVM/architecture/zkprover/arithmetic-sm.md
-            - Binary state machine: zkEVM/architecture/zkprover/binary-sm.md
-            - Memory state machine: zkEVM/architecture/zkprover/memory-sm.md
-            - Memory-Align state machine: zkEVM/architecture/zkprover/mem-align-sm.md
-            - Hashing state machines:
-              - Hashing state machines: zkEVM/architecture/zkprover/hashing-state-machines/index.md
-              - Keccak framework: zkEVM/architecture/zkprover/hashing-state-machines/keccak-framework.md
-              - Padding-kk state machine: zkEVM/architecture/zkprover/hashing-state-machines/paddingkk-sm.md
-              - Padding-kk-bit state machine: zkEVM/architecture/zkprover/hashing-state-machines/paddingkk-bit-sm.md
-              - Bits2Field state machine: zkEVM/architecture/zkprover/hashing-state-machines/bits2field-sm.md
-              - Keccak-f state machine: zkEVM/architecture/zkprover/hashing-state-machines/keccakf-sm.md
-              - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
       - Specification:
         - Estark: zkEVM/spec/estark.md
-        - OLD or wrong spot?:
-          - User fees:
-            - User fees: zkEVM/spec/user-fees/index.md
-            - Gas price suggestion: zkEVM/spec/user-fees/gas-price-suggest.md
-            - L1-L2 cost discrepancies: zkEVM/spec/user-fees/l1-l2-discrepancies.md
-            - Breakeven gas price: zkEVM/spec/user-fees/breakeven-technique.md
-            - Prioritizing transactions: zkEVM/spec/user-fees/prioritization-txs.md
-            - User fees flow:
-              - User fees flow: zkEVM/spec/user-fees/user-fees-flow/index.md 
-              - RPC flow: zkEVM/spec/user-fees/user-fees-flow/rpc-flow.md
-              - Sequencer flow: zkEVM/spec/user-fees/user-fees-flow/sequencer-flow.md
-          - Polynomial Identity Language:
-            - Polynomial Identity Language: zkEVM/spec/pil/index.md
-            - Simple example: zkEVM/spec/pil/simple-example.md
-            - Modular programs: zkEVM/spec/pil/modular-programs.md
-            - Connection arguments: zkEVM/spec/pil/connection-arguments.md
-            - Cyclicity in PIL: zkEVM/spec/pil/cyclicity-in-pil.md
-            - Filling polynomials: zkEVM/spec/pil/filling-polynomials.md
-            - Generating proofs: zkEVM/spec/pil/generating-proofs.md
-            - Permutation arguments: zkEVM/spec/pil/permutation-arguments.md
-            - Inclusion arguments: zkEVM/spec/pil/inclusion-arguments.md
-            - Compiling using PILCOM: zkEVM/spec/pil/compiling-using-pilcom.md
-            - Configuration files: zkEVM/spec/pil/configuration-files.md
-            - PLONK in PIL: zkEVM/spec/pil/plonk-in-pil.md
-            - Public values: zkEVM/spec/pil/public-values.md
-          - zkASM:
-            - zkASM: zkEVM/spec/zkasm/index.md
-            - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
-            - Examples: zkEVM/spec/zkasm/examples.md
+        - Polynomial Identity Language:
+          - Polynomial Identity Language: zkEVM/spec/pil/index.md
+          - Simple example: zkEVM/spec/pil/simple-example.md
+          - Modular programs: zkEVM/spec/pil/modular-programs.md
+          - Connection arguments: zkEVM/spec/pil/connection-arguments.md
+          - Cyclicity in PIL: zkEVM/spec/pil/cyclicity-in-pil.md
+          - Filling polynomials: zkEVM/spec/pil/filling-polynomials.md
+          - Generating proofs: zkEVM/spec/pil/generating-proofs.md
+          - Permutation arguments: zkEVM/spec/pil/permutation-arguments.md
+          - Inclusion arguments: zkEVM/spec/pil/inclusion-arguments.md
+          - Compiling using PILCOM: zkEVM/spec/pil/compiling-using-pilcom.md
+          - Configuration files: zkEVM/spec/pil/configuration-files.md
+          - PLONK in PIL: zkEVM/spec/pil/plonk-in-pil.md
+          - Public values: zkEVM/spec/pil/public-values.md
       - Concepts:
         - Ethereum state: zkEVM/concepts/ethereum-state.md
         - L2 scaling strategies: zkEVM/concepts/l2-scaling-strategies.md
         - Road to scalability: zkEVM/concepts/road-to-scalability.md
-        - OLD or wrong spot?:
-          - EVM basics: zkEVM/concepts/evm-basics.md
-          - Sparse merkle trees:
-            - Merkle trees: zkEVM/concepts/sparse-merkle-trees/sparse-merkle-tree.md
-            - Constructing simple SMTs: zkEVM/concepts/sparse-merkle-trees/simple-smt.md
-            - SMT concepts: zkEVM/concepts/sparse-merkle-trees/detailed-smt.md
-            - Operations on SMTs: zkEVM/concepts/sparse-merkle-trees/basic-smt-ops.md
-          - mFibonnaci state machine:
-            - Design approach: zkEVM/concepts/mfibonacci/mfibonacci.md
-            - An example: zkEVM/concepts/mfibonacci/mfibonacci-example.md
-            - Commitment scheme: zkEVM/concepts/mfibonacci/commitment-scheme.md
-            - Verification scheme: zkEVM/concepts/mfibonacci/verification-scheme.md
-            - PIL-STARK process: zkEVM/concepts/mfibonacci/pil-stark.md
-            - PIL-STARK demo: zkEVM/concepts/mfibonacci/pil-stark-demo.md
-          - Generic state machine: 
-            - Generic SM introduction: zkEVM/concepts/generic-state-machine/intro-generic-sm.md
-            - Execution trace: zkEVM/concepts/generic-state-machine/exec-trace-correct.md
-            - Ending programs: zkEVM/concepts/generic-state-machine/ending-program.md
-            - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
-            - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
-          - CIRCOM: zkEVM/concepts/circom-intro-brief.md
-      - Troubleshooting:
+      - Glossary:
+        - Glossary: cdk/glossary/index.md
+      - Additional resources:
+        - Third-party guides: cdk/resources/third-party-guides.md
+        - CDK repos: cdk/resources/cdk-repo-reference.md
         - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
       - PoS: pos/index.md
@@ -360,28 +249,41 @@ nav:
       - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
   - Developer tools: 
       - Developer tools: tools/index.md
+      - zkEVM chains:
+        - How to:
+          - zkEVM testnet & mainnet: zkEVM/get-started/quick-start/connect-wallet.md
+          - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
+          - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
+          - Gas station: zkEVM/get-started/zkevm-gas-station.md
+        - Tutorials:
+          - Write a contract: zkEVM/how-to/write-contract.md
+          - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
+          - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
+          - Verify a contract: zkEVM/how-to/verify-contract.md
+        - APIs: 
+          - JSON RPC endpoints: zkEVM/api/json-rpc.md
       - dApp development: 
-          - dApp Launchpad:
-              - Introduction: tools/dApp-development/launchpad/intro.md
-              - Quickstart: tools/dApp-development/launchpad/quickstart.md
-              - Frontend: tools/dApp-development/launchpad/frontend.md
-              - Smart contracts: tools/dApp-development/launchpad/smart-contracts.md
-              - Commands: tools/dApp-development/launchpad/commands.md
-              - Contributing: tools/dApp-development/launchpad/contributing.md
-              - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
-          - Smart contract development on PoS:
-              - Alchemy: tools/dApp-development/pos/alchemy.md
-              - ChainIDE: tools/dApp-development/pos/chainide.md
-              - ChainStack: tools/dApp-development/pos/chainstack.md
-              - Crossmint: tools/dApp-development/pos/crossmint.md
-              - GetBlock: tools/dApp-development/pos/getblock.md
-              - QuickNode: tools/dApp-development/pos/quicknode.md
-              - SmartPress: tools/dApp-development/pos/smartpress.md
-              - Thirdweb: tools/dApp-development/pos/thirdweb.md
-          - Common tools:
-              - Hardhat: tools/dApp-development/common-tools/hardhat.md
-              - Remix: tools/dApp-development/common-tools/remix.md
-              - Replit: tools/dApp-development/common-tools/replit.md
+        - dApp Launchpad:
+            - Introduction: tools/dApp-development/launchpad/intro.md
+            - Quickstart: tools/dApp-development/launchpad/quickstart.md
+            - Frontend: tools/dApp-development/launchpad/frontend.md
+            - Smart contracts: tools/dApp-development/launchpad/smart-contracts.md
+            - Commands: tools/dApp-development/launchpad/commands.md
+            - Contributing: tools/dApp-development/launchpad/contributing.md
+            - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
+        - Smart contract development on PoS:
+            - Alchemy: tools/dApp-development/pos/alchemy.md
+            - ChainIDE: tools/dApp-development/pos/chainide.md
+            - ChainStack: tools/dApp-development/pos/chainstack.md
+            - Crossmint: tools/dApp-development/pos/crossmint.md
+            - GetBlock: tools/dApp-development/pos/getblock.md
+            - QuickNode: tools/dApp-development/pos/quicknode.md
+            - SmartPress: tools/dApp-development/pos/smartpress.md
+            - Thirdweb: tools/dApp-development/pos/thirdweb.md
+        - Common tools:
+            - Hardhat: tools/dApp-development/common-tools/hardhat.md
+            - Remix: tools/dApp-development/common-tools/remix.md
+            - Replit: tools/dApp-development/common-tools/replit.md
       - Chain indexer framework:
           - Overview: tools/chain-indexer-framework/overview.md
           - Usage: tools/chain-indexer-framework/usage.md

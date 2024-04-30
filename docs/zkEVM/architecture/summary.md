@@ -108,8 +108,6 @@ zkNode is the software needed to run any zkEVM node. It is a client that the net
 - As a node to know the state of the network, or;
 - As a participant in the process of batch production in any of the two roles: sequencer or aggregator.
 
-The zkNode architecture is modular in nature. You can dig deeper into zkNode and its components [here](zknode/index.md).
-
 ### Incentivization structure
 
 The two permissionless participants of the zkEVM network are sequencers and aggregators. Proper incentive structures have been devised to keep the zkEVM network fast and secure. Below is a summary of the fee structure for sequencers and aggregators:
@@ -135,7 +133,7 @@ It consists of a main state machine executor**, a collection of secondary state 
 
 ![Skeletal overview of zkProver](../../img/zkEVM/fig4-zkProv-arch.png)
 
-In a nutshell, the zkEVM expresses state changes in a polynomial form. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. To put it another way, all valid batches must satisfy specific polynomial constraints. Check out the detailed architecture of zkProver [here](zkprover/index.md).
+In a nutshell, the zkEVM expresses state changes in a polynomial form. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. To put it another way, all valid batches must satisfy specific polynomial constraints.
 
 ## zkEVM bridge
 
@@ -167,8 +165,6 @@ Before getting into a transaction flow in L2, users need some funds to perform a
   - Sequencer sends the batch data to L1 smart contract, enabling any node to synchronize from L1 in a trustless way (aka virtual state)
   - Aggregator will take pending transactions to be verified and build a proof in order to achieve finality on L1
   - Once the proof is validated, user's transactions will attain L1 finality (important for withdrawals). This is called the consolidated state.
-
-The above process is a summarized version of how transactions are processed in zkEVM. We recommend you to take a look at the complete [transaction life cycle](protocol/transaction-life-cycle/submit-transaction.md) document.
 
 ## Design characteristics
 

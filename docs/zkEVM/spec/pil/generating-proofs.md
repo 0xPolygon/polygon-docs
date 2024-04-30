@@ -88,5 +88,3 @@ async function execute() {
 ```
 
 If the output of the `starkVerify` function is `true`, the proof is valid. Otherwise, the verifier should invalidate the proof sent by the prover.
-
-A `pil-stark` DIY guide is given [here](../../concepts/mfibonacci/pil-stark-demo.md).
