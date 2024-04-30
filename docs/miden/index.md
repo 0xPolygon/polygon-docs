@@ -15,21 +15,13 @@ hide:
       <h1 class="hero-heading">Polygon Miden</h1>
       <h2><code>Software in development</code></h2>
       <h2></h2>
-      <p class="hero-subtext">Polygon Miden is an in-development zero-knowledge (zk) rollup running on the Miden VM, a virtual machine that prioritizes zk-friendliness over EVM compatibility.</p>
+      <p class="hero-subtext">Polygon Miden is a zero-knowledge rollup for private, high-throughput applications.</p>
    </div>
 </div>
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./miden-base/introduction/roadmap/">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Roadmap</div>
-         </div>
-         <p class="feature-paragraph">Check out the Miden roadmap for the latest updates.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./miden-base/introduction/getting-started/">
+      <a href="./miden-base/introduction/get-started/prerequisites/">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Getting started</div>
          </div>
@@ -42,6 +34,14 @@ hide:
             <div class="feature-card-heading">Miden architecture</div>
          </div>
          <p class="feature-paragraph">Learn more about the Miden architecture.</p>
+      </a>
+   </div>
+   <div class="grid-item">
+      <a href="./miden-base/introduction/roadmap/">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Roadmap</div>
+         </div>
+         <p class="feature-paragraph">Check out the Miden roadmap for the latest updates.</p>
       </a>
    </div>
 </div>
