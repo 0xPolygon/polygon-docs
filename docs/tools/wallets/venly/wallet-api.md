@@ -6,7 +6,7 @@
 The Wallet API allows developers to interact with blockchain networks and offer wallet functionality to their users without having to build everything from scratch. This can include features like account creation, transaction management, balance inquiries, and more.
 
 - Welcome your users with custom wallet branding. You can customize the user interface to your taste.
-- You are completely in charge of the wallet user experience to optimize your user conversion. Get total freedom on UX and asset management with our Wallet API.
+- You are completely in charge of the wallet user experience to optimize user conversion. Get total freedom with regard to UX and asset management with our Wallet API.
 - You and your users have complete control over digital assets, without any third-party interference. Securely manage wallets with complete autonomy and privacy.
 - In case of lost login details, you and your users can recover access to wallets with a security code or biometric verification.
 
