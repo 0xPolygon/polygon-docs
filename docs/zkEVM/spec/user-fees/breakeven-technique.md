@@ -189,4 +189,4 @@ $$
 105, 000 − 35, 000 · 3.27 < 0
 $$
 
-**Final Note**: In the example, even though we assumed that the decrease in $\texttt{BreakEvenGasPrice}$ is a result of executing with a correct state root, it can also decrease significantly due to a substantial reduction in $\texttt{L1GasPrice}$.
+**Final Note**: In the above example, even though we assumed that the decrease in $\texttt{BreakEvenGasPrice}$ is a result of executing with a correct state root, it can also decrease significantly due to a substantial reduction in $\texttt{L1GasPrice}$.
