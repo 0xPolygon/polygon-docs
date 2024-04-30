@@ -34,7 +34,7 @@ In this phase of the end-to-end transaction flow, transactions go through differ
    ![Figure: Sequencer flow](../../../../img/zkEVM/tx-flow-seq-component.png)
 
 
-### Example (Sequencer Flow)
+### Example (Sequencer flow)
 
 Let's continue the numerical example we have been using throughout this document.
 
@@ -53,7 +53,7 @@ $$
     
     Recall how we previously obtained the $\texttt{BreakEvenGasPriceRPC}$ of $2.52\ \texttt{GWei/Gas}$.
     
-    According to the above figure, the network recommends a gas price of $3$, which corresponds to an L1 gas price of $20$.
+    According to the figure above, the network recommends a gas price of $3$, which corresponds to an L1 gas price of $20$.
 
     This results in the following priority factor:
 
@@ -93,7 +93,7 @@ $$
 
     which is bigger than the RPC-estimated gas of $60,000$.
 
-4. With the new $\texttt{GasUsedNew}$, an adjusted effective gas price ($\texttt{NEGP}$) can be computed in the following steps.
+4. With the new $\texttt{GasUsedNew}$, an adjusted effective gas price ($\texttt{NEGP}$) can be computed by the following steps.
     
     Firstly, the total transaction cost:
 
@@ -101,7 +101,7 @@ $$
     \texttt{TxCostNew} = (200 · 16 + 100 · 4) · 20 + 95,000 · 20 · 0.04 = 148,000 \ \texttt{GWei}
     $$
 
-    It is assumed that the transaction has 200 non-zero bytes and 100 zero bytes.
+    We assume that the transaction has 200 non-zero bytes and 100 zero bytes.
 
     Secondly, the new breakeven gas price: 
 
@@ -122,7 +122,7 @@ $$
     \end{aligned}
     $$
 
-    Observe that the transaction cost is way higher than the RPC-estimated one of $126,000$ even when the L1 gas price has decreased from 21 to 20 due to a huge increase in gas.
+    Observe that the transaction cost is much higher than the RPC-estimation of $126,000$, even when the L1 gas price has decreased from 21 to 20 due to a huge increase in gas.
 
 5. Observe that there is a significant deviation between both effective gas prices:
     
