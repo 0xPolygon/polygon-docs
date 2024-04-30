@@ -123,5 +123,3 @@ The effective gas price scheme, as outlined above, although steeped in details, 
 Ultimately, the scheme is accurate and fair to both the users and the zkEVM network.
 
 Check out this [repo](https://github.com/0xPolygonHermez/zkevm-rom/issues/316) for a detailed example of how the effective gas price is calculated.
-
-A more elaborate and expanded documentation of the EGP scheme can be found in the specifications section [here](../../spec/user-fees/index.md).
