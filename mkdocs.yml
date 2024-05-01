@@ -343,6 +343,7 @@ nav:
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
       - Miden: miden/index.md
+      - Overview: miden/overview.md
       - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
       - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
   - Developer tools: 
