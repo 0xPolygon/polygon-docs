@@ -1,5 +1,6 @@
 !!!info
-    This document series describes in detail the various forms and stages that L2 users' transactions go through, from the time they are created in users' wallets to the time they are finally verified with indisputable evidence on L1.
+    
+    This series of documents describes in detail the various stages L2 transactions go through, from the time they are created in users' wallets to the time they are finally verified with indisputable evidence on L1.
 
 ## Submit transaction
 
