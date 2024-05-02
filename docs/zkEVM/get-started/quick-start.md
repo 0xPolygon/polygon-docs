@@ -30,7 +30,7 @@ Connect your wallet to the Polygon zkEVM network of your choice by navigating to
 
 ## Polygon testnet faucet
 
-If you plan on developing a dapp for zkEVM, you may want to deploy your test dapp on the Cardona zkEVM testnet. These test tokens enable you to work with Polygon zkEVM without having to spend actual MATIC tokens on the mainnet zkEVM chain. Visit the [Polygon MATIC faucet page](../../tools/gas/matic-faucet.md) to learn how to get testnet tokens.
+If you plan on developing a dApp for zkEVM, you may want to deploy your test dapp on the Cardona zkEVM testnet. These test tokens enable you to work with Polygon zkEVM without having to spend actual MATIC tokens on the mainnet zkEVM chain. Visit the [Polygon MATIC faucet page](../../tools/gas/matic-faucet.md) to learn how to get testnet tokens.
 
 ## Bridging assets to zkEVM
 
