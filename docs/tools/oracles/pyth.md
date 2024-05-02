@@ -1,4 +1,4 @@
-# Pyth Network
+# Pyth network
 
 [Pyth Network]: https://pyth.network/
 
