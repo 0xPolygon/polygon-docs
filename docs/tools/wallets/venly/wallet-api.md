@@ -37,9 +37,10 @@ The Wallet API allows developers to interact with blockchain networks and offer 
 ```https
 POST /api/wallets
 ```
-| Parameter        | Param type | Value      | Description                                                                                   | Example value                                 |
-| :--------------- | :--------- | :--------- | :-------------------------------------------------------------------------------------------- | :-------------------------------------------- |
-| `Signing-Method` | Header     | `id:value` | `id`: This is the ID of the signing method. `value`: This is the value of the signing method. | `756ae7a7-3713-43ee-9936-0dff50306488:123456` |
+| Parameter | Param type | Value | Description |
+| :--------------- | :--------- | :--------- | :--------------------------------------- |
+| `Signing-Method` | Header     | `id:value` | `id`: This is the ID of the signing method. `value`: This is the value of the signing method. |
+
 
 | Parameter                | Param type | Description                                            | Data type | Mandatory |
 | :----------------------- | :--------- | :----------------------------------------------------- | :-------- | :-------- |
