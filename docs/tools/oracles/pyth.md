@@ -4,9 +4,9 @@
 
 ## Overview
 
-The [Pyth Network] is the **largest** first-party financial oracle network, delivering real-time market data to over 40 blockchains securely and transparently.
+The [Pyth network](https://pyth.network/) is the largest first-party financial oracle network, delivering real-time market data to over 40 blockchains securely and transparently.
 
-The network comprises some of the world’s largest exchanges, market makers, and financial services providers publishing their proprietary price data on-chain for aggregation and distribution to smart contract applications.
+The network comprises some of the world’s largest exchanges, market makers, and financial services providers publishing their proprietary price-data on-chain for aggregation and distribution to smart contract applications.
 
 ## Using Pyth network
                                                                                        
