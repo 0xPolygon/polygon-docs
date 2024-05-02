@@ -8,6 +8,7 @@ comments: true
 ## Connect to zkEVM mainnet or testnet
 
 Add a full network configuration to your wallet in one click.
+
 <center>
 ![img](../../img/zkEVM/chainlist-add-network.gif)
 </center>
