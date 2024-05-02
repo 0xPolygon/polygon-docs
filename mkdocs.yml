@@ -356,15 +356,6 @@ nav:
               - Commands: tools/dApp-development/launchpad/commands.md
               - Contributing: tools/dApp-development/launchpad/contributing.md
               - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
-          - Smart contract development on PoS:
-              - Alchemy: tools/dApp-development/pos/alchemy.md
-              - ChainIDE: tools/dApp-development/pos/chainide.md
-              - ChainStack: tools/dApp-development/pos/chainstack.md
-              - Crossmint: tools/dApp-development/pos/crossmint.md
-              - GetBlock: tools/dApp-development/pos/getblock.md
-              - QuickNode: tools/dApp-development/pos/quicknode.md
-              - SmartPress: tools/dApp-development/pos/smartpress.md
-              - Thirdweb: tools/dApp-development/pos/thirdweb.md
           - Common tools:
               - Hardhat: tools/dApp-development/common-tools/hardhat.md
               - Remix: tools/dApp-development/common-tools/remix.md
@@ -374,6 +365,7 @@ nav:
           - Usage: tools/chain-indexer-framework/usage.md
       - Third-party tutorials:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
+          - Smart contract development: tools/dApp-development/pos/third-party-smart-contracts.md
           - Venly's NFT-API: https://docs.venly.io/docs/nft-api-getting-started
           - Venly's Zapier integration: https://docs.venly.io/docs/zapier-integration 
       - Gas:
