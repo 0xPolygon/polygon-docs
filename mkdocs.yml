@@ -54,7 +54,12 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Version compatibility matrix: cdk/version-matrix.md
-      - Get started: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - Get started - Kurtosis: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - Get started - Erigon: 
+        - Releases: cdk/erigon/releases.md
+        - Deploy a node: cdk/erigon/deploy-cdk-erigon.md
+        - How to:
+            - Configure chains dynamically: cdk/erigon/chain-config.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
