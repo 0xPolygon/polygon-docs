@@ -21,7 +21,7 @@ Chainlist is a site that provides a button to connect your wallet to the Polygon
 
 ### Manually add network to wallet
 
-Connect your wallet to the Polygon zkEVM network of your choice by navigating to the add network setting and entering the network details as shown in the table:
+Connect your wallet to the Polygon zkEVM network of your choice by navigating to the add network settings and entering the network details as shown in the table:
 
 | Network | RPC URL | ChainID | Block explorer URL | Currency |
 | ------- | ------------------------------- | ---------------- | ---------------- | ----- |
