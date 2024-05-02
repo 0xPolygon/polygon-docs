@@ -31,6 +31,7 @@ Connect your wallet to the Polygon zkEVM network of your choice by navigating to
 If you plan on developing a dapp for zkEVM, you may want to deploy your test dapp on the Cardona zkEVM testnet. These test tokens enable you to work with Polygon zkEVM without having to spend actual MATIC tokens on the mainnet zkEVM chain. Visit the [Polygon MATIC faucet page](../../tools/gas/matic-faucet.md) to learn how to get testnet tokens.
 
 ## Bridging assets to zkEVM
+
 Once the wallet is connected, the next step is to bridge crypto assets from Ethereum to zkEVM. Depositing and swapping tokens between the Polygon zkEVM chain (or the Cardona zkEVM testnet) and other chains can be achieved by utilizing the Polygon Portal. Visit [the Polygon Portal documentation page](../../tools/wallets/portal.md) for guides on how to connect to and operate the Polygon Portal website.
 
 ## Video demo
