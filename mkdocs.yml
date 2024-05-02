@@ -72,7 +72,6 @@ nav:
       - Get started:
         - Get started: zkEVM/get-started/index.md
         - Quick start: zkEVM/get-started/quick-start.md
-        - Gas station: zkEVM/get-started/zkevm-gas-station.md
         - Setup nodes:
           - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
           - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
