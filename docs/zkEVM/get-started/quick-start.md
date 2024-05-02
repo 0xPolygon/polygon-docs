@@ -34,7 +34,7 @@ If you plan on developing a dApp for zkEVM, you may want to deploy your test dap
 
 ## Bridging assets to zkEVM
 
-Once the wallet is connected, the next step is to bridge crypto assets from Ethereum to zkEVM. Depositing and swapping tokens between the Polygon zkEVM chain (or the Cardona zkEVM testnet) and other chains can be achieved by utilizing the Polygon Portal. Visit [the Polygon Portal documentation page](../../tools/wallets/portal.md) for guides on how to connect to and operate the Polygon Portal website.
+Once the wallet is connected, the next step is to bridge crypto assets from Ethereum to zkEVM. Use the Polygon Portal to deposit and swap tokens between the Polygon zkEVM chain (or the Cardona zkEVM testnet) and other chains. Visit [the Polygon Portal documentation page](../../tools/wallets/portal.md) for guides on how to connect to and operate the Polygon Portal website.
 
 ## Video demo
 
