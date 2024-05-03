@@ -16,16 +16,18 @@ You can send `GET` requests using the following URLs to fetch gas price recommen
 - Amoy testnet: https://gasstation-testnet.polygon.technology/amoy
 - zkEVM Cardona: https://gasstation-testnet.polygon.technology/zkevm/cardona
 
+Use the Amoy testnet below to get gas price recommendations:
+
 #### cURL
 
 ```bash
-curl https://gasstation-testnet.polygon.technology/v2
+curl https://gasstation-testnet.polygon.technology/amoy
 ```
 
 #### JavaScript
 
 ```javascript
-fetch('https://gasstation-testnet.polygon.technology/v2')
+fetch('https://gasstation-testnet.polygon.technology/amoy')
   .then(response => response.json())
   .then(json => console.log(json))
 ```
@@ -34,7 +36,7 @@ fetch('https://gasstation-testnet.polygon.technology/v2')
 
 ```python
 import requests
-requests.get('https://gasstation-testnet.polygon.technology/v2').json()
+requests.get('https://gasstation-testnet.polygon.technology/amoy').json()
 ```
 
 ### Mainnet
