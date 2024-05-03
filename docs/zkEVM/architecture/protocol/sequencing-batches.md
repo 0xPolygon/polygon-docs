@@ -29,8 +29,8 @@ Upon determining the transactions that correctly fill a specific batch through s
 
 A closed batch means one of the following conditions has been fulfilled:
 
-- The maximum number of execution trace rows is reached. 
-- The maximum gas limit is attained. 
+- The execution trace reaches the maximum number of rows. 
+- The gas used attains maximum gas limit. 
 - The allocated time expires.
 
 During batch pre-execution, and for batch closure, the sequencer and the executor update the Merkle tree of the zkEVM with L2 state changes and store them in the prover's hash DB. This is illustrated in the figure below:
