@@ -114,7 +114,7 @@ After deploying on Amoy without any errors, you can deploy the smart contract on
 
 - Copy your wallet address from MetaMask by clicking over your account name
 
-5. Make sure your MetaMask wallet has MATIC tokens to pay the deployment / gas fees.
+5. Make sure your MetaMask wallet has MATIC tokens to pay the deployment's gas fees.
 
 
 ## Remix deployment
