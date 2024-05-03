@@ -28,7 +28,7 @@ There are companion plugins for wallets that help detect, warn, and prevent mali
 ## Third party wallets
 
 !!! info "Third-party"
-      Some third party wallets may not have Polygon networks natively as an option in their blockchain network selection. It is very easy to fix this by using Chainlist, searching for the Polygon network you want to add to your wallet, and click the "Connect Wallet" button. More information and an example of adding a mainnet or testnet Polygon chain using Chainlist MetaMask wallet can be found [here](../wallets/metamask/add-polygon-network.md).
+      Some third party wallets may not have Polygon networks natively as an option in their blockchain network selection. It is easy to fix this by using Chainlist. Search for the Polygon network you want to add to your wallet, and click the **Connect Wallet** button. More information and an example of adding a mainnet or testnet Polygon chain using Chainlist MetaMask wallet can be found [here](../wallets/metamask/add-polygon-network.md).
       
 !!! warning "Third-party wallets"
       **You should do your own due diligence before using third party wallets**. The official Polygon Support **cannot** provide assistance for issues with these wallets or other non-native wallets.
