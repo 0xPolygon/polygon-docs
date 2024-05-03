@@ -102,7 +102,7 @@ After deploying on Amoy without any errors, you can deploy the smart contract on
 2. Click on the network dropdown menu (set to **Ethereum Mainnet** by default) and click on the **Add Network** button. 
 3. Make sure to have your [Alchemy API key](https://docs.alchemy.com/docs/alchemy-quickstart-guide) to hand.
 
-- Open Metamask
+4. Add the info:
 
     - **Network Name**: Polygon Mainnet
     - **New RPC URL**: <https://polygon-mainnet.g.alchemy.com/v2/{your-api-key}>
