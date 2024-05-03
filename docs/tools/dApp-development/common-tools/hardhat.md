@@ -153,7 +153,7 @@ Run this command in root of the project directory:
 npx hardhat run scripts/deploy.js --network polygon_amoy
 ```
 
-The contract will be deployed on Polygon Amoy Testnet, and you can check the deployment status here: <https://amoy.polygonscan.com/>
+The contract will be deployed on Polygon Amoy testnet, and you can check the deployment status here: <https://amoy.polygonscan.com/>
 
 **Congratulations! You have successfully deployed Greeter Smart Contract. Now you can interact with the Smart Contract.**
 
