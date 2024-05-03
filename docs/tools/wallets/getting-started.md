@@ -12,7 +12,7 @@ If you are new to the concepts and terminology of wallets, start at the [wallet 
 
 ## Wallet basics
 
-Comprehensive information and guides on wallets, including what a wallet is, how to use it, types of wallets, and key terminology can be found on the [Ethereum.org's Wallet documentation page](https://ethereum.org/en/wallets/).
+Comprehensive information and guides on wallets, including what a wallet is, how to use it, types of wallets, and key terminology can be found on [Ethereum.org's wallet documentation page](https://ethereum.org/en/wallets/).
 
 ### Important wallet safety information
 
