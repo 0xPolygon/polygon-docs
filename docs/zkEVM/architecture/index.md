@@ -262,7 +262,7 @@ Efficiency is key to network performance. Polygon zkEVM applies several implemen
 
 2. The second strategy is to carry out all computations off-chain while keeping only the necessary data and zk-proofs on-chain.
 
-3. The way in which the bridge smart contract is implemented, such as settling accounts in a UTXO manner, by only using the exit tree roots.
+3. The bridge smart contract's implementation is made efficient by only using Merkle roots of exit trees.
 
 4. Utilization of specialized cryptographic primitives within the zkProver in order to speed up computations and minimize proof sizes, as seen in:
     
