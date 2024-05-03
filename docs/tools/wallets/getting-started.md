@@ -18,7 +18,7 @@ Comprehensive information and guides on wallets, including what a wallet is, how
 
 **You are responsible for keeping your keys safe and secure.** There are many scams and pitfalls in managing your wallet and protecting it from malicious situations where bad actors try to compromise your wallet. Ethereum.org documentation has a [how to stay safe section](https://ethereum.org/en/wallets/) on their wallet documentation page (scroll to the middle of the page) referenced in the screenshot below. It includes some tips and links to more comprehensive articles.
 
-[![ethereum.org How to Stay Safe section](../../img/tools/wallet/getting-started/wallet-safety-ethereum-org.png)](https://ethereum.org/en/wallets/)
+[![Ethereum.org: how to stay safe](../../img/tools/wallet/getting-started/wallet-safety-ethereum-org.png)](https://ethereum.org/en/wallets/)
 
 There are companion plugins for wallets that help detect, warn, and prevent malicious wallet scams and transactions. Visit the [Wallet Security Tools on the Alchemy website](https://www.alchemy.com/best/wallet-security-tools). Look for the "Wallet Security Tools" tag for tools you can use to protect your wallet.
 
