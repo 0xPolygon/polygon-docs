@@ -39,7 +39,7 @@ There are companion plugins for wallets that help detect, warn, and prevent mali
 - Security: open source, personal ownership/custody of your wallet.
 - Language support: filter by your preferred language.
 
-**Be sure to select "Layer 2" on the Filter menu on the left side of the page to list wallets that are compatible with Polygon networks.**
+Be sure to select **Layer 2** on the Filter menu on the left side of the page to list wallets that are compatible with Polygon networks.
 
 <center>
 [![ethereum.org Wallet List](../../img/tools/wallet/getting-started/ethereum-org-wallets.gif)](https://ethereum.org/en/wallets/find-wallet/)
