@@ -55,7 +55,7 @@ Make sure that you have followed the list of [prerequisites](#prerequisites) abo
 
 1. Click on **Run** (at the top) to install all relevant packages and start up the contract deployment UI.
 
-2. Connect your MetaMask wallet to the web interface and switch to the [Amoy Testnet](../../wallets/metamask/add-polygon-network.md).
+2. Connect your MetaMask wallet to the web interface and switch to the [Amoy testnet](../../wallets/metamask/add-polygon-network.md).
 
     ![img](../../../img/tools/replit/connect.png)
 
