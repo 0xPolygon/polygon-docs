@@ -58,9 +58,6 @@ This process is depicted in the figure below.
 
 In order to sequence a batch, the sequencer calls the $\texttt{sequenceBatches()}$ function in the L1 smart contract which can sequence one or multiple batches at once.
 
-
-This step provides L2 data availability in the L1 execution layer, because we are registering in L1 all the bytes of the L2 transactions.
-
 The calldata for the L1 $\texttt{sequenceBatches()}$​ function needs to include the following information:
 
 - The L2 transactions data, which is an array containing data for each batch. It includes all transactions within the batch along with a timestamp indicating its closure time. 
