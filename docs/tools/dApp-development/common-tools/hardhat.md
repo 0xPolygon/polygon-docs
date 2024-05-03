@@ -121,7 +121,7 @@ module.exports = {
 
 ### Compiling the contract
 
-To compile the contract, you first need to install Hardhat Toolbox:
+To compile the contract, you first need to install Hardhat:
 
 ```bash
 npm install --save-dev @nomicfoundation/hardhat-toolbox
