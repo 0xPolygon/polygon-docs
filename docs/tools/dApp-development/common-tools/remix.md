@@ -90,7 +90,7 @@ To deploy to the Amoy testnet, we have to connect to the web3 with a service lik
 
 - Copy your wallet address from MetaMask by clicking over your account name
 
-- Head over to [Faucet](https://faucet.polygon.technology/) and request test MATIC - you will need this to pay for gas on the Polygon network. Select **Amoy** as the network and **MATIC Token** as the token in the faucet. You can also use this free [Amoy faucet](https://www.alchemy.com/faucets/polygon-amoy)
+- Head over to [the faucet](https://faucet.polygon.technology/) and request test MATIC to pay for gas on the Polygon network. Select **Amoy** as the network and **MATIC Token** as the token in the faucet. You can also use the [Alchemy Amoy faucet](https://www.alchemy.com/faucets/polygon-amoy).
 
 - Finally, to deploy to Amoy, refer to the instructions in the "Remix deployment" section below
 
