@@ -28,7 +28,7 @@ The skeletal architecture of Polygon zkEVM is shown below:
 
 The earlier version, Polygon Hermez 1.0, was based on the Proof of Donation (PoD) consensus mechanism. 
 
-PoD was basically a decentralized auction conducted automatically, with participants (coordinators) bidding a certain number of tokens in order to be chosen to create the next batch.
+PoD was basically a decentralized auction conducted automatically, with participants (coordinators) bidding a certain number of tokens in order to be selected for creating batches.
 
 It was based on a decentralized auction model to get the right to produce batches in a specific timeframe.
 
