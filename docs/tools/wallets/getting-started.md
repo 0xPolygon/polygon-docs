@@ -6,6 +6,7 @@ This page serves as a resource for using Polygon compatible wallets which have k
 
 If you are new to the concepts and terminology of wallets, start at the [Wallet Basics](#wallet-basics) section of this page. You can browse through the many [third-party wallets](#third-party-wallets) that support Polygon chains, or if you already have Polygon networks in your wallet of choice, check out Polygon's native asset management solution [Polygon Portal](#polygon-portal).
 
+
 !!! info "Centralized Exchanges (CEXs)"
       For a list of CEXs that support Polygon, visit a third-party tracking website such as [**CoinGecko**](https://www.coingecko.com/).
 
