@@ -51,7 +51,7 @@ The [Polygon Portal](https://portal.polygon.technology) is a comprehensive solut
 
 The Portal can be used to perform a variety of tasks, such as:
 
-- Bridge your assets via the [Polygon Native Bridge](https://support.polygon.technology/support/solutions/articles/82000905011-how-does-bridging-work-) and a variety of third-party bridges
+- Bridge your assets via the [Polygon native bridge](https://support.polygon.technology/support/solutions/articles/82000905011-how-does-bridging-work-) and a variety of third-party bridges.
 - View your assets and token lists
 - Use the Refuel Gas feature to purchase MATIC or ETH for gas on the destination chain you are sending assets to
 - Swap assets easily with third-party DEXs
