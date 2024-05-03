@@ -25,7 +25,7 @@ A fast executor is used for batch pre-execution. This is a _single-computation_ 
 
 The sequencer communicates with the executor for swift batch pre-execution.
 
-Upon determining the transactions that correctly fill a specific batch through successful batch pre-execution, the sequencer records the batch in the node’s StateDB as a _closed batch_. 
+Once the executor successfully completes batch pre-execution, the sequencer records the batch in the node’s StateDB as a _closed batch_.
 
 A closed batch means one of the following conditions has been fulfilled:
 
