@@ -119,6 +119,7 @@ nav:
             - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
             - Batch sequencing: zkEVM/architecture/protocol/transaction-life-cycle/batch-sequencing.md
             - Batch aggregation: zkEVM/architecture/protocol/transaction-life-cycle/batch-aggregation.md
+          - Sequencing batches: zkEVM/architecture/protocol/sequencing-batches.md
           - Incentive mechanism: zkEVM/architecture/protocol/incentive-mechanism.md
           - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
           - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
