@@ -66,7 +66,7 @@ The calldata for the L1 $\texttt{sequenceBatches()}$​ function needs to includ
 
 The L2 coinbase address serves as a critical destination for rewards earned by the sequencer in the Layer 2 environment.
 
-The sequencer undertakes the responsibility of paying for data availability in Layer 1 using L1 Ether.
+The sequencer is responsible for paying for data availability in layer 1 using L1 Ether.
 
 When the sequencer successfully closes a batch and executes transactions, they receive a reward for their services. This reward, denominated in L2 Ether, is routed to the L2 coinbase address.
 
