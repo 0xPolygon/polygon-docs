@@ -15,7 +15,7 @@ npm i @maticnetwork/maticjs
 ```
 ## Ethereum library
 
-The Ethereum library allows us to use any favorite ether library. It is injected into maticjs using plugins.
+The Ethereum library allows us to use any ether library. It is injected into Matic.js using plugins.
 
 matic.js supports two popular library -
 
