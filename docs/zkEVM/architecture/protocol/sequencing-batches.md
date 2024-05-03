@@ -68,7 +68,7 @@ The L2 coinbase address serves as a critical destination for rewards earned by t
 
 The sequencer is responsible for paying for data availability in layer 1 using L1 Ether.
 
-When the sequencer successfully closes a batch and executes transactions, they receive a reward for their services. This reward, denominated in L2 Ether, is routed to the L2 coinbase address.
+The sequencer receives a reward for successfully closing a batch and executing transactions. This reward, denominated in L2 Ether, is routed to the L2 coinbase address.
 
 The L2 coinbase address is situated within layer 2 because users compensate the sequencer with L2 Ether. 
 
