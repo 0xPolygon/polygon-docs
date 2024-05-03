@@ -4,7 +4,7 @@
 
 This page serves as a resource for using Polygon compatible wallets which have key management and interfaces that allow users to perform chain actions and sign transactions, such as sending assets.
 
-If you are new to the concepts and terminology of wallets, start at the [Wallet Basics](#wallet-basics) section of this page. You can browse through the many [third-party wallets](#third-party-wallets) that support Polygon chains, or if you already have Polygon networks in your wallet of choice, check out Polygon's native asset management solution [Polygon Portal](#polygon-portal).
+If you are new to the concepts and terminology of wallets, start at the [wallet basics](#wallet-basics) section of this page. You can browse through the many [third-party wallets](#third-party-wallets) that support Polygon chains, or if you already have Polygon networks in your wallet of choice, check out Polygon's native asset management solution [Polygon Portal](#polygon-portal).
 
 
 !!! info "Centralized Exchanges (CEXs)"
