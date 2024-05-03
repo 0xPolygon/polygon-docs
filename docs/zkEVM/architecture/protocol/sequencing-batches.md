@@ -82,7 +82,7 @@ There is a direct and fixed one-to-one correspondence between L1 ETH and L2 ETH,
 
 When the smart contract receives a transaction for sequencing into batches, it creates a cryptographic pointer for each batch.
 
-These pointers play a crucial role in identifying a batch uniquely, specifying its position, and encapsulating its data.
+These pointers identify a batch and specify its position.
 
 Subsequently, provers utilize these pointers as references during the proving process, allowing them to precisely identify the batch being proved and retrieve its associated data.
 
