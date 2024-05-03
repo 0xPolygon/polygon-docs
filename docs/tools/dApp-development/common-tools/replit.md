@@ -8,7 +8,7 @@ This article guides you to build and deploy a solidity smart contract on Polygon
 
 - Create a Replit account.
 - Create a Repl environment.
-- Deploy a sample project on the Polygon Mumbai network.
+- Deploy a sample project on the Polygon Amoy network.
 - Verify the contract.
 - Publish your project to a personal Replit profile.
 
@@ -20,7 +20,7 @@ This article guides you to build and deploy a solidity smart contract on Polygon
 
 You do not need any local environment setup to deploy your solidity smart contract on Polygon using Replit.
 
-You need a browser-based Web3 wallet to interact with the Polygon Mumbai Testnet and deployed contracts. If you are already using MetaMask, it is recommended to create a new account for testing with Replit. You can do this from the account menu, which appears when you click on the account avatar in the top right corner of MetaMask interface.
+You need a browser-based Web3 wallet to interact with the Polygon Amoy Testnet and deployed contracts. If you are already using MetaMask, it is recommended to create a new account for testing with Replit. You can do this from the account menu, which appears when you click on the account avatar in the top right corner of MetaMask interface.
 
 You must set up all of the following prerequisites to be able to deploy your solidity smart contract on Polygon:
 
@@ -55,7 +55,7 @@ Make sure that you have followed the list of [prerequisites](#prerequisites) abo
 
 1. Click on **Run** (at the top) to install all relevant packages and start up the contract deployment UI.
 
-2. Connect your MetaMask wallet to the web interface and switch to the [Mumbai Testnet](../../wallets/metamask/add-polygon-network.md).
+2. Connect your MetaMask wallet to the web interface and switch to the [Amoy Testnet](../../wallets/metamask/add-polygon-network.md).
 
     ![img](../../../img/tools/replit/connect.png)
 
@@ -69,7 +69,7 @@ Make sure that you have followed the list of [prerequisites](#prerequisites) abo
 
 ## Verifying and testing your contract
 
-When the contract is deployed, [navigate to Polyganscan](https://mumbai.polygonscan.com/) to search for your account, view your deployed contract, and copy your account address.
+When the contract is deployed, [navigate to Polygonscan](https://amoy.polygonscan.com/) to search for your account, view your deployed contract, and copy your account address.
 
 Once your contract has been deployed, it will show up as expandable boxes below the dropdown box. Expand it and take a look at all the different functions available. You can now interact with your contract using the provided user interface or from a sharable URL shown on the interface.
 
