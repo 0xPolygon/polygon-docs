@@ -20,7 +20,7 @@ Comprehensive information and guides on wallets, including what a wallet is, how
 
 [![Ethereum.org: how to stay safe](../../img/tools/wallet/getting-started/wallet-safety-ethereum-org.png)](https://ethereum.org/en/wallets/)
 
-There are companion plugins for wallets that help detect, warn, and prevent malicious wallet scams and transactions. Visit the [Wallet Security Tools on the Alchemy website](https://www.alchemy.com/best/wallet-security-tools). Look for the "Wallet Security Tools" tag for tools you can use to protect your wallet.
+There are companion plugins for wallets that help detect, warn, and prevent malicious wallet scams and transactions. Visit the [wallet security tools section on the Alchemy website](https://www.alchemy.com/best/wallet-security-tools). Look for the **Wallet Security Tools** tag for tools you can use to protect your wallet.
 
 !!! warning "Wallet safety"
       The official Polygon Support **cannot** provide assistance for stolen wallet assets and third-party wallet security plugins/software. **Do your own research and be cautious**.
