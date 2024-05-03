@@ -35,9 +35,9 @@ There are companion plugins for wallets that help detect, warn, and prevent mali
 
 [Ethereum.org's wallet documentation page](https://ethereum.org/en/wallets/) has a comprehensive page of different wallets you can select from. There are many options to filter the list to find a wallet that is right for you including:
 
-- Device type: browser plugin, desktop, mobile, or hardware wallet
-- Security: open source, personal ownership/custody of your wallet
-- Language support: filter by your preferred language
+- Device type: browser plugin, desktop, mobile, or hardware wallet.
+- Security: open source, personal ownership/custody of your wallet.
+- Language support: filter by your preferred language.
 
 **Be sure to select "Layer 2" on the Filter menu on the left side of the page to list wallets that are compatible with Polygon networks.**
 
