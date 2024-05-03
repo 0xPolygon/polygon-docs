@@ -4,21 +4,29 @@ comments: true
 
 When setting up a new sentry, validator, or full node server, it is recommended that you use snapshots for faster syncing without having to sync over the network. Using snapshots will save you several days for both Heimdall and Bor. 
 
+## Community snapshots
+
+With the [deprecation of Mumbai testnet](https://forum.polygon.technology/t/pos-tooling-after-mumbai-deprecation-no-action-required/13740), we're shifting to a community-driven model for snapshots where active members like Vault Staking, Stakepool, StakeCraft, and Girnaar Nodes will now provide snapshots. See [All4nodes.io](https://all4nodes.io/Polygon), an aggregator for Polygon community snapshots, for future community snapshots on the Sepolia-anchored Amoy testnet.
+
+!!! tip "Older snapshots"
+
+    If you're looking for older snapshots, please visit [Polygon Chains Snapshots](https://snapshot.polygon.technology/).
+
 !!! note
 
     We no longer support Bor archive snapshots due to unsustainable data growth.
 
-!!!tip
-    
-    For the latest snapshot, please visit [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
+## Downloading and using client snapshots
 
+!!! warning "Mumbai testnet now deprecated"
 
-## Client snapshots
+    Mumbai testnet is no longer supported. [Existing snapshots](https://snapshot.polygon.technology/), however, will still be available for the users who rely on them. 
 
 To begin, ensure that your node environment meets the **prerequisites** outlined [here](../how-to/full-node/full-node-binaries.md). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. In our example, we will be using an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
 To transfer the correct chain data to your disk, follow these steps:
 
 - All one has to do is specify the network ("mainnet" or "amoy") and client type ("heimdall" or "bor" or "erigon") of your desired snapshot and run the following command:
+
 
 ```bash
 curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --network {{ network }} --client {{ client }} --extract-dir {{ extract_dir }} --validate-checksum {{ true / false }}
@@ -30,7 +38,9 @@ For example:
 curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --network mainnet --client heimdall --extract-dir data --validate-checksum true
 ```
 
-> This bash script automatically handles all download and extraction phases, as well as optimizing disk space by deleting already extracted files along the way.
+!!! tip
+
+    This bash script automatically handles all download and extraction phases, as well as optimizing disk space by deleting already extracted files along the way.
 
 - `--extract-dir` and `--validate-checksum` flags are optional.
 - Consider using a Screen session to prevent accidental interruptions during the chaindata download and extraction process.
@@ -191,12 +201,10 @@ curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --
 Once the extraction is complete, ensure that you update the datadir configuration of your client to point to the path where the extracted data is located. This ensures that the systemd services can correctly register the snapshot data when the client starts. 
 If you wish to preserve the default client configuration settings, you can use symbolic links (symlinks).
 
-For example, let's say you have mounted your block device at `~/snapshots` and have downloaded and extracted the chaindata
-for Heimdall into the directory `heimdall_extract`, and for Bor into the directory `bor_extract`. To ensure proper registration
-of the extracted data when starting the Heimdall or Bor systemd services, you can use the following sample commands:
+For example, let's say you have mounted your block device at `~/snapshots` and have downloaded and extracted the chaindata for Heimdall into the directory `heimdall_extract`, and for Bor into the directory `bor_extract`. To ensure proper registration of the extracted data when starting the Heimdall or Bor systemd services, you can use the following sample commands:
 
 ```bash
-# remove any existing datadirs for heimdall and bor
+# remove any existing datadirs for Heimdall and Bor
 rm -rf /var/lib/heimdall/data
 rm -rf /var/lib/bor/chaindata
 
@@ -208,7 +216,7 @@ sudo ln -s ~/snapshots/chaindata /var/lib/bor
 
 # bring up clients with all snapshot data properly registered
 sudo service heimdalld start
-# wait for heimdall to fully sync then start bor
+# wait for Heimdall to fully sync then start Bor
 sudo service bor start
 ```
 
@@ -218,27 +226,27 @@ sudo service bor start
 
 | Metric | Calculation Breakdown | Value |
 | ------ | --------------------- | ----------- |
-| approx. compressed total | 250 GB (bor) + 35 GB (heimdall) | 285 GB |
-| approx. data growth daily | 10 GB (bor) + .5 GB (heimdall) | 10.5 GB |
-| approx. total extracted size | 350 GB (bor) + 50 GB (heimdall) | 400 GB |
+| approx. compressed total | 250 GB (Bor) + 35 GB (Heimdall) | 285 GB |
+| approx. data growth daily | 10 GB (Bor) + .5 GB (Heimdall) | 10.5 GB |
+| approx. total extracted size | 350 GB (Bor) + 50 GB (Heimdall) | 400 GB |
 | suggested disk size (2.5x buffer) | 400 GB * 2.5 (natural chain growth) | 1 TB | 
 
 **Polygon mainnet**
 
 | Metric | Calculation Breakdown | Value |
 | ------ | --------------------- | ----------- |
-| approx. compressed total | 1500 GB (bor) + 225 GB (heimdall) | 1725 GB |
-| approx. data growth daily | 100 GB (bor) + 5 GB (heimdall) | 105 GB |
-| approx. total extracted size | 2.1 TB (bor) + 300 GB (heimdall) | 2.4 TB |
+| approx. compressed total | 1500 GB (Bor) + 225 GB (Heimdall) | 1725 GB |
+| approx. data growth daily | 100 GB (Bor) + 5 GB (Heimdall) | 105 GB |
+| approx. total extracted size | 2.1 TB (Bor) + 300 GB (Heimdall) | 2.4 TB |
 | suggested disk size (2.5x buffer) | 2.4 TB * 2.5 (natural chain growth) | 6 TB |
 
 **Polygon Amoy Erigon Archive**
 
 | Metric | Calculation Breakdown | Value |
 | ------ | --------------------- | ----------- |
-| approx. compressed total | 210 GB (erigon) + 35 GB (heimdall) | 245 GB |
-| approx. data growth daily | 4.5 GB (erigon) + .5 GB (heimdall) | 5 GB |
-| approx. total extracted size | 875 GB (erigon) + 50 GB (heimdall) | 925 GB |
+| approx. compressed total | 210 GB (Erigon) + 35 GB (Heimdall) | 245 GB |
+| approx. data growth daily | 4.5 GB (Erigon) + .5 GB (Heimdall) | 5 GB |
+| approx. total extracted size | 875 GB (Erigon) + 50 GB (Heimdall) | 925 GB |
 | suggested disk size (2.5x buffer) | 925 GB * 2.5 (natural chain growth) | 2.5 TB | 
 
 !!! note
@@ -247,7 +255,7 @@ sudo service bor start
 
 **Polygon Mainnet Erigon Archive**
 
-Currently under maintenance. ETA Aug 2023 for Erigon bor-mainnet incremental snapshots.
+Currently under maintenance. ETA Aug 2023 for Erigon Bor-mainnet incremental snapshots.
 
 ## Recommended disk type and IOPS guidance
 
