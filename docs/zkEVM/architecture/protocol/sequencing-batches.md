@@ -80,10 +80,6 @@ There is a direct and fixed one-to-one correspondence between L1 ETH and L2 ETH,
 
 ## Accumulated input hash pointers
 
-Let's briefly explain how the sequencing operation and the proving process link up.
-
-In particularly, we look at how the prover can match each sequenced batch with its data.
-
 When the smart contract receives a transaction for sequencing into batches, it creates a cryptographic pointer for each batch.
 
 These pointers play a crucial role in identifying a batch uniquely, specifying its position, and encapsulating its data.
