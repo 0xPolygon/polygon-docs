@@ -12,7 +12,7 @@ Before we get into the details, let us understand why we need it and the problem
 
 ### 1. What is an EVM blockchain data indexer?
 
-An EVM ([Ethereum Virtual Machine](https://ethereum.org/en/developers/docs/evm/)) blockchain data indexer is a specialised search engine for EVM-based blockchains like Ethereum and Polygon protocols. It sorts and organises blockchain data, making it faster and easier for developers to query and retrieve specific information for their decentralised applications (dApps).
+An EVM [Ethereum Virtual Machine](https://ethereum.org/en/developers/docs/evm/) blockchain data indexer is a specialised search engine for EVM-based blockchains like Ethereum and Polygon protocols. It sorts and organises blockchain data, making it faster and easier for developers to query and retrieve specific information for their decentralised applications (dApps).
 
 ### 2. Why do dApps need a blockchain data indexer?
 
