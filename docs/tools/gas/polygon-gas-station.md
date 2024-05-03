@@ -18,7 +18,6 @@ You can send `GET` requests using the following URLs to fetch gas price recommen
 
 For fetching gas price recommendations on Amoy Testnet, below is the guide to do so
 
-
 #### cURL
 
 ```bash
