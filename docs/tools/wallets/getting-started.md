@@ -2,7 +2,7 @@
 
       Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
-This page serves as a resource for using Polygon compatible wallets. Wallets that support Polygon allow for key management and interfaces that allow users to perform chain actions and sign transactions, such as sending assets.
+This page serves as a resource for using Polygon compatible wallets which have key management and interfaces that allow users to perform chain actions and sign transactions, such as sending assets.
 
 If you are new to the concepts and terminology of wallets, start at the [Wallet Basics](#wallet-basics) section of this page. You can browse through the many [third-party wallets](#third-party-wallets) that support Polygon chains, or if you already have Polygon networks in your wallet of choice, check out Polygon's native asset management solution [Polygon Portal](#polygon-portal).
 
