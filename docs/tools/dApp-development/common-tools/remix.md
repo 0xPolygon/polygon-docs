@@ -132,7 +132,7 @@ In both Testnet and Mainnet, you do the below to deploy your smart contract usin
   ![RemixIDE_Step1](../../../img/tools/remix/confirm_tx.png)
 <br/>
 
-Congratulations! You have successfully deployed the HelloWorld smart contract to the Polygon Amoy Testnet. You can start interacting with your smart contract. Check the deployment status at <https://amoy.polygonscan.com/>.
+Congratulations! You have successfully deployed the HelloWorld smart contract to the Polygon Amoy testnet. You can now start interacting with your smart contract. Check the deployment status at <https://amoy.polygonscan.com/>.
 
 ## Verifying your contract
 
