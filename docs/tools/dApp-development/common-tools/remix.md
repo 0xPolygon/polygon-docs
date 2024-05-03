@@ -79,9 +79,9 @@ To deploy to the Amoy testnet, we have to connect to the web3 with a service lik
 
 - Open Metamask. Click on the network dropdown menu (set to **Ethereum Mainnet** by default) and click on the **Add Network** button. MaticVigil provides a public endpoint and is rate-limited. Therefore, most developers use a free blockchain provider like [Alchemy](https://docs.alchemy.com/docs/how-to-add-polygon-to-metamask) or [Quicknode](https://www.quicknode.com/guides/smart-contract-development/how-to-deploy-a-smart-contract-on-maticpolygon#setting-up-metamask-with-polygon-node) to have a dedicated RPC endpoint with faster throughput AKA computing units per second (CUPs). You need to create a free account to get your private API key from one of these providers to put into the dedicated RPC endpoint URL below.
 
-    - **Network:** Polygon Amoy Testnet
+    - **Network:** Polygon Amoy testnet
     - **RPC URL (public endpoint):** <https://rpc-amoy.polygon.technology/>.
-    - **RPC URL (dedicated endpoint):** <https://polygon-amoy.g.alchemy.com/v2/{your-api-key}>. You'll need a [free API key](https://docs.alchemy.com)
+    - **RPC URL (dedicated endpoint):** <https://polygon-amoy.g.alchemy.com/v2/{your-api-key}>. You need a [free API key](https://docs.alchemy.com)
     - **Chain ID:** 80002
     - **Currency Symbol:** MATIC
     - **Block Explorer URL:** <https://amoy.polygonscan.com/>
