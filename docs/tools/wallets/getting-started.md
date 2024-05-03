@@ -33,7 +33,7 @@ There are companion plugins for wallets that help detect, warn, and prevent mali
 !!! warning "Third-party wallets"
       Do your own due diligence before using third party wallets. The official Polygon Support _cannot_ provide assistance for issues with these wallets or other non-native wallets.
 
-[Ethereum.org's Wallet documentation page](https://ethereum.org/en/wallets/) has a comprehensive page of different wallets you can select from. There are many options to filter the list to find a wallet that is right for you including:
+[Ethereum.org's wallet documentation page](https://ethereum.org/en/wallets/) has a comprehensive page of different wallets you can select from. There are many options to filter the list to find a wallet that is right for you including:
 
 - Device type: browser plugin, desktop, mobile, or hardware wallet
 - Security: open source, personal ownership/custody of your wallet
