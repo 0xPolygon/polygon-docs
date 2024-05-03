@@ -20,7 +20,7 @@ The Amoy testnet serves as a replica of the Polygon mainnet and is primarily use
 | RPC endpoint     | [https://rpc-amoy.polygon.technology/](https://rpc-amoy.polygon.technology/)                       |
 | Node endpoint    | [wss://rpc-amoy.polygon.technology/](wss://rpc-amoy.polygon.technology/)                           |
 | Heimdall API     | [https://heimdall-api-amoy.polygon.technology](https://heimdall-api-amoy.polygon.technology)       |
-| Block Explorer   | [https://www.oklink.com/amoy](https://www.oklink.com/amoy)                                         |
+| Block Explorer   | [https://amoy.polygonscan.com/](https://amoy.polygonscan.com/)                                         |
 
 !!!note
     Additional information
