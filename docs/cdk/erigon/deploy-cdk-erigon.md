@@ -56,7 +56,7 @@ In order to enable the `zkevm_ namespace`, add `zkevm` to the `http.api` flag (s
 
 ### Deprecated
 
-`zkevm_getBroadcastURI` - removed by zkEVM
+`zkevm_getBroadcastURI` - removed by zkEVM.
 
 ## Limitations/warnings
 
