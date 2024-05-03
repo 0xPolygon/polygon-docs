@@ -84,7 +84,7 @@ To deploy to the Amoy testnet, we have to connect to the web3 with a service lik
     - **RPC URL (dedicated endpoint):** <https://polygon-amoy.g.alchemy.com/v2/{your-api-key}>. You need a [free API key](https://docs.alchemy.com)
     - **Chain ID:** 80002
     - **Currency Symbol:** MATIC
-    - **Block Explorer URL:** <https://amoy.polygonscan.com/>
+    - **Block explorer URL:** <https://amoy.polygonscan.com/>
 
 - Go ahead and click **Save**
 
