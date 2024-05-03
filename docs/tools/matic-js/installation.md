@@ -33,6 +33,6 @@ npm install @maticnetwork/maticjs-web3
 ```sh
 npm install @maticnetwork/maticjs-ethers
 ```
-### System Requirements
+### System requirements
 
 Ensure that your [Node.js](https://nodejs.org/en/)version is up to date. We recommend using Node.js version v18.19.1 for optimal compatibility.
