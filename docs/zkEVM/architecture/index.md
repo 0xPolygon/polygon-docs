@@ -250,7 +250,7 @@ Data availability is most crucial for decentralization, where every user has suf
 
 The aim is to ensure that there is no censorship and that no one party can control the network. For this reason, mechanisms such as [force batches](protocol/malfunction-resistance/sequencer-resistance.md) and [force verification](protocol/malfunction-resistance/aggregator-resistance.md) have been activated.
 
-Polygon zkEVM was designed with security in mind. And as an L2 solution, most of the security is inherited from Ethereum.
+Polygon zkEVM was designed with security in mind. As an L2 solution, it inherits its security from Ethereum.
 
 Smart contracts are deployed to ensure that everyone who executes state changes does so appropriately, creates a proof that attests to the validity of a state change, and makes validity proofs available on-chain for verification.
 
