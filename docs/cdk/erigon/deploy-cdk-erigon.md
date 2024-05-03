@@ -1,56 +1,81 @@
-Prereqs
-In order to use the optimal vectorized poseidon hashing for the Sparse Merkle Tree, on x86 the following packages are required (for Apple silicon it will fall back to the iden3 library and as such these dependencies are not required in that case.
+## Prerequisites
 
-Please install:
+1. The installation requires [Go 1.19](https://go.dev/doc/manage-install).
 
-Linux: libgtest-dev libomp-dev libgmp-dev
-MacOS: brew install libomp brew install gmp
-Using the Makefile command: make build-libs will install these for the relevant architecture.
+2. Install the relevant libraries for your architecture by running:
 
-Due to dependency requirements Go 1.19 is required to build.
+    ```sh
+    make build-libs
+    ```
 
-Sequencer (WIP)
-Enable Sequencer: CDK_ERIGON_SEQUENCER=1 ./build/bin/cdk-erigon <flags>
+!!! tip "Hardware specifics"
+    - On x86, the following packages are used by the optimal, vectorized, Poseidon hashing for the sparse Merkle tree:
 
-Special mode - L1 recovery
+        - Linux: `libgtest-dev libomp-dev libgmp-dev`
+        - MacOS: `libomp brew install gmp`
+
+    - For Apple silicon, the `iden3` library is used instead.
+
+## Set up sequencer (WIP)
+
+Run the following to enable the sequencer:
+
+```sh
+CDK_ERIGON_SEQUENCER=1 ./build/bin/cdk-erigon <flags>
+```
+
+### Special mode - L1 recovery
+
 The sequencer supports a special recovery mode which allows it to continue the chain using data from the L1. To enable this add the flag zkevm.l1-sync-start-block: [first l1 block with sequencer data]. It is important to find the first block on the L1 from the sequencer contract that contains the sequenceBatches event. When the node starts up it will pull of the L1 data into the cdk-erigon database and use this during execution rather than waiting for transactions from the txpool, effectively rebuilding the chain from the L1 data. This can be used in tandem with unwinding the chain, or using the zkevm.sync-limit flag to limit the chain to a certain block height before starting the L1 recovery (useful if you have an RPC node available to speed up the process).
 
 Important Note: If using the zkevm.sync-limit flag you need to go to the boundary of a batch+1 block so if batch 41 ends at block 99 then set the sync limit flag to 100.
 
-zkEVM-specific API Support
-In order to enable the zkevm_ namespace, please add 'zkevm' to the http.api flag (see the example config below).
+## Enable zkEVM APIs
 
-Supported
-zkevm_batchNumber
-zkevm_batchNumberByBlockNumber
-zkevm_consolidatedBlockNumber
-zkevm_isBlockConsolidated
-zkevm_verifiedBatchNumber
-zkevm_isBlockVirtualized
-zkevm_virtualBatchNumber
-zkevm_getFullBlockByHash
-zkevm_getFullBlockByNumber
-Supported (remote)
-zkevm_getBatchByNumber
-Not yet supported
-zkevm_getNativeBlockHashesInRange
-Deprecated
-zkevm_getBroadcastURI - it was removed by zkEvm
-Limitations/Warnings
+In order to enable the `zkevm_ namespace`, add `zkevm` to the `http.api` flag (see the example config below??).
+
+### Supported functions
+
+`zkevm_batchNumber`
+`zkevm_batchNumberByBlockNumber`
+`zkevm_consolidatedBlockNumber`
+`zkevm_isBlockConsolidated`
+`zkevm_verifiedBatchNumber`
+`zkevm_isBlockVirtualized`
+`zkevm_virtualBatchNumber`
+`zkevm_getFullBlockByHash`
+`zkevm_getFullBlockByNumber`
+
+### Supported (remote)
+
+`zkevm_getBatchByNumber`
+
+### Not yet supported
+
+`zkevm_getNativeBlockHashesInRange`
+
+### Deprecated
+
+`zkevm_getBroadcastURI` - removed by zkEVM
+
+## Limitations/warnings
+
 The golden poseidon hashing will be much faster on x86, so developers on Mac may experience slowness on Apple silicone
 Falling behind the network significantly will cause a SMT rebuild - which will take some time for longer chains
-Configuration Files
+
+### Configuration files
+
 Config files are the easiest way to configure cdk-erigon, there are examples in the repository for each network e.g. hermezconfig-mainnet.yaml.example.
 
 Depending on the RPC provider you are using, you may wish to alter zkevm.rpc-ratelimit.
 
-Running CDK-Erigon
+## Running CDK-Erigon
 Build using make cdk-erigon
 Set up your config file (copy one of the examples found in the repository root directory, and edit as required)
 run ./build/bin/cdk-erigon --config="./hermezconfig-{network}.yaml" (complete the name of your config file as required)
 NB: --externalcl flag is removed in upstream erigon so beware of re-using commands/config
 
-Run modes
+### Run modes
 cdk-erigon can be run as an RPC node which will use the data stream to fetch new block/batch information and track a remote sequencer (the default behaviour). It can also run as a sequencer. To enable the sequencer, set the CDK_ERIGON_SEQUENCER environment variable to 1 and start the node. cdk-erigon supports migrating a node from being an RPC node to a sequencer and vice versa. To do this, stop the node, set the CDK_ERIGON_SEQUENCER environment variable to the desired value and restart the node. Please ensure that you do include the sequencer specific flags found below when running as a sequencer. You can include these flags when running as an RPC to keep a consistent configuration between the two run modes.
 
 Docker (DockerHub)
