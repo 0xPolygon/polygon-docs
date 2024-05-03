@@ -31,7 +31,7 @@ There are companion plugins for wallets that help detect, warn, and prevent mali
       Some third party wallets may not have Polygon networks natively as an option in their blockchain network selection. It is easy to fix this by using Chainlist. Search for the Polygon network you want to add to your wallet, and click the **Connect Wallet** button. More information and an example of adding a mainnet or testnet Polygon chain using Chainlist MetaMask wallet can be found [here](../wallets/metamask/add-polygon-network.md).
       
 !!! warning "Third-party wallets"
-      **You should do your own due diligence before using third party wallets**. The official Polygon Support **cannot** provide assistance for issues with these wallets or other non-native wallets.
+      Do your own due diligence before using third party wallets. The official Polygon Support _cannot_ provide assistance for issues with these wallets or other non-native wallets.
 
 [Ethereum.org's Wallet documentation page](https://ethereum.org/en/wallets/) has a comprehensive page of different wallets you can select from. There are many options to filter the list to find a wallet that is right for you including:
 
