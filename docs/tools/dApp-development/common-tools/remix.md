@@ -11,7 +11,7 @@ This tutorial guides you to implement a Hello World dApp which echoes a message 
 - Create a file on Remix.
 - Upload a pre-built smart contract into the IDE.
 - Compile the smart contract.
-- Connect the application to the Polygon Amoy Testnet via Metamask.
+- Connect the application to the Polygon Amoy testnet via MetaMask.
 - Deploy the smart contract.
 - Verify the smart contract.
 
