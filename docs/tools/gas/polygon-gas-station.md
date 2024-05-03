@@ -16,7 +16,7 @@ You can send `GET` requests using the following URLs to fetch gas price recommen
 - Amoy testnet: https://gasstation-testnet.polygon.technology/amoy
 - zkEVM Cardona: https://gasstation-testnet.polygon.technology/zkevm/cardona
 
-For fetching gas price recommendations on Amoy Testnet, below is the guide to do so
+Use the Amoy testnet below to get gas price recommendations:
 
 #### cURL
 
