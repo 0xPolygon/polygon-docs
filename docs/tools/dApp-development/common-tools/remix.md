@@ -96,7 +96,7 @@ To deploy to the Amoy testnet, we have to connect to the web3 with a service lik
 
 ## Deploying to Polygon mainnet
 
-After you can deploy on the Amoy Testnet without any errors (i.e., the purpose of the Testnet), let's deploy the Smart Contract on the Polygon Mainnet. Remember this will cost real $ in the form of MATIC tokens.
+After deploying on Amoy without any errors, you can deploy the smart contract on the Polygon mainnet. Remember this costs real $ in the form of MATIC tokens.
 
 Similar to the steps above when you deployed to Amoy, you open your MetaMask wallet. Click on the network dropdown menu (set to **Ethereum Mainnet** by default) and click on the **Add Network** button. Make sure to have your [Alchemy API key](https://docs.alchemy.com/docs/alchemy-quickstart-guide).
 
