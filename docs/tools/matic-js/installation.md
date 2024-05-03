@@ -2,7 +2,7 @@
 
 ## Matic.JS
 
-[Matic.js](https://github.com/maticnetwork/matic.js) a JavaScript library build to facilitate interaction with the Polygon Network. It provides developers with a simplified operations on the Polygon Network, such as depositing, transferring, and withdrawing assets allowing developers to focus on building (DApps) without the need for in-depth knowledge of blockchain. 
+[Matic.js](https://github.com/maticnetwork/matic.js) a JavaScript library that facilitates interaction with the Polygon network. It provides developers with simplified operations such as depositing, transferring, and withdrawing assets; allowing developers to focus on building (dApps) without the need for in-depth knowledge of blockchain systems. 
 
 Matic.js is made up of a main library and an Ethereum library:
 
