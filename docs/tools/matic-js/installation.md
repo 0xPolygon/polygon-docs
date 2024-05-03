@@ -1,30 +1,36 @@
-Matic.js is made up of a main library and an Ethereum library:
+[Matic.js](https://github.com/maticnetwork/matic.js) a JavaScript library that facilitates interaction with the Polygon network. It provides developers with simplified operations such as depositing, transferring, and withdrawing assets; allowing them to focus on building dApps without the need for in-depth knowledge of blockchain systems. 
 
-## Main library
+Matic.js supports two popular libraries:
 
-The main library has the core logic and provides different APIs. The user interacts mostly with this library.
+1. [Web3.js](https://web3js.readthedocs.io/)
+2. [Ethers](https://docs.ethers.io/)
+
+## Prerequisites
+
+Ensure that your [Node.js](https://nodejs.org/en/)version is up to date. 
+
+We recommend using Node.js version v18.19.1 for optimal compatibility.
+
+## Matic.js core library
+
+The library contains core logic and provides different APIs. The user interacts mostly with this library.
 
 ```sh
 npm i @maticnetwork/maticjs
 ```
 
-## Ethereum library
+## Matic.js ethers library
 
-The Ethereum library allows us to use any favorite ether library. It is injected into maticjs using plugins.
-
-matic.js supports two popular library -
-
-1. [Web3.js](https://web3js.readthedocs.io/)
-2. [Ethers](https://docs.ethers.io/)
-
-### Web3.js
-
-```sh
-npm install @maticnetwork/maticjs-web3
-```
-
-### ethers
+The ethers library allows us to use any ethers function. It is injected into Matic.js using plugins.
 
 ```sh
 npm install @maticnetwork/maticjs-ethers
+```
+
+### Matic.js web3 library
+
+The web3 library allows us to use any web3 function.
+
+```sh
+npm install @maticnetwork/maticjs-web3
 ```
