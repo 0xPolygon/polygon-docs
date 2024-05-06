@@ -75,4 +75,3 @@ https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-statedb.sql.gz (1.9GB)
 https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-hashdb.sql.gz (49GB)
 ```
 
-
