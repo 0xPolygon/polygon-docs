@@ -1,6 +1,6 @@
 The Polygon CDK validium is one of two configuration options of the Polygon CDK, the other being the Polygon zkEVM rollup.
 
-As per [the definition](https://ethereum.org/developers/docs/scaling/validium), the Polygon CDK validium uses validity proofs to enforce integrity of state transitions, but it does not store transaction data on the Ethereum network.
+As per [the definition of validium](https://ethereum.org/developers/docs/scaling/validium), the Polygon CDK validium uses validity proofs to enforce integrity of state transitions, but it does not store transaction data on the Ethereum network.
 
 The Polygon CDK validium is in fact a _zero-knowledge validium_ (zkValidium) because it utilises the Polygon zkEVM's off-chain prover to produce zero-knowledge proofs, which are published as _validity proofs_.
 

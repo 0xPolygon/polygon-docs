@@ -90,12 +90,12 @@ require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-etherscan");
 
 module.exports = {
-  defaultNetwork: "polygon_mumbai",
+  defaultNetwork: "polygon_amoy",
   networks: {
     hardhat: {
     },
-    polygon_mumbai: {
-      url: "https://rpc-mumbai.maticvigil.com",
+    polygon_amoy: {
+      url: "https://rpc-amoy.polygon.technology",
       accounts: [process.env.PRIVATE_KEY]
     }
   },
@@ -119,11 +119,9 @@ module.exports = {
 
     Find more instructions on how to use DOTENV on [this page](https://www.npmjs.com/package/dotenv).
 
-    You can deploy on MATIC(Polygon mainnet) if you change polygon_mumbai by MATIC.
-
 ### Compiling the contract
 
-To compile the contract, you first need to install Hardhat Toolbox:
+To compile the contract, you first need to install Hardhat:
 
 ```bash
 npm install --save-dev @nomicfoundation/hardhat-toolbox
@@ -152,10 +150,10 @@ And this is an expected output:
 Run this command in root of the project directory:
 
 ```bash
-npx hardhat run scripts/deploy.js --network polygon_mumbai
+npx hardhat run scripts/deploy.js --network polygon_amoy
 ```
 
-The contract will be deployed on Matic's Mumbai Testnet, and you can check the deployment status here: <https://mumbai.polygonscan.com/>
+The contract will be deployed on Polygon Amoy testnet, and you can check the deployment status here: <https://amoy.polygonscan.com/>
 
 **Congratulations! You have successfully deployed Greeter Smart Contract. Now you can interact with the Smart Contract.**
 
@@ -165,5 +163,5 @@ The contract will be deployed on Matic's Mumbai Testnet, and you can check the d
 
     ```bash
     npm install --save-dev @nomiclabs/hardhat-etherscan
-    npx hardhat verify --network polygon_mumbai 0x4b75233D4FacbAa94264930aC26f9983e50C11AF
+    npx hardhat verify --network polygon_amoy 0x4b75233D4FacbAa94264930aC26f9983e50C11AF
     ```
