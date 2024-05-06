@@ -5,7 +5,7 @@ comments: true
 !!! important
     New and streamlined state sync process coming online soon.
 
-Follow the instructions below to run a fast state sync on a node database using the relevant snapshot. Snapshot file URLs are available in the [snapshots section](#snapshots).
+Follow the instructions below to run a fast state sync on a node database using the relevant snapshot. Snapshot URLs are available in the [snapshots section](#snapshots).
 
 ## Sync a database
 
