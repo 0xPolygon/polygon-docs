@@ -2,6 +2,9 @@
 comments: true
 ---
 
+!!! important
+    New and streamlined state sync process coming online soon.
+
 Follow the instructions below to run a fast state sync on a database using the relevant snapshot, file name given in the [snapshots section](#snapshots).
 
 ## Sync a database
