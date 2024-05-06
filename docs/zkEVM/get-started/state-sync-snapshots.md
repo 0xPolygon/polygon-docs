@@ -49,7 +49,7 @@ Follow the instructions below to run a fast state sync on a node database using 
     rm statedb.sql.gz
     ```
     
-6. Start everything again
+6. Start everything again:
 
     ```sh
     docker compose up -d
