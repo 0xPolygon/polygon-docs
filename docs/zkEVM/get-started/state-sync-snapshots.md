@@ -42,7 +42,7 @@ Follow the instructions below to run a fast state sync on a node database using 
     gunzip -c statedb.sql.gz | docker compose exec -T zkevm-state-db psql -U state_user -d state_db
     ```
 
-5. Clean up
+5. Clean up:
 
     ```sh
     docker compose exec zkevm-state-db rm /tmp/statedb.schema
