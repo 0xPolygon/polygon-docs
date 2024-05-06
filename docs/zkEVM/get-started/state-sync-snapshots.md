@@ -36,7 +36,7 @@ Follow the instructions below to run a fast state sync on a node database using 
     docker compose exec -it zkevm-state-db pg_restore -U state_user -v -d state_db /tmp/statedb.schema
     ```
 
-4. Import the backup file into database:
+4. Import the backup file into the database:
 
     ```sh
     gunzip -c statedb.sql.gz | docker compose exec -T zkevm-state-db psql -U state_user -d state_db
