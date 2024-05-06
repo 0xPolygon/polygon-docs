@@ -12,7 +12,7 @@ Follow the instructions below to run a fast state sync on a node database using 
 1. Run the following command to download the snapshot with the same name as given in the URL.
 
     ```sh
-    curl <snapshot-file> -o statedb.sql.gz
+    curl <snapshot-url> -o <db-name>.sql.gz
     ```
 
 2. Stop/start the database:
