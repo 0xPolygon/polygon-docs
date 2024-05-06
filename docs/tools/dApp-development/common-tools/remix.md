@@ -1,6 +1,6 @@
 ## Overview
 
-This tutorial guides you to implement a Hello World dApp which echoes a message passed to the contract on to the frontend. You will also be able to change the message using the interactive panel.
+This tutorial guides you to implement a Hello World dApp which echoes a message passed to the contract on to the frontend. You can also change the message using the interactive panel. 
 
 !!! tip "Recommended"
 
