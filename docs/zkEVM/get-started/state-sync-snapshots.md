@@ -27,7 +27,7 @@ Follow the instructions below to run a fast state sync on a node database using 
     docker compose start zkevm-state-db
     ```
 
-3. Remove data from the database, keeping the schema, and a raw backup copy:
+3. Remove data from the database, keeping the schema and a raw backup copy:
 
     ```sh
     docker compose exec -it zkevm-state-db pg_dump -U state_user -v -Fc -s -f /tmp/statedb.schema state_db
