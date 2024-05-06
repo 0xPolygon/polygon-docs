@@ -9,7 +9,7 @@ Follow the instructions below to run a fast state sync on a node database using 
 
 ## Sync a database
 
-1. Run the following command to download the snapshot with the correct `snapshot-url` and `db-name` as given in the URL.
+1. Run the following command to download the snapshot with the correct `snapshot-url` and `db-name`.
 
     ```sh
     curl <snapshot-url> -o <db-name>.sql.gz
