@@ -26,7 +26,7 @@ Connect your wallet to the Polygon zkEVM network of your choice by navigating to
 | Network | RPC URL | ChainID | Block explorer URL | Currency |
 | ------- | ------------------------------- | ---------------- | ---------------- | ----- |
 | Polygon zkEVM | `https://zkevm-rpc.com` | `1101` | `https://zkevm.polygonscan.com/` | **ETH** |
-| Cardona zkEVM testnet | `https://rpc.cardona.zkevm-rpc.com` | `2442` | `https://cardona-zkevm.polygonscan.com/` | **ETH** |
+| Cardona zkEVM testnet | `https://rpc.cardona.zkevm-rpc.com` | `1442` | `https://cardona-zkevm.polygonscan.com/` | **ETH** |
 
 ## Polygon testnet faucet
 
