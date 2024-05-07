@@ -20,7 +20,7 @@ The Amoy testnet serves as a replica of the Polygon mainnet and is primarily use
 | RPC endpoint     | [https://rpc-amoy.polygon.technology/](https://rpc-amoy.polygon.technology/)                       |
 | Node endpoint    | [wss://rpc-amoy.polygon.technology/](wss://rpc-amoy.polygon.technology/)                           |
 | Heimdall API     | [https://heimdall-api-amoy.polygon.technology](https://heimdall-api-amoy.polygon.technology)       |
-| Block Explorer   | [https://www.oklink.com/amoy](https://www.oklink.com/amoy)                                         |
+| Block Explorer   | [https://amoy.polygonscan.com/](https://amoy.polygonscan.com/)                                         |
 
 !!!note
     Additional information
@@ -50,7 +50,7 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
     For more details, refer to this [**JSON data**](https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json).
 
 
-### Mumbai ( Deprecating Soon )
+### Mumbai ( Deprecated )
 
 The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
 

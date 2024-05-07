@@ -4,9 +4,9 @@ comments: true
 
 Ethereum developers are by default Polygon developers. Welcome. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All familiar tools used on Ethereum are supported on Polygon. Whether it is Truffle, Remix or Web3.js, Polygon offers the same UX as Ethereum.
 
-Connect your wallet and deploy any decentralized application to either Polygon Mainnet or Polygon Mumbai Testnet.
+Connect your wallet and deploy any decentralized application to either Polygon Mainnet or Polygon Amoy Testnet.
 
-Polygon Mumbai Testnet connects to Ethereum Goërli Testnet, which acts as its ParentChain, a testnet layer 1 (L1).
+Polygon Amoy Testnet connects to Ethereum Sepolia Testnet, which acts as its ParentChain, a testnet layer 1 (L1).
 
 Find all the network-related details in the [network documentation](../reference/rpc-endpoints.md).
 
@@ -61,7 +61,7 @@ const { Alchemy, Network } = require("alchemy-sdk");
 
 const settings = {
   apiKey: "demo", // Can replace with your API Key from https://www.alchemy.com
-  network: Network.MATIC_MAINNET, // Can replace with MATIC_MUMBAI
+  network: Network.MATIC_MAINNET, // Can replace with MATIC_AMOY
 };
 
 const alchemy = new Alchemy(settings);

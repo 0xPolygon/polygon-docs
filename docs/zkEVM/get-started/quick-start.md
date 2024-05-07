@@ -17,7 +17,7 @@ Chainlist is a site that provides a button to connect your wallet to the Polygon
 
 - Go to the [Polygon zkEVM mainnet](https://chainlist.org/chain/1101) page and click **Connect Wallet** to add the Polygon zkEVM mainnet network to your wallet settings.
 
-- Go to the [Polygon zkEVM Cardona testnet](https://chainlist.org/chain/1101) page and click **Connect Wallet** to add the Polygon zkEVM Cardona testnet configurations to your wallet settings.
+- Go to the [Polygon zkEVM Cardona testnet](https://chainlist.org/chain/2442) page and click **Connect Wallet** to add the Polygon zkEVM Cardona testnet configurations to your wallet settings.
 
 ### Manually add network to wallet
 
@@ -26,7 +26,7 @@ Connect your wallet to the Polygon zkEVM network of your choice by navigating to
 | Network | RPC URL | ChainID | Block explorer URL | Currency |
 | ------- | ------------------------------- | ---------------- | ---------------- | ----- |
 | Polygon zkEVM | `https://zkevm-rpc.com` | `1101` | `https://zkevm.polygonscan.com/` | **ETH** |
-| Cardona zkEVM testnet | `https://rpc.cardona.zkevm-rpc.com` | `1442` | `https://cardona-zkevm.polygonscan.com/` | **ETH** |
+| Cardona zkEVM testnet | `https://rpc.cardona.zkevm-rpc.com` | `2442` | `https://cardona-zkevm.polygonscan.com/` | **ETH** |
 
 ## Polygon testnet faucet
 
