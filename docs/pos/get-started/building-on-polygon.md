@@ -46,20 +46,7 @@ Token bridging between Polygon PoS and Ethereum and vice-versa, and inter-layer 
 
 ## Smart contracts
 
-Polygon supports many popular frameworks and tools that you can choose from to deploy, debug, compile, and test smart contracts on Polygon PoS. This helps ensure your dApp development experience on Polygon is virtually the same as it would be if you were deploying to Ethereum. These frameworks and tools include:
-
-- [Alchemy](../../tools/dApp-development/pos/alchemy.md)
-- [thirdweb](../../tools/dApp-development/pos/thirdweb.md)
-- [ChainIDE](../../tools/dApp-development/pos/chainide.md)
-- [Chainstack](../../tools/dApp-development/pos/chainstack.md)
-- [QuickNode](../../tools/dApp-development/pos/quicknode.md)
-- [GetBlock](../../tools/dApp-development/pos/quicknode.md)
-- [Crossmint](../../tools/dApp-development/pos/crossmint.md)
-- [SmartPress](../../tools/dApp-development/pos/crossmint.md)
-- [Remix](../../tools/dApp-development/common-tools/remix.md)
-- [Hardhat](../../tools/dApp-development/common-tools/hardhat.md)
-- [Truffle](../../tools/dApp-development/common-tools/hardhat.md)
-- [Replit](../../tools/dApp-development/common-tools/replit.md)
+Check out the [third-party developer tools section](../../tools/dApp-development/pos/third-party-smart-contracts.md) for tutorials.
 
 ## Connecting to Polygon
 
