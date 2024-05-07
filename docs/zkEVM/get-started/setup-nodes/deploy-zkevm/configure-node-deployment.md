@@ -31,7 +31,7 @@ comments: true
 4. In the `.env` file, set the following:
 
     ```sh
-    ZKEVM_NODE_ETHERMAN_URL = ""  # set valid Goerli RPC endpoint
+    ZKEVM_NODE_ETHERMAN_URL = ""  # set valid Sepolia RPC endpoint
     ZKEVM_NODE_STATEDB_DATA_DIR = "~/zkevm/data/statedb"
     ZKEVM_NODE_POOLDB_DATA_DIR = "~/zkevm/data/pooldb"
     ```
@@ -43,17 +43,17 @@ comments: true
 
 ## Approve MATIC token for sequencer
 
-1. Launch a Hardhat console connected to the Goerli network.
+1. Launch a Hardhat console connected to the Sepolia network.
 
     ```sh
     cd ~/zkevm-contracts
-    npx hardhat console --network goerli
+    npx hardhat console --network sepolia
     ```
 
 2. Add the missing data as directed and copy/paste the following code into the open console.
 
     ```js
-    const provider = ethers.getDefaultProvider("<GOERLI_RPC_NODE>"); // set Goerli RPC node
+    const provider = ethers.getDefaultProvider("<SEPOLIA_RPC_NODE>"); // set Sepolia RPC node
     const privateKey = "<TRUSTED_SEQUENCER_PK>"; // from wallets.txt 
     const wallet = new ethers.Wallet(privateKey, provider);
 
@@ -97,7 +97,7 @@ Add the following missing parameters to the `~/zkevm/mainnet/config/environments
     If you're having trouble locating the configuration file, try looking for `node.config.toml`, since it may exist under that name in some cases. Once you've added the missing parameters, rename the file to `public.node.config.toml`.
 
 - `ApiKey`  # for Etherscan
-- `URL`     # for Goerli node, under [ETHERMAN]
+- `URL`     # for Sepolia node, under [ETHERMAN]
 
 ## Add wallet keystores
 
