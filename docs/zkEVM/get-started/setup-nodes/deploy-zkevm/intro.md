@@ -2,7 +2,7 @@
 comments: true
 ---
 
-This tutorial takes you through the process of deploying a full zkEVM stack on Goerli.
+This tutorial takes you through the process of deploying a full zkEVM stack on Sepolia.
 
 It relies on specific component versions so we have hidden most of the configuration complexity in scripts to make the process straightforward.
 

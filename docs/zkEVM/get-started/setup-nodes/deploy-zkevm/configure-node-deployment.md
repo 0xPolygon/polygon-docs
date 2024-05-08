@@ -31,39 +31,51 @@ comments: true
 4. In the `.env` file, set the following:
 
     ```sh
-    ZKEVM_NODE_ETHERMAN_URL = ""  # set valid Goerli RPC endpoint
+    ZKEVM_NODE_ETHERMAN_URL = ""  # set valid Sepolia RPC endpoint
     ZKEVM_NODE_STATEDB_DATA_DIR = "~/zkevm/data/statedb"
     ZKEVM_NODE_POOLDB_DATA_DIR = "~/zkevm/data/pooldb"
     ```
 
     !!! warning "Workaround if you have configuration issues"
         - You may have to hardcode these variables into the `mainnet/docker-compose.yaml` file.
-        - Also, the `ZKEVM_NETWORK` variable which you can set to `mainnet`.
-        - Note, there are more than one references to hardcode in.
+            - Also, the `ZKEVM_NETWORK` variable which you can set to `mainnet`.
+            - Note, there are more than one references to hardcode in.
 
-## Approve MATIC token for sequencer
+## Approve POL token for sequencer
 
-1. Launch a Hardhat console connected to the Goerli network.
+1. Launch a Hardhat console connected to the Sepolia network.
 
     ```sh
     cd ~/zkevm-contracts
-    npx hardhat console --network goerli
+    npx hardhat console --network sepolia
     ```
 
 2. Add the missing data as directed and copy/paste the following code into the open console.
 
     ```js
-    const provider = ethers.getDefaultProvider("<GOERLI_RPC_NODE>"); // set Goerli RPC node
-    const privateKey = "<TRUSTED_SEQUENCER_PK>"; // from wallets.txt 
+    const provider = ethers.getDefaultProvider("https://sepolia.drpc.org"); // set Sepolia RPC node
+    const privateKey = "0xdd3ddb7e864207f6c11ed73348221823eccb8e872d2d6f3103df6f32b284a15a"; // from wallets.txt 
     const wallet = new ethers.Wallet(privateKey, provider);
-
-    const maticTokenFactory = await ethers.getContractFactory(
+    
+    const polTokenFactory = await ethers.getContractFactory(
     "ERC20PermitMock",
     provider
     );
-    maticTokenContract = maticTokenFactory.attach("<maticTokenAddress>"); // from ~/zkevm-contracts/deployments/deploy_output.json 
-    maticTokenContractWallet = maticTokenContract.connect(wallet);
-    await maticTokenContractWallet.approve("<polygonZkEVMAddress>", ethers.utils.parseEther("100.0")); // from ~/zkevm-contracts/deployments/deploy_output.json 
+    polTokenContract = polTokenFactory.attach("0x2B2Ef864542EA38657221393B0A18215e5c3fc7e"); // from ~/zkevm-contracts/deployments/deploy_output.json 
+    polTokenContractWallet = polTokenContract.connect(wallet);
+    await polTokenContractWallet.approve("0x702394d505ABC47cEd3F4D2CD04453719A9168cc", ethers.parseEther("100.0")); // from ~/zkevm-contracts/deployments/deploy_output.json 
+    
+    const provider = ethers.getDefaultProvider("<SEPOLIA_RPC_NODE>"); // set Sepolia RPC node
+    const privateKey = "<TRUSTED_SEQUENCER_PK>"; // from wallets.txt 
+    const wallet = new ethers.Wallet(privateKey, provider);
+    
+    const polTokenFactory = await ethers.getContractFactory(
+    "ERC20PermitMock",
+    provider
+    );
+    polTokenContract = polTokenFactory.attach("<polTokenAddress>"); // from ~/zkevm-contracts/deployments/deploy_output.json 
+    polTokenContractWallet = polTokenContract.connect(wallet);
+    await polTokenContractWallet.approve("<polygonZkEVMAddress>", ethers.parseEther("100.0")); // from ~/zkevm-contracts/deployments/deploy_output.json 
     ```
 
 ## Configure genesis
@@ -71,10 +83,10 @@ comments: true
 1. Copy the `genesis.json` file into the appropriate location.
 
     ```sh
-    cp ~/zkevm-contracts/deployment/genesis.json ~/zkevm/mainnet/config/environments/mainnet/public.genesis.config.json
+    cp ~/zkevm-contracts/deployment/v2/genesis.json ~/zkevm/mainnet/config/environments/mainnet/public.genesis.config.json
     ```
 
-2. Copy/paste the json below to the head of the `public.genesis.config.json` file inputting the data from `~/zkevm/zkevm-contracts/deployments/deploy_output.json`. 
+2. Copy/paste the json below to the head of the `public.genesis.config.json` file inputting the data from `~/zkevm-contracts/deployments/v2/deploy_output.json`. 
 
     !!! important
         The `genesisBlockNumber` is called `deploymentBlockNumber` in `deploy_output.json`.
@@ -83,7 +95,7 @@ comments: true
     "l1Config" : {
         "chainId": 5,
         "polygonZkEVMAddress": "", 
-        "maticTokenAddress": "", 
+        "polTokenAddress": "", 
         "polygonZkEVMGlobalExitRootAddress": ""  
     },
     "genesisBlockNumber": <number-here>,  
@@ -97,7 +109,7 @@ Add the following missing parameters to the `~/zkevm/mainnet/config/environments
     If you're having trouble locating the configuration file, try looking for `node.config.toml`, since it may exist under that name in some cases. Once you've added the missing parameters, rename the file to `public.node.config.toml`.
 
 - `ApiKey`  # for Etherscan
-- `URL`     # for Goerli node, under [ETHERMAN]
+- `URL`     # for Sepolia node, under [ETHERMAN]
 
 ## Add wallet keystores
 
