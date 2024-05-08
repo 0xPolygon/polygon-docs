@@ -127,7 +127,7 @@ nav:
             - Etherman: zkEVM/architecture/high-level/hermez-node/etherman.md
             - Synchronizer: zkEVM/architecture/high-level/hermez-node/synchronizer.md
           - DAC: zkEVM/architecture/high-level/hermez-node/dac.md
-          - Bridge service: zkEVM/architecture/high-level/bridge-service.md
+        - Bridge service: zkEVM/architecture/high-level/bridge-service.md
       - Architecture low-level:
         - Architecture: zkEVM/architecture/index.md
         - Upgrades:
