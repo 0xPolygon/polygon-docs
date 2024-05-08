@@ -75,8 +75,6 @@ In order to receive MATIC Mumbai tokens using QuickNode faucet,
 
 - To receive 0.1 testnet MATIC, click on No thanks, just send me 0.1 MATIC.
 
-   ![img](../../img/tools/gas/quicknode-faucet3.png)
-
 - You can also view your transaction details on [Polygonscan](https://mumbai.polygonscan.com/) by clicking on the TxHash.
 
 ## LearnWeb3 Faucets
