@@ -105,17 +105,17 @@ npm i
     ```sh
     cd ..
     npm i @openzeppelin/hardhat-upgrades
-    npm run deploy:deployer:ZkEVM:goerli
-    npm run verify:deployer:ZkEVM:goerli
-    npm run prepare:testnet:ZkEVM:goerli && npm run deploy:ZkEVM:test:goerli
-    npm run verify:ZkEVM:goerli
+    npm run deploy:deployer:ZkEVM:sepolia
+    npm run verify:deployer:ZkEVM:sepolia
+    npm run prepare:testnet:ZkEVM:sepolia && npm run deploy:ZkEVM:test:sepolia
+    npm run verify:ZkEVM:sepolia
     ```
 
     You should see output that looks something like this at the start each time:
 
     ```sh
-    > @0xpolygonhermez/zkevm-contracts@3.0.0 deploy:deployer:ZkEVM:goerli
-    > npx hardhat run deployment/2_deployPolygonZKEVMDeployer.js --network goerli
+    > @0xpolygonhermez/zkevm-contracts@3.0.0 deploy:deployer:ZkEVM:sepolia
+    > npx hardhat run deployment/2_deployPolygonZKEVMDeployer.js --network sepolia
 
     #######################
 
@@ -128,5 +128,5 @@ npm i
 2. Check the deployment was successful on Etherscan.
 
     ```html
-    https://goerli.etherscan.io/address/[deployment-address] <!-- from `wallets.txt` -->
+    https://sepolia.etherscan.io/address/[deployment-address] <!-- from `wallets.txt` -->
     ```
