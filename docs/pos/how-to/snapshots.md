@@ -6,7 +6,7 @@ When setting up a new sentry, validator, or full node server, it is recommended 
 
 ## Community snapshots
 
-With the [deprecation of Mumbai testnet](https://forum.polygon.technology/t/pos-tooling-after-mumbai-deprecation-no-action-required/13740), we're shifting to a community-driven model for snapshots where active members like Vault Staking, Stakepool, StakeCraft, and Girnaar Nodes will now provide snapshots. See [All4nodes.io](https://all4nodes.io/Polygon), an aggregator for Polygon community snapshots, for future community snapshots on the Sepolia-anchored Amoy testnet.
+With the [deprecation of the Mumbai testnet](https://forum.polygon.technology/t/pos-tooling-after-mumbai-deprecation-no-action-required/13740), Polygon PoS is shifting to a community-driven model for snapshots where active validators like Vault Staking, Stakepool, StakeCraft, and Girnaar Nodes will now provide snapshots. See [All4nodes.io](https://all4nodes.io/Polygon), an aggregator for Polygon community snapshots, for future community snapshots on the Sepolia-anchored Amoy testnet.
 
 !!! tip "Older snapshots"
 
@@ -14,7 +14,7 @@ With the [deprecation of Mumbai testnet](https://forum.polygon.technology/t/pos-
 
 !!! note
 
-    We no longer support Bor archive snapshots due to unsustainable data growth.
+    Bor archive snapshots are no longer supported due to unsustainable data growth.
 
 ## Downloading and using client snapshots
 
@@ -22,7 +22,7 @@ With the [deprecation of Mumbai testnet](https://forum.polygon.technology/t/pos-
 
     Mumbai testnet is no longer supported. [Existing snapshots](https://snapshot.polygon.technology/), however, will still be available for the users who rely on them. 
 
-To begin, ensure that your node environment meets the **prerequisites** outlined [here](../how-to/full-node/full-node-binaries.md). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. In our example, we will be using an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
+To begin, ensure that your node environment meets the **prerequisites** outlined [here](../how-to/full-node/full-node-binaries.md). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. This example uses an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
 To transfer the correct chain data to your disk, follow these steps:
 
 - All one has to do is specify the network ("mainnet" or "amoy") and client type ("heimdall" or "bor" or "erigon") of your desired snapshot and run the following command:
@@ -251,11 +251,11 @@ sudo service bor start
 
 !!! note
 
-    PoS Network is deprecating Archive Node snapshots we request users to move to the Erigon Client and make use of Erigon Snapshots.
+    The PoS Network is deprecating archive node snapshots. Please move to the Erigon client and use Erigon snapshots to sync your nodes.
 
 **Polygon Mainnet Erigon Archive**
 
-Currently under maintenance. ETA Aug 2023 for Erigon Bor-mainnet incremental snapshots.
+Please check the hardware requirements for an Erigon mainnet archive node on the [pre-requisites page for deploying a Polygon node using Erigon](https://erigon.gitbook.io/erigon/basic-usage/getting-started#hardware-requirements).
 
 ## Recommended disk type and IOPS guidance
 
