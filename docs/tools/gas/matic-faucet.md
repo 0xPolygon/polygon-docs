@@ -3,7 +3,7 @@ Polygon Faucet is a tool provided by Polygon and its ecosystem partners such as 
 Additionally, you can also receive Polygon zkEVM testnet ETH on Polygon Faucet.
 
 !!! info
-      Tokens on testnet networks like Amoy, Sepolia & Cardona Testnet have no value as they are only used for testing purposes.
+      Tokens on testnet networks like Amoy, Sepolia & Cardona testnet have no value as they are only used for testing purposes.
 
 We have listed several faucet tools you can use to receive MATIC testnet tokens, along with their usage guides, in the sections below:
 
