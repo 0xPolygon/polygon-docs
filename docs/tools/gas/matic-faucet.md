@@ -74,4 +74,4 @@ In order to receive Amoy MATIC tokens using QuickNode faucet,
 
 !!! tip "Join the Polygon Discord community"
 
-      Connect to Discord to make sure you're a part of [Polygon Main Discord](https://discord.gg/0xPolygon) server.
+      Make sure to connect with the [Polygon Discord community](https://discord.gg/0xPolygon) for news, tips, and help.
