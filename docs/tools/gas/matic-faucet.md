@@ -20,9 +20,9 @@ In addition, Polygon faucet also provides Polygon zkEVM testnet ETH tokens.
    ![img](../../img/tools/gas/faucet.png)
 
 - Select one of the blockchain testnet networks:
-      - Polygon zkEVM(Cardona) - Polygon zkEVM Testnet
-      - Sepolia - Ethereum Testnet
-      - Amoy - Polygon PoS Testnet
+      - Polygon zkEVM (Cardona) testnet
+      - Sepolia Ethereum testnet
+      - Amoy Polygon PoS testnet
 
 - The type of tesnet token will automatically be reflected below network selection
       - **zkEVM ETH** - Testnet ETH on the Cardona Testnet
