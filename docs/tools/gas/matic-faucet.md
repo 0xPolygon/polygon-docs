@@ -24,9 +24,9 @@ In addition, Polygon faucet also provides Polygon zkEVM testnet ETH tokens.
       - Sepolia Ethereum testnet
       - Amoy Polygon PoS testnet
 
-- The type of tesnet token will automatically be reflected below network selection
-      - **zkEVM ETH** - Testnet ETH on the Cardona Testnet
-      - **MATIC Token** - Amoy and Sepolia networks
+- Select the type of token you want to receive:
+      - **zkEVM ETH** - testnet ETH on the Cardona testnet.
+      - **MATIC token** - testnet MATIC on the Amoy and Sepolia testnets.
 
 - Connect to Discord to make sure you're a part of [Polygon Main Discord](https://discord.gg/0xPolygon) server.
 
