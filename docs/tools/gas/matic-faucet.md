@@ -8,8 +8,8 @@ Additionally, you can also receive Polygon zkEVM testnet ETH on Polygon Faucet.
 We have listed several faucet tools you can use to receive MATIC testnet tokens, along with their usage guides, in the sections below:
 
 - [Polygon faucet](https://faucet.polygon.technology/)
-- [Alchemy Polygon Amoy MATIC Faucet](https://www.alchemy.com/faucets/polygon-amoy)
-- [QuickNode Polygon Faucet](https://faucet.quicknode.com/polygon)
+- [Alchemy Polygon Amoy MATIC faucet](https://www.alchemy.com/faucets/polygon-amoy)
+- [QuickNode Polygon faucet](https://faucet.quicknode.com/polygon)
 
 In addition, Polygon faucet also provides Polygon zkEVM testnet ETH tokens.
 
