@@ -106,10 +106,8 @@ npm i
     ```
 
 4. Edit the following parameters to match the rollup parameters
-
     - `trustedSequencer`:  trusted sequencer address in `wallets.txt`.
     - `adminZkEVM`: deployment address in `wallets.txt`.
-
 ## Deploy & verify contracts
 
 `cd` back to `zkevm-contract` root directory and run the deployment scripts.
@@ -163,6 +161,3 @@ npm i
    ```
 
    And now if you go to sepolia scan, you should also see that under your account, there's a new `Pol` Erc-20 token created with the balance of `19,900,000` tokens.
-
-!!! info
-    The scripts auto-deploy the MATIC token contract and the `zkEVMDeployer` contract if required.

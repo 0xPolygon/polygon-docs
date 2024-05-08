@@ -71,11 +71,7 @@ nav:
       - Overview: zkEVM/overview.md
       - Get started:
         - Get started: zkEVM/get-started/index.md
-        - Quick start:
-          - zkEVM testnet & mainnet: zkEVM/get-started/quick-start/connect-wallet.md
-          - Using Polygon faucet: zkEVM/get-started/quick-start/zkevm-faucet.md
-          - Bridging assets to zkEVM: zkEVM/get-started/quick-start/bridge-to-zkevm.md
-        - Gas station: zkEVM/get-started/zkevm-gas-station.md
+        - Quick start: zkEVM/get-started/quick-start.md
         - Setup nodes:
           - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
           - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
@@ -119,6 +115,7 @@ nav:
             - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
             - Batch sequencing: zkEVM/architecture/protocol/transaction-life-cycle/batch-sequencing.md
             - Batch aggregation: zkEVM/architecture/protocol/transaction-life-cycle/batch-aggregation.md
+          - Sequencing batches: zkEVM/architecture/protocol/sequencing-batches.md
           - Incentive mechanism: zkEVM/architecture/protocol/incentive-mechanism.md
           - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
           - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
@@ -356,39 +353,26 @@ nav:
               - Commands: tools/dApp-development/launchpad/commands.md
               - Contributing: tools/dApp-development/launchpad/contributing.md
               - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
-          - Smart contract development on PoS:
-              - Alchemy: tools/dApp-development/pos/alchemy.md
-              - ChainIDE: tools/dApp-development/pos/chainide.md
-              - ChainStack: tools/dApp-development/pos/chainstack.md
-              - Crossmint: tools/dApp-development/pos/crossmint.md
-              - GetBlock: tools/dApp-development/pos/getblock.md
-              - QuickNode: tools/dApp-development/pos/quicknode.md
-              - SmartPress: tools/dApp-development/pos/smartpress.md
-              - Thirdweb: tools/dApp-development/pos/thirdweb.md
           - Common tools:
               - Hardhat: tools/dApp-development/common-tools/hardhat.md
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
+          - Smart contract development: tools/dApp-development/pos/third-party-smart-contracts.md
       - Chain indexer framework:
           - Overview: tools/chain-indexer-framework/overview.md
           - Usage: tools/chain-indexer-framework/usage.md
       - Third-party tutorials:
-          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
           - Venly's NFT-API: https://docs.venly.io/docs/nft-api-getting-started
           - Venly's Zapier integration: https://docs.venly.io/docs/zapier-integration 
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
       - Data:
-          - The Graph: 
-              - Overview: tools/data/the-graph/overview.md
-              - Data: tools/data/the-graph/data.md
-              - Entities: tools/data/the-graph/entities.md
-              - Queries: tools/data/the-graph/queries.md
-          - Moralis: tools/data/moralis.md
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
           - Covalent: tools/data/covalent.md
           - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
+          - Moralis: tools/data/moralis.md
           - PARSIQ: tools/data/parsiq.md
           - SubQuery: tools/data/subquery.md
       - Matic.js:
@@ -491,9 +475,8 @@ nav:
               - Create and import accounts:  tools/wallets/metamask/multiple-accounts.md
           - Venly:
               - Intro:  tools/wallets/venly/index.md
-              - Create wallet:  tools/wallets/venly/create-wallet.md
-              - Add network:  tools/wallets/venly/add-network.md
-              - Add custom token:  tools/wallets/venly/custom-tokens.md
+              - Create Venly wallet:  tools/wallets/venly/create-wallet.md
+              - Venly wallet API:  tools/wallets/venly/wallet-api.md
               - Venly widget: tools/wallets/venly/venly-widget.md
           - Fortmatic: tools/wallets/fortmatic.md    
           - Openfort: tools/wallets/openfort.md

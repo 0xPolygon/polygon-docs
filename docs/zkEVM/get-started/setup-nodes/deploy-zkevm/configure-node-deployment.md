@@ -53,18 +53,6 @@ comments: true
 2. Add the missing data as directed and copy/paste the following code into the open console.
 
     ```js
-    const provider = ethers.getDefaultProvider("https://sepolia.drpc.org"); // set Sepolia RPC node
-    const privateKey = "0xdd3ddb7e864207f6c11ed73348221823eccb8e872d2d6f3103df6f32b284a15a"; // from wallets.txt 
-    const wallet = new ethers.Wallet(privateKey, provider);
-    
-    const polTokenFactory = await ethers.getContractFactory(
-    "ERC20PermitMock",
-    provider
-    );
-    polTokenContract = polTokenFactory.attach("0x2B2Ef864542EA38657221393B0A18215e5c3fc7e"); // from ~/zkevm-contracts/deployments/deploy_output.json 
-    polTokenContractWallet = polTokenContract.connect(wallet);
-    await polTokenContractWallet.approve("0x702394d505ABC47cEd3F4D2CD04453719A9168cc", ethers.parseEther("100.0")); // from ~/zkevm-contracts/deployments/deploy_output.json 
-    
     const provider = ethers.getDefaultProvider("<SEPOLIA_RPC_NODE>"); // set Sepolia RPC node
     const privateKey = "<TRUSTED_SEQUENCER_PK>"; // from wallets.txt 
     const wallet = new ethers.Wallet(privateKey, provider);
