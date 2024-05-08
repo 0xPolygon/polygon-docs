@@ -68,9 +68,7 @@ In order to receive Amoy MATIC tokens using QuickNode faucet,
    !!! tip "Get 2x MATIC"
       If you tweet the [drip faucet URL](https://faucet.quicknode.com/drip) along with your wallet address, you get 2X more MATIC testnet tokens.
 
-   ![img](../../img/tools/gas/quicknode-faucet3.png)
-
-- View your transaction details on [Polygonscan](https://mumbai.polygonscan.com/) by clicking the **TxHash**.
+- You can also view your transaction details on [Polygonscan](https://mumbai.polygonscan.com/) by clicking on the TxHash.
 
 !!! tip "Join the Polygon Discord community"
 
