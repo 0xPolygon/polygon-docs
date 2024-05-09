@@ -1,7 +1,5 @@
 Omnificent diagram of component
 
-       Detailed description
+Detailed description of validium sc contracts
 
-        Sequence diagram and any other helpful UML to connect the code base.
-
-        Important code/db schemas/etc
+L2 vs L1
