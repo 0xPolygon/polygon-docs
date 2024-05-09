@@ -95,11 +95,11 @@ nav:
         - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture high-level:
         - Overview: zkEVM/architecture/high-level/overview.md
-        - Smart contracts: 
-          - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
-          - Rollup: zkEVM/architecture/high-level/smart-contracts/rollup.md
-          - Validium: zkEVM/architecture/high-level/smart-contracts/validium.md      
-          - Exit root trees: zkEVM/architecture/high-level/smart-contracts/exit-root-trees.md
+        #- Smart contracts: 
+        #  - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
+        #  - Rollup: zkEVM/architecture/high-level/smart-contracts/rollup.md
+        #  - Validium: zkEVM/architecture/high-level/smart-contracts/validium.md      
+        #  - Exit root trees: zkEVM/architecture/high-level/smart-contracts/exit-root-trees.md
         # - AggLayer: https://potential-couscous-4gw6qyo.pages.github.io/index.html
         #- CDK node:
           #- JSON/RPC: zkEVM/architecture/high-level/cdk-node/json-rpc.md
