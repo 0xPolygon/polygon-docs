@@ -2,7 +2,7 @@
 
 ## Intro
 
-This section of the docs looks more closely at the full topology of Polygon's zero-knowledge system architecture. 
+This section of the docs looks more closely at the full topology of the Polygon zero-knowledge system architecture. 
 
 Built for CDK stacks and using zkEVM technology, these documents explain the contents, layout, and interactions between component systems and functions, drilling down into detailed descriptions of the components that make up the wider system with reference to the relevant code bases.
 
@@ -34,7 +34,7 @@ When complete, this section will include information on:
 - The key components included in the nodes, how they function, and their interactions with other components, external developers, and the L1/L2 environment.
 - Key similarities and differences between a CDK and zkEVM node set up.
 - CDK validium components, including the DAC and DAC sequencer.
-- Detailed description of the Polygon smart contract sets for L1 and L2
+- Detailed description of the Polygon smart contract sets for L1 and L2.
 - The zkProver and how it interacts with a zkEVM node aggregator.
 
 ### Currently out of scope
