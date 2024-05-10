@@ -34,7 +34,7 @@ When complete, this section will include information on:
 - The structure of a CDK node and how it interacts with L2 and L1 smart contracts.
 - The structure of a zkEVM node and how it interacts with L2 and L1 smart contracts.
 - The key components included in the nodes, how they function, and their interactions with other components, external dApps, and the L1/L2 environment.
-- Key similarities and differences between a CDK and zkEVM node set up.
+- Key similarities and differences between a CDK and zkEVM node.
 - CDK validium components, including the DAC and DAC sequencer.
 - Detailed description of the Polygon smart contract sets for L1 and L2.
 - The zkProver and how it interacts with a zkEVM node aggregator.
