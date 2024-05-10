@@ -2,7 +2,7 @@
 
 ## Intro
 
-This section of the docs looks more closely at the full topology of the Polygon zero-knowledge system architecture. 
+This section of the docs provides a detailed analysis of the full topology of the Polygon zero-knowledge system architecture. 
 
 Built for CDK stacks and using zkEVM technology, these documents explain the contents, layout, and interactions between component systems and functions, drilling down into detailed descriptions of the components that make up the wider system with reference to the relevant code bases.
 
