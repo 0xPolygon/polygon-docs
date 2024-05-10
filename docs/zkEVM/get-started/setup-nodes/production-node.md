@@ -16,7 +16,7 @@ After spinning up an instance of the production node, you can run the synchroniz
 
 This tutorial requires a [`docker-compose`](https://docs.docker.com/compose/install/) installation.
 
-Run the following to create directory:
+Run the following to create a directory:
 
 ```sh
 mkdir -p ~/zkevm-node
@@ -44,7 +44,7 @@ mkdir -p ~/zkevm-node
 
 We set up the Ethereum node first as it takes a long time to synchronize.
 
-There are numerous ways to set up an Ethereum L1 environment; we will use Geth for this. We recommend Geth, but a Sepolia node is OK too.
+We recommend using Geth but a Sepolia node is OK too.
 
 Follow the instructions provided in this [guide to setup and install Geth](https://geth.ethereum.org/docs/getting-started/installing-geth).
 
@@ -85,7 +85,7 @@ Let's start setting up our zkNode:
 
 4. The `example.env` file must be modified according to your configurations.
 
-        Edit the .env file with your favourite editor (we'll use nano in this guide): 
+        Edit the .env file with your favorite editor (we use nano): 
     
         ```sh
         nano $ZKEVM_CONFIG_DIR/.env
@@ -159,5 +159,5 @@ In other words, instead of running ```cp $ZKEVM_DIR/testnet/example.env $ZKEVM_C
 
 !!!info "Batch rate"
     - Batches are closed every 10s, or whenever they are full.
-    - Also, the frequency of closing batches is subject to change as it depends on the prevailing configurations.
+    - The frequency of closing batches is subject to change as it depends on the prevailing configurations.
     - The batch rate always needs to be updated accordingly.
