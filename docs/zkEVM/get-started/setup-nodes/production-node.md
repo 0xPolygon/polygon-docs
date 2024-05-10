@@ -44,7 +44,7 @@ mkdir -p ~/zkevm-node
 
 We set up the Ethereum node first as it takes a long time to synchronize.
 
-There are numerous ways to set up an Ethereum L1 environment; we will use Geth for this. We recommend Geth, but a Sepolia node is OK too.
+We recommend using Geth but a Sepolia node is OK too.
 
 Follow the instructions provided in this [guide to setup and install Geth](https://geth.ethereum.org/docs/getting-started/installing-geth).
 
