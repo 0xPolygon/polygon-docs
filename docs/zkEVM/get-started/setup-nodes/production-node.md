@@ -159,5 +159,5 @@ In other words, instead of running ```cp $ZKEVM_DIR/testnet/example.env $ZKEVM_C
 
 !!!info "Batch rate"
     - Batches are closed every 10s, or whenever they are full.
-    - Also, the frequency of closing batches is subject to change as it depends on the prevailing configurations.
+    - The frequency of closing batches is subject to change as it depends on the prevailing configurations.
     - The batch rate always needs to be updated accordingly.
