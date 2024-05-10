@@ -85,7 +85,7 @@ Let's start setting up our zkNode:
 
 4. The `example.env` file must be modified according to your configurations.
 
-        Edit the .env file with your favourite editor (we'll use nano in this guide): 
+        Edit the .env file with your favourite editor (we use nano): 
     
         ```sh
         nano $ZKEVM_CONFIG_DIR/.env
