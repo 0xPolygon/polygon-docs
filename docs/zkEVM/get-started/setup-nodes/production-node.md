@@ -16,7 +16,7 @@ After spinning up an instance of the production node, you can run the synchroniz
 
 This tutorial requires a [`docker-compose`](https://docs.docker.com/compose/install/) installation.
 
-Run the following to create directory:
+Run the following to create a directory:
 
 ```sh
 mkdir -p ~/zkevm-node
