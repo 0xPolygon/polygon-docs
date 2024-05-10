@@ -90,16 +90,16 @@ $$
 
 where $\texttt{DataCost}$ is the cost in gas for data stored in L1.
 
-The cost of data in Ethereum varies according to whether it involves zero bytes or non-zero bytes. In particular, non-zero bytes cost $16$ gas units, while zero bytes cost $4$ gas unints. 
+The cost of data in Ethereum varies according to whether it involves zero bytes or non-zero bytes. In particular, non-zero bytes cost $16$ gas units, while zero bytes cost $4$ gas units. 
 
-Also, recall that the computation of the cost for _non-zero bytes_ must take into account the constant data which always appear in a transaction but not included in the RLP:
+Also, recall that the computation of the cost for _non-zero bytes_ must take into account constants that appear in transactions but are not included in the RLP, which includes:
 
 - The signature, which consists of $65$ bytes.
-- The previously defined $\texttt{EffectivePercentageByte}$, which consists in a single byte. 
+- The previously defined $\texttt{EffectivePercentageByte}$, which consists of a single byte. 
 
 This results in a total of $66$ constantly present bytes.
 
-Taking all in consideration, $\texttt{DataCost}$ can be computed as:
+Taking everything into consideration, $\texttt{DataCost}$ can be computed as:
 
 $$
 \texttt{DataCost} = (\texttt{TxConstBytes} + \texttt{TxNonZeroBytes}) \cdot \texttt{NonZeroByteGasCost} \\
@@ -110,9 +110,9 @@ where $\texttt{TxNonZeroBytes}$ represents the count of non-zero bytes in a raw 
 
 #### Computational costs
 
-Costs associated with transaction execution is denoted by $\texttt{ExecutionCost}$, and it is measured in gas.
+Costs associated with transaction execution is denoted by $\texttt{ExecutionCost}$, and is measured in gas.
 
-In contrast to costs for data availability, calculating computational costs necessecitates transactions to be executed.
+In contrast to costs for data availability, calculating computational costs requires executing transactions.
 
 So then,
 
@@ -160,11 +160,11 @@ $$
 \texttt{SignedGasPrice} > \texttt{BreakEvenGasPrice}.
 $$
 
-However, a  problem arises:
+However, a problem arises:
 
 In the RPC component, we’re only pre-executing the transaction, meaning we’re using an incorrect state root. Consequently, the $\texttt{GasUsed}$ is only an approximation.
 
-This implies that we need to multiply the result by a chosen factor before comparing it to the signed price.
+This implies that we need to multiply the result by a chosen factor before comparing it to the signed price to hedge against unforeseen costs.
 
 This ensures that the costs are covered in case more gas is ultimately required to execute the transaction. This factor is named $\texttt{BreakEvenFactor}$.
 
@@ -176,7 +176,7 @@ $$
 
 then it is safe to accept the transaction.
 
-Observe that we still need to introduce gas price prioritization, which will be covered later on.
+Observe that we still need to introduce gas price prioritization, which we explain later.
 
 ### Example (Breakeven gas price)
 
@@ -186,11 +186,11 @@ The figure below depicts the current situation.
 
 ![Figure: Timeline current L1GasPrice](../../../img/zkEVM/timeline-current-l1gasprice.png)
 
-Suppose the user sends a transaction that has $200$ non-zero bytes, including the constant ones and $100$ zero bytes. 
+Suppose the user sends a transaction that has $200$ non-zero bytes, including the constants and $100$ zero bytes. 
 
-Moreover, at the time of pre-executing the transaction, which is done without getting an out-of-counters (OOC) error, $60,000$ gas units are consumed.
+Moreover, on pre-executing the transaction without an out-of-counters (OOC) error, $60,000$ gas units are consumed.
 
-Recall that, since we are using a "wrong" state root, this gas is only an estimation. 
+Recall that, since we are using a "wrong" state root, this amount is only an estimation. 
 
 Hence, using the previously explained formulas, the total transaction cost is:
 
@@ -211,7 +211,7 @@ $$
 
 We have introduced a $\texttt{NetProfit}$ value of $1.2$, indicating a target of a $20\%$ gain in this process. 
 
-At a first glance, we might conclude acceptance since:
+At first glance, we might conclude the transaction has been accepted:
 
 $$
  \texttt{SignedGasPrice} = 3.3 > 2.52
@@ -225,7 +225,7 @@ $$
 \texttt{SignedGasPrice} = 3.3 > 3.276 = 2.52 · 1.3 = \texttt{BreakEvenGasPrice} \cdot \texttt{BreakEvenFactor}
 $$
 
-Consequently, we decide to accept the transaction.
+Consequently, the system accepts the transaction.
 
 ### Example (Breakeven factor)
 
@@ -239,11 +239,11 @@ $$
 
 However, let's assume the correct execution at the time of sequencing consumes $35,000$ gas.
 
-If we recompute $\texttt{BreakEvenGasPrice}$ using this updated used gas, we get $3.6\ \texttt{GWei/Gas}$, which is way higher than the original one. 
+If we recompute $\texttt{BreakEvenGasPrice}$ using this updated used gas, we get $3.6\ \texttt{GWei/Gas}$, which is way higher than the original estimation. 
 
 That means we should have charged the user a higher gas price in order to cover the whole transaction cost, standing at $105,000\ \texttt{GWei}$.
 
-But, since we are accepting all the transactions that sign more than $2.85$ of gas price, we do not have any margin to increase more. 
+But, since we are accepting all the transactions that sign more than $2.85$ of gas price, we do not have any margin to increase it. 
 
 In the worst case we are losing:
 
@@ -265,4 +265,4 @@ $$
 105, 000 − 35, 000 · 3.27 < 0
 $$
 
-**Final Note**: In the above example, even though we assumed that a decrease in the $\texttt{BreakEvenGasPrice}$ is a result of executing with a correct state root, it can also decrease significantly due to a substantial reduction in $\texttt{L1GasPrice}$.
+**Final Note**: In the above example, even though we assume that a decrease in the $\texttt{BreakEvenGasPrice}$ is a result of executing with a correct state root, it can also decrease significantly due to a substantial reduction in $\texttt{L1GasPrice}$.

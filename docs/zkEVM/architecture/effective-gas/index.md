@@ -6,7 +6,7 @@ Now that the EGP is in place, you can reduce any chance for a transaction revert
 
 ## How gas fees work in Ethereum
 
-There are two adjustable parameters, in Ethereum, that have a direct impact on transaction gas fees:
+In Ethereum, there are two adjustable parameters that have a direct impact on transaction gas fees:
 
 - The $\texttt{gasLimit}$, which is the maximum amount of gas units the user is willing to buy in order for their transactions to be included in a block and processed on chain.
 - The $\texttt{gasPrice}$, that is, the amount of ETH a user is willing to pay for 1 gas unit. For instance, a gas price of 10 Gwei means the user is willing to pay 0.00000001 ETH for each unit of gas.

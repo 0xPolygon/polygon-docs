@@ -52,7 +52,7 @@ hide:
 							</div>
 							<p class="feature-paragraph">Deploy a dApp on the widely adopted Polygon Proof-of-Stake protocol, an EVM-compatible environment optimized for high throughput and low transaction fees.</p>
 						</a>
-						<a href="zkEVM" class="flex-card-item w-inline-block">
+						<a href="cdk/get-started/quickstart/deploy-stack" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
 								<div class="feature-card-heading">Polygon zkEVM</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
@@ -206,7 +206,7 @@ hide:
 						<p class="home-section-subtext">Are you ready to start building?</p>
 					</div>
 					<div class="flexbox">
-						<a href="zkEVM/get-started/deploy-zkevm/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+						<a href="cdk/get-started/quickstart/deploy-stack" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
 								<div class="feature-content-name">Polygon CDK: Deploy a local test rollup</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
@@ -250,7 +250,7 @@ hide:
 									</svg></div>
 							</div>
 						</a>
-						<a href="cdk/get-started/quickstart-validium/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+						<a href="https://github.com/Snapchain/zkValidium-quickstart" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
 								<div class="feature-content-name">Polygon CDK: Create your own validium</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
