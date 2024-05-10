@@ -31,5 +31,5 @@ The commands on the [install dependencies page](install-dependencies.md) fulfill
 
 - `INFURA_API_KEY`: [Infura](https://infura.io/) API key
 - `ETHERSCAN_API_KEY`: [Etherscan](https://etherscan.io/) API key
-- Goërli node RPC URL: e.g. https://goerli.infura.io/v3/YOUR-INFURA-API-KEY
-- Goërli account address holding minimum 0.5 GoërliETH
+- Sepolia node RPC URL: e.g. https://sepolia.infura.io/v3/YOUR-INFURA-API-KEY
+- Sepolia account address holding minimum 0.5 SepoliaETH
