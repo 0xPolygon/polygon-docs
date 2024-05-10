@@ -133,7 +133,7 @@ npm i
    polygonZkEVMDeployer deployed on:  0xB1A5BA61fBAD71Ba52d70B769d6A994c01b40983
    ```
 
-3. Verify Deployer
+3. Verify deployer
 
    ```bash
    npx hardhat run deployment/v2/verifyzkEVMDeployer.js --network sepolia
