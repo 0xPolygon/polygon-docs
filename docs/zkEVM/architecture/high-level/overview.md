@@ -17,7 +17,7 @@ The diagram below is a full and detailed topological overview of the entire Poly
 - Smart contracts: L1 and L2 Solidity smart contracts used for interacting with the whole stack. See the discussion on [zkEVM smart contracts](../../architecture/protocol/zkevm-bridge/smart-contracts.md) for more information.
 - Exit root trees: Append-only sparse Merkle trees which record the current and historical state of the system. See the discussion on [zkEVM exit trees](../../architecture/protocol/zkevm-bridge/exit-tree.md) for more information.
 - CDK and zkEVM nodes containing:
-    - Aggregator: Used for aggregating transactions into batches for proving. See the discussion on [aggregators](../../architecture/index.md#aggregator) for more information.
+    - Aggregator: Used for aggregating transaction batches to send to the prover. See the discussion on [aggregators](../../architecture/index.md#aggregator) for more information.
     - Sequencer: Does the complex job of carefully sequencing transactions as they come in before sending them to the aggregator for batching. See the discussion on [sequencers](../../architecture/index.md#sequencer) for more information.
     - Synchronizer: This component ensures a synchronized state between the node's systems and the L1 outside world via the Etherman component and the state database. 
     - Etherman component: The Etherman helps the synchronizer maintain a synchronized state with L1 by communicating with the L1 Ethereum chain via smart contract methods.
