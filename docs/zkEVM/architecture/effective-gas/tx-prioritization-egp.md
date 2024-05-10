@@ -124,4 +124,4 @@ Ultimately, the scheme is accurate and fair to both the users and the zkEVM netw
 
 Check out this [repo](https://github.com/0xPolygonHermez/zkevm-rom/issues/316) for a detailed example of how the effective gas price is calculated.
 
-A more elaborate and expanded documentation of the EGP scheme can be found in the specifications section [here](../../spec/user-fees/index.md).
+The content of this document series was sourced from the [User fees document](https://github.com/0xPolygonHermez/zkevm-techdocs/blob/main/knowledge-layer/architecture/PDFs/users-fees.pdf).
