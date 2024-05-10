@@ -146,7 +146,7 @@ npm i
    https://sepolia.etherscan.io/address/0xB1A5BA61fBAD71Ba52d70B769d6A994c01b40983#code
    ```
 
-4. Prepare Testnet
+4. Prepare testnet
 
    ```bash
    npx hardhat run deployment/testnet/prepareTestnet.ts --network sepolia
