@@ -112,7 +112,7 @@ npm i
 
 `cd` back to `zkevm-contract` root directory and run the deployment scripts.
 
-1. Install Hardhat
+1. Install Hardhat:
 
    ```
    cd ..
