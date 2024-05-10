@@ -39,7 +39,7 @@ comments: true
     !!! warning "Workaround if you have configuration issues"
         - You may have to hardcode these variables into the `mainnet/docker-compose.yaml` file.
             - Also, the `ZKEVM_NETWORK` variable which you can set to `mainnet`.
-            - Note, there are more than one references to hardcode in.
+            - Note, there is more than one reference to hardcode in.
 
 ## Approve POL token for sequencer
 
