@@ -119,7 +119,7 @@ npm i
    npm i @openzeppelin/hardhat-upgrades
    ```
 
-2. Deploy Polygon ZKEVM Deployer
+2. Deploy Polygon zkEVM deployer
 
    ```bash
    npx hardhat run deployment/v2/2_deployPolygonZKEVMDeployer.ts --network sepolia
