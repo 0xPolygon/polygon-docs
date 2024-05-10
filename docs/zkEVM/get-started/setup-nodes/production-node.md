@@ -31,7 +31,7 @@ mkdir -p ~/zkevm-node
 
 - 16GB RAM
 - 4-core CPU
-- ~350GB storage
+- ~250/350GB storage
 
 ### Software requirements
 
