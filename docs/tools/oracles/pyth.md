@@ -10,8 +10,8 @@ The Pyth network introduces an innovative low-latency [pull oracle design](https
 
 Developers on Polygon have permissionless access to any of Pyth’s 350+ price feeds for equities, ETFs, commodities, foreign exchange pairs, and cryptocurrencies.
 
-Here is a working example of a contract that fetches the latest price of MATIC/USD on the Polygon mainnet. 
-You have to pass [Pyth's contract address](https://docs.pyth.network/price-feeds/contract-addresses/evm) for Polygon mainnet/mumbai and the desired [price feed](https://pyth.network/developers/price-feed-ids) id](https://pyth.network/developers/price-feed-ids) to fetch the latest price.
+Here is a working example of a contract that fetches the latest price of MATIC/USD on the Polygon network. 
+You have to pass [Pyth's contract address](https://docs.pyth.network/price-feeds/contract-addresses/evm) for Polygon mainnet/amoy and the desired [price feed](https://pyth.network/developers/price-feed-ids) id](https://pyth.network/developers/price-feed-ids) to fetch the latest price.
 
 ```solidity 
 // SPDX-License-Identifier: UNLICENSED
@@ -57,9 +57,9 @@ You can find more details on the various functions available to you when interac
 The Pyth Network smart contract is available at the following address: 
 
 - Mainnet: [0xff1a0f4744e8582DF1aE09D5611b887B6a12925C](https://polygonscan.com/address/0xff1a0f4744e8582df1ae09d5611b887b6a12925c).
-- Mumbai: [0xFC6bd9F9f0c6481c6Af3A7Eb46b296A5B85ed379](https://mumbai.polygonscan.com/address/0xFC6bd9F9f0c6481c6Af3A7Eb46b296A5B85ed379)
+- Amoy: [0x2880aB155794e7179c9eE2e38200202908C17B43](https://www.oklink.com/amoy/address/0x2880ab155794e7179c9ee2e38200202908c17b43)
 
-Additionally, you'll be able to find all the Pyth Price Feed IDs [here](https://pyth.network/developers/price-feed-ids). Be sure to select the correct environment as mainnet and testnet price feed IDs differ.
+Additionally, you'll be able to find all the Pyth Price Feed IDs [here](https://pyth.network/developers/price-feed-ids).
 
 ## Other
 
