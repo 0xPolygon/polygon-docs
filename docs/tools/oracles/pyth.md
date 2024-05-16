@@ -59,7 +59,7 @@ The Pyth Network smart contract is available at the following address:
 
 Additionally, click to access the [Pyth price-feed IDs](https://pyth.network/developers/price-feed-ids).
 
-## Other
+## Developers and community
 
 The Pyth network provides additional tools to developers, such as [TradingView Integration](https://docs.pyth.network/guides/how-to-create-tradingview-charts), or the [Gelato web3 functions](https://docs.pyth.network/guides/how-to-schedule-price-updates-with-gelato).  
 
