@@ -61,6 +61,6 @@ Additionally, click to access the [Pyth price-feed IDs](https://pyth.network/dev
 
 ## Other
 
-The Pyth Network provides additional tools to developers like this [TradingView Integration](https://docs.pyth.network/guides/how-to-create-tradingview-charts) or the [Gelato Web3 Functions](https://docs.pyth.network/guides/how-to-schedule-price-updates-with-gelato).  
+The Pyth network provides additional tools to developers, such as [TradingView Integration](https://docs.pyth.network/guides/how-to-create-tradingview-charts), or the [Gelato web3 functions](https://docs.pyth.network/guides/how-to-schedule-price-updates-with-gelato).  
 
 If you have any questions or issues, you can contact us on the following platforms: [Telegram](https://t.me/Pyth_Network), [Discord](https://discord.gg/invite/PythNetwork), [Website](https://pyth.network/contact).
