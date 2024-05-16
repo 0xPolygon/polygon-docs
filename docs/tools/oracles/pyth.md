@@ -11,7 +11,7 @@ The Pyth network introduces an innovative low-latency [pull oracle design](https
 Developers on Polygon have permissionless access to any of Pyth’s 350+ price feeds for equities, ETFs, commodities, foreign exchange pairs, and cryptocurrencies.
 
 Here is a working example of a contract that fetches the latest price of MATIC/USD on the Polygon network. 
-You have to pass [Pyth's contract address](https://docs.pyth.network/price-feeds/contract-addresses/evm) for Polygon mainnet/amoy and the desired [price feed id](https://pyth.network/developers/price-feed-ids) to fetch the latest price.
+You have to pass [Pyth's contract address](https://docs.pyth.network/price-feeds/contract-addresses/evm) for Polygon mainnet/testnet and the desired [price feed id](https://pyth.network/developers/price-feed-ids) to fetch the latest price.
 
 ```solidity 
 // SPDX-License-Identifier: UNLICENSED
