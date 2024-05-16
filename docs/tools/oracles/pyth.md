@@ -48,9 +48,7 @@ This [package](https://github.com/pyth-network/pyth-crosschain/tree/main/target_
 
 We recommend following the [consumer best practices](https://docs.pyth.network/documentation/pythnet-price-feeds/best-practices) when consuming Pyth data. 
 
-For more information, check out the official [Pyth documentation](https://docs.pyth.network/price-feeds).
-
-You can find more details on the various functions available to you when interacting with the Pyth smart contract in the [API Reference section](https://docs.pyth.network/price-feeds/api-reference/evm).
+For more information, check out the official [Pyth documentation](https://docs.pyth.network/price-feeds). There are details on the various functions available for interacting with the Pyth smart contract in the [API Reference section](https://docs.pyth.network/price-feeds/api-reference/evm).
 
 ## Pyth on Polygon
 
