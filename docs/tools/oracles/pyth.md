@@ -57,7 +57,7 @@ The Pyth Network smart contract is available at the following address:
 - Mainnet: [0xff1a0f4744e8582DF1aE09D5611b887B6a12925C](https://polygonscan.com/address/0xff1a0f4744e8582df1ae09d5611b887b6a12925c).
 - Amoy: [0x2880aB155794e7179c9eE2e38200202908C17B43](https://www.oklink.com/amoy/address/0x2880ab155794e7179c9ee2e38200202908c17b43)
 
-Additionally, you'll be able to find all the Pyth Price Feed IDs [here](https://pyth.network/developers/price-feed-ids).
+Additionally, click to access the [Pyth price-feed IDs](https://pyth.network/developers/price-feed-ids).
 
 ## Other
 
