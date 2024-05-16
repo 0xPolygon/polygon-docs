@@ -6,7 +6,7 @@ The network comprises some of the world’s largest exchanges, market makers, an
 
 ## Using Pyth network
                                                                                        
-The Pyth network introduces an innovative low-latency [pull oracle design](https://docs.pyth.network/documentation/pythnet-price-feeds/on-demand), where users can pull price updates on-chain when needed, enabling everyone in that blockchain environment to access that data point. 
+The Pyth network introduces an innovative low-latency [pull oracle design](https://docs.pyth.network/documentation/pythnet-price-feeds/on-demand), where users can pull price updates on-chain when needed, enabling everyone in the blockchain environment to access that data point. 
 
 Developers on Polygon have permissionless access to any of Pyth’s 350+ price feeds for equities, ETFs, commodities, foreign exchange pairs, and cryptocurrencies.
 
