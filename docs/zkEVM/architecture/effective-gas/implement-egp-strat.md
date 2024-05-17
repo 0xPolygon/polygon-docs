@@ -34,14 +34,9 @@ The following parameters can be configured in the Polygon zkEVM node:
 - $\texttt{PollMinAllowedGasPriceInterval}$ is the interval to poll L1 in order to find the suggested L2 minimum gas price.
 - $\texttt{IntervalToRefreshGasPrices}$ is the interval to refresh L2 gas prices.
 
-More specifically, these are configured in the $\texttt{[Pool]}$ section of the configuration file found [here](https://github.com/0xPolygonHermez/zkevm-node/blob/b938572f138ba6cc40ef6736153c469afeb11c96/config/default.go#L37).
-
+More specifically, these are configured in the $\texttt{[Pool]}$ section of the [configuration file](https://github.com/0xPolygonHermez/zkevm-node/blob/b938572f138ba6cc40ef6736153c469afeb11c96/config/default.go#L37).
 
 ![Figure: ](../../../img/zkEVM/config-prev-parameter.png)
-
-
-
-
 
 ## How to avoid incurring losses in L2
 

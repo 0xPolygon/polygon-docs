@@ -2,55 +2,49 @@
 comments: true
 ---
 
-Polygon zkEVM's Mainnet Beta is available for developers to launch smart contracts, execute transactions, and experiment with the network. This tutorial extends the exploration by allowing developers to launch their own production zkNode.
+The Polygon zkEVM beta mainnet is available for developers to launch smart contracts, execute transactions, and experiment. This document shows you how to launch your own production zkNode.
 
-Developers can setup a production node with either the Polygon zkEVM's mainnet or the Cardona testnet.
+Developers can setup a production node with either the Polygon zkEVM mainnet or the Cardona testnet.
 
-After spinning up an instance of the production zkNode, you will be able to run the Synchronizer and utilize the JSON-RPC interface.
+After spinning up an instance of the production node, you can run the synchronizer and utilize the JSON-RPC interface.
 
 !!!info
-    Sequencer and Prover functionalities are not covered in this document as they are still undergoing development and rigorous testing.
-
-    Syncing zkNode currently takes anywhere between 1-2 days depending on various factors. The team is working on snapshots to improve the syncing time.
+    - Sequencer and prover functionalities are not covered in this document as they are still undergoing development and rigorous testing.
+    - Syncing the zkNode currently takes anywhere between 1-2 days depending on various factors. The team is working on snapshots to improve the syncing time.
 
 ## Prerequisites
 
-This tutorial requires `docker-compose` to have been installed.
+This tutorial requires a [`docker-compose`](https://docs.docker.com/compose/install/) installation.
 
-Please check the [official docker-compose installation guide](https://docs.docker.com/compose/install/) for this purpose.
+Run the following to create a directory:
 
-It is highly recommended that you create a separate folder for installing and working around the zkNode. We won't be cloning any repository (unlike [local zkNode setup](local-node.md)) so it's better to create a folder before starting the zkNode setup: ```mkdir -p /$HOME/zkevm-node```.
+```sh
+mkdir -p ~/zkevm-node
+```
 
-### Minimum system requirements
+### Minimum hardware requirements
 
 !!!caution
-    The zkProver does not work on ARM-based Macs yet. For Windows users, the use of WSL/WSL2 is not recommended.
-
-    Currently, zkProver optimizations require CPUs that support the AVX2 instruction, which means some non-M1 computers, such as AMD, won't work with the software regardless of the OS.
+    - The zkProver does not work on ARM-based Macs yet. 
+    - For Windows users, the use of WSL/WSL2 is not recommended.
+    - Currently, zkProver optimizations require CPUs that support the AVX2 instruction, which means some non-M1 computers, such as AMD, won't work with the software regardless of the OS.
 
 - 16GB RAM
 - 4-core CPU
-- 70GB Storage (This will increase over time)
+- ~250/350GB storage (increasing over time)
 
-!!!info About batch rate
-    Batches are closed every 10s, or whenever they are full (which can happen when there are high network loads).
-    Also, how frequent batches are closed is subject to change as it depends on the prevailing configurations.
-    The batch rate will always need to be updated accordingly.
+### Software requirements
 
-### Network components
-
-Here is a list of crucial network components that are required before you can run the production zkNode:
-
-- An Ethereum Node, which could be Geth or any service providing a JSON RPC interface for accessing the L1 network can be used.
-- zkEVM node (or zkNode), as the L2 network.
-- Synchronizer, which is responsible for synchronizing data between L1 and L2.
-- A JSON RPC Server, which acts as an interface to the L2 network.
+- An Ethereum node; Geth or any service providing a JSON RPC interface for accessing the L1 network.
+- zkEVM node (or zkNode) for the L2 network.
+- Synchronizer which is responsible for synchronizing data between L1 and L2.
+- A JSON RPC server which acts as an interface to the L2 network.
 
 ## Ethereum node setup
 
-The Ethereum node is the first component to be set up. And it is because the Ethereum network takes a long time to synchronise. So, we start synchronising the Ethereum Node, and then begin to setup other components while waiting for the synchronisation to complete.
+We set up the Ethereum node first as it takes a long time to synchronize.
 
-There are numerous ways to set up an Ethereum L1 environment; we will use Geth for this. We recommend Geth, but a Sepolia node will suffice.
+We recommend using Geth but a Sepolia node is OK too.
 
 Follow the instructions provided in this [guide to setup and install Geth](https://geth.ethereum.org/docs/getting-started/installing-geth).
 
@@ -77,18 +71,8 @@ Let's start setting up our zkNode:
     ZKEVM_CONFIG_DIR=./path_to_config
     ```
 
-2. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command. Also, the mainnet uses the latest version, and Cardona testnet uses a specific version.
+2. Download and extract the artifacts. Note that you may need to [install unzip](https://formulae.brew.sh/formula/unzip) before running this command. 
     
-    So use the next `curl` command specifically for Cardona, which uses version v0.6.3.
-
-    The recommended version of Cardona can be changed, so please check the `Testnet/Mainnet versions` section of [0xPolygonHermez Github](https://github.com/0xPolygonHermez):
-
-    ```bash
-    curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/download/v0.6.3/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
-    ```
-
-    And use this second command for the mainnet:
-
     ```bash
     curl -L https://github.com/0xPolygonHermez/zkevm-node/releases/latest/download/$ZKEVM_NET.zip > $ZKEVM_NET.zip && unzip -o $ZKEVM_NET.zip -d $ZKEVM_DIR && rm $ZKEVM_NET.zip
     ```
@@ -101,20 +85,24 @@ Let's start setting up our zkNode:
 
 4. The `example.env` file must be modified according to your configurations.
 
-    Edit the .env file with your favourite editor (we'll use nano in this guide): ```nano $ZKEVM_CONFIG_DIR/.env```
+        Edit the .env file with your favorite editor (we use nano): 
+    
+        ```sh
+        nano $ZKEVM_CONFIG_DIR/.env
+        ```
 
-      ```bash
-      # ZKEVM_NETWORK = "mainnet" or ZKEVM_NETWORK = "cardona"
-      
-      # URL of a JSON RPC for Sepolia
-      ZKEVM_NODE_ETHERMAN_URL = "http://your.L1node.url"
+        ```bash
+        # ZKEVM_NETWORK = "mainnet" or ZKEVM_NETWORK = "cardona"
+        
+        # URL of a JSON RPC for Sepolia
+        ZKEVM_NODE_ETHERMAN_URL = "http://your.L1node.url"
 
-      # PATH WHERE THE STATEDB POSTGRES CONTAINER WILL STORE PERSISTENT DATA
-      ZKEVM_NODE_STATEDB_DATA_DIR = "/path/to/persistent/data/stetedb"
+        # PATH WHERE THE STATEDB POSTGRES CONTAINER WILL STORE PERSISTENT DATA
+        ZKEVM_NODE_STATEDB_DATA_DIR = "/path/to/persistent/data/stetedb"
 
-      # PATH WHERE THE POOLDB POSTGRES CONTAINER WILL STORE PERSISTENT DATA
-      ZKEVM_NODE_POOLDB_DATA_DIR = "/path/to/persistent/data/pooldb"
-      ```
+        # PATH WHERE THE POOLDB POSTGRES CONTAINER WILL STORE PERSISTENT DATA
+        ZKEVM_NODE_POOLDB_DATA_DIR = "/path/to/persistent/data/pooldb"
+        ```
 
 5. To run the zkNode instance, run the following command:
 
@@ -168,3 +156,8 @@ In other words, instead of running ```cp $ZKEVM_DIR/testnet/example.env $ZKEVM_C
     ```bash
     docker compose --env-file $ZKEVM_CONFIG_DIR/.env -f $ZKEVM_DIR/$ZKEVM_NET/docker-compose.yml logs <cointainer_name>
     ```
+
+!!!info "Batch rate"
+    - Batches are closed every 10s, or whenever they are full.
+    - The frequency of closing batches is subject to change as it depends on the prevailing configurations.
+    - The batch rate always needs to be updated accordingly.
