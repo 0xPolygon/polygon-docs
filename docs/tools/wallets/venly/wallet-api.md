@@ -41,7 +41,7 @@ POST /api/wallets
 
 | Parameter | Param type | Value | Description |
 | :--------------- | :--------- | :--------- | :--------------------------------------- |
-| `Signing-Method` | Header     | `id:value` | `id`: This is the ID of the signing method.`value`: This is the value of the signing method. |
+| `Signing-Method` | Header     | `id:value` | `id`: This is the ID of the signing method. `value`: This is the value of the signing method. |
 
 #### Body params
 
