@@ -41,5 +41,5 @@ When complete, this section will include information on:
 
 ### Currently out of scope
 
-- The bridge service.
+- The in-development bridge service.
 - AggLayer.
