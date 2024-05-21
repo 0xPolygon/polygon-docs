@@ -98,10 +98,10 @@ nav:
         - Smart contracts: 
           - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
           - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
-          - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/consensus-sequencing.md
+          - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
           - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
           - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md      
-          - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/consensus-verification.md
+          - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
           - API: zkEVM/architecture/high-level/smart-contracts/api.md
           - Addresses: zkEVM/architecture/high-level/smart-contracts/addresses.md
         #- AggLayer: https://potential-couscous-4gw6qyo.pages.github.io/index.html
