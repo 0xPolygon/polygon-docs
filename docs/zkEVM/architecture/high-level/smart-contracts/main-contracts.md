@@ -1,30 +1,14 @@
-## L1 consensus contracts
-
-The group of consensus contracts deal with sequencing and verifying transaction batches.
-
-### `PolygonRollupBaseEtrog.sol`
-
-[PolygonRollupBaseEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/lib/PolygonRollupBaseEtrog.sol) is the base contract for rollups and validiums.
-
-### `PolygonZkEVMEtrog.sol`
-
-[https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/consensus/zkEVM/PolygonZkEVMEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/consensus/zkEVM/PolygonZkEVMEtrog.sol) is the rollup contract that inherits from the base contract that calls the `onSequenceBatches(...)` function on the `PolygonRollupManager.sol` contract.
-
-### `PolygonValidiumEtrog.sol`
-
-[PolygonValidiumEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol) is the validium contract that inherits from the base contract that calls the `onSequenceBatches(...)` function on the `PolygonRollupManager.sol` contract.
-
-### `PolygonRollupBaseEtrogNoGap.sol`
-
-### `PolygonValidiumStorageMigration.sol`
+---
+comments: true
+---
 
 ## L1 main contracts
 
 ### `PolygonRollupManager.sol`
 
-The [PolygonRollupManager.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonRollupManager.sol) contract is responsible for keeping track of and managing rollups. It also verifies batches. It creates and updates rollup stacks by storing hash-sequenced data as newly sequenced batches arrive.
+The [PolygonRollupManager.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonRollupManager.sol) contract is responsible for managing rollups. It also verifies batches. It creates and updates rollup stacks by storing hash-sequenced data as newly sequenced batches arrive.
 
-It is responsible for the verification workflow by supplying updated exit root data to the [[PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMGlobalExitRootV2.sol)](#polygonzkevmglobalexitrootv2sol) contract.
+It is responsible for the verification workflow by supplying updated exit root data to the [PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMGlobalExitRootV2.sol) contract.
 
 #### Key functionality
 
@@ -57,3 +41,32 @@ The [PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-
 - Updating the L1 info tree by emitting the `UpdateL1InfoTree(...)` event.
 - Updating exit roots.
 - Retrieving latest exit roots and leaf values.
+
+## L1 consensus contracts
+
+The following contracts manage consensus mechanisms. They deal with sequencing and verifying transaction batches across the L1 and L2 realms.
+
+### `PolygonRollupBaseEtrog.sol`
+
+[PolygonRollupBaseEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/lib/PolygonRollupBaseEtrog.sol) is the base contract for rollups and validiums.
+
+### `PolygonZkEVMEtrog.sol`
+
+[PolygonZkEVMEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/consensus/zkEVM/PolygonZkEVMEtrog.sol) is the rollup contract that inherits from the base contract. 
+
+This contract calls the `onSequenceBatches(...)` function on the `PolygonRollupManager.sol` contract to trigger the verification mechanism after successful sequencing through the `sequenceBatches(...)` call.
+
+### `PolygonValidiumEtrog.sol`
+
+[PolygonValidiumEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol) is the validium contract that inherits from the base contract. 
+
+This contract calls the `onSequenceBatches(...)` function on the `PolygonRollupManager.sol` contract to trigger the verification mechanism after successful sequencing through the `sequenceBatchesValidium(...)` call.
+
+<!--
+### `PolygonRollupBaseEtrogNoGap.sol`
+
+### `PolygonValidiumStorageMigration.sol`-->
+
+!!! tip
+    - For more information, and the Solidity code, check out the [API section](api/PolygonRollupManager.md).
+

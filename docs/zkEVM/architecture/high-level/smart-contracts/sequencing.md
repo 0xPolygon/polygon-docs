@@ -1,4 +1,11 @@
-Transactions flowing through the system reach the smart contract environment after one of two contract call use cases; sequencing coming from the sequencer component, or verifying batches coming from the aggregator component.
+---
+comments: true
+---
+
+Transactions flowing through the system reach the smart contract environment after one of two contract call use cases:
+
+- Sequence batches requests coming from the sequencer component.
+- Verifying batches requests coming from the aggregator component.
 
 This section looks at the sequencing workflow.
 
@@ -19,7 +26,7 @@ struct BatchData {
 }
 ```
 
-The function validates arguments, checks and organizes the batches, and appends them in the correct sequence while computing an accumulated hash and eventually emits a `SequenceBatch` event which sends a newly sequenced batch of transactions to the `PolygonRollupManager.sol` contract via the [`onSequenceBatches(...)`](#onsequencebatchesnewsequencedbatches-newaccinputhash) function. 
+The function validates arguments, checks and organizes the batches, and appends them in the correct sequence while computing an accumulated hash. Finally, the function emits a `SequenceBatches` event which sends a newly sequenced batch of transactions to the `PolygonRollupManager.sol` contract after the [`onSequenceBatches(...)`](#onsequencebatchesnewsequencedbatches-newaccinputhash) function returns successfully. 
 
 Stepwise, the function does the following:
 
@@ -36,7 +43,7 @@ Stepwise, the function does the following:
 
 This function is called on the `PolygonRollupManager.sol` contract.
 
-It takes the sequenced batches and the accumulated hash from the caller, adds the batches to the correct stack, and updates the batch count.
+It takes the sequenced batches and the accumulated hash from the calling contract, adds the batches to the correct stack, and updates the batch count.
 
 Stepwise, the function does the following:
 
@@ -46,11 +53,11 @@ Stepwise, the function does the following:
 1. Attempts to consolidate pending state for the rollup by updating `lastVerifiedBatch`, `batchNumToStateRoot[]`, and `lastLocalExitRoot` state variables, and also by updating `globalExitRootManager.updateExitRoot(L2sLocalExitRoot)`, after which it emits a `ConsolidatePendingState(...)` event.
 1. Emits an `OnSequenceBatches(...)` event back to the original `sequenceBatches(...)` call.
 
-## `sequenceBatchesValidium(...)`
+## `sequenceBatchesValidium(batches, l2Coinbase, dataAvailabilityMessage)`
 
 This function is called on the `PolygonValidiumEtrog.sol` contract.
 
-The sequencing logic is nearly the same as for the rollup `sequenceBatches(...)` function except the function takes a `ValidiumBatchData[]` array instead of `BatchData[]` which means instead of passing the actual batch data, the struct passes the hashes of the transactions.
+The sequencing logic is nearly the same as for the rollup `sequenceBatches(...)` function except the function takes a `ValidiumBatchData[]` array instead of `BatchData[]`. This means that, instead of passing the actual transaction data, the struct passes the hashes of the transactions.
 
 ```solidity
 struct ValidiumBatchData {
@@ -61,7 +68,9 @@ struct ValidiumBatchData {
 }
 ```
 
-Stepwise, the function has identical logic to the `PolygonRollupBaseEtrog.sequenceBatches(...)` function except for:
+It also has a `dataAvailabilityMessage` parameter instead of the sequence information. This parameter contains all the ECDSA address signatures of the committee in ascending order and is used for verification.
+
+Stepwise, the function has identical logic to the `PolygonRollupBaseEtrog.sequenceBatches(...)` function apart from the following steps:
 
 1. `ValdiumBatchData` instead of `BatchData`.
 1. Accumulates the txHash into `accumulatedNonForcedTransactionHash`.
