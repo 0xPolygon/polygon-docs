@@ -18,7 +18,7 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
 ```
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_globalExitRootManager` | contract IPolygonZkEVMGlobalExitRootV2 | Global exit root manager address
@@ -39,7 +39,7 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
 ```
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_admin` | address | Admin address
@@ -62,7 +62,7 @@ Note if a wrapped token of the bridge is used, the original network and address 
 Allows a sequencer to send multiple batches
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`batches` | struct PolygonRollupBaseEtrog.BatchData[] | Struct array which holds the necessary data to append new batches to the sequence
@@ -84,7 +84,7 @@ note Pol is not a reentrant token
 Callback on verify batches, can only be called by the rollup manager
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`lastVerifiedBatch` | uint64 | Last verified batch
@@ -105,7 +105,7 @@ In order to assure that users force transactions will be processed properly, use
 with the same nonce
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`transactions` | bytes | L2 ethereum transactions EIP-155 or pre-EIP-155 with signature:
@@ -120,7 +120,7 @@ with the same nonce
 Allows anyone to sequence forced Batches if the trusted sequencer has not done so in the timeout period
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`batches` | struct PolygonRollupBaseEtrog.BatchData[] | Struct array which holds the necessary data to append force batches
@@ -134,7 +134,7 @@ Allows anyone to sequence forced Batches if the trusted sequencer has not done s
 Allow the admin to set a new trusted sequencer
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newTrustedSequencer` | address | Address of the new trusted sequencer
@@ -148,7 +148,7 @@ Allow the admin to set a new trusted sequencer
 Allow the admin to set the trusted sequencer URL
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newTrustedSequencerURL` | string | URL of trusted sequencer
@@ -163,7 +163,7 @@ Allow the admin to change the force batch address, that will be allowed to force
 If address 0 is set, then everyone is able to force batches, this action is irreversible
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newForceBatchAddress` | address | New force batch address
@@ -178,7 +178,7 @@ Allow the admin to set the forcedBatchTimeout
 The new value can only be lower, except if emergency state is active
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newforceBatchTimeout` | uint64 | New force batch timeout
@@ -193,7 +193,7 @@ Starts the admin role transfer
 This is a two step process, the pending admin must accepted to finalize the process
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newPendingAdmin` | address | Address of the new pending admin
@@ -228,7 +228,7 @@ Function to calculate the reward for a forced batch
 Generate Initialize transaction for hte bridge on L2
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`networkID` | uint32 | Indicates the network identifier that will be used in the bridge

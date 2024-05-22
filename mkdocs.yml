@@ -103,12 +103,11 @@ nav:
           - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
           - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
           - API:
-              - CDKDataCommittee: zkEVM/architecture/high-level/smart-contracts/api/CDKDataCommittee.md
-              - CDKValidium: zkEVM/architecture/high-level/smart-contracts/api/CDKValidium.md
-              - CDKValidiumTimelock: zkEVM/architecture/high-level/smart-contracts/api/CDKValidiumTimelock.md
               - PolygonRollupManager:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
               - PolygonZkEVMBridgeV2:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
               - PolygonZkEVMGlobalExitRootV2:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMGlobalExitRootV2.md
+              - CDKValidium: zkEVM/architecture/high-level/smart-contracts/api/CDKValidium.md
+              - CDKValidiumTimelock: zkEVM/architecture/high-level/smart-contracts/api/CDKValidiumTimelock.md
               - Consensus:
                   - Datacomittee:
                       - CDKDataCommittee:  zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/CDKDataCommittee.md

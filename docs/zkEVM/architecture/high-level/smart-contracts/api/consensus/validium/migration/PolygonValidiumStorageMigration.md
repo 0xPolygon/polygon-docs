@@ -11,7 +11,7 @@
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -41,7 +41,7 @@ Allows a sequencer to send multiple batches.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -69,7 +69,7 @@ Allows a sequencer to send multiple batches.
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -91,7 +91,7 @@ Allow the admin to set a new data availability protocol.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -107,7 +107,7 @@ Allow the admin to switch the sequence with data availability.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |

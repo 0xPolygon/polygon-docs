@@ -10,7 +10,7 @@
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -35,7 +35,7 @@
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -62,7 +62,7 @@
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -80,7 +80,7 @@
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -100,7 +100,7 @@
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -131,7 +131,7 @@ Add an already deployed rollup.
 !!! note
     - This rollup does not follow any `rollupType`.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -160,7 +160,7 @@ Add an already deployed rollup.
 !!! note
     - This rollup does not follow any `rollupType`.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -183,7 +183,7 @@ Upgrade an existing rollup.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -202,7 +202,7 @@ Sequence batches, callback called by one of the consensus rollups managed by thi
   ) external returns (uint64)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -226,7 +226,7 @@ Allows an aggregator to verify multiple batches.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -256,7 +256,7 @@ Allows a trusted aggregator to verify multiple batches.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -286,7 +286,7 @@ Verify and reward batches internal function.
   ) internal
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -319,7 +319,7 @@ Consolidates any pending state that has already exceed the `pendingStateTimeout`
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -337,7 +337,7 @@ Internal function to consolidate any pending state that has already exceed the `
   ) internal
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -361,7 +361,7 @@ Allows the trusted aggregator to override the pending state if it is possible to
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -391,7 +391,7 @@ Activates the emergency state if its possible to prove a different state root gi
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -421,7 +421,7 @@ Internal function that proves a different state root given the same batches to v
   ) internal
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -444,7 +444,7 @@ Function to update the batch fee based on the new verified batches. The batch fe
   ) internal
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -487,7 +487,7 @@ Set a new pending state timeout. The timeout can only be lowered, except if emer
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -503,7 +503,7 @@ Set a new trusted aggregator timeout. The timeout can only be lowered, except if
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -519,7 +519,7 @@ Set a new multiplier batch fee.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -535,7 +535,7 @@ Set a new verify batch time target. This value will only be relevant once the ag
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -549,7 +549,7 @@ Set a new verify batch time target. This value will only be relevant once the ag
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -589,7 +589,7 @@ Returns a boolean that indicates if the `pendingStateNum` is consolidate-able.
   ) public returns (bool)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -610,7 +610,7 @@ Returns a boolean that indicates if the `pendingStateNum` is consolidate-able.
   ) internal returns (bool)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -660,7 +660,7 @@ Function to calculate the input snark bytes.
   ) public returns (bytes)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -686,7 +686,7 @@ Function to calculate the input snark bytes.
   ) internal returns (bytes)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -707,7 +707,7 @@ Function to check if the state root is inside of the prime field.
   ) internal returns (bool)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -724,7 +724,7 @@ Get rollup state root given a batch number.
   ) public returns (bytes32)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -742,7 +742,7 @@ Get rollup sequence batches struct given a batch number.
   ) public returns (struct LegacyZKEVMStateVariables.SequencedBatchData)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -760,7 +760,7 @@ Get rollup sequence pending state struct given a batch number.
   ) public returns (struct LegacyZKEVMStateVariables.PendingState)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |

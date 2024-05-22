@@ -10,7 +10,7 @@ Contract responsible for deploying deterministic address contracts related with 
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -28,7 +28,7 @@ Deploys a contract using `create2`.
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -49,7 +49,7 @@ Deploys a contract using `create2` and calls it afterwards.
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -68,7 +68,7 @@ Deploys a contract using `create2` and calls it afterwards.
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -85,7 +85,7 @@ Deploys a contract using `create2` and calls it afterwards.
   ) public returns (address)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |

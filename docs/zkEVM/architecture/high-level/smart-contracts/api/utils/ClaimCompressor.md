@@ -11,7 +11,7 @@ Utility contract for compressing and decompressing claim data.
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -30,7 +30,7 @@ Forward all the claim parameters to compress them inside the contract.
   ) external returns (bytes)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |

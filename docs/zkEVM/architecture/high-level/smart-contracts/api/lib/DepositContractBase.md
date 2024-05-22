@@ -21,7 +21,7 @@ Computes and returns the merkle root
 Add a new leaf to the merkle tree
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leaf` | bytes32 | Leaf
@@ -38,7 +38,7 @@ Add a new leaf to the merkle tree
 Verify merkle proof
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafHash` | bytes32 | Leaf hash
@@ -57,7 +57,7 @@ Verify merkle proof
 Calculate root from merkle proof
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafHash` | bytes32 | Leaf hash

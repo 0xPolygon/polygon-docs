@@ -25,7 +25,7 @@ Allows the admin to setup the members of the committee.
     - A member is represented by the url and the address contained in `urls[i]` and `addrsBytes[i*_ADDR_SIZE : i*_ADDR_SIZE + _ADDR_SIZE]`.
 
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -51,7 +51,7 @@ Verifies that the given `signedHash` has been signed by `requiredAmountOfSignatu
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -72,7 +72,7 @@ Emitted when the committee is updated.
   )
 ```
 
-#### Parameters
+##### Parameters
 
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |

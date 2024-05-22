@@ -11,7 +11,7 @@ Contract responsible for managing the exit roots across multiple networks.
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -28,7 +28,7 @@ Update the exit root of one of the networks and the global exit root.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -64,7 +64,7 @@ Given the leaf data returns the leaf hash.
   ) public returns (bytes32)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |

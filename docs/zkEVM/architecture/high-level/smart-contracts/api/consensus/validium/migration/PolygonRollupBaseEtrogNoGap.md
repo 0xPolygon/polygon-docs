@@ -11,7 +11,7 @@
   ) internal
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -33,7 +33,7 @@
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -58,7 +58,7 @@ Allows a sequencer to send multiple batches.
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -82,7 +82,7 @@ Callback on verify batches. Can only be called by the rollup manager.
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -105,7 +105,7 @@ Allows a sequencer/user to force a batch of L2 transactions. This should be used
   ) public
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -122,7 +122,7 @@ Allows anyone to sequence forced batches if the trusted sequencer has not done s
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -138,7 +138,7 @@ Allow the admin to set a new trusted sequencer.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -154,7 +154,7 @@ Allow the admin to set the trusted sequencer URL.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -172,7 +172,7 @@ This action is irreversible.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -188,7 +188,7 @@ Allow the admin to set the `forcedBatchTimeout`. The new value can only be lower
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -204,7 +204,7 @@ Allow the admin to set the `forcedBatchTimeout`. The new value can only be lower
 
 Starts the admin role transfer. This is a two step process, the pending admin must accepted to finalize the process.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -241,7 +241,7 @@ Generate initialize transaction for the bridge on L2.
   ) public returns (bytes)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |

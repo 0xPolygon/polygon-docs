@@ -1,13 +1,7 @@
-Contract responsible for managing the states and the updates of L2 network.
-There will be a trusted sequencer, which is able to send transactions.
-Any user can force some transaction and the sequencer will have a timeout to add them in the queue.
-The sequenced state is deterministic and can be precalculated before it's actually verified by a zkProof.
-The aggregators will be able to verify the sequenced state with zkProofs and therefore make available the withdrawals from L2 network.
-To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart contract that will be deployed in both networks.
-
-
 ## Functions
-### constructor
+
+### `constructor`
+
 ```solidity
   function constructor(
     contract IPolygonZkEVMGlobalExitRoot _globalExitRootManager,
@@ -20,8 +14,8 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
   ) public
 ```
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_globalExitRootManager` | contract IPolygonZkEVMGlobalExitRoot | Global exit root manager address
@@ -32,7 +26,8 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
 |`_chainID` | uint64 | L2 chainID
 |`_forkID` | uint64 | Fork Id
 
-### initialize
+### `initialize`
+
 ```solidity
   function initialize(
     struct CDKValidium.InitializePackedParameters initializePackedParameters,
@@ -42,8 +37,8 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
   ) external
 ```
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`initializePackedParameters` | struct CDKValidium.InitializePackedParameters | Struct to save gas and avoid stack too deep errors
@@ -51,7 +46,10 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
 |`_trustedSequencerURL` | string | Trusted sequencer URL
 |`_networkName` | string | L2 network name
 
-### sequenceBatches
+### `sequenceBatches`
+
+Allows a sequencer to send multiple batches.
+
 ```solidity
   function sequenceBatches(
     struct CDKValidium.BatchData[] batches,
@@ -59,10 +57,9 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
     bytes signaturesAndAddrs
   ) external
 ```
-Allows a sequencer to send multiple batches
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`batches` | struct CDKValidium.BatchData[] | Struct array which holds the necessary data to append new batches to the sequence
@@ -71,7 +68,10 @@ Allows a sequencer to send multiple batches
 [signature 0, ..., signature requiredAmountOfSignatures -1, address 0, ... address N]
 note that each ECDSA signatures are used, therefore each one must be 65 bytes
 
-### verifyBatches
+### `verifyBatches`
+
+Allows an aggregator to verify multiple batches.
+
 ```solidity
   function verifyBatches(
     uint64 pendingStateNum,
@@ -82,10 +82,9 @@ note that each ECDSA signatures are used, therefore each one must be 65 bytes
     bytes32[24] proof
   ) external
 ```
-Allows an aggregator to verify multiple batches
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`pendingStateNum` | uint64 | Init pending state, 0 if consolidated state is used
@@ -95,7 +94,10 @@ Allows an aggregator to verify multiple batches
 |`newStateRoot` | bytes32 | New State root once the batch is processed
 |`proof` | bytes32[24] | fflonk proof
 
-### verifyBatchesTrustedAggregator
+### `verifyBatchesTrustedAggregator`
+
+Allows an aggregator to verify multiple batches.
+
 ```solidity
   function verifyBatchesTrustedAggregator(
     uint64 pendingStateNum,
@@ -106,10 +108,9 @@ Allows an aggregator to verify multiple batches
     bytes32[24] proof
   ) external
 ```
-Allows an aggregator to verify multiple batches
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`pendingStateNum` | uint64 | Init pending state, 0 if consolidated state is used
@@ -119,7 +120,10 @@ Allows an aggregator to verify multiple batches
 |`newStateRoot` | bytes32 | New State root once the batch is processed
 |`proof` | bytes32[24] | fflonk proof
 
-### _verifyAndRewardBatches
+### `_verifyAndRewardBatches`
+
+Verify and reward batches internal function.
+
 ```solidity
   function _verifyAndRewardBatches(
     uint64 pendingStateNum,
@@ -130,10 +134,9 @@ Allows an aggregator to verify multiple batches
     bytes32[24] proof
   ) internal
 ```
-Verify and reward batches internal function
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`pendingStateNum` | uint64 | Init pending state, 0 if consolidated state is used
@@ -143,246 +146,268 @@ Verify and reward batches internal function
 |`newStateRoot` | bytes32 | New State root once the batch is processed
 |`proof` | bytes32[24] | fflonk proof
 
-### _tryConsolidatePendingState
+### `_tryConsolidatePendingState`
+
+Internal function to consolidate the state automatically once sequence or verify batches are called. It tries to consolidate the first and the middle pending state in the queue.
+
 ```solidity
   function _tryConsolidatePendingState(
   ) internal
 ```
-Internal function to consolidate the state automatically once sequence or verify batches are called
-It tries to consolidate the first and the middle pending state in the queue
 
+### `consolidatePendingState`
 
+Consolidates any pending state that has already exceed the `pendingStateTimeout`.
+Can be called by the trusted aggregator, which can consolidate any state without the timeout restrictions.
 
-### consolidatePendingState
 ```solidity
   function consolidatePendingState(
     uint64 pendingStateNum
   ) external
 ```
-Allows to consolidate any pending state that has already exceed the pendingStateTimeout
-Can be called by the trusted aggregator, which can consolidate any state without the timeout restrictions
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`pendingStateNum` | uint64 | Pending state to consolidate
 
-### _consolidatePendingState
+### `_consolidatePendingState`
+
+Internal function to consolidate any pending state that has already exceed the `pendingStateTimeout`.
+
 ```solidity
   function _consolidatePendingState(
     uint64 pendingStateNum
   ) internal
 ```
-Internal function to consolidate any pending state that has already exceed the pendingStateTimeout
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`pendingStateNum` | uint64 | Pending state to consolidate
 
-### _updateBatchFee
+### `_updateBatchFee`
+
+Function to update the batch fee based on the new verified batches. The batch fee will not be updated when the trusted aggregator verifies batches.
+
 ```solidity
   function _updateBatchFee(
     uint64 newLastVerifiedBatch
   ) internal
 ```
-Function to update the batch fee based on the new verified batches
-The batch fee will not be updated when the trusted aggregator verifies batches
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newLastVerifiedBatch` | uint64 | New last verified batch
 
-### forceBatch
+### `forceBatch`
+
+Allows a sequencer/user to force a batch of L2 transactions. This should be used only in extreme cases where the trusted sequencer does not work as expected.
+
 ```solidity
   function forceBatch(
     bytes transactions,
     uint256 maticAmount
   ) public
 ```
-Allows a sequencer/user to force a batch of L2 transactions.
-This should be used only in extreme cases where the trusted sequencer does not work as expected
-Note The sequencer has certain degree of control on how non-forced and forced batches are ordered
-In order to assure that users force transactions will be processed properly, user must not sign any other transaction
-with the same nonce
 
+!!! note
+    - The sequencer has a certain degree of control on how non-forced and forced batches are ordered.
+    - In order to assure that users force transactions are processed properly, user must not sign any other transaction with the same nonce.
 
-#### Parameters:
+##### Parameters
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`transactions` | bytes | L2 ethereum transactions EIP-155 or pre-EIP-155 with signature:
 |`maticAmount` | uint256 | Max amount of MATIC tokens that the sender is willing to pay
 
-### sequenceForceBatches
+### `sequenceForceBatches`
+
+Allows anyone to sequence forced batches if the trusted sequencer has not done so within the timeout period.
+
 ```solidity
   function sequenceForceBatches(
     struct CDKValidium.ForcedBatchData[] batches
   ) external
 ```
-Allows anyone to sequence forced Batches if the trusted sequencer has not done so in the timeout period
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`batches` | struct CDKValidium.ForcedBatchData[] | Struct array which holds the necessary data to append force batches
 
-### setTrustedSequencer
+### `setTrustedSequencer`
+
+Allow the admin to set a new trusted sequencer.
+
 ```solidity
   function setTrustedSequencer(
     address newTrustedSequencer
   ) external
 ```
-Allow the admin to set a new trusted sequencer
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newTrustedSequencer` | address | Address of the new trusted sequencer
 
-### setTrustedSequencerURL
+### `setTrustedSequencerURL`
+
+Allow the admin to set the trusted sequencer URL.
+
 ```solidity
   function setTrustedSequencerURL(
     string newTrustedSequencerURL
   ) external
 ```
-Allow the admin to set the trusted sequencer URL
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newTrustedSequencerURL` | string | URL of trusted sequencer
 
-### setTrustedAggregator
+### `setTrustedAggregator`
+
+Allow the admin to set a new trusted aggregator address.
+
 ```solidity
   function setTrustedAggregator(
     address newTrustedAggregator
   ) external
 ```
-Allow the admin to set a new trusted aggregator address
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newTrustedAggregator` | address | Address of the new trusted aggregator
 
-### setTrustedAggregatorTimeout
+### `setTrustedAggregatorTimeout`
+
+Allow the admin to set a new pending state timeout. The timeout can only be lowered, except if emergency state is active.
+
 ```solidity
   function setTrustedAggregatorTimeout(
     uint64 newTrustedAggregatorTimeout
   ) external
 ```
-Allow the admin to set a new pending state timeout
-The timeout can only be lowered, except if emergency state is active
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newTrustedAggregatorTimeout` | uint64 | Trusted aggregator timeout
 
-### setPendingStateTimeout
+### `setPendingStateTimeout`
+
+Allow the admin to set a new trusted aggregator timeout. The timeout can only be lowered, except if emergency state is active.
+
 ```solidity
   function setPendingStateTimeout(
     uint64 newPendingStateTimeout
   ) external
 ```
-Allow the admin to set a new trusted aggregator timeout
-The timeout can only be lowered, except if emergency state is active
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newPendingStateTimeout` | uint64 | Trusted aggregator timeout
 
-### setMultiplierBatchFee
+### `setMultiplierBatchFee`
+
+Allow the admin to set a new multiplier batch fee.
+
 ```solidity
   function setMultiplierBatchFee(
     uint16 newMultiplierBatchFee
   ) external
 ```
-Allow the admin to set a new multiplier batch fee
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newMultiplierBatchFee` | uint16 | multiplier batch fee
 
-### setVerifyBatchTimeTarget
+### `setVerifyBatchTimeTarget`
+
+Allow the admin to set a new verify batch time target. This value is only relevant when aggregation is decentralized, so the trustedAggregatorTimeout should be zero or very close to zero.
+
 ```solidity
   function setVerifyBatchTimeTarget(
     uint64 newVerifyBatchTimeTarget
   ) external
 ```
-Allow the admin to set a new verify batch time target
-This value will only be relevant once the aggregation is decentralized, so
-the trustedAggregatorTimeout should be zero or very close to zero
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newVerifyBatchTimeTarget` | uint64 | Verify batch time target
 
-### setForceBatchTimeout
+### `setForceBatchTimeout`
+
+Allow the admin to set the `forcedBatchTimeout`. The new value can only be lower, except if emergency state is active.
+
 ```solidity
   function setForceBatchTimeout(
     uint64 newforceBatchTimeout
   ) external
 ```
-Allow the admin to set the forcedBatchTimeout
-The new value can only be lower, except if emergency state is active
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newforceBatchTimeout` | uint64 | New force batch timeout
 
-### activateForceBatches
+### `activateForceBatches`
+
+Allow the admin to turn on the force batches. This action is not reversible.
+
 ```solidity
   function activateForceBatches(
   ) external
 ```
-Allow the admin to turn on the force batches
-This action is not reversible
 
+### `transferAdminRole`
 
+Starts the admin role transfer. This is a two step process, the pending admin must accepted to finalize the process.
 
-### transferAdminRole
 ```solidity
   function transferAdminRole(
     address newPendingAdmin
   ) external
 ```
-Starts the admin role transfer
-This is a two step process, the pending admin must accepted to finalize the process
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newPendingAdmin` | address | Address of the new pending admin
 
-### acceptAdminRole
+### `acceptAdminRole`
+
+Allows the current pending admin to accept the admin role.
+
 ```solidity
   function acceptAdminRole(
   ) external
 ```
-Allow the current pending admin to accept the admin role
 
+### `overridePendingState`
 
+Allows the trusted aggregator to override the pending state if it's possible to prove a different state root given the same batches.
 
-### overridePendingState
 ```solidity
   function overridePendingState(
     uint64 initPendingStateNum,
@@ -394,11 +419,9 @@ Allow the current pending admin to accept the admin role
     bytes32[24] proof
   ) external
 ```
-Allows the trusted aggregator to override the pending state
-if it's possible to prove a different state root given the same batches
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`initPendingStateNum` | uint64 | Init pending state, 0 if consolidated state is used
@@ -409,7 +432,10 @@ if it's possible to prove a different state root given the same batches
 |`newStateRoot` | bytes32 | New State root once the batch is processed
 |`proof` | bytes32[24] | fflonk proof
 
-### proveNonDeterministicPendingState
+### `proveNonDeterministicPendingState`
+
+Allows to halt the CDKValidium if its possible to prove a different state root given the same batches.
+
 ```solidity
   function proveNonDeterministicPendingState(
     uint64 initPendingStateNum,
@@ -421,10 +447,9 @@ if it's possible to prove a different state root given the same batches
     bytes32[24] proof
   ) external
 ```
-Allows to halt the CDKValidium if its possible to prove a different state root given the same batches
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`initPendingStateNum` | uint64 | Init pending state, 0 if consolidated state is used
@@ -435,7 +460,10 @@ Allows to halt the CDKValidium if its possible to prove a different state root g
 |`newStateRoot` | bytes32 | New State root once the batch is processed
 |`proof` | bytes32[24] | fflonk proof
 
-### _proveDistinctPendingState
+### `_proveDistinctPendingState`
+
+Internal function that proves a different state root given the same batches to verify.
+
 ```solidity
   function _proveDistinctPendingState(
     uint64 initPendingStateNum,
@@ -447,10 +475,9 @@ Allows to halt the CDKValidium if its possible to prove a different state root g
     bytes32[24] proof
   ) internal
 ```
-Internal function that proves a different state root given the same batches to verify
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`initPendingStateNum` | uint64 | Init pending state, 0 if consolidated state is used
@@ -461,77 +488,79 @@ Internal function that proves a different state root given the same batches to v
 |`newStateRoot` | bytes32 | New State root once the batch is processed
 |`proof` | bytes32[24] | fflonk proof
 
-### activateEmergencyState
+### `activateEmergencyState`
+
+Function to activate emergency state, which also enables the emergency mode on both `CDKValidium` and `PolygonZkEVMBridge` contracts. If not called by the owner must be provided a `batchNum` that does not have been aggregated within the  `_HALT_AGGREGATION_TIMEOUT` period.
+
 ```solidity
   function activateEmergencyState(
     uint64 sequencedBatchNum
   ) external
 ```
-Function to activate emergency state, which also enables the emergency mode on both CDKValidium and PolygonZkEVMBridge contracts
-If not called by the owner must be provided a batcnNum that does not have been aggregated in a _HALT_AGGREGATION_TIMEOUT period
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`sequencedBatchNum` | uint64 | Sequenced batch number that has not been aggreagated in _HALT_AGGREGATION_TIMEOUT
+|`sequencedBatchNum` | uint64 | Sequenced batch number that has not been aggregated in _HALT_AGGREGATION_TIMEOUT
 
-### deactivateEmergencyState
+### `deactivateEmergencyState`
+
+Function to deactivate emergency state on both CDKValidium and PolygonZkEVMBridge contracts.
+
 ```solidity
   function deactivateEmergencyState(
   ) external
 ```
-Function to deactivate emergency state on both CDKValidium and PolygonZkEVMBridge contracts
 
+### `_activateEmergencyState`
 
+Internal function to activate emergency state on both CDKValidium and PolygonZkEVMBridge contracts.
 
-### _activateEmergencyState
 ```solidity
   function _activateEmergencyState(
   ) internal
 ```
-Internal function to activate emergency state on both CDKValidium and PolygonZkEVMBridge contracts
 
+### `getForcedBatchFee`
 
-
-### getForcedBatchFee
 ```solidity
   function getForcedBatchFee(
   ) public returns (uint256)
 ```
-Get forced batch fee
 
+### `getLastVerifiedBatch`
 
-
-### getLastVerifiedBatch
 ```solidity
   function getLastVerifiedBatch(
   ) public returns (uint64)
 ```
-Get the last verified batch
 
+### `isPendingStateConsolidable`
 
+Returns a boolean that indicates if the `pendingStateNum` is consolidate-able.
 
-### isPendingStateConsolidable
 ```solidity
   function isPendingStateConsolidable(
   ) public returns (bool)
 ```
-Returns a boolean that indicates if the pendingStateNum is or not consolidable
-Note that his function does not check if the pending state currently exists, or if it's consolidated already
 
+!!! note
+    - This function does not check if the pending state currently exists, or if it's consolidated already.
 
+### `calculateRewardPerBatch`
 
-### calculateRewardPerBatch
+Function to calculate the reward to verify a single batch. 
+
 ```solidity
   function calculateRewardPerBatch(
   ) public returns (uint256)
 ```
-Function to calculate the reward to verify a single batch
 
+### `getInputSnarkBytes`
 
+Function to calculate the input snark bytes.
 
-### getInputSnarkBytes
 ```solidity
   function getInputSnarkBytes(
     uint64 initNumBatch,
@@ -541,10 +570,9 @@ Function to calculate the reward to verify a single batch
     bytes32 newStateRoot
   ) public returns (bytes)
 ```
-Function to calculate the input snark bytes
 
+##### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`initNumBatch` | uint64 | Batch which the aggregator starts the verification
@@ -553,174 +581,191 @@ Function to calculate the input snark bytes
 |`oldStateRoot` | bytes32 | State root before batch is processed
 |`newStateRoot` | bytes32 | New State root once the batch is processed
 
-### checkStateRootInsidePrime
+### `checkStateRootInsidePrime`
+
 ```solidity
   function checkStateRootInsidePrime(
   ) public returns (bool)
 ```
 
-
-
-
 ## Events
-### SequenceBatches
+
+### `SequenceBatches`
+
+Emitted when the trusted sequencer sends a new batch of transactions.
+
 ```solidity
   event SequenceBatches(
   )
 ```
 
-Emitted when the trusted sequencer sends a new batch of transactions
+### `ForceBatch`
 
-### ForceBatch
+Emitted when a batch is forced.
+
 ```solidity
   event ForceBatch(
   )
 ```
 
-Emitted when a batch is forced
+### `SequenceForceBatches`
 
-### SequenceForceBatches
+Emitted when forced batches are sequenced by not the trusted sequencer.
+
 ```solidity
   event SequenceForceBatches(
   )
 ```
 
-Emitted when forced batches are sequenced by not the trusted sequencer
+### `VerifyBatches`
 
-### VerifyBatches
+Emitted when a aggregator verifies batches.
+
 ```solidity
   event VerifyBatches(
   )
 ```
 
-Emitted when a aggregator verifies batches
+### `VerifyBatchesTrustedAggregator`
 
-### VerifyBatchesTrustedAggregator
+Emitted when the trusted aggregator verifies batches.
+
 ```solidity
   event VerifyBatchesTrustedAggregator(
   )
 ```
 
-Emitted when the trusted aggregator verifies batches
+### `ConsolidatePendingState`
 
-### ConsolidatePendingState
+Emitted when pending state is consolidated.
+
 ```solidity
   event ConsolidatePendingState(
   )
 ```
 
-Emitted when pending state is consolidated
+### `SetTrustedSequencer`
 
-### SetTrustedSequencer
+Emitted when the admin updates the trusted sequencer address.
+
 ```solidity
   event SetTrustedSequencer(
   )
 ```
 
-Emitted when the admin updates the trusted sequencer address
+### `SetTrustedSequencerURL`
 
-### SetTrustedSequencerURL
+Emitted when the admin updates the sequencer URL.
+
 ```solidity
   event SetTrustedSequencerURL(
   )
 ```
 
-Emitted when the admin updates the sequencer URL
+### `SetTrustedAggregatorTimeout`
 
-### SetTrustedAggregatorTimeout
+Emitted when the admin updates the trusted aggregator timeout.
+
 ```solidity
   event SetTrustedAggregatorTimeout(
   )
 ```
 
-Emitted when the admin updates the trusted aggregator timeout
+### `SetPendingStateTimeout`
 
-### SetPendingStateTimeout
+Emitted when the admin updates the pending state timeout.
+
 ```solidity
   event SetPendingStateTimeout(
   )
 ```
 
-Emitted when the admin updates the pending state timeout
+### `SetTrustedAggregator`
 
-### SetTrustedAggregator
+Emitted when the admin updates the trusted aggregator address.
+
 ```solidity
   event SetTrustedAggregator(
   )
 ```
 
-Emitted when the admin updates the trusted aggregator address
+### `SetMultiplierBatchFee`
 
-### SetMultiplierBatchFee
+Emitted when the admin updates the multiplier batch fee.
+
 ```solidity
   event SetMultiplierBatchFee(
   )
 ```
 
-Emitted when the admin updates the multiplier batch fee
+### `SetVerifyBatchTimeTarget`
 
-### SetVerifyBatchTimeTarget
+Emitted when the admin updates the verify batch timeout.
+
 ```solidity
   event SetVerifyBatchTimeTarget(
   )
 ```
 
-Emitted when the admin updates the verify batch timeout
+### `SetForceBatchTimeout`
 
-### SetForceBatchTimeout
+Emitted when the admin update the force batch timeout.
+
 ```solidity
   event SetForceBatchTimeout(
   )
 ```
 
-Emitted when the admin update the force batch timeout
+### `ActivateForceBatches`
 
-### ActivateForceBatches
+Emitted when activate force batches.
+
 ```solidity
   event ActivateForceBatches(
   )
 ```
 
-Emitted when activate force batches
+### `TransferAdminRole`
 
-### TransferAdminRole
+Emitted when the admin starts the two-step transfer role setting a new pending admin.
+
 ```solidity
   event TransferAdminRole(
   )
 ```
 
-Emitted when the admin starts the two-step transfer role setting a new pending admin
+### `AcceptAdminRole`
 
-### AcceptAdminRole
+Emitted when the pending admin accepts the admin role.
+
 ```solidity
   event AcceptAdminRole(
   )
 ```
 
-Emitted when the pending admin accepts the admin role
+### `ProveNonDeterministicPendingState`
 
-### ProveNonDeterministicPendingState
+Emitted when is proved a different state given the same batches.
+
 ```solidity
   event ProveNonDeterministicPendingState(
   )
 ```
 
-Emitted when is proved a different state given the same batches
+### `OverridePendingState`
 
-### OverridePendingState
+Emitted when the trusted aggregator overrides pending state.
+
 ```solidity
   event OverridePendingState(
   )
 ```
 
-Emitted when the trusted aggregator overrides pending state
+### `UpdateZkEVMVersion`
 
-### UpdateZkEVMVersion
+Emitted every time the forkID is updated; this includes the first initialization of the contract. This event should be emitted on every upgrade of the contract with relevant changes for the nodes.
+
 ```solidity
   event UpdateZkEVMVersion(
   )
 ```
-
-Emitted everytime the forkID is updated, this includes the first initialization of the contract
-This event is intended to be emitted for every upgrade of the contract with relevant changes for the nodes
-

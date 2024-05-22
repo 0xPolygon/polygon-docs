@@ -33,7 +33,7 @@ Allows the admin to setup the members of the committee.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -52,7 +52,7 @@ Verifies that the given signedHash has been signed by requiredAmountOfSignatures
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -91,7 +91,7 @@ Emitted when the committee is updated.
   )
 ```
 
-#### Parameters
+##### Parameters
 
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |

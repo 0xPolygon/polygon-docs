@@ -21,7 +21,7 @@ Computes and returns the merkle root
 Add a new leaf to the merkle tree
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafHash` | bytes32 | Leaf hash
@@ -38,7 +38,7 @@ Add a new leaf to the merkle tree
 Verify merkle proof
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafHash` | bytes32 | Leaf hash
@@ -61,7 +61,7 @@ Verify merkle proof
 Given the leaf data returns the leaf value
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafType` | uint8 | Leaf type -->  [0] transfer Ether / ERC20 tokens, [1] message

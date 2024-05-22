@@ -18,7 +18,7 @@ to calculate the leaf of the tree
 Given the leaf data returns the leaf value
 
 
-#### Parameters:
+##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafType` | uint8 | Leaf type -->  [0] transfer Ether / ERC20 tokens, [1] message

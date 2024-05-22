@@ -2,9 +2,9 @@ Bridge contract deployed on Ethereum and all Polygon rollups. Responsible for ma
 
 ## Functions
 
-Disable initializers on the implementation following the best practices.
-
 ### `constructor`
+
+Disable initializers on the implementation following best practices.
 
 ```solidity
   function constructor(
@@ -26,7 +26,7 @@ The value of `_polygonRollupManager` on the L2 deployment of the contract is `ad
   ) external
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -59,7 +59,7 @@ Deposit add a new leaf to the Merkle tree.
 !!! note
     - User/UI must be aware of the existing/available networks when choosing the destination network.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -86,7 +86,7 @@ Bridge message and send ETH value.
 !!! note
     - User/UI must be aware of the existing/available networks when choosing the destination network.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -112,7 +112,7 @@ Bridge message and send ETH value.
 !!! note
     - User/UI must be aware of the existing/available networks when choosing the destination network
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -136,7 +136,7 @@ Bridge message and send ETH value.
   ) internal
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -166,7 +166,7 @@ Verify merkle proof and withdraw tokens/ETH.
   ) external
 ```
 
-#### Parameters
+##### Parameters
 s
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -208,7 +208,7 @@ Verify merkle proof and execute message. If the receiving address is an EOA, the
   ) external
 ```
 
-#### Parameters
+##### Parameters
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`smtProofLocalExitRoot` | bytes32[32] | Smt proof to proof the leaf against the exit root
@@ -247,7 +247,7 @@ Returns the precalculated address of a wrapper using the token information.
     - Updating the metadata of a token is not supported.
     - Since the metadata has relevance in the address deployed, this function does not return a valid wrapped address if the metadata provided is not the original one.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -268,7 +268,7 @@ Returns the address of a wrapper using the token information if already exist.
   ) external returns (address)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -308,7 +308,7 @@ Verify leaf and checks that it has not been claimed.
   ) internal
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -330,7 +330,7 @@ Function to check if an index is claimed or not.
   ) external returns (bool)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -366,7 +366,7 @@ Function to call token permit method of extended ERC20 + @param token ERC20 toke
   ) internal
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -384,7 +384,7 @@ Internal function that uses create2 to deploy the wrapped tokens.
   ) internal returns (contract TokenWrapped newWrappedToken)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -402,7 +402,7 @@ Provides a safe `ERC20.symbol` version which returns `NO_SYMBOL` as fallback str
   ) internal returns (string)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -418,7 +418,7 @@ Provides a safe `ERC20.name` version which returns `NO_NAME` as fallback string.
   ) internal returns (string)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -437,7 +437,7 @@ Provides a safe `ERC20.decimals` version which returns `18` as fallback value.
 !!! warn
     - Tokens with (decimals > 255) are not supported.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -453,7 +453,7 @@ Function to convert returned data to string; returns `NOT_VALID_ENCODING` as fal
   ) internal returns (string)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -469,7 +469,7 @@ Returns the encoded token metadata.
   ) public returns (bytes)
 ```
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -491,7 +491,7 @@ Returns the precalculated address of a wrapper using the token address.
     - Updating the metadata of a token is not supported.
     - Since the metadata has relevance in the address deployed, this function does not return a valid wrapped address if the metadata provided is not the original one.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
