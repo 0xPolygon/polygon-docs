@@ -6,7 +6,7 @@ This document is a guide on how to deploy a smart contract on the Polygon zkEVM 
 ## Initial setup
 
 !!!info
-
+    
     Before starting with this deployment, please ensure that your wallet is connected to the Polygon zkEVM Testnet. See the demo [here](../get-started/quick-start.md) for details on how to connect your wallet.
 
 - Add the Polygon zkEVM Testnet to your Metamask wallet and get some Testnet ETH from the [Polygon Faucet](https://faucet.polygon.technology).
@@ -34,19 +34,14 @@ This document is a guide on how to deploy a smart contract on the Polygon zkEVM 
     ```
 
 - Populate the `.env.sample` file with your `ACCOUNT_PRIVATE_KEY`
+??? "How to get your private key in MetaMask"
+    Click the vertical 3 dots in the upper-right corner of Metamask window.
 
-<details>
-<summary>How to get your private key in MetaMask</summary>
+    Select `Account details` and then click `Export private key`.
 
-- Click the vertical 3 dots in the upper-right corner of Metamask window
+    Enter your Metamask password to reveal the private key.
 
-- Select **Account details** and then click **Export private key**
-
-- Enter your Metamask password to reveal the private key
-
-- Copy the private key and paste it into the `.env.sample` file.
-
-</details>
+    Copy the private key and paste it into the `.env.sample` file.
 
 - Copy the contents of the `.env.sample` file to the `.env` file,
 

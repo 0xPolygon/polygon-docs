@@ -94,7 +94,7 @@ nav:
         - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
         - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture high-level:
-        - Overview: zkEVM/architecture/high-level/overview.md
+        - Architectural overview: zkEVM/architecture/high-level/overview.md
         #- Smart contracts: 
         #  - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
         #  - Rollup: zkEVM/architecture/high-level/smart-contracts/rollup.md

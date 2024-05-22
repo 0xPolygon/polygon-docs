@@ -183,6 +183,6 @@ The above command compiles and deploys the contract to the zkEVM Testnet. The ou
 
 - Copy the address of your newly deployed contract (i.e. the `Deployed to:` address as in the above example output).
 
-- Go to the [zkEVM Testnet Explorer](https://testnet-zkevm.polygonscan.com), and paste the address in the `Search by address` field.
+- Go to the [zkEVM Testnet Explorer](https://cardona-zkevm.polygonscan.com/), and paste the address in the `Search by address` field.
 
 - Check `Transaction Details`  reflecting the `From` address, which is the owner's address and the `To` address, which is the same `Deployed to:` address seen in the CLI.
