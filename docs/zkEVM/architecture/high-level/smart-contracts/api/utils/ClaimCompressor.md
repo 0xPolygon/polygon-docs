@@ -1,8 +1,9 @@
-Contract for compressing and decompressing claim data
-
+Utility contract for compressing and decompressing claim data.
 
 ## Functions
-### constructor
+
+### `constructor`
+
 ```solidity
   function constructor(
     address __bridgeAddress,
@@ -10,14 +11,17 @@ Contract for compressing and decompressing claim data
   ) public
 ```
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`__bridgeAddress` | address | PolygonZkEVMBridge contract address
 |`__networkID` | uint32 | Network ID
 
-### compressClaimCall
+### `compressClaimCall`
+
+Forward all the claim parameters to compress them inside the contract.
+
 ```solidity
   function compressClaimCall(
     bytes32 mainnetExitRoot,
@@ -25,23 +29,17 @@ Contract for compressing and decompressing claim data
     struct ClaimCompressor.CompressClaimCallData[] compressClaimCalldata
   ) external returns (bytes)
 ```
-Foward all the claim parameters to compress them inside the contrat
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`mainnetExitRoot` | bytes32 | Mainnet exit root
 |`rollupExitRoot` | bytes32 | Rollup exit root
 |`compressClaimCalldata` | struct ClaimCompressor.CompressClaimCallData[] | compress claim calldata
 
-
-### sendCompressedClaims
+### `sendCompressedClaims`
 ```solidity
   function sendCompressedClaims(
   ) external
 ```
-
-
-
-

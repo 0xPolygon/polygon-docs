@@ -1,21 +1,25 @@
-Contract responsible for deploying deterministic address contracts related with the CDKValidium
-
+Contract responsible for deploying deterministic address contracts related with the CDKValidium.
 
 ## Functions
-### constructor
+
+### `constructor`
+
 ```solidity
   function constructor(
     address _owner
   ) public
 ```
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_owner` | address | Owner
 
-### deployDeterministic
+### `deployDeterministic`
+
+Deploys a contract using `create2`.
+
 ```solidity
   function deployDeterministic(
     uint256 amount,
@@ -23,17 +27,19 @@ Contract responsible for deploying deterministic address contracts related with 
     bytes initBytecode
   ) public
 ```
-Allows to deploy a contract using create2
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`amount` | uint256 | Amount used in create2
 |`salt` | bytes32 | Salt used in create2
 |`initBytecode` | bytes | Init bytecode that will be use in create2
 
-### deployDeterministicAndCall
+### `deployDeterministicAndCall`
+
+Deploys a contract using `create2` and calls it afterwards.
+
 ```solidity
   function deployDeterministicAndCall(
     uint256 amount,
@@ -42,10 +48,9 @@ Allows to deploy a contract using create2
     bytes dataCall
   ) public
 ```
-Allows to deploy a contract using create2 and call it afterwards
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`amount` | uint256 | Amount used in create2
@@ -53,7 +58,8 @@ Allows to deploy a contract using create2 and call it afterwards
 |`initBytecode` | bytes | Init bytecode that will be use in create2
 |`dataCall` | bytes | Data used in the call after deploying the smart contract
 
-### functionCall
+### `functionCall`
+
 ```solidity
   function functionCall(
     address targetAddress,
@@ -62,15 +68,16 @@ Allows to deploy a contract using create2 and call it afterwards
   ) public
 ```
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`targetAddress` | address | Amount of contract deploy
 |`dataCall` | bytes | Data used to call the target smart contract
 |`amount` | uint256 | Data used to call the target smart contract
 
-### predictDeterministicAddress
+### `predictDeterministicAddress`
+
 ```solidity
   function predictDeterministicAddress(
     bytes32 salt,
@@ -78,27 +85,30 @@ Allows to deploy a contract using create2 and call it afterwards
   ) public returns (address)
 ```
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`salt` | bytes32 | Salt used in create2
 |`bytecodeHash` | bytes32 | Init bytecode hashed, it contains the constructor parameters
 
 ## Events
-### NewDeterministicDeployment
+
+### `NewDeterministicDeployment`
+
+Emitted when a contract is deployed.
+
 ```solidity
   event NewDeterministicDeployment(
   )
 ```
 
-Emitted when a contract is deployed
+### `FunctionCall`
 
-### FunctionCall
+Emitted when a contract is called
+
 ```solidity
   event FunctionCall(
   )
 ```
-
-Emitted when a contract is called
 

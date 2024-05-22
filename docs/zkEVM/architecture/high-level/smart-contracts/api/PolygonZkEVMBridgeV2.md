@@ -1,18 +1,20 @@
-PolygonZkEVMBridge that will be deployed on Ethereum and all Polygon rollups
-Contract responsible to manage the token interactions with other networks
-
+Bridge contract deployed on Ethereum and all Polygon rollups. Responsible for managing the token interactions with other networks.
 
 ## Functions
-### constructor
+
+Disable initializers on the implementation following the best practices.
+
+### `constructor`
+
 ```solidity
   function constructor(
   ) public
 ```
-Disable initalizers on the implementation following the best practices
 
+### `initialize`
 
+The value of `_polygonRollupManager` on the L2 deployment of the contract is `address(0)`, so an emergency state is not possible for the L2 deployment of the bridge.
 
-### initialize
 ```solidity
   function initialize(
     uint32 _networkID,
@@ -23,11 +25,9 @@ Disable initalizers on the implementation following the best practices
     bytes _gasTokenMetadata
   ) external
 ```
-The value of `_polygonRollupManager` on the L2 deployment of the contract will be address(0), so
-emergency state is not possible for the L2 deployment of the bridge, intentionally
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_networkID` | uint32 | networkID
@@ -37,7 +37,10 @@ emergency state is not possible for the L2 deployment of the bridge, intentional
 |`_polygonRollupManager` | address | polygonZkEVM address
 |`_gasTokenMetadata` | bytes | Abi encoded gas token metadata
 
-### bridgeAsset
+### `bridgeAsset`
+
+Deposit add a new leaf to the Merkle tree.
+
 ```solidity
   function bridgeAsset(
     uint32 destinationNetwork,
@@ -48,15 +51,16 @@ emergency state is not possible for the L2 deployment of the bridge, intentional
     bytes permitData
   ) public
 ```
-Deposit add a new leaf to the merkle tree
-note If this function is called with a reentrant token, it would be possible to `claimTokens` in the same call
-Reducing the supply of tokens on this contract, and actually locking tokens in the contract.
-Therefore we recommend to third parties bridges that if they do implement reentrant call of `beforeTransfer` of some reentrant tokens
-do not call any external address in that case
-note User/UI must be aware of the existing/available networks when choosing the destination network
 
+!!! note
+    - If this function is called with a reentrant token, it is possible to `claimTokens` in the same call, thus reducing the supply of tokens on this contract, and actually locking tokens in the contract.
+    - Therefore we recommend to third-party bridges that if they do implement reentrant `beforeTransfer` for some reentrant tokens, not to call any external address.
 
-#### Parameters:
+!!! note
+    - User/UI must be aware of the existing/available networks when choosing the destination network.
+
+#### Parameters
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`destinationNetwork` | uint32 | Network destination
@@ -66,7 +70,10 @@ note User/UI must be aware of the existing/available networks when choosing the 
 |`forceUpdateGlobalExitRoot` | bool | Indicates if the new global exit root is updated or not
 |`permitData` | bytes | Raw data of the call `permit` of the token
 
-### bridgeMessage
+### `bridgeMessage`
+
+Bridge message and send ETH value.
+
 ```solidity
   function bridgeMessage(
     uint32 destinationNetwork,
@@ -75,11 +82,12 @@ note User/UI must be aware of the existing/available networks when choosing the 
     bytes metadata
   ) external
 ```
-Bridge message and send ETH value
-note User/UI must be aware of the existing/available networks when choosing the destination network
 
+!!! note
+    - User/UI must be aware of the existing/available networks when choosing the destination network.
 
-#### Parameters:
+#### Parameters
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`destinationNetwork` | uint32 | Network destination
@@ -87,7 +95,10 @@ note User/UI must be aware of the existing/available networks when choosing the 
 |`forceUpdateGlobalExitRoot` | bool | Indicates if the new global exit root is updated or not
 |`metadata` | bytes | Message metadata
 
-### bridgeMessageWETH
+### `bridgeMessageWETH`
+
+Bridge message and send ETH value.
+
 ```solidity
   function bridgeMessageWETH(
     uint32 destinationNetwork,
@@ -97,11 +108,12 @@ note User/UI must be aware of the existing/available networks when choosing the 
     bytes metadata
   ) external
 ```
-Bridge message and send ETH value
-note User/UI must be aware of the existing/available networks when choosing the destination network
 
+!!! note
+    - User/UI must be aware of the existing/available networks when choosing the destination network
 
-#### Parameters:
+#### Parameters
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`destinationNetwork` | uint32 | Network destination
@@ -110,7 +122,10 @@ note User/UI must be aware of the existing/available networks when choosing the 
 |`forceUpdateGlobalExitRoot` | bool | Indicates if the new global exit root is updated or not
 |`metadata` | bytes | Message metadata
 
-### _bridgeMessage
+### `_bridgeMessage`
+
+Bridge message and send ETH value.
+
 ```solidity
   function _bridgeMessage(
     uint32 destinationNetwork,
@@ -120,10 +135,9 @@ note User/UI must be aware of the existing/available networks when choosing the 
     bytes metadata
   ) internal
 ```
-Bridge message and send ETH value
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`destinationNetwork` | uint32 | Network destination
@@ -132,7 +146,10 @@ Bridge message and send ETH value
 |`forceUpdateGlobalExitRoot` | bool | Indicates if the new global exit root is updated or not
 |`metadata` | bytes | Message metadata
 
-### claimAsset
+### `claimAsset`
+
+Verify merkle proof and withdraw tokens/ETH.
+
 ```solidity
   function claimAsset(
     bytes32[32] smtProofLocalExitRoot,
@@ -148,10 +165,9 @@ Bridge message and send ETH value
     bytes metadata
   ) external
 ```
-Verify merkle proof and withdraw tokens/ether
 
-
-#### Parameters:
+#### Parameters
+s
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`smtProofLocalExitRoot` | bytes32[32] | Smt proof to proof the leaf against the network exit root
@@ -172,7 +188,10 @@ to avoid possible synch attacks
 |`amount` | uint256 | Amount of tokens
 |`metadata` | bytes | Abi encoded metadata if any, empty otherwise
 
-### claimMessage
+### `claimMessage`
+
+Verify merkle proof and execute message. If the receiving address is an EOA, the call results as a success which means that the amount of ether transfers correctly, but the message does not trigger any execution.
+
 ```solidity
   function claimMessage(
     bytes32[32] smtProofLocalExitRoot,
@@ -188,13 +207,8 @@ to avoid possible synch attacks
     bytes metadata
   ) external
 ```
-Verify merkle proof and execute message
-If the receiving address is an EOA, the call will result as a success
-Which means that the amount of ether will be transferred correctly, but the message
-will not trigger any execution
 
-
-#### Parameters:
+#### Parameters
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`smtProofLocalExitRoot` | bytes32[32] | Smt proof to proof the leaf against the exit root
@@ -215,7 +229,10 @@ to avoid possible synch attacks
 |`amount` | uint256 | message value
 |`metadata` | bytes | Abi encoded metadata if any, empty otherwise
 
-### precalculatedWrapperAddress
+### `precalculatedWrapperAddress`
+
+Returns the precalculated address of a wrapper using the token information.
+
 ```solidity
   function precalculatedWrapperAddress(
     uint32 originNetwork,
@@ -225,13 +242,13 @@ to avoid possible synch attacks
     uint8 decimals
   ) public returns (address)
 ```
-Returns the precalculated address of a wrapper using the token information
-Note Updating the metadata of a token is not supported.
-Since the metadata has relevance in the address deployed, this function will not return a valid
-wrapped address if the metadata provided is not the original one.
 
+!!! note
+    - Updating the metadata of a token is not supported.
+    - Since the metadata has relevance in the address deployed, this function does not return a valid wrapped address if the metadata provided is not the original one.
 
-#### Parameters:
+#### Parameters
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`originNetwork` | uint32 | Origin network
@@ -240,43 +257,46 @@ wrapped address if the metadata provided is not the original one.
 |`symbol` | string | Symbol of the token
 |`decimals` | uint8 | Decimals of the token
 
-### getTokenWrappedAddress
+### `getTokenWrappedAddress`
+
+Returns the address of a wrapper using the token information if already exist.
+
 ```solidity
   function getTokenWrappedAddress(
     uint32 originNetwork,
     address originTokenAddress
   ) external returns (address)
 ```
-Returns the address of a wrapper using the token information if already exist
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`originNetwork` | uint32 | Origin network
 |`originTokenAddress` | address | Origin token address, 0 address is reserved for ether
 
-### activateEmergencyState
+### `activateEmergencyState`
+
+Function to activate the emergency state. Can only be called by the Polygon ZK-EVM in extreme situations.
+
 ```solidity
   function activateEmergencyState(
   ) external
 ```
-Function to activate the emergency state
-     " Only can be called by the Polygon ZK-EVM in extreme situations
 
+### `deactivateEmergencyState`
 
+Function to deactivate the emergency state. Can only be called by the Polygon ZK-EVM.
 
-### deactivateEmergencyState
 ```solidity
   function deactivateEmergencyState(
   ) external
 ```
-Function to deactivate the emergency state
-     " Only can be called by the Polygon ZK-EVM
 
+### `_verifyLeaf`
 
+Verify leaf and checks that it has not been claimed.
 
-### _verifyLeaf
 ```solidity
   function _verifyLeaf(
     bytes32[32] smtProofLocalExitRoot,
@@ -287,10 +307,9 @@ Function to deactivate the emergency state
     bytes32 leafValue
   ) internal
 ```
-Verify leaf and checks that it has not been claimed
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`smtProofLocalExitRoot` | bytes32[32] | Smt proof
@@ -300,147 +319,166 @@ Verify leaf and checks that it has not been claimed
 |`rollupExitRoot` | bytes32 | Rollup exit root
 |`leafValue` | bytes32 | leaf value
 
-### isClaimed
+### `isClaimed`
+
+Function to check if an index is claimed or not.
+
 ```solidity
   function isClaimed(
     uint32 leafIndex,
     uint32 sourceBridgeNetwork
   ) external returns (bool)
 ```
-Function to check if an index is claimed or not
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafIndex` | uint32 | Index
 |`sourceBridgeNetwork` | uint32 | Origin network
 
-### updateGlobalExitRoot
+### `updateGlobalExitRoot`
+
+Function to update the `globalExitRoot` if the last deposit is not submitted.
+
 ```solidity
   function updateGlobalExitRoot(
   ) external
 ```
-Function to update the globalExitRoot if the last deposit is not submitted
 
+### `_updateGlobalExitRoot`
 
+Function to update the `globalExitRoot`.
 
-### _updateGlobalExitRoot
 ```solidity
   function _updateGlobalExitRoot(
   ) internal
 ```
-Function to update the globalExitRoot
 
+### `_permit`
 
+Function to call token permit method of extended ERC20 + @param token ERC20 token address.
 
-### _permit
 ```solidity
   function _permit(
     address amount,
     uint256 permitData
   ) internal
 ```
-Function to call token permit method of extended ERC20
-     + @param token ERC20 token address
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`amount` | address | Quantity that is expected to be allowed
 |`permitData` | uint256 | Raw data of the call `permit` of the token
 
-### _deployWrappedToken
+### `_deployWrappedToken`
+
+Internal function that uses create2 to deploy the wrapped tokens.
+
 ```solidity
   function _deployWrappedToken(
     bytes32 salt,
     bytes constructorArgs
   ) internal returns (contract TokenWrapped newWrappedToken)
 ```
-Internal function that uses create2 to deploy the wrapped tokens
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`salt` | bytes32 | Salt used in create2 params,
 tokenInfoHash will be used as salt for all wrappeds except for bridge native WETH, that will be bytes32(0)
 |`constructorArgs` | bytes | Encoded constructor args for the wrapped token
 
-### _safeSymbol
+### `_safeSymbol`
+
+Provides a safe `ERC20.symbol` version which returns `NO_SYMBOL` as fallback string.
+
 ```solidity
   function _safeSymbol(
     address token
   ) internal returns (string)
 ```
-Provides a safe ERC20.symbol version which returns 'NO_SYMBOL' as fallback string
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`token` | address | The address of the ERC-20 token contract
 
-### _safeName
+### `_safeName`
+
+Provides a safe `ERC20.name` version which returns `NO_NAME` as fallback string.
+
 ```solidity
   function _safeName(
     address token
   ) internal returns (string)
 ```
- Provides a safe ERC20.name version which returns 'NO_NAME' as fallback string.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`token` | address | The address of the ERC-20 token contract.
 
-### _safeDecimals
+### `_safeDecimals`
+
+Provides a safe `ERC20.decimals` version which returns `18` as fallback value.
+
 ```solidity
   function _safeDecimals(
     address token
   ) internal returns (uint8)
 ```
-Provides a safe ERC20.decimals version which returns '18' as fallback value.
-Note Tokens with (decimals > 255) are not supported
 
+!!! warn
+    - Tokens with (decimals > 255) are not supported.
 
-#### Parameters:
+#### Parameters
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`token` | address | The address of the ERC-20 token contract
 
-### _returnDataToString
+### `_returnDataToString`
+
+Function to convert returned data to string; returns `NOT_VALID_ENCODING` as fallback value.
+
 ```solidity
   function _returnDataToString(
     bytes data
   ) internal returns (string)
 ```
-Function to convert returned data to string
-returns 'NOT_VALID_ENCODING' as fallback value.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`data` | bytes | returned data
 
-### getTokenMetadata
+### `getTokenMetadata`
+
+Returns the encoded token metadata.
+
 ```solidity
   function getTokenMetadata(
     address token
   ) public returns (bytes)
 ```
-Returns the encoded token metadata
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`token` | address | Address of the token
 
-### calculateTokenWrapperAddress
+### `calculateTokenWrapperAddress`
+
+Returns the precalculated address of a wrapper using the token address.
+
 ```solidity
   function calculateTokenWrapperAddress(
     uint32 originNetwork,
@@ -448,13 +486,13 @@ Returns the encoded token metadata
     address token
   ) external returns (address)
 ```
-Returns the precalculated address of a wrapper using the token address
-Note Updating the metadata of a token is not supported.
-Since the metadata has relevance in the address deployed, this function will not return a valid
-wrapped address if the metadata provided is not the original one.
 
+!!! note
+    - Updating the metadata of a token is not supported.
+    - Since the metadata has relevance in the address deployed, this function does not return a valid wrapped address if the metadata provided is not the original one.
 
-#### Parameters:
+#### Parameters
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`originNetwork` | uint32 | Origin network
@@ -462,27 +500,30 @@ wrapped address if the metadata provided is not the original one.
 |`token` | address | Address of the token to calculate the wrapper address
 
 ## Events
-### BridgeEvent
+
+### `BridgeEvent`
+
+Emitted when bridge assets or messages to another network.
+
 ```solidity
   event BridgeEvent(
   )
 ```
 
-Emitted when bridge assets or messages to another network
+### `ClaimEvent`
 
-### ClaimEvent
+Emitted when a claim is done from another network.
+
 ```solidity
   event ClaimEvent(
   )
 ```
 
-Emitted when a claim is done from another network
+### `NewWrappedToken`
 
-### NewWrappedToken
+Emitted when a new wrapped token is created.
+
 ```solidity
   event NewWrappedToken(
   )
 ```
-
-Emitted when a new wrapped token is created
-

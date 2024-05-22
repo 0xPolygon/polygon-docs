@@ -1,8 +1,9 @@
-Contract responsible for managing the exit roots across multiple networks
-
+Contract responsible for managing the exit roots across multiple networks.
 
 ## Functions
-### constructor
+
+### `constructor`
+
 ```solidity
   function constructor(
     address _rollupManager,
@@ -10,46 +11,51 @@ Contract responsible for managing the exit roots across multiple networks
   ) public
 ```
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_rollupManager` | address | Rollup manager contract address
 |`_bridgeAddress` | address | PolygonZkEVMBridge contract address
 
-### updateExitRoot
+### `updateExitRoot`
+
+Update the exit root of one of the networks and the global exit root.
+
 ```solidity
   function updateExitRoot(
     bytes32 newRoot
   ) external
 ```
-Update the exit root of one of the networks and the global exit root
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newRoot` | bytes32 | new exit tree root
 
-### getLastGlobalExitRoot
+### `getLastGlobalExitRoot`
+
+Return last global exit root.
+
 ```solidity
   function getLastGlobalExitRoot(
   ) public returns (bytes32)
 ```
-Return last global exit root
 
+### `getRoot`
 
+Computes and returns the Merkle root of the `L1InfoTree`.
 
-### getRoot
 ```solidity
   function getRoot(
   ) public returns (bytes32)
 ```
-Computes and returns the merkle root of the L1InfoTree
 
+### `getLeafValue`
 
+Given the leaf data returns the leaf hash.
 
-### getLeafValue
 ```solidity
   function getLeafValue(
     bytes32 newGlobalExitRoot,
@@ -57,10 +63,9 @@ Computes and returns the merkle root of the L1InfoTree
     uint64 timestamp
   ) public returns (bytes32)
 ```
-Given the leaf data returns the leaf hash
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newGlobalExitRoot` | bytes32 | Last global exit root
@@ -68,11 +73,12 @@ Given the leaf data returns the leaf hash
 |`timestamp` | uint64 | Ethereum timestamp in seconds
 
 ## Events
-### UpdateL1InfoTree
+
+### `UpdateL1InfoTree`
+
+Emitted when the global exit root is updated
+
 ```solidity
   event UpdateL1InfoTree(
   )
 ```
-
-Emitted when the global exit root is updated
-

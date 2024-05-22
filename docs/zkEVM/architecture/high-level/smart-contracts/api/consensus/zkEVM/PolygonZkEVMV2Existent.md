@@ -1,13 +1,7 @@
-Contract responsible for managing the states and the updates of L2 network.
-There will be a trusted sequencer, which is able to send transactions.
-Any user can force some transaction and the sequencer will have a timeout to add them in the queue.
-The sequenced state is deterministic and can be precalculated before it's actually verified by a zkProof.
-The aggregators will be able to verify the sequenced state with zkProofs and therefore make available the withdrawals from L2 network.
-To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart contract that will be deployed in both networks.
-
-
 ## Functions
-### constructor
+
+### `constructor`
+
 ```solidity
   function constructor(
     contract IPolygonZkEVMGlobalExitRoot _globalExitRootManager,
@@ -17,8 +11,8 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
   ) public
 ```
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_globalExitRootManager` | contract IPolygonZkEVMGlobalExitRoot | Global exit root manager address
@@ -26,7 +20,8 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
 |`_bridgeAddress` | contract IPolygonZkEVMBridge | Bridge address
 |`_rollupManager` | contract PolygonRollupManager | Global exit root manager address
 
-### initializeUpgrade
+### `initializeUpgrade`
+
 ```solidity
   function initializeUpgrade(
     address _admin,
@@ -37,11 +32,13 @@ To enter and exit of the L2 network will be used a PolygonZkEVMBridge smart cont
     uint64 _lastTimestamp
   ) external
 ```
-note This initializer will be called instead of the PolygonRollupBase
-This is a especial initializer since the zkEVM it's an already created network
 
+!!! note
+    - This initializer is called instead of the `PolygonRollupBase`.
+    - This is a especial initializer since the zkEVM network has already been created.
 
-#### Parameters:
+#### Parameters
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_admin` | address | Admin address
