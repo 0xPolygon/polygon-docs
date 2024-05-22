@@ -1,32 +1,36 @@
-This contract will be used as a helper for all the sparse merkle tree related functions
-Based on the implementation of the deposit eth2.0 contract https://github.com/ethereum/consensus-specs/blob/dev/solidity_deposit_contract/deposit_contract.sol
-
+This contract is a helper for all the sparse Merkle tree related functions and is based on the implementation of the deposit eth2.0 contract https://github.com/ethereum/consensus-specs/blob/dev/solidity_deposit_contract/deposit_contract.sol.
 
 ## Functions
-### getDepositRoot
+
+### `getDepositRoot`
+
+Computes and returns the Merkle root.
+
 ```solidity
   function getDepositRoot(
   ) public returns (bytes32)
 ```
-Computes and returns the merkle root
 
+### `_deposit`
 
+Adds a new leaf to the merkle tree.
 
-### _deposit
 ```solidity
   function _deposit(
     bytes32 leafHash
   ) internal
 ```
-Add a new leaf to the merkle tree
 
+##### Parameters
 
-##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafHash` | bytes32 | Leaf hash
 
-### verifyMerkleProof
+### `verifyMerkleProof`
+
+Verify merkle proof.
+
 ```solidity
   function verifyMerkleProof(
     bytes32 leafHash,
@@ -35,10 +39,9 @@ Add a new leaf to the merkle tree
     bytes32 root
   ) public returns (bool)
 ```
-Verify merkle proof
 
+##### Parameters
 
-##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafHash` | bytes32 | Leaf hash
@@ -46,7 +49,10 @@ Verify merkle proof
 |`index` | uint32 | Index of the leaf
 |`root` | bytes32 | Merkle root
 
-### getLeafValue
+### `getLeafValue`
+
+Given the leaf data returns the leaf value.
+
 ```solidity
   function getLeafValue(
     uint8 leafType,
@@ -58,10 +64,9 @@ Verify merkle proof
     bytes32 metadataHash
   ) public returns (bytes32)
 ```
-Given the leaf data returns the leaf value
 
+##### Parameters
 
-##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafType` | uint8 | Leaf type -->  [0] transfer Ether / ERC20 tokens, [1] message

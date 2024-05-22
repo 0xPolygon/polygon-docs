@@ -136,8 +136,6 @@ nav:
                   - DepositContractV2:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractV2.md
                   - LegacyZKEVMStateVariables:  zkEVM/architecture/high-level/smart-contracts/api/lib/LegacyZKEVMStateVariables.md
                   - PolygonAccessControlUpgradeable:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonAccessControlUpgradeable.md
-                  - PolygonConstantsBase:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonConstantsBase.md
-                  - PolygonRollupBase:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonRollupBase.md
                   - PolygonRollupBaseEtrog:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonRollupBaseEtrog.md
                   - PolygonTransparentProxy:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonTransparentProxy.md
                   - PolygonZkEVMGlobalExitRootBaseStorage:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonZkEVMGlobalExitRootBaseStorage.md

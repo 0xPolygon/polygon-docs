@@ -1,58 +1,45 @@
-
-
-
 ## Functions
-### constructor
+
+### `constructor`
+
 ```solidity
   function constructor(
   ) public
 ```
 
+### `mint`
 
-
-
-### mint
 ```solidity
   function mint(
   ) external
 ```
 
+### `burn`
 
-
-
-### burn
 ```solidity
   function burn(
   ) external
 ```
 
+### `decimals`
 
-
-
-### decimals
 ```solidity
   function decimals(
   ) public returns (uint8)
 ```
 
+### `permit`
 
-
-
-### permit
 ```solidity
   function permit(
   ) external
 ```
 
+### `DOMAIN_SEPARATOR`
 
+Returns the `DOMAIN_SEPARATOR`.
 
-
-### DOMAIN_SEPARATOR
 ```solidity
   function DOMAIN_SEPARATOR(
   ) public returns (bytes32)
 ```
-
-Return the DOMAIN_SEPARATOR.
-
-

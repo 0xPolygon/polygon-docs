@@ -1,9 +1,11 @@
-This contract will be used in the PolygonZkEVMBridge contract, it inherits the DepositContractBase and adds the logic
-to calculate the leaf of the tree
-
+This contract is used by the `PolygonZkEVMBridge` contract. It inherits the `DepositContractBase` and adds the logic to calculate the leaf of the exit tree.
 
 ## Functions
-### getLeafValue
+
+### `getLeafValue`
+
+Given the leaf data returns the leaf value.
+
 ```solidity
   function getLeafValue(
     uint8 leafType,
@@ -15,10 +17,9 @@ to calculate the leaf of the tree
     bytes32 metadataHash
   ) public returns (bytes32)
 ```
-Given the leaf data returns the leaf value
 
+##### Parameters
 
-##### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`leafType` | uint8 | Leaf type -->  [0] transfer Ether / ERC20 tokens, [1] message
