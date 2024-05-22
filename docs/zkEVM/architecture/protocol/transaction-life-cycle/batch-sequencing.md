@@ -29,9 +29,9 @@ The contract's public constant, `MAX_TRANSACTIONS_BYTE_LENGTH`, determines the m
 
 Similarly, the number of batches in a sequence is limited by the contract's public constant `MAX_VERIFY_BATCHES` (1000). The batches array must contain at least one batch and no more than the value of the constant `MAX_VERIFY_BATCHES`.
 
-Only the trusted sequencer's Ethereum account can access the `sequencedBatches` mapping. It is also necessary that the contract not be in an emergency state.
+Only the trusted sequencer's Ethereum account can access the `sequencedBatches` mapping. The contract must not be in an emergency state.
 
-The function call will be reverted if the above conditions are not met.
+The function call is reverted if the above conditions are not met.
 
 ## Batch validity & L2 state integrity
 
@@ -39,11 +39,11 @@ The `sequencedBatches` function iterates over every batch of the sequence, check
 
 - It must include a `globalExitRoot` value that is present in the `GlobalExitRootMap` of the bridge’s L1 `PolygonZkEVMGlobalExitRoot.sol` contract. A batch is valid only if it includes a valid `globalExitRoot`.
 - The length of the transactions byte array must be less than the value of `MAX_TRANSACTIONS_BYTE_LENGTH` constant.
-- The timestamp of the batch must be greater or equal to that of the last batch sequenced, but less than or equal to the timestamp of the block where the sequencing L1 transaction is executed. All batches must be ordered by time.
+- The timestamp of the block must be greater or equal to that of the last block (of a sequenced batch), but less than or equal to the timestamp of the block where the sequencing L1 transaction is executed. All blocks must be ordered by time.
 
-If one batch is not valid, the transaction reverts, discarding the entire sequence. Otherwise, if all batches to be sequenced are valid, the sequencing process will continue.
+If one block is not valid, the transaction reverts, discarding the entire sequence. Otherwise, if all blocks in the batches that are to be sequenced are valid, the sequencing process continues as normal.
 
-A storage variable called `lastBatchSequenced` is used as a batch counter, and it is thus incremented each time a batch is sequenced. It gives a specific index number to each batch that will be used as a position value in the batch chain.
+A storage variable called `lastBatchSequenced` is used as a batch counter, and it is thus incremented each time a batch is sequenced. It gives a specific index number to each batch that is to be used as a position value in the batch chain.
 
 The same hashing mechanism used in blockchains to link one block to the next is used in batches to ensure the cryptographic integrity of the batch chain. That is, including the previous batch's digest among the data used to compute the next batch's digest.
 
@@ -69,7 +69,7 @@ keccak256 (
 - `keccack256(transactions)` is the Keccak digest of the transactions byte array.
 - `globalExitRoot` is the root of the bridge’s global exit Merkle tree.
 - `timestamp` is the batch timestamp.
-- `seqAddress` is address of batch sequencer.
+- `seqAddress` is the address of the batch sequencer.
 
 ![Batch chain structure](../../../../img/zkEVM/04l2-batch-chain-acc-hash.png)
 
@@ -93,29 +93,29 @@ struct SequencedBatchData {
 - `sequencedTimestamp` is the timestamp of the block where the sequencing L1 transaction is executed.
 - `previousLastBatchSequenced` is the index of the last sequenced batch before the first batch of the current sequence (i.e., the last batch of the previous sequence).
 
-The index number of the last batch in the sequence is used as key and the `SequencedBatchData` struct is used as value when the sequence will be entered into `sequencedBatches` mapping.
+The index number of the last batch in the sequence is used as key and the `SequencedBatchData` struct is used as value when the sequence is entered into `sequencedBatches` mapping.
 
 ## Batch data minimal storage
 
-Since storage operations in L1 are very expensive in terms of gas consumption, it is critical to use it as little as possible. To accomplish this, storage slots (or mapping entries) are used solely to store a sequence commitment.
+Since storage operations on L1 are very costly in terms of gas consumption, it is essential to use them as sparingly as possible. To accomplish this, storage slots (or mapping entries) are used solely to store a sequence commitment.
 
-Each mapping entry commits two batch indices.
+Each mapping entry commits two batch indices,
 
-- Last batch of the previous sequence as value of `SequencedBatchData` struct.
-- Last batch of the current sequence as mapping key.
+- Last batch of the previous sequence as value of `SequencedBatchData` struct,
+- Last batch of the current sequence as mapping key,
 
-Along with the accumulated hash of the last batch in the current sequence and a timestamp.
+along with the accumulated hash of the last batch in the current sequence and a timestamp.
 
 It is important to note that only the accumulated hash of the last batch in the sequence is saved; all others are computed on the fly in order to obtain the last one.
 
-As previously stated, the hash digest will be a commitment of the entire batch chain. Batch indices also commit useful information like the number of batches in the sequence and their position in the batch chain. The timestamp anchors the sequence to a specific point in time.
+As previously stated, the hash digest becomes a commitment of the entire batch chain. Batch indices also commit useful information like the number of batches in the sequence and their position in the batch chain. The timestamp anchors the sequence to a specific point in time.
 
-The data availability of the L2 transactions is guaranteed because the data of each batch can be recovered from the calldata of the sequencing transaction, which is not part of the contract storage but is part of the L1 State.
+The data availability of the L2 transactions is guaranteed because the data of each batch can be recovered from the calldata of the sequencing transaction, which is not part of the contract storage but is part of the L1 state.
 
-Finally a `SequenceBatches` event will be emitted.
+Finally a `SequenceBatches` event is emitted.
 
 ```solidity
 event SequenceBatches (uint64 indexed numBatch)
 ```
 
-Once the batches are successfully sequenced in L1, all zkEVM nodes can sync their local L2 State by fetching the data directly from L1 `PolygonZkEVM.sol` contract, without having to rely on the Trusted Sequencer alone. This is how the L2 virtual state is reached.
+Once the batches are successfully sequenced in L1, all zkEVM nodes can sync their local L2 state by fetching the data directly from the L1 `PolygonZkEVM.sol` contract, without having to rely on the trusted sequencer alone. This is how the L2 virtual state is reached.

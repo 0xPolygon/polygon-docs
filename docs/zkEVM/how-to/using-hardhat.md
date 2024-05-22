@@ -94,7 +94,7 @@ mv README.md README-tutorial.md
     };
     ```
 
-    Note that a different path to artifacts is added so that the React app will be able to read the contract ABI within the `src` folder.
+    Note that a different path to artifacts is added so that the React app can read the contract ABI within the `src` folder.
 
 ## Add scripts
 

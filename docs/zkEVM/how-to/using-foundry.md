@@ -1,7 +1,7 @@
 
-Any smart contract deployable to the Ethereum network can be deployed easily to the Polygon zkEVM network. In this guide, we will demonstrate how to deploy an ERC-721 token contract on the Polygon zkEVM network using Foundry.
+Any smart contract deployable to the Ethereum network can be deployed easily to the Polygon zkEVM network. In this guide, we demonstrate how to deploy an ERC-721 token contract on the Polygon zkEVM network using Foundry.
 
-We will be following the Soulbound NFT tutorial from [this video](https://www.loom.com/share/41dcd20628774d3bbcce5edf2647312f).
+We follow the Soulbound NFT tutorial from [this video](https://www.loom.com/share/41dcd20628774d3bbcce5edf2647312f).
 
 ## Set up the environment
 
@@ -118,7 +118,7 @@ This is the file that contains the metadata for the token which includes the ima
 
 - Copy the address to the `Sbt.sol` inside the `safeMint` function
 
-- Remove the `uri` parameter so as to hardcode it. This makes all tokens to have the same `uri` image, but every consecutively minted pair of tokens will differ by 1 in numerical value of their `tokenId`.
+- Remove the `uri` parameter so as to hardcode it. This results in all minted tokens sharing the same uri image, but each token's `tokenId` differs from the previous one by 1.
 
 ## Populate the `.env` file
 
@@ -126,7 +126,7 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
 
 - Create a `.env.sample` file within the `src` folder
 
-- Populate `.env.sample` file with your `ACCOUNT_PRIVATE_KEY` and the zkEVM Testnet's `RPC URL` found [here](../get-started/quick-start.md). So the `.env.sample` file will look like this:
+- Populate `.env.sample` file with your `ACCOUNT_PRIVATE_KEY` and the zkEVM Testnet's `RPC URL` found [here](../get-started/quick-start.md). So the `.env.sample` file looks like this:
 
     ```json
     RPC_URL="https://rpc.public.zkevm-test.net"
@@ -169,7 +169,7 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
     - Passes the `RPC_URL` and `PVTKEY`.
     - References the actual smart contract.
 
-    For example, when deploying the `Sbt.sol` contract, the command will look like this:
+    For example, when deploying the `Sbt.sol` contract, the command looks like this:
 
     ```bash
     forge create --rpc-url $RPC_URL --private-key $PRIVATE_KEY src/Sbt.sol:SoEarly --legacy

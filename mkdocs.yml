@@ -160,8 +160,8 @@ nav:
             - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
             - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
             - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
-          - zkEVM Bridge:
-            - zkEVM Bridge: zkEVM/architecture/protocol/zkevm-bridge/index.md
+          - zkEVM bridge:
+            - zkEVM bridge: zkEVM/architecture/protocol/zkevm-bridge/index.md
             - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
             - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
             - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
