@@ -31,7 +31,7 @@ hide:
          <div class="product-list-item-header">
             <div class="feature-card-heading">Chain indexer framework</div>
          </div>
-         <p class="feature-paragraph">Web3 data indexer framework for developing flexible event-driven, data-pipelines on EVM blockchains.</p>
+         <p class="feature-paragraph">Web3 data indexing framework for developing flexible, event-driven data pipelines on EVM blockchains.</p>
       </a>
    </div>
    <div class="grid-item">
