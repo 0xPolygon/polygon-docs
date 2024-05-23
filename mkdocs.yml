@@ -519,7 +519,7 @@ nav:
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
           - OKLink: https://www.oklink.com/polygon
-  - Learn:
+  - Innovation & design:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
       - Polygon type 1 prover:
