@@ -31,7 +31,7 @@ Similarly, the number of batches in a sequence is limited by the contract's publ
 
 Only the trusted sequencer's Ethereum account can access the `sequencedBatches` mapping. The contract must not be in an emergency state.
 
-The function call is reverted if the above conditions are not met.
+The function call reverts if the above conditions are not met.
 
 ## Batch validity & L2 state integrity
 
@@ -43,7 +43,7 @@ The `sequencedBatches` function iterates over every batch of the sequence, check
 
 If one block is not valid, the transaction reverts, discarding the entire sequence. Otherwise, if all blocks in the batches that are to be sequenced are valid, the sequencing process continues as normal.
 
-A storage variable called `lastBatchSequenced` is used as a batch counter, and it is thus incremented each time a batch is sequenced. It gives a specific index number to each batch that is to be used as a position value in the batch chain.
+A storage variable called `lastBatchSequenced` is used as a batch counter, and it is thus incremented each time a batch is sequenced. It gives a specific index number to each batch that is used as a position value in the batch chain.
 
 The same hashing mechanism used in blockchains to link one block to the next is used in batches to ensure the cryptographic integrity of the batch chain. That is, including the previous batch's digest among the data used to compute the next batch's digest.
 
@@ -93,7 +93,7 @@ struct SequencedBatchData {
 - `sequencedTimestamp` is the timestamp of the block where the sequencing L1 transaction is executed.
 - `previousLastBatchSequenced` is the index of the last sequenced batch before the first batch of the current sequence (i.e., the last batch of the previous sequence).
 
-The index number of the last batch in the sequence is used as key and the `SequencedBatchData` struct is used as value when the sequence is entered into `sequencedBatches` mapping.
+The index number of the last batch in the sequence is the key, and the `SequencedBatchData` struct is the value, in the `sequencedBatches` mapping.
 
 ## Batch data minimal storage
 
@@ -112,7 +112,7 @@ As previously stated, the hash digest becomes a commitment of the entire batch c
 
 The data availability of the L2 transactions is guaranteed because the data of each batch can be recovered from the calldata of the sequencing transaction, which is not part of the contract storage but is part of the L1 state.
 
-Finally a `SequenceBatches` event is emitted.
+Finally a `SequenceBatches` event emits.
 
 ```solidity
 event SequenceBatches (uint64 indexed numBatch)

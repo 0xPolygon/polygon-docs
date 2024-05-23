@@ -72,7 +72,7 @@ function _updateBatchFee(uint64 newLastVerifiedBatch) internal
 The admin defines two storage variables that are used to **tune the fee adjustment function**:
 
 - `veryBatchTimeTarget`, which is **the targeted time of the verification of a batch**, so the `batchFee` variable is updated to achieve this target, and
-- `multiplierBatchFee`, which is the batch fee multiplier, with 3 decimals **ranging from 1000 to 1024**.
+- `multiplierBatchFee`, which is the batch fee multiplier, with 3 decimals ranging from 1000 to 1024.
 
 The function `_updateBatchFee` first determines how many of the aggregated batches are late. That is, those who are in the sequence but have not yet been aggregated.
 

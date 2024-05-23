@@ -15,7 +15,7 @@ function verifyBatches(
 ) public ifNotEmergencyState
 ```
 
-As previously stated, the `verifyBatches` function accepts the same arguments as the `trustedVerifyBatches` function. However, the `verifyBatches` function adds two additional constraints for a sequence to be aggregated, as well as a new L2 state stage called Pending state.
+As previously stated, the `verifyBatches` function accepts the same arguments as the `trustedVerifyBatches` function. However, the `verifyBatches` function adds two additional constraints for a sequence to be aggregated, as well as a new L2 pending state.
 
 Along with the conditions required in the `trustedVerifyBatches` function, the following conditions must also be met in `verifyBatches`:
 

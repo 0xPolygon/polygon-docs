@@ -1,6 +1,6 @@
-The zkEVM's bridge SC utilizes a special Merkle tree called Exit Tree for each of the networks participating in the communication or asset-exchange.
+The zkEVM's bridge SC utilizes a special Merkle tree called an exit tree for each of the networks participating in the communication or asset-exchange.
 
-The term `exit tree refers to an append-only Sparse Merkle tree (SMT) whose leaf nodes record information about assets being transferred out of the network. Exit trees of depth 32 are used by Polygon zkEVM.
+The term exit tree refers to an append-only sparse Merkle tree (SMT) whose leaf nodes record information about assets being transferred out of the network. Exit trees of depth 32 are used by Polygon zkEVM.
 
 From now on, a leaf of an exit tree is referred to as a exit leaf. Exit leaves are classified into two types: type 0 for recording asset(s) information and Type 1 for recording messaging information.
 
@@ -14,7 +14,7 @@ An exit leaf, in particular, is a Keccak256 hash of the ABI encoded packed struc
 - uint256 amount: Amount of tokens/ether to bridge.
 - bytes32 metadataHash: Hash of the metadata. This metadata contains information about asset transferred or the message payload.
 
-When a user commits to transferring assets from one network to another, the bridge SC must add an exit leaf to that network's exit tree.
+When a user commits to transferring assets from one network to another, the bridge contract adds an exit leaf to that network's exit tree.
 
 The Merkle root of an exit tree is known as the exit tree root, and it is the fingerprint of all the information recorded in the exit tree's leaf nodes.
 
@@ -63,7 +63,7 @@ To claim the bridged assets on the destination L2 network, the global exit root 
 
 ### Transfer from rollup L2 to L1
 
-Transfers can also occur from an L2 Rollup to the Mainnet L1. In this scenario, the same procedure outlined in the previous example is followed, but in the reverse direction.
+Transfers can also occur from an L2 Rollup to the L1 mainnet. In this scenario, the same procedure outlined in the previous example is followed, but in the reverse direction.
 
 That is, once a user commits to a transfer, an exit leaf is added to the L2 exit tree with corresponding transfer information. The transfer data in this case looks as follows:
 

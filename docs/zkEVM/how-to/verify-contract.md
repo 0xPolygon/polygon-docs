@@ -71,7 +71,7 @@ Click on **Verify & Publish** to verify your deployed smart contract.
 
 ## Verify using Remix
 
-We use ready-made `Storage.sol` contract in Remix. Compile the contract and follow the steps provided below.
+We use the ready-made `Storage.sol` contract in Remix. Compile the contract and follow the steps provided below.
 
 1. Deploy the `Storage.sol` contract:
 

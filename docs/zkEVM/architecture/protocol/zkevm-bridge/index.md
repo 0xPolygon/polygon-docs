@@ -1,4 +1,4 @@
-The ability of a blockchain to exchange data with other blockchains is crucial for its participation in a broader ecosystem, a concept known as Interoperability. Various solutions have been developed to enable interoperability, each offering unique advantages and disadvantages.
+The ability of a blockchain to exchange data with other blockchains is crucial for its participation in a broader ecosystem, a concept known as interoperability. Various solutions have been developed to enable interoperability, each offering unique advantages and disadvantages.
 
 The Polygon team has developed an interoperability solution in the form of a bridge for the Polygon zkEVM network. This zkEVM bridge facilitates communication and asset migration between the Polygon zkEVM network and other networks, such as the L1 (Ethereum Mainnet) or any L2 built on Ethereum.
 
@@ -10,7 +10,7 @@ In zk-rollups like the Polygon zkEVM, L1 smart contracts manage L2 state transit
 
 To better understand the zkEVM bridge protocol design, let's use an analogy. Refer to the illustration below for a clearer explanation of the protocol.
 
-![Polygon zkEVM bridge Schema](../../../../img/zkEVM/01pzb-polygon-zkevm-schema.png)
+![Polygon zkEVM bridge schema](../../../../img/zkEVM/01pzb-polygon-zkevm-schema.png)
 
 Consider two networks, L1 and L2. To bridge an asset between L1 and L2, a user must lock the asset on the origin network (L1). The bridge smart contract then mints an equivalent representative asset on the destination network (L2). This minted asset is called a Wrapped Token.
 
@@ -18,7 +18,7 @@ Once minting is complete, the asset can be claimed by the user or recipient in t
 
 The operation can also be performed in reverse. After burning the Wrapped Token, the bridge smart contract unlocks the original asset on the origin network.
 
-As mentioned earlier, there is also a third option where the bridge smart contract facilitates cross-chain messaging. This allows data payloads to be sent from one network to another using the bridge smart contract's Bridge and Claim operations.
+As mentioned earlier, there is also a third option where the bridge smart contract facilitates cross-chain messaging. This allows data payloads to be sent from one network to another using the bridge smart contract's bridge and claim operations.
 
 ## Comparing with Ethereum 2.0 deposit contract
 
@@ -36,9 +36,9 @@ As a result, as stated in this document, every transfer is protected by smart co
 
 ## Features
 
-The Polygon zkEVM bridge smart contract's main feature is the use of Exit Trees and the Global Exit Tree, with the Global Exit Tree Root serving as the primary source of state truth.
+The Polygon zkEVM bridge smart contract's main feature is the use of exit trees and the global exit tree, with the global exit tree root serving as the primary source of state truth.
 
-The use of two distinct Global Exit Root managers for L1 and L2, as well as separate logic for the bridge SC and each of these Global Exit Root managers, allows for extensive network interoperability.
+The use of two distinct global exit root managers for L1 and L2, as well as separate logic for the bridge contract and each of these global exit root managers, allows for extensive network interoperability.
 
 Meanwhile, all asset transfers can be validated by any L1 and L2 nodes due to data availability.
 
