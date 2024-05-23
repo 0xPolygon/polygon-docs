@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Polygon CDK running in validium mode inherits the core functionalities of a zkEVM rollup node and adds a [data availability layer](../glossary/index.md#data-availability-committee-dac).
 
 ## Key differences

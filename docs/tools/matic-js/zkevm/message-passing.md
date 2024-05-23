@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 This document demonstrates inter-layer message passing using the messaging layer of the Polygon bridge. As an example, we go over how to customize wrapped tokens using adapter contracts, and how to use Matic.js to bridge assets from Ethereum to Polygon zkEVM and vice versa.
 
 !!! info "Terminology"

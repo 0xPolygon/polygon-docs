@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Prerequisites
 
 - [Node](https://nodejs.org/en/download) version 18.x.x is recommended.
