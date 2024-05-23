@@ -1,4 +1,4 @@
-It is inevitable that the current version of the Polygon zkEVM will go through updates and some upgrades, as it gets tested by both the community of Polygon developers and the internal team.
+It is inevitable for the current version of the Polygon zkEVM to go through updates and some upgrades, as it gets tested by both the community of Polygon developers and the internal team.
 
 For this reason, and as an effort towards incentivising developers to battle-test the Polygon zkEVM, [bug-bounties](https://immunefi.com/bounty/polygonzkevm/) have been made available.
 
@@ -6,7 +6,7 @@ Since zk-Rollup ecosystems are nascent, it is expected that the frequency of upg
 
 In tandem, Polygon intends to move its governance of upgrades from the currently centralized approach to a much more decentralized modus operandi.
 
-These gradual _changes in governance_ will follow Polygon Improvement Proposals (PIPs), as already outlined in Polygon's [Three Pillars of Governance](https://forum.polygon.technology/t/the-three-pillars-of-polygon-governance-call-for-proposals/11847).
+These gradual _changes in governance_ follow Polygon Improvement Proposals (PIPs), as already outlined in Polygon's [Three Pillars of Governance](https://forum.polygon.technology/t/the-three-pillars-of-polygon-governance-call-for-proposals/11847).
 
 Presently, centralization is seen in the form of the _Admin Multisig Contract_ and the [_Security Council Multisig_](security-council.md).
 

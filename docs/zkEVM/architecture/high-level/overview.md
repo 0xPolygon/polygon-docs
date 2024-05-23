@@ -1,7 +1,5 @@
 <!-- https://excalidraw.com/#json=JKZp9QEihifF_B7Z41Dfv,FVNhqQKi9PA1jM0kzUoCsQ" -->
 
-## Intro
-
 This section of the docs provides a detailed analysis of the full topology of the Polygon zero-knowledge system architecture. 
 
 Tailored for CDK stacks and using zkEVM technology, these documents explore the contents, layout, and interactions among component systems and functions. They offer in-depth descriptions of the components that constitute the larger system, with references to relevant code bases.

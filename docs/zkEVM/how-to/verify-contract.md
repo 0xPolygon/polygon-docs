@@ -1,6 +1,6 @@
 Once a smart contract is deployed to zkEVM, it can be verified in various ways depending on the framework of deployment as well as the complexity of the contract. The aim here is to use examples to illustrate how you can manually verify a deployed smart contract.
 
-Ensure that your wallet is connected while following this guide. We will use Metamask wallet throughout this tutorial.
+Ensure that your wallet is connected while following this guide. Although any wallet can be used, we use Metamask wallet throughout this tutorial.
 
 ## Manual verification
 
@@ -18,7 +18,7 @@ After successfully compiling a smart contract, follow the next steps to verify y
 
 6. Click the **Verify and Publish** button.
 
-7. There are 3 options to provide the Contract's code. We will be diving into the following two options:
+7. There are 3 options to provide the Contract's code. We dive into the `Flattened source code` and `Standard input JSON` options.
 ??? "Flattened source code"
     Click **Next** after selecting the **via Flattened Source Code** option.
 
@@ -42,7 +42,6 @@ After successfully compiling a smart contract, follow the next steps to verify y
 
     With this command, the flattened code gets saved in the `<Any-Name-For-Flattened-Code>.sol` file. Copy the contents of the new `<Any-Name-For-Flattened-Code>.sol` file and paste into the `Enter the Solodity Contract` field in the [explorer](https://testnet-zkevm.polygonscan.com).
 
-
 ??? "Standard input JSON"
     Click **Next** after selecting the **via Standard Input JSON** option.
 
@@ -53,7 +52,7 @@ After successfully compiling a smart contract, follow the next steps to verify y
     2. Paste the **Standard input JSON** file into the *Drop the standard input JSON file or Click here* field. You can find it in your local project folder.
         - The **Standard input JSON** file is the `{"superlongnumberfile"}.json` in the `build-info` subfolder. Path example: `fullstack-zkevm/src/build-info/{"superlongnumberfile"}.json`
         - Save this file to parse it with [Prettier](https://prettier.io/)
-        - Find the input JSON object. It will look [something like this](https://docs.soliditylang.org/en/latest/using-the-compiler.html#input-description) &rarr; `"input": {}`
+        - Find the input JSON object. It looks [something like this](https://docs.soliditylang.org/en/latest/using-the-compiler.html#input-description) &rarr; `"input": {}`
         - Copy the **input** object value into a new file
         - **Name and save** this file locally in the **root folder**. Check this [example file](https://github.com/oceans404/zkevm-hardhat-demo/blob/main/example-standard-input.json) for reference
         - Drag and drop the **Standard Input JSON** file into *Drop the standard input JSON file or Click here* field. Once pasted, the **Verify & Publish** button becomes active.
@@ -66,13 +65,13 @@ After successfully compiling a smart contract, follow the next steps to verify y
         - Copy the ABI-encoded output.
         - Paste it into `ABI-encoded Constructor Arguments` if required by the contract.
 
-Once you paste the contents of the newly created `.sol` file to the _Enter the Solidity Contract_ field, the **Verify & Publish** button will be active.
+Once you paste the contents of the newly created `.sol` file to the _Enter the Solidity Contract_ field, the **Verify & Publish** button becomes active.
 
 Click on **Verify & Publish** to verify your deployed smart contract.
 
 ## Verify using Remix
 
-We will be using the ready-made `Storage.sol` contract in Remix. Compile the contract and follow the steps provided below.
+We use the ready-made `Storage.sol` contract in Remix. Compile the contract and follow the steps provided below.
 
 1. Deploy the `Storage.sol` contract:
 
@@ -102,7 +101,7 @@ We will be using the ready-made `Storage.sol` contract in Remix. Compile the con
 
     - Type **Etherscan** in the search field at the top.
 
-    - Click **Activate** button as the Etherscan option appears. Etherscan icon will appear on the left-side of the IDE.
+    - Click **Activate** button as the Etherscan option appears. An Etherscan icon should appear on the left-side of the IDE.
 
     - Click on the Etherscan icon.
 
@@ -112,6 +111,6 @@ We will be using the ready-made `Storage.sol` contract in Remix. Compile the con
 
     - Paste the address in the _Contract Address_ field.
 
-    - **Verify** button will be active if all information has been provided.
+    - **Verify** button becomes active if all information has been provided.
 
     - Click the **Verify** button to complete verification of your smart contract.
