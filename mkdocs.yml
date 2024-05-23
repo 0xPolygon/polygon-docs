@@ -56,9 +56,10 @@ nav:
       - Version compatibility matrix: cdk/version-matrix.md
       - Get started: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
       - Architecture:
+        - Unified Bridge API and auto-claim service: cdk/architecture/unified-bridge-api.md
+        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
-        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
