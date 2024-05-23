@@ -6,7 +6,7 @@ When setting up a new sentry, validator, or full node server, it is recommended 
 
 ## Community snapshots
 
-With the [deprecation of the Mumbai testnet](https://forum.polygon.technology/t/pos-tooling-after-mumbai-deprecation-no-action-required/13740), Polygon PoS is shifting to a community-driven model for snapshots where active validators like Vault Staking, Stakepool, StakeCraft, and Girnaar Nodes will now provide snapshots. See [All4nodes.io](https://all4nodes.io/Polygon), an aggregator for Polygon community snapshots, for future community snapshots on the Sepolia-anchored Amoy testnet.
+With the [deprecation of the Mumbai testnet](https://forum.polygon.technology/t/pos-tooling-after-mumbai-deprecation-no-action-required/13740), Polygon PoS is shifting to a community-driven model for snapshots. Active validators such as Vault Staking, Stakepool, StakeCraft, and Girnaar Nodes will now provide snapshots. For future community snapshots on the Sepolia-anchored Amoy testnet, visit [All4nodes.io](https://all4nodes.io/Polygon), an aggregator for Polygon community snapshots.
 
 !!! tip "Older snapshots"
 
@@ -259,9 +259,7 @@ Please check the hardware requirements for an Erigon mainnet archive node on the
 
 ## Recommended disk type and IOPS guidance
 
-- Disk IOPS will impact speed of downloading/extracting snapshots,
-  getting in sync, and performing LevelDB compaction
+- Disk IOPS will impact speed of downloading/extracting snapshots, getting in sync, and performing LevelDB compaction.
 - To minimize disk latency, direct attached storage is ideal.
-- In AWS, when using gp3 disk types, we recommend provisioning IOPS of 16000 and
-  throughput of 1000 - this minimizes cost and adds a lot of performance. io2 EBS volumes with matching IOPS and throughput values are similarly performant.
+- In AWS, when using gp3 disk types, we recommend provisioning IOPS of 16000 and throughput of 1000. This minimizes cost and adds a lot of performance. io2 EBS volumes with matching IOPS and throughput values are similarly performant.
 - For GCP, we recommend using performance (SSD) persistent disks (`pd-ssd`) or extreme persistent disks (`pd-extreme`) with similar IOPS and throughput values as seen above.
