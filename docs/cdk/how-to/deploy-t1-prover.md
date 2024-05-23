@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 This document shows you how to run the Polygon Type 1 Prover, specifically for proving transactions, but with the option to test full blocks of less than 4M gas, which means it is similar to [`eth-proof`](https://github.com/wborgeaud/eth-proof) but for transaction proofs.
 
 ## Quick start

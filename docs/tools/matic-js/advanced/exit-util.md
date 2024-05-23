@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 `matic.js` internally use `ExitUtil` for generating proofs. It is a class which has different methods for helping with exit utilities.
 
 ## buildPayloadForExit

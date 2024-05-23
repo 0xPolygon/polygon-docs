@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 [Polygon Portal](https://portal.polygon.technology/) is an integrated UI platform that serves as a one-stop solution for asset management and token operations such as swapping and bridging. The unified UI comes with a comprehensive dashboard that can be used by connecting your wallet via popular tools such as MetaMask, Coinbase, Bitski, Venly, WalletConnect, and more. 
 
 Polygon Portal establishes a trustless, two-way transaction channel between the Polygon PoS and zkEVM, and Ethereum networks, along with support for LxLy chains in the Polygon Ecosystem. You can transfer your tokens across these chains without incurring third-party risks and market liquidity limitations.

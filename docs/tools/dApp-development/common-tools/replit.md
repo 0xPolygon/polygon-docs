@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Overview
 
 [Replit](https://docs.replit.com/) is a coding platform that allows you to write code and host apps. Replit supports Solidity so it provides all of the features and functionality for Web3 developers to create and deploy smart contracts.

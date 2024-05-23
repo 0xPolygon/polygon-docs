@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 This glossary provides definitions for technical terminology and concepts that commonly occur throughout the CDK docs space.
 
 ### AggLayer v1 (AL1)

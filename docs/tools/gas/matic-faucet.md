@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Polygon Faucet is a tool provided by Polygon and ecosystem partners, such as Alchemy and Quicknode, that allows you to obtain free MATIC tokens on the testnets and get started with the Polygon network. These test tokens enable you to work with Polygon features without having to spend actual MATIC tokens on the mainnet.
 
 Additionally, you can also receive Polygon zkEVM testnet ETH on Polygon Faucet.

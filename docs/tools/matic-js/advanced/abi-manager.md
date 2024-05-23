@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 `matic.js` internally uses `ABIManager` for handling ABI management, configuration for you. All of the ABI and config are taken from [static repo](https://github.com/maticnetwork/static).
 
 ## Change ABI
