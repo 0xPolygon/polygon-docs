@@ -130,8 +130,30 @@ This service polls the Unified Bridge API endpoints to fetch unprocessed claims 
 
 Claims are automatically processed on a destination chain so that users don’t have to perform extra steps, or add additional transaction gas fees, to receive their tokens on the destination chain. 
 
-The auto-claim script is not yet open source at the time of writing. 
+The auto-claim script is not open source at the time of writing. 
 
 ### How to run the auto-claim script
 
-Clone the [auto-claim service repo](https://github.com/0xPolygon/auto-claim-service) and follow the README instructions making sure to include all required parameters in the `.env` file.
+Clone the [auto-claim service repo](https://github.com/0xPolygon/auto-claim-service) and follow the README instructions making sure to include all required parameters in the `.env` file before running `npm install`, `npm build`, and `npm run`.
+
+```sh
+# COMMON
+PRIVATE_KEY=0x   # The private key of the EOA which will be submitting the claim transaction 
+NETWORK=testnet # testnet/mainnet
+TRANSACTIONS_URL= https://api-gateway.polygon.technology/api/v3/transactions/testnet # The transaction list endpoint of the bridge API service
+TRANSACTIONS_API_KEY=64cbf956-198a-47e0-b4a1-2b3432d8f70d
+PROOF_URL= https://api-gateway.polygon.technology/api/v3/merkle-proof/testnet # The merkle proof endpoint of the bridge API service
+RPC_URL=https://zkyoto.explorer.startale.com # The rpc of your chain
+PROOF_API_KEY=64cbf956-198a-47e0-b4a1-2b3432d8f70d
+BRIDGE_CONTRACT=0x528e26b25a34a4A5d0dbDa1d57D318153d2ED582 # contract address of your bridge contract 
+GAS_STATION_URL=https://gasstation-staging.polygon.technology/astar/zkyoto # Follow Readme to spin up your own gas estimation service
+SOURCE_NETWORKS=[0,1] # The list of soruce network ID's of the chains you want to monitor and process claim transactions from
+DESTINATION_NETWORK=2 # The network ID if your chain on the L1 lxly bridge contract
+SLACK_URL= # Not Mandatory
+
+# LOGGER_ENV - Not Mandatory
+SENTRY_DSN=
+SENTRY_ENVIRONMENT=
+DATADOG_API_KEY=
+DATADOG_APP_KEY=
+```
