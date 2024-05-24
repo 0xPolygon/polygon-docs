@@ -62,9 +62,8 @@ This contract calls the `onSequenceBatches(...)` function on the `PolygonRollupM
 
 This contract calls the `onSequenceBatches(...)` function on the `PolygonRollupManager.sol` contract to trigger the verification mechanism after successful sequencing through the `sequenceBatchesValidium(...)` call.
 
-<!--
+<!-- custom validium contracts
 ### `PolygonRollupBaseEtrogNoGap.sol`
-
 ### `PolygonValidiumStorageMigration.sol`-->
 
 !!! tip
