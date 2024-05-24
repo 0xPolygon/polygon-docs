@@ -4,10 +4,10 @@ comments: true
 
 Transactions flowing through the system reach the smart contract environment after one of two contract call use cases:
 
-- Sequence batches requests coming from the sequencer component.
-- Verifying batches requests coming from the aggregator component.
+- Sequence batches requests coming from the sequencer component in the node.
+- Verifying batches requests coming from the aggregator component in the node.
 
-This section looks at the sequencing workflow. The diagram below shows the sequencing workflow for rollup (non-validium) stacks. 
+This section looks at the sequencing workflow. The diagram below shows the sequencing workflow for rollup (non-validium) stacks which calls `sequenceBatches(...)` and `onSequenceBatches(...)`. 
 
 ![Polygon Solidity smart contract architecture](../../../../img/cdk/high-level-architecture/sequencing-flow.png)
 
@@ -56,6 +56,9 @@ Stepwise, the function does the following:
 1. Emits an `OnSequenceBatches(...)` event back to the original `sequenceBatches(...)` call.
 
 ## `sequenceBatchesValidium(batches, l2Coinbase, dataAvailabilityMessage)`
+
+!!! info
+    - This function is not included in the sequence diagram above.
 
 This function is called on the `PolygonValidiumEtrog.sol` contract.
 
