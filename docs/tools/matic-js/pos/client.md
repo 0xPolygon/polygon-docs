@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 !!! important
     Make sure you have followed the [installation](../installation.md) and [get started](../get-started.md) documentation.
 

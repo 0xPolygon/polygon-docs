@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 The Polygon CDK validium is one of two configuration options of the Polygon CDK, the other being the Polygon zkEVM rollup.
 
 As per [the definition of validium](https://ethereum.org/developers/docs/scaling/validium), the Polygon CDK validium uses validity proofs to enforce integrity of state transitions, but it does not store transaction data on the Ethereum network.

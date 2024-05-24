@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## `init`
 
 Initializes a new project in a new directory which has the same name as the project. If a project name is not mentioned, a random one is chosen.
