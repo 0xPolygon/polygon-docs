@@ -59,7 +59,7 @@ The [PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-
 ![Polygon Solidity smart contract exit root L1](../../../../img/cdk/high-level-architecture/l1-exit-root.png){ width=60% }
 </center>
 
-The L2 exit root management contract, [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygon/cdk-validium-contracts/blob/main/contracts/PolygonZkEVMGlobalExitRootL2.sol) has a lighter exit root mechanism.
+The L2 exit root management contract, [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygon/cdk-validium-contracts/blob/main/contracts/PolygonZkEVMGlobalExitRootL2.sol), has a lighter-weight exit root mechanism.
 
 <center>
 ![Polygon Solidity smart contract exit root L2](../../../../img/cdk/high-level-architecture/l2-exit-root.png){ width=60% }

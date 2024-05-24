@@ -23,7 +23,7 @@ This contract calls the `onSequenceBatches(...)` function on the `PolygonRollupM
 This contract calls the `onSequenceBatches(...)` function on the `PolygonRollupManager.sol` contract to trigger the verification mechanism after successful sequencing through the `sequenceBatchesValidium(...)` call.
 
 !!! info
-    - Custom chain contracts also exist at the consensus level and extend from common base contracts.
+    - Custom chain contracts also exist at the consensus level and extend from common consensus base contracts.
 
 ## Rollup manager
 
