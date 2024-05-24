@@ -38,10 +38,10 @@ comments: true
 
     !!! warning "Workaround if you have configuration issues"
         - You may have to hardcode these variables into the `mainnet/docker-compose.yaml` file.
-        - Also, the `ZKEVM_NETWORK` variable which you can set to `mainnet`.
-        - Note, there are more than one references to hardcode in.
+            - Also, the `ZKEVM_NETWORK` variable which you can set to `mainnet`.
+            - Note, there is more than one reference to hardcode in.
 
-## Approve MATIC token for sequencer
+## Approve POL token for sequencer
 
 1. Launch a Hardhat console connected to the Sepolia network.
 
@@ -56,14 +56,14 @@ comments: true
     const provider = ethers.getDefaultProvider("<SEPOLIA_RPC_NODE>"); // set Sepolia RPC node
     const privateKey = "<TRUSTED_SEQUENCER_PK>"; // from wallets.txt 
     const wallet = new ethers.Wallet(privateKey, provider);
-
-    const maticTokenFactory = await ethers.getContractFactory(
+    
+    const polTokenFactory = await ethers.getContractFactory(
     "ERC20PermitMock",
     provider
     );
-    maticTokenContract = maticTokenFactory.attach("<maticTokenAddress>"); // from ~/zkevm-contracts/deployments/deploy_output.json 
-    maticTokenContractWallet = maticTokenContract.connect(wallet);
-    await maticTokenContractWallet.approve("<polygonZkEVMAddress>", ethers.utils.parseEther("100.0")); // from ~/zkevm-contracts/deployments/deploy_output.json 
+    polTokenContract = polTokenFactory.attach("<polTokenAddress>"); // from ~/zkevm-contracts/deployments/deploy_output.json 
+    polTokenContractWallet = polTokenContract.connect(wallet);
+    await polTokenContractWallet.approve("<polygonZkEVMAddress>", ethers.parseEther("100.0")); // from ~/zkevm-contracts/deployments/deploy_output.json 
     ```
 
 ## Configure genesis
@@ -71,10 +71,10 @@ comments: true
 1. Copy the `genesis.json` file into the appropriate location.
 
     ```sh
-    cp ~/zkevm-contracts/deployment/genesis.json ~/zkevm/mainnet/config/environments/mainnet/public.genesis.config.json
+    cp ~/zkevm-contracts/deployment/v2/genesis.json ~/zkevm/mainnet/config/environments/mainnet/public.genesis.config.json
     ```
 
-2. Copy/paste the json below to the head of the `public.genesis.config.json` file inputting the data from `~/zkevm/zkevm-contracts/deployments/deploy_output.json`. 
+2. Copy/paste the json below to the head of the `public.genesis.config.json` file inputting the data from `~/zkevm-contracts/deployments/v2/deploy_output.json`. 
 
     !!! important
         The `genesisBlockNumber` is called `deploymentBlockNumber` in `deploy_output.json`.
@@ -83,7 +83,7 @@ comments: true
     "l1Config" : {
         "chainId": 5,
         "polygonZkEVMAddress": "", 
-        "maticTokenAddress": "", 
+        "polTokenAddress": "", 
         "polygonZkEVMGlobalExitRootAddress": ""  
     },
     "genesisBlockNumber": <number-here>,  

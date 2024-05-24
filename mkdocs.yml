@@ -93,7 +93,42 @@ nav:
         - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
         - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
         - Verify a contract: zkEVM/how-to/verify-contract.md
-      - Architecture:
+      - Architecture high-level:
+        - Architectural overview: zkEVM/architecture/high-level/overview.md
+        #- Smart contracts: 
+        #  - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
+        #  - Rollup: zkEVM/architecture/high-level/smart-contracts/rollup.md
+        #  - Validium: zkEVM/architecture/high-level/smart-contracts/validium.md      
+        #  - Exit root trees: zkEVM/architecture/high-level/smart-contracts/exit-root-trees.md
+        # - AggLayer: https://potential-couscous-4gw6qyo.pages.github.io/index.html
+        #- CDK node:
+          #- JSON/RPC: zkEVM/architecture/high-level/cdk-node/json-rpc.md
+          #- Databases:
+            #- State: zkEVM/architecture/high-level/cdk-node/state-db.md
+            #- Pool: zkEVM/architecture/high-level/cdk-node/pool-db.md
+          #- Transaction flow:
+            #- Sequencer: zkEVM/architecture/high-level/cdk-node/sequencer.md
+            #- Aggregator: zkEVM/architecture/high-level/cdk-node/aggregator.md
+            #- Prover: zkEVM/architecture/high-level/cdk-node/prover.md
+          #- L1 comms:
+            #- Etherman: zkEVM/architecture/high-level/cdk-node/etherman.md
+            #- Synchronizer: zkEVM/architecture/high-level/cdk-node/synchronizer.md
+          #- DAC: zkEVM/architecture/high-level/cdk-node/dac.md
+        #- Hermez node:
+          #- JSON/RPC: zkEVM/architecture/high-level/hermez-node/json-rpc.md
+          #- Databases:
+            #- State: zkEVM/architecture/high-level/hermez-node/state-db.md
+            #- Pool: zkEVM/architecture/high-level/hermez-node/pool-db.md
+          #- Transaction flow:
+            #- Sequencer: zkEVM/architecture/high-level/hermez-node/sequencer.md
+            #- Aggregator: zkEVM/architecture/high-level/hermez-node/aggregator.md
+            #- Prover: zkEVM/architecture/high-level/hermez-node/prover.md
+          #- L1 comms:
+            #- Etherman: zkEVM/architecture/high-level/hermez-node/etherman.md
+            #- Synchronizer: zkEVM/architecture/high-level/hermez-node/synchronizer.md
+          #- DAC: zkEVM/architecture/high-level/hermez-node/dac.md
+        #- Bridge service: zkEVM/architecture/high-level/bridge-service.md
+      - Architecture low-level:
         - Architecture: zkEVM/architecture/index.md
         - Upgrades:
           - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
@@ -125,8 +160,8 @@ nav:
             - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
             - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
             - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
-          - zkEVM Bridge:
-            - zkEVM Bridge: zkEVM/architecture/protocol/zkevm-bridge/index.md
+          - zkEVM bridge:
+            - zkEVM bridge: zkEVM/architecture/protocol/zkevm-bridge/index.md
             - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
             - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
             - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
@@ -189,16 +224,6 @@ nav:
             - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
       - Specification:
         - Specification: zkEVM/spec/index.md
-        - User fees:
-          - User fees: zkEVM/spec/user-fees/index.md
-          - Gas price suggestion: zkEVM/spec/user-fees/gas-price-suggest.md
-          - L1-L2 cost discrepancies: zkEVM/spec/user-fees/l1-l2-discrepancies.md
-          - Breakeven gas price: zkEVM/spec/user-fees/breakeven-technique.md
-          - Prioritizing transactions: zkEVM/spec/user-fees/prioritization-txs.md
-          - User fees flow:
-            - User fees flow: zkEVM/spec/user-fees/user-fees-flow/index.md 
-            - RPC flow: zkEVM/spec/user-fees/user-fees-flow/rpc-flow.md
-            - Sequencer flow: zkEVM/spec/user-fees/user-fees-flow/sequencer-flow.md
         - Polynomial Identity Language:
           - Polynomial Identity Language: zkEVM/spec/pil/index.md
           - Simple example: zkEVM/spec/pil/simple-example.md
@@ -459,6 +484,7 @@ nav:
           - Band standard dataset: tools/oracles/bandstandarddataset.md
           - Chainlink: tools/oracles/chainlink.md
           - DIA: tools/oracles/diadataoracles.md
+          - Pyth: tools/oracles/pyth.md
           - Razor: tools/oracles/razor.md
           - Supra: tools/oracles/supra.md
           - Tellor: tools/oracles/tellor.md

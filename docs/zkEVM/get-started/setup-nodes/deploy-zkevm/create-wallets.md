@@ -8,7 +8,7 @@ Clone the wallet contracts from the [`zkevm-contracts` repository](https://githu
 
 ```sh
 git clone https://github.com/0xPolygonHermez/zkevm-contracts.git
-cd ~/zkevm-contracts
+cd zkevm-contracts
 npm i
 ```
 
@@ -17,7 +17,7 @@ npm i
 1. Create a `wallets.js` file.
 
     ```sh
-    cd ~/zkevm-contracts
+    cd zkevm-contracts
     nano wallets.js
     ```
 
@@ -36,8 +36,8 @@ npm i
         const wallet = ethers.Wallet.createRandom();
         console.log(arrayNames[i]);
         console.log(`Address: ${wallet.address}`);
-        console.log(`PrvKey: ${wallet._signingKey().privateKey}`);
-        console.log(`mnemonic: "${wallet._mnemonic().phrase}"`);
+        console.log(`PrvKey: ${wallet.privateKey}`);
+        console.log(`mnemonic: "${wallet.mnemonic.phrase}"`);
 
         const keystoreJson = await wallet.encrypt("password");
         console.log(`keystore: ${keystoreJson}`);
@@ -73,14 +73,14 @@ npm i
     ETHERSCAN_API_KEY="..."   # your Etherscan API key
     ```
 
-3. Send 0.5 Sepolia ETH to the deployment address wallet listed in `wallets.txt`.
+3. Send 1 Sepolia ETH to the deployment address wallet listed in `wallets.txt`.
 
 ## Edit deployment configuration
 
 1. Open the `deploy-parameters.json` file.
 
     ```sh
-    cd ~/zkevm-contracts/deployment
+    cd zkevm-contracts/deployment/v2
     cp deploy_parameters.json.example deploy_parameters.json
     nano deploy_parameters.json
     ```
@@ -94,39 +94,70 @@ npm i
     - `timelockAddress`: deployment address in `wallets.txt`.
     - `initialZkEVMDeployerAddress`: deployment address in `wallets.txt`.  
     - `zkEVMDeployerAddress`: deployment address in `wallets.txt`.  
+    - `emergencyCouncilAddress`: deployment address in `wallets.txt`.
+    - `deployerPvtKey`: deployment private key in `wallets.txt`.
 
-## Deploy contracts
+3. Open the `create_rollup_parameters.json` file.
 
-1. `cd` back to `zkevm-contract` root directory and run the deployment scripts.
-
-    !!! tip
-        It might be helpful to run these one at a time.
-
-    ```sh
-    cd ..
-    npm i @openzeppelin/hardhat-upgrades
-    npm run deploy:deployer:ZkEVM:sepolia
-    npm run verify:deployer:ZkEVM:sepolia
-    npm run prepare:testnet:ZkEVM:sepolia && npm run deploy:ZkEVM:test:sepolia
-    npm run verify:ZkEVM:sepolia
+    ```bash
+    cd zkevm-contracts/deployment/v2
+    cp create_rollup_parameters.json.example create_rollup_parameters.json
+    vim create_rollup_parameters.json
     ```
 
-    You should see output that looks something like this at the start each time:
+4. Edit the following parameters to match the rollup parameters
+    - `trustedSequencer`:  trusted sequencer address in `wallets.txt`.
+    - `adminZkEVM`: deployment address in `wallets.txt`.
+## Deploy & verify contracts
 
-    ```sh
-    > @0xpolygonhermez/zkevm-contracts@3.0.0 deploy:deployer:ZkEVM:sepolia
-    > npx hardhat run deployment/2_deployPolygonZKEVMDeployer.js --network sepolia
+`cd` back to `zkevm-contract` root directory and run the deployment scripts.
 
-    #######################
+1. Install Hardhat:
 
-    polygonZkEVMDeployer deployed on:  0x8c4e69A65f84D5Ee0d83095916706Be74C133571
-    ```
+   ```
+   cd ..
+   npm i @openzeppelin/hardhat-upgrades
+   ```
 
-    !!! info
-        The scripts auto-deploy the MATIC token contract and the `zkEVMDeployer` contract if required.
+2. Deploy Polygon zkEVM deployer
 
-2. Check the deployment was successful on Etherscan.
+   ```bash
+   npx hardhat run deployment/v2/2_deployPolygonZKEVMDeployer.ts --network sepolia
+   ```
 
-    ```html
-    https://sepolia.etherscan.io/address/[deployment-address] <!-- from `wallets.txt` -->
-    ```
+   You should see output that looks like this:
+
+   ```bash
+   #######################
+   
+   polygonZkEVMDeployer deployed on:  0xB1A5BA61fBAD71Ba52d70B769d6A994c01b40983
+   ```
+
+3. Verify deployer
+
+   ```bash
+   npx hardhat run deployment/v2/verifyzkEVMDeployer.js --network sepolia
+   ```
+
+   You should see ouput that looks like this:
+
+   ```bash
+   The contract 0xB1A5BA61fBAD71Ba52d70B769d6A994c01b40983 has already been verified.
+   https://sepolia.etherscan.io/address/0xB1A5BA61fBAD71Ba52d70B769d6A994c01b40983#code
+   ```
+
+4. Prepare testnet
+
+   ```bash
+   npx hardhat run deployment/testnet/prepareTestnet.ts --network sepolia
+   ```
+
+   You should see output that looks like this:
+
+   ```bash
+   #######################
+   
+   pol deployed to: 0x2B2Ef864542EA38657221393B0A18215e5c3fc7e
+   ```
+
+   And now if you go to sepolia scan, you should also see that under your account, there's a new `Pol` Erc-20 token created with the balance of `19,900,000` tokens.

@@ -45,7 +45,7 @@ The Admin can schedule and commit maintenance operations transactions in L1 usin
 
 **The Polygon zkEVM team has decided to use the [OpenZeppelin's TimelockController.sol contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/governance/TimelockController.sol) to inherit security as well to avoid the lengthy and complicated audit process**. We have changed the `getMinDelay` method in the contract and this modified implementation is named **PolygonZkEVMTimelock.sol** contract.
 
-In the event that the zkEVM contract system is in [Emergency Mode](malfunction-resistance/emergency-state.md), the new `getMinDelay` will set the time `minDelay` to 0. This is when the Security Council Multisig takes control.
+In the event that the zkEVM contract system is in [Emergency Mode](malfunction-resistance/emergency-state.md), the new `getMinDelay` sets the time `minDelay` to 0. This is when the Security Council Multisig takes control.
 
 The zKEVM Protocol’s Admin role is set to an instance of **PolygonZkEVMTimelock.sol** contract address since the deployment of the zk-rollup.
 

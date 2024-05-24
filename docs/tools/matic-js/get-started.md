@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Matic.js is a javascript library which helps in interacting with the various components of Matic Network.
 
 In this get started document we will learn about how we can setup and interact with the POS bridge.

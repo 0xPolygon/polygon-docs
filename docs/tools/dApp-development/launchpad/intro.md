@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 dApp Launchpad is an automated CLI tool for initializing, creating, and deploying a fully-integrated web3 dApp project.
 
 ## Overview

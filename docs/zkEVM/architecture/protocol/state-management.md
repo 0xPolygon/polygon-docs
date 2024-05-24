@@ -1,4 +1,4 @@
-This document aims to explain how the Polygon zkEVM protocol manages the L2 rollup state while providing state transition verifiability and security.
+This document explains how the Polygon zkEVM protocol manages the L2 rollup state while providing verifiability of each state transition.
 
 ## Trustless L2 state management
 

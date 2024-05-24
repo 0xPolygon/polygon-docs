@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 !!! note
 
     The API links have been changed from `https://apis.matic.network` &rarr; `https://proof-generator.polygon.technology`. Please make sure to update the links.
