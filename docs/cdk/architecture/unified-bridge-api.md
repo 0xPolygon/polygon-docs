@@ -136,8 +136,6 @@ This service polls the Unified Bridge API endpoints to fetch unprocessed claims 
 
 Claims are automatically processed on a destination chain so that users don’t have to perform extra steps, or add additional transaction gas fees, to receive their tokens on the destination chain. 
 
-The auto-claim script is not open source at the time of writing. 
-
 ### How to run the auto-claim script
 
 Clone the [auto-claim service repo](https://github.com/0xPolygon/auto-claim-service) and follow the README instructions making sure to include all required parameters in the `.env` file before running `npm install`, `npm build`, and `npm run`.
