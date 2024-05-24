@@ -2,7 +2,7 @@
 
 ### `constructor`
 
-Disable initializers on the implementation following best practices.
+Disables initializers on the implementation, following best practices.
 
 ```solidity
   function constructor(
@@ -21,9 +21,9 @@ Disable initializers on the implementation following best practices.
 Allows the admin to setup the members of the committee. 
 
 !!! note
-    - The system will require `N/M` signatures where `N` => `_requiredAmountOfSignatures` and `M` => `urls.length`.
-    - There must be the same amount of urls than addresses encoded in the `addrsBytes`.
-    - A member is represented by the url and the address contained in urls[i] and `addrsBytes. [i*_ADDR_SIZE : i*_ADDR_SIZE + _ADDR_SIZE]`.
+    - The system requires `N/M` signatures where `N` => `_requiredAmountOfSignatures` and `M` => `urls.length`.
+    - The number of urls must be the same as addresses encoded in the `addrsBytes`.
+    - A member is represented by a url and the address contained in urls[i] and `addrsBytes. [i*_ADDR_SIZE : i*_ADDR_SIZE + _ADDR_SIZE]`.
 
 ```solidity
   function setupCommittee(
@@ -43,7 +43,7 @@ Allows the admin to setup the members of the committee.
 
 ### `verifyMessage`
 
-Verifies that the given signedHash has been signed by requiredAmountOfSignatures committee members.
+Verifies that the given signedHash has been signed by the requiredAmountOfSignatures committee members.
 
 ```solidity
   function verifyMessage(
@@ -56,14 +56,14 @@ Verifies that the given signedHash has been signed by requiredAmountOfSignatures
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`signedHash` | bytes32 | Hash that must have been signed by requiredAmountOfSignatures of committee members
-|`signaturesAndAddrs` | bytes | Byte array containing the signatures and all the addresses of the committee in ascending order
+|`signedHash` | bytes32 | Hash that must have been signed by the requiredAmountOfSignatures of committee members
+|`signaturesAndAddrs` | bytes | Byte array containing signatures and all addresses of the committee members in ascending order
 [signature 0, ..., signature requiredAmountOfSignatures -1, address 0, ... address N]
-note that each ECDSA signatures are used, therefore each one must be 65 bytes
+note that all signatures are ECDSA, therefore each must be 65 bytes long
 
 ### `getAmountOfMembers`
 
-Return the amount of committee members.
+Returns the number of committee members.
 
 ```solidity
   function getAmountOfMembers(

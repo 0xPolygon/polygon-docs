@@ -1,4 +1,4 @@
-Contract inherits from Openzeppelin `AccessControlUpgradeable` with the following modifications:
+A contract that inherits `AccessControlUpgradeable` from Openzeppelin, but with the following modifications:
 
 - Delete `ERC165Upgradeable` dependencies to save us the "gap" variables and let us have consistent storage.
 - Add the legacy `Owner` variable, to be consistent with the previous.
@@ -30,8 +30,8 @@ Returns `true` if `account` has been granted `role`.
   ) internal
 ```
 
-- Revert with a standard message if `msg.sender` is missing `role`. Overriding this function changes the behavior of the {onlyRole} modifier.
-- Format of the revert message is described in `{_checkRole}`.
+- Reverts with a standard message if `msg.sender` is missing `role`. Overriding this function changes the behavior of the {onlyRole} modifier.
+- Describes the format of the revert message in `{_checkRole}`.
 - _Available since v4.6._
 
 ### `_checkRole`
@@ -41,7 +41,7 @@ Returns `true` if `account` has been granted `role`.
   ) internal
 ```
 
-- Revert with a standard message if `account` is missing `role`.
+- Reverts with a standard message if `account` is missing `role`.
 - The format of the revert reason is given by the following regular expression:
 
  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/
@@ -92,12 +92,9 @@ Revokes `role` from the calling account.
 - The caller must have `account`'s admin role.
 - May emit a `RoleRevoked` event.
 
-Roles are often managed via `grantRole` and `revokeRole`. This function's
-purpose is to provide a mechanism for accounts to lose their privileges
-if they are compromised (such as when a trusted device is misplaced).
+Roles are often managed via `grantRole` and `revokeRole`. The purpose of this function is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced).
 
-If the calling account had been revoked `role`, emits a `RoleRevoked`
-event.
+Emits a `RoleRevoked`event if the calling account had `role` revoked.
 
 ### `_setupRole`
 
@@ -108,9 +105,8 @@ event.
 
 Grants `role` to `account`.
 
-If `account` had not been already granted `role`, emits a `RoleGranted`
-event. Note that unlike `grantRole`, this function doesn't perform any
-checks on the calling account.
+Emits a `RoleGranted`event if `account` had not been already granted `role`. 
+Note that unlike `grantRole`, this function doesn't perform any checks on the calling account.
 
 May emit a `RoleGranted` event.
 

@@ -7,7 +7,7 @@ Transactions flowing through the system reach the smart contract environment aft
 - Sequence batches requests coming from the sequencer component in the node.
 - Verifying batches requests coming from the aggregator component in the node.
 
-This section looks at the sequencing workflow. 
+This section focuses on the sequencing workflow. 
 
 The diagram below shows the sequencing workflow for rollup (non-validium) stacks which calls `sequenceBatches(...)` and `onSequenceBatches(...)`. 
 
@@ -30,7 +30,9 @@ struct BatchData {
 }
 ```
 
-The function validates arguments, checks and organizes the batches, and appends them in the correct sequence while computing an accumulated hash. Finally, the function emits a `SequenceBatches` event which sends a newly sequenced batch of transactions to the `PolygonRollupManager.sol` contract after the [`onSequenceBatches(...)`](#onsequencebatchesnewsequencedbatches-newaccinputhash) function returns successfully. 
+The function validates arguments, checks and organizes the batches, and appends them in the correct sequence while computing an accumulated hash. 
+
+Finally, the function emits a `SequenceBatches` event which sends a newly sequenced batch of transactions to the `PolygonRollupManager.sol` contract after the [`onSequenceBatches(...)`](#onsequencebatchesnewsequencedbatches-newaccinputhash) function returns successfully. 
 
 Stepwise, the function does the following:
 

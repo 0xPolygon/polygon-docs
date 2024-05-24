@@ -1,4 +1,4 @@
-Provides the necessary calculations to calculate the global exit root.
+Provides computations of the global exit root.
 
 ## Functions
 

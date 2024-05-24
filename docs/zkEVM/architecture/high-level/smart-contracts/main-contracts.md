@@ -4,7 +4,7 @@ comments: true
 
 ## Consensus contracts
 
-The following contracts manage consensus mechanisms. They deal with sequencing and verifying transaction batches across the L1 and L2 realms.
+The following contracts manage consensus mechanisms. They deal with sequencing and verifying transaction batches across the L1 and L2 networks.
 
 ### `PolygonRollupBaseEtrog.sol`
 
@@ -12,13 +12,13 @@ The following contracts manage consensus mechanisms. They deal with sequencing a
 
 ### `PolygonZkEVMEtrog.sol`
 
-[PolygonZkEVMEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/consensus/zkEVM/PolygonZkEVMEtrog.sol) is the rollup contract that inherits from the base contract. 
+[PolygonZkEVMEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/consensus/zkEVM/PolygonZkEVMEtrog.sol) is the rollup contract inherited from the base contract.
 
 This contract calls the `onSequenceBatches(...)` function on the `PolygonRollupManager.sol` contract to trigger the verification mechanism after successful sequencing through the `sequenceBatches(...)` call.
 
 ### `PolygonValidiumEtrog.sol`
 
-[PolygonValidiumEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol) is the validium contract that inherits from the base contract. 
+[PolygonValidiumEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol) is the validium contract inherited from the base contract.
 
 This contract calls the `onSequenceBatches(...)` function on the `PolygonRollupManager.sol` contract to trigger the verification mechanism after successful sequencing through the `sequenceBatchesValidium(...)` call.
 
@@ -29,7 +29,7 @@ This contract calls the `onSequenceBatches(...)` function on the `PolygonRollupM
 
 ### `PolygonRollupManager.sol`
 
-The [PolygonRollupManager.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonRollupManager.sol) contract is responsible for managing rollups. It also verifies batches. It creates and updates rollup stacks by storing hash-sequenced data as newly sequenced batches arrive.
+The [PolygonRollupManager.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonRollupManager.sol) contract is responsible for managing rollups. It verifies batches, and also creates and updates rollup stacks by storing hash-sequenced data as newly sequenced batches arrive.
 
 It is responsible for the verification workflow by supplying updated exit root data to the [PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMGlobalExitRootV2.sol) contract.
 
@@ -69,8 +69,5 @@ The [PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-
 - Updating exit roots.
 - Retrieving latest exit roots and leaf values.
 
-
-
 !!! tip
     - For more information, and the Solidity code, check out the [API section](api/PolygonRollupManager.md).
-

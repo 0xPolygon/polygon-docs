@@ -1,4 +1,4 @@
-An exit tree is an append-only sparse Merkle tree (SMT), or binary tree, whose leaf nodes store bridging data. The exit trees have a depth of 32.
+An exit tree is a binary append-only sparse Merkle tree (SMT) whose leaf nodes store bridging data. The exit trees have a depth of 32.
 
 Whenever a token or message is bridged, the bridge contract appends an exit leaf to the tree related to the specific network.
 
@@ -32,9 +32,9 @@ Data from `bridgeAsset()` and `bridgeMessage()` calls on the bridge at the L1 Et
 
 ## L1 info tree
 
-All the subtrees feed into the L1 info tree which contains the global exit root (GER). 
+All subtrees feed into the L1 info tree, which contains the global exit root (GER). 
 
-The GER is the fingerprint of all the information stored in all trees and thus represents the true state of the system.
+The GER is the fingerprint of the information stored in all trees, and thus represents the true state of the system.
 
 <center>
 ![Exit tree for rollups](../../../../img/cdk/high-level-architecture/l1-info-tree.png)
@@ -42,3 +42,4 @@ The GER is the fingerprint of all the information stored in all trees and thus r
 
 !!! tip
     - Read more about exit trees in our [exit tree documentation](../../protocol/zkevm-bridge/exit-tree.md).
+    

@@ -1,5 +1,4 @@
-
-Inherits from contract `TransparentUpgradeableProxy` from Openzeppelin v5 with the following modifications:
+Inherits from `TransparentUpgradeableProxy`, a Openzeppelin v5 contract, with the following modifications:
 
 - Admin is a parameter in the constructor instead of being deployed.
 - Let the admin get access to the proxy.
@@ -27,7 +26,7 @@ Returns the admin of this proxy.
 
 ### `_fallback`
 
-If caller is the admin process the call internally, otherwise transparently fallback to the proxy behavior.
+If caller is the admin, process the call internally. Otherwise, transparently fallback to the proxy behavior.
 
 ```solidity
   function _fallback(

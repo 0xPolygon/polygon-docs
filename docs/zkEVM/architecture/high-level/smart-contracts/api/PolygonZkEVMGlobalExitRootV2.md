@@ -20,7 +20,7 @@ Contract responsible for managing the exit roots across multiple networks.
 
 ### `updateExitRoot`
 
-Update the exit root of one of the networks and the global exit root.
+Updates the exit root of any of the networks and the global exit root.
 
 ```solidity
   function updateExitRoot(
@@ -36,7 +36,7 @@ Update the exit root of one of the networks and the global exit root.
 
 ### `getLastGlobalExitRoot`
 
-Return last global exit root.
+Returns last global exit root.
 
 ```solidity
   function getLastGlobalExitRoot(
@@ -54,7 +54,7 @@ Computes and returns the Merkle root of the `L1InfoTree`.
 
 ### `getLeafValue`
 
-Given the leaf data returns the leaf hash.
+Given leaf data, it returns the leaf hash.
 
 ```solidity
   function getLeafValue(
@@ -76,7 +76,7 @@ Given the leaf data returns the leaf hash.
 
 ### `UpdateL1InfoTree`
 
-Emitted when the global exit root is updated
+Emitted when the global exit root is updated.
 
 ```solidity
   event UpdateL1InfoTree(
