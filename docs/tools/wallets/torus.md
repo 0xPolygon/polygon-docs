@@ -1,7 +1,7 @@
 !!! caution "Content disclaimer"
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md)
 
-Torus is a user-friendly, secure, and non-custodial key management system for decentralized apps. We're focused on providing mainstream users a gateway to the decentralized ecosystem.
+[Torus](https://tor.us/) is a user-friendly, secure, and non-custodial key management system for decentralized apps. We're focused on providing mainstream users a gateway to the decentralized ecosystem.
 
 - **Type**: Non-custodial/HD.
 - **Private Key Storage**: User’s local browser storage/encrypted and stored on Torus servers.

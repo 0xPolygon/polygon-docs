@@ -15,6 +15,8 @@ hide:
       <h1 class="hero-heading">Developer tools</h1>
       <p class="hero-subtext">This section describes some of the in-house and third-party tools that are used by developers to work with Polygon products and services.</p>
       <p class="hero-subtext">Find out how to access data, code against blockchain networks, use oracles, and much more. </p>
+      <i><p class="hero-subtext">All third-party content in this section is covered by our <a href="https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md">content disclaimer</a>.</i>
+
    </div>
 </div>
 <div class="grid-container">
