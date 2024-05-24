@@ -2,6 +2,10 @@
 comments: true
 ---
 
+!!! warning "Mumbai testnet deprecated"
+
+   Mumbai testnet is deprecated and will not receive any future updates. GCP support for deploying Amoy testnet nodes will be ready soon. Stay tuned!
+
 In this document, we will describe how to deploy Polygon nodes into a Virtual Machine instance on the Google Cloud Platform (GCP).
 
 It is recommended to use any modern Debian or Linux Ubuntu OS with long-term support, i.e. Debian 11, Ubuntu 20.04. We'll focus on Ubuntu 20.04 in this guide.
