@@ -4,6 +4,10 @@ comments: true
 
 Validators are the key actor in maintaining the Polygon network. Validators run a full node, secure the network by staking MATIC to produce blocks, validate and participate in PoS consensus.
 
+Validators play a crucial role in maintaining the integrity and security of the Polygon PoS network. By running a full node, validators contribute to the network's infrastructure and help facilitate transactions. They secure the network by staking MATIC tokens, which enables them to produce blocks and participate in network consensus (PoS). This contributes to greater network security and enhances network decentralization making it more resilient against potential attacks.
+
+In return for their efforts, validators are rewarded with incentives, encouraging active participation and commitment to the network's stability and growth.
+
 !!!info
     
     There is limited space for accepting new validators. New validators can only join the active set when a currently active validator unbonds/is removed due to low performance. 

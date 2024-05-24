@@ -2,7 +2,7 @@
 comments: true
 ---
 
-Ethereum developers are by default Polygon developers. Welcome. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All familiar tools used on Ethereum are supported on Polygon. Whether it is Truffle, Remix or Web3.js, Polygon offers the same UX as Ethereum.
+Ethereum developers are by default Polygon developers. Welcome. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All familiar tools used on Ethereum are supported on Polygon. Whether it is Foundry, Remix or Web3.js, Polygon offers the same UX as Ethereum.
 
 Connect your wallet and deploy any decentralized application to either Polygon Mainnet or Polygon Mumbai Testnet.
 
@@ -91,11 +91,12 @@ Suppose you have no prior experience building decentralized applications (dApps)
 - [Web3.js](https://www.dappuniversity.com/articles/web3-js-intro)
 - [Ethers.js](https://docs.ethers.io/v5/)
 - [thirdweb](https://portal.thirdweb.com)
-- Remix
-- Truffle
-- Metamask
-- Arkane
-- Develop a dApp using Fauna, Polygon and React
+- [Remix](https://remix.ethereum.org/)
+- [Hardhat](https://hardhat.org/hardhat-runner/docs/getting-started)
+- [Foundry](https://github.com/foundry-rs/foundry/blob/master/README.md)
+- [Metamask](https://support.metamask.io/getting-started/)
+- [Venly (previously Arkane)](https://docs.venly.io/docs/getting-started-with-venly)
+- [Develop a dApp using Fauna, Polygon, and React](https://github.com/hello-ashleyintech/polygon-fauna-app)
 
 ## Polygon DID
 
