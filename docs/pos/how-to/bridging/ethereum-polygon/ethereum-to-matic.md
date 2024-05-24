@@ -12,7 +12,7 @@ The Sender and Receiver contract are required to be mapped on Ethereum — [Stat
 
 ---
 
-In the following walkthrough, we'll be deploying a Sender contract on Goerli (Ethereum testnet) and a Receiver contract on Mumbai (Polygon's testnet) and then we'll be sending data from Sender and reading data on Receiver via web3 calls in a node script.
+In the following walkthrough, we'll be deploying a Sender contract on Sepolia (Ethereum testnet) and a Receiver contract on Amoy (Polygon testnet). Then, we'll be sending data from Sender and reading data on Receiver via web3 calls in a node script.
 
 ### 1. Deploy Sender contract
 
@@ -20,7 +20,7 @@ The sole purpose of Sender contract is to be able to call [syncState](https://gi
 
 Deployed at:
 
-`0xEAa852323826C71cd7920C3b4c007184234c3945` on Goerli
+`0x49E307Fa5a58ff1834E0F8a60eB2a9609E6A5F50` on Sepolia
 
 `0x28e4F3a7f651294B9564800b2D01f35189A5bFbE` on Ethereum Mainnet
 
@@ -48,7 +48,7 @@ function sendState(bytes calldata data) external {
 }
 ```
 
-In the above function, `stateSenderContract` is the address of the StateSender on the network you'll be deploying `Sender` on. (eg., we'll be using `0xEAa852323826C71cd7920C3b4c007184234c3945` for Goerli), and `receiver` is the contract that will receive the data we send from here.
+In the above function, `stateSenderContract` is the address of the StateSender on the network you'll be deploying `Sender` on. (eg., we'll be using `0x49E307Fa5a58ff1834E0F8a60eB2a9609E6A5F50` for Sepolia), and `receiver` is the contract that will receive the data we send from here.
 
 It is recommended to use constructors to pass in variables, but for the purpose of this demo, we'll simply hardcode these two addresses:
 
@@ -113,7 +113,7 @@ contract receiver {
 
 The function simply assigns the last received State Id and data to variables. [StateId](https://github.com/maticnetwork/contracts/blob/239a91045622ddcf9ebec2cec81fdc6daa3a33e3/contracts/root/stateSyncer/StateSender.sol#L36) is a simple unique reference to the transferred state (a simple counter).
 
-Deploy  your Receiver.sol on Polygon's testnet and keep a note of the address and ABI
+Deploy your `Receiver.sol` to Amoy testnet and keep a note of the address and ABI
 
 ### 3. Getting your Sender and Receiver mapped
 
@@ -133,7 +133,7 @@ We'll first initialise our web3 objects, wallet to make the transactions and con
 const Web3 = require('web3')
 const Network = require("@maticnetwork/meta/network")
 
-const network = new Network ('testnet', 'mumbai')
+const network = new Network ('testnet', 'amoy')
 
 const main = new Web3(network.Main.RPC)
 const matic = new Web3 (network.Matic.RPC)
@@ -243,7 +243,7 @@ This is how our test script looks like:
 const Web3 = require('web3')
 const Network = require("@maticnetwork/meta/network")
 
-const network = new Network ('testnet', 'mumbai')
+const network = new Network ('testnet', 'amoy')
 
 const main = new Web3(network.Main.RPC)
 const matic = new Web3 (network.Matic.RPC)
