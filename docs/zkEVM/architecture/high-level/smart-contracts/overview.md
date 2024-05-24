@@ -37,9 +37,11 @@ The [PolygonRollupManager.sol](https://github.com/0xPolygonHermez/zkevm-contract
 ![Polygon Solidity smart contract rollup manager](../../../../img/cdk/high-level-architecture/rollup-manager.png){ width=80% }
 </center>
 
+
+
 ## Bridge 
 
-The L1/L2 unified bridge contract [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) is responsible for bridging and claiming activity across L1 and L2 chains. 
+The unified bridge contract [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) is responsible for bridging and claiming activity across L1 and L2 chains. 
 
 <center>
 ![Polygon Solidity smart contract bridge](../../../../img/cdk/high-level-architecture/bridge.png){ width=80% }
