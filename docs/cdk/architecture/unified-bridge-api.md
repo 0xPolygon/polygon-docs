@@ -6,6 +6,8 @@ The API is built using the [chain indexer framework](../../tools/chain-indexer-f
 
 The Unified Bridge API indexes data from Polygon's public chains PoS and zkEVM, Ethereum mainnet and testnets. The service also indexes CDK chains.
 
+Together with the bridge & call
+
 ## Architecture
 
 ![bridge-api-service.png](../../img/cdk/bridge-api-service.png)
@@ -68,7 +70,7 @@ This API manages the payload needed to process claims on the destination chain. 
     
 ## Onboarding a new CDK
 
-New CDK chains must supply the following mandatory parameters:
+New CDK IP partners must supply the following mandatory parameters:
 
 - Public RPC
 - Chain ID
@@ -79,7 +81,7 @@ New CDK chains must supply the following mandatory parameters:
 - Bridging contracts address
 
 !!! important
-    - The above are mandatory expectations from any CDK team. 
+    - The above are mandatory expectations from any CDK IP partner. 
     - At the time of writing, everything else is handled and deployed by the Polygon team.
 
 ## Deeper dive into the bridging workflow
@@ -88,11 +90,17 @@ To understand why the API requires the mandatory onboarding parameters, let's ex
 
 ### `lxly.js` client library 
 
-The [LxLy SDK](https://www.npmjs.com/package/@maticnetwork/lxlyjs) is a JavaScript library that contains all prebuilt functions required for initializing and interacting with the bridge contracts; such as the bridge contract address, RPC, and network ID. 
+The [LxLy SDK](https://www.npmjs.com/package/@maticnetwork/lxlyjs) is a JavaScript library that contains all prebuilt functions required for interacting with the bridge contracts.
 
-It performs type conversion, formatting, error handling, and other processes to make it easy for a developer to invoke bridge, claim, and many other functions required for bridging. 
+Initialize the library with the bridge contract address, RPC URL, and network id to access type conversion, formatting, error handling, and other processes to make it easy for a developer to invoke bridge, claim, and many other functions required for bridging. 
 
 The SDK can be used for any compatible chain with no additional changes. 
+
+#### Common use cases
+
+- L1 to L2 (Ethereum to CDK L2 chain).
+- L2 to L2 (zkEVM to CDK L2 chain).
+- L2 to L1 (CDK L2 chain to Ethereum).
 
 ### Unified Bridge API
 
