@@ -44,7 +44,7 @@ Transaction data belonging to a specific chain is identified using either the `d
 
 - ETH = 0
 - zkEVM = 1
-- Astar = 2 (including testnet) 
+- CDK chains = >1 (including testnets) 
 
 ### Transactions API
 
