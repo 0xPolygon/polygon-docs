@@ -6,8 +6,6 @@ The API is built using the [chain indexer framework](../../tools/chain-indexer-f
 
 The Unified Bridge API indexes data from Polygon's public chains PoS and zkEVM, Ethereum mainnet and testnets. The service also indexes CDK chains.
 
-Together with the bridge & call
-
 ## Architecture
 
 ![bridge-api-service.png](../../img/cdk/bridge-api-service.png)
