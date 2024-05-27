@@ -143,7 +143,7 @@ In this tutorial, we'll cover how to:
 
 ## Add custom tokens to Polygon portal
 
-1. First, try looking up the token directly by clicking on the "Manage Tokens" located in the bottom-right corner of the dashboard, and then entering the token name in the input field.
+1. First, try looking up the token directly by clicking on the **Manage Tokens** located in the bottom-right corner of the dashboard, and then entering the token name in the input field.
 
     <center>
     ![](../../img/tools/portal/portal-16.png){ width=60% }
