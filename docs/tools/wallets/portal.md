@@ -123,7 +123,7 @@ In this tutorial, we'll cover how to:
     ![](../../img/tools/portal/portal-10.png){ width=60% }
     </center>
 
-2. The "Claim Tokens" button will appear under the transaction once your tokens are ready to be claimed.
+2. The **Claim Tokens** button will appear under the transaction once your tokens are ready to be claimed.
 
     <center>
     ![](../../img/tools/portal/portal-11.png){ width=60% }
