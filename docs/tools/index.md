@@ -23,7 +23,7 @@ hide:
    <div class="grid-item">
       <a href="./dApp-development/launchpad/intro">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">dApp Launchpadd</div>
+            <div class="feature-card-heading">dApp Launchpad</div>
          </div>
          <p class="feature-paragraph">Automated CLI tool for initializing, creating, and deploying fully-integrated, web3 dApp projects.</p>
       </a>
