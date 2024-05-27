@@ -6,9 +6,13 @@ This guide provides an index of network details for the Polygon Amoy testnet and
 
 ## Network details
 
+!!! warning "Mumbai testnet deprecated"
+
+    The Goerli-anchored Mumbai testnet is now deprecated. Please use the Sepolia-anchored Amoy testnet for all future testing and dApp development activities on Polygon PoS.
+
 ### Amoy
 
-The Amoy testnet serves as a replica of the Polygon mainnet and is primarily used for testing. **Amoy network will soon replace Mumbai Testnet**. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
+The Amoy testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
 
 | Properties       | Network details                                                                                    |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
@@ -20,10 +24,9 @@ The Amoy testnet serves as a replica of the Polygon mainnet and is primarily use
 | RPC endpoint     | [https://rpc-amoy.polygon.technology/](https://rpc-amoy.polygon.technology/)                       |
 | Node endpoint    | [wss://rpc-amoy.polygon.technology/](wss://rpc-amoy.polygon.technology/)                           |
 | Heimdall API     | [https://heimdall-api-amoy.polygon.technology](https://heimdall-api-amoy.polygon.technology)       |
-| Block Explorer   | [https://www.oklink.com/amoy](https://www.oklink.com/amoy)                                         |
+| Block Explorer   | [https://amoy.polygonscan.com/](https://amoy.polygonscan.com/)                                         |
 
-!!!note
-    Additional information
+!!! note "Additional information"
 
     For more details, refer to this [**JSON data**](https://static.polygon.technology/network/testnet/amoy/index.json).
 
@@ -44,8 +47,7 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 | Heimdall API     | [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)                 |
 | Block explorer   | [https://polygonscan.com/](https://polygonscan.com/)                                               |
 
-!!!note
-    Additional information
+!!! note "Additional information"
 
     For more details, refer to this [**JSON data**](https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json).
 
@@ -66,9 +68,9 @@ The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily u
 | Heimdall API     | [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology) |
 | Block Explorer   | [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)                                 |
 
-!!!note
-    Additional information
-
+!!! note "Additional information
+"
+    
     For more details, refer to this [**JSON data**](https://static.polygon.technology/network/testnet/mumbai/index.json).
 
 </TabItem>
@@ -78,8 +80,7 @@ The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily u
 
 Developers can interact with on-chain data and execute various types of transactions using network endpoints. These APIs adhere to the JSON-RPC standard, a stateless, lightweight remote procedure call (RPC) protocol.
 
-!!!info
-    Getting started with RPC calls
+!!! info "Getting started with RPC calls"
 
     For a comprehensive list of API documentation, visit [**Polygon JSON-RPC calls**](https://github.com/0xPolygon/polygon-edge/tree/develop/docs/docs/api).
 
