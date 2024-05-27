@@ -151,7 +151,7 @@ In this tutorial, we'll cover how to:
     ![](../../img/tools/portal/portal-26.png){ width=60% }
     </center>
 
-2. If the token you're looking for shows up, select "Add" to add it to the portal.
+2. If the token you're looking for shows up, select **Add** to add it to the portal.
 
 3. If your token doesn't appear in the search results, you can also add the token manually by selecting the "+" in the bottom-right of the "Manage tokens" window.
 
