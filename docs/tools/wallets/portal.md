@@ -2,9 +2,9 @@
 comments: true
 ---
 
-[Polygon portal](https://portal.polygon.technology/) is an integrated UI platform that serves as a one-stop solution for asset management and token operations such as swapping and bridging. The unified UI comes with a comprehensive dashboard that can be used by connecting your wallet via popular tools such as MetaMask, Coinbase, Bitski, Venly, WalletConnect, and more. 
+[Polygon Portal](https://portal.polygon.technology/) is an integrated UI platform that serves as a one-stop solution for asset management and token operations such as swapping and bridging. The unified UI comes with a comprehensive dashboard that can be used by connecting your wallet via popular tools such as MetaMask, Coinbase, Bitski, Venly, WalletConnect, and more. 
 
-Polygon portal establishes a trustless, two-way transaction channel between the Polygon PoS and zkEVM, and Ethereum networks, along with support for LxLy chains in the Polygon Ecosystem. You can transfer your tokens across these chains without incurring third-party risks and market liquidity limitations.
+The portal establishes a trustless, two-way transaction channel between the Polygon PoS and zkEVM, and Ethereum networks, along with support for LxLy chains in the Polygon Ecosystem. You can transfer your tokens across these chains without incurring third-party risks and market liquidity limitations.
 
 !!! info
     - The bridge is operational on both testnet and mainnet.
@@ -24,17 +24,17 @@ Polygon portal establishes a trustless, two-way transaction channel between the 
 
 In this tutorial, we'll cover how to:
 
-- [Connect to Polygon portal](#connect-to-polygon-portal)
+- [Connect to Polygon Portal](#connect-to-polygon-portal)
 - [Transfer funds from Ethereum to Polygon chains](#transfer-funds-from-ethereum-to-polygon-chains)
 - [Claim bridged tokens on Ethereum](#claim-bridged-tokens-on-ethereum)
-- [Add custom tokens to Polygon portal](#add-custom-tokens-to-polygon-portal)
+- [Add custom tokens to Polygon Portal](#add-custom-tokens-to-polygon-portal)
 
 !!! info
     If you come across any issues, [Polygon support](https://support.polygon.technology/support/home) is just a click away! Feel free to get in touch with us for assistance.
 
-## Connect to Polygon portal
+## Connect to Polygon Portal
 
-1. Use the following URL to access Polygon portal: https://portal.polygon.technology/
+1. Use the following URL to access Polygon Portal: https://portal.polygon.technology/
 
 2. Click on the **Connect Wallet** button to bring up the **blocknative** wallet connect window.
 
@@ -58,7 +58,7 @@ In this tutorial, we'll cover how to:
 
 ## Transfer funds from Ethereum to Polygon chains
 
-1. Start by navigating to the [Polygon portal](https://portal.polygon.technology/), and then either selecting **Bridge your Asset** option on the main page, or the **Bridge** option from the sidebar on your dashboard.
+1. Start by navigating to the [Polygon Portal](https://portal.polygon.technology/), and then either selecting **Bridge your Asset** option on the main page, or the **Bridge** option from the sidebar on your dashboard.
 
     <center>
     ![](../../img/tools/portal/portal-3.png){ width=60% }
@@ -141,7 +141,7 @@ In this tutorial, we'll cover how to:
     ![](../../img/tools/portal/portal-13.png){ width=60% }
     </center>
 
-## Add custom tokens to Polygon portal
+## Add custom tokens to Polygon Portal
 
 1. First, try looking up the token directly by clicking on the **Manage Tokens** located in the bottom-right corner of the dashboard, and then entering the token name in the input field.
 

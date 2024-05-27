@@ -493,7 +493,7 @@ nav:
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
           - Getting started:  tools/wallets/getting-started.md
-          - Polygon portal: tools/wallets/portal.md
+          - Polygon Portal: tools/wallets/portal.md
           - Metamask:
               - Overview: tools/wallets/metamask/index.md
               - Create MetaMask wallet: https://support.metamask.io/getting-started/getting-started-with-metamask/
