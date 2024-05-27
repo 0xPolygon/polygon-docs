@@ -102,6 +102,43 @@ nav:
           #- Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
           #- Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
           #- Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
+          - API:
+              - PolygonRollupManager:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
+              - PolygonZkEVMBridgeV2:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
+              - PolygonZkEVMGlobalExitRootV2:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMGlobalExitRootV2.md
+              - CDKValidium: zkEVM/architecture/high-level/smart-contracts/api/CDKValidium.md
+              - CDKValidiumTimelock: zkEVM/architecture/high-level/smart-contracts/api/CDKValidiumTimelock.md
+              - Consensus:
+                  - Datacomittee:
+                      - CDKDataCommittee:  zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/CDKDataCommittee.md
+                      - PolygonDataComittee:  zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/PolygonDataComittee.md
+                  - Validium:
+                      - PolygonDataCommittee:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonDataCommittee.md
+                      - PolygonValidiumEtrog:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonValidiumEtrog.md
+                      - Migration:
+                          - PolygonRollupBaseEtrogNoGap:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonRollupBaseEtrogNoGap.md
+                          - PolygonValidiumStorageMigration:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonValidiumStorageMigration.md
+                  - Zkevm:
+                      - PolygonZkEVMEtrog:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMEtrog.md
+                      - PolygonZkEVMExistentEtrog:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMExistentEtrog.md
+                      - PolygonZkEVMV2:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2.md
+                      - PolygonZkEVMV2Existent:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2Existent.md
+              - Deployment: 
+                  - CDKValidiumDeployer: zkEVM/architecture/high-level/smart-contracts/api/deployment/CDKValidiumDeployer.md
+              - Lib:
+                  - CDK:
+                      - DepositContract: zkEVM/architecture/high-level/smart-contracts/api/lib/cdk/DepositContract.md
+                      - EmergencyManager: zkEVM/architecture/high-level/smart-contracts/api/lib/cdk/EmergencyManager.md
+                      - GlobalExitRootLib: zkEVM/architecture/high-level/smart-contracts/api/lib/cdk/GlobalExitRootLib.md
+                      - TokenWrapped: zkEVM/architecture/high-level/smart-contracts/api/lib/cdk/TokenWrapped.md
+                  - DepositContractBase:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractBase.md
+                  - DepositContractLib:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractLib.md
+                  - DepositContractV2:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractV2.md
+                  - LegacyZKEVMStateVariables:  zkEVM/architecture/high-level/smart-contracts/api/lib/LegacyZKEVMStateVariables.md
+                  - PolygonAccessControlUpgradeable:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonAccessControlUpgradeable.md
+                  - PolygonRollupBaseEtrog:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonRollupBaseEtrog.md
+                  - PolygonTransparentProxy:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonTransparentProxy.md
+                  - PolygonZkEVMGlobalExitRootBaseStorage:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonZkEVMGlobalExitRootBaseStorage.md
           - Addresses: zkEVM/architecture/high-level/smart-contracts/addresses.md
         #- AggLayer: https://potential-couscous-4gw6qyo.pages.github.io/index.html
         #- CDK node:
