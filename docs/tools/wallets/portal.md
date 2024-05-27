@@ -89,7 +89,7 @@ In this tutorial, we'll cover how to:
     ![](../../img/tools/portal/portal-7.png){ width=60% }
     </center>
 
-6. You can check the transaction status and browse your transaction history by selecting "Transactions" from the sidebar. Select a transaction to view details.
+6. You can check the transaction status and browse your transaction history by selecting **Transactions** from the sidebar. Select a transaction to view details.
 
     <center>
     ![](../../img/tools/portal/portal-8.png){ width=60% }
