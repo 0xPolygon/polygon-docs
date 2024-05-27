@@ -9,7 +9,7 @@
 
 ### `setupCommittee`
 
-Allows the admin to setup the members of the committee. 
+Allows the admin to setup members of the committee. 
 
 ```solidity
   function setupCommittee(
@@ -21,8 +21,8 @@ Allows the admin to setup the members of the committee.
 
 !!! note
     - The system requires N/M signatures where N => `_requiredAmountOfSignatures` and M => `urls.length`.
-    - There must be the same amount of urls than addresses encoded in the `addrsBytes`.
-    - A member is represented by the url and the address contained in `urls[i]` and `addrsBytes[i*_ADDR_SIZE : i*_ADDR_SIZE + _ADDR_SIZE]`.
+    - The number of urls must be the same as the addresses encoded in the `addrsBytes`.
+    - A member is represented by a url and the address contained in `urls[i]` and `addrsBytes[i*_ADDR_SIZE : i*_ADDR_SIZE + _ADDR_SIZE]`.
 
 
 ##### Parameters

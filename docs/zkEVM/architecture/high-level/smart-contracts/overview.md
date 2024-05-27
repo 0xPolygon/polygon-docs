@@ -6,7 +6,7 @@ comments: true
 
 ## Polygon smart contract architecture
 
-Chain stacks at the node level direct transaction data into the L2 and L1 realms via smart contract calls. The system stores state in binary tree structures containing verifiable local and global exit roots.
+Chain stacks at the node level direct transaction data to the L2 and L1 networks via smart contract calls. The system stores state in binary tree structures containing verifiable local and global exit roots.
 
 The diagram below details the Polygon Solidity smart contract architecture. 
 
@@ -45,7 +45,7 @@ The unified bridge contract [PolygonZkEVMBridgeV2.sol](https://github.com/0xPoly
 ![Polygon Solidity smart contract bridge](../../../../img/cdk/high-level-architecture/bridge.png){ width=80% }
 </center>
 
-In the L1 realm, the bridge also manages the complex exit root mechanism governing system state. In the L2 realm, there is a lighter exit root mechanism that governs state at this layer. 
+In the L1 network, the bridge also manages the complex exit root mechanism governing system state. In the L2 network, there is a lighter exit root mechanism that governs state at this layer. 
 
 ## Global exit roots
 
@@ -72,5 +72,5 @@ CDK validium stacks use the [cdk-validium-contracts](https://github.com/0xPolygo
 The CDK repo is a fork of the zkEVM main contracts repo and all contracts, therefore, extend from common interfaces.
 
 !!! important
-    - A CDK validium stack starts life as a rollup stack. 
-    - It may be referred to as such interchangeably when discussing aspects shared by the two options.
+    - A CDK validium stack starts as a rollup stack. 
+    - It may interchangeably be referred to as such, when discussing aspects shared by the two options.

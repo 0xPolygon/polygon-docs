@@ -1,11 +1,10 @@
-
 Contract helper responsible for managing the emergency state.
 
 ## Functions
 
 ### `_activateEmergencyState`
 
-Activate emergency state.
+Activates the emergency state.
 
 ```solidity
   function _activateEmergencyState(
@@ -14,7 +13,7 @@ Activate emergency state.
 
 ### `_deactivateEmergencyState`
 
-Deactivate emergency state.
+Deactivates the emergency state.
 
 ```solidity
   function _deactivateEmergencyState(
@@ -25,7 +24,7 @@ Deactivate emergency state.
 
 ### `EmergencyStateActivated`
 
-Emitted when emergency state is activated.
+Emitted when the emergency state is activated.
 
 ```solidity
   event EmergencyStateActivated(
@@ -34,7 +33,7 @@ Emitted when emergency state is activated.
 
 ### `EmergencyStateDeactivated`
 
-Emitted when emergency state is deactivated.
+Emitted when the emergency state is deactivated.
 
 ```solidity
   event EmergencyStateDeactivated(

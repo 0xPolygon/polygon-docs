@@ -14,7 +14,7 @@ Contract responsible for deploying deterministic address contracts related with 
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_owner` | address | Owner
+|`_owner` | address | Owner | 
 
 ### `deployDeterministic`
 
@@ -32,9 +32,9 @@ Deploys a contract using `create2`.
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount used in create2
-|`salt` | bytes32 | Salt used in create2
-|`initBytecode` | bytes | Init bytecode that will be use in create2
+|`amount` | uint256 | Amount used in create2. | 
+|`salt` | bytes32 | Salt used in create2. | 
+|`initBytecode` | bytes | Init bytecode used in create2. | 
 
 ### `deployDeterministicAndCall`
 
@@ -53,10 +53,10 @@ Deploys a contract using `create2` and calls it afterwards.
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount used in create2
-|`salt` | bytes32 | Salt used in create2
-|`initBytecode` | bytes | Init bytecode that will be use in create2
-|`dataCall` | bytes | Data used in the call after deploying the smart contract
+|`amount` | uint256 | Amount used in create2. | 
+|`salt` | bytes32 | Salt used in create2. | 
+|`initBytecode` | bytes | Init bytecode used in create2. | 
+|`dataCall` | bytes | Data used in the call after deploying the smart contract. | 
 
 ### `functionCall`
 
@@ -72,9 +72,9 @@ Deploys a contract using `create2` and calls it afterwards.
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`targetAddress` | address | Amount of contract deploy
-|`dataCall` | bytes | Data used to call the target smart contract
-|`amount` | uint256 | Data used to call the target smart contract
+|`targetAddress` | address | Amount of contract deploy. | 
+|`dataCall` | bytes | Data used to call the target smart contract. | 
+|`amount` | uint256 | Data used to call the target smart contract. | 
 
 ### `predictDeterministicAddress`
 
@@ -89,8 +89,8 @@ Deploys a contract using `create2` and calls it afterwards.
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`salt` | bytes32 | Salt used in create2
-|`bytecodeHash` | bytes32 | Init bytecode hashed, it contains the constructor parameters
+|`salt` | bytes32 | Salt used in create2. | 
+|`bytecodeHash` | bytes32 | Init bytecode hashed, it contains the constructor parameters. | 
 
 ## Events
 
@@ -111,4 +111,3 @@ Emitted when a contract is called
   event FunctionCall(
   )
 ```
-

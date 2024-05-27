@@ -1,4 +1,4 @@
-This contract is a helper for all the sparse Merkle tree related functions and is based on the implementation of the deposit eth2.0 contract https://github.com/ethereum/consensus-specs/blob/dev/solidity_deposit_contract/deposit_contract.sol.
+This contract is a helper for all functions related to the sparse Merkle tree. And it is based on the implementation of the deposit eth2.0 contract https://github.com/ethereum/consensus-specs/blob/dev/solidity_deposit_contract/deposit_contract.sol.
 
 ## Functions
 
@@ -25,7 +25,7 @@ Adds a new leaf to the merkle tree.
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`leaf` | bytes32 | Leaf
+|`leaf` | bytes32 | Leaf | 
 
 ### `verifyMerkleProof`
 
@@ -44,10 +44,10 @@ Verify Merkle proof.
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`leafHash` | bytes32 | Leaf hash
-|`smtProof` | bytes32[32] | Smt proof
-|`index` | uint32 | Index of the leaf
-|`root` | bytes32 | Merkle root
+|`leafHash` | bytes32 | Leaf hash. | 
+|`smtProof` | bytes32[32] | Smt proof. | 
+|`index` | uint32 | Index of the leaf. | 
+|`root` | bytes32 | Merkle root. | 
 
 ### `calculateRoot`
 
@@ -65,7 +65,6 @@ Calculate root from Merkle proof.
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`leafHash` | bytes32 | Leaf hash
-|`smtProof` | bytes32[32] | Smt proof
-|`index` | uint32 | Index of the leaf
-
+|`leafHash` | bytes32 | Leaf hash. | 
+|`smtProof` | bytes32[32] | Smt proof. | 
+|`index` | uint32 | Index of the leaf. | 

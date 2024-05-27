@@ -15,12 +15,12 @@ Utility contract for compressing and decompressing claim data.
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`__bridgeAddress` | address | PolygonZkEVMBridge contract address
-|`__networkID` | uint32 | Network ID
+|`__bridgeAddress` | address | PolygonZkEVMBridge contract address. | 
+|`__networkID` | uint32 | Network ID. | 
 
 ### `compressClaimCall`
 
-Forward all the claim parameters to compress them inside the contract.
+Forwards all claim parameters in order to compress them inside the contract.
 
 ```solidity
   function compressClaimCall(
@@ -34,9 +34,9 @@ Forward all the claim parameters to compress them inside the contract.
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`mainnetExitRoot` | bytes32 | Mainnet exit root
-|`rollupExitRoot` | bytes32 | Rollup exit root
-|`compressClaimCalldata` | struct ClaimCompressor.CompressClaimCallData[] | compress claim calldata
+|`mainnetExitRoot` | bytes32 | Mainnet exit root. | 
+|`rollupExitRoot` | bytes32 | Rollup exit root. | 
+|`compressClaimCalldata` | struct ClaimCompressor.CompressClaimCallData[] | compress claim calldata. | 
 
 ### `sendCompressedClaims`
 ```solidity
