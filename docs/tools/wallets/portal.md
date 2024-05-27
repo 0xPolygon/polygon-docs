@@ -153,7 +153,7 @@ In this tutorial, we'll cover how to:
 
 2. If the token you're looking for shows up, select **Add** to add it to the portal.
 
-3. If your token doesn't appear in the search results, you can also add the token manually by selecting the "+" in the bottom-right of the "Manage tokens" window.
+3. If your token doesn't appear in the search results, you can also add the token manually by selecting the **+** in the bottom-right of the **Manage tokens** window.
 
     <center>
     ![](../../img/tools/portal/portal-20.png){ width=60% }
