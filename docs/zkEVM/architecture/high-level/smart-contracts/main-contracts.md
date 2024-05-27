@@ -68,6 +68,3 @@ The [PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-
 - Updating the L1 info tree by emitting the `UpdateL1InfoTree(...)` event.
 - Updating exit roots.
 - Retrieving latest exit roots and leaf values.
-
-!!! tip
-    - For more information, and the Solidity code, check out the [API section](api/PolygonRollupManager.md).
