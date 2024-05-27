@@ -58,7 +58,7 @@ In this tutorial, we'll cover how to:
 
 ## Transfer funds from Ethereum to Polygon chains
 
-1. Start by navigating to the [Polygon portal](https://portal.polygon.technology/), and then either selecting "Bridge you Asset" option on the main page, or the "Bridge" option from the sidebar on your dashboard.
+1. Start by navigating to the [Polygon portal](https://portal.polygon.technology/), and then either selecting **Bridge your Asset** option on the main page, or the **Bridge** option from the sidebar on your dashboard.
 
     <center>
     ![](../../img/tools/portal/portal-3.png){ width=60% }
