@@ -101,7 +101,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 
 
 
-### Mumbai
+### Mumbai (Deprecated)
 
 **Parent chain: Goerli**
 

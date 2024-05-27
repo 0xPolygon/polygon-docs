@@ -52,7 +52,7 @@ The `createdDID` function helps user generate a DID URI. While creating a DID, t
     const {address, publicKey58, privateKey, DID} = await createDID(network);
     ```
 
-The network parameter in both cases refers to whether the user wants to create the DID on Polygon Mumbai Testnet or Polygon Mainnet.
+The network parameter in both cases refers to whether the user wants to create the DID on Polygon Amoy Testnet or Polygon Mainnet.
 
 Sample Input:
 

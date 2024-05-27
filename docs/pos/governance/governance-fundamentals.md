@@ -49,7 +49,7 @@ Assuming that the change or upgrade agreed upon via community consensus requires
 1. The protocol decision is made on a PPGC, and implementation begins in the form of modifications to the relevant GitHub repositories.
 2. Core developers create pull requests containing the changes, which can then be merged into the respective code base, and a new [tag](https://github.com/maticnetwork/bor/tags) is created.
 3. Core developers test new releases by deploying them on local devnets. If everything continues to function normally, the tag is marked as "**beta**", which is essentially the "**pre-release**" state.
-4. The modifications and upgrades are rolled out to the Mumbai testnet, and left out to soak for at least one week. Currently, the [Mumbai Testing Committee](https://forum.polygon.technology/t/introducing-mumbai-testing-committee/12970) reports on the stability of the release in the PPGC.
+4. The modifications and upgrades are rolled out to the Amoy testnet, and left out to soak for at least one week. Currently, the Amoy Testing Committee reports on the stability of the release in the PPGC.
 5. Finally, once confirmed that the upgrade doesn't break anything, it is scheduled to be released to mainnet on a PPGC. At this point, the tag version is marked as "**final**".
 6. Validators upgrade their nodes to the latest version after considering the changes. The upgrade is now made canonical via on-chain consensus of the validating stake, including that delegated by token holders. 
 
