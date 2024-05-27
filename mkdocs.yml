@@ -94,13 +94,16 @@ nav:
         - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
         - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture high-level:
-        - Architectural overview: zkEVM/architecture/high-level/overview.md
-        #- Smart contracts: 
-        #  - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
-        #  - Rollup: zkEVM/architecture/high-level/smart-contracts/rollup.md
-        #  - Validium: zkEVM/architecture/high-level/smart-contracts/validium.md      
-        #  - Exit root trees: zkEVM/architecture/high-level/smart-contracts/exit-root-trees.md
-        # - AggLayer: https://potential-couscous-4gw6qyo.pages.github.io/index.html
+        - Overview: zkEVM/architecture/high-level/overview.md
+        - Smart contracts: 
+          - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
+          - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
+          - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
+          #- Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
+          #- Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
+          #- Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
+          - Addresses: zkEVM/architecture/high-level/smart-contracts/addresses.md
+        #- AggLayer: https://potential-couscous-4gw6qyo.pages.github.io/index.html
         #- CDK node:
           #- JSON/RPC: zkEVM/architecture/high-level/cdk-node/json-rpc.md
           #- Databases:
