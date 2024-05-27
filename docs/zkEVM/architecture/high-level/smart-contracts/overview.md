@@ -72,5 +72,5 @@ CDK validium stacks use the [cdk-validium-contracts](https://github.com/0xPolygo
 The CDK repo is a fork of the zkEVM main contracts repo and all contracts, therefore, extend from common interfaces.
 
 !!! important
-    - A CDK validium stack starts as a rollup stack. 
-    - It may interchangeably be referred to as such, when discussing aspects shared by the two options.
+    - A CDK validium stack starts life as a rollup stack. 
+    - It may interchangeably be referred to as such when discussing aspects shared by the two options.
