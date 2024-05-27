@@ -36,7 +36,7 @@ In this tutorial, we'll cover how to:
 
 1. Use the following URL to access Polygon portal: https://portal.polygon.technology/
 
-2. Click on the "Connect Wallet" button to bring up the **blocknative** wallet connect window.
+2. Click on the **Connect Wallet** button to bring up the **blocknative** wallet connect window.
 
     <center>
     ![](../../img/tools/portal/portal-1.png){ width=60% }
