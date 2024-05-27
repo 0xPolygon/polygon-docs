@@ -101,7 +101,7 @@ In this tutorial, we'll cover how to:
 
 ### MATIC tokens
 
-1. Let's say you bridged MATIC from PoS to Ethereum. Once your tokens are ready to claim, you'll be able to select the "Initiate Claim" option under the transaction record.
+1. Let's say you bridged MATIC from PoS to Ethereum. Once your tokens are ready to claim, you'll be able to select the **Initiate Claim** option under the transaction record.
 
     <center>
     ![](../../img/tools/portal/portal-14.png){ width=60% }
