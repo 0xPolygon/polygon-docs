@@ -385,7 +385,8 @@ nav:
               - Hardhat: tools/dApp-development/common-tools/hardhat.md
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
-          - Smart contract development: tools/dApp-development/pos/third-party-smart-contracts.md
+          - Smart contract development: 
+              - Third-party tools: tools/dApp-development/pos/third-party-smart-contracts.md
       - Chain indexer framework:
           - Overview: tools/chain-indexer-framework/overview.md
           - Usage: tools/chain-indexer-framework/usage.md
@@ -498,24 +499,22 @@ nav:
           - Polygon Portal: tools/wallets/portal.md
           - Metamask:
               - Overview: tools/wallets/metamask/index.md
-              - Create MetaMask wallet: tools/wallets/metamask/create-metamask-wallet.md
+              - Create MetaMask wallet: https://support.metamask.io/getting-started/getting-started-with-metamask/
               - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
-              - Configure custom tokens:  tools/wallets/metamask/custom-tokens.md
-              - Create and import accounts:  tools/wallets/metamask/multiple-accounts.md
+              - Configure custom tokens:  https://support.metamask.io/managing-my-tokens/custom-tokens/how-to-display-tokens-in-metamask/
+              - Import accounts:  https://support.metamask.io/managing-my-wallet/accounts-and-addresses/how-to-import-an-account/
           - Venly:
               - Intro:  tools/wallets/venly/index.md
               - Create Venly wallet:  tools/wallets/venly/create-wallet.md
               - Venly wallet API:  tools/wallets/venly/wallet-api.md
               - Venly widget: tools/wallets/venly/venly-widget.md
-          - Fortmatic: tools/wallets/fortmatic.md    
+          - Fortmatic: https://docs.fortmatic.com/   
           - Openfort: tools/wallets/openfort.md
           - Particle network:  tools/wallets/particle-network.md
           - Portis:  tools/wallets/portis.md    
-          - SlashAuth:  tools/wallets/slashauth.md
           - Torus:  tools/wallets/torus.md  
-          - WalletKit:  tools/wallets/walletkit.md
-          - Wallet link: tools/wallets/wallet-link.md
           - WalletConnect:  tools/wallets/walletconnect.md
+          - WalletKit:  tools/wallets/walletkit.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
           - Polygon: https://polygonscan.com/ 
