@@ -56,10 +56,8 @@ Verifies that the given signedHash has been signed by the requiredAmountOfSignat
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`signedHash` | bytes32 | Hash that must have been signed by the requiredAmountOfSignatures of committee members
-|`signaturesAndAddrs` | bytes | Byte array containing signatures and all addresses of the committee members in ascending order
-[signature 0, ..., signature requiredAmountOfSignatures -1, address 0, ... address N]
-note that all signatures are ECDSA, therefore each must be 65 bytes long
+|`signedHash` | bytes32 | Hash that must have been signed by the requiredAmountOfSignatures of committee members. |
+|`signaturesAndAddrs` | bytes | Byte array containing signatures and all addresses of the committee members in ascending order [signature 0, ..., signature requiredAmountOfSignatures -1, address 0, ... address N]. </br> Note that all signatures are ECDSA, therefore each must be 65 bytes long. |
 
 ### `getAmountOfMembers`
 
