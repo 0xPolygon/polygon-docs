@@ -45,7 +45,7 @@ Allows a sequencer to send multiple batches.
 | :--- | :--- | :------------------------------------------------------------------- |
 |`batches` | struct PolygonDataComittee.ValidiumBatchData[] | Struct array which holds the necessary data to append new batches to a sequence
 |`l2Coinbase` | address | Address that will receive the fees from L2
-|`dataAvailabilityMessage` | bytes | Byte array containing signatures and addresses of all the committee members in ascending order
+|`dataAvailabilityMessage` | bytes | Byte array containing signatures and all addresses of the committee members in the ascending order
 [signature 0, ..., signature requiredAmountOfSignatures -1, address 0, ... address N]
 note that each ECDSA signatures are used, therefore each one must be 65 bytes
 
@@ -56,17 +56,17 @@ Allows the admin to activate force batches.
 This action is not reversible.
 
 ```solidity
-function switchSequenceWithDataAvailability(
-) external
+  function switchSequenceWithDataAvailability(
+  ) external
 ```
 
 ## Events
 
-### `SwitchSequenceWithDataAvailability`
+### SwitchSequenceWithDataAvailability
 
 ```solidity
-event SwitchSequenceWithDataAvailability(
-)
+  event SwitchSequenceWithDataAvailability(
+  )
 ```
 
-Emitted when the `switchSequenceWithDataAvailability` function runs.
+Emitted when switching the sequencing functionality.

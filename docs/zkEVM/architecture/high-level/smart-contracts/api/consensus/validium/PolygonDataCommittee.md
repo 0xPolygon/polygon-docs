@@ -22,7 +22,7 @@ Allows the admin to setup the members of the committee.
 
 !!! note
     - The system requires `N/M` signatures where `N` => `_requiredAmountOfSignatures` and `M` => `urls.length`.
-    - The number of urls must be the same as the number of addresses encoded in the `addrsBytes`.
+    - The number of urls must be the same as addresses encoded in the `addrsBytes`.
     - A member is represented by a url and the address contained in urls[i] and `addrsBytes. [i*_ADDR_SIZE : i*_ADDR_SIZE + _ADDR_SIZE]`.
 
 ```solidity
@@ -39,11 +39,11 @@ Allows the admin to setup the members of the committee.
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_requiredAmountOfSignatures` | uint256 | Required amount of signatures
 |`urls` | string[] | List of urls of the members of the committee
-|`addrsBytes` | bytes | Byte array that contains the addresses of the members of the committee
+|`addrsBytes` | bytes | Byte array that contains the addressess of the members of the committee
 
 ### `verifyMessage`
 
-Verifies that the given signedHash has been signed by the `requiredAmountOfSignatures` committee members.
+Verifies that the given signedHash has been signed by the requiredAmountOfSignatures committee members.
 
 ```solidity
   function verifyMessage(
@@ -58,7 +58,7 @@ Verifies that the given signedHash has been signed by the `requiredAmountOfSigna
 | :--- | :--- | :------------------------------------------------------------------- |
 |`signedHash` | bytes32 | Hash that must have been signed by the requiredAmountOfSignatures of committee members
 |`signaturesAndAddrs` | bytes | Byte array containing signatures and all addresses of the committee members in ascending order
-[signature 0, ..., signature `requiredAmountOfSignatures` -1, address 0, ... address N]
+[signature 0, ..., signature requiredAmountOfSignatures -1, address 0, ... address N]
 note that all signatures are ECDSA, therefore each must be 65 bytes long
 
 ### `getAmountOfMembers`
@@ -95,4 +95,4 @@ Emitted when the committee is updated.
 
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`committeeHash`| bytes32 | hash of the addresses of the committee members
+|`committeeHash`| bytes32 | hash of the addresses of the committee members |

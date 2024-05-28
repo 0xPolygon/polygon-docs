@@ -1,1 +1,0 @@
-Legacy contract used after upgrading to PolygonRollupManager to preserve previously used storage slots. The variables is used by the RollupManager only for initializing the zkEVM inside the initializer function.

@@ -21,7 +21,7 @@ Allows the admin to setup members of the committee.
 
 !!! note
     - The system requires N/M signatures where N => `_requiredAmountOfSignatures` and M => `urls.length`.
-    - The number of urls must be the same as the number of addresses encoded in the `addrsBytes`.
+    - The number of urls must be the same as the addresses encoded in the `addrsBytes`.
     - A member is represented by a url and the address contained in `urls[i]` and `addrsBytes[i*_ADDR_SIZE : i*_ADDR_SIZE + _ADDR_SIZE]`.
 
 
@@ -56,7 +56,7 @@ Verifies that the given `signedHash` has been signed by `requiredAmountOfSignatu
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`signedHash` | bytes32 | Hash that must have been signed by requiredAmountOfSignatures of committee members
-|`signaturesAndAddrs` | bytes | Byte array containing the signatures and addresses of all members of the committee in ascending order
+|`signaturesAndAddrs` | bytes | Byte array containing the signatures and all the addresses of the committee in ascending order
 [signature 0, ..., signature requiredAmountOfSignatures -1, address 0, ... address N]
 note that each ECDSA signatures are used, therefore each one must be 65 bytes
 
@@ -76,4 +76,5 @@ Emitted when the committee is updated.
 
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`committeeHash`| bytes32 | hash of the addresses of the committee members
+|`committeeHash`| bytes32 | hash of the addresses of the committee members |
+

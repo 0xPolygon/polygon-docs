@@ -20,30 +20,3 @@
 |`_bridgeAddress` | contract IPolygonZkEVMBridge | Bridge address. | 
 |`_rollupManager` | contract PolygonRollupManager | Global exit root manager address. | 
 
-### `initializeUpgrade`
-
-```solidity
-  function initializeUpgrade(
-    address _admin,
-    address _trustedSequencer,
-    string _trustedSequencerURL,
-    string _networkName,
-    bytes32 _lastAccInputHash,
-    uint64 _lastTimestamp
-  ) external
-```
-
-!!! note
-    - This initializer is called instead of the `PolygonRollupBase`.
-    - This is a special initializer since the zkEVM network has already been created.
-
-##### Parameters
-
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_admin` | address | Admin address. | 
-|`_trustedSequencer` | address | Trusted sequencer address. | 
-|`_trustedSequencerURL` | string | Trusted sequencer URL. | 
-|`_networkName` | string | L2 network name. | 
-|`_lastAccInputHash` | bytes32 | Acc input hash. | 
-|`_lastTimestamp` | uint64 | Timestamp. |

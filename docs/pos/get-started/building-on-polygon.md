@@ -25,7 +25,7 @@ In order to be a validator on the Polygon Network, you need to:
 
 ## Wallets
 
-You'll need an Ethereum-based wallet to interact with Polygon because the network runs on Ethereum Virtual Machine (EVM). You can choose to set up a [Metamask](../../tools/wallets/metamask/create-metamask-wallet.md), or [Venly](../../tools/wallets/venly/create-wallet.md) (Arkane) Wallet. 
+You'll need an Ethereum-based wallet to interact with Polygon because the network runs on Ethereum Virtual Machine (EVM). You can choose to set up a [MetaMask](https://support.metamask.io/getting-started/getting-started-with-metamask/), or [Venly](../../tools/wallets/venly/create-wallet.md) (Arkane) Wallet. 
 
 There are several other third-party wallet options available to choose from, and you'll find them listed out on [this page here](../../tools/wallets/getting-started.md).
 
