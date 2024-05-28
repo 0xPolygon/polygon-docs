@@ -69,12 +69,14 @@ hide:
       </a>
    </div>
    <div class="grid-item">
-      <a href="https://www.okx.com/web3/explorer/polygon">
+      <a href="https://polygonscan.com/">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Block explorers</div>
+            <div class="feature-card-heading">Block explorers</div></a>
          </div>
-         <p class="feature-paragraph">Links to useful explorers like <a href="https://polygonscan.com/">Polygonscan</a> and <a href="https://www.okx.com/web3/explorer/polygon">OKX explorer</a>.</p>
-      </a>
+         <p class="feature-paragraph">Links to useful explorers like 
+         <a href="https://polygonscan.com/">Polygonscan</a> and 
+         <a href="https://www.okx.com/web3/explorer/polygon">OKX explorer</a>.
+         </p>
    </div>
    <div class="grid-item">
       <a href="./storage/ipfs">
