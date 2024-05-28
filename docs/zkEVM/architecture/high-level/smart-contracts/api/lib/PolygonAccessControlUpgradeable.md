@@ -1,9 +1,9 @@
 A contract that inherits `AccessControlUpgradeable` from Openzeppelin, but with the following modifications:
 
-- Delete `ERC165Upgradeable` dependencies to save us the "gap" variables and let us have consistent storage.
-- Add the legacy `Owner` variable, to be consistent with the previous.
-- Add custom errors.
-- Replace `_msgSender()` with `msg.sender`.
+- Deleted `ERC165Upgradeable` dependencies to save us the "gap" variables and let us have consistent storage.
+- Added the legacy `Owner` variable, to be consistent with the previous.
+- Added custom errors.
+- Replaced `_msgSender()` with `msg.sender`.
 
 ## Functions
 
@@ -59,26 +59,24 @@ To change a role's admin, use `_setRoleAdmin`.
 
 ### `grantRole`
 
-Grants `role` to `account`. If `account` had not been already granted `role`, it emits a `RoleGranted` event.
+Grants `role` to `account`. If `account` had not been granted `role`, it emits a `RoleGranted` event.
 
 ```solidity
   function grantRole(
   ) public
 ```
 
-- The caller must have `role`'s admin role.
+- The caller must have the `role` as the admin role.
 - May emit a `RoleGranted` event.
 
 ### `revokeRole`
 
-Revokes `role` from `account`. If `account` had been granted `role`, emits a `RoleRevoked` event.
+Revokes `role` from `account`. If `account` had been granted `role`, this function emits a `RoleRevoked` event.
 
 ```solidity
   function revokeRole(
   ) public
 ```
-
-
 
 ### `renounceRole`
 
@@ -89,12 +87,12 @@ Revokes `role` from the calling account.
   ) public
 ```
 
-- The caller must have `account`'s admin role.
+- The caller must have the admin role `account`.
 - May emit a `RoleRevoked` event.
 
 Roles are often managed via `grantRole` and `revokeRole`. The purpose of this function is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced).
 
-Emits a `RoleRevoked`event if the calling account had `role` revoked.
+Emits a `RoleRevoked`event if the calling account had its `role` revoked.
 
 ### `_setupRole`
 
@@ -103,15 +101,15 @@ Emits a `RoleRevoked`event if the calling account had `role` revoked.
   ) internal
 ```
 
-Grants `role` to `account`.
+Grants `role` to an `account`.
 
-Emits a `RoleGranted`event if `account` had not been already granted `role`. 
+Emits a `RoleGranted` event if `account` had not been granted `role` before.
 Note that unlike `grantRole`, this function doesn't perform any checks on the calling account.
 
 May emit a `RoleGranted` event.
 
 !!! warn
-    - This function should only be called from the constructor when setting up the initial roles for the system.
+    - This function should only be called from the constructor, when setting up the initial roles for the system.
     - Using this function in any other way is effectively circumventing the admin system imposed by `AccessControl`.
 
 !!! note
@@ -119,7 +117,7 @@ May emit a `RoleGranted` event.
 
 ### `_setRoleAdmin`
 
-Sets `adminRole` as `role`'s admin role.
+Sets `adminRole` as the admin `role`.
 
 ```solidity
   function _setRoleAdmin(
