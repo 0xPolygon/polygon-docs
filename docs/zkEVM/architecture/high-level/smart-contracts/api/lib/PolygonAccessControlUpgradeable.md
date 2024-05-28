@@ -1,9 +1,9 @@
 A contract that inherits `AccessControlUpgradeable` from Openzeppelin, but with the following modifications:
 
-- Deleted `ERC165Upgradeable` dependencies to save us the "gap" variables and let us have consistent storage.
-- Added the legacy `Owner` variable, to be consistent with the previous.
-- Added custom errors.
-- Replaced `_msgSender()` with `msg.sender`.
+- Deletes `ERC165Upgradeable` dependencies to save us the "gap" variables and let us have consistent storage.
+- Adds the legacy `Owner` variable, to be consistent with the previous.
+- Adds custom errors.
+- Replaces `_msgSender()` with `msg.sender`.
 
 ## Functions
 
@@ -59,7 +59,7 @@ To change a role's admin, use `_setRoleAdmin`.
 
 ### `grantRole`
 
-Grants `role` to `account`. If `account` had not been granted `role`, it emits a `RoleGranted` event.
+Grants `role` to `account`. If `account` has not been granted `role`, it emits a `RoleGranted` event.
 
 ```solidity
   function grantRole(
@@ -103,7 +103,7 @@ Emits a `RoleRevoked`event if the calling account had its `role` revoked.
 
 Grants `role` to an `account`.
 
-Emits a `RoleGranted` event if `account` had not been granted `role` before.
+Emits a `RoleGranted` event if `account` has not been granted `role` before.
 Note that unlike `grantRole`, this function doesn't perform any checks on the calling account.
 
 May emit a `RoleGranted` event.
