@@ -29,7 +29,7 @@ Adds a new leaf to the merkle tree.
 
 ### `verifyMerkleProof`
 
-Verify Merkle proof.
+Verifies a Merkle proof.
 
 ```solidity
   function verifyMerkleProof(
@@ -51,7 +51,7 @@ Verify Merkle proof.
 
 ### `calculateRoot`
 
-Calculate root from Merkle proof.
+Calculates root via a Merkle proof.
 
 ```solidity
   function calculateRoot(
