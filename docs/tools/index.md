@@ -73,7 +73,7 @@ hide:
          <div class="product-list-item-header">
             <div class="feature-card-heading">Block explorers</div>
          </div>
-         <p class="feature-paragraph">Quick links to useful block explorers such as OKX explorer.</p>
+         <p class="feature-paragraph">Links to useful explorers like <a href="https://polygonscan.com/">Polygonscan</a> and <a href="https://www.okx.com/web3/explorer/polygon">OKX explorer</a>.</p>
       </a>
    </div>
    <div class="grid-item">
