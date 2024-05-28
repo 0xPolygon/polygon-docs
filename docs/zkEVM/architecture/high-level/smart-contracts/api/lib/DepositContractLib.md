@@ -29,7 +29,7 @@ Adds a new leaf to a merkle tree.
 
 ### `verifyMerkleProof`
 
-Verify Merkle proof.
+Verifies a Merkle proof.
 
 ```solidity
   function verifyMerkleProof(
