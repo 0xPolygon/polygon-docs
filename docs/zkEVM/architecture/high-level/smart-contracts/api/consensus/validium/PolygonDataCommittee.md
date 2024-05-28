@@ -70,7 +70,7 @@ Returns the number of committee members.
 
 ### `getProcotolName`
 
-Return the protocol name.
+Returns the protocol name.
 
 ```solidity
   function getProcotolName(
