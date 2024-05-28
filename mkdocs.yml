@@ -391,6 +391,8 @@ nav:
           - Overview: tools/chain-indexer-framework/overview.md
           - Usage: tools/chain-indexer-framework/usage.md
       - Third-party tutorials:
+          - OKLink verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
+          - OKLink verify contract with external plugins: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins 
           - Venly's NFT-API: https://docs.venly.io/docs/nft-api-getting-started
           - Venly's Zapier integration: https://docs.venly.io/docs/zapier-integration 
       - Gas:
@@ -517,10 +519,11 @@ nav:
           - WalletKit:  tools/wallets/walletkit.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
+          - OKX explorer: https://www.okx.com/web3/explorer/polygon      
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
-          - OKLink: https://www.oklink.com/polygon
+
   - Learn:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
