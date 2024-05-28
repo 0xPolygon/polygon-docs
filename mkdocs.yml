@@ -393,6 +393,8 @@ nav:
       - Third-party tutorials:
           - Venly's NFT-API: https://docs.venly.io/docs/nft-api-getting-started
           - Venly's Zapier integration: https://docs.venly.io/docs/zapier-integration 
+          - Verify contract by OKLink API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
+          - Verify contract by Hardhat/ Foundry/ Truffle plugins: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins 
       - Gas:
           - Polygon MATIC faucet: tools/gas/matic-faucet.md
           - Polygon gas station: tools/gas/polygon-gas-station.md
