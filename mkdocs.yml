@@ -519,10 +519,11 @@ nav:
           - WalletKit:  tools/wallets/walletkit.md
           - Web3Modal: tools/wallets/using-web3modal.md
       - Block explorers:
+          - OKX explorer: https://www.okx.com/web3/explorer/polygon      
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
-          - OKLink: https://www.oklink.com/polygon
+
   - Learn:
       - Learn: learn/index.md
       - Welcome: learn/welcome.md
