@@ -4,7 +4,7 @@ The Unified Bridge API powers the [Polygon portal](https://portal.polygon.techno
 
 The API is built using the [chain indexer framework](../../tools/chain-indexer-framework/overview.md). 
 
-The Unified Bridge API indexes data from Polygon's public chains PoS and zkEVM, Ethereum mainnet and testnets. The service also indexes CDK chains.
+The Unified Bridge API indexes data from Polygon PoS, Polygon zkEVM, Ethereum mainnet and testnets. The service also indexes CDK chains.
 
 ## Architecture
 
@@ -68,7 +68,7 @@ This API manages the payload needed to process claims on the destination chain. 
     
 ## Onboarding a new CDK
 
-New CDK IP partners must supply the following mandatory parameters:
+New CDK implementation providers must supply the following mandatory parameters:
 
 - Public RPC
 - Chain ID
@@ -79,8 +79,8 @@ New CDK IP partners must supply the following mandatory parameters:
 - Bridging contracts address
 
 !!! important
-    - The above are mandatory expectations from any CDK IP partner. 
-    - At the time of writing, everything else is handled and deployed by the Polygon team.
+    - The above are mandatory expectations from any CDK implementation provider. 
+    - At the time of writing, the Polygon Labs team coordinates additional steps for full implementation.
 
 ## Deeper dive into the bridging workflow
 
@@ -104,13 +104,13 @@ The SDK can be used for any compatible chain with no additional changes.
 
 The backend service as [explained previously](#unified-bridge-api). 
 
-The repository to spin up this service is not yet open source and is currently fully managed by the Polygon team including all deployment, maintenance, and support. We expect to open source the code soon and require all participants to manage their own deployments.
+The repository to spin up this service is not yet open source and is currently managed by the Polygon Labs team. The code is expected to be open source soon, at which time all participants will manage their own deployments.
 
 ### Gas station 
 
 In order to estimate the gas price before submitting the transactions, we use the [Polygon gas station](../../tools/gas/polygon-gas-station.md), a lightweight service which gets gas price estimates for a specific chain.
 
-The gas station is currently deployed and maintained by the Polygon team, but can be hosted by anyone as the [code is open source](https://github.com/maticnetwork/maticgasstation).
+The gas station is currently maintained by the Polygon Labs team, but can be hosted by anyone as the [code is open source](https://github.com/maticnetwork/maticgasstation).
 
 ### Token list
 
