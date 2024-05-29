@@ -1,6 +1,10 @@
 An exit tree is a binary append-only sparse Merkle tree (SMT) whose leaf nodes store bridging data. The exit trees have a depth of 32.
 
-Whenever a token or message is bridged, the bridge contract appends an exit leaf to the tree related to the specific network.
+Whenever a token or message is bridged, the bridge contract appends an exit leaf to the exit tree related to the specific network. 
+
+The Merkle root of an exit tree is known as the exit tree root, and it is the fingerprint of all the information recorded in the exit tree's leaf nodes. 
+
+The global exit tree root of the L1 info tree is, therefore, the source of truth for the whole network. 
 
 ## Local exit trees
 
@@ -52,37 +56,29 @@ uint8 private constant _LEAF_TYPE_ASSET = 0;
 uint8 private constant _LEAF_TYPE_MESSAGE = 1;
 ```
 
-An exit leaf, in particular, is a Keccak256 hash of the ABI encoded packed structure with the following parameters:
+Data in a leaf is a Keccak256 hash of the metadata (ABI encoded metadata if any) with the following parameters:
 
-- uint8 leafType: [0] asset, [1] message.
-- int32 originNetwork: Origin network ID, where the original asset belongs.
-- address originAddress: If `leafType = 0`, Origin network token address (`0x0000...0000`) is reserved for ether. If `leafType = 1`, `msg.sender` of the message.
-- uint32 destinationNetwork: Bridging destination network ID.
-- address destinationAddress: Address that receives the bridged asset in the destination network.
-- uint256 amount: Amount of tokens/ether to bridge.
-- bytes32 metadataHash: Hash of the metadata. This metadata contains information about asset transferred or the message payload.
+```solidity
+_addLeaf(
+    getLeafValue(
+        _LEAF_TYPE_ASSET, // or _LEAF_TYPE_MESSAGE_
+        originNetwork,
+        originTokenAddress,
+        destinationNetwork,
+        destinationAddress,
+        leafAmount,
+        keccak256(metadata)
+    )
+);
+```
 
-When a user commits to transferring assets from one network to another, the bridge contract adds an exit leaf to that network's exit tree.
-
-The Merkle root of an exit tree is known as the exit tree root, and it is the fingerprint of all the information recorded in the exit tree's leaf nodes.
-
-As a result, given any network exit tree, whether L1 or L2, its exit tree root is the source of state truth for that network.
-
-## Global exit tree
-
-Consider a scenario of bridging assets between the L1 Mainnet and L2 network. The global exit tree is a binary Merkle tree whose leaf nodes are the L1 exit tree's Merkle root and the L2 exit tree's Merkle root. A global exit tree is depicted in the figure below.
-
-![The L1-L2 global exit tree](../../../../img/zkEVM/02pzb-global-exit-tree.png)
-
-The Merkle root of the global exit tree is called the global exit root.
-
-Whenever a new exit leaf is added to an exit tree, a new root for that exit tree is calculated. Consequently, the global exit tree is updated with this new root. As a result, the global exit root always reflects the current state of both networks.
-
-Since the Merkle root of each exit tree represents the true state of its respective network, the most recent global exit root consequently represents the true state of all networks, that is, both the L1 and L2 networks.
-
-Once the global exit root is synchronized between the L1 and L2 networks, users can use a Merkle proof to verify the inclusion of the correct exit leaf, allowing them to claim their transferred assets.
-
-This is how a complete asset transfer or cross-chain messaging is achieved: it starts with the bridge function in the origin network and concludes with the claim function in the destination network, with exit tree roots conveying the true state at both ends.
+!!! info "Leaf parameters"
+    - int32 originNetwork: Origin network ID, where the original asset belongs.
+    - address originTokenAddress: If `leafType = 0`, Origin network token address (`0x0000...0000`) is reserved for ether. If `leafType = 1`, `msg.sender` of the message.
+    - uint32 destinationNetwork: Bridging destination network ID.
+    - address destinationAddress: Address that receives the bridged asset in the destination network.
+    - uint256 leafAmount: Amount of tokens/ether to bridge.
+    - bytes32 keccak256(metadata): Hash of the metadata. This metadata contains information about asset transferred or the message payload.
 
 ## Asset transfer scenarios
 
@@ -125,20 +121,3 @@ Metadata: 0x116...
 ```
 
 The newly added L2 exit leaf means the L2 exit tree has a new root. The new L2 exit tree Root is then appended to the global exit tree, and thus the root of the global exit tree is updated.
-
-
-
-## Global Exit Root manager contract
-
-The Global Exit Root Manager SC (PolygonZkEVMGlobalExitRoot.sol) manages the Global Exit Tree Root. It is in charge of updating the Global Exit Tree Root and acts as a repository for the Global Exit Tree's history.
-
-The logic of the zkEVM Bridge SC has been separated from that of the Global Exit Root Manager SC in order to achieve improved interoperability.
-
-This means that the zkEVM Bridge SC, in conjunction with the Global Exit Root Manager SC, can be installed in any network to achieve the same results.
-
-!!!info
-    There are two Global Exit Root manager SCs: one deployed in L1, while the other is deployed in L2.
-
-    Their Solidity code files are; [PolygonZkEVMGlobalExitRoot.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/PolygonZkEVMGlobalExitRoot.sol), and [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/PolygonZkEVMGlobalExitRootL2.sol), respectively.
-
-But the L2 Global Exit Root Manager SC is different, and it appears in code as `PolygonZkEVMGlobalExitRootL2.sol`. This is a special contract that allows synchronization of L2 Exit Tree Root and the Global Exit Root.
