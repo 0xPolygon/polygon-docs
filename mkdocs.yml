@@ -99,9 +99,9 @@ nav:
           - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
           - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
           - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
-          #- Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
-          #- Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
-          #- Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
+          - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
+          - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
+          - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
           - API:
             - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
             - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
@@ -191,13 +191,8 @@ nav:
             - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
             - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
             - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
-          - zkEVM bridge:
-            - zkEVM bridge: zkEVM/architecture/protocol/zkevm-bridge/index.md
-            - Exit trees: zkEVM/architecture/protocol/zkevm-bridge/exit-tree.md
-            - Smart contracts: zkEVM/architecture/protocol/zkevm-bridge/smart-contracts.md
-            - Flow of assets: zkEVM/architecture/protocol/zkevm-bridge/flow-of-assets.md
-          - LxLy bridge: zkEVM/architecture/protocol/lxly-bridge.md
           - Unified bridge:
+            - History of the unified bridge: zkEVM/architecture/protocol/unified-LxLy/lxly-bridge.md
             - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
             - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
             - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
