@@ -53,8 +53,7 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
-      - Version compatibility matrix: cdk/version-matrix.md
-      - Get started: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - Get started: 'cdk/getting-started.md'
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
@@ -66,6 +65,7 @@ nav:
       - Additional resources:
         - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
+        - Version compatibility matrix: cdk/version-matrix.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
