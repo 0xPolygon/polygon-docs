@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # Get Started
 
 This getting started guide will walk you through the process of setting up a Layer 2 blockchain using the Polygon CDK on your local machine, running the components in Docker containers.

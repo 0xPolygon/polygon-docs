@@ -1,18 +1,26 @@
-The Polygon Chain Development Kit (CDK) is an open-source stack to build sovereign layer 2 blockchains powered by zero-knowledge (ZK) proofs.
+The Polygon Chain Development Kit (CDK) is an open-source stack for blockchain developers to build sovereign layer 2 blockchains powered by zero-knowledge (ZK) proofs.
 
 It consists of modular components designed to be fully composable; empowering developers to customize each aspect of their chain to meet their specific needs.
 
-## What is the CDK?
-
 ## CDK Features
 
-- **Scalability**: todo
+The CDK provides the components necessary to build a layer 2 blockchain that is secure, scalable, and interoperable with other chains. Below are some of the key features of the CDK:
 
-- **Sovereignity**: todo
+### **Scalability**: todo
 
-- **Modularity**: todo
+hey
 
-- **Interoperability**: todo
+### **Sovereignity**: todo
+
+hey
+
+### **Modularity**: todo
+
+hey
+
+### **Interoperability**: todo
+
+hey
 
 ## Why Use the CDK?
 
