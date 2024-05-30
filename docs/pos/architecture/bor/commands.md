@@ -1,17 +1,8 @@
 This guide provides a curated list of common commands and Polygon-specific operations essential for node operators. Whether you're setting up a full node, validator node or troubleshooting, these commands will assist you in managing your Polygon PoS environment effectively.
 
-## Frequently Used Commands for Bor & Heimdall
+## Frequently used commands
 
-Use the tabs below to switch between commands for Bor and Heimdall:
-
-<Tabs
-  defaultValue="bor"
-  values={[
-    { label: 'Bor Commands', value: 'bor', },
-    { label: 'Heimdall Commands', value: 'heimdall', },
-  ]
-}>
-<TabItem value="bor">
+### Bor
 
 To execute Bor IPC commands, use the following syntax:
 
@@ -32,8 +23,7 @@ bor attach .bor/data/bor.ipc <command>
 | `eth.getBlock("latest").number` | `curl http://YourIP:8545 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0", "id":1, "method":"bor_getSigners", "params":["0x98b3ea"]}'` | Queries the height of the latest Bor block. |
 |  | `curl http://YourIP:8545 -X POST -H "Content-Type: application/json" --data '{"method":"eth_chainId","params":[],"id":1,"jsonrpc":"2.0"}'` | Retrieves the `chainID`. |
 
-</TabItem>
-<TabItem value="heimdall">
+### Heimdall
 
 | Command | Description |
 | ------- | ----------- |
@@ -44,9 +34,6 @@ bor attach .bor/data/bor.ipc <command>
 | `curl -s localhost:26657/status` | Verifies Heimdall's sync status using `jq .result \| jq .sync_info`. |
 | `heimdalld unsafe-reset-all` | Resets the database in case of issues. |
 | `curl localhost:26657/status` | Provides comprehensive information about Heimdall. |
-
-</TabItem>
-</Tabs>
 
 ## Node Management Commands
 
@@ -95,14 +82,14 @@ curl http://<your ip>:8545 -X POST -H "Content-Type: application/json" -d '{"jso
 
 ### Cleanup: Deleting Remnants of Heimdall and Bor
 
-**For Linux package:**
+##### For Linux package:
 
 ```bash
 sudo dpkg -i matic-bor
 sudo rm -rf /etc/bor
 ```
 
-**For Binaries:**
+##### For Binaries:
 
 ```bash
 sudo rm -rf /etc/bor
@@ -111,14 +98,14 @@ sudo rm /etc/heimdall
 
 ### Terminate Bor Process
 
-**For Linux:**
+##### For Linux:
 
 ```bash
 ps -aux | grep bor
 sudo kill -9 <PID>
 ```
 
-**For Binaries:**
+##### For Binaries:
 
 ```bash
 cd CS-2003/bor
@@ -139,14 +126,14 @@ exit
 
 ### Stop Heimdall and Bor Services
 
-**For Linux packages:**
+##### For Linux packages:
 
 ```bash
 sudo service heimdalld stop
 sudo service bor stop
 ```
 
-**For Binaries:**
+##### For Binaries:
 
 ```bash
 pkill heimdalld
@@ -157,14 +144,14 @@ bash stop.sh
 
 ### Remove Heimdall and Bor Directories
 
-**For Linux packages:**
+##### For Linux packages:
 
 ```bash
 sudo rm -rf /etc/heimdall/*
 sudo rm -rf /etc/bor/*
 ```
 
-**For Binaries:**
+##### For Binaries:
 
 ```bash
 sudo rm -rf /var/lib/heimdalld/

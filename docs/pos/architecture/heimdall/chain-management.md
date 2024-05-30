@@ -1,12 +1,12 @@
 This document specifies an overview of the chain manager module of Heimdall.
 
-The **chain manager** module provides all necessary dependencies like `contract-addresses`, `bor_chain_id,` and `tx_confirmation_time`. Other parameters can be added to this later on.
+The *chain manager* module provides all necessary dependencies like `contract-addresses`, `bor_chain_id,` and `tx_confirmation_time`. Other parameters can be added to this later on.
 
 Params are updated through the `gov` module.
 
 ## Types
 
-Chainmanager structure on Heimdall looks like the following:
+The chain manager structure on Heimdall looks like the following:
 
 ```go
 type ChainParams struct {
@@ -41,7 +41,7 @@ type ChainParams struct {
 
 ### Parameters
 
-To print all params;
+Use the following command to print all params:
 
 ```go
 heimdallcli query chainmanager params --trust-node

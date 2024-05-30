@@ -4,11 +4,7 @@ comments: true
 
 Ethereum developers are by default Polygon developers. Welcome. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All familiar tools used on Ethereum are supported on Polygon. Whether it is Foundry, Remix or Web3.js, Polygon offers the same UX as Ethereum.
 
-Connect your wallet and deploy any decentralized application to either PoS mainnet or Amoy testnet.
-
-Polygon Amoy testnet connects to Ethereum Sepolia testnet, which acts as its parent chain, a testnet layer 1 (L1).
-
-Find all the network-related details in the [network documentation](../reference/rpc-endpoints.md).
+Connect your wallet and deploy any decentralized application to either PoS mainnet or Amoy testnet (Sepolia-anchored).
 
 ## Overview
 
@@ -22,6 +18,10 @@ In order to be a validator on the Polygon Network, you need to:
 - Run a sentry node, which is a separate machine running a Heimdall node and a Bor node. A sentry node is open to all nodes on the Polygon Network.
 - Run a validator node, which is a separate machine running a Heimdall node and a Bor node. A validator node is only open to its sentry node and closed to the rest of the network.
 - Stake the MATIC tokens in the staking contracts deployed on the Ethereum mainnet.
+
+## Network details
+
+To access network-related details, including the chain ID, RPC URL, and more, for both the mainnet and Amoy testnet, refer to the [network documentation](../reference/rpc-endpoints.md).
 
 ## Wallets
 
@@ -42,7 +42,7 @@ Token bridging between Polygon PoS and Ethereum and vice-versa, and inter-layer 
 
 * [Bridge tokens from Ethereum to PoS](../how-to/bridging/ethereum-polygon/ethereum-to-matic.md)
 * [Bridge tokens from PoS to Ethereum](../how-to/bridging/ethereum-polygon/matic-to-ethereum.md)
-* [L1 - L2 communication](../how-to/bridging/l1-l2-communication/state-transfer.md)
+* [L1 - L2 communication and state transfer](../how-to/bridging/l1-l2-communication/state-transfer.md)
 
 ## Smart contracts
 
@@ -60,8 +60,8 @@ In order to connect with the Polygon network to read blockchain information, we 
 const { Alchemy, Network } = require("alchemy-sdk");
 
 const settings = {
-  apiKey: "demo", // Can replace with your API Key from https://www.alchemy.com
-  network: Network.MATIC_MAINNET, // Can replace with MATIC_AMOY for testnet config
+  apiKey: "demo", // Replace with your API Key from https://www.alchemy.com
+  network: Network.MATIC_MAINNET, // Replace with MATIC_AMOY for testnet config
 };
 
 const alchemy = new Alchemy(settings);

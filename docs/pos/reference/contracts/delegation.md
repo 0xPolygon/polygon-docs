@@ -1,14 +1,16 @@
 Polygon supports delegation via validator shares. By using this design, it is easier to distribute rewards and slash with scale (thousands of delegators) on Ethereum contracts without much computation.
 
-Delegators delegate by purchasing shares of a finite pool from validators. Each validator will have their own validator share token. Let's call these fungible tokens `VATIC` for a validator `A`. As soon as a user delegates to a validator `A`, they will be issued `VATIC` based on an exchange rate of `MATIC/VATIC` pair. As users accrue value the exchange rate indicates that they can now withdraw more `MATIC` for each `VATIC` and when users get slashed, users withdraw less `MATIC` for their `VATIC`.
+Delegators delegate by purchasing shares of a finite pool from validators. Each validator will have their own validator share token. Let's call these fungible tokens VATIC for a validator *A*. VATIC refers to validator-specific minted validator share ERC20 tokens. 
 
-Note that `MATIC` is a staking token. A delegator needs to have `MATIC` tokens to participate in the delegation.
+As soon as a user delegates to a validator *A*, they will be issued VATIC based on an exchange rate of MATIC/VATIC pair. As users accrue value the exchange rate indicates that they can now withdraw more MATIC for each VATIC and when users get slashed, users withdraw less MATIC for their VATIC.
 
-Initially, a delegator `D` buys tokens from validator `A` specific pool when `1 MATIC per 1 VATIC`.
+!!! note
 
-When a validator gets rewarded with more `MATIC` tokens, new tokens are added to the pool. Let's say with the current pool of `100 MATIC` tokens, `10 MATIC` rewards are added to the pool. But since the total supply of `VATIC` tokens didn't change due to rewards, the exchange rate becomes `1 MATIC per 0.9 VATIC`. Now, delegator `D` gets more `MATIC` for the same shares.
+    MATIC is a staking token. A delegator needs to have MATIC tokens to participate in the delegation.
 
-`VATIC`: Validator specific minted validator share tokens (ERC20 tokens)
+Initially, a delegator *D* buys tokens from validator *A* specific pool at *1 MATIC per 1 VATIC*.
+
+When a validator gets rewarded with more MATIC tokens, new tokens are added to the pool. Let's say with the current pool of 100 MATIC, 10 MATIC rewards are added to the pool. But since the total supply of VATIC tokens didn't change due to rewards, the exchange rate becomes *1 MATIC per 0.9 VATIC*. Now, delegator *D* gets more MATIC for the same shares.
 
 ## Technical specification
 
@@ -31,7 +33,7 @@ ExchangeRate = (totalDelegatedPower + delegatorRewardPool) / totalDelegatorShare
 
 ## Methods and variables
 
-### buyVoucher
+### `buyVoucher`
 
 ```js
 function buyVoucher(uint256 _amount) public;
@@ -42,7 +44,7 @@ function buyVoucher(uint256 _amount) public;
 - `Mint` delegation shares using current `exchangeRate` for `_amount`.
 - `amountStaked` is used to keep track of active stake of each delegator in order to calculate liquid rewards.
 
-### sellVoucher
+### `sellVoucher`
 
 ```js
 function sellVoucher() public;
@@ -62,7 +64,7 @@ function withdrawRewards() public;
 - For a delegator, calculate the rewards and transfer, and depending upon `exchangeRate` burn count of shares.
 - Example: if a delegator owns 100 shares and exchange rate is 200 so rewards are 100 tokens, transfer 100 tokens to delegator. Remaining stake is 100 so using exchange rate 200, now it is worth 50 shares. So burn 50 shares. Delegator now has 50 shares worth 100 tokens (which he initially staked / delegated).
 
-### reStake
+### `reStake`
 
 Restake can work in two ways: delegator can buy more shares using `buyVoucher` or reStake rewards.
 
@@ -76,7 +78,7 @@ Above function is used to reStake rewards. The number of shares aren’t affecte
 
 Purpose of reStaking is that since delegator's validator has now more active stake and they will earn more rewards for that so will the delegator.
 
-### unStakeClaimTokens
+### `unStakeClaimTokens`
 
 ```js
 function unStakeClaimTokens()
@@ -84,7 +86,7 @@ function unStakeClaimTokens()
 
 Once withdrawal period is over, delegators who've sold their shares can claim their MATIC tokens. Must transfer tokens to user.
 
-### updateCommissionRate
+### `updateCommissionRate`
 
 ```js
 function updateCommissionRate(uint256 newCommissionRate)
@@ -94,7 +96,7 @@ function updateCommissionRate(uint256 newCommissionRate)
 
 - Updates commission % for the validator.
 
-### updateRewards
+### `updateRewards`
 
 ```js
 function updateRewards(uint256 reward, uint256 checkpointStakePower, uint256 validatorStake)

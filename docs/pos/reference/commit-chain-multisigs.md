@@ -7,13 +7,14 @@ The primary role of multi-signature wallets (multisigs) is to facilitate contrac
 - Implement timelocks for added security.
 - Phase out multisigs entirely in the long term.
 
-**It's important to note that the existing multisigs do not have the capability to censor transactions, including bridge transactions.**
+!!! info "Censorship"
+    It's important to note that the existing multisigs do not have the capability to censor transactions, including bridge transactions.
 
 ## Active multi-signature wallets
 
 ### Ethereum chain multisigs
 
-| Multisig Address  | **5/9 Multisig**<br/>`0xFa7D2a996aC6350f4b56C043112Da0366a59b74c` |
+| Multisig Address  | **$5/9$ Multisig**<br/>`0xFa7D2a996aC6350f4b56C043112Da0366a59b74c` |
 |:----------------:|---------------------------------------------------------------------|
 | Purpose          | To upgrade PoS and staking contracts on Ethereum.                    |
 | Chain            | Ethereum                                                            |
@@ -22,7 +23,7 @@ The primary role of multi-signature wallets (multisigs) is to facilitate contrac
 
 ### Polygon commitchain multisigs
 
-| Multisig Address  | **5/8 Multisig**<br/>`0x355b8E02e7F5301E6fac9b7cAc1D6D9c86C0343f` |
+| Multisig Address  | **$5/8$ Multisig**<br/>`0x355b8E02e7F5301E6fac9b7cAc1D6D9c86C0343f` |
 |:----------------:|---------------------------------------------------------------------|
 | Purpose          | To update custom ChildERC20s on Polygon Commitchain.                 |
 | Chain            | Polygon Commitchain                                                  |
@@ -31,7 +32,7 @@ The primary role of multi-signature wallets (multisigs) is to facilitate contrac
 
 ### Custom child ERC20s mapping
 
-| Multisig Address  | **4/8 Multisig**<br/>`0x424bDE99FCfB68c5a1218fd3215caFfD031f19C4` |
+| Multisig Address  | **$4/8$ Multisig**<br/>`0x424bDE99FCfB68c5a1218fd3215caFfD031f19C4` |
 |:----------------:|---------------------------------------------------------------------|
 | Purpose          | To enable the mapping of custom ChildERC20s with Mainnet contracts.  |
 | Chain            | Ethereum                                                            |
@@ -40,7 +41,7 @@ The primary role of multi-signature wallets (multisigs) is to facilitate contrac
 
 ### Permissionless mapping
 
-| Multisig Address  | **Permissionless Mapping of Standard ChildERC20 Tokens (No Multisig Required)** |
+| Multisig Address  | Permissionless Mapping of Standard ChildERC20 Tokens (No Multisig Required) |
 |:----------------:|--------------------------------------------------------------------------------|
 | Purpose          | FxPortal supports permissionless token mapping of standard ChildERC20 for any ERC20 token on Ethereum. |
 | Chain            | Permissionless                                                                 |

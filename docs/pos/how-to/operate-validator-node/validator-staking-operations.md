@@ -10,10 +10,10 @@ Your validator node fully set up and synced. See also: [Run a Validator Node](..
 
 ### Account setup
 
-On your validator node, check that the account is set up. To check, run the following command **on the validator node**:
+On your validator node, check that the account is set up. To check, run the following command *on the validator node*:
 
 ```sh
-    heimdalld show-account
+heimdalld show-account
 ```
 
 Your output should appear in the following format:
@@ -25,13 +25,13 @@ Your output should appear in the following format:
 }
 ```
 
-This will display your address and public key for your validator node. Note that **this address must match with your signer address on Ethereum**.
+This will display your address and public key for your validator node. Note that *this address must match with your signer address on Ethereum*.
 
 ### Show private key
 
 This step is optional.
 
-On your validator node, check that the private key is correct. To check, run the following command **on the validator node**:
+On your validator node, check that the private key is correct. To check, run the following command *on the validator node*:
 
 ```sh
 heimdalld show-privatekey
@@ -53,17 +53,17 @@ You can stake on Polygon using the [validator dashboard](https://staking.polygon
 
 1. Access the [validator dashboard](https://staking.polygon.technology/validators/).
 2. Log in with your wallet. MetaMask is the recommended wallet. You have to make sure that you login using the same address where your MATIC tokens are present.
-3. Click **Become a Validator**. You will be asked to set up your node. If you haven't already set up your node by now, you will need to do so, else if you proceed ahead you will receive an error when you attempt to stake.
+3. Select **Become a Validator**. You will be asked to set up your node. If you haven't already set up your node by now, you will need to do so, else if you proceed ahead you will receive an error when you attempt to stake.
 4. On the next screen, add your validator details, the commission rate, and the staking amount.
-5. Click **Stake Now**.
+5. Select **Stake Now**.
 
 Once the transaction is completed you will have staked successfully to become a validator. You will be asked thrice to confirm the transaction.
 
 * Approve Transaction — this will approve your stake transaction.
 * Stake — This will confirm your stake transaction.
-* Save —ß This will save your validator details.
+* Save — This will save your validator details.
 
-!!!note
+!!! note
     
     For the changes to take effect on the [staking dashboard](https://staking.polygon.technology/account), it requires a minimum of 12 block confirmations.
 
@@ -108,14 +108,14 @@ You will see two buttons on your profile:
 
 As a validator, you earn rewards as long as you are performing your validator duties correctly.
 
-Clicking **Withdraw Reward** will get your rewards back to your wallet.
+Selecting **Withdraw Reward** will get your rewards back to your wallet.
 
-The dashboard will update after 12 block confirmations.
+The dashboard will update after *12 block confirmations*.
 
 #### Restake Reward
 
 Restaking your rewards is an easy way to increase your stake as a validator.
 
-Clicking **Restake Reward** will restake your reward and increase your stake.
+Selecting **Restake Reward** will restake your reward and increase your stake.
 
-The dashboard will update after 12 block confirmations.
+The dashboard will update after *12 block confirmations*.

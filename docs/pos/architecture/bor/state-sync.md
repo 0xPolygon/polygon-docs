@@ -13,9 +13,9 @@ This is the flow required from dapps / users to work with state-sync:
 5. After every sprint on `bor`, the Bor node fetches the pending state-sync events from Heimdall via an API call.
 6. The receiver contract inherits `IStateReceiver` interface, and custom logic of decoding the data bytes and performing any action sits inside `onStateReceive` function: [https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/IStateReceiver.sol](https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/IStateReceiver.sol)
 
-## How does State Sync work?
+## How does state sync work?
 
-State management sends the state from the Ethereum chain to the Bor chain. It is called **state-sync**.
+State management sends the state from the Ethereum chain to the Bor chain. It is called *state-sync*.
 
 State transfer from Ethereum to Bor happens through system call. Suppose, a user deposits USDC to the deposit manager on Ethereum. Validators listen to those events, validate, and store them in Heimdall state. Bor gets the latest state-sync records and updates the Bor state (mints equal amount of USDC on Bor) using a system call.
 
@@ -23,7 +23,7 @@ State transfer from Ethereum to Bor happens through system call. Suppose, a user
 
 Source: [https://github.com/maticnetwork/contracts/blob/develop/contracts/root/stateSyncer/StateSender.sol](https://github.com/maticnetwork/contracts/blob/develop/contracts/root/stateSyncer/StateSender.sol)
 
-To sync state, the contract calls following method **state sender contract** on Ethereum chain.
+To sync state, the state sender contract calls the `syncState` method on Ethereum chain.
 
 ```jsx
 contract StateSender {
@@ -39,7 +39,7 @@ contract StateSender {
 }
 ```
 
-`receiver` contract must be present on the child chain, which receives state `data` once the process is complete. `syncState` emits `StateSynced` event on Ethereum, which is the following:
+The `receiver` contract must be present on the child chain, which receives state `data` once the process is complete. `syncState` emits `StateSynced` event on Ethereum, which is the following:
 
 ```jsx
 /**
@@ -55,9 +55,9 @@ event StateSynced (
 );
 ```
 
-Once the `StateSynced` event emitted on the `stateSender` contract on the Ethereum chain, Heimdall listens to those events and adds to the Heimdall state after 2/3+ validators agree on the.
+Once the `StateSynced` event is emitted on the `stateSender` contract on Ethereum, Heimdall listens to those events and adds to the Heimdall state after 2/3+ validators agree on the.
 
-After every sprint (currently 16 blocks on Bor), Bor fetches new state-sync record and updates the state using a `system` call. Here is the code for the same: [https://github.com/maticnetwork/bor/blob/6f0f08daecaebbff44cf18bee558fc3796d41832/consensus/bor/genesis_contracts_client.go#L51](https://github.com/maticnetwork/bor/blob/6f0f08daecaebbff44cf18bee558fc3796d41832/consensus/bor/genesis_contracts_client.go#L51)
+After every sprint (currently 16 blocks on Bor), Bor fetches a new state-sync record and updates the state using a `system` call. Here is the code for the same: [https://github.com/maticnetwork/bor/blob/6f0f08daecaebbff44cf18bee558fc3796d41832/consensus/bor/genesis_contracts_client.go#L51](https://github.com/maticnetwork/bor/blob/6f0f08daecaebbff44cf18bee558fc3796d41832/consensus/bor/genesis_contracts_client.go#L51)
 
 During `commitState`, Bor executes `onStateReceive`, with `stateId` and `data` as args, on target contract.
 

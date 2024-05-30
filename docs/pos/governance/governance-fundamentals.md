@@ -1,10 +1,10 @@
 
 The Polygon PoS chain is a decentralized network of validator nodes that participate in block generation and consensus, and non-validator nodes that perform functions such as maintaining the complete block history of the network, providing dApps with an interface to communicate with the chain, and so on. No single node controls the network, meaning consensus is required for upgrades. 
 
-Changes to the network require a high level of coordination and ecosystem consensus to execute successfully; if the ecosystem disagrees over a change, it can result in the network splitting, a protocol-level change generally referred to as **forking**.
+Changes to the network require a high level of coordination and ecosystem consensus to execute successfully; if the ecosystem disagrees over a change, it can result in the network splitting, a protocol-level change generally referred to as *forking*.
 
 !!! info "Hard forks vs. soft forks"
-    A **hard fork** happens when the node software changes in such a way that the new version is no longer backward-compatible with earlier blocks. This is usually the result of a change in the consensus logic, meaning that blocks validated using the latest software will produce a different hash.
+    A *hard fork* happens when the node software changes in such a way that the new version is no longer backward-compatible with earlier blocks. This is usually the result of a change in the consensus logic, meaning that blocks validated using the latest software will produce a different hash.
 
     A block number is selected, before which all nodes in the network should have upgraded to the new version; nodes running the old version will be disconnected from the canonical chain after the hard fork block.
 
@@ -39,8 +39,8 @@ The framework is composed of three key components:
 
 The PoS network currently uses two clients simultaneously:
 
-- **Heimdall**: the [consensus layer](https://docs.polygon.technology/pos/architecture/heimdall/) client - [See GitHub](https://github.com/maticnetwork/heimdall)
-- **Bor**: the [execution layer](https://docs.polygon.technology/pos/architecture/bor/) client - [See GitHub](https://github.com/maticnetwork/bor)
+- Heimdall: the [consensus layer](https://docs.polygon.technology/pos/architecture/heimdall/) client - [See GitHub](https://github.com/maticnetwork/heimdall)
+- Bor: the [execution layer](https://docs.polygon.technology/pos/architecture/bor/) client - [See GitHub](https://github.com/maticnetwork/bor)
 
 Currently, Bor and Heimdall are the majority clients for the PoS network; these clients serve as ecosystem focal points rather than control switches operated by core developers that can dictate decisions.
 
@@ -48,9 +48,9 @@ Assuming that the change or upgrade agreed upon via community consensus requires
 
 1. The protocol decision is made on a PPGC, and implementation begins in the form of modifications to the relevant GitHub repositories.
 2. Core developers create pull requests containing the changes, which can then be merged into the respective code base, and a new [tag](https://github.com/maticnetwork/bor/tags) is created.
-3. Core developers test new releases by deploying them on local devnets. If everything continues to function normally, the tag is marked as "**beta**", which is essentially the "**pre-release**" state.
+3. Core developers test new releases by deploying them on local devnets. If everything continues to function normally, the tag is marked as "*beta*", which is essentially the "*pre-release*" state.
 4. The modifications and upgrades are rolled out to the Amoy testnet, and left out to soak for at least one week. Currently, the Amoy Testing Committee reports on the stability of the release in the PPGC.
-5. Finally, once confirmed that the upgrade doesn't break anything, it is scheduled to be released to mainnet on a PPGC. At this point, the tag version is marked as "**final**".
+5. Finally, once confirmed that the upgrade doesn't break anything, it is scheduled to be released to mainnet on a PPGC. At this point, the tag version is marked as "*final*".
 6. Validators upgrade their nodes to the latest version after considering the changes. The upgrade is now made canonical via on-chain consensus of the validating stake, including that delegated by token holders. 
 
 ## On-chain consensus
@@ -59,7 +59,7 @@ The parameters that define on-chain consensus are inherited from [Tendermint BFT
 
 For the chain to remain stable once the change is made canonical by validators, non-validating full nodes must also be upgraded to the latest version.
 
-Key ecosystem stakeholders such as dApps, exchanges, and RPCs run full nodes, and are crucial in network operations as they propagate transactions and blocks. These nodes can either accept or reject blocks; this makes them **enforcers of the network consensus rules** and vital to the on-chain governance process. Should these nodes be incompatible with the changes, users and dApps would find that their transactions are invalid and not accepted by the network.
+Key ecosystem stakeholders such as dApps, exchanges, and RPCs run full nodes, and are crucial in network operations as they propagate transactions and blocks. These nodes can either accept or reject blocks; this makes them *enforcers of the network consensus rules* and vital to the on-chain governance process. Should these nodes be incompatible with the changes, users and dApps would find that their transactions are invalid and not accepted by the network.
 
 ## On-chain governance module
 

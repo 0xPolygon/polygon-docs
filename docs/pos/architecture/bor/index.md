@@ -2,7 +2,7 @@ Bor is an integral component of the Polygon network that operates based on princ
 
 ## Proposers and Producers Selection
 
-Block Producers for the Bor layer are a committee selected from the Validator pool on the basis of their stake, which happens at regular intervals and is shuffled periodically. These intervals are decided by the Validator's governance with regard to dynasty and network.
+Block Producers for the Bor layer are a committee selected from the validator pool on the basis of their stake, which happens at regular intervals and is shuffled periodically. These intervals are decided by the Validator's governance with regard to dynasty and network.
 
 The ratio of Stake/Staking power specifies the probability to be selected as a member of the block producer committee.
 
@@ -17,7 +17,7 @@ The ratio of Stake/Staking power specifies the probability to be selected as a m
 
 ### Validators in Polygon's Proof-of-Stake System
 
-In Polygon's Proof-of-Stake (PoS) framework, participants can stake Matic tokens on a designated Ethereum smart contract, known as the "staking contract," to become validators. Active validators on Heimdall are eligible for selection as block producers through the `bor` module.
+In Polygon's Proof-of-Stake (PoS) framework, participants can stake MATIC tokens on a designated Ethereum smart contract, known as the "staking contract," to become validators. Active validators on Heimdall are eligible for selection as block producers through the Bor module.
 
 ### Span: Defining Validator Sets and Voting Power
 
@@ -47,7 +47,7 @@ The potential for forks arises when backup producers generate blocks due to dela
 
 ### View Change and Span Commitment
 
-At the end of each span, Bor undergoes a view change, fetching new producers for the subsequent span. This involves an HTTP call to the Heimdall node to retrieve new span data and a `commitSpan` call to the BorValidatorSet genesis contract. Block headers in Bor are also structured to include producer bytes, aiding in the fast-syncing process.
+At the end of each span, Bor undergoes a view change, fetching new producers for the subsequent span. This involves an HTTP call to the Heimdall node to retrieve new span data and a `commitSpan` call to the `BorValidatorSet` genesis contract. Block headers in Bor are also structured to include producer bytes, aiding in the fast-syncing process.
 
 ### State Synchronization with the Ethereum Chain
 

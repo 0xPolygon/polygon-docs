@@ -8,7 +8,7 @@ Nodes on Polygon are therefore designed with a two-layer implementation represen
 
 In particular, and on the execution client side, it delineates on snapshots and state syncing, network configurations, and frequently used commands when running PoS nodes.
 
-On the consesus client side, one finds descriptions on how Heimdall handles; authentication of account addresses, management of validators' keys, management of gas limits, enhancement of transaction verifications, balance transfers, staking and general chain management.
+On the consensus client side, one finds descriptions on how Heimdall handles; authentication of account addresses, management of validators' keys, management of gas limits, enhancement of transaction verifications, balance transfers, staking and general chain management.
 
 ## Architectural overview
 
@@ -57,7 +57,7 @@ An overview of the process:
 See also [Heimdall architecture](heimdall/index.md).
 <!-- (/docs/pos/design/heimdall/overview). -->
 
-## Bor (block producer layer)
+## Bor (block production layer)
 
 Bor is Polygon's sidechain block producer — the entity responsible for aggregating transactions into blocks.
 

@@ -16,7 +16,7 @@ In the following walkthrough, we'll be deploying a Sender contract on Sepolia (E
 
 ### 1. Deploy Sender contract
 
-The sole purpose of Sender contract is to be able to call [syncState](https://github.com/maticnetwork/contracts/blob/e999579e9dc898ab6e66ddcb49ee84c2543a9658/contracts/root/stateSyncer/StateSender.sol#L33) function on the StateSender contract — which is Matic's state syncer contract - the StateSynced event of which Heimdall is listening to.
+The sole purpose of Sender contract is to be able to call [syncState](https://github.com/maticnetwork/contracts/blob/e999579e9dc898ab6e66ddcb49ee84c2543a9658/contracts/root/stateSyncer/StateSender.sol#L33) function on the StateSender contract — which is Matic's state syncer contract - the `StateSynced` event of which Heimdall is listening to.
 
 Deployed at:
 
@@ -26,8 +26,7 @@ Deployed at:
 
 To be able to call this function, let's first include it's interface in our contract:
 
-```jsx
-// Sender.sol
+```jsx title="Sender.sol"
 
 pragma solidity ^0.5.11;
 
@@ -39,7 +38,7 @@ contract IStateSender {
 ...
 ```
 
-Next, let's write our custom function that takes in the data we'd like to pass on to Polygon and calls syncState
+Next, let's write our custom function that takes in the data we'd like to pass on to Polygon and calls `syncState`.
 
 ```jsx
 function sendState(bytes calldata data) external {
@@ -48,14 +47,13 @@ function sendState(bytes calldata data) external {
 }
 ```
 
-In the above function, `stateSenderContract` is the address of the StateSender on the network you'll be deploying `Sender` on. (eg., we'll be using `0x49E307Fa5a58ff1834E0F8a60eB2a9609E6A5F50` for Sepolia), and `receiver` is the contract that will receive the data we send from here.
+In the above function, `stateSenderContract` is the address of the `StateSender` on the network you'll be deploying the Sender on. (eg., we'll be using `0x49E307Fa5a58ff1834E0F8a60eB2a9609E6A5F50` for Sepolia), and the Receiver is the contract that receives the data we send from here.
 
 It is recommended to use constructors to pass in variables, but for the purpose of this demo, we'll simply hardcode these two addresses:
 
-Following is how our Sender.sol looks like:
+Following is how our `Sender.sol` looks like:
 
-```jsx
-// sender.sol
+```jsx title="Sender.sol"
 
 pragma solidity ^0.5.11;
 
@@ -84,12 +82,11 @@ Use Remix to deploy the contract and keep a note of the address and ABI.
 
 ### 2. Deploy Receiver contract
 
-Receiver contract is the one that is invoked by a Validator when the `StateSynced` event is emitted. The Validator invokes the function `onStateReceive`on the receiver contract to submit the data. To implement it, we first import [StateReceiver](https://github.com/maticnetwork/contracts/blob/release-betaV2/contracts/child/bor/StateReceiver.sol) interface and write down our custom logic — to interpret the transferred data inside onStateReceive.
+Receiver contract is the one that is invoked by a validator when the `StateSynced` event is emitted. The validator invokes the function `onStateReceive`on the receiver contract to submit the data. To implement it, we first import [StateReceiver](https://github.com/maticnetwork/contracts/blob/release-betaV2/contracts/child/bor/StateReceiver.sol) interface and write down our custom logic — to interpret the transferred data inside onStateReceive.
 
-Following is how our Receiver.sol looks like:
+Following is how our `Receiver.sol` looks like:
 
-```jsx
-// receiver.sol
+```jsx title="Receiver.sol"
 
 pragma solidity ^0.5.11;
 
@@ -111,13 +108,13 @@ contract receiver {
 }
 ```
 
-The function simply assigns the last received State Id and data to variables. [StateId](https://github.com/maticnetwork/contracts/blob/239a91045622ddcf9ebec2cec81fdc6daa3a33e3/contracts/root/stateSyncer/StateSender.sol#L36) is a simple unique reference to the transferred state (a simple counter).
+The function simply assigns the last received state ID and data to variables. [`StateId`](https://github.com/maticnetwork/contracts/blob/239a91045622ddcf9ebec2cec81fdc6daa3a33e3/contracts/root/stateSyncer/StateSender.sol#L36) is a simple unique reference to the transferred state (a simple counter).
 
-Deploy your `Receiver.sol` to Amoy testnet and keep a note of the address and ABI
+Deploy your `Receiver.sol` to Amoy testnet and keep a note of the address and ABI.
 
 ### 3. Getting your Sender and Receiver mapped
 
-You can either use the already deployed addresses (mentioned above) for sender and receiver, or deploy your custom contracts and request a mapping using [the Google form here](https://docs.google.com/forms/d/e/1FAIpQLSeq8HTef2dYpRx35_WWYhyr4C146K9dfhyYJQcoD1RuTTVABg/viewform).
+You can either use the already deployed addresses (mentioned above) for the Sender and Receiver, or deploy your custom contracts and request a mapping using [the Google form here](https://docs.google.com/forms/d/e/1FAIpQLSeq8HTef2dYpRx35_WWYhyr4C146K9dfhyYJQcoD1RuTTVABg/viewform).
 
 ### 4. Sending and receiving data
 
@@ -125,10 +122,9 @@ Now that we have our contracts in place and mapping done, we'll be writing a sim
 
 **4.1 Setup your script**
 
-We'll first initialise our web3 objects, wallet to make the transactions and contracts
+We'll first initialize our web3 objects, wallet to make the transactions and contracts.
 
-```jsx
-// test.js
+```jsx title="test.js"
 
 const Web3 = require('web3')
 const Network = require("@maticnetwork/meta/network")
@@ -153,11 +149,11 @@ let receiver = new matic.eth.Contract(JSON.parse(receiverABI), receiverAddress)
 
 ```
 
-We're using @maticnetwork/meta package for the RPCs, the package isn't a requirement to run the script.
+We're using `@maticnetwork/meta` package for the RPCs, the package isn't a requirement to run the script.
 
-`matic` and `main` objects refer to the web3 object initialised with Polygon's and Ropsten's RPC respectively.
+`matic` and `main` objects refer to the web3 object initialized with Polygon's and Ropsten's RPC respectively.
 
-`sender` and `receiver` objects refer to the contract objects of Sender.sol and Receiver.sol that we deployed in Step 1 and 2.
+`sender` and `receiver` objects refer to the contract objects of `Sender.sol` and `Receiver.sol` that we deployed in Step 1 and 2.
 
 **4.2 Sending data**
 
@@ -182,7 +178,7 @@ async function sendData (data) {
 }
 ```
 
-Calling `getData` will convert an ascii string (eg., `Hello World !`) to a string of bytes (eg., `0x48656c6c6f20576f726c642021`); while the function `sendData`takes in `data` (an ascii string), calls `getData` and passes on the bytestring to sender contract
+Calling `getData` will convert an ASCII string (eg., `Hello World !`) to a string of bytes (eg., `0x48656c6c6f20576f726c642021`); while the function `sendData`takes in `data` (an ascii string), calls `getData` and passes on the bytestring to sender contract
 
 **4.3 Receiving data**
 
@@ -237,8 +233,7 @@ async function test() {
 
 This is how our test script looks like:
 
-```jsx
-// test.js
+```jsx title="test.js"
 
 const Web3 = require('web3')
 const Network = require("@maticnetwork/meta/network")

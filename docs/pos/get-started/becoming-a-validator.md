@@ -78,41 +78,41 @@ A blockchain validator is someone who is responsible for validating transactions
 
 Any validator on the Polygon Network has the following responsibilities:
 
-* Technical node operations (done automatically by the nodes)
-* Operations
-  * Maintain high uptime
-  * Check node-related services and processes daily
-  * Run node monitoring
-  * Keep ETH balance (between 0.5 to 1) on the signer address
-* Delegation
-  * Be open to delegation
-  * Communicate commission rates
-* Communication
-  * Communicate issues
-  * Provide feedback and suggestions
-* Earn staking rewards for validate blocks on the blockchain
+- Technical node operations (done automatically by the nodes).
+- Operations
+    - Maintain high uptime.
+    - Check node-related services and processes daily.
+    - Run node monitoring.
+    - Keep ETH balance (between 0.5 to 1) on the signer address.
+- Delegation
+    - Be open to delegation.
+    - Communicate commission rates.
+- Communication
+    - Communicate issues.
+    - Provide feedback and suggestions.
+- Earn staking rewards for validate blocks on the blockchain.
 
 ### Technical node operations
 
 The following technical node operations are **done automatically by the nodes:**
 
 * Block producer selection:
-  * Select a subset of validators for the block producer set for each span.
-  * For each span, select the block producer set again on Heimdall and transmit the selection information to Bor periodically.
+    * Select a subset of validators for the block producer set for each span.
+    * For each span, select the block producer set again on Heimdall and transmit the selection information to Bor periodically.
 * Validating blocks on Bor:
-  * For a set of Bor blocks, each validator independently reads block data for these blocks and validates the data on Heimdall.
+    * For a set of Bor blocks, each validator independently reads block data for these blocks and validates the data on Heimdall.
 * Checkpoint submission:
-  * A proposer is chosen among the validators for each Heimdall block. The checkpoint proposer creates the checkpoint of Bor block data, validates, and broadcasts the signed transaction for other validators to consent to.
-  * If more than 2/3 of the active validators reach consensus on the checkpoint, the checkpoint is submitted to the Ethereum mainnet.
+    * A proposer is chosen among the validators for each Heimdall block. The checkpoint proposer creates the checkpoint of Bor block data, validates, and broadcasts the signed transaction for other validators to consent to.
+    * If more than 2/3 of the active validators reach consensus on the checkpoint, the checkpoint is submitted to the Ethereum mainnet.
 * Sync changes to Polygon staking contracts on Ethereum:
-  * Continuing from the checkpoint submission step, since this is an external network call, the checkpoint transaction on Ethereum may or may not be confirmed, or may be pending due to Ethereum congestion issues.
-  * In this case, there is an `ack/no-ack` process that is followed to ensure that the next checkpoint contains a snapshot of the previous Bor blocks as well. For example, if checkpoint 1 is for Bor blocks 1-256, and it failed for some reason, the next checkpoint 2 will be for Bor blocks 1-512. See also [Heimdall architecture: Checkpoint](../architecture/heimdall/checkpoints.md).
+    * Continuing from the checkpoint submission step, since this is an external network call, the checkpoint transaction on Ethereum may or may not be confirmed, or may be pending due to Ethereum congestion issues.
+    * In this case, there is an `ack/no-ack` process that is followed to ensure that the next checkpoint contains a snapshot of the previous Bor blocks as well. For example, if checkpoint 1 is for Bor blocks 1-256, and it failed for some reason, the next checkpoint 2 will be for Bor blocks 1-512. See also [Heimdall architecture: Checkpoint](../architecture/heimdall/checkpoints.md).
 * State sync from the Ethereum mainnet to Bor:
-  * Contract state can be moved between Ethereum and Polygon, specifically through Bor:
-  * A DApp contract on Ethereum calls a function on a special Polygon contract on Ethereum.
-  * The corresponding event is relayed to Heimdall and then Bor.
-  * A state-sync transaction gets called on a Polygon smart contract and the DApp can get the value on Bor via a function call on Bor itself.
-  * A similar mechanism is in place for sending state from Polygon to Ethereum. See also [State Sync Mechanism](../how-to/bridging/l1-l2-communication/state-transfer.md).
+    * Contract state can be moved between Ethereum and Polygon, specifically through Bor.
+    * A dApp contract on Ethereum calls a function on a special Polygon contract on Ethereum.
+    * The corresponding event is relayed to Heimdall and then Bor.
+    * A state-sync transaction gets called on a Polygon smart contract and the dApp can get the value on Bor via a function call on Bor itself.
+    * A similar mechanism is in place for sending state from Polygon to Ethereum. See also [State Sync Mechanism](../how-to/bridging/l1-l2-communication/state-transfer.md).
 
 ### Operations
 
@@ -133,8 +133,8 @@ You must check daily the services and processes associated with Heimdall and Bor
 You must run either:
 
 * Grafana Dashboards provided by Polygon. See GitHub repository: [Matic-Jagar setup](https://github.com/vitwit/matic-jagar)
-* Or, use your own monitoring tools for the validator and sentry nodes
-* Ethereum endpoint used on nodes should be monitored to ensure the node is within the request limits
+* Or, use your own monitoring tools for the validator and sentry nodes.
+* Ethereum endpoint used on nodes should be monitored to ensure the node is within the request limits.
 
 #### Maintain ETH balance
 

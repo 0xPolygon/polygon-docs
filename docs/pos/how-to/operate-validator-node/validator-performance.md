@@ -8,7 +8,7 @@ These parameters and the related health statuses help provide information about 
 
 ### Parameters
 
-A validator’s performance is measured based on checkpoints it signed over a monitoring period. Performance is measured on a rolling basis at each new checkpoint to provide an objective figure. This figure is then measured against a benchmark of the total network performance in the monitoring period, as detailed below.
+A validator’s performance is measured based on the checkpoints it signed over a fixed monitoring period. Performance is measured on a rolling basis at each new checkpoint to provide an objective figure. This figure is then measured against a benchmark of the total network performance in the monitoring period, as detailed below.
 
 * Monitoring Period (“MP") = previous 700 checkpoints, updated every new checkpoint.
 * Take % of checkpoints signed by each validator in the MP and find the median.
@@ -17,11 +17,13 @@ A validator’s performance is measured based on checkpoints it signed over a mo
 
 ### Performance benchmark
 
-![Figure: performance benchmark](../../../img/pos/performance-benchmark.png)
+<center>
+![Figure: performance benchmark](../../../img/pos/performance-benchmark.png){width=60%}
+</center>
 
 To facilitate the transition, there will be a slightly lower benchmark around the first two months while validators become accustomed to the parameters.
 
-* PB1 → 95% of the median average of the last 700 checkpoints signed by the validator set (first 2,800 checkpoints))
+* PB1 → 95% of the median average of the last 700 checkpoints signed by the validator set (first 2,800 checkpoints)
 * PB2 → 98% of the median average of last checkpoints signed by validator set (continues thereafter)
 
 ### Deficient validator process
@@ -34,10 +36,9 @@ Each GP is an additional 700 checkpoints, allowing a validator to bring their pe
 
 The validator will have a 700 checkpoint period to correct the deficiency in GP2. If the deficiency is fixed within the NOD period, then no further action will occur. However, the NOD would remain public. Failure to improve after GP2 would result in the issuance of an FN of the community's intent to implement a forced exit procedure by offboarding the validator from the network by unbonding their stake.
 
-!!!tip
-    Health Status
+!!! tip "Health status"
 
-    You can quickly check a validator's health status, whether it is **Healthy**, on **Grace Period** or **Final Notice** on the **All Validators** table or on each validator page.
+    You can quickly check a validator's health status, whether it is *Healthy*, on *Grace Period*, or ** on the **All Validators** table or on each validator page.
 
     <div align="center">
     ![Figure: Health status](../../../img/pos/health-status.png)
@@ -46,17 +47,19 @@ The validator will have a 700 checkpoint period to correct the deficiency in GP2
 
 ### Public notices
 
-The Public Notices page shows the recent notices and messages sent to the community of validators.
+The **Public Notices** page shows the recent notices and messages sent to the community of validators.
 
 ![Figure: Topup Heimdall fee](../../../img/pos/public-notices.png)
 
-This is how a Notice message should look like:
+This is how a notice message should look like:
 
-![Figure: Notice](../../../img/pos/notice.png)
+<center>
+![Figure: Notice](../../../img/pos/notice.png){width=60%}
+</center>
 
 
 ### Forced unstaking
 
 The unstaking of the deficient validator would be done as follows:
 
-Call the `ForceUnstake` function in Polygon Commitchain Contract: 0xFa7D2a996aC6350f4b56C043112Da0366a59b74c
+Call the `ForceUnstake` function in Polygon Commitchain Contract: `0xFa7D2a996aC6350f4b56C043112Da0366a59b74c`

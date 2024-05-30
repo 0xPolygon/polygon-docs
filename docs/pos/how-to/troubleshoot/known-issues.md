@@ -4,10 +4,11 @@ comments: true
 
 ### Error: Bad block/Invalid Merkle
 
-**Description:**
+##### Description
+
 A bad block or invalid Merkle root error occurs when the Heimdall and Bor layers are not in sync. Heimdall, as the consensus layer for Polygon POS chain, directs Bor to create blocks accordingly. A bad block error occurs when the Bor moves ahead to create a block which has not been directed by Heimdall. This causes an invalid hash being created, and hence results in an invalid Merkle root.
 
-**Solution 1**:
+##### Solution 1
     Restart the Bor service by using the following command,
     ```bash
         sudo service bor restart
@@ -17,7 +18,9 @@ Typically a restart of the Bor service should resolve the problem, and that's be
 
 If restarting the Bor service does not fix the problem, then try the next option.
 
-**Solution 2**: Make the following checks.
+##### Solution 2 
+
+Make the following checks.
 
 - Check if your Heimdall and REST servers are running.
 
@@ -44,7 +47,9 @@ If restarting the Bor service does not fix the problem, then try the next option
 
 If restarting both the Bor and Heimdall services doesn't solve the problem, it could be that Bor is stuck on some block.
 
-**Solution 3**: Check the bad block in logs for Bor.
+##### Solution 3 
+
+Check the bad block in logs for Bor.
 
 - Check Bor logs with this command
     ```bash
@@ -58,7 +63,7 @@ If restarting both the Bor and Heimdall services doesn't solve the problem, it c
 - Note the bad block number.
 - Convert the block number to a hexadecimal number.
 
-!!!info
+!!! info
     
     Use this [tool](https://www.rapidtables.com/convert/number/decimal-to-hex.html) to convert the block number to a hexadecimal number. 
 
@@ -150,12 +155,14 @@ It should in **no way affect the checkpointing mechanism**.
 
 ### Error: Failed Sanity Checks
 
-**Description:**
+##### Description
+
 `Addressbook` warnings can be ignored without an issue most of the time. If your node is connected to sufficient number of peers these kind of errors can be ignored. Your `pex` is just trying to re-establish it's connections with peers already present in `addrbook.json`.
 
 ### Issue: Bor synchronisation is slow
 
-**Description:**
+##### Description
+
 If Bor synchronisation is slow it could be due to either of the below reasons:
 
 - The node is running on a fork - means at certain point the block production was done by forking on a different block and that has impacted the further block production
@@ -172,38 +179,45 @@ If Bor synchronisation is slow it could be due to either of the below reasons:
         - Node sync rate should be at 15-20 blocks every 8 secs
 
 
-**Solution:**
+##### Solution
+
 As the issue is more about lack of hardware resources try upgrading it to double of the current specifications.
 
 ### Node is not signing any checkpoints
 
-**PreRequisite:**
+##### Prerequisite
+
 First, please point the bor_rpc_url(heimdall-config.toml) of the validator to any external infra providers and restart the services. This change helps to avoid missing checkpoints.
 
 You can find a list of Infra Providers, on the navbar, that validators can make use of.
 
-!!!note
+!!! note
     At this point in time, the node will not mine blocks. So once the issue is fixed, the changes made have to be reverted for the node to return to normal functionality.
 
 
-**Description:**
+##### Description
+
 First of all, your node not signing checkpoints could be for a multiple reasons.
 
-**Solution 1:**
+##### Solution 1
+
 First check if your Heimdall service is running correctly on your Sentry and Validator node. If the service has stopped abruptly or see any errors, try restarting your Heimdall service and see it comes back to normal.
 
-**Solution 2:**
+##### Solution 2
+
 Check your Bor service and see if it has halted abruptly or there are any errors on the logs. Try restarting your Bor service to resolve this issue.
 
-**Solution 3:**
+##### Solution 3
+
 Check if your Heimdall Bridge is running or not or if it has any errors in the logs. Try restarting the service and see if the issue resolves.
 
 ### Issue: Validator Heimdall is unable to connect to Peers
 
-**Description:**
+##### Description
+
 This typically means that your Sentry Heimdall is running into issues.
 
-**Solution:**
+##### Solution
 
 - Check your Sentry Heimdall and see if the service is running fine.
 - If the service is stopped then restarting the service on your Sentry should resolve this issue.
@@ -211,58 +225,63 @@ This typically means that your Sentry Heimdall is running into issues.
 
 ### Error: Error while fetching mainchain receipt error
 
-**Description:** These are normal logs. Do not do anything to your bridge.
+##### Description
+
+These are normal logs. Do not do anything to your bridge.
 
 ### Validator bor is stuck on block for a long time
 
-**Description:**
+##### Description
+
 This means that your Bor on your Sentry is also stuck because your Validator gets information from your Sentry.
 
-**Solution:**
+##### Solution
 
 - Please check your Bor logs on your sentry and see if everything is okay.
 - Probably restart the Bor service first on your Bor and then simultaneously restart the Bor service on your Validator as well.
 
 ### Error: (in Bor) "Failed to prepare header mining at block 0"
 
-**Description:**
+##### Description
+
 This happens because of a formatting issue in your `static-nodes.json` file (/var/lib/bor/data/bor/static-nodes.json).
 
-**Solution:**
+##### Solution
 
 - Ensure there are no space and no additional characters like < / > .
 - If you have made any changes to the file then please restart your Bor service and you should see logs printing.
 
 ### Error: "30303" or invalid command
 
-**Description:**
+##### Description
+
 This is because you haven’t created the bor keystore and the password file for it.
 
-**Solution:**
+##### Solution
 
 Ensure that you follow all the steps from the guide setup.
 
 ### Error: Impossible reorg, please file an issue
 
-**Description:**
+##### Description
 Let these logs be. Your node should ideally not suffer because of this and the issue should be automatically resolved.
 
 If your node is suffering because of this, please contact the support team immdiately.
 
 ### Error: "Host not found" while setting up a node using Ansible
 
-**Description:**
+##### Description
 This could be because your `inventory.yml` file may have some formatting issues.
 
-**Solution:**
+##### Solution
 Correct them with proper indentation and then try again.
 
 ### Issue: "Dialling failed" in Heimdall
 
-**Description:**
+##### Description
 This is related to connectivity and more specifically a port related problem.
 
-**Solution:**
+##### Solution
 
 - Check to `curl localhost:26657/status` still shows the same block.
 - Try a Heimdall Restart.
@@ -272,7 +291,7 @@ This is related to connectivity and more specifically a port related problem.
 
 ### Issue: Looking for Peers or Stopping Peer for error
 
-**Solution:**
+##### Solution
 
 - open the `config.toml` file on your Sentry node.
 
@@ -321,7 +340,7 @@ Follow the below steps for adding additional peers in  `vi /var/lib/heimdall/con
 
 ### Error: Error while fetching data from URL
 
-**Error sample:**
+##### Error sample
 
 ```bash
 module=span service=processor error="Error while fetching data from url:
@@ -330,23 +349,25 @@ Aug 23 12:07:23 US-CA-SN01 bridge[2340]: E[2021-08-23|12:07:23.158] Unable to fe
 module=span service=processor lastSpanId=2862
 ```
 
-**Solution:**
+##### Solution
 
 Then the Heimdall Bridge needs a restart.
 
 ### Error: no contract code at the given address
 
-**Solution**
+##### Solution
 
 1. Get the right configs from Github and copy them to `/var/lib/heimdall/config` and
 2.  Please reset heimdall using `heimdalld unsafe-reset-all`.
 
 ### Issue: Problems in starting Bor
 
-**Issue:**
+##### Issue
+
 Address is required as an argument.
 
-**Solution:**
+##### Solution
+
 You have to add address.
 
 ```bash
@@ -355,22 +376,22 @@ You have to add address.
 
 ### Error: Failed to unlock account (0x...) No key for given address or file
 
-**Description:**
+##### Description
 
 This error happens in light of the fact that the way for the password.txt record is erroneous. You can follow the beneath steps to amend this.
 
-**Solution:**
+##### Solution
 
 For Linux packages:
 
 Kill Bor process
 
-**For linux**:
+##### For linux
 
 1. `ps -aux | grep bor`. Get the PID for Bor and then run the following command.
 2. `sudo kill -9 PID`
 
-**For Ansible:**
+##### For Ansible
 
 1. Copy the bor keystore file to
 
@@ -386,7 +407,7 @@ Kill Bor process
 
 3. Make sure you have added correct address in `/etc/bor/metadata`
 
-**For Binaries:**
+##### For Binaries
 
 1. Copy the Bor keystore file to:
 
@@ -410,19 +431,19 @@ Kill Bor process
 
 ### Error: dpkg: error processing archive matic-heimdall-xxxxxxxxxx
 
-**Sample:**
+##### Sample
 
 ```bash
  "dpkg: error processing archive matic-heimdall_1.0.0_amd64.deb (--install): trying to overwrite '/heimdalld-rest-server.service', which is also in package matic-node 1.0.0"
 ```
 
-**Solution:**
+##### Solution
 
 This occurs mainly because of a previous installation of Matic on machine. To resolve you can run: `sudo dpkg -r matic-node`
 
 ### Issue: Tendermint was rest without resetting application's data
 
-**Solution:**
+##### Solution
 
 - Reset Heimdall config data and try running the installation again;
 
@@ -436,18 +457,18 @@ This occurs mainly because of a previous installation of Matic on machine. To re
 
 ### Issue: Bor crashed
 
-**Solution:**
+##### Solution
 
 - Try upgrading to double the amount of RAM
 - For example, their current RAM capacity is 16GB, it can be upgraded to 32GB
 
 ### Error: err="insufficient funds for gas * price + value"
 
-**Description:**
+##### Description
 
 These logs throw up when there is no enough ETH in your signer wallet.
 
-**Solution:**
+##### Solution
 It is recommended to have 1 ETH in your signer wallet but can keep .5 to .75 in case you check it often enough.
 
 ### Heimdall:  No staking sequence exists: %s %s             module=staking
@@ -482,14 +503,14 @@ curl localhost:26657/net_info? | jq .result.n_peers
 
 If there aren’t any peers, check whether the **seeds or persistent peers are rightly set on Heimdall** and **ensure Port 26656 is all open**.
 
-**Reset Heimdall**
+##### Reset Heimdall
 
 ```bash
 sudo service heimdalld stop
 heimdalld unsafe-reset-all
 ```
 
-**Sync Heimdall from Snapshot**
+##### Sync Heimdall from Snapshot
 
 ```bash
 wget -c <Snapshot URL>

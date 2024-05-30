@@ -1,18 +1,18 @@
-In Polygon, validators stake their MATIC tokens as collateral to work for the security of the network, and in exchange for their service, earn rewards.
+On the Polygon PoS network, validators stake their MATIC tokens as collateral to help secure the network. In return for their service, they earn rewards.
 
-To leverage Polygon's economics, you should either become a validator or a delegator.
+To leverage the PoS network's tokenomics, you should either become a validator or a delegator.
 
-To be a validator, you need to **run a full validator** node and stake MATIC.
+To be a validator, you need to [run a full validator node](../get-started/becoming-a-validator.md) and stake MATIC.
 
-Also check the [Validator Responsibilities](../get-started/becoming-a-validator.md#validator-responsibilities) page.
+Also, check the [validator responsibilities](../get-started/becoming-a-validator.md#validator-responsibilities) page.
 
-To be a delegator, you only need to **delegate MATIC to a validator**
+To be a delegator, you only need to [delegate MATIC to a validator](../how-to/delegate.md).
 
-## What is the incentive?
+## How are validators incentivized?
 
-Polygon allocates 12% of its total supply of 10 billion tokens to fund the staking rewards. This is to ensure that the network is seeded well enough until transaction fees gain traction. These rewards are primarily meant to jump-start the network, while the protocol in the long run is intended to sustain itself on the basis of transaction fees.
+Polygon allocates *12%* of its total supply of 10 billion tokens to fund the staking rewards. This is to ensure that the network is seeded well enough until transaction fees gain traction. These rewards are primarily meant to jump-start the network, while the protocol in the long run is intended to sustain itself on the basis of transaction fees.
 
-**Validator Rewards = Staking Rewards + Transaction Fees**
+$Validator Rewards = Staking Rewards + Transaction Fees$
 
 This is allocated in a way to ensure gradual decoupling of staking rewards from being the dominant component of the validator rewards.
 
@@ -22,7 +22,7 @@ This is allocated in a way to ensure gradual decoupling of staking rewards from 
 |Second|2,556,580,023|12%|275,625,675|
 |Third|2,890,642,855|9%|246,933,140|
 |Fourth|2,951,934,048|7%|204,303,976|
-|Fifth|2,996,518,749|5%|148,615,670 + **11,604,170**|
+|Fifth|2,996,518,749|5%|148,615,670 + *11,604,170*|
 
 Below is a sample snapshot of the expected annual rewards for the first 5 years considering staked supply ranging from 5% to 40% at 5% interval
 
@@ -47,13 +47,13 @@ No validator holds custody over delegator tokens.
 
 ## Staking rewards
 
-The yearly incentive is absolute — irrespective of the overall stake or the target bonding rate in the network, the incentive amount is given out as a reward to all signers periodically.
+The yearly incentive is fixed — irrespective of the overall stake or the target bonding rate in the network, the incentive amount is given out as a reward to all signers periodically.
 
 In Polygon, there is an additional element of committing periodic checkpoints to the Ethereum mainnet. This is a major part of the validator responsibilities and they are incentivized to perform this activity. This constitutes a cost to the validator which is unique to a Layer 2 solution such as Polygon. We strive to accommodate this cost in the validator staking reward payout mechanism as a bonus to be paid to the proposer, who is responsible for committing the checkpoint. Rewards minus the bonus is to be shared among all stakers, proposer and signers, proportionally.
 
 ## Encouraging the proposer to include all signatures
 
-To avail the bonus completely, the proposer must include all signatures in the checkpoint. Because the protocol desires ⅔ +1 weight of the total stake, the checkpoint is accepted even with 80% votes. However, in this case, the proposer gets only 80% of the calculated bonus.
+To avail the bonus completely, the proposer must include all signatures in the checkpoint. Because the protocol desires $2/3+1$ weight of the total stake, the checkpoint is accepted even with 80% votes. However, in this case, the proposer gets only 80% of the calculated bonus.
 
 ## Transaction fees
 

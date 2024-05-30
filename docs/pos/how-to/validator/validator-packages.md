@@ -13,12 +13,11 @@ comments: true
 
 ## Overview
 
-To get to a running validator node, conduct the following in this **exact sequence of steps**:
+To spin up a functioning validator node, follow these steps in the *specified sequence*:
 
-!!!caution
+!!! warning
     
-    You will run into configuration issues if these steps are performed out of sequence.
-    It is important to keep in mind that a sentry node must always be set up before the validator node.
+    Please ensure you strictly adhere to the outlined sequence of actions to avoid encountering issues. For instance, it's imperative to set up a sentry node before configuring the validator node.
 
 
 1. Prepare two machines, one for the sentry node and one for the validator node.
@@ -83,7 +82,7 @@ To get to a running validator node, conduct the following in this **exact sequen
     bor version
     ```
 
-!!!note
+!!! note
     
     Before proceeding, Bor should be installed on both the sentry and validator machines.
 
@@ -93,9 +92,9 @@ To get to a running validator node, conduct the following in this **exact sequen
 
 In this section, we will go through steps to initialize and customize configurations nodes.
 
-!!!caution
+!!! warning
     
-    Bor v1.1.0 and Heimdall v1.0.3 use standardized paths for configuration files and chain data. If you have existing config files and chain data on your node, please skip this section and jump directly to **[Migration](#upgrade-from-02x-to-03x) section** to learn about migrating configs and data to standardized file locations.
+    Bor v1.1.0 and Heimdall v1.0.3 use standardized paths for configuration files and chain data. If you have existing config files and chain data on your node, please skip this section and refer to the [Migration](https://www.notion.so/polygontechnology/Bor-Heimdall-Mainnet-Upgrade-v0-3-0-6575b2672a1d4ecc8cea8e1703bcc2df) guide to learn about migrating configs and data to standardized file locations. This is not relevant for new validators.
 
 
 ### Configure Heimdall
@@ -235,8 +234,8 @@ Check the Heimdall service logs:
 journalctl -u heimdalld.service -f
 ```
 
-!!!note
-    
+!!! bug "Common errors"
+     
     In the logs, you may see the following errors:
 
     * `Stopping peer for error`
@@ -288,16 +287,14 @@ Follow the same [installation steps](#installing-packages) on validator node.
 
 ## Configuring the Validator Node
 
-!!!note
+!!! note
     
     To complete this section, you must have an RPC endpoint of your fully synced Ethereum mainnet node ready.
 
 
-!!!caution
+!!! warning
     
-    Bor v1.1.0 and Heimdall v1.0.3 use standardized paths for configuration files and chain data. If you have existing config files and chain data on your node, please jump directly to **[Migration](#upgrade-from-02x-to-03x-1) section** to learn about migrating configs and data to standardized file locations.
-
-
+    Bor v1.1.0 and Heimdall v1.0.3 use standardized paths for configuration files and chain data. If you have existing config files and chain data on your node, please skip this section and refer to the [Migration](https://www.notion.so/polygontechnology/Bor-Heimdall-Mainnet-Upgrade-v0-3-0-6575b2672a1d4ecc8cea8e1703bcc2df) guide to learn about migrating configs and data to standardized file locations. This is not relevant for new validators.
 
 ### Configure Heimdall
 
@@ -449,7 +446,7 @@ Open `config.toml` for editing: `vi /var/lib/bor/config.toml`.
   allow-insecure-unlock = true
 ```
 
-!!!caution
+!!! warning
     
     Please ensure that `priv_validator_key.json` & `UTC-<time>-<address>` files have relevant permissions. To set relevant permissions for `priv_validator_key.json`, run `sudo chown -R heimdall:nogroup /var/lib/heimdall/config/priv_validator_key.json` and similarly `sudo chown -R heimdall:nogroup /var/lib/bor/data/keystore/UTC-<time>-<address>` for `UTC-<time>-<address>`.
 
@@ -568,7 +565,7 @@ journalctl -u bor.service -f
 ```
 ### Seed nodes and bootnodes
 
-!!! note "Amoy node seeds"
+!!! tip "Amoy node seeds"
 
     The Heimdall and Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
 

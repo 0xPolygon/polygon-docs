@@ -7,7 +7,7 @@ There are two ways to topup your account:
 
 ## Messages
 
-### MsgTopup
+### `MsgTopup`
 
 `MsgTopup` transaction is responsible for minting balance to an address on Heimdall based on Ethereum chain's `TopUpEvent` on staking manager contract.
 
@@ -24,7 +24,7 @@ type MsgTopup struct {
 }
 ```
 
-### MsgWithdrawFee
+### `MsgWithdrawFee`
 
 `MsgWithdrawFee` transaction is responsible for withdrawing balance from Heimdall to Ethereum chain. A Validator can withdraw any amount from Heimdall.
 
@@ -66,7 +66,7 @@ heimdallcli query auth account <validator-address> --trust-node
 
 ## REST APIs
 
-|Name                  |Method|URL               |Body Params                                                                                                                                      |
-|----------------------|------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-|Topup Fee             |POST  |/topup/fee        |`id` Validator id, `tx_hash` Transaction hash of successful topup event on Ethereum chain, `log_index` Log index of topup event emitted on Ethereum chain|
-|Withdraw Fee          |POST  |/topup/withdraw   |`amount` Withdraw amount|
+| Name         | Method | URL             | Body Params                                                                                                                                               |
+| ------------ | ------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Topup Fee    | POST   | /topup/fee      | `id` Validator id, `tx_hash` Transaction hash of successful topup event on Ethereum chain, `log_index` Log index of topup event emitted on Ethereum chain |
+| Withdraw Fee | POST   | /topup/withdraw | `amount` Withdraw amount                                                                                                                                  |

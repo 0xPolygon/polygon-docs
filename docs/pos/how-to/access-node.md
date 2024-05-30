@@ -6,9 +6,7 @@ If you're a new Web3 developer, it's unlikely that you'll need to run your own f
 
 The majority of developers use a node provider, or a third-party external service that receives node requests and returns responses for you automatically. That's because the fastest way to get developing on Polygon is using a node provider rather than managing your own node.
 
-!!! tip Recommended
-
-    New developers on the Polygon network can use Alchemy as their node provider because of its reliability, scalability, and [Enhanced APIs](https://docs.alchemy.com/reference/enhanced-apis-overview).
+This guide demonstrates how to connect to a RPC provider, using Alchemy as an example.
 
 ## Send your first blockchain request
 
@@ -18,23 +16,24 @@ This guide assumes you already have an [Alchemy account](https://alchemy.com/?r=
 
 First, you'll need an Alchemy API key to authenticate your requests. You can [create API keys from the dashboard](http://dashboard.alchemyapi.io). Check out [this YouTube video](https://www.youtube.com/watch?v=tfggWxfG9o0) on how to create an app. Or you can follow the steps written below:
 
-**Step 1 &rarr;** Navigate to the **Create App** button in the **Apps** tab.
+1. Navigate to the **Create App** button in the **Apps** tab.
+  ![img](https://files.readme.io/693457a-Getting_Started.png)
 
-![img](https://files.readme.io/693457a-Getting_Started.png)
+2. Fill in the details under **Create App** to get your new key. You can also see the applications you previously made by you and your team on this page. Pull existing keys by clicking on **View Key** for any app.
+  ![img](https://files.readme.io/d6172a5-Create_App_Details.png)
 
-**Step 2 &rarr;** Fill in the details under **Create App** to get your new key. You can also see the applications you previously made by you and your team on this page. Pull existing keys by clicking on **View Key** for any app.
+!!! tip "Optional"
+    You can also pull existing API keys by hovering over **Apps** and selecting one. You can **View Key** here, as well as **Edit App** to whitelist specific domains, see several developer tools, and view analytics.
 
-![img](https://files.readme.io/d6172a5-Create_App_Details.png)
-
-**Optional &rarr;** You can also pull existing API keys by hovering over **Apps** and selecting one. You can **View Key** here, as well as **Edit App** to whitelist specific domains, see several developer tools, and view analytics.
-
-![img](https://files.readme.io/f0dbb19-ezgif.com-gif-maker_1.gif)
+  <center>
+  ![img](https://files.readme.io/f0dbb19-ezgif.com-gif-maker_1.gif)
+  </center>
 
 ### Making a cURL request
 
 You can interact with Alchemy's Polygon infrastructure provider using JSON-RPC and your [command line interface](https://www.computerhope.com/jargon/c/commandi.htm).
 
-For manual requests, we recommend interacting with the `JSON-RPC` via `POST` requests. Simply pass in the `Content-Type: application/json` header and your query as the `POST` body with the following fields:
+For manual requests, use `POST` requests to interact with the JSON-RPC. Simply pass in the `Content-Type: application/json` header and your query as the `POST` body with the following fields:
 
 * `jsonrpc`: The JSON-RPC version—currently, only `2.0` is supported.
 * `method`: The MATIC API method. [See API reference](https://alchemyenterprisegroup.readme.io/reference/polygon-api-quickstart).
@@ -64,9 +63,9 @@ Results:
 
 ## Alchemy SDK setup
 
-To make blockchain requests directly from your Javascript / Node.js dApp, you'll need to integrate the **Alchemy SDK**, the easiest and most powerful way to access the blockchain and Alchemy's suite of enhanced APIs.
+To make blockchain requests directly from your Javascript / Node.js dApp, you'll need to integrate the *Alchemy SDK*, the easiest and most powerful way to access the blockchain and Alchemy's suite of enhanced APIs.
 
-**If you have an existing client such as Web3.js or Ethers.js,** you can just change your current node provider URL to an Alchemy URL with your API key: <https://eth-mainnet.alchemyapi.io/v2/your-api-key>
+*If you have an existing client such as Web3.js or Ethers.js,* you can just change your current node provider URL to an Alchemy URL with your API key: <https://eth-mainnet.alchemyapi.io/v2/your-api-key>
 
 !!! note
 
@@ -134,7 +133,7 @@ You should now see the latest block number output in your console.
 The latest block number is 11043912
 ```
 
-**Excellent! You just wrote a working Web3 script and sent your first request to your Alchemy API endpoint.**
+Excellent! You just wrote a working Web3 script and sent your first request to your Alchemy API endpoint.
 
 The project associated with your API key should now look like this on the dashboard:
 
@@ -146,8 +145,8 @@ The project associated with your API key should now look like this on the dashbo
 
 Don't know where to start? Check out these tutorials to get more familiar with Alchemy and blockchain development:
 
-1. [Examples of Common Queries Using the Alchemy SDK](https://docs.alchemy.com/reference/using-the-alchemy-sdk)
-3. Learn [How to Send Transactions on Ethereum](https://docs.alchemy.com/docs/how-to-send-transactions-on-ethereum)
+1. [Examples of Common Queries Using the Alchemy SDK](https://docs.alchemy.com/reference/using-the-alchemy-sdk).
+3. Learn [How to Send Transactions on Ethereum](https://docs.alchemy.com/docs/how-to-send-transactions-on-ethereum).
 4. Try deploying your first [Hello World Smart Contract](https://docs.alchemy.com/docs/hello-world-smart-contract) and get your hands dirty with some solidity programming!
 
 ### Other Web3 libraries

@@ -1,6 +1,7 @@
-This guide provides a curated list of common commands and Polygon-specific operations essential for node operators. Whether you're setting up a full node, validator node or troubleshooting, these commands will assist you in managing your Polygon PoS environment effectively.
+This guide provides a curated list of common commands and Polygon PoS-specific operations essential for node operators. Whether you're setting up a full node, validator node or troubleshooting, these commands will assist you in managing your Polygon PoS environment effectively.
 
 ## Frequently used commands for Bor & Heimdall
+
 ### Bor
 
 To execute Bor IPC commands, use the following syntax:
@@ -82,14 +83,14 @@ curl http://<your ip>:8545 -X POST -H "Content-Type: application/json" -d '{"jso
 
 ### Cleanup: deleting remnants of Heimdall and Bor
 
-**For Linux package:**
+##### For Linux package
 
 ```bash
 sudo dpkg -i matic-bor
 sudo rm -rf /etc/bor
 ```
 
-**For Binaries:**
+##### For Binaries
 
 ```bash
 sudo rm -rf /etc/bor
@@ -98,14 +99,14 @@ sudo rm /etc/heimdall
 
 ### Terminate Bor process
 
-**For Linux:**
+##### For Linux
 
 ```bash
 ps -aux | grep bor
 sudo kill -9 <PID>
 ```
 
-**For Binaries:**
+##### For Binaries
 
 ```bash
 cd CS-2003/bor
@@ -126,14 +127,14 @@ exit
 
 ### Stop Heimdall and Bor services
 
-**For Linux packages:**
+##### For Linux packages
 
 ```bash
 sudo service heimdalld stop
 sudo service bor stop
 ```
 
-**For binaries:**
+##### For binaries
 
 ```bash
 pkill heimdalld
@@ -144,14 +145,14 @@ bash stop.sh
 
 ### Remove Heimdall and Bor directories
 
-**For Linux packages:**
+##### For Linux packages
 
 ```bash
 sudo rm -rf /etc/heimdall/*
 sudo rm -rf /etc/bor/*
 ```
 
-**For binaries:**
+##### For binaries
 
 ```bash
 sudo rm -rf /var/lib/heimdalld/

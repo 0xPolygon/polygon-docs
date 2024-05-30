@@ -2,8 +2,7 @@
 comments: true
 ---
 
-An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html) is used to
-configure and manage a full node. 
+An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html) is used to configure and manage a full node. 
 
 ## Prerequisites
 
@@ -16,8 +15,7 @@ configure and manage a full node.
 - You will also need to ensure that Go is **not installed** in your environment. You will run into issues if you attempt to set up your full node through Ansible with Go installed as Ansible requires specific packages of Go to be installed.
 - You will also need to make sure that your VM / Machine does not have any previous setups for Polygon Validator or Heimdall or Bor. You will need to delete them as your setup will run into issues.
 
-!!!info
-    Heimdall source enhancements
+!!! info "Heimdall source enhancements"
 
     The latest Heimdall version, **[v1.0.3](https://github.com/maticnetwork/heimdall/releases/tag/v1.0.3)**, contains a few enhancements.
     The delay time between the contract events of different validators **has been increased** to ensure that the mempool doesn't get filled quickly in case of a burst of events that could hamper the chain's progress.
@@ -66,13 +64,13 @@ configure and manage a full node.
   ```
 
 - In case you run into any issues, delete and clean the whole setup using:
-  ```
+  ```bash
   ansible-playbook playbooks/clean.yml
   ```
 
 - Once you initiate the Ansible playbook, log in to the remote machine.
 
-- Please **ensure that the value of seeds and bootnodes mentioned below is the same value as mentioned in Heimdall and Bor `config.toml` files**. If not, change the values accordingly.
+- Please *ensure that the value of seeds and bootnodes mentioned below is the same value as mentioned in Heimdall and Bor `config.toml` files*. If not, change the values accordingly.
 
 !!! tip "Amoy testnet seeds"
 
@@ -116,19 +114,19 @@ You have successfully set up a full node with Ansible.
 
 Logs can be managed by the `journalctl` linux tool. Here is a tutorial for advanced usage: [How To Use Journalctl to View and Manipulate Systemd Logs](https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs).
 
-**Check Heimdall node logs**
+### Check Heimdall node logs
 
 ```bash
 journalctl -u heimdalld.service -f
 ```
 
-**Check Bor Rest-server logs**
+### Check Bor Rest-server logs
 
 ```bash
 journalctl -u bor.service -f
 ```
 
-## Ports and Firewall Setup
+## Ports and firewall setup
 
 Open ports 22, 26656 and 30303 to world (0.0.0.0/0) on sentry node firewall.
 

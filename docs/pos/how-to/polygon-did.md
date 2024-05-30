@@ -2,15 +2,21 @@
 comments: true
 ---
 
-This is a startup guide for users who wish to use the implementation packages published by Polygon team, to generate and publish a Polygon DID on the Polygon ledger.
+This is a startup guide for users who wish to use the implementation packages published by Polygon team, to generate and publish a Polygon Decentralized Identifier (DID) on the Polygon ledger.
 
-The Polygon DID method Implementation comprises of 3 packages, namely the polygon-did-registrar, polygon-did-resolver and polygon-did-registry-contract. A user who wants to incorporate the functionality to either register or read a DID on or from Polygon network can use the following guide.
+The Polygon DID method implementation comprises of 3 packages:
 
-A DID is essentially a unique identifier, that has been created without the presence of a central authority.  DID in context of Verifiable Credentials is used to sign documents, thereby facilitating the user to prove ownership of the document when required.
+- polygon-did-registrar
+- polygon-did-resolver
+- polygon-did-registry-contract 
+
+A user who wants to incorporate the functionality to register or read a DID on the Polygon network can follow the guide provided below.
+
+A DID is essentially a unique identifier, that has been created without the presence of a central authority. DID in context of [Verifiable Credentials](https://www.w3.org/TR/vc-data-model-2.0/#what-is-a-verifiable-credential) is used to sign documents, thereby facilitating the user to prove ownership of the document when required.
 
 ## Polygon DID Method
 
-The Polygon DID method definition conforms to the DID-Core specifications and standards. A DID URI is composed of three components separated by colons, the scheme, followed by the method name and finally a method specific identifier. For Polygon the URI looks like:
+The Polygon DID method definition conforms to the [DID-Core specifications and standards](https://www.w3.org/TR/did-core/#identifier). A DID URI is composed of three components separated by colons, the scheme, followed by the method name and finally a method specific identifier. For Polygon the URI looks like:
 
 ```
 did:polygon:<Ethereum address>
@@ -28,13 +34,13 @@ To get started, one first needs to create a DID. Creation in case of Polygon did
 
 In your project to create a polygon DID URI one first needs to install:
 
-```
+```bash
 npm i @ayanworks/polygon-did-registrar --save
 ```
 
 Once the installation is completed, the user can use it as follows:
 
-```
+```js
 import { createDID } from "@ayanworks/polygon-did-registrar";
 ```
 
@@ -42,19 +48,19 @@ The `createdDID` function helps user generate a DID URI. While creating a DID, t
 
   1. The user already owns a wallet and wishes to generate a DID corresponding to the same wallet.
 
-    ```
+    ```js
     const {address, publicKey58, privateKey, DID} = await createDID(network, privateKey);
     ```
 
   2. If the user does not have an existing wallet and wants to generate one, the user can use:
 
-    ```
+    ```js
     const {address, publicKey58, privateKey, DID} = await createDID(network);
     ```
 
-The network parameter in both cases refers to whether the user wants to create the DID on Polygon Amoy Testnet or Polygon Mainnet.
+The network parameter in both cases refers to whether the user wants to create the DID on Polygon Amoy testnet or Polygon mainnet.
 
-Sample Input:
+Sample input:
 
 ```
 network :"testnet | mainnet"
@@ -124,7 +130,9 @@ didResolutionResult:
 }
 ```
 
-It should be noted that, no gas cost will be entailed by the user while trying to resolve a DID.
+!!! tip "Resolve DIDs for free"
+
+    No gas cost will be entailed by the user while trying to resolve a DID.
 
 ## Update DID Document
 

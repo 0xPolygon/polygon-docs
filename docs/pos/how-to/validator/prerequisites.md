@@ -4,9 +4,9 @@ comments: true
 
 ## Before setting up the Validator node
 
-!!!caution
+!!! warning "Caution"
     
-    We recommend running the Validator node with Sentry. Otherwise, you may encounter security concerns and issues with your Validator node.
+    We highly recommend running the validator node with a sentry node. This helps mitigate security concerns and potential issues that may arise with your validator node.
 
 ### Downloading the Snapshot
 
@@ -18,15 +18,15 @@ Validator nodes require an Ethereum-based RPC endpoint. You may use your own Eth
 
 ### Open necessary ports
 
-- **Port 26656** &rarr; Heimdall service will connect your node to another node's Heimdall service using this port.
+- Port `26656`: Heimdall service will connect your node to another node's Heimdall service using this port.
 
-- **Port 30303** &rarr; Bor service will connect your node to another node's Bor service using this port.
+- Port `30303`: Bor service will connect your node to another node's Bor service using this port.
 
-- **Port 22** &rarr; for the Validator to be able to SSH from wherever they are.
+- Port `22`: for the validator to be able to SSH from wherever they are.
 
 ### Install RabbitMQ
 
-It is recommended to install the **RabbitMQ** service before setting up your Validator node. Please utilize the below commands to set up RabbitMQ (if not already installed):
+Before setting up your validator node, it’s advisable to install the RabbitMQ service. You can use the following commands to set up RabbitMQ (if it’s not already installed):
 
 ```bash
 sudo apt-get update
@@ -46,18 +46,18 @@ See the doc on [validator best practices](../operate-validator-node/validator-be
 
     | Checklist               | Binaries                                       | Ansible                                                                 | Packages                                       |
     | ----------------------- | ---------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------- |
-    | **Machines Required**   | 2 Machines - **Sentry** & **Validator**        | 3 Machines - **Local Machine**, **Sentry** and **Validator**            | 2 Machines - **Sentry** & **Validator**        |
-    | **Install Go Packages** | Yes                                            | No                                                                      | No                                             |
-    | **Install Python**      | No                                             | Yes (only on the **Local Machine** where the **Ansible Playbook** runs) | No                                             |
-    | **Install Ansible**     | No                                             | Yes (only on one machine)                                               | No                                             |
-    | **Install Bash**        | No                                             | No                                                                      | Yes                                            |
-    | **Run Build Essential** | Yes                                            | No                                                                      | No                                             |
-    | **Node Setup**          | [Using Binaries](../validator/validator-binaries.md) | [Using Ansible](../validator/validator-ansible.md)                            | [Using Packages](../validator/validator-packages.md) |
+    | Machines Required   | 2 Machines - *Sentry* & *Validator*        | 3 Machines - *Local Machine*, *Sentry* and *Validator*            | 2 Machines - *Sentry* & *Validator*        |
+    | Install Go Packages | Yes                                            | No                                                                      | No                                             |
+    | Install Python      | No                                             | Yes (only on the *Local Machine* where the *Ansible Playbook* runs) | No                                             |
+    | Install Ansible     | No                                             | Yes (only on one machine)                                               | No                                             |
+    | Install Bash        | No                                             | No                                                                      | Yes                                            |
+    | Run Build Essential | Yes                                            | No                                                                      | No                                             |
+    | Node Setup          | [Using Binaries](../validator/validator-binaries.md) | [Using Ansible](../validator/validator-ansible.md)                            | [Using Packages](../validator/validator-packages.md) |
 
 2. Once your Sentry and Validator nodes are synced and running, head over to our [Discord server](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes. You may check the logs by using the following commands:
 
-    - **Heimdall logs &rarr;** ```journalctl -u heimdalld.service -f```
-    - **Bor logs &rarr;** ```journalctl -u bor.service -f```
+    - Heimdall logs: ```journalctl -u heimdalld.service -f```
+    - Bor logs: ```journalctl -u bor.service -f```
 
 3. It is highly recommended to maintain a backup of the key files on your local machine. These might be needed in the situation of migration or outage. You may access the files using the commands below:
 
@@ -104,7 +104,7 @@ See the doc on [validator best practices](../operate-validator-node/validator-be
 This document gives some additional details for setting up a new node based on [full node deployment](../../how-to/full-node/full-node-binaries.md) guide.
 
 - VPN setup is required before proceeding with any of these steps.
-- If you are using Macbook, it has native Python 2.7 available which **needs to be replaced by with anything Python 3.x**.
+- If you are using Macbook, it has native Python 2.7 available which *needs to be replaced by with anything Python 3.x*.
 - Make sure if pip3 packages are installed correctly
 
     If the above 3 steps are not done correctly then even though Ansible is installed, it can’t recognize the Ansible packages. You might face something like the below screenshot:
@@ -130,7 +130,7 @@ This document gives some additional details for setting up a new node based on [
     ![Figure: Knowledge base - node setup 2](../../../img/pos/node-setup-2.png)
 
 
-- Example of **inventory.yml**
+- Example of `inventory.yml`
 
     ![Figure: Knowledge base - node setup 3](../../../img/pos/node-setup-3.png)
 
@@ -169,11 +169,11 @@ This document gives some additional details for setting up a new node based on [
 - `eth_rpc_url =insert Infura or any full node RPC URL to Ethereum`
     - For this step, sign in to https://infura.io (signup if you already don't have an account)
 
-    - Copy the **https** endpoint provided under **ethereum → keys → endpoints**
+    - Copy the `https` endpoint provided under *ethereum → keys → endpoints*
 
         ![Figure: Knowledge base - node setup 5](../../../img/pos/node-setup-5.png)
 
-        - Provide the copied **https** endpoint as `eth_rpc_url` in `/var/lib/heimdall/config/heimdall-config.toml`
+        - Provide the copied `https` endpoint as `eth_rpc_url` in `/var/lib/heimdall/config/heimdall-config.toml`
 
 ### 2. Why do I have to keep ETH in my signer account?
 
@@ -181,7 +181,7 @@ ETH is required on your signer account because for submitting checkpoints to Eth
 
 ### 3. For a Polygon Validator, do I need to setup a Sentry and Validator node or can I just run the Validator node only?
 
-For a Polygon Validator, our ecosystem and architecture demands that you run a **Sentry + Validator** setup. This is to ensure that your Validator node is not exposed to the public and only your Sentry node is.
+For a Polygon Validator, our ecosystem and architecture demands that you run a *Sentry + Validator* setup. This is to ensure that your Validator node is not exposed to the public and only your Sentry node is.
 
 Your Sentry node gleans information / blocks from the network and then relays them to the Validator for validation.
 
@@ -233,7 +233,7 @@ You can add the `persistent_peers` in the following file:
 
 ### 10. How to stop Heimdall and Bor services?
 
-**For Linux packages**:
+#### For Linux packages
 
 Stop Heimdall: `sudo service heimdalld stop`
 
@@ -242,7 +242,7 @@ Stop Bor: `sudo service bor stop` or
 1. `ps -aux | grep bor`. Get the PID for Bor and then run the following command.
 2. `sudo kill -9 PID`
 
-**For Binaries**:
+#### For Binaries
 
 Stop Heimdall: `pkill heimdalld`
 
@@ -252,13 +252,13 @@ Stop Bor:  `bash stop.sh`
 
 ### 11. How to remove Heimdall and Bor directories?
 
-**For Linux packages**:
+#### For Linux packages
 
 Delete Heimdall: `sudo rm -rf /etc/heimdall/*`
 
 Delete Bor: `sudo rm -rf /etc/bor/*`
 
-**For Binaries**:
+#### For Binaries
 
 Delete Heimdall: `sudo rm -rf /var/lib/heimdall/`
 

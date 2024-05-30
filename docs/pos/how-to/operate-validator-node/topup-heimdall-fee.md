@@ -2,8 +2,7 @@
 comments: true
 ---
 
-
-This document provides instructions on how to top up the Heimdall fee for a PoS Validator. 
+This document provides instructions on how to top up the Heimdall fee for a PoS validator. 
 
 The easiest way is via the [Polygon Staking UI](https://staking.polygon.technology/account).
 
@@ -17,7 +16,7 @@ You can also do it manually by following the steps below; this requires basic Et
 
     ![Figure: Connect wallet etherscan](../../../img/pos/connect-wallet-etherscan.png)
 
-4. Scroll down to the `topUpForFee` method (#26 in the list) and select it. You will see something like the below screenshot.
+4. Scroll down to the `topUpForFee` method (#26 in the list) and select it. You will then see a display similar to the screenshot below..
 
     ![Figure: Topup Heimdall fee](../../../img/pos/topup-heimdall-fee.png)
 
@@ -26,6 +25,6 @@ You can also do it manually by following the steps below; this requires basic Et
     - `user`: Validator's Signer Address
     - `heimdallFee`: Topup fee (**minimum 1 MATIC**)
 
-6. After filling in the details, click on **Write** to sign the transaction.
+6. After filling in the details, select **Write** to sign the transaction.
 
 Your Heimdall fee will be updated soon after the transaction completes.

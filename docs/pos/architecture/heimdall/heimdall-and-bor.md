@@ -1,8 +1,10 @@
-Heimdall's `bor` module is responsible for managing span intervals and coordinating interactions with the Bor chain. Specifically, it determines when a new span can be proposed on Heimdall based on the current block number `n` and the current span `span`. A new span proposal is permissible when the current Bor chain block number `n` falls within the range of `span.StartBlock` and `span.EndBlock` (inclusive of `StartBlock` and exclusive of `EndBlock`). Validators on the Heimdall chain can propose a new span when these conditions are met.
+Heimdall's `bor` module is responsible for managing span intervals and coordinating interactions with the Bor chain. Specifically, it determines when a new span can be proposed on Heimdall based on the current block number `n` and the current span `span`. 
+
+A new span proposal is permissible when the current Bor chain block number `n` falls within the range of `span.StartBlock` and `span.EndBlock` (inclusive of `StartBlock` and exclusive of `EndBlock`). Validators on the Heimdall chain can propose a new span when these conditions are met.
 
 ## Messages
 
-### MsgProposeSpan
+### `MsgProposeSpan`
 
 The `MsgProposeSpan` message plays a crucial role in setting up the validator committee for a specific span and records a new span in the Heimdall state. This message is detailed in the Heimdall source code at [bor/handler.go#L27](https://github.com/maticnetwork/heimdall/blob/develop/bor/handler.go#L27).
 
@@ -17,13 +19,13 @@ type MsgProposeSpan struct {
 }
 ```
 
-#### Selection of Producers
+#### Selection of producers
 
 The process for choosing producers from among all validators involves a two-step mechanism:
 
-1. **Slot Allocation Based on Validator Power:** Each validator is assigned a number of slots proportional to their power. For instance, a validator with a power rating of 10 will receive 10 slots, while one with a power rating of 20 will receive 20 slots. This method ensures that validators with higher power have a correspondingly higher chance of being selected.
+1. Slot allocation based on validator power: Each validator is assigned a number of slots proportional to their power. For instance, a validator with a power rating of 10 will receive 10 slots, while one with a power rating of 20 will receive 20 slots. This method ensures that validators with higher power have a correspondingly higher chance of being selected.
 
-2. **Shuffling and Selection:** All allocated slots are then shuffled using a `seed` derived from the Ethereum (ETH 1.0) block hash corresponding to each span `n`. The first `producerCount` producers are selected from this shuffled list. The `bor` module on Heimdall employs the Ethereum 2.0 shuffle algorithm for this selection process. The algorithm's implementation can be viewed at [bor/selection.go](https://github.com/maticnetwork/heimdall/blob/develop/bor/selection.go).
+2. Shuffling and selection: All allocated slots are then shuffled using a `seed` derived from the Ethereum (ETH 1.0) block hash corresponding to each span `n`. The first `producerCount` producers are selected from this shuffled list. The `bor` module on Heimdall employs the Ethereum 2.0 shuffle algorithm for this selection process. The algorithm's implementation can be viewed at [bor/selection.go](https://github.com/maticnetwork/heimdall/blob/develop/bor/selection.go).
 
 This method of selection ensures that the process is both fair and weighted according to the validators' power, thereby maintaining a balanced and proportional representation in the span committee.
 
@@ -80,17 +82,19 @@ type Span struct {
 
 The Bor module contains the following parameters:
 
-|Key                   |Type  |Default value                      | Duration (*)                 |
-|----------------------|------|-----------------------------------|------------------------------|
-|SprintDuration.       |uint64|16 blocks                          |32 seconds                    |
-|SpanDuration          |uint64|100 * SprintDuration = 1,600 blocks|3,200 seconds (53min and 20s)|
-|ProducerCount         |uint64|4 blocks                           |8 seconds                     |
+| Key             | Type   | Default value                       | Duration (*)                  |
+| --------------- | ------ | ----------------------------------- | ----------------------------- |
+| SprintDuration. | uint64 | 16 blocks                           | 32 seconds                    |
+| SpanDuration    | uint64 | 100 * SprintDuration = 1,600 blocks | 3,200 seconds (53min and 20s) |
+| ProducerCount   | uint64 | 4 blocks                            | 8 seconds                     |
 
-(*): Given that blocks are produced every [2 seconds](https://github.com/maticnetwork/bor/blob/4d23e6de3387e18c5f9f55b40ed37189ce82a7aa/params/config.go#L416) on Bor.
+> (*): <i>Given that blocks are produced every [2 seconds](https://github.com/maticnetwork/bor/blob/4d23e6de3387e18c5f9f55b40ed37189ce82a7aa/params/config.go#L416) on Bor.</i>
 
-Previously, a sprint would last [64 blocks](https://github.com/maticnetwork/bor/blob/4d23e6de3387e18c5f9f55b40ed37189ce82a7aa/params/config.go#L423) but it was agreed to decrease this number to [16 blocks](https://github.com/maticnetwork/bor/blob/4d23e6de3387e18c5f9f55b40ed37189ce82a7aa/params/config.go#L424) on the [Delhi hard fork](https://polygon.technology/blog/hardfork-incoming-upgrading-polygon-pos-chain-to-boost-performance) of January 17th, 2023, precisely starting at block number [38,189,056](https://polygonscan.com/block/38189056).
+!!! info "Sprint length"
+  
+    Previously, a sprint would last [64 blocks](https://github.com/maticnetwork/bor/blob/4d23e6de3387e18c5f9f55b40ed37189ce82a7aa/params/config.go#L423) but it was agreed to decrease this number to [16 blocks](https://github.com/maticnetwork/bor/blob/4d23e6de3387e18c5f9f55b40ed37189ce82a7aa/params/config.go#L424) on the [Delhi hard fork](https://polygon.technology/blog/hardfork-incoming-upgrading-polygon-pos-chain-to-boost-performance) of January 17th, 2023, precisely starting at block number [38,189,056](https://polygonscan.com/block/38189056).
 
-## CLI Commands
+## CLI commands
 
 ### Span propose tx
 
@@ -169,7 +173,7 @@ To print all params;
 heimdalldcli query bor params
 ```
 
-Expected Result:
+Expected result:
 
 ```go
 sprint_duration: 16
@@ -179,8 +183,8 @@ producer_count: 4
 
 ## REST APIs
 
-|Name                  |Method|Endpoint          |
-|----------------------|------|------------------|
-|Span details          |GET   |/bor/span/span-id |
-|Get latest span       |GET   |/bor/latest-span  |
-|Get params            |GET   |/bor/params       |
+| Name            | Method | Endpoint          |
+| --------------- | ------ | ----------------- |
+| Span details    | GET    | /bor/span/span-id |
+| Get latest span | GET    | /bor/latest-span  |
+| Get params      | GET    | /bor/params       |

@@ -6,7 +6,7 @@ Depending on the extent to which you're looking to participate in different netw
 
 !!! tip
 
-    It's always a good idea to first read and understand the **minimum** and **recommended** system requirements for any node that you choose to deploy to the PoS network.
+    It's always a good idea to first read and understand the *minimum* and *recommended* system requirements for any node that you choose to deploy to the PoS network.
 
 |                       Validator node                       |                          Full node                          |        Access node         | Archive node |
 | :--------------------------------------------------------: | :---------------------------------------------------------: | :------------------------: | :----------: |

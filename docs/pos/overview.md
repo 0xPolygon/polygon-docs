@@ -11,7 +11,7 @@ The following cyclical workflow outlines the operational mechanics of today's Po
 1. **User initiates transaction**: On the Polygon PoS chain, typically via a smart contract function call.
 2. **Validation by public checkpoint nodes**: These nodes validate the transaction against the Polygon chain's current state.
 3. **Checkpoint creation and submission**: A checkpoint of the validated transactions is created and submitted to the core contracts on the Ethereum mainnet.
-4. **Verification by core contracts**: Core contracts verify the checkpoint's validity, with the added security of fraud proofs. 
+4. **Verification by core contracts**: Core contracts verify checkpoint validity
 5. **Transaction execution**: Upon successful verification, the transaction is executed and state changes are committed to the Polygon sidechain.
 6. **Asset transfer (optional)**: If needed, assets can be transferred back to the Ethereum mainnet via the exit queue in the core contracts.
 7. **Cycle reiteration**: The process can be initiated again by the user, returning to step 1.
@@ -21,7 +21,7 @@ The following cyclical workflow outlines the operational mechanics of today's Po
 
 Ethereum serves as the foundational layer upon which Polygon's PoS architecture is built. Within the Ethereum ecosystem, a set of core contracts play an important role connecting Polygon PoS to Ethereum. These core contracts are responsible for a range of functionalities, from anchoring the Polygon chain to handling asset transfers.
 
-The core contracts on the Ethereum mainnet incorporate two key features for security and functionality: fraud proofs and the exit queue. Fraud proofs act as a security layer, enabling the validation of transactions and state changes to ensure transparency and security across operations. The exit queue manages the safe and efficient transfer of assets back to the Ethereum mainnet, allowing users to seamlessly move assets between the Polygon PoS chain and Ethereum without compromising data integrity or security.
+The core contracts on the Ethereum mainnet incorporate a key feature for security and functionality: the exit queue. The exit queue manages the safe and efficient transfer of assets back to the Ethereum mainnet, allowing users to seamlessly move assets between the Polygon PoS chain and Ethereum without compromising data integrity or security.
 
 
 ## Public checkpoint nodes
