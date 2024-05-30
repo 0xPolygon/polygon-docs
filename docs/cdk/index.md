@@ -13,7 +13,7 @@ hide:
    <div class="hero-image"><img src="../img/cdk/cdk.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
    <div class="hero-left">
       <h1 class="hero-heading">Polygon CDK</h1>
-      <p class="hero-subtext">Polygon Chain Development Kit (CDK) is a modular, open source software toolkit allowing blockchain developers to launch new zero-knowledge proof (zkEVM plus optional validium) L2 chains on Ethereum.</p>
+      <p class="hero-subtext">Polygon Chain Development Kit (CDK) is a modular, open-source stack for blockchain developers to launch sovereign L2 chains powered by zero-knowledge (ZK) proofs.</p>
    </div>
    </br>
 </div>
@@ -24,7 +24,7 @@ hide:
          <div class="product-list-item-header">
             <div class="feature-card-heading">Understand the CDK</div>
          </div>
-         <p class="feature-paragraph">A high-level overview of the CDK and why you would use it.</p>
+         <p class="feature-paragraph">A high-level overview of the CDK and why you might use it.</p>
       </a>
    </div>
    <div class="grid-item">
@@ -48,7 +48,7 @@ hide:
          <div class="product-list-item-header">
             <div class="feature-card-heading">CDK Architecture</div>
          </div>
-         <p class="feature-paragraph">Dive deeper into the components of a CDK chain.</p>
+         <p class="feature-paragraph">Dive deeper into the components of a CDK chain and how they interact.</p>
       </a>
    </div>
    <div class="grid-item">
@@ -56,7 +56,7 @@ hide:
          <div class="product-list-item-header">
             <div class="feature-card-heading">Contribute to the CDK</div>
          </div>
-         <p class="feature-paragraph">Get involved in developing the open-source CDK stack on GitHub.</p>
+         <p class="feature-paragraph">Get involved in building the open-source CDK stack on GitHub.</p>
       </a>
    </div>
 </div>
