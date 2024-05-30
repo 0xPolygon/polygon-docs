@@ -20,35 +20,43 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
+      <a href="./overview">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Understand the CDK</div>
+         </div>
+         <p class="feature-paragraph">A high-level overview of the CDK and why you would use it.</p>
+      </a>
+   </div>
+   <div class="grid-item">
       <a href="./getting-started">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Deploy the stack</div>
+            <div class="feature-card-heading">Try the CDK Locally</div>
          </div>
-         <p class="feature-paragraph">Get started on deploying a CDK stack.</p>
+         <p class="feature-paragraph">Get started by deploying a chain with the CDK on your local machine.</p>
       </a>
    </div>
    <div class="grid-item">
-      <a href="./spec/validium-vs-rollup">
+      <a href="./concepts/layer2s">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Rollup versus validium</div>
+            <div class="feature-card-heading">CDK Concepts</div>
          </div>
-         <p class="feature-paragraph">Discover the key differences between the rollup and validium infrastructure options.</p>
+         <p class="feature-paragraph">Learn the concepts behind the CDK.</p>
+      </a>
+   </div>
+    <div class="grid-item">
+      <a href="./architecture/cdk-zkevm">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">CDK Architecture</div>
+         </div>
+         <p class="feature-paragraph">Dive deeper into the components of a CDK chain.</p>
       </a>
    </div>
    <div class="grid-item">
-      <a href="./glossary">
+      <a href="https://github.com/0xPolygon/cdk-validium-node" target="_blank">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Glossary</div>
+            <div class="feature-card-heading">Contribute to the CDK</div>
          </div>
-         <p class="feature-paragraph">Learn about commonly used terminology and concepts relevant to the CDK tech stack.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./architecture/type-1-prover/intro-t1-prover">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Polygon type 1 prover</div>
-         </div>
-         <p class="feature-paragraph">Find out about the Polygon type 1 prover component.</p>
+         <p class="feature-paragraph">Get involved in developing the open-source CDK stack on GitHub.</p>
       </a>
    </div>
 </div>
