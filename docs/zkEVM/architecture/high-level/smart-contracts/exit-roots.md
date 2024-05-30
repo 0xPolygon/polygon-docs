@@ -11,7 +11,9 @@ The global exit tree root of the L1 info tree is, therefore, the source of truth
 The L2 bridge contract manages a special Merkle tree called a local exit tree for each network that participates in bridging and claiming which is updated by the [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/PolygonZkEVMGlobalExitRootL2.sol) contract.
 
 <center>
+
 ![Local exit tree for network participant](../../../../img/cdk/high-level-architecture/local-exit-tree.png)
+
 </center>
 
 Data from `bridgeAsset()` and `bridgeMessage()` calls on the bridge is stored in leaf nodes on the local exit trees. 
@@ -28,7 +30,9 @@ Data from `bridgeAsset()` and `bridgeMessage()` calls on the bridge is stored in
 The roots of the L2 local exit trees feed into a single exit tree that manages state from all participating L2 rollups.
 
 <center>
+
 ![Exit tree for rollups](../../../../img/cdk/high-level-architecture/exit-tree-for-rollups.png)
+
 </center>
 
 The L2 local exit root is accessible on the rollup manager by calling the [`getRollupExitRoot()`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/b2a62e6af5738366e7494e8312184b1d6fdf287c/contracts/v2/PolygonRollupManager.sol#L1620) method.
@@ -38,7 +42,9 @@ The L2 local exit root is accessible on the rollup manager by calling the [`getR
 Every time there is a call to `bridgeAsset()` and `bridgeMessage()` on the bridge at the L1 Ethereum level, the data is stored in a leaf node on the L1 local exit tree.
 
 <center>
+
 ![L1 local exit tree](../../../../img/cdk/high-level-architecture/l1-ethereum-exit-tree.png)
+
 </center>
 
 ## L1 info tree
@@ -50,7 +56,9 @@ All subtrees exit roots feed into the leaves of the L1 info tree, which contains
 The GER is the fingerprint of the information stored in all trees, and thus represents the true state of the system.
 
 <center>
+
 ![Exit tree for rollups](../../../../img/cdk/high-level-architecture/l1-info-tree.png)
+
 </center>
 
 ## Exit leaves
