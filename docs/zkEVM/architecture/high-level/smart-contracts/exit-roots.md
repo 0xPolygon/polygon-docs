@@ -1,4 +1,4 @@
-An exit tree is a binary append-only sparse Merkle tree (SMT) whose leaf nodes store bridging data. The exit trees have a depth of 32.
+An exit tree is a binary, append-only, sparse Merkle tree (SMT) whose leaf nodes store bridging data. The exit trees have a depth of 32.
 
 Whenever a token or message is bridged, the bridge contract appends an exit leaf to the exit tree related to the specific network. 
 
@@ -8,7 +8,7 @@ The global exit tree root of the L1 info tree is, therefore, the source of truth
 
 ## Rollup local exit trees
 
-The L2 bridge contract manages a special Merkle tree called a local exit tree for each network that participates in bridging and claiming which is managed and updated by the [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/PolygonZkEVMGlobalExitRootL2.sol) contract.
+The L2 bridge contract manages a special Merkle tree called a local exit tree for each network that participates in bridging and claiming which is updated by the [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/PolygonZkEVMGlobalExitRootL2.sol) contract.
 
 <center>
 ![Local exit tree for network participant](../../../../img/cdk/high-level-architecture/local-exit-tree.png)
@@ -17,17 +17,21 @@ The L2 bridge contract manages a special Merkle tree called a local exit tree fo
 Data from `bridgeAsset()` and `bridgeMessage()` calls on the bridge is stored in leaf nodes on the local exit trees. 
 
 !!! important
-    The following exit tree structures are managed by the [PolygonRollupManager.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonRollupManager.sol), the L1 [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) contract, and the[PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMGlobalExitRootV2.sol).
+    The following exit tree structures are managed by:
+
+    - The [PolygonRollupManager.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonRollupManager.sol). 
+    - The L1 [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) contract. 
+    - The[PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMGlobalExitRootV2.sol).
 
 ## Exit tree for rollups
 
-The roots of the local exit trees feed into a single exit tree that manages state from all participating L2 rollups.
+The roots of the L2 local exit trees feed into a single exit tree that manages state from all participating L2 rollups.
 
 <center>
 ![Exit tree for rollups](../../../../img/cdk/high-level-architecture/exit-tree-for-rollups.png)
 </center>
 
-The L2 local exit root is accessible on the rollup manager by calling the `getRollupExitRoot()` method.
+The L2 local exit root is accessible on the rollup manager by calling the [`getRollupExitRoot()`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/b2a62e6af5738366e7494e8312184b1d6fdf287c/contracts/v2/PolygonRollupManager.sol#L1620) method.
 
 ## L1 local exit tree
 
@@ -51,7 +55,7 @@ The GER is the fingerprint of the information stored in all trees, and thus repr
 
 ## Exit leaves
 
-Two constants define leaf types in the bridge contract.
+Two constants define transaction leaf types in the bridge contract.
 
 ```solidity
 // Leaf type asset

@@ -6,6 +6,9 @@ This contract is deployed on L1 and there is also one deployed on every L2 netwo
 
 ![Polygon bridge contracts](../../../../img/zkEVM/bridge-l1-l2.png)
 
+!!! tip
+    - Notice that the L2 bridge content has a function for updating the global exit root: `setGlobalExitRoot(...)`.
+
 ## Bridge and claim
 
 The main functions of the bridge are:
@@ -17,13 +20,13 @@ The main functions of the bridge are:
 
 ### L1 to L2
 
-To bridge assets from L1 to L2, the sender first transfers the token into the bridge by locking the asset on the origin L1 network. 
+To bridge assets from L1 to L2, the sender first transfers the token into the bridge by locking the asset on the origin network (L1). 
 
 The bridge smart contract mints an equivalent asset, called a wrapped token, on the destination network (L2). 
 
 Once minted, the recipient can claim the token on the destination network (L2).
 
-The data below is transaction data represented by a leaf node and comes from an [example L1 to L2 transaction](https://etherscan.io/tx/0xddbff67ac10c27db39c8e49a36871eba319528286752188e1730fbfdcb184f1b) recorded on the L2 zkEVM chain after a successful `bridgeAsset` call.
+The data below is transaction data (represented by a leaf node in an exit tree) and comes from an [example L1 to L2 transaction](https://etherscan.io/tx/0xddbff67ac10c27db39c8e49a36871eba319528286752188e1730fbfdcb184f1b) recorded on the L2 zkEVM chain after a successful `bridgeAsset` call.
 
 | Index | Parameter name                     | Data type   | Example value                              |
 |------|---------------------------|---------|--------------------------------------------|
@@ -40,7 +43,7 @@ To send an asset from L2 to L1, the wrapped token is first burnt on the L2 netwo
 
 The bridge smart contract then unlocks the original asset on the origin network (L1) ready for claiming.
 
-The data below is transaction data represented by a leaf node and comes from an [example L2 to L1 claim transaction](https://etherscan.io/tx/0x70f7f550cded85e21e0893b6ea5aae3dd2b998021ce449770fa78a967bc44f79) which also posts the local and network exit roots and root proofs used for verification on L1.
+The data below is transaction data (represented by a leaf node in an exit tree) and comes from an [example L2 to L1 claim transaction](https://etherscan.io/tx/0x70f7f550cded85e21e0893b6ea5aae3dd2b998021ce449770fa78a967bc44f79) which also posts the local and network exit roots and root proofs used for verification on L1.
 
 | #  | Parameter name                   | Data type        | Example value                                                              |
 |----|------------------------|-------------|--------------------------------------------------------------------|
@@ -54,14 +57,11 @@ The data below is transaction data represented by a leaf node and comes from an 
 | 7  | destinationNetwork     | uint32      | 0                                                                  |
 | 8  | destinationAddress     | address     | 0x5251b3304d1bA5834fd227c2842AA82aC50412E6                         |
 | 9  | amount                 | uint256     | 67000000000000000                                                  |
-| 10 | metadata               | (Abi encoded metadata if any, empty otherwise)bytes       |                                                                    |
+| 10 | metadata               | (abi encoded metadata if any, empty otherwise)bytes       |                                                                    |
 
 ## Updating system state
 
-The Polygon bridge smart contract uses exit tree roots to manage state. Leaves of the trees point to transaction data such as detailed above.
-
-!!! tip
-    - For further details on the exit tree architecture, check out the [exit root documentation](exit-roots.md).
+The Polygon bridge smart contract uses a set of [exit tree roots](exit-roots.md) to manage system state. Leaves of the trees point to transaction data such as detailed above.
 
 On a call to the bridge, the bridge contract calls the `updateExitRoot(...)` function on the relevant exit root contract (L1 or L2) which adds an exit leaf to the relevant exit tree. 
 
@@ -70,7 +70,7 @@ On a call to the bridge, the bridge contract calls the `updateExitRoot(...)` fun
 
 Adding a new leaf to the tree triggers an update to the exit tree root which then propagates to an update on the global exit tree root.
 
-Using Merkle tree exit roots in this way, referenced by the bridge contract and accessible to the `PolygonRollupManager` contract with getters, the bridge contract synchronizes data across L1 and L2, the sequencer component, and the state db.
+Using Merkle tree exit roots in this way, referenced by the bridge contracts and accessible to the `PolygonRollupManager` contract with getters, the bridge contract triggers data synchronization across L1 and L2, including at the sequencer and state db level.
 
 The use of two distinct global exit root manager contracts for L1 and L2, as well as separate logic for the bridge contract and each of these global exit root managers, allows for extensive network interoperability.
 
@@ -80,7 +80,7 @@ Meanwhile, all asset transfers can be validated by any L1 and L2 node due to the
 
 ### L1 to L2
 
-1. If a call to the `bridgeAsset` or `bridgeMessage` passes validation, the bridge contract appends an exit leaf to the L1 exit tree and computes the new L1 exit tree root.
+1. If a call to `bridgeAsset` or `bridgeMessage` on L1 passes validation, the bridge contract appends an exit leaf to the L1 exit tree and computes the new L1 exit tree root.
 
 2. The global exit root manager appends the new L1 exit tree root to the global exit tree and computes the global exit root.
 
@@ -94,9 +94,9 @@ Meanwhile, all asset transfers can be validated by any L1 and L2 node due to the
 
 ### L2 to L1
 
-1. If a `bridgeAsset` or `bridgeMessage` call on the L2 bridge contract validates, the bridge contract appends an exit leaf to the L2 exit tree and computes the new L2 exit tree root.
+1. If a call to `bridgeAsset` or `bridgeMessage` on L2 passes validation, the bridge contract appends an exit leaf to the L2 exit tree and computes the new L2 exit tree root.
 
-2. The L2 global exit root manager appends the new L2 exit tree toot to the global exit tree and computes the global exit root. At that point, the caller's bridge transaction is included in one of batches selected and sequenced by the sequencer.
+2. The L2 global exit root manager appends the new L2 exit tree root to the global exit tree and computes the global exit root. At that point, the caller's bridge transaction is included in one of batches selected and sequenced by the sequencer.
 
 3. The aggregator generates a zk-proof attesting to the computational integrity in the execution of sequenced batches which include the transaction.
 
@@ -110,7 +110,7 @@ Meanwhile, all asset transfers can be validated by any L1 and L2 node due to the
 
 ### L2 to L2
 
-1. When a batch of transactions is processed, the bridge contracts appends the L2 exit tree with a new leaf containing the batch information. This updates the L2 exit tree root.
+1. When a batch of transactions is processed, the bridge contract appends the L2 exit tree with a new leaf containing the batch information. This updates the L2 exit tree root.
 
 2. The bridge contracts communicates the L2 exit tree root to the L2 global exit root manager. The L2 global exit root manager, however, does not update the global exit tree at this stage.
 

@@ -93,7 +93,6 @@ nav:
         - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
         - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
         - Verify a contract: zkEVM/how-to/verify-contract.md
-        - Check transaction status: zkEVM/how-to/check-tx-status.md
       - Architecture high-level:
         - Overview: zkEVM/architecture/high-level/overview.md
         - Smart contracts: 
@@ -272,6 +271,7 @@ nav:
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
       - API: 
         - JSON RPC endpoints: zkEVM/api/json-rpc.md
+        - Check transaction status: zkEVM/api/check-tx-status.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
