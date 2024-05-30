@@ -93,7 +93,7 @@ nav:
         - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
         - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
         - Verify a contract: zkEVM/how-to/verify-contract.md
-        - Checking transaction status: zkEVM/how-to/check-tx-status.md
+        - Check transaction status: zkEVM/how-to/check-tx-status.md
       - Architecture high-level:
         - Overview: zkEVM/architecture/high-level/overview.md
         - Smart contracts: 
