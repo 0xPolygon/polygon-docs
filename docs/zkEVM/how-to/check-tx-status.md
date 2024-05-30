@@ -2,14 +2,14 @@ Here's how to verify the status of a transaction when using an RPC node as an in
 
 This guide is for users who send transactions to an RPC node, which in turn relays these transactions to the Polygon zkEVM network.
 
-## Recommended endpoints:
+## Recommended endpoints
 
-After sending a transaction (TX) to the network using the `eth_sendRawTransaction`, use the following endpoints to check the TX Status:
+After sending a transaction (TX) to the network using the `eth_sendRawTransaction`, use the following endpoints to check the TX status:
 
 1. `eth_getTransactionByHash`
 2. `eth_getTransactionReceipt`
 
-### Using eth_getTransactionByHash
+### Using `eth_getTransactionByHash`
 
 When checking the TX status using the `eth_getTransactionByHash`, the result can be either one of the following.
 
@@ -21,7 +21,7 @@ When checking the TX status using the `eth_getTransactionByHash`, the result can
 
 - If the fields `block_num` and `block_hash` are NOT null, it means the TX was mined.
 
-### Using eth_getTransactionReceipt
+### Using `eth_getTransactionReceipt`
 
 When checking the TX status using the `eth_getTransactionReceipt`, again the result can either one of the following.
 
