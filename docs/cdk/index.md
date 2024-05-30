@@ -1,6 +1,6 @@
 ---
 hide:
-- toc
+  - toc
 ---
 
 <style>
@@ -20,19 +20,11 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./get-started/quickstart/deploy-stack/">
+      <a href="./getting-started">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Deploy the stack</div>
          </div>
          <p class="feature-paragraph">Get started on deploying a CDK stack.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./get-started/how-to/use-native-token/">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Bridge a token</div>
-         </div>
-         <p class="feature-paragraph">Find out how to use and bridge a token on CDK.</p>
       </a>
    </div>
    <div class="grid-item">
