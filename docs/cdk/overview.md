@@ -1,8 +1,20 @@
-The Polygon Chain Development Kit (CDK) is an open-source stack to build layer 2 blockchains powered by zero-knowledge (ZK) proofs.
+The Polygon Chain Development Kit (CDK) is an open-source stack to build sovereign layer 2 blockchains powered by zero-knowledge (ZK) proofs.
 
-It consists of several modular components, many of which are used to power the Polygon zkEVM in production today, that are designed to be fully composable; empowering developers to customize each component and build a chain that meets their specific needs.
+It consists of modular components designed to be fully composable; empowering developers to customize each aspect of their chain to meet their specific needs.
 
-## Why Build With the CDK?
+## What is the CDK?
+
+## CDK Features
+
+- **Scalability**: todo
+
+- **Sovereignity**: todo
+
+- **Modularity**: todo
+
+- **Interoperability**: todo
+
+## Why Use the CDK?
 
 The CDK bootstraps the development process of creating a layer 2 blockchain. Developers can easily set up the stack and begin configuring each component&rsquo;s behavior with a fast feedback loop on a local development environment.
 
@@ -10,7 +22,7 @@ As logic is separated into modular components, developers can easily swap out co
 
 ### Tap Into the AggLayer
 
-By default, CDK chains are opted into the Aggregation Layer (AggLayer) which enables cross-chain transactions among other L2 chains that are also opted into the AggLayer including the Polygon zkEVM.
+By default, CDK chains are opted into the Aggregation Layer (AggLayer) which enables cross-chain transactions among other L2 chains that are also opted into the AggLayer, including the [Polygon zkEVM](https://docs.polygon.technology/zkEVM/).
 
 This provides a powerful network effect by enabling users to interact with smart contracts on your chain without having to manually bridge assets to it. This is especially useful for developers looking to bootstrap their chain&rsquo;s ecosystem and have immediate access to a large pool of users and liquidity.
 
