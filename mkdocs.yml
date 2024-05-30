@@ -101,7 +101,7 @@ nav:
           - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
           - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
           - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
-          - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
+          #- Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
           - API:
             - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
             - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md

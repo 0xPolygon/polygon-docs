@@ -6,15 +6,18 @@ The Merkle root of an exit tree is known as the exit tree root, and it is the fi
 
 The global exit tree root of the L1 info tree is, therefore, the source of truth for the whole network. 
 
-## Local exit trees
+## Rollup local exit trees
 
-The L2 bridge has a special Merkle tree called a local exit tree for each network that participates in bridging and claiming. 
+The L2 bridge contract manages a special Merkle tree called a local exit tree for each network that participates in bridging and claiming which is managed and updated by the [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/PolygonZkEVMGlobalExitRootL2.sol) contract.
 
 <center>
 ![Local exit tree for network participant](../../../../img/cdk/high-level-architecture/local-exit-tree.png)
 </center>
 
 Data from `bridgeAsset()` and `bridgeMessage()` calls on the bridge is stored in leaf nodes on the local exit trees. 
+
+!!! important
+    The following exit tree structures are managed by the [PolygonRollupManager.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonRollupManager.sol), the L1 [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) contract, and the[PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMGlobalExitRootV2.sol).
 
 ## Exit tree for rollups
 
@@ -28,15 +31,17 @@ The L2 local exit root is accessible on the rollup manager by calling the `getRo
 
 ## L1 local exit tree
 
-Data from `bridgeAsset()` and `bridgeMessage()` calls on the bridge at the L1 Ethereum level is stored in leaf nodes on the L1 local exit tree.
+Every time there is a call to `bridgeAsset()` and `bridgeMessage()` on the bridge at the L1 Ethereum level, the data is stored in a leaf node on the L1 local exit tree.
 
 <center>
-![Exit tree for rollups](../../../../img/cdk/high-level-architecture/l1-ethereum-exit-tree.png)
+![L1 local exit tree](../../../../img/cdk/high-level-architecture/l1-ethereum-exit-tree.png)
 </center>
 
 ## L1 info tree
 
-All subtrees feed into the L1 info tree, which contains the global exit root (GER). 
+The L1 info tree is stored in the [PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMGlobalExitRootV2.sol) contract also known as the global exit root manager.
+
+All subtrees exit roots feed into the leaves of the L1 info tree, which contains the global exit root (GER). 
 
 The GER is the fingerprint of the information stored in all trees, and thus represents the true state of the system.
 
@@ -56,7 +61,7 @@ uint8 private constant _LEAF_TYPE_ASSET = 0;
 uint8 private constant _LEAF_TYPE_MESSAGE = 1;
 ```
 
-Data in a leaf is a Keccak256 hash of the metadata (ABI encoded metadata if any) with the following parameters:
+Data in a leaf contains a Keccak256 hash of the metadata (ABI encoded metadata if any) and the following parameters (matched by publicly available transaction data as seen in the [bridge L1 to L2](bridging.md#l1-to-l2) documentation):
 
 ```solidity
 _addLeaf(
@@ -73,51 +78,9 @@ _addLeaf(
 ```
 
 !!! info "Leaf parameters"
-    - int32 originNetwork: Origin network ID, where the original asset belongs.
-    - address originTokenAddress: If `leafType = 0`, Origin network token address (`0x0000...0000`) is reserved for ether. If `leafType = 1`, `msg.sender` of the message.
-    - uint32 destinationNetwork: Bridging destination network ID.
-    - address destinationAddress: Address that receives the bridged asset in the destination network.
-    - uint256 leafAmount: Amount of tokens/ether to bridge.
-    - bytes32 keccak256(metadata): Hash of the metadata. This metadata contains information about asset transferred or the message payload.
-
-## Asset transfer scenarios
-
-In this subsection, we present two scenarios to illustrate the role of exit trees and the global exit tree in the asset transfer process.
-
-### Transfer from L1 to rollup L2
-
-Consider a scenario where a user wants to transfer assets from the L1 Mainnet to the L2 Rollup.
-
-Once the user commits to a transfer, a new exit leaf with the information of the assets being bridged is appended to the L1 exit tree. The transfer data typically looks like this:
-
-```
-Origin network: 0 (L1)
-Origin address: 0x56566... 
-Dest Network: 1 (L2)
-Dest Address: 0x12345...
-Amount: 145
-Metadata: 0x0...
-```
-
-With the newly added exit leaf, the L1 exit tree now has a new root. Updating the global exit tree with this new L1 exit tree root means changing the root of the global exit tree.
-
-To claim the bridged assets on the destination L2 network, the global exit root is verified using a Merkle proof. This proof allows one to confirm whether an exit leaf, containing information about assets being bridged to L2, is represented in the global exit tree by the corresponding L1 exit tree root.
-
-![Updating L1 exit tree and the global exit root](../../../../img/zkEVM/03pzb-exit-leaf-add-L1-L2.png)
-
-### Transfer from rollup L2 to L1
-
-Transfers can also occur from an L2 Rollup to the L1 mainnet. In this scenario, the same procedure outlined in the previous example is followed, but in the reverse direction.
-
-That is, once a user commits to a transfer, an exit leaf is added to the L2 exit tree with corresponding transfer information. The transfer data in this case looks as follows:
-
-```
-Origin network: 3 (L2)
-Origin address: 0x34655... 
-Dest Network: 0 (L1)
-Dest Address: 0x27564...
-Amount: 92
-Metadata: 0x116...
-```
-
-The newly added L2 exit leaf means the L2 exit tree has a new root. The new L2 exit tree Root is then appended to the global exit tree, and thus the root of the global exit tree is updated.
+    - `int32 originNetwork`: Origin network ID, where the original asset belongs.
+    - `address originTokenAddress`: If `leafType = 0`, Origin network token address (`0x0000...0000`) is reserved for ether. If `leafType = 1`, `msg.sender` of the message.
+    - `uint32 destinationNetwor`k: Bridging destination network ID.
+    - `address destinationAddress`: Address that receives the bridged asset in the destination network.
+    - `uint256 leafAmount`: Amount of tokens/ether to bridge.
+    - `bytes32 keccak256(metadata)`: Hash of the metadata. This metadata contains information about assets transferred or the message payload.
