@@ -1,6 +1,6 @@
 Polygon brings you a trustless two-way transaction channel between Polygon PoS and Ethereum by introducing the cross-chain bridge. The official bridge allows you to transfer tokens between Ethereum and Polygon PoS without incurring third-party risks and market liquidity limitations. 
 
-The official bridge is available on both PoS Amoy testnet as well as mainnet, and provides a near-instant, low-cost, and flexible bridging option for both users and dApp developers. You can access it and bridge assets from Ethereum over to Polygon PoS using [Polygon Portal](https://portal.polygon.technology).
+The official bridge is available on both the PoS Amoy testnet as well as mainnet, and provides a near-instant, low-cost, and flexible bridging option for both users and dApp developers. You can access it and bridge assets from Ethereum over to Polygon PoS using [Polygon Portal](https://portal.polygon.technology).
 
 !!! tip "Polygon Portal"
 
@@ -14,4 +14,4 @@ There is no change to the circulating supply of your token when it crosses the b
 ## Additional resources
 
 - [Introduction to Blockchain Bridges](https://ethereum.org/en/bridges/)
-- [What are Cross-Chain Bridges](https://www.alchemy.com/overviews/cross-chain-bridges)
+- [What are Cross-Chain Bridges?](https://www.alchemy.com/overviews/cross-chain-bridges)

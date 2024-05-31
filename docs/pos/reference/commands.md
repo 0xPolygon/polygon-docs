@@ -90,7 +90,7 @@ sudo dpkg -i matic-bor
 sudo rm -rf /etc/bor
 ```
 
-##### For Binaries
+##### For binaries
 
 ```bash
 sudo rm -rf /etc/bor
@@ -106,7 +106,7 @@ ps -aux | grep bor
 sudo kill -9 <PID>
 ```
 
-##### For Binaries
+##### For binaries
 
 ```bash
 cd CS-2003/bor

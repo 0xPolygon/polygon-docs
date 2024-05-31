@@ -4,9 +4,9 @@ comments: true
 
 This section guides you through starting and running the validator node through an Ansible playbook.
 
-For the system requirements, see [Validator Node System Requirements](validator-system-requirements.md).
+For the system requirements, see [validator node system requirements](validator-system-requirements.md).
 
-If you would like to start and run the validator node from binaries, see the guide on [spinning up a Validator node using binaries](./validator-binaries.md).
+If you would like to start and run the validator node from binaries, see the guide on [spinning up a validator node using binaries](./validator-binaries.md).
 
 !!! note "Limited spots for new validators"
     
@@ -15,7 +15,7 @@ If you would like to start and run the validator node from binaries, see the gui
 
 ## Prerequisites
 
-* Three machines — one local machine on which you will run the Ansible playbook; two remote machines — one sentry and one validator.
+* Three machines: One local machine on which you will run the Ansible playbook; two remote machines — one sentry and one validator.
 * On the local machine, [Ansible](https://www.ansible.com/) installed.
 * On the local machine, [Python 3.x](https://www.python.org/downloads/) installed.
 * On the remote machines, make sure Go is *not* installed.
@@ -41,7 +41,7 @@ To get to a running validator node, do the following:
 8. Start the validator node.
 9. Check node health with the community.
 
-## Set up the Sentry node
+## Set up the sentry node
 
 On your local machine, clone the [node-ansible repository](https://github.com/maticnetwork/node-ansible):
 
@@ -133,7 +133,7 @@ Once the setup is complete, you will see a message of completion on the terminal
     ansible-playbook -l sentry playbooks/clean.yml
     ```
 
-## Set up the Validator node
+## Set up the validator node
 
 At this point, you have the sentry node set up.
 
@@ -184,7 +184,7 @@ Once the setup is complete, you will see a message of completion on the terminal
     ansible-playbook -l validator playbooks/clean.yml
     ```
 
-## Configure the Sentry node
+## Configure the sentry node
 
 Log into the remote sentry machine.
 
@@ -218,7 +218,7 @@ Change the following:
 
 Save the changes in `config.toml`.
 
-### Configure the Bor Service
+### Configure the Bor service
 
 Open for editing `vi /var/lib/bor/config.toml`.
 
@@ -324,7 +324,7 @@ In the output, the `catching_up` value is:
 
 Wait for the Heimdall service to fully sync.
 
-### Start the Bor Service
+### Start the Bor service
 
 Once the Heimdall service is fully synced, start the Bor service.
 
@@ -347,7 +347,7 @@ journalctl -u bor.service -f
     To complete this section, you must have your own RPC endpoint of your own fully synced Ethereum mainnet node ready. The use of Infura and Alchemy is also sufficient and widely used among validators.
 
 
-### Configure the Heimdall Service
+### Configure the Heimdall service
 
 Log into the remote validator machine.
 
@@ -382,7 +382,7 @@ Example: `eth_rpc_url = "https://nd-123-456-789.p2pify.com/60f2a23810ba11c827d3d
 
 Save the changes in `heimdall-config.toml`.
 
-### Configure the Bor Service
+### Configure the Bor service
 
 Open for editing `vi /var/lib/bor/config.toml`.
 
@@ -422,9 +422,7 @@ To generate the private key, run:
 heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
 ```
 
-!!! note
-    
-    ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s `Signer` private key
+Here `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s signer private key.
 
 
 This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration directory:
@@ -443,10 +441,7 @@ To generate the private key, run:
 heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
 ```
 
-!!! note
-    
-    ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s `Signer` private key.
-
+Here `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s signer private key.
 
 When prompted, set up a password to the keystore file.
 
@@ -470,7 +465,7 @@ Ensure that `password` parameter in `/var/lib/bor/config.toml` matches the locat
 
 Open for editing `vi /var/lib/bor/config.toml`.
 
-In `[accounts]` section you should have paramater `password` already defined from previous step, now add your Ethereum address to `unlock` parameter and also ensure `allow-insecure-unlock` has a value of `true`.
+In the `[accounts]` table, you should have paramater `password` already defined from previous step, now add your Ethereum address to `unlock` parameter and also ensure `allow-insecure-unlock` is set to `true`.
 
 Example: 
 
@@ -483,7 +478,7 @@ Example:
 
 Save the changes in `/var/lib/bor/config.toml`.
 
-## Start the Validator node
+## Start the validator node
 
 At this point, you must have:
 
@@ -492,7 +487,7 @@ At this point, you must have:
 * The Heimdall service and the Bor service on the validator machine configured.
 * Your owner and signer keys configured.
 
-### Start the Heimdall Service
+### Start the Heimdall service
 
 You will now start the Heimdall service on the validator machine. Once the Heimdall service syncs, you will start the Bor service on the validator machine.
 
@@ -521,7 +516,7 @@ In the output, the `catching_up` value is:
 
 Wait for the Heimdall service to fully sync.
 
-### Start the Bor Service
+### Start the Bor service
 
 Once the Heimdall service on the validator machine is fully synced, start the Bor service on the validator machine.
 

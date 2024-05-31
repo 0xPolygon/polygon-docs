@@ -6,7 +6,7 @@ For more information on what a signer address is, see
 
 Make sure your new validator node is fully synced and is running with the new signer address.
 
-## Change the Signer Address
+## Change the signer Address
 
 This guide refers to your current validator node as Node 1 and your new validator node as Node 2.
 

@@ -1,19 +1,19 @@
 For the Polygon PoS' Proof of Security based consensus, all the $2/3+1$ proof verification and handling of staking, rewards are executed on the Ethereum smart contract. The whole design follows this philosophy of doing less on the Mainnet contract. It does information verification and pushes all the computation-heavy operations to L2 (read about [Heimdall](https://docs.polygon.technology/pos/architecture/heimdall/)).
 
-**Stakers** are divided into **validators**, **delegators**, and **watchers** (for fraud reporting).
+*Stakers* are divided into *validators*, *delegators*, and *watchers* (for fraud reporting).
 
-[**StakeManager**](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/stakeManager/StakeManager.sol) is the main contract for handling validator related activities like `checkPoint` signature verification, reward distribution, and stake management. Since the contract is using **NFT ID** as a source of ownership, change of ownership and signer won't affect anything in the system.
+[`StakeManager`](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/stakeManager/StakeManager.sol) is the main contract for handling validator related activities like `checkPoint` signature verification, reward distribution, and stake management. Since the contract is using *NFT ID* as a source of ownership, change of ownership and signer won't affect anything in the system.
 
-!!! tip
+!!! info
     
-    From one Ethereum address, a **Staker can only be a validator or delegator** (it's just a design choice, no hard reasons).
+    From a single Ethereum address, *a staker can only function as either a validator or a delegator* (this is a design choice without any underlying technical constraints).
 
 
 ## Validator admissions/replacement
 
 ### Admissions
 
-At present, there are no open validator slots available on Polygon PoS. There is also a waitlist to become a validator. In the future, if slots become available, validators may apply to be considered and removed off of the waitlist.
+At present, there are no open validator slots available on Polygon PoS. There is also a wait list to become a validator. In the future, if slots become available, validators may apply to be considered and removed off of the wait list.
 
 
 ### Replacement
@@ -56,7 +56,7 @@ function stakeFor(
 ```
 
 - Allows anyone with amount (in MATIC tokens) greater than `minDeposit`, if `currentValidatorSetSize` is less then `validatorThreshold`.
-- Must transfer `amount+heimdallFee`, puts validator into auction period for an auctionInterval (more in Auction section).
+- Must transfer `amount+heimdallFee`, puts validator into auction period for an `auctionInterval` (more in Auction section).
 - `updateTimeLine` updates special timeline data structure, which keeps track of active validators and active stake for given epoch / checkpoint count.
 - One unique `NFT` is minted on each new `stake` or `stakeFor` call, which can be transferred to anyone but can be owned 1:1 Ethereum address.
 - `acceptDelegation` set to true if validators want to accept delegation, `ValidatorShare` contract is deployed for the validator.
@@ -123,7 +123,7 @@ This method is used to withdraw fees from Heimdall. `accountStateRoot` is update
 
 Note that `accountStateRoot` is re-written to prevent exits on multiple checkpoints (for old root and save accounting on `stakeManager`).
 
-### StakingNFT
+### Staking NFT
 
 Standard ERC721 contract with few restrictions like one token per user and minted in sequential manner.
 
@@ -151,9 +151,9 @@ function confirmAuctionBid(
     ) external
 ```
 
-- **Must check that this is not an auctionPeriod.**
-- If last bidder is owner of `validatorId`, behaviour should be similar to restake.
-- In second case unStake `validatorId` and add new user as validator from next checkpoint, for the new user behaviour should be similar to stake/stakeFor.
+- *Must check that this is not an auctionPeriod.*
+- If last bidder is owner of `validatorId`, behavior should be similar to restake.
+- In second case unstake `validatorId` and add new user as validator from next checkpoint, for the new user behavior should be similar to stake/stakeFor.
 
 ### `checkSignatures`
 
@@ -169,7 +169,7 @@ function checkSignatures(
 - Writes are meant only for RootChain contract when submitting checkpoints
 - `voteHash` on which all validators sign (BFT $2/3+1$ agreement)
 - This function validates only unique sigs and checks for $2/3+1$ power has signed on checkpoint root (inclusion in `voteHash` verification in RootChain contract for all data) `currentValidatorSetTotalStake` provides current active stake.
-- Rewards are distributed proportionally to validator's stake. More on rewards in [Rewards Distribution](https://docs.polygon.technology/pos/how-to/operating/validator-node/#reward-distribution)
+- Rewards are distributed proportionally to validator's stake. More on rewards on the [rewards distribution](https://docs.polygon.technology/pos/how-to/operating/validator-node/#reward-distribution) page.
 <!-- (https://www.notion.so/Rewards-Distribution-127d586c14544beb9ea326fd3bb5d3a2). -->
 
 ### `isValidator`
@@ -192,7 +192,7 @@ mapping(uint256 => State) public validatorState;
 
 ## `StakingInfo`
 
-Centralized logging contract for both validator and delegation events, includes few read only functions. You can check out the source code of the [StakingInfo.sol](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/StakingInfo.sol) contract on GitHub.
+Centralized logging contract for both validator and delegation events, includes few read only functions. You can check out the source code of the [`StakingInfo.sol`](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/StakingInfo.sol) contract on GitHub.
 
 ## `ValidatorShareFactory`
 

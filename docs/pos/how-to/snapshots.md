@@ -25,7 +25,7 @@ With the [deprecation of the Mumbai testnet](https://forum.polygon.technology/t/
 To begin, ensure that your node environment meets the **prerequisites** outlined [here](../how-to/full-node/full-node-binaries.md). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. This example uses an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
 To transfer the correct chain data to your disk, follow these steps:
 
-- All one has to do is specify the network ("mainnet" or "amoy") and client type ("heimdall" or "bor" or "erigon") of your desired snapshot and run the following command:
+- Specify the network (`mainnet` or `amoy`) and client type (`heimdall` or `bor` or `erigon`) of your desired snapshot and run the following command:
 
 
 ```bash
@@ -240,7 +240,7 @@ sudo service bor start
 | approx. total extracted size | 2.1 TB (Bor) + 300 GB (Heimdall) | 2.4 TB |
 | suggested disk size (2.5x buffer) | 2.4 TB * 2.5 (natural chain growth) | 6 TB |
 
-### Polygon Amoy Erigon Archive
+### Polygon Amoy Erigon archive
 
 | Metric | Calculation Breakdown | Value |
 | ------ | --------------------- | ----------- |
@@ -253,7 +253,7 @@ sudo service bor start
 
     The PoS Network is deprecating archive node snapshots. Please move to the Erigon client and use Erigon snapshots to sync your nodes.
 
-### Polygon Mainnet Erigon Archive
+### Polygon mainnet Erigon archive
 
 Please check the hardware requirements for an Erigon mainnet archive node on the [pre-requisites page for deploying a Polygon node using Erigon](https://erigon.gitbook.io/erigon/basic-usage/getting-started#hardware-requirements).
 

@@ -1,6 +1,6 @@
-Each validator uses two keys to manage validator related activities on Polygon. The Signer key is kept on the node and is generally considered a `hot` wallet, whereas the Owner key is supposed to kept very secure, is used infrequently, and is generally considered a `cold` wallet. The staked funds are controlled by the Owner key.
+Each validator uses two keys to manage validator related activities on Polygon. The *signer* key is kept on the node and is generally considered a *hot* wallet, whereas the Owner key is supposed to kept very secure, is used infrequently, and is generally considered a *cold* wallet. The staked funds are controlled by the *owner* key.
 
-This separation of responsibilities has been done to ensure an efficient tradeoff between security and ease of use. Both keys are Ethereum compatible addresses and work exactly the same manner. And yes, it is possible to have same Owner and Signer keys.
+This separation of responsibilities has been done to ensure an efficient tradeoff between security and ease of use. Both keys are Ethereum compatible addresses and work exactly the same manner. And yes, it is possible to have same owner and signer keys.
 
 ## Signer key
 

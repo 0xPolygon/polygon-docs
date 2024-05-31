@@ -35,28 +35,28 @@ bor attach .bor/data/bor.ipc <command>
 | `heimdalld unsafe-reset-all` | Resets the database in case of issues. |
 | `curl localhost:26657/status` | Provides comprehensive information about Heimdall. |
 
-## Node Management Commands
+## Node management commands
 
 | Description                           | Command                                        |
 | ------------------------------------- | ---------------------------------------------- |
-| **Locate Heimdall genesis file**      | `$CONFIGPATH/heimdall/config/genesis.json`     |
-| **Locate heimdall-config.toml**       | `/etc/heimdall/config/heimdall-config.toml`    |
-| **Locate config.toml**                | `/etc/heimdall/config/config.toml`             |
-| **Locate heimdall-seeds.txt**         | `$CONFIGPATH/heimdall/heimdall-seeds.txt`      |
-| **Start Heimdall**                    | `$ sudo service heimdalld start`               |
-| **Start Heimdall rest-server**        | `$ sudo service heimdalld-rest-server start`   |
-| **Start Heimdall bridge-server**      | `$ sudo service heimdalld-bridge start`        |
-| **Locate Bor genesis file**           | `$CONFIGPATH/bor/genesis.json`                 |
-| **Start Bor**                         | `sudo service bor start`                       |
-| **Retrieve Heimdall logs**            | `/var/log/matic-logs/`                         |
-| **Check Heimdall logs**               | `tail -f heimdalld.log`                        |
-| **Check Heimdall rest-server logs**   | `tail -f heimdalld-rest-server.log`            |
-| **Check Heimdall bridge logs**        | `tail -f heimdalld-bridge.log`                 |
-| **Check Bor logs**                    | `tail -f bor.log`                              |
+| Locate Heimdall genesis file      | `$CONFIGPATH/heimdall/config/genesis.json`     |
+| Locate heimdall-config.toml       | `/etc/heimdall/config/heimdall-config.toml`    |
+| Locate config.toml                | `/etc/heimdall/config/config.toml`             |
+| Locate heimdall-seeds.txt         | `$CONFIGPATH/heimdall/heimdall-seeds.txt`      |
+| Start Heimdall                    | `$ sudo service heimdalld start`               |
+| Start Heimdall rest-server        | `$ sudo service heimdalld-rest-server start`   |
+| Start Heimdall bridge-server      | `$ sudo service heimdalld-bridge start`        |
+| Locate Bor genesis file           | `$CONFIGPATH/bor/genesis.json`                 |
+| Start Bor                         | `sudo service bor start`                       |
+| Retrieve Heimdall logs            | `/var/log/matic-logs/`                         |
+| Check Heimdall logs               | `tail -f heimdalld.log`                        |
+| Check Heimdall rest-server logs   | `tail -f heimdalld-rest-server.log`            |
+| Check Heimdall bridge logs        | `tail -f heimdalld-bridge.log`                 |
+| Check Bor logs                    | `tail -f bor.log`                              |
 
-## Useful Configuration Commands
+## Useful configuration commands
 
-### Sync Status of Heimdall
+### Sync Heimdall status
 
 To check if Heimdall is synced, run:
 
@@ -64,7 +64,7 @@ To check if Heimdall is synced, run:
 curl http://localhost:26657/status
 ```
 
-### Latest Block Height on Heimdall
+### Latest block height on Heimdall
 
 To check the latest block height on Heimdall, run:
 
@@ -72,7 +72,7 @@ To check the latest block height on Heimdall, run:
 curl localhost:26657/status
 ```
 
-### Latest Block Height on Bor
+### Latest block height on Bor
 
 To check the latest block height on Bor, use:
 
@@ -80,39 +80,39 @@ To check the latest block height on Bor, use:
 curl http://<your ip>:8545 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0", "id":1, "method":"bor_getSigners", "params":["0x98b3ea"]}'
 ```
 
-### Cleanup: Deleting Remnants of Heimdall and Bor
+### Cleanup: Deleting remnants of Heimdall and Bor
 
-##### For Linux package:
+##### For Linux package
 
 ```bash
 sudo dpkg -i matic-bor
 sudo rm -rf /etc/bor
 ```
 
-##### For Binaries:
+##### For binaries
 
 ```bash
 sudo rm -rf /etc/bor
 sudo rm /etc/heimdall
 ```
 
-### Terminate Bor Process
+### Terminate Bor process
 
-##### For Linux:
+##### For Linux package
 
 ```bash
 ps -aux | grep bor
 sudo kill -9 <PID>
 ```
 
-##### For Binaries:
+##### For binaries
 
 ```bash
 cd CS-2003/bor
 bash stop.sh
 ```
 
-### Retrieve Latest Peer Details
+### Retrieve latest peer details
 
 To retrieve the latest peer details, run:
 
@@ -124,16 +124,16 @@ admin.peers.forEach(function(value){
 exit
 ```
 
-### Stop Heimdall and Bor Services
+### Stop Heimdall and Bor services
 
-##### For Linux packages:
+##### For Linux packages
 
 ```bash
 sudo service heimdalld stop
 sudo service bor stop
 ```
 
-##### For Binaries:
+##### For binaries
 
 ```bash
 pkill heimdalld
@@ -142,16 +142,16 @@ cd CS-2001/bor
 bash stop.sh
 ```
 
-### Remove Heimdall and Bor Directories
+### Remove Heimdall and Bor directories
 
-##### For Linux packages:
+##### For Linux packages
 
 ```bash
 sudo rm -rf /etc/heimdall/*
 sudo rm -rf /etc/bor/*
 ```
 
-##### For Binaries:
+##### For binaries
 
 ```bash
 sudo rm -rf /var/lib/heimdalld/

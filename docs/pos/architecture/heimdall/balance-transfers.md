@@ -1,4 +1,4 @@
-Heimdall's `bank` module handles balance transfers between accounts. This module corresponds to the `bank` module from cosmos-sdk.
+Heimdall's `bank` module handles balance transfers between accounts. This module corresponds to the `bank` module from the Cosmos SDK.
 
 ## Messages
 

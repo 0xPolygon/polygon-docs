@@ -111,7 +111,7 @@ keep updating this list regularly for more convenience.
 
 #### O. Kill Bor process
 
-**For linux**:
+##### For linux
 
 1. 
 ```bash
@@ -123,7 +123,7 @@ ps -aux | grep bor
 sudo kill -9 PID
 ```
 
-**For Binaries**:
+##### For Binaries
 
 Go to 
 ```bash
@@ -137,22 +137,22 @@ bash stop.sh
 
 ### 3. `Error: Failed to unlock account (0x...) No key for given address or file`
 
-This error occurs because the path for the password.txt file is incorrect. You can follow the below steps to rectify this:
+This error occurs because the path for the `password.txt` file is incorrect. You can follow the below steps to rectify this:
 
-This error occurs because the path for the password.txt and Keystore file is incorrect. You can follow the below steps to rectify this:
+This error occurs because the path for the `password.txt` and Keystore file is incorrect. You can follow the below steps to rectify this:
 
 1. Copy the bor keystore file to
 
     `/etc/bor/dataDir/keystore`
 
-2. And password.txt to
+2. And `password.txt` to
 
     `/etc/bor/dataDir/`
 
-3. Make sure you have added correct address in `/etc/bor/metadata`
+3. Make sure you have added correct address in `/etc/bor/metadata`.
 
 
-For Binaries:
+##### For Binaries
 
 1. Copy the Bor keystore file to:
 
@@ -180,12 +180,15 @@ You can access this link: [https://infura.io/register](https://infura.io/registe
 
 Mainnet is selected by default.
 
-### 6. Heimdall isn't working. I'm getting a Panic error
+### 6. Heimdall isn't working. I'm getting a panic error
 
-**Actual Error**: My heimdalld isn’t working. In the log the first line is:
+Example: My `heimdalld` isn’t working. In the log the first line is:
+
+```bash
 panic: Unknown db_backend leveldb, expected either goleveldb or memdb or fsdb
+```
 
-Change the config to `goleveldb` in `config.toml`.
+Solution: Change the config to `goleveldb` in `config.toml`.
 
 
 ### 7. How do I delete remnants of Heimdall and Bor?
@@ -193,26 +196,26 @@ Change the config to `goleveldb` in `config.toml`.
 If you want to delete remnants of Heimdall and Bor then you can run the following commands
 Bor:
 
-For Linux package:
+##### For Linux package
 
 ```$ sudo dpkg -i matic-bor```
 
-And delete Bor Directory:
+And delete Bor Directory using:
 
 ```$ sudo rm -rf /etc/bor```
 
-For Binaries:
+##### For Binaries
 
 ```$ sudo rm -rf /etc/bor```
 
-And
+And then run:
 
 ```$ sudo rm /etc/heimdall```
 
 
 ### 8. How many validators can be active concurrently?
 
-There will be upto 100 active validators at a time. We will bring in more participants if the limit is reached mid-way through the event as well. Note that active validators is mostly those whose uptime is high. Participants with high downtime will be forced out.
+There will be up to 100 active validators at a time. We will bring in more participants if the limit is reached mid-way through the event as well. Note that active validators is mostly those whose uptime is high. Participants with high downtime will be forced out.
 
 ### 9. How much should I stake?
 
@@ -220,16 +223,17 @@ Set the `stake-amount` and `heimdall-fee-amount` values according to the logic d
 
 A minimum of 10 Matic tokens is required for the stake amount whereas heimdall fee should be greater than 10. For example, your stake amount is 400 then the heimdall fee should be 20. We suggest to keep the Heimdall fee as 20.
 
-However, please note that the values entered in stake amount and `heimdal-fee-amount` should be entered in 18 decimals
+However, please note that the values entered in stake amount and `heimdal-fee-amount` should be entered in 18 decimals.
 
 For example,
 
-    heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000000000000 --validator 0xf8d1127780b89f167cb4578935e89b8ea1de774f
-
+```bash
+heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000000000000 --validator 0xf8d1127780b89f167cb4578935e89b8ea1de774f
+```
 
 ### 10. I was selected to become a validator but my ETH address was incorrect. What do I do?
 
-If you have access to the ETH address that you submitted earlier then you can transfer the Test tokens from that account to the current account. And then you can initiate your process of setting up your nodes.
+If you have access to the ETH address that you submitted earlier then you can transfer the test tokens from that account to the current account. And then you can initiate your process of setting up your nodes.
 
 If you don't have access to that ETH address, we won't be transferring you tokens separately. You can  re-register in the form again with the correct ETH address.
 
@@ -239,10 +243,10 @@ Error: Object "start" is unknown, try "bridge help". Is it still OK to ignore th
 
 Check "which bridge" - if it's `/usr/sbin/bridge` you're not running the right "bridge" program.
 
-Try `~/go/bin/bridge` instead `(or $GOBIN/bridge)`
+Try `~/go/bin/bridge` instead `(or $GOBIN/bridge)`.
 
 
-### 12. I'm getting dpkg error
+### 12. I'm getting `dpkg` error
 
 Error: "dpkg: error processing archive matic-heimdall_1.0.0_amd64.deb (--install): trying to overwrite '/heimdalld-rest-server.service', which is also in package matic-node 1.0.0"
 
@@ -260,9 +264,11 @@ The private key to be used is your wallet's ETH address where your Polygon testn
 
 You can run the following command to check it:
 
-```$ curl [http://localhost:26657/status](http://localhost:26657/status)```
+```bash
+$ curl [http://localhost:26657/status](http://localhost:26657/status)
+```
 
-Check the value of the `catching_up` flag. If it is false then the node is all synced up.
+Check the value of the `catching_up` flag. If it is `false` then the node is all synced up.
 
 
 ### 15. If someone becomes a top 10 staker, how do they receive their MATIC reward?
@@ -285,11 +291,13 @@ The correct version of Heimdall for stage 1 should be `heimdalld version is beta
 
 A minimum of 10 Matic tokens is required for the stake amount whereas heimdall fee should be greater than 10. For example, your stake amount is 400 then the heimdall fee should be 20. We suggest to keep the Heimdall fee as 20.
 
-However, please note that the values entered in stake amount and heimdal-fee-amount should be entered in 18 decimals
+However, please note that the values entered in stake amount and `heimdal-fee-amount` should be entered in 18 decimals.
 
 For example,
 
-    heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000000000000 --validator 0xf8d1127780b89f167cb4578935e89b8ea1de774f
+```bash
+heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000000000000 --validator 0xf8d1127780b89f167cb4578935e89b8ea1de774f
+```
 
 
 ### 18. What's the difference between `/var/lib/heimdall` and `/etc/heimdall?`
@@ -301,7 +309,7 @@ For example,
 
 This error may occur because of the stake or fee amount format. The values entered during the stake command need to have 18 decimals.
 
-However, please note that the values entered in stake amount and `heimdal-fee-amount` should be entered in 18 decimals
+However, please note that the values entered in stake amount and `heimdal-fee-amount` should be entered in 18 decimals.
 
 For example,
 
@@ -317,34 +325,29 @@ We are progressively adding validators throughout the course of Stage 1 event. W
 
 ### 21. Where can I find Heimdall account info location?
 
-For binaries:
+For binaries: `/var/lib/heimdall/config folder`
 
-    /var/lib/heimdall/config folder
-
-For Linux package:
-
-    /etc/heimdall/config
+For Linux package: `/etc/heimdall/config`
 
 
 ### 22. Which file do I add the API key in?
 
-Once you have created the API key you need to add the API key in `heimdall-config.toml` file.
+Once you have created the API key, you need to add it to the `heimdall-config.toml` file.
 
 
 ### 23. Which file do I add the persistent_peers?
 
-You can add the persistent_peers in the following file:
-
-    /var/lib/heimdall/config/config.toml
+You can add the persistent_peers in the following file: `/var/lib/heimdall/config/config.toml`
 
 
 ### 24. “Did you reset Tendermint without resetting your application's data?”
 
 In such a case you can reset heimdall config data and try running the installation again.
 
-    $ heimdalld unsafe-reset-all
-    $ rm -rf $HEIMDALLDIR/bridge
-
+```bash
+$ heimdalld unsafe-reset-all
+$ rm -rf $HEIMDALLDIR/bridge
+```
 
 ### 25. Error: Unable to unmarshall config Error 1 error(s) decoding
 
@@ -385,7 +388,7 @@ Delete Heimdall: `sudo rm -rf /var/lib/heimdall/`
 
 Delete Bor: `sudo rm -rf /var/lib/bor`
 
-### 28. What to do when you get "Wrong Block.Header.AppHash." error
+### 28. What to do when you get `Wrong Block.Header.AppHash.` error
 
 If your node fails with an `appHash` error, you'll need to restore it using a snapshot. See the [guide available here](../../how-to/snapshots.md).
 

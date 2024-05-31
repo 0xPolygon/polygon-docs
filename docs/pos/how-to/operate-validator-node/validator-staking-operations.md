@@ -4,7 +4,7 @@ comments: true
 
 ## Prerequisites
 
-### Full node set up
+### Full node setup
 
 Your validator node fully set up and synced. See also: [Run a Validator Node](../validator/validator-binaries.md)
 
@@ -59,13 +59,13 @@ You can stake on Polygon using the [validator dashboard](https://staking.polygon
 
 Once the transaction is completed you will have staked successfully to become a validator. You will be asked thrice to confirm the transaction.
 
-* Approve Transaction — this will approve your stake transaction.
-* Stake — This will confirm your stake transaction.
-* Save — This will save your validator details.
+* Approve Transaction: This will approve your stake transaction.
+* Stake:This will confirm your stake transaction.
+* Save: This will save your validator details.
 
 !!! note
     
-    For the changes to take effect on the [staking dashboard](https://staking.polygon.technology/account), it requires a minimum of 12 block confirmations.
+    For the changes to take effect on the [staking dashboard](https://staking.polygon.technology/account), it requires a *minimum of 12 block confirmations*.
 
 
 ### Check the balance
@@ -76,10 +76,10 @@ To check the balance of your address:
 heimdallcli query auth account SIGNER_ADDRESS --chain-id CHAIN_ID
 ```
 
-where
+where,
 
-* SIGNER_ADDRESS — your signer address.
-* CHAIN_ID — the Polygon mainnet chain ID with the client prefix: `heimdall-137`.
+* `SIGNER_ADDRESS`: Your signer address.
+* `CHAIN_ID`: The Polygon mainnet chain ID with the client prefix: `heimdall-137`.
 
 The following output should appear:
 
@@ -101,8 +101,8 @@ To claim rewards you can go to your [validator dashboard](https://staking.polygo
 
 You will see two buttons on your profile:
 
-* Withdraw Reward
-* Restake Reward
+* **Withdraw Reward**
+* **Restake Reward**
 
 #### Withdraw Reward
 

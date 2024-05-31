@@ -189,7 +189,7 @@ Expected Result:
 checkpoint_buffer_time: 16m40s
 ```
 
-### Send Checkpoint
+### Send checkpoint
 
 Following command sends checkpoint transaction on Heimdall:
 

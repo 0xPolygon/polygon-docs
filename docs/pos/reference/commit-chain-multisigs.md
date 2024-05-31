@@ -25,8 +25,8 @@ The primary role of multi-signature wallets (multisigs) is to facilitate contrac
 
 | Multisig Address  | **$5/8$ Multisig**<br/>`0x355b8E02e7F5301E6fac9b7cAc1D6D9c86C0343f` |
 |:----------------:|---------------------------------------------------------------------|
-| Purpose          | To update custom ChildERC20s on Polygon Commitchain.                 |
-| Chain            | Polygon Commitchain                                                  |
+| Purpose          | To update custom ChildERC20s on Polygon commitchain.                 |
+| Chain            | Polygon commitchain                                                  |
 | Rights           | Ability to upgrade custom child contracts.                           |
 | Signatories      | Quickswap, Curve, Polygon, Horizon Games, Cometh                     |
 

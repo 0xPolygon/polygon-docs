@@ -2,7 +2,7 @@
 comments: true
 ---
 
-The mechanism for transferring data from Polygon to Ethereum differs from the process of transferring data from Ethereum to Polygon. Validators create *checkpoint transactions* on the Ethereum chain to facilitate this transfer. These checkpoints serve as periodic summaries of the PoS chain’s state, ensuring data integrity and consistency when moving data back to Ethereum. The flow of this process is briefly described below.
+The mechanism for transferring data from Polygon PoS to Ethereum differs from the process of transferring data from Ethereum to Polygon PoS. Validators create *checkpoint transactions* on the Ethereum chain to facilitate this transfer. These checkpoints serve as periodic summaries of the PoS chain’s state, ensuring data integrity and consistency when moving data back to Ethereum. The flow of this process is briefly described below.
 
 1. A transaction is created on Polygon PoS. It is crucial to emit an event and ensure that the event logs include the data intended for transfer to Ethereum. This process is essential for tracking and verifying the data transfer, as the event logs serve as a reliable record that can be referenced on the Ethereum network.
 2. Within a time frame of approximately 10 to 30 minutes, this transaction is check-pointed on the Ethereum chain by the validators. 
@@ -14,7 +14,7 @@ The mechanism for transferring data from Polygon to Ethereum differs from the pr
 
 - A transaction is executed on the child contract deployed on the Polygon chain.
 - An event is also emitted in this transaction. The parameters of this event includes the data which has to be transferred from Polygon PoS to Ethereum.
-- The validators on the PoS network pick up this transaction in a specific interval of time( probably 10-30mins), validate them and add them to the checkpoint on Ethereum.
+- The validators on the PoS network pick up this transaction in a specific interval of time( probably 10-30 mins), validate them and add them to the checkpoint on Ethereum.
 - A checkpoint transaction is created on the `RootChain` contract and the checkpoint inclusion can be checked using this [script](https://github.com/rahuldamodar94/matic-learn-pos/blob/transfer-matic-ethereum/script/check-checkpoint.js)
 - Once the checkpoint addition is completed, the `matic.js` library can be used to call the `exit` function of the `RootChainManager` contract. Here's an [example](https://github.com/rahuldamodar94/matic-learn-pos/blob/transfer-matic-ethereum/script/exit.js).
 - Running the script, verifies the inclusion of the Polygon transaction hash on Ethereum chain, and then in turn calls the `exitToken` function of the [predicate](https://github.com/rahuldamodar94/matic-learn-pos/blob/transfer-matic-ethereum/contracts/CustomPredicate.sol) contract.
@@ -27,7 +27,7 @@ The mechanism for transferring data from Polygon to Ethereum differs from the pr
 
 This is a simple demonstration of how data can be transferred from Polygon PoS to Ethereum. This tutorial shows an example of transferring a `uint256` value across the chain. But you can transfer any type of data. However, it is necessary to encode the data in bytes and then emit it from the child contract, which can finally be decoded by the root contract.
 
-First, create the root chain and child chain contract. Ensure that the function that does the state change also emits an event. This event must include the data to be transferred as one of its parameters. A sample format of how the Child and Root contract must look like is given below. This is a very simple contract that has a data variable whose value is set by using a setData function. Calling the setData function emits the Data event. Rest of the things in the contract will be explained in the upcoming sections of this tutorial.
+First, create the root chain and child chain contract. Ensure that the function that does the state change also emits an event. This event must include the data to be transferred as one of its parameters. A sample format of how the child and root contract must look like is given below. This is a very simple contract that has a data variable whose value is set by using a `setData` function. Calling the `setData` function emits the `Data` event. Rest of the things in the contract will be explained in the upcoming sections of this tutorial.
 
 ```jsx title="Child contract"
 contract Child {
@@ -68,7 +68,7 @@ contract Root {
 }
 ```
 
-Once the child and root contract is deployed on the Polygon and Ethereum chain respectively, these contracts have to be mapped using the PoS bridge. This mapping ensures that a connection is maintained between these two contracts across the chains. For doing this mapping,the Polygon team can be reached on [discord](https://discord.com/invite/0xPolygon).
+Once the child and root contract is deployed on the Polygon and Ethereum chain respectively, these contracts have to be mapped using the PoS bridge. This mapping ensures that a connection is maintained between these two contracts across the chains. For doing this mapping,the Polygon team can be reached on [Discord](https://discord.com/invite/0xPolygon).
 
 One important thing to note is that in the root contract, there is a `onlyPredicate` modifier. It is recommended to use this modifier always because it ensures that only the predicate contract makes the state change on the root contract. The predicate contract is a special contract that triggers the root contract only when the transaction that happened on the Polygon PoS chain is verified by the `RootChainManager` on Ethereum chain. This ensures secure change of state on the root contract.
 

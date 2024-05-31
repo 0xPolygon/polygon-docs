@@ -49,16 +49,16 @@ Here are a few instructions on how to configure ports for sentry and validator n
 
 This guide will walk you through running a Polygon validator node from binaries.
 
-For system requirements, follow the [Validator Node System Requirements](./validator-system-requirements.md) guide.
+For system requirements, follow the [validator node system requirements](./validator-system-requirements.md) guide.
 
-!!!caution
+!!! warning
     
     There is limited space for accepting new validators. New validators can only join the active set when an already active validator unbonds.
 
 
 ## Prerequisites
 
-* Two machines — one sentry and one validator.
+* Two machines - one sentry and one validator.
 * `build-essential` installed on both the sentry and the validator machines.
 
   To install:
@@ -90,7 +90,8 @@ For system requirements, follow the [Validator Node System Requirements](./valid
   ```
 
   
-!!!tip
+!!! tip "Download RabbitMQ"
+
     Check more information about downloading and installing RabbitMQ [<ins>here</ins>](https://www.rabbitmq.com/download.html).
 
 
@@ -99,7 +100,7 @@ For system requirements, follow the [Validator Node System Requirements](./valid
 
 To set up a running validator node, follow these steps in the *exact sequence*:
 
-!!! caution
+!!! warning
 
     Performing these steps out of sequence may lead to configuration issues. It's crucial to note that setting up a sentry node must always *precede* the configuration of the validator node.
 
@@ -114,7 +115,7 @@ To set up a running validator node, follow these steps in the *exact sequence*:
 9. Start the validator node.
 10. Check node health with the community.
 
-## Installing the Binaries
+## Installing the binaries
 
 Polygon node consists of 2 layers: Heimdall and Bor. Heimdall is a tendermint fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
 
@@ -185,7 +186,7 @@ bor version
     Before proceeding, Bor should be installed on both the sentry and validator machines.
 
 
-## Configuring the Sentry Node
+## Configuring the sentry node
 
 Start by logging in to the remote sentry machine.
 
@@ -226,7 +227,7 @@ In `config.toml`, change the following parameters:
 
 Save the changes in `config.toml`.
 
-### Configuring the Bor Service
+### Configuring the Bor service
 
 Open the Bor configuration file for editing:
 
@@ -251,7 +252,7 @@ The sentry machine must have the following ports open to the world `0.0.0.0/0`:
 
 * `30303`- Your Bor service will connect your node to other nodes Bor service.
 
-## Starting the Sentry Node
+## Starting the sentry node
 
 You will first start the Heimdall service. Once the Heimdall service syncs, you will start the Bor service.
 
@@ -273,7 +274,8 @@ Start the Heimdall service:
 sudo service heimdalld start
 ```
 !!!note
-    The heimdall-rest service starts along with heimdall.
+
+    The `heimdall-rest` service starts along with heimdall.
 
     Check the Heimdall service logs:
 
@@ -291,7 +293,7 @@ sudo service heimdalld start
 
     These logs mean that one of the nodes on the network refused a connection to your node.
 
-    Wait for your node to crawl more nodes on the network; you do not need to do anything to address these errors.
+    Wait for your node to crawl more nodes on the network; you do not need to do anything manually to address these errors.
 
 
 Check the sync status of Heimdall:
@@ -302,8 +304,8 @@ curl localhost:26657/status
 
 In the output, the `catching_up` value is:
 
-* `true` — the Heimdall service is syncing.
-* `false` — the Heimdall service is fully synced.
+* `true`: The Heimdall service is syncing.
+* `false`: The Heimdall service is fully synced.
 
 Wait for the Heimdall service to sync fully.
 
@@ -323,9 +325,9 @@ Check the Bor service logs:
 journalctl -u bor.service -f
 ```
 
-## Configuring the Validator Node
+## Configuring the validator node
 
-!!!note
+!!! note
     
     To complete this section, you must have an RPC endpoint of your fully synced Ethereum mainnet node ready.
 
@@ -384,8 +386,8 @@ To get the Node ID of Bor on the sentry machine:
 
 On Polygon, it is recommended that you keep the owner and signer keys different.
 
-* Signer — the address that signs the checkpoint transactions. The recommendation is to keep at least 1 ETH on the signer address.
-* Owner — the address that does the staking transactions. The recommendation is to keep the MATIC tokens on the owner address.
+* Signer: The address that signs the checkpoint transactions. It is advisable to keep at least 1 ETH on the signer address.
+* Owner: The address that does the staking transactions. It is advisable to keep the MATIC tokens on the owner address.
 
 ### Generating a Heimdall private key
 
@@ -398,12 +400,9 @@ To generate the private key, run:
 heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
 ```
 
-where
+where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s private key.
 
-* ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s private key.
-
-This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration
-directory:
+This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration directory:
 
 ```sh
 mv ./priv_validator_key.json  /var/lib/heimdall/config
@@ -420,9 +419,7 @@ To generate the private key, run:
 heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
 ```
 
-where
-
-* ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s private key.
+where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s private key.
 
 When prompted, set up a password to the keystore file.
 
@@ -434,7 +431,7 @@ Move the generated keystore file to the Bor configuration directory:
 mv ./UTC-<time>-<address> /var/lib/bor/data/keystore
 ```
 
-### Add password.txt
+### Add `password.txt`
 
 Make sure to create a `password.txt` file, then add the Bor keystore file password right in the
 `/var/lib/bor/password.txt` file.
@@ -458,7 +455,7 @@ Open `config.toml` for editing: `vi /var/lib/bor/config.toml`.
     
     Please ensure that `priv_validator_key.json` & `UTC-<time>-<address>` files have relevant permissions. To set relevant permissions for `priv_validator_key.json`, run `sudo chown -R heimdall:nogroup /var/lib/heimdall/config/priv_validator_key.json` and similarly `sudo chown -R heimdall:nogroup /var/lib/bor/data/keystore/UTC-<time>-<address>` for `UTC-<time>-<address>`.
 
-## Starting the Validator Node
+## Starting the validator node
 
 At this point, you must have:
 
@@ -496,15 +493,14 @@ sudo service heimdalld start
 
 In the output, the `catching_up` value is:
 
-* `true` — the Heimdall service is syncing.
-* `false` — the Heimdall service is synced.
+* `true`: The Heimdall service is syncing.
+* `false`: The Heimdall service is synced.
 
 Wait for the Heimdall service to fully sync.
 
 ### Starting the Bor service
 
-Once the Heimdall service on the validator machine syncs, start the Bor service on
-the validator machine.
+Once the Heimdall service on the validator machine syncs, start the Bor service on the validator machine.
 
 Start the Bor service:
 
@@ -541,17 +537,17 @@ journalctl -u bor.service -f
   ```
 
 
-## Health Checks with the Community
+## Health checks with the Community
 
 Now that your sentry and validator nodes are in sync and running, head over to
 [Discord](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes.
 
 !!! note
     
-    As validators, it’s mandatory to always have a check of the signer address. If the ETH balance reaches below 0.5 ETH then it should be refilled. Avoiding this will push out nodes from submitting checkpoint transactions.
+    As validators, it’s mandatory to always have a check of the signer address. If the ETH balance reaches below *0.5 ETH* then it should be refilled. Avoiding this will push out nodes from submitting checkpoint transactions.
 
 
-## Next Steps: Staking
+## Next steps: Staking
 
 Now that you have your sentry and validator nodes are health-checked, proceed to
 the [Staking](../../how-to/operate-validator-node/validator-staking-operations.md) guide to start backing the network.

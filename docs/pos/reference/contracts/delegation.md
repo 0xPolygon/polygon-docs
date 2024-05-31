@@ -55,7 +55,7 @@ function sellVoucher() public;
 - Must remove active stake from timeline using `updateValidatorState` in stakeManger.
 - `delegators` mapping is used to keep track of stake in withdrawal period.
 
-### withdrawRewards
+### `withdrawRewards`
 
 ```js
 function withdrawRewards() public;
@@ -66,7 +66,7 @@ function withdrawRewards() public;
 
 ### `reStake`
 
-Restake can work in two ways: delegator can buy more shares using `buyVoucher` or reStake rewards.
+Restake can work in two ways: delegator can buy more shares using `buyVoucher` or `reStake` rewards.
 
 ```js
 function reStake() public;

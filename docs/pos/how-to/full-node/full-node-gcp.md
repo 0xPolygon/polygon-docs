@@ -99,7 +99,7 @@ It will take a couple of minutes to install all the required software and a coup
    journalctl -fu heimdalld
    ```
 
-!!!note
+!!! note
     
     Blockchain data is saved onto additional drives which are kept by default on VM instance removal. You need to remove additional disks manually if you don't need this data anymore.
 

@@ -9,10 +9,12 @@ comments: true
 A bad block or invalid Merkle root error occurs when the Heimdall and Bor layers are not in sync. Heimdall, as the consensus layer for Polygon POS chain, directs Bor to create blocks accordingly. A bad block error occurs when the Bor moves ahead to create a block which has not been directed by Heimdall. This causes an invalid hash being created, and hence results in an invalid Merkle root.
 
 ##### Solution 1
-    Restart the Bor service by using the following command,
-    ```bash
-        sudo service bor restart
-    ```
+
+Restart the Bor service by using the following command:
+
+```bash
+    sudo service bor restart
+```
 
 Typically a restart of the Bor service should resolve the problem, and that's because restarting causes Bor to reconnect with Heimdall, start syncing, and create blocks correctly.
 
@@ -26,7 +28,7 @@ Make the following checks.
 
     The Heimdall service might have stopped, and thus causing the bad block issue on Bor.
 
-- Check the logs for your Heimdall first,
+- Check the logs for your Heimdall first using the following command:
 
     ```bash
         journalctl -u heimdalld -f
@@ -34,7 +36,7 @@ Make the following checks.
 
 - Check if everything is working correctly.
 
-- Additionally, check your REST server logs,
+- Additionally, check your REST server logs using:
 
     ```bash
         journalctl -u heimdalld-rest-server -f
@@ -45,17 +47,16 @@ Make the following checks.
     This should cause Bor to automatically resolve the problem
     
 
-If restarting both the Bor and Heimdall services doesn't solve the problem, it could be that Bor is stuck on some block.
+If restarting both the Bor and Heimdall services doesn't solve the problem, it could be that Bor is stuck on a particular block.
 
 ##### Solution 3 
 
 Check the bad block in logs for Bor.
 
-- Check Bor logs with this command
+- Check Bor logs with this command:
     ```bash
         journalctl -u bor -f
     ```
-
     The bad block is typically displayed in the logs as shown in the below figure:
 
 ![Figure: Bad block](../../../img/pos/bad_block.png)
@@ -68,11 +69,11 @@ Check the bad block in logs for Bor.
     Use this [tool](https://www.rapidtables.com/convert/number/decimal-to-hex.html) to convert the block number to a hexadecimal number. 
 
 
-- Roll back the Blockchain by a few hundred blocks. That is, set Bor at the right block height, with the `debug.setHead()` function. Use the following command
+- Roll back the Blockchain by a few hundred blocks. That is, set Bor at the right block height, with the `debug.setHead()` function. Use the following command:
 
 ```bash
-    bor attach ./.bor/data/bor.ipc
-    > debug.setHead("0xE92570")
+bor attach ./.bor/data/bor.ipc
+> debug.setHead("0xE92570")
 ```
 
 The `debug.setHead()` function allows Bor to set the tip at a particular block height, resyncing from a previous block.
@@ -85,7 +86,7 @@ If none of these solutions works for you, please contact the Polygon Support tea
 
 If the node throws these logs, check the following:
 
-- Check if the Bor node is in sync by running the following command
+- Check if the Bor node is in sync by running the following command:
 
     ```bash
     bor attach .bor/data/bor.ipc
@@ -94,7 +95,7 @@ If the node throws these logs, check the following:
 
     If the output is "false", then the Bor node is in sync.
 
-- Check if the Bor node is on the wrong fork by running this command
+- Check if the Bor node is on the wrong fork by running this command:
 
     ```bash
     bor attach .bor/data/bor.ipc
@@ -125,7 +126,7 @@ If you're still encountering the error, after either updating to the latest seed
 
 2. Stop `heimdalld` service: ```sudo service heimdalld stop```
 
-3. Clear your `addrbook`
+3. Clear your `addrbook` using the following command:
     
     ```
     sudo service heimdalld stop
@@ -140,10 +141,10 @@ If you're still encountering the error, after either updating to the latest seed
     max_num_outbound_peers = 100
     ```
 
-5. Start `heimdalld` service with the following command
+5. Start `heimdalld` service with the following command:
     
     ```bash
-        sudo service heimdalld start
+    sudo service heimdalld start
     ```
     
 
@@ -197,11 +198,11 @@ You can find a list of Infra Providers, on the navbar, that validators can make 
 
 ##### Description
 
-First of all, your node not signing checkpoints could be for a multiple reasons.
+First of all, your node not signing checkpoints could be due to multiple reasons.
 
 ##### Solution 1
 
-First check if your Heimdall service is running correctly on your Sentry and Validator node. If the service has stopped abruptly or see any errors, try restarting your Heimdall service and see it comes back to normal.
+First check if your Heimdall service is running correctly on your sentry and validator node. If the service has stopped abruptly or see any errors, try restarting your Heimdall service and see it comes back to normal.
 
 ##### Solution 2
 
@@ -211,16 +212,16 @@ Check your Bor service and see if it has halted abruptly or there are any errors
 
 Check if your Heimdall Bridge is running or not or if it has any errors in the logs. Try restarting the service and see if the issue resolves.
 
-### Issue: Validator Heimdall is unable to connect to Peers
+### Issue: Validator Heimdall is unable to connect to peers
 
 ##### Description
 
-This typically means that your Sentry Heimdall is running into issues.
+This typically means that your sentry Heimdall is running into issues.
 
 ##### Solution
 
-- Check your Sentry Heimdall and see if the service is running fine.
-- If the service is stopped then restarting the service on your Sentry should resolve this issue.
+- Check your sentry Heimdall and see if the service is running fine.
+- If the service is stopped then restarting the service on your sentry node should resolve this issue.
 - Similarly, after fixing your sentry, a restart of your Heimdall service should also resolve the problem.
 
 ### Error: Error while fetching mainchain receipt error
@@ -238,17 +239,17 @@ This means that your Bor on your Sentry is also stuck because your Validator get
 ##### Solution
 
 - Please check your Bor logs on your sentry and see if everything is okay.
-- Probably restart the Bor service first on your Bor and then simultaneously restart the Bor service on your Validator as well.
+- Probably restart the Bor service first on your Bor and then simultaneously restart the Bor service on your validator as well.
 
 ### Error: (in Bor) "Failed to prepare header mining at block 0"
 
 ##### Description
 
-This happens because of a formatting issue in your `static-nodes.json` file (/var/lib/bor/data/bor/static-nodes.json).
+This happens because of a formatting issue in your `static-nodes.json` file *(/var/lib/bor/data/bor/static-nodes.json)*.
 
 ##### Solution
 
-- Ensure there are no space and no additional characters like < / > .
+- Ensure there are no space and no additional characters like '<', '/', or '>'.
 - If you have made any changes to the file then please restart your Bor service and you should see logs printing.
 
 ### Error: "30303" or invalid command
@@ -264,9 +265,10 @@ Ensure that you follow all the steps from the guide setup.
 ### Error: Impossible reorg, please file an issue
 
 ##### Description
+
 Let these logs be. Your node should ideally not suffer because of this and the issue should be automatically resolved.
 
-If your node is suffering because of this, please contact the support team immdiately.
+If your node is suffering because of this, please contact the support team immediately.
 
 ### Error: "Host not found" while setting up a node using Ansible
 
@@ -279,47 +281,48 @@ Correct them with proper indentation and then try again.
 ### Issue: "Dialling failed" in Heimdall
 
 ##### Description
+
 This is related to connectivity and more specifically a port related problem.
 
 ##### Solution
 
 - Check to `curl localhost:26657/status` still shows the same block.
-- Try a Heimdall Restart.
+- Try a Heimdall restart.
 - Make sure that the connectivity to this port 26656 is open.
 - Try adding additional peers in vi /var/lib/heimdall/config/config.toml
 - Set `max_open_connection` parameter to 100.
 
-### Issue: Looking for Peers or Stopping Peer for error
+### Issue: Looking for peers or stopping peer for error
 
 ##### Solution
 
-- open the `config.toml` file on your Sentry node.
+- Open the `config.toml` file on your sentry node. The file can be found at the following path:
 
     `/var/lib/heimdall/config/config.toml`
 
-- And then find the parameter `external_address`. Once you find it this what you should be updating it with
+- And then find the parameter `external_address`. Once you find it this what you should be updating it with:
 
     `tcp://<my_elastic_ip>:26656`
 
-- Where `my_elastic_ip` is your Sentry’s public IP
+- Here `my_elastic_ip` is your sentry’s public IP.
 
 - Once you have updated this, all you need to do is restart your Heimdall service on your Sentry
 
     `sudo service heimdalld restart`
 
-- Ensure that you’re only doing this on your sentry only.
+- Double-check to ensure that you’re performing these operations on your sentry node.
 
 Follow the below steps for adding additional peers in  `vi /var/lib/heimdall/config/config.toml`
 
-- Stop heimdalld service
+- Stop `heimdalld` service
 
-    ```
+    ```bash
     sudo service heimdalld stop
     ```
 
 - Clear your `addrbook`
 
-    ```
+    ```bash
     sudo service heimdalld stop
     cp /var/lib/heimdall/config/addrbook.json /var/lib/heimdall/config/addrbook.json.bkp
     rm /var/lib/heimdall/config/addrbook.json
@@ -327,20 +330,20 @@ Follow the below steps for adding additional peers in  `vi /var/lib/heimdall/con
 
 - Increase `max_num_inbound_peers` and `max_num_outbound_peers` in `/var/lib/heimdall/config/config.toml`:
 
-    ```
+    ```toml
     max_num_inbound_peers = 300
     max_num_outbound_peers = 100
     ```
 
 - Start heimdalld service:
 
-    ```
+    ```bash
     sudo service heimdalld start
     ```
 
 ### Error: Error while fetching data from URL
 
-##### Error sample
+##### Sample error
 
 ```bash
 module=span service=processor error="Error while fetching data from url:
@@ -357,8 +360,8 @@ Then the Heimdall Bridge needs a restart.
 
 ##### Solution
 
-1. Get the right configs from Github and copy them to `/var/lib/heimdall/config` and
-2.  Please reset heimdall using `heimdalld unsafe-reset-all`.
+1. Get the right configs from Github and copy them to `/var/lib/heimdall/config`.
+2. Reset heimdall using `heimdalld unsafe-reset-all`.
 
 ### Issue: Problems in starting Bor
 
@@ -471,7 +474,7 @@ These logs throw up when there is no enough ETH in your signer wallet.
 ##### Solution
 It is recommended to have 1 ETH in your signer wallet but can keep .5 to .75 in case you check it often enough.
 
-### Heimdall:  No staking sequence exists: %s %s             module=staking
+### Heimdall:  No staking sequence exists: module=staking
 
 If the following logs are found on a large frequency on Heimdall then this issue is related to the bridge service resetting the bridge directory fixes this issue.
 
@@ -492,16 +495,14 @@ So the recommended procedure would be to clear the historical data of both Heimd
 Ensure the following is fine:
 
 1. Heimdall logs are normal or is it throwing up any errors?
-
 2. Ensure Heimdall is fully synced by running: ```curl localhost:26657/status```
-
 3. Also ensure whether Heimdall is connected with the other peers.
 
 ```bash
 curl localhost:26657/net_info? | jq .result.n_peers
 ```
 
-If there aren’t any peers, check whether the **seeds or persistent peers are rightly set on Heimdall** and **ensure Port 26656 is all open**.
+If there aren’t any peers, check whether the *seeds or persistent peers are rightly set on Heimdall* and *ensure Port 26656 is all open*.
 
 ##### Reset Heimdall
 
@@ -510,7 +511,7 @@ sudo service heimdalld stop
 heimdalld unsafe-reset-all
 ```
 
-##### Sync Heimdall from Snapshot
+##### Sync Heimdall using a snapshot
 
 ```bash
 wget -c <Snapshot URL>
@@ -521,24 +522,23 @@ tar -xzvf <snapshot file> -C <HEIMDALL_DATA_DIRECTORY>
 
 To fix this issue, the signer address that is used to mine must be added inside `miner.etherbase` section in the `config.toml` file.
 
-### Steps to Prune the node
+### Steps to prune the node
 
 Please use the below steps:
 
-1. Check your Bor data size before pruning
+1. Check your Bor data size before pruning using the following command:
     
     ```bash
     du -sh /usr/bin/bor
     ```
 
-2. Stop Bor
+2. Stop Bor.
     
     ```bash
     sudo service bor stop
     ```
 
-3. Start `tmux` to ensure that even if your SSH connection is reset, the process is running on the remote machine
-`tmux`.
+3. Start `tmux` to ensure that even if your SSH connection is reset, the process is running on the remote machine using `tmux`.
 
 4. Start pruning.
     
@@ -548,14 +548,14 @@ Please use the below steps:
 
     The default --datadir is `/usr/bin/bor`.
 
-5. Once the pruning is completed, you will see success logs and details. Then start Bor again.
+5. Once the pruning is completed, you will see success logs and details. Then start Bor again using:
     
     ```bash
     sudo service bor start
     ```
 
 
-6. Check your Bor data size after pruning.
+6. Check your Bor data size after pruning using:
     
     ```bash
     du -sh  /usr/bin/bor

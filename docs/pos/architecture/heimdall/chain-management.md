@@ -47,7 +47,7 @@ Use the following command to print all params:
 heimdallcli query chainmanager params --trust-node
 ```
 
-### Expected result
+Expected result:
 
 ```yaml
 tx_confirmation_time: 12s

@@ -2,13 +2,13 @@
 comments: true
 ---
 
-Polygon validators continuously monitor a contract on Ethereum chain called `StateSender`. Each time a registered contract on Ethereum chain calls this contract, it emits an event. Using this event Polygon validators relay the data to another contract on Polygon chain. This **State Sync** mechanism is used to send data from Ethereum to Polygon.
+Polygon validators continuously monitor a contract on Ethereum chain called `StateSender`. Each time a registered contract on Ethereum chain calls this contract, it emits an event. Using this event Polygon validators relay the data to another contract on Polygon chain. This *state sync* mechanism is used to send data from Ethereum to Polygon.
 
 Additionally, Polygon validators send the transaction hash, namely *checkpoint*, of each transaction on the PoS chain to Ethereum on a regular basis. You can use this to validate any transaction that took place on Polygon. Once a transaction has been verified to have occurred on the PoS chain, the corresponding action can then be executed on Ethereum.
 
 These two mechanisms can be used together to enable two-way data (state) transfer between Ethereum and Polygon. To abstract out all these interactions, you can directly inherit our `FxBaseRootTunnel` (on Ethereum) and `FxBaseChildTunnel` (on Polygon) contracts.
 
-## Root Tunnel Contract
+## Root tunnel contract
 
 Use the `FxBaseRootTunnel` contract from [here](https://github.com/jdkanani/fx-portal/blob/main/contracts/tunnel/FxBaseRootTunnel.sol). This contract gives access to the following functions:
 
@@ -16,7 +16,7 @@ Use the `FxBaseRootTunnel` contract from [here](https://github.com/jdkanani/fx-p
 - `_sendMessageToChild(bytes memory message)`: This function can be called internally with any bytes data as a message. This data will be sent as it is to the child tunnel.
 - `receiveMessage(bytes memory inputData)`: This function needs to be called to receive the message emitted by `ChildTunnel`. The proof of transaction needs to be provided as calldata. An example script to generate proof using the *matic.js* SDK is included below.
 
-## Child Tunnel Contract
+## Child tunnel contract
 
 Use the `FxBaseChildTunnel` contract from [here](https://github.com/jdkanani/fx-portal/blob/main/contracts/tunnel/FxBaseChildTunnel.sol). This contract gives access to following functions:
 
@@ -38,16 +38,16 @@ You need to inherit `FxBaseRootTunnel` contract in your root contract on Ethereu
 
 ## State tunnel sample contracts
 
-- **Contracts**: [Fx-Portal Github Repository](https://github.com/jdkanani/fx-portal/tree/main/contracts/tunnel)
-- **Sepolia:** [0x1707157b9221204869ED67705e42fB65e026586c](https://sepolia.etherscan.io/address/0x1707157b9221204869ED67705e42fB65e026586c)
-- **Amoy:** [0xf5D2463d0176462d797Afcd57eC477b7B0CcBE70](https://amoy.polygonscan.com/address/0xf5D2463d0176462d797Afcd57eC477b7B0CcBE70)
+- Contracts: [Fx-Portal Github Repository](https://github.com/jdkanani/fx-portal/tree/main/contracts/tunnel)
+- Sepolia: [0x1707157b9221204869ED67705e42fB65e026586c](https://sepolia.etherscan.io/address/0x1707157b9221204869ED67705e42fB65e026586c)
+- Amoy: [0xf5D2463d0176462d797Afcd57eC477b7B0CcBE70](https://amoy.polygonscan.com/address/0xf5D2463d0176462d797Afcd57eC477b7B0CcBE70)
 
-## State Transfer from Ethereum &rarr; Polygon
+## State Transfer from Ethereum to Polygon
 
 - You need to call `_sendMessageToChild()` internally in your root contract and pass the data as an argument to be sent to Polygon. Example: [0x00a1aa71593fec825b4b1ce1081b5a9848612fb21f9e56def2914b483f5f34f5](https://sepolia.etherscan.io/tx/0x00a1aa71593fec825b4b1ce1081b5a9848612fb21f9e56def2914b483f5f34f5)
 - In your child contract, implement `_processMessageFromRoot()` virtual function in `FxBaseChildTunnel` to retrieve data from Ethereum. The data will be received automatically from the state receiver when the state is synced.
 
-## State Transfer from Polygon &rarr; Ethereum
+## State Transfer from Polygon to Ethereum
 
 1. Call `_sendMessageToRoot()` internally in your child contract with data as a parameter to be sent to Ethereum. Note down the transaction hash as it will be used to generate the proof after the transaction has been included as a checkpoint.
 
@@ -61,10 +61,9 @@ You need to inherit `FxBaseRootTunnel` contract in your root contract on Ethereu
 Here, 
 
 - `burnTxHash` is the transaction hash of the `_sendMessageToRoot()` transaction you initiated on Polygon.
-- `eventSignature` is the event signature of the event emitted by the `_sendMessageToRoot()` function. The event signature for the MESSAGE_SENT_EVENT_SIG is `0x8c5261668696ce22758910d05bab8f186d6eb247ceac2af2e82c7dc17669b036`.
+- `eventSignature` is the event signature of the event emitted by the `_sendMessageToRoot()` function. The event signature for the `MESSAGE_SENT_EVENT_SIG` is `0x8c5261668696ce22758910d05bab8f186d6eb247ceac2af2e82c7dc17669b036`.
 
 Here's an example of [how to use the proof generation API](https://proof-generator.polygon.technology/api/v1/matic/exit-payload/0x70bb6dbee84bd4ef1cd1891c666733d0803d81ac762ff7fdc4726e4525c1e23b?eventSignature=0x8c5261668696ce22758910d05bab8f186d6eb247ceac2af2e82c7dc17669b036).
 
 1. Implement `_processMessageFromChild()` in your root contract.
-
 2. Use the generated proof as an input to `receiveMessage()` to retrieve data sent from child tunnel into your contract.

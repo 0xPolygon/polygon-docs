@@ -157,7 +157,7 @@ Expected output:
 }
 ```
 
-### Query span by id
+### Query span by ID
 
 ```bash
 heimdallcli query bor span --span-id <span-id> --chain-id <heimdall-chain-id>
@@ -167,7 +167,7 @@ It prints the result in same format as above.
 
 ### Parameters
 
-To print all params;
+Use the following command to print all params:
 
 ```go
 heimdalldcli query bor params

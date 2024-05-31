@@ -19,12 +19,12 @@ This deployment guide walks you through starting and running a full node through
     
     It's crucial to follow the outlined sequence of actions precisely; deviating from it may result in encountering issues.
 
-- Prepare the machine
-- Install Heimdall and Bor binaries on the full node machine
-- Set up Heimdall and Bor services on the full node machine
-- Configure the full node machine
-- Start the full node machine
-- Check node health with the community
+- Prepare the machine.
+- Install Heimdall and Bor binaries on the full node machine.
+- Set up Heimdall and Bor services on the full node machine.
+- Configure the full node machine.
+- Start the full node machine.
+- Check node health with the community.
 
 
 ### Install `build-essential`
@@ -38,7 +38,7 @@ sudo apt-get install build-essential
 
 ## Install binaries
 
-Polygon node consists of 2 layers: Heimdall and Bor. Heimdall is a tendermint fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
+Polygon node consists of 2 layers: Heimdall and Bor. Heimdall is a Tendermint fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
 
 Both binaries must be installed and run in the correct order to function properly.
 
@@ -69,7 +69,7 @@ curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh 
 
 You can run the above command with following options:
 
-- `heimdall_version`: valid v1.0+ release tag from https://github.com/maticnetwork/heimdall/releases
+- `heimdall_version`: Valid v1.0+ release tag from https://github.com/maticnetwork/heimdall/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
@@ -141,8 +141,8 @@ sudo service heimdalld start
     Ensure that Heimdall is fully synced before starting Bor. Initiating Bor without complete synchronization of Heimdall may lead to frequent issues.
 
 To check if Heimdall is synced:
-  1. On the remote machine/VM, run `curl localhost:26657/status`
-  2. In the output, `catching_up` value should be `false`
+  1. On the remote machine/VM, run `curl localhost:26657/status`.
+  2. In the output, `catching_up` value should be `false`.
 
 Once Heimdall is synced, run the following command:
 
@@ -160,13 +160,13 @@ Logs can be managed by the `journalctl` linux tool. Here is a tutorial for advan
 journalctl -u heimdalld.service -f
 ```
 
-### Check Heimdall rest-server logs
+### Check Heimdall REST-server logs
 
 ```bash
 journalctl -u heimdalld-rest-server.service -f
 ```
 
-### Check Bor rest-server logs
+### Check Bor REST-server logs
 
 ```bash
 journalctl -u bor.service -f

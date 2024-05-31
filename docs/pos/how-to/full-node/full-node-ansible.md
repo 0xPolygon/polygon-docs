@@ -6,13 +6,13 @@ An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playboo
 
 ## Prerequisites
 
-- Install Ansible on your local machine with Python3.x. The setup will not work if you have Python2.x.
+- Install Ansible on your local machine with Python3.x. The setup will not work if you have Python 2.x.
     - To install Ansible with Python 3.x, you can use pip. If you do not have pip on your machine,
       follow the steps outlined [here](https://pip.pypa.io/en/stable/). Run `pip3 install ansible` to install
       Ansible.
 - Check the [Polygon PoS Ansible repository](https://github.com/maticnetwork/node-ansible#requirements) for
   requirements.
-- You will also need to ensure that Go is **not installed** in your environment. You will run into issues if you attempt to set up your full node through Ansible with Go installed as Ansible requires specific packages of Go to be installed.
+- You will also need to ensure that Go is *not installed* in your environment. You will run into issues if you attempt to set up your full node through Ansible with Go installed as Ansible requires specific packages of Go to be installed.
 - You will also need to make sure that your VM / Machine does not have any previous setups for Polygon Validator or Heimdall or Bor. You will need to delete them as your setup will run into issues.
 
 !!! info "Heimdall source enhancements"
@@ -120,7 +120,7 @@ Logs can be managed by the `journalctl` linux tool. Here is a tutorial for advan
 journalctl -u heimdalld.service -f
 ```
 
-### Check Bor Rest-server logs
+### Check Bor REST-server logs
 
 ```bash
 journalctl -u bor.service -f
@@ -128,6 +128,6 @@ journalctl -u bor.service -f
 
 ## Ports and firewall setup
 
-Open ports 22, 26656 and 30303 to world (0.0.0.0/0) on sentry node firewall.
+Open ports `22`, `26656` and `30303` to world (0.0.0.0/0) on sentry node firewall.
 
 You can use VPN to restrict access for port 22 as per your requirement and security guidelines.

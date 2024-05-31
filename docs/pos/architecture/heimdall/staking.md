@@ -4,7 +4,7 @@ Staking module manages validator related transactions and state for Heimdall. No
 
 ## Messages
 
-![](../../../img/pos/stake-management-flow.png)
+![Stake management flow](../../../img/pos/stake-management-flow.png)
 
 ### `MsgValidatorJoin`
 
@@ -51,7 +51,7 @@ type MsgValidatorJoin struct {
 
 ### `MsgStakeUpdate`
 
-`MsgStakeUpdate` handles the stake update when a validator the re-stakes or new delegation comes in. In either case, the new `StakeUpdate` event is emitted.
+`MsgStakeUpdate` handles the stake update when a validator re-stakes, or a new delegation comes in. The new `StakeUpdate` event is emitted in both cases.
 
 ```jsx
 /**
@@ -80,7 +80,7 @@ type MsgStakeUpdate struct {
 
 ### `MsgValidatorExit`
 
-`MsgValidatorExit` handles the validator exit process after a validator initiates the exit process on Ethereum. It emits `SignerUpdate` event.
+`MsgValidatorExit` handles the validator exit process after a validator initiates the exit process on Ethereum. It emits the `SignerUpdate` event.
 
 ```jsx
 /**
@@ -196,7 +196,7 @@ This command should display the following output:
 
 ### Validator join
 
-This command sends validator join command through CLI:
+This command sends `validator-join` command through CLI:
 
 ```bash
 heimdallcli tx staking validator-join \
@@ -206,7 +206,7 @@ heimdallcli tx staking validator-join \
  --chain-id <chain-id>
 ```
 
-`tx-hash` value must be the same as Ethereum TX hash which emitted `Staked` event and `log-index` must be the same at which index the event is emitted.
+`tx-hash` value must be the same as Ethereum transaction hash which emitted `Staked` event, and `log-index` must be the same as the index at which the event is emitted.
 
 ## REST APIs
 

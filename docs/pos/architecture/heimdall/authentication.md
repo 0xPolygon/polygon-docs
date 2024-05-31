@@ -91,7 +91,7 @@ Use the following command to print account related data into Heimdall:
 heimdalld show-account
 ```
 
-Expected Result:
+Expected result:
 
 ```json
 {
@@ -102,13 +102,13 @@ Expected Result:
 
 ### Account and coin details
 
-To display account details, coins, sequence and account number;
+To display account details, coins, sequence and account number:
 
 ```bash
 heimdallcli query auth account 0x68243159a498cf20d945cf3E4250918278BA538E --trust-node
 ```
 
-Expected Result:
+Expected result:
 
 ```json
 address: 0x68243159a498cf20d945cf3e4250918278ba538e
@@ -129,7 +129,7 @@ Use the following command to print all params:
 heimdallcli query auth params
 ```
 
-Expected Result:
+Expected result:
 
 ```go
 max_memo_characters: 256

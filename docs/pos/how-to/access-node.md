@@ -12,7 +12,7 @@ This guide demonstrates how to connect to a RPC provider, using Alchemy as an ex
 
 This guide assumes you already have an [Alchemy account](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5) and access to the [Alchemy Dashboard](https://dashboard.alchemyapi.io).
 
-### Create an Alchemy Key
+### Create an Alchemy key
 
 First, you'll need an Alchemy API key to authenticate your requests. You can [create API keys from the dashboard](http://dashboard.alchemyapi.io). Check out [this YouTube video](https://www.youtube.com/watch?v=tfggWxfG9o0) on how to create an app. Or you can follow the steps written below:
 
