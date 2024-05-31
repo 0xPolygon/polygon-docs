@@ -87,12 +87,6 @@ nav:
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
           - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
         - Historical data: zkEVM/get-started/historical-data.md
-      - How to:
-        - How to: zkEVM/how-to/index.md
-        - Write a contract: zkEVM/how-to/write-contract.md
-        - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
-        - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
-        - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture high-level:
         - Overview: zkEVM/architecture/high-level/overview.md
         - Smart contracts: 
@@ -128,6 +122,7 @@ nav:
               - PolygonAccessControlUpgradeable.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonAccessControlUpgradeable.md
               - PolygonRollupBaseEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonRollupBaseEtrog.md
               - PolygonTransparentProxy.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonTransparentProxy.md
+              - PolygonZkEVMGlobalExitRootBaseStorage.sol: zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonZkEVMGlobalExitRootBaseStorage.md
             - Utils:
               - ClaimCompressor.sol:  zkEVM/architecture/high-level/smart-contracts/api/utils/ClaimCompressor.md
           - Addresses: zkEVM/architecture/high-level/smart-contracts/addresses.md
