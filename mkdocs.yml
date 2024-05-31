@@ -58,6 +58,13 @@ nav:
         - Layer 2s: cdk/concepts/layer2s.md
         - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
         - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
+        - Batches, Blocks, Transactions: cdk/concepts/blocks.md
+        - Transaction Lifecycle: cdk/concepts/transaction-lifecycle.md
+        - Transaction Finality: cdk/concepts/transaction-finality.md
+        - Bridging: cdk/concepts/bridging.md
+        - Gas Fees: cdk/concepts/gas-fees.md
+        - AggLayer & Interoperability: cdk/concepts/agglayer.md
+        - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
