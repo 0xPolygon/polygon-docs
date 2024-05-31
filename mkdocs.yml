@@ -56,12 +56,11 @@ nav:
       - Get started: cdk/getting-started.md
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
+        - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
         - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
-      - Specification:
-        - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
         - Glossary: cdk/glossary/index.md
       - Additional resources:
