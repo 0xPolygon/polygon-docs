@@ -57,6 +57,7 @@ nav:
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
+        - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
