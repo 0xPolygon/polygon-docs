@@ -39,10 +39,10 @@ By inspecting the transactions in the batch, we can see:
 
 ![Transaction found inside batch](../../img/cdk/transaction-in-batch.png)
 
-If the L2 is a [rollup](./layer2s.md), it sends an array of batches to Ethereum, by providing the array as an argument to the `sequenceBatches` function of a smart contract on Ethereum.
+If the L2 is a [rollup](./layer2s.md) (meaning it uses Ethereum for it&rsquo;s [data availability](https://docs.polygon.technology/cdk/glossary/#data-availability)), it sends an array of batches to Ethereum, by providing the array as an argument to the `sequenceBatches` function of a smart contract on Ethereum.
 
 ![Sequence Transaction](../../img/cdk/sequence-transaction.png)
 
-By inspecting the `Sequence Tx Hash` transaction, we can see the `sequenceBatches` function is called with the array of batches as an argument. One of these batches is the batch we have been following, `2041736`, which contains our original example transaction.
+By inspecting the `Sequence Tx Hash` transaction, we can see the `sequenceBatches` function is called with the array of batches as an argument. One of these batches is the batch we have been following, `2041736`, which contains our original example transaction:
 
 ![Last Batch Sequenced](../../img/cdk/last-batch-sequenced.png)
