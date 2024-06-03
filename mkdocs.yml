@@ -63,8 +63,7 @@ nav:
         - Transaction Lifecycle: cdk/concepts/transaction-lifecycle.md
         - Transaction Finality: cdk/concepts/transaction-finality.md
         - Gas Fees: cdk/concepts/gas-fees.md
-        - Bridging: cdk/concepts/bridging.md
-        - AggLayer & Interoperability: cdk/concepts/agglayer.md
+        - Bridging & Interoperability: cdk/concepts/bridging.md
         - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
