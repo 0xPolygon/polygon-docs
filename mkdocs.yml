@@ -420,7 +420,7 @@ nav:
           - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
           - Verify contract with external plugins: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins
         - Venly:
-          - NFT-API: https://docs.venly.io/docs/nft-api-getting-started
+          - NFT API: https://docs.venly.io/docs/nft-api-getting-started
           - Zapier integration: https://docs.venly.io/docs/zapier-integration
       - Chain indexer framework:
           - Overview: tools/chain-indexer-framework/overview.md
