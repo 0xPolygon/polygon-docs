@@ -61,7 +61,7 @@ Hex Byte representation - [171 205 18 52]
 Length in byte format - 4
 ```
 
-To install *Heimdall*, run the below commands:
+To install *Heimdall*, run the following commands:
 
 ```bash
 curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <heimdall_version> <network_type> <node_type>

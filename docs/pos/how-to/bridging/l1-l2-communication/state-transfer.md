@@ -42,12 +42,12 @@ You need to inherit `FxBaseRootTunnel` contract in your root contract on Ethereu
 - Sepolia: [0x1707157b9221204869ED67705e42fB65e026586c](https://sepolia.etherscan.io/address/0x1707157b9221204869ED67705e42fB65e026586c)
 - Amoy: [0xf5D2463d0176462d797Afcd57eC477b7B0CcBE70](https://amoy.polygonscan.com/address/0xf5D2463d0176462d797Afcd57eC477b7B0CcBE70)
 
-## State Transfer from Ethereum to Polygon
+## State transfer from Ethereum to Polygon
 
 - You need to call `_sendMessageToChild()` internally in your root contract and pass the data as an argument to be sent to Polygon. Example: [0x00a1aa71593fec825b4b1ce1081b5a9848612fb21f9e56def2914b483f5f34f5](https://sepolia.etherscan.io/tx/0x00a1aa71593fec825b4b1ce1081b5a9848612fb21f9e56def2914b483f5f34f5)
 - In your child contract, implement `_processMessageFromRoot()` virtual function in `FxBaseChildTunnel` to retrieve data from Ethereum. The data will be received automatically from the state receiver when the state is synced.
 
-## State Transfer from Polygon to Ethereum
+## State transfer from Polygon to Ethereum
 
 1. Call `_sendMessageToRoot()` internally in your child contract with data as a parameter to be sent to Ethereum. Note down the transaction hash as it will be used to generate the proof after the transaction has been included as a checkpoint.
 

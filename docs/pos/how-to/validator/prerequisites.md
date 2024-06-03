@@ -2,7 +2,7 @@
 comments: true
 ---
 
-## Before setting up the calidator node
+## Before setting up the validator node
 
 !!! warning "Caution"
     
@@ -18,9 +18,9 @@ Validator nodes require an Ethereum-based RPC endpoint. You may use your own Eth
 
 ### Open necessary ports
 
-- Port `26656`: Heimdall service will connect your node to another node's Heimdall service using this port.
+- Port `26656`: Heimdall service connects your node to another node's Heimdall service using this port.
 
-- Port `30303`: Bor service will connect your node to another node's Bor service using this port.
+- Port `30303`: Bor service connects your node to another node's Bor service using this port.
 
 - Port `22`: For the validator to be able to SSH from wherever they are.
 
@@ -46,13 +46,13 @@ See the doc on [validator best practices](../operate-validator-node/validator-be
 
     | Checklist               | Binaries                                       | Ansible                                                                 | Packages                                       |
     | ----------------------- | ---------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------- |
-    | Machines Required   | 2 Machines - *Sentry* & *Validator*        | 3 Machines - *Local Machine*, *Sentry* and *Validator*            | 2 Machines - *Sentry* & *Validator*        |
-    | Install Go Packages | Yes                                            | No                                                                      | No                                             |
-    | Install Python      | No                                             | Yes (only on the *Local Machine* where the *Ansible Playbook* runs) | No                                             |
+    | Machines required   | 2 Machines - *sentry* & *validator*        | 3 Machines - *local machine*, *sentry* and *validator*            | 2 Machines - *sentry* & *validator*        |
+    | Install Go packages | Yes                                            | No                                                                      | No                                             |
+    | Install Python      | No                                             | Yes (only on the local machine where the Ansible Playbook runs) | No                                             |
     | Install Ansible     | No                                             | Yes (only on one machine)                                               | No                                             |
     | Install Bash        | No                                             | No                                                                      | Yes                                            |
     | Run Build Essential | Yes                                            | No                                                                      | No                                             |
-    | Node Setup          | [Using Binaries](../validator/validator-binaries.md) | [Using Ansible](../validator/validator-ansible.md)                            | [Using Packages](../validator/validator-packages.md) |
+    | Node setup          | [Using binaries](../validator/validator-binaries.md) | [Using Ansible](../validator/validator-ansible.md)                            | [Using packages](../validator/validator-packages.md) |
 
 2. Once your sentry and validator nodes are synced and running, head over to our [Discord server](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes. You may check the logs by using the following commands:
 
@@ -177,7 +177,7 @@ This document gives some additional details for setting up a new node based on [
 
 ### 2. Why do I have to keep ETH in my signer account?
 
-ETH is required on your signer account because for submitting checkpoints to Ethereum, all transactions require ETH to be used as Gas. Hence, ETH is required in your signer Account.
+ETH is required on your signer account because for submitting checkpoints to Ethereum, all transactions require ETH to be used as Gas. Hence, ETH is required in your signer account.
 
 ### 3. For a Polygon PoS validator, do I need to setup a sentry and validator node or can I just run the Validator node by itself?
 

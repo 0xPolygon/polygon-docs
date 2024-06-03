@@ -51,7 +51,7 @@ The **Public Notices** page shows the recent notices and messages sent to the co
 
 ![Figure: Topup Heimdall fee](../../../img/pos/public-notices.png)
 
-This is how a notice message should look like:
+This is what a notice message should look like:
 
 <center>
 ![Figure: Notice](../../../img/pos/notice.png){width=60%}

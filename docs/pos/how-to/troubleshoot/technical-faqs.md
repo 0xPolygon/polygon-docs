@@ -123,7 +123,7 @@ ps -aux | grep bor
 sudo kill -9 PID
 ```
 
-##### For Binaries
+##### For binaries
 
 Go to 
 ```bash
@@ -152,7 +152,7 @@ This error occurs because the path for the `password.txt` and Keystore file is i
 3. Make sure you have added correct address in `/etc/bor/metadata`.
 
 
-##### For Binaries
+##### For binaries
 
 1. Copy the Bor keystore file to:
 
@@ -200,11 +200,11 @@ Bor:
 
 ```$ sudo dpkg -i matic-bor```
 
-And delete Bor Directory using:
+And delete Bor directory using:
 
 ```$ sudo rm -rf /etc/bor```
 
-##### For Binaries
+##### For binaries
 
 ```$ sudo rm -rf /etc/bor```
 
@@ -215,7 +215,7 @@ And then run:
 
 ### 8. How many validators can be active concurrently?
 
-There will be up to 100 active validators at a time. We will bring in more participants if the limit is reached mid-way through the event as well. Note that active validators is mostly those whose uptime is high. Participants with high downtime will be forced out.
+There can be up to 100 active validators at a time. We bring in more participants if the limit is reached mid-way through the event as well. Note that active validators is mostly those whose uptime is high. Participants with high downtime are forced out.
 
 ### 9. How much should I stake?
 
@@ -235,7 +235,7 @@ heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000
 
 If you have access to the ETH address that you submitted earlier then you can transfer the test tokens from that account to the current account. And then you can initiate your process of setting up your nodes.
 
-If you don't have access to that ETH address, we won't be transferring you tokens separately. You can  re-register in the form again with the correct ETH address.
+If you don't have access to that ETH address, we won't be transferring you tokens separately. You can re-register in the form again with the correct ETH address.
 
 ### 11. I'm getting an error starting the bridge
 
@@ -366,7 +366,7 @@ Stop Bor: `sudo service bor stop` or
 1. `ps -aux | grep bor`. Get the PID for Bor and then run the following command.
 2. `sudo kill -9 PID`
 
-##### For Binaries
+##### For binaries
 
 Stop Heimdall: `pkill heimdalld`
 
@@ -382,7 +382,7 @@ Delete Heimdall: `sudo rm -rf /etc/heimdall/*`
 
 Delete Bor: `sudo rm -rf /etc/bor/*`
 
-##### For Binaries
+##### For binaries
 
 Delete Heimdall: `sudo rm -rf /var/lib/heimdall/`
 

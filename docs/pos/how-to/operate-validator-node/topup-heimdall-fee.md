@@ -6,7 +6,7 @@ This document provides instructions on how to top up the Heimdall fee for a PoS 
 
 The easiest way is via the [Polygon Staking UI](https://staking.polygon.technology/account).
 
-You can also do it manually by following the steps below. This requires basic Etherscan knowledge and key details like the Validator signer address.
+You can also do it manually by following the steps below. This requires basic Etherscan knowledge and key details like the validator signer address.
 
 1. Head over to [Etherscan.io](https://etherscan.io)
 

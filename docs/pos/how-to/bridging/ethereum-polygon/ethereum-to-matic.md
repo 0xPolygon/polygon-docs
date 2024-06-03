@@ -12,7 +12,7 @@ The sender and receiver contracts are required to be mapped on Ethereum — [Sta
 
 ---
 
-In the following walkthrough, we'll be deploying a sender contract on Sepolia (Ethereum testnet) and a Receiver contract on Amoy (Polygon testnet). Then, we'll be sending data from the sender and reading data on the receiver via web3 calls in a node script.
+In the following walkthrough, we'll be deploying a sender contract on Sepolia (Ethereum testnet) and a receiver contract on Amoy (Polygon testnet). Then, we'll be sending data from the sender and reading data on the receiver via web3 calls in a node script.
 
 ### 1. Deploy sender contract
 
@@ -51,7 +51,7 @@ In the above function, `stateSenderContract` is the address of the `StateSender`
 
 It is recommended to use constructors to pass in variables, but for the purpose of this demo, we'll simply hardcode these two addresses:
 
-Following is how our `Sender.sol` looks like:
+Following is what our `Sender.sol` looks like:
 
 ```jsx title="Sender.sol"
 
@@ -84,7 +84,7 @@ Use Remix to deploy the contract and keep a note of the address and ABI.
 
 The receiver contract is the one that is invoked by a validator when the `StateSynced` event is emitted. The validator invokes the function `onStateReceive`on the receiver contract to submit the data. To implement it, we first import [StateReceiver](https://github.com/maticnetwork/contracts/blob/release-betaV2/contracts/child/bor/StateReceiver.sol) interface and write down our custom logic — to interpret the transferred data inside onStateReceive.
 
-Following is how our `Receiver.sol` looks like:
+The following is what our `Receiver.sol` looks like:
 
 ```jsx title="Receiver.sol"
 

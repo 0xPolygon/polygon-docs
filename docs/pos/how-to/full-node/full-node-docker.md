@@ -380,7 +380,7 @@ At this point, we should be ready to start Bor. We’re going to use this comman
 docker run -p 30303:30303 -p 8545:8545 -v /mnt/data/bor:/bor-home:rw --net polygon --name bor -d --restart unless-stopped  0xpolygon/bor:1.1.0 server --config /bor-home/config.toml
 ```
 
-If everything went well, you should see log entries that look like this:
+If everything goes well, you should see log entries that look like this:
 
 ```bash
 2022-12-14T19:53:51.989897291Z INFO [12-14|19:53:51.989] Fetching state updates from Heimdall     fromID=4 to=2020-05-30T23:47:46Z

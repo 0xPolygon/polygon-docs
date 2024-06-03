@@ -41,7 +41,7 @@ The primary role of multi-signature wallets (multisigs) is to facilitate contrac
 
 ### Permissionless mapping
 
-| Multisig Address  | Permissionless Mapping of Standard ChildERC20 Tokens (No Multisig Required) |
+| Multisig address  | Permissionless mapping of standard ChildERC20 tokens (no multisig required) |
 |:----------------:|--------------------------------------------------------------------------------|
 | Purpose          | FxPortal supports permissionless token mapping of standard ChildERC20 for any ERC20 token on Ethereum. |
 | Chain            | Permissionless                                                                 |

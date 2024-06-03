@@ -1,4 +1,4 @@
-For the Polygon PoS' Proof of Security based consensus, all the $2/3+1$ proof verification and handling of staking, rewards are executed on the Ethereum smart contract. The whole design follows this philosophy of doing less on the Mainnet contract. It does information verification and pushes all the computation-heavy operations to L2 (read about [Heimdall](https://docs.polygon.technology/pos/architecture/heimdall/)).
+For the Polygon PoS Proof of Security based consensus, all the $2/3+1$ proof verification and handling of staking, rewards are executed on the Ethereum smart contract. The whole design follows this philosophy of doing less on the Mainnet contract. It does information verification and pushes all the computation-heavy operations to L2 (read about [Heimdall](https://docs.polygon.technology/pos/architecture/heimdall/)).
 
 *Stakers* are divided into *validators*, *delegators*, and *watchers* (for fraud reporting).
 
@@ -168,7 +168,7 @@ function checkSignatures(
 
 - Writes are meant only for RootChain contract when submitting checkpoints
 - `voteHash` on which all validators sign (BFT $2/3+1$ agreement)
-- This function validates only unique sigs and checks for $2/3+1$ power has signed on checkpoint root (inclusion in `voteHash` verification in RootChain contract for all data) `currentValidatorSetTotalStake` provides current active stake.
+- This function validates only unique sigs and checks for $2/3+1$ power has signed on checkpoint root (inclusion in `voteHash` verification in `RootChain` contract for all data) `currentValidatorSetTotalStake` provides current active stake.
 - Rewards are distributed proportionally to validator's stake. More on rewards on the [rewards distribution](https://docs.polygon.technology/pos/how-to/operating/validator-node/#reward-distribution) page.
 <!-- (https://www.notion.so/Rewards-Distribution-127d586c14544beb9ea326fd3bb5d3a2). -->
 

@@ -21,7 +21,7 @@ In return for their efforts, validators are rewarded with incentives, encouragin
 Polygon consists of the three following layers:
 
 * Ethereum layer: A set of contracts on the Ethereum mainnet.
-* Heimdall layer:  A set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon PoS network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
+* Heimdall layer: A set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon PoS network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
 * Bor layer: A set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
 
 To be a validator on the Polygon PoS network, you must do the following:
@@ -67,7 +67,7 @@ Bor is the block producing node and layer for the Polygon PoS network. It is bas
 
     Keep up with the latest node and validator updates from the Polygon team and the community by keeping an eye on the [announcements posed to Polygon forums](https://forum.polygon.technology/c/announcement/6).
 
-A blockchain validator is someone who is responsible for validating transactions within a blockchain. On the Polygon PoS network, any participant can be qualified to become a Polygon's validator by running a **Validator Node (Sentry + Validator)** to earn rewards and collect transaction fees. To ensure the good participation by validators, they lock up at least 1 MATIC token as a stake in the ecosystem.
+A blockchain validator is someone who is responsible for validating transactions within a blockchain. On the Polygon PoS network, any participant can be qualified to become a Polygon's validator by running a validator node (sentry + validator) to earn rewards and collect transaction fees. To ensure the good participation by validators, they lock up at least 1 MATIC token as a stake in the ecosystem.
 
 !!! info "Active validator limit"
     
@@ -119,7 +119,7 @@ The following technical node operations are **done automatically by the nodes:**
 
 The node uptime on the Polygon PoS network is based on the number of checkpoint transactions that the validator node has signed.
 
-Approximately every 34 minutes a proposer submits a checkpoint transaction to the Ethereum mainnet. The checkpoint transaction must be signed by every validator on the Polygon PoS network. **Failure to sign a checkpoint transaction results in the decrease of your validator node performance**.
+Approximately every 34 minutes a proposer submits a checkpoint transaction to the Ethereum mainnet. The checkpoint transaction must be signed by every validator on the Polygon PoS network. Failure to sign a checkpoint transaction results in the decrease of your validator node performance.
 
 The process of signing the checkpoint transactions is automated. To ensure your validator node is signing all valid checkpoint transactions, you must maintain and monitor your node health.
 
