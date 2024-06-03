@@ -59,4 +59,12 @@ hide:
          <p class="feature-paragraph">Get involved in building the open-source CDK stack on GitHub.</p>
       </a>
    </div>
+   <div class="grid-item">
+      <a href="https://discord.com/invite/0xPolygonDevs" target="_blank">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Join the Dev Community</div>
+         </div>
+         <p class="feature-paragraph">Join our developer Discord server to ask questions and get help.</p>
+      </a>
+   </div>
 </div>
