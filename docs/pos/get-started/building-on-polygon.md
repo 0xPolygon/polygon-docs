@@ -8,7 +8,7 @@ Connect your wallet and deploy any decentralized application to either PoS mainn
 
 ## Overview
 
-Polygon is a layer 2 (L2) network to Ethereum, employing a Proof-of-Stake (PoS) consensus mechanism, and thus composed of the following two layers:
+Polygon is a Layer-2 (L2) network to Ethereum, employing a Proof-of-Stake (PoS) consensus mechanism, and thus composed of the following two layers:
 
   - Heimdall layer, a consensus layer consisting of a set of proof-of-stake Heimdall nodes for monitoring staking contracts deployed on the Ethereum mainnet, and committing the Polygon PoS network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
   - Bor layer, an execution layer which is made up of a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum (Geth).
