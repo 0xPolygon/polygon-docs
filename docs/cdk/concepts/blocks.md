@@ -12,7 +12,7 @@ To best understand how these concepts relate to each other, on this page, we wil
 
 ## Transaction
 
-A transaction is a cryptographically signed instructions from an account to update the state of the blockchain. Users can send transactions to L2 chains built with the CDK using the same tools and libraries they use to interact with Ethereum such as MetaMask.
+A transaction is a cryptographically signed instruction from an account to update the state of the blockchain. Users can send transactions to L2 chains built with the CDK using the same tools and libraries they use to interact with Ethereum such as MetaMask.
 
 Transactions are included in both blocks and batches. An example Polygon zkEVM transaction [`0xdd`](https://zkevm.polygonscan.com/tx/0xdd3f79c24886310ddf868ad1d36aadc6a3b6495048f68aad765c658c42426ef8) performs a `Simple Swap` function call, and part of block [`12952601`](https://zkevm.polygonscan.com/block/12952601) on the L2.
 
