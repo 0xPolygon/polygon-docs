@@ -1,10 +1,27 @@
 An exit tree is a binary, append-only, sparse Merkle tree (SMT) whose leaf nodes store bridging data. The exit trees have a depth of 32.
 
-Whenever a token or message is bridged, the bridge contract appends an exit leaf to the exit tree related to the specific network. 
-
 The Merkle root of an exit tree is known as the exit tree root, and it is the fingerprint of all the information recorded in the exit tree's leaf nodes. 
 
 The global exit tree root of the L1 info tree is, therefore, the source of truth for the whole network. 
+
+## Updating system state
+
+The system uses a set of [exit tree roots](exit-roots.md) to manage system state. Leaves of the trees point to transaction data such as detailed above.
+
+The `PolygonRollupManager.sol` contract calls `updateExitRoot(...)` on the `GlobalExitRootManager` during the sequencing flow to add an exit leaf to the relevant exit tree. 
+
+When bridging, the global exit root is updated if the [`forceUpdateGlobalExitRoot`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol#L312) variable is set to `true`.
+
+- If `msg.sender` is the bridge contract, the L1 local exit root is updated.
+- If `msg.sender` is the rollup manager, the L2 local exit root is updated.
+
+Adding a new leaf to the tree triggers an update to the exit tree root which then propagates to an update on the global exit tree root.
+
+Using Merkle tree exit roots in this way, referenced by the bridge contracts and accessible to the `PolygonRollupManager` contract with getters, the bridge contract triggers data synchronization across L1 and L2, including at the sequencer and state db level.
+
+The use of two distinct global exit root manager contracts for L1 and L2, as well as separate logic for the bridge contract and each of these global exit root managers, allows for extensive network interoperability.
+
+Meanwhile, all asset transfers can be validated by any L1 and L2 node due to the accessibility of state data.
 
 ## Rollup local exit trees
 

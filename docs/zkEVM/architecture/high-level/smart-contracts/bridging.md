@@ -1,6 +1,4 @@
-The unified bridge transfers assets and messages between L1 and L2 networks by calling bridge and claim functions on the unified bridge smart contract. 
-
-The smart contract that manages bridging and claiming across networks is the [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) contract. 
+The unified bridge transfers assets and messages between networks (L1, L2) by calling bridge and claim functions on the [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) contract which is an upgradeable proxy.
 
 This contract is deployed on L1 and there is also one deployed on every L2 network. It communicates closely with an exit root manager contract specific to L1 or L2.
 
@@ -22,7 +20,7 @@ The main functions of the bridge are:
 
 To bridge assets from L1 to L2, the sender first transfers the token into the bridge by locking the asset on the origin network (L1). 
 
-The bridge smart contract mints an equivalent asset, called a wrapped token, on the destination network (L2). 
+When executing `claimAsset`, the bridge smart contract mints a wrapped token of the original asset on the destination network (L2). The wrapped token is a generic ERC20.
 
 Once minted, the recipient can claim the token on the destination network (L2).
 
@@ -41,7 +39,7 @@ The data below is transaction data (represented by a leaf node in an exit tree) 
 
 To send an asset from L2 to L1, the wrapped token is first burnt on the L2 network.
 
-The bridge smart contract then unlocks the original asset on the origin network (L1) ready for claiming.
+When executing `claimAsset`, the bridge smart contract unlocks the original asset on the origin network (L1) ready for claiming.
 
 The data below is transaction data (represented by a leaf node in an exit tree) and comes from an [example L2 to L1 claim transaction](https://etherscan.io/tx/0x70f7f550cded85e21e0893b6ea5aae3dd2b998021ce449770fa78a967bc44f79) which also posts the local and network exit roots and root proofs used for verification on L1.
 
@@ -57,24 +55,7 @@ The data below is transaction data (represented by a leaf node in an exit tree) 
 | 7  | destinationNetwork     | uint32      | 0                                                                  |
 | 8  | destinationAddress     | address     | 0x5251b3304d1bA5834fd227c2842AA82aC50412E6                         |
 | 9  | amount                 | uint256     | 67000000000000000                                                  |
-| 10 | metadata               | (abi encoded metadata if any, empty otherwise)bytes       |                                                                    |
-
-## Updating system state
-
-The Polygon bridge smart contract uses a set of [exit tree roots](exit-roots.md) to manage system state. Leaves of the trees point to transaction data such as detailed above.
-
-On a call to the bridge, the bridge contract calls the `updateExitRoot(...)` function on the relevant exit root contract (L1 or L2) which adds an exit leaf to the relevant exit tree. 
-
-- If `msg.sender` is the bridge contract, the L1 local exit root is updated.
-- If `msg.sender` is the rollup manager, the L2 local exit root is updated.
-
-Adding a new leaf to the tree triggers an update to the exit tree root which then propagates to an update on the global exit tree root.
-
-Using Merkle tree exit roots in this way, referenced by the bridge contracts and accessible to the `PolygonRollupManager` contract with getters, the bridge contract triggers data synchronization across L1 and L2, including at the sequencer and state db level.
-
-The use of two distinct global exit root manager contracts for L1 and L2, as well as separate logic for the bridge contract and each of these global exit root managers, allows for extensive network interoperability.
-
-Meanwhile, all asset transfers can be validated by any L1 and L2 node due to the accessibility of state data.
+| 10 | metadata               | bytes       |            (abi encoded metadata if any, empty otherwise)                  |
 
 ## Transaction flows in depth
 
