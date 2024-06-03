@@ -93,6 +93,7 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 
 - [Alchemy](https://www.alchemy.com/)
 - [Allnodes](https://polygon.publicnode.com)
+- [All That Node](https://www.allthatnode.com/polygon.dsrv)
 - [Amazon Managed Blockchain](https://aws.amazon.com/managed-blockchain/)
 - [Ankr](https://www.ankr.com/)
 - [Blast (Bware Labs)](https://blastapi.io/)
