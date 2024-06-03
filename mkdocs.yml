@@ -69,7 +69,7 @@ nav:
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
-      - Get started:
+      - Build:
         - Get started: zkEVM/get-started/index.md
         - Quick start: zkEVM/get-started/quick-start.md
         - Setup nodes:
@@ -87,6 +87,11 @@ nav:
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
           - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
         - Historical data: zkEVM/get-started/historical-data.md
+        - How to:
+          - Write a contract: zkEVM/how-to/write-contract.md
+          - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
+          - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
+          - Verify a contract: zkEVM/how-to/verify-contract.md
       - Architecture high-level:
         - Overview: zkEVM/architecture/high-level/overview.md
         - Smart contracts: 
