@@ -270,6 +270,7 @@ nav:
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
       - API: 
         - JSON RPC endpoints: zkEVM/api/json-rpc.md
+        - Check transaction status: zkEVM/how-to/check-tx-status.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -413,14 +414,14 @@ nav:
               - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
               - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
               - Verify a contract: zkEVM/how-to/verify-contract.md
-              - Check transaction status: zkEVM/how-to/check-tx-status.md
           - Third-party tutorials: tools/dApp-development/third-party-tutorials.md
-        #- OKLink:
-          #- OKLink verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
-          #- OKLink verify contract with external plugins: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins
-        #- Venly:
-          #- Venly's NFT-API: https://docs.venly.io/docs/nft-api-getting-started
-          #- Venly's Zapier integration: https://docs.venly.io/docs/zapier-integration
+      - Popular tools:
+        - OKX explorer:
+          - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
+          - Verify contract with external plugins: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins
+        - Venly:
+          - NFT-API: https://docs.venly.io/docs/nft-api-getting-started
+          - Zapier integration: https://docs.venly.io/docs/zapier-integration
       - Chain indexer framework:
           - Overview: tools/chain-indexer-framework/overview.md
           - Usage: tools/chain-indexer-framework/usage.md 
@@ -610,7 +611,7 @@ markdown_extensions:
   - footnotes
   - def_list
   - attr_list
-  - md_in_html
+  #- md_in_html
   - abbr
   - pymdownx.tabbed
   - pymdownx.superfences

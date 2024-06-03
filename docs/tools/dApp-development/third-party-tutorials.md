@@ -20,7 +20,7 @@ Explore the categories below to discover third-party resources and tutorials to 
 
 ## Chain data and analytics services
 
-- OKLink
+- OKX explorer
     - [Verify contract with API](https://www.oklink.com/docs/en#on-chain-tools-contract-verification)
     - [Verify contract with external plugins](https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins)
 
