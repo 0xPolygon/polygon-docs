@@ -24,7 +24,7 @@ The Amoy testnet serves as a replica of the Polygon mainnet and is primarily use
 | RPC endpoint     | [https://rpc-amoy.polygon.technology/](https://rpc-amoy.polygon.technology/)                       |
 | Node endpoint    | [wss://rpc-amoy.polygon.technology/](wss://rpc-amoy.polygon.technology/)                           |
 | Heimdall API     | [https://heimdall-api-amoy.polygon.technology](https://heimdall-api-amoy.polygon.technology)       |
-| Block Explorer   | [https://amoy.polygonscan.com/](https://amoy.polygonscan.com/)                                         |
+| Block Explorer   | [https://amoy.polygonscan.com/](https://amoy.polygonscan.com/)                                     |
 
 !!! note "Additional information"
 
@@ -47,12 +47,13 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 | Heimdall API     | [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)                 |
 | Block explorer   | [https://polygonscan.com/](https://polygonscan.com/)                                               |
 
+
 !!! note "Additional information"
+    
+    For more details, refer to the [JSON data](https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json).
 
-    For more details, refer to this [**JSON data**](https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json).
 
-
-### Mumbai ( Deprecating Soon )
+### Mumbai (deprecated)
 
 The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
 
@@ -68,13 +69,9 @@ The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily u
 | Heimdall API     | [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology) |
 | Block Explorer   | [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)                                 |
 
-!!! note "Additional information
-"
-    
-    For more details, refer to this [**JSON data**](https://static.polygon.technology/network/testnet/mumbai/index.json).
+!!! note "Additional information"
 
-</TabItem>
-</Tabs>
+    For more details, refer to this [JSON data](https://static.polygon.technology/network/testnet/mumbai/index.json).
 
 ## RPC API methods
 

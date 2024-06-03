@@ -328,7 +328,6 @@ nav:
           - Validator best practices: pos/how-to/operate-validator-node/validator-best-practices.md
           - Stake tokens: pos/how-to/operate-validator-node/validator-staking-operations.md
           - Set commission rate: pos/how-to/operate-validator-node/validator-commission-operations.md
-          - Move stake: pos/how-to/operate-validator-node/move-stake.md
           - Change signer address: pos/how-to/operate-validator-node/change-signer-address.md
           - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
           - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md

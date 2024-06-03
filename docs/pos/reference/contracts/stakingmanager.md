@@ -1,40 +1,42 @@
-For the Polygon's Proof of Security based consensus, all the ⅔+1 proof verification and handling of staking, rewards are executed on the Ethereum smart contract. The whole design follows this philosophy of doing less on the Mainnet contract. It does information verification and pushes all the computation-heavy operations to L2 (read about [Heimdall](https://docs.polygon.technology/pos/architecture/heimdall/)).
+For the Polygon PoS Proof of Security based consensus, all the $2/3+1$ proof verification and handling of staking, rewards are executed on the Ethereum smart contract. The whole design follows this philosophy of doing less on the Mainnet contract. It does information verification and pushes all the computation-heavy operations to L2 (read about [Heimdall](https://docs.polygon.technology/pos/architecture/heimdall/)).
 
-**Stakers** are divided into **validators**, **delegators**, and **watchers** (for fraud reporting).
+*Stakers* are divided into *validators*, *delegators*, and *watchers* (for fraud reporting).
 
-[**StakeManager**](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/stakeManager/StakeManager.sol) is the main contract for handling validator related activities like `checkPoint` signature verification, reward distribution, and stake management. Since the contract is using **NFT ID** as a source of ownership, change of ownership and signer won't affect anything in the system.
+[`StakeManager`](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/stakeManager/StakeManager.sol) is the main contract for handling validator related activities like `checkPoint` signature verification, reward distribution, and stake management. Since the contract is using *NFT ID* as a source of ownership, change of ownership and signer won't affect anything in the system.
 
-!!!tip
+!!! info
     
-    From one Ethereum address, a **Staker can only be a validator or delegator** (it's just a design choice, no hard reasons).
+    From a single Ethereum address, *a staker can only function as either a validator or a delegator* (this is a design choice without any underlying technical constraints).
 
 
-## Validator admissions / replacement
+## Validator admissions/replacement
 
 ### Admissions
-At present, there are no open validator slots available on Polygon PoS. There is also a waitlist to become a validator. In the future, if slots become available, validators may apply to be considered and removed off of the waitlist.
+
+At present, there are no open validator slots available on Polygon PoS. There is also a wait list to become a validator. In the future, if slots become available, validators may apply to be considered and removed off of the wait list.
 
 
 ### Replacement
+
 PIP4 introduced the concept of showcasing validator performance for community visibility. If a validator is in an unhealthy state for an extended period of time as outlined in PIP4, they are off-boarded from the network. The validator slot is then made available to those coming off of the waitlist.
 
-!!!info
+!!! info
     
     Currently, [<ins>Phase 2 of PART C in PIP4</ins>](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956/24) is being implemented. This is where the community decides on validator prospect evaluation criteria. In time, this exercise will produce an application and admissions process.
 
 
 ## Methods and variables
 
-### validatorThreshold
+### `validatorThreshold`
 
 It stores the maximum number of validators accepted by the system, also called slots.
 
-### AccountStateRoot
+### `AccountStateRoot`
 
 - For various accounting done on Heimdall for validators and delegator, account root is submitted while submitting the `checkpoint`.
 - `accRoot` is used while `claimRewards` and `unStakeClaim`.
 
-### stake / stakeFor
+### `stake` / `stakeFor`
 
 ```solidity title="StakeManager.sol"
 function stake(
@@ -54,25 +56,25 @@ function stakeFor(
 ```
 
 - Allows anyone with amount (in MATIC tokens) greater than `minDeposit`, if `currentValidatorSetSize` is less then `validatorThreshold`.
-- Must transfer `amount+heimdallFee`, puts validator into auction period for an auctionInterval (more in Auction section).
+- Must transfer `amount+heimdallFee`, puts validator into auction period for an `auctionInterval` (more in Auction section).
 - `updateTimeLine` updates special timeline data structure, which keeps track of active validators and active stake for given epoch / checkpoint count.
 - One unique `NFT` is minted on each new `stake` or `stakeFor` call, which can be transferred to anyone but can be owned 1:1 Ethereum address.
 - `acceptDelegation` set to true if validators want to accept delegation, `ValidatorShare` contract is deployed for the validator.
 
-### unstake
+### `unstake`
 
 - Remove validator from validator set in next epoch (only valid for current checkpoint once called `unstake`)
 - Remove validator's stake from timeline data structure, update count for validator's exit epoch.
 - If validator had delegation on, collect all rewards and lock delegation contract for new delegations.
 
-### unstakeClaim
+### `unstakeClaim`
 
 ```solidity
 function unstakeClaim(uint256 validatorId) public;
 ```
 Once `WITHDRAWAL_DELAY` period is served, validators can call this function and do settlement with `stakeManager` (get rewards if any, get staked tokens back, burn NFT, etc).
 
-### restake
+### `restake`
 
 ```solidity
 function restake(uint256 validatorId, uint256 amount, bool stakeRewards) public;
@@ -81,7 +83,7 @@ function restake(uint256 validatorId, uint256 amount, bool stakeRewards) public;
 - Allows validators to increase their stake by putting new amount or rewards or both.
 - Must update timeline (amount) for active stake.
 
-### withdrawRewards
+### `withdrawRewards`
 
 ```solidity
 function withdrawRewards(uint256 validatorId) public;
@@ -89,7 +91,7 @@ function withdrawRewards(uint256 validatorId) public;
 
 This method allows validators to withdraw accumulated rewards, must consider getting rewards from delegation contract if validator accepts delegation.
 
-### updateSigner
+### `updateSigner`
 
 ```solidity
 function updateSigner(uint256 validatorId, bytes memory signerPubkey) public
@@ -97,7 +99,7 @@ function updateSigner(uint256 validatorId, bytes memory signerPubkey) public
 
 This method allows validators to update signer address (which is used to validate blocks on Polygon blockchain and checkpoint signatures on `stakeManager`).
 
-### topUpForFee
+### `topUpForFee`
 
 ```solidity
 function topUpForFee(uint256 validatorId, uint256 heimdallFee) public;
@@ -105,7 +107,7 @@ function topUpForFee(uint256 validatorId, uint256 heimdallFee) public;
 
 Validators can top-up their balance for Heimdall fee by invoking this method.
 
-### claimFee
+### `claimFee`
 
 ```solidity
 function claimFee(
@@ -121,11 +123,11 @@ This method is used to withdraw fees from Heimdall. `accountStateRoot` is update
 
 Note that `accountStateRoot` is re-written to prevent exits on multiple checkpoints (for old root and save accounting on `stakeManager`).
 
-### StakingNFT
+### Staking NFT
 
 Standard ERC721 contract with few restrictions like one token per user and minted in sequential manner.
 
-### startAuction
+### `startAuction`
 
 ```solidity
 function startAuction(
@@ -134,11 +136,11 @@ function startAuction(
     ) external;
 ```
 
-In order to start a bid or bid higher on already running auction, this function is used. Auction period runs in cycles like `(auctionPeriod--dynasty)--(auctionPeriod--dynasty)--(auctionPeriod--dynasty)` so it **must check for correct auction period**.
+In order to start a bid or bid higher on already running auction, this function is used. Auction period runs in cycles like `(auctionPeriod--dynasty)--(auctionPeriod--dynasty)--(auctionPeriod--dynasty)` so it *must check for correct auction period*.
 
-`perceivedStakeFactor` is used to calculate exact factor*old stake (note currently it is by default 1 WIP for picking the function). **Must check for auction from last auction period if any still going on** (one can choose to not call `confirmAuction` in order to get their capital out in the next auction). Normally continuous english auction is going on in a `auctionPeriod`.
+`perceivedStakeFactor` is used to calculate exact $factor*old stake$ (note currently it is by default 1 WIP for picking the function). *Must check for auction from last auction period if any still going on* (one can choose to not call `confirmAuction` in order to get their capital out in the next auction). Normally continuous english auction is going on in a `auctionPeriod`.
 
-### confirmAuctionBid
+### `confirmAuctionBid`
 
 ```solidity
 function confirmAuctionBid(
@@ -149,11 +151,11 @@ function confirmAuctionBid(
     ) external
 ```
 
-- **Must check that this is not an auctionPeriod.**
-- If last bidder is owner of `validatorId`, behaviour should be similar to restake.
-- In second case unStake `validatorId` and add new user as validator from next checkpoint, for the new user behaviour should be similar to stake/stakeFor.
+- *Must check that this is not an auctionPeriod.*
+- If last bidder is owner of `validatorId`, behavior should be similar to restake.
+- In second case unstake `validatorId` and add new user as validator from next checkpoint, for the new user behavior should be similar to stake/stakeFor.
 
-### checkSignatures
+### `checkSignatures`
 
 ```solidity
 function checkSignatures(
@@ -165,12 +167,12 @@ function checkSignatures(
 ```
 
 - Writes are meant only for RootChain contract when submitting checkpoints
-- `voteHash` on which all validators sign (BFT ⅔+1 agreement)
-- This function validates only unique sigs and checks for ⅔+1 power has signed on checkpoint root (inclusion in `voteHash` verification in RootChain contract for all data) `currentValidatorSetTotalStake` provides current active stake.
-- Rewards are distributed proportionally to validator's stake. More on rewards in [Rewards Distribution](https://docs.polygon.technology/pos/how-to/operating/validator-node/#reward-distribution)
+- `voteHash` on which all validators sign (BFT $2/3+1$ agreement)
+- This function validates only unique sigs and checks for $2/3+1$ power has signed on checkpoint root (inclusion in `voteHash` verification in `RootChain` contract for all data) `currentValidatorSetTotalStake` provides current active stake.
+- Rewards are distributed proportionally to validator's stake. More on rewards on the [rewards distribution](https://docs.polygon.technology/pos/how-to/operating/validator-node/#reward-distribution) page.
 <!-- (https://www.notion.so/Rewards-Distribution-127d586c14544beb9ea326fd3bb5d3a2). -->
 
-### isValidator
+### `isValidator`
 
 Checks if a given validator is active validator for the current epoch.
 
@@ -188,10 +190,10 @@ mapping(uint256 => State) public validatorState;
 ![Figure: Knowledge base - node setup 1](../../../img/pos/staking_manager.png)
 
 
-## StakingInfo
+## `StakingInfo`
 
-Centralized logging contract for both validator and delegation events, includes few read only functions. You can check out the source code of the [StakingInfo.sol](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/StakingInfo.sol) contract on GitHub.
+Centralized logging contract for both validator and delegation events, includes few read only functions. You can check out the source code of the [`StakingInfo.sol`](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/StakingInfo.sol) contract on GitHub.
 
-## ValidatorShareFactory
+## `ValidatorShareFactory`
 
 A factory contract to deploy `ValidatorShare` contract for each validator who opt-in for delegation. You can check out the source code of the [ValidatorShareFactory.sol](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/validatorShare/ValidatorShareFactory.sol) contract on GitHub.

@@ -1,8 +1,8 @@
-Heimdall's `bank` module handles balance transfers between accounts. This module corresponds to the `bank` module from cosmos-sdk.
+Heimdall's `bank` module handles balance transfers between accounts. This module corresponds to the `bank` module from the Cosmos SDK.
 
 ## Messages
 
-### MsgSend
+### `MsgSend`
 
 `MsgSend` handles transfer between accounts in Heimdall. Here is a structure for transaction message:
 
@@ -15,7 +15,7 @@ type MsgSend struct {
 }
 ```
 
-### MsgMultiSend
+### `MsgMultiSend`
 
 `MsgMultiSend` handles multi transfer between account for Heimdall.
 
@@ -31,15 +31,15 @@ type MsgMultiSend struct {
 
 The bank module contains the following parameters:
 
-|Key                  |Type|Default value       |
-|----------------------|--------|------------------|
-|`sendenabled`       |bool|true|
+| Key           | Type | Default value |
+| ------------- | ---- | ------------- |
+| `sendenabled` | bool | true          |
 
 ## CLI Commands
 
-### Send Balance
+### Send balance
 
-Following command will send 1000 matic tokens to mentioned `address`;
+The following command sends 1000 matic tokens to the specified `address`:
 
 ```bash
 heimdallcli tx bank send <address> 1000matic --chain-id <chain-id>
