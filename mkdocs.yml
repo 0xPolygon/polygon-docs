@@ -4,7 +4,7 @@ copyright: Copyright &copy; 2024 Polygon Labs
 repo_name: Polygon Knowledge Layer
 repo_url: https://github.com/0xPolygon/polygon-docs
 edit_uri: edit/main/docs/
-#site_url: https://docs.polygon.technology/
+site_url: https://docs.polygon.technology/
 
 theme:
   name: material
