@@ -124,7 +124,7 @@ This service relies on a [balance scanner contract](https://github.com/MyCryptoH
 
 The contract fetches the balance from multiple ERC20 tokens in one single batch call and returns them. Token balance is processed with a price-feed service which attaches the USD value of the tokens before sending to the UI. 
 
-### Merkle Proof Generation API
+### Merkle proof generation API
 
 This is used to process claims on L1 and L2. 
 
