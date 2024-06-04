@@ -18,7 +18,7 @@ To index data, the producer reads raw blockchain data from a specific chain and 
 
 The block data indexed by the service can be used for multiple use cases; not just for bridge related scenarios. 
 
-Reorgs are handled at the producer level but only if the reorg height is less than 256 blocks. Anything above that requires the team to manually trigger a resync.
+Reorgs are handled at the producer level, but only if the reorg height is less than 256 blocks. Anything above that requires the team to manually trigger a resync.
 
 ### Transformer
 
