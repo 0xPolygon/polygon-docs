@@ -134,7 +134,7 @@ The service can be accessed via the Unified Bridge API endpoint. It relies on th
 
 This service polls the Unified Bridge API endpoints to fetch unprocessed claims on a specific chain, and then submits the `claimAsset` transaction for all unprocessed claims. The service takes care of all retry mechanisms and error handling.
 
-Claims are automatically processed on a destination chain so that users don’t have to perform extra steps, or add additional transaction gas fees, to receive their tokens on the destination chain. 
+Claims are automatically processed on the destination chain, so users don’t need to perform extra steps or pay additional transaction gas fees to receive their tokens. 
 
 ### How to run the auto-claim script
 
