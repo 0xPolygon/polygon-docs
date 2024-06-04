@@ -38,7 +38,7 @@ The infrastructure for all three components needs to be deployed for each chain.
 
 The endpoints are common for all CDK chains. 
 
-### Network ids
+### Network IDs
 
 Transaction data belonging to a specific chain is identified using either the `destinationNetwork` and `sourceNetwork` parameters which are included in every endpoint response. 
 
