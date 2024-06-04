@@ -48,7 +48,7 @@ Transaction data belonging to a specific chain is identified using either the `d
 
 ### Transactions API
 
-This API manages the details of a bridge transactions initiated from, or incoming to, a user’s `walletAddress`. Details include the real time status, the token bridged, the amount, the source and destination chain, etc. For example:
+This API manages the details of a bridge transactions initiated from, or incoming to, a user’s `walletAddress`. Details include the real-time status, the bridged token, transaction amount, source chain, and destination chain, etc. For example:
 
 - Testnet: [https://api-gateway.polygon.technology/api/v3/transactions/testnet?userAddress=](https://api-gateway.polygon.technology/api/v3/transactions/testnet?userAddress=)`walletAddress`
 - Mainnet: [https://api-gateway.polygon.technology/api/v3/transactions/mainnet?userAddress=](https://api-gateway.polygon.technology/api/v3/transactions/mainnet?userAddress=)`walletAddress`
