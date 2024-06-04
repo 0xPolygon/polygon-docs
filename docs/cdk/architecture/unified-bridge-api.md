@@ -32,7 +32,7 @@ This component consumes the transformed data from the queue and writes it into a
 
 ### Deploying the components
 
-The infrastructure for the three components has to be deployed for each chain. This means that every new CDK chain must have a new producer, transformer, and consumer. Once these are deployed, the API endpoints can start exposing data for the chain. 
+The infrastructure for all three components needs to be deployed for each chain. This means that every new CDK chain must have a new producer, transformer, and consumer. Once these components are deployed, the API endpoints can start exposing data for the respective chain. 
 
 ## Endpoints
 
