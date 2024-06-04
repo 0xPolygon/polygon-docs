@@ -114,7 +114,7 @@ The gas station is currently maintained by the Polygon Labs team, but can be hos
 
 ### Token list
 
-This is a [json-formatted list](https://github.com/maticnetwork/polygon-token-list) containing metadata for all supported tokens. 
+This is a [JSON-formatted list](https://github.com/maticnetwork/polygon-token-list) containing metadata for all supported tokens. 
 
 It automatically updates with new token details whenever one is bridged for the first time. However, logos or other metadata types need to be added or updated via a PR. 
 
