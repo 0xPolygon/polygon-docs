@@ -15,10 +15,11 @@ Follow the instructions below to run a fast state sync on a node database using 
     curl <snapshot-url> -o <db-name>.sql.gz
     ```
 
-   For example: 
+    For example: 
 
-   ```sh
-   curl https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-statedb.sql.gz -o statedb.sql.gz
+    ```sh
+    curl https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-statedb.sql.gz -o statedb.sql.gz
+    ```
 
 2. Stop/start the database:
     

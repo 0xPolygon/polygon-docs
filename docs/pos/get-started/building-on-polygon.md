@@ -44,10 +44,6 @@ Token bridging between Polygon PoS and Ethereum and vice-versa, and inter-layer 
 * [Bridge tokens from PoS to Ethereum](../how-to/bridging/ethereum-polygon/matic-to-ethereum.md)
 * [L1 - L2 communication and state transfer](../how-to/bridging/l1-l2-communication/state-transfer.md)
 
-## Smart contracts
-
-Check out the [third-party developer tools section](../../tools/dApp-development/pos/third-party-smart-contracts.md) for tutorials.
-
 ## Connecting to Polygon
 
 You can add Polygon to MetaMask, or directly use Venly (Arkane), which allows you to connect to Polygon using RPC.
