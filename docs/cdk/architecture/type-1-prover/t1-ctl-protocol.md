@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Since each STARK module is like a small state machine where its state transition can be uniquely captured in the form of a table, called the `execution trace`, the STARK modules are henceforth also referred to as _STARK tables_. See the repo for further details of each table [here](https://github.com/0xPolygonZero/plonky2/tree/main/evm/spec/tables).
 
 For each STARK table, ordinary STARK proof and verification are used to check if all state transitions occurring in the module satisfies stipulated constraints.

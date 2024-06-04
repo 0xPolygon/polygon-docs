@@ -1,6 +1,6 @@
 In order to ensure the system's sustainability, actors must be compensated for correctly performing their roles and giving the protocol finality.
 
-Unless otherwise specified, the measures and rules presented here apply to cases in which the Sequencer and Aggregator roles are decentralised (i.e., when there are no Trusted Sequencer and no Trusted Aggregator).
+Unless otherwise specified, the measures and rules presented here apply to cases in which the Sequencer and Aggregator roles are decentralised (i.e., when there are no trusted sequencer and no trusted aggregator).
 
 ## L2 transaction fees and sequencing fees
 
@@ -44,7 +44,7 @@ $$
     \mathtt{batchReward} =  { \dfrac{ \textit{``}contract\ MATIC\ balance\textit{''}}{\textit{``}Quantity\ of\ batches\ not\ aggregated\ yet \textit{''}}}
 $$
 
-The following expression represents **the total amount of ETH value that the Aggregator will earn for the aggregation of a sequence of batches**:
+The following expression represents **the total amount of ETH value that the Aggregator earns for the aggregation of a sequence of batches**:
 
 $$
 \mathtt{\textit{`` }Aggregator net Ether income\textit{''}= \frac{batchReward ∗ nBatches}{MATIC/ETH} − L1AggTxGasFee}
@@ -61,7 +61,7 @@ where:
 
 The `batchFee` is automatically adjusted with every aggregation of a sequence by an independent Aggregator.
 
-This happens when the Trusted Aggregator isn't working properly and the `batchFee` variable needs to be changed to encourage aggregation. Further information on the Trusted Aggregator's inactivity or malfunctioning is provided in upcoming sections.
+This happens when the trusted aggregator isn't working properly and the `batchFee` variable needs to be changed to encourage aggregation. Further information on the trusted aggregator's inactivity or malfunctioning is provided in upcoming sections.
 
 An internal method called `_updateBatchFee`, is used to adjust `batchFee` storage variable.
 
@@ -71,8 +71,8 @@ function _updateBatchFee(uint64 newLastVerifiedBatch) internal
 
 The admin defines two storage variables that are used to **tune the fee adjustment function**:
 
-- `veryBatchTimeTarget`: it is **the targeted time of the verification of a batch**, so the `batchFee` variable will be updated to achieve this target, and
-- `multiplierBatchFee`: it is the batch fee multiplier, with 3 decimals that **ranges from 1000 to 1024**.
+- `veryBatchTimeTarget`, which is **the targeted time of the verification of a batch**, so the `batchFee` variable is updated to achieve this target, and
+- `multiplierBatchFee`, which is the batch fee multiplier, with 3 decimals ranging from 1000 to 1024.
 
 The function `_updateBatchFee` first determines how many of the aggregated batches are late. That is, those who are in the sequence but have not yet been aggregated.
 
@@ -82,7 +82,7 @@ The `diffBatches` variable represents the difference between late batches and th
 
 ### Case 1
 
-If there are more late batches than early batches in the sequence being aggregated, the following formula will be applied to the `batchFee` storage variable:
+If there are more late batches than early batches in the sequence being aggregated, the following formula is applied to the `batchFee` storage variable:
 
 $$
 \textit{`` }\mathtt{

@@ -3,13 +3,13 @@ For the sake of securing the Polygon zkEVM, which is still in its Beta version, 
 
 Although Upgradeability is not a permanent feature of the Polygon zkEVM but only a part of the so-called _Training Wheels_, this document acts as a note on the process followed when upgrading.  
 
-Upgrades on the Polygon zkEVM will typically affect the following contracts:
+Upgrades on the Polygon zkEVM typically affect the following contracts:
 
 - **PolygonZkEVM.sol** (Consensus Contract)
 - **PolygonZkEVMGlobalExitRoot.sol**
 - **PolygonZkEVMBridge.sol** (Bridge Contract)
 
-A typical upgrade can only change the logic but not the state of the network. For instance, an upgrade affecting the zkEVM's Consensus Contract (or `PolygonZkEVM.sol`) could be changing the old _verifier contract_ to a new one. In this case, the logic will change from pointing to the old _verifier contract_ to the new one, leaving the state intact.
+A typical upgrade can only change the logic but not the state of the network. For instance, an upgrade affecting the zkEVM's Consensus Contract (or `PolygonZkEVM.sol`) could be changing the old _verifier contract_ to a new one. In this case, the logic changes from pointing to the old _verifier contract_ to the new one, leaving the state intact.
 
 ## Security parameters
 

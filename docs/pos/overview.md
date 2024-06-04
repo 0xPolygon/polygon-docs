@@ -1,27 +1,27 @@
-The Polygon Proof-of-Stake (PoS) network, originally launched as Matic Network in June 2020, has been upgraded a number of times since inception. Initially designed to scale Ethereum through a sidechain, a new discussion on the Polygon forum proposes upgrading Polygon PoS into a zero-knowledge (ZK)-based validium on Ethereum.
+The Polygon Proof-of-Stake (PoS) network is designed to address scalability challenges within the Ethereum ecosystem. It operates as an EVM-compatible Layer-2 (L2) scaling solution for Ethereum, enhancing its throughput while also significantly bringing down  gas costs, i.e., transaction fees.
 
-If passed, Polygon PoS would adopt the execution environment of Polygon zkEVM along with a dedicated data availability layer. The new architecture would be inherently interoperable, through an in-development interop-layer, with a broader network of ZK-powered Layer 2 (L2) chains on Ethereum.
+Originally launched as Matic Network in June 2020, Polygon PoS has undergone numerous upgrades since its inception. Initially designed to scale Ethereum through a sidechain, a new proposal on the Polygon forum suggests upgrading Polygon PoS into a zero-knowledge (ZK)-based validium on Ethereum. If approved, Polygon PoS would adopt the execution environment of Polygon zkEVM along with a dedicated data availability layer. This new architecture would be inherently interoperable with a broader network of ZK-powered Ethereum L2s via the Agglayer.
 
-Polygon PoS will continue to be foundational infrastructure for a wide array of decentralized applications and services. More details about the overarching vision of a unified ecosystem of L2s on Ethereum can be found in the Learn section.
+Polygon PoS will continue to be foundational infrastructure for a wide array of decentralized applications and services. More details about the overarching vision of a unified ecosystem of L2s on Ethereum can be found in [the Learn space](../learn/index.md).
 
 ## Transaction lifecycle
 
 The following cyclical workflow outlines the operational mechanics of today's Polygon PoS architecture:
 
-1. **User initiates transaction**: On the Polygon PoS chain, typically via a smart contract function call.
-2. **Validation by public checkpoint nodes**: These nodes validate the transaction against the Polygon chain's current state.
-3. **Checkpoint creation and submission**: A checkpoint of the validated transactions is created and submitted to the core contracts on the Ethereum mainnet.
-4. **Verification by core contracts**: Core contracts verify the checkpoint's validity, with the added security of fraud proofs. 
-5. **Transaction execution**: Upon successful verification, the transaction is executed and state changes are committed to the Polygon sidechain.
-6. **Asset transfer (optional)**: If needed, assets can be transferred back to the Ethereum mainnet via the exit queue in the core contracts.
-7. **Cycle reiteration**: The process can be initiated again by the user, returning to step 1.
+1. User initiates transaction: On the Polygon PoS chain, typically via a smart contract function call.
+2. Validation by public checkpoint nodes: These nodes validate the transaction against the Polygon chain's current state.
+3. Checkpoint creation and submission: A checkpoint of the validated transactions is created and submitted to the core contracts on the Ethereum mainnet.
+4. Verification by core contracts: Core contracts verify checkpoint validity
+5. Transaction execution: Upon successful verification, the transaction is executed and state changes are committed to Polygon PoS.
+6. Asset transfer (optional): If needed, assets can be transferred back to the Ethereum mainnet via the exit queue in the core contracts.
+7. Cycle reiteration: The process can be initiated again by the user, returning to step 1.
 
 
 ## Core contracts on Ethereum 
 
 Ethereum serves as the foundational layer upon which Polygon's PoS architecture is built. Within the Ethereum ecosystem, a set of core contracts play an important role connecting Polygon PoS to Ethereum. These core contracts are responsible for a range of functionalities, from anchoring the Polygon chain to handling asset transfers.
 
-The core contracts on the Ethereum mainnet incorporate two key features for security and functionality: fraud proofs and the exit queue. Fraud proofs act as a security layer, enabling the validation of transactions and state changes to ensure transparency and security across operations. The exit queue manages the safe and efficient transfer of assets back to the Ethereum mainnet, allowing users to seamlessly move assets between the Polygon PoS chain and Ethereum without compromising data integrity or security.
+The core contracts on the Ethereum mainnet incorporate a key feature for security and functionality: the exit queue. The exit queue manages the safe and efficient transfer of assets back to the Ethereum mainnet, allowing users to seamlessly move assets between the Polygon PoS chain and Ethereum without compromising data integrity or security.
 
 
 ## Public checkpoint nodes

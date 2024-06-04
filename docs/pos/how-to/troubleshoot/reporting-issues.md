@@ -3,7 +3,7 @@
 
 For any bugs or attacks that are discovered, you need to report them to the [Immunefi bug bounty program](https://immunefi.com/bounty/polygon/). 
 
-!!!info
+!!! info
     Performing an attack and not providing submission of your proof will result in disqualification of your attempt.
 
 Make sure you add all relevant details such as your email address and Discord ID. Providing ample details creates a rapport of communication, and helps the Polygon team evaluate your submission appropriately.

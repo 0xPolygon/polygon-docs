@@ -4,45 +4,44 @@ comments: true
 
 This section guides you through starting and running the validator node through an Ansible playbook.
 
-For the system requirements, see [Validator Node System Requirements](validator-system-requirements.md).
+For the system requirements, see [validator node system requirements](validator-system-requirements.md).
 
-If you would like to start and run the validator node from binaries, see the guide on [spinning up a Validator node using binaries](./validator-binaries.md).
+If you would like to start and run the validator node from binaries, see the guide on [spinning up a validator node using binaries](./validator-binaries.md).
 
-!!!caution
+!!! note "Limited spots for new validators"
     
     There is limited space for accepting new validators. New validators can only join the active set when an already active validator unbonds.
 
 
 ## Prerequisites
 
-* Three machines — one local machine on which you will run the Ansible playbook; two remote machines — one sentry and one validator.
+* Three machines: One local machine on which you will run the Ansible playbook; two remote machines — one sentry and one validator.
 * On the local machine, [Ansible](https://www.ansible.com/) installed.
 * On the local machine, [Python 3.x](https://www.python.org/downloads/) installed.
 * On the remote machines, make sure Go is *not* installed.
 * On the remote machines, your local machine's SSH public key is on the remote machines to let Ansible connect to them.
-* We have Bloxroute available as a relay network. If you need a gateway to be added as your Trusted Peer please contact **@validator-support-team** in [Polygon Discord](https://discord.com/invite/0xPolygon) > POS VALIDATORS | FULL NODE PROVIDERS | PARTNERS > bloxroute.
+* We have Bloxroute available as a relay network. If you need a gateway to be added as your Trusted Peer please contact *@validator-support-team* in [Polygon Discord](https://discord.com/invite/0xPolygon) > POS VALIDATORS | FULL NODE PROVIDERS | PARTNERS > bloxroute.
 
 ## Overview
 
-!!!caution
+!!! warning
     
-    You must follow the **exact outlined sequence of actions**, otherwise you will run into issues.
-    For example, **a sentry node must always be set up before the validator node**.
+    Please ensure you strictly adhere to the outlined sequence of actions to avoid encountering issues. For instance, it's imperative to set up a sentry node before configuring the validator node.
 
 
 To get to a running validator node, do the following:
 
 1. Have the three machines prepared.
-1. Set up a sentry node through Ansible.
-1. Set up a validator node through Ansible.
-1. Configure the sentry node.
-1. Start the sentry node.
-1. Configure the validator node.
-1. Set the owner and signer keys.
-1. Start the validator node.
-1. Check node health with the community.
+2. Set up a sentry node through Ansible.
+3. Set up a validator node through Ansible.
+4. Configure the sentry node.
+5. Start the sentry node.
+6. Configure the validator node.
+7. Set the owner and signer keys.
+8. Start the validator node.
+9. Check node health with the community.
 
-## Set up the Sentry node
+## Set up the sentry node
 
 On your local machine, clone the [node-ansible repository](https://github.com/maticnetwork/node-ansible):
 
@@ -126,7 +125,7 @@ ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_version=v1.1.0
 
 Once the setup is complete, you will see a message of completion on the terminal.
 
-!!!note
+!!! note "How to start over"
     
     If you run into an issue and would like to start over, run:
 
@@ -134,8 +133,7 @@ Once the setup is complete, you will see a message of completion on the terminal
     ansible-playbook -l sentry playbooks/clean.yml
     ```
 
-
-## Set up the Validator node
+## Set up the validator node
 
 At this point, you have the sentry node set up.
 
@@ -186,8 +184,7 @@ Once the setup is complete, you will see a message of completion on the terminal
     ansible-playbook -l validator playbooks/clean.yml
     ```
 
-
-## Configure the Sentry node
+## Configure the sentry node
 
 Log into the remote sentry machine.
 
@@ -221,7 +218,7 @@ Change the following:
 
 Save the changes in `config.toml`.
 
-### Configure the Bor Service
+### Configure the Bor service
 
 Open for editing `vi /var/lib/bor/config.toml`.
 
@@ -250,22 +247,22 @@ Save the changes in `config.toml`.
 
 The sentry machine must have the following ports open to the world `0.0.0.0/0`:
 
-* `26656`- Your Heimdall service will connect your node to other nodes using the Heimdall service.
+* Port `26656`- Your Heimdall service will connect your node to other nodes using the Heimdall service.
 
-* `30303`- Your Bor service will connect your node to other nodes using the Bor service.
+* Port `30303`- Your Bor service will connect your node to other nodes using the Bor service.
 
-* `22`- Open this port if your node is servicing validators. You will likely want to restrict what traffic can access this port as it is a sensitive port.
+* Port `22`- Open this port if your node is servicing validators. You will likely want to restrict what traffic can access this port as it is a sensitive port.
 
-!!!note
+!!! note "Sentry node with a VPN enabled"
     
-    However, if they use a VPN connection, they can allow incoming SSH connections only from the VPN IP address.
+    If the sentry node utilizes a VPN connection, it may restrict incoming SSH connections solely to the VPN IP address.
 
 
 ## Start the sentry node
 
 You will first start the Heimdall service. Once the Heimdall service syncs, you will start the Bor service.
 
-!!!note
+!!! note "Syncing node using snapshots"
     
     The Heimdall service takes several days to fully sync from scratch.
 
@@ -278,13 +275,13 @@ You will first start the Heimdall service. Once the Heimdall service syncs, you 
 
 The latest version, [Heimdall v1.0.3](https://github.com/maticnetwork/heimdall/releases/tag/v1.0.3), contains a few enhancements such as:
 1. Restricting data size in state sync txs to:
-    * **30Kb** when represented in **bytes**
-    * **60Kb** when represented as **string**.
-2. Increasing the **delay time** between the contract events of different validators to ensure that the mempool doesn't get filled very quickly in case of a burst of events which can hamper the progress of the chain.
+    * *30Kb* when represented in `bytes`
+    * *60Kb* when represented as `string`.
+2. Increasing the *delay time* between the contract events of different validators to ensure that the mempool doesn't get filled very quickly in case of a burst of events which can hamper the progress of the chain.
 
 The following example shows how the data size is restricted:
 
-```
+```text
 Data - "abcd1234"
 Length in string format - 8
 Hex Byte representation - [171 205 18 52]
@@ -303,7 +300,7 @@ Check the Heimdall service logs:
 journalctl -u heimdalld.service -f
 ```
 
-!!!note
+!!! bug "Common errors"
     
     In the logs, you may see the following errors:
 
@@ -311,7 +308,7 @@ journalctl -u heimdalld.service -f
     * `MConnection flush failed`
     * `use of closed network connection`
 
-    These mean that one of the nodes on the network refused a connection to your node. You do not need to do anything with these errors. Wait for your node to crawl more nodes on the network.
+    These mean that one of the nodes on the network refused a connection to your node. You do not need to do anything to address these errors. Wait for your node to crawl more nodes on the network.
 
 
 Check the sync status of Heimdall:
@@ -327,7 +324,7 @@ In the output, the `catching_up` value is:
 
 Wait for the Heimdall service to fully sync.
 
-### Start the Bor Service
+### Start the Bor service
 
 Once the Heimdall service is fully synced, start the Bor service.
 
@@ -345,12 +342,12 @@ journalctl -u bor.service -f
 
 ## Configure the validator node
 
-!!!note
+!!! note "RPC endpoint"
     
     To complete this section, you must have your own RPC endpoint of your own fully synced Ethereum mainnet node ready. The use of Infura and Alchemy is also sufficient and widely used among validators.
 
 
-### Configure the Heimdall Service
+### Configure the Heimdall service
 
 Log into the remote validator machine.
 
@@ -385,7 +382,7 @@ Example: `eth_rpc_url = "https://nd-123-456-789.p2pify.com/60f2a23810ba11c827d3d
 
 Save the changes in `heimdall-config.toml`.
 
-### Configure the Bor Service
+### Configure the Bor service
 
 Open for editing `vi /var/lib/bor/config.toml`.
 
@@ -415,7 +412,9 @@ On Polygon, you should keep the owner and signer keys different.
 
 ### Generate a Heimdall private key
 
-You must generate a Heimdall private key only on the validator machine. **Do not generate a Heimdall private key on the sentry machine.**
+!!! warning
+
+    Generate a Heimdall private key exclusively on the validator machine. Avoid generating a Heimdall private key on the sentry machine.
 
 To generate the private key, run:
 
@@ -423,9 +422,7 @@ To generate the private key, run:
 heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
 ```
 
-!!!note
-    
-    ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s `Signer` private key
+Here `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s signer private key.
 
 
 This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration directory:
@@ -444,10 +441,7 @@ To generate the private key, run:
 heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
 ```
 
-!!!note
-    
-    ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s `Signer` private key.
-
+Here `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s signer private key.
 
 When prompted, set up a password to the keystore file.
 
@@ -471,7 +465,7 @@ Ensure that `password` parameter in `/var/lib/bor/config.toml` matches the locat
 
 Open for editing `vi /var/lib/bor/config.toml`.
 
-In `[accounts]` section you should have paramater `password` already defined from previous step, now add your Ethereum address to `unlock` parameter and also ensure `allow-insecure-unlock` has a value of `true`.
+In the `[accounts]` table, you should have paramater `password` already defined from previous step, now add your Ethereum address to `unlock` parameter and also ensure `allow-insecure-unlock` is set to `true`.
 
 Example: 
 
@@ -484,7 +478,7 @@ Example:
 
 Save the changes in `/var/lib/bor/config.toml`.
 
-## Start the Validator node
+## Start the validator node
 
 At this point, you must have:
 
@@ -493,7 +487,7 @@ At this point, you must have:
 * The Heimdall service and the Bor service on the validator machine configured.
 * Your owner and signer keys configured.
 
-### Start the Heimdall Service
+### Start the Heimdall service
 
 You will now start the Heimdall service on the validator machine. Once the Heimdall service syncs, you will start the Bor service on the validator machine.
 
@@ -522,7 +516,7 @@ In the output, the `catching_up` value is:
 
 Wait for the Heimdall service to fully sync.
 
-### Start the Bor Service
+### Start the Bor service
 
 Once the Heimdall service on the validator machine is fully synced, start the Bor service on the validator machine.
 
@@ -540,6 +534,10 @@ journalctl -u bor.service -f
 
 ### Seed nodes and bootnodes
 
+!!! tip "Amoy testnet seeds"
+
+    The Heimdall and Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
+
 - Heimdall seed nodes:
 
   ```bash
@@ -547,22 +545,13 @@ journalctl -u bor.service -f
 
   # Mainnet:
   seeds="1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656,6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656"
-
-  # Testnet:
-  seeds="9df7ae4bf9b996c0e3436ed4cd3050dbc5742a28@43.200.206.40:26656,d9275750bc877b0276c374307f0fd7eae1d71e35@54.216.248.9:26656,1a3258eb2b69b235d4749cf9266a94567d6c0199@52.214.83.78:26656"
   ```
-
-!!! tip
-    The following Heimdall seed can be used for both mainnet and Mumbai testnet: `8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656`
-
+  
 - Bootnodes:
 
   ```bash
   # Mainnet:
   bootnode ["enode://b8f1cc9c5d4403703fbf377116469667d2b1823c0daf16b7250aa576bacf399e42c3930ccfcb02c5df6879565a2b8931335565f0e8d3f8e72385ecf4a4bf160a@3.36.224.80:30303", "enode://8729e0c825f3d9cad382555f3e46dcff21af323e89025a0e6312df541f4a9e73abfa562d64906f5e59c51fe6f0501b3e61b07979606c56329c020ed739910759@54.194.245.5:30303"]
-
-  # Testnet:
-  bootnodes ["enode://bdcd4786a616a853b8a041f53496d853c68d99d54ff305615cd91c03cd56895e0a7f6e9f35dbf89131044e2114a9a782b792b5661e3aff07faf125a98606a071@43.200.206.40:30303", "enode://209aaf7ed549cf4a5700fd833da25413f80a1248bd3aa7fe2a87203e3f7b236dd729579e5c8df61c97bf508281bae4969d6de76a7393bcbd04a0af70270333b3@54.216.248.9:30303"]
   ```
 
 ## Check node health with the community

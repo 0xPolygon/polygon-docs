@@ -1,10 +1,14 @@
-### Testing the prover
+---
+comments: true
+---
+
+## Testing the prover
 
 Find a parser and test runner for testing compatible and common Ethereum full node tests against the Polygon type 1 prover [here](https://github.com/0xPolygonZero/evm-tests).
 
 The prover passes all relevant and official [Ethereum tests](https://github.com/ethereum/tests/).
 
-### Proving costs
+## Proving costs
 
 Instead of presenting gas costs, we focus on the cost of proving EVM transactions with the Polygon type 1 prover.
 

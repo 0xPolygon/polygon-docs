@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Overview
 
 Hardhat is an Ethereum development environment for deploying smart contracts, running tests, and debugging Solidity code locally.

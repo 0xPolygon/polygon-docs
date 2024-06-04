@@ -2,30 +2,30 @@
 comments: true
 ---
 
-Ethereum developers are by default Polygon developers. Welcome. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All familiar tools used on Ethereum are supported on Polygon. Whether it is Truffle, Remix or Web3.js, Polygon offers the same UX as Ethereum.
+Ethereum developers are by default Polygon developers. Welcome. Simply switch to the [Polygon RPC](https://polygon-rpc.com/) and get started. All familiar tools used on Ethereum are supported on Polygon. Whether it is Foundry, Remix or Web3.js, Polygon offers the same UX as Ethereum.
 
-Connect your wallet and deploy any decentralized application to either Polygon Mainnet or Polygon Mumbai Testnet.
-
-Polygon Mumbai Testnet connects to Ethereum Goërli Testnet, which acts as its ParentChain, a testnet layer 1 (L1).
-
-Find all the network-related details in the [network documentation](../reference/rpc-endpoints.md).
+Connect your wallet and deploy any decentralized application to either PoS mainnet or Amoy testnet (Sepolia-anchored).
 
 ## Overview
 
-Polygon is a layer 2 (L2) network to Ethereum, employing a proof-of-stake (PoS) consensus mechanism, and thus composed of the following two layers:
+Polygon is a Layer-2 (L2) network to Ethereum, employing a Proof-of-Stake (PoS) consensus mechanism, and thus composed of the following two layers:
 
-  - Heimdall layer, a consensus layer consisting of a set of proof-of-stake Heimdall nodes for monitoring staking contracts deployed on the Ethereum mainnet, and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
+  - Heimdall layer, a consensus layer consisting of a set of proof-of-stake Heimdall nodes for monitoring staking contracts deployed on the Ethereum mainnet, and committing the Polygon PoS network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
   - Bor layer, an execution layer which is made up of a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum (Geth).
 
-In order to be a validator on the Polygon Network, you need to:
+In order to be a validator on the Polygon PoS network, you need to:
 
-- Run a sentry node, which is a separate machine running a Heimdall node and a Bor node. A sentry node is open to all nodes on the Polygon Network.
+- Run a sentry node, which is a separate machine running a Heimdall node and a Bor node. A sentry node is open to all nodes on the Polygon PoS network.
 - Run a validator node, which is a separate machine running a Heimdall node and a Bor node. A validator node is only open to its sentry node and closed to the rest of the network.
 - Stake the MATIC tokens in the staking contracts deployed on the Ethereum mainnet.
 
+## Network details
+
+To access network-related details, including the chain ID, RPC URL, and more, for both the mainnet and Amoy testnet, refer to the [network documentation](../reference/rpc-endpoints.md).
+
 ## Wallets
 
-You'll need an Ethereum-based wallet to interact with Polygon because the network runs on Ethereum Virtual Machine (EVM). You can choose to set up a [Metamask](../../tools/wallets/metamask/create-metamask-wallet.md), or [Venly](../../tools/wallets/venly/create-wallet.md) (Arkane) Wallet. 
+You'll need an Ethereum-based wallet to interact with Polygon because the network runs on Ethereum Virtual Machine (EVM). You can choose to set up a [MetaMask](https://support.metamask.io/getting-started/getting-started-with-metamask/), or [Venly](../../tools/wallets/venly/create-wallet.md) (Arkane) Wallet. 
 
 There are several other third-party wallet options available to choose from, and you'll find them listed out on [this page here](../../tools/wallets/getting-started.md).
 
@@ -42,7 +42,7 @@ Token bridging between Polygon PoS and Ethereum and vice-versa, and inter-layer 
 
 * [Bridge tokens from Ethereum to PoS](../how-to/bridging/ethereum-polygon/ethereum-to-matic.md)
 * [Bridge tokens from PoS to Ethereum](../how-to/bridging/ethereum-polygon/matic-to-ethereum.md)
-* [L1 - L2 communication](../how-to/bridging/l1-l2-communication/state-transfer.md)
+* [L1 - L2 communication and state transfer](../how-to/bridging/l1-l2-communication/state-transfer.md)
 
 ## Smart contracts
 
@@ -52,7 +52,7 @@ Check out the [third-party developer tools section](../../tools/dApp-development
 
 You can add Polygon to MetaMask, or directly use Venly (Arkane), which allows you to connect to Polygon using RPC.
 
-In order to connect with the Polygon network to read blockchain information, we recommend using the Alchemy SDK.
+In order to connect with the Polygon PoS network to read blockchain information, you can use a node provider like Alchemy SDK.
 
 ```js
 // Javascript
@@ -60,8 +60,8 @@ In order to connect with the Polygon network to read blockchain information, we 
 const { Alchemy, Network } = require("alchemy-sdk");
 
 const settings = {
-  apiKey: "demo", // Can replace with your API Key from https://www.alchemy.com
-  network: Network.MATIC_MAINNET, // Can replace with MATIC_MUMBAI
+  apiKey: "demo", // Replace with your API Key from https://www.alchemy.com
+  network: Network.MATIC_MAINNET, // Replace with MATIC_AMOY for testnet config
 };
 
 const alchemy = new Alchemy(settings);
@@ -85,17 +85,18 @@ main();
 
 Decentralized applications (dApps) act as the bridge between users and their data privacy on the blockchain. The increasing number of dApps validates their usefulness within the blockchain ecosystem, solving challenges like executing transactions between two participants without the need for central authority via smart contracts.
 
-Suppose you have no prior experience building decentralized applications (dApps). In that case, the below-mentioned resources will give you a head start on the tools required to build, debug, and deploy dApps on the Polygon Network.
+Suppose you have no prior experience building dApps. In that case, the below-mentioned resources will give you a head start on the tools required to build, debug, and deploy dApps on the Polygon PoS network.
 
 - [Full Stack dApp: Tutorial Series](https://kauri.io/full-stack-dapp-tutorial-series/5b8e401ee727370001c942e3/c)
 - [Web3.js](https://www.dappuniversity.com/articles/web3-js-intro)
 - [Ethers.js](https://docs.ethers.io/v5/)
 - [thirdweb](https://portal.thirdweb.com)
-- Remix
-- Truffle
-- Metamask
-- Arkane
-- Develop a dApp using Fauna, Polygon and React
+- [Remix](https://remix.ethereum.org/)
+- [Hardhat](https://hardhat.org/hardhat-runner/docs/getting-started)
+- [Foundry](https://github.com/foundry-rs/foundry/blob/master/README.md)
+- [Metamask](https://support.metamask.io/getting-started/)
+- [Venly (previously Arkane)](https://docs.venly.io/docs/getting-started-with-venly)
+- [Develop a dApp using Fauna, Polygon, and React](https://github.com/hello-ashleyintech/polygon-fauna-app)
 
 ## Polygon DID
 
@@ -107,5 +108,5 @@ You can refer to the elaborate startup guide for users who wish to implement the
 
 If you already have a decentralized application (dApp) and are looking for a platform to help you scale efficiently, then you are at the right place because Polygon allows you to:
 
-1. **Easily migrate from Ethereum Virtual Machine (EVM) based chain**: Polygon prides itself in being the ultimate Layer-2 scaling solution for Ethereum. You don't have to worry about the underlying architecture while moving or deploying your dApps to the Polygon Network as long as it is EVM-compatible.
-2. **Use Polygon as a faster transaction layer**: Deploying your dApp to the Polygon Mainnet allows you to leverage Polygon as a faster transaction layer for your dApp. Additionally, you can get your tokens mapped by us. You can join our [technical discussions group](http://bit.ly/matic-technical-group) on Telegram to learn more.
+1. Easily migrate from Ethereum Virtual Machine (EVM) based chain: Polygon prides itself in being the ultimate Layer-2 scaling solution for Ethereum. You don't have to worry about the underlying architecture while moving or deploying your dApps to the Polygon PoS network as long as it is EVM-compatible.
+2. Use Polygon PoS as a faster transaction layer: Deploying your dApp to the PoS mainnet allows you to leverage Polygon as a faster transaction layer for your dApp. Additionally, you can get your tokens mapped by us. You can join our [technical discussions group](http://bit.ly/matic-technical-group) on Telegram to learn more.
