@@ -17,7 +17,7 @@ The *owner wallet* is an address that is used for staking, re-staking, changing 
 
 !!! warning
 
-    The private key for this address **MUST** be kept secure.
+    The private key for this address *MUST* be kept secure.
 
 All transactions through this key happen on the Ethereum chain.
 

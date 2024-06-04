@@ -19,7 +19,7 @@ You can participate in governance proposals to vote on various aspects of the Po
 
 ### ...as a node delegator or operator?
 
-No. You can provide feedback on the proposed changes in the PIPs and monitor Github and the forum for new node software versions to remain compatible with your given chain when PIPs are approved by the community.
+No. You can provide feedback on the proposed changes in the PIPs and monitor GitHub and the forum for new node software versions to remain compatible with your given chain when PIPs are approved by the community.
 
 ### ...as an application or tooling developer?
 
@@ -29,7 +29,7 @@ No. You can review the [PIPs](https://forum.polygon.technology/t/pip-17-polygon-
 
 ### Does the amount of POL increase over time?
 
-Yes, the amount of POL will increase, starting at 3% per year at genesis. Governance may change this rate through an upgrade of the `EmissionManager` contract.
+Yes, the amount of POL will increase, starting at $3%$ per year at genesis. Governance may change this rate through an upgrade of the `EmissionManager` contract.
 
 ### How is POL minted?
 
@@ -39,7 +39,7 @@ The `EmissionsManager` smart contract is responsible for initiating the upgrade 
 
 The emission rate is governed by a variable named `mintPerSecondCap` in the primary POL smart contract. Additionally, the `EmissionManager` contract uses a constant called `INTEREST_PER_YEAR_LOG2` to calculate an annual emission rate, compounded per year.
 
-### Can the emission rate Be modified?
+### Can the emission rate be modified?
 
 Yes, the emission rate can be modified through a governance proposal, but cannot surpass `mintPerSecondCap` in the primary POL smart contract.
 
@@ -62,9 +62,9 @@ A migration smart contract will allow users to upgrade from MATIC to POL by call
 
 MATIC is held in the migration contract and can be used for unmigration.
 
-### Can POL tokens Be reverted back to MATIC?
+### Can POL tokens be reverted back to MATIC?
 
-Yes, the migration contract includes a feature known as "unmigration." This allows users to convert their POL to an equivalent amount of MATIC. Governance controls this feature, providing flexibility in response to network conditions or security concerns.
+Yes, the migration contract includes a feature known as 'unmigration'. This allows users to convert their POL to an equivalent amount of MATIC. Governance controls this feature, providing flexibility in response to network conditions or security concerns.
 
 ## Bridging mechanisms
 
@@ -88,7 +88,7 @@ The contracts are governed by the Polygon decentralized governance model. In acc
 
 ### What security measures are in place?
 
-The contracts have been designed with various security measures, including rate limits on minting and the ability to lock or unlock features like unmigration.
+The contracts have been designed with various security measures, including rate limits on minting and the ability to lock or unlock features like 'unmigration'.
 
 ## Implications and safeguards
 
