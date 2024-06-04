@@ -56,7 +56,7 @@ This API manages the details of a bridge transactions initiated from, or incomin
 !!! tip
     - Additional filtering can be performed on the transactions API by including the `sourceNetworkIds` and `destinationNetworkIds` query parameters.
     
-### Merkle Proof API
+### Merkle proof API
 
 This API manages the payload needed to process claims on the destination chain. For example:
 
