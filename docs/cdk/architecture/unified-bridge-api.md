@@ -28,7 +28,7 @@ For the bridge service use case, the transformer filters bridge and claim events
 
 ### Consumer
 
-This component consumes the transformed data from the queue and writes it into a database which is accessible to users via API endpoints.
+This component consumes the transformed data from the queue and writes it into a database accessible to users via API endpoints.
 
 ### Deploying the components
 
