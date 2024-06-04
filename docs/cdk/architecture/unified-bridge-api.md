@@ -10,7 +10,7 @@ The Unified Bridge API indexes data from Polygon PoS, Polygon zkEVM, Ethereum ma
 
 ![bridge-api-service.png](../../img/cdk/bridge-api-service.png)
 
-[Chain indexer framework](../../tools/chain-indexer-framework/overview.md) is the backend technology that runs the Unified Bridge API. The framework consists of three main components:
+The [chain indexer framework](../../tools/chain-indexer-framework/overview.md) is the backend technology that powers the Unified Bridge API. The framework consists of three main components:
 
 ### Producer
 
