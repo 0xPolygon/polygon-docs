@@ -87,7 +87,7 @@ mv README.md README-tutorial.md
     },
     networks: {
         zkEVM: {
-        url: `https://rpc.public.zkevm-test.net`,
+        url: `https://rpc.cardona.zkevm-rpc.com`,
         accounts: [process.env.ACCOUNT_PRIVATE_KEY],
         },
     },
@@ -130,7 +130,7 @@ mv README.md README-tutorial.md
         const deployedContract = await hre.ethers.deployContract("Counter");
         await deployedContract.waitForDeployment();
         console.log(
-            `Counter contract deployed to https://explorer.public.zkevm-test.net/address/${deployedContract.target}`
+            `Counter contract deployed to https://cardona-zkevm.polygonscan.com/address/${deployedContract.target}`
         );
     }
 
@@ -160,7 +160,7 @@ mv README.md README-tutorial.md
 
     ​Here's an output example:
 
-    `Counter contract deployed to https://explorer.public.zkevm-test.net/address/0x5FbDB2315678afecb367f032d93F642f64180aa3`
+    `Counter contract deployed to https://cardona-zkevm.polygonscan.com/address/0x5FbDB2315678afecb367f032d93F642f64180aa3`
 
 ## Update frontend
 
