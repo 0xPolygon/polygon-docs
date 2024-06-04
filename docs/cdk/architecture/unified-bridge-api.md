@@ -1,6 +1,6 @@
 ## Introduction
 
-The Unified Bridge API powers the [Polygon portal](https://portal.polygon.technology/) which consists in a set of endpoints that track the status of bridge transactions over all Polygon chains in real time and exposes the data to the user.
+The Unified Bridge API powers the [Polygon Portal](https://portal.polygon.technology/), which consists of a set of endpoints that track the status of bridge transactions across all Polygon chains in real time and expose the data to the user.
 
 The API is built using the [chain indexer framework](../../tools/chain-indexer-framework/overview.md). 
 
