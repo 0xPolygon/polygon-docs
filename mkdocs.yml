@@ -568,20 +568,20 @@ nav:
       - Polygon protocols: innovation-design/polygon-protocols.md
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
       - Security:
-          - Overview: learn/security/overview.md
+          - Overview: innovation-design/security/overview.md
           - Security areas:
-            - Governance & management: learn/security/governance.md
-            - Risk management: learn/security/risk.md
-            - Human resources: learn/security/hr.md
-            - Infrastructure: learn/security/infrastructure.md
-            - Software development: learn/security/sdlc.md
-            - Smart contracts: learn/security/smartcontracts.md
-            - Vulnerability management: learn/security/vulnerability.md
-            - Security operations: learn/security/operations.md
-          - Security reports: learn/security/reports.md
-          - Bug bounty programs: learn/security/bugbounty.md
-          - Responsable disclosure: learn/security/disclosure.md
-          - Contact us: learn/security/contact.md
+            - Governance & management: innovation-design/security/governance.md
+            - Risk management: innovation-design/security/risk.md
+            - Human resources: innovation-design/security/hr.md
+            - Infrastructure: innovation-design/security/infrastructure.md
+            - Software development: innovation-design/security/sdlc.md
+            - Smart contracts: innovation-design/security/smartcontracts.md
+            - Vulnerability management: innovation-design/security/vulnerability.md
+            - Security operations: innovation-design/security/operations.md
+          - Security reports: innovation-design/security/reports.md
+          - Bug bounty programs: innovation-design/security/bugbounty.md
+          - Responsable disclosure: innovation-design/security/disclosure.md
+          - Contact us: innovation-design/security/contact.md
 
 extra:
   generator: false
