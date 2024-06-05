@@ -129,7 +129,7 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
 - Populate `.env.sample` file with your `ACCOUNT_PRIVATE_KEY` and the zkEVM Testnet's `RPC URL` found [here](../get-started/quick-start.md). So the `.env.sample` file looks like this:
 
     ```json
-    RPC_URL="https://rpc.public.zkevm-test.net"
+    RPC_URL="https://rpc.cardona.zkevm-rpc.com"
     PVTKEY="<insert private key here>"
     ```
 

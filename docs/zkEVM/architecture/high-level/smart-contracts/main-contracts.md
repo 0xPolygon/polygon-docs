@@ -68,3 +68,16 @@ The [PolygonZkEVMGlobalExitRootV2.sol](https://github.com/0xPolygonHermez/zkevm-
 - Updating the L1 info tree by emitting the `UpdateL1InfoTree(...)` event.
 - Updating exit roots.
 - Retrieving latest exit roots and leaf values.
+
+### `PolygonZkEVMGlobalExitRootL2.sol`
+
+The [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/PolygonZkEVMGlobalExitRootL2.sol) contract manages the L2 rollup info trees. 
+
+It is a lighter-weight version of the global exit root contract mentioned previously.
+
+#### Key functionality
+
+- Stores every global exit root in the `globalExitRootMap` where keys are global exit roots and values are timestamps.
+- Updates the `lastRollupExitRoot` on any bridge call.
+- Updates the L2 network and global exit root with the `updateExitRoot(...)` function.
+

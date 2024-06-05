@@ -26,10 +26,8 @@ Here is a brief review of the zkEVM Bridge's architecture.
 Version-1 consists mainly of three (3) smart contracts;
 
 - the Bridge contract ([PolygonZkEVMBridge.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMBridge.sol)), which handles transfer of assets and messages between networks.
-- the Global Exit Root manager contract ([PolygonZkEVMGlobalExitRoot.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMGlobalExitRoot.sol)), which facillitates synchronization of state-info between the L2 and the L1.
+- the Global Exit Root manager contract ([PolygonZkEVMGlobalExitRoot.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMGlobalExitRoot.sol)), which facilitates synchronization of state-info between the L2 and the L1.
 - the Polygon zkEVM Consensus contract ([PolygonZkEVM.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVM.sol)), which handles the sequencing and verification of transactions in the form of batches.
-
-Interaction of these three contracts has been detailed [here](zkevm-bridge/flow-of-assets.md).
 
 ### Global exit trees Review
 
@@ -47,7 +45,7 @@ A complete transfer of assets in Version-1 involves three smart contracts; the P
 
 The below figure depicts a _bridge_ of assets and a _claim_ of assets;
 
-![Figure 1: An asset transfer and three Smart Contracts](../../../img/zkEVM/lxly-1-v1-asset-transfer.png)
+![Figure 1: An asset transfer and three Smart Contracts](../../../../img/zkEVM/lxly-1-v1-asset-transfer.png)
 
 Observe, in the above figure, that the Consensus Contract (PolygonZkEVM.sol) is able to;
 
@@ -76,7 +74,7 @@ The _Rollup Manager_ SC stores the information of the sequenced batches in the f
 
 Once sequenced batches have been verified, the _Global Exit Tree_ gets updated, in an approach similar to the zkEVM Bridge Version-1.
 
-![Figure 2: New version of bridge](../../../img/zkEVM/lxly-2-new-bridge-design.png)
+![Figure 2: New version of bridge](../../../../img/zkEVM/lxly-2-new-bridge-design.png)
 
 ### Rollup manager's role
 
@@ -118,7 +116,7 @@ The below diagram captures the following flow of events, most of which are handl
 - Verification of batches,
 - Updating the Global Exit Root.
 
-![Figure 3: Events flow related to RollupManager.sol](../../../img/zkEVM/lxly-bridge-diagram.png)
+![Figure 3: Events flow related to RollupManager.sol](../../../../img/zkEVM/lxly-bridge-diagram.png)
 
 ## Conclusion
 
@@ -130,4 +128,4 @@ The next step is to enable developers wishing to create a zk-rollup to choose be
 
 The idea of handling verification of several networks in a single contract, is a pre-cursor to the ultimate and envisaged _interop layer_ for the Polygon ecosystem.
 
-The Code for the LXLY Bridge Version-2 can be found [here](https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/v2ForkID5/contracts/v2).
+The code for the LXLY Bridge Version-2 can be found [here](https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/v2ForkID5/contracts/v2).

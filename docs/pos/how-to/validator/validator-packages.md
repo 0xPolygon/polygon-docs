@@ -13,12 +13,11 @@ comments: true
 
 ## Overview
 
-To get to a running validator node, conduct the following in this **exact sequence of steps**:
+To spin up a functioning validator node, follow these steps in the *specified sequence*:
 
-!!!caution
+!!! warning
     
-    You will run into configuration issues if these steps are performed out of sequence.
-    It is important to keep in mind that a sentry node must always be set up before the validator node.
+    Please ensure you strictly adhere to the outlined sequence of actions to avoid encountering issues. For instance, it's imperative to set up a sentry node before configuring the validator node.
 
 
 1. Prepare two machines, one for the sentry node and one for the validator node.
@@ -36,7 +35,7 @@ To get to a running validator node, conduct the following in this **exact sequen
 
 ### Heimdall
 
-- Install the default latest version of sentry for the Polygon Mainnet:
+- Install the default latest version of sentry for the Polygon mainnet:
 
     ```shell
     curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash
@@ -53,7 +52,7 @@ To get to a running validator node, conduct the following in this **exact sequen
 
 ### Bor
 
-- Install the default latest version of sentry for Mainnet:
+- Install the default latest version of sentry for mainnet:
 
     ```shell
     curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash
@@ -83,24 +82,22 @@ To get to a running validator node, conduct the following in this **exact sequen
     bor version
     ```
 
-!!!note
+!!! note
     
     Before proceeding, Bor should be installed on both the sentry and validator machines.
-
-
 
 ## Configuration
 
 In this section, we will go through steps to initialize and customize configurations nodes.
 
-!!!caution
+!!! warning
     
-    Bor v1.1.0 and Heimdall v1.0.3 use standardized paths for configuration files and chain data. If you have existing config files and chain data on your node, please skip this section and jump directly to **[Migration](#upgrade-from-02x-to-03x) section** to learn about migrating configs and data to standardized file locations.
+    Bor v1.1.0 and Heimdall v1.0.3 use standardized paths for configuration files and chain data. If you have existing config files and chain data on your node, please skip this section and refer to the [migration](https://www.notion.so/polygontechnology/Bor-Heimdall-Mainnet-Upgrade-v0-3-0-6575b2672a1d4ecc8cea8e1703bcc2df) guide to learn about migrating configs and data to standardized file locations. This is not relevant for new validators.
 
 
 ### Configure Heimdall
 
-- Initialize Heimdall configs
+- Initialize Heimdall configs using:
 
 ```shell
 # For mainnet
@@ -161,6 +158,7 @@ To get the Node ID of Bor on the validator machine:
 2. Run `bor bootnode -node-key /var/lib/bor/data/bor/nodekey -dry-run`.
 
 Example content of static node field in `/var/lib/bor/config.toml`:
+
 ```
 [p2p]
     [p2p.discovery]
@@ -173,16 +171,17 @@ Save the changes in `/var/lib/bor/config.toml`.
 
 The sentry machine must have the following ports open to the world `0.0.0.0/0`:
 
-* `26656`- Your Heimdall service will connect your node to other nodes Heimdall service.
+* Port `26656`: Your Heimdall service will connect your node to other nodes Heimdall service.
 
-* `30303`- Your Bor service will connect your node to other nodes Bor service.
+* Port `30303`: Your Bor service will connect your node to other nodes Bor service.
 
-* `22` - Open this port if your node is servicing validators. You will likely want to restrict what traffic can access this port as it is a sensitive port.
+* Port `22`: Open this port if your node is servicing validators. You will likely want to restrict what traffic can access this port as it is a sensitive port.
 
 ## Configure service files for Bor and Heimdall
 
 After successfully installing Bor and Heimdall through [packages](#installing-package), their service file could be found under `/lib/systemd/system`, and Bor's config
 file could be found under `/var/lib/bor/config.toml`.
+
 You will need to check and modify these files accordingly.
 
     - In the service file, set `--chain` to `mainnet` or `amoy` accordingly
@@ -208,7 +207,7 @@ You will need to check and modify these files accordingly.
   Save the changes in `/var/lib/bor/config.toml`.
 
 
-## Starting the Sentry Node
+## Starting the sentry node
 
 You will first start the Heimdall service. Once the Heimdall service syncs, you will start the Bor service.
 
@@ -235,8 +234,8 @@ Check the Heimdall service logs:
 journalctl -u heimdalld.service -f
 ```
 
-!!!note
-    
+!!! bug "Common errors"
+     
     In the logs, you may see the following errors:
 
     * `Stopping peer for error`
@@ -261,8 +260,8 @@ curl localhost:26657/status
 
 In the output, the `catching_up` value is:
 
-* `true` — the Heimdall service is syncing.
-* `false` — the Heimdall service is fully synced.
+* `true`: The Heimdall service is syncing.
+* `false`: The Heimdall service is fully synced.
 
 Wait for the Heimdall service to sync fully.
 
@@ -282,22 +281,20 @@ Check the Bor service logs:
 journalctl -u bor.service -f
 ```
 
-## Installing packages on the Validator Node
+## Installing packages on the validator node
 
 Follow the same [installation steps](#installing-packages) on validator node.
 
-## Configuring the Validator Node
+## Configuring the validator node
 
-!!!note
+!!! note
     
     To complete this section, you must have an RPC endpoint of your fully synced Ethereum mainnet node ready.
 
 
-!!!caution
+!!! warning
     
-    Bor v1.1.0 and Heimdall v1.0.3 use standardized paths for configuration files and chain data. If you have existing config files and chain data on your node, please jump directly to **[Migration](#upgrade-from-02x-to-03x-1) section** to learn about migrating configs and data to standardized file locations.
-
-
+    Bor v1.1.0 and Heimdall v1.0.3 use standardized paths for configuration files and chain data. If you have existing config files and chain data on your node, please skip this section and refer to the [migration](https://www.notion.so/polygontechnology/Bor-Heimdall-Mainnet-Upgrade-v0-3-0-6575b2672a1d4ecc8cea8e1703bcc2df) guide to learn about migrating configs and data to standardized file locations. This is not relevant for new validators.
 
 ### Configure Heimdall
 
@@ -377,10 +374,8 @@ Save the changes in `/var/lib/bor/config.toml`.
 
 On Polygon, it is recommended that you keep the owner and signer keys different.
 
-* Signer — the address that signs the
-  checkpoint transaction. The recommendation is to keep at least 1 ETH on the signer address.
-* Owner — the address that does the staking transactions. The recommendation is to keep the MATIC
-  tokens on the owner address.
+* Signer: The address that signs the checkpoint transaction. It is advisable to keep at least 1 ETH on the signer address.
+* Owner: The address that does the staking transactions. It is advisable to keep the MATIC tokens on the owner address.
 
 ### Generating a Heimdall private key
 
@@ -393,12 +388,9 @@ To generate the private key, run:
 heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
 ```
 
-where
+where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet's private key.
 
-* ETHEREUM_PRIVATE_KEY — your Ethereum wallet's private key.
-
-This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration
-directory:
+This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration directory:
 
 ```sh
 mv ./priv_validator_key.json /var/lib/heimdall/config
@@ -415,9 +407,7 @@ To generate the private key, run:
 heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
 ```
 
-where
-
-* ETHEREUM_PRIVATE_KEY — your Ethereum wallet's private key.
+where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet's private key.
 
 When prompted, set up a password to the keystore file.
 
@@ -429,7 +419,7 @@ Move the generated keystore file to the Bor configuration directory:
 mv ./UTC-<time>-<address> /var/lib/bor/data/keystore
 ```
 
-### Add password.txt
+### Add `password.txt`
 
 Make sure to create a `password.txt` file then add the Bor keystore file password right in the
 `/var/lib/bor/password.txt` file.
@@ -449,15 +439,15 @@ Open `config.toml` for editing: `vi /var/lib/bor/config.toml`.
   allow-insecure-unlock = true
 ```
 
-!!!caution
+!!! warning
     
     Please ensure that `priv_validator_key.json` & `UTC-<time>-<address>` files have relevant permissions. To set relevant permissions for `priv_validator_key.json`, run `sudo chown -R heimdall:nogroup /var/lib/heimdall/config/priv_validator_key.json` and similarly `sudo chown -R heimdall:nogroup /var/lib/bor/data/keystore/UTC-<time>-<address>` for `UTC-<time>-<address>`.
 
 
-## Configure service files for bor and heimdall
+## Configure service files for Bor and Heimdall
 
-After successfully installing Bor and Heimdall through [packages](#install-with-packages-recommended), their service file could be found under `/lib/systemd/system`, and Bor's config
-file could be found under `/var/lib/bor/config.toml`.
+After successfully installing Bor and Heimdall through [packages](#install-with-packages-recommended), their service file could be found under `/lib/systemd/system`, and Bor's config file could be found under `/var/lib/bor/config.toml`.
+
 You will need to check and modify these files accordingly.
 
 - Make sure the chain is set correctly in `/lib/systemd/system/heimdalld.service` file. Open the file with following command `sudo vi /lib/systemd/system/heimdalld.service`
@@ -493,7 +483,7 @@ You will need to check and modify these files accordingly.
 
   Save the changes in `/var/lib/bor/config.toml`.
 
-## Starting the Validator Node
+## Starting the validator node
 
 At this point, you must have:
 
@@ -545,8 +535,8 @@ curl localhost:26657/status
 
 In the output, the `catching_up` value is:
 
-* `true` — the Heimdall service is syncing.
-* `false` — the Heimdall service is synced.
+* `true`: The Heimdall service is syncing.
+* `false`: The Heimdall service is synced.
 
 Wait for the Heimdall service to fully sync.
 
@@ -568,7 +558,7 @@ journalctl -u bor.service -f
 ```
 ### Seed nodes and bootnodes
 
-!!! note "Amoy node seeds"
+!!! tip "Amoy node seeds"
 
     The Heimdall and Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
 
@@ -598,7 +588,7 @@ Now that your sentry and validator nodes are in sync and running, head over to
     As validators, it’s mandatory to always have a check of the signer address. If the ETH balance reaches below 0.5 ETH then it should be refilled. Avoiding this will push out nodes from submitting checkpoint transactions.
 
 
-## Next Steps: Staking
+## Next steps: Staking
 
 Now that you have your sentry and validator nodes are health-checked, proceed to
-the [Staking](../operate-validator-node/validator-staking-operations.md) guide to start backing the network.
+the [staking](../operate-validator-node/validator-staking-operations.md) guide to start backing the network.
