@@ -12,7 +12,7 @@ Although the Polygon zkEVM architecture and state differ from the Ethereum, comm
 
 Since Polygon zkEVM is a separate instance, with a state distinct from Ethereum, balances in accounts may differ and therefore L1 smart contracts cannot be directly accessed through L2 transactions.
 
-A special zkEVM bridge and cross-chain messaging mechanism have been developed so as to enable the exchange of data between both networks. More details on the zkEVM Bridge are documented [here](../architecture/protocol/zkevm-bridge/index.md).
+A special zkEVM bridge and cross-chain messaging mechanism have been developed so as to enable the exchange of data between both networks. 
 
 ## Basics of EVM
 
