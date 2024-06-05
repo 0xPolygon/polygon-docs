@@ -2,7 +2,7 @@ Abstract contract required to preserve the storage slots from previous versions.
 
 ## Functions
 
-### `lastRollupExitRoo`
+### `lastRollupExitRoot`
 
 Rollup root, contains all exit roots of all rollups.
 
