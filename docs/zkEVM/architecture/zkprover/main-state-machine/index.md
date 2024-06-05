@@ -1,6 +1,6 @@
 Main state machine is a component of the zkProver that can be instantiated with various computations pertaining to transactions submitted by users to the Polygon zkEVM network.
 
-In addition to carrying out these computations, the main SM also generates fixed-length, easy-to-verify cryptographic proofs of Computational Integrity (CI). These proofs can be verified by spending only a minimal amount of computational resources.
+In addition to carrying out these computations, the main SM also generates fixed-length, easy-to-verify cryptographic proofs of _computational integrity_. These proofs can be verified by spending only a minimal amount of computational resources.
 
 It achieves this by using cutting-edge zero-knowledge technology. In particular, these proofs are STARK proofs that are recursively aggregated into one STARK proof, which is in turn proved with a SNARK proof. This last SNARK proof is published as the validity proof. You can read a summary of the STARK proofs recursion [here](index.md), and its complete documentation [here](../stark-recursion/index.md).
 
@@ -8,38 +8,38 @@ It achieves this by using cutting-edge zero-knowledge technology. In particular,
 
 ## The ROM
 
-The ROM is a program written in zero-knowledge Assembly (zkASM) and contains all the instructions the main SM must execute. It is to the Polygon zkEVM what the EVM Interpreter is to Ethereum. Since the ROM is in fact analogous to computer memory, it is named with a well-known acronym that stands for **Read-Only Memory**.
+The ROM is a program written in zero-knowledge Assembly (zkASM) and contains all the instructions the main SM must execute. It is to the Polygon zkEVM what the EVM Interpreter is to Ethereum. Since the ROM is in fact analogous to computer memory, it is named with a well-known acronym that stands for _Read-Only Memory_.
 
 The main SM can be viewed as a processor capable of interpreting a set of instructions, and the ROM as the memory containing the firmware. The term firmware here refers to a piece of low-level software that is infrequently subjected to changes.
 
 It is a piece of software, composed of a set of instructions, which implements a special EVM interpreter for Polygon zkEVM's L2 architecture.
 
-All EVM opcodes are interpreted in the ROM, as well as interpretation of batches and the execution logic of transactions. The ROM is therefore the interpreter of all opcodes to the Polygon zkEVM, allowing the main SM to execute Polygon zkEVM's L2 state transitions with Computational Integrity (CI).
+All EVM opcodes are interpreted in the ROM, as well as interpretation of batches and the execution logic of transactions. The ROM is therefore the interpreter of all opcodes to the Polygon zkEVM, allowing the main SM to execute Polygon zkEVM's L2 state transitions with _computational integrity_.
 
 !!!info
     In order to avoid any misunderstandings in the future, it is helpful to distinguish between the set of ROM instructions and EVM opcodes:
 
-    **ROM Instructions** &rarr; Set of instructions created and developed by Polygon to target a ”special” zero-knowledge virtual machine (main SM) that can execute computations with probable Computational Integrity (CI).
+    **ROM Instructions**: Set of instructions created and developed by Polygon to target a ”special” zero-knowledge virtual machine (main SM) that can execute computations with probable _computational integrity_.
 
-    **EVM opcodes** &rarr; Set of instructions designed to target the EVM, used to define smart contract’s computations.
+    **EVM opcodes**: Set of instructions designed to target the EVM, used to define smart contract’s computations.
 
 Although zkASM instructions and EVM opcodes are different types of instructions, the Polygon zkEVM's ROM contains a piece of code written in zkASM instructions to implement each EVM opcode.
 
 ## Public parameters
 
-Polygon zkEVM's proofs of Computational Integrity (CI) are zero-knowledge proofs. That is, the proofs do not reveal any information about the executed computations to effect the state transition.
+Polygon zkEVM's proofs of _computational integrity_ are zero-knowledge proofs. That is, the proofs do not reveal any information about the executed computations to effect the state transition.
 
 **How then is the L1 verifier smart contract enabled to verify the proofs?**
 
-The proofs are made verifiable by disclosing certain parameters pertaining to the executed computations. These are **public parameters** because they are in fact publicly disclosed. Since the proof is derived from the actual execution of the computations being specified, verification of the proofs will not succeed if falsified parameters are used.
+The proofs are made verifiable by disclosing certain parameters pertaining to the executed computations. These are _public parameters_ because they are in fact publicly disclosed. Since the proof is derived from the actual execution of the computations being specified, verification of the proofs will not succeed if falsified parameters are used.
 
-These public parameters form part of the **data availability** of L2 batches, which is provided by the L1 contracts.
+These public parameters form part of the _data availability_ of L2 batches, which is provided by the L1 contracts.
 
 Here is a complete list of the public parameters;
 
-- `oldStateRoot`: the root of **old state** refers to the root of the Merkle tree representing the L2 State before the state transition was executed.
+- `oldStateRoot`: the root of _old state_ refers to the root of the Merkle tree representing the L2 state before the state transition was executed.
 
-- `newAccInputHash`: the new accumulating input hash is a unique cryptographic identifier of the batch whose execution is currently being proved and verified. And it is computed as the **Keccak256** digest of the quintuple;
+- `newAccInputHash`: the new accumulating input hash is a unique cryptographic identifier of the batch whose execution is currently being proved and verified. And it is computed as the _Keccak256_ digest of the quintuple;
 
     $$
     \texttt{oldAccInputHash},\ \texttt{batchHashData},\ \texttt{globalExitRoot},\ \texttt{timestamp},\ \texttt{msg.sender}.
@@ -49,7 +49,7 @@ Here is a complete list of the public parameters;
 
 - `oldBatchNum`: the old Batch Number is a unique batch index of the previous batch (i.e., the batch whose execution led to the L2 state that existed before the state transition currently being proved and verified).
 
-- `newStateRoot`: the new state root is the root of the newly amended Merkle tree (representing the new L2 State) due to the state transition being proved and verified.
+- `newStateRoot`: the new state root is the root of the newly amended Merkle tree (representing the new L2 state) due to the state transition being proved and verified.
 
 - `newBatchNum`: the new Batch Number is a unique batch index of the batch whose execution is currently being proved and verified.
 
@@ -61,11 +61,11 @@ Here is a complete list of the public parameters;
 
 ## State trie
 
-The state of a Blockchain is typically recorded in the form of a Merkle Tree. Both the EVM and the Polygon zkEVM store their states in their respective especially modified Merkle Trees.
+The state of a Blockchain is typically recorded in the form of a Merkle Tree. Both the EVM and the Polygon zkEVM store their states in their respective especially modified Merkle trees.
 
 ### EVM state trie
 
-An Ethereum state is stored in the form of a **Modified Patricia Merkle Tree**.
+An Ethereum state is stored in the form of a modified _Merkle Patricia Trie_.
 
 At each level, a branch node is an array of $17$ items composed of $1$ node value and $16$ child-nodes.
 
@@ -81,23 +81,23 @@ $$
 \texttt{Value = keccak256(RLP(ethereumAccount))}
 $$
 
-where the Ethereum Account is composed of; the Nonce, Balance, Storage Root, and Code hash.
+where the Ethereum account is composed of; the nonce, balance, storage root, and code hash.
 
-The Storage Root is basically all the storage of the State that a smart contract has, and is coded into another Modified Patricia Merkle Tree.
+The Storage Root is basically all the storage of the state that a smart contract has, and is coded into another modified _Merkle Patricia Trie_.
 
 Here is how the tree in the EVM looks like:
 
-![A simplified EVM's State Trie](../../../../img/zkEVM/06msm-eth-state-trie.png)
+![A simplified EVM's state trie](../../../../img/zkEVM/06msm-eth-state-trie.png)
 
 ### zkEVM state trie
 
 There are some differences between the zkEVM Merkle tree and EVM Merkle tree.
 
-A zkEVM State is stored in the form of a Sparse Merkle Tree (SMT), which is a binary tree. Instead of **Keccak-256**, the `POSEIDON` Hash Function is used to build the SMTs, mainly due to its STARK-friendliness.
+A zkEVM state is stored in the form of a Sparse Merkle Tree (SMT), which is a binary tree. Instead of _Keccak-256_, the `POSEIDON` Hash Function is used to build the SMTs, mainly due to its STARK-friendliness.
 
 It is important to note that unlike the EVM tree, the zkEVM SMT does not add all the parameters in one leaf of the Merkle tree.
 
-For convenience and achieving faster computations, each of the parameters (the Nonce, Balance, Storage Root and Code hash) is stored in its respective leaf.
+For convenience and achieving faster computations, each of the parameters (the nonce, balance, storage root and code hash) is stored in its respective leaf.
 
 An additional parameter called `codeHashLen` is used to store the length of the Code hash. A fifth leaf-type is used for this zkEVM-specific parameter.
 
@@ -111,17 +111,17 @@ Each of the values; $\texttt{V0}, \texttt{V1}, \texttt{V2}, \dots , \texttt{V7}$
 
 The figure below depicts the 5 leaf-types together with the corresponding keys:
 
-![A simplified Polygon zkEVM's State Trie](../../../../img/zkEVM/07msm-zkevm-state-trie.png)
+![A simplified Polygon zkEVM's state trie](../../../../img/zkEVM/07msm-zkevm-state-trie.png)
 
 ## Memory regions
 
 Memory is a volatile Read-Write data storage that exists only during the execution of a ROM instruction.
 
-In Ethereum, whenever a call is made, a new **context** together with its new stack and new Memory is created. Each created **context** is referred to as volatile because it is temporarily available for the call being executed.
+In Ethereum, whenever a call is made, a new _context_ together with its new stack and new Memory is created. Each created _context_ is referred to as volatile because it is temporarily available for the call being executed.
 
 ### zkEVM memory map
 
-The Polygon zkEVM uses context-based Memory. And, by **context** we refer to an environment of every Ethereum call.
+The Polygon zkEVM uses context-based Memory. And, by _context_ we refer to an environment of every Ethereum call.
 
 As in Ethereum, when a transactions begins, a new context is created for that transaction:
 
@@ -181,7 +181,7 @@ That difference is the EVM Memory is created in the form of slots where each slo
 
 It was therefore necessary to align the EVM's $8$-bit slots with the zkEVM's $256$-bit slots.
 
-A mapping to synchronize the two Memories comes in the form a special state machine called the [**Mem-Align state machine**](../mem-align-sm.md). It is a specialized SM solely dealing with the alignment of the EVM Memory with the zkEVM Memory.
+A mapping to synchronize the two Memories comes in the form a special state machine called the [_Mem-Align state machine_](../mem-align-sm.md). It is a specialized SM solely dealing with the alignment of the EVM Memory with the zkEVM Memory.
 
 ![Aligning the EVM Memory to the zkEVM Memory](../../../../img/zkEVM/09msm-evm-zkevm-mem-align.png)
 
@@ -203,10 +203,10 @@ The figure below displays a schematic representation of the zkEVM stack and the 
 
 ## TLDR
 
-&rarr; The ROM is a program written in zkASM. It contains the instructions that the zkProver must execute in order to produce verifiable Computational Integrity proofs. The ROM contains the rules and logic that form the firmware of the zkProver. Its code can be found [here](https://github.com/0xPolygonHermez/zkevm-rom) in the GitHub repository.
+1. The ROM is a program written in zkASM. It contains the instructions that the zkProver must execute in order to produce verifiable _computational integrity_ proofs. The ROM contains the rules and logic that form the firmware of the zkProver. Its code can be found [here](https://github.com/0xPolygonHermez/zkevm-rom) in the GitHub repository.
 
-&rarr; The zkEVM uses SMT with five different leaf types.
+1. The zkEVM uses SMT with five different leaf types.
 
-&rarr; Memory alignment between the EVM and the zkEVM is handled by a specialist state machine, the [**Mem-Align state machine**](../mem-align-sm.md).
+1. Memory alignment between the EVM and the zkEVM is handled by a specialist state machine, the [_Mem-Align state machine_](../mem-align-sm.md).
 
-&rarr; The two stacks are exactly the same except that the zkEVM has many more slots compared to the EVM.
+1. The two stacks are exactly the same except that the zkEVM has many more slots compared to the EVM.

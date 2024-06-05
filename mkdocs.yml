@@ -218,7 +218,7 @@ nav:
           - STARK recursion:
             - STARK recursion: zkEVM/architecture/zkprover/stark-recursion/index.md
             - Proving tools and techniques: zkEVM/architecture/zkprover/stark-recursion/proving-tools.md
-            - Composition, Recursion and Aggregation: zkEVM/architecture/zkprover/stark-recursion/composition-recursion-aggregation.md
+            - Composition, recursion and aggregation: zkEVM/architecture/zkprover/stark-recursion/composition-recursion-aggregation.md
             - Recursion sub-process: zkEVM/architecture/zkprover/stark-recursion/recursion-sub-process.md
             - Proving architecture: zkEVM/architecture/zkprover/stark-recursion/proving-architecture.md
             - CIRCOM in zkProver: zkEVM/architecture/zkprover/stark-recursion/circom-in-zkprover.md

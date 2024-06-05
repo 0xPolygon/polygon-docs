@@ -1,6 +1,6 @@
 This covers node configuration parameters, interchange of tokens among chains, and the mention of an issue with CREATE2. 
 
-### Node Configuration
+### Node configuration
 
 The node configuration for a rollup (or validium) network typically involves specifying various parameters and addresses that are crucial for its operation.
 
@@ -32,11 +32,9 @@ Regarding the creation of the ERC-20 tokens with CREATE2:
 - Use $\texttt{salt = 0}$ to create the W-ETH contract.
 - Use $\texttt{salt = tokenInfoHash}$ for the rest of the wrapped tokens of the layer with tokenInfoHash defined as the following hash:
 
-
 $$
 \texttt{tokenInfoHash = keccak256(originNetwork, originTokenAddress)}
 $$
-
 
 As a final remark, note that L1 ETH is the only native currency that can be used as a native currency in another layer.
 
