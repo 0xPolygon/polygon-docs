@@ -549,8 +549,8 @@ nav:
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
   - Innovation & design:
-      - Learn: learn/index.md
-      - Welcome: learn/welcome.md
+      - Learn: innovation-design/index.md
+      - Welcome: innovation-design/welcome.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
@@ -564,8 +564,8 @@ nav:
               - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
               - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
               - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
-      - Plonky 2 & 3: learn/plonky.md
-      - Polygon protocols: learn/polygon-protocols.md
+      - Plonky 2 & 3: innovation-design/plonky.md
+      - Polygon protocols: innovation-design/polygon-protocols.md
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
 
 extra:
