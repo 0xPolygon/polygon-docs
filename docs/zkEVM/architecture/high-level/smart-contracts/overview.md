@@ -21,7 +21,7 @@ There are four key contract types built into the system design:
 
 ## Consensus contracts
 
-In the Ethereum realm, the set of consensus contracts and the functions they expose fuel the sequencing and verification mechanisms triggered by stack components, such as the sequencer and aggregator, at the node level. 
+In the Ethereum realm, the set of consensus contracts and the methods they expose fuel the sequencing and verification mechanisms triggered by stack components, such as the sequencer and aggregator, at the node level. 
 
 <center>
 ![Polygon Solidity smart contract consensus contract set](../../../../img/cdk/high-level-architecture/consensus-contracts.png)

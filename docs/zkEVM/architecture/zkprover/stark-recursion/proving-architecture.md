@@ -64,7 +64,7 @@ The $\mathtt{{\pi}_{FFLONK}}$ proof gets published on-chain as the validity proo
 
 All the public inputs used throughout the entire recursion procedure get hashed together, and the resulting digest forms the public input to the SNARK circuit.
 
-The set of all public inputs is listed below.
+The set of all public inputs is listed below (see the documents on [zkEVM L2 state management](../../protocol/state-management.md) and [bridge](../../protocol/zkevm-bridge/index.md)):
 
 - `oldStateRoot`
 - `oldAccInputHash`
