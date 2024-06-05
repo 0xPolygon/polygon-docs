@@ -1,4 +1,4 @@
-The unified bridge transfers assets and messages between networks (L1, L2) by calling bridge and claim functions on the [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) contract which is an upgradeable proxy.
+The unified bridge transfers assets and messages between networks (L1, L2) by calling bridge and claim functions on the [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) contract which can act as an upgradeable proxy via the library imports.
 
 This contract is deployed on L1 and there is also one deployed on every L2 network. It communicates closely with an exit root manager contract specific to L1 or L2.
 

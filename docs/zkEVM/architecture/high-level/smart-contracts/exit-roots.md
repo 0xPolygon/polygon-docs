@@ -39,14 +39,10 @@ When bridging, the global exit root is updated if the [`forceUpdateGlobalExitRoo
 
 ![Update exit roots via bridging flow](../../../../img/cdk/high-level-architecture/update-exit-roots-via-bridging.png)
 
-1. User initiates a bridging transaction by interacting with the `PolygonZkEVMBridgeV2` contract.
-2. The `PolygonZkEVMBridgeV2` contract handles the bridging request and forwards it to the `PolygonRollupManager`.
-3. The `PolygonRollupManager` updates the local exit root in the `PolygonZkEVMGlobalExitRootL2` contract.
-4. The `PolygonZkEVMGlobalExitRootL2` contract confirms that the local exit root has been updated and notifies the `PolygonRollupManager`.
-5. The `PolygonRollupManager` then updates the global exit root in the `PolygonZkEVMGlobalExitRootV2` contract.
-6. The `PolygonZkEVMGlobalExitRootV2` contract confirms that the global exit root has been updated and notifies the `PolygonRollupManager`.
-7. The `PolygonRollupManager` completes the bridging process and notifies the `PolygonZkEVMBridgeV2`.
-8. The `PolygonZkEVMBridgeV2` informs the iuser that the bridging transaction is completed.
+1. The user interacts with the `PolygonZkEVMBridgeV2` contract by calling the `bridge()` and `claim()` functions.
+2. For both bridge() and claim():
+    `PolygonZkEVMBridgeV2` calls `updateLocalExitRoot()` on `PolygonZkEVMGlobalExitRootL2`, which updates the local exit root.
+3. If `forceUpdateGlobalExitRoot` is set to true, `PolygonZkEVMBridgeV2` calls `updateGlobalExitRoot()` on `PolygonZkEVMGlobalExitRootV2`, which updates the global exit root.
 
 ## Rollup local exit trees
 
