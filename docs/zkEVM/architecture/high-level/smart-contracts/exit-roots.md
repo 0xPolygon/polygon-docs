@@ -4,46 +4,6 @@ The Merkle root of an exit tree is known as the exit tree root, and it is the fi
 
 The global exit tree root of the L1 info tree is, therefore, the source of truth for the whole network. 
 
-## Updating system state
-
-The system uses a set of [exit tree roots](exit-roots.md) to manage system state. Leaves of the trees point to transaction data such as detailed above.
-
-Adding a new leaf to the tree triggers an update to the exit tree root which then propagates to an update on the global exit tree root.
-
-Using Merkle tree exit roots in this way, referenced by the bridge contracts and accessible to the `PolygonRollupManager` contract with getters, the bridge contract triggers data synchronization across L1 and L2, including at the sequencer and state db level.
-
-The use of two distinct global exit root manager contracts for L1 and L2, as well as separate logic for the sequencing flow and the bridge contract, allows for extensive network interoperability. Meanwhile, all asset transfers can be validated by any L1 and L2 node due to the accessibility of state data.
-
-The exit roots are modified in two key flows; sequencing and bridging.
-
-### Sequencing flow
-
-The `PolygonZkEVMGlobalExitRootV2` contract manages updates to the exit roots on sequencing The contract calls `updateExitRoot(...)` on the `GlobalExitRootManager` during the sequencing flow to add an exit leaf to the relevant exit tree. 
-
-![Update exit roots via sequencing flow](../../../../img/cdk/high-level-architecture/update-exit-roots-via-sequencing.png)
-
-1. Initiate update: `PolygonZkEVMEtrog` initiates the update process by calling `updateExitRoots` on `PolygonRollupBaseEtrog`.
-2. Retrieve current roots: `PolygonRollupBaseEtrog` retrieves the current local and global exit roots from `PolygonZkEVMGlobalExitRootL2` and `PolygonZkEVMGlobalExitRootV2` respectively.
-3. Compute new exit root: `PolygonRollupBaseEtrog` computes the new exit root based on the retrieved local and global exit roots.
-4. Update local exit root: `PolygonRollupBaseEtrog` updates the local exit root in `PolygonZkEVMGlobalExitRootL2`.
-5. Update global exit root: `PolygonRollupBaseEtrog` updates the global exit root in `PolygonZkEVMGlobalExitRootV2`.
-6. Verify updated exit root: `PolygonRollupBaseEtrog` calls `getRollupExitRoot` on `PolygonRollupManager` to verify the updated exit root.
-
-!!! tip "L1 or L2 update"
-    - If `msg.sender` is the bridge contract, the L1 local exit root is updated.
-    - If `msg.sender` is the rollup manager, the L2 local exit root is updated.
-
-### Bridging flow
-
-When bridging, the global exit root is updated if the [`forceUpdateGlobalExitRoot`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol#L312) variable is set to `true`.
-
-![Update exit roots via bridging flow](../../../../img/cdk/high-level-architecture/update-exit-roots-via-bridging.png)
-
-1. The user interacts with the `PolygonZkEVMBridgeV2` contract by calling the `bridge()` and `claim()` functions.
-2. For both bridge() and claim():
-    `PolygonZkEVMBridgeV2` calls `updateLocalExitRoot()` on `PolygonZkEVMGlobalExitRootL2`, which updates the local exit root.
-3. If `forceUpdateGlobalExitRoot` is set to true, `PolygonZkEVMBridgeV2` calls `updateGlobalExitRoot()` on `PolygonZkEVMGlobalExitRootV2`, which updates the global exit root.
-
 ## Rollup local exit trees
 
 The L2 bridge contract manages a special Merkle tree called a local exit tree for each network that participates in bridging and claiming which is updated by the [PolygonZkEVMGlobalExitRootL2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/PolygonZkEVMGlobalExitRootL2.sol) contract.
@@ -134,3 +94,42 @@ _addLeaf(
     - `address destinationAddress`: Address that receives the bridged asset in the destination network.
     - `uint256 leafAmount`: Amount of tokens/ether to bridge.
     - `bytes32 keccak256(metadata)`: Hash of the metadata. This metadata contains information about assets transferred or the message payload.
+
+## Updating system state
+
+The system uses a set of [exit tree roots](exit-roots.md) to manage system state. Leaves of the trees point to transaction data such as detailed above.
+
+Adding a new leaf to the tree triggers an update to the exit tree root which then propagates to an update on the global exit tree root.
+
+Using Merkle tree exit roots in this way, referenced by the bridge contracts and accessible to the `PolygonRollupManager` contract with getters, the bridge contract triggers data synchronization across L1 and L2, including at the sequencer and state db level.
+
+The use of two distinct global exit root manager contracts for L1 and L2, as well as separate logic for the sequencing flow and the bridge contract, allows for extensive network interoperability. Meanwhile, all asset transfers can be validated by any L1 and L2 node due to the accessibility of state data.
+
+The exit roots are modified in two key flows; sequencing and bridging.
+
+### Sequencing flow
+
+The `PolygonZkEVMGlobalExitRootV2` contract manages updates to the exit roots on sequencing. The contract calls `updateExitRoot(...)` on the `GlobalExitRootManager` during the sequencing flow to add an exit leaf to the relevant exit tree. 
+
+![Update exit roots via sequencing flow](../../../../img/cdk/high-level-architecture/update-exit-roots-via-sequencing.png)
+
+1. Initiate update: `PolygonZkEVMEtrog` initiates the update process by calling `updateExitRoots` on `PolygonRollupBaseEtrog`.
+2. Retrieve current roots: `PolygonRollupBaseEtrog` retrieves the current local and global exit roots from `PolygonZkEVMGlobalExitRootL2` and `PolygonZkEVMGlobalExitRootV2` respectively.
+3. Compute new exit root: `PolygonRollupBaseEtrog` computes the new exit root based on the retrieved local and global exit roots.
+4. Update local exit root: `PolygonRollupBaseEtrog` updates the local exit root in `PolygonZkEVMGlobalExitRootL2`.
+5. Update global exit root: `PolygonRollupBaseEtrog` updates the global exit root in `PolygonZkEVMGlobalExitRootV2`.
+6. Verify updated exit root: `PolygonRollupBaseEtrog` calls `getRollupExitRoot` on `PolygonRollupManager` to verify the updated exit root.
+
+!!! tip "L1 or L2 update"
+    - If `msg.sender` is the bridge contract, the L1 local exit root is updated.
+    - If `msg.sender` is the rollup manager, the L2 local exit root is updated.
+
+### Bridging flow
+
+When bridging, the global exit root is updated if the [`forceUpdateGlobalExitRoot`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol#L312) variable is set to `true`.
+
+![Update exit roots via bridging flow](../../../../img/cdk/high-level-architecture/update-exit-roots-via-bridging.png)
+
+1. The user interacts with the `PolygonZkEVMBridgeV2` contract by calling the `bridge()` function.
+2. `PolygonZkEVMBridgeV2` calls `updateLocalExitRoot()` on `PolygonZkEVMGlobalExitRootL2`, which updates the local exit root.
+3. If `forceUpdateGlobalExitRoot` is set to true, `PolygonZkEVMBridgeV2` calls `updateGlobalExitRoot()` on `PolygonZkEVMGlobalExitRootV2`, which updates the global exit root.
