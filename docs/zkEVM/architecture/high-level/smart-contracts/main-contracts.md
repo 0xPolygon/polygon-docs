@@ -77,7 +77,7 @@ It is a lighter-weight version of the global exit root contract mentioned previo
 
 #### Key functionality
 
-- Stores every global exit root in the `globalExitRootMap`. The root of this map is the timestamp.
+- Stores every global exit root in the `globalExitRootMap` where keys are global exit roots and values are timestamps.
 - Updates the `lastRollupExitRoot` on any bridge call.
 - Updates the L2 network and global exit root with the `updateExitRoot(...)` function.
 
