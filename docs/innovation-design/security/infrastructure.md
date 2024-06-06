@@ -1,7 +1,8 @@
 ## Polygon network infrastructure security
 
 Polygon Labs has developed network infrastructure via smart contracts that automatically transfers assets to-and-from the Ethereum blockchain for both the Polygon PoS network and Polygon zkEVM scaling solution. This infrastructure implements a lock-and-mint architecture which results in assets being locked by the smart contract implementations. 
-On behalf of the Polygon community and broader industry, Polygon Labs has implemented certain monitoring features over the network infrastructure to enhance security.  Much of the security efforts noted here are rigorously applied to network infrastructure, including risk management, secure software development practices, auditing, vulnerability management, CI/CI, on-chain monitoring and bug bounties.
+
+On behalf of the Polygon community and broader industry, Polygon Labs has implemented certain monitoring features over the network infrastructure to enhance security.  Much of the security efforts noted here are rigorously applied to network infrastructure, including risk management, secure software development practices, auditing, vulnerability management, CI/CI, on-chain monitoring, and bug bounties.
 
 ## Monitoring
 
