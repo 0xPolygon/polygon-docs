@@ -11,6 +11,7 @@ Polygon Labs was awarded ISO 27001 certification in March of 2024.
 https://www.schellman.com/certificate-directory (search for "Polygon Labs")
 
 ### Scope
+
 The scope of the ISO/IEC 27001:2022 certification is limited to the information security management system (ISMS) supporting Polygon Labs' business of developing blockchain scaling solutions; which includes personnel, policies, procedures, standards, systems, endpoint devices, applications, data, and controls in accordance with the statement of applicability, version 1.2, dated October 11, 2023.
 
 ## Portal
