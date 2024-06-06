@@ -551,6 +551,16 @@ nav:
   - Innovation & design:
       - Learn: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
+      - AggLayer:
+        - Overview: innovation-design/agglayer/index.md
+        - End goal: innovation-design/agglayer/end-goal.md
+        - Current state (functional): 
+          - Unified bridge: innovation-design/agglayer/unified-bridge.md
+          - AggLayer today: innovation-design/agglayer/current-state-func.md
+        - Current state (in developement): innovation-design/agglayer/current-state-dev.md
+        - Next release: 
+          - Pessimistic proof: innovation-design/agglayer/pessimistic-proof.md
+          - Balance tracking: innovation-design/agglayer/balance-tracking.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:

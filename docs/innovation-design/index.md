@@ -39,6 +39,14 @@ hide:
          <p class="feature-paragraph">Driven by innovation, the Polygon type 1 prover is fully Ethereum equivalent.</p>
       </a>
    </div>
+   <div class="grid-item">
+      <a href="./agglayer">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">AggLayer documentation</div>
+         </div>
+         <p class="feature-paragraph">What we have now and what's coming up.</p>
+      </a>
+   </div>
     <div class="grid-item">
       <a href="./plonky">
          <div class="product-list-item-header">
