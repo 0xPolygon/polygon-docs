@@ -236,7 +236,7 @@ hide:
 					<div class="flexbox items-4">
 						<a href="pos/how-to/bridging/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
-								<div class="feature-content-name">Polygon PoS: Deploy bridge contracts</div>
+								<div class="feature-content-name">Polygon PoS: Bridge tokens and send interlayer messages</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
