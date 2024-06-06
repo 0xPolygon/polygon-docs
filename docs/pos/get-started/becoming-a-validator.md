@@ -8,12 +8,13 @@ Validators play a crucial role in maintaining the integrity and security of the 
 
 In return for their efforts, validators are rewarded with incentives, encouraging active participation and commitment to the network's stability and growth.
 
-!!!info
+!!! info "Active validator limit"
     
-    There is limited space for accepting new validators. New validators can only join the active set when a currently active validator unbonds/is removed due to low performance. 
-    If you are interested in becoming a validator on the PoS network, you can submit an application here: https://polygoncommunity.typeform.com/validatorshub
+    There is limited space for accepting new validators. Currently, the system allows for a maximum of 105 active validators at any given time. New validators can join the active set only when a currently active validator unbonds or is removed due to low performance.
+    
+    If you are interested in becoming a validator on the PoS network, you can submit an application over at the [Polygon validators hub](https://polygoncommunity.typeform.com/validatorshub).
 
-    * Submitting an application does not guarantee you a validator slot.
+    \* *Submitting an application does not guarantee you a validator slot.*
 
 
 ## Overview
@@ -69,11 +70,9 @@ Bor is the block producing node and layer for the Polygon PoS network. It is bas
 
 A blockchain validator is someone who is responsible for validating transactions within a blockchain. On the Polygon PoS network, any participant can be qualified to become a Polygon's validator by running a validator node (sentry + validator) to earn rewards and collect transaction fees. To ensure the good participation by validators, they lock up at least 1 MATIC token as a stake in the ecosystem.
 
-!!! info "Active validator limit"
-    
-    Currently, there is a limit of 100 active validators at a time.
+!!! info "PIP4 raises the minimum staking amount"
 
-    Also, after the [<ins>PIP4 governance proposal</ins>](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956) is implemented on the contract-level, the minimum staking amount will increase to 10,000 MATIC.
+    After the implementation of the [PIP4 governance proposal](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956) at the contract level, the minimum staking amount will increase to *10,000 MATIC*.
 
 Any validator on the Polygon PoS network has the following responsibilities:
 

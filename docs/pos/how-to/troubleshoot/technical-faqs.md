@@ -215,7 +215,7 @@ And then run:
 
 ### 8. How many validators can be active concurrently?
 
-There can be up to 100 active validators at a time. We bring in more participants if the limit is reached mid-way through the event as well. Note that active validators is mostly those whose uptime is high. Participants with high downtime are forced out.
+Under the current limit, a maximum of 105 validators can be active at any given time. It's important to note that active validators are primarily those with high uptime, while participants with significant downtime may be removed.
 
 ### 9. How much should I stake?
 
