@@ -7,6 +7,7 @@ The following information relates to the latest available (and public) external 
 Polygon Labs was awarded ISO 27001 certification in March of 2024.
 
 ### Certificate 
+
 https://www.schellman.com/certificate-directory (search for "Polygon Labs")
 
 ### Scope
