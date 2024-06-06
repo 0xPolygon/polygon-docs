@@ -14,7 +14,7 @@ In return for their efforts, validators are rewarded with incentives, encouragin
     
     If you are interested in becoming a validator on the PoS network, you can submit an application over at the [Polygon validators hub](https://polygoncommunity.typeform.com/validatorshub).
 
-    \* *Submitting an application does not guarantee you a validator slot.*
+    \* *Submitting an application does not guarantee a validator slot.*
 
 
 ## Overview
