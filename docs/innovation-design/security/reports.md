@@ -42,7 +42,7 @@ The scope of the ISO/IEC 27001:2022 certification is limited to the information 
 
 Most of components have been reviewed as part of zkEVM's audits.
 
- - Bridge Service: Penetration testing assessment by Cobalt.io in March 2023.
+ - Bridge service: Penetration testing assessment by Cobalt.io in March 2023.
  - Bridge UI: Penetration testing assessment by Cobalt.io in March 2023.
 
 ## Zero
