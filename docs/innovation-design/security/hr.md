@@ -4,7 +4,6 @@ Polygon Labs uses single sign-on technologies to automate the administration of 
 
 When a service provider exits the company, HR changes their status in our HRIS system, automatically removing their access to our SSO integrated SaaS platforms, and IT is immediately notified to initiate the wipe and recovery of their corporate system.
 
-
 ## Security awareness training
 
 Polygon Labs uses a SaaS platform to provide an integrated approach to email and security awareness training for all of our service providers.  All service providers are required to pass the training during their first weeks of service. The key features of the platform are:
