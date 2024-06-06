@@ -28,7 +28,7 @@ The scope of the ISO/IEC 27001:2022 certification is limited to the information 
  - POS portal audits: https://github.com/maticnetwork/pos-portal/tree/master/audits.
  - POS contracts: https://github.com/0xPolygon/pos-contracts/tree/main/audit.
 
-## LXLY
+## Unified bridge
 
  - Security audits by Hexens & Spearbit: https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/audits
  - Security audit by Sigma Prime: TBA
