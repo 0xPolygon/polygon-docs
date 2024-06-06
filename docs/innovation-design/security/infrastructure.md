@@ -10,7 +10,6 @@ The on-chain infrastructure is monitored for real-time events as a way to augmen
 
 The monitoring infrastructure was developed both in-house, and by vendors as needed, to augment our capabilities in specific analysis areas. Any adverse events detected by our models and tools are evaluated, triaged and, if necessary, escalated to the proper team for further analysis. The monitoring process is integrated with our enterprise incident response process.
 
-
 ## Multisig security
 
 Specific requirements are followed by any Polygon Labs employee that is a signer on a multisig contract, which are used for various security reasons.  Multisigs consist of Safes (previously Gnosis Safes) and other smart contract multisig implementations. Hardware wallets are hardware-based cold storage, such as Trezor or Ledger devices that store private keys and enable signing multisig transactions offline. Signer multisig requirements include:
