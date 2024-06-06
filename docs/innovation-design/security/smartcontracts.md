@@ -8,7 +8,7 @@ Engineers tasked with developing such codebases follow industry-standard, secure
 
 ## Internal assessments
 
-Polygon Labs application security teams are composed of Sr. & Staff security engineers that perform internal reviews on all code developed. This in-house expertise allows us to follow standard methodologies for assessments using available tooling for static analyzing, line-by-line manual reviews, Fuzzing, and Formal Verification where applicable.
+Polygon Labs application security teams are composed of senior & staff security engineers that perform internal reviews on all code developed. This in-house expertise allows us to follow standard methodologies for assessments using available tooling for static analyzing, line-by-line manual reviews, fuzzing, and formal verification where applicable.
 
 ## External assessments
 
