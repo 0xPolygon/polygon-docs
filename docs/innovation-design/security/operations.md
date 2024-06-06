@@ -10,7 +10,6 @@ Polygon Labs relies on a variety of sources that generate alerts for potential s
 
 Polygon Labs has security analysts distributed globally to help ensure timely triage of security alerts.
 
-
 ## Incident response
 
 Polygon Labs has established an incident response process that is modeled on industry best practices. We designate key people to act as subject matter experts to join the incident response team as needed and depending on the nature of a given cyber security incident. We also use third-party agencies to complement our incident response team from top tier security vendors.
