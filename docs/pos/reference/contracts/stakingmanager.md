@@ -13,16 +13,16 @@ For the Polygon PoS Proof of Security based consensus, all the $2/3+1$ proof ver
 
 ### Admissions
 
-At present, there are no open validator slots available on Polygon PoS. There is also a wait list to become a validator. In the future, if slots become available, validators may apply to be considered and removed off of the wait list.
+Currently, the system allows for a maximum of 105 active validators at any given time on Polygon PoS. There is also a waitlist to become a validator. New validators can join the active set only when a currently active validator unbonds or is removed due to low performance. You can apply to become a validator via the [Polygon validators hub](https://polygoncommunity.typeform.com/validatorshub).
+
+Please note that submitting an application does not guarantee a validator slot. More relevant information is available on the [becoming a validator](../../get-started/becoming-a-validator.md) page.
 
 
 ### Replacement
 
-PIP4 introduced the concept of showcasing validator performance for community visibility. If a validator is in an unhealthy state for an extended period of time as outlined in PIP4, they are off-boarded from the network. The validator slot is then made available to those coming off of the waitlist.
+[PIP4](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956) introduced the concept of showcasing validator performance for community visibility. If a validator is in an unhealthy state for an extended period of time as outlined in PIP4, they are off-boarded from the network. The validator slot is then made available to those coming off of the waitlist.
 
-!!! info
-    
-    Currently, [<ins>Phase 2 of PART C in PIP4</ins>](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956/24) is being implemented. This is where the community decides on validator prospect evaluation criteria. In time, this exercise will produce an application and admissions process.
+Learn more about these requirements on the [validator performance requirements page](../../how-to/operate-validator-node/validator-performance.md).
 
 
 ## Methods and variables

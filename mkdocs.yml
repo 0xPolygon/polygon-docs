@@ -95,7 +95,7 @@ nav:
           - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
           - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
           - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
-          #- Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
+          - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
           - API:
             - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
             - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
@@ -549,7 +549,7 @@ nav:
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
   - Innovation & design:
-      - Learn: innovation-design/index.md
+      - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
@@ -567,6 +567,21 @@ nav:
       - Plonky 2 & 3: innovation-design/plonky.md
       - Polygon protocols: innovation-design/polygon-protocols.md
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
+      - Security:
+          - Overview: innovation-design/security/overview.md
+          - Security areas:
+            - Governance & management: innovation-design/security/governance.md
+            - Risk management: innovation-design/security/risk.md
+            - Human resources: innovation-design/security/hr.md
+            - Infrastructure: innovation-design/security/infrastructure.md
+            - Software development: innovation-design/security/sdlc.md
+            - Smart contracts: innovation-design/security/smartcontracts.md
+            - Vulnerability management: innovation-design/security/vulnerability.md
+            - Security operations: innovation-design/security/operations.md
+          - Security reports: innovation-design/security/reports.md
+          - Bug bounty programs: innovation-design/security/bugbounty.md
+          - Responsable disclosure: innovation-design/security/disclosure.md
+          - Contact us: innovation-design/security/contact.md
 
 extra:
   generator: false
