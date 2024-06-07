@@ -28,6 +28,6 @@ This internal function calculates the inputSnark bytes value, which is a `(SHA25
 
 Next, in the `_verifyAndRewardBatches` helper function, the code reverts if the proof does not verify successfully. Otherwise, the code pays POL rewards to the beneficiary. 
 
-The function then updates the state and calls `rollup.rollupContract.onVerifyBatches(...)` which is a callback into the rollup consensus contract to allow for customizable behavior. `onVerifyBatches(...)` takes the new state root and final batch, and emits a `VerifyBatches(...)` event.
+The function then updates the state and calls `rollup.rollupContract.onVerifyBatches(...)`, which is a callback into the rollup consensus contract, allowing for customizable behavior. `onVerifyBatches(...)` takes the new state root and final batch, and emits a `VerifyBatches(...)` event.
 
 The command flow returns to the `verifyBatchesTrustedAggregator` function which consolidates and updates the state with the `newStateRoot` and the new `localExitRoot` and calls the `updateExitRoot(...)` function on the `GlobalExitRootManager` contract passing the rollup's updated exit root.
