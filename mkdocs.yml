@@ -234,7 +234,7 @@ nav:
           - Arithmetic state machine: zkEVM/architecture/zkprover/arithmetic-sm.md
           - Binary state machine: zkEVM/architecture/zkprover/binary-sm.md
           - Memory state machine: zkEVM/architecture/zkprover/memory-sm.md
-          - Memory-Align state machine: zkEVM/architecture/zkprover/mem-align-sm.md
+          - Memory-align state machine: zkEVM/architecture/zkprover/mem-align-sm.md
           - Hashing state machines:
             - Hashing state machines: zkEVM/architecture/zkprover/hashing-state-machines/index.md
             - Keccak framework: zkEVM/architecture/zkprover/hashing-state-machines/keccak-framework.md

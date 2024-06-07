@@ -25,7 +25,7 @@ $$
 
 The $44$ bits are loaded into the state machine as $11$-bit chunks.
 
-In `keccakf.pil`, each committed polynomial $\texttt{a[4]}$ is expressed in terms of 4 chunks, where each is $11$ bits long. The corresponding a $44$-bit array can be expressed as,
+In _keccakf.pil_, each committed polynomial $\texttt{a[4]}$ is expressed in terms of 4 chunks, where each is $11$ bits long. The corresponding a $44$-bit array can be expressed as,
 
 $$
 \texttt{a44} = \texttt{a}[3] \cdot 2^{33} + \texttt{a}[2] \cdot 2^{22} + \texttt{a}[1] \cdot 2^{11} + \texttt{a}[0]
@@ -87,7 +87,11 @@ $$
 \mathtt{P = 1 \mid\mid 0^{1088+j} \mid\mid 1}.
 $$
 
-It should be noted that **our construction does not follow the FIPS-202 based standard (a.k.a SHA-3)**. According to the NIST specification, the SHA3 padding has been changed to
+!!!Note
+    
+    It should be noted that our construction does not follow the FIPS-202 based standard (a.k.a SHA-3). 
+
+According to the NIST specification, the SHA3 padding has been changed to
 
 $$
 \mathtt{\text{SHA3-256}(M) = \text{Keccak}[512](M \mid\mid 01, 256)}.
@@ -236,13 +240,13 @@ The code of the $\theta$ step mapping is found here: [keccak_theta.cpp](https://
 
 ### Mapping Rho
 
-The step mapping $\rho$ does not change the value of the input bit, but simply moves it to another position along the $z$-axis. Since all operations along the $z$-axis are worked out **modulo 64**, the mapping $\rho$ is therefore cyclic, and amounts to rotating each of the 64 bits in the same lane along the $z$-axis. It does this in three sub-steps;
+The step mapping $\rho$ does not change the value of the input bit, but simply moves it to another position along the $z$-axis. Since all operations along the $z$-axis are worked out _modulo 64_, the mapping $\rho$ is therefore cyclic, and amounts to rotating each of the 64 bits in the same lane along the $z$-axis. It does this in three sub-steps;
 
 1. Set $\mathtt{(x,y) = (0,1)}$,
 2. For $t$ ranging from $0$ to $23$, set $\mathtt{{A}'[x,y,z] = {A}\big[x,y,\big(z-(t+1)(t+2)/2 \big)\text{mod }64\big]}$,
 3. Set $\mathtt{(x,y) = (y,(2x + 3y)\text{mod }5)}$.
 
-Basically, $\rho$ modifies the $z$ coordinate of each bit, $\mathtt{Bit}[x,y,z]$, by subtracting a specific offset constant **$\mathbf{K}$ modulo 64**, where $\mathbf{K} = (t+1)(t+2)/2$. See the below table for these offset constants used for rotation.
+Basically, $\rho$ modifies the $z$ coordinate of each bit, $\mathtt{Bit}[x,y,z]$, by subtracting a specific offset constant _$\mathbf{K}$ modulo 64_, where $\mathbf{K} = (t+1)(t+2)/2$. See the below table for these offset constants used for rotation.
 
 $$
 \begin{array}{|l|c|c|c|c|c|c|}
@@ -268,7 +272,7 @@ The 24 constants in the above table are first permuted and then set as fixed off
 $$
 \begin{array}{|l|c|c|c|c|c|c|}
 \hline
-\texttt{y}\ big{\\} \texttt{x} & 3 & 4 & 0 & 1 & 2\\ \hline
+\texttt{y} \big{\\ } \texttt{x} & 3 & 4 & 0 & 1 & 2\\ \hline
 2 & 25 & 39 & 3 & 10 & 43\\ \hline
 1 & 55 & 20 & 36 & 44 & 6\\ \hline
 0 & 28 & 27 & 0 & 1 & 62\\ \hline
@@ -292,6 +296,7 @@ Here's an example of how $\rho$ maps two different lanes.
     $$
 
 2. Similarly, the bits $\{\mathtt{Bit}[4,1,z]\}$ are always off-set by $20$ and mapped as follows,
+    
     $$
     \rho\big(\mathtt{Bit}[4,1,z]\big) \mapsto \mathtt{Bit}[1,1,(z-20)\text{mod }64]
     $$
@@ -337,7 +342,7 @@ The code of the $\pi$ step mapping is found here: [keccak_pi.cpp](https://github
 
 The $\chi$ step mapping is the non-linear layer of Keccak-F, and it can be thought of as a parallel application of $320 = 5*64$ S-boxes operating on $5$-bit rows.
 
-#### How $\chi$ operates on rows
+#### How Chi operates on rows
 
 For a fixed $y = b$ and $z = c$, the $\chi$ step mapping takes as its input the $5$-bit row,
 
@@ -377,7 +382,9 @@ $$
 
 The round-constants are XOR-ed only to a single lane of the state, in particular, the origin lane (i.e., the 64 bits $\{\mathtt{Bit}[0,0,z]\}$ where $0\leq z \leq 63$).
 
-#### Here's how $\large{\iota}$ operates on the origin lane, $\{\mathtt{Bit}[0,0,z]\ |\ 0\leq z \leq 63\}$
+#### Iota operating the origin lane
+
+Here's how $\large{\iota}$ operates on the origin lane, $\{\mathtt{Bit}[0,0,z]\ |\ 0\leq z \leq 63\}$
 
 Firstly, the derivation of the round-constants $RC[ir]$. As shown in the algorithm of $\large{\iota}$, the round-constant $RC$ is initialized to $0^{w}$ at the beginning of each round of $\large{\iota}$. After which, 7 specific bit-places $\{2^j – 1\ |\ 0 \leq j \leq 6 \}$ of the round-constant are set to the bits $\{rc[j + 7 ir]\ |\ 0 \leq j \leq 6 \}$. Meanwhile, the rest of the bits remain as zeros.
 
