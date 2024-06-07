@@ -19,7 +19,7 @@ This function is called on the `PolygonRollupManager` contract.
 
 The zkEVM node aggregator, or the AggLayer, calls the [`verifyBatchesTrustedAggregator`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/b2a62e6af5738366e7494e8312184b1d6fdf287c/contracts/v2/PolygonRollupManager.sol#L921) function on the [`PolygonRollupManager.sol`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/v2/PolygonRollupManager.sol) contract.
 
-The function creates a rollup data storage object with the data provided by the caller which it first verifies by sending it to the helper function [`_verifyAndRewardBatches`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/b2a62e6af5738366e7494e8312184b1d6fdf287c/contracts/v2/PolygonRollupManager.sol#L977). 
+The function creates a rollup data storage object with the data provided by the caller, which it first verifies by sending it to the helper function [`_verifyAndRewardBatches`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/b2a62e6af5738366e7494e8312184b1d6fdf287c/contracts/v2/PolygonRollupManager.sol#L977). 
 
 This internal function calculates the inputSnark bytes value, which is a `(SHA256 % "RFIELD")` calculation on the input data, and uses this value to verify the proof by calling `rollup.verifier.verifyProof(proof, [inputSnark])` on an `IVerifierRollup` interface implementation. 
 
