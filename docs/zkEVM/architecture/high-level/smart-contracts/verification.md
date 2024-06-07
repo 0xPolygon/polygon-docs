@@ -2,7 +2,7 @@
 comments: true
 ---
 
-Transactions flowing through the system reach the smart contract environment after one of two contract call use cases:
+Transactions flowing through the system reach the smart contract environment after one of two contract call use-cases:
 
 - Sequence batches requests coming from the sequencer component in the node.
 - Verifying batches requests coming from the aggregator component in the node.
