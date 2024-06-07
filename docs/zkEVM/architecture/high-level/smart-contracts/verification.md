@@ -26,7 +26,7 @@ This internal function calculates the inputSnark bytes value, which is a `(SHA25
 !!! note
     Using a `verifier` variable on the rollup object means the verifier implementation can be customized in the future.
 
-Next in the `_verifyAndRewardBatches` helper function, if the proof does not verify successfully the code reverts. If the proof verifies successfully, the code pays POL rewards to the beneficiary. 
+Next, in the `_verifyAndRewardBatches` helper function, the code reverts if the proof does not verify successfully. Otherwise, the code pays POL rewards to the beneficiary. 
 
 The function then updates the state and calls `rollup.rollupContract.onVerifyBatches(...)` which is a callback into the rollup consensus contract to allow for customizable behavior. `onVerifyBatches(...)` takes the new state root and final batch, and emits a `VerifyBatches(...)` event.
 
