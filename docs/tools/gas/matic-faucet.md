@@ -17,13 +17,13 @@ Several faucet tools are available to receive test MATIC and ETH on Sepolia-anch
 |          Faucet          | Supported networks                                                                                                    |
 | :----------------------: | --------------------------------------------------------------------------------------------------------------------- |
 |      Polygon Faucet      | [zkEVM Cardona, PoS Amoy, Ethereum Sepolia](https://faucet.polygon.technology)                                                 |
-|         Alchemy          | [PoS Amoy](https://www.alchemy.com/faucets/polygon-amoy) \| [Ethereum Sepolia](https://www.alchemy.com/faucets/ethereum-sepolia) |
+|         Alchemy Faucet         | [PoS Amoy](https://www.alchemy.com/faucets/polygon-amoy) \| [Ethereum Sepolia](https://www.alchemy.com/faucets/ethereum-sepolia) |
 | QuickNode Polygon Faucet | [PoS Amoy](https://faucet.quicknode.com/polygon/amoy)                                                                 |
 |     GetBlock Faucet      | [PoS Amoy](https://getblock.io/faucet/matic-amoy/) \| [Ethereum Sepolia](https://getblock.io/faucet/eth-sepolia)                 |  
 
-## Polygon faucet
+## Polygon Faucet
 
-- Start by navigating to [faucet.polygon.technology](https://faucet.polygon.technology/) and connecting your Discord to the webapp by selecting **Connect Discord** in the top-right corner of the page.
+- Start by navigating to [faucet.polygon.technology](https://faucet.polygon.technology/) and connecting/verifying your Discord by selecting **Connect Discord** in the top-right corner of the page.
 
    <center>
    ![img](../../img/tools/gas/faucet.png){width=70%}
@@ -60,7 +60,7 @@ Several faucet tools are available to receive test MATIC and ETH on Sepolia-anch
    ![img](../../img/tools/gas/success.png){width=50%}
    </center>
 
-## Alchemy MATIC faucet
+## Alchemy Faucet
 
 !!! tip "Get 0.5 Amoy MATIC"
       If you sign up or log in with an Alchemy account, you get 0.5 MATIC per day. Without an account, you get 0.2.
@@ -86,5 +86,15 @@ In order to receive Amoy MATIC tokens using QuickNode faucet,
 
 - Click on the transaction hash to view transaction details on [Polygonscan](https://amoy.polygonscan.com/).
 
-!!! tip "Join the Polygon Discord community"
-      Make sure to connect with the [Polygon Discord community](https://discord.gg/0xPolygon) for news, tips, and help.
+## GetBlock Polygon Faucet
+
+Head over to the [GetBlock Polygon Faucet](https://getblock.io/faucet/matic-amoy/) to acquire Amoy MATIC tokens using the GetBlock faucet.
+
+Please register or login to request free testnet tokens.
+
+!!! tip "Get additional tokens" 
+    If you tweet about the [GetBlock Faucet](https://getblock.io/faucet/matic-amoy/), you can claim additional PoS Amoy testnet tokens.
+
+## Discord community
+
+Make sure to connect with the [Polygon Discord community](https://discord.gg/0xPolygon) for news, tips, and help.
