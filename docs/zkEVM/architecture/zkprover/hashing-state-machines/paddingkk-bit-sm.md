@@ -14,11 +14,11 @@ A block of 136 rows of bytes in the Padding-KK SM corresponds to $\mathtt{1993}$
 
 ![Figure 1: Padding-KK block vs. Padding-KK-Bit's 3 subdivisions](../../../../img/zkEVM/01kkb-chunk-divs-136-bytes.png)
 
-**First subdivision:** Consists of $\mathtt{9*136 = 1224}$ rows, where each of the $\mathtt{136}$ byte-rows has been expanded into $\mathtt{9}$ rows (i.e., $\mathtt{8}$ rows for the $\mathtt{8}$ bits plus $\mathtt{1}$ row for the byte that represents the $\mathtt{8}$ bits). The decomposition of the bytes into the 8 bits (with an extra row, just for the byte), is done for easy implementation in PIL. This subdivision of $\mathtt{1224}$ rows represents the bitrate of the KECCAK-F permutation. Therefore, a strategy to ensure that the bits are accurately and correctly provided, as input to the KECCAK-F SM, needs to be derived.
+First subdivision: Consists of $\mathtt{9*136 = 1224}$ rows, where each of the $\mathtt{136}$ byte-rows has been expanded into $\mathtt{9}$ rows (i.e., $\mathtt{8}$ rows for the $\mathtt{8}$ bits plus $\mathtt{1}$ row for the byte that represents the $\mathtt{8}$ bits). The decomposition of the bytes into the 8 bits (with an extra row, just for the byte), is done for easy implementation in PIL. This subdivision of $\mathtt{1224}$ rows represents the bitrate of the KECCAK-F permutation. Therefore, a strategy to ensure that the bits are accurately and correctly provided, as input to the KECCAK-F SM, needs to be derived.
 
-**Second subdivision:** Consists of the $\mathtt{512}$ rows, and represents the capacity input-bits in the $\mathtt{1600}$-bit state of the KECCAK-F SM. Within the KECCAK-F state machine, unlike the bits in the first subdivision of $\mathtt{1224}$ rows, the capacity bits are not affected by any exterior bits.
+Second subdivision: Consists of the $\mathtt{512}$ rows, and represents the capacity input-bits in the $\mathtt{1600}$-bit state of the KECCAK-F SM. Within the KECCAK-F state machine, unlike the bits in the first subdivision of $\mathtt{1224}$ rows, the capacity bits are not affected by any exterior bits.
 
-**Third subdivision:** Consists of $\mathtt{256 + 1}$ rows represents the 256 bits of the intermediate hash value produced by the KECCAK-F permutation. At the end of hashing each 1088 bits (136-byte) string, this intermediate hash value actually coincides with the final hash of the KECCAK-256 hash function. Each hash value, the final digest, is packed into eight 32-bit registers at the final row of this subdivision.
+Third subdivision: Consists of $\mathtt{256 + 1}$ rows represents the 256 bits of the intermediate hash value produced by the KECCAK-F permutation. At the end of hashing each 1088 bits (136-byte) string, this intermediate hash value actually coincides with the final hash of the KECCAK-256 hash function. Each hash value, the final digest, is packed into eight 32-bit registers at the final row of this subdivision.
 
 ### Bytes to bits correspondence
 

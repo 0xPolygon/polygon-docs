@@ -31,7 +31,7 @@ Every rollup has a set of distinct identifiers that are essential for its functi
 
 When creating and verifying proofs, an index called $\texttt{globalIndex}$ is used to uniquely locate a leaf in the new global exit tree.
 
-A $\texttt{globalIndex}$​​​ is a 256-bit string composed of; unused bits, mainnet flag, rollup index bits and local root index bits.
+A $\texttt{globalIndex}$​​​ is a 256-bit string composed of unused bits, mainnet flag, rollup index bits, and local root index bits.
 
 $$
 \texttt{globalIndex} = \texttt{(unused bits)_} \texttt{(mainnet flag)_} \texttt{(rollupIndex)_} \texttt{(local root index)}
