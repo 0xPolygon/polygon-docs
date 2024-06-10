@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## MetaMask transactions fail with a nonce error in dev environment 
 
 Every time the dev environment starts, a new local test chain is started. Metamask maintains a cache of "latest block number" and "account transaction nonce". Since every run of `dev` creates a new chain, it never matches with this cache.

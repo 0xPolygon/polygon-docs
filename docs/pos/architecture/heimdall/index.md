@@ -1,7 +1,13 @@
 # Heimdall
 
-Heimdall is the heart of the Polygon network. It manages validators, block producer selection, spans, the state-sync mechanism between Ethereum and Matic and other essentials aspects of the system.
+Heimdall is the heart of the Polygon PoS network. It performs the following functions:
 
-It uses the **Cosmos-SDK** and a forked version of Tendermint, called **Peppermint**. Here is the Peppermint source: [https://github.com/maticnetwork/tendermint/tree/peppermint](https://github.com/maticnetwork/tendermint/tree/peppermint)
+- Manages validators.
+- Handles block producer selection.
+- Facilitates spans.
+- Orchestrates the state sync mechanism between Ethereum and Polygon PoS.
+- Addresses other essential aspects of the system.
 
-Heimdall removes some of the modules from Cosmos-SDK, but mostly uses a customised version of it while following the same pattern.
+It uses the *Cosmos SDK* and a forked version of Tendermint, called *Peppermint*. Here is the Peppermint source: [https://github.com/maticnetwork/tendermint/tree/peppermint](https://github.com/maticnetwork/tendermint/tree/peppermint)
+
+Heimdall removes certain modules from Cosmos SDK but primarily utilizes a customized version of it, following a similar pattern.

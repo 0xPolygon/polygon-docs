@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Polygon gas station aims to help dApp developers with gas price recommendations, so that they can use it before sending transaction off to the Polygon network.
 
 We received a lot of requests from dApp developers for building a gas price recommendation service. So we took some inspiration from Eth Gas Station and built one.

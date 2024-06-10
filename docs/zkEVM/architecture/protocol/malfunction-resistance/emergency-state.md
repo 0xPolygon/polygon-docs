@@ -10,7 +10,7 @@ The following functions will be disabled while in the emergency state:
 
 As a result, while the contract is in the emergency state, the Sequencer cannot sequence batches. Meanwhile, the trusted Aggregator will be able to consolidate additional state transitions or override a pending state transition that can be proven to be non-deterministic.
 
-When the same sequence of batches is successfully verified with two different resulting L2 State root values, a non-deterministic state transition occurs. This situation could arise if a soundness vulnerability in the verification of the Zero-Knowledge proof of computational integrity is exploited.
+When the same sequence of batches is successfully verified with two different resulting L2 state root values, a non-deterministic state transition occurs. This situation could arise if a soundness vulnerability in the verification of the zero-knowledge proof of computational integrity is exploited.
 
 ## When is the emergency state activated?
 

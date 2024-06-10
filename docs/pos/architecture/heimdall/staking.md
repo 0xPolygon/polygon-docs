@@ -4,9 +4,9 @@ Staking module manages validator related transactions and state for Heimdall. No
 
 ## Messages
 
-![](../../../img/pos/stake-management-flow.svg)
+![Stake management flow](../../../img/pos/stake-management-flow.png)
 
-### MsgValidatorJoin
+### `MsgValidatorJoin`
 
 `MsgValidatorJoin` handles the staking when a new validator joins the system. Once validator calls `stake` or `stakeFor` in `StakingManager.sol` on Ethereum, and the new `Staked` event is emitted.
 
@@ -49,9 +49,9 @@ type MsgValidatorJoin struct {
 }
 ```
 
-### MsgStakeUpdate
+### `MsgStakeUpdate`
 
-`MsgStakeUpdate` handles the stake update when a validator the re-stakes or new delegation comes in. In either case, the new `StakeUpdate` event is emitted.
+`MsgStakeUpdate` handles the stake update when a validator re-stakes, or a new delegation comes in. The new `StakeUpdate` event is emitted in both cases.
 
 ```jsx
 /**
@@ -78,9 +78,9 @@ type MsgStakeUpdate struct {
 }
 ```
 
-### MsgValidatorExit
+### `MsgValidatorExit`
 
-`MsgValidatorExit` handles the validator exit process after a validator initiates the exit process on Ethereum. It emits `SignerUpdate` event.
+`MsgValidatorExit` handles the validator exit process after a validator initiates the exit process on Ethereum. It emits the `SignerUpdate` event.
 
 ```jsx
 /**
@@ -110,7 +110,7 @@ type MsgValidatorExit struct {
 }
 ```
 
-### MsgSignerUpdate
+### `MsgSignerUpdate`
 
 `MsgSignerUpdate` handles the signer update when a validator updates signer key on Ethereum. It emits `SignerUpdate` event.
 
@@ -148,7 +148,7 @@ type MsgSignerUpdate struct {
 
 ### Validator details
 
-**By signer address**
+#### By signer address
 
 ```bash
 heimdallcli query staking validator-info \
@@ -171,7 +171,7 @@ This command should display the following output:
 }
 ```
 
-**By validator address**
+#### By validator address
 
 ```bash
 heimdallcli query staking validator-info \
@@ -196,7 +196,7 @@ This command should display the following output:
 
 ### Validator join
 
-This command sends validator join command through CLI:
+This command sends `validator-join` command through CLI:
 
 ```bash
 heimdallcli tx staking validator-join \
@@ -206,14 +206,14 @@ heimdallcli tx staking validator-join \
  --chain-id <chain-id>
 ```
 
-`tx-hash` value must be the same as Ethereum TX hash which emitted `Staked` event and `log-index` must be the same at which index the event is emitted.
+`tx-hash` value must be the same as Ethereum transaction hash which emitted `Staked` event, and `log-index` must be the same as the index at which the event is emitted.
 
 ## REST APIs
 
-|Name                  |Method|Endpoint          |
-|----------------------|------|------------------|
-|Get Heimdall validator set|GET   |/staking/validator-set|
-|Get validator details |GET   |/staking/validator/validator-id|
+| Name                       | Method | Endpoint                        |
+| -------------------------- | ------ | ------------------------------- |
+| Get Heimdall validator set | GET    | /staking/validator-set          |
+| Get validator details      | GET    | /staking/validator/validator-id |
 
 All query APIs will result in following format:
 

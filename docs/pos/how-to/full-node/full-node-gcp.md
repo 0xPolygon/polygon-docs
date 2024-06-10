@@ -2,6 +2,10 @@
 comments: true
 ---
 
+!!! warning "Mumbai testnet deprecated"
+
+   Mumbai testnet is deprecated and will not receive any future updates. GCP support for deploying Amoy testnet nodes will be ready soon. Stay tuned!
+
 In this document, we will describe how to deploy Polygon nodes into a Virtual Machine instance on the Google Cloud Platform (GCP).
 
 It is recommended to use any modern Debian or Linux Ubuntu OS with long-term support, i.e. Debian 11, Ubuntu 20.04. We'll focus on Ubuntu 20.04 in this guide.
@@ -23,7 +27,7 @@ Pay attention to default region and zone, choose ones closer to you or your cust
    * `POLYGON_NODETYPE` - choose `archive`,`fullnode` node type to run
    * `POLYGON_BOOTSTRAP_MODE` - choose bootstrap mode `snapshot` or `from_scratch`
    * `POLYGON_RPC_PORT` - choose JSON RPC bor node port to listen on, the default value is what used on VM instance creation and in firewall rules
-   * `EXTRA_VAR` - choose Bor and Heimdall branches, use `network_version=mainnet-v1` with `mainnet` network and `network_version=testnet-v4` with `mumbai` network
+   * `EXTRA_VAR` - choose Bor and Heimdall branches, use `network_version=mainnet-v1` with `mainnet` network and `network_version=testnet-v4` with `amoy` network
    * `INSTANCE_NAME` - the name of a VM instance with Polygon we are going to create
    * `INSTANCE_TYPE` - GCP [machine type](https://cloud.google.com/compute/docs/machine-types), default value is recommended, You may change it later if required
    * `BOR_EXT_DISK_SIZE` - additional disk size in GB to use with Bor, default value with `fullnode` is recommended, You may expand it later if required. You'll need 8192GB+ with `archive` node though
@@ -95,7 +99,7 @@ It will take a couple of minutes to install all the required software and a coup
    journalctl -fu heimdalld
    ```
 
-!!!note
+!!! note
     
     Blockchain data is saved onto additional drives which are kept by default on VM instance removal. You need to remove additional disks manually if you don't need this data anymore.
 

@@ -2,9 +2,9 @@ Checkpoints are vital components of the Polygon network, representing snapshots 
 
 Heimdall, an integral part of this process, manages checkpoint functionalities using the `checkpoint` module. It coordinates with the Bor chain to verify checkpoint root hashes when a new checkpoint is proposed.
 
-## Checkpoint life-cycle and types
+## Checkpoint lifecycle and types
 
-### Life-cycle
+### Lifecycle
 
 Heimdall selects the next proposer using Tendermint's leader selection algorithm. The multi-stage checkpoint process is crucial due to potential failures when submitting checkpoints on the Ethereum chain caused by factors like gas limit, network traffic, or high gas fees.
 
@@ -36,7 +36,7 @@ type CheckpointBlockHeader struct {
 
 The `RootHash` is calculated as a Merkle hash of Bor block hashes from `StartBlock` to `EndBlock`. The process involves hashing each block's number, time, transaction hash, and receipt hash, then creating a Merkle root of these hashes.
 
-```matlab
+```m
 blockHash = keccak256([number, time, tx hash, receipt hash])
 ```
 
@@ -78,7 +78,7 @@ tree.Generate(convert(headers), sha3.NewLegacyKeccak256())
 rootHash := tree.Root().Hash
 ```
 
-### AccountRootHash
+### `AccountRootHash`
 
 `AccountRootHash` is the hash of the validator account-related information that needs to pass to the Ethereum chain at each checkpoint.
 
@@ -123,7 +123,7 @@ func (da DividendAccount) CalculateHash() ([]byte, error) {
 
 ## Messages in checkpoint module
 
-### MsgCheckpoint
+### `MsgCheckpoint`
 
 `MsgCheckpoint` handles checkpoint verification on Heimdall, utilizing RLP encoding for Ethereum chain verification. It prioritizes transactions with high gas consumption to ensure only one `MsgCheckpoint` transaction per block.
 
@@ -138,7 +138,7 @@ type MsgCheckpoint struct {
 }
 ```
 
-### MsgCheckpointAck
+### `MsgCheckpointAck`
 
 `MsgCheckpointAck` manages successful checkpoint submissions, updating the checkpoint count and clearing the `checkpointBuffer`.
 
@@ -152,7 +152,7 @@ type MsgCheckpointAck struct {
 }
 ```
 
-### MsgCheckpointNoAck
+### `MsgCheckpointNoAck`
 
 `MsgCheckpointNoAck` deals with unsuccessful checkpoints or offline proposers, allowing a timeout period before selecting a new proposer.
 
@@ -169,9 +169,9 @@ type MsgCheckpointNoAck struct {
 
 The checkpoint module contains the following parameters:
 
-|Key                   |Type  |Default value     |
-|----------------------|------|------------------|
-|CheckpointBufferTime  |uint64|1000 * time.Second|
+| Key                  | Type   | Default value      |
+| -------------------- | ------ | ------------------ |
+| CheckpointBufferTime | uint64 | 1000 * time.Second |
 
 ### CLI commands
 
@@ -189,7 +189,7 @@ Expected Result:
 checkpoint_buffer_time: 16m40s
 ```
 
-### Send Checkpoint
+### Send checkpoint
 
 Following command sends checkpoint transaction on Heimdall:
 
@@ -226,19 +226,19 @@ heimdallcli tx checkpoint send-noack --chain-id <chain-id>
 
 Heimdall provides several REST APIs for interacting with the checkpoint module, including endpoints for preparing messages, querying checkpoints, and more.
 
-|Name                  |Method|Endpoint          |
-|----------------------|------|------------------|
-|It returns the prepared msg for ack checkpoint|POST   |/checkpoint/ack|
-|It returns the prepared msg for new checkpoint|POST   |/checkpoint/new|
-|It returns the prepared msg for no-ack checkpoint|POST   |/checkpoint/no-ack|
-|Checkpoint by number  |GET   |/checkpoints/<checkpoint-number\>|
-|Get current checkpoint buffer state|GET   |/checkpoints/buffer|
-|Get checkpoint counts |GET   |/checkpoints/count |
-|Get last no-ack details|GET   |/checkpoints/last-no-ack|
-|Get latest checkpoint |GET   |/checkpoints/latest|
-|All checkpoints       |GET   |/checkpoints/list  |
-|It returns the checkpoint parameters|GET   |/checkpoints/parama|
-|It returns the prepared checkpoint|GET   |/checkpoints/prepare|
-|Get ack count, buffer, validator set, validator count and last-no-ack details|GET   |/overview         |
+| Name                                                                          | Method | Endpoint                          |
+| ----------------------------------------------------------------------------- | ------ | --------------------------------- |
+| It returns the prepared msg for ack checkpoint                                | POST   | /checkpoint/ack                   |
+| It returns the prepared msg for new checkpoint                                | POST   | /checkpoint/new                   |
+| It returns the prepared msg for no-ack checkpoint                             | POST   | /checkpoint/no-ack                |
+| Checkpoint by number                                                          | GET    | /checkpoints/<checkpoint-number\> |
+| Get current checkpoint buffer state                                           | GET    | /checkpoints/buffer               |
+| Get checkpoint counts                                                         | GET    | /checkpoints/count                |
+| Get last no-ack details                                                       | GET    | /checkpoints/last-no-ack          |
+| Get latest checkpoint                                                         | GET    | /checkpoints/latest               |
+| All checkpoints                                                               | GET    | /checkpoints/list                 |
+| It returns the checkpoint parameters                                          | GET    | /checkpoints/parama               |
+| It returns the prepared checkpoint                                            | GET    | /checkpoints/prepare              |
+| Get ack count, buffer, validator set, validator count and last-no-ack details | GET    | /overview                         |
 
 For more details and the response format of these APIs, visit [Heimdall API Documentation](https://heimdall-api.polygon.technology/swagger-ui/#/checkpoint).

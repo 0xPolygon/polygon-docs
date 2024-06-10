@@ -1,14 +1,14 @@
-The zkEVM, as an L2 zk-Rollup for Ethereum, employs the Keccak hash function to achieve seamless compatibility with the Ethereum blockchain at Layer 1. However, **rather than implementing the Keccak-256 hash function as a single state machine, the zkEVM does so in a framework of four state machines**. They are as follows:
+The zkEVM, as an L2 zk-Rollup for Ethereum, employs the Keccak hash function to achieve seamless compatibility with the Ethereum blockchain at Layer 1. However, rathe four state machines relate implementing the Keccak-256 hash function as a single state machine, the zkEVM does so in a framework of four state machines. The four state machines relate as follows:
 
-1. **The Padding-KK SM** is used for padding purposes, as well as validation of hash-related computations pertaining to the Main SM's queries. As depicted in the below figure, the **Padding-KK SM is Main SM's gateway to the Keccak hashing state machines**.
+1. The Padding-KK SM is used for padding purposes, as well as validation of hash-related computations pertaining to the Main SM's queries. As depicted in the figure below, the Padding-KK SM is the Main SM's gateway to the Keccak hashing framework.
 
    ![Keccak Design Schema](../../../../img/zkEVM/hsh02-sm-kk-framework.png)
 
-2. The **Padding-KK-Bit SM** converts between two string formats, the bytes of the Padding-KK SM to the bits of the Keccak-F Hashing SM, and vice-versa.
+2. The Padding-KK-Bit SM converts between two string formats, the bytes of the Padding-KK SM to the bits of the Keccak-F Hashing SM, and vice-versa.
 
-3. The **Bits2Field SM** is used specifically for parallelizing Keccak-F SM implementation. It acts as a multiplexer between the Padding-KK-Bit SM and the Keccak-F SM. **This state machine is called Bits2Field because it ensures correct packing of bits from $44$ different blocks of the Padding-KK-Bit SM into a single field element**. In other words, **it is a $44$-bits-to-$1$-field-element multiplexer**.
+3. The Bits2Field SM is used specifically for parallelizing Keccak-F SM implementation. It acts as a multiplexer between the Padding-KK-Bit SM and the Keccak-F SM. This state machine is called _Bits2Field_ because it ensures correct packing of bits from $44$ different blocks of the Padding-KK-Bit SM into a single field element. In other words, it is a $44$-bits-to-$1$-field-element multiplexer.
 
-4. The **Keccak-F SM** computes string hashes at the request of the Main SM. Although the Keccak-F SM is a binary circuit, it operates on a **44bits-by-44bits** basis rather than a bit-by-bit basis. This equates to running four $44$ hashing circuits in parallel.
+4. The Keccak-F SM computes string hashes at the request of the Main SM. Although the Keccak-F SM is a binary circuit, it operates on a _44-bits-by-44-bits_ basis rather than a bit-by-bit basis. This equates to running four $44$ hashing circuits in parallel.
 
 ### Source Code
 

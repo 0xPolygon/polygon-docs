@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 The Matic.js library follows common api architecture throughout and the APIs are divided into two types:
 
 1. Read API

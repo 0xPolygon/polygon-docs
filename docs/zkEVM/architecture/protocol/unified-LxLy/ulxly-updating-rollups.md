@@ -38,5 +38,3 @@ Since the rollup has previously been initialized, the following information need
 - The $\texttt{rollupCompatibilityID}$.
 
 Observe that most of these parameters were actually provided by the $\texttt{RollupType}$, but $\texttt{RollupData}$ of already existing rollups is constructed by hand, since they do not follow any rollup type as yet.
-
-

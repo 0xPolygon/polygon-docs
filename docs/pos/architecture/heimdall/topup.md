@@ -1,13 +1,13 @@
-Topups are amounts used to pay fees on the Heimdall chain.
+Top-ups are amounts used to pay fees on the Heimdall chain.
 
-There are two ways to topup your account:
+There are two ways to top up your account:
 
-1. When new validator joins, they can mention a `topup` amount as top-up in addition to the staked amount, which will be moved as balance on Heimdall chain to pays fees on Heimdall.
+1. When new validator joins, they can mention a `topup` amount in addition to the staked amount, which will be moved as balance on Heimdall chain to pays fees on Heimdall.
 2. A user can directly call the top-up function on the staking smart contract on Ethereum to increase top-up balance on Heimdall.
 
 ## Messages
 
-### MsgTopup
+### `MsgTopup`
 
 `MsgTopup` transaction is responsible for minting balance to an address on Heimdall based on Ethereum chain's `TopUpEvent` on staking manager contract.
 
@@ -24,13 +24,13 @@ type MsgTopup struct {
 }
 ```
 
-### MsgWithdrawFee
+### `MsgWithdrawFee`
 
-`MsgWithdrawFee` transaction is responsible for withdrawing balance from Heimdall to Ethereum chain. A Validator can withdraw any amount from Heimdall.
+`MsgWithdrawFee` transaction is responsible for withdrawing balance from Heimdall to Ethereum chain. A validator can withdraw any amount from Heimdall.
 
 Handler processes the withdraw by deducting the balance from the given validator and prepares the state to send the next checkpoint. The next possible checkpoint will contain the withdraw related state for the specific validator.
 
-Handler gets validator information based on `ValidatorAddress` and processes the withdraw.
+Handler fetches validator information based on the `ValidatorAddress` and processes the withdrawal.
 
 ```go
 // MsgWithdrawFee - high-level transaction of the fee coin withdrawal module
@@ -40,9 +40,9 @@ type MsgWithdrawFee struct {
 }
 ```
 
-## CLI Commands
+## CLI commands
 
-### Topup fee
+### Top-up fee
 
 ```bash
 heimdallcli tx topup fee
@@ -58,7 +58,7 @@ heimdallcli tx topup fee
 heimdallcli tx topup withdraw --chain-id <heimdall-chain-id>
 ```
 
-To check reflected topup on account run following command
+To check the updated top-up amount for the account, run the following command:
 
 ```bash
 heimdallcli query auth account <validator-address> --trust-node
@@ -66,7 +66,7 @@ heimdallcli query auth account <validator-address> --trust-node
 
 ## REST APIs
 
-|Name                  |Method|URL               |Body Params                                                                                                                                      |
-|----------------------|------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-|Topup Fee             |POST  |/topup/fee        |`id` Validator id, `tx_hash` Transaction hash of successful topup event on Ethereum chain, `log_index` Log index of topup event emitted on Ethereum chain|
-|Withdraw Fee          |POST  |/topup/withdraw   |`amount` Withdraw amount|
+| Name         | Method | URL             | Body Params                                                                                                                                               |
+| ------------ | ------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Top-up fee    | POST   | /topup/fee      | `id` Validator ID, `tx_hash` Transaction hash of successful top-up event on Ethereum chain, `log_index` Log index of the top-up event emitted on Ethereum |
+| Withdraw fee | POST   | /topup/withdraw | `amount` Withdraw amount                                                                                                                                  |

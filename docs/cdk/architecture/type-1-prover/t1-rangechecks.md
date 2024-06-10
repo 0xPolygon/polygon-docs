@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 Tables often deal with 256-bit words which are split into 16-bit limbs. This helps to avoid field overflows. Range-checks are used for examining integrity of values in these 16-bit limbs. 
 
 ### What to range-check?
