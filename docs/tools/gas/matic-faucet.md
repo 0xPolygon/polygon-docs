@@ -6,8 +6,8 @@ The Polygon Faucet is a tool provided by Polygon and ecosystem partners like Alc
 
 Polygon Faucet drips:
 
-- MATIC on PoS Amoy and Ethereum Sepolia
-- Test ETH on zkEVM Cardona
+- MATIC on PoS Amoy and Ethereum Sepolia.
+- Test ETH on zkEVM Cardona.
 
 !!! info "Testnet tokens hold no real-world value"
       Tokens on testnet networks such as PoS Amoy, Ethereum Sepolia, and zkEVM Cardona hold no real value and are solely used for testing purposes.
