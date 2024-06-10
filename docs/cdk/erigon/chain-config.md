@@ -9,7 +9,7 @@ To use chains other than the [defaults](releases.md#current-status), supply a se
     - `dynamic-{network}-conf.json` - an additional configuration file.
     - `dynamic-{network}.yaml` - the run config file for erigon.  
     
-    You can use any of the example yaml files at the root of the repo as a base and edit as required, but ensure the `chain` field is in the format `dynamic-{network` and matches the names of the config files above.
+    You can use any of the example yaml files at the root of the repo as a base and edit as required, but ensure the `chain` field is in the format `dynamic-mynetwork` and matches the names of the config files above.
 
 3. Put the erigon config file, along with the other files, in the directory of your choice. For example `dynamic-mynetwork`.
 
