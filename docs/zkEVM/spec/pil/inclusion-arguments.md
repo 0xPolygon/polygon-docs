@@ -154,14 +154,14 @@ An inclusion argument is used for this purpose.
 Given two vectors, $\texttt{a} = (a_1, . . . , a_n) \in \mathbb{F}^n_p$ and $\texttt{b} = (b_1,...,b_m) \in \mathbb{F}^m_p$, it is said that,
 
 $$
-\texttt{a}\ \text{ is } \textbf{contained in }\ \texttt{b}\ \text{ if for all }\ i ∈ [n],\ \text{ there exists a }\ j ∈ [m]\ \text{ such that }\ a_i = b_j.
+\texttt{a}\ \text{ is } \texttt{ contained in }\ \texttt{b}\ \text{ if for all }\ i ∈ [n],\ \text{ there exists a }\ j ∈ [m]\ \text{ such that }\ a_i = b_j.
 $$
 
 In other words, if one thinks of $\texttt{a}$ and $\texttt{b}$ as multisets and reduce them to sets (by removing the multiplicity), then $\texttt{a}$ is contained in $\texttt{b}$ if $\texttt{a}$ is a subset of $\texttt{b}$. See [this document](../../concepts/generic-state-machine/intro-generic-sm.md) for more details on multisets and Plookup.
 
 A protocol $(\mathcal{P},\mathcal{V})$ is an _inclusion argument_ if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that one vector is contained in another vector.
 
-In the PIL context, the implemented inclusion argument is the same as the $\text{Plookup}$ method provided in [[GW20](https://eprint.iacr.org/2020/315.pdf)], also discussed [here](../../concepts/generic-state-machine/intro-generic-sm.md). Other "alternative" method exists such as the $\text{PlonkUp}$ described in [[PFM+22](https://eprint.iacr.org/2022/086.pdf)].
+In the PIL context, the implemented inclusion argument is the same as the $\text{Plookup}$ method provided in [[GW20](https://eprint.iacr.org/2020/315.pdf)], also discussed [here](../../concepts/generic-state-machine/intro-generic-sm.md). Other "alternative" method exists such as [PlonkUp](https://eprint.iacr.org/2022/086.pdf).
 
 An inclusion argument is invoked in PIL with the "$\texttt{in}$" keyword.
 

@@ -26,15 +26,15 @@ Here is a detailed explanation of how the ADD opcode gets interpreted. Recall th
 
         SP - 2          :JMPN(stackUnderflow)
 
-    If less than two elements are present, then the `stackUnderflow` function gets executed.
+    If less than two elements are present, then the _stackUnderflow_ function gets executed.
 
-2. Next, we move the stack pointer to the first operand, load its value and place the result in the `A` register. Similarly, we move the stack pointer to the next operated, load its value and place the result in the `C` register.
+2. Next, we move the stack pointer to the first operand, load its value and place the result in the A register. Similarly, we move the stack pointer to the next operated, load its value and place the result in the C register.
 
         SP - 1 => SP
         $ => A          :MLOAD(SP--)
         $ => C          :MLOAD(SP)
 
-3. Now its when the operation takes place. We perform the addition operation by storing the value of the registers `A` and `C` into the variables `arithA` and `arithB` and then we call the subroutine `addARITH` that is the one in charge of actually performing the addition.
+3. Now its when the operation takes place. We perform the addition operation by storing the value of the registers A and C into the variables _arithA_ and _arithB_ and then we call the subroutine _addARITH_ that is the one in charge of actually performing the addition.
 
         A               :MSTORE(arithA)
         C               :MSTORE(arithB)
@@ -42,7 +42,7 @@ Here is a detailed explanation of how the ADD opcode gets interpreted. Recall th
         $ => E          :MLOAD(arithRes1)
         E               :MSTORE(SP++)
 
-    Finally, the result of the addition gets placed into the register `E` and the corresponding value gets placed into the stack pointer location; moving it forward afterwise.
+    Finally, the result of the addition gets placed into the register E and the corresponding value gets placed into the stack pointer location; moving it forward afterwise.
 
 4. A bunch of checks are performed. It is first checked that after the operation, the stack is not full and then that we do not run out of gas.
 

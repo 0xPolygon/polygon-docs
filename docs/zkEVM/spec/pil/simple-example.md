@@ -75,7 +75,7 @@ In the above figure, the namespace given to the _Multiplier_ program is $\texttt
 
 In the zkEVM context, these polynomials would be committed by the Main state machine for verification, they appear in the PIL code as _pol commit_.
 
-## Optimized _Multiplier_ program
+## Optimized Multiplier program
 
 The above design of the _Multiplier_ program, as represented by its execution trace, does not scale easily to more complex operations. The number of polynomials (or number of columns) grows linearly with the number of operations that needs to be performed.
 
@@ -107,7 +107,7 @@ $$
     \end{aligned}
 $$
 
-Observe how each column of the execution trace records the **"state"** in each row.
+Observe how each column of the execution trace records the "state" in each row.
 
 - $\texttt{row 1}$ : The $\texttt{freeIn}$ column records the first input $4$ of the operation, hence $\texttt{RESET}$ reflects a $1$, while $\texttt{out}$ records $0$ as its default initial value.
 

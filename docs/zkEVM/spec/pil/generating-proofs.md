@@ -6,7 +6,7 @@ A Javascript package called _pil-stark_ has been specially designed to work toge
 
 The _pil-stark_ package utilizes three functions: _starkSetup_, _starkGen_, and _starkVerify_.
 
-## _starkSetup_
+## starkSetup
 
 The first function, _starkSetup_, is for setting up the STARK. Its computational output is independent of the values of committed polynomials. This includes computation of the tree of evaluations of the constant polynomials.
 
@@ -44,7 +44,7 @@ async function execute() {
 } 
 ```
 
-## _starkGen_
+## starkGen
 
 After setting up the STARK with the _starkSetup_ function, the proof of execution correctness can be generated with the _starkGen_ function.
 
@@ -63,7 +63,7 @@ async function execute() {
 
 Observe that the _starkGen_ object contains a _starkInfo_ field which contains, besides all the _starkStruct_ parameters, a lot of useful information about how the input PIL code looks like.
 
-## _starkVerify_
+## starkVerify
 
 Now that a proof has been generated, it can be verified by invoking the _starkVerify_ function.
 

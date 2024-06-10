@@ -1,9 +1,9 @@
 !!!info
     In this document, we describe the CIRCOM component of the zkProver. It is one of the four main components of the zkProver, as outlined [here](../architecture/zkprover/index.md). These principal components are; the Executor or Main SM, STARK Recursion, CIRCOM, and Rapid SNARK.
 
-    You may refer to the original [CIRCOM research paper](https://www.techrxiv.org/articles/preprint/CIRCOM_A_Robust_and_Scalable_Language_for_Building_Complex_Zero-Knowledge_Circuits/19374986/1) for more details.
+    You may refer to the original [CIRCOM paper](https://www.techrxiv.org/articles/preprint/CIRCOM_A_Robust_and_Scalable_Language_for_Building_Complex_Zero-Knowledge_Circuits/19374986/1) for more details.
 
-As seen in the [zkProver Overview](../architecture/zkprover/index.md) document, the output of the STARK Recursion component is a STARK proof.
+As seen in the [zkProver overview](../architecture/zkprover/index.md) document, the output of the STARK recursion component is a STARK proof.
 
 The next step in the zkProver's process of providing validity proof is to produce the witness similar to the output of the STARK Recursion.
 
@@ -11,15 +11,15 @@ Although the zkProver is designed as a state machine emulating the EVM, in order
 
 CIRCOM takes the output of the STARK Recursion as input, so as to create its corresponding witness.
 
-The witness is in turn taken as input to the Rapid SNARK, which is used to generate a SNARK proof published as the validity proof.
+The witness is in turn taken as an input to the Rapid SNARK, which is used to generate a SNARK proof published as the validity proof.
 
 ![CIRCOM's input and output](../../img/zkEVM/01circom-witness-zkprover.png)
 
-In fact, CIRCOM takes a STARK proof as input and produces its corresponding Arithmetic circuit, expressed as the equivalent set of equations called Rank-1 Constraint System (R1CS).
+In fact, CIRCOM takes a STARK proof as input and produces its corresponding Arithmetic circuit, expressed as the equivalent set of equations called rank-1 constraint system (R1CS).
 
 The set of valid circuit input, intermediate and output values satisfying the R1CS is actually the witness related to the input STARK proof.
 
-This document focuses on what CIRCOM is, its common context of implementation, and how the zkProver utilizes CIRCOM.
+This document focuses on what CIRCOM is, its common implementation context, and how the zkProver utilizes CIRCOM.
 
 ## Circuit context
 
@@ -27,11 +27,11 @@ Arithmetic circuits are mostly used as standard models for studying the complexi
 
 An Arithmetic circuit is composed of addition and multiplication gates, and wires that carry values that are elements of a prime finite field $\mathbb{F}_p$, where $p$ is typically a very large prime number.
 
-In the context of ZK-Proof protocols, a prover can use an Arithmetic circuit to prove knowledge of a valid assignment to all wires of the circuit.
+In the context of ZK-proof protocols, a prover can use an Arithmetic circuit to prove knowledge of a valid assignment to all wires of the circuit.
 
 And if the proof is correct, the verifier is convinced that the computation expressed as the Arithmetic circuit is valid, but learns nothing about the wires’ assigned values.
 
-Arithmetic circuits are commonly encoded in the form of a set of equations called Rank-1 Constraint System (R1CS).
+Arithmetic circuits are commonly encoded in the form of R1CS.
 
 Once obtained, the R1CS can later be used by a zk-SNARK protocol to generate verifiable proof.
 
@@ -43,7 +43,7 @@ CIRCOM was developed for the very purpose of scaling complex Arithmetic circuits
 
 ## What is CIRCOM?
 
-CIRCOM is a Domain-Specific Language (DSL) used to define Arithmetic circuits, and it has an associated compiler of Arithmetic circuits to their respective Rank-1 Constraint System (or R1CS).
+CIRCOM is a domain-specific language (DSL) used to define Arithmetic circuits, and it has an associated compiler of Arithmetic circuits to their respective R1CS.
 
 ![CIRCOM Overall Context](../../img/zkEVM/02circom-overall-context.png)
 
@@ -53,9 +53,9 @@ As described in the title of its [specifications paper](https://www.techrxiv.org
 
 It is designed as a low-level circuit language, mimicking the design of electronic circuits, for naturally defining Arithmetic circuits.
 
-As a Domain-Specific Language (DSL), it allows programmers to design and create Arithmetic circuits of their own choice, and later on apply these circuits to ZK tools.
+As a DSL, it allows programmers to design and create Arithmetic circuits of their own choice, and later on apply these circuits to ZK tools.
 
-One of the main peculiarities of CIRCOM is its modularity as a language. It allows the definition of parameterizable small circuits called templates, which can be instantiated to form part of larger circuits.
+One of the main peculiarities of CIRCOM is its modularity as a language. It allows the definition of parameterizable small circuits called _templates_, which can be instantiated to form part of larger circuits.
 
 In this regard, CIRCOM users can use templates to create their own custom circuits with varied complexity.
 
@@ -86,7 +86,7 @@ $$
 \texttt{a} \times \texttt{b} \texttt{ - c = 0}
 $$
 
-### The _pragma_ instruction
+### The pragma instruction
 
 The _pragma_ instruction specifies the version of the CIRCOM compiler being used. It is meant to ensure compatibility between the circuit and the compiler version. If the two are incompatible, the compiler throws a warning.
 
@@ -179,7 +179,7 @@ Given a circuit with the _multiplier.circom_ extension, the following line of co
 circom multiplier.circom --r1cs --c --wasm --sym
 ```
 
-After compiling the _.circom_ circuit, the compiler returns four files:
+After compiling the _.circom_ circuit, the compiler returns four files,
 
 - A file with the R1CS constraints (symbolic task)
 - A C++ program for computing values of the circuit wires (computational task)
@@ -188,7 +188,7 @@ After compiling the _.circom_ circuit, the compiler returns four files:
 
 At this stage, either one of the C++ or WebAssembly programs generated by the compiler can be used to compute all signals that match the set of constraints of the circuit.
 
-Whichever program is used, needs as input, a file containing a set of valid input values.
+Whichever program is used, needs as input a file containing a set of valid input values.
 
 Recall that a valid set of circuit input, intermediate and output values is called the witness.
 

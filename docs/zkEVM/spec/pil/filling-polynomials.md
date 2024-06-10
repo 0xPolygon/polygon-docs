@@ -62,7 +62,7 @@ Note that;
 
 Using these, the polynomials can now be filled.
 
-## _Main.pil_ code example
+## Main.pil code example
 
 In our example, we recall the _main.pil_ seen in the [Connection arguments](connection-arguments.md) section about $4$-bit integers.
 
