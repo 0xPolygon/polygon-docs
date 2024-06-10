@@ -33,5 +33,4 @@ The figure below depicts the verification flow within the rollup manager compone
 - Successful verification of a proof is followed by a call to the $\texttt{onVerifyBatches()}$ function.
 - At the end of the process, the consensus contract emits the $\texttt{verifyBatches}$ event.
 
-
 ![ulxly-consensus-rollupmanager-aggregator](../../../../img/zkEVM/ulxly-consensus-rollupmanager-aggregator.png)
