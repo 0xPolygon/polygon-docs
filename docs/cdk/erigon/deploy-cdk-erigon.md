@@ -1,27 +1,41 @@
 ## Prerequisites
 
-1. The installation requires [Go 1.19](https://go.dev/doc/manage-install).
+### Hardware 
 
-2. Clone the repo and `cd` to the root:
+On x86, the following packages are required to use the optimal, vectorized-Poseidon-hashing for the sparse Merkle tree:
+
+Linux: `libgtest-dev libomp-dev libgmp-dev`
+MacOS: `brew install libomp` `brew install gmp`
+
+!!! tip
+    - For Apple silicon, the `iden3` library is used instead.
+
+### Software
+
+The installation requires [Go 1.19](https://go.dev/doc/manage-install).
+
+### Set up
+
+1. Clone the repo and `cd` to the root:
 
     ```sh
     git clone https://github.com/0xPolygonHermez/cdk-erigon
     cd cdk-erigon/
     ```
 
-3. Install the relevant libraries for your architecture by running:
+2. Install the relevant libraries for your architecture by running:
 
     ```sh
     make build-libs
     ```
 
-!!! tip "Hardware specifics"
-    - On x86, the following packages are used by the optimal, vectorized-Poseidon-hashing for the sparse Merkle tree:
+## L1 interaction
 
-        - Linux: `libgtest-dev libomp-dev libgmp-dev`
-        - MacOS: `libomp brew install gmp`
+In order to retrieve data from L1, the L1 syncer needs to know how to request the highest block. 
 
-    - For Apple silicon, the `iden3` library is used instead.
+This can be configured by the flag: `zkevm.l1-highest-block-type`.
+
+The flag defaults to retrieving the `finalized` block. However, there are cases where you may wish to pass `safe` or `latest`.
 
 ## Set up sequencer (WIP)
 
@@ -48,7 +62,7 @@ When the node starts up it pulls the L1 data into the `cdk-erigon` database and 
 
 You can use this in tandem with unwinding the chain, or using the `zkevm.sync-limit` flag to limit the chain to a certain block height before starting the L1 recovery. This is useful if you have an RPC node available to speed up the process.
 
-!!! tip
+!!! warning
     If using the `zkevm.sync-limit` flag, you need to go to the boundary of a `batch+1` block; so if batch `41` ends at block `99` then set the flag to `100`.
 
 ## Enable zkEVM APIs
@@ -66,8 +80,10 @@ In order to enable the `zkevm_ namespace`, add `zkevm` to the [`http.api`](#conf
 - `zkevm_virtualBatchNumber`
 - `zkevm_getFullBlockByHash`
 - `zkevm_getFullBlockByNumber`
+- `zkevm_virtualCounters`
+- `zkevm_traceTransactionCounters`
 
-### Supported (remote)
+### Supported functions (remote)
 
 - `zkevm_getBatchByNumber`
 
@@ -184,10 +200,3 @@ The following examples are comprehensive. There are key fields which must be set
 ### Useful config entries
 
 - `zkevm.sync-limit`: This ensures the network only syncs to a given block height.
-
-## Networks
-
-| Network name  | Chain ID | ForkID | Genesis file | RPC URL                                          | Rootchain        | Rollup Address                               |
-|---------------|----------|--------|--------------|--------------------------------------------------|------------------|----------------------------------------------|
-| zkEVM Mainnet | 1101     | 9      | [Link](https://hackmd.io/bpmxb5QaSFafV0nB4i-KZA) | [Mainnet RPC](https://zkevm-rpc.com/)            | Ethereum Mainnet | `0x5132A183E9F3CB7C848b0AAC5Ae0c4f0491B7aB2` |
-| zkEVM Cardona | 2442     | 9      | [Link](https://hackmd.io/Ug9pB613SvevJgnXRC4YJA) | [Cardona RPC](https://rpc.cardona.zkevm-rpc.com/) | Sepolia          | `0x32d33D5137a7cFFb54c5Bf8371172bcEc5f310ff` |
