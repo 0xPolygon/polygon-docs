@@ -14,6 +14,7 @@ We have listed several faucet tools you can use to receive MATIC testnet tokens 
 - [Polygon faucet](https://faucet.polygon.technology/)
 - [Alchemy Polygon Amoy MATIC faucet](https://www.alchemy.com/faucets/polygon-amoy)
 - [QuickNode Polygon faucet](https://faucet.quicknode.com/polygon)
+- [GetBlock Polygon Amoy Fuace](https://getblock.io/faucet/matic-amoy/)
 
 In addition, the faucet also has Polygon zkEVM testnet ETH tokens.
 
@@ -75,5 +76,16 @@ In order to receive Amoy MATIC tokens using QuickNode faucet,
 - You can also view your transaction details on [Polygonscan](https://mumbai.polygonscan.com/) by clicking on the TxHash.
 
 !!! tip "Join the Polygon Discord community"
+
+## GetBlock Polygon Faucet
+
+In order to receive Amoy MATIC tokens using GetBlock faucet,
+
+- Head over to the [GetBlock Polygon Faucet](https://getblock.io/faucet/matic-amoy/). 
+
+Please register or login and request free testnet tokens 
+
+!!! tip "Get additinal tokens" 
+    If you tweet about the [GetBlock Faucet](https://getblock.io/faucet/matic-amoy/), you can clain additional Polygon testnet tokens.
 
       Make sure to connect with the [Polygon Discord community](https://discord.gg/0xPolygon) for news, tips, and help.
