@@ -10,7 +10,7 @@ Polygon Faucet drips:
 - Test ETH on zkEVM Cardona.
 
 !!! info "Testnet tokens hold no real-world value"
-      Tokens on testnet networks such as PoS Amoy, Ethereum Sepolia, and zkEVM Cardona hold no real value and are solely used for testing purposes.
+      Tokens on testnets such as PoS Amoy, Ethereum Sepolia, and zkEVM Cardona hold no real value and are solely used for testing purposes.
 
 Several faucet tools are available to receive test MATIC and ETH on Sepolia-anchored Polygon networks:
 
