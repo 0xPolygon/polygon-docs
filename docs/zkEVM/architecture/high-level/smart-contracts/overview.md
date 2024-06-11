@@ -2,15 +2,21 @@
 comments: true
 ---
 
-<!-- https://excalidraw.com/#json=JKZp9QEihifF_B7Z41Dfv,FVNhqQKi9PA1jM0kzUoCsQ" -->
+The skeleton-class diagram below reveals the smart contract architecture of rollup and CDK stacks.
+
+![Polygon Solidity smart contract architecture full view](../../../../img/cdk/high-level-architecture/overview-class-diagram.png)
 
 ## Polygon smart contract architecture
 
 Chain stacks at the node level direct transaction data to the L2 and L1 networks via smart contract calls. The system stores state in binary tree structures containing verifiable local and global exit roots.
 
-The diagram below details the Polygon Solidity smart contract architecture. 
+The diagram below details the Polygon Solidity smart contract architecture minus the bridging contracts. 
 
 ![Polygon Solidity smart contract architecture](../../../../img/cdk/high-level-architecture/smart-contracts-full-view.png)
+
+And here is the class diagram for the unified bridge and exit roots activity.
+
+![Polygon Solidity smart contract bridging architecture](../../../../img/cdk/high-level-architecture/bridging-class-diagram.png)
 
 There are four key contract types built into the system design: 
 
