@@ -61,8 +61,6 @@ The $\texttt{RollupManager}$ contract has functions; $\texttt{addNewRollupType()
 
 It is not possible to create a new rollup of an obsolete rollup type.
 
-
-
 ## Rollup data
 
 Although several rollups can be of the same $\texttt{RollupType}$, it's important for each rollup store its state data. This state data is included in a structure called $\texttt{RollupData\{\}}$.
@@ -101,4 +99,3 @@ Below is a schematic representation of the transparent proxy pattern within the 
 ![ulxly-transparent-proxy-pattern](../../../../img/zkEVM/ulxly-transparent-proxy-pattern.png)
 
 Proxies are frequently utilized in Ethereum for upgradability, and the exact usage of proxies in the Polygon zkEVM's upgradability is discussed [here](https://docs.polygon.technology/zkEVM/architecture/protocol/upgradability/).
-

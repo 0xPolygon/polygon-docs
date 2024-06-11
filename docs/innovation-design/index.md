@@ -40,6 +40,15 @@ hide:
       </a>
    </div>
    <div class="grid-item">
+      <a href="./security/overview">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Polygon security</div>
+         </div>
+         <p class="feature-paragraph">Polygon security, bug bounties, and more.</p>
+      </a>      
+   </div>
+    <div class="grid-item">
+       <div class="grid-item">
       <a href="./agglayer">
          <div class="product-list-item-header">
             <div class="feature-card-heading">AggLayer documentation</div>
@@ -47,7 +56,6 @@ hide:
          <p class="feature-paragraph">What we have now and what's coming up.</p>
       </a>
    </div>
-    <div class="grid-item">
       <a href="./plonky">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Plonky 2 & 3</div>

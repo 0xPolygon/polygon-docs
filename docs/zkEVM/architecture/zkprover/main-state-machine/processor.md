@@ -1,23 +1,28 @@
-As a microprocessor-type state machine, the main SM is a typical example of a **Generic state machine**.
+As a microprocessor-type state machine, the main SM is a typical example of a _Generic state machine_.
 
 It is a state machine that behaves like an Algebraic processor. It receives instructions in the form of programs written in the zero-knowledge Assembly (zkASM) language, and makes state transitions in accordance with these instructions.
 
 As a Generic SM, it can be thought of as being composed of two parts:
 
-1. The **firmware** part which is concerned with interpreting program instructions and correctly generating the execution trace. The ROM, which is a computer program written in zkASM, contains the set of all the zkProver's instructions. It is to the Polygon zkEVM what the EVM Interpreter is to Ethereum.
+1. The _firmware_ part which is concerned with interpreting program instructions and correctly generating the execution trace. The ROM, which is a computer program written in zkASM, contains the set of all the zkProver's instructions. It is to the Polygon zkEVM what the EVM Interpreter is to Ethereum.
 
-2. The **hardware** part is responsible for setting up polynomial identities that every correctly-generated execution trace must satisfy. These polynomial identities (which are obtained via an interpolation process), are described in a novel language developed by the Polygon zkEVM team, called the Polynomial Identity Language.
+2. The _hardware_ part is responsible for setting up polynomial identities that every correctly-generated execution trace must satisfy. These polynomial identities (which are obtained via an interpolation process), are described in a novel language developed by the Polygon zkEVM team, called the Polynomial Identity Language.
 
 ## Specialist state machines
 
 Instead of executing all the various computations on its own, the main SM achieves efficiency by delegating verification of complex computations to specialized secondary state machines. These are:
 
-- [Storage SM](../storage-state-machine/index.md) which handles all storage-related computations (e.g., Create, Read, Update and Delete).
-- [Arithmetic SM](../arithmetic-sm.md) which carries out elliptic curve arithmetic operations related to ECDSA.
-- [Binary SM](../binary-sm.md) which is responsible for performing all binary operations as the Executor requires.
-- [Memory SM](../memory-sm.md) which in the zkEVM plays the same role the EVM Memory plays in Ethereum.
-- [Keccak SM](../hashing-state-machines/keccakf-sm.md) which is a binary circuit that computes hash values of strings as instructed by the main SM. And, it is implemented within a special framework, detailed [here](../hashing-state-machines/keccak-framework.md).
-- [Poseidon SM](../hashing-state-machines/poseidon-sm.md) which specialises with computing hash values required in building Sparse Merkle Trees as per the main SM instructions.
+1. [Storage SM](../storage-state-machine/index.md) which handles all storage-related computations (e.g., Create, Read, Update and Delete).
+
+2. [Arithmetic SM](../arithmetic-sm.md) which carries out elliptic curve arithmetic operations related to ECDSA.
+
+3. [Binary SM](../binary-sm.md) which is responsible for performing all binary operations as the Executor requires.
+
+4. [Memory SM](../memory-sm.md) which in the zkEVM plays the same role the EVM Memory plays in Ethereum.
+
+5. [Keccak SM](../hashing-state-machines/keccakf-sm.md) which is a binary circuit that computes hash values of strings as instructed by the main SM. And, it is implemented within a special framework, detailed [here](../hashing-state-machines/keccak-framework.md).
+
+6. [Poseidon SM](../hashing-state-machines/poseidon-sm.md) which specialises with computing hash values required in building Sparse Merkle trees as per the main SM instructions.
 
 There are other *auxiliary* state machines used in the zkProver; the [Padding-KK](../hashing-state-machines/paddingkk-sm.md), the [Padding-KK-Bit](../hashing-state-machines/paddingkk-bit-sm.md), the Padding-PG SM, the [Memory Align SM](../mem-align-sm.md), the [Bits2Field SM](../hashing-state-machines/bits2field-sm.md) and the ROM SM ([sm_rom.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_rom.js)).
 
@@ -143,7 +148,7 @@ for (i=0; i<N; i++)
 
 Note that `rom.line[zkPC]` is the line in the ROM indicating the position of the program to be executed. And, `zkPC` denotes the zkEVM Program Counter.
 
-The for loop runs from $i = 0$ to $\texttt{N} = 2^{23}-1$ because the maximum number of execution steps is set at $2^{23}$. Due to the **cyclic nature** of state machines, the iterations must loop back to zero.
+The for loop runs from $i = 0$ to $\texttt{N} = 2^{23}-1$ because the maximum number of execution steps is set at $2^{23}$. Due to the _cyclic nature_ of state machines, the iterations must loop back to zero.
 
 At $i = 2^{23}$, the evaluations are such that,
 
@@ -157,13 +162,13 @@ Apart from the generic registers related to the zkEVM State, there are additiona
 
 Here are the descriptions of each of these registers;
 
-- $\texttt{SR}$: The **state register** is used to indicate the processor's current state. It might, for example, indicate whether an Arithmetic operation resulted in a $\texttt{carry}$ or an $\texttt{overflow}$, or flag that an instruction encountered an $\texttt{error}$.
+- $\texttt{SR}$: The _state register_ is used to indicate the processor's current state. It might, for example, indicate whether an Arithmetic operation resulted in a $\texttt{carry}$ or an $\texttt{overflow}$, or flag that an instruction encountered an $\texttt{error}$.
 
-- $\texttt{CTX}$: The **context register** is used to store the context of the current execution environment. It might, for example, store information about the smart contract or transaction currently being executed.
+- $\texttt{CTX}$: The _context register_ is used to store the context of the current execution environment. It might, for example, store information about the smart contract or transaction currently being executed.
 
-- $\texttt{SP}$: The **stack pointer register** is used to point to the top of the stack. Every time a number is pushed onto the stack or removed from it, $\texttt{SP}$ is either increased or decreased.
+- $\texttt{SP}$: The _stack pointer register_ is used to point to the top of the stack. Every time a number is pushed onto the stack or removed from it, $\texttt{SP}$ is either increased or decreased.
 
-- $\texttt{PC}$: The EVM **program counter register** encodes which instruction, stored in the code, is next to be executed.
+- $\texttt{PC}$: The EVM _program counter register_ encodes which instruction, stored in the code, is next to be executed.
 
     It is usually incremented by one byte, to point to the following instruction, though exceptions may occur.
 
@@ -171,25 +176,25 @@ Here are the descriptions of each of these registers;
 
     Another example is the $\texttt{JUMP}$ instruction which, instead of incrementing the $\texttt{PC}$’s value by one byte, modifies the $\texttt{PC}$ to a location determined by the top of the $\text{Stack}$.
 
-- $\texttt{GAS}$: The **gas register** is used to store the remaining amount of gas for the current transaction. $\texttt{GAS}$ is a unit of measure used to quantify the amount of computational effort required to execute specific operations on the Ethereum network.
+- $\texttt{GAS}$: The _gas register_ is used to store the remaining amount of gas for the current transaction. $\texttt{GAS}$ is a unit of measure used to quantify the amount of computational effort required to execute specific operations on the Ethereum network.
 
-- $\texttt{RR}$: The **return register** is used to store the address to return to, after a function $\texttt{call}$ or a $\texttt{JUMP}$.
+- $\texttt{RR}$: The _return register_ is used to store the address to return to, after a function $\texttt{call}$ or a $\texttt{JUMP}$.
 
-- $\texttt{zkPC}$: The **zkEVM program counter** register. Similar to the $\texttt{PC}$ register, the $\texttt{zkPC}$ encodes which instruction of the zkEVM is being executed. This register is crucial in ensuring that the program being executed matches the program that needs to be proved.
+- $\texttt{zkPC}$: The _zkEVM program counter_ register. Similar to the $\texttt{PC}$ register, the $\texttt{zkPC}$ encodes which instruction of the zkEVM is being executed. This register is crucial in ensuring that the program being executed matches the program that needs to be proved.
 
 The figure below depicts the main SM's simplified state transition in accordance with ROM instructions.
 
 ![Main SM's simplified state transition](../../../../img/zkEVM/04msm-simple-state-transition.png)
 
-- $\texttt{STEP}$: The **step register** is used to store the number of instructions executed so far in the current transaction.
+- $\texttt{STEP}$: The _step register_ is used to store the number of instructions executed so far in the current transaction.
 
-- $\texttt{MAXMEM}$: The **maximum memory** register is used to store the maximum amount of memory allocated for the current transaction.
+- $\texttt{MAXMEM}$: The _maximum memory_ register is used to store the maximum amount of memory allocated for the current transaction.
 
-- $\texttt{HASHPOS}$: The **hash position register** contains the index of the next position of the input bytes-array of the hash, that starts the fill.
+- $\texttt{HASHPOS}$: The _hash position register_ contains the index of the next position of the input bytes-array of the hash, that starts the fill.
 
-- $\mathtt{ROTL\_C}$: The **rotate** **$\texttt{C}$** **to-the-left** register is read-only, and it is used to flag a left-rotation of the $\texttt{C}$ register by $4$ bytes. This has the effect of moving the $4$ most significant bytes of the $\texttt{C}$ register to the $4$ least significant bytes, and moving the $28$ least significant bytes to the $28$ most significant bytes. Later on, the rotated value in the $\texttt{C}$ register can be assigned elsewhere.
+- $\mathtt{ROTL\_C}$: The _rotate_ _$\texttt{C}$_ _to-the-left_ register is read-only, and it is used to flag a left-rotation of the $\texttt{C}$ register by $4$ bytes. This has the effect of moving the $4$ most significant bytes of the $\texttt{C}$ register to the $4$ least significant bytes, and moving the $28$ least significant bytes to the $28$ most significant bytes. Later on, the rotated value in the $\texttt{C}$ register can be assigned elsewhere.
 
-- $\texttt{RCX}$: The **repeat count register** is used in the $\texttt{repeat}$ instruction. The $\texttt{repeat}$ instruction allows for certain instructions to be executed multiple times, based on the value stored in the $\texttt{RCX}$ register.
+- $\texttt{RCX}$: The _repeat count register_ is used in the $\texttt{repeat}$ instruction. The $\texttt{repeat}$ instruction allows for certain instructions to be executed multiple times, based on the value stored in the $\texttt{RCX}$ register.
 
     The $\texttt{RCX}$ register is decremented by $1$ each time the instruction is executed, until it reaches $0$.
 
@@ -201,7 +206,7 @@ The main SM utilizes other Context-specific registers in order to effectively ex
 
 #### Address in memory
 
-The **address** register, $\texttt{addr}$, is used to indicate a position in memory. It is however used internally to an instruction that needs an address, like the $\texttt{call}$ function or any instruction that has something to do with memory.
+The _address_ register, $\texttt{addr}$, is used to indicate a position in memory. It is however used internally to an instruction that needs an address, like the $\texttt{call}$ function or any instruction that has something to do with memory.
 
 All $\texttt{JMP}$ instructions (read "jump instructions") for example, require the $\texttt{addr}$ register.
 
@@ -380,9 +385,9 @@ The details on what these operations are, have been documented [here](../binary-
 
 For instance, when the ROM instruction is to add two values, the Binary SM reads as input values whatever values stored in the $\texttt{A}\ \texttt{0...7}$ and $\texttt{B}\ \texttt{0...7}$ registers.
 
-If the **resulting sum fits** in the allocated $256$ bits for the Binary output, it gets stored in the $\texttt{FREE}\ \texttt{0...7}$ and then injected to the $\texttt{OP}$ register.
+If the _resulting sum fits_ in the allocated $256$ bits for the Binary output, it gets stored in the $\texttt{FREE}\ \texttt{0...7}$ and then injected to the $\texttt{OP}$ register.
 
-But if the **resulting sum exceeds** the allocated $256$ bits, the Binary operation not only updates the $\texttt{OP}$ register but also the $\texttt{cntArith}$ register and the $\texttt{carry}$ register, setting $\texttt{carry}$ to $1$. Subsequently, a conditional jump then gets used.
+But if the _resulting sum exceeds_ the allocated $256$ bits, the Binary operation not only updates the $\texttt{OP}$ register but also the $\texttt{cntArith}$ register and the $\texttt{carry}$ register, setting $\texttt{carry}$ to $1$. Subsequently, a conditional jump then gets used.
 
 Here's how the code for the Binary instruction looks like,
 
@@ -412,7 +417,7 @@ Storage is managed by calling the $\texttt{StateDB.SMT}$, which essentially refe
 
 As seen in the above figure, the corresponding ROM instructions are denoted by $\texttt{sWR}$ and $\texttt{sRD}$, respectively.
 
-Values can be **read** from the SMT if $\mathtt{sRD == 1}$, or *written* to the SMT if $\mathtt{sWR == 1}$.
+Values can be _read_ from the SMT if $\mathtt{sRD == 1}$, or *written* to the SMT if $\mathtt{sWR == 1}$.
 
 - Reading a $\texttt{value}$ from the SMT requires passing the old state root $\texttt{oldRoot}$, the key $\texttt{sKey}$ and the read $\texttt{value}$, through the $\texttt{StateDB}$ service. And the value being read is stored in the $\texttt{FREE}\ \texttt{0...7}$ register.
 

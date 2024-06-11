@@ -1,3 +1,5 @@
+![Polygon Solidity smart contract bridging architecture](../../../../img/cdk/high-level-architecture/bridging-class-diagram.png)
+
 The unified bridge transfers assets and messages between networks (L1, L2) by calling bridge and claim functions on the [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) contract whose deployment address is an [upgradeable proxy](https://etherscan.io/address/0x2a3DD3EB832aF982ec71669E178424b10Dca2EDe#code). Interaction with the actual contract happens via the proxy.
 
 This contract is deployed on L1 and there is also one deployed on every L2 network. It communicates closely with an exit root manager contract specific to L1 or L2.

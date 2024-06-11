@@ -95,7 +95,7 @@ nav:
           - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
           - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
           - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
-          #- Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
+          - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
           - API:
             - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
             - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
@@ -218,7 +218,7 @@ nav:
           - STARK recursion:
             - STARK recursion: zkEVM/architecture/zkprover/stark-recursion/index.md
             - Proving tools and techniques: zkEVM/architecture/zkprover/stark-recursion/proving-tools.md
-            - Composition, Recursion and Aggregation: zkEVM/architecture/zkprover/stark-recursion/composition-recursion-aggregation.md
+            - Composition, recursion and aggregation: zkEVM/architecture/zkprover/stark-recursion/composition-recursion-aggregation.md
             - Recursion sub-process: zkEVM/architecture/zkprover/stark-recursion/recursion-sub-process.md
             - Proving architecture: zkEVM/architecture/zkprover/stark-recursion/proving-architecture.md
             - CIRCOM in zkProver: zkEVM/architecture/zkprover/stark-recursion/circom-in-zkprover.md
@@ -234,7 +234,7 @@ nav:
           - Arithmetic state machine: zkEVM/architecture/zkprover/arithmetic-sm.md
           - Binary state machine: zkEVM/architecture/zkprover/binary-sm.md
           - Memory state machine: zkEVM/architecture/zkprover/memory-sm.md
-          - Memory-Align state machine: zkEVM/architecture/zkprover/mem-align-sm.md
+          - Memory-align state machine: zkEVM/architecture/zkprover/mem-align-sm.md
           - Hashing state machines:
             - Hashing state machines: zkEVM/architecture/zkprover/hashing-state-machines/index.md
             - Keccak framework: zkEVM/architecture/zkprover/hashing-state-machines/keccak-framework.md
@@ -410,6 +410,8 @@ nav:
               - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
               - Verify a contract: zkEVM/how-to/verify-contract.md
           - Third-party tutorials: tools/dApp-development/third-party-tutorials.md
+          - Polygon faucet: tools/gas/matic-faucet.md
+          - Polygon gas station: tools/gas/polygon-gas-station.md
       - Popular tools:
         - OKX explorer:
           - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
@@ -420,9 +422,6 @@ nav:
       - Chain indexer framework:
           - Overview: tools/chain-indexer-framework/overview.md
           - Usage: tools/chain-indexer-framework/usage.md 
-      - Gas:
-          - Polygon MATIC faucet: tools/gas/matic-faucet.md
-          - Polygon gas station: tools/gas/polygon-gas-station.md
       - Data:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
           - Covalent: tools/data/covalent.md
@@ -549,7 +548,7 @@ nav:
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
   - Innovation & design:
-      - Learn: innovation-design/index.md
+      - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
       - AggLayer:
         - Overview: innovation-design/agglayer/index.md
@@ -577,6 +576,21 @@ nav:
       - Plonky 2 & 3: innovation-design/plonky.md
       - Polygon protocols: innovation-design/polygon-protocols.md
       - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
+      - Security:
+          - Overview: innovation-design/security/overview.md
+          - Security areas:
+            - Governance & management: innovation-design/security/governance.md
+            - Risk management: innovation-design/security/risk.md
+            - Human resources: innovation-design/security/hr.md
+            - Infrastructure: innovation-design/security/infrastructure.md
+            - Software development: innovation-design/security/sdlc.md
+            - Smart contracts: innovation-design/security/smartcontracts.md
+            - Vulnerability management: innovation-design/security/vulnerability.md
+            - Security operations: innovation-design/security/operations.md
+          - Security reports: innovation-design/security/reports.md
+          - Bug bounty programs: innovation-design/security/bugbounty.md
+          - Responsable disclosure: innovation-design/security/disclosure.md
+          - Contact us: innovation-design/security/contact.md
 
 extra:
   generator: false
