@@ -2,13 +2,11 @@
 comments: true
 ---
 
-<!-- https://excalidraw.com/#json=JKZp9QEihifF_B7Z41Dfv,FVNhqQKi9PA1jM0kzUoCsQ" -->
-
 ## Polygon smart contract architecture
 
 Chain stacks at the node level direct transaction data to the L2 and L1 networks via smart contract calls. The system stores state in binary tree structures containing verifiable local and global exit roots.
 
-The diagram below details the Polygon Solidity smart contract architecture. 
+The diagram below details the Polygon Solidity smart contract architecture minus the bridging contracts. 
 
 ![Polygon Solidity smart contract architecture](../../../../img/cdk/high-level-architecture/smart-contracts-full-view.png)
 
@@ -39,6 +37,10 @@ The [PolygonRollupManager.sol](https://github.com/0xPolygonHermez/zkevm-contract
 
 ## Bridge 
 
+The class diagram below describes the unified bridge interactions.
+
+![Polygon Solidity smart contract bridging architecture](../../../../img/cdk/high-level-architecture/bridging-class-diagram.png)
+
 The unified bridge contract [PolygonZkEVMBridgeV2.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) is responsible for bridging and claiming activity across L1 and L2 chains. 
 
 <center>
@@ -48,6 +50,10 @@ The unified bridge contract [PolygonZkEVMBridgeV2.sol](https://github.com/0xPoly
 In the L1 network, the bridge also manages the complex exit root mechanism governing system state. In the L2 network, there is a lighter exit root mechanism that governs state at this layer. 
 
 ## Global exit roots
+
+The class diagram below describes the exit root interactions.
+
+![Polygon Solidity smart contract bridging architecture](../../../../img/cdk/high-level-architecture/exit-root-class-diagram.png)
 
 System state as a whole is stored on binary trees with data and/or exit roots written into their leaves. 
 
