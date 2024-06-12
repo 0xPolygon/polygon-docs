@@ -551,15 +551,19 @@ nav:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
       - AggLayer:
-        - Overview: innovation-design/agglayer/index.md
-        - End goal: innovation-design/agglayer/end-goal.md
-        - Current state (functional): 
-          - Unified bridge: innovation-design/agglayer/unified-bridge.md
-          - AggLayer today: innovation-design/agglayer/current-state-func.md
-        - Current state (in developement): innovation-design/agglayer/current-state-dev.md
-        - Next release: 
-          - Pessimistic proof: innovation-design/agglayer/pessimistic-proof.md
-          - Balance tracking: innovation-design/agglayer/balance-tracking.md
+        - Overview: cdk/agglayer/overview.md
+        - What is AggLayer: cdk/agglayer/what-is-agglayer.md
+        - Roadmap:  cdk/agglayer/roadmap.md
+        - AggLayer | Unified bridge: cdk/agglayer/unified-bridge.md
+        - AggLayer | Go - DEPRECATING: cdk/agglayer/agglayer-go.md
+        - AggLayer | Rust: cdk/agglayer/agglayer-rs.md
+        - AggLayer | Pessimistic proof: cdk/agglayer/pessimistic-proof.md
+        - AggLayer | Bridge & call : cdk/agglayer/bridge-and-call.md
+        - Specifications:
+          - Low-level specs: cdk/agglayer/specifications.md
+        #- Current state (in developement): cdk/agglayer/current-state-dev.md
+        #- Next release: 
+        #  - Balance tracking: cdk/agglayer/balance-tracking.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:

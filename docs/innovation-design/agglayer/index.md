@@ -1,3 +1,0 @@
-## Preamble
-
-[pic]

@@ -1,0 +1,94 @@
+## Overview
+
+The Agglayer Golang service is a web service designed to receive zero-knowledge proofs from various CDK chains, verify their soundness, and send them to L1 for final verification.
+
+!!! warning
+    This service is now deprecating in favor of the more robust and efficient [Rust implementation](agglayer-rs.md).
+
+## Get started
+
+### Run locally with Docker
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/AggLayer/agglayer-go
+    ```
+
+2. Execute the following command:
+
+    ```bash
+    make run-docker
+    ```
+
+### Configure key signing 
+
+1. Install `polygon-cli`:
+
+    ```bash
+    go install github.com/maticnetwork/polygon-cli@latest
+    ```
+
+2. Create a new signature:
+
+    ```bash
+    polygon-cli signer create --kms GCP --gcp-project-id gcp-project --key-id mykey-tmp
+    ```
+
+3. Install `gcloud` CLI and set up ADC:
+
+    ```bash
+    gcloud auth application-default login
+    ```
+
+4. Configure `KMSKeyName` in `agglayer.toml`.
+
+## Production set up
+
+1. Ensure only one instance of Agglayer is running at a time.
+2. Use a containerized setup, or OS level service manager/monitoring system, for automatic restarts in the case of failures.
+
+### Prerequisites
+
+#### Hardware
+
+- For each CDK chain it's necessary to configure it's corresponding RPC node, synced with the target CDK. 
+- This node is for checking the state root after executions of L2 batches.
+- We recommend a durable HA PostgresDB for storage, preferably AWS Aurora PostgreSQL or Cloud SQL for PostgreSQL in GCP.
+
+#### Software
+
+- Docker
+- Docker Compose
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/AggLayer/agglayer-go
+    ```
+
+2. Install Golang dependencies:
+
+    ```bash
+    go install .
+    ```
+
+### Configure `agglayer.toml`
+
+* `[FullNodeRPCs]` to point to the corresponding L2 full node.
+* `[L1]` to point to the corresponding L1 chain.
+* `[DB]` section with the managed database details.
+
+## Architecture
+
+Agglayer's architecture includes interactions with multiple CDK chains for ZKP verification. It uses PostgresDB for storage and interacts with both L1 and L2 chains through configured RPC nodes.
+
+## API
+
+Refer to the `cmd` and `client` directories for API implementation details. Documentation and specific API routes can be generated from these sources.
+
+---
+
+For more information, visit the [AggLayer Golang repository](https://github.com/AggLayer/agglayer-go).
