@@ -50,3 +50,7 @@ Below is a breakdown of the technical differences between a zkEVM rollup and val
 | **Final settlement**  | Transaction batches and their corresponding proofs are added to the Ethereum state.                                                                                                                      | The hash of transaction data and its proof are added to the Ethereum state, referred to as the consolidated state.                                                                                                                                         |
 
 <sub><sup>\*</sup>JSON RPC, Pool DB, Sequencer, Etherman, Synchronizer, State DB, Aggregator, Prover</sub>
+
+## Default Configuration
+
+By default, chains built with the CDK are set up as a validium. For most use cases, this is the more suitable option as it offers lower gas fees and higher throughput, while still maintaining strong security guarantees provided by the use of validity proofs.
