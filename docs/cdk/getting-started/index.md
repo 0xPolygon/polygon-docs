@@ -209,7 +209,7 @@ open $(kurtosis port print cdk-v1 grafana-001 dashboards)
 
 From the hamburger menu, navigate to `Dashboards` and select the `Panoptichain` dashboard to view all of the metrics.
 
-![Panoptichain Dashboard](../img/cdk/grafana.png)
+![Panoptichain Dashboard](../../img/cdk/grafana.png)
 
 ### Stopping the Chain
 

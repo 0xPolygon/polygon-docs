@@ -53,7 +53,8 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
-      - Get started: cdk/getting-started.md
+      - Get started: 
+        - Get started: cdk/getting-started/index.md
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
