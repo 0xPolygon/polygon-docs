@@ -221,7 +221,7 @@ kurtosis clean --all
 
 ## Going to Production
 
-While it is possible to run a CDK chain on your own, we strongly recommend getting in touch with one of our [Implementation Providers](https://ecosystem.polygon.technology/spn/cdk/) for production deployments.
+While it is possible to run a CDK chain on your own, we strongly recommend getting in touch with the [Polygon Labs team directly](https://share-eu1.hsforms.com/1aI6l7_bFTn-vWl0NIFVzDQc8xid), or one of our [Implementation Providers](https://ecosystem.polygon.technology/spn/cdk/) for production deployments.
 
 ## Dive Deeper into the CDK
 
