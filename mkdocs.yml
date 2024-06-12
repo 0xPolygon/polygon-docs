@@ -66,6 +66,7 @@ nav:
         - Gas Fees: cdk/concepts/gas-fees.md
         - Bridging & Interoperability: cdk/concepts/bridging.md
         - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
+      - Build: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
