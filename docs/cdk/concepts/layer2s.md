@@ -17,3 +17,8 @@ L2s come in different shapes and sizes in terms of their relationship with Ether
 For example, some L2s such as the Polygon zkEVM send all transaction data to Ethereum, whereas other L2s only send information about the state differences, or choose to not send transaction data to Ethereum at all; instead relying on different data availability mechanisms.
 
 As storing information on Ethereum is expensive, building an L2 chain requires a balance between security, decentralization and scalability. The CDK provides developers with the tools to make these trade-offs and build a chain that meets their specific needs depending on their use case.
+
+## Further Reading
+
+- [Ethereum documentation: layer 2s](https://ethereum.org/en/layer-2/)
+- [Ethereum documentation: scaling](https://ethereum.org/en/developers/docs/scaling/)

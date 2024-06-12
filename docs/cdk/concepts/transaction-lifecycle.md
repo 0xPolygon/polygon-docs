@@ -43,3 +43,7 @@ Depending on the data availability design choices of the L2, if the L2 is a [rol
 The final step of the transaction lifecycle is to generate a ZK-proof that proves the batch of transactions is valid. Batches of transactions are read by the [aggregator](./architecture.md#aggregator) which utilizes a [prover](./architecture.md#prover) to generate a ZK-proof that is posted back to Ethereum.
 
 ![Aggregator posting ZK-proof](../../img/cdk/aggregate-batches.png)
+
+## Further Reading
+
+- [zkEVM transaction lifecycle documentation](https://docs.polygon.technology/zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction/)

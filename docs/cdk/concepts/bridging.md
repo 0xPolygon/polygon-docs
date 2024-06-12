@@ -15,3 +15,7 @@ By default, chains launched using the CDK are opt-in to the AggLayer, enabling c
 This allows developers to build unique cross-chain experiences by integrating a `bridgeAndCall` function into their smart contracts, enabling users to call smart contract functions on other L2 chains without requiring users to bridge or hold tokens on the target chain.
 
 Learn more on the [zkEVM unified bridge documentation](https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager/).
+
+## Further Reading
+
+- [Unified Bridge Overview](https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/lxly-bridge/)

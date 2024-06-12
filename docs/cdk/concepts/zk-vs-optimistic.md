@@ -34,5 +34,5 @@ ZK rollups have several advantages over optimistic rollups; users can withdraw t
 
 You can learn more about the differences between ZK and optimistic rollups on the official Ethereum documentation:
 
-- [ZK Rollups](https://ethereum.org/en/developers/docs/scaling/zk-rollups/)
-- [Optimistic Rollups](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/)
+- [Ethereum documentation: ZK Rollups](https://ethereum.org/en/developers/docs/scaling/zk-rollups/)
+- [Ethereum documentation: Optimistic Rollups](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/)

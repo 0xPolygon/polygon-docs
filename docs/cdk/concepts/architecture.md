@@ -36,3 +36,7 @@ Deployed on the L1 (Ethereum), multiple smart contracts work together to finaliz
 The aggregator is responsible for periodically reading batches of transactions from the L2 that have not been verified yet, and generating ZK-proofs for them to prove their validity.
 
 To do this, the aggregator sends the batches of transactions to a **prover**. The prover generates ZK proofs and sends them back to the aggregator, which then posts the proofs back to the L1 smart contract.
+
+## Further Reading
+
+- [zkEVM architecture overview](https://docs.polygon.technology/zkEVM/architecture/high-level/overview/)

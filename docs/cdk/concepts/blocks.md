@@ -46,3 +46,7 @@ If the L2 is a [rollup](./layer2s.md) (meaning it uses Ethereum for it&rsquo;s [
 By inspecting the `Sequence Tx Hash` transaction, we can see the `sequenceBatches` function is called with the array of batches as an argument. One of these batches is the batch we have been following, `2041736`, which contains our original example transaction:
 
 ![Last Batch Sequenced](../../img/cdk/last-batch-sequenced.png)
+
+## Further Reading
+
+- [Blocks in the zkEVM Etrog Upgrade](https://docs.polygon.technology/zkEVM/architecture/protocol/etrog-upgrade/?h=blocks#etrog-blocks)

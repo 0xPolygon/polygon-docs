@@ -54,3 +54,8 @@ Below is a breakdown of the technical differences between a zkEVM rollup and val
 ## Default Configuration
 
 By default, chains built with the CDK are set up as a validium. For most use cases, this is the more suitable option as it offers lower gas fees and higher throughput, while still maintaining strong security guarantees provided by the use of validity proofs.
+
+## Further Reading
+
+- [Ethereum documentation: rollups](https://ethereum.org/en/developers/docs/scaling/#rollups)
+- [Ethereum documentation: validiums](https://ethereum.org/en/developers/docs/scaling/validium/)
