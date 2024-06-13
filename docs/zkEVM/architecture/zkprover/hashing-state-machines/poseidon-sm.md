@@ -132,8 +132,8 @@ Here, the input vector (_in0_, _in1_, ... , _in7_, _hashType_, _cap1_, _cap2_, _
 
 The Polygon zkEVM Repository is available here: [Polygon zkEVM on GitHub](https://github.com/0xPolygonHermez)
 
-_Poseidon SM executor_: [sm_poseidong.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_poseidong.js)
+Poseidon SM executor: [sm_poseidong.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_poseidong.js)
 
-_Poseidon SM PIL_:  [poseidong.pil](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/poseidong.pil)
+Poseidon SM PIL:  [poseidong.pil](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/poseidong.pil)
 
-_Test vectors_: [poseidong_test.js](https://github.com/0xPolygonHermez/zkevm-testvectors/tree/main/test/poseidon)
+Test vectors: [poseidong_test.js](https://github.com/0xPolygonHermez/zkevm-testvectors/tree/main/test/poseidon)

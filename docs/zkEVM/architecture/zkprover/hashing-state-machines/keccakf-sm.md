@@ -87,7 +87,7 @@ $$
 \mathtt{P = 1 \mid\mid 0^{1088+j} \mid\mid 1}.
 $$
 
-!!!Note
+!!! note
     
     It should be noted that our construction does not follow the FIPS-202 based standard (a.k.a SHA-3). 
 

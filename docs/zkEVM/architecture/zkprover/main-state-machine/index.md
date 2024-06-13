@@ -16,12 +16,12 @@ It is a piece of software, composed of a set of instructions, which implements a
 
 All EVM opcodes are interpreted in the ROM, as well as interpretation of batches and the execution logic of transactions. The ROM is therefore the interpreter of all opcodes to the Polygon zkEVM, allowing the main SM to execute Polygon zkEVM's L2 state transitions with _computational integrity_.
 
-!!!info
+!!! info
     In order to avoid any misunderstandings in the future, it is helpful to distinguish between the set of ROM instructions and EVM opcodes:
 
-    **ROM Instructions**: Set of instructions created and developed by Polygon to target a ”special” zero-knowledge virtual machine (main SM) that can execute computations with probable _computational integrity_.
+    ROM Instructions: Set of instructions created and developed by Polygon to target a ”special” zero-knowledge virtual machine (main SM) that can execute computations with probable _computational integrity_.
 
-    **EVM opcodes**: Set of instructions designed to target the EVM, used to define smart contract’s computations.
+    EVM opcodes: Set of instructions designed to target the EVM, used to define smart contract’s computations.
 
 Although zkASM instructions and EVM opcodes are different types of instructions, the Polygon zkEVM's ROM contains a piece of code written in zkASM instructions to implement each EVM opcode.
 
