@@ -1,11 +1,15 @@
-AggLayer's beginnings lie in the Polygon zkEVM unified bridge technology which was originally implemented for Polygon zkEVM. 
+AggLayer's beginnings lie in the Polygon zkEVM unified bridge technology which was originally implemented for Polygon zkEVM but now also supports CDK chains.
 
-The unified bridge supports Ethereum scalability and interoperability by using advanced cryptographic techniques and Solidity smart contracts on L1 and L2. It facilitates secure cross-chain interactions and asset transfers, ensuring transaction throughput and integrity.
+The unified bridge accelerates Ethereum interoperability by using advanced cryptographic techniques and Solidity smart contracts on L1 and L2. It facilitates secure cross-chain interactions and asset transfers, ensuring transaction throughput and integrity.
 
 An Ethereum scalability solution, the unified bridge facilitates seamless L1-L2 interaction and relies on robust and secure zero-knowledge proofs.
 
+<center>
+![CDK architecture](../../img/cdk/agglayer/unified-bridge.png)
+</center>
+
 !!! important "AggLayer smart contracts"
-    - The [AggLayer smart contract repo](https://github.com/AggLayer/ulxly-contracts) differs in minor ways only to the [unified bridge smart contract rep](https://github.com/0xPolygonHermez/zkevm-contracts).
+    - The [AggLayer smart contract repo](https://github.com/AggLayer/ulxly-contracts) differs in only minor ways when compared to the [unified bridge smart contract rep](https://github.com/0xPolygonHermez/zkevm-contracts).
 
 ## Unified bridge architecture
 
@@ -27,17 +31,17 @@ Exit roots, cryptographic commitments representing system states, ensure integri
 
 ## Main contracts
 
-Critical to the zkEVM bridge, the consensus contracts govern core operations such as sequencing and verification. Learn more in the [main contract documentation](../../zkEVM/architecture/high-level/smart-contracts/main-contracts.md) where you can find more information on the consensus contracts and rollup manager, as well as unified bridge and exit root contracts.
+Critical to the zkEVM bridge, the consensus contracts govern core operations such as sequencing and verification. Learn more in the [main contract documentation](../../zkEVM/architecture/high-level/smart-contracts/main-contracts.md) where you can find information on the consensus contracts and rollup manager, as well as unified bridge and exit root contracts.
 
 ### Sequencing
 
-Sequencing maintains transaction order and integrity, encompassing transaction ordering and batch processing. Dive into the details via [smart contract sequencing documentation](../../zkEVM/architecture/high-level/smart-contracts/sequencing.md).
+A transaction passes from the node components to the smart contract environment to be sequenced into a batch. Sequencing maintains transaction order and integrity, encompassing transaction ordering and batch processing. Dive into the details via [smart contract sequencing documentation](../../zkEVM/architecture/high-level/smart-contracts/sequencing.md).
 
 ![Smart contract sequencing flow](../../img/cdk/high-level-architecture/sequencing-flow.png)
 
 ### Verification
 
-Security is ensured through zk-proofs, verifying transaction correctness. Understand proof generation and validation in the [smart contract verification documentation](https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/verification/).
+Once sequenced, a transaction goes through the verification process. Security is ensured through zk-proofs which verify transaction correctness. Understand proof generation and validation in the [smart contract verification documentation](https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/verification/).
 
 ![Smart contract sequencing flow](../../img/cdk/high-level-architecture/verification-flow.png)
 

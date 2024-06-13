@@ -4,21 +4,22 @@ AggLayer is a Rust-based web service designed to enhance interoperability among 
 
 The service verifies the soundness of proofs from various CDK chains before forwarding them to L1 for verification.
 
-It replaces the previous [Golang implementation](agglayer-go.md)
+It replaces the previous [Golang implementation](agglayer-go.md).
 
 ## Architecture
 
 ### Components
 
-1. Aggregator: Receives and verifies zk-proofs.
-
-2. Verifier: Confirms the soundness of proofs before submitting them to L1.
+- Aggregator: Receives and verifies zk-proofs.
+- Verifier: Confirms the soundness of proofs before submitting them to L1.
 
 ### Data flow
 
-1. Input: Proofs from various CDK chains.
-2. Processing: Verification of proofs.
-3. Output: Verified proofs sent to L1.
+- Input: Proofs from various CDK chains.
+- Processing: Verification of proofs.
+- Output: Verified proofs sent to L1.
+
+[pic-here]
 
 ## Getting started
 
@@ -36,17 +37,17 @@ It replaces the previous [Golang implementation](agglayer-go.md)
 
 1. Clone the repository:
 
-   ```sh
-   git clone https://github.com/AggLayer/agglayer-rs.git
-   cd agglayer-rs
-   ```
+      ```sh
+      git clone https://github.com/AggLayer/agglayer-rs.git
+      cd agglayer-rs
+      ```
 
 2. Build and run:
 
-   ```sh
-   cargo build
-   cargo run
-   ```
+      ```sh
+      cargo build
+      cargo run
+      ```
 
 ## How to
 
@@ -64,24 +65,25 @@ chain_id = "your_chain_id"
 
 1. Run unit tests:
 
-   ```sh
-   cargo test
-   ```
+      ```sh
+      cargo test
+      ```
 
 2. Run integration tests by first ensuring all necessary services are running, then execute:
 
-   ```sh
-   cargo test -- --ignored
-   ```
+      ```sh
+      cargo test -- --ignored
+      ```
 
 ## API reference
 
 ### Endpoints
 
-1. **Submit proof**:
-   - **Endpoint**: `/submit_zkp`
-   - **Method**: POST
-   - **Payload**: 
+#### Submit proof
+
+- **Endpoint**: `/submit_zkp`
+- **Method**: POST
+- **Payload**: 
 
      ```json
      {
@@ -89,7 +91,8 @@ chain_id = "your_chain_id"
        "chain_id": "cdk_chain_id"
      }
      ```
-   - **Response**:
+
+- **Response**:
 
      ```json
      {

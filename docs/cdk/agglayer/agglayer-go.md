@@ -5,6 +5,14 @@ The Agglayer Golang service is a web service designed to receive zero-knowledge 
 !!! warning
     This service is now deprecating in favor of the more robust and efficient [Rust implementation](agglayer-rs.md).
 
+## Architecture
+
+The AggLayer Golang architecture supports interactions with multiple CDK chains for ZKP verification. 
+
+It uses PostgreSQL database for storage and interacts with both L1 and L2 chains through configured RPC nodes.
+
+[pic-here]
+
 ## Get started
 
 ### Run locally with Docker
@@ -20,28 +28,6 @@ The Agglayer Golang service is a web service designed to receive zero-knowledge 
     ```bash
     make run-docker
     ```
-
-### Configure key signing 
-
-1. Install `polygon-cli`:
-
-    ```bash
-    go install github.com/maticnetwork/polygon-cli@latest
-    ```
-
-2. Create a new signature:
-
-    ```bash
-    polygon-cli signer create --kms GCP --gcp-project-id gcp-project --key-id mykey-tmp
-    ```
-
-3. Install `gcloud` CLI and set up ADC:
-
-    ```bash
-    gcloud auth application-default login
-    ```
-
-4. Configure `KMSKeyName` in `agglayer.toml`.
 
 ## Production set up
 
@@ -75,15 +61,33 @@ The Agglayer Golang service is a web service designed to receive zero-knowledge 
     go install .
     ```
 
+### Configure key signing 
+
+1. Install `polygon-cli`:
+
+    ```bash
+    go install github.com/maticnetwork/polygon-cli@latest
+    ```
+
+2. Create a new signature:
+
+    ```bash
+    polygon-cli signer create --kms GCP --gcp-project-id gcp-project --key-id mykey-tmp
+    ```
+
+3. Install `gcloud` CLI and set up ADC:
+
+    ```bash
+    gcloud auth application-default login
+    ```
+
+4. Configure `KMSKeyName` in `agglayer.toml`.
+
 ### Configure `agglayer.toml`
 
 * `[FullNodeRPCs]` to point to the corresponding L2 full node.
 * `[L1]` to point to the corresponding L1 chain.
 * `[DB]` section with the managed database details.
-
-## Architecture
-
-Agglayer's architecture includes interactions with multiple CDK chains for ZKP verification. It uses PostgresDB for storage and interacts with both L1 and L2 chains through configured RPC nodes.
 
 ## API
 

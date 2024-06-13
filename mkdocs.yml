@@ -552,7 +552,6 @@ nav:
       - Welcome: innovation-design/welcome.md
       - AggLayer:
         - Overview: cdk/agglayer/overview.md
-        - What is AggLayer: cdk/agglayer/what-is-agglayer.md
         - Roadmap:  cdk/agglayer/roadmap.md
         - AggLayer | Unified bridge: cdk/agglayer/unified-bridge.md
         - AggLayer | Go - DEPRECATING: cdk/agglayer/agglayer-go.md
@@ -561,9 +560,7 @@ nav:
         - AggLayer | Bridge & call : cdk/agglayer/bridge-and-call.md
         - Specifications:
           - Low-level specs: cdk/agglayer/specifications.md
-        #- Current state (in developement): cdk/agglayer/current-state-dev.md
-        #- Next release: 
-        #  - Balance tracking: cdk/agglayer/balance-tracking.md
+        - Future functionality: cdk/agglayer/future-functionality.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
