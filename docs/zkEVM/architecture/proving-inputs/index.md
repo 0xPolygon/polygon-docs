@@ -1,18 +1,18 @@
-Generating the proof of correct processing of a single batch requires several inputs.
+Generating a proof for the valid processing of a single batch requires multiple inputs.
 
-In addition to data of each transaction in the processed batch, other inputs are necessary for network's overall security.
+In addition to the data from each transaction in the processed batch, other inputs are necessary to ensure the network's overall security.
 
-For example, some are inputs that need to be sent to the smart contract.
+For example, some inputs need to be sent to the smart contract.
 
-Central to generation of proofs and their verification are the verifier smart contract and the prover, as well as how these two interact.
+Central to generation of proofs and their verification are the verifier smart contract and the prover, as well as their interaction.
 
-This document therefore explores what the prover transmits to the verifier smart contract, and why.
+This document, therefore, explores what the prover transmits to the verifier smart contract and why.
 
 In the zkEVM context, the focus is on generating _succinct_[^1] proofs rather than privacy concerns. 
 
 Consequently, L2 transactions and L2 state data are public. 
 
-We therefore delve into the initial design of the proving system, operating without private inputs.
+We therefore delve into the initial design of the proving system, which operates without private inputs.
 
 ## Public inputs
 
