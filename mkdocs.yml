@@ -554,6 +554,17 @@ nav:
   - Innovation & design:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
+      - AggLayer:
+        - Overview: cdk/agglayer/overview.md
+        - Roadmap:  cdk/agglayer/roadmap.md
+        - AggLayer | Unified bridge: cdk/agglayer/unified-bridge.md
+        - AggLayer | Go - DEPRECATING: cdk/agglayer/agglayer-go.md
+        - AggLayer | Rust: cdk/agglayer/agglayer-rs.md
+        - AggLayer | Pessimistic proof: cdk/agglayer/pessimistic-proof.md
+        - AggLayer | Bridge & call : cdk/agglayer/bridge-and-call.md
+        - Specifications:
+          - Low-level specs: cdk/agglayer/specifications.md
+        - Future functionality: cdk/agglayer/future-functionality.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
