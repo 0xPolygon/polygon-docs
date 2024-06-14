@@ -132,7 +132,7 @@ In order to match the type of commitment scheme used in the zkEVM, these arithme
 
 Up to this stage, we have only mentioned that the SM executor reads instructions in a program written in zkASM, and it may take some free inputs in order to produce an execution trace. There is however a lot more detail that goes into this process.
 
-For example, the executor does not really read the zkASM program as is. But rather, the zkASM program (which we name here, _program.zkasm_), is first compiled with a tool called _zkasmcom_, into a JSON file (call the JSON file, _program.json_).
+For example, the executor does not really read the zkASM program as is. But rather, the zkASM program (which we name here, `program.zkasm`), is first compiled with a tool called _zkasmcom_, into a JSON file (call the JSON file, `program.json`).
 
 Also, the free inputs may come in the form of another JSON file, let's name it _input.json_. In addition, the executor can read information in databases and receive relevant input such as the _PIL.json_.
 
