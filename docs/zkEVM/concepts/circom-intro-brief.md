@@ -86,7 +86,7 @@ $$
 \texttt{a} \times \texttt{b} \texttt{ - c = 0}
 $$
 
-### The pragma instruction
+### The `pragma` instruction
 
 The _pragma_ instruction specifies the version of the CIRCOM compiler being used. It is meant to ensure compatibility between the circuit and the compiler version. If the two are incompatible, the compiler throws a warning.
 
