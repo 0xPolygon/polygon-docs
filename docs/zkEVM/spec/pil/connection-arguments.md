@@ -4,7 +4,7 @@ This document describes the connection arguments and how they are used in Polyno
 
 Given a vector $a = ( a_1 , \dots , a_n) \in \mathbb{F}_n$ and a partition ${\large{\S}} = \{ S_1, \dots , S_t \}$ of $[n]$, we say "$a$ $\textit{copy-satisfies}$ ${\large{\S}}$" if for each $S_k \in {\large{\S}}$, we have that $a_i = a_j$ whenever $i, j \in S_k$ , with $i, j \in [n]$ and $k \in [t]$.
 
-Moreover, we say that a protocol $(\mathcal{P}, \mathcal{V})$ is a **connection argument** if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that a vector $\textit{copy-satisfies}$ a partition of $[n]$.
+Moreover, we say that a protocol $(\mathcal{P}, \mathcal{V})$ is a _connection argument_ if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that a vector $\textit{copy-satisfies}$ a partition of $[n]$.
 
 !!! info
 
@@ -48,7 +48,7 @@ Observe that, since the singleton $\{2\}$ is in ${\large{\S}}$, then $\mathtt{a}
 
 Also, the vector $\mathtt{b}$ does not $\textit{copy-satisfies}\ {\large{\S}}$ because $\mathtt{b}_1 = \mathtt{b}_5 =3 \not= 7 = \mathtt{b}_3$.
 
-In the context of programs, connection arguments can be written easily in PIL by introducing a column associated with the chosen partition. This is also done in [GWC19](https://eprint.iacr.org/2019/953).
+In the context of programs, connection arguments can be written easily in PIL by introducing a column associated with the chosen partition. This is also done in [[GWC19]](https://eprint.iacr.org/2019/953).
 
 Recall that column values are evaluations of a polynomial at $G = \langle g \rangle$ and $\texttt{N}$ is the length of the execution trace.
 
@@ -80,7 +80,7 @@ A valid execution trace for this example was shown in Table 1 above.
 
 !!! info Remark
 
-    The column $\texttt{SA}$ does not need to be declared as a constant polynomial. The **connection argument** will still hold true even if it is declared as committed.
+    The column $\texttt{SA}$ does not need to be declared as a constant polynomial. The _connection argument_ still holds true even if it is declared as committed.
 
 ## Multiple copy satisfiability
 
@@ -106,7 +106,7 @@ $$
 
 where $k_1, k_2 \in \mathbb{F}$ are introduced here as a way of obtaining more elements (in a group $G$ of size $n$) and enabling correct encoding of the $[3n] \to [3n]$ permutation $\sigma$.
 
-See [GWC19](https://eprint.iacr.org/2019/953) for more details on this encoding.
+See [[GWC19]](https://eprint.iacr.org/2019/953) for more details on this encoding.
 
 The below table shows how to compute the polynomials $\texttt{SA}$, $\texttt{SB}$ and $\texttt{SC}$ encoding the permutation of the above example:
 
