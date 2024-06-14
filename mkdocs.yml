@@ -212,6 +212,8 @@ nav:
           - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
         - L2 state tree concept: 
           - L2 state tree concept: zkEVM/architecture/l2-state-tree/index.md
+        - Proving system inputs:
+          - Proving system inputs: zkEVM/architecture/proving-inputs/index.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - Main state machine: 
