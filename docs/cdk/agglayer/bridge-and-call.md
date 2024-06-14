@@ -41,6 +41,10 @@ The new [`BridgeExtension.sol`](https://github.com/AggLayer/lxly-bridge-and-call
 
 ### Bridge and call process flow
 
+<center>
+![CDK architecture](../../img/cdk/agglayer/bridge-and-call-sequence.png)
+</center>
+
 #### `BridgeExtension.bridgeAndCall(...)`
 
 1. Check what kind of asset is being bridged (i.e. is it more complex than a fungible asset).

@@ -11,7 +11,11 @@ The AggLayer Golang architecture supports interactions with multiple CDK chains 
 
 It uses PostgreSQL database for storage and interacts with both L1 and L2 chains through configured RPC nodes.
 
-[pic-here]
+The diagram below shows the full start up, running, and shutdown sequence for the application and its components.
+
+<center>
+![CDK architecture](../../img/cdk/agglayer/agglayer-go.png)
+</center>
 
 ## Get started
 

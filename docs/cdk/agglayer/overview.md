@@ -5,7 +5,7 @@
 
 ## Welcome to AggLayer documentation
 
-The culmination of Polygon innovation and design, AggLayer is an evolving ecosystem of zk-based (zero-knowledge) interacting chains. It addresses the current industry focus on interoperability and shared liquidity.
+The culmination of Polygon Lab's innovation and design, AggLayer is an evolving ecosystem of zk-based (zero-knowledge) interacting chains. It addresses the current industry focus on interoperability and shared liquidity.
 
 While most rollup environments follow a modular approach, where developers pick-and-choose components such as execution and data availability layers for example, the Agglayer vision is uniquely centered around zk-proof technology.
 
