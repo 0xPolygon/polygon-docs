@@ -37,13 +37,13 @@ Once obtained, the R1CS can later be used by a zk-SNARK protocol to generate ver
 
 A valid proof attests to the fact that the prover knows an assignment to all wires of the circuit that fulfills all the constraints of the R1CS.
 
-An issue that arises, when applying zero-Knowledge protocols to complex computations such as a circuit describing the logic of a ZK-rollup, is that the number of constraints to be verified can be extremely large.
+An issue that arises, when applying zero-knowledge protocols to complex computations such as a circuit describing the logic of a ZK-rollup, is that the number of constraints to be verified can be extremely large.
 
 CIRCOM was developed for the very purpose of scaling complex Arithmetic circuits by realizing them as combined instantiations of smaller Arithmetic circuits.
 
 ## What is CIRCOM?
 
-CIRCOM is a domain-specific language (DSL) used to define Arithmetic circuits, and it has an associated compiler of Arithmetic circuits to their respective R1CS.
+CIRCOM is a Domain-Specific Language (DSL) used to define Arithmetic circuits, and it has an associated compiler of Arithmetic circuits to their respective R1CS.
 
 ![CIRCOM Overall Context](../../img/zkEVM/02circom-overall-context.png)
 

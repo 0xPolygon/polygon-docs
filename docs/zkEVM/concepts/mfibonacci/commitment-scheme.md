@@ -36,14 +36,14 @@ For all practical purposes, such the constructed proof-verification system needs
 
 Proof systems based on testing polynomial identities take advantage of a basic property of polynomials expressed by the [Schwartz-Zippel lemma](https://courses.cs.washington.edu/courses/cse521/17wi/521-lecture-7.pdf).
 
-According to the Schwartz-Zippel lemma;
+According to the Schwartz-Zippel lemma:
 
->For any non-zero polynomial ${Q(X_1, \dots , X_n)}$ on ${n}$ variables with degree ${d}$, and ${S}$ a finite but sufficiently large subset of the field $\mathbb{F}$, then values ${ X_1, \dots , X_n }$ from ${S}$ are independently and uniformly assigned at random, then
+- For any non-zero polynomial ${Q(X_1, \dots , X_n)}$ on ${n}$ variables with degree ${d}$, and ${S}$ a finite but sufficiently large subset of the field $\mathbb{F}$, then values ${ X_1, \dots , X_n }$ from ${S}$ are independently and uniformly assigned at random, then
 ${Pr[Q(X_1, \dots , X_n) = 0] ≤ \dfrac{d}{|S|}}$.
 
 Here's what the Schwartz-Zippel lemma means in the specific case of the mFibonacci state machine:
 
->​If the verifier selects the challenges $\{ \alpha_1, \alpha_2 . . . , \alpha_l \}$ randomly and uniformly, then the probability of the prover finding a false polynomial ${Q'}$ of degree $d$, such that ${Q'(\alpha_j) = 0 = Q(\alpha_j)}$ for all $j \in \{ 1, 2, \dots , l \}$ , is at most ${\dfrac{d}{|S|}}$, which is very small.
+- If the verifier selects the challenges $\{ \alpha_1, \alpha_2 . . . , \alpha_l \}$ randomly and uniformly, then the probability of the prover finding a false polynomial ${Q'}$ of degree $d$, such that ${Q'(\alpha_j) = 0 = Q(\alpha_j)}$ for all $j \in \{ 1, 2, \dots , l \}$ , is at most ${\dfrac{d}{|S|}}$, which is very small.
 
 This speaks of the soundness of our polynomial commitment scheme.
 

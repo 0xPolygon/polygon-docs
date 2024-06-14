@@ -1,4 +1,4 @@
-Consider a proof-verification scheme, using an arbitrary Polynomial Commitment Scheme, where users have to prove knowledge of the N-th member of a multiplicative Fibonacci series, for specific initial conditions.
+Consider a proof-verification scheme, using an arbitrary Polynomial Commitment Scheme. In this scheme, users must prove knowledge of the $Nth$ member of a multiplicative Fibonacci series for specific initial conditions.
 
 ## What is a multiplicative Fibonacci series?
 
@@ -12,7 +12,7 @@ has the property that the product of every two consecutive members $\mathbf{a_{i
 
 Also, the initial values are specified as $\mathbf{a_0} = 2$ and $\mathbf{a_1} = 1$.
 
-Here are the first ten members of the mFibonacci series,
+Here are the first ten terms of the mFibonacci series,
 
 $$
 \mathbf{ \ \ 2,\ \ 1,\ \ 2,\ \ 2,\ \ 4,\ \ 8,\ \ 32,\ \ 256,\ \ 8192,\ \ 2097152,\ \ \dots }
@@ -220,7 +220,7 @@ In the context of our mFibonacci SM, the verifier can set the initial conditions
 
 Boundary constraints apply to particular registry values, and are used to enforce that the correct initial state was applied.
 
-The idea here is to set up a specific boundary constraint, which the verifier can use to check that correct initial conditions were applied, when the prover was computing a particular N-th term of the mFibonacci series. Yet, the verifier must not disclose any information about the secret values $A_0$ and $B_0$.
+The idea here is to set up a specific boundary constraint, which the verifier can use to check that correct initial conditions were applied, when the prover was computing a particular $Nth$ term of the mFibonacci series. Yet, the verifier must not disclose any information about the secret values $A_0$ and $B_0$.
 
 Therefore, the first thing to do, is removing terms in the identities bearing the initial values $A_0$ and $B_0$. This means modifying our polynomial identities to the ones below;
 
@@ -245,7 +245,7 @@ This logic is valid simply because the computations carried out by the state mac
 
 All computations are carried out in a field $\mathbb{F}_p$ , where $p = \mathtt{2^{64}-2^{32}+1}$, a Goldilocks-like prime number.
 
-Suppose the verifier knows that an mFibonacci series starting with initial values, $A_0$ and $B_0$, yields $A_{\mathtt{1023}} = \mathtt{14\ 823\ 897\ 298\ 192\ 278\ 947}$ as the value of the $\mathtt{1024}$-th term. The verifier can challenge anyone to prove knowledge of the initial condition of the mFibonacci SM to provide three polynomials and the correct $\mathtt{1024}$-th term. That is, the verifier uses the following constraints to verify the prover's submissions;
+Suppose the verifier knows that an mFibonacci series starting with initial values, $A_0$ and $B_0$, yields $A_{\mathtt{1023}} = \mathtt{14\ 823\ 897\ 298\ 192\ 278\ 947}$ as the value of the $\mathtt{1024}$-th term. The verifier can challenge anyone to prove knowledge of the initial condition of the mFibonacci SM to provide three polynomials and the correct $\mathtt{1024}$-th term. That is, the verifier uses the following constraints to verify the prover's submissions:
 
 $$
 \begin{aligned}

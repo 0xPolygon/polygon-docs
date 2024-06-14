@@ -80,7 +80,7 @@ $$
 
 where $\texttt{offset}$ is provided as part of the jump instructions, $\texttt{JMPZ(addr)}$ and $\texttt{JMP(addr)}$.
 
-We now have the following new columns in the execution trace,
+We now have the following new columns in the execution trace:
 
 $$
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline

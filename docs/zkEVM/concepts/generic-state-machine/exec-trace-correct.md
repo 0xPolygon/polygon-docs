@@ -2,13 +2,13 @@ In this document we discuss how the correctness of the execution trace is ensure
 
 The first step is to build a mechanism for verifying correctness of the execution trace. This requires creating a set of arithmetic constraints that only hold true when the execution trace is correct. These arithmetic constraints are equations that registry values in any two consecutive rows of the correct execution trace, must satisfy.
 
-Similar to the mFibonacci SM, where each state had to conform to polynomial identities, the arithmetic constraints of the generic state machine are translated into polynomial identities, and ultimately be translated into the PIL language.
+Similar to the mFibonacci SM, where each state had to conform to polynomial identities, the arithmetic constraints of the generic state machine are translated into polynomial identities and ultimately into the PIL language.
 
 ## Constructing arithmetic constraints
 
 Since these arithmetic constraints govern state transitions, they express the next state $\big(\mathtt{A'} ,\mathtt{B'}\big)$ in terms of the current state $\big(\texttt{A},\texttt{B}\big)$. That is, in terms of the execution trace, the new registry values are linear combinations of previous registry values, together with constants and free inputs.
 
-We therefore need auxiliary columns for selectors. Like switches that can either be ON or OFF, selectors too can either have a value $\mathtt{1}$ or $\mathtt{0}$, depending on the instruction being executed.
+We therefore need auxiliary columns for selectors. Like switches that can either be _ON_ or _OFF_, selectors too can either have a value $\mathtt{1}$ or $\mathtt{0}$, depending on the instruction being executed.
 
 In continuing with the previous example of a four-instruction state machine,
 
@@ -124,7 +124,7 @@ $$
 
 2. It shall be seen later, in our implementation of a state machine with jumps, that $\texttt{CONST}$ is in fact a committed polynomial rather than a constant polynomial.
 
-3. All the operations in the constraints are carried out $\mathtt{\ modulo }$ the order $p$ of the prime field. The so-called Goldilocks-like Field, with $p = 2^{64} − 2^{32} +1$, is mainly used where 64-bit numbers suffice (see [Plonky2](https://github.com/mir-protocol/plonky2/blob/main/plonky2/plonky2.pdf)). Otherwise, the [BN128 field](https://iden3-docs.readthedocs.io/en/latest/iden3_repos/research/publications/zkproof-standards-workshop-2/baby-jubjub/baby-jubjub.html) is deployed.
+3. All operations in the constraints are carried out $\mathtt{\ modulo }$ the order $p$ of the prime field. The so-called Goldilocks-like field, with $p = 2^{64} − 2^{32} +1$, is mainly used where 64-bit numbers suffice (see [Plonky2](https://github.com/mir-protocol/plonky2/blob/main/plonky2/plonky2.pdf)). Otherwise, the [BN128 field](https://iden3-docs.readthedocs.io/en/latest/iden3_repos/research/publications/zkproof-standards-workshop-2/baby-jubjub/baby-jubjub.html) is used.
 
 In order to match the type of commitment scheme used in the zkEVM, these arithmetic constraints must first be expressed as polynomial identities, which are in turn compiled with PILCOM.
 
@@ -191,7 +191,7 @@ $$
 
 where $\mathtt{op(x) = inA(x) \cdot A(x) + inB(x) \cdot B(x) + inFREE(x) \cdot FREE(x) + CONST(x)}$.
 
-As far as boundary constraints are concerned, we can, for instance,
+As far as boundary constraints are concerned, we can, for instance:
 
 - Make both the free input and the last registry value of $\mathtt{A}$ public.
 

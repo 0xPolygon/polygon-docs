@@ -9,7 +9,7 @@ After sending a transaction (TX) to the network using the `eth_sendRawTransactio
 1. `eth_getTransactionByHash`
 2. `eth_getTransactionReceipt`
 
-### Using eth_getTransactionByHash
+### Using `eth_getTransactionByHash`
 
 When checking the TX status using the `eth_getTransactionByHash`, the result can be either one of the following.
 
@@ -21,7 +21,7 @@ When checking the TX status using the `eth_getTransactionByHash`, the result can
 
 - If the fields `block_num` and `block_hash` are NOT null, it means the TX was mined.
 
-### Using eth_getTransactionReceipt
+### Using `eth_getTransactionReceipt`
 
 When checking the TX status using the `eth_getTransactionReceipt`, again the result can either one of the following.
 

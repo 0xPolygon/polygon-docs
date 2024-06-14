@@ -30,7 +30,7 @@ FRI is in fact a Merkle commitment scheme where commitments are roots of Merkle 
 
 #### Why is FRI fast?
 
-The FRI protocol is considered fast for the following reasons.
+The FRI protocol is considered fast for the following reasons:
 
 1. Its resemblance of the ubiquitous Fast Fourier Transforms (FFTs).
 2. The strict linearity of the prover's arithmetic complexity.
@@ -43,7 +43,7 @@ We later demonstrate how PIL-STARK is used to prove polynomial identities of the
 
 Before describing PIL-STARK, let's take a look at the novel polynomial identity language (PIL), and some of its distinguishing features.
 
-### Polynomial identity language
+### Polynomial Identity Language (PIL)
 
 PIL is a domain-specific language (DSL) designed for naming polynomials and describing identities that define the computations performed by a state machine.
 

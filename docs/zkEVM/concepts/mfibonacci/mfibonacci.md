@@ -21,7 +21,7 @@ The approach involves developing a state machine that enables a prover to genera
 
 ![A Skeletal View of the Design Process](../../../img/zkEVM/fib5-design-approach-outline.png)
 
-The process that leads to achieving such a state machine-based system takes a few steps,
+The process that leads to achieving such a state machine-based system takes a few steps:
 
 - Modeling deterministic computation as a state machine.
 - Specifying the equations that fully describe the state transitions of the state machine, known as arithmetic constraints.
