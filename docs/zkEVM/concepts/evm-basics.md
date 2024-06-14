@@ -1,14 +1,14 @@
-In this series of documents, we will dig deeper into the Main State Machine Executor component of the zkProver. It is one of the four main components of the zkProver, outlined [here](../architecture/zkprover/index.md). These are - Executor, STARK Recursion, CIRCOM, and Rapid SNARK.
+In this document we dig deeper into the main state machine or executor component of the zkProver. It is one of the four main components of the zkProver, outlined [here](../architecture/zkprover/index.md). These are - Executor, STARK recursion, CIRCOM, and Rapid SNARK.
 
-Since the design of the zkProver emulates that of the EVM, this document focuses on explaining the basics of Ethereum Virtual Machine (EVM).
+Since the design of the zkProver emulates that of the EVM, this document focuses on explaining the basics of EVM.
 
 ## Overview of Polygon zkEVM
 
-Polygon zkEVM is an L2 network that implements a special instance of the Ethereum Virtual Machine (EVM). It emulates the EVM in that the zkProver, which is core to proving and verifying computation correctness, is also designed as a state machine or a cluster of state machines.
+Polygon zkEVM is an L2 network that implements a special instance of the EVM. It emulates the EVM in that the zkProver, which is core to proving and verifying computation correctness, is also designed as a state machine or a cluster of state machines.
 
 The terms state machine and virtual machine are used interchangeably in this documentation.
 
-Although the Polygon zkEVM architecture and state differ from the Ethereum, communication with the Polygon zkEVM is done through a JSON-RPC interface, which is fully compatible with Ethereum RPC. This allows all Ethereum-compatible applications and tools to be natively compatible with the Polygon zkEVM.
+Although the Polygon zkEVM architecture and state differ from Ethereum, communication with the Polygon zkEVM is done through a JSON-RPC interface, which is fully compatible with Ethereum RPC. This allows all Ethereum-compatible applications and tools to be natively compatible with the Polygon zkEVM.
 
 Since Polygon zkEVM is a separate instance, with a state distinct from Ethereum, balances in accounts may differ and therefore L1 smart contracts cannot be directly accessed through L2 transactions.
 
@@ -18,7 +18,7 @@ A special zkEVM bridge and cross-chain messaging mechanism have been developed s
 
 The Ethereum blockchain is a distributed digital ledger that keeps track of all transactions and interactions that occur on the Ethereum network. In addition to recording transactions, the EVM can store and execute smart contracts. These smart contracts are low-level codes that can perform a variety of tasks and operations on the network.
 
-The Ethereum Virtual Machine (EVM) is therefore the computational engine of the Ethereum blockchain responsible for smart contract deployment and execution.
+The EVM is therefore the computational engine of the Ethereum blockchain responsible for smart contract deployment and execution.
 
 The EVM is categorized as a quasi–Turing-complete state machine because it can handle all execution processes except that, due to the gas limit set in every smart contract, it is limited to computations with a finite number of steps.
 
@@ -28,13 +28,13 @@ Since Ethereum is a distributed digital ledger, its state is maintained by each 
 
 ## Key features of EVM
 
-In terms of how it operates, the EVM is described as; deterministic, sandboxed, and Stack-based.
+In terms of how it operates, the EVM is described as; deterministic, sandboxed, and stack-based.
 
-Deterministic &rarr; for any given input, it always produces the exact same output. This feature is critical for ensuring dependability and predictability of smart contract execution, as well as enabling reliable verification of execution.
+Deterministic: For any given input, it always produces the exact same output. This feature is critical for ensuring dependability and predictability of smart contract execution, as well as enabling reliable verification of execution.
 
-Sandboxed &rarr; because transactions processed by smart contracts run in an environment that is isolated from the rest of the system, making it impossible for transactions to access or modify data outside this environment. This contributes towards network security by preventing unauthorized access to sensitive data.
+Sandboxed: Transactions processed by smart contracts run in an environment that is isolated from the rest of the system, making it impossible for transactions to access or modify data outside this environment. This contributes towards network security by preventing unauthorized access to sensitive data.
 
-Stack-based &rarr; because it employs a Last-In First-Out (LIFO) memory data structure for processing operations, with data being pushed onto a Stack and popped off as needed.
+Stack-based: It employs a _last-in-first-out_ (LIFO) memory data structure for processing operations, with data being pushed onto a stack and popped off as needed.
 
 ## Components of EVM
 
@@ -50,15 +50,15 @@ The main components of the EVM involved in the processing of a transaction are:
 
     In general, smart contracts are written in a high-level programming language, such as [Solidity](https://docs.soliditylang.org/en/v0.8.20/) or [Vyper](https://docs.vyperlang.org/en/stable/), and then compiled into an EVM bytecode.
 
-2. Processing Environment refers to the component responsible for executing smart contracts. It provides a runtime environment for the smart contract bytecode to execute in and manage the memory and storage used by smart contract.
+2. Processing environment refers to the component responsible for executing smart contracts. It provides a runtime environment for the smart contract bytecode to execute in and manage the memory and storage used by smart contract.
 
-3. Stack is the Last-In First-Out (LIFO) data structure used to execute the EVM's operations, and thus turning the EVM into a Stack-based machine.
+3. Stack is the LIFO data structure used to execute the EVM's operations, and thus turning the EVM into a stack-based machine.
 
 4. Memory is the component that allows smart contracts to store and retrieve data. It is organized as a linear array of bytes, while data is accessed by specifying its location in memory.
 
-5. `calldata` refers to the set of parameters & values required for a smart contract to perform its function.
+5. _calldata_ refers to the set of parameters & values required for a smart contract to perform its function.
 
-    The transaction that invokes a particular smart contract must contain the right `calldata`, and thus pass the `calldata` to that smart contract. `calldata` is read-only and therefore smart contracts cannot modify it during execution.
+    The transaction that invokes a particular smart contract must contain the right _calldata_, and thus pass the _calldata_ to that smart contract. _calldata_ is read-only and therefore smart contracts cannot modify it during execution.
 
     The smart contract's input data is part of the transaction which is stored on the blockchain, and therefore any changes to the input data would result in a different transaction-hash and hence a different state of the blockchain.
 
@@ -66,53 +66,53 @@ The main components of the EVM involved in the processing of a transaction are:
 
 The EVM is a variant of the [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) which means it uses a single shared memory for both data and instructions.
 
-&rarr; The smart contract’s bytecode is stored in memory in the EVM, and the Program Counter (PC) keeps track of the current instruction being executed.
+- The smart contract’s bytecode is stored in memory in the EVM, and the _program counter_ (PC) keeps track of the current instruction being executed.
 
-&rarr; Stack is used for storing small values, such as integers and booleans, values needed for immediate use, such as function parameters, local variables, and return values.
+- Stack is used for storing small values, such as integers and booleans, values needed for immediate use, such as function parameters, local variables, and return values.
 
-&rarr; Memory is used for storing large data structures, such as arrays and strings.
+- Memory is used for storing large data structures, such as arrays and strings.
 
 ### EVM computational costs
 
-The EVM has its own instruction set or list of available opcodes, which is a set of low-level commands used to manipulate data in the Stack, Memory and Storage components.
+The EVM has its own instruction set or list of available opcodes, which is a set of low-level commands used to manipulate data in the stack, memory and storage components.
 
-The instruction set includes operations such as Arithmetic, Bit manipulation and Control flow.
+The instruction set includes operations such as Arithmetic, bit manipulation and control flow.
 
-Additionally, in order to prevent spam and Denial of Service (DoS) attacks, the EVM employs a gas system. Gas is a unit of measurement for the computational resources required to execute a smart contract, and each operation in the instruction set has its own gas cost.
+Additionally, in order to prevent spam and denial of service (DoS) attacks, the EVM employs a gas system. Gas is a unit of measurement for the computational resources required to execute a smart contract, and each operation in the instruction set has its own gas cost.
 
 ## Stack
 
-The EVM is a Stack-based machine because it uses a Stack data structure to execute its operations. When an operation is performed, values that are currently top of the Stack are popped off, used in the executed operation, and then the result of the operation is pushed back onto the Stack.
+The EVM is a stack-based machine because it uses a stack data structure to execute its operations. When an operation is performed, values that are currently top of the stack are popped off, used in the executed operation, and then the result of the operation is pushed back onto the stack.
 
-Some of the main Stack operations executed in the EVM are:
+Some of the main stack operations executed in the EVM are:
 
-1. `PUSH`: This opcode pushes a value onto the Stack. It is usually followed by:
+1. PUSH: This opcode pushes a value onto the stack. It is usually followed by:
 
-    - A byte which indicates the number of bytes to be pushed onto the Stack, and
+    - A byte which indicates the number of bytes to be pushed onto the stack, and
 
-    - The actual bytes to be pushed onto the Stack.
+    - The actual bytes to be pushed onto the stack.
 
-    For example, the opcode `PUSH2 0x0123` pushes the bytes `0x01` and `0x23` onto the Stack as one word `0x0123`.
+    For example, the opcode PUSH2 0x0123 pushes the bytes 0x01 and 0x23 onto the stack as one word 0x0123.
 
-2. `POP`: Removes the top value from the Stack and discards it.
+2. POP: Removes the top value from the stack and discards it.
 
-3. `DUP`: Duplicates the top value on the Stack and pushes the duplicate onto the Stack.
+3. DUP: Duplicates the top value on the stack and pushes the duplicate onto the stack.
 
-4. `SWAP`: Swaps the top two values on the Stack.
+4. SWAP: Swaps the top two values on the stack.
 
-5. `ADD`, `SUB`, `MUL`, `DIV`, `MOD`: These opcodes perform specific Arithmetic operations on the top two values of the Stack, and push the result back onto the Stack.
+5. ADD, SUB, MUL, DIV, MOD: These opcodes perform specific Arithmetic operations on the top two values of the stack, and push the result back onto the stack.
 
-6. `AND`, `OR`, `XOR`, `NOT`: These opcodes perform bitwise logic operations on the top two values of the Stack, and push the result back onto the Stack.
+6. AND, OR, XOR, NOT: These opcodes perform bitwise logic operations on the top two values of the stack, and push the result back onto the stack.
 
-7. `EQ`, `LT`, `GT`: These opcodes perform comparison operations on the top two values of the Stack, and push the result back onto the Stack as a Boolean.
+7. EQ, LT, GT: These opcodes perform comparison operations on the top two values of the stack, and push the result back onto the stack as a Boolean.
 
-8. `SHA3`: Computes the `SHA3` hash of the top value on the Stack, and pushes the hash onto the Stack.
+8. SHA3: Computes the SHA3 hash of the top value on the stack, and pushes the hash onto the stack.
 
-9. `JUMP`, `JUMPI`: These opcodes modify the program counter, allowing the program to jump to a different part of the code.
+9. JUMP, JUMPI: These opcodes modify the _program counter_, allowing the program to jump to a different part of the code.
 
-The EVM Stack is limited to $1024$ elements. This yields the capacity of $(1024 \times 256)$ bits because each EVM word is 256 bits long.
+The EVM stack is limited to $1024$ elements. This yields the capacity of $(1024 \times 256)$ bits because each EVM word is 256 bits long.
 
-If a contract attempts to `PUSH` more elements onto the Stack, exceeding the $1024$-limit, a `Stack overflow error` will occur, causing the transaction to fail.
+If a contract attempts to PUSH more elements onto the stack, exceeding the $1024$-limit, a _stack overflow error_ occurs, causing the transaction to fail.
 
 ## Memory
 
@@ -138,13 +138,13 @@ It is worth noting that if a smart contract does not actually use the memory it 
 
 The opcodes related to memory are as follows:
 
-- `MLOAD` is an opcode used to load a $32$-byte word from Memory into the Stack. It takes a Memory address as its input and pushes the value stored at that address onto the Stack.
+- MLOAD is an opcode used to load a $32$-byte word from Memory into the stack. It takes a Memory address as its input and pushes the value stored at that address onto the stack.
 
-- `MSTORE` is an opcode used to store a $32$-byte word from the Stack into Memory. It takes a Memory address and a value from the Stack as its input, and stores the value at the specified address.
+- MSTORE is an opcode used to store a $32$-byte word from the stack into Memory. It takes a Memory address and a value from the stack as its input, and stores the value at the specified address.
 
-- `MSTORE8` is an opcode similar to `MSTORE`, except that it stores a single byte of data instead of a $32$-byte word. It takes a Memory address and a byte value from the Stack as its input, and stores the byte at the specified address.
+- MSTORE8 is an opcode similar to MSTORE, except that it stores a single byte of data instead of a $32$-byte word. It takes a Memory address and a byte value from the stack as its input, and stores the byte at the specified address.
 
-- `MSIZE` is an opcode that returns the size of the current Memory area in bytes.
+- MSIZE is an opcode that returns the size of the current Memory area in bytes.
 
 ## Storage
 
@@ -156,8 +156,8 @@ A Patricia Tree is a specific type of a trie designed to be more space-efficient
 
 The following opcodes are used to manipulate the storage of a smart contract:
 
-- `SLOAD` loads a $256$-bit word from Storage at a given index, and pushes it onto the Stack.
-- `SSTORE` stores a $256$-bit word to Storage at a given index. The value to be stored is popped from the Stack, and its index is specified as the next value on the Stack.
+- SLOAD loads a $256$-bit word from Storage at a given index, and pushes it onto the stack.
+- SSTORE stores a $256$-bit word to Storage at a given index. The value to be stored is popped from the stack, and its index is specified as the next value on the stack.
 
 ## Transaction process
 
@@ -188,19 +188,19 @@ The Ethereum account is identified by a 20-byte (160-bit) address. The address i
 
 The EVM begins by creating a context with an empty stack and memory space.
 
-The bytecode instructions are then executed. The execution involves values being pushed and popped onto and from the Stack as required.
+The bytecode instructions are then executed. The execution involves values being pushed and popped onto and from the stack as required.
 
-EVM uses a Program Counter to keep track of which instruction to execute next. Each opcode has a fixed number of bytes, so the Program Counter increments by the appropriate number of bytes after each instruction is executed.
+EVM uses a _program counter_ to keep track of which instruction to execute next. Each opcode has a fixed number of bytes, so the _program counter_ increments by the appropriate number of bytes after each instruction is executed.
 
 ### Stack elements and word size
 
-Stack elements are 32 bytes in size. This means each value pushed onto the Stack by an opcode, as well as each value popped off the Stack by an opcode, are each 32 bytes in size.
+Stack elements are 32 bytes in size. This means each value pushed onto the stack by an opcode, as well as each value popped off the stack by an opcode, are each 32 bytes in size.
 
-The 32-byte size limit for Stack elements is a fundamental design choice in Ethereum, and is purely based on the size of the EVM word. The EVM word is the basic unit of storage and processing in the EVM, defined as a 256-bit (32-byte) unsigned integer. Since the EVM word is the smallest unit of data that can be processed by the EVM, the stack elements are conveniently set to be of the same size.
+The 32-byte size limit for stack elements is a fundamental design choice in Ethereum, and is purely based on the size of the EVM word. The EVM word is the basic unit of storage and processing in the EVM, defined as a 256-bit (32-byte) unsigned integer. Since the EVM word is the smallest unit of data that can be processed by the EVM, the stack elements are conveniently set to be of the same size.
 
 ### Summary
 
-The EVM sequentially executes the opcodes in the bytecode, by following the Program Counter. It also manipulates $32$-byte values on the Stack and in Memory, in accordance with computations required to be performed, and permanently stores relevant values as required.
+The EVM sequentially executes the opcodes in the bytecode, by following the _program counter_. It also manipulates $32$-byte values on the stack and in Memory, in accordance with computations required to be performed, and permanently stores relevant values as required.
 
 ## EVM interpreter
 
@@ -214,12 +214,12 @@ A complete list of Ethereum opcodes includes over 200 different operations, rang
 
 Some of the most commonly used opcodes include:
 
-- `ADD`, `SUB`, `MUL`, `DIV`, which are basic arithmetic operations.
-- `CALL`, `DELEGATECALL`, `CALLCODE`, which are calls to other contracts.
-- `PUSH`, `POP`, which are Stack management operations.
-- `JUMP`, `JUMPI`, which respectively refer to jumps and conditional jumps, from one line of a program to another.
-- `SLOAD`, `SSTORE`, which are Storage management operations.
-- `MLOAD`, `MSTORE`, which are Memory management operations.
+- ADD, SUB, MUL, DIV, which are basic arithmetic operations.
+- CALL, DELEGATECALL, CALLCODE, which are calls to other contracts.
+- PUSH, POP, which are stack management operations.
+- JUMP, JUMPI, which respectively refer to jumps and conditional jumps, from one line of a program to another.
+- SLOAD, SSTORE, which are Storage management operations.
+- MLOAD, MSTORE, which are Memory management operations.
 
 ## References
 

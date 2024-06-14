@@ -18,25 +18,31 @@ The witness (that is, the input kept private by the prover) is $F_1 = 2$ and $F_
 
 The modular Fibonacci sequence can be arithmetized with $3$ columns (i.e., $3$ polynomials):
 
-- First, two committed polynomials $\texttt{a}$ and $\texttt{b}$ that keep track of the sequence elements. We naturally obtain the following constraints between $\texttt{a}$ and $\texttt{b}$;
+- First, two committed polynomials $\texttt{a}$ and $\texttt{b}$ that keep track of the sequence elements. We naturally obtain the following constraints on $\texttt{a}$ and $\texttt{b}$,
 
- $$
- \texttt{a}’ =\ \texttt{b}\qquad \\
- \texttt{b}’ =\ \texttt{a} + \texttt{b}
- $$
+$$
+\begin{aligned}
+\texttt{a}’ =\ \texttt{b}\qquad\\
+\texttt{b}’ =\ \texttt{a} + \texttt{b}
+\end{aligned}
+$$
 
 - Second, the constant polynomial $\texttt{ISLAST}$, which is defined as,
 
- $$
- \texttt{ISLAST}(g^i)\ = 0,\ \text{ for all}\ \ i \in [\texttt{N}−1]\ \text{and}\\
- \texttt{ISLAST}(g^i)\ = 1,\ \text{ for}\ i = \texttt{N}.\ \qquad\qquad\quad
- $$
+$$
+\begin{aligned}
+&\texttt{ISLAST}(g^i)\ = 0,\ \text{ for all}\ \ i \in [\texttt{N}−1]\ \text{and}\\
+&\texttt{ISLAST}(g^i)\ = 1,\ \text{ for}\ i = \texttt{N}.
+\end{aligned}
+$$
 
 With the introduction of the $\texttt{ISLAST}$ polynomial, the above constraints can be rewritten as follows:
 
 $$
+\begin{aligned}
 (1−\texttt{ISLAST}) \cdot (a’−b) = 0\quad\quad \\
 (1−\texttt{ISLAST}) \cdot (b’−a−b) = 0.
+\end{aligned}
 $$
 
 This way, $\texttt{ISLAST}$ ensures that the above constraints are valid in all rows of the execution trace, including the last row. Note that this last row is precisely the point where it is checked whether the claimed $1024$-th term is correct or not.
@@ -59,7 +65,7 @@ Notice that the $1024$-th Fibonacci term is hardcoded as $180312667050811804$ in
 
 This means, every time one uses the same PIL with a different witness ($F_1$, $F_2$) or even a different Fibonacci term, the PIL code would need to be modified.
 
-We solve this by introducing mutable **public values** which the Prover can use to change the witness ($F_1$, $F_2$) or the $\texttt{N}$-th Fibonacci term without the need to alter the PIL code.
+We solve this by introducing mutable _public values_ which the Prover can use to change the witness ($F_1$, $F_2$) or the $\texttt{N}$-th Fibonacci term without the need to alter the PIL code.
 
 ```
 public result = a(%N-1);

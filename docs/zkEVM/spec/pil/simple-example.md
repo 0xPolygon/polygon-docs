@@ -57,7 +57,7 @@ In the language of proof/verification systems concerned with proving and verifyi
 
 So, the values in each column of the execution trace actually represents or describes a particular polynomial. Such polynomials can be computed by $\text{interpolation}$.
 
-The PIL code for the above `Multiplier` program is as follows.
+The PIL code for the above _Multiplier_ program is as follows.
 
 ```
 namespace Multiplier(2**10);
@@ -71,13 +71,13 @@ pol commit out;
 out = freeIn1*freeIn2;
 ```
 
-In the above figure, the namespace given to the `Multiplier` program is $\texttt{Multiplier}$, and its specified length is $2^{10}$.
+In the above figure, the namespace given to the _Multiplier_ program is $\texttt{Multiplier}$, and its specified length is $2^{10}$.
 
-In the zkEVM context, these polynomials would be committed by the Main state machine for verification, they appear in the PIL code as `pol commit`.
+In the zkEVM context, these polynomials would be committed by the Main state machine for verification, they appear in the PIL code as _pol commit_.
 
-## Optimized `Multiplier` program
+## Optimized Multiplier program
 
-The above design of the `Multiplier` program, as represented by its execution trace, does not scale easily to more complex operations. The number of polynomials (or number of columns) grows linearly with the number of operations that needs to be performed.
+The above design of the _Multiplier_ program, as represented by its execution trace, does not scale easily to more complex operations. The number of polynomials (or number of columns) grows linearly with the number of operations that needs to be performed.
 
 For example, if we were design a Multiplier program that computes $2^{10}$ operation, the above design would require $2^{10}$ committed polynomials, which is far from being practical.
 
@@ -107,7 +107,7 @@ $$
     \end{aligned}
 $$
 
-Observe how each column of the execution trace records the **"state"** in each row.
+Observe how each column of the execution trace records the "state" in each row.
 
 - $\texttt{row 1}$ : The $\texttt{freeIn}$ column records the first input $4$ of the operation, hence $\texttt{RESET}$ reflects a $1$, while $\texttt{out}$ records $0$ as its default initial value.
 
@@ -172,4 +172,4 @@ In order to express the values of the $\texttt{out}$ polynomial in terms of the 
     out' = RESET*freeIn + (1-RESET)*(out*freeIn);
     ```
 
-    Observe that the $\texttt{RESET}$ polynomial is $\texttt{constant}$ because it does not change from one execution to the next. In an actual implementation of the `Multiplier` program, $\texttt{RESET}$ would be among the preprocessed polynomials.
+    Observe that the $\texttt{RESET}$ polynomial is $\texttt{constant}$ because it does not change from one execution to the next. In an actual implementation of the _Multiplier_ program, $\texttt{RESET}$ would be among the preprocessed polynomials.
