@@ -210,6 +210,8 @@ nav:
           - zkEVM and execution traces: zkEVM/architecture/proving-system/exec-trace-and-zkevm.md
           - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
           - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
+        - L2 state tree concept: 
+          - L2 state tree concept: zkEVM/architecture/l2-state-tree/index.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - Main state machine: 
