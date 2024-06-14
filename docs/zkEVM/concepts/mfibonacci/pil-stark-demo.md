@@ -1,12 +1,11 @@
-
 !!!note
-    This document is a guide to a DIY implementation of the PIL-STARK proof/verification system.
+    This document is a DIY implementation guide for the PIL-STARK proof-verification system.
 
 Before delving into the implementation, we first ensure the boundary constraints in the  $\texttt{mFibonacci.pil}$ code are not hardcoded. The aim here is to implement these values as $\texttt{publics}$. This subsequently populates the $\texttt{publics}$' field in the parsed $\texttt{\{ \} fibonacci.pil.json}$ file.
 
-## Boundary Constraints As Publics
+## Boundary constraints as publics
 
-As seen in the description of PIL-STARK, one of the outputs of the SM-Prover is the $\texttt{publics}$, which are publicly known values. However, looking back at our demonstration, where the $\texttt{mFibonacci.pil}$ file was compiled with $\texttt{PILCOM}$, you will notice that the $\texttt{publics}$ field in the parsed $\texttt{\{ \} fibonacci.pil.json}$ file is empty. Check $\text{line 6}$ in the provided snapshot of the "$\texttt{\{ \} fibonacci.pil.json}$" file, and notice it reads thus:
+As seen in the description of PIL-STARK, one of the outputs of the SM-prover is the $\texttt{publics}$, which are publicly known values. However, looking back at our demonstration, where the $\texttt{mFibonacci.pil}$ file was compiled with $\texttt{PILCOM}$, you can notice that the $\texttt{publics}$ field in the parsed $\texttt{\{ \} fibonacci.pil.json}$ file is empty. Check $\text{line 6}$ in the provided snapshot of the "$\texttt{\{ \} fibonacci.pil.json}$" file, and notice it reads thus:
 
 $$
 \texttt{"publics": [],}
@@ -20,9 +19,9 @@ $$
 \mathtt{ISLAST*(a - 144115188042301440) = 0;}
 $$
 
-This is undesirable because any change in the initial conditions would yield a wrong proof, which the Verifier would reject.
+This is undesirable because any change in the initial conditions would yield a wrong proof, which the verifier would reject.
 
-The aim in this subsection is to therefore, rewrite the boundary constraint in the $\texttt{mFibonacci.pil}$ file such that, instead of hardcoding this public value, it is rather generically defined. So, $\mathtt{144115188042301440}$, is replaced with a public **variable** called "$\texttt{out}$". The new **variable** must be declared, and it is defined as;
+The aim in this subsection is to therefore, rewrite the boundary constraint in the $\texttt{mFibonacci.pil}$ file such that, instead of hardcoding this public value, it is rather generically defined. So, $\mathtt{144115188042301440}$, is replaced with a public variable called "$\texttt{out}$". The new variable must be declared, and it is defined as;
 
 $$
 \textbf{public} \texttt{ out = a(\%N - 1);}
@@ -34,21 +33,21 @@ $$
 \texttt{ISLAST*(a - :out) = 0;}
 $$
 
-where the  **` : `**  colon-prefix indicates a read of the value stored at $\texttt{out}$.
+where the  ` : `  colon-prefix indicates a read of the value stored at $\texttt{out}$.
 
 The modified $\texttt{mFibonacci.pil}$ file, before compilation with $\texttt{PILCOM}$, is now as follows,
 
 ![mFibonacci.pil file with "publics"](../../../img/zkEVM/fib17-mfib-pil-w-pubs.png)
 
-This modified $\texttt{mFibonacci.pil}$ file can be compiled with $\texttt{PILCOM}$ in the manner demonstrated earlier. The resulting parsed PIL file, "$\texttt{\{ \} mfibonacci.pil.json}$", now reflects some information in the "$\texttt{publics}$" field, as shown here:
+This modified $\texttt{mFibonacci.pil}$ file can be compiled with $\texttt{PILCOM}$ in the manner demonstrated earlier. The resulting parsed PIL file, "$\texttt{\{ \} mfibonacci.pil.json}$", now reflects some information in the "$\texttt{publics}$" field, as shown below.
 
 ![A non-empty "publics" field the parsed PIL file ](../../../img/zkEVM/fib18-non-empt-pubs-field.png)
 
-## PIL-STARK Implementation Guide
+## PIL-STARK implementation guide
 
 Here is a step-by-step guide on how PIL-STARK is implemented. You are encouraged to Do-It-Yourself by following the steps provided below.
 
-### Initialise A Node Project
+### Initialise a node project
 
 The first step is to make a new subdirectory named `mfibonacci_sm`, switch directory to it and initialise a node project as indicated below;
 
@@ -70,7 +69,7 @@ The installation takes seconds, and again the results looks like this,
 
 ![Installed dependencies](../../../img/zkEVM/fib20-dependncs-install-mfib.png)
 
-### Create Input Files
+### Create input files
 
 First of all, the overall inputs to PIL-STARK are; the $\texttt{.pil}$ file describing the mFibonacci state machine, the STARK configuration $\texttt{.json}$ file and the inputs $\texttt{.json}$ file, which contains initial values of the mFibonacci state machine.
 
@@ -113,9 +112,9 @@ First of all, the overall inputs to PIL-STARK are; the $\texttt{.pil}$ file desc
 
 - Create a new file and call it `mfib.input.json`. Populate this JSON file with the initial values of the mFibonacci state machine of your choice (the numbers must be positive integers). We use here $\texttt{[ 234, 135 ]}$. Simply type the 2-element array in the `mfib.input.json` file and save it.
 
-### Create The Executor
+### Create the executor
 
-In our earlier description of PIL-STARK, the $\texttt{Executor}$ was 'split' into the $\texttt{Setup} \texttt{ executor}$ and the $\texttt{Prover } \texttt{executor}$. This was done for simplicity's sake. The two $\texttt{executors}$ are but one program that generates the evaluations of the constant polynomial, as well as the evaluations of the committed polynomials.
+In our earlier description of PIL-STARK, the $\texttt{executor}$ was 'split' into the _setup executor_ and the _prover executor_. This was done for the sake of simplicity. The two $\texttt{executors}$ are but one program that generates the evaluations of the constant polynomial, as well as the evaluations of the committed polynomials.
 
 Create a new file and call it  `executor_mfibonacci.js`. Copy the code-text shown below, into this `.js` file and save it in the `mfibonacci_sm` subdirectory.
 
@@ -140,7 +139,7 @@ module.exports.execute = async function (pols, input) {
 }
 ```
 
-### Create PIL-STARK Proof Generator And Verifier
+### Create PIL-STARK proof generator and verifier
 
 Finally, create the PIL-STARK proof generator and verifier by creating a new file (using a code editor) and name it `mfib_gen_and_prove.js`.
 
@@ -194,4 +193,4 @@ Run the `mfib_gen_and_prove.js` code:
 node mfib_gen_and_prove.js
 ```
 
-After a long reporting on all the checks made, a successful STARK generation and its verification is indicated with a **$\texttt{VALID proof!}$** message. If you used different filenames from ours, you might have to do some light debugging.
+After a long reporting on all the checks made, a successful STARK generation and its verification is indicated with a $\texttt{VALID proof!}$ message. If you used different filenames from ours, you might have to do some light debugging.
