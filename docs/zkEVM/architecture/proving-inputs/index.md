@@ -22,17 +22,17 @@ Recall that the prover generates a proof, and sends the proof and an array of pu
 
 The public inputs consist of the following data:
 
-(a) `batchData` which is the data of all the L2 transactions in the batch being proved.
+- `batchData` which is the data of all the L2 transactions in the batch being proved.
 
-(b) `currentStateRoot` referring to the current L2 state root.
+- `currentStateRoot` referring to the current L2 state root.
 
-(c\) `proverAccount` which is the prover's account due to receive rewards. This account is attached to the proof so as to avoid successful plagiariasm of the proof.
+- `proverAccount` which is the prover's account due to receive rewards. This account is attached to the proof so as to avoid successful plagiariasm of the proof.
 
-(d) `timestamp` specifies the time at which the proof was generated.
+- `timestamp` specifies the time at which the proof was generated.
 
-(e) `forkId` is the current version of the L2 EVM being used.
+- `forkId` is the current version of the L2 EVM being used.
 
-(f) `chainId` is the identifier of the chain for which the proof is being generated. The protocol is designed with the capability to host multiple layer 2 networks.
+- `chainId` is the identifier of the chain for which the proof is being generated. The protocol is designed with the capability to host multiple layer 2 networks.
 
 The public output of this process is a new L2 state root, denoted by `newStateRoot`.
 
