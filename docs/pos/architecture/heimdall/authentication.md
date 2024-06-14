@@ -4,15 +4,14 @@ Heimdall's `auth` module is responsible for specifying the base transaction and 
 
 Fees serve two purposes for an operator of the network.
 
-Fees limit the growth of the state stored by every full node and allow for general purpose censorship of transactions of little economic value. Fees are best suited as an anti-spam mechanism where validators are disinterested in the use of the network and identities of users.
-
-Since Heimdall doesn't support custom contract or code for any transaction, it uses fixed cost transactions. For fixed cost transactions, the validator can top up their accounts on the Ethereum chain and get tokens on Heimdall using the [Topup](topup.md) module.
+1. Fees limit the growth of the state stored by every full node and allow for general purpose censorship of transactions of little economic value. Fees are best suited as an anti-spam mechanism where validators are disinterested in the use of the network and identities of users.
+2. Since Heimdall doesn't support custom contract or code for any transaction, it uses fixed cost transactions. For fixed cost transactions, the validator can top up their accounts on the Ethereum chain and get tokens on Heimdall using the [Topup module](topup.md).
 
 ## Types
 
-Besides accounts (specified in State), the types exposed by the auth module are **StdSignature**, the combination of an optional public key and a cryptographic signature as a byte array, **StdTx**, a struct that implements the `sdk.Tx` interface using **StdSignature**, and **StdSignDoc**, a replay-prevention structure for **StdTx** which transaction senders must sign over.
+Besides accounts (specified in State), the types exposed by the auth module are `StdSignature`, the combination of an optional public key and a cryptographic signature as a byte array, `StdTx`, a struct that implements the `sdk.Tx` interface using `StdSignature`, and `StdSignDoc`, a replay-prevention structure for `StdTx` which transaction senders must sign over.
 
-### StdSignature
+### `StdSignature`
 
 A `StdSignature` is the types of a byte array.
 
@@ -21,7 +20,7 @@ A `StdSignature` is the types of a byte array.
 type StdSignature []byte
 ```
 
-### StdTx
+### `StdTx`
 
 A `StdTx` is a struct that implements the `sdk.Tx` interface, and is likely to be generic enough to serve the purposes of many types of transactions.
 
@@ -33,7 +32,7 @@ type StdTx struct {
 }
 ```
 
-### StdSignDoc
+### `StdSignDoc`
 
 A `StdSignDoc` is a replay-prevention structure to be signed over, which ensures that any submitted transaction (which is simply a signature over a particular byte string) will only be executable once on a Heimdall.
 
@@ -72,27 +71,27 @@ type BaseAccount struct {
 
 The auth module contains the following parameters:
 
-|Key                   |Type  |Default value     |
-|----------------------|------|------------------|
-|MaxMemoCharacters     |uint64|256               |
-|TxSigLimit            |uint64|7                 |
-|TxSizeCostPerByte     |uint64|10                |
-|SigVerifyCostED25519  |uint64|590               |
-|SigVerifyCostSecp256k1|uint64|1000              |
-|DefaultMaxTxGas       |uint64|1000000           |
-|DefaultTxFees         |string|"1000000000000000"|
+| Key                    | Type   | Default value      |
+| ---------------------- | ------ | ------------------ |
+| MaxMemoCharacters      | uint64 | 256                |
+| TxSigLimit             | uint64 | 7                  |
+| TxSizeCostPerByte      | uint64 | 10                 |
+| SigVerifyCostED25519   | uint64 | 590                |
+| SigVerifyCostSecp256k1 | uint64 | 1000               |
+| DefaultMaxTxGas        | uint64 | 1000000            |
+| DefaultTxFees          | string | "1000000000000000" |
 
 ## CLI commands
 
 ### Show account
 
-To print account related data into Heimdall;
+Use the following command to print account related data into Heimdall:
 
 ```bash
 heimdalld show-account
 ```
 
-Expected Result:
+Expected result:
 
 ```json
 {
@@ -103,13 +102,13 @@ Expected Result:
 
 ### Account and coin details
 
-To display account details, coins, sequence and account number;
+To display account details, coins, sequence and account number:
 
 ```bash
 heimdallcli query auth account 0x68243159a498cf20d945cf3E4250918278BA538E --trust-node
 ```
 
-Expected Result:
+Expected result:
 
 ```json
 address: 0x68243159a498cf20d945cf3e4250918278ba538e
@@ -124,13 +123,13 @@ sequence: 0
 
 ### Parameters
 
-To print all params;
+Use the following command to print all params:
 
 ```go
 heimdallcli query auth params
 ```
 
-Expected Result:
+Expected result:
 
 ```go
 max_memo_characters: 256
@@ -144,8 +143,8 @@ tx_fees: "1000000000000000"
 
 ## REST APIs
 
-|Name                  |Endpoint|Description       |
-|----------------------|--------|------------------|
-|Account details       |/auth/accounts/{address}|Returns all details for an address|
-|Account sequence details|/auth/accounts/{address}/sequence|Returns only necessary details for signing|
-|Auth params           |/auth/params|Returns all params auth module uses|
+| Name                     | Endpoint                          | Description                                |
+| ------------------------ | --------------------------------- | ------------------------------------------ |
+| Account details          | /auth/accounts/{address}          | Returns all details for an address         |
+| Account sequence details | /auth/accounts/{address}/sequence | Returns only necessary details for signing |
+| Auth params              | /auth/params                      | Returns all params auth module uses        |

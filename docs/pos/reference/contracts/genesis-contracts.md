@@ -2,7 +2,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 
 ### Mainnet
 
-**Parent chain: Ethereum mainnet**
+#### Parent chain: Ethereum mainnet
 
 | Contracts             | [Address](https://etherscan.io/address/Address)                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -44,7 +44,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 | MaticWeth             | [0xa45b966996374E9e65ab991C6FE4Bfce3a56DDe8](https://etherscan.io/address/0xa45b966996374E9e65ab991C6FE4Bfce3a56DDe8) |
 
 
-**Child chain: Polygon mainnet**
+#### Child chain: PoS mainnet
 
 | Contracts             | Address                                    |
 |-----------------------|--------------------------------------------|
@@ -57,7 +57,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 
 ### Amoy
 
-**Parent chain: Sepolia**
+#### Parent chain: Sepolia
 
 | Contracts             | Address                                                                                                                      |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -88,7 +88,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 | MaticWeth             | [0x700dDE29De87ed2c01c27C896dc8Badb4f671302](https://sepolia.etherscan.io/address/0x700dDE29De87ed2c01c27C896dc8Badb4f671302) |
 | RootERC721            | [0x13B0Edd9312886Ac0C73116e767208bEd1199679](https://sepolia.etherscan.io/address/0x13B0Edd9312886Ac0C73116e767208bEd1199679) |
 
-**Child chain: Amoy**
+#### Child chain: Amoy
 
 | Contracts             | Address                                    |
 |-----------------------|--------------------------------------------|
@@ -100,10 +100,9 @@ Here you will find a list of contracts deployed on Polygon together with their i
 | RootERC721            | [0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e](https://www.oklink.com/amoy/address/0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e/) |
 
 
+### Mumbai (Deprecated)
 
-### Mumbai
-
-**Parent chain: Goerli**
+#### Parent chain: Goerli
 
 | Contracts             | Address                                                                                                                      |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -137,7 +136,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 | ERC20Predicate        | [0x39c1e715316a1acbce0e6438cf62edf83c111975](https://goerli.etherscan.io/address/0x39c1e715316a1acbce0e6438cf62edf83c111975) |
 | ERC721Predicate       | [0x473cb675c9214f79dee10948443509c441a678e7](https://goerli.etherscan.io/address/0x473cb675c9214f79dee10948443509c441a678e7) |
 
-**Child Chain: Mumbai**
+#### Child chain: Mumbai
 
 | Contracts             | Address                                    |
 |-----------------------|--------------------------------------------|

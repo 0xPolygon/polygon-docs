@@ -1,8 +1,8 @@
-One of the core features of Polynomial Identity Language is that it allows modular design of its programs. This document describes how PIL connects programs.
+One of the core features of _Polynomial Identity Language_ (PIL) is that it allows modular design of its programs. This document describes how PIL connects programs.
 
 ## Modular design
 
-One of PIL's core features is that it allows **modular design** of its programs. By modular, we mean the ability to split the design of a program $M$ into multiple smaller programs, such that a proper combination of these small programs leads to $M$.
+One of PIL's core features is that it allows _modular design_ of its programs. By modular, we mean the ability to split the design of a program $M$ into multiple smaller programs, such that a proper combination of these small programs leads to $M$.
 
 Without this feature, one would need to combine the logic of multiple pieces in a single design, and as a consequence, a lot of redundant polynomials would be included in the design. Moreover, the resulting design would be too big and difficult to validate and test.
 
@@ -16,7 +16,7 @@ The difficulty here is that bitwise operations are difficult to describe when wo
 
 Then, the idea is to split these integers into bits in another program, allowing us to check the operations in a trivial way.
 
-The main program will consist of $3$ columns; $\texttt{a}$, $\mathtt{neg\_a}$, and $\texttt{op}$. In each row, the column $\texttt{a}$ contains the integer $a$ of the computation $a \cdot \bar{a}$. The columns, $\mathtt{neg\_a}$ and $\texttt{op}$, contain $\bar{a}$ and $a \cdot \bar{a}$, respectively.
+The main program consists of $3$ columns; $\texttt{a}$, $\mathtt{neg\_a}$, and $\texttt{op}$. In each row, the column $\texttt{a}$ contains the integer $a$ of the computation $a \cdot \bar{a}$. The columns, $\mathtt{neg\_a}$ and $\texttt{op}$, contain $\bar{a}$ and $a \cdot \bar{a}$, respectively.
 
 The below table represents a valid execution trace of the program that validates negated strings of bits.
 
@@ -34,9 +34,9 @@ $$
 
 First, there is a need to enforce that each of the inputs is a 4-bit integer. That is, an integer in the range $[0, 15]$.
 
-This can be enforced via an inclusion argument. Specifically, this argument enforces that all the values of a vector belong to a certain range (publicly known). For this reason, such a family of inclusion arguments is often referred to as **range checks**.
+This can be enforced via an inclusion argument. Specifically, this argument enforces that all the values of a vector belong to a certain range (publicly known). For this reason, such a family of inclusion arguments is often referred to as _range checks_.
 
-The PIL code for a **range check** of a column $\texttt{a}$ is as follows:
+The PIL code for a _range check_ of a column $\texttt{a}$ is as follows:
 
     ```
     include "config.pil";
@@ -52,11 +52,11 @@ The PIL code for a **range check** of a column $\texttt{a}$ is as follows:
 
 !!! info "Remarks about the above code"
 
-    `BITS4` is a polynomial containing each of the possible 4-bit integers. These 4-bit integers can be chosen in any order when constructing `BITS4` because **inclusion checks do not respect orderings**.
+    _BITS4_ is a polynomial containing each of the possible 4-bit integers. These 4-bit integers can be chosen in any order when constructing _BITS4_ because _inclusion checks do not respect orderings_.
 
-    Also, observe that `BITS4` is called from a namespace which is different from where it is defined. The syntax `Namespace.polynomial` can be used to access polynomials of other namespaces.
+    Also, observe that _BITS4_ is called from a namespace which is different from where it is defined. The syntax _Namespace.polynomial_ can be used to access polynomials of other namespaces.
 
-The traditional procedure is to put different namespaces in separate files and then use the include keyword to **“connect”** them. For instance, two programs can be defined as follows.
+The traditional procedure is to put different namespaces in separate files and then use the include keyword to “connect” them. For instance, two programs can be defined as follows.
 
 ```
 // Filename: global.pil
@@ -106,11 +106,11 @@ $$
 \mathtt{bits} + \mathtt{nbits} = 1.
 $$
 
-The idea to connect the $\mathtt{Main}$ program with the $\mathtt{Negation}$ program will be to construct $a$ and $\bar{a}$ from the given bits of each free input integer $a$. Therefore, the inclusion argument that verifies that the tuple $(a,\bar{a})$ from the $\mathtt{Main}$ program is included in the $\mathtt{Negation}$ program will also prove the fact that $\bar{a}$ is correctly constructed. In order to achieve this, we will need a constant polynomial called $\mathtt{FACTOR}$. As depicted in the above table, $\mathtt{FACTOR}$ places the bits in their correct bit-position.
+The idea of connecting the $\mathtt{Main}$ program with the $\mathtt{Negation}$ program is to construct $a$ and $\bar{a}$ from the given bits of each _free input_ integer $a$. Therefore, the inclusion argument that verifies that the tuple $(a,\bar{a})$ from the $\mathtt{Main}$ program is included in the $\mathtt{Negation}$ program also proves the fact that $\bar{a}$ is correctly constructed. In order to achieve this, we need a constant polynomial called $\mathtt{FACTOR}$. As depicted in the above table, $\mathtt{FACTOR}$ places the bits in their correct bit-position.
 
 At the same time, a constant polynomial $\texttt{RESET}$ is necessary so as to allow resetting the generation of columns $\texttt{a}$ and $\mathtt{neg\_a}$ from the bits of $\mathtt{bits}$ and $\mathtt{nbits}$ respectively, after every 4 rows.
 
-Observe that the cyclic behavior is ensured in this situation because $4$ divide $\mathtt{N} = 2^{10}$. Since $\mathtt{N}$ should be a power of $2$, this requirement will always be satisfied.
+Observe that the cyclic behavior is ensured in this situation because $4$ divides $\mathtt{N} = 2^{10}$. Since $\mathtt{N}$ should be a power of $2$, this requirement is always satisfied.
 
 The following are the constraints that should be added to PIL in order to describe this generation:
 
@@ -142,7 +142,7 @@ $$
 
 Observe that the $\mathtt{RESET}$ polynomial ensures that the constraints labelled $\text{Eqn. 11}$ above, are satisfied in each row.
 
-The file which describes correct execution of the $\texttt{Negation}$ program (`negation.pil`) is now as follows:
+The file which describes correct execution of the $\texttt{Negation}$ program (_negation.pil_) is now as follows:
 
 ```
 namespace Negation(%N);
@@ -161,7 +161,7 @@ neg_a ' = FACTOR '*nbits ' + (1 - RESET)*neg_a;
 
 Observe that binary checks for the columns $\texttt{bits}$ and $\texttt{nbits}$ have been added because we need to ensure that both of them are actually bits.
 
-Now, we will connect the $\texttt{Main}$ and the $\texttt{Negation}$ program via an inclusion check, adding the following line into the $\texttt{Main}$ PIL’s namespace:
+Now, we connect the $\texttt{Main}$ and the $\texttt{Negation}$ program via an inclusion check, adding the following line into the $\texttt{Main}$ PIL’s namespace:
 
 ```
 {a, neg_a} in {Negation.a, Negation.neg_a};
@@ -183,7 +183,7 @@ The same is possible from the other side, adding a selector polynomial $\texttt{
 sel {a, neg_a} in {Negation.a, Negation.neg_a}
 ```
 
-The above feature, of enforcing row-selective inclusion checks, is crucial in PIL especially in situations where inclusions must be satisfied only in a subset of rows. We will later on see that this is important for improved proving performance.
+The above feature, of enforcing row-selective inclusion checks, is crucial in PIL especially in situations where inclusions must be satisfied only in a subset of rows. We later on see that this is important for improved proving performance.
 
 Also, we can use a combination of selectors, one for each side:
 
@@ -252,7 +252,7 @@ a' = FACTOR'*bits' + (1 - RESET)*a;
 neg_a ' = FACTOR '*nbits ' + (1 - RESET)*neg_a;
 ```
 
-Having all the `.pil` files in the same directory, we can compile `main.pil` and obtain the following debug message:
+Having all the _.pil_ files in the same directory, we can compile _main.pil_ and obtain the following debug message:
 
 ```bash
 Input Pol Commitments: 10

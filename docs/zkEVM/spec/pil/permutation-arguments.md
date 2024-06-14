@@ -8,7 +8,7 @@ $$
 \sigma(b)\ :=\ \big( b_{\sigma(1)}, \dots , b_{\sigma(n)} \big).
 $$
 
-A protocol $(\mathcal{P}, \mathcal{V})$ is a **permutation argument** if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that two vectors in $\mathbb{F}^n$ are a permutation of each other.
+A protocol $(\mathcal{P}, \mathcal{V})$ is a _permutation argument_ if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that two vectors in $\mathbb{F}^n$ are a permutation of each other.
 
 !!! note
 
@@ -64,7 +64,7 @@ Notice that columns $\{\texttt{a}, \texttt{b}, \texttt{c}\}$ of the program $\te
 
 To still achieve a valid permutation argument over such columns, we have introduced a committed column $\texttt{sel}$ set to $1$ in rows where a permutation argument is enforced, and is $0$ elsewhere.
 
-Therefore, the permutation argument will only be valid if,
+Therefore, the permutation argument is valid only if,
 
 - $\texttt{sel}$ is correctly computed, and
 - the subset of rows chosen by sel in both programs shows a permutation.

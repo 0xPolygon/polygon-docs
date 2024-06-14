@@ -1,10 +1,12 @@
 The Bits2Field state machine is one of the auxiliary state machines used specifically for parallelizing the implementation of KECCAK-F SM. Its source code is available [here](https://github.com/0xPolygonHermez/zkevm-prover/blob/main/src/sm/bits2field/bits2field_executor.cpp).
 
-The Bits2Field state machine ensures correct packing of $\mathtt{44}$ bits from $\mathtt{44}$ different $\mathtt{1600}$-row blocks of the Padding-KK-Bit SM into a single field element. Therefore, it operates like a (44 bits to 1 field element) multiplexer between the Padding-KK-Bit SM and the Keccak-F SM.
+The Bits2Field state machine ensures correct packing of $\mathtt{44}$ bits from $\mathtt{44}$ different $\mathtt{1600}$-row blocks of the Padding-KK-Bit SM into a single field element. Therefore, it operates like a (44-bits-to-1-field-element) multiplexer between the Padding-KK-Bit SM and the Keccak-F SM.
 
-In simpler terms, it takes bits from $\mathtt{44}$ different blocks, places them into the first 44 bit-positions of a single field element, whereupon the KECCAK-F circuit runs. The name Bits2Field state machine refers to the processing where $44$ bits from $44$ different blocks of the Padding-KK-Bit SM are inserted into a single field element.
+In simpler terms, it takes bits from $\mathtt{44}$ different blocks, places them into the first 44 bit-positions of a single field element, whereupon the KECCAK-F circuit runs. The name Bits2Field state machine refers to the process of taking $44$ bits from $44$ different blocks of the Padding-KK-Bit SM and inserting them into a single field element.
 
 Although the KECCAK-F SM is a binary circuit, instead of executing on a bit-by-bit basis, it is implemented to execute KECCAK-F operations on a 44bits-by-44bits basis. This is tantamount to running $\mathtt{44}$ KECCAK-F hashing circuits in parallel.
+
+The figure below depicts a simplified multiplexing process.
 
 ![The 44 bits to 1 field-element Multiplexing](../../../../img/zkEVM/01b2f-44-2-one-multiplex.png)
 
@@ -25,7 +27,11 @@ $$
 
 and it is composed of 20 zeroes and 44 meaningful bits related to the committed polynomials.
 
-Given the capacity of $2^{23}$ in terms of the state machine evaluations (i.e., the degree of polynomials) and the KECCAK-F's $\texttt{SlotSize} = 155286$, one obtains $2^{23} / 155286 = 54.020375307$ KECCAK-F slots. Therefore, a total of $54$ slots $\times$ $44$ blocks $= 2376$ Keccak blocks can be processed. This is a big improvement from the previous $477$ blocks of the 9bits-to-1field element multiplexing (i.e., $53 \times 9 = 477$).
+Given the capacity of $2^{23}$ in terms of the state machine evaluations (i.e., the degree of polynomials) and the KECCAK-F's $\texttt{SlotSize} = 155286$, one obtains $2^{23} / 155286 = 54.020375307$ KECCAK-F slots.
+
+Therefore, a total of $54$ slots $\times$ $44$ blocks $= 2376$ Keccak blocks can be processed.
+
+This is a big improvement from the previous $477$ blocks of the 9bits-to-1field element multiplexing (i.e., $53 \times 9 = 477$).
 
 ## The Bits2Field PIL Code
 

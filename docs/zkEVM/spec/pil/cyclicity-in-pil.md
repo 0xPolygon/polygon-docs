@@ -34,7 +34,7 @@ Denote the cyclic group over which interpolation is carried out as $G = \{ g, g^
     P(g^i) = \texttt{a}[i]\ \ \text{and}\ \ Q(g^i) = \texttt{b}[i] \tag{eqn}
     $$
 
-    **But in order to keep the PIL code simple and easily relatable to the execution trace**, we replace the $P$ and $Q$ with $\texttt{a}$ and $\texttt{b}$, respectively. The above $\text{eqn}$ will therefore be seen written as,
+    But in order to keep the PIL code simple and easily relatable to the execution trace, we replace the $P$ and $Q$ with $\texttt{a}$ and $\texttt{b}$, respectively. The above $\text{eqn}$ is therefore seen written as,
 
     $$
     \texttt{a}(g^i) = \texttt{a}[i]\ \ \text{and}\ \ \texttt{b}(g^i) = \texttt{b}[i].
@@ -84,7 +84,7 @@ $$
 \text{RHS} =\ \texttt{a}(g^3) + \texttt{b}(g^3) =\ \texttt{a}[3] + \texttt{b}[3] = 1 + 1 = 2.
 $$
 
-This proves that second constraint is not satisfied for $i = 3$. And therefore the execution trace is **not cyclic**.
+This proves that second constraint is not satisfied for $i = 3$. And therefore the execution trace is _not cyclic_.
 
 ## Introducing cyclicity
 

@@ -1,88 +1,100 @@
-Polygon Faucet is a tool provided by Polygon and its ecosystem partners such as Alchemy and Quicknode that allows you to obtain free MATIC tokens on the Mumbai Testnet and get started with the Polygon network. These test tokens enable you to work with Polygon features without having to spend actual MATIC tokens on the mainnet.
+---
+comments: true
+---
 
-Additionally, you can also receive Polygon zkEVM testnet ETH on Polygon Faucet.
+The Polygon Faucet is a tool provided by Polygon and ecosystem partners like Alchemy, QuickNode, and GetBlock. It enables developers to acquire free MATIC/ETH test tokens on the PoS Amoy and zkEVM Cardona testnets. Start deploying and testing your dApps on the Polygon network with test tokens that allow you to explore Polygon features without spending actual MATIC tokens on the mainnet.
 
-!!! info
-      Tokens on testnet networks like Mumbai, Goerli & Polygon zkEVM testnet have no value as they are only used for testing purposes.
+Polygon Faucet drips:
 
-We have listed three faucet tools you can use to receive MATIC testnet tokens, along with their usage guides, in the sections below.
+- MATIC on PoS Amoy and Ethereum Sepolia.
+- Test ETH on zkEVM Cardona.
 
-- [Polygon faucet](https://faucet.polygon.technology/)
-- [Alchemy MATIC faucet](https://mumbaifaucet.com/)
-- [QuickNode multi-chain faucet](https://faucet.quicknode.com/drip)
-- [LearnWeb3 Mumbai MATIC Faucet](https://learnweb3.io/faucets/polygon_mumbai)
-- [LearnWeb3 zkEVM MATIC Faucet](https://learnweb3.io/faucets/polygon_zkevm)
+!!! info "Testnet tokens hold no real-world value"
+      Tokens on testnets such as PoS Amoy, Ethereum Sepolia, and zkEVM Cardona hold no real value and are solely used for testing purposes.
 
-In addition, Polygon faucet also provides Polygon zkEVM testnet ETH tokens.
+Several faucet tools are available to receive test MATIC and ETH on Sepolia-anchored Polygon networks:
 
-## Polygon faucet
+|          Faucet          | Supported networks                                                                                                    |
+| :----------------------: | --------------------------------------------------------------------------------------------------------------------- |
+|      Polygon Faucet      | [zkEVM Cardona, PoS Amoy, Ethereum Sepolia](https://faucet.polygon.technology)                                                 |
+|         Alchemy Faucet         | [PoS Amoy](https://www.alchemy.com/faucets/polygon-amoy) \| [Ethereum Sepolia](https://www.alchemy.com/faucets/ethereum-sepolia) |
+| QuickNode Polygon Faucet | [PoS Amoy](https://faucet.quicknode.com/polygon/amoy)                                                                 |
+|     GetBlock Faucet      | [PoS Amoy](https://getblock.io/faucet/matic-amoy/) \| [Ethereum Sepolia](https://getblock.io/faucet/eth-sepolia)                 |  
 
-- Navigate to [faucet.polygon.technology](https://faucet.polygon.technology/)
+## Polygon Faucet
 
-   ![img](../../img/tools/gas/faucet.png)
+- Start by navigating to [faucet.polygon.technology](https://faucet.polygon.technology/) and connecting/verifying your Discord by selecting **Connect Discord** in the top-right corner of the page.
 
-- Select one of the blockchain testnet networks:
-      - Mumbai - Polygon Testnet
-      - Goerli - Ethereum Testnet
-      - Polygon zkEVM - Polygon zkEVM Testnet
+   <center>
+   ![img](../../img/tools/gas/faucet.png){width=70%}
+   </center>
 
-- Select the type of Testnet token that you want to receive:
-      - **MATIC Token** - Testnet token of Polygon network
-      - **Test ERC20** - Standard testnet token on the Ethereum network
-      - **Test ERC1155** - Standard testnet token used for NFTs
-      - **LINK** - ERC677 testnet token that inherits functionality from the ERC20
-      - **zkEVM ETH** - Testnet ETH on the Polygon zkEVM testnet network
+- Select one of the blockchain testnet networks from the drop-down list:
+  
+      - **Polygon zkEVM (Cardona)**
+      - **Polygon PoS Amoy (Amoy)**
+      - **Sepolia**
 
-- Enter your wallet address (you can copy it from your MetaMask or Polygon wallet)
+- Select the type of token you want to receive:
+  
+      - **zkEVM ETH**: Testnet ETH on zkEVM Cardona.
+      - **MATIC**: Testnet MATIC on the PoS Amoy and Ethereum Sepolia.
 
-- Click on the **Submit** button to send your token request
+- Once done, copy your wallet address and select **Paste** to paste it in the text box. Typing is disabled to prevent entering a wrong address. 
 
-- Click **Confirm** to finalize the transaction
+- Select **Submit**. 
 
-   ![img](../../img/tools/gas/confirm-transaction.png)
+- Verify the details and select **Confirm** to finalize the transaction.
+
+   <center>
+   ![img](../../img/tools/gas/confirm-transaction.png){width=50%}
+   </center>
 
 !!! danger
 
-      If you don't have enough MATIC testnet tokens in your account to pay for the gas fees, the transaction may fail. If you require testnet tokens in bulk, please fill [this form](https://docs.google.com/forms/d/e/1FAIpQLSe4npoGldJknEs9EBtPaV3AS-0HTso2IuMWDCiMmLEMCx8euQ/viewform).
+      If you don't have enough MATIC testnet tokens in your account to pay for the gas fees, the transaction may fail. If you require testnet tokens in bulk, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSe4npoGldJknEs9EBtPaV3AS-0HTso2IuMWDCiMmLEMCx8euQ/viewform).
 
-- After confirmation, you will receive the requested testnet tokens within 1 to 2 minutes.
+- Testnet tokens usually arrive within 1 to 2 minutes.
 
-   ![img](../../img/tools/gas/success.png)
+   <center>
+   ![img](../../img/tools/gas/success.png){width=50%}
+   </center>
 
-## Alchemy MATIC faucet
+## Alchemy Faucet
 
-!!! tip "GET 5 MATIC"
+!!! tip "Get 0.5 Amoy MATIC"
+      If you sign up or log in with an Alchemy account, you get 0.5 MATIC per day. Without an account, you get 0.2.
 
-      If you sign up or log in with an Alchemy account, you get 5 times more MATIC/day (up to 5 MATIC).
+- You can request MATIC tokens from Alchemy's Amoy Faucet. In order to receive testnet tokens, head over to the [Alchemy Polygon Amoy MATIC faucet](https://www.alchemy.com/faucets/polygon-amoy), enter your wallet address and hit the **Send Me MATIC** button.
 
-- You can request MATIC tokens from Alchemy's Mumbai Faucet. In order to receive testnet tokens, head over to the [Mumbai Faucet website](https://mumbaifaucet.com/) by Alchemy, enter your wallet address and hit the **Send Me MATIC** button.
+   ![img](../../img/tools/gas/alchemy-faucet1.png)
 
-![img](../../img/tools/gas/alchemy-faucet1.png)
+- Check the transaction hash as soon as you finish requesting your MATIC, and view the transaction details on [Polygonscan](https://amoy.polygonscan.com/).
 
-- You can check the transaction hash as soon as you finish requesting your MATIC and also view the transaction details on [Polygonscan](https://mumbai.polygonscan.com/).
+## QuickNode Polygon Faucet
 
-## QuickNode multi-chain faucet
+In order to receive Amoy MATIC tokens using QuickNode faucet,
 
-In order to receive MATIC Mumbai tokens using QuickNode faucet,
+- Head over to the [QuickNode Polygon Faucet](https://faucet.quicknode.com/polygon). Connect your Coinbase, MetaMask, or Phantom wallet by clicking on **Connect Wallet**. Then, choose **Amoy**, and finally select **Continue**.
 
-- Head over to [QuickNode multi-chain faucet](https://faucet.quicknode.com/drip). Connect your wallet (MetaMask or Phantom) by clicking on **Connect Wallet**. Select **Polygon and Mumbai Testnet** from the dropdown menus, and then click on **Continue**.
+   <center>
+   ![img](../../img/tools/gas/quicknode-faucet2.png){width=80%}
+   </center>
 
-   ![img](../../img/tools/gas/quicknode-faucet2.png)
+!!! tip "Get 2x MATIC"
+      Tweet the [drip faucet URL](https://faucet.quicknode.com/drip) with your wallet address to get *twice* as many MATIC testnet tokens.
 
-!!! tip "Get 1 MATIC"
+- Click on the transaction hash to view transaction details on [Polygonscan](https://amoy.polygonscan.com/).
 
-      If you tweet the [drip faucet URL](https://faucet.quicknode.com/drip) along with your wallet address and submit the tweet URL, you get 10X more MATIC testnet tokens (i.e. 1 MATIC).
+## GetBlock Polygon Faucet
 
-- To receive 0.1 testnet MATIC, click on No thanks, just send me 0.1 MATIC.
+Head over to the [GetBlock Polygon Faucet](https://getblock.io/faucet/matic-amoy/) to acquire Amoy MATIC tokens using the GetBlock faucet.
 
-   ![img](../../img/tools/gas/quicknode-faucet3.png)
+Please register or login to request free testnet tokens.
 
-- You can also view your transaction details on [Polygonscan](https://mumbai.polygonscan.com/) by clicking on the TxHash.
+!!! tip "Get additional tokens" 
+    If you tweet about the [GetBlock Faucet](https://getblock.io/faucet/matic-amoy/), you can claim additional PoS Amoy testnet tokens.
 
-## LearnWeb3 Faucets
+## Discord community
 
-In order to receive MATIC tokens on Mumbai or zkEVM using the LearnWeb3 Faucet:
-
-- Head over to the [Mumbai Faucet](https://learnweb3.io/faucets/polygon_mumbai) or the [zkEVM Faucet](https://learnweb3.io/faucets/polygon_zkevm).
-- Sign in to LearnWeb3 by clicking **Sign In** in the top-right. Connect your GitHub if you haven't already done so to gain access to the faucet.
-- Enter your wallet address and request MATIC tokens
+Make sure to connect with the [Polygon Discord community](https://discord.gg/0xPolygon) for news, tips, and help.

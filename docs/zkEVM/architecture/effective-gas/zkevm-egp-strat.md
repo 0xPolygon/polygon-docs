@@ -12,7 +12,6 @@ This document presents an outline of Polygon zkEVM's strategy for executing tran
 
     The polled gas prices are used to set the expected 'signed gas price', called $\texttt{MinL2GasPrice}$.
 
-
 - **Provide suggested gas prices**
     
     The polled L1 gas price values are sent to users upon request individually.

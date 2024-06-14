@@ -24,5 +24,5 @@ Deploying the full zkEVM stack requires installing and deploying a number of dif
 | zkEVM explorer    | `zkevm-explorer-l2`    | L2 network's block explorer. i.e., The zkRollup Etherscan [explorer](https://zkevm.polygonscan.com). |
 | zkEVM explorer DB | `zkevm-explorer-l2-db` | Database for the L2 network's Block explorer. i.e., Where all the zkRollup Etherscan explorer queries are made. |
 | Gas pricer        | `zkevm-l2gaspricer`    | Responsible for suggesting the gas price for the L2 network fees. |
-| Goërli execution  | `goerli-execution`     | L1 node's execution layer.                                   |
-| Goërli consensus  | `goerli-consensus`     | L1 node's consensus layer.       
+| Sepolia execution  | `sepolia-execution`     | L1 node's execution layer.                                   |
+| Sepolia consensus  | `sepolia-consensus`     | L1 node's consensus layer.       

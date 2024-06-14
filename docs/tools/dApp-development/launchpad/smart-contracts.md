@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Environment variables
 
 Make sure you have followed the [steps in the quickstart](quickstart.md#set-up-environment-variables).

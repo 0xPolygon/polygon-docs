@@ -15,31 +15,33 @@ hide:
       <h1 class="hero-heading">Developer tools</h1>
       <p class="hero-subtext">This section describes some of the in-house and third-party tools that are used by developers to work with Polygon products and services.</p>
       <p class="hero-subtext">Find out how to access data, code against blockchain networks, use oracles, and much more. </p>
+      <i><p class="hero-subtext">All third-party content in this section is covered by our <a href="https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md">content disclaimer</a>.</i>
+
    </div>
 </div>
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./dApp-development/common-tools/hardhat">
+      <a href="./dApp-development/launchpad/intro">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Smart contracts</div>
+            <div class="feature-card-heading">dApp Launchpad</div>
          </div>
-         <p class="feature-paragraph">Common software for designing, building, and deploying smart contracts.</p>
+         <p class="feature-paragraph">Automated CLI tool for initializing, creating, and deploying fully-integrated, web3 dApp projects.</p>
+      </a>
+   </div>
+   <div class="grid-item">
+      <a href="./chain-indexer-framework/overview">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Chain indexer framework</div>
+         </div>
+         <p class="feature-paragraph">Web3 data indexing framework for developing flexible, event-driven data pipelines on EVM blockchains.</p>
       </a>
    </div>
    <div class="grid-item">
       <a href="./gas/matic-faucet">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Gas</div>
+            <div class="feature-card-heading">Gas faucet</div>
          </div>
          <p class="feature-paragraph">The Polygon MATIC gas faucet and gas estimation tools.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./data/the-graph/overview">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Data</div>
-         </div>
-         <p class="feature-paragraph">Software tools, such as Graph, used for efficient data manipulation on Polygon networks.</p>
       </a>
    </div>
    <div class="grid-item">
@@ -49,6 +51,32 @@ hide:
          </div>
          <p class="feature-paragraph">The <code>matic.js</code> library used to interact with Polygon networks and services.</p>
       </a>
+   </div>
+   <div class="grid-item">
+      <a href="./wallets/portal">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Polygon Portal</div>
+         </div>
+         <p class="feature-paragraph">Polygon's asset management dashboard used for bridging and claiming.</p>
+      </a>
+   </div>
+   <div class="grid-item">
+      <a href="./wallets/getting-started">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Wallets</div>
+         </div>
+         <p class="feature-paragraph">Using Polygon-compatible external wallets, such as MetaMask, with Polygon networks.</p>
+      </a>
+   </div>
+   <div class="grid-item">
+      <a href="https://polygonscan.com/">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Block explorers</div></a>
+         </div>
+         <p class="feature-paragraph">Links to useful explorers like 
+         <a href="https://polygonscan.com/">Polygonscan</a> and 
+         <a href="https://www.okx.com/web3/explorer/polygon">OKX explorer</a>.
+         </p>
    </div>
    <div class="grid-item">
       <a href="./storage/ipfs">
@@ -64,22 +92,6 @@ hide:
             <div class="feature-card-heading">Oracles</div>
          </div>
          <p class="feature-paragraph">Oracle services used for accessing accurate offline data.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./wallets/getting-started">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Wallets</div>
-         </div>
-         <p class="feature-paragraph">Using Polygon-compatible external wallets, such as MetaMask, with Polygon networks.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="https://polygonscan.com/">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Block explorers</div>
-         </div>
-         <p class="feature-paragraph">Quick links to useful block explorers such as https://polygonscan.com/ for example.</p>
       </a>
    </div>
 </div>

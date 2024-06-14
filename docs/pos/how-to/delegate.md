@@ -12,95 +12,104 @@ The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainn
 ## Access the dashboard
 
   1. In your wallet (e.g. MetaMask), choose the Ethereum mainnet.
-    
-    ![Figure: Choose ERTHh mainnet ](../../img/pos/choose-eth-mainnet.png)
+    <center>
+    ![Figure: Choose ERTHh mainnet ](../../img/pos/choose-eth-mainnet.png){width=50%}
+    </center>
   
   2. Log in to [Polygon Staking](https://staking.polygon.technology/).
 
   3. Once you log in, you will see overall statistics along with the list of validators.
-    
+    <center>
     ![img](../../img/pos/home.png)
+    </center>
 
-!!!note
+!!! note
     If you are a validator, use a different non-validating address to log in as delegator.
 
 
 ## Delegate to a validator
 
-  1. Click "Become a Delegator" or scroll down to a specific validator and click "Delegate".
-    
+  1. Select **Become a Delegator**, or scroll down to a specific validator and select **Delegate**.
+    <center>
     ![img](../../img/pos/home.png)
+    </center>
 
-  2. Provide the amount of MATIC to delegate.
-    
-    ![img](../../img/pos/delegateB.png)
-
-    
-  3. Approve the delegation transaction and click "Delegate".
-    
-    ![img](../../img/pos/delegate2.png)
+  2. Enter the amount of MATIC to delegate.
+    <center>
+    ![img](../../img/pos/delegateB.png){width=50%}
+    </center>
 
     
-After the delegation transaction completes, you will see the `Delegation Completed` message.
-  
-  ![img](../../img/pos/delegate3.png)
+  3. Approve the delegate transaction from your wallet and select **Delegate**.
+    <center>
+    ![img](../../img/pos/delegate2.png){width=50%}
+    </center>
+
+    
+After the delegation transaction completes, you will see the **Delegation Completed** message.
+    <center>
+    ![img](../../img/pos/delegate3.png){width=50%}
+    </center>
 
 ## View your delegations
 
-To view your delegations, click "My Account".
+To view your delegations, select **My Account**.
 
 ![img](../../img/pos/myAccount.png)
 
 ## Withdraw rewards
 
-  1. Click "My Account".
-    
-    ![img](../../img/pos/click-my-account.png)
+  1. Select **My Account**.
+    <center>
+    ![img](../../img/pos/click-my-account.png){width=70%}
+    </center>
 
     
-  2. Under your delegated validator, click "Withdraw Rewards".
-    
+  2. Under your delegated validator, select **Withdraw Rewards**.
+    <center>
     ![img](../../img/pos/withdraw-reward.png)
+    </center>
 
 This will withdraw the MATIC token rewards to your Ethereum address.
 
 ## Restake rewards
 
-  1. Click "My Account".
-    
-    ![img](../../img/pos/click-my-account.png)
+  1. Select **My Account**.
+    <center>
+    ![img](../../img/pos/click-my-account.png){width=70%}
+    </center>
 
 
-  2. Under your delegated validator, click "Restake Reward".
+  2. Under your delegated validator, click **Restake Reward**.
     
     ![img](../../img/pos/restake-rewards.png)
 
-    
 
 This will restake the MATIC token rewards to the validator and increase your delegation stake.
 
 ## Unbond from a validator
 
-  1. Click "My Account".
-    
-    ![img](../../img/pos/click-my-account.png)
+  1. Select **My Account**.
+    <center>
+    ![img](../../img/pos/click-my-account.png){width=70%}
+    </center>
 
 
-  2. Under your delegated validator, click "Unbond".
+  2. Under your delegated validator, select **Unbond**.
     
     ![img](../../img/pos/unbond-from-validator.png)
 
 
   This will withdraw your rewards from the validator and your entire stake from the validator.
 
-  Your withdrawn rewards will show up immediately on your Ethereum account.
+  Your withdrawn rewards will show up immediately in your Ethereum wallet.
 
-  Your withdrawn stake funds will be locked for 80 checkpoints.
+  Your withdrawn stake funds will remain locked for *80 checkpoints*.
     
-    ![img](../../img/pos/unbond.png)
+![img](../../img/pos/unbond.png){width=50%}
 
 
-!!!note
+!!! note
     
     The fund locking for the unbonding period is in place to ensure there is no malicious behaviour on the network.
 
@@ -109,21 +118,22 @@ This will restake the MATIC token rewards to the validator and increase your del
 
 Moving stake from one node to another node is a single transaction. There are no delays or unbonding periods during this event.
   
-  1. Log in to the "My Account" on the Staking dashboard.
+  1. Select **My Account** and login to the staking dashboard.
 
-  2. Click "Move Stake" under your delegated validator.
+  2. Select **Move Stake** under your delegated validator.
 
-  3. Select an external validator and click "Stake here".
+  3. Select an external validator and select **Stake here**.
     
     ![img](../../img/pos/move.png)
 
 
-  4. Provide the stake amount and click "Move Stake".
-    
-    ![img](../../img/pos/move2.png)
+  4. Provide the stake amount and select **Move Stake**.
+    <center>
+    ![img](../../img/pos/move2.png){width=50%}
+    </center>
     
 
-This will move the stake. The dashboard will update after 12 block confirmations.
+This will move the stake. The dashboard will update *after 12 block confirmations*.
 
 # Common queries and solutions
 
@@ -138,7 +148,7 @@ There is no minimum stake amount to delegate. However, you can always start with
 
 ### How to stake tokens on Polygon?
 
-For Staking you would need to have funds on the Ethereum Mainnet (more information [here](https://etherscan.io/gastracker)). Log into your wallet on the Ethereum network using the Staking Dashboard. https://staking.polygon.technology/
+For staking, you would need to have funds on the Ethereum mainnet (more information [here](https://etherscan.io/gastracker)). Log into your wallet on the Ethereum network using the [staking dashboard](https://staking.polygon.technology/). 
 
 Please watch this video for a graphical illustration of how this works:
 
@@ -150,14 +160,14 @@ Please watch this video for a graphical illustration of how this works:
 
 ### Why does my transaction take so long?
 
-All staking transactions of Polygon happen on Ethereum for security reasons.
+All staking transactions of Polygon PoS take place on Ethereum for security reasons.
 
-The time taken to complete a transaction depends on the gas fees that you have allowed and also the network congestion of Ethereum mainnet at that point in time. You can always use the “Speed Up” option to increase the gas fees so that your transaction can be completed soon.
+The time taken to complete a transaction depends on the gas fees that you have allowed and also the network congestion of Ethereum mainnet at that point in time. You can always use the **Speed Up** option to increase the gas fees so that your transaction can be completed soon.
 
 
-### I've staked my Matic tokens. How can I stake more?
+### I've staked my MATIC tokens. How can I stake more?
 
-Navigate to "Your Delegations", choose one of the stakes and click on "Stake More".
+Navigate to the **Your Delegations** page and choose one of the stakes. Then click on **Stake More**.
 
 Please watch this video for a graphical illustration of how this works:
 
@@ -185,15 +195,14 @@ You just need to access **https://staking.polygon.technology/**, where you will 
 ![img](../../img/pos/staking-lp.png)
 
 
-
 ### How do I know which validator to select for better rewards?
 
 It depends on your understanding and research on which validator you would want to stake on. You can find the list of validators here : https://staking.polygon.technology/validators
 
 ### How to unbond?
 
-To unbond from a validator, navigate to MyAccount, where you find **Your Delegations**.
-There you will see an **Unbond** button for each of the validators. Click on the **Unbond** button for whichever validator that you want to unbond from.
+To unbond from a validator, navigate to **My Account**, where you'll find **Your Delegations**.
+There you will see an **Unbond** button for each of the validators. Click on the **Unbond** button for the validator that you want to unbond from.
 
 ![img](../../img/pos/unbond-from-validator.png)
 
@@ -205,26 +214,24 @@ Please watch the video for a graphical illustration of how this works:
   <p>Your browser does not support the video element.</p>
 </video>
 
-
 ### What is the unbonding period?
 
-The unbonding period on Polygon is 80 checkpoints. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed due to congestion on Ethereum.
-This period applies to the originally delegated amount and re-delegated amounts. It does not apply to any rewards that were not re-delegated.
-
+The unbonding period on Polygon PoS is 80 checkpoints. Every checkpoint takes approximately *30 minutes*. However, some checkpoints could be delayed due to congestion on Ethereum. This period applies to the originally delegated amount and re-delegated amounts. It does not apply to any rewards that were not re-delegated.
 
 ### How to restake rewards?
 
-Go to **My Account** to check **Your Delegations**.
-Clicking on **Restake Reward** will ask you for confirmation from your wallet account. Once you confirm the transaction, only then the restake transaction would be complete.
+Go to **My Account** to check **Your Delegations**. Clicking on **Restake Reward** will ask you for confirmation from your wallet account. Once you confirm the transaction in your wallet, the restake transaction is completed.
 
-`Step 1` 
+#### Step 1
+
   <center>
-  ![img](../../img/pos/restake-rewards1.png)
+  ![img](../../img/pos/restake-rewards1.png){width=50%}
   </center>
 
-`Step 2` <br/>
+#### Step 2
+
   <center>
-  ![img](../../img/pos/restake-rewards2.png)
+  ![img](../../img/pos/restake-rewards2.png){width=50%}
   </center>
 
 Please watch the video for a graphical illustration of how this works:
@@ -236,20 +243,20 @@ Please watch the video for a graphical illustration of how this works:
 
 ### I want to restake rewards but I am unable to.
 
-You would need to have a minimum of **2 Matic** to restake rewards.
+You would need to have a minimum of **2 MATIC** to restake rewards.
 
 ### How to withdraw rewards?
 
 You can claim your rewards by clicking on the **My Account**, all the delegators for a validator are displayed. Click on the **Withdraw Reward** button and the rewards will be transferred to your delegated account in wallet.
 
-`Step 1` <br/>
+#### Step 1
 <center>
-  ![img](../../img/pos/withdraw1.png)
+  ![img](../../img/pos/withdraw1.png){width=50%}
 </center>
 
-`Step 2` <br/>
+#### Step 2
 <center>
-  ![img](../../img/pos/withdraw2.png)
+  ![img](../../img/pos/withdraw2.png){width=50%}
 </center>
 
 Please watch the video for a graphical illustration of how this works:
@@ -261,25 +268,25 @@ Please watch the video for a graphical illustration of how this works:
 
 ### I want to withdraw rewards but I am unable to.
 
-You would need to have a minimum of **2 Matic** to withdraw rewards.
+You would need to have a minimum of **2 MATIC** available to withdraw rewards.
 
 ### How to claim stake?
 
 Once the unbonding period is complete, the **Claim Stake** button will be enabled and you can then claim your staked tokens. The tokens will be transferred to your account.
 
-`Step 1` <br/>
+#### Step 1
 <center>
-  ![img](../../img/pos/claim-stake1.png)
+  ![img](../../img/pos/claim-stake1.png){width=50%}
 </center>
 
-`Step 2` <br/>
+#### Step 2
 <center>
   ![img](../../img/pos/claim-stake2.png)
 </center>
 
-`Step 3` <br/>
+#### Step 3
 <center>
-  ![img](../../img/pos/claim-stake3.png)
+  ![img](../../img/pos/claim-stake3.png){width=50%}
 </center>
 
 Please watch the video for a graphical illustration of how this works:
@@ -295,12 +302,12 @@ Please watch the video for a graphical illustration of how this works:
 We have recently upgraded the wallet support to WalletConnect v2.0. Now you can choose from a plethora of wallets, including Metamask, Coinbase, and others, on both desktop and mobile devices to log in.
   
   <center>
-  ![Figure: Supported wallet](../../img/pos/supported-wallet.png)
+  ![Figure: Supported wallet](../../img/pos/supported-wallet.png){width=50%}
   </center>
  
 ### Are hardware wallets supported?
 
-Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on MetaMask and connect your Hardware wallet and then continue the delegation process.
+Yes, hardware wallets are supported. You can use the **Connect Hardware Wallet** option on MetaMask and connect your hardware wallet and then continue the delegation process.
 
 ### Why can’t I stake directly from Binance?
 
@@ -308,21 +315,19 @@ Staking through Binance is not yet supported. There will be an announcement if a
 
 ### I have completed my delegation, where can I check details?
 
-Once you have completed your delegation, wait for 12 block confirmations on Ethereum (approx. 3-5 minutes), then on the Dashboard, you can click on **My Account**.
+Once you have completed your delegation, wait for 12 block confirmations on Ethereum (approx. 3-5 minutes), then on the dashboard, you can click on **My Account**.
 
 ![Figure: My account](../../img/pos/my-account.png)
-
 
 ### Where can I check my rewards?
 
-On the Dashboard, you can click on the **My Account** option on the left-hand side.
+On the dashboard, you can click on the **My Account** option on the left-hand side.
 
 ![Figure: My account](../../img/pos/my-account.png)
 
-
 ### Do I need ETH to pay for gas fees?
 
-Yes. You should provision for ~0.05-0.1 ETH to be safe.
+Yes. You should maintain at least ~0.05-0.1 ETH balance for gas fees to be safe.
 
 ### Do I need to deposit MATIC tokens to the Polygon mainnet network for staking?
 
@@ -338,7 +343,7 @@ The rewards are distributed whenever a checkpoint is submitted.
 
 Currently, 71795 MATIC tokens are distributed proportionately on each successful checkpoint submission to each delegator based on their stake relative to the overall staking pool of all validators and delegators. Also, the percentage for the reward distributed to each delegator will vary with each checkpoint depending on the relative stake of the delegator, validator and the overall stake.
 
-(Note that there is a 10% proposer bonus that accrues to the validator who submits the checkpoint, but over time, the effect of the extra bonus is nullified over multiple checkpoints by different validators.)
+Note that there is a 10% proposer bonus that accrues to the validator who submits the checkpoint, but over time, the effect of the extra bonus is nullified over multiple checkpoints by different validators.
 
 The checkpoint submission is done by one of the validators approximately every 30 minutes. This time is approximate and may vary based on validator consensus on the Polygon Heimdall layer. This may also vary based on Ethereum Network. Higher congestion in the network may result in delayed checkpoints.
 
@@ -367,20 +372,21 @@ No. Once you unbond, you will stop receiving rewards.
 
 ### How many transactions does the delegation require?
 
-Delegation requires 2 transactions, one after the other. One to **Approve** the request and another to **Deposit**.
+The delegation action takes place in 2 successive transactions. The first transaction to *approve* the request, and the second to *deposit* the approved token amount.
 
 ![Figure: Delegate ](../../img/pos/delegate.png) 
 
-### What does redelegate rewards mean?
+### What does re-delegate rewards mean?
 
-Redelegating your rewards simply means that you want to increase your stake by restaking the rewards you have accumulated.
+Re-delegating your rewards simply means that you want to increase your stake by restaking the rewards you have accumulated.
 
 ### Can I stake to any validator?
+
 Yes, you can delegate to any validator except the ones which are offline.
 
-
 ### Can I move the stake to another validator?
- Yes, you just have to access **Your Delegations**, click on **Move Stake**, and then choose your new validator.
+
+Yes, you just have to access **Your Delegations**, click on **Move Stake**, and then choose your new validator.
 
 Please watch the video for a graphical illustration of how this works:
 
@@ -389,11 +395,9 @@ Please watch the video for a graphical illustration of how this works:
   <p>Your browser does not support the video element.</p>
 </video>
 
-
-
 ### Which browser is compatible with the Polygon earnings calculator?
 
-Chrome, Firefox, and Brave
+Chrome, Firefox, and Brave.
 
 ### My MetaMask is stuck at confirming after login, what do I do? Or nothing happens when I try to login?
 
@@ -413,6 +417,7 @@ First, you must withdraw your funds from Binance or any other exchange to your E
 ### When can I become a validator and how many tokens do I for that?
 
 A user can earn a validator spot only by if the below conditions come into play:
+
 1. When a validator decides to unstake from the network, or
 2. Wait for the auction mechanism and replace the inactive validator.
 
@@ -422,7 +427,7 @@ The minimum stake depends on the auction process where one user outbids another.
 
 If you have not re-delegated your rewards before delegating additional funds to the same validator node, your rewards will be withdrawn automatically.
 
-In case you dont want that to happen, re-delegate your rewards before delegating additional funds.
+In case you don't want that to happen, re-delegate your rewards before delegating additional funds.
 
 ### I have delegated my tokens via MetaMask on the dashboard. Do I need to keep my system or device on?
 
@@ -440,9 +445,7 @@ The Claim Stake button will only be enabled when your unbonding period is comple
 
 Under the **Claim Stake** button you should see a note on how many checkpoints are pending before the **Claim Stake** button is enabled. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
-![Figure: Unbound ](../../img/pos/unbond.png)
-
-
+![Figure: Unbound ](../../img/pos/unbond.png){width=50%}
 
 ### Have the foundations nodes been turned off?
 
@@ -452,6 +455,6 @@ Yes, the foundation nodes had been turned off.
 
 No, there won't be any Foundation nodes in the future.
 
-### How many transactions do I need to pay for gas when I do a "move stake"?
+### How many transactions do I need to pay for gas when I perform a 'move stake' action?
 
-The move stake is a single transaction only. All transactions are on the Ethereum blockchain so you will spend some ETH to make the transaction.
+The 'move stake' operation is performed in a single transaction. Since all transactions are executed on the Ethereum blockchain, you will need to spend some ETH for gas fees to complete the transaction.

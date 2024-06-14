@@ -9,19 +9,19 @@ The zkProver performs complex mathematical computations in the form of polynomia
 
 ## Interaction with node and database
 
-The zkProver mainly interacts with two components, i.e. the Node and the Database (DB). Hence, before diving deeper into other components, we must understand the flow of control between zkProver, the Node, and Database. Here is a diagram to explain the process clearly.
+The zkProver mainly interacts with two components, i.e. the Node and the database (DB). Hence, before diving deeper into other components, we must understand the flow of control between zkProver, the Node, and database. Here is a diagram to explain the process clearly.
 
 ![zkProver, the Node, and Database ](../../../img/zkEVM/fig1-zkprv-and-node.png)
 
 As depicted in the flow diagram above, the whole interaction works out in 4 steps.
 
-1 &rarr; The Node sends the content of Merkle trees to the Database to be stored there
+1. The Node sends the content of Merkle trees to the database to be stored there
 
-2 &rarr; The Node then sends the input transactions to the zkProver
+2. The Node then sends the input transactions to the zkProver
 
-3 &rarr; The zkProver accesses the Database and fetches the info needed to produce verifiable proofs of the transactions sent by the Node. This information consists of the Merkle roots, the keys and hashes of relevant siblings, and more
+3. The zkProver accesses the database and fetches the info needed to produce verifiable proofs of the transactions sent by the Node. This information consists of the Merkle roots, the keys and hashes of relevant siblings, and more
 
-4 &rarr; The zkProver then generates the proofs of transactions, and sends these proofs back to the Node
+4. The zkProver then generates the proofs of transactions, and sends these proofs back to the Node
 
 However, this is really the tip of the iceberg in terms of what the zkProver does. There is a lot more detail involved in how the zkProver actually creates these verifiable proofs of transactions. It will be revealed while we dig deeper into state machines below.
 
@@ -29,24 +29,27 @@ However, this is really the tip of the iceberg in terms of what the zkProver doe
 
 The zkProver follows modularity of design to the extent that, except for a few components, it is mainly a cluster of state machines. It has a total of thirteen (13) state machines;
 
-- The Main state machine
-- Secondary state machines &rarr; Binary SM, Storage SM, Memory SM, Arithmetic SM, Keccak Function SM, PoseidonG SM,
-- Auxiliary state machines &rarr; Padding-PG SM, Padding-KK SM, Bits2Field SM, Memory Align SM, Byte4 SM, ROM SM.
+1. The Main state machine.
+
+2. Secondary state machines; Binary SM, Storage SM, Memory SM, Arithmetic SM, Keccak Function SM, PoseidonG SM.
+
+3. Auxiliary state machines; Padding-PG SM, Padding-KK SM, Bits2Field SM, Memory Align SM, Byte4 SM, ROM SM.
 
 Due to the modular design of zkProver, the Main state machine can delegate as many of tasks as possible to other specialist state machines. This heavily improves the efficiency of Main SM.
 
 ### Secondary state machines
 
-The Main SM Executor directly instructs each of the secondary state machines by sending appropriate instructions called Actions, depicted in the below diagram.
+The Main SM executor directly instructs each of the secondary state machines by sending appropriate instructions called _Actions_, depicted in the below diagram.
 
-The grey boxes are not state machines but indicate Actions, which are specific instructions from the Main state machine to the relevant Secondary state machine. These instructions dictate how a state should transition in a state machine. However, every Action, whether from the generic Main SM or the specific SM, must be supported with a proof that it was correctly executed.
+The grey boxes are not state machines but indicate _Actions_, which are specific instructions from the Main state machine to the relevant Secondary state machine. These instructions dictate how a state should transition in a state machine. However, every Action, whether from the generic Main SM or the specific SM, must be supported with a proof that it was correctly executed.
 
 ![The Main SM Executor's Instructions](../../../img/zkEVM/fig2-actions-sec-sm.png)
 
 There are some natural dependencies between;
 
-- the Storage state machine which uses merkle Trees and the Poseidon state machine, which is needed for computing hash values of all nodes in the Storage's Merkle Trees.
-- each of the hashing state machines, Keccak Function SM and the PoseidonG SM, and their respective padding state machines, i.e. the Padding-KK SM and the Padding-PG SM.
+1. The Storage state machine which uses merkle Trees and the Poseidon state machine, which is needed for computing hash values of all nodes in the Storage's Merkle Trees.
+
+2. Each of the hashing state machines, Keccak Function SM and the PoseidonG SM, and their respective padding state machines, i.e. the Padding-KK SM and the Padding-PG SM.
 
 ## Two novel languages for zkProver
 
@@ -56,17 +59,17 @@ It is not surprising that the zkProver uses a language specifically created for 
 
 These two languages, zkASM and PIL, were designed mindful of prospects for broader adoption outside Polygon zkEVM.
 
-### Zero-Knowledge Assembly
+### Zero-knowledge assembly
 
 As an Assembly language, the Zero-Knowledge Assembly (or zkASM) language is specially designed to map instructions from the zkProver's Main state machine to other state machines. In case of the state machines with firmware, zkASM is the Interpreter for the firmware.
 
 Prescriptive assembly codes are generated by zkASM codes using instructions from the Main state machine to specify how a given SM Executor must carry out calculations. The Executor's strict adherence to the zkASM codes' logic and conventions makes computation verification simple.
 
-### Polynomial Identity Language
+### Polynomial identity language
 
-The Polynomial Identity Language (or PIL) is especially designed for the zkProver. Almost all state machines express computations in terms of polynomials. Therefore, state transitions in state machines must satisfy computation-specific polynomial identities.
+The _Polynomial identity language_ (or PIL) is especially designed for the zkProver. Almost all state machines express computations in terms of polynomials. Therefore, state transitions in state machines must satisfy computation-specific polynomial identities.
 
-Polygon zkEVM is creating the most effective solution to solve the Blockchain Trilemma of Privacy, Security, and Scalability. And its context is an efficient Zero-Knowledge Commitment Scheme. The most reliable and effective commitment schemes till-date are the Polynomial Commitment Schemes.
+Polygon zkEVM is creating the most effective solution to solve the blockchain trilemma of privacy, security, and scalability. And its context is an efficient zero-knowledge commitment scheme. The most reliable and effective commitment schemes till-date are the Polynomial Commitment Schemes.
 
 Hence, it was convenient to transform calculations into some polynomial language, where verification essentially comes down to verifying whether execution fulfils specific polynomial identities. All PIL codes, in the zkProver's state machines, therefore form the very DNA of the verifier code.
 
@@ -74,7 +77,7 @@ Hence, it was convenient to transform calculations into some polynomial language
 
 There are two microprocessor-type state machines; the Main SM and the Storage SM. These two state machines have the Firmware and the Hardware part. It is worth noting that each of these Microprocessor SM has its own ROM.
 
-The Firmware part runs the zkASM language to set up the logic and rules, which are expressed in JSON format and stored in a ROM. The JSON-file is then parsed to the specific SM Executor, which executes Storage Actions in compliance with the rules and logic in the JSON-file.
+The Firmware part runs the zkASM language to set up the logic and rules, which are expressed in JSON format and stored in a ROM. The JSON-file is then parsed to the specific SM Executor, which executes Storage _Actions_ in compliance with the rules and logic in the JSON-file.
 
 The Hardware component, which uses the Polynomial Identity Language (PIL), defines constraints (or polynomial identities), expresses them in JSON format, and stores them in the accompanying JSON-file. These constraints are parsed to the specific SM Executor, because all computations must be executed in conformance to the polynomial identities.
 
@@ -83,11 +86,11 @@ The Hardware component, which uses the Polynomial Identity Language (PIL), defin
 !!!info
     Although the Main SM and the Storage SM have the same look and feel, they differ considerably.
 
-    For example, the Storage SM specialises with execution of Storage Actions (also called SMT Actions), whilst the Main SM is responsible for a wider range of Actions. Nevertheless, the Main SM delegates most of these Actions to specialist state machines. Also, the Storage SM remains secondary as it receives instructions from the Main SM, and not conversely.
+    For example, the Storage SM specialises with execution of Storage _Actions_ (also called SMT _Actions_), whilst the Main SM is responsible for a wider range of _Actions_. Nevertheless, the Main SM delegates most of these _Actions_ to specialist state machines. Also, the Storage SM remains secondary as it receives instructions from the Main SM, and not conversely.
 
 ## Hashing in the zkProver
 
-There are two secondary state machines specialising with Hashing &rarr; The Keccak state machine, and the Poseidon state machine. Each of them is an "automised" version of its standard cryptographic hash function.
+There are two secondary state machines specialising with Hashing ; The Keccak state machine, and the Poseidon state machine. Each of them is an "automised" version of its standard cryptographic hash function.
 
 ### Keccak state machine
 
@@ -163,13 +166,13 @@ These are taken in order to generate a zk-STARK proof. In an effort to facilitat
 
 The component is referred to as the STARK Recursion, because;
 
-  &rarr; It actually produces several zk-STARK proofs,
+  ; It actually produces several zk-STARK proofs,
 
-  &rarr; Collates them into bundles of a few zk-STARK proofs,
+  ; Collates them into bundles of a few zk-STARK proofs,
 
-  &rarr; And produces a further zk-STARK proof of each bundle,
+  ; And produces a further zk-STARK proof of each bundle,
 
-  &rarr; The resulting zk-STARK proofs of the bundle are also collated and proved with only one zk-STARK proof.
+  ; The resulting zk-STARK proofs of the bundle are also collated and proved with only one zk-STARK proof.
 
 This way, hundreds of zk-STARK proofs are represented and proved with only one zk-STARK proof.
 
