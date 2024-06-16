@@ -227,18 +227,11 @@ You can read more about dAPIs [here](https://docs.api3.org/guides/dapis/subscrib
 
 ## Using API3 QRNG
 
-[API3 QRNG](https://docs.api3.org/explore/qrng/) is a public utility we provide with the courtesy of [Australian National University (ANU)](https://www.anu.edu.au/). It is powered by an Airnode hosted by [ANU Quantum Random Numbers](https://quantumnumbers.anu.edu.au/), meaning that it is a first-party service.
-It is served as a public good and is free of charge (apart from the gas costs), and it **provides ‘true’ quantum randomness** via an easy-to-use solution when requiring RNG on-chain.
-
-To request randomness on-chain, the requester submits a request for a random number to `AirnodeRrpV0`. The ANU Airnode gathers the request from the `AirnodeRrpV0` protocol contract, retrieves the random number off-chain, and sends it back to `AirnodeRrpV0`. Once received, it performs a callback to the requester with the random number.
-
-### QRNG getting started
-
 [API3 QRNG](https://docs.api3.org/explore/qrng/) is a public utility we provide with the courtesy of Australian National University (ANU), Quintessence Labs and Quantum Blockchains. It is powered by an Airnode hosted by the QRNG Providers, meaning that it is a first-party service. It is served as a public good and is free of charge (apart from the gas costs), and it provides ‘true’ quantum randomness via an easy-to-use solution when requiring RNG on-chain.
 
 To request randomness on-chain, the requester submits a request for a random number to `AirnodeRrpV0`. The QRNG Airnode gathers the request from the `AirnodeRrpV0` protocol contract, retrieves the random number off-chain, and sends it back to `AirnodeRrpV0`. Once received, it performs a callback to the requester with the random number.
 
-Click here to check out the [AirnodeRrpV0](https://docs.api3.org/reference/qrng/chains.html) and available [QRNG Providers](https://docs.api3.org/reference/qrng/providers.html) on Polygon and Polygon zkEVM.
+Click here to check out the [`AirnodeRrpV0` contract addresses](https://docs.api3.org/reference/qrng/chains.html) and available [QRNG Providers](https://docs.api3.org/reference/qrng/providers.html) on Polygon and Polygon zkEVM.
 
 Here is an example of a basic `QrngRequester` that requests a random number:
 
