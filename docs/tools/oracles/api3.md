@@ -136,7 +136,7 @@ Apart from relying on deviation threshold and heartbeat configuration updates, u
 
 The [API3 Market](https://market.api3.org/polygon) enables users to connect to a dAPI and access the associated data feed services.
 
-![img](/img/tools/api3/dapi-main.png)
+<img src="/img/tools/api3/dapi-main.png"/>
 
 [*To learn more about how dAPIs work, click here*](https://docs.api3.org/explore/dapis/what-are-dapis.html)
 
@@ -157,7 +157,7 @@ The current supported configurations for dAPIs are:
 | 1%        | 24 hours  |
 | 5%        | 24 hours  |
 
-![img](/img/tools/api3/dapi-1.png)
+<img src="/img/tools/api3/dapi-1.png"/>
 
 #### Activating your dAPI
 
@@ -169,7 +169,7 @@ If a dAPI is already activated, make sure to check the expiration date and updat
 
 After selecting the dAPI and the configuration, you will be presented with an option to purchase the dAPI and activate it. Make sure to check the time and amount of the subscription. If everything looks good, click on Purchase.
 
-![img](/img/tools/api3/dapi-2.png)
+<img src="/img/tools/api3/dapi-2.png"/>
 
 You can then connect your wallet and confirm the transaction. Once it's confirmed, you will be able to see the updated configuration for the dAPI.
 
@@ -177,7 +177,7 @@ You can then connect your wallet and confirm the transaction. Once it's confirme
 
 Once you are done configuring and activating the dAPI, you can now integrate it. To do so, click on the **Integrate** button on the dAPI details page.
 
-![img](/img/tools/api3/dapi-5.png)
+<img src="/img/tools/api3/dapi-5.png"/>
 
 You can now see the deployed proxy contract address. You can now use this to read from the configured dAPI.
 
