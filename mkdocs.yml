@@ -54,7 +54,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Version compatibility matrix: cdk/version-matrix.md
-      - Build: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      #- Build: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
@@ -69,6 +69,8 @@ nav:
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
+      - Releases: 
+        - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
       - Build:
         - Get started: zkEVM/get-started/index.md
         - Quick start: zkEVM/get-started/quick-start.md
@@ -156,31 +158,29 @@ nav:
         #- Bridge service: zkEVM/architecture/high-level/bridge-service.md
       - Architecture low-level:
         - Architecture: zkEVM/architecture/index.md
-        - Upgrades:
-          - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
-        - Effective gas price:
-          - Effective gas price: zkEVM/architecture/effective-gas/index.md
-          - Effective gas price strategy: zkEVM/architecture/effective-gas/zkevm-egp-strat.md
-          - User transaction flow:
-            - User transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/index.md
-            - RPC transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/rpc-flow-egp.md
-            - Sequencer transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/sequencer-flow-egp.md
-          - Implementing EGP strategy: zkEVM/architecture/effective-gas/implement-egp-strat.md
-          - Transaction prioritization: zkEVM/architecture/effective-gas/tx-prioritization-egp.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
-          - State management: zkEVM/architecture/protocol/state-management.md
-          - Transaction life cycle:
-            - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
-            - Transaction execution: zkEVM/architecture/protocol/transaction-life-cycle/transaction-execution.md
-            - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
-            - Batch sequencing: zkEVM/architecture/protocol/transaction-life-cycle/batch-sequencing.md
-            - Batch aggregation: zkEVM/architecture/protocol/transaction-life-cycle/batch-aggregation.md
-          - Sequencing batches: zkEVM/architecture/protocol/sequencing-batches.md
-          - Incentive mechanism: zkEVM/architecture/protocol/incentive-mechanism.md
-          - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
+          - zkNode: zkEVM/architecture/zknode/index.md
+          - State management: 
+            - State management: zkEVM/architecture/protocol/state-management.md
+            - Transaction life cycle:
+              - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
+              - Transaction execution: zkEVM/architecture/protocol/transaction-life-cycle/transaction-execution.md
+              - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
+              - Batch sequencing: zkEVM/architecture/protocol/transaction-life-cycle/batch-sequencing.md
+              - Batch aggregation: zkEVM/architecture/protocol/transaction-life-cycle/batch-aggregation.md
+            - Sequencing batches: zkEVM/architecture/protocol/sequencing-batches.md
+            - Data streamer:
+              - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
+              - Data streamer protocols: zkEVM/architecture/data-streamer/data-streamer-protocols.md
+              - Bookmarks: zkEVM/architecture/data-streamer/bookmarks.md
+              - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
+              - Stream file: zkEVM/architecture/data-streamer/stream-file.md
+              - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
           - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
-          - Upgrade process: zkEVM/architecture/protocol/upgrade-process.md
+          - Upgrades:
+            - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
+            - Upgrade process: zkEVM/architecture/protocol/upgrade-process.md
           - Security council: zkEVM/architecture/protocol/security-council.md
           - Malfunction resistance:
             - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
@@ -193,29 +193,19 @@ nav:
             - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
             - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
             - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
-        - zkNode: zkEVM/architecture/zknode/index.md
-        - Data streamer:
-          - Overall design: zkEVM/architecture/data-streamer/data-streamer-design.md
-          - Data streamer protocols: zkEVM/architecture/data-streamer/data-streamer-protocols.md
-          - Bookmarks: zkEVM/architecture/data-streamer/bookmarks.md
-          - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
-          - Stream file: zkEVM/architecture/data-streamer/stream-file.md
-          - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
-        - The proving system:
-          - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
-          - Executor: zkEVM/architecture/proving-system/the-executor-comp.md
-          - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
-          - Execution trace design: zkEVM/architecture/proving-system/execution-trace-design.md
-          - Selector columns: zkEVM/architecture/proving-system/exec-selector-columns.md
-          - zkEVM and execution traces: zkEVM/architecture/proving-system/exec-trace-and-zkevm.md
-          - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
-          - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
-        - L2 state tree concept: 
-          - L2 state tree concept: zkEVM/architecture/l2-state-tree/index.md
-        - Proving system inputs:
-          - Proving system inputs: zkEVM/architecture/proving-inputs/index.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
+          - zkProver design:
+            - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
+            - Executor: zkEVM/architecture/proving-system/the-executor-comp.md
+            - Proving system inputs: zkEVM/architecture/proving-inputs/index.md
+            - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
+            - Execution trace design: zkEVM/architecture/proving-system/execution-trace-design.md
+            - Selector columns: zkEVM/architecture/proving-system/exec-selector-columns.md
+            - zkEVM and execution traces: zkEVM/architecture/proving-system/exec-trace-and-zkevm.md
+            - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
+            - L2 state tree concept: zkEVM/architecture/l2-state-tree/index.md
+            - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
           - Main state machine: 
             - Main state machine: zkEVM/architecture/zkprover/main-state-machine/index.md
             - As a processor: zkEVM/architecture/zkprover/main-state-machine/processor.md
@@ -247,6 +237,17 @@ nav:
             - Bits2Field state machine: zkEVM/architecture/zkprover/hashing-state-machines/bits2field-sm.md
             - Keccak-f state machine: zkEVM/architecture/zkprover/hashing-state-machines/keccakf-sm.md
             - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
+        - Tokenomics:
+          - Incentive mechanism: zkEVM/architecture/protocol/incentive-mechanism.md
+          - Effective gas price:
+            - Effective gas price: zkEVM/architecture/effective-gas/index.md
+            - Effective gas price strategy: zkEVM/architecture/effective-gas/zkevm-egp-strat.md
+            - User transaction flow:
+              - User transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/index.md
+              - RPC transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/rpc-flow-egp.md
+              - Sequencer transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/sequencer-flow-egp.md
+            - Implementing EGP strategy: zkEVM/architecture/effective-gas/implement-egp-strat.md
+            - Transaction prioritization: zkEVM/architecture/effective-gas/tx-prioritization-egp.md
       - Specification:
         - Specification: zkEVM/spec/index.md
         - Polynomial Identity Language:
@@ -390,8 +391,8 @@ nav:
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
       - Miden: miden/index.md
-      - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
-      - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
+      #- Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
+      #- Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
