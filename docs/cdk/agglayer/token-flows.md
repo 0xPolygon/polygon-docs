@@ -1,3 +1,5 @@
+The following document describes how token and message transactions are implemented by the unified bridge across various L1 and L2 permutations.
+
 <center>
 ![Token flows](../../img/cdk/agglayer/tx-flows.png)
 </center>
