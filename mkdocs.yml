@@ -198,15 +198,15 @@ nav:
           - zkProver design:
             - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
             - Executor: zkEVM/architecture/proving-system/the-executor-comp.md
-            - Proving system inputs: zkEVM/architecture/proving-inputs/index.md
+            - Proving system inputs: zkEVM/architecture/proving-system/proving-inputs.md
             - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
             - Execution trace design: zkEVM/architecture/proving-system/execution-trace-design.md
             - Selector columns: zkEVM/architecture/proving-system/exec-selector-columns.md
             - zkEVM and execution traces: zkEVM/architecture/proving-system/exec-trace-and-zkevm.md
             - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
-            - L2 state tree concept: zkEVM/architecture/l2-state-tree/index.md
+            - L2 state tree concept: zkEVM/architecture/proving-system/l2-state-tree.md
             - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
-          - Main state machine: 
+          - Main state machine:
             - Main state machine: zkEVM/architecture/zkprover/main-state-machine/index.md
             - As a processor: zkEVM/architecture/zkprover/main-state-machine/processor.md
           - STARK recursion:
