@@ -54,7 +54,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Version compatibility matrix: cdk/version-matrix.md
-      #- Build: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - Build: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
@@ -391,8 +391,8 @@ nav:
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
       - Miden: miden/index.md
-      #- Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
-      #- Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
+      - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
+      - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
