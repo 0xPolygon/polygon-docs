@@ -12,7 +12,7 @@ Read more about how The API3 DAO works. [Click here](https://docs.api3.org/explo
 
 ## Airnode
 
-Developers can use [Airnode](https://docs.api3.org/explore/airnode/what-is-airnode.html) to request off-chain data inside their Smart Contracts on the Polygon and Polygon zkEVM. An Airnode is a first-party oracle that pushes off-chain API data to your on-chain contract. Airnode lets API providers easily run their own first-party oracle nodes. That way, they can provide data to any on-chain dApp that's interested in their services, all without an intermediary.
+Developers can use [Airnode](https://docs.api3.org/explore/airnode/what-is-airnode.html) to request off-chain data inside their Smart Contracts on the Polygon PoS and Polygon zkEVM. An Airnode is a first-party oracle that pushes off-chain API data to your on-chain contract. Airnode lets API providers easily run their own first-party oracle nodes. That way, they can provide data to any on-chain dApp that's interested in their services, all without an intermediary.
 
 An on-chain smart contract makes a request in the [RRP (Request Response Protocol)](https://docs.api3.org/reference/airnode/latest/concepts/) contract (`AirnodeRrpV0.sol`) that adds the request to the event logs. The Airnode then accesses the event logs, fetches the API data and performs a callback to the requester with the requested data.
 
