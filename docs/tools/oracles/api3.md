@@ -6,9 +6,9 @@
 
 [API3](https://api3.org/) is a collaborative project to deliver traditional API services to smart contract platforms in a decentralized and trust-minimized way. It is governed by a decentralized autonomous organization (DAO), namely the [API3 DAO](https://api3.org/dao).
 
-:::info The API3 DAO
-Read more about how The API3 DAO works. [Click here](https://docs.api3.org/explore/dao-members/)
-:::
+!!! info "The API3 DAO"
+    Read more about how The API3 DAO works. [Click here](https://docs.api3.org/explore/dao-members/)
+
 
 ## Airnode
 
@@ -17,7 +17,8 @@ Developers can use [Airnode](https://docs.api3.org/explore/airnode/what-is-airno
 An on-chain smart contract makes a request in the [RRP (Request Response Protocol)](https://docs.api3.org/reference/airnode/latest/concepts/) contract (`AirnodeRrpV0.sol`) that adds the request to the event logs. The Airnode then accesses the event logs, fetches the API data and performs a callback to the requester with the requested data.
 
 <!-- ![API3 Remix deploy](/img/tools/api3/airnode1.png) -->
-<img src="/img/tools/api3/airnode1.png" width="600"/>
+
+![airnode1](../../img/tools/oracles/api3/airnode1.png)
 
 ## Requesting off-chain data by calling an Airnode
 
@@ -28,8 +29,9 @@ The requester calling an Airnode primarily focuses on two tasks:
 - Make the request
 - Accept and decode the response
 
-<img src="/img/tools/api3/airnode2.png" width="600"/>
-<br></br>
+<center>
+![airnode2](../../img/tools/oracles/api3/airnode2.png){width=70%}
+</center>
 
 **Here is an example of a basic requester contract to request data from an Airnode:**
 
@@ -96,9 +98,9 @@ contract Requester is RrpRequesterV0, Ownable {
 
 The `_rrpAddress` is the main `airnodeRrpAddress`. The RRP Contracts have already been deployed on-chain. You can check the address for all supported chains [here](https://docs.api3.org/reference/airnode/latest/). You can also try [deploying it using Remix](https://remix.ethereum.org/#url=https://github.com/api3-ecosystem/remix-contracts/blob/master/contracts/RequesterWithWithdrawal.sol&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.9+commit.e5eed63a.js)
 
-|         Contract         |                     Addresses                    |
-|:------------------------:|:------------------------------------------------:|
-| AirnodeRrpV0 |   `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`    |
+|   Contract   |                  Addresses                   |
+| :----------: | :------------------------------------------: |
+| AirnodeRrpV0 | `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd` |
 
 
 ### Request parameters
@@ -117,9 +119,9 @@ The callback to the Requester contains two parameters:
 - [**`requestId`**](https://docs.api3.org/reference/airnode/latest/concepts/request.html#requestid): First acquired when making the request and passed here as a reference to identify the request for which the response is intended.
 - **`data`**: In case of a successful response, this is the requested data which has been encoded and contains a timestamp in addition to other response data. Decode it using the `decode()` function from the `abi` object.
 
-:::info Note !
-Sponsors should not fund a `sponsorWallet` with more then they can trust the Airnode with, as the Airnode controls the private key to the `sponsorWallet`. The deployer of such Airnode undertakes no custody obligations, and the risk of loss or misuse of any excess funds sent to the `sponsorWallet` remains with the sponsor.
-:::
+!!! info "Note"
+    Sponsors should not fund a `sponsorWallet` with more then they can trust the Airnode with, as the Airnode controls the private key to the `sponsorWallet`. The deployer of such Airnode undertakes no custody obligations, and the risk of loss or misuse of any excess funds sent to the `sponsorWallet` remains with the sponsor.
+
 
 [Try deploying it on Remix!](https://remix.ethereum.org/#url=https://github.com/api3-ecosystem/remix-contracts/blob/master/contracts/RequesterWithWithdrawal.sol&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.9+commit.e5eed63a.js)
 
@@ -136,7 +138,7 @@ Apart from relying on deviation threshold and heartbeat configuration updates, u
 
 The [API3 Market](https://market.api3.org/polygon) enables users to connect to a dAPI and access the associated data feed services.
 
-<img src="/img/tools/api3/dapi-main.png"/>
+![dapi-main](../../img/tools/oracles/api3/dapi-main.png)
 
 [*To learn more about how dAPIs work, click here*](https://docs.api3.org/explore/dapis/what-are-dapis.html)
 
@@ -157,19 +159,18 @@ The current supported configurations for dAPIs are:
 | 1%        | 24 hours  |
 | 5%        | 24 hours  |
 
-<img src="/img/tools/api3/dapi-1.png"/>
+![dapi-1](../../img/tools/oracles/api3/dapi-1.png)
 
 #### Activating your dAPI
 
-:::note
-Note
-
-If a dAPI is already activated, make sure to check the expiration date and update parameters. You can update the parameters and extend the subscription by purchasing a new configuration.
-:::
+!!! note "Note"
+    If a dAPI is already activated, make sure to check the expiration date and update parameters. You can update the parameters and extend the subscription by purchasing a new configuration.
 
 After selecting the dAPI and the configuration, you will be presented with an option to purchase the dAPI and activate it. Make sure to check the time and amount of the subscription. If everything looks good, click on Purchase.
 
-<img src="/img/tools/api3/dapi-2.png"/>
+<center>
+![dapi-2](../../img/tools/oracles/api3/dapi-2.png){width=65%}
+</center>
 
 You can then connect your wallet and confirm the transaction. Once it's confirmed, you will be able to see the updated configuration for the dAPI.
 
@@ -177,7 +178,7 @@ You can then connect your wallet and confirm the transaction. Once it's confirme
 
 Once you are done configuring and activating the dAPI, you can now integrate it. To do so, click on the **Integrate** button on the dAPI details page.
 
-<img src="/img/tools/api3/dapi-5.png"/>
+![dapi-5](../../img/tools/oracles/api3/dapi-5.png)
 
 You can now see the deployed proxy contract address. You can now use this to read from the configured dAPI.
 
@@ -379,7 +380,7 @@ You can try QRNG on the Polygon and Polygon zkEVM for free. Check out the all th
 
 [Click here to read more about API3 QRNG](https://docs.api3.org/explore/qrng/)
 
-## Additional Resources
+## Additional resources
 
 Here are some additional developer resources
 
