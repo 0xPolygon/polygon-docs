@@ -1,8 +1,8 @@
-Consider a proof/verification scheme, using an arbitrary Polynomial Commitment Scheme, where users have to prove knowledge of the N-th member of a multiplicative Fibonacci Series, for specific initial conditions.
+Consider a proof-verification scheme, using an arbitrary Polynomial Commitment Scheme. In this scheme, users must prove knowledge of the $Nth$ member of a multiplicative Fibonacci series for specific initial conditions.
 
 ## What is a multiplicative Fibonacci series?
 
-The multiplicative Fibonacci Series (or simply mFibonacci Series), denoted by
+The multiplicative Fibonacci series (or simply mFibonacci series), denoted by
 
 $$
 \mathbf{a_0, a_1, a_2, \dots , a_n}
@@ -12,15 +12,15 @@ has the property that the product of every two consecutive members $\mathbf{a_{i
 
 Also, the initial values are specified as $\mathbf{a_0} = 2$ and $\mathbf{a_1} = 1$.
 
-Here are the first ten members of the mFibonacci Series,
+Here are the first ten terms of the mFibonacci series,
 
 $$
 \mathbf{ \ \ 2,\ \ 1,\ \ 2,\ \ 2,\ \ 4,\ \ 8,\ \ 32,\ \ 256,\ \ 8192,\ \ 2097152,\ \ \dots }
 $$
 
-As a trivial example, the challenge may be: Prove knowledge of the initial values that produced $\mathbf{a_{10} = 17179869184}$, the eleventh member of the mFibonacci Series, without revealing the initial values.
+As a trivial example, the challenge may be: Prove knowledge of the initial values that produced $\mathbf{a_{10} = 17179869184}$, the eleventh member of the mFibonacci series, without revealing the initial values.
 
-The task therefore, is to first build a state machine that would enable anyone to prove knowledge of the initial values $\mathbf{a_0}$ and $\mathbf{a_1}$ that yields a specific N-th member of the mFibonacci Series.
+The task therefore, is to first build a state machine that would enable anyone to prove knowledge of the initial values $\mathbf{a_0}$ and $\mathbf{a_1}$ that yields a specific N-th member of the mFibonacci series.
 
 ## Constructing mFibonacci state machine
 
@@ -35,7 +35,7 @@ $$
 
 such that the i-th state is the pair $\big( A_i , B_i \big)$.
 
-Such a state machine is an **mFibonacci state machine** if indeed the registry values conform to the format of the mFibonnacci Series. See Figure 4 below, for an mFibonacci state machine with the initial conditions, $A_0 = 2$ and $B_0 = 1$.
+Such a state machine is an mFibonacci state machine if indeed the registry values conform to the format of the mFibonnacci series. See Figure 4 below, for an mFibonacci state machine with the initial conditions, $A_0 = 2$ and $B_0 = 1$.
 
 ![Figure 4: mFibonacci SM with two registries](../../../img/zkEVM/fib6-mfibon-sm-2-regs.png)
 
@@ -89,7 +89,7 @@ $$
 
 If these polynomial identities should accurately express the two registries, then every state transition of the mFibonacci SM must satisfy them.
 
-## Non-cyclicity of mFibonacci SM
+## Non-cyclicity of the mFibonacci state machine
 
 Note that the definition of ${\mathcal{H}}$ does not restrict the values of $i$ to be less than $8$.
 
@@ -193,11 +193,11 @@ $$
 \end{aligned}
 $$
 
-These polynomial identities enforce correct state transitioning, and are therefore referred to as **transition constraints**. They apply to every pair of consecutive states. That is, every pair of consecutive rows in the execution trace of the SM.
+These polynomial identities enforce correct state transitioning, and are therefore referred to as transition constraints. They apply to every pair of consecutive states. That is, every pair of consecutive rows in the execution trace of the SM.
 
 ## Verifying computations
 
-In addition to transition constraints, are **boundary constraints**. A **boundary constraint** is a constraint that enforces that a polynomial has a certain value at a particular root of unity.
+In addition to transition constraints, are boundary constraints. A boundary constraint is a constraint that enforces that a polynomial has a certain value at a particular root of unity.
 
 ### Varied initial conditions
 
@@ -214,13 +214,13 @@ $$
 \end{aligned}
 $$
 
-In the context of our mFibonacci SM, the verifier can set the initial conditions $\big( A_0 , B_0 \big)$ to values of his or her own choice, and generate the state machine while keeping $A_0$ and $B_0$ secret. The prover's task is therefore, to prove knowledge of $A_0$ and $B_0$ that led to a given N-th term of the mFibonacci Series.
+In the context of our mFibonacci SM, the verifier can set the initial conditions $\big( A_0 , B_0 \big)$ to values of his or her own choice, and generate the state machine while keeping $A_0$ and $B_0$ secret. The prover's task is therefore, to prove knowledge of $A_0$ and $B_0$ that led to a given N-th term of the mFibonacci series.
 
 ### Boundary constraints
 
 Boundary constraints apply to particular registry values, and are used to enforce that the correct initial state was applied.
 
-The idea here is to set up a specific boundary constraint, which the verifier can use to check that correct initial conditions were applied, when the prover was computing a particular N-th term of the mFibonacci Series. Yet, the verifier must not disclose any information about the secret values $A_0$ and $B_0$.
+The idea here is to set up a specific boundary constraint, which the verifier can use to check that correct initial conditions were applied, when the prover was computing a particular $Nth$ term of the mFibonacci series. Yet, the verifier must not disclose any information about the secret values $A_0$ and $B_0$.
 
 Therefore, the first thing to do, is removing terms in the identities bearing the initial values $A_0$ and $B_0$. This means modifying our polynomial identities to the ones below;
 
@@ -245,7 +245,7 @@ This logic is valid simply because the computations carried out by the state mac
 
 All computations are carried out in a field $\mathbb{F}_p$ , where $p = \mathtt{2^{64}-2^{32}+1}$, a Goldilocks-like prime number.
 
-Suppose the verifier knows that an mFibonacci Series starting with initial values, $A_0$ and $B_0$, yields $A_{\mathtt{1023}} = \mathtt{14\ 823\ 897\ 298\ 192\ 278\ 947}$ as the value of the $\mathtt{1024}$-th term. The verifier can challenge anyone to prove knowledge of the initial condition of the mFibonacci SM to provide three polynomials and the correct $\mathtt{1024}$-th term. That is, the verifier uses the following constraints to verify the prover's submissions;
+Suppose the verifier knows that an mFibonacci series starting with initial values, $A_0$ and $B_0$, yields $A_{\mathtt{1023}} = \mathtt{14\ 823\ 897\ 298\ 192\ 278\ 947}$ as the value of the $\mathtt{1024}$-th term. The verifier can challenge anyone to prove knowledge of the initial condition of the mFibonacci SM to provide three polynomials and the correct $\mathtt{1024}$-th term. That is, the verifier uses the following constraints to verify the prover's submissions:
 
 $$
 \begin{aligned}

@@ -16,7 +16,7 @@ Comments are made with the semicolon "$;$" symbol.
 
 At this moment, only one-line comments are available.
 
-One can subdivide the zkASM code into multiple files and import code with the `INCLUDE` keyword. This is what we refer to as the **Modularity** of the zkASM.
+One can subdivide the zkASM code into multiple files and import code with the INCLUDE keyword. This is what we refer to as the _modularity_ of the zkASM.
 
 ```
 ; File: main.zkasm
@@ -50,7 +50,7 @@ There are many ways in which values can be stored into registers:
 
         ${ExecutorMethod(params)} => A,B
 
-        ; Notice that the method `ExecutorMethod` does not necessarily depends on the registers.
+        ; Notice that the method `ExecutorMethod` does not necessarily depend on the registers.
         ; A good example of such a method is `SHA256`.
 
 5. If a method gets executed (with the dollar sign) by its own, its main purpose is generating log information.
@@ -78,7 +78,7 @@ A clear example of one such situation is while using the memory load opcode:
 $ => A,B    :MLOAD(param)
 ```
 
-When a registers appear at the side of an Opcode, it is typically used to indicate that the value of the register `A` is the input of the memory store opcode:
+When a registers appear at the side of an Opcode, it is typically used to indicate that the value of the register A is the input of the memory store opcode:
 
 ```
 A   :MSTORE(param)
@@ -117,7 +117,7 @@ The main difference between the single dollar sign and the double dollar sign is
 
 ## Asserts
 
-Asserts work by comparing what is being asserted with the value on register `A`. For instance, the following instructions compares the value inside register `B` with the value inside register `A`:
+Asserts work by comparing what is being asserted with the value on register A. For instance, the following instructions compares the value inside register B with the value inside register A:
 
 ```
 B    :ASSERT

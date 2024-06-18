@@ -1,6 +1,6 @@
-All Keccak-related state machines are accessed through the Padding-KK state machine. It is therefore responsible for handling queries from the Main state machine. The common queries are requests for digests of messages, together with validation of these digests.
+All Keccak-related state machines are accessed through the Padding-KK state machine. It is therefore responsible for handling queries from the Main state machine. Common queries are requests for digests of messages, together with validation of these digests.
 
-In this document, the workings of the Padding-KK SM are described. How it validates the validity of hash values, input string lengths, and input string reading to ensure that padding requirements are followed.
+In this document, the internal mechanism of the Padding-KK SM is described. How it validates the validity of hash values, input string lengths, and input string readings to ensure that padding requirements are followed.
 
 First, keep in mind that the Padding-KK SM's operations are byte-based, whereas the Keccak-F SM's actions are bit-based. This discrepancy in string formats is handled by the Padding-KK-Bit SM.
 
@@ -8,11 +8,11 @@ First, keep in mind that the Padding-KK SM's operations are byte-based, whereas 
 
 Although the hashing of messages is carried out by the Keccak-F SM, the padding happens in the Padding-KK SM. Messages are presented to the Padding-KK SM as byte-strings in hexadecimal form. But the Padding-KK-Bit SM ensures that these are presented as bit-strings to the Keccak-F SM.
 
-Even though Keccak-F SM receives strings of any length as inputs, each input-message to the Keccak-F SM is first split into blocks of 1088 bits (i.e., 136 bytes), called the bit rate (or rate). If the tail-end of the splits is shorter than 136 bytes, or if the original message is shorter than 136 bytes, a specific string is appended to it in order to form a full 136-byte string. The appended bits (or bytes) are referred to as the **padding**.
+Even though Keccak-F SM receives strings of any length as inputs, each input-message to the Keccak-F SM is first split into blocks of 1088 bits (i.e., 136 bytes), called the _bitrate_ (or rate). If the tail-end of the splits is shorter than 136 bytes, or if the original message is shorter than 136 bytes, a specific string is appended to it in order to form a full 136-byte string. The appended bits (or bytes) are referred to as the _padding_.
 
-Keccak's first padding-rule is to append the string $\mathtt{100^*1}$ of the appropriate length. That is, the padding always consists of two 1's and a string of 0's between them.
+Keccak's _first_ padding-rule is to append the string $\mathtt{100^*1}$ of the appropriate length. That is, the padding always consists of two 1's and a string of 0's between them.
 
-The second padding rule: If the input-message is exactly 136 bytes long, or a multiple of 136 bytes, then a block of 136 bytes consisting of just the padding $\mathtt{100^*1}$, must be appended.
+The _second_ padding rule: If the input-message is exactly 136 bytes long, or a multiple of 136 bytes, then a block of 136 bytes consisting of just the padding $\mathtt{100^*1}$, must be appended.
 
 It is crucial to emphasise that the Polygon zkEVM follows the Keccak construction used in the Ethereum. So then the Padding-KK SM does not append any other 'fixed' bits to the padding, such as appending "$\mathtt{01}$" as it is done in the FIPS's SHA-3. Therefore, as far as the Keccak-F hash function is concerned, the Polygon zkEVM does not follow the FIPS.202 Standard.
 
@@ -26,28 +26,28 @@ The idea here is to map each string to one or several blocks of 136 bytes (1088 
 
 ![Schema of input strings allocation in Keccak](../../../../img/zkEVM/01pkk-input-strings-allocate.png)
 
-Observe that, as shown in the first string in the Figure above; Whenever the length of a certain string is a multiple of the block length of 136 bytes, a new block containing only the padding must be appended. Once this is done, the new resulting string can be provided to the Keccak-F SM for hashing.
+Observe that, as shown in the first string in the figure above; Whenever the length of a certain string is a multiple of the block length of 136 bytes, a new block containing only the padding must be appended. Once this is done, the new resulting string can be provided to the Keccak-F SM for hashing.
 
 ## Dealing with Main SM queries
 
 The Padding-KK SM is in charge of validating that the padding rule is correctly performed, as well as validating each of the prescribed operations;
 
-1. Validate the lengths of given strings $\{\mathtt{s_i}\}$. (i.e., **length check**),
-2. Validate the hashes of certain strings $\{\mathtt{s_i}\}$. (i.e., **digest check**),
-3. Validate reads from 1 to 32 bytes of string $\{\mathtt{s_i}\}$. (i.e., **read check**).
+1. Validate the lengths of given strings $\{\mathtt{s_i}\}$. (i.e., length check),
+2. Validate the hashes of certain strings $\{\mathtt{s_i}\}$. (i.e., digest check),
+3. Validate reads from 1 to 32 bytes of string $\{\mathtt{s_i}\}$. (i.e., read check).
 
-Next is to prepare the machinery that will enable the Padding-KK SM achieve these three checks.
+Next is to prepare the machinery that enables the Padding-KK SM achieve these three checks.
 
 ### Setting up columns for verification purposes
 
-We now design a series of columns that will enable us to completely verify correctness of every state transitions.
+We now design a series of columns that enable us to completely verify correctness of every state transitions.
 
-- $\texttt{freeIn}$: This register will store every byte of the padded input (as commented before), one byte per row.
-- $\texttt{address}$: This register will store an increasing sequence of integers starting from 0, changing its value at the beginning of a new string. Of course, an address completely determines the corresponding string of a certain byte.
+- $\texttt{freeIn}$: This register stores every byte of the padded input (as commented before), one byte per row.
+- $\texttt{address}$: This register stores an increasing sequence of integers starting from 0, changing its value at the beginning of a new string. Of course, an address completely determines the corresponding string of a certain byte.
 
 - $\texttt{connected}$: This register represents the connection between two blocks. If $\texttt{connected}$ is 1, the actual block is in the same string with the previous block. Otherwise, the last block is in the previous string.
 
-- $\texttt{lastBlock}$: This register flags the last row of every block. If $\texttt{lastBlock}$ is 1, the next block will start in the next row of the table.
+- $\texttt{lastBlock}$: This register flags the last row of every block. If $\texttt{lastBlock}$ is 1, the next block starts in the next row of the table.
 
 - $\texttt{rem}$: For each string, this register is a decreasing sequence of signed integers. Starting at the length of the current string and it keeps decreasing until the last block of the string is reached. Observe that this value can be negative since a padding may be present in the string. ($\texttt{rem}$ is short for 'remaining'.)
 
@@ -63,7 +63,7 @@ $$
 \mathtt{lastHash = lastBlock \cdot (spare + remIsZero)} \tag{Eqn.1}
 $$
 
-  This means $\texttt{lastHash}$ will be 1 whenever two things hold true. First, if $\texttt{lastBlock} = 1$, and secondly, if the next block to be processed is contained in the next string.
+  This means $\texttt{lastHash}$ should be 1 whenever two things hold true. First, if $\texttt{lastBlock} = 1$, and secondly, if the next block to be processed is contained in the next string.
 
   Observe that $\texttt{spare}$ and $\texttt{remIsZero}$ cannot simultaneously be "1" (i.e., not in the same row). Moreover, it is very important to include $\texttt{remIsZero}$ in this computation because $\texttt{spare}$ alone cannot help detect that padding has occurred. For instance, if $\mathtt{pad = 0x81}$, then $\texttt{spare}$ would remain constant, continuing to record 0's as if no padding took place.
 
@@ -127,6 +127,7 @@ By capturing the relationships between and among the columns (registers defined 
     Secondly, notice that after this point, $\texttt{spare}$ remains 1 until (and including when) $\texttt{lastHash}$ equals 1. After which, $\texttt{spare}$ becomes 0.
 
     Hence, these behaviour can be captured as,
+
     $$
     \texttt{spare}' \mathtt{ = (spare + remIsZero)\cdot (1 - lastHash)} \tag{Eqn.3}
     $$
@@ -228,6 +229,7 @@ By capturing the relationships between and among the columns (registers defined 
     $$
 
 8. Now, checking whether $\mathtt{remIsZero}$ is 1 if and only if $\mathtt{rem}$ is 0, is done reversely by first committing the column $\mathtt{remInv}$, the inverse of $\mathtt{rem}$, and computing $\mathtt{remIsZero}$ as:
+    
     $$
     \mathtt{remIsZero = 1 − rem · remInv} \tag{Eqn.11}
     $$
@@ -236,7 +238,7 @@ By capturing the relationships between and among the columns (registers defined 
 
 9. Next is the $\mathtt{aFreeIn}$ register which stores the input byte if and only if the current row does not corresponding to the padding. $\mathtt{aFreeIn}$ is computed from the $\mathtt{remIsZero}$, $\mathtt{spare}$ and $\mathtt{lastHash}$ registers. This ensures loading the padding bytes at their correct positions.
 
-    In fact, this register will be used in the Plookup of the next state machine.
+    In fact, this register is used in the Plookup of the next state machine.
 
     Observe that $\mathtt{aFreeIn}$ can be computed as
 
@@ -268,21 +270,21 @@ $$
 
 ### Hash output check
 
-We have thus far only dealt with correct inputs of the padding. Now, we will introduce several columns to deal with the hash itself.
+We have thus far only dealt with correct inputs of the padding. Now, we introduce several columns to deal with the hash itself.
 
 Since KECCAK-256's output is 256 bits long, we use eight (8) registers each of 32 bits to store the result of the hash function. Denote these registers by  $\{ \mathtt{hash}_\mathtt{i}\ |\ \mathtt{i} \in \{0, 1, 2, \dots , 7\} \}$.
 
-As columns, these $\{\mathtt{hash}_\mathtt{i}\}$ registers will remain constant within a single string, because they represent the hash of a given string. The following constraints are therefore added,
+As columns, these $\{\mathtt{hash}_\mathtt{i}\}$ registers remain constant within a single string, because they represent the hash of a given string. The following constraints are therefore added,
 
 $$
 \mathtt{(hash ′ −hash )·(1−lastHash) = 0} \tag{Eqn.13}
 $$
 
-A combination of other KECCAK-related state machines will be used to verify correctness of the output hash. The reason for this is that, for compatibility with the KECCAK-256 hash function, we first need to describe all inputs in terms of bits.
+A combination of other KECCAK-related state machines is used to verify correctness of the output hash. The reason for this is that, for compatibility with the KECCAK-256 hash function, we first need to describe all inputs in terms of bits.
 
 ### Length and read check operations
 
-In this section we give a description of the design that will allow us to verify the lengths of input strings and the read operations.
+In this section we give a description of the design that allows us to verify the lengths of input strings and the read operations.
 
 #### Length check
 
@@ -326,7 +328,13 @@ where $\texttt{hashKLen}$ flags whenever the operation is checked and the length
 
 #### Read check
 
-Checking reads requires more columns to be introduced. **Recall that, given given three parameters; the address $a$ of a string, the position $p$ of the starting byte of the string, and  $l$  the total number of bytes that we want to read; the intention is to read the bytes of the string from the first to thirty second**.
+Checking reads requires more columns to be introduced. Recall that, given three parameters;
+
+- the address $a$ of a string, 
+- the position $p$ of the starting byte of the string, and 
+- the total number of bytes $l$ that we want to read.
+
+The intention is to read the bytes of the string from the first to thirty second.
 
 It takes 8 registers, each of 32-bits, to store the output of the read operation. Let us denote these registers by:
 
@@ -343,10 +351,12 @@ Before looking into the roles of the $\{\mathtt{crV_i}\}$ registers and $\{\math
 - $\mathtt{crOffset}$: A decreasing sequence of values, starting from *the length value of the read* minus 1 (i.e., $\mathtt{crLen - 1}$ ) and ends at 0, for each read. This is important for positioning each byte at the correct power of 2.
 
 - $\mathtt{crLatch}$: This is a computed column, using the same inverse technique as before. It records instances when the $\mathtt{crOffset}$ register is 0. First, the register $\mathtt{crOffsetInv}$ is committed, allowing  $\mathtt{crLatch}$ to be expressed as
-  $$
-  \mathtt{crLatch = 1 − crOffset \cdot crOffsetInv} \tag{Eqn.14}
-  $$
-   which satisfies the constraint, $\mathtt{crOffsetInv \cdot crLatch = 0}$.
+
+$$
+\mathtt{crLatch = 1 − crOffset \cdot crOffsetInv} \ \ \tag{Eqn.14}
+$$
+
+which satisfies the constraint, $\mathtt{crOffsetInv \cdot crLatch = 0}$.
 
 #### Example: Read check using columns
 
@@ -374,48 +384,63 @@ $$
 
 Note that the horizontal line is used to separate every 8 bytes, which are the exact number of bytes stored in a $\mathtt{crV_i}$ register. We will later on see why this is important.
 
-**Several observations**
+#### Several observations
 
-Firstly, note that $\mathtt{crLatch}$ is 1 *if and only if* $\mathtt{crOffset}$ is 0.
+Firstly, note that $\mathtt{crLatch}$ is 1 _if and only if_ $\mathtt{crOffset}$ is 0.
 
-Secondly, if we want to express the two read values as an array, the output will be
+Secondly, if we want to express the two read values as an array, the output should be
+
 $$
 \mathtt{[0xff00111a6e6e1f02ef10, 0x7355]}
 $$
+
 where the first element of the array has 10 bytes, whilst the second has 2 bytes. This coincides with each of the $\mathtt{crLen}$ defined values.
 
 Thirdly, observe the relationships that these registers; $\texttt{crLen}$, $\texttt{crOffset}$ and $\texttt{crLatch}$ ; have to satisfy.
 
 $\bf{(a)}$ The $\texttt{crOffset}$ register decreases in every read, so we can express this as
+
 $$
 \mathtt{crOffset′ \cdot (1 − crLatch) = (crOffset − 1) \cdot (1 − crLatch)} \tag{Eqn.15}
 $$
+
 $\bf{(b)}$ The $\texttt{crLen}$ register remains constant during each read operation, hence the following constraint applies,
+
 $$
 \mathtt{crLen′ \cdot (1 − crLatch) = crLen \cdot (1 − crLatch)} \tag{Eqn.16}
 $$
+
 $\bf{(c)}$ The first $\texttt{crOffset}$ of every read is $\texttt{crLen − 1}$. Hence, we need to specify the following relationship
+
 $$
 \mathtt{crLatch \cdot crOffset' = crLatch \cdot (crLen′ − 1)} \tag{Eqn.17}
 $$
-$\bf{(d)}$ In addition, we need to ensure that the address resets immediately after a string ends. Otherwise, we will read from a different string. For this reason, we need to introduce the following constraint
+
+$\bf{(d)}$ In addition, we need to ensure that the address resets immediately after a string ends. Otherwise, we read from a different string. For this reason, we need to introduce the following constraint
+
 $$
 \mathtt{(1 − crLatch) \cdot lastHash} \tag{Eqn.18}
 $$
+
 which, when combined with the previous constraints enforces the desired results.
 
-**The registers $\{\mathtt{crV_i}\}$ and polynomial factors $\{\mathtt{crF_i}\}$**
 
-Let us now turn to the registers $\mathtt{crV_i}$ and polynomial factors $\mathtt{crF_i}$.
+#### Registers and polynomial factors
+
+Let's look closely at the registers $\mathtt{crV_i}$ and polynomial factors $\mathtt{crF_i}$.
 
 Consider the previous example, where the first element of the 'output' array is
+
 $$
 \mathtt{0xff00111a6e6e1f02ef10}
 $$
+
  Obviously, this element does not fit in a 32-bit register. So it needs to be split over three registers; $\mathtt{crV_0}$, $\mathtt{crV_1}$ and $\mathtt{crV_2}$; respectively as,
+
 $$
 \mathtt{0x1f02ef10, 0x111a6e6e} \text{ and } \mathtt{0xff00}
 $$
+
 Moreover, each byte has a corresponding weight $(2^8)^j$, for some $j \in \{0, 1, 2, 3\}$, such that,
 
 $$
@@ -454,15 +479,17 @@ The registers $\{\mathtt{crF_i}\}$ are responsible for correct positioning of ea
 
 Lastly, observe that the rows corresponding to $\mathtt{crLatch = 1}$, store the complete result of the read in the registers $\{\mathtt{crV_i}\}$. These are the rows where validity of the read operation is checked via a Plookup.
 
-**Constraints pertaining to $\{\mathtt{crV_i}\}$ and $\{\mathtt{crF_i}\}$**
+#### Constraints on registers
 
-The idea here is to compute a column  $\mathtt{crVC_i}$ defined by,
+We look closely at constraints pertaining to $\{\mathtt{crV_i}\}$ and $\{\mathtt{crF_i}\}$.
+
+The idea here is to compute a column $\mathtt{crVC_i}$ defined by,
 
 $$
 \mathtt{crVC_i = crV_i + crF_i \cdot aFreeIn} \tag{Eqn.19}
 $$
 
-and then verify that the next state $\mathtt{crV'_i}$ coincides with $\mathtt{crVC_i}$ whenever $\mathtt{crLatch}$ is not equal to 1. This will confirm that the $\{\mathtt{crV_i}\}$ registers are not only sequentially read, but are also correctly computed from the previous states. Hence, the following constraint needs to be added;
+and then verify that the next state $\mathtt{crV'_i}$ coincides with $\mathtt{crVC_i}$ whenever $\mathtt{crLatch}$ is not equal to 1. This confirms that the $\{\mathtt{crV_i}\}$ registers are not only sequentially read, but are also correctly computed from the previous states. Hence, the following constraint needs to be added;
 
 $$
 \mathtt{crV' = crVC \cdot (1 − crLatch)}  \tag{Eqn.20}
@@ -503,7 +530,7 @@ $$
 
 There are a few subtle details concerning the connection between the Read operation and the Main SM to be taken into account.
 
-For instance, in order to avoid problems, reading from the last (probably smaller) block is not allowed. A constant column $\mathtt{r8Valid}$ is therefore created specifically for checking if a read is done at the last block. So, $\mathtt{r8Valid}$ will be 1 *if and only if* the current state is not at the last block. Hence, the Plookup in the Main SM's PIL code ([main.pil code; lines 663 to 676](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/main.pil#L663-L676)):
+For instance, in order to avoid problems, reading from the last (probably smaller) block is not allowed. A constant column $\mathtt{r8Valid}$ is therefore created specifically for checking if a read is done at the last block. So, $\mathtt{r8Valid}$ is 1 *if and only if* the current state is not at the last block. Hence, the Plookup in the Main SM's PIL code ([main.pil code; lines 663 to 676](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/main.pil#L663-L676)):
 
 $$
 \begin{aligned}
@@ -524,7 +551,7 @@ $$
 \end{aligned}
 $$
 
-Please note that these quoted code lines will differ with different versions. They should only be taken as examples for a particular code version.
+Please note that these quoted code lines may vary across different versions. They should only be taken as examples for a particular code version.
 
 Note that $\texttt{HASHPOS}$ is marking the position in the string of the byte where the reading starts. The Plookup shown above, maps the  committed polynomial $\texttt{HASHPOS}$ in the Main SM to the linear combination of the committed polynomials; $\mathtt{len}$, $\mathtt{rem}$ and $\mathtt{crLen}$; of the Padding-KK SM as,
 

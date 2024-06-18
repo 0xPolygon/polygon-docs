@@ -21,12 +21,13 @@ hide:
 </style>
 
 <div class="section-wrapper product-section-head">
-      <div class="hero-image"><img src="../img/learn/learn.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
+      <div class="hero-image"><img src="../img/learn/innovation-and-design.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
    <div class="hero-left">
-      <h1 class="hero-heading">Learn</h1>
-      <p class="hero-subtext">The Polygon Knowledge Layer consists of two parts. Firstly, tech docs that developers need in order to build with Polygon protocols. Secondly, resources necessary for learning about Polygon technologies.</p>
-<p class="hero-subtext">This section gives you a peek into the future, the Polygon 2.0 vision which is community-driven.
- </p>
+      <h1 class="hero-heading">Innovation & design</h1>
+      <p class="hero-subtext">The Polygon Knowledge Layer consists of technical documentation that developers need for building with Polygon protocols, products, and services.</p> 
+      <p class="hero-subtext">We also publish resources necessary for learning about and contributing to Polygon technologies.</p>
+      <p class="hero-subtext">This section gives you a peek into the future, the community-driven Polygon 2.0 vision focussing on cutting-edge web3 development.
+      </p>
    </div>
 </div>
 <div class="grid-container">
@@ -37,6 +38,14 @@ hide:
          </div>
          <p class="feature-paragraph">Driven by innovation, the Polygon type 1 prover is fully Ethereum equivalent.</p>
       </a>
+   </div>
+   <div class="grid-item">
+      <a href="./security/overview">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Polygon security</div>
+         </div>
+         <p class="feature-paragraph">Polygon security, bug bounties, and more.</p>
+      </a>      
    </div>
     <div class="grid-item">
       <a href="./plonky">

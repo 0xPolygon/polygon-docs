@@ -1,20 +1,20 @@
 ## Checking sequence of instructions
 
-In order to keep track of which line of the program is currently being executed, a new registry called "Program Counter" is added to the state machine.
+In order to keep track of which line of the program is currently being executed, a new registry called "program counter" is added to the state machine.
 
 We denote it by $\texttt{zkPC}$ because it is verified in a zero-knowledge manner.
 
 The $\texttt{zkPC}$ is therefore a new column of the execution trace and it contains, at each clock, the line in the zkASM program of the instruction being executed.
 
-![Figure 7: A state machine with a Program Counter](../../../img/zkEVM/gen7-state-machine-w-zkpc.png)
+![Figure 7: A state machine with a program counter](../../../img/zkEVM/gen7-state-machine-w-zkpc.png)
 
 In addition to the $\texttt{JMPZ(addr)}$, an unconditional jump instruction $\texttt{JMP(addr)}$ is allowed in the zkASM program.
 
 Unlike the $\texttt{JMPZ(addr)}$ instruction, when the state machine executes $\texttt{JMP(addr)}$, it must jump to the line $\texttt{addr}$, irrespective of what the value of $\texttt{op}$ is.
 
-### Program Counter constraint related to JMP
+### Program counter constraint related to JMP
 
-This is how the $\texttt{JMP(addr)}$ instruction is implemented: A new selector called $\texttt{JMP}$ is added, as a column to the execution trace. And, the Program Counter $\texttt{zkPC}$ now uses the following identity to keep track of the correct line of the assembly program to be executed next;
+This is how the $\texttt{JMP(addr)}$ instruction is implemented: A new selector called $\texttt{JMP}$ is added, as a column to the execution trace. And, the program counter $\texttt{zkPC}$ now uses the following identity to keep track of the correct line of the assembly program to be executed next;
 
 $$
 \mathtt{zkPC' = (zkPC+1)+JMP \cdot \big(addr−(zkPC+1)\big)} \tag{Eqn 0*}
@@ -27,7 +27,7 @@ $\texttt{JMP}$ therefore acts as a 'flag' where;
 
 Note that execution continues with the next chronological line of instruction $\texttt{zkPC+1}$ when $\texttt{JMP}$ is $\mathtt{0}$, but otherwise proceeds to execute the instruction in line number $\texttt{addr}$.
 
-### Program Counter constraint related to JMPZ
+### Program counter constraint related to JMPZ
 
 The $\texttt{JMPZ(addr)}$ similarly needs a selector to be added as an extra column to the execution trace, call it $\texttt{JMPZ}$.
 
@@ -59,15 +59,17 @@ Note that $\mathtt{op^{−1}}$ is not part of any instruction. The evaluations o
 
 Most importantly, we rename the polynomial $\mathtt{op^{−1}}$ as $\texttt{invOp}$.
 
-### Program Counter constraint related to JMP and JMPZ
+### Program counter constraint related to JMP and JMPZ
 
 All four constraints, $\text{Eqn 0*}$, $\text{Eqn 1*}$, $\text{Eqn 2*}$ and $\text{Eqn 3*}$ can be merged as follows;
 
 $$
-\mathtt{isZero\ := (1 − op \cdot op^{−1})},\qquad\qquad\qquad\qquad\text{ }\qquad \\
-\mathtt{isZero \cdot op = 0},\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad \\
-\mathtt{doJMP := JPMZ \cdot isZero + JMP}, \qquad\qquad\qquad\qquad\quad \\
-\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)} \tag{Eqn 4*}
+\begin{aligned}
+&\mathtt{isZero\ := (1 − op \cdot op^{−1})},\qquad\text{ }\qquad \\
+&\mathtt{isZero \cdot op = 0},\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad \\
+&\mathtt{doJMP := JPMZ \cdot isZero + JMP}, \qquad\qquad\qquad\qquad\quad \\
+&\mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)} 
+&\end{aligned}
 $$
 
 Define "$\texttt{addr}$" as an intermediate polynomial,
@@ -78,7 +80,7 @@ $$
 
 where $\texttt{offset}$ is provided as part of the jump instructions, $\texttt{JMPZ(addr)}$ and $\texttt{JMP(addr)}$.
 
-We now have the following new columns in the execution trace;
+We now have the following new columns in the execution trace:
 
 $$
 \begin{array}{|l|c|c|c|c|c|c|c|}\hline
@@ -106,7 +108,7 @@ So, we query the executor for when the execution trace is at its last but one ro
 
 The assembly program uses labels instead of explicit line numbers, hence conforming to how assembly programs are typically written. Labels are convenient because with them, the assembly compiler can take care of computing actual line numbers. For instance, as in Figure 8 below; $\mathtt{start}$ is line $\mathtt{0}$ and $\mathtt{finalWait}$ is line $\mathtt{5}$.
 
-![Figure 8: Ending a Program with a loop](../../../img/zkEVM/gen8-end-prog-w-loop.png)
+![Figure 8: Ending a program with a loop](../../../img/zkEVM/gen8-end-prog-w-loop.png)
 
 ## Commentary on the execution trace
 
@@ -134,7 +136,7 @@ $$
 
 and $\mathtt{invOp = 3^{-1}}$.
 
-Regarding the Program Counter; First note that initially $\mathtt{zkPC = 0}$. And, since $\mathtt{op = 3}$  and $\mathtt{invOp = 3^{-1}}$, then
+Regarding the program counter, first note that initially $\mathtt{zkPC = 0}$. And, since $\mathtt{op = 3}$  and $\mathtt{invOp = 3^{-1}}$, then
 
 $$
 \mathtt{isZero\ := (1 − op \cdot op^{−1}) = (1 − 3 \cdot 3^{−1}) = 0}.\qquad\qquad\qquad\qquad\text{ }\qquad \\
@@ -166,7 +168,7 @@ $$
 
 and $\mathtt{invOp = (-3)^{-1}}$.
 
-So, $\mathtt{isZero\ := (1 − op \cdot op^{−1}) = \big(1 − (-3) \cdot (-3)^{−1}\big) = 0}$.
+So, $\mathtt{\ isZero\ := (1 − op \cdot op^{−1}) = \big(1 − (-3) \cdot (-3)^{−1}\big) = 0}$.
 
 Again, the absence of jumps in the instruction means, $\mathtt{JMP = 0}$ and $\mathtt{JMPZ = 0}$. And therefore $\mathtt{zkPC′ = zkPC + 1}$.
 
@@ -178,7 +180,7 @@ $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 0 \cdot 0 + 0 = 0}. \qquad\qquad\qquad\qquad\qquad \\
 $$
 
-Since $\mathtt{zkPC = 1}$, the next value of the Program Counter (according to Eqn 4*) must therefore be,
+Since $\mathtt{zkPC = 1}$, the next value of the program counter (according to Eqn 4*) must therefore be,
 
 $$
 \mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (1+1) + 0 \cdot \big( addr−(1+1) \big) = 2}.
@@ -238,7 +240,7 @@ $$
 \mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (2+1) + 0 \cdot \big( addr - (2+1)\big) = 3}.
 $$
 
-The Program Counter therefore moves to the subsequent line of instruction. That is, the next instruction to be executed must the one in $\texttt{line}$ $\texttt{3}$ of the Assembly code.
+The program counter therefore moves to the subsequent line of instruction. That is, the next instruction to be executed must the one in $\texttt{line}$ $\texttt{3}$ of the Assembly code.
 
 ### Step 3: "A :JMPZ(finalWait)"
 
@@ -260,7 +262,7 @@ $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 1 \cdot 1 + 0 = 1}. \qquad\qquad\qquad\qquad\qquad \\
 $$
 
-The next value of the Program Counter, according to Eqn 4, is
+The next value of the program counter, according to Eqn 4, is
 
 $$
 \mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (3+1) + 1 \cdot \big(5−(3+1)\big) = 4 + (5-4) = 5.}
@@ -284,7 +286,7 @@ $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 1 \cdot 1 + 0 = 1}. \qquad\qquad\qquad\qquad\qquad \\
 $$
 
-The next value of the Program Counter is given by,
+The next value of the program counter is given by,
 
 $$
 \mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big) = (5+1) + 1 \cdot \big(5−(5+1)\big) = 6 + (5-6) = 5.}
@@ -332,7 +334,7 @@ $$
 
 which means  $\mathtt{FREE = 0}$ and $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 0 \cdot \alpha) = 1}$. So, again $\texttt{JMPZ(finalWait)}$ gets executed.
 
-The absence of unconditional jumps means $\mathtt{JMP = 0}$, while $\mathtt{JMPZ = 1}$. Since $\mathtt{offset = 5}$, the Program Counter, $\mathtt{zkPC′}$, must in the next step be $\mathtt{5}$.
+The absence of unconditional jumps means $\mathtt{JMP = 0}$, while $\mathtt{JMPZ = 1}$. Since $\mathtt{offset = 5}$, the program counter, $\mathtt{zkPC′}$, must in the next step be $\mathtt{5}$.
 
 We verify this by first checking:
 
@@ -354,7 +356,7 @@ $$
 \mathtt{op = inA \cdot A + inB \cdot B + inFREE \cdot FREE + CONST = 0 \cdot A + 0 \cdot B + 1 \cdot 1 + 0  = 1}.
 $$
 
-This means  $\mathtt{FREE = 1}$ and $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 1 \cdot 1) = 0}$. And, this time $\texttt{JMPZ(finalWait)}$ is not executed, implying the next Program Counter, $\mathtt{zkPC′ = zkPC + 1}$.
+This means  $\mathtt{FREE = 1}$ and $\mathtt{isZero \ := (1 − op \cdot invOp)\ = (1 − 1 \cdot 1) = 0}$. And, this time $\texttt{JMPZ(finalWait)}$ is not executed, implying the next program counter, $\mathtt{zkPC′ = zkPC + 1}$.
 
 Since there are no jumps in this step, $\mathtt{JMP = 0}$ and $\mathtt{JMPZ = 0}$, yielding
 
@@ -388,7 +390,7 @@ $$
 \mathtt{doJMP := JPMZ \cdot isZero + JMP = 0 \cdot 1 + 1 = 1}. \\
 $$
 
-The constraint in Eqn 4* verifies the next value of the Program Counter as follows,
+The constraint in Eqn 4* verifies the next value of the program counter as follows,
 
 $$
 \mathtt{zkPC′ = (zkPC+1)+doJMP \cdot \big(addr−(zkPC+1)\big)\ =\ (6+1)\ +\ 1 \cdot \big(0 −(6+1)\big)\ =\ 0.}
@@ -434,7 +436,7 @@ $$
 
 In conclusion, our Assembly program uses jumps to create a loop in its execution. That is, at the right point of the execution, when the registry values of interest have been attained, the executor retains these values until the execution trace is in the last but one row. This way, the result of the computations can be reflected in the last position of the registry $\mathtt{A}$, in the last row of the execution trace, which is the output of the mFibonacci state machine.
 
-Note that in cases where the jumps are such that $\mathtt{offset}$ is one of the previous addresses, the length of the execution trace can turn out to be much bigger than the final value of the Program Counter. i.e., $\mathtt{zkPC \leq 2^N - 1}$ where $\mathtt{2^N -1}$ is the degree of the state machine polynomials.  
+Note that in cases where the jumps are such that $\mathtt{offset}$ is one of the previous addresses, the length of the execution trace can turn out to be much bigger than the final value of the program counter. i.e., $\mathtt{zkPC \leq 2^N - 1}$ where $\mathtt{2^N -1}$ is the degree of the state machine polynomials.  
 
 ## Publics placed at known steps
 
@@ -442,6 +444,6 @@ Regarding the $\texttt{publics}$, it is best to place these at specific and know
 
 Notice that, in the above example, the final loop added to Assembly program repeats the values of the registries $\mathtt{A}$ and $\mathtt{B}$ until they are reset to Step $\mathtt{0}$.
 
-So if, for example, the execution result or state machine output is the state of registry $\mathtt{A}$ at the end of all the instructions, we will find this value at $\mathtt{A(N-1)}$.
+So if, for example, the execution result or state machine output is the state of registry $\mathtt{A}$ at the end of all the instructions, we find this value at $\mathtt{A(N-1)}$.
 
 This is important for verification purposes, because then, we need only add the proper boundary constraint in the PIL, referencing a specific step in the execution trace.

@@ -2,15 +2,15 @@ This document describes how Polynomial Identity Language implements Inclusion Ar
 
 For most of the programs used in the zkEVM's Prover, the values recorded in the columns of execution traces are field elements.
 
-In some cases, there may be a need to restrict the sizes of these values to only a certain number of bits. It is therefore necessary to devise a good control strategy for handling both **underflows** and **overflows**.
+In some cases, there may be a need to restrict the sizes of these values to only a certain number of bits. It is therefore necessary to devise a good control strategy for handling both _underflows_ and _overflows_.
 
 ## Verify addition of 2-byte numbers
 
-The aim in this section is to design a program (and its corresponding PIL code) to verify addition of two integers each of a size fitting in exactly 2 bytes. Any input to the addition program will be considered invalid if it is not an integer in the range [0, 65535].
+The aim in this section is to design a program (and its corresponding PIL code) to verify addition of two integers each of a size fitting in exactly 2 bytes. Any input to the addition program is considered invalid if it is not an integer in the range [0, 65535].
 
 ## Naive execution trace
 
-Of course, there are many ways in which such a program can be arithmetized. We are going to use a method based on **inclusion arguments**. The overall idea is to reduce $2$-byte additions to $1$-byte additions.
+Of course, there are many ways in which such a program can be arithmetized. We are going to use a method based on _inclusion arguments_. The overall idea is to reduce $2$-byte additions to $1$-byte additions.
 
 Specifically, the program consists of two input polynomials $\texttt{a}$ and $\texttt{b}$ where each introduces a single byte (equivalently, an integer in the range [0, 255]) in each row, starting with the less significant byte, for each operand of the sum.
 
@@ -30,7 +30,7 @@ $$
 
 The output of the addition between $1$-byte words can't be stored in a single column that only accepts words of $1$-byte, since an overflow may occur.
 
-The result of the addition will be split into two columns; $\texttt{carry}$ and $\texttt{add}$. Each column accepts only $1$-byte words, thereby storing the complete result so that a correct addition between bytes can be defined as:
+The result of the addition is split into two columns; $\texttt{carry}$ and $\texttt{add}$. Each column accepts only $1$-byte words, thereby storing the complete result so that a correct addition between bytes can be defined as:
 
 $$
 \texttt{a}\ +\ \texttt{b} \ = \texttt{carry}\cdot 2^8\ + \texttt{add} \qquad\quad \tag{Eqn. 9}
@@ -154,14 +154,14 @@ An inclusion argument is used for this purpose.
 Given two vectors, $\texttt{a} = (a_1, . . . , a_n) \in \mathbb{F}^n_p$ and $\texttt{b} = (b_1,...,b_m) \in \mathbb{F}^m_p$, it is said that,
 
 $$
-\texttt{a}\ \text{ is } \textbf{contained in }\ \texttt{b}\ \text{ if for all }\ i ∈ [n],\ \text{ there exists a }\ j ∈ [m]\ \text{ such that }\ a_i = b_j.
+\texttt{a}\ \text{ is } \texttt{ contained in }\ \texttt{b}\ \text{ if for all }\ i ∈ [n],\ \text{ there exists a }\ j ∈ [m]\ \text{ such that }\ a_i = b_j.
 $$
 
 In other words, if one thinks of $\texttt{a}$ and $\texttt{b}$ as multisets and reduce them to sets (by removing the multiplicity), then $\texttt{a}$ is contained in $\texttt{b}$ if $\texttt{a}$ is a subset of $\texttt{b}$. See [this document](../../concepts/generic-state-machine/intro-generic-sm.md) for more details on multisets and Plookup.
 
-A protocol $(\mathcal{P},\mathcal{V})$ is an **inclusion argument** if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that one vector is contained in another vector.
+A protocol $(\mathcal{P},\mathcal{V})$ is an _inclusion argument_ if the protocol can be used by $\mathcal{P}$ to prove to $\mathcal{V}$ that one vector is contained in another vector.
 
-In the PIL context, the implemented inclusion argument is the same as the $\text{Plookup}$ method provided in [[GW20](https://eprint.iacr.org/2020/315.pdf)], also discussed [here](../../concepts/generic-state-machine/intro-generic-sm.md). Other "alternative" method exists such as the $\text{PlonkUp}$ described in [[PFM+22](https://eprint.iacr.org/2022/086.pdf)].
+In the PIL context, the implemented inclusion argument is the same as the $\text{Plookup}$ method provided in [[GW20](https://eprint.iacr.org/2020/315.pdf)], also discussed [here](../../concepts/generic-state-machine/intro-generic-sm.md). Other "alternative" method exists such as [PlonkUp](https://eprint.iacr.org/2022/086.pdf).
 
 An inclusion argument is invoked in PIL with the "$\texttt{in}$" keyword.
 

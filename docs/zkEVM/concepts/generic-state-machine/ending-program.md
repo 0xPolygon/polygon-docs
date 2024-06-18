@@ -66,7 +66,13 @@ Note that, since there are no restrictions placed on the next values of $\mathtt
 
 ## Programs with conditional jumps
 
-We now add to the zkASM program, the instruction "$\text{jump to a particular address if ... }$", denoted by $\mathtt{JMPZ(addr)}$. Which means the executor must jump to the specified position in the program *on condition* that the preceding operation, denoted by $\texttt{op}$, is zero.
+We now add to the zkASM program, the instruction 
+
+$$
+\texttt{jump } \texttt{to } \texttt{a } \texttt{particular } \texttt{address } \texttt{if } ...
+$$
+
+denoted by $\mathtt{JMPZ(addr)}$. This means the executor must jump to the specified position in the program *on condition* that the preceding operation, denoted by $\texttt{op}$, is zero.
 
 Since this instruction needs to specify the destination of the jump, we need to add the line column so as to indicate which row is each instruction placed in the program. See the table below.
 
@@ -142,27 +148,27 @@ The dynamism brought about by the inclusion of jumps in our zkASM programs means
 
 Since the instructions require the executor to perform varied operations, and due to the presence of jumps, these operations are not sequentially executed, we then need to do a few more checks;
 
-   1. **Check program operations**
+   1. Check program operations.
 
       Every operation being executed needs to be checked if it is the correct one. That is, if the instruction is an $\texttt{ADD}$, then we must check that indeed an $\texttt{ADD}$ was performed and not a different operation.
 
-   2. **Check instructions’ sequence**
+   2. Check instructions’ sequence.
 
       The sequence in which the operations are executed must tally with the instructions in the zkASM program, and not necessarily their usual chronological sequence of the lines of code. e.g., The lines of instructions executed in Example B above, are lines $\texttt{0, 1, 2, 3, 5}$ , where $\texttt{line}$ $\texttt{4}$ was skipped.
 
       Note that more complicated programs can be built where, for instance, the SM execution jumps to a previous line of code, and thus repeating execution of some instructions.
 
-   3. **Check correct program ending**
+   3. Check correct program ending.
 
       How the program ends also needs to be managed. Due to the presence of jumps, the length of the execution trace is no longer constant for the same program if the free inputs are varied.
 
-   4. **Check positioning of Publics**
+   4. Check positioning of Publics.
 
       We must ensure that all $\texttt{publics}$ (the inputs and the outputs) are in the expected positions. So, $\texttt{publics}$ should be placed at known steps. This ensures that the SM's PIL does not have to change with every execution.
 
       For this reason, $\texttt{publics}$ are going to be placed in either the first positions of the polynomial or the last positions of the polynomial (these are specified positions in the arrays representing the columns of the trace).
 
-   5. **Check correct Program (ROM) Execution**
+   5. Check correct Program (ROM) Execution.
 
       Although the polynomial identities are there to monitor correct state transitions (checking that each instruction does what it is supposed to do), and also that the correct sequence of instructions is followed, one still needs to make sure the instruction being executed belongs to the program in the first place. So, if for instance, the third instruction is being executed, is it really the third instruction of the right program or not.
 
