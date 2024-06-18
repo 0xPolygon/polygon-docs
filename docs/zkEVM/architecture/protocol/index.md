@@ -14,7 +14,7 @@ It takes three main components of the Polygon zkEVM protocol to enable transacti
 
 ### Trusted sequencer
 
-The trusted sequencer receives L2 transactions from users, orders them, generates blocks of trasactions, fills batches, and submits them to the consensus contract's storage slots in the form of sequences.
+The trusted sequencer receives L2 transactions from users, orders them, generates blocks of transactions, fills batches, and submits them to the consensus contract's storage slots in the form of sequences.
 
 The trusted sequencer processes batches and distributes them to L2 network nodes to achieve immediate finality and reduce costs associated with high network usage, all before submitting them to L1.
 
