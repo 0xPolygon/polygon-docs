@@ -1,6 +1,7 @@
 # Transaction Lifecycle
 
-Chains built using the CDK go through a series of steps to eventually reach [finality](./transaction-finality.md) on Ethereum. Transactions submitted by users to an L2 built with the CDK go through the following lifecycle:
+Transactions on chains built using the CDK go through a series of steps to eventually reach [finality](./transaction-finality.md) on Ethereum.
+Specifically, they go through the following steps:
 
 1. **Submitted**: The transaction is submitted to the L2.
 2. **Executed**: The transaction is executed on the L2 by the sequencer.
@@ -10,7 +11,7 @@ Chains built using the CDK go through a series of steps to eventually reach [fin
 
 ## Submitted
 
-Just like Ethereum, users submit transactions to a &ldquo;pool&rdquo; of pending transactions on the L2. The transaction is submitted using the same interface as Ethereum, via [JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) which is implemented by tools such as MetaMask and developer libraries.
+Just like Ethereum, users submit transactions to a &ldquo;pool&rdquo; of pending transactions on the L2. The transaction is submitted using the same interface as Ethereum, via [JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) which is implemented by wallets such as MetaMask and developer libraries such as Ethers.js.
 
 ![User submitting transactions to L2](../../img/cdk/user-to-pending-pool.png)
 

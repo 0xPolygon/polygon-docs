@@ -1,6 +1,6 @@
 # Transaction Finality
 
-Through the [transaction lifecycle](./transaction-lifecycle.md), transactions progress through three states of finality:
+Throughout the [transaction lifecycle](./transaction-lifecycle.md), transactions progress through three states of finality:
 
 1. **Trusted**: The transaction has been [submitted](./transaction-lifecycle.md#submitted) and [executed](./transaction-lifecycle.md#executed) on the L2. The user receives the result of the transaction and can continue to interact with the L2 chain.
 

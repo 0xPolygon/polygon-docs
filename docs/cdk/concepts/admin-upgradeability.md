@@ -1,6 +1,6 @@
 # Admin Upgradeability
 
-As L2s work through the [stages of training wheels](https://medium.com/l2beat/introducing-stages-a-framework-to-evaluate-rollups-maturity-d290bb22befe) to become fully decentralized, chains built with the CDK that opt in to the [AggLayer](https://docs.polygon.technology/cdk/glossary/#agglayer-v1-al1) implement shared security mechanisms with other AggLayer chains including the [Polygon zkEVM](https://docs.polygon.technology/zkEVM/architecture/protocol/upgradability/) to ensure the safety of users.
+As L2s work through the [stages of training wheels](https://medium.com/l2beat/introducing-stages-a-framework-to-evaluate-rollups-maturity-d290bb22befe) to become fully decentralized, chains that opt in to the [AggLayer](https://docs.polygon.technology/cdk/glossary/#agglayer-v1-al1) implement shared security mechanisms with other AggLayer chains including the [Polygon zkEVM](https://docs.polygon.technology/zkEVM/architecture/protocol/upgradability/) to ensure the safety of users.
 
 Chains opted into the AggLayer share the following upgradeability controls:
 

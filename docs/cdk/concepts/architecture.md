@@ -2,6 +2,8 @@
 
 While each chain built with the CDK is unique, they all share a common high-level architecture. Before diving into the specifics of how [transactions](./transaction-lifecycle.md) are processed, it&rsquo;s helpful to first understand the role of each component in the system.
 
+Below is an overview of the high-level architecture of a chain built with the CDK, showing how transactions sent by users are processed and finalized on the L1:
+
 ![CDK Architecture](../../img/cdk/architecture-overview.png)
 
 ## Users
@@ -21,7 +23,7 @@ The sequencer is responsible for two vital tasks in the system:
 
 The sequencer reads transactions from the pending transaction pool and executes them on the L2, effectively updating the state of the L2 and providing this information back to the user. Once this process is complete _(typically in a matter of seconds)_, users are free to continue interacting with the L2 as if the transaction was finalized.
 
-In the background, the sequencer also periodically creates batches of transactions together and sends multiple batches of transactions to the L1 smart contract in a single transaction.
+In the background, the sequencer periodically creates batches of transactions and sends multiple batches of transactions to the L1 smart contract in a single transaction.
 
 ## L1 Smart Contracts
 
@@ -29,13 +31,13 @@ Deployed on the L1 (Ethereum), multiple smart contracts work together to finaliz
 
 1. Receiving and storing batches of transactions from the L2 (depending on the design of the L2, it may not use Ethereum for [data availability](https://docs.polygon.technology/cdk/glossary/#data-availability)).
 
-2. Receiving and verifying ZK-proofs from the aggregator.
+2. Receiving and verifying ZK-proofs from the aggregator to prove the validity of the transactions.
 
 ## Aggregator & Prover
 
 The aggregator is responsible for periodically reading batches of transactions from the L2 that have not been verified yet, and generating ZK-proofs for them to prove their validity.
 
-To do this, the aggregator sends the batches of transactions to a **prover**. The prover generates ZK proofs and sends them back to the aggregator, which then posts the proofs back to the L1 smart contract.
+To do this, the aggregator sends the batches of transactions to a **prover**. The prover generates ZK proofs and sends them back to the aggregator, which then posts the proof back to the L1 smart contract.
 
 ## Further Reading
 

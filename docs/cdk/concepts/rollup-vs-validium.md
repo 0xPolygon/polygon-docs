@@ -14,13 +14,15 @@ The CDK provides full flexibility to developers to choose what to do with transa
 
 ## Validiums
 
-Validiums **do not** store transaction data on Ethereum. Instead, they post ZK proofs called validity proofs to Ethereum that verify the state of the L2 chain.
+Validiums **do not** store transaction data on Ethereum. Instead, they only post ZK proofs called validity proofs to Ethereum that verify the state of the L2 chain.
 
-As the L2 does not pay the high gas fees associated with storing data on Ethereum, this approach is more cost-effective than rollups, meaning gas fees are also lower for users. However, validiums are typically considered less secure than rollups, as they rely on alternative data availability solutions such as a [Data Availability Committee (DAC)](https://docs.polygon.technology/cdk/glossary/#data-availability-committee-dac).
+As the L2 does not pay the high gas fees associated with storing data on Ethereum, this approach is more cost-effective than rollups, meaning gas fees are also lower for users. 
+
+However, validiums are typically considered less secure than rollups, as they store transaction data off of Ethereum using solutions such as a [Data Availability Committee (DAC)](https://docs.polygon.technology/cdk/glossary/#data-availability-committee-dac) or [alternative data availability solutions](#alternative-da-solutions).
 
 ### Alternative DA Solutions
 
-The CDK also supports the integration of alternative DA solutions, with support for networks such as [Avail DA](https://blog.availproject.org/avail-ecosystem-series-polygon-zkevm-validium/), [Celestia](https://polygon.technology/blog/celestias-high-throughput-out-of-the-box-data-availability-layer-to-integrate-with-polygon-cdk), [Near DA](https://pages.near.org/blog/near-da-integrates-with-polygon-cdk-for-developers-building-ethereum-zk-rollups/) and more.
+The CDK supports the integration of alternative DA solutions, including solutions such as [Avail DA](https://blog.availproject.org/avail-ecosystem-series-polygon-zkevm-validium/), [Celestia](https://polygon.technology/blog/celestias-high-throughput-out-of-the-box-data-availability-layer-to-integrate-with-polygon-cdk), [Near DA](https://pages.near.org/blog/near-da-integrates-with-polygon-cdk-for-developers-building-ethereum-zk-rollups/) and more.
 
 ## What's Best for You?
 
@@ -31,6 +33,10 @@ The method you use to store transaction data should be determined by your specif
 - **Validiums** are more suitable for chains that process a high volume of transactions where low transaction fees are the top priority, such as gaming or social applications; as they are considered more scalable and offer low fees.
 
 ![zkEVM Rollup vs Validium](../../img/cdk/zkevm-rollup-validium.png)
+
+## Default Configuration
+
+By default, chains built with the CDK are set up as a validium. For most use cases, this is the more suitable option as it offers lower gas fees and higher throughput, while still maintaining strong security guarantees provided by the use of validity proofs.
 
 ## Technical Comparison
 
@@ -51,9 +57,6 @@ Below is a breakdown of the technical differences between a zkEVM rollup and val
 
 <sub><sup>\*</sup>JSON RPC, Pool DB, Sequencer, Etherman, Synchronizer, State DB, Aggregator, Prover</sub>
 
-## Default Configuration
-
-By default, chains built with the CDK are set up as a validium. For most use cases, this is the more suitable option as it offers lower gas fees and higher throughput, while still maintaining strong security guarantees provided by the use of validity proofs.
 
 ## Further Reading
 

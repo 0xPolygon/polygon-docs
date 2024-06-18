@@ -1,12 +1,12 @@
 # Batches, Blocks, and Transactions
 
-To understand how transactions are handled on L2s built with the CDK, there are four key concepts to understand:
+To understand how transactions are handled on L2s built with the CDK, there are three key concepts to understand:
 
 - **Transaction**: Signed instruction to perform an action on the blockchain.
 - **Block**: A group of transactions and a hash of the previous block in the chain.
 - **Batch**: A group of many transactions from multiple blocks.
 
-To best understand how these concepts relate to each other, on this page, we will follow a real transaction from the Polygon zkEVM to see how it first gets included in a block on the L2, then in a batch, and finally, a sequence that is sent to Ethereum.
+To best understand how these concepts relate to each other, on this page, we will follow a real transaction from the Polygon zkEVM to track how it first gets included in a block on the L2, then in a batch, and finally, a sequence that is sent to Ethereum.
 
 ![Batches, blocks, transactions](../../img/cdk/sequence-batch-block-transaction.png)
 
@@ -14,13 +14,15 @@ To best understand how these concepts relate to each other, on this page, we wil
 
 A transaction is a cryptographically signed instruction from an account to update the state of the blockchain. Users can send transactions to L2 chains built with the CDK using the same tools and libraries they use to interact with Ethereum such as MetaMask.
 
-Transactions are included in both blocks and batches. An example Polygon zkEVM transaction [`0xdd`](https://zkevm.polygonscan.com/tx/0xdd3f79c24886310ddf868ad1d36aadc6a3b6495048f68aad765c658c42426ef8) performs a `Simple Swap` function call, and part of block [`12952601`](https://zkevm.polygonscan.com/block/12952601) on the L2.
+Transactions are included in both blocks and batches. An example Polygon zkEVM transaction, [`0xdd`](https://zkevm.polygonscan.com/tx/0xdd3f79c24886310ddf868ad1d36aadc6a3b6495048f68aad765c658c42426ef8), performs a `Simple Swap` function call, and is included in block number [`12952601`](https://zkevm.polygonscan.com/block/12952601) on the L2.
 
 ![Transaction with Block Number](../../img/cdk/transaction-block.png)
 
 ## Block
 
-Blocks contain multiple transactions and the hash of the previous block in the chain to link blocks together. Following our example transaction from above, the `0xdd` transaction is included in block [`12952601`](https://zkevm.polygonscan.com/block/12952601), which contains [2 total transactions](https://zkevm.polygonscan.com/txs?block=12952601).
+Blocks contain multiple transactions as well as the hash of the previous block in the chain to link blocks together. Following our example transaction from above, the `0xdd` transaction is included in block [`12952601`](https://zkevm.polygonscan.com/block/12952601), which contains [2 total transactions](https://zkevm.polygonscan.com/txs?block=12952601).
+
+We can see this `0xdd` transaction is included in both a block and a batch, specifically, it is included in the block `12952601` and the batch `2041736`:
 
 ![Block and Batch](../../img/cdk/block-batch.png)
 
@@ -28,7 +30,9 @@ Blocks contain multiple transactions and the hash of the previous block in the c
 
 Batches contain multiple transactions from multiple blocks. The two total transactions from our example block `12952601` are included in batch [`2041736`](https://zkevm.polygonscan.com/batch/2041736), which contains [10 total transactions](https://zkevm.polygonscan.com/txs?batch=2041736).
 
-As there is also a `Sequence Tx Hash` field associated with this batch, we can infer that this batch is part of a sequence of batches that have already been sent to Ethereum.
+This means the batch `2041736` includes the two transactions from block `12952601` as well as eight transactions from other blocks.
+
+As there is a `Sequence Tx Hash` field associated with this batch, this means that this batch has been sent to Ethereum along with other batches in a single transaction.
 
 ![Batch of transactions](../../img/cdk/batch-overview.png)
 
