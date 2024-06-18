@@ -17,8 +17,8 @@ Polygon gas station has been deployed both on the Polygon mainnet & Amoy testnet
 
 You can send `GET` requests using the following URLs to fetch gas price recommendations from the gas oracle:
 
-- Amoy testnet: https://gasstation-testnet.polygon.technology/amoy
-- zkEVM Cardona: https://gasstation-testnet.polygon.technology/zkevm/cardona
+- Amoy testnet: https://gasstation.polygon.technology/amoy
+- zkEVM Cardona: https://gasstation.polygon.technology/zkevm/cardona
 
 Use the Amoy testnet below to get gas price recommendations:
 
@@ -31,7 +31,7 @@ curl https://gasstation-testnet.polygon.technology/amoy
 #### JavaScript
 
 ```javascript
-fetch('https://gasstation-testnet.polygon.technology/amoy')
+fetch('https://gasstation.polygon.technology/amoy')
   .then(response => response.json())
   .then(json => console.log(json))
 ```
@@ -40,7 +40,7 @@ fetch('https://gasstation-testnet.polygon.technology/amoy')
 
 ```python
 import requests
-requests.get('https://gasstation-testnet.polygon.technology/amoy').json()
+requests.get('https://gasstation.polygon.technology/amoy').json()
 ```
 
 ### Mainnet
