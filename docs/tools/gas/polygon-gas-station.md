@@ -25,7 +25,7 @@ Use the Amoy testnet below to get gas price recommendations:
 #### cURL
 
 ```bash
-curl https://gasstation-testnet.polygon.technology/amoy
+curl https://gasstation.polygon.technology/amoy
 ```
 
 #### JavaScript
