@@ -16,7 +16,7 @@ The CDK provides the components necessary to build a layer 2 blockchain that is 
 
 - Sovereignty: Maintain full control over your chain&rsquo;s revenue, governance, security, economic policies, and more.
 
-## Dive Deeper into the CDK
+## Dive deeper into the CDK
 
 Whether you&rsquo;re a developer looking to build a new chain or a researcher interested in looking under the hood, the CDK documentation provides a comprehensive guide to the CDK&rsquo;s architecture, components, and how to get started building with the CDK:
 
