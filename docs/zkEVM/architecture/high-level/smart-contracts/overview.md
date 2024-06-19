@@ -73,9 +73,7 @@ The L2 exit root management contract, [PolygonZkEVMGlobalExitRootL2.sol](https:/
 
 ## Validium stacks
 
-CDK validium stacks use the [cdk-validium-contracts](https://github.com/0xPolygon/cdk-validium-contracts/tree/main) which has slightly adjusted behavior to take account of validium components and CDK custom requirements. 
-
-The CDK repo is a fork of the zkEVM main contracts repo and all contracts, therefore, extend from common interfaces.
+CDK validium stacks have slightly adjusted behavior to take account of validium components and CDK custom requirements. 
 
 !!! important
     - A CDK validium stack starts life as a rollup stack. 

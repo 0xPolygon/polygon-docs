@@ -9,6 +9,8 @@ Transactions flowing through the system reach the smart contract environment aft
 
 This section focuses on the verification workflow. 
 
+![ulxly-consensus-rollupmanager-aggregator](../../../../img/zkEVM/ulxly-consensus-rollupmanager-aggregator.png)
+
 The sequence diagram below shows the verification workflow for rollup stacks and/or the AggLayer calling the `verifyBatchesTrustedAggregator(...)` function on the rollup manager.
 
 ![Polygon Solidity consensus verification flow](../../../../img/cdk/high-level-architecture/verification-flow.png)

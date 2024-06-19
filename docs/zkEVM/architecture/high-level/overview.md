@@ -18,8 +18,8 @@ The diagram below is a full and detailed topological overview of the entire Poly
     - JSON RPC client: Exposes the read/write interfaces for interacting with a node/chain.
     - Pool database: Records transaction requests coming in from the JSON RPC client and passes them to the sequencer.
     - State database: Responds to read requests from the JSON RPC client.
-    - Sequencer: Does the complex job of fetching transactions and carefully sequencing them before sending them to the aggregator for batching. See the discussion on [sequencers](../../architecture/index.md#sequencer) for more information.
-    - Aggregator: Aggregates transaction batches to send to the prover. See the discussion on [aggregators](../../architecture/index.md#aggregator) for more information.
+    - Sequencer: Does the complex job of fetching transactions and carefully sequencing them before sending them to the aggregator for batching. 
+    - Aggregator: Aggregates transaction batches to send to the prover. 
     - Synchronizer: Ensures a synchronized state between the node's systems and the L1 outside-world via the Etherman component and the state database. 
     - Etherman: Helps the synchronizer maintain a synchronized state with L1 by communicating with the L1 Ethereum chain via smart contract functions.
 - Unified bridge service: Provides an API to perform bridge claims, i.e. asset and message transfers between L1/L2 and L2/L2.

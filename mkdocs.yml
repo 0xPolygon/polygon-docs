@@ -89,13 +89,15 @@ nav:
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
           - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
         - Historical data: zkEVM/get-started/historical-data.md
-      - Architecture high-level:
+      - Architecture:
         - Overview: zkEVM/architecture/high-level/overview.md
         - Smart contracts: 
           - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
           - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
+          - Rollup manager contract: zkEVM/architecture/high-level/smart-contracts/rollup-manager.md
           - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
           - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
+          - Cross-chain token exchange: zkEVM/architecture/high-level/smart-contracts/crosschain-token-exchange.md
           - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
           - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
           - API:
@@ -156,8 +158,6 @@ nav:
             #- Synchronizer: zkEVM/architecture/high-level/hermez-node/synchronizer.md
           #- DAC: zkEVM/architecture/high-level/hermez-node/dac.md
         #- Bridge service: zkEVM/architecture/high-level/bridge-service.md
-      - Architecture low-level:
-        - Architecture: zkEVM/architecture/index.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - zkNode: zkEVM/architecture/zknode/index.md
@@ -186,13 +186,6 @@ nav:
             - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
             - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
             - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
-          - Unified bridge:
-            - History of the unified bridge: zkEVM/architecture/protocol/unified-LxLy/lxly-bridge.md
-            - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
-            - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
-            - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
-            - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
-            - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - zkProver design:

@@ -9,6 +9,8 @@ Transactions flowing through the system reach the smart contract environment aft
 
 This section focuses on the sequencing workflow. 
 
+![ulxly-sequencer-consensus-rollupmanager](../../../../img/zkEVM/ulxly-sequencer-consensus-rollupmanager.png)
+
 The diagram below shows the sequencing workflow for rollup (non-validium) stacks which calls `sequenceBatches(...)` and `onSequenceBatches(...)`. 
 
 ![Polygon Solidity smart contract architecture](../../../../img/cdk/high-level-architecture/sequencing-flow.png)
