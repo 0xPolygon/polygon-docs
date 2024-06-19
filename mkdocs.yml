@@ -53,19 +53,30 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
-      - Version compatibility matrix: cdk/version-matrix.md
+      - Get started: 
+        - Get started: cdk/getting-started/index.md
+      - Concepts:
+        - Layer 2s: cdk/concepts/layer2s.md
+        - L2 Architecture Overview: cdk/concepts/architecture.md
+        - L2 Transaction Lifecycle: cdk/concepts/transaction-lifecycle.md
+        - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
+        - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
+        - Batches, Blocks, Transactions: cdk/concepts/blocks.md
+        - Transaction Finality: cdk/concepts/transaction-finality.md
+        - Gas Fees: cdk/concepts/gas-fees.md
+        - Bridging & Interoperability: cdk/concepts/bridging.md
+        - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
       - Build: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
         - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
-      - Specification:
-        - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
         - Glossary: cdk/glossary/index.md
       - Additional resources:
         - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
+        - Version compatibility matrix: cdk/version-matrix.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
