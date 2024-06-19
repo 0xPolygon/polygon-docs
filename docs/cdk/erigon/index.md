@@ -40,6 +40,6 @@ The CDK implementation of Erigon, available at [0xPolygonHermez/cdk-erigon](http
 
 - Enhanced modular architecture: While Erigon is already modular, the CDK implementation extends this modularity, allowing developers to more easily customize and replace components, such as the consensus mechanism, transaction pool, and state management.
 
-- Integration with the Polygon ecosystem**: CDK Erigon is designed to seamlessly integrate with the broader Polygon ecosystem, facilitating interoperability with Polygon products and services, scaling solutions and tools.
+- Integration with the Polygon ecosystem: CDK Erigon is designed to seamlessly integrate with the broader Polygon ecosystem, facilitating interoperability with Polygon products and services, scaling solutions and tools.
 
 - Tailored RPC interface: The RPC interface in the CDK implementation is adapted to support the zkEVM protocol's functionalities and optimizations, enabling more efficient communication and interaction with the network.
