@@ -4,13 +4,17 @@ Erigon has a modular architecture, which makes it highly efficient and customiza
 
 ## Key features
 
-- Modular architecture: Erigon's modular design allows different components to be developed, optimized, and updated independently. This separation of concerns helps in improving the performance and reliability of each module.
+### Modular architecture
+Erigon's modular design allows different components to be developed, optimized, and updated independently. This separation of concerns helps in improving the performance and reliability of each module.
 
-- Performance optimization: Erigon employs advanced techniques for data handling, such as memory-mapped files and optimized data structures, to ensure high-speed processing of blockchain data.
+### Performance optimization
+Erigon employs advanced techniques for data handling, such as memory-mapped files and optimized data structures, to ensure high-speed processing of blockchain data.
 
-- Reduced disk usage: By implementing a more efficient database schema, Erigon significantly reduces disk usage compared to other Ethereum clients.
+### Reduced disk usage
+By implementing a more efficient database schema, Erigon significantly reduces disk usage compared to other Ethereum clients.
 
-- Fast synchronization: Erigon's fast sync method allows nodes to catch up with the blockchain more quickly by downloading only the most recent state of the blockchain, rather than the entire history.
+### Fast synchronization
+Erigon's fast sync method allows nodes to catch up with the blockchain more quickly by downloading only the most recent state of the blockchain, rather than the entire history.
 
 ## Erigon as a sequencer
 
@@ -26,11 +30,11 @@ The following sequence diagram shows how a transaction is processed by the Erigo
 
 ## CDK erigon 
 
-The CDK implementation of Erigon, available at [0xPolygonHermez/cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon), is a specialized adaptation that provides a framework for creating and managing blockchain networks with customized consensus algorithms, transaction handling, and state management tailored to specific use cases.
+The CDK implementation of Erigon, available at [0xPolygonHermez/cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon), is a specialized adaptation that provides a framework for creating and managing zkEVM networks with that run using the zkEVM protocol.
 
-### Differences from the standard Erion
+### Differences from the standard erigon
 
-- Custom consensus mechanisms: The CDK implementation allows for the integration of custom consensus protocols, enhancing the flexibility and adaptability of the blockchain.
+- zkEVM consensus mechanisms: The CDK implementation integrates with zkEVM consensus protocols.
 
 - Optimized for layer 2 solutions: This adaptation is optimized for layer 2 scaling solutions which focus on high throughput and reduced transaction costs.
 
@@ -38,4 +42,4 @@ The CDK implementation of Erigon, available at [0xPolygonHermez/cdk-erigon](http
 
 - Integration with the Polygon ecosystem**: CDK Erigon is designed to seamlessly integrate with the broader Polygon ecosystem, facilitating interoperability with Polygon products and services, scaling solutions and tools.
 
-5. Tailored RPC interface: The RPC interface in the CDK implementation is adapted to support additional functionalities and optimizations, enabling more efficient communication and interaction with the network.
+- Tailored RPC interface: The RPC interface in the CDK implementation is adapted to support the zkEVM protocol's functionalities and optimizations, enabling more efficient communication and interaction with the network.
