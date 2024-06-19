@@ -71,12 +71,13 @@ nav:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
         - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
+      - Specification:
+        - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
         - Glossary: cdk/glossary/index.md
       - Additional resources:
         - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
-        - Version compatibility matrix: cdk/version-matrix.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
