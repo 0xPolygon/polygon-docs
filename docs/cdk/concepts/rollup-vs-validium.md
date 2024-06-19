@@ -1,44 +1,44 @@
-# Rollups vs. Validiums
+# Rollups vs. validiums
 
-[Layer 2s](./layer2s.md) can differ in how they interact with Ethereum; more specifically, they often differ in what they do with the transaction data (i.e. the information about transactions that occurred on the L2). They can be broadly categorized into two types: **rollups** and **validiums**.
+[Layer 2s](./layer2s.md) can differ in how they interact with Ethereum. More specifically, they often differ in what they do with the transaction data (i.e. the information about transactions that occurred on the L2). L2s can be broadly categorized into two types: rollups and validiums.
 
 ## Rollups
 
-Rollups use **Ethereum** as a [data availability](https://docs.polygon.technology/cdk/glossary/#data-availability) (DA) layer, meaning they send and store transaction data directly on Ethereum, by providing it inside the parameters of a transaction submitted to a smart contract on the L1.
+Rollups use Ethereum as a [data availability](https://docs.polygon.technology/cdk/glossary/#data-availability) (DA) layer, meaning they send and store transaction data directly on Ethereum, by providing it within specific parameters of a transaction submitted to a smart contract on the L1.
 
-Using Ethereum to store transaction data is generally considered the most secure option for DA as it leverages Ethereum's security and decentralization. However, this approach is costly, as the L2 must pay Ethereum&rsquo;s high gas fees to store data on the L1, which typically results in higher gas fees for users.
+Using Ethereum to store transaction data is generally considered the most secure option for DA as it leverages Ethereum's security and decentralization. However, this approach is costly, as the L2 must pay Ethereum&rsquo;s high gas fees for storing data on the L1, which typically results in higher gas fees for users.
 
-Within the rollup category, there are further nuances to storing transaction data on Ethereum. Some rollups post serialized transaction data directly, whereas other rollups post state differences instead. Some rollups use [calldata](https://docs.soliditylang.org/en/v0.8.26/types.html#data-location) to store transaction data, while others use more recent Ethereum features such as Blobs, introduced in [EIP-4844](https://www.eip4844.com/).
+Within the rollup category, there are further nuances to storing transaction data on Ethereum. Some rollups post serialized transaction data directly, whereas others post state differences instead. Some rollups use [calldata](https://docs.soliditylang.org/en/v0.8.26/types.html#data-location) to store transaction data, while others use more recent Ethereum features such as Blobs, introduced in [EIP-4844](https://www.eip4844.com/).
 
 The CDK provides full flexibility to developers to choose what to do with transaction data, including the ability to build rollups that store data on Ethereum as a rollup like the Polygon zkEVM.
 
 ## Validiums
 
-Validiums **do not** store transaction data on Ethereum. Instead, they only post ZK proofs called validity proofs to Ethereum that verify the state of the L2 chain.
+Validiums do not store transaction data on Ethereum. Instead, they only post ZK-proofs called validity proofs to Ethereum that verify the state of the L2 chain.
 
-As the L2 does not pay the high gas fees associated with storing data on Ethereum, this approach is more cost-effective than rollups, meaning gas fees are also lower for users. 
+As an L2, a validium does not pay high gas fees associated with storing data on Ethereum. This approach is more cost-effective than rollups, meaning gas fees are much lower for users. 
 
 However, validiums are typically considered less secure than rollups, as they store transaction data off of Ethereum using solutions such as a [Data Availability Committee (DAC)](https://docs.polygon.technology/cdk/glossary/#data-availability-committee-dac) or [alternative data availability solutions](#alternative-da-solutions).
 
-### Alternative DA Solutions
+### Alternative DA solutions
 
-The CDK supports the integration of alternative DA solutions, including solutions such as [Avail DA](https://blog.availproject.org/avail-ecosystem-series-polygon-zkevm-validium/), [Celestia](https://polygon.technology/blog/celestias-high-throughput-out-of-the-box-data-availability-layer-to-integrate-with-polygon-cdk), [Near DA](https://pages.near.org/blog/near-da-integrates-with-polygon-cdk-for-developers-building-ethereum-zk-rollups/) and more.
+The CDK supports integration of alternative DA solutions, including solutions such as [Avail DA](https://blog.availproject.org/avail-ecosystem-series-polygon-zkevm-validium/), [Celestia](https://polygon.technology/blog/celestias-high-throughput-out-of-the-box-data-availability-layer-to-integrate-with-polygon-cdk), [Near DA](https://pages.near.org/blog/near-da-integrates-with-polygon-cdk-for-developers-building-ethereum-zk-rollups/) and more.
 
-## What's Best for You?
+## What's best for you?
 
 The method you use to store transaction data should be determined by your specific use case. As a general rule of thumb:
 
-- **Rollups** are more suitable for chains that process high-value transactions where security is the top priority, such as DeFi applications; as they are considered more secure with slightly higher fees and limited throughput.
+- Rollups are more suitable for chains that process high-value transactions where security is the top priority, such as DeFi applications, as they are considered more secure with slightly higher fees and limited throughput.
 
-- **Validiums** are more suitable for chains that process a high volume of transactions where low transaction fees are the top priority, such as gaming or social applications; as they are considered more scalable and offer low fees.
+- Validiums are more suitable for chains that process a high volume of transactions where low transaction fees are the top priority, such as gaming or social applications, as they are considered more scalable and offer low fees.
 
 ![zkEVM Rollup vs Validium](../../img/cdk/zkevm-rollup-validium.png)
 
-## Default Configuration
+## Default configuration
 
-By default, chains built with the CDK are set up as a validium. For most use cases, this is the more suitable option as it offers lower gas fees and higher throughput, while still maintaining strong security guarantees provided by the use of validity proofs.
+By default, chains built with the CDK are set up as a validium. For most use cases, the validium option is the more suitable as it offers lower gas fees and higher throughput, while maintaining strong security guarantees provided by the use of validity proofs.
 
-## Technical Comparison
+## Technical comparison
 
 Below is a breakdown of the technical differences between a zkEVM rollup and validium:
 
@@ -58,7 +58,7 @@ Below is a breakdown of the technical differences between a zkEVM rollup and val
 <sub><sup>\*</sup>JSON RPC, Pool DB, Sequencer, Etherman, Synchronizer, State DB, Aggregator, Prover</sub>
 
 
-## Further Reading
+## Further reading
 
 - [Ethereum documentation: rollups](https://ethereum.org/en/developers/docs/scaling/#rollups)
 - [Ethereum documentation: validiums](https://ethereum.org/en/developers/docs/scaling/validium/)

@@ -1,17 +1,17 @@
-# Transaction Lifecycle
+# Transaction lifecycle
 
-Transactions on chains built using the CDK go through a series of steps to eventually reach [finality](./transaction-finality.md) on Ethereum.
+Transactions on  CDK-built chains go through a series of steps to eventually reach [finality](./transaction-finality.md) on Ethereum.
 Specifically, they go through the following steps:
 
-1. **Submitted**: The transaction is submitted to the L2.
-2. **Executed**: The transaction is executed on the L2 by the sequencer.
-3. **Batched**: The transaction is included in a batch of transactions.
-4. **Sequenced**: The batch containing the transaction is sent to Ethereum.
-5. **Aggregated**: A ZK-proof is generated, posted, and verified on Ethereum to prove the transaction is valid.
+1. Submitted: The transaction is submitted to the L2.
+2. Executed: The transaction is executed on the L2 by the sequencer.
+3. Batched: The transaction is included in a batch of transactions.
+4. Sequenced: The batch containing the transaction is sent to Ethereum.
+5. Aggregated: A ZK-proof is generated, posted, and verified on Ethereum to prove the transaction is valid.
 
 ## Submitted
 
-Just like Ethereum, users submit transactions to a &ldquo;pool&rdquo; of pending transactions on the L2. The transaction is submitted using the same interface as Ethereum, via [JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) which is implemented by wallets such as MetaMask and developer libraries such as Ethers.js.
+Similar to Ethereum, users submit transactions to a &ldquo;pool&rdquo; of pending transactions on the L2. The transaction is submitted using the same interface as on Ethereum, via [JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) which is implemented by wallets such as MetaMask and developer libraries such as Ethers.js.
 
 ![User submitting transactions to L2](../../img/cdk/user-to-pending-pool.png)
 
@@ -45,6 +45,6 @@ The final step of the transaction lifecycle is to generate a ZK-proof that prove
 
 ![Aggregator posting ZK-proof](../../img/cdk/aggregate-batches.png)
 
-## Further Reading
+## Further reading
 
 - [zkEVM transaction lifecycle documentation](https://docs.polygon.technology/zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction/)

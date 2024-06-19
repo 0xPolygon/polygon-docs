@@ -1,29 +1,29 @@
-# Get Started
+# Get started
 
-This getting started guide will walk you through the process of setting up a Layer 2 blockchain using the Polygon CDK on your local machine, running the components in Docker containers.
+This _getting started_ guide walks you through the process of setting up a Layer 2 blockchain using the Polygon CDK on your local machine, running the components in Docker containers.
 
-## Setting Up Your Environment
+## Setting up your environment
 
 To run the Polygon CDK locally, the following prerequisites are required:
 
-**Hardware Requirements:**
+Hardware Requirements:
 
 - A Linux-based Operating System (or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about))
 - Minimum 8GB RAM and 2-core CPU
 - An AMD64 architecture system
 
-**Software Dependencies:**
+Software Dependencies:
 
 - [Docker Engine](https://docs.docker.com/engine/) (version 4.27 or higher)
 - [Kurtosis CLI](https://docs.kurtosis.com/install/)
 - [Foundry](https://book.getfoundry.sh/getting-started/installation)
 - Optional: [yq](https://github.com/mikefarah/yq), [jq](https://stedolan.github.io/jq/), and [polycli](https://github.com/maticnetwork/polygon-cli) help submit transactions and interact with the environment.
 
-## Exploring the CDK Kurtosis Package
+## Exploring the CDK kurtosis package
 
-The [Polygon CDK Kurtosis Package](https://github.com/0xPolygon/kurtosis-cdk/) allows you to easily customize and instantiate all of the components of a CDK chain. It uses the [Kurtosis](https://docs.kurtosis.com/) tool to orchestrate the setup of the chain components in Docker containers, with logic defined in [Starlark](https://github.com/bazelbuild/starlark) (a Python dialect) scripts to define the step-by-step process of setting up the chain.
+The [Polygon CDK kurtosis package](https://github.com/0xPolygon/kurtosis-cdk/) allows you to easily customize and instantiate all of the components of a CDK chain. It uses the [Kurtosis](https://docs.kurtosis.com/) tool to orchestrate the setup of the chain components in Docker containers, with logic defined in [Starlark](https://github.com/bazelbuild/starlark) (a Python dialect) scripts to define the step-by-step process of setting up the chain.
 
-### Cloning the Repository
+### Cloning the repository
 
 To get started, clone the repository and navigate to the `kurtosis-cdk` directory:
 
@@ -32,9 +32,9 @@ git clone https://github.com/0xPolygon/kurtosis-cdk.git
 cd kurtosis-cdk
 ```
 
-### Checking Your Environment
+### Checking your environment
 
-Ensure Docker is running on your machine, then run the following command to confirm all prerequisites are installed:
+Ensure Docker is running on your machine, then run the following command to confirm that all prerequisites are installed:
 
 ```bash
 sh scripts/tool_check.sh
@@ -56,7 +56,7 @@ You might as well need the following tools to interact with the environment...
 🎉 You are ready to go!
 ```
 
-### Customizing Your Chain
+### Customizing your chain
 
 To begin understanding the codebase, there are two key files to inspect:
 
@@ -90,7 +90,7 @@ The `params.yml` file defines the parameters of the chain and the deployment pro
 
 You can modify each of these parameters to customize the chain to your specific needs.
 
-## Running the Chain Locally
+## Running the chain locally
 
 First run the [kurtosis clean](https://docs.kurtosis.com/clean) to remove any existing Kurtosis environments:
 
@@ -133,13 +133,13 @@ Status:          RUNNING
 
 Run `kurtosis enclave inspect cdk-v1` to see the status of the enclave and the services running within it at any time.
 
-## Interacting with the Chain
+## Interacting with the chain
 
 Now that your chain is running, you can explore and interact with each component!
 
 Below are a few examples of how you can interact with the chain.
 
-### Sending Test Transactions
+### Sending test transactions
 
 Let&rsquo;s perform some basic read and write operations on the L2 using Foundry.
 
@@ -171,7 +171,7 @@ cast send --legacy --value 0.01ether 0x0000000000000000000000000000000000000000 
 
       The `0xE34...9970` and `0x12d...c625` public-private key pair used in the above commands is the default admin account configured in `params.yml`.
 
-### Load Testing the Chain
+### Load testing the chain
 
 Use the [polycli loadtest](https://github.com/maticnetwork/polygon-cli/blob/main/doc/polycli_loadtest.md) command to send multiple transactions at once to the chain to test its performance:
 
@@ -179,7 +179,7 @@ Use the [polycli loadtest](https://github.com/maticnetwork/polygon-cli/blob/main
 polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --verbosity 700 --requests 500 --rate-limit 5 --mode t --private-key "0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
 ```
 
-### Viewing Transaction Finality
+### Viewing transaction finality
 
 A common way to check the status of the system is to ensure that batches are being sent and verified on the L1 chain.
 
@@ -191,7 +191,7 @@ cast rpc zkevm_virtualBatchNumber   # Latest batch received on the L1
 cast rpc zkevm_verifiedBatchNumber  # Latest batch verified or "proven" on the L1
 ```
 
-### Opening the Bridge UI
+### Opening the bridge UI
 
 To open the bridge interface and bridge tokens across the L1 and L2, run the following command:
 
@@ -199,7 +199,7 @@ To open the bridge interface and bridge tokens across the L1 and L2, run the fol
 open $(kurtosis port print cdk-v1 zkevm-bridge-proxy-001 bridge-interface)
 ```
 
-### Viewing Chain Metrics
+### Viewing chain metrics
 
 To view information such as how many transactions are being processed, the amount of gas being used, the time since a batch was last verified, how many addresses have bridged, and much more, a Grafana dashboard is included in the deployed observability stack which can be opened by running the following command:
 
@@ -211,18 +211,18 @@ From the hamburger menu, navigate to `Dashboards` and select the `Panoptichain` 
 
 ![Panoptichain Dashboard](../../img/cdk/grafana.png)
 
-### Stopping the Chain
+### Stopping the chain
 
-If you want to **stop** the chain and remove all the containers, run the following command:
+If you want to stop the chain and remove all the containers, run the following command:
 
 ```bash
 kurtosis clean --all
 ```
 
-## Going to Production
+## Going to production
 
 While it is possible to run a CDK chain on your own, we strongly recommend getting in touch with the [Polygon Labs team directly](https://share-eu1.hsforms.com/1aI6l7_bFTn-vWl0NIFVzDQc8xid), or one of our [Implementation Providers](https://ecosystem.polygon.technology/spn/cdk/) for production deployments.
 
-## Dive Deeper into the CDK
+## Dive deeper into the CDK
 
 For more detailed information on the CDK&rsquo;s architecture, components, and how to customize your chain, refer to the [CDK architecture documentation](https://docs.polygon.technology/cdk/architecture/cdk-zkevm/).
