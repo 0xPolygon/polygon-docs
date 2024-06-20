@@ -71,9 +71,8 @@ comments: true
 1. Copy the `genesis.json` file into the appropriate location.
 
     ```sh
-    cp ~/zkevm-contracts/deployment/v2/genesis.json ~/zkevm/mainnet/config/environments/mainnet/public.genesis.config.json
+    npx ts-node deployment/v2/1_createGenesis.ts && cp ~/zkevm-contracts/deployment/v2/genesis.json ~/zkevm/mainnet/config/environments/mainnet/public.genesis.config.json
     ```
-
 2. Copy/paste the json below to the head of the `public.genesis.config.json` file inputting the data from `~/zkevm-contracts/deployments/v2/deploy_output.json`. 
 
     !!! important
