@@ -87,7 +87,6 @@ npm i
 
 2. Edit the following parameters to match the generated wallet parameters.
 
-    - `trustedSequencer`: trusted sequencer address in `wallets.txt`.
     - `trustedAggregator`: trusted aggregated address in `wallets.txt`.
     - `admin`: deployment address in `wallets.txt`.
     - `zkEVMOwner`: deployment address in `wallets.txt`.
@@ -108,6 +107,7 @@ npm i
 4. Edit the following parameters to match the rollup parameters
     - `trustedSequencer`:  trusted sequencer address in `wallets.txt`.
     - `adminZkEVM`: deployment address in `wallets.txt`.
+    - `deployerPvtKey`: private key in `wallets.txt`.
 ## Deploy & verify contracts
 
 `cd` back to `zkevm-contract` root directory and run the deployment scripts.
