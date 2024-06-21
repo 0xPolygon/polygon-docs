@@ -4,7 +4,7 @@
 
 CDK-built chains come with a built-in bridge service and customizable UI out of the box, with the option to have a standalone [LxLy bridge](#lxly-bridge) or alternatively opt-in to the AggLayer and use the [Unified Bridge](#unified-bridge) to enable cross-chain L2-to-L2 interoperability.
 
-## LxLy Bridge
+## LxLy bridge
 
 The LxLy bridge contracts carry out deposit and withdrawal of assets between L2 and L1.
 
@@ -16,7 +16,7 @@ This option is suited to chains that may want to customize how the bridge is man
 
 ![LxLy Bridge](../../img/cdk/lxly.png)
 
-## Unified Bridge
+## Unified bridge
 
 A single, shared instance of the LxLy bridge, called the [unified bridge](https://docs.polygon.technology/cdk/architecture/staking-the-bridge/) is available to use for all CDK chains that opt-in to the AggLayer. 
 
@@ -28,7 +28,7 @@ This option is suited to chains that want a standard bridging experience and do 
 
 ![Unified Bridge](../../img/cdk/unified-bridge.png)
 
-## Further Reading
+## Further reading
 
 - [Aggregated Blockchains: A New Thesis](https://polygon.technology/blog/aggregated-blockchains-a-new-thesis)
 - [Unified Bridge Overview](https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/lxly-bridge/)
