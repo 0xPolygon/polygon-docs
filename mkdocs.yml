@@ -211,6 +211,7 @@ nav:
             - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
             - Executor: zkEVM/architecture/proving-system/the-executor-comp.md
             - Proving system inputs: zkEVM/architecture/proving-system/proving-inputs.md
+            - Order and prove: zkEVM/architecture/proving-system/order-and-prove.md
             - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
             - Execution trace design: zkEVM/architecture/proving-system/execution-trace-design.md
             - Selector columns: zkEVM/architecture/proving-system/exec-selector-columns.md
