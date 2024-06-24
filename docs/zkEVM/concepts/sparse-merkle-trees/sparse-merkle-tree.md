@@ -18,12 +18,14 @@ Firstly, each leaf is nothing but the hash value $\mathbf{H}(\text{V}_{\mathbf{i
 Secondly, the branch nodes are computed as follows;
 
 $$
-\mathbf{B}_{\mathbf{ab}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{a}})\| \mathbf{H}(\text{V}_{\mathbf{b}})\big), \\
+\begin{aligned}
+&\mathbf{B}_{\mathbf{ab}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{a}})\| \mathbf{H}(\text{V}_{\mathbf{b}})\big),\
 \mathbf{B}_{\mathbf{cd}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{c}})\| \mathbf{H}(\text{V}_{\mathbf{d}})\big), \\  
-\mathbf{B}_{\mathbf{ef}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{e}})\| \mathbf{H}(\text{V}_{\mathbf{f}})\big),\text{ } \\  
+&\mathbf{B}_{\mathbf{ef}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{e}})\| \mathbf{H}(\text{V}_{\mathbf{f}})\big),\  
 \mathbf{B}_{\mathbf{gh}} = \mathbf{H} \big(\mathbf{H}(\text{V}_{\mathbf{g}})\| \mathbf{H}(\text{V}_{\mathbf{h}})\big), \\
-\mathbf{B}_{\mathbf{abcd}} = \mathbf{H} \big(\mathbf{B}_{\mathbf{ab}}\| \mathbf{B}_{\mathbf{cd}}\big), \text{}  \text{and} \\
-\mathbf{B}_{\mathbf{efgh}} = \mathbf{H} \big( \mathbf{B}_{\mathbf{ef}}\| \mathbf{B}_{\mathbf{gh}}\big). \quad \text{ } \text{ } \text{ }
+&\mathbf{B}_{\mathbf{abcd}} = \mathbf{H} \big(\mathbf{B}_{\mathbf{ab}}\| \mathbf{B}_{\mathbf{cd}}\big),\  \text{and}\
+\mathbf{B}_{\mathbf{efgh}} = \mathbf{H} \big( \mathbf{B}_{\mathbf{ef}}\| \mathbf{B}_{\mathbf{gh}}\big).
+\end{aligned}
 $$
 
 Thirdly, the root is computed as $\mathbf{root}_{\mathbf{a..h}} = \mathbf{H} \big(\mathbf{B}_{\mathbf{abcd}}\| \mathbf{B}_{\mathbf{efgh}} \big)$.

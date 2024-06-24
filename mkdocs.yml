@@ -275,7 +275,7 @@ nav:
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
-        - Sparse merkle trees:
+        - Sparse Merkle trees:
           - Merkle trees: zkEVM/concepts/sparse-merkle-trees/sparse-merkle-tree.md
           - Constructing simple SMTs: zkEVM/concepts/sparse-merkle-trees/simple-smt.md
           - SMT concepts: zkEVM/concepts/sparse-merkle-trees/detailed-smt.md
