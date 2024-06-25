@@ -4,7 +4,7 @@ In this document, we distinguish between the sequencing and proving processes, w
 
 The decoupling of sequencing from proving enhances the system's efficiency.
 
-Central to the zkEVM architecture are the verifier smart contract, prover, aggregator and sequencer.
+Central to the zkEVM architecture are the verifier smart contract, the prover, the aggregator, and sequencer.
 
 ## Typical state transition
 
@@ -26,7 +26,7 @@ The figure below depicts a state transition.
 
 The zkEVM's key performance indicators (KPIs) are _Delay_ and _Throughput_.
 
-_Delay_ refers to the delay that occurs from the moment a user sends an L2 transaction until the consequence of the transaction execution is part of the L2 state.
+_Delay_ refers to the time elapsed from when a user sends an L2 transaction until the transaction's execution results are reflected in the L2 state.
 
 This is a major KPI when it comes to positive user experience (UX).
 
@@ -52,9 +52,9 @@ There are three parameters affecting these KPIs: $\mathtt{close\_a\_batch\_time}
 
 Let's explore how this parameters impact the _Delay_ and _Throughput_ of the full system.
 
-### Example. (Processing pipeline)
+### Processing pipeline
 
-Consider a scenario of a simplified processing pipeline, like an assembly line in a factory, as depicted in the figure below.
+Consider an example of a simplified processing pipeline, similar to an assembly line in a factory, as illustrated in the figure below.
 
 Identify two key performance indicators (KPIs) of interest: lead time (or delay) and production rate (or throughput).
 
@@ -70,7 +70,7 @@ Identify two key performance indicators (KPIs) of interest: lead time (or delay)
 
 #### Two scaling methods
 
-The following question arises: How can we improve both these metrics: delay and throughput? 
+The following question arises: How can we improve both delay and throughput metrics?
 
 The objective is to increase the throughput and reduce the delay.
 
@@ -118,9 +118,9 @@ $$
 \texttt{throughput} = \dfrac{1}{\mathtt{prove\_a\_batch\_time}}\ [\text{batches per second}]
 $$
 
-When computing the throughput, we assume that the closing, proving, and verifying a batch can be done in parallel with respect to other batches.
+When computing throughput, we assume that closing, proving, and verifying a batch can be done in parallel with other batches.
 
-And thus, depends on the longest part of the process, which is to prove the batch.
+And thus, in practice, throughput is determined by the longest part of the process, which is to prove the batch.
 
 $$
 \begin{aligned}
@@ -129,7 +129,7 @@ $$
 \end{aligned}
 $$
 
-In order to have some numbers:
+To provide specific numbers:
 
 $$
 \begin{aligned}
@@ -139,7 +139,7 @@ $$
 \end{aligned}
 $$
 
-### Improving KPIs with Vertical Scaling
+### Improving KPIs with vertical scaling
 
 The aim is to increase throughput and reduce delay.
 
@@ -147,28 +147,28 @@ The one limiting factor in this case is the $\mathtt{prove\_a\_batch\_time}$.
 
 Vertical scaling means adding more resources to the existing machines.
 
-It can be done by running provers in more powerful machines, optimizing the proving system, or a combination of both.
+It can be achieved by running provers on more powerful machines, optimizing the proving system, or a combination of both.
 
 Although vertical scaling seems like a straightforward solution to speed up proof generation, it has limitations:
 
 - Cost-effectiveness: Upgrading to very powerful machines often results in diminishing returns. The cost increase might not be proportional to the performance gain, especially for high-end hardware.
-- Optimization challenges: Optimizing the proof system itself can be complex and time-consuming.
+- Optimization challenges: Optimizing the prover system itself can be complex and time-consuming.
 
-### Improving KPIs with Horizontal Scaling
+### Improving KPIs with horizontal scaling
 
 Another option is to scale the system horizontally. 
 
-Horizontal scaling involves adding more processing units (workers) to distribute the workload across multiple machines. 
+Horizontal scaling involves adding more processing units (workers) to distribute the workload across multiple machines and leverage additional hardware resources in parallel. 
 
 In the context of a batch processing system, this translates to spinning up multiple provers to work in parallel.
 
-#### Naïve horizontal scaling
+#### Naive horizontal scaling
 
 Consider the figure below, depicting a naive implementation of horizontal scaling, which involves:
 
-1. Parallelized proof generation, by spinning up multiple provers.
-2. Proofs reception, where each prover individually sends the proof it generated to the aggregator.
-3. Proofs Verification, which means the aggregator puts all these proofs into an L1 transaction, and sends it to the smart contract for verification of batches.
+1. Parallelized proof generation by spinning up multiple provers.
+2. Proof reception, where each prover individually sends the proof it generated to the aggregator.
+3. Proof Verification, which means the aggregator puts all these proofs into an L1 transaction, and sends it to the smart contract for verification of batches.
 
 ![Figure: Naive approach - Horizontal scaling](../../../img/zkEVM/od-naive-approach-horizontal.png)
 
@@ -178,7 +178,7 @@ Notice that, as depicted in the figure above, the proofs $\pi_a$, $\pi_b$ and $\
 
 This means the overall verification cost is proportional to the number of proofs sent to the aggregator.
 
-The disadvantage with the naïve approach is the associated costs, seen in terms of the space occupied by each proof, and cumulative verification expenses with every additional proof.
+The disadvantage with the naive approach is the associated costs, seen in terms of the space occupied by each proof, and cumulative verification expenses with every additional proof.
 
 #### Proof aggregation in horizontal scaling
 
@@ -187,11 +187,11 @@ Another option is to scale the system horizontally with proof aggregation, as sh
 Here’s how it works:
 
 1. Parallelized proof generation, by instantiating multiple provers.
-2. Proofs reception, where each prover individually sends the proof it generated to the aggregator.
+2. Proof reception, where each prover individually sends the proof it generated to the aggregator.
 3. Proof aggregation, where proofs are aggregated into a single proof.
 4. Proof verification here means encapsulating only one proof, the aggregated proof, in an L1 transaction. And hence transmitting it to the smart contract for batch verification.
 
-The bedrock of this approach lies in the zkEVM's custom cryptographic backend, which specifically supports proof aggregation.
+The foundation of this approach rests on zkEVM's custom cryptographic backend, designed specifically to support proof aggregation.
 
 It allows multiple proofs to be combined into a single verifiable proof.
 
@@ -217,7 +217,7 @@ Observe that, since proving and closing batches, and aggregating proofs can run 
 
 Hence the denominator, in the above formula, is the maximum among the values: $\mathtt{prove\_a\_batch\_time}$,  $N · \mathtt{close\_a\_batch\_time}$, $\mathtt{block\_time}$, and  $\mathtt{aggregation\_time}$.
 
-This means, in the case where the maximum time in the denominator is $\mathtt{prove\_a\_batch\_time}$, the systems throughput increases by a factor of $N$​.
+This means, in the case where the maximum time in the denominator is $\mathtt{prove\_a\_batch\_time}$, the system's throughput increases by a factor of $N$​.
 
 Delay in this scenario can be computed as follows:
 
@@ -229,28 +229,28 @@ A straightforward aggregation of batches substantially increases delay relative 
 
 As discussed earlier, delay is a critical factor to user experience.
 
-To retain the throughput gains while improving the delay, we can adopt a two-step approach for batch processing: first, _order_ (also known as _sequence_) and then _prove_. 
+To retain the throughput gains while reducing the delay, we can adopt a two-step approach for batch processing: first, _order_ (also known as _sequence_) and then _prove_. 
 
-This segmentation allows for optimization in each step, potentially enhancing the overall delay without compromising the achieved throughput improvements.
+This segmentation allows for optimization in each step, potentially reducing the overall delay while maintaining improvements in throughput.
 
 ### Enhancing delay by order then prove
 
-The idea behind decoupling batch ordering (sequencing) from batch proving is to:
+The rationale behind decoupling batch ordering (sequencing) from batch proving is twofold:
 
-- Provide a low delay response to users about their L2 transactions.
-- While being able to aggregate transactions to provide high system throughput.
+- Ensure swift responses to users regarding their L2 transactions with minimal delay.
+- Enable transaction aggregation for maximizing system throughput.
 
 Sequencing an L2 batch involves deciding which L2 transactions should be part of the next batch. That is, when to create or close the batch, and sent it to L1. 
 
-As the sequence of batches is written to L1, data availability and immutability provided on L1. 
+As the sequence of batches is written to L1, data availability and immutability are ensured on L1. 
 
 Sequenced batches may not be proved immediately, but they are guaranteed to be proved eventually.
 
 This creates a state within the L2 system that reflects the eventual outcome of executing those transactions, even though the proof hasn’t been completed yet. 
 
-Such a state is called a virtual state because it represents a future state to be consolidated once the proof is processed.
+Such a state is called a *virtual state* because it represents a future state to be consolidated once the proof is processed.
 
-More precisely, the virtual state is the state reached after executing and sequencing batches in L1, before they are proved.
+More precisely, the virtual state is the state reached after executing and sequencing batches in L1, before they are validated using proofs.
 
 ![Figure: Definition of the Virtual state](../../../img/zkEVM/od-defn-virtual-state.png)
 
@@ -260,7 +260,7 @@ Notable improvement lies in the ability to close batches more rapidly than the b
 
 Let’s adopt a revised definition for the delay: 
 
-- The duration from the moment a user submits an L2 transaction until that transaction reaches a virtual state.
+- The duration from the moment a user submits an L2 transaction until that transaction reaches the virtual state.
 
 From the user’s perspective, once the transaction is in the virtual state, it can be regarded as processed.
 
@@ -274,7 +274,7 @@ $$
 \mathtt{delay}^{(\mathtt{to\_virtual})} = N · \mathtt{close\_a\_batch\_time} + \mathtt{block\_time}
 $$
 
-Observe that we have experienced an improvement in the delay.
+Note that we have experienced a significant reduction in the delay.
 
 Below, we present several advantages of decoupling batch sequencing from batch proving:
 
