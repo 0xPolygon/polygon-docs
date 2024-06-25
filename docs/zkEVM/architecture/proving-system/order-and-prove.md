@@ -135,7 +135,7 @@ $$
 \begin{aligned}
 &\mathtt{block\_time} = 15\ \text{seconds}\ (\text{average})\\
 &\mathtt{prove\_a\_batch\_time} = 120\ \text{seconds}\ (\text{min})\\
-&\mathtt{close\_a\_batch\_time} = 10\ \text{seconds}\ (\text{max})\\
+&\mathtt{close\_a\_batch\_time} = 3\ \text{seconds}\ (\text{max})\\
 \end{aligned}
 $$
 
