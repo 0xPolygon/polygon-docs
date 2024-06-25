@@ -18,7 +18,7 @@ pragma solidity ^0.8.16;
  * @title OracleReader
  * @notice A simple contract to read from Chronicle oracles
  * @dev To see the full repository, visit https://github.com/chronicleprotocol/OracleReader-Example.
- * @dev Addresses in this contract are hardcoded for the Arbitrum Sepolia testnet.
+ * @dev Addresses in this contract are hardcoded for the zkEVM Testnet.
  * For other supported networks, check the https://chroniclelabs.org/dashboard/oracles.
  */
 contract OracleReader {
