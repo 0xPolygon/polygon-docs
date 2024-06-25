@@ -135,7 +135,7 @@ Both computations involve climbing the tree from the located leaf $\mathbf{{L}_{
 
     Suppose the number of levels to root is 3, and the least-significant bits used for navigation are $\text{kb}_\mathbf{2}$, $\text{kb}_\mathbf{1}$ and $\text{kb}_\mathbf{0}$.
 
-    In order to check key-correctness, verifier the remaining key $\text{RK}$ and,
+    In order to check key-correctness, verifier takes the remaining key $\text{RK}$ and,
 
     - Concatenates $\text{kb}_\mathbf{2}$ and gets $\text{ } \text{RK} \|  \text{kb}_\mathbf{2}$,
 
