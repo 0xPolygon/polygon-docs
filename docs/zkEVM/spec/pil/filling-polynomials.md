@@ -26,7 +26,8 @@ async function execute() {
 
 The _pilcom_ package also provides two functions; _newConstPolsArray_ and _newCommitPolsArray_. Both these functions use the _pil_ object in order to create two crucial objects:
 
-1. First is the constant polynomials object _constPols_, which is created by the _newConstPolsArray_ function, and
+1. First is the constant polynomials object _constPols_, which is created by the _newConstPolsArray_ function.
+
 2. Second is the committed polynomials object _cmPols_, created by _newCommitPolsArray_.
 
 Below is an outline of the _pilcom_ package.
