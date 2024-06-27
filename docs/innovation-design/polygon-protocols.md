@@ -39,8 +39,9 @@ Security: The two near-term priorities for Polygon zkEVM are:
 - Lengthening the 10-day timelock for network upgrades.
 
 EVM-equivalence: As EIPs change and shape Ethereum’s execution logic, Polygon zkEVM will evolve to maintain EVM-equivalence. The two most important forthcoming changes are:
-- EIP-4844: Expected in the Cancun hard fork, proto-Danksharding creates a low-cost alternative to CALLDATA, expected to greatly reduce transaction fees on rollups.
-- EIP-7212: A new precompiled contract will support signature verifications in the secp256r1 elliptic curve.
+
+- [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844): Expected in the Cancun hard fork, proto-Danksharding creates a low-cost alternative to CALLDATA, expected to greatly reduce transaction fees on rollups.
+- [EIP-7212](https://eips.ethereum.org/EIPS/eip-7212): A new precompiled contract will support signature verifications in the secp256r1 elliptic curve.
 
 Polygon zkEVM will continue to offer the strongest open source software security guarantees by making transaction data available (DA) on Ethereum. Eventually, Polygon zkEVM will plug into the Agglayer that will help connect the entire Polygon ecosystem.
 
