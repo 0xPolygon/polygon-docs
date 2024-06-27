@@ -15,9 +15,9 @@ The zkProver mainly interacts with two components, i.e. the Node and the databas
 
 As depicted in the flow diagram above, the whole interaction works out in 4 steps.
 
-1. The Node sends the content of Merkle trees to the database to be stored there.
+1. The node sends the content of Merkle trees to the database to be stored there.
 
-2. The Node then sends the input transactions to the zkProver.
+2. The node then sends the input transactions to the zkProver.
 
 3. The zkProver accesses the database and fetches the info needed to produce verifiable proofs of the transactions sent by the Node. This information consists of the Merkle roots, the keys and hashes of relevant siblings, and more.
 
