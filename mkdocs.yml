@@ -519,6 +519,7 @@ nav:
           - Bandchain: tools/oracles/bandchain.md
           - Band standard dataset: tools/oracles/bandstandarddataset.md
           - Chainlink: tools/oracles/chainlink.md
+          - Chronicle: tools/oracles/chronicle.md
           - DIA: tools/oracles/diadataoracles.md
           - Pyth: tools/oracles/pyth.md
           - Razor: tools/oracles/razor.md
