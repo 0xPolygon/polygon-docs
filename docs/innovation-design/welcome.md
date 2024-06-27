@@ -10,7 +10,7 @@ This section offers a glimpse into the future, presenting a vision that is commu
 
 Polygon technologies will help developers build in an elastically scalable and *unified* ecosystem of ZK-powered Layer 2s on Ethereum, where users can create, program and exchange value.
 
-Polygon envisions a unified multichain ecosystem. A web of interoperable ZK-powered Ethereum L2s, with near-instant and atomic L2 <-> L2 transactions, and designed to empower developers to build without limitations. Developers will choose to build dApps, design and launch dedicated application-specific L2 chains, or migrate existing EVM Layer 1 chains to become an L2.
+Polygon envisions a unified multichain ecosystem. A web of interoperable ZK-powered Ethereum L2s, with near-instant and atomic L2 <-> L2 transactions, designed to empower developers build without limitations. An ecosystem where developers can choose to build dApps, design and launch dedicated application-specific L2 chains, or migrate existing EVM Layer 1 chains to become L2s.
 
 The endgame is to allow developers to build in an environment that feels and functions more like the internet. This means a blockchain ecosystem that can scale without limit, seamlessly unified, and backed by the decentralization and security of Ethereum.
 
