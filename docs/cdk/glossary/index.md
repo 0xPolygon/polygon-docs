@@ -21,7 +21,7 @@ Polygon CDK validiums connect to a DAC to guarantee data availability. The DAC n
 The native bridge infrastructure of CDK chains that allows transfer of assets and messages between L2 and L1 (typically Ethereum).
 
 ### LxLy messenger
-A contract on the LxLy bridge utilizes its message passing capabilities to pass arbitrary messages between L1 and L2.  This is not a separate component, and is part of the LxLy bridge's architecture.
+A contract on the LxLy bridge utilizes its message passing capabilities to pass arbitrary messages between L1 and L2.  This is not a separate component, but part of the LxLy bridge's architecture.
 
 ### POL (Token)
 The POL token powers the Polygon ecosystem through a native re-staking protocol that allows token holders to validate multiple chains, and perform multiple roles on each of those chains (sequencing, ZK proof generation, participation in data availability committees, etc.) 
