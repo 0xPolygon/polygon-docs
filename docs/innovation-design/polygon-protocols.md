@@ -42,7 +42,7 @@ EVM-equivalence: As EIPs change and shape Ethereum’s execution logic, Polygon 
 - EIP-4844: Expected in the Cancun hard fork, proto-Danksharding creates a low-cost alternative to CALLDATA, expected to greatly reduce transaction fees on rollups.
 - EIP-7212: A new precompiled contract will support signature verifications in the secp256r1 elliptic curve.
 
-Polygon zkEVM will continue to offer the strongest open source software security guarantees by making transaction data available (DA) on Ethereum. Eventually, Polygon zkEVM will plug into the unified interop layer that will help connect the entire Polygon ecosystem.
+Polygon zkEVM will continue to offer the strongest open source software security guarantees by making transaction data available (DA) on Ethereum. Eventually, Polygon zkEVM will plug into the Agglayer that will help connect the entire Polygon ecosystem.
 
 ## Polygon CDK
 
@@ -52,7 +52,7 @@ Polygon CDK is a collection of open source software components for launching ZK-
 
 The next release of Polygon CDK, expected in Q1 2024, will support a wider set of features and configurations. These include:
 
-- The unified LxLy bridge: As the first phase of the interop layer, projects building with CDK will have the option to plug into the unified LxLy bridge that will, eventually, help connect the entire Polygon ecosystem.
+- The unified LxLy bridge: As the first phase of the Agglayer development, projects building with CDK will have the option to plug into the unified LxLy bridge that will, eventually, help connect the entire Polygon ecosystem.
 - Custom native (gas) tokens.
 - Custom allow-lists for smart contracts and transactions.
 - Support for modular, third-party data availability solutions.
@@ -63,6 +63,6 @@ Polygon Miden is a novel ZK rollup currently in development, designed as a zkVM.
 
 ### Where Polygon Miden is heading
 
-A testnet for Polygon Miden is expected to launch in Q1 2024, with mainnet following later in the year. 
+The new version (v2) of Polygon Miden Alpha testnet was [launched in Q2 2024](https://polygon.technology/blog/polygon-miden-alpha-testnet-v-2-live), and the mainnet is expected to go live later in the year.
 
-Once Polygon Miden is on mainnet, it will plug into the interop layer that will help connect the entire Polygon ecosystem.
+Once Polygon Miden is on mainnet, it will plug into the Agglayer that will help connect the entire Polygon ecosystem.
