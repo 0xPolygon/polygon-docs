@@ -14,7 +14,10 @@ Here is how the proposed development, with consensus of the Polygon community, w
 - Changes to network token.
 - Introduction of a Staking Layer, which will eventually serve all L2 chains in the Polygon network.
 
-[PIP-18](https://forum.polygon.technology/t/pip-18-polygon-2-0-phase-0-frontier/12913) has suggested a phased approach for upgrading Polygon PoS to a zkEVM validium. This community discussion is guiding the technical specification of the potential upgrade. If this PIP is accepted, Polygon PoS will eventually plug into the interop layer that will connect the entire Polygon network. 
+[PIP-18](https://forum.polygon.technology/t/pip-18-polygon-2-0-phase-0-frontier/12913) has suggested a phased approach for upgrading Polygon PoS to a zkEVM validium. This community discussion is guiding the technical specification of the potential upgrade. If this PIP is accepted, Polygon PoS will eventually plug into the Agglayer that will connect the entire Polygon network.
+
+!!! info "What's Agglayer?"
+    AggLayer is the interoperability layer that EVM-compatible chains connect to, enabling features such as seamless and efficient cross-chain communication, unified liquidity, and more. Read more on the AggLayer in the [Polygon blog](https://polygon.technology/blog/wtf-is-polygon?utm_source=twitter&utm_medium=social&utm_content=wtf-is-polygon).
 
 Phase 0 of PIP-18 includes:
 
