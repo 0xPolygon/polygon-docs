@@ -20,5 +20,5 @@ Fundamentally, building this web of ZK-powered L2s comes down to one challenge: 
 
 The best way to accomplish this goal is through zero-knowledge cryptography as it is capable of providing verifiable proofs that attest to the integrity of off-chain computations. Otherwise, scaling technologies often have to add additional socio-economic mechanisms to mediate off-chain computations, which often results in delayed settlement of transactions.
 
-Future iterations will focus on applying the open source, zero-knowledge scaling technology developed at Polygon Labs, and this will allow Ethereum to scale to the limits of the internet.
+Future iterations will focus on applying the open source, zero-knowledge scaling technology developed at Polygon Labs, and these advancements will enable Ethereum to scale to the limits of the internet..
 
