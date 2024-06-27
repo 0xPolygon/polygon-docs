@@ -156,10 +156,10 @@ The Executor executes all instructions on top of the PIL hardware and generates 
 
 ### STARK recursion component
 
-Once the Main state machine Executor has converted transactions and related data to committed polynomials, the STARK Recursion Component takes the following inputs;
+Once the Main state machine Executor has converted transactions and related data to committed polynomials, the STARK Recursion component takes the following inputs;
 
-1. The Committed Polynomials.
-2. The Constant Polynomials.
+1. The committed polynomials.
+2. The constant polynomials.
 3. Scripts, which are lists of instructions.
 
 These are taken in order to generate a zk-STARK proof. In an effort to facilitate fast zk-STARK proving, the STARK Recursion Component utilises [Fast Reed-Solomon Interactive Oracle Proofs of Proximity (RS-IOPP)](https://drops.dagstuhl.de/opus/volltexte/2018/9018/pdf/LIPIcs-ICALP-2018-14.pdf), also referred to as FRI, for each zk-proof.
