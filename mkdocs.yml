@@ -53,8 +53,19 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
-      - Version compatibility matrix: cdk/version-matrix.md
-      - Build: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - Get started: cdk/getting-started/index.md
+      - Concepts:
+        - Layer 2s: cdk/concepts/layer2s.md
+        - L2 Architecture Overview: cdk/concepts/architecture.md
+        - L2 Transaction Lifecycle: cdk/concepts/transaction-lifecycle.md
+        - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
+        - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
+        - Batches, Blocks, Transactions: cdk/concepts/blocks.md
+        - Transaction Finality: cdk/concepts/transaction-finality.md
+        - Gas Fees: cdk/concepts/gas-fees.md
+        - Bridging & Interoperability: cdk/concepts/bridging.md
+        - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
+        # - Kurtosis cdk: '!import https://github.com/jarrodwatts/kurtosis-cdk?branch=jw/docs'
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
