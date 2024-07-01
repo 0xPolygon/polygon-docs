@@ -6,11 +6,13 @@ When setting up a new sentry, validator, or full node server, it is recommended 
 
 ## Community snapshots
 
-With the [deprecation of the Mumbai testnet](https://forum.polygon.technology/t/pos-tooling-after-mumbai-deprecation-no-action-required/13740), Polygon PoS is shifting to a community-driven model for snapshots. Active validators such as Vault Staking, Stakepool, StakeCraft, and Girnaar Nodes will now provide snapshots. For future community snapshots on the Sepolia-anchored Amoy testnet, visit [All4nodes.io](https://all4nodes.io/Polygon), an aggregator for Polygon community snapshots.
+### Amoy and beyond
 
-!!! tip "Older snapshots"
+With the [deprecation of the Mumbai testnet](https://forum.polygon.technology/t/pos-tooling-after-mumbai-deprecation-no-action-required/13740), Polygon PoS is transitioning to a community-driven model for snapshots. Active validators such as Vault Staking, Stakepool, StakeCraft, and Girnaar Nodes will now provide these snapshots. For future community snapshots on the Sepolia-anchored Amoy testnet, visit [All4nodes.io](https://all4nodes.io/Polygon), an aggregator for Polygon community snapshots.
 
-    If you're looking for older snapshots, please visit [Polygon Chains Snapshots](https://snapshot.polygon.technology/).
+### Legacy snapshots
+
+If you're looking for older snapshots, please visit [Polygon Chains Snapshots](https://snapshot.polygon.technology/).
 
 !!! note
 
@@ -25,7 +27,7 @@ With the [deprecation of the Mumbai testnet](https://forum.polygon.technology/t/
 To begin, ensure that your node environment meets the **prerequisites** outlined [here](../how-to/full-node/full-node-binaries.md). Before starting any services, execute the shell script provided below. This script will download and extract the snapshot data, which allows for faster bootstrapping. This example uses an Ubuntu Linux m5d.4xlarge machine with an 8TB block device attached.
 To transfer the correct chain data to your disk, follow these steps:
 
-- Specify the network (`mainnet` or `amoy`) and client type (`heimdall` or `bor` or `erigon`) of your desired snapshot and run the following command:
+- Specify the network (`mainnet` or `mumbai`) and client type (`heimdall` or `bor` or `erigon`) of your desired snapshot and run the following command:
 
 
 ```bash
@@ -53,8 +55,8 @@ curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --
   #!/bin/bash
 
   function validate_network() {
-    if [[ "$1" != "mainnet" && "$1" != "amoy" ]]; then
-      echo "Invalid network input. Please enter 'mainnet' or 'amoy'."
+    if [[ "$1" != "mainnet" && "$1" != "mumbai" ]]; then
+      echo "Invalid network input. Please enter 'mainnet' or 'mumbai'."
       exit 1
     fi
   }
@@ -109,7 +111,7 @@ curl -L https://snapshot-download.polygon.technology/snapdown.sh | bash -s -- --
   done
 
   # Set default values if not provided through command-line arguments
-  network=${network:-amoy}
+  network=${network:-mumbai}
   client=${client:-heimdall}
   extract_dir=${extract_dir:-"${client}_extract"}
   checksum=${checksum:-false}
