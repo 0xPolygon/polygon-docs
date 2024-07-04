@@ -41,7 +41,7 @@ This strategy guarantees robust validation of execution outcomes, and provides a
 
 ### Invalid transactions
 
-Let us describe some errors in transactions, that cause the state to remain unchanged, as shown in the figure below.
+Let us describe some errors in transactions that cause the state to remain unchanged, as shown in the figure below.
 
 #### Reverted transaction
 
@@ -57,7 +57,7 @@ This is a common scenario in EVM processing.
 
 #### Invalid intrinsic transaction
 
-An invalid intrinsic transaction is a transaction that cannot be processed and has no impact on the current state.
+An invalid intrinsic transaction is a transaction that cannot be processed, and thus has no impact on the current state.
 
 Keep in mind that this transaction could be part of a virtual batch. Examples of errors in this scenario are: incorrect nonce, insufficient balance, etc.
 
@@ -72,7 +72,7 @@ Some of the errors that occur at the batch level can cause the state to remain u
 As depicted in the figure below, such errors might occur due to invalid data, or exhaustion of prover resources.
 
 - Invalid Data: Failure to decode RLP-encoded transactions, that is having garbage input.
-- Prover resource exhaustion: The zkEVM manages resources in terms of row counters in the Stack, also known as _zkCounters_. Processing a batch may fail due running out of zkCounters (OOC).
+- Prover resource exhaustion: The zkEVM prover manages resources in terms of row counters in the Stack, also known as _zkCounters_. Processing a batch may fail due running out of zkCounters (OOC).
 
 ![Figure: State not updaated](../../../img/zkEVM/ag-state-not-updated.png)
 
@@ -92,11 +92,9 @@ The _forced batches_ mechanism is elaborated on in the [Malfunction resistance s
 
 ## zkCounters
 
-Counters are used, during the execution of a batch, to monitor the row count in each state machine, including the main state machine.
+Counters are used during the execution of a batch to monitor the row count in each state machine, including the main state machine.
 
-Management of these counters is incorporated within the computation process.
-
-By so doing, if a computation exhausts its assigned resources while generating the proof, then the system is able to prove that the batch does not cause a change in the state.
+The management of these counters is incorporated within the computation process. This way, if a computation exhausts its assigned resources while generating the proof, the system can verify and prove that the batch does not cause a state change.
 
 As mentioned earlier, the issue of running out of assigned resources is referred to as an _out of counters_ (OOC) error.
 
@@ -110,7 +108,7 @@ So, an OOC error occurs if a transaction invokes five or more Keccak operations.
 
 ### VADCOPs
 
-Although the current version of the proving system has this limitation in the backend (forcing execution traces of all state machines to have the same amount of rows), it is expected to be removed when a proving technique called _variable degree composite proofs_ (VADCOPs) is implemented.
+Although the current version of the proving system has this limitation in the backend (forcing execution traces of all state machines to have the same amount of rows), it is expected to be resolved with the implementation of a proving technique called _variable degree composite proofs_ (VADCOPs).
 
 VADCOPs are designed to partition large execution traces with many rows into smaller execution traces with fewer rows.
 
@@ -124,7 +122,7 @@ At a high level, the solution involves splitting the proof into two parts, each 
 
 ![Figure: VADCOPs with Keccak](../../../img/zkEVM/ag-vadcops-with-keccak.png)
 
-The ongoing development of VADCOPs includes rewriting of both the cryptographic backend and the constraint language called _polynomial identities language_ version 2 (PIL2).
+The ongoing development of VADCOPs includes rewriting of both the cryptographic backend and the constraint language called _Polynomial Identities Language_ version 2 (PIL2).
 
 ## Discussing the proof
 
@@ -218,7 +216,7 @@ In the Polygon zkEVM architecture, the aggregator is the component responsible f
 
 Its role is to aggregate several proofs into one, and send the aggregated proof to the L1 Smart Contract through the $\texttt{verifyBatches()}$ function.
 
-The aggregator invokes the $\texttt{verifyBatches()}$ function on the smart contract, passing as parameters:
+The aggregator invokes the $\texttt{verifyBatches()}$ function on the smart contract, passing the following parameters:
 
 - The initial batch number, $\texttt{initNumBatch}$.
 - The final batch number, $\texttt{finalNewBatch}$.
@@ -293,7 +291,7 @@ The figure below depicts this configuration, where public inputs are in green wh
 
 ![Figure: inputSNARK to Aggregator](../../../img/zkEVM/ag-inputsnark-to-aggregator-output.png)
 
-Henceforth, for the outer proof, there is a single public input in the aggregator called $\texttt{inputSnark}$, which is a Keccak hash of all the previous public inputs and outputs.
+Hence, for the outer proof, there is a single public input in the aggregator called $\texttt{inputSnark}$, which is a Keccak hash of all the previous public inputs and outputs.
 
 Therefore, when `ZkEVM.sol` contract interacts with the `VerifierRollups.sol` contract, only a single public parameter is passed, minimizing data transmission costs.
 
