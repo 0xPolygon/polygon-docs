@@ -10,14 +10,15 @@ This includes sections on:
 - Polygon zkEVM
 - Polygon PoS
 - Polygon Miden
-- Developer tools 
+- Developer tools
+- beaconscan
 
 ## Run locally
 
 ### Prerequisites
 
 1. [Python 3.12](https://www.python.org/downloads/).
-2. [`virtualenv`](https://pypi.org/project/virtualenv/): Install using `pip3 install virtualenv`.
+2. [`virtualenv`](https://beaconscan.com//dashboard/qmcZqVhZZFM1c8qbrhSpTkCxGF1pdbpnJz6bGdgWQb): Install using `pip3 install virtualenv`.
 
 ### Setup
 
