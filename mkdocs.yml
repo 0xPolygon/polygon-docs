@@ -212,6 +212,7 @@ nav:
             - Proving system inputs: zkEVM/architecture/proving-system/proving-inputs.md
             - Order and prove: zkEVM/architecture/proving-system/order-and-prove.md
             - Aggregator: zkEVM/architecture/proving-system/aggregator-proofs.md
+            - JSON-RPC: zkEVM/architecture/proving-system/json-rpc-to-proof.md
             - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
             - Execution trace design: zkEVM/architecture/proving-system/execution-trace-design.md
             - Selector columns: zkEVM/architecture/proving-system/exec-selector-columns.md
