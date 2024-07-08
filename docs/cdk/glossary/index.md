@@ -5,7 +5,7 @@ comments: true
 This glossary provides definitions for technical terminology and concepts that commonly occur throughout the CDK docs space.
 
 ### AggLayer v1 (AL1)
-The AggLayer is the interoperability layer at the heart of Polygon 2.0. All CDK chains connect to the AggLayer to enable features such as seamless and efficient cross-chain communication, unified liquidity, and more. AggLayer v1 (AL1), is the first version of many planned iterations that relies on ZK checks to ensure operational soundness, and a unified bridge infrastructure.
+The AggLayer is the interoperability layer that CDK chains connect to, enabling features such as seamless and efficient cross-chain communication, unified liquidity, and more. AggLayer v1 (AL1), is the first version of many planned iterations that relies on ZK checks to ensure operational soundness, and a unified bridge infrastructure.
 Read more on the AggLayer in the Polygon blog [here](https://polygon.technology/blog/wtf-is-polygon?utm_source=twitter&utm_medium=social&utm_content=wtf-is-polygon).
 
 ### Chain operator
@@ -21,10 +21,10 @@ Polygon CDK validiums connect to a DAC to guarantee data availability. The DAC n
 The native bridge infrastructure of CDK chains that allows transfer of assets and messages between L2 and L1 (typically Ethereum).
 
 ### LxLy messenger
-A contract on the LxLy bridge utilizes its message passing capabilities to pass arbitrary messages between L1 and L2.  This is not a separate component, and is part of the LxLy bridge's architecture.
+A contract on the LxLy bridge utilizes its message passing capabilities to pass arbitrary messages between L1 and L2.  This is not a separate component, but part of the LxLy bridge's architecture.
 
 ### POL (Token)
-The POL token powers the Polygon 2.0 ecosystem through a native re-staking protocol that allows token holders to validate multiple chains, and perform multiple roles on each of those chains (sequencing, ZK proof generation, participation in data availability committees, etc.) 
+The POL token powers the Polygon ecosystem through a native re-staking protocol that allows token holders to validate multiple chains, and perform multiple roles on each of those chains (sequencing, ZK proof generation, participation in data availability committees, etc.) 
 
 ### Rollups
 Rollups refer to blockchain scaling solutions (in the context of Ethereum) that carry out transaction execution on L2, and then post updated state data to a contract on L1. There are different types rollups, two of the most popular being optimistic, and zero-knowledge (ZK) rollups. Follow the links below to learn more:

@@ -53,8 +53,19 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
-      - Version compatibility matrix: cdk/version-matrix.md
-      - Build: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - Get started: cdk/getting-started/index.md
+      - Concepts:
+        - Layer 2s: cdk/concepts/layer2s.md
+        - L2 Architecture Overview: cdk/concepts/architecture.md
+        - L2 Transaction Lifecycle: cdk/concepts/transaction-lifecycle.md
+        - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
+        - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
+        - Batches, Blocks, Transactions: cdk/concepts/blocks.md
+        - Transaction Finality: cdk/concepts/transaction-finality.md
+        - Gas Fees: cdk/concepts/gas-fees.md
+        - Bridging & Interoperability: cdk/concepts/bridging.md
+        - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
+        # - Kurtosis cdk: '!import https://github.com/jarrodwatts/kurtosis-cdk?branch=jw/docs'
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
@@ -128,34 +139,6 @@ nav:
             - Utils:
               - ClaimCompressor.sol:  zkEVM/architecture/high-level/smart-contracts/api/utils/ClaimCompressor.md
           - Addresses: zkEVM/architecture/high-level/smart-contracts/addresses.md
-        #- AggLayer: https://potential-couscous-4gw6qyo.pages.github.io/index.html
-        #- CDK node:
-          #- JSON/RPC: zkEVM/architecture/high-level/cdk-node/json-rpc.md
-          #- Databases:
-            #- State: zkEVM/architecture/high-level/cdk-node/state-db.md
-            #- Pool: zkEVM/architecture/high-level/cdk-node/pool-db.md
-          #- Transaction flow:
-            #- Sequencer: zkEVM/architecture/high-level/cdk-node/sequencer.md
-            #- Aggregator: zkEVM/architecture/high-level/cdk-node/aggregator.md
-            #- Prover: zkEVM/architecture/high-level/cdk-node/prover.md
-          #- L1 comms:
-            #- Etherman: zkEVM/architecture/high-level/cdk-node/etherman.md
-            #- Synchronizer: zkEVM/architecture/high-level/cdk-node/synchronizer.md
-          #- DAC: zkEVM/architecture/high-level/cdk-node/dac.md
-        #- Hermez node:
-          #- JSON/RPC: zkEVM/architecture/high-level/hermez-node/json-rpc.md
-          #- Databases:
-            #- State: zkEVM/architecture/high-level/hermez-node/state-db.md
-            #- Pool: zkEVM/architecture/high-level/hermez-node/pool-db.md
-          #- Transaction flow:
-            #- Sequencer: zkEVM/architecture/high-level/hermez-node/sequencer.md
-            #- Aggregator: zkEVM/architecture/high-level/hermez-node/aggregator.md
-            #- Prover: zkEVM/architecture/high-level/hermez-node/prover.md
-          #- L1 comms:
-            #- Etherman: zkEVM/architecture/high-level/hermez-node/etherman.md
-            #- Synchronizer: zkEVM/architecture/high-level/hermez-node/synchronizer.md
-          #- DAC: zkEVM/architecture/high-level/hermez-node/dac.md
-        #- Bridge service: zkEVM/architecture/high-level/bridge-service.md
       - Architecture low-level:
         - Architecture: zkEVM/architecture/index.md
         - zkEVM protocol:
@@ -199,6 +182,8 @@ nav:
             - Introduction: zkEVM/architecture/proving-system/intro-proving-sys.md
             - Executor: zkEVM/architecture/proving-system/the-executor-comp.md
             - Proving system inputs: zkEVM/architecture/proving-system/proving-inputs.md
+            - Order and prove: zkEVM/architecture/proving-system/order-and-prove.md
+            - Aggregator: zkEVM/architecture/proving-system/aggregator-proofs.md
             - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
             - Execution trace design: zkEVM/architecture/proving-system/execution-trace-design.md
             - Selector columns: zkEVM/architecture/proving-system/exec-selector-columns.md
@@ -275,7 +260,7 @@ nav:
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
-        - Sparse merkle trees:
+        - Sparse Merkle trees:
           - Merkle trees: zkEVM/concepts/sparse-merkle-trees/sparse-merkle-tree.md
           - Constructing simple SMTs: zkEVM/concepts/sparse-merkle-trees/simple-smt.md
           - SMT concepts: zkEVM/concepts/sparse-merkle-trees/detailed-smt.md
@@ -518,6 +503,7 @@ nav:
           - Bandchain: tools/oracles/bandchain.md
           - Band standard dataset: tools/oracles/bandstandarddataset.md
           - Chainlink: tools/oracles/chainlink.md
+          - Chronicle: tools/oracles/chronicle.md
           - DIA: tools/oracles/diadataoracles.md
           - Pyth: tools/oracles/pyth.md
           - Razor: tools/oracles/razor.md
@@ -667,7 +653,7 @@ validation:
 
 extra_javascript:
   - _site_essentials/js/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js

@@ -30,8 +30,7 @@ The scope of the ISO/IEC 27001:2022 certification is limited to the information 
 
 ## Unified bridge
 
- - Security audits by Hexens & Spearbit: https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/audits
- - Security audit by Sigma Prime: TBA
+ - Security audits by Sigma Prime, Hexens & Spearbit: https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/audits
 
 ## zkEVM
  

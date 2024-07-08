@@ -9,7 +9,7 @@ It describes what a commitment scheme is, the necessary properties such a scheme
 
 ## Commitment scheme protocol
 
-In the case of our mFibonacci state machine, the prover needs to commit to the polynomials $P(X)$, $Q(X)$ $P( X \omega)$ and $Q( X \omega)$, and the verifier requests the prover to evaluate these polynomials at randomly selected points (i.e., field elements).
+In the case of our mFibonacci state machine, the prover needs to commit to the polynomials $P(X)$, $Q(X)$, $P( X \omega)$ and $Q( X \omega)$, and the verifier requests the prover to evaluate these polynomials at randomly selected points (i.e., field elements).
 
 The general protocol, in an interactive setting, is as follows;
 
@@ -72,12 +72,16 @@ In a typical commitment scheme, the following  protocol is followed;
     $$
 
 5. In order to enable the verifier to check the boundary constraint,
+    
+    $$
+    P(\omega^{\mathtt{1023}}) = \mathtt{14\ 823\ 897\ 298\ 192\ 278\ 947}
+    $$
 
-   $$
-   P(\omega^{\mathtt{1023}}) = \mathtt{14\ 823\ 897\ 298\ 192\ 278\ 947}\qquad\qquad
-   $$
-
-   the prover must send a witness $\large{\mathtt{w}}$ as proof that he or she knows the correct value of the $1024$-th term, without disclosing the actual value $A_{1023} = \mathtt{14\ 823\ 897\ 298\ 192\ 278\ 947}$.
+    the prover must send a witness $\large{\mathtt{w}}$ as proof that he or she knows the correct value of the $1024$-th term, without disclosing the actual value 
+    
+    $$
+    A_{1023} = \mathtt{14\ 823\ 897\ 298\ 192\ 278\ 947}.
+    $$
 
 6. The verifier then uses a formula, which is specific to the commitment scheme in use and it takes the witness as an input, to check whether the prover has computed the correct $A_{1023}$.
 

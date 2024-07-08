@@ -7,7 +7,7 @@ comments: true
 From the `zkevm` root directory, run the following:
 
 ```sh
-sudo docker-compose -f mainnet/docker-compose.yml up
+sudo docker compose -f mainnet/docker-compose.yml up
 ```
 
 This command spins up the following services:

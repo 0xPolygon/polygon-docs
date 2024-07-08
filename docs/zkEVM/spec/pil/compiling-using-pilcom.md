@@ -102,10 +102,10 @@ polIdentities: 1
 
 The debug message reflects the numbers of;
 
-- Input committed polynomials, denoted by $\texttt{Input Pol Commitments}$,
-- Quadratic polynomials, denoted by $\texttt{Q Pol Commitmets}$,
-- Constant polynomials, denoted by $\texttt{Constant Pols}$,
-- Intermediate polynomials, denoted by $\texttt{Im Pols}$,
+- Input committed polynomials, denoted by $\texttt{Input Pol Commitments}$.
+- Quadratic polynomials, denoted by $\texttt{Q Pol Commitmets}$.
+- Constant polynomials, denoted by $\texttt{Constant Pols}$.
+- Intermediate polynomials, denoted by $\texttt{Im Pols}$.
 - The various identities that can be checked; the $\texttt{Plookup}$, the $\texttt{Permutation}$, the $\texttt{connection}$ and the $\texttt{Polynomial}$ identities.
 
 The resulting $\texttt{JSON}$ file into which the _multiplier.pil_ code is compiled looks like this:
