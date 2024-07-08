@@ -191,7 +191,7 @@ $$
 
 ## Special cyclic register for leaf levels
 
-Define a register called _LEVEL_ which is vector of four bits, three 0 bits and one 1 bit. And the operation  _ROTATE_LEVEL_  which is the left rotation of _LEVEL_'s bits by one position.
+Define a register called _LEVEL_ which is a vector of four bits; three 0 bits and one 1 bit. And the operation  _ROTATE_LEVEL_  which is the left rotation of _LEVEL_'s bits by one position.
 
 If _LEVEL_ is initialised as $(1,0,0,0)$, observe that applying _ROTATE_LEVEL_ four times brings _LEVEL_ back to $(1,0,0,0)$. That is,
 

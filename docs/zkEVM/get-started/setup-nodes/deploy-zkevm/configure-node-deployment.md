@@ -81,7 +81,7 @@ comments: true
 
     ```json
     "l1Config" : {
-        "chainId": 5,
+        "chainId": 11155111,
         "polygonZkEVMAddress": "", 
         "polTokenAddress": "", 
         "polygonZkEVMGlobalExitRootAddress": ""  

@@ -2,7 +2,7 @@ A standard state machine is characterized by sets of states (as inputs) stored i
 
 ![A Generic State Machine](../../../../img/zkEVM/fig1-gen-state-mchn.png)
 
-State machine can be monolithic, where it is a prototype of one particular computation, while others may specialise with certain types of computations. Depending on the computational algorithm, a state machine may have to run through a number of state transitions before producing the desired output. Iterations of the same sequence of operations may be required, to the extend that most common state machines are cyclic by nature.
+Some state machines can be monolithic, serving as prototypes for a specific computation, while others may specialize in performing multiple computations of the same type. Depending on the computational algorithm, a state machine may have to run through a number of state transitions before producing the desired output. Iterations of the same sequence of operations may be required, to the extend that most common state machines are cyclic by nature.
 
 The _Storage_ state machine is one of the secondary zkProver state machines responsible for all operations on data stored in the zkProver's storage. It receives instructions from the Main state machine, called _Storage Actions_. The Main state machine performs typical database operations such as: Create, Read, Update and Delete (CRUD); and then instructs the Storage state machine to verify whether these were correctly performed.
 

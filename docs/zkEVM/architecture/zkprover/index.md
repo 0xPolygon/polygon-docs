@@ -15,13 +15,13 @@ The zkProver mainly interacts with two components, i.e. the Node and the databas
 
 As depicted in the flow diagram above, the whole interaction works out in 4 steps.
 
-1. The Node sends the content of Merkle trees to the database to be stored there
+1. The node sends the content of Merkle trees to the database to be stored there.
 
-2. The Node then sends the input transactions to the zkProver
+2. The node then sends the input transactions to the zkProver.
 
-3. The zkProver accesses the database and fetches the info needed to produce verifiable proofs of the transactions sent by the Node. This information consists of the Merkle roots, the keys and hashes of relevant siblings, and more
+3. The zkProver accesses the database and fetches the info needed to produce verifiable proofs of the transactions sent by the Node. This information consists of the Merkle roots, the keys and hashes of relevant siblings, and more.
 
-4. The zkProver then generates the proofs of transactions, and sends these proofs back to the Node
+4. The zkProver then generates the proofs of transactions, and sends these proofs back to the Node.
 
 However, this is really the tip of the iceberg in terms of what the zkProver does. There is a lot more detail involved in how the zkProver actually creates these verifiable proofs of transactions. It will be revealed while we dig deeper into state machines below.
 
@@ -114,11 +114,11 @@ Each secondary state machine therefore consists of its own executor and a PIL pr
 
 Here is a step-by-step outline of how the system achieves proof / verification of transactions:
 
-- Represent a given computation as a state machine (SM),
-- Express the state changes of the SM as polynomials,
-- Capture traces of state changes, called execution traces, as rows of a lookup table,
-- Form polynomial identities / constraints that these state transitions satisfy,
-- Prover uses a specific polynomial commitment scheme to commit and prove knowledge of the committed polynomials,
+- Represent a given computation as a state machine (SM).
+- Express the state changes of the SM as polynomials.
+- Capture traces of state changes, called execution traces, as rows of a lookup table.
+- Form polynomial identities and/or constraints that these state transitions satisfy.
+- Prover uses a specific polynomial commitment scheme to commit and prove knowledge of the committed polynomials.
 - [Plookup](https://eprint.iacr.org/2020/315.pdf) is one of the ways to check if the Prover's committed polynomials produce correct traces.
 
 While the polynomial constraints are written in the PIL language, the instructions are initially written in zkASM but subsequently expressed and stored in JSON format. Although not all verification involves a Plookup, the diagram below, briefly illustrates the wide role Plookup plays in the zkProver.
@@ -129,13 +129,13 @@ While the polynomial constraints are written in the PIL language, the instructio
 
 For the sake of simplicity, one can think of the zkProver as being composed of the following four components;
 
-- The Executor or the Main state machine executor
+- The Executor or the Main state machine executor.
 
-- The STARK Recursion Component
+- The STARK Recursion Component.
 
-- The CIRCOM library
+- The CIRCOM library.
 
-- The zk-SNARK Prover
+- The zk-SNARK Prover.
 
 In the nutshell, the zkProver uses these four components to generates verifiable proofs. As a result, the constraints that each proposed batch must meet are polynomial constraints or polynomial identities. All valid batches must satisfy specific polynomial constraints.
 
@@ -147,8 +147,8 @@ The Executor or Main state machine Executor handles the execution of the zkEVM. 
 
 It takes as inputs; the transactions, the old and the new states, the ChainID of the Sequencer, to mention a few. The executor also needs;
 
-1. The PIL, which is the list of polynomials, the list of the registers, and
-2. The ROM, which stores the list of instructions pertaining to execution
+1. The PIL, which is the list of polynomials, the list of the registers.
+2. The ROM, which stores the list of instructions pertaining to execution.
 
 The Executor sets up the polynomial constraints that every valid batch of transactions must satisfy. Another language, specially developed by the team, called Polynomial Identity Language (or PIL), is used to encode all the polynomial constraints.
 
@@ -156,23 +156,23 @@ The Executor executes all instructions on top of the PIL hardware and generates 
 
 ### STARK recursion component
 
-Once the Main state machine Executor has converted transactions and related data to committed polynomials, the STARK Recursion Component takes the following inputs;
+Once the Main state machine Executor has converted transactions and related data to committed polynomials, the STARK Recursion component takes the following inputs;
 
-1. The Committed Polynomials,
-2. The Constant Polynomials,
-3. Scripts, which are lists of instructions,
+1. The committed polynomials.
+2. The constant polynomials.
+3. Scripts, which are lists of instructions.
 
 These are taken in order to generate a zk-STARK proof. In an effort to facilitate fast zk-STARK proving, the STARK Recursion Component utilises [Fast Reed-Solomon Interactive Oracle Proofs of Proximity (RS-IOPP)](https://drops.dagstuhl.de/opus/volltexte/2018/9018/pdf/LIPIcs-ICALP-2018-14.pdf), also referred to as FRI, for each zk-proof.
 
 The component is referred to as the STARK Recursion, because;
 
-  ; It actually produces several zk-STARK proofs,
+- It actually produces several zk-STARK proofs.
 
-  ; Collates them into bundles of a few zk-STARK proofs,
+- Collates them into bundles of a few zk-STARK proofs.
 
-  ; And produces a further zk-STARK proof of each bundle,
+- Produces a further zk-STARK proof for each bundle.
 
-  ; The resulting zk-STARK proofs of the bundle are also collated and proved with only one zk-STARK proof.
+- The resulting zk-STARK proofs of the bundles are also collated and proved with only one zk-STARK proof.
 
 This way, hundreds of zk-STARK proofs are represented and proved with only one zk-STARK proof.
 
@@ -182,7 +182,7 @@ The single zk-STARK proof produced by the STARK Recursion Component is the input
 
 The original CIRCOM [paper](https://www.techrxiv.org/articles/preprint/CIRCOM_A_Robust_and_Scalable_Language_for_Building_Complex_Zero-Knowledge_Circuits/19374986/1) describes it as both a circuits programming language to define Arithmetic circuits, and a compiler that generates two things;
 
-1. A file containing a set of Rank-1 Constraints System (or R1CS) constraints associated with an Arithmetic circuit, and
+1. A file containing a set of Rank-1 Constraints System (or R1CS) constraints associated with an Arithmetic circuit.
 2. A program (written either in C++ or WebAssembly) for computing a valid assignment to all wires of the Arithmetic circuit, called a witness.
 
 As implemented in the zkProver, CIRCOM takes as input a zk-STARK proof in order to perform two tasks;
@@ -196,7 +196,7 @@ The last component of the zkProver is the zk-SNARK Prover, in particular, Rapid 
 
 Rapid SNARK is a zk-SNARK proof generator, written in C++ and Intel Assembly, which is very fast in generating proofs of CIRCOM's outputs. With regards to the zkProver, the Rapid SNARK takes as inputs
 
-1. The witness from CIRCOM, and
+1. The witness from CIRCOM.
 2. The STARK verifier data, which dictates how the Rapid SNARK must process the data, and then generate a zk-SNARK proof.
 
 ## Strategy to achieving succinctness

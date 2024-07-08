@@ -26,7 +26,7 @@ hide:
       <h1 class="hero-heading">Innovation & design</h1>
       <p class="hero-subtext">The Polygon Knowledge Layer consists of technical documentation that developers need for building with Polygon protocols, products, and services.</p> 
       <p class="hero-subtext">We also publish resources necessary for learning about and contributing to Polygon technologies.</p>
-      <p class="hero-subtext">This section gives you a peek into the future, the community-driven Polygon 2.0 vision focussing on cutting-edge web3 development.
+      <p class="hero-subtext">This section gives you a peek into the future: a community-driven  vision centered on cutting-edge Web3 development.
       </p>
    </div>
 </div>
@@ -58,9 +58,9 @@ hide:
     <div class="grid-item">
       <a href="./polygon-protocols">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Polygon 2.0</div>
+            <div class="feature-card-heading">The future of Polygon network</div>
          </div>
-         <p class="feature-paragraph">Widely-adopted EVM-compatible sidechain designed for low transaction costs and fast transaction times.</p>
+         <p class="feature-paragraph">Upcoming updates and iterations across Polygon network</p>
       </a>
    </div>
    <div class="grid-item">
