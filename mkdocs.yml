@@ -72,6 +72,7 @@ nav:
         - Deploy a node: cdk/erigon/deploy-cdk-erigon.md
         - How to:
           - Configure chains dynamically: cdk/erigon/chain-config.md
+          - Recover the network: cdk/erigon/network-recovery.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
