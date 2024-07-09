@@ -14,7 +14,7 @@ comments: true
 
     So, there will be no need for snapshots.
 
-    As a result, this document will soon be deprecated … or maybe be moved to the legacy section of the zkEVM docs (if the team so decides).
+    As a result, this document will soon be deprecated.
 
     
 Follow the instructions below to run a fast state sync on a node database using the relevant snapshot. Snapshot URLs are available in the [snapshots subsection](#snapshots) below.
