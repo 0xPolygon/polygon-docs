@@ -112,9 +112,7 @@ With this implementation approach, the sequencer needs to ensure that block cons
 
 The sequencer can modify the timestamp of the various blocks in a batch by utilizing a specific transaction as a marker, dubbed `changeL2Block`. 
 
-This transaction is included in the batch to indicate a change from one block to the next 
-
-in blocks and is responsible for modifying the timestamp and the L2 block number. 
+This transaction is included in the batch to indicate a change from one block to the next, is responsible for modifying the timestamp and the L2 block number.
 
 The figure below depicts the structure of the Etrog upgrade's batches.
 
@@ -132,9 +130,9 @@ The information is retrieved with the same RPC call as in Ethereum.
 
 Users are less concerned with the transaction being in a block, and more with when the newly generated batch results in a state transition.
 
-The zkEVM protocol has additional endpoints for retrieving various information pertaining to the status of the L2 block.
+The zkEVM protocol has additional endpoints for retrieving various information pertaining to the state of the L2 block.
 
-For example, the user may query whether a block is virtualized or not by using a specific endpoint as shown in the figure below.
+For example, the user may query whether a block is in the virtual state or not by using a specific endpoint as shown in the figure below.
 
 ![Figure: Checking if block is virtualized](../../../img/zkEVM/rpc-check-if-block-virtual.png)
 
@@ -184,8 +182,7 @@ In the `validateTx()` function performs the following preliminary checks:
 
 3. The transaction’s `chainID` is the same as the pool’s `chainID` (which is the `chainID` of the L2 Network) whenever `chainID` is not zero.
 
-4. The transaction string has an encoding that is accepted by the zkEVM. (See the next subsection for more details on this encoding.)
-
+4. The transaction string has an encoding that is accepted by the zkEVM. (See the [next subsection](./json-rpc-to-proof.md#zkevm-customized-transaction-encoding) for more details on this encoding.)
 5. The transaction sender’s address can be correctly retrieved from the transaction, using the `ecRecover` algorithm.
 
 6. The transaction size is not too large (more specifically, larger than 100132 bytes), to prevent DoS attacks.
