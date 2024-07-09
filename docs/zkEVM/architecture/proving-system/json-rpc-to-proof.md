@@ -17,7 +17,7 @@ The Ethereum JSON-RPC is a standardized collection of methods used by all Ethere
 
 The zkEVM JSON-RPC is an interface compatible with the Ethereum JSON-RPC for any layer 2 system.
 
-It replicates the same endpoints as the Ethereum JSON-RPC, and similarly receives queries and provides answers to users. 
+It implements the same endpoints as the Ethereum JSON-RPC, and similarly receives queries and provides answers to users. 
 
 The figure below illustrates a user's Ethereum JSON-RPC query to obtain information on the latest forged block.
 
@@ -43,7 +43,7 @@ zkEVM batches transition through various states: trusted, virtual, and consolida
 
 
 
-We explore next the expected form of data in the zkEVM JSON-RPC's responses to queries for the latest L2 block.
+Next, we explore the expected format of data in the zkEVM JSON-RPC's responses to queries for the latest L2 block.
 
 
 
@@ -108,7 +108,7 @@ The Etrog upgrade (which is ForkID 6) addresses these two issues.
 
 That is, each L2 block consists of one or more transactions, and each block has its own unique timestamp.
 
-With this implementation approach, the sequencer needs to make ensure that block construction has a shorter timeout than the batch generation.
+With this implementation approach, the sequencer needs to ensure that block construction has a shorter timeout than the batch generation.
 
 The sequencer can modify the timestamp of the various blocks in a batch by utilizing a specific transaction as a marker, dubbed `changeL2Block`. 
 
@@ -130,7 +130,7 @@ The L2 block contains the most recent transactions approved by the trusted seque
 
 The information is retrieved with the same RPC call as in Ethereum.
 
-Users are not really concerned with the transaction being in a block, but rather when the batch transitions to a new state.
+Users are less concerned with the transaction being in a block, and more with when the newly generated batch results in a state transition.
 
 The zkEVM protocol has additional endpoints for retrieving various information pertaining to the status of the L2 block.
 
@@ -142,9 +142,9 @@ Here is a list of custom zkEVM endpoints, each accompanied by a brief descriptio
 
 - $\mathtt{zkevm\_consolidatedBlockNumber}$: Returns the latest block number within the last verified batch.
 
-- $\mathtt{zkevm\_isBlockVirtualized}$: Returns true if the provided block number is in a virtualized batch.
+- $\mathtt{zkevm\_isBlockVirtualized}$: Returns `true` if the provided block number is in a virtualized batch.
 
-- $\mathtt{zkevm\_isBlockConsolidated}$: Returns true if the provided block number is in a consolidated batch.
+- $\mathtt{zkevm\_isBlockConsolidated}$: Returns `true` if the provided block number is in a consolidated batch.
 
 - $\mathtt{zkevm\_batchNumber}$: Returns the latest batch number.
 
@@ -154,7 +154,7 @@ Here is a list of custom zkEVM endpoints, each accompanied by a brief descriptio
 
 - $\mathtt{zkevm\_batchNumberByBlockNumber}$: Returns the batch number of the batch containing the given block.
 
-- $\mathtt{zkevm\_getBatchByNumber}$: Gets the info of a batch given its number.
+- $\mathtt{zkevm\_getBatchByNumber}$: Fetches the available info for a batch based on the specified batch number.
 
 ## Sending raw transactions
 
@@ -210,7 +210,7 @@ In the `validateTx()` function performs the following preliminary checks:
 
 14. The computed _intrinsic gas_ is greater than the provided gas. The _intrinsic gas_ of a transaction measures the required gas in terms of the amount of transactional data plus the starting gas for the raw transaction which is currently of $21000$, or $53000$ in the case of a contract creation transaction.
 
-15. The current transaction gasprice is higher than the other transactions in the PoolDB with the same nonce and from. This is because a transaction cannot be replaced with another with less gasprice.
+15. The current transaction `GasPrice` is higher than the other transactions in the PoolDB with the same nonce and `from` address. This is because a transaction cannot be replaced with another with lower `GasPrice`.
 
 16. The sizes of the transaction’s fields are compatible with the Executor needs. More specifically:
 
