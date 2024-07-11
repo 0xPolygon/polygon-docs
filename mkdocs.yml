@@ -447,6 +447,7 @@ nav:
           - Flair: tools/data/flair.md
           - Moralis: tools/data/moralis.md
           - PARSIQ: tools/data/parsiq.md
+          - SQD (Subsquid): tools/data/sqd.md
           - SubQuery: tools/data/subquery.md
       - Matic.js:
           - Installation:  tools/matic-js/installation.md
