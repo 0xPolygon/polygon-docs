@@ -60,7 +60,7 @@ hide:
       </a>
    </div>
    <div class="grid-item">
-      <a href="https://discord.com/invite/0xPolygonDevs" target="_blank">
+      <a href="https://discord.com/invite/0xpolygonRnD" target="_blank">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Join the Dev Community</div>
          </div>
