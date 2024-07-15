@@ -1,19 +1,34 @@
 # Bridging
 
-[Bridges](https://ethereum.org/en/developers/docs/bridges/) are fundamental components of L2s. A core feature of chains built with the CDK is _interoperability_, which allows developers to access funds from Ethereum as well as other L2s. This is crucial for building dApps on your chain.
+[Bridges](https://ethereum.org/en/developers/docs/bridges/) are a fundamental component of L2s that allow users to deposit and withdraw assets to and from your chain.
 
-## L1 <-> L2 bridge
+CDK-built chains come with a built-in bridge service and customizable UI out of the box, with the option to have a standalone [LxLy bridge](#lxly-bridge) or alternatively opt-in to the AggLayer and use the [Unified Bridge](#unified-bridge) to enable cross-chain L2-to-L2 interoperability.
 
-CDK-built chains come with a built-in bridge service and customizable UI that enables users to move assets (both native and ERC20 tokens) between L1 and L2 or between different L2s.
+## LxLy bridge
 
-A key benefit to building ZK-powered L2s with the CDK is that there are no challenge periods, as those experienced in [optimistic rollups](./zk-vs-optimistic.md#optimistic-rollups). This means, as soon as the [aggregation](./transaction-lifecycle.md#aggregated) process is complete (i.e. a ZK proof is posted & verified), users can move funds from a CDK-built L2 to the L1.
+The LxLy bridge contracts carry out deposit and withdrawal of assets between L2 and L1.
+
+Chains looking to run their own bridge infrastructure can choose to deploy a new instance of the [LxLy bridge](https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/lxly-bridge/) that allows users to move assets (both native and [ERC20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) tokens) from L1 to the L2 and vice versa.
+
+Deploying an individual instance of the LxLy means interoperability with other L2 chains via the [AggLayer](https://polygon.technology/blog/aggregated-blockchains-a-new-thesis) is not possible. To enable cross-chain interoperability (i.e. L2-to-L2 cross-chain transactions), chains can opt-in to the AggLayer and use the [Unified Bridge](#unified-bridge).
+
+This option is suited to chains that may want to customize how the bridge is managed and operated, or maintain control of the bridge&rsquo;s funds; as the [upgradeability](./admin-upgradeability.md) of the bridge contracts are managed by the chain operator.
+
+![LxLy Bridge](../../img/cdk/lxly.png)
 
 ## Unified bridge
 
-By default, chains launched using the CDK are opt-in to the AggLayer. The unified bridge enables cross-chain transactions amongst chains that have opted-in to the [AggLayer](https://polygon.technology/blog/aggregated-blockchains-a-new-thesis).
+A single, shared instance of the LxLy bridge, called the [unified bridge](https://docs.polygon.technology/cdk/architecture/staking-the-bridge/) is available to use for all CDK chains that opt-in to the AggLayer. 
 
-This allows developers to build unique cross-chain experiences by integrating a `bridgeAndCall` function into their smart contracts, enabling users to call smart contract functions on other L2 chains without requiring users to bridge or hold tokens on the target chain.
+It is a shared smart contract deployed on Ethereum, responsible for enabling interoperability between chains in the form of cross-chain transactions and L2-to-L2 transfers.
+
+Chains that integrate with the Unified Bridge can benefit from the network effect of the AggLayer, as their chain can therefore access the users and liquidity of other chains that are also part of the AggLayer.
+
+This option is suited to chains that want a standard bridging experience and do not require customization of the bridge&rsquo;s operation. The shared bridge is also not directly managed by the chain operator, instead, it shares the governance outlined in the [admin upgradeability](./admin-upgradeability.md) section.
+
+![Unified Bridge](../../img/cdk/unified-bridge.png)
 
 ## Further reading
 
+- [Aggregated Blockchains: A New Thesis](https://polygon.technology/blog/aggregated-blockchains-a-new-thesis)
 - [Unified Bridge Overview](https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/lxly-bridge/)

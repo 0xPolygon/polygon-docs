@@ -21,7 +21,7 @@ Software Dependencies:
 
 ## Exploring the CDK kurtosis package
 
-The [Polygon CDK kurtosis package](https://github.com/0xPolygon/kurtosis-cdk/) allows you to easily customize and instantiate all of the components of a CDK chain. It uses the [Kurtosis](https://docs.kurtosis.com/) tool to orchestrate the setup of the chain components in Docker containers, with logic defined in [Starlark](https://github.com/bazelbuild/starlark) (a Python dialect) scripts to define the step-by-step process of setting up the chain.
+The [Polygon CDK Kurtosis package](https://github.com/0xPolygon/kurtosis-cdk/) allows you to easily customize and instantiate all of the components of a CDK chain. It uses the [Kurtosis](https://docs.kurtosis.com/) tool to orchestrate the setup of the chain components in Docker containers, with logic defined in [Starlark](https://github.com/bazelbuild/starlark) (a Python dialect) scripts to define the step-by-step process of setting up the chain.
 
 ### Cloning the repository
 
@@ -60,10 +60,10 @@ You might as well need the following tools to interact with the environment...
 
 To begin understanding the codebase, there are two key files to inspect:
 
-1. [main.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/main.star): The script that defines what steps to take to set up the chain on your machine.
-2. [params.yml](https://github.com/0xPolygon/kurtosis-cdk/blob/main/params.yml): The main configuration file that defines the parameters of the chain.
+1. [`main.star`](https://github.com/0xPolygon/kurtosis-cdk/blob/main/main.star): The script that defines what steps to take to set up the chain on your machine.
+2. [`params.yml`](https://github.com/0xPolygon/kurtosis-cdk/blob/main/params.yml): The main configuration file that defines the parameters of the chain.
 
-#### main.star
+#### `main.star`
 
 The `main.star` file defines the step-by-step instructions of the deployment process. It is the main "hub" of the chain setup process; orchestrating the setup of all the components in sequential order by pulling in necessary logic from other files.
 
@@ -84,7 +84,7 @@ It defines the following steps for the deployment process:
 
 You can customize (or skip) the logic for each of these steps by modifying the logic in the respective files.
 
-#### params.yml
+#### `params.yml`
 
 The `params.yml` file defines the parameters of the chain and the deployment process. It includes configurations for simple parameters such as the chain ID and more complex configurations such as the gas token smart contract address.
 

@@ -12,9 +12,9 @@ See the figure below to best understand how these concepts relate to each other.
 
 ## Transaction
 
-A transaction is a cryptographically signed instruction from an account to update the state of the blockchain. Users can send transactions to CDK-built L2 chains using the same tools and libraries they use to interact with Ethereum such as MetaMask.
+A transaction is a cryptographically signed instruction from an account to update the state of the blockchain. Users can leverage familiar tools and libraries, like MetaMask and Ethers.js, typically used for interacting with Ethereum, to send these transactions to CDK-built L2 chains.
 
-Transactions are included in blocks, and these blocks fill batches. Take as an example of a Polygon zkEVM transaction, [`0xdd`](https://zkevm.polygonscan.com/tx/0xdd3f79c24886310ddf868ad1d36aadc6a3b6495048f68aad765c658c42426ef8), which performs a `Simple Swap` function call, and is included in block number [`12952601`](https://zkevm.polygonscan.com/block/12952601) on the L2.
+Transactions are included in blocks, and these blocks fill batches. Consider a Polygon zkEVM transaction as an example, [`0xdd`](https://zkevm.polygonscan.com/tx/0xdd3f79c24886310ddf868ad1d36aadc6a3b6495048f68aad765c658c42426ef8), which performs a `Simple Swap` function call, and is included in block number [`12952601`](https://zkevm.polygonscan.com/block/12952601) on the L2.
 
 ![Transaction with Block Number](../../img/cdk/transaction-block.png)
 
@@ -28,7 +28,7 @@ We can see this `0xdd` transaction is included in both a block and a batch, spec
 
 ## Batch
 
-Batches contain multiple transactions from multiple blocks. The two total transactions from our example block `12952601` are included in batch [`2041736`](https://zkevm.polygonscan.com/batch/2041736), which contains [10 total transactions](https://zkevm.polygonscan.com/txs?batch=2041736).
+Batches contain multiple transactions from multiple blocks. The two transactions from our example block `12952601` are included in batch [`2041736`](https://zkevm.polygonscan.com/batch/2041736), which contains [10 total transactions](https://zkevm.polygonscan.com/txs?batch=2041736).
 
 This means the batch `2041736` includes the two transactions from block `12952601` as well as eight transactions from other blocks.
 

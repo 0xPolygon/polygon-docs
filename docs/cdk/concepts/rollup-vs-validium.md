@@ -18,7 +18,7 @@ Validiums do not store transaction data on Ethereum. Instead, they only post ZK-
 
 As an L2, a validium does not pay high gas fees associated with storing data on Ethereum. This approach is more cost-effective than rollups, meaning gas fees are much lower for users. 
 
-However, validiums are typically considered less secure than rollups, as they store transaction data off of Ethereum using solutions such as a [Data Availability Committee (DAC)](https://docs.polygon.technology/cdk/glossary/#data-availability-committee-dac) or [alternative data availability solutions](#alternative-da-solutions).
+However, validiums are typically considered less secure than ZK-rollups, as they store transaction data off of Ethereum using solutions such as a [Data Availability Committee (DAC)](https://docs.polygon.technology/cdk/glossary/#data-availability-committee-dac) or [alternative data availability solutions](#alternative-da-solutions).
 
 ### Alternative DA solutions
 
