@@ -15,13 +15,15 @@ hide:
       <h1 class="hero-heading">Developer tools</h1>
       <p class="hero-subtext">This section describes some of the in-house and third-party tools that are used by developers to work with Polygon products and services.</p>
       <p class="hero-subtext">Find out how to access data, code against blockchain networks, use oracles, and much more. </p>
+      <i><p class="hero-subtext">All third-party content in this section is covered by our <a href="https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md">content disclaimer</a>.</i>
+
    </div>
 </div>
 <div class="grid-container">
    <div class="grid-item">
       <a href="./dApp-development/launchpad/intro">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">dApp Launchpadd</div>
+            <div class="feature-card-heading">dApp Launchpad</div>
          </div>
          <p class="feature-paragraph">Automated CLI tool for initializing, creating, and deploying fully-integrated, web3 dApp projects.</p>
       </a>
@@ -69,10 +71,12 @@ hide:
    <div class="grid-item">
       <a href="https://polygonscan.com/">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Block explorers</div>
+            <div class="feature-card-heading">Block explorers</div></a>
          </div>
-         <p class="feature-paragraph">Quick links to useful block explorers such as https://polygonscan.com/ for example.</p>
-      </a>
+         <p class="feature-paragraph">Links to useful explorers like 
+         <a href="https://polygonscan.com/">Polygonscan</a> and 
+         <a href="https://www.okx.com/web3/explorer/polygon">OKX explorer</a>.
+         </p>
    </div>
    <div class="grid-item">
       <a href="./storage/ipfs">

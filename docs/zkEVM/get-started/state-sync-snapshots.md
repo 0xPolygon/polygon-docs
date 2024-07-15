@@ -2,10 +2,22 @@
 comments: true
 ---
 
-!!! important
-    New and streamlined state sync process coming online soon.
+!!! warning
+    
+    **Apologies to zkEVM users**
 
-Follow the instructions below to run a fast state sync on a node database using the relevant snapshot. Snapshot URLs are available in the [snapshots section](#snapshots).
+    We don't have snapshots from the time we moved from AWS to GCP. That’s since February, 2024.
+
+    As we are moving towards an Erigon-based CDK, which has no PostgreSQL, the task to prepare snapshots is on-hold.
+
+    Also, it is expected to take only hours, instead of days, for Erigon to sync from scratch.
+
+    So, there will be no need for snapshots.
+
+    As a result, this document will soon be deprecated.
+
+    
+Follow the instructions below to run a fast state sync on a node database using the relevant snapshot. Snapshot URLs are available in the [snapshots subsection](#snapshots) below.
 
 ## Sync a database
 
@@ -15,10 +27,11 @@ Follow the instructions below to run a fast state sync on a node database using 
     curl <snapshot-url> -o <db-name>.sql.gz
     ```
 
-   For example: 
+    For example: 
 
-   ```sh
-   curl https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-statedb.sql.gz -o statedb.sql.gz
+    ```sh
+    curl https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-statedb.sql.gz -o statedb.sql.gz
+    ```
 
 2. Stop/start the database:
     
@@ -74,4 +87,3 @@ https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-bridgedb.sql.gz (312MB)
 https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-statedb.sql.gz (1.9GB)
 https://zkevm-pub.s3.eu-west-1.amazonaws.com/testnet-hashdb.sql.gz (49GB)
 ```
-

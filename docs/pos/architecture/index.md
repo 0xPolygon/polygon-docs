@@ -8,15 +8,15 @@ Nodes on Polygon are therefore designed with a two-layer implementation represen
 
 In particular, and on the execution client side, it delineates on snapshots and state syncing, network configurations, and frequently used commands when running PoS nodes.
 
-On the consesus client side, one finds descriptions on how Heimdall handles; authentication of account addresses, management of validators' keys, management of gas limits, enhancement of transaction verifications, balance transfers, staking and general chain management.
+On the consensus client side, one finds descriptions on how Heimdall handles; authentication of account addresses, management of validators' keys, management of gas limits, enhancement of transaction verifications, balance transfers, staking and general chain management.
 
 ## Architectural overview
 
 The Polygon Network is broadly divided into three layers:
 
-* **Ethereum layer** — a set of contracts on the Ethereum mainnet.
-* **Heimdall layer** — a set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
-* **Bor layer** — a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
+* Ethereum layer — a set of contracts on the Ethereum mainnet.
+* Heimdall layer — a set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
+* Bor layer — a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
 
 ![Figure: Ethereum, Bor and Heimdall architecture](../../img/pos/architecture.png)
 
@@ -32,7 +32,7 @@ The staking contracts implement the following features:
 
 The PoS mechanism also acts as a mitigation to the data unavailability problem for the Polygon sidechains.
 
-## Heimdall (validation layer)
+## Heimdall: Validation layer
 
 Heimdall layer handles the aggregation of blocks produced by Bor into a Merkle tree and publishes the Merkle root periodically to the root chain. The periodic publishing of snapshots of Bor are called checkpoints.
 
@@ -57,9 +57,9 @@ An overview of the process:
 See also [Heimdall architecture](heimdall/index.md).
 <!-- (/docs/pos/design/heimdall/overview). -->
 
-## Bor (block producer layer)
+## Bor: Block production layer
 
-Bor is Polygon's sidechain block producer — the entity responsible for aggregating transactions into blocks.
+Bor is Polygon PoS's block producer — the entity responsible for aggregating transactions into blocks.
 
 Bor block producers are a subset of the validators and are shuffled periodically by the Heimdall validators.
 

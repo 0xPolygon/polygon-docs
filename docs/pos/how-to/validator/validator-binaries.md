@@ -5,13 +5,14 @@ comments: true
 This guide will walk you through running a Polygon validator node from packages.
 
 For system requirements,
-follow the [Validator Node System Requirements](./validator-system-requirements.md) guide.
+refer to the [Validator node system requirements](./validator-system-requirements.md) guide.
 
-!!!tip Snapshots
-    Steps in this guide involve waiting for the **Heimdall** and **Bor** services to fully sync.
-    This process takes several days to complete. Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours. For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](../../how-to/snapshots.md).
+!!! tip "Snapshots"
 
-    For snapshot download links, see [<ins>Polygon Chains Snapshots</ins>](https://snapshot.polygon.technology/).
+    Steps in this guide involve waiting for the *Heimdall* and *Bor* services to fully sync.
+    This process takes several days to complete. Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours. For detailed instructions, see [Snapshot Instructions for Heimdall and Bor](../../how-to/snapshots.md).
+
+    For snapshot download links, see [Polygon Chains Snapshots](https://snapshot.polygon.technology/).
 
 
 ## Port configuration details
@@ -20,49 +21,49 @@ Here are a few instructions on how to configure ports for sentry and validator n
 
 ### For sentry nodes
 
-  - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
+  - Port `22`: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
 
-  - **Port 30303**: To be opened to the public for Bor p2p discovery.
+  - Port `30303`: To be opened to the public for Bor p2p discovery.
 
-  - **Port 26656**: To be opened to the public for Heimdall/Tendermint p2p discovery.
+  - Port `26656`: To be opened to the public for Heimdall/Tendermint p2p discovery.
   
-  - **Port 26660**: Prometheus port for Tendermint/Heimdall. Not required to be opened to the public. Only allow for the monitoring systems (Prometheus/Datadog).
+  - Port `26660`: Prometheus port for Tendermint/Heimdall. Not required to be opened to the public. Only allow for the monitoring systems (Prometheus/Datadog).
 
-  - **Port 7071**: Metric port for Bor. Only needs to be opened for the Monitoring system.
+  - Port `7071`: Metric port for Bor. Only needs to be opened for the Monitoring system.
 
-  - **Ports 8545, 8546, 1317**: Can be opened for Bor HTTP RPC, Bor WS RPC, and Heimdall API respectively; but only if really necessary.
+  - Ports `8545`, `8546`, `1317`: Can be opened for Bor HTTP RPC, Bor WS RPC, and Heimdall API respectively; but only if really necessary.
 
 
 ### For validator nodes
 
-  - **Port 22**: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
+  - Port `22`: Opening this to the public is not a good idea as the default SSH port 22 is prone to attacks. It is better to secure it by allowing it only in a closed network (VPN).
 
-  - **Port 30303**: To be opened to only Sentry to which the validator is connected for Bor p2p discovery.
+  - Port `30303`: To be opened to only Sentry to which the validator is connected for Bor p2p discovery.
 
-  - **Port 26656**: To be opened to only Sentry to which the validator is connected for Heimdall/Tendermint p2p discovery.
+  - Port `26656`: To be opened to only Sentry to which the validator is connected for Heimdall/Tendermint p2p discovery.
 
-  - **Port 26660**: Prometheus port for Tendermint/Heimdall. Not required to be opened to the public. Only allow for the monitoring systems (Prometheus/Datadog).
+  - Port `26660`: Prometheus port for Tendermint/Heimdall. Not required to be opened to the public. Only allow for the monitoring systems (Prometheus/Datadog).
 
-  - **Port 7071**: Metric port for Bor. Only needs to be opened for the monitoring system.
+  - Port `7071`: Metric port for Bor. Only needs to be opened for the monitoring system.
 
 
 This guide will walk you through running a Polygon validator node from binaries.
 
-For system requirements, follow the [Validator Node System Requirements](./validator-system-requirements.md) guide.
+For system requirements, follow the [validator node system requirements](./validator-system-requirements.md) guide.
 
-!!!caution
+!!! warning
     
     There is limited space for accepting new validators. New validators can only join the active set when an already active validator unbonds.
 
 
 ## Prerequisites
 
-* Two machines — one sentry and one validator.
+* Two machines - one sentry and one validator.
 * `build-essential` installed on both the sentry and the validator machines.
 
   To install:
 
-  ```sh
+  ```bash
   sudo apt-get install build-essential
   ```
 
@@ -70,7 +71,7 @@ For system requirements, follow the [Validator Node System Requirements](./valid
 
   To install:
 
-  ```sh
+  ```bash
   wget https://raw.githubusercontent.com/maticnetwork/node-ansible/master/go-install.sh
   bash go-install.sh
   sudo ln -nfs ~/.go/bin/go /usr/bin/go
@@ -80,7 +81,7 @@ For system requirements, follow the [Validator Node System Requirements](./valid
 
   Here are the commands to install RabbitMQ:
 
-  ```sh
+  ```bash
   sudo apt-get update
   sudo apt install build-essential
   sudo apt install erlang
@@ -89,21 +90,19 @@ For system requirements, follow the [Validator Node System Requirements](./valid
   ```
 
   
-!!!tip
+!!! tip "Download RabbitMQ"
+
     Check more information about downloading and installing RabbitMQ [<ins>here</ins>](https://www.rabbitmq.com/download.html).
 
 
 
 ## Overview
 
-To get to a running validator node, conduct the following in this **exact sequence of steps**:
+To set up a running validator node, follow these steps in the *exact sequence*:
 
-!!!caution
-    
-    You will run into configuration issues if these steps are performed out of sequence.
-    It is important to keep in mind that a sentry node must always be set up before the validator node.
+!!! warning
 
-
+    Performing these steps out of sequence may lead to configuration issues. It's crucial to note that setting up a sentry node must always *precede* the configuration of the validator node.
 
 1. Prepare two machines, one for the sentry node and one for the validator node.
 2. Install the Heimdall and Bor binaries on the sentry and validator machines.
@@ -116,7 +115,7 @@ To get to a running validator node, conduct the following in this **exact sequen
 9. Start the validator node.
 10. Check node health with the community.
 
-## Installing the Binaries
+## Installing the binaries
 
 Polygon node consists of 2 layers: Heimdall and Bor. Heimdall is a tendermint fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
 
@@ -127,10 +126,10 @@ Both binaries must be installed and run in the correct order to function properl
 Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/maticnetwork/heimdall/releases). Note that the latest version, [Heimdall v1.0.5](https://github.com/maticnetwork/heimdall/releases/tag/v1.0.5), contains enhancements such as:
 
 1. Restricting data size in state sync txs to:
-    * **30Kb** when represented in **bytes**
-    * **60Kb** when represented as **string**
+    * *30Kb* when represented in `bytes`
+    * *60Kb* when represented as `string`
 
-2. Increasing the **delay time** between the contract events of different validators to ensure that the mempool doesn't get filled very quickly in case of a burst of events which can hamper the progress of the chain.
+2. Increasing the delay time between the contract events of different validators to ensure that the mempool doesn't get filled very quickly in case of a burst of events which can hamper the progress of the chain.
 
 The following example shows how the data size is restricted:
 
@@ -141,26 +140,26 @@ Hex Byte representation - [171 205 18 52]
 Length in byte format - 4
 ```
 
-To install **Heimdall**, run the below commands:
+To install Heimdall, run the below commands:
 
 ```bash
 curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <heimdall_version> <network_type> <node_type>
 ```
 You can run the above command with following options:
 
-- **heimdall_version**: `valid v1.0+ release tag from https://github.com/maticnetwork/heimdall/releases`
-- **network_type**: `mainnet` and `amoy`
-- **node_type**: `sentry`
+- `heimdall_version`: valid v1.0+ release tag from https://github.com/maticnetwork/heimdall/releases
+- `network_type`: `mainnet` and `amoy`
+- `node_type`: `sentry`
 
-That will install the `heimdalld` and `heimdallcli` binaries. Verify the installation by checking the Heimdall version on your machine:
+That will install the `heimdalld` and `heimdallcli` binaries. Verify the installation by checking the Heimdall version on your machine using the following command:
 
 ```bash
 heimdalld version --long
 ```
 
-!!!note
+!!! note
     
-    Before proceeding, Heimdall should be installed on both the sentry and validator machines.
+    Before proceeding, ensure that Heimdall is installed on both the sentry and validator machines.
 
 
 ### Installing Bor
@@ -172,9 +171,9 @@ curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bas
 ```
 You can run the above command with following options:
 
-- **bor_version**: `valid v1.0+ release tag from https://github.com/maticnetwork/bor/releases`
-- **network_type**: `mainnet` and `amoy`
-- **node_type**: `sentry`
+- `bor_version`: valid v1.0+ release tag from https://github.com/maticnetwork/bor/releases
+- `network_type`: `mainnet` and `amoy`
+- `node_type`: `sentry`
 
 That will install the `bor` binary. Verify the installation by checking the Bor version on your machine:
 
@@ -182,12 +181,12 @@ That will install the `bor` binary. Verify the installation by checking the Bor 
 bor version
 ```
 
-!!!note
+!!! note
     
     Before proceeding, Bor should be installed on both the sentry and validator machines.
 
 
-## Configuring the Sentry Node
+## Configuring the sentry node
 
 Start by logging in to the remote sentry machine.
 
@@ -228,7 +227,7 @@ In `config.toml`, change the following parameters:
 
 Save the changes in `config.toml`.
 
-### Configuring the Bor Service
+### Configuring the Bor service
 
 Open the Bor configuration file for editing:
 
@@ -253,11 +252,11 @@ The sentry machine must have the following ports open to the world `0.0.0.0/0`:
 
 * `30303`- Your Bor service will connect your node to other nodes Bor service.
 
-## Starting the Sentry Node
+## Starting the sentry node
 
 You will first start the Heimdall service. Once the Heimdall service syncs, you will start the Bor service.
 
-!!!note
+!!! note "Sync node using snapshots"
     
     As mentioned earlier, the Heimdall service takes several days to sync from scratch fully.
 
@@ -275,7 +274,8 @@ Start the Heimdall service:
 sudo service heimdalld start
 ```
 !!!note
-    The heimdall-rest service starts along with heimdall.
+
+    The `heimdall-rest` service starts along with heimdall.
 
     Check the Heimdall service logs:
 
@@ -283,7 +283,7 @@ sudo service heimdalld start
     journalctl -u heimdalld.service -f
     ```
 
-!!!note
+!!! bug "Common error"
     
     In the logs, you may see the following errors:
 
@@ -293,7 +293,7 @@ sudo service heimdalld start
 
     These logs mean that one of the nodes on the network refused a connection to your node.
 
-    Wait for your node to crawl more nodes on the network; you do not need to do anything to address these errors.
+    Wait for your node to crawl more nodes on the network; you do not need to do anything manually to address these errors.
 
 
 Check the sync status of Heimdall:
@@ -304,8 +304,8 @@ curl localhost:26657/status
 
 In the output, the `catching_up` value is:
 
-* `true` — the Heimdall service is syncing.
-* `false` — the Heimdall service is fully synced.
+* `true`: The Heimdall service is syncing.
+* `false`: The Heimdall service is fully synced.
 
 Wait for the Heimdall service to sync fully.
 
@@ -325,9 +325,9 @@ Check the Bor service logs:
 journalctl -u bor.service -f
 ```
 
-## Configuring the Validator Node
+## Configuring the validator node
 
-!!!note
+!!! note
     
     To complete this section, you must have an RPC endpoint of your fully synced Ethereum mainnet node ready.
 
@@ -386,8 +386,8 @@ To get the Node ID of Bor on the sentry machine:
 
 On Polygon, it is recommended that you keep the owner and signer keys different.
 
-* Signer — the address that signs the checkpoint transactions. The recommendation is to keep at least 1 ETH on the signer address.
-* Owner — the address that does the staking transactions. The recommendation is to keep the MATIC tokens on the owner address.
+* Signer: The address that signs the checkpoint transactions. It is advisable to keep at least 1 ETH on the signer address.
+* Owner: The address that does the staking transactions. It is advisable to keep the MATIC tokens on the owner address.
 
 ### Generating a Heimdall private key
 
@@ -400,12 +400,9 @@ To generate the private key, run:
 heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
 ```
 
-where
+where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s private key.
 
-* ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s private key.
-
-This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration
-directory:
+This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration directory:
 
 ```sh
 mv ./priv_validator_key.json  /var/lib/heimdall/config
@@ -422,9 +419,7 @@ To generate the private key, run:
 heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
 ```
 
-where
-
-* ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s private key.
+where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s private key.
 
 When prompted, set up a password to the keystore file.
 
@@ -436,7 +431,7 @@ Move the generated keystore file to the Bor configuration directory:
 mv ./UTC-<time>-<address> /var/lib/bor/data/keystore
 ```
 
-### Add password.txt
+### Add `password.txt`
 
 Make sure to create a `password.txt` file, then add the Bor keystore file password right in the
 `/var/lib/bor/password.txt` file.
@@ -456,11 +451,11 @@ Open `config.toml` for editing: `vi /var/lib/bor/config.toml`.
   allow-insecure-unlock = true
 ```
 
-!!!caution
+!!! warning
     
     Please ensure that `priv_validator_key.json` & `UTC-<time>-<address>` files have relevant permissions. To set relevant permissions for `priv_validator_key.json`, run `sudo chown -R heimdall:nogroup /var/lib/heimdall/config/priv_validator_key.json` and similarly `sudo chown -R heimdall:nogroup /var/lib/bor/data/keystore/UTC-<time>-<address>` for `UTC-<time>-<address>`.
 
-## Starting the Validator Node
+## Starting the validator node
 
 At this point, you must have:
 
@@ -480,8 +475,8 @@ Start the Heimdall service:
 sudo service heimdalld start
 ```
 
-!!!note
-    The heimdall-rest service and heimdall-bridge starts along with heimdall.
+!!! note
+    The `heimdall-rest` service and `heimdall-bridge` starts along with heimdall.
 
     Check the Heimdall service logs:
 
@@ -498,15 +493,14 @@ sudo service heimdalld start
 
 In the output, the `catching_up` value is:
 
-* `true` — the Heimdall service is syncing.
-* `false` — the Heimdall service is synced.
+* `true`: The Heimdall service is syncing.
+* `false`: The Heimdall service is synced.
 
 Wait for the Heimdall service to fully sync.
 
 ### Starting the Bor service
 
-Once the Heimdall service on the validator machine syncs, start the Bor service on
-the validator machine.
+Once the Heimdall service on the validator machine syncs, start the Bor service on the validator machine.
 
 Start the Bor service:
 
@@ -543,17 +537,17 @@ journalctl -u bor.service -f
   ```
 
 
-## Health Checks with the Community
+## Health checks with the Community
 
 Now that your sentry and validator nodes are in sync and running, head over to
 [Discord](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes.
 
-!!!note
+!!! note
     
-    As validators, it’s mandatory to always have a check of the signer address. If the ETH balance reaches below 0.5 ETH then it should be refilled. Avoiding this will push out nodes from submitting checkpoint transactions.
+    As validators, it’s mandatory to always have a check of the signer address. If the ETH balance reaches below *0.5 ETH* then it should be refilled. Avoiding this will push out nodes from submitting checkpoint transactions.
 
 
-## Next Steps: Staking
+## Next steps: Staking
 
 Now that you have your sentry and validator nodes are health-checked, proceed to
 the [Staking](../../how-to/operate-validator-node/validator-staking-operations.md) guide to start backing the network.

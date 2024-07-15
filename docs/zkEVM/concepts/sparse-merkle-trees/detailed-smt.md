@@ -1,23 +1,23 @@
-This document covers more concepts needed in understanding our specific design of the zkProver storage using binary SMTs. These concepts also help in elucidating how **keys influence the shape of binary SMTs**.
+This document covers more concepts needed in understanding our specific design of the zkProver storage using binary SMTs. These concepts also help in elucidating how keys influence the shape of binary SMTs.
 
-First is the level of a leaf. The **level of a leaf**, $\mathbf{L}_{\mathbf{x}}$, in a binary SMT is defined as the number of edges one traverses when navigating from the root to the leaf. Denote the level of the leaf $\mathbf{L_x}$ by  $\text{lvl}(\mathbf{L_x})$.
+First is the level of a leaf. The level of a leaf, $\mathbf{L}_{\mathbf{x}}$, in a binary SMT is defined as the number of edges one traverses when navigating from the root to the leaf. Denote the level of the leaf $\mathbf{L_x}$ by  $\text{lvl}(\mathbf{L_x})$.
 
 ## Leaf levels
 
 Consider the below figure for an SMT storing seven key-value pairs, built by following the principles explained in the foregoing subsection;
 
 $$
-(\mathbf{K}_{\mathbf{a}} , V_{\mathbf{a}}),\ \ (\mathbf{K}_{\mathbf{b}} , V_{\mathbf{b}}),\ \
-(\mathbf{K}_{\mathbf{c}} , V_{\mathbf{c}}),\ \ (\mathbf{K}_{\mathbf{c}}, V_{\mathbf{c}}),\\
-(\mathbf{K}_{\mathbf{d}}, V_{\mathbf{d}}),\ \
-(\mathbf{K}_{\mathbf{e}}, V_{\mathbf{e}}),\ \
-(\mathbf{K}_{\mathbf{f}}, V_{\mathbf{f}})\ \ {\text{and}}\ \ (\mathbf{K}_{\mathbf{g}} , V_{\mathbf{g}})
+(\mathbf{K}_{\mathbf{a}}, V_{\mathbf{a}}),\ (\mathbf{K}_{\mathbf{b}}, V_{\mathbf{b}}),\ (\mathbf{K}_{\mathbf{c}}, V_{\mathbf{c}}),\ (\mathbf{K}_{\mathbf{c}}, V_{\mathbf{c}}),\ (\mathbf{K}_{\mathbf{d}}, V_{\mathbf{d}}),\ 
+(\mathbf{K}_{\mathbf{e}}, V_{\mathbf{e}}),\ (\mathbf{K}_{\mathbf{f}}, V_{\mathbf{f}})\ \ {\text{and}}\ \ (\mathbf{K}_{\mathbf{g}}, V_{\mathbf{g}})
 $$
 
 where the keys are,
 
 $$
-K_{\mathbf{a}} = 10101100, K_{\mathbf{b}} = 10010010, K_{\mathbf{c}} = 10001010, K_{\mathbf{d}} = 11100110,\\ K_{\mathbf{e}} = 11110101, K_{\mathbf{f}} = 10001011, K_{\mathbf{g}} = 00011111.
+\begin{aligned}
+&K_{\mathbf{a}} = 10101100, K_{\mathbf{b}} = 10010010, K_{\mathbf{c}} = 10001010, K_{\mathbf{d}} = 11100110,\\ 
+&K_{\mathbf{e}} = 11110101, K_{\mathbf{f}} = 10001011, K_{\mathbf{g}} = 00011111.
+\end{aligned}
 $$
 
 The leaf levels are as follows;
@@ -32,19 +32,19 @@ The main determining factor of the SMT shape is in fact the common key-bits amon
 
 This explains why different leaves in SMTs can have different levels.
 
-The **height of a Merkle Tree** refers to the largest number of edges traversed when navigating from the root to any leaf. Since all leaves are of the same level in Merkle Trees, the concept of a **height** coincide with that of the **level of a leaf** for Merkle Trees.
+The height of a Merkle tree refers to the largest number of edges traversed when navigating from the root to any leaf. Since all leaves are of the same level in Merkle trees, the concept of a height coincide with that of the level of a leaf for Merkle trees.
 
 But this is not the case for SMTs. Since leaf levels differ from one leaf to another in SMTs, the height of an SMT is not the same as the leaf level.
 
-Rather, the **height of an SMT** is defined as the largest leaf level among the various leaf levels of leaves on the SMT. For instance, **the height of the SMT** depicted in the figure above, is $4$.
+Rather, the height of an SMT is defined as the largest leaf level among the various leaf levels of leaves on the SMT. For instance, the height of the SMT depicted in the figure above, is $4$.
 
 Now, since all keys have the same fixed key-length, they not only influence SMT leaf levels and shapes, but also restrict SMT heights to the fixed key-length. The maximum height of an SMT is the maximum key-length imposed on all keys.
 
 ### Remaining keys
 
-In a general Sparse Merkle Tree (SMT), values are stored at their respective leaf-nodes.
+In a general Sparse Merkle tree (SMT), values are stored at their respective leaf-nodes.
 
-But a leaf node $\mathbf{L}_{\mathbf{x}}$ not only stores a value, $V_{\mathbf{x}}$, but also the key-bits that are left unused in the navigation from the root to $\mathbf{L}_{\mathbf{x}}$. These unused key-bits are called **the remaining key**, and are denoted by $\text{RK}_{\mathbf{x}}$ for the leaf node $\mathbf{L}_{\mathbf{x}}$.
+But a leaf node $\mathbf{L}_{\mathbf{x}}$ not only stores a value, $V_{\mathbf{x}}$, but also the key-bits that are left unused in the navigation from the root to $\mathbf{L}_{\mathbf{x}}$. These unused key-bits are called the remaining key, and are denoted by $\text{RK}_{\mathbf{x}}$ for the leaf node $\mathbf{L}_{\mathbf{x}}$.
 
 Consider again the SMT of the 7 key-value pairs depicted in the figure above. The remaining keys of each of the 7 leaves in the SMT are as follows;
 
@@ -94,7 +94,7 @@ Therefore, the fake leaf $\mathbf{L_{fk}}$ passes the Merkle proof.
 
 In order to circumvent the Fake-Leaf Attack we modify how the binary SMTs are built.
 
-Here's **the trick**: When building binary SMTs, differentiate between how leaves are hashed and how branches are hashed.
+Here's the trick: When building binary SMTs, differentiate between how leaves are hashed and how branches are hashed.
 
 That is, use two different hash functions; one hash function to hash leaves, denote it by $\mathbf{H}_{\mathbf{leaf}}$, and the other function for hashing non-leaf nodes, denote it by $\mathbf{H}_{\mathbf{noleaf}}$.
 
@@ -103,7 +103,7 @@ That is, use two different hash functions; one hash function to hash leaves, den
 Reconsider now, the Scenario A, given above.  Recall that the Attacker provides the following;
 
 - The key-value $(K_{\mathbf{fk}}, V_\mathbf{{fk}})$, where $K_{\mathbf{fk}} = 11010100$ and $V_{\mathbf{fk}} = \mathbf{L_{a}} \| \mathbf{L_{b}}$.
-- The root  $ \mathbf{{root}_{ab..f}}$ , the number of levels to root, and the siblings  $\mathbf{{S}_{\mathbf{cd}}}$  and  $\mathbf{{S}_{\mathbf{ef}}}$.
+- The root  $\mathbf{{root}_{ab..f}}$ , the number of levels to root, and the siblings  $\mathbf{{S}_{\mathbf{cd}}}$  and  $\mathbf{{S}_{\mathbf{ef}}}$.
 
 The verifier suspecting no foul, uses $K_{\mathbf{fk}} = 11010100$ to navigate the tree until he finds $V_{\mathbf{fk}}$ stored at $\mathbf{L_{fk}} := \mathbf{{B}_{ab}}$.
 
@@ -129,25 +129,25 @@ Whenever the verifier needs to check inclusion of the given key-value pair $(K_{
 
 Both computations involve climbing the tree from the located leaf $\mathbf{{L}_{x}}$ back to the root, $\mathbf{{root}_{a..x}}$. And the two computations are;
 
-1. Checking **correctness of the key** $K_{\mathbf{x}}$.
+1. Checking correctness of the key $K_{\mathbf{x}}$.
+    
+    That is, verifier takes the Remaining Key, $\text{RK}_{\mathbf{x}}$, and reconstructs the key $K_{\mathbf{x}}$ by concatenating the key bits used to navigate to $\mathbf{{L}_{x}}$ from $\mathbf{{root}_{a..x}}$, in the reverse order.
 
-   That is, verifier takes the Remaining Key, $\text{RK}_{\mathbf{x}}$, and reconstructs the key $K_{\mathbf{x}}$ by concatenating the key bits used to navigate to $\mathbf{{L}_{x}}$ from $\mathbf{{root}_{a..x}}$, in the reverse order.
+    Suppose the number of levels to root is 3, and the least-significant bits used for navigation are $\text{kb}_\mathbf{2}$, $\text{kb}_\mathbf{1}$ and $\text{kb}_\mathbf{0}$.
 
-   Suppose the **number of levels to root** is 3, and the least-significant bits used for navigation are $\text{kb}_\mathbf{2}$, $\text{kb}_\mathbf{1}$ and $\text{kb}_\mathbf{0}$.
+    In order to check key-correctness, verifier takes the remaining key $\text{RK}$ and,
 
-   In order to check key-correctness, verifier the remaining key $\text{RK}$ and,
+    - Concatenates $\text{kb}_\mathbf{2}$ and gets $\text{ } \text{RK} \|  \text{kb}_\mathbf{2}$,
 
-   - Concatenates $\text{kb}_\mathbf{2}$ and gets $\text{ } \text{RK} \|  \text{kb}_\mathbf{2}$,
+    - Concatenates $\text{kb}_\mathbf{1}$ then gets $\text{ } \text{RK} \|  \text{kb}_\mathbf{2} \| \text{kb}_\mathbf{1}$,
 
-   - Concatenates $\text{kb}_\mathbf{1}$ then gets $\text{ } \text{RK} \|  \text{kb}_\mathbf{2} \| \text{kb}_\mathbf{1}$,
+    - Concatenates $\text{kb}_\mathbf{0}$ and gets $\text{ }  \text{RK} \|  \text{kb}_\mathbf{2} \| \text{kb}_\mathbf{1} \| \text{kb}_\mathbf{0}$.
 
-   - Concatenates $\text{kb}_\mathbf{0}$ and gets $\text{ }  \text{RK} \|  \text{kb}_\mathbf{2} \| \text{kb}_\mathbf{1} \| \text{kb}_\mathbf{0}$.
+    He then sets $\tilde{K}_{\mathbf{x}} := \text{RK} \|  \text{kb}_\mathbf{2} \| \text{kb}_\mathbf{1} \| \text{kb}_\mathbf{0}$, and checks if $\tilde{K}_{\mathbf{x}}$ equals $K_{\mathbf{x}}$.
 
-   He then sets $\tilde{K}_{\mathbf{x}} := \text{RK} \|  \text{kb}_\mathbf{2} \| \text{kb}_\mathbf{1} \| \text{kb}_\mathbf{0}$, and checks if $\tilde{K}_{\mathbf{x}}$ equals $K_{\mathbf{x}}$.
-
-2. **The Merkle proof**: That is, checking whether the value stored at the located leaf $\mathbf{{L}_{x}}$ was indeed included in computing the root, $\mathbf{{root}_{a..x}}$.
-
-   This computation was illustrated several times in the above discussions. Note that the **key-correctness** and the Merkle proof are simultaneously carried out.
+2. The Merkle proof: That is, checking whether the value stored at the located leaf $\mathbf{{L}_{x}}$ was indeed included in computing the root, $\mathbf{{root}_{a..x}}$.
+    
+    This computation was illustrated several times in the above discussions. Note that the key-correctness and the Merkle proof are simultaneously carried out.
 
 ### Example: Indistinguishable leaves
 
@@ -178,7 +178,7 @@ In order to ensure that $\mathbf{L_{x}}$ actually stores the value $V_\mathbf{{x
 
 He sets $\tilde{K}_{\mathbf{x}} := 10100 \|1\|0\|0 = 10100100$. Since $\tilde{K}_{\mathbf{x}}$ equals $K_{\mathbf{x}}$, the verifier concludes that the supplied key is correct.
 
-As the verifier **climbs** the tree to test key-correctness, he concurrently checks if the value $V_\mathbf{{x}}$ is included in the SMT identified by the given root, $\mathbf{{root}_{a..x}}$. That is, he executes the following computations;
+As the verifier climbs the tree to test key-correctness, he concurrently checks if the value $V_\mathbf{{x}}$ is included in the SMT identified by the given root, $\mathbf{{root}_{a..x}}$. That is, he executes the following computations;
 
 - He computes the hash of $V_\mathbf{{x}}$ and sets it as, $\tilde{\mathbf{L}}_\mathbf{x}:= \mathbf{H_{leaf}}(V_\mathbf{{x}})$.
 
@@ -211,7 +211,7 @@ In other words, the attack succeeds simply because the key-value pairs (as 'comm
 
 The solution to this problem is straightforward, and it is to build the binary SMTs in such a way that the key-value pairs are binding. This means, create a relationship between the keys and their associated values, so that the verifier can simply check if this relationship holds true.
 
-In order to ensure that **checking such a relationship** blends with the usual proof machinery, one has two options. The naïve solution, which involves the keys, is one option.
+In order to ensure that checking such a relationship blends with the usual proof machinery, one has two options. The naïve solution, which involves the keys, is one option.
 
 #### The Naïve solution
 
@@ -233,14 +233,16 @@ $$
 \mathbf{L_{x}} = \mathbf{H_{leaf}}(K_{\mathbf{x}} \| V_\mathbf{{x}}) \neq \mathbf{H_{leaf}}(K_{\mathbf{z}} \| V_\mathbf{{z}}) = \mathbf{L_{z}}
 $$
 
-Consequently, although the key-value pairs $(K_{\mathbf{x}}, V_\mathbf{{x}})$ and $(K_{\mathbf{z}}, V_\mathbf{{z}})$ might falsely pass the key-correctness check, they will not pass the Merkle proof test. And this is because, collision-resistance also guarantees that the following series of inequalities hold true;
+Consequently, although the key-value pairs $(K_{\mathbf{x}}, V_\mathbf{{x}})$ and $(K_{\mathbf{z}}, V_\mathbf{{z}})$ might falsely pass the key-correctness check, they do not pass the Merkle proof test. And this is because, collision-resistance also guarantees that the following series of inequalities hold true;
 
 $$
+\begin{aligned}
 \mathbf{L_{x}} = \mathbf{H_{leaf}}(K_{\mathbf{x}} \| V_\mathbf{{x}}) \neq \mathbf{H_{leaf}}(K_{\mathbf{z}} \| V_\mathbf{{z}}) = \mathbf{L_{z}} \\
 \\
 \mathbf{B_{bx}} = \mathbf{H_{noleaf}}(\mathbf{S}_\mathbf{{b}} \| \mathbf{L}_{\mathbf{x}}) \neq \mathbf{H_{noleaf}}(\mathbf{S}'_\mathbf{{b}} \| \mathbf{L}_{\mathbf{z}}) = \mathbf{B_{bz}} \\
 \\
 \mathbf{B_{abx}} = \mathbf{H_{noleaf}}(\mathbf{S}_\mathbf{{a}} \| \mathbf{B_{bx}} ) \neq \mathbf{H_{noleaf}}(\mathbf{S}'_\mathbf{{a}} \| \mathbf{B_{bz}}) = \mathbf{B_{abz}}
+\end{aligned}
 $$
 
 where; $\mathbf{S}_\mathbf{{b}}$ is a sibling to $\mathbf{L}_{\mathbf{x}}$ and $\mathbf{S}_\mathbf{{a}}$ is a sibling to $\mathbf{B_{bx}}$, making $\mathbf{B_{bx}}$ and $\mathbf{B_{abx}}$ branches traversed while climbing the tree from $\mathbf{L_{x}}$ to root; Similarly,  $\mathbf{S}'_\mathbf{{b}}$ is a sibling to $\mathbf{L}_{\mathbf{z}}$, while $\mathbf{S}'_\mathbf{{a}}$ is a sibling to $\mathbf{B_{bx}}$, also making $\mathbf{B_{bz}}$ and $\mathbf{B_{abz}}$ branches traversed while climbing the tree from $\mathbf{L_{z}}$ to root.
@@ -279,14 +281,16 @@ And this can be achieved by storing hashes of values, as opposed to plainly stor
 A leaf therefore is henceforth constructed in two steps;
 
 - Firstly, for a key-value pair $(K_{\mathbf{x}}, V_\mathbf{{x}})$, compute the hash the value $V_\mathbf{{x}}$,
-  $$
-  \text{Hashed Value} = \text{HV}_\mathbf{{x}} = \mathbf{H_{noleaf}}(V_\mathbf{{x}})
-  $$
+
+$$
+\text{Hashed Value} = \text{HV}_\mathbf{{x}} = \mathbf{H_{noleaf}}(V_\mathbf{{x}})
+$$
 
 - Secondly, form the leaf containing $V_\mathbf{{x}}$, as follows,
-  $$
-  \mathbf{L_{x}} = \mathbf{H_{leaf}}(  \text{RK}_\mathbf{x}  \| \text{HV}_\mathbf{{x}})
-  $$
+
+$$
+\mathbf{L_{x}} = \mathbf{H_{leaf}}(  \text{RK}_\mathbf{x}  \| \text{HV}_\mathbf{{x}})
+$$
 
 Since it is infeasible to compute the preimage of the hash functions, $\mathbf{H_{leaf}}$ and $\mathbf{H_{noleaf}}$, computing the hash of the value $V_\mathbf{{x}}$ amounts to 'encrypting'.
 
@@ -298,13 +302,13 @@ The verifier, on the other hand, has to adjust the Merkle proof by starting with
 - Secondly, concatenating the hashed-value $\text{HV}_\mathbf{{x}}$ and the remaining key $\text{RK}_\mathbf{{x}}$,
 - Thirdly, hashing the concatenation in order to form the leaf, $\mathbf{L_{x}} := \mathbf{H_{leaf}}( \text{RK}_\mathbf{x}  \| \text{HV}_\mathbf{{x}})$.
 
-### Example: Zero-Knowledge Merkle Proof
+### Example. (Merkle proof on hidden values)
 
 The following example illustrates a Merkle proof when the above strategy is applied.
 
 Consider an SMT where the keys are 8-bit long, and the prover commits to the key-value $( K_{\mathbf{c}} , \text{HV}_{\mathbf{c}} )$ with $K_{\mathbf{c}} = 10010100$. See figure below.
 
-![ZK Merkle Proof Example](../../../img/zkEVM/fig9-zk-mkl-prf.png)
+![ZK Merkle proof example](../../../img/zkEVM/fig9-zk-mkl-prf.png)
 
 Since the levels to root is 3, the prover provides; the least-significant key-bits, $\text{kb}_0 = 0$, $\text{kb}_1 = 0$, $\text{kb}_2 = 1$, the stored hashed-value $\text{HV}_{\mathbf{c}}$, the root  $\mathbf{{root}_{a..f}}$, the Remaining Key $\mathbf{ \text{RK}_{\mathbf{c}}} = 10010$, and the siblings $\mathbf{{S}_{ab}}$, $\mathbf{{L}_{d}}$ and $\mathbf{{S}_{\mathbf{ef}}}$.
 

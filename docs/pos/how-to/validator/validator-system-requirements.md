@@ -1,10 +1,13 @@
 The system requirements listed in this section are both for the Sentry node and the Validator node.
 
-The **minimum** system requirements mean you can run the nodes but the setup is not future-proof.
+The *minimum* system requirements allow you to run the nodes, but the setup may not be future-proof.
 
-The **recommended** system requirements mean the nodes are future-proof. There is, however, no upper limit to future-proofing your nodes.
+The *recommended* system requirements ensure that the nodes are future-proof. However, there is no upper limit to future-proofing your nodes.
 
-You must always run the sentry node and the validator node on separate machines.
+
+!!! warning
+
+    You must always run the sentry node and the validator node on separate machines.
 
 ## Minimum system requirements
 
@@ -13,10 +16,10 @@ You must always run the sentry node and the validator node on separate machines.
 * Storage: 2.5 TB SSD
 
 !!!info
-    For Amazon Web Services (AWS), the equivalent of the minimum requirements instances are, **with unlimited credits selected**:
+    For Amazon Web Services (AWS), the equivalent of the minimum requirements instances are, *with unlimited credits selected*:
 
-    - For Sentry: **c5.2xlarge**
-    - For Validator node: **c5.4xlarge**
+    - For Sentry: *c5.2xlarge*
+    - For Validator node: *c5.4xlarge*
 
 ## Recommended system requirements
 
@@ -25,9 +28,10 @@ You must always run the sentry node and the validator node on separate machines.
 * Storage: 5 TB SSD
 * Bandwidth: 1 Gbit/s
 
-!!!info
-    For Amazon Web Services (AWS), the equivalent of the recommended requirements instance is **m5d.4xlarge**.
+!!! info
 
-    For OVH, the equivalent of the recommended requirements instance is **infra-3**.
+    For Amazon Web Services (AWS), the equivalent of the recommended requirements instance is *m5d.4xlarge*.
+
+    For OVH, the equivalent of the recommended requirements instance is *infra-3*.
 
     For network, expect 3-5 TB of data transferred per month.

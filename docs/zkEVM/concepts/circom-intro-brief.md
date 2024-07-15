@@ -1,10 +1,9 @@
-
 !!!info
     In this document, we describe the CIRCOM component of the zkProver. It is one of the four main components of the zkProver, as outlined [here](../architecture/zkprover/index.md). These principal components are; the Executor or Main SM, STARK Recursion, CIRCOM, and Rapid SNARK.
 
-    You may refer to the original [CIRCOM research paper](https://www.techrxiv.org/articles/preprint/CIRCOM_A_Robust_and_Scalable_Language_for_Building_Complex_Zero-Knowledge_Circuits/19374986/1) for more details.
+    You may refer to the original [CIRCOM paper](https://www.techrxiv.org/articles/preprint/CIRCOM_A_Robust_and_Scalable_Language_for_Building_Complex_Zero-Knowledge_Circuits/19374986/1) for more details.
 
-As seen in the [zkProver Overview](../architecture/zkprover/index.md) document, the output of the STARK Recursion component is a STARK proof.
+As seen in the [zkProver overview](../architecture/zkprover/index.md) document, the output of the STARK recursion component is a STARK proof.
 
 The next step in the zkProver's process of providing validity proof is to produce the witness similar to the output of the STARK Recursion.
 
@@ -12,15 +11,15 @@ Although the zkProver is designed as a state machine emulating the EVM, in order
 
 CIRCOM takes the output of the STARK Recursion as input, so as to create its corresponding witness.
 
-The witness is in turn taken as input to the Rapid SNARK, which is used to generate a SNARK proof published as the validity proof.
+The witness is in turn taken as an input to the Rapid SNARK, which is used to generate a SNARK proof published as the validity proof.
 
 ![CIRCOM's input and output](../../img/zkEVM/01circom-witness-zkprover.png)
 
-In fact, CIRCOM takes a STARK proof as input and produces its corresponding Arithmetic circuit, expressed as the equivalent set of equations called Rank-1 Constraint System (R1CS).
+In fact, CIRCOM takes a STARK proof as input and produces its corresponding Arithmetic circuit, expressed as the equivalent set of equations called rank-1 constraint system (R1CS).
 
 The set of valid circuit input, intermediate and output values satisfying the R1CS is actually the witness related to the input STARK proof.
 
-This document focuses on what CIRCOM is, its common context of implementation, and how the zkProver utilizes CIRCOM.
+This document focuses on what CIRCOM is, its common implementation context, and how the zkProver utilizes CIRCOM.
 
 ## Circuit context
 
@@ -28,23 +27,23 @@ Arithmetic circuits are mostly used as standard models for studying the complexi
 
 An Arithmetic circuit is composed of addition and multiplication gates, and wires that carry values that are elements of a prime finite field $\mathbb{F}_p$, where $p$ is typically a very large prime number.
 
-In the context of ZK-Proof protocols, a prover can use an Arithmetic circuit to prove knowledge of a valid assignment to all wires of the circuit.
+In the context of ZK-proof protocols, a prover can use an Arithmetic circuit to prove knowledge of a valid assignment to all wires of the circuit.
 
 And if the proof is correct, the verifier is convinced that the computation expressed as the Arithmetic circuit is valid, but learns nothing about the wires’ assigned values.
 
-Arithmetic circuits are commonly encoded in the form of a set of equations called Rank-1 Constraint System (R1CS).
+Arithmetic circuits are commonly encoded in the form of R1CS.
 
 Once obtained, the R1CS can later be used by a zk-SNARK protocol to generate verifiable proof.
 
 A valid proof attests to the fact that the prover knows an assignment to all wires of the circuit that fulfills all the constraints of the R1CS.
 
-An issue that arises, when applying Zero-Knowledge protocols to complex computations such as a circuit describing the logic of a ZK-rollup, is that the number of constraints to be verified can be extremely large.
+An issue that arises, when applying zero-knowledge protocols to complex computations such as a circuit describing the logic of a ZK-rollup, is that the number of constraints to be verified can be extremely large.
 
 CIRCOM was developed for the very purpose of scaling complex Arithmetic circuits by realizing them as combined instantiations of smaller Arithmetic circuits.
 
 ## What is CIRCOM?
 
-CIRCOM is a Domain-Specific Language (DSL) used to define Arithmetic circuits, and it has an associated compiler of Arithmetic circuits to their respective Rank-1 Constraint System (or R1CS).
+CIRCOM is a Domain-Specific Language (DSL) used to define Arithmetic circuits, and it has an associated compiler of Arithmetic circuits to their respective R1CS.
 
 ![CIRCOM Overall Context](../../img/zkEVM/02circom-overall-context.png)
 
@@ -54,9 +53,9 @@ As described in the title of its [specifications paper](https://www.techrxiv.org
 
 It is designed as a low-level circuit language, mimicking the design of electronic circuits, for naturally defining Arithmetic circuits.
 
-As a Domain-Specific Language (DSL), it allows programmers to design and create Arithmetic circuits of their own choice, and later on apply these circuits to ZK tools.
+As a DSL, it allows programmers to design and create Arithmetic circuits of their own choice, and later on apply these circuits to ZK tools.
 
-One of the main peculiarities of CIRCOM is its modularity as a language. It allows the definition of parameterizable small circuits called templates, which can be instantiated to form part of larger circuits.
+One of the main peculiarities of CIRCOM is its modularity as a language. It allows the definition of parameterizable small circuits called _templates_, which can be instantiated to form part of larger circuits.
 
 In this regard, CIRCOM users can use templates to create their own custom circuits with varied complexity.
 
@@ -77,25 +76,25 @@ The CIRCOM compiler is mainly written in Rust and it is open source.
 
 The CIRCOM language has its own peculiarities. The focus in this subsection is on a few features characteristic of CIRCOM.
 
-Consider as an example, the `Multiplier` circuit with input signals $\texttt{a}$ and $\texttt{b}$, and an output signal $\texttt{c}$ satisfying the constraint $\texttt{a} \times \texttt{b} \texttt{ - c = 0}$.
+Consider as an example, the _Multiplier_ circuit with input signals $\texttt{a}$ and $\texttt{b}$, and an output signal $\texttt{c}$ satisfying the constraint $\texttt{a} \times \texttt{b} \texttt{ - c = 0}$.
 
 ![A simple Multiplier Arithmetic circuit](../../img/zkEVM/03circom-simple-arith-circuit.png)
 
-The figure above depicts a simple `Multiplier` Arithmetic circuit with input wires labeled $\texttt{a}$ and $\texttt{b}$ and an output wire labeled $\texttt{c}$ such that $\texttt{a} \times \texttt{b\ = } \texttt{c}$. The wires are referred to as signals. The constraint related to this Multiplier circuit is:
+The figure above depicts a simple _Multiplier_ Arithmetic circuit with input wires labeled $\texttt{a}$ and $\texttt{b}$ and an output wire labeled $\texttt{c}$ such that $\mathtt{a} \times \mathtt{b = }\ \texttt{c}$. The wires are referred to as signals. The constraint related to this Multiplier circuit is:
 
 $$
-\texttt{a} \times \texttt{b} \texttt{ - c = 0}
+\mathtt{a} \times \mathtt{b} \mathtt{\ -\ c = 0}
 $$
 
 ### The `pragma` instruction
 
-The `pragma` instruction specifies the version of the CIRCOM compiler being used. It is meant to ensure compatibility between the circuit and the compiler version. If the two are incompatible, the compiler throws a warning.
+The _pragma_ instruction specifies the version of the CIRCOM compiler being used. It is meant to ensure compatibility between the circuit and the compiler version. If the two are incompatible, the compiler throws a warning.
 
 ```
 pragma circom 2.0.0;
 ```
 
-As a precautionary measure, all files with the `.circom` extension should start with a `pragma` instruction. In the absence of this instruction, it is assumed that the code is compatible with the latest compiler version.
+As a precautionary measure, all files with the _.circom_ extension should start with a _pragma_ instruction. In the absence of this instruction, it is assumed that the code is compatible with the latest compiler version.
 
 ### Declaration of signals
 
@@ -130,7 +129,7 @@ Templates are parametrizable in the sense that their outputs depend on free inpu
 
 They are general descriptions of circuits, that have some input and output signals, as well as a relation between the inputs and the outputs.
 
-The following code shows how a `Multiplier template` is created:
+The following code shows how a _Multiplier template_ is created:
 
 ```
 pragma circom 2.0.0;
@@ -147,7 +146,7 @@ template Multiplier () {
 
 ### Instantiation of templates
 
-Although the above code succeeds in creating the `Multiplier template`, the template is yet to be instantiated.
+Although the above code succeeds in creating the _Multiplier template_, the template is yet to be instantiated.
 
 In CIRCOM, the instantiation of a template is called a component, and it is created as follows:
 
@@ -155,7 +154,7 @@ In CIRCOM, the instantiation of a template is called a component, and it is crea
 component main = Multiplier();
 ```
 
-The `Multiplier template` does not depend on any parameter.
+The _Multiplier template_ does not depend on any parameter.
 
 However, it is possible to initially create a generic, parametrizable template that can later be instantiated using specific parameters to construct the circuit.
 
@@ -165,69 +164,69 @@ Small circuits can be defined which can be combined to create larger circuits by
 
 ### Compiling a circuit
 
-As previously mentioned, the use of the operator "<==" in the `Multiplier template` has dual functionality:
+As previously mentioned, the use of the operator "<==" in the _Multiplier template_ has dual functionality:
 
-- It captures the arithmetic relation between signals, and
+- It captures the arithmetic relation between signals.
 - It also provides a way to compute $\texttt{c}$ from $\texttt{a}$ and $\texttt{b}$.
 
 In general, the description of a CIRCOM circuit also keeps dual functionality. That is, it performs both symbolic tasks and computational tasks.
 
 This enables the compiler to easily generate the R1CS describing a circuit, together with instructions to compute intermediate and output values of a circuit.
 
-Given a circuit with the `multiplier.circom` extension, the following line of code instructs the compiler to carry out the two types of tasks:
+Given a circuit with the _multiplier.circom_ extension, the following line of code instructs the compiler to carry out the two types of tasks:
 
 ```
 circom multiplier.circom --r1cs --c --wasm --sym
 ```
 
-After compiling the `.circom` circuit, the compiler returns four files:
+After compiling the _.circom_ circuit, the compiler returns four files,
 
-- A file with the R1CS constraints (symbolic task)
-- A C++ program for computing values of the circuit wires (computational task)
-- A WebAssembly program for computing values of the circuit wires (computational task)
-- A file of symbols for debugging and printing the constraint system in an annotated way (symbolic task)
+- A file with the R1CS constraints (symbolic task).
+- A C++ program for computing values of the circuit wires (computational task).
+- A WebAssembly program for computing values of the circuit wires (computational task).
+- A file of symbols for debugging and printing the constraint system in an annotated way (symbolic task).
 
 At this stage, either one of the C++ or WebAssembly programs generated by the compiler can be used to compute all signals that match the set of constraints of the circuit.
 
-Whichever program is used, needs as input, a file containing a set of valid input values.
+Whichever program is used, needs as input a file containing a set of valid input values.
 
 Recall that a valid set of circuit input, intermediate and output values is called the witness.
 
 ### Private and public signals
 
-Depending on the `template` being used, some signals are `private` while others are `public`.
+Depending on the _template_ being used, some signals are _private_ while others are _public_.
 
-In the case of the `Multiplier template`, a signal is `private` by default, unless it is declared to be `public` in the instantiation of the template as shown below.
+In the case of the _Multiplier template_, a signal is _private_ by default, unless it is declared to be _public_ in the instantiation of the template as shown below.
 
 ```
 component main {public [a]} = Multiplier();
 ```
 
-According to the above line, the input signal $\texttt{a}$ is `public`, while $\texttt{b}$ is `private` by default.
+According to the above line, the input signal $\texttt{a}$ is _public_, while $\texttt{b}$ is _private_ by default.
 
 ### Main component
 
-The CIRCOM compiler needs a specific component as an entry point. And this initial component is called `main`.
+The CIRCOM compiler needs a specific component as an entry point. And this initial component is called _main_.
 
-In the same way the `Multiplier template` needed instantiation as a component, so does the `main` component.
+In the same way the _Multiplier template_ needed instantiation as a component, so does the _main_ component.
 
-However, unlike other intermediate components, the `main` component defines the global input and output signals of a circuit.
+However, unlike other intermediate components, the _main_ component defines the global input and output signals of a circuit.
 
 Denote a list of $\texttt{n}$ signals by $\{\mathtt{ s1, s2, \dots , sn }\}$.
 
-The general syntax to specify the `main` component is the following:
+The general syntax to specify the _main_ component is the following:
 
 ```
 component main {public [s1,..,sn]} = templateID(v1,..,vn);
 ```
 
-Specifying the list of public signals of the circuit, indicated as `{public [s1,..,sn]}`, is optional.
+Specifying the list of public signals of the circuit, indicated as $\mathtt{public [s1,..,sn]}$, is optional.
 
-Note that global inputs are considered `private` signals while global outputs are considered `public`.
+Note that global inputs are considered _private_ signals while global outputs are considered _public_.
 
-However, the `main` component has a special attribute to set a list of global inputs as public signals.
+However, the _main_ component has a special attribute to set a list of global inputs as public signals.
 
-The rule of thumb is: Any other input signal not included in this list `{public [s1,..,sn]}`, is considered private.
+The rule of thumb is: Any other input signal not included in this list $\mathtt{public [s1,..,sn]}$, is considered private.
 
 ### Concluding CIRCOM's features
 
@@ -235,7 +234,7 @@ There are many more features that distinguish CIRCOM from other known ZK tools. 
 
 We conclude this document by putting together the mentioned CIRCOM features in one code example.
 
-The `Multiplier template` is again used as an example. But the `pragma` instruction is omitted for simplicity's sake.
+The _Multiplier template_ is again used as an example. But the _pragma_ instruction is omitted for simplicity's sake.
 
 ```
 template Multiplier() {

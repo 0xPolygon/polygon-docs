@@ -1,6 +1,4 @@
-This document describes how PLONK verification is implemented in Polynomial Identity Language.
-
-This document will help us in understanding how to implement $\mathcal{PlonK}$ verification by using **connection arguments**. Let's begin!
+This document describes how PLONK verification is implemented in Polynomial Identity Language. It explains how to implement $\mathcal{PlonK}$ verification using _connection arguments_.
 
 ## PLONK-like circuit
 

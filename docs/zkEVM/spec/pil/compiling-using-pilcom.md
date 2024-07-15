@@ -1,8 +1,8 @@
 This document describes how Polynomial Identity Language programs are compiled by PILCOM.
 
-Depending on the language used in implementation, every PIL code can be compiled into either a $\texttt{JSON}$ file or a $\texttt{C++}$ code by using a compiler called $\bf{pilcom}$.
+Depending on the language used in implementation, every PIL code can be compiled into either a $\texttt{JSON}$ file or a $\texttt{C++}$ code by using a compiler called _pilcom_.
 
-The $\bf{pilcom}$ compiler package can be found at this Github repository [here](https://github.com/0xPolygonHermez/pilcom). Setup can be fired up at the command line with the usual $\texttt{clone}$, $\texttt{install}$ and $\texttt{build}$ CLI commands.
+The _pilcom_ compiler package can be found at this Github repository [here](https://github.com/0xPolygonHermez/pilcom). Setup can be fired up at the command line with the usual $\texttt{clone}$, $\texttt{install}$ and $\texttt{build}$ CLI commands.
 
 Any PIL code can be compiled into a $\texttt{JSON}$ file with the command,
 
@@ -18,11 +18,11 @@ Similarly, any PIL code can be compiled into C++ code with this command,
 node src/pil.js <input.pil> -c -n namespace
 ```
 
-in which case the corresponding header files (`.hpp`) will be generated in the `./pols_generated` folder.
+in which case the corresponding header files (_.hpp_) will be generated in the _./pols_generated_ folder.
 
 ## Restriction on polynomial degrees
 
-The current version of PIL can only handle quadratics. Simply put, **given any set of polynomials; $\texttt{a}$, $\texttt{b}$ and $\texttt{c}$; PIL can only handle products of two polynomials at a time**,
+The current version of PIL can only handle quadratics. That is, given any set of polynomials; $\texttt{a}$, $\texttt{b}$ and $\texttt{c}$; PIL can only handle products of two polynomials at a time,
 
 $$
 \mathtt{a * a},\ \ \mathtt{a * b}\ \ \text{and}\ \ \mathtt{a * c}
@@ -60,9 +60,9 @@ In the same sense that keywords $\texttt{commit}$ and $\texttt{constant}$ can be
 
 In order to compile the above PIL code to a JSON file, follow the following steps.
 
-- Create a subdirectory/folder for the Multiplier SM and call it `multiplier_sm`.
+- Create a subdirectory/folder for the Multiplier SM and call it _multiplier_sm_.
 
-- Switch directory to the new subdirectory `multiplier_sm`, and open a new file. Name it `multiplier.pil` , copy in it the text below and save;
+- Switch directory to the new subdirectory _multiplier_sm_, and open a new file. Name it _multiplier.pil_ , copy in it the text below and save;
 
     ```
     namespace Multiplier(2**10); 
@@ -102,13 +102,13 @@ polIdentities: 1
 
 The debug message reflects the numbers of;
 
-- Input committed polynomials, denoted by $\texttt{Input Pol Commitments}$,
-- Quadratic polynomials, denoted by $\texttt{Q Pol Commitmets}$,
-- Constant polynomials, denoted by $\texttt{Constant Pols}$,
-- Intermediate polynomials, denoted by $\texttt{Im Pols}$,
+- Input committed polynomials, denoted by $\texttt{Input Pol Commitments}$.
+- Quadratic polynomials, denoted by $\texttt{Q Pol Commitmets}$.
+- Constant polynomials, denoted by $\texttt{Constant Pols}$.
+- Intermediate polynomials, denoted by $\texttt{Im Pols}$.
 - The various identities that can be checked; the $\texttt{Plookup}$, the $\texttt{Permutation}$, the $\texttt{connection}$ and the $\texttt{Polynomial}$ identities.
 
-The resulting $\texttt{JSON}$ file into which the `multiplier.pil` code is compiled looks like this:
+The resulting $\texttt{JSON}$ file into which the _multiplier.pil_ code is compiled looks like this:
 
 ```json
 {

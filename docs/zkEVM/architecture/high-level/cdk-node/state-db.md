@@ -1,2 +1,0 @@
-!!! warning
-    Coming soon.

@@ -6,11 +6,11 @@ Depending on the extent to which you're looking to participate in different netw
 
 !!! tip
 
-    It's always a good idea to first read and understand the **minimum** and **recommended** system requirements for any node that you choose to deploy to the PoS network.
+    It's always a good idea to first read and understand the *minimum* and *recommended* system requirements for any node that you choose to deploy to the PoS network.
 
 |                       Validator node                       |                          Full node                          |        Access node         | Archive node |
 | :--------------------------------------------------------: | :---------------------------------------------------------: | :------------------------: | :----------: |
-| [Prerequisites](validator/prerequisites.md) **(Read me!)** | [Requirements](full-node/full-node-system-requirements.md) | [Full guide](access-node.md) |   [Full guide](erigon-archive-node.md)   |
+| [Prerequisites](validator/prerequisites.md) *(Read me!)* | [Requirements](full-node/full-node-system-requirements.md) | [Full guide](access-node.md) |   [Full guide](erigon-archive-node.md)   |
 |        [Binaries](validator/validator-binaries.md)         |        [Binaries](full-node/full-node-binaries.md)         |             -              |      -       |
 |         [Ansible](validator/validator-ansible.md)          |         [Ansible](full-node/full-node-ansible.md)          |             -              |      -       |
 |        [Packages](validator/validator-packages.md)         |        [Packages](full-node/full-node-packages.md)         |             -              |      -       |

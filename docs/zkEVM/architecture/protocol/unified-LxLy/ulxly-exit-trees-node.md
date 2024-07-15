@@ -19,7 +19,7 @@ The design of the updated global exit tree has two main branches:
 
 ![ulxly-mainnet-and-rollup-exit-trees](../../../../img/zkEVM/ulxly-mainnet-and-rollup-exit-trees.png)
 
-## Rollup Identifiers
+## Rollup identifiers
 
 Every rollup has a set of distinct identifiers that are essential for its functioning and interaction within the larger network ecosystem.
 
@@ -27,19 +27,15 @@ Every rollup has a set of distinct identifiers that are essential for its functi
 - A $\texttt{networkID}$ identifier defines a rollup in the Polygon ecosystem, allowing network participants to uniquely identify and interact with the rollup. The Ethereum mainnet is identified by  $\texttt{networkID = 0}$, while the $\texttt{networkID = 1}$ is reserved for the Polygon zkEVM, and so on.
 - The $\texttt{rollupIndex}$ is an identifier used to identify a rollup within the rollup tree. The first rollup, being the Polygon zkEVM, has $\texttt{rollupIndex = 0}$. And in general, $\texttt{rollupIndex = networkID - 1}$.
 
-
-
-## Global Index
+## Global index
 
 When creating and verifying proofs, an index called $\texttt{globalIndex}$ is used to uniquely locate a leaf in the new global exit tree.
 
-A $\texttt{globalIndex}$​​​ is a 256-bit string composed of; unused bits, mainnet flag, rollup index bits and local root index bits.
-
+A $\texttt{globalIndex}$​​​ is a 256-bit string composed of unused bits, mainnet flag, rollup index bits, and local root index bits.
 
 $$
 \texttt{globalIndex} = \texttt{(unused bits)_} \texttt{(mainnet flag)_} \texttt{(rollupIndex)_} \texttt{(local root index)}
 $$
-
 
 Starting from the most significant bit, a $\texttt{globalIndex}$ consists of the following bits:
 
@@ -47,8 +43,6 @@ Starting from the most significant bit, a $\texttt{globalIndex}$ consists of the
 - $1$ bit of mainnet flag: This single bit serves as a flag indicating whether an exit pertains to a rollup (represented by $0$) or the mainnet (indicated by $1$).
 - $32$ bit of the rollup Index: These bits indicate the specific rollup being pointed at, within the rollup exit tree. These bits are therefore only used whenever mainnet flag is $0$.
 - $32$ bits of the local root index: These bits indicate the specific index being pointed at, within each rollup's local exit tree.
-
-
 
 The figure below depicts how the $\texttt{globalIndex}$ is interpreted:
 

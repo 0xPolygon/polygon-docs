@@ -1,20 +1,20 @@
-The **Binary State Machine is one of the six secondary state machines receiving instructions from the Main SM Executor**. It is responsible for the execution of all binary operations in the zkProver.
+The Binary state machine is one of the six secondary state machines receiving instructions from the Main SM executor. It is responsible for the execution of all binary operations in the zkProver.
 
-As a secondary state machine, the Binary State Machine has the **executor part (the Binary SM Executor)** and an **internal Binary PIL program**, which is a set of verification rules, written in the PIL language. The Binary SM Executor is written in two languages: Javascript and C/C++.
+As a secondary state machine, the Binary state machine has the executor part, called the Binary SM executor, and an internal Binary PIL program, which is a set of verification rules written in the PIL language. The Binary SM executor is written in two languages: Javascript and C/C++.
 
 ## Binary operations on 256-bit strings
 
 The zkEVM performs the following binary operations on 256-bit strings:
 
-- The **addition** operation, denoted by $\text{ADD }$ ($+$), adds two 256-bit numbers,
-- The **subtraction** operation, denoted by $\text{SUB }$ ($-$), computes the difference between two 256-bit numbers,
-- The **less-than** operation, denoted by $\text{LT }$ ($<$), checks if a 256-bit number is smaller than another 256-bit number, without considering the signs the numbers,
-- The **signed less-than** operation, denoted by $\text{SLT }$ ($<$), checks if a 256-bit number is smaller than another 256-bit number, but takes into consideration the respective signs of the numbers,
-- The **equal** operation, denoted by $\text{EQ }$ ($=$), checks if two 256-bit numbers are equal,
-- The **AND** operation, denoted by $\text{AND }$ ($\land$), computes the bit-wise "AND" of two numbers,
-- The **OR** operation, denoted by $\text{OR }$ ($\lor$), computes the bit-wise "OR" of two numbers,
-- The **XOR** operation, denoted by $\text{XOR }$  ($\oplus$), computes the bit-wise "XOR" of two numbers,
-- The **NOT** operation, denoted by $\text{NOT }$ ($\neg$), computes the bit-wise "NOT" of a binary number.
+- The _addition_ operation, denoted by $\text{ADD }$ ($+$), adds two 256-bit numbers,
+- The _subtraction_ operation, denoted by $\text{SUB }$ ($-$), computes the difference between two 256-bit numbers,
+- The _less-than_ operation, denoted by $\text{LT }$ ($<$), checks if a 256-bit number is smaller than another 256-bit number, without considering the signs the numbers,
+- The _signed less-than_ operation, denoted by $\text{SLT }$ ($<$), checks if a 256-bit number is smaller than another 256-bit number, but takes into consideration the respective signs of the numbers,
+- The _equal_ operation, denoted by $\text{EQ }$ ($=$), checks if two 256-bit numbers are equal,
+- The AND operation, denoted by $\text{AND }$ ($\land$), computes the bit-wise "AND" of two numbers,
+- The OR operation, denoted by $\text{OR }$ ($\lor$), computes the bit-wise "OR" of two numbers,
+- The XOR operation, denoted by $\text{XOR }$  ($\oplus$), computes the bit-wise "XOR" of two numbers,
+- The NOT operation, denoted by $\text{NOT }$ ($\neg$), computes the bit-wise "NOT" of a binary number.
 
 ## Addition and subtraction operations
 
@@ -74,7 +74,7 @@ Notice that we do not consider the $\text{NOT}$ operation. This is because the $
 
 ## The design of Binary SM
 
-The Executor of the Binary SM records the trace of each computation in the state machine, and this computational trace is used to prove correctness of computations.
+The executor of the Binary SM records the trace of each computation in the state machine, and this computational trace is used to prove correctness of computations.
 
 The execution trace is typically in the form of 256-bit strings. And the polynomial constraints, which every correct execution trace must satisfy, are described in a PIL file (or 'code').
 
@@ -215,7 +215,7 @@ $$
 
 Consider the following two scenarios:
 
-1. If $a_2 + b_2 + 1 \geq 2^8$, then the sum will take the form:
+1. If $a_2 + b_2 + 1 \geq 2^8$, then the sum takes the form:
 
     $$
     a_2 + b_2 + 1 = 1 \cdot 2^8 + c_2.
@@ -294,7 +294,7 @@ $$
 2^8 - b_i + a_i - \texttt{carry} = 255 - b_i + a_i - \texttt{carry} + 1.
 $$
 
-However, we need to discuss the last step of our example. Observe that we can not perform the operation $\mathtt{0x00} - \mathtt{0xFE} - \mathtt{0x01}$ since it corresponds to a negative value. But as we are working with unsigned integers, we will do the two's complement and set the last byte to,
+However, we need to discuss the last step of our example. Observe that we cannot perform the operation $\mathtt{0x00} - \mathtt{0xFE} - \mathtt{0x01}$ since it corresponds to a negative value. But as we are working with unsigned integers, we do the two's complement and set the last byte to,
 
 $$
 2^8 - \mathtt{0xFE} + \mathtt{0x00} - \mathtt{0x01} = 255 - \mathtt{0xFE} + \mathtt{0x00} - \mathtt{0x01} + 1 = 255 - b_3 + a_3 - \texttt{carry} + 1.
@@ -308,7 +308,7 @@ $$
 
 ### Less than
 
-We want to describe the less than comparator byte-wise. For $256$-bits integers, the operation $<$ will output $c = 1$ if $a < b$ and $c = 0$ otherwise. As we are working in the natural integers order, the most significant byte decides and, if they are equal, we should consider the previous one until we can decide. Let us propose the example with $a = \mathtt{0xFF AE 09}$ and $b = \mathtt{0x FF AE 02}$. We know that $a > b$. Why? We should start at the most significant byte. We know that:
+We want a byte-wise description of the _less than_ comparator. For $256$-bits integers, the operation $<$ outputs $c = 1$ if $a < b$ and $c = 0$ otherwise. As we are working in the natural integers order, the most significant byte decides and, if they are equal, we should consider the previous one until we can decide. Let us propose the example with $a = \mathtt{0xFF AE 09}$ and $b = \mathtt{0x FF AE 02}$. We know that $a > b$. Why? We should start at the most significant byte. We know that:
 
 $$
 a \mathtt{>> 16} = \mathtt{0x FF} = \mathtt{0x FF} = b \mathtt{>> 16}.
@@ -320,13 +320,13 @@ $$
 \mathtt{0x 09} > \mathtt{0x 02}.
 $$
 
-However, the problem with our setup is that we must start with the less significant byte and climb up to the most significant byte. The strategy will be to use some kind of a carry in order to "carry" the decisions from previous bytes. Let us do an example step by step, now with $a = \mathtt{0x FF AA 02}$ and $b = \mathtt{0x 01 AA 09}$. First of all, we will compare the less significant bytes. Since:
+However, the problem with our setup is that we must start with the less significant byte and climb up to the most significant byte. The strategy is to use some kind of a carry in order to "carry" the decisions from previous bytes. Let us do an example step by step, now with $a = \mathtt{0x FF AA 02}$ and $b = \mathtt{0x 01 AA 09}$. First of all, we compare the less significant bytes. Since:
 
 $$
 \mathtt{0x 02} < \mathtt{0x 09},
 $$
 
-we will set up $\mathtt{carry} = 1$. We will carry this decision until we finish to process all bytes or, alternatively, we should change to the complementary decision. Therefore, since the next two bytes are equal and we are not at the end, we maintain $\mathtt{carry}$ to $1$. The previous step is the last one. We compare the most significant bytes,
+we set up $\mathtt{carry} = 1$. We then keep this decision until we finish to process all bytes or, alternatively, we should change to the complementary decision. Therefore, since the next two bytes are equal and we are not at the end, we maintain $\mathtt{carry}$ to $1$. The previous step is the last one. We compare the most significant bytes,
 
 $$
 \mathtt{0x FF} \not < \mathtt{0x 01}.
@@ -340,7 +340,7 @@ Henceforth, we should output a $0$, independently to the previous carry decision
 
 ### Signed less than
 
-In computer science, the most common method of representing signed integers on computers, is called **two's complement**. When the most significant bit is a one, the number is signed as negative. The way to express a negative integer $x$ into two's complement form is chosen so that, among integers of the same sign, the lexicographical order is maintained. That is, if $a < b$ are signed integers of the same sign, then its two's complement representations preserve the same order. This will not be true if the signs are different. For example, it is not surprising that:
+In computer science, the most common method of representing signed integers on computers, is called _two's complement_. When the most significant bit is a one, the number is signed as negative. The way to express a negative integer $x$ into two's complement form is chosen so that, among integers of the same sign, the lexicographical order is maintained. That is, if $a < b$ are signed integers of the same sign, then its two's complement representations preserve the same order. This is not true if the signs are different. For example, it is not surprising that:
 
 $$
 000\dots0 > 111\dots1
@@ -360,9 +360,9 @@ $$
 
 Hence, observe that $-1 > -2$ because $1111 > 1110$ and, conversely, the order is preserved for integers of the same sign.
 
-We will describe a method to compare signed integers byte-wise. First of all, let us analyze the order among all the signed bytes, in order to understand how to compare them. Once we achieve this, the strategy will be very similar to the previous Less Than.
+We describe a method to compare signed integers byte-wise. First of all, let us analyze the order among all the signed bytes, in order to understand how to compare them. Once we achieve this, the strategy is very similar to the previous Less Than.
 
-Let $a = (a_{31}, a_{30}, \dots, a_0)$ and $b = (b_{31}, b_{30}, \dots, b_0)$ be the byte-representation of the 256-bits unsigned integers $a$ and $b$. We will define $\texttt{sgn}(a) = a_{31, 7}$, where
+Let $a = (a_{31}, a_{30}, \dots, a_0)$ and $b = (b_{31}, b_{30}, \dots, b_0)$ be the byte-representation of the 256-bits unsigned integers $a$ and $b$. We define $\texttt{sgn}(a) = a_{31, 7}$, where
 
 $$
 a_{31} = \sum_{i = 0}^7 a_{31, i} \cdot 2^i
@@ -380,7 +380,7 @@ because $\texttt{sgn}(a) > \texttt{sgn}(b)$ i.e. $a$ is negative and $b$ is posi
 2. If $\texttt{sgn}(a) = 0$ and $\texttt{sgn}(b) = 1$, then $a > b$.
 3. If $\texttt{sgn}(a) = \texttt{sgn}(b)$, the order is the usual one and hence, we already know how to compare $a$ and $b$.
 
-Recall that we are processing the bytes of $a$ and $b$ from the less significant bytes to the most significant bytes. Hence, we need to adapt our strategy following this order. The strategy will be almost the same than in the unsigned operation.
+Recall that we are processing the bytes of $a$ and $b$ from the less significant bytes to the most significant bytes. Hence, we need to adapt our strategy following this order. The strategy is almost the same as in the unsigned operation.
 
 1. First of all, we start comparing $a_0$ and $b_0$.
 
@@ -414,11 +414,11 @@ Let us exemplify the previous procedure setting $a = \mathtt{0xFF FF FF 00}$ and
 
 ### Equality
 
-We want to describe the equality comparator byte-wise. For unsigned $256$-bits integers, the operation $=$ will output $c = 1$ if $a = b$ and $c = 0$ otherwise. This operation is very simple to describe byte-wise, since $a = b$ if and only if all its bytes coincide.
+We want to describe the equality comparator byte-wise. For unsigned $256$-bits integers, the operation $=$ outputs $c = 1$ if $a = b$ and $c = 0$ otherwise. This operation is very simple to describe byte-wise, since $a = b$ if and only if all its bytes coincide.
 
 Let us compare $a = \mathtt{0xFF 00 a0 10}$ and $b = \mathtt{0xFF 00 00 10}$ byte-wise. Observe that the first byte is the same $\mathtt{0x10}$, however the next byte is different $\mathtt{0xa0} \neq \mathtt{0x00}$. Hence, we can finish here and state that $a \neq b$.
 
-We will describe an algorithm in order to proceed processing all the bytes. We will use a carry to mark up when a difference among bytes has $\textbf{not}$ been found (i.e. if $\texttt{carry}$ reach $0$, then $a$ and $b$ should differ). Hence, the algorithm to compare two $32$-bytes integers $a = (a_{31}, a_{30}, \dots, a_{0})$ and $b = (b_{31}, b_{30}, \dots, b_0)$ is the following:
+We describe an algorithm in order to proceed processing all the bytes. We use a carry to mark up when a difference among bytes has $\textbf{not}$ been found (i.e. if $\texttt{carry}$ reach $0$, then $a$ and $b$ should differ). Hence, the algorithm to compare two $32$-bytes integers $a = (a_{31}, a_{30}, \dots, a_{0})$ and $b = (b_{31}, b_{30}, \dots, b_0)$ is the following:
 
 1. First of all, since no differences have been found up to this point, set $\texttt{carry}$ equal to $1$.
 
@@ -426,7 +426,7 @@ We will describe an algorithm in order to proceed processing all the bytes. We w
 
    (a)  If $a_0$ and $b_0$ are equal, then leave $\texttt{carry}$ unchanged equal to $1$.
 
-   (b)  If $a_0 \neq b_0$, then set $\texttt{carry}$ equal to $0$, which will imply that $a \neq b$.
+   (b)  If $a_0 \neq b_0$, then set $\texttt{carry}$ equal to $0$, which implies that $a \neq b$.
 
 3. When comparing bytes $a_i$ and $b_i$ for $0 < i \leq 31$.
 
@@ -436,7 +436,7 @@ We will describe an algorithm in order to proceed processing all the bytes. We w
 
 ### Bitwise operations
 
-We will describe all bitwise operations at once because they are the easiest ones, since we do not need to introduce carries.
+We describe all bitwise operations at once because they are the easiest ones, since we do not need to introduce carries.
 
 Now, the idea is to extend this operation bitwise. That is, if we have the following binary representations of $a = (a_{31}, a_{30}, \dots, a_{0})$ and $a = (b_{31}, b_{30}, \dots, b_{0})$ where $a_i, b_i \in \{0, 1\}$, then we define,
 
@@ -456,53 +456,53 @@ a \oplus b &= \mathtt{0b00100001} = \mathtt{0x21}.
 \end{aligned}
 $$
 
-## The Binary SM in summary
+## Binary SM in summary
 
 The Binary SM has 8 registries, each with a 32-bit Input/Output capacity. i.e., a total of 256 bits.
 
-It carries out binary computations in accordance with instructions from the Main SM Executor.
+It carries out binary computations in accordance with instructions from the Main SM executor.
 
 The binary operations it executes, together with their specific opcodes, are:
 
-1. The common operations; the No-Operation `NOP`, Addition `ADD` and Subtraction `SUB`. Their corresponding special opcodes are; `0`, `1` and `2`, respectively.
+1. The common operations; the No-Operation NOP, Addition ADD and Subtraction SUB. Their corresponding special opcodes are; 0, 1 and 2, respectively.
 
-2. The Boolean operations; $\text{Less Than }$ `LT`, $\text{Greater Than }$ `GT`, $\text{Signed Less Than }$ `SLT`, $\text{Signed Greater Than }$ `SGT`, $\text{Equal }$ `EQ`  and  $\text{Is-Zero }$ `ISZERO`. Their special opcodes are, `3`, `4`, `5`, `6` and `7`, respectively.
+2. The Boolean operations; $\text{Less Than }$ LT, $\text{Greater Than }$ GT, $\text{Signed Less Than }$ SLT, $\text{Signed Greater Than }$ SGT, $\text{Equal }$ EQ  and  $\text{Is-Zero }$ ISZERO. Their special opcodes are, 3, 4, 5, 6 and 7, respectively.
 
-3. The logical operations; `AND`, `OR`,  `XOR` and `NOT`, each with its special opcode; `9` ,`10`, `11` and `12`, respectively.
+3. The logical operations; AND, OR,  XOR and NOT, each with its special opcode; 9 ,10, 11 and 12, respectively.
 
-**Firstly,** the Binary SM Executor translates the Binary Actions into the PIL language.
+_Firstly,_ the Binary SM executor translates the Binary Actions into the PIL language.
 
-**Secondly,** it executes the Binary Actions.
+_Secondly,_ it executes the Binary Actions.
 
-**And thirdly,** it uses the [Binary PIL program](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/binary.pil), to check correct execution of the Binary Actions using Plookup.
+_And thirdly,_ it uses the [Binary PIL program](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/binary.pil), to check correct execution of the Binary Actions using Plookup.
 
 #### Translation to PIL language
 
 It builds the constant polynomials, which are generated once-off at the beginning. These are;
 
-- the 4 bits long operation code `P_OPCODE`,
-- the 1-bit Carry-in  `P_CIN`,
-- the Last-byte `P_LAST`,
-- the 1 byte input polynomials `P_A` and `P_B`,
-- the 16-bit output polynomial `P_C`,
-- the 1-bit Carry-out `P_COUT`.
+- the 4 bits long operation code P_OPCODE,
+- the 1-bit Carry-in  P_CIN,
+- the Last-byte P_LAST,
+- the 1 byte input polynomials P_A and P_B,
+- the 16-bit output polynomial P_C,
+- the 1-bit Carry-out P_COUT.
 
 It also creates constants required in the Binary PIL program;
 
-- `RESET` is used to reset registry values every time the state machine completes a cycle of state transitions,
-- `FACTOR`, which is an array of size 8, is used for correct placement of output registry values.
+- RESET is used to reset registry values every time the state machine completes a cycle of state transitions,
+- FACTOR, which is an array of size 8, is used for correct placement of output registry values.
 
 ### Execution of Binary actions
 
-The crux of the Binary SM Executor is in the `lines 371 to 636` of [sm_binary.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_binary.js). This is where it executes Binary Actions.
+The crux of the Binary SM executor is in the lines 371 to 636 of [sm_binary.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_binary.js). This is where it executes Binary Actions.
 
 1. It takes the committed polynomials A, B and C, and breaks them into bytes (in little-endian form).
 
-2. It sequentially pushes each triplet of bytes (`freeInA`, `freeInB`, `freeInC`) into their corresponding registries (`ai`, `bi`, `ci`).
+2. It sequentially pushes each triplet of bytes (freeInA, freeInB, freeInC) into their corresponding registries (ai, bi, ci).
 
    It runs one for-loop for all committed polynomials (A, B, C), over all the bytes of the 8 registries, which are altogether 32 bytes per committed polynomial.
 
-   Recall that `LATCH_SIZE = REGISTERS_NUM * BYTES_PER_REGISTER` = 8 registries * 4 bytes. It hence amounts to 32 bytes for each committed polynomial.
+   Recall that LATCH_SIZE = REGISTERS_NUM * BYTES_PER_REGISTER = 8 registries * 4 bytes. It hence amounts to 32 bytes for each committed polynomial.
 
 3. Once the 256-bit LATCH is built, it checks the opcodes and then computes the required binary operations in accordance with the instructions of the Main SM.
 
@@ -514,45 +514,44 @@ There are two types of inputs to the Binary PIL program: the constant polynomial
 
 The program operates byte-wise to carry out 256-bit Plookup operations.
 
-Each row of the lookup table is a vector of the form; \{ `P_LAST`, `P_OPCODE`, `P_A`, `P_B`, `P_CIN`, `P_C`, `P_COUT` \},  consisting of the constant polynomials created by the Binary SM Executor. As seen above,
+Each row of the lookup table is a vector of the form; \{ P_LAST, P_OPCODE, P_A, P_B, P_CIN, P_C, P_COUT \},  consisting of the constant polynomials created by the Binary SM executor. As seen above,
 
-- `P_LAST` is the Last-byte,
-- `P_OPCODE` is the 4-bit operation code,
-- `P_A` and `P_B`, are the 1-byte input polynomials,
-- `P_CIN` is the 1-bit Carry-in,
+- P_LAST is the Last-byte,
+- P_OPCODE is the 4-bit operation code,
+- P_A and P_B, are the 1-byte input polynomials,
+- P_CIN is the 1-bit Carry-in,
+- P_C is the 16-bit output polynomial,
+- P_COUT is the 1-bit Carry-out.
 
-- `P_C` is the 16-bit output polynomial,
-- `P_COUT` is the 1-bit Carry-out.
+The Binary PIL program takes in byte-size inputs, as in the Binary SM executor, each 256-bit input committed polynomial is first broken into 32 bytes.
 
-The Binary PIL program takes in byte-size inputs, as in the Binary SM Executor, each 256-bit input committed polynomial is first broken into 32 bytes.
+For each of the 32 triplets freeInA, freeInB and freeInC, tallying with the three 256-bit committed polynomials  A,B and C, the Binary PIL program,
 
-For each of the 32 triplets `freeInA`, `freeInB` and `freeInC`, tallying with the three 256-bit committed polynomials  A,B and C, the Binary PIL program,
-
-1. Prepares a Plookup input vector of the form;  \{`last`, `opcode`, `freeInA`, `freeInB`, `cIn`, `freeInC`, `cOut`\}, where each element is a byte.
+1. Prepares a Plookup input vector of the form;  \{last, opcode, freeInA, freeInB, cIn, freeInC, cOut\}, where each element is a byte.
 2. Runs Plookup,
 
 ```
 {last,opcode,freeInA,freeInB,cIn,freeInC,cOut} in {P_LAST,P_OPCODE,P_A,P_B,P_CIN,P_C,P_COUT};
 ```
 
-3. Resets registry values at the end of the 32 cycles using `RESET`, and utilising `FACTOR` for correct placement of values. For e.g., `a0' = a0 * (1 - RESET) + freeInA * FACTOR[0];`
+3. Resets registry values at the end of the 32 cycles using RESET, and utilising FACTOR for correct placement of values. For e.g., $\texttt{a0' = a0 * (1 - RESET) + freeInA * FACTOR[0]}$;
 
-   Special variables, `useCarry` and `c0Temp`, are used for managing updates and assignments of values, particularly for Boolean operations, where the output `c0` registry value is either `TRUE = 1` or `FALSE = 0`. Hence the Lines 104 and 105 of code;
+   Special variables, useCarry and c0Temp, are used for managing updates and assignments of values, particularly for Boolean operations, where the output c0 registry value is either TRUE = 1 or FALSE = 0. Hence the Lines 104 and 105 of code;
 
-   Line 104.    `c0Temp' = c0Temp * (1 - RESET) + freeInC * FACTOR[0];`
+   Line 104.    c0Temp' = c0Temp * (1 - RESET) + freeInC * FACTOR[0];
 
-   Line 105.    `c0' = useCarry * (cOut - c0Temp ) + c0Temp;`
+   Line 105.    c0' = useCarry * (cOut - c0Temp ) + c0Temp;
 
-   For all non-Boolean operations; the default value for `useCarry` is zero, making `c0' = c0Temp`. The value of `c0'` is therefore of the same form as other `ci'` update values.
+   For all non-Boolean operations; the default value for useCarry is zero, making c0' = c0Temp. The value of c0' is therefore of the same form as other ci' update values.
 
-4. The output of the Binary PIL program is therefore a report of either `pass` or `fail`.
+4. The output of the Binary PIL program is therefore a report of either _pass_ or _fail_.
 
 ## Source code
 
 The Polygon zkEVM repository is available on [GitHub](https://github.com/0xPolygonHermez).
 
-**Binary SM Executor**: [sm_binary.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_binary.js)
+Binary SM executor: [sm_binary.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/src/sm/sm_binary.js)
 
-**Binary SM PIL**: [binary.pil](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/binary.pil)
+Binary SM PIL: [binary.pil](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/pil/binary.pil)
 
-**Test Vectors**: [binary_test.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/test/sm/sm_binary_test.js)
+Test vectors: [binary_test.js](https://github.com/0xPolygonHermez/zkevm-proverjs/blob/main/test/sm/sm_binary_test.js)

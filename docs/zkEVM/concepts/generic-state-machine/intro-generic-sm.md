@@ -4,7 +4,7 @@ Unlike the mFibonacci state machine, which is an implementation of one specific 
 
 The idea here is to create a state machine that behaves like a processor of sorts. In as much as a processor has registries and a clock, so is our generic state machine. It receives instructions in the form of programs written in Assembly, and makes state transitions at each clock in accordance with these instructions.
 
-See Figure below, for such a state machine with registries $\texttt{A}$ and $\texttt{B}$, and a state $\big(\texttt{A}^{\texttt{i}},\texttt{B}^{\texttt{i}}\big)$ that changes to another state $\big(\texttt{A}^{\texttt{i+2}},\texttt{B}^{\texttt{i+2}}\big)$ in accordance with two instructions, $\texttt{Instruction}_{\texttt{i}}$ and $\texttt{Instruction}_{\texttt{i+1}}$.
+See the figure below, for a state machine with registries $\texttt{A}$ and $\texttt{B}$, and a state $\big(\texttt{A}^{\texttt{i}},\texttt{B}^{\texttt{i}}\big)$ that changes to another state $\big(\texttt{A}^{\texttt{i+2}},\texttt{B}^{\texttt{i+2}}\big)$ in accordance with two instructions, $\texttt{Instruction}_{\texttt{i}}$ and $\texttt{Instruction}_{\texttt{i+1}}$.
 
 ![Figure 1: A typical generic state machine](../../../img/zkEVM/gen1-typical-gen-sm.png)
 
@@ -12,19 +12,19 @@ The aim with this document is to explain how the machinery used in the mFibonacc
 
 Think of our state machine as being composed of two parts; the part that has to do with generating the execution trace, while the other part is focused on verifying that the executions were correctly executed.
 
-- The former part is more like the "software" of the state machine, as it is concerned with interpreting program instructions and correctly generating the execution trace. A novel language dubbed the **Zero-knowledge Assembly Language** (zkASM) is used in this part.
+- The former part is more like the 'software' of the state machine, as it is concerned with interpreting program instructions and correctly generating the execution trace. A novel language dubbed the zero-knowledge Assembly (zkASM) language is used in this part.
 
-- But the latter part is more like the "hardware" as it consists of a set of arithmetic constraints (or their equivalent, polynomial identities) that every correctly generated execution trace must satisfy. Since these arithmetic constraints are transformed into polynomial identities (via an interpolation process), they are described in a novel language called the **Polynomial Identity Language** (PIL).
+- But the latter part is more like the 'hardware' as it consists of a set of arithmetic constraints (or their equivalent, polynomial identities) that every correctly generated execution trace must satisfy. Since these arithmetic constraints are transformed into polynomial identities (via an interpolation process), they are described in a novel language called the Polynomial Identity Language (PIL).
 
 ## Generic SM executor
 
 As seen with the mFibonacci SM, the SM executor takes certain inputs together with the description of the SM, in order to produce the execution trace specifically corresponding to these inputs.
 
-![Figure 2: mFibonacci State Machine producing input-specific execution trace](../../../img/zkEVM/gen2-mfib-exec-w-inputs.png)
+![Figure 2: mFibonacci state machine producing input-specific execution trace](../../../img/zkEVM/gen2-mfib-exec-w-inputs.png)
 
-The main difference, in the Generic State Machine case, is the inclusion of a program which stipulates computations to be carried out by the SM executor. These computations could range from a simple addition of two registry values, or moving the value in registry $\texttt{A}$ to registry $\texttt{B}$, to computing some linear combination of several registry values.
+The main difference, in the Generic state machine case, is the inclusion of a program which stipulates computations to be carried out by the SM executor. These computations could range from a simple addition of two registry values, or moving the value in registry $\texttt{A}$ to registry $\texttt{B}$, to computing some linear combination of several registry values.
 
-![Figure 3: A Generic State Machine producing input- and program-specific execution trace ](../../../img/zkEVM/gen3-gen-sm-w-input-instrctn.png)
+![Figure 3: A Generic state machine producing input- and program-specific execution trace ](../../../img/zkEVM/gen3-gen-sm-w-input-instrctn.png)
 
 So then, instead of programming the SM executor ourselves with a specific set of instructions as we did with the mFibonacci SM, the executor of a Generic SM is programmed to read arbitrary instructions encapsulated in some program (depending on the capacity of the SM or the SM's context of application). As mentioned above, each of these programs is initially written, not in a language like Javascript, but in the zkASM language.
 
@@ -47,7 +47,7 @@ $$
 \end{aligned}
 $$
 
-Suppose the state machine starts with the initial state $\big(\texttt{A},\texttt{B}\big) = \big(\texttt{0},\texttt{0} \big)$. The SM executor sequentially executes each instruction as follows;  
+Suppose the state machine starts with the initial state $\big(\texttt{A},\texttt{B}\big) = \big(\texttt{0},\texttt{0} \big)$. The SM executor sequentially executes each instruction as follows,  
 
 - Firstly, "$\mathtt{\$\{getAFreeInput()\} => A}$" is a request to execute the function $\texttt{getAFreeInput()}$. That is, the executor must get a free input value and move it into register $\texttt{A}$. Note that "free input" simply means the input can be any numeric value.
 - Secondly, "$\mathtt{3 => B}$" means the executor must move the constant value $\mathtt{3}$ into register $\mathtt{B}$. Since the value $\texttt{3}$ is part of an instruction, it is referred to as the *constant of the execution*. Also, it is called a constant because, for a given program, it cannot be freely chosen.
@@ -56,7 +56,7 @@ Suppose the state machine starts with the initial state $\big(\texttt{A},\texttt
 
 ### Execution trace
 
-In addition to carrying out computations as per instructions in programs, the executor must also generate the trace of all state transitions, called the **Execution Trace**.
+In addition to carrying out computations as per instructions in programs, the executor must also generate the trace of all state transitions, called the _execution trace_.
 
 Consider, as an example, the execution trace the executor produces for the above program of four instructions. Suppose the free input value used is $7$. The generated execution trace can be depicted in tabular form as shown below.
 

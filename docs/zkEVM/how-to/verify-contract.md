@@ -8,7 +8,7 @@ After successfully compiling a smart contract, follow the next steps to verify y
 
 1. Copy the address to which the smart contract is deployed.
 
-2. Navigate to the [zkEVM Explorer](https://testnet-zkevm.polygonscan.com) and paste the contract address into the Search box. This opens a window with a box labelled **Contract Address Details**.
+2. Navigate to the [zkEVM Explorer](https://cardona-zkevm.polygonscan.com/) and paste the contract address into the Search box. This opens a window with a box labelled **Contract Address Details**.
 
 3. Scroll down to the box with tabs labelled **Transactions**, **Internal Transactions**, **Coin Balance History**, **Logs**, and **Code**.
 
@@ -40,7 +40,7 @@ After successfully compiling a smart contract, follow the next steps to verify y
         forge flatten src/<Contract-Name> -o <Any-Name-For-Flattened-Code>.sol
     ```
 
-    With this command, the flattened code gets saved in the `<Any-Name-For-Flattened-Code>.sol` file. Copy the contents of the new `<Any-Name-For-Flattened-Code>.sol` file and paste into the `Enter the Solodity Contract` field in the [explorer](https://testnet-zkevm.polygonscan.com).
+    With this command, the flattened code gets saved in the `<Any-Name-For-Flattened-Code>.sol` file. Copy the contents of the new `<Any-Name-For-Flattened-Code>.sol` file and paste into the `Enter the Solodity Contract` field in the [explorer](https://cardona-zkevm.polygonscan.com/).
 
 ??? "Standard input JSON"
     Click **Next** after selecting the **via Standard Input JSON** option.
@@ -76,14 +76,14 @@ We use the ready-made `Storage.sol` contract in Remix. Compile the contract and 
 1. Deploy the `Storage.sol` contract:
 
     - Click the **Deploy** icon on the left-side of the IDE window.
-    - Change `ENVIRONMENT` to "Injected Provider - MetaMask" (ensure that your wallet is already connected to Goërli network).
+    - Change `ENVIRONMENT` to "Injected Provider - MetaMask" (ensure that your wallet is already connected to Sepolia network).
     - Confirm the connection request when MetaMask pops up.
     - Click the **Deploy** button and confirm.
 
 2. Check the deployed smart contract on Etherscan:
 
     - Copy the contract address below the **Deploy Contracts**.
-    - Navigate to the [Goërli explorer](https://goerli.etherscan.io).
+    - Navigate to the [Sepolia explorer](https://sepolia.etherscan.io).
     - Paste the contract address in the _Search by address_ field and press **ENTER**.
     - Click on the **Transaction Hash** to see transaction details.
 
@@ -105,7 +105,7 @@ We use the ready-made `Storage.sol` contract in Remix. Compile the contract and 
 
     - Click on the Etherscan icon.
 
-    - Ensure that **Goërli** is present in the **Selected Network** field.
+    - Ensure that **Sepolia** is present in the **Selected Network** field.
 
     - Click within the _Contract Name_ field and type in the name of your deployed contract, or select it if it appears.
 
