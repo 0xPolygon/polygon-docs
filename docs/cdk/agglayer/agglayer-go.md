@@ -3,7 +3,7 @@
 The Agglayer Golang is a web service designed to receive zero-knowledge proofs (ZKP) from CDK chains, ensure they are valid, and send them to the L1 verifier contract for final verification.
 
 !!! warning
-    This service is now deprecating in favor of the more robust and efficient [Rust implementation](agglayer-rs.md).
+    This service is being deprecated and replaced with a more robust and efficient [Rust implementation](agglayer-rs.md).
 
 ## Architecture
 
