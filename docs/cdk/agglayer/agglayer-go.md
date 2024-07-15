@@ -7,11 +7,9 @@ The Agglayer Golang is a web service designed to receive zero-knowledge proofs (
 
 ## Architecture
 
-The AggLayer Golang architecture supports interactions with multiple CDK chains for ZKP verification. 
+The AggLayer Golang architecture supports interoperability among connected CDK chains by using ZKPs to ensure safety. It uses a PostgreSQL database for storage and interacts with both L1 and L2 chains through configured RPC nodes.
 
-It uses PostgreSQL database for storage and interacts with both L1 and L2 chains through configured RPC nodes.
-
-The diagram below shows the full start up, running, and shutdown sequence for the application and its components.
+The diagram below shows the full start-up, running, and shutdown sequence for the AggLayer Golang application and its components.
 
 <center>
 ![CDK architecture](../../img/cdk/agglayer/agglayer-go.png)
