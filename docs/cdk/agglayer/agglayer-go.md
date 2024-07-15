@@ -40,7 +40,7 @@ The diagram below shows the full start-up, running, and shutdown sequence for th
 
 #### Hardware
 
-- For each CDK chain it's necessary to configure it's corresponding RPC node, synced with the target CDK. 
+- For each CDK chain it's necessary to configure its corresponding RPC node, synced with the target CDK. 
 - This node is for checking the state root after executions of L2 batches.
 - We recommend a durable HA PostgresDB for storage, preferably AWS Aurora PostgreSQL or Cloud SQL for PostgreSQL in GCP.
 
