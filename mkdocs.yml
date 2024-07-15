@@ -56,16 +56,16 @@ nav:
       - Get started: cdk/getting-started/index.md
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
-        - L2 Architecture Overview: cdk/concepts/architecture.md
-        - L2 Transaction Lifecycle: cdk/concepts/transaction-lifecycle.md
-        - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
-        - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
-        - Batches, Blocks, Transactions: cdk/concepts/blocks.md
-        - Transaction Finality: cdk/concepts/transaction-finality.md
-        - Gas Fees: cdk/concepts/gas-fees.md
-        - Bridging & Interoperability: cdk/concepts/bridging.md
-        - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
-        # - Kurtosis cdk: '!import https://github.com/jarrodwatts/kurtosis-cdk?branch=jw/docs'
+        - L2 architecture overview: cdk/concepts/architecture.md
+        - L2 transaction lifecycle: cdk/concepts/transaction-lifecycle.md
+        - Rollups vs. validiums: cdk/concepts/rollup-vs-validium.md
+        - ZK vs. optimistic rollups: cdk/concepts/zk-vs-optimistic.md
+        - Batches, blocks, transactions: cdk/concepts/blocks.md
+        - Transaction finality: cdk/concepts/transaction-finality.md
+        - Gas fees: cdk/concepts/gas-fees.md
+        - Bridging & interoperability: cdk/concepts/bridging.md
+        - Admin upgradeability: cdk/concepts/admin-upgradeability.md
+      - How to: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
@@ -184,6 +184,7 @@ nav:
             - Proving system inputs: zkEVM/architecture/proving-system/proving-inputs.md
             - Order and prove: zkEVM/architecture/proving-system/order-and-prove.md
             - Aggregator: zkEVM/architecture/proving-system/aggregator-proofs.md
+            - JSON-RPC: zkEVM/architecture/proving-system/json-rpc-to-proof.md
             - Polynomial identity language: zkEVM/architecture/proving-system/polynom-identity-lang.md
             - Execution trace design: zkEVM/architecture/proving-system/execution-trace-design.md
             - Selector columns: zkEVM/architecture/proving-system/exec-selector-columns.md
@@ -419,6 +420,7 @@ nav:
           - Flair: tools/data/flair.md
           - Moralis: tools/data/moralis.md
           - PARSIQ: tools/data/parsiq.md
+          - SQD (Subsquid): tools/data/sqd.md
           - SubQuery: tools/data/subquery.md
       - Matic.js:
           - Installation:  tools/matic-js/installation.md
