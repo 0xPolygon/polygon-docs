@@ -1,17 +1,15 @@
 ## Overview
 
-The Agglayer Golang service is a web service designed to receive zero-knowledge proofs from various CDK chains, verify their soundness, and send them to L1 for final verification.
+The Agglayer Golang is a web service designed to receive zero-knowledge proofs (ZKP) from CDK chains, ensure they are valid, and send them to the L1 verifier contract for final verification.
 
 !!! warning
-    This service is now deprecating in favor of the more robust and efficient [Rust implementation](agglayer-rs.md).
+    This service is being deprecated and replaced with a more robust and efficient [Rust implementation](agglayer-rs.md).
 
 ## Architecture
 
-The AggLayer Golang architecture supports interactions with multiple CDK chains for ZKP verification. 
+The AggLayer Golang architecture supports interoperability among connected CDK chains by using ZKPs to ensure safety. It uses a PostgreSQL database for storage and interacts with both L1 and L2 chains through configured RPC nodes.
 
-It uses PostgreSQL database for storage and interacts with both L1 and L2 chains through configured RPC nodes.
-
-The diagram below shows the full start up, running, and shutdown sequence for the application and its components.
+The diagram below shows the full start-up, running, and shutdown sequence for the AggLayer Golang application and its components.
 
 <center>
 ![CDK architecture](../../img/cdk/agglayer/agglayer-go.png)
@@ -42,7 +40,7 @@ The diagram below shows the full start up, running, and shutdown sequence for th
 
 #### Hardware
 
-- For each CDK chain it's necessary to configure it's corresponding RPC node, synced with the target CDK. 
+- For each CDK chain it's necessary to configure its corresponding RPC node, synced with the target CDK. 
 - This node is for checking the state root after executions of L2 batches.
 - We recommend a durable HA PostgresDB for storage, preferably AWS Aurora PostgreSQL or Cloud SQL for PostgreSQL in GCP.
 

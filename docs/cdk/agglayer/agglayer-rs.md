@@ -1,6 +1,6 @@
 ## Overview
 
-AggLayer is a Rust-based web service designed to enhance interoperability among heterogeneous blockchain networks by securely handling zero-knowledge proofs. 
+The AggLayer is a Rust-based web service designed to ensure safety for cross-chain asset transfers among heterogeneous blockchain networks. This safety is provided using ZKPs, allowing end-users to interoperate with no additional trust assumptions.  
 
 The service verifies the soundness of proofs from various CDK chains before forwarding them to L1 for verification.
 
@@ -10,8 +10,8 @@ It replaces the previous [Golang implementation](agglayer-go.md).
 
 ### Components
 
-- Aggregator: Receives and verifies zk-proofs.
-- Verifier: Confirms the soundness of proofs before submitting them to L1.
+- Unified bridge: A shared bridge contract for all AggLayer-connected chains, allowing for the transfer of native assets.
+- Pessimistic proof: A novel ZKP that provides safety for the assets on the unified bridge by ensuring no chain can withdraw more tokens of any type than have been deposited into it. The pessimistic proof is validated the verifier contract on the L1. 
 
 ### Data flow
 
