@@ -65,7 +65,7 @@ nav:
         - Gas fees: cdk/concepts/gas-fees.md
         - Bridging & interoperability: cdk/concepts/bridging.md
         - Admin upgradeability: cdk/concepts/admin-upgradeability.md
-        # - Kurtosis cdk: '!import https://github.com/jarrodwatts/kurtosis-cdk?branch=jw/docs'
+      - How to: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
       - Erigon: 
         - Erigon: cdk/erigon/index.md
         - Releases: cdk/erigon/releases.md
