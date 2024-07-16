@@ -134,9 +134,9 @@ As depicted in the figure above, a typical SMT has four types of nodes: leaf, ro
     
     These type of nodes exist whenever two conditions are satisfied:
 
-    (a) No key associated with non-zero values stored in the SMT has a prefix that leads to the node.
+    - No key associated with non-zero values stored in the SMT has a prefix that leads to the node.
 
-    (b) The node has a sibling node, which is either a non-zero leaf or a branch node with a non-zero leaf as its child or grandchild.
+    - The node has a sibling node, which is either a non-zero leaf or a branch node with a non-zero leaf as its child or grandchild.
 
     Referring to the above example, the node reached by traversing the 2-edge path $\mathtt{01}$ is a zero-node because:
 
