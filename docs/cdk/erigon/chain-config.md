@@ -28,4 +28,4 @@ To use chains other than the [defaults](releases.md#current-status), supply a se
 
 4. Mount the directory containing the config files on a Docker container. For example `/dynamic-mynetwork`.
 
-5. To use the new config when starting erigon, use the `--cfg` flag with the path to the config file e.g. `--cfg="/dynamic-mynetwork/dynamic-mynetwork.yaml"`.
+5. To use the new config when starting erigon, use the `--config` flag with the path to the config file e.g. `--config="/dynamic-mynetwork/dynamic-mynetwork.yaml"`.
