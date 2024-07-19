@@ -53,6 +53,7 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
+      - Version compatibility matrix: cdk/version-matrix.md
       - Get started: cdk/getting-started/index.md
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
@@ -191,6 +192,7 @@ nav:
             - zkEVM and execution traces: zkEVM/architecture/proving-system/exec-trace-and-zkevm.md
             - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
             - L2 state tree concept: zkEVM/architecture/proving-system/l2-state-tree.md
+            - Keys and values: zkEVM/architecture/proving-system/l2statetree-keys-and-values.md
             - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
           - Main state machine:
             - Main state machine: zkEVM/architecture/zkprover/main-state-machine/index.md
