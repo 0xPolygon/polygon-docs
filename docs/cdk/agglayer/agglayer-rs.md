@@ -2,7 +2,7 @@
 
 The AggLayer is a Rust-based web service designed to ensure safety for cross-chain asset transfers among heterogeneous blockchain networks. This safety is provided using ZKPs, allowing end-users to interoperate with no additional trust assumptions.  
 
-The service verifies the soundness of proofs from various CDK chains before forwarding them to L1 for verification.
+The service verifies the validity of proofs from various CDK chains before forwarding them to L1 for verification.
 
 It replaces the previous [Golang implementation](agglayer-go.md).
 
