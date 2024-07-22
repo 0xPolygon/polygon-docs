@@ -33,7 +33,7 @@ The diagram below shows the full start-up, running, and shutdown sequence for th
 
 ## Production set up
 
-1. Ensure only one instance of AggLayer is running at a time.
+1. Ensure only one instance of the AggLayer is running at a time.
 2. Use a containerized setup, or OS level service manager/monitoring system, for automatic restarts in the case of failures.
 
 ### Prerequisites
