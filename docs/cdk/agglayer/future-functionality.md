@@ -1,3 +1,0 @@
-- Balance tracking.
-- Decentralization.
-- Etc.

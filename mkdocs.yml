@@ -554,7 +554,6 @@ nav:
         - AggLayer | Rust: cdk/agglayer/agglayer-rs.md
         - AggLayer | Pessimistic proof: cdk/agglayer/pessimistic-proof.md
         - AggLayer | Bridge & call : cdk/agglayer/bridge-and-call.md
-        - Future functionality: cdk/agglayer/future-functionality.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:

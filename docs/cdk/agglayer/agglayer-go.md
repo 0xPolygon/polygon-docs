@@ -1,6 +1,6 @@
 ## Overview
 
-The Agglayer Golang is a web service designed to receive zero-knowledge proofs (ZKP) from CDK chains, ensure they are valid, and send them to the L1 verifier contract for final verification.
+The AggLayer Golang is a web service designed to receive zero-knowledge proofs (ZKP) from CDK chains, ensure they are valid, and send them to the L1 verifier contract for final verification.
 
 !!! warning
     This service is being deprecated and replaced with a more robust and efficient [Rust implementation](agglayer-rs.md).
@@ -33,7 +33,7 @@ The diagram below shows the full start-up, running, and shutdown sequence for th
 
 ## Production set up
 
-1. Ensure only one instance of Agglayer is running at a time.
+1. Ensure only one instance of AggLayer is running at a time.
 2. Use a containerized setup, or OS level service manager/monitoring system, for automatic restarts in the case of failures.
 
 ### Prerequisites
