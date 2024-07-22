@@ -10,8 +10,8 @@ It replaces the previous [Golang implementation](agglayer-go.md).
 
 ### Components
 
-- Unified bridge: A shared bridge contract for all AggLayer-connected chains, allowing for the transfer of native assets.
-- Pessimistic proof: A novel ZKP that provides safety for the assets on the unified bridge by ensuring no chain can withdraw more tokens of any type than have been deposited into it. The pessimistic proof is validated the verifier contract on the L1. 
+- Unified bridge: A shared bridge contract for all AggLayer-connected chains, allowing for the transfer of fungible tokens. 
+- Pessimistic proof: A novel ZKP that provides safety for the tokens deposited to the unified bridge by ensuring no chain can withdraw more tokens of any type than have been deposited into it. Pessimistic proofs are validated by the verifier contract on the L1. 
 
 ### Data flow
 
