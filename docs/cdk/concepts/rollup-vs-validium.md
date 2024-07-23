@@ -12,7 +12,8 @@ Within the rollup category, there are further nuances to storing transaction dat
 
 The CDK provides full flexibility to developers to choose what to do with transaction data, including the ability to build rollups that store data on Ethereum as a rollup like the Polygon zkEVM. 
 
-Note: Currently, the rollup mode of Polygon CDK does not support BLOB mode (EIP4844), but this functionality is coming soon.
+!!! note
+    Currently, the rollup mode of Polygon CDK does not support BLOB mode (EIP4844), but this functionality is coming soon.
 
 ## Validiums
 
