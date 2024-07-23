@@ -154,7 +154,7 @@ The "Outer Prover", seen in the figure above, is responsible for proving the cor
 
 The proof $\pi_{small}$ being a SNARK proof is therefore much smaller compared to $\pi_{big}$ due to the succinctness property of SNARKs.
 
-Notice that the set of public values vary from from one recursion stage to the next.
+Notice that the set of public values vary from one recursion stage to the next.
 
 ### Proof aggregation
 
