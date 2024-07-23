@@ -66,7 +66,15 @@ nav:
         - Gas fees: cdk/concepts/gas-fees.md
         - Bridging & interoperability: cdk/concepts/bridging.md
         - Admin upgradeability: cdk/concepts/admin-upgradeability.md
-      - How to: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - How to: 
+        - Migrate:
+          - Fork id 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
+          - General guide for partners: cdk/how-to/migrate/fork.md
+        - Create custom native token: cdk/how-to/use-native-token.md
+        - Integrate a DAC: cdk/how-to/integrate-da.md
+        - Manage allowlists with policies: cdk/how-to/manage-policies.md
+        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
+        - Connect to CDK testnets: cdk/how-to/connect-testnet.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
