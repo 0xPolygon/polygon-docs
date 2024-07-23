@@ -2,16 +2,16 @@
 
 It is optimized for syncing with the Polygon zkEVM network.
 
-## Current status
+## Current chain/fork support status
 
 At the time of writing, `cdk-erigon` supports the following chains and fork ids:
 
-- zkEVM Cardona testnet: beta support.
+- zkEVM Cardona testnet: full support.
 - zkEVM mainnet: beta support.
 - CDK chains: beta support (forkid.9 and above).
 
 ## Roadmap
 
-- `v1.x.x`: Support for the Polygon Cardona testnet.
-- `v1.x.x`: Support for Polygon zkEVM mainnet.
+- `v1.1.x`: RPC (full support).
+- `v2.x.x`: Sequencer (full support).
 - `v3.x.x`: Erigon 3 based (snapshot support).

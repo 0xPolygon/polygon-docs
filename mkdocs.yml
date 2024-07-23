@@ -66,7 +66,15 @@ nav:
         - Gas fees: cdk/concepts/gas-fees.md
         - Bridging & interoperability: cdk/concepts/bridging.md
         - Admin upgradeability: cdk/concepts/admin-upgradeability.md
-      - How to: '!import https://github.com/0xPolygon/kurtosis-cdk?branch=main'
+      - How to: 
+        - Migrate:
+          - Fork id 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
+          - General guide for partners: cdk/how-to/migrate/fork.md
+        - Create custom native token: cdk/how-to/use-native-token.md
+        - Integrate a DAC: cdk/how-to/integrate-da.md
+        - Manage allowlists with policies: cdk/how-to/manage-policies.md
+        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
+        - Connect to CDK testnets: cdk/how-to/connect-testnet.md
       - Erigon: 
         - Erigon: cdk/erigon/index.md
         - Releases: cdk/erigon/releases.md
@@ -74,6 +82,7 @@ nav:
         - How to:
           - Configure chains dynamically: cdk/erigon/chain-config.md
           - Recover the network: cdk/erigon/network-recovery.md
+        - Resources: cdk/erigon/resources.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
@@ -199,6 +208,7 @@ nav:
             - zkEVM and execution traces: zkEVM/architecture/proving-system/exec-trace-and-zkevm.md
             - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
             - L2 state tree concept: zkEVM/architecture/proving-system/l2-state-tree.md
+            - Keys and values: zkEVM/architecture/proving-system/l2statetree-keys-and-values.md
             - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
           - Main state machine:
             - Main state machine: zkEVM/architecture/zkprover/main-state-machine/index.md

@@ -30,7 +30,7 @@ hide:
    <div class="grid-item">
       <a href="./getting-started">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Try the CDK Locally</div>
+            <div class="feature-card-heading">Try the CDK locally</div>
          </div>
          <p class="feature-paragraph">Get started by deploying a chain with the CDK on your local machine.</p>
       </a>
@@ -38,7 +38,7 @@ hide:
    <div class="grid-item">
       <a href="./concepts/layer2s">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">CDK Concepts</div>
+            <div class="feature-card-heading">CDK concepts</div>
          </div>
          <p class="feature-paragraph">Learn the concepts behind the CDK.</p>
       </a>
@@ -46,7 +46,7 @@ hide:
     <div class="grid-item">
       <a href="./architecture/cdk-zkevm">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">CDK Architecture</div>
+            <div class="feature-card-heading">CDK architecture</div>
          </div>
          <p class="feature-paragraph">Dive deeper into the components of a CDK chain and how they interact.</p>
       </a>
@@ -62,7 +62,7 @@ hide:
    <div class="grid-item">
       <a href="https://discord.com/invite/0xpolygonRnD" target="_blank">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Join the Dev Community</div>
+            <div class="feature-card-heading">Join the dev community</div>
          </div>
          <p class="feature-paragraph">Join our developer Discord server to ask questions and get help.</p>
       </a>

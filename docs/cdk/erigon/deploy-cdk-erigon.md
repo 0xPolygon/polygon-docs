@@ -1,13 +1,17 @@
 ## Prerequisites
 
-### Hardware 
+### Hardware requirements
 
-On x86, the following packages are required to use the optimal, vectorized-Poseidon-hashing for the sparse Merkle tree:
-
-Linux: `libgtest-dev libomp-dev libgmp-dev`
-MacOS: `brew install libomp` `brew install gmp`
+* A Linux-based OS (e.g. Ubuntu 22.04 LTS).
+* At least 32GB RAM with a 4-core CPU.
+* Both Apple Silicon and AMD64 are supported.
 
 !!! tip
+    - On x86, the following packages are required to use the optimal, vectorized-Poseidon-hashing for the sparse Merkle tree:
+
+        - Linux: `libgtest-dev libomp-dev libgmp-dev`
+        - MacOS: `brew install libomp` `brew install gmp`
+
     - For Apple silicon, the `iden3` library is used instead.
 
 ### Software
