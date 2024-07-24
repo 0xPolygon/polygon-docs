@@ -174,7 +174,7 @@ The figure below depicts the submission process.
 
 ![Figure: Sending txs to the system](../../../img/zkEVM/rpc-sending-tx-to-system.png)
 
-In the `validateTx()` function performs the following preliminary checks:
+The `validateTx()` function performs the following preliminary checks:
 
 1. The transaction IP address has a valid format.
 
