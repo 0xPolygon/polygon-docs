@@ -34,7 +34,7 @@ The network name, contract name, bridge name etc can be taken from our [official
 import { ABIManager } from '@maticnetwork/maticjs'
 
 
-const manager = new ABIManager('testnet','mumbai');
+const manager = new ABIManager('testnet','amoy');
 await manager.init();
 
 // set abi
