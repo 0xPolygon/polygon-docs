@@ -109,8 +109,8 @@ nav:
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
           - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
         - Historical data: zkEVM/get-started/historical-data.md
-      - Architecture high-level:
-        - Overview: zkEVM/architecture/high-level/overview.md
+      - Architecture:
+        - Architecture: zkEVM/architecture/index.md
         - Smart contracts: 
           - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
           - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
@@ -148,8 +148,6 @@ nav:
             - Utils:
               - ClaimCompressor.sol:  zkEVM/architecture/high-level/smart-contracts/api/utils/ClaimCompressor.md
           - Addresses: zkEVM/architecture/high-level/smart-contracts/addresses.md
-      - Architecture low-level:
-        - Architecture: zkEVM/architecture/index.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - zkNode: zkEVM/architecture/zknode/index.md
