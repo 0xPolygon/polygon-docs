@@ -192,7 +192,7 @@ Once the normalization step has been finished, the proofs go through aggregation
 
 The procedure is to construct a binary tree of proofs by aggregating every pair of proofs into one. We call this step, the _Aggregation Stage_.
 
-In this step, two batch proofs are put together into one, and this repeated for as long as there's more than one proofs to aggregate.
+In this step, two batch proofs are put together into one, and this repeated for as long as there's more than one proof to aggregate.
 
 Observe that the *Aggregation Stage* is designed to accept:
 
