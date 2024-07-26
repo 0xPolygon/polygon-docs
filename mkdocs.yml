@@ -199,6 +199,7 @@ nav:
             - Using lookup tables: zkEVM/architecture/proving-system/secondary-sms-lookup-tables.md
             - L2 state tree concept: zkEVM/architecture/proving-system/l2-state-tree.md
             - Keys and values: zkEVM/architecture/proving-system/l2statetree-keys-and-values.md
+            - Processing L2 blocks: zkEVM/architecture/proving-system/processing-l2-blocks.md
             - Recapitulation: zkEVM/architecture/proving-system/prover-and-verifier-recap.md
           - Main state machine:
             - Main state machine: zkEVM/architecture/zkprover/main-state-machine/index.md
