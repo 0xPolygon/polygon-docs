@@ -1,8 +1,7 @@
-AggLayer's beginnings lie in the Polygon zkEVM unified bridge technology which was originally implemented for Polygon zkEVM but now also supports CDK chains.
+## Overview
 
-The unified bridge accelerates Ethereum interoperability by using advanced cryptographic techniques and Solidity smart contracts on L1 and L2. It facilitates secure cross-chain interactions and asset transfers, ensuring transaction throughput and integrity.
+The unified bridge is a single bridge contract on Ethereum, providing a safe, common access point for the transfer of all native, never-wrapped tokens. Each chain has a local copy of the unified bridge root, enabling cross-chain interoperability that doesn’t require the security risks of third-party bridges
 
-An Ethereum scalability solution, the unified bridge facilitates seamless L1-L2 interaction and relies on robust and secure zero-knowledge proofs.
 
 !!! important "AggLayer smart contracts"
     - The current version of the unified bridge uses the contracts in the [PolygonzkEVM smart contract repo](https://github.com/0xPolygonHermez/zkevm-contracts).
