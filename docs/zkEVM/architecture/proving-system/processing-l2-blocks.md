@@ -87,7 +87,7 @@ Polygon zkEVM therefore stores the state root after processing each transaction.
 
 In each case the state root is stored in a designated slot: The slot 1 of the `0x5ca1ab1e` smart contract, as illustrated in the figure below.
 
-With this approach, the state root is stored as many times as there are transactions in a batch, resulting in accurate monitoring of the entire batch processing at transaction level. 
+With this approach, the state root is stored for each transaction within a batch, allowing for precise monitoring of the entire batch processing at the transaction level.
 
 ### L2 BLOCKHASH
 
@@ -167,7 +167,7 @@ In the RPC, the method [`zkevm_getNativeBlockHashesInRange`](https://github.com/
 
 ## Etrog upgrade (Fork-ID 6)
 
-In the zkEVM Etrog, similarly to the Ethereum setting though not exactly, more data related to the L2 block processing is secured via the `0x5ca1ab1e` smart contract.
+In the zkEVM Etrog, similar to the Ethereum setting but not identical, additional data related to the L2 block processing is secured via the `0x5ca1ab1e` smart contract.
 
 In particular, the L2 system smart contract `0x5ca1ab1e` stores, in:
 
@@ -201,7 +201,7 @@ $$
 \texttt{txData} = \texttt{(nonce,gasPrice, gasLimit, to, value, data, from)}
 $$
 
-But each L2 transaction data is stored in terms of its cryptographic representative as follows:
+But each L2 transaction's data is stored as its cryptographic representation as follows:
 
 $$
 \texttt{transactionHashL2 = LinearPoseidon(txData)}
@@ -346,7 +346,7 @@ Next, the system starts processing a new block, which starts with the `changeL2B
 
 The proving system provides the $\mathtt{oldStateRoot = SR_{k−1}}$, and the initial step of processing a block in the ROM is to record it in the `0x5ca1ab1e` smart contract.
 
-Subsequently, yet in contrast to what happened in Dragonfruit upgrade, every transaction containing the BLOCKHASH opcode now provides the correct state root, $\mathtt{SR_{k−1}}$.
+Subsequently, and in contrast to what happened in Dragonfruit upgrade, every transaction containing the BLOCKHASH opcode now provides the correct state root, $\mathtt{SR_{k−1}}$.
 
 As shown in the figure below, while transactions within the block are processed, the zkEVM not only updates the L2 state but also adds the information to the $\mathtt{BlockInfoTree}$.
 
