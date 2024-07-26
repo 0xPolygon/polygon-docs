@@ -1,4 +1,4 @@
-The zkEVM, as an L2 zk-Rollup for Ethereum, employs the Keccak hash function to achieve seamless compatibility with the Ethereum blockchain at Layer 1. However, rather than a single state machine hidding four state machines to implement the Keccak-256 hash function, the zkEVM does so in a framework of four state machines:
+The zkEVM, as an L2 zk-Rollup for Ethereum, employs the Keccak hash function to achieve seamless compatibility with the Ethereum blockchain at Layer 1. However, rather than a single state machine hidding four different parts to implement the Keccak-256 hash function, the zkEVM does so in a framework of four state machines:
 
 1. The Padding-KK SM is used for padding purposes, as well as validation of hash-related computations pertaining to the Main SM's queries. As depicted in the figure below, the Padding-KK SM is the Main SM's gateway to the Keccak hashing framework.
 
