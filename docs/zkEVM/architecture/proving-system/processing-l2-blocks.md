@@ -149,7 +149,7 @@ So, if we want to provide a verifiable proof of the execution parameters of a bl
 
 Incorporating block execution parameters into the L2 state is facilitated through the `0x5ca1ab1e` smart contract.
 
-Henceforth, the L2 state root is a hash that contains all the parameters that provide information about block execution.
+Thus, the L2 state root is a hash that contains all the parameters that provide information about block execution.
 
 The figure below depicts the differences.
 
