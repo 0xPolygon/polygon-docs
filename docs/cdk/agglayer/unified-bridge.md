@@ -1,6 +1,6 @@
 ## Overview
 
-The unified bridge is a single bridge contract on Ethereum, providing a safe, common access point for the transfer of all native, never-wrapped tokens. Each chain has a local copy of the unified bridge root, enabling cross-chain interoperability that doesn’t require the security risks of third-party bridges
+The unified bridge is a single bridge contract on Ethereum, providing a safe, common access point for the transfer of all native, never-wrapped tokens. Each chain has a local copy of the unified bridge root, enabling cross-chain interoperability that doesn’t require the security risks of third-party bridges.
 
 
 !!! important "AggLayer smart contracts"
