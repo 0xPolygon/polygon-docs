@@ -16,8 +16,8 @@ Explore the categories below to discover third-party resources and tutorials to 
 
 - [ChainIDE](https://chainide.gitbook.io/chainide-english-1/ethereum-ide-1/6.-polygon-ide)
 - [EthCreator](https://www.ethcreator.com/)
+- [Openfort](https://openfort.xyz/docs)
 - [Thirdweb](https://portal.thirdweb.com/contracts)
-- [Openfort])https://openfort.xyz/docs)
 
 ## Chain data and analytics services
 
