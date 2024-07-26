@@ -1,6 +1,6 @@
 All Keccak-related state machines are accessed through the Padding-KK state machine. It is therefore responsible for handling queries from the Main state machine. Common queries are requests for digests of messages, together with validation of these digests.
 
-In this document, the internal mechanism of the Padding-KK SM is described. How it validates the validity of hash values, input string lengths, and input string readings to ensure that padding requirements are followed.
+This document describes the internal mechanism of the Padding-KK SM. It explains how the state machine validates hash values, input string lengths, and input string readings to ensure that padding requirements are followed.
 
 First, keep in mind that the Padding-KK SM's operations are byte-based, whereas the Keccak-F SM's actions are bit-based. This discrepancy in string formats is handled by the Padding-KK-Bit SM.
 
