@@ -13,6 +13,6 @@ The bridging mechanism enables token transfers and message-passing between Ether
 
 ## Data structures 
 
-Each chain holds a single data structure which stores a record of all token withdrawals and messages that originated from that chain. This “exit tree” is an append-only Merkle trie, similar in structure to the Ethereum deposit trie” The latest state of each chain and the unified bridge is represented by the root of this Merkle tree, referred to as the “exit root.”
+Each chain holds a single data structure which stores a record of all token withdrawals and messages that originated from that chain. This “exit tree” is an append-only Merkle trie, similar in structure to the Ethereum deposit trie. The latest state of each chain and the unified bridge is represented by the root of this Merkle tree, referred to as the “exit root.”
 
 As cryptographic commitments, exit roots ensure the integrity of the network as a whole.  Refer to the [exit root documentation](../../zkEVM/architecture/high-level/smart-contracts/exit-roots.md) for greater detail about the role of exit roots in the system.
