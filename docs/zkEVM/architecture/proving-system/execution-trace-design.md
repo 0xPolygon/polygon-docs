@@ -4,7 +4,7 @@ The intention is to ensure that each row of an execution trace contains all data
 
 **Notation**
 
-Since execution traces are created in the context of state machines, columns of a execution trace are also referred to as _registries_.
+Since execution traces are created in the context of state machines, columns of an execution trace are also referred to as _registries_.
 
 A registry $\texttt{A}$ is denoted by $\texttt{A} = ( a_0, a_1, ... , a_{2^{k}-1})$, where each $a_{i+1}$ is the value in $\texttt{A}$ subsequent to $a_i$. Denote this next value in $\texttt{A}$ by $a'$. That is, $a' = a_{i+1}$.
 
@@ -123,7 +123,7 @@ $$
 \texttt{OP2}:\ c' = a + b + c + a' + b'
 $$
 
-The computation's final outcome is in this case placed in column $\texttt{C}$, as shown inthe table below.
+The computation's final outcome is in this case placed in column $\texttt{C}$, as shown in the table below.
 
 ![Figure: ](../../../img/zkEVM/prover-operands-alternative.png)
 
