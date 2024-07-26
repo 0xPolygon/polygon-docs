@@ -3,8 +3,6 @@
     - Please check against the main documentation site for any live releases.
     - Feel free to experiment with any code in public repos.
 
-## Welcome to AggLayer documentation
-
 The AggLayer is an in-development interoperability protocol that allows for trustless, cross-chain token transfers and message-passing, as well as more complex operations. The safety of the AggLayer is provided by ZK proofs. 
 
 The AggLayer currently connects chains built with Polygon CDK, a developer toolkit for designing ZK-powered Layer 2s. The long term goal for the protocol is to be flexible enough to provide interoperability among a growing range of blockchain architectures, including L2s, appchains, and non-EVM chains. 
