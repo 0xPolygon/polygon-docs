@@ -553,13 +553,10 @@ nav:
       - Welcome: innovation-design/welcome.md
       - AggLayer:
         - Overview: cdk/agglayer/overview.md
-        - Roadmap: cdk/agglayer/roadmap.md
         - AggLayer | Unified bridge: cdk/agglayer/unified-bridge.md
-        - AggLayer | Token flows: cdk/agglayer/token-flows.md
         - AggLayer | Go - DEPRECATING: cdk/agglayer/agglayer-go.md
         - AggLayer | Rust: cdk/agglayer/agglayer-rs.md
-        - AggLayer | Pessimistic proof: cdk/agglayer/pessimistic-proof.md
-        - AggLayer | Bridge & call : cdk/agglayer/bridge-and-call.md
+        - AggLayer | Token flows: cdk/agglayer/token-flows.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:

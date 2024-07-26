@@ -1,12 +1,8 @@
-The following document describes how token and message transactions are implemented by the unified bridge across various L1 and L2 permutations.
+The following describes how token transfers and message passing are implemented by the unified bridge across various L1 and L2 permutations. While the examples provided describe only token transfers, the sequence is the same for arbitrary messages in this current implementation of the AggLayer. 
 
-<center>
-![Token flows](../../img/cdk/agglayer/tx-flows.png)
-</center>
+## L1 to L2
 
-### L1 to L2
-
-1. If a call to `bridgeAsset` or `bridgeMessage` on L1 passes validation, the bridge contract appends an exit leaf to the L1 exit tree and computes the new L1 exit tree root.
+1. If a call to `bridgeAsset` or `bridgeMessage` on L1 passes validation, the unified bridge contract appends an exit leaf to the L1 exit tree and computes the new L1 exit tree root.
 
 2. The global exit root manager appends the new L1 exit tree root to the global exit tree and computes the global exit root.
 
@@ -16,25 +12,25 @@ The following document describes how token and message transactions are implemen
 
 5. A call to `claimAsset` or `claimMessage` provides a Merkle proof that validates the correct exit leaf in the global exit root.
 
-6. The bridge contract validates the caller's Merkle proof against the global exit root. If the proof is valid, the bridging process succeeds; otherwise, the transaction fails.
+6. The unified bridge contract validates the caller's Merkle proof against the global exit root. If the proof is valid, the bridging process succeeds; otherwise, the transaction fails.
 
-### L2 to L1
+## L2 to L1
 
-1. If a call to `bridgeAsset` or `bridgeMessage` on L2 passes validation, the bridge contract appends an exit leaf to the L2 exit tree and computes the new L2 exit tree root.
+1. If a call to `bridgeAsset` or `bridgeMessage` on L2 passes validation, the unified bridge contract appends an exit leaf to the L2 exit tree and computes the new L2 exit tree root.
 
-2. The L2 global exit root manager appends the new L2 exit tree root to the global exit tree and computes the global exit root. At that point, the caller's bridge transaction is included in one of batches selected and sequenced by the sequencer.
+2. The L2 global exit root manager appends the new L2 exit tree root to the global exit tree and computes the global exit root. At that point, the caller's bridge transaction is included in one of the batches selected and sequenced by the sequencer.
 
 3. The aggregator generates a zk-proof attesting to the computational integrity in the execution of sequenced batches which include the transaction.
 
-4. For verification purposes, the aggregator sends the zk-proof together with all relevant batch information that led to the new L2 exit tree root (computed in step 2), to the consensus contract.
+4. For verification purposes, the aggregator sends the zk-proof together with all relevant batch information that led to the new L2 exit tree root (computed in step 2), to the verifier contract.
 
-5. The consensus contract utilizes the `verifyBatches` function to verify validity of the received zk-proof. If valid, the contract sends the new L2 exit tree root to the global exit root manager in order to update the global exit tree.
+5. The verifier contract utilizes the `verifyBatches` function to verify validity of the received zk-proof. If valid, the contract sends the new L2 exit tree root to the global exit root manager in order to update the global exit tree.
 
-6. `claimMessage` or `claimAsset` is then called on the bridge contract with Merkle proofs for correct validation of exit leaves.
+6. `claimMessage` or `claimAsset` is then called on the unified bridge contract with Merkle proofs for correct validation of exit leaves.
 
-7. The bridge contract retrieves the global exit root from the L1 global exit root manager and verifies validity of the Merkle proof. If the Merkle proof is valid, the bridge completes. Otherwise, the transaction is reverted.
+7. The unified bridge contract retrieves the global exit root from the L1 global exit root manager and verifies validity of the Merkle proof. If the Merkle proof is valid, the settlement completes, otherwise, the transaction is reverted.
 
-### L2 to L2
+## L2 to L2
 
 1. When a batch of transactions is processed, the bridge contract appends the L2 exit tree with a new leaf containing the batch information. This updates the L2 exit tree root.
 
