@@ -132,9 +132,7 @@ Publicly known values, or _publics_, are not only important in the proving phase
 
 As seen in the previous figure above, _publics_ form part of the verfier's inputs. And, similar to the above pasword protocol, these _publics_ are uniquely related to the executor's input program.
 
-Note that all values in PIL are, by default, considered private.
-
-By default, all values in PIL are considered private. However, any specific can be made public by using the keyword _public_.
+By default, all values in PIL are considered private. However, any specific value can be made public by using the keyword _public_.
 
 ![Figure: ](../../../img/zkEVM/prover-exec-trace-hash-and-verifier.png)
 

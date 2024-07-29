@@ -1,58 +1,25 @@
 !!! info "Disclaimer"
-    - Much of the content in this section is discussing technology in development and not ready for release.
+    - Some of the content in this section discusses technology in development and not ready for release.
     - Please check against the main documentation site for any live releases.
     - Feel free to experiment with any code in public repos.
 
-## Welcome to AggLayer documentation
+The AggLayer is an in-development interoperability protocol that allows for trustless, cross-chain token transfers and message-passing, as well as more complex operations. The safety of the AggLayer is provided by ZK proofs. 
 
-The culmination of Polygon Lab's innovation and design, AggLayer is an evolving ecosystem of zk-based (zero-knowledge) interacting chains. It addresses the current industry focus on interoperability and shared liquidity.
-
-While most rollup environments follow a modular approach, where developers pick-and-choose components such as execution and data availability layers for example, the Agglayer vision is uniquely centered around zk-proof technology.
-
-<center>
-![CDK architecture](../../img/cdk/agglayer/mono-modu.png)
-</center>
+The AggLayer currently connects chains built with Polygon CDK, a developer toolkit for designing ZK-powered Layer 2s. The long term goal for the protocol is to be flexible enough to provide interoperability among a growing range of blockchain architectures, including L2s, appchains, and non-EVM chains. 
  
 ## AggLayer components
 
-AggLayer connects CDK chains and provides a zero-knowledge prover for validity and security.
+### Polygon CDK
 
-<center>
-![CDK architecture](../../img/cdk/cdk-architecture.png)
-</center>
+The AggLayer connects chains built with Polygon CDK, which use ZK proofs to generate state transitions that are cryptographically secure. 
 
-### Chain development kit (CDK)
+### Unified bridge
 
-- CDK chains connect to AggLayer.
-- CDK chains are similar to other rollup stacks but enforce unique zk-based cryptographic proofs for transaction validation to ensure robust security and efficiency.
-- Non-CDK chains will also eventually connect to AggLayer.
+The unified bridge is a single bridge contract for all AggLayer-connected chains, allowing for the cross-chain transfer of fungible (non-wrapped) tokens. It is the source of unified liquidity for the AggLayer. 
 
-### AggLayer
+!!! tip "More information"
+    See the [unified bridge documentation](unified-bridge.md) for details. 
 
-- Running now on the unified bridge technology, AggLayer takes a many-to-many approach to CDK chain interactions which focuses on validity, interoperability, and security.
-- It aggregates and batches proofs from multiple CDK chains into a single proof, significantly lowering the verification cost across chains as the ecosystem grows.
+### AggLayer service
 
-<center>
-![AggLayer overview](../../img/cdk/agglayer/agg-layer-overview.png)
-</center>
-
-- AggLayer ensures seamless and correct ordering of cross-chain transaction execution and securely-shared liquidity across all zk-based chains.
-
-### Provers
-
-- Provers generate cryptographic proofs for zk-based chains that verify the validity of transactions.
-- Ethereum smart contracts then validate those proofs.
-- The cost of proof validation on Ethereum remains fixed regardless of the number of transactions.
-- AggLayer offers a modular approach to provers. Options include the Polygon zkEVM prover technology and the SP1/Plonky 3 prover currently in development.
-
-<center>
-![AggLayer overview](../../img/cdk/agglayer/prover.png)
-</center>
-
-## What to expect
-
-These documents introduce you to the current unified bridge technology that inspires and underpins AggLayer. 
-
-We also document some of AggLayer's key technology in development now; such as the Go and Rust libraries, the bridge and call API, and Plonky prover technology. 
-
-We also document a little about what the future has in store.
+The AggLayer service is a service designed to receive ZK proofs from various CDK chains and verify their validity before sending them to the L1 for final settlement. Currently, the AggLayer service has two implementations: [agglayer-go](agglayer-go.md) and [agglayer-rs](agglayer-rs.md).
