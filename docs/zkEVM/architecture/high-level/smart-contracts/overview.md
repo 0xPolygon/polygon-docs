@@ -13,6 +13,10 @@ There are four key contract types built into the system design:
 - The [bridge contract](#bridge). 
 - [Exit root management contracts](#global-exit-roots).
 
+The diagram below details the Polygon Solidity smart contract architecture.
+
+![Polygon Solidity smart contract architecture](../../../../img/cdk/high-level-architecture/smart-contracts-full-view.png)
+
 ## Consensus contracts
 
 In the Ethereum realm, the set of consensus contracts and the functions they expose fuel the sequencing and verification mechanisms triggered by stack components, such as the sequencer and aggregator, at the node level. 
