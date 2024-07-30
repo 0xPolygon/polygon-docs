@@ -1,3 +1,6 @@
+!!! warning
+    Old doc. Should be reviewed for currency.
+
 Polygon zkEVM Mainnet Beta is provided on an **AS-IS** and **AS-AVAILABLE** basis. The documentation contains statements about technical specifications, some of which may relate to future versions of Polygon zkEVM rather than its current implementation.
 
 ## Attack vectors/security

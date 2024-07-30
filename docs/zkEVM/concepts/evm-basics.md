@@ -1,3 +1,6 @@
+!!! warning
+    This first paragraph is confusing as it sounds like the doc is about something else.
+
 In this document we dig deeper into the main state machine or executor component of the zkProver. It is one of the four main components of the zkProver, outlined [here](../architecture/zkprover/index.md). These are - Executor, STARK recursion, CIRCOM, and Rapid SNARK.
 
 Since the design of the zkProver emulates that of the EVM, this document focuses on explaining the basics of EVM.

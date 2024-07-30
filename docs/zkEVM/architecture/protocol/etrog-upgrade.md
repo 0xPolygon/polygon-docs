@@ -1,5 +1,11 @@
 # Etrog upgrade
 
+!!! warning
+    - Testnet info should be a separate page.
+    - Type 2 section looks like a separate doc.
+    - Opcodes and EIPs shouldn't be subheading.
+    - Docs like this are kind of "latest news" but they are hidden deep in the content
+
 This document provides details of the Etrog upgrade, which is Polygon zkEVM's upgrade that succeeds the Dragonfruit upgrade.
 
 Although the Dragonfruit upgrade had some advantages over previous zkEVM versions, it has its own pain points. We take a look at what these pain points are, and how the Etrog upgrade resolves them.
