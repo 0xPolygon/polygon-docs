@@ -8,7 +8,7 @@ The stream client-server protocol messages are $\texttt{Start}$, $\texttt{StartB
 
     If the stream client knows the entry number at which the stream should start, it sends a $\texttt{Start}$ message with that particular entry number. That is, $\mathtt{entryNumber} \not= \texttt{0}$.
 
-- $\texttt{StartBookmark}$ message is the type of message the stream client can send if the the stream client does not the know entry number, but knows something more meaningful to the application, like a bookmark.
+- $\texttt{StartBookmark}$ message is the type of message the stream client can send if the stream client does not the know entry number, but knows something more meaningful to the application, like a bookmark.
     
     In the case of the Polygon zkEVM, if the stream client wants to receive information from a certain L2 block number, then it provides the appropriate bookmark by sending a $\texttt{StartBookmark}$ message.
 
