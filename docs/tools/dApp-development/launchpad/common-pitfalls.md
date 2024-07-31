@@ -16,7 +16,7 @@ MetaMask maintains a cache of *latest block number* and *account transaction non
 
 To clear the cache, follow the [MetaMask documentation](https://support.metamask.io/hc/en-us/articles/360015488891-How-to-clear-your-account-activity-reset-account).
 
-### Error: could not coalesce error (error={ "code": -32603, "message": "Internal JSON-RPC error." })
+### Error: `could not coalesce error (error={ "code": -32603, "message": "Internal JSON-RPC error." })`
 
 Clear your wallet cache and try again.
 
