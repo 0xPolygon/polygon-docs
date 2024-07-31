@@ -18,7 +18,7 @@ operating on a fixed number $b$ of bits.
 
 The array of $b$ bits that $f$ keeps transforming is called the _state_, and $b$ is called the _width_ of the state.
 
-The state array is split into two chunks, one with $r$ bits and the other with $c$ bits. The width $b = r + c$,_ where_ $r$ is called the _bitrate_ (or simply _rate_) and $c$ is called the _capacity_.
+The state array is split into two chunks, one with $r$ bits and the other with $c$ bits. The width $b = r + c$, where $r$ is called the _bitrate_ (or simply _rate_) and $c$ is called the _capacity_.
 
 ## Sponge construction phases
 

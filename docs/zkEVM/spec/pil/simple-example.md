@@ -79,7 +79,7 @@ In the zkEVM context, these polynomials would be committed by the Main state mac
 
 The above design of the _Multiplier_ program, as represented by its execution trace, does not scale easily to more complex operations. The number of polynomials (or number of columns) grows linearly with the number of operations that needs to be performed.
 
-For example, if we were design a Multiplier program that computes $2^{10}$ operation, the above design would require $2^{10}$ committed polynomials, which is far from being practical.
+For example, if we were to design a Multiplier program that computes $2^{10}$ operation, the above design would require $2^{10}$ committed polynomials, which is far from being practical.
 
 Here's a more practical design, which reduces the $2^{10}$ committed polynomials to only 3 polynomials;
 
