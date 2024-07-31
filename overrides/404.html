@@ -3,33 +3,33 @@
 {% block content %}
   <body
     style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       height: 100dvh;
       padding: 20px;
       margin: 0;
       width: 100%;
     "
   >
-    <p
+    <div class="container"
       style="
-        font-size: 20px;
-        line-height: 26px;
-        font-family: Space Mono, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       "
     >
-      ERROR
-    </p>
-    <p
-      style="
-        font-size: 120px;
-        line-height: 120px;
-        margin: 0;
-        font-family: Space Mono, monospace;
-      "
-    >
+      <p style="
+              font-size: 20px;
+              line-height: 26px;
+              font-family: Space Mono, monospace;
+            ">
+        ERROR
+      </p>
+      <p style="
+              font-size: 120px;
+              line-height: 120px;
+              margin: 0;
+              font-family: Space Mono, monospace;
+            ">
       404
     </p>
     <svg
@@ -96,7 +96,9 @@
         font-size: 12px;
         line-height: 15.6px;
         font-weight: 500;
+        cursor: pointer;
       "
+      onclick="window.location.href = 'https://docs.polygon.technology'"
     >
       Back to Home
     </button>
