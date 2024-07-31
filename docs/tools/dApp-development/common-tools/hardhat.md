@@ -42,7 +42,7 @@ Choose the JavaScript project and go through these steps to compile, test and de
 
 ### Checking the contract
 
-The `contracts` folder contains `Lock.sol`, which is a sample contract which consistis of a simple digital lock, where users could only withdraw funds after a given period of time.
+The `contracts` folder contains `Lock.sol`, which is a sample contract which consists of a simple digital lock, where users could only withdraw funds after a given period of time.
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
