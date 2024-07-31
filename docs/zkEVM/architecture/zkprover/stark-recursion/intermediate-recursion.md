@@ -70,7 +70,7 @@ A schema of the _recursive2_ circuit generated is as shown in the below Figure.
 
 ![Figure 16: Convert the _recursive1_ circuit to its associated STARK](../../../../img/zkEVM/16prf-rec-recursive2-circuit.png)
 
-Observe that, since the upper proof is of the $\mathtt{\pi_{rec2}}$-type, the multiplexor does not provides the constant root _rootC_ to the _Verifier A_ for hardcoding it, because this verifier should get it through a public input from the previous circuit.
+Observe that, since the upper proof is of the $\mathtt{\pi_{rec2}}$-type, the multiplexor does not provide the constant root _rootC_ to the _Verifier A_ for hardcoding it, because this verifier should get it through a public input from the previous circuit.
 
 Otherwise, since the lower proof has the $\mathtt{\pi_{rec1}}$-type, the Multiplexor lets it pass through by providing the constant root to the Verifier B, so that it can be hardcoded when the corresponding template is filled.
 
