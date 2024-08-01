@@ -389,7 +389,9 @@ nav:
       - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
   - Developer tools: 
       - Developer tools: tools/index.md
-      - dApp development: 
+      - Polygon dApp development: 
+          - Polygon faucet: tools/gas/matic-faucet.md
+          - Polygon gas station: tools/gas/polygon-gas-station.md
           - dApp Launchpad:
               - Introduction: tools/dApp-development/launchpad/intro.md
               - Quickstart: tools/dApp-development/launchpad/quickstart.md
@@ -398,19 +400,82 @@ nav:
               - Commands: tools/dApp-development/launchpad/commands.md
               - Contributing: tools/dApp-development/launchpad/contributing.md
               - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
-          - Smart contract development:
-            - PoS:
-              - Hardhat: tools/dApp-development/common-tools/hardhat.md
-              - Remix: tools/dApp-development/common-tools/remix.md
-              - Replit: tools/dApp-development/common-tools/replit.md
+          - Chain indexer framework:
+              - Overview: tools/chain-indexer-framework/overview.md
+              - Usage: tools/chain-indexer-framework/usage.md 
+          - Matic.js:
+            - Installation:  tools/matic-js/installation.md
+            - Get started:  tools/matic-js/get-started.md
+            - POS:
+                - POS client:  tools/matic-js/pos/client.md
+                - API overview:  tools/matic-js/api-architecture.md
+                - Setup:
+                    - Ethers:  tools/matic-js/setup/ethers.md
+                    - Web3js:  tools/matic-js/setup/web3js.md
+                - Set proof API:  tools/matic-js/set-proof-api.md
+                - Advanced:
+                    - ABI manager:  tools/matic-js/advanced/abi-manager.md
+                    - Exit util:  tools/matic-js/advanced/exit-util.md
+                    - Plugin:  tools/matic-js/advanced/plugin.md
+                - ERC20:
+                    - Overview: tools/matic-js/pos/erc20/index.md
+                    - approveMax:  tools/matic-js/pos/erc20/approve-max.md
+                    - approve:  tools/matic-js/pos/erc20/approve.md
+                    - deposit:  tools/matic-js/pos/erc20/deposit.md
+                    - getAllowance:  tools/matic-js/pos/erc20/get-allowance.md
+                    - getBalance:  tools/matic-js/pos/erc20/get-balance.md
+                    - isWithdrawExited:  tools/matic-js/pos/erc20/is-withdraw-exited.md
+                    - transfer:  tools/matic-js/pos/erc20/transfer.md
+                    - withdrawExitFaster:  tools/matic-js/pos/erc20/withdraw-exit-faster.md
+                    - withdrawExit:  tools/matic-js/pos/erc20/withdraw-exit.md
+                    - withdrawStart:  tools/matic-js/pos/erc20/withdraw-start.md
+                - ERC721:
+                    - Overview:  tools/matic-js/pos/erc721/index.md
+                    - approveAll:  tools/matic-js/pos/erc721/approve-all.md
+                    - approve:  tools/matic-js/pos/erc721/approve.md
+                    - depositMany:  tools/matic-js/pos/erc721/deposit-many.md
+                    - deposit:  tools/matic-js/pos/erc721/deposit.md
+                    - getAllTokens:  tools/matic-js/pos/erc721/get-all-tokens.md
+                    - getTokenIdAtIndexForUser:  tools/matic-js/pos/erc721/get-token-id-at-index-for-user.md
+                    - getTokensCount:  tools/matic-js/pos/erc721/get-tokens-count.md
+                    - isApprovedAll:  tools/matic-js/pos/erc721/is-approved-all.md
+                    - isApproved:  tools/matic-js/pos/erc721/is-approved.md
+                    - isWithdrawExitedMany:  tools/matic-js/pos/erc721/is-withdraw-exited-many.md
+                    - isWithdrawExited:  tools/matic-js/pos/erc721/is-withdraw-exited.md
+                    - transfer:  tools/matic-js/pos/erc721/transfer.md
+                    - withdrawExitFasterMany:  tools/matic-js/pos/erc721/withdraw-exit-faster-many.md
+                    - withdrawExitFaster:  tools/matic-js/pos/erc721/withdraw-exit-faster.md
+                    - withdrawExitMany:  tools/matic-js/pos/erc721/withdraw-exit-many.md
+                    - withdrawExit:  tools/matic-js/pos/erc721/withdraw-exit.md
+                    - withdrawStartMany:  tools/matic-js/pos/erc721/withdraw-start-many.md
+                    - withdrawStartWithMetaData:  tools/matic-js/pos/erc721/withdraw-start-with-meta-data.md
+                    - withdrawStart:  tools/matic-js/pos/erc721/withdraw-start.md
+                - ERC1155:
+                    - approveAllForMintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
+                    - approveAll:  tools/matic-js/pos/erc1155/approve-all.md
+                    - depositMany:  tools/matic-js/pos/erc1155/deposit-many.md
+                    - deposit:  tools/matic-js/pos/erc1155/deposit.md
+                    - getBalance:  tools/matic-js/pos/erc1155/get-balance.md
+                    - index:  tools/matic-js/pos/erc1155/index.md
+                    - isApprovedAll:  tools/matic-js/pos/erc1155/is-approved-all.md
+                    - isWithdrawExitedMany:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
+                    - isWithdrawExited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
+                    - transfer:  tools/matic-js/pos/erc1155/transfer.md
+                    - withdrawExitFasterMany:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
+                    - withdrawExitFaster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
+                    - withdrawExitMany:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
+                    - withdrawExit:  tools/matic-js/pos/erc1155/withdraw-exit.md
+                    - withdrawStartMany:  tools/matic-js/pos/erc1155/withdraw-start-many.md
+                    - withdrawStart:  tools/matic-js/pos/erc1155/withdraw-start.md
+                - Common methods:
+                    - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
+                    - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
+                    - isDeposited:  tools/matic-js/pos/is-deposited.md
             - zkEVM:
-              - Write a contract: zkEVM/how-to/write-contract.md
-              - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
-              - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
-              - Verify a contract: zkEVM/how-to/verify-contract.md
-          - Third-party tutorials: tools/dApp-development/third-party-tutorials.md
-          - Polygon faucet: tools/gas/matic-faucet.md
-          - Polygon gas station: tools/gas/polygon-gas-station.md
+                - zkEVM client:  tools/matic-js/zkevm/initialize.md
+                - ERC20:  tools/matic-js/zkevm/erc20.md
+                - Message passing: tools/matic-js/zkevm/message-passing.md
+                - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Popular tools:
         - OKX explorer:
           - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
@@ -418,9 +483,17 @@ nav:
         - Venly:
           - NFT API: https://docs.venly.io/docs/nft-api-getting-started
           - Zapier integration: https://docs.venly.io/docs/zapier-integration
-      - Chain indexer framework:
-          - Overview: tools/chain-indexer-framework/overview.md
-          - Usage: tools/chain-indexer-framework/usage.md 
+        - Smart contract development:
+          - PoS:
+            - Hardhat: tools/dApp-development/common-tools/hardhat.md
+            - Remix: tools/dApp-development/common-tools/remix.md
+            - Replit: tools/dApp-development/common-tools/replit.md
+          - zkEVM:
+            - Write a contract: zkEVM/how-to/write-contract.md
+            - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
+            - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
+            - Verify a contract: zkEVM/how-to/verify-contract.md
+        - Third-party tutorials: tools/dApp-development/third-party-tutorials.md
       - Data:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
           - Covalent: tools/data/covalent.md
@@ -430,79 +503,6 @@ nav:
           - PARSIQ: tools/data/parsiq.md
           - SQD (Subsquid): tools/data/sqd.md
           - SubQuery: tools/data/subquery.md
-      - Matic.js:
-          - Installation:  tools/matic-js/installation.md
-          - Get started:  tools/matic-js/get-started.md
-          - POS:
-              - POS client:  tools/matic-js/pos/client.md
-              - API overview:  tools/matic-js/api-architecture.md
-              - Setup:
-                  - Ethers:  tools/matic-js/setup/ethers.md
-                  - Web3js:  tools/matic-js/setup/web3js.md
-              - Set proof API:  tools/matic-js/set-proof-api.md
-              - Advanced:
-                  - ABI manager:  tools/matic-js/advanced/abi-manager.md
-                  - Exit util:  tools/matic-js/advanced/exit-util.md
-                  - Plugin:  tools/matic-js/advanced/plugin.md
-              - ERC20:
-                  - Overview: tools/matic-js/pos/erc20/index.md
-                  - approveMax:  tools/matic-js/pos/erc20/approve-max.md
-                  - approve:  tools/matic-js/pos/erc20/approve.md
-                  - deposit:  tools/matic-js/pos/erc20/deposit.md
-                  - getAllowance:  tools/matic-js/pos/erc20/get-allowance.md
-                  - getBalance:  tools/matic-js/pos/erc20/get-balance.md
-                  - isWithdrawExited:  tools/matic-js/pos/erc20/is-withdraw-exited.md
-                  - transfer:  tools/matic-js/pos/erc20/transfer.md
-                  - withdrawExitFaster:  tools/matic-js/pos/erc20/withdraw-exit-faster.md
-                  - withdrawExit:  tools/matic-js/pos/erc20/withdraw-exit.md
-                  - withdrawStart:  tools/matic-js/pos/erc20/withdraw-start.md
-              - ERC721:
-                  - Overview:  tools/matic-js/pos/erc721/index.md
-                  - approveAll:  tools/matic-js/pos/erc721/approve-all.md
-                  - approve:  tools/matic-js/pos/erc721/approve.md
-                  - depositMany:  tools/matic-js/pos/erc721/deposit-many.md
-                  - deposit:  tools/matic-js/pos/erc721/deposit.md
-                  - getAllTokens:  tools/matic-js/pos/erc721/get-all-tokens.md
-                  - getTokenIdAtIndexForUser:  tools/matic-js/pos/erc721/get-token-id-at-index-for-user.md
-                  - getTokensCount:  tools/matic-js/pos/erc721/get-tokens-count.md
-                  - isApprovedAll:  tools/matic-js/pos/erc721/is-approved-all.md
-                  - isApproved:  tools/matic-js/pos/erc721/is-approved.md
-                  - isWithdrawExitedMany:  tools/matic-js/pos/erc721/is-withdraw-exited-many.md
-                  - isWithdrawExited:  tools/matic-js/pos/erc721/is-withdraw-exited.md
-                  - transfer:  tools/matic-js/pos/erc721/transfer.md
-                  - withdrawExitFasterMany:  tools/matic-js/pos/erc721/withdraw-exit-faster-many.md
-                  - withdrawExitFaster:  tools/matic-js/pos/erc721/withdraw-exit-faster.md
-                  - withdrawExitMany:  tools/matic-js/pos/erc721/withdraw-exit-many.md
-                  - withdrawExit:  tools/matic-js/pos/erc721/withdraw-exit.md
-                  - withdrawStartMany:  tools/matic-js/pos/erc721/withdraw-start-many.md
-                  - withdrawStartWithMetaData:  tools/matic-js/pos/erc721/withdraw-start-with-meta-data.md
-                  - withdrawStart:  tools/matic-js/pos/erc721/withdraw-start.md
-              - ERC1155:
-                  - approveAllForMintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
-                  - approveAll:  tools/matic-js/pos/erc1155/approve-all.md
-                  - depositMany:  tools/matic-js/pos/erc1155/deposit-many.md
-                  - deposit:  tools/matic-js/pos/erc1155/deposit.md
-                  - getBalance:  tools/matic-js/pos/erc1155/get-balance.md
-                  - index:  tools/matic-js/pos/erc1155/index.md
-                  - isApprovedAll:  tools/matic-js/pos/erc1155/is-approved-all.md
-                  - isWithdrawExitedMany:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
-                  - isWithdrawExited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
-                  - transfer:  tools/matic-js/pos/erc1155/transfer.md
-                  - withdrawExitFasterMany:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
-                  - withdrawExitFaster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
-                  - withdrawExitMany:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
-                  - withdrawExit:  tools/matic-js/pos/erc1155/withdraw-exit.md
-                  - withdrawStartMany:  tools/matic-js/pos/erc1155/withdraw-start-many.md
-                  - withdrawStart:  tools/matic-js/pos/erc1155/withdraw-start.md
-              - Common methods:
-                  - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
-                  - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
-                  - isDeposited:  tools/matic-js/pos/is-deposited.md
-          - zkEVM:
-              - zkEVM client:  tools/matic-js/zkevm/initialize.md
-              - ERC20:  tools/matic-js/zkevm/erc20.md
-              - Message passing: tools/matic-js/zkevm/message-passing.md
-              - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md
