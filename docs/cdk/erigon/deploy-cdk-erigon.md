@@ -41,7 +41,11 @@ This can be configured by the flag: `zkevm.l1-highest-block-type`.
 
 The flag defaults to retrieving the `finalized` block. However, there are cases where you may wish to pass `safe` or `latest`.
 
-## Set up sequencer (WIP)
+## Set up sequencer 
+
+!!! warning "Work in progress"
+    - Sequencer is production ready from `v2.x.x` onwards.
+    - Please check the [roadmap](releases.md#roadmap) for more information.
 
 Enable the sequencer by setting the following environment variable:
 
