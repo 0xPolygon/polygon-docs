@@ -24,7 +24,9 @@ Polygon PoS has transitioned to a community-driven model for snapshots. Active c
 
 To begin, ensure that your node environment meets the **prerequisites** outlined [here](../how-to/full-node/full-node-binaries.md). 
 
-The majority of snapshot providers have also outlined the steps that need to be followed to download and use their respective client snapshots. Navigate to the All4nodes In case there the steps are unavailable or unclear, the following tips will come in handy:
+The majority of snapshot providers have also outlined the steps that need to be followed to download and use their respective client snapshots. Navigate to [All4nodes](https://all4nodes.io/Polygon) to view the snapshot source. 
+
+In case the steps are unavailable or the procedure is unclear, the following tips will come in handy:
 
 - You can use the `wget` command to download and extract the `.tar` snapshot files. For example:
 
