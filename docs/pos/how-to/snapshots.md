@@ -10,13 +10,15 @@ Polygon PoS has transitioned to a community-driven model for snapshots. Active c
 
 | Name                                                                 | Available snapshots   | Note                                         |
 | -------------------------------------------------------------------- | --------------------- | -------------------------------------------- |
-| [Stakecraft](https://all4nodes.io/Polygon)                           | Mainnet, Amoy, Erigon | Support for Erigon archive snapshot          |
+| Stakecraft                                                           | Mainnet, Amoy, Erigon | Support for Erigon archive snapshot          |
 | [PublicNode (by Allnodes)](https://publicnode.com/snapshots#polygon) | Mainnet, Amoy         | Support for PBSS + PebbleDB enabled snapshot |
-| [Stakepool](https://all4nodes.io/Polygon)                            | Mainnet, Amoy         | -                                            |
-| [Vaultstaking](https://all4nodes.io/Polygon)                         | Mainnet               | -                                            |
-| [Girnaar Nodes](https://all4nodes.io/Polygon)                        | Amoy                  | -                                            |
+| Stakepool                                                            | Mainnet, Amoy         | -                                            |
+| Vaultstaking                                                         | Mainnet               | -                                            |
+| Girnaar Nodes                                                        | Amoy                  | -                                            |
 
-For all the snapshots, visit [All4nodes.io](https://all4nodes.io/Polygon), an aggregator for Polygon community snapshots.
+!!! info "Snapshot aggregator"
+
+    Visit [All4nodes.io](https://all4nodes.io/Polygon) for a comprehensive list of community snapshots.
 
 ## Downloading and using client snapshots
 
