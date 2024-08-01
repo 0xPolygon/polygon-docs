@@ -137,6 +137,10 @@ In order to enable the `zkevm_ namespace`, add `zkevm` to the [`http.api`](#conf
 
 It can also run as a sequencer. To enable the sequencer, set the `CDK_ERIGON_SEQUENCER` environment variable to `1` and start the node. 
 
+!!! warning "Work in progress"
+    - Sequencer is production ready from `v2.x.x` onwards.
+    - Please check the [roadmap](releases.md#roadmap) for more information.
+
 `cdk-erigon` supports migrating a node from being an RPC node to a sequencer and vice versa. To do this, stop the node, set the `CDK_ERIGON_SEQUENCER` environment variable to the desired value and restart the node. Please ensure that you do include the sequencer specific flags found below when running as a sequencer. You can include these flags when running as an RPC to keep a consistent configuration between the two run modes.
 
 ### Docker (DockerHub)
