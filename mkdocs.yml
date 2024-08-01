@@ -110,8 +110,8 @@ nav:
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
           - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
         - Connect to zkEVM: zkEVM/get-started/quick-start.md
-        - API: 
-          - JSON RPC endpoints: zkEVM/api/json-rpc.md
+        - JSON RPC API: 
+          - Endpoints: zkEVM/api/json-rpc.md
           - Check transaction status: zkEVM/api/check-tx-status.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
@@ -127,10 +127,9 @@ nav:
             - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
             - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
             - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
-
           - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
           - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
-          - API:
+          - Solidity API:
             - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
             - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
             - PolygonZkEVMGlobalExitRootV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMGlobalExitRootV2.md
