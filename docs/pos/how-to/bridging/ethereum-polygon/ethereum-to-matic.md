@@ -151,7 +151,7 @@ let receiver = new matic.eth.Contract(JSON.parse(receiverABI), receiverAddress)
 
 We're using `@maticnetwork/meta` package for the RPCs, the package isn't a requirement to run the script.
 
-`matic` and `main` objects refer to the web3 object initialized with Polygon's and Ropsten's RPC respectively.
+`matic` and `main` objects refer to the web3 object initialized with Polygon Amoy and Sepolia network's respective RPC URLs.
 
 `sender` and `receiver` objects refer to the contract objects of `Sender.sol` and `Receiver.sol` that we deployed in Step 1 and 2.
 

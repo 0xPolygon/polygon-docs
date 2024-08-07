@@ -9,7 +9,7 @@
 
 ## Supported endpoints
 
-All [__Class A__](https://www.covalenthq.com/docs/api/#tag--Class-A) endpoints are supported for the Matic mainnet and the Mumbai testnet. You can query either network via the unified API by changing the `chainId`.
+All [__Class A__](https://www.covalenthq.com/docs/api/#tag--Class-A) endpoints are supported for the Matic mainnet and the Amoy testnet. You can query either network via the unified API by changing the `chainName`.
 
 !!! info "Endpoints"
 
@@ -17,14 +17,13 @@ All [__Class A__](https://www.covalenthq.com/docs/api/#tag--Class-A) endpoints a
 
 ## Appendix
 
-### Matic gas token
+### MATIC gas token
 
-To interact with the Matic network, MATIC tokens are required to pay as gas fees. Covalent's
-responses automatically returns `gas_*` fields in the MATIC units.
+To interact with Polygon network, MATIC tokens are required to pay gas fees. Covalent's responses automatically return `gas_*` fields in MATIC units.
 
 ### Token mapping
 
-Covalent maintains an on-chain real-time mapping of token addresses between the Ethereum mainnet and the Matic chain. These addresses are used to reverse-lookup prices on Matic and also to return the right token logo URLs.
+Covalent maintains an on-chain real-time mapping of token addresses between the Ethereum mainnet and Polygon. These addresses are used to reverse-lookup prices on MATIC and also to return the right token logo URLs.
 
 Some example of mapped tokens:
 
