@@ -27,7 +27,7 @@ In the non-recursive case, a PIL specification is transformed into a verifiable 
 
 Subsequently, CIRCOM takes the above _STARK_ proof as an input and generates an _Arithmetic circuit_ and its corresponding _witness_.
 
-The Arithmetic circuit is expressed in terms of its equivalent _Rank-1 Constraint System (R1CS)_, while the _witness_ is actuallly a set of input, intermediate and output values of the circuit wires, satisfying the R1CS.
+The Arithmetic circuit is expressed in terms of its equivalent _Rank-1 Constraint System (R1CS)_, while the _witness_ is actually a set of input, intermediate and output values of the circuit wires, satisfying the R1CS.
 
 Finally, _Rapid SNARK_ takes the above Witness together with the _STARK Verifier data_ and generates a _SNARK_ proof corresponding to the previous _STARK_ proof.
 

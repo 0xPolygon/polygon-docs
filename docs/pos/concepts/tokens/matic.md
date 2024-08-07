@@ -19,4 +19,4 @@ You can obtain test MATIC for testing purposes on the Amoy testnet. Testnet toke
 3. Choose the **Polygon PoS (Amoy)** network.
 4. Enter your account address and confirm.
 
-For interactions between Sepolia and Amoy, consider using tools like [Matic.js](https://maticnetwork.github.io/matic.js/), or use the the [Polygon Portal](https://portal.polygon.technology/).
+For interactions between Sepolia and Amoy, consider using tools like [Matic.js](https://maticnetwork.github.io/matic.js/), or use the [Polygon Portal](https://portal.polygon.technology/).

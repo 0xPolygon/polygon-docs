@@ -32,6 +32,14 @@ hide:
 </div>
 <div class="grid-container">
    <div class="grid-item">
+      <a href="../cdk/agglayer/overview">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">AggLayer documentation</div>
+         </div>
+         <p class="feature-paragraph">AggLayer solves blockchain fragmentation by enabling sovereign chains to securely share liquidity, users, and state.</p>
+      </a>
+   </div>
+   <div class="grid-item">
       <a href="../cdk/architecture/type-1-prover/intro-t1-prover">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Polygon Type 1 Prover</div>
@@ -47,7 +55,7 @@ hide:
          <p class="feature-paragraph">Polygon security, bug bounties, and more.</p>
       </a>      
    </div>
-    <div class="grid-item">
+   <div class="grid-item">
       <a href="./plonky">
          <div class="product-list-item-header">
             <div class="feature-card-heading">Plonky 2 & 3</div>
@@ -61,14 +69,6 @@ hide:
             <div class="feature-card-heading">The future of Polygon network</div>
          </div>
          <p class="feature-paragraph">Upcoming updates and iterations across Polygon network</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./welcome">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Polygon innovation and design</div>
-         </div>
-         <p class="feature-paragraph">Find out what to expect from the Polygon Knowledge Layer Learn section.</p>
       </a>
    </div>
    <div class="grid-item">

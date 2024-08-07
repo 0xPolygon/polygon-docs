@@ -162,6 +162,6 @@ sol-merger \"./contracts/*.sol\" ./build
 
 - Choose the license type of your contract
 
-In the next section, paste your flattened samrt contract here. If you had enabled optimization, then adjust the `optimization` section accordingly.
+In the next section, paste your flattened smart contract here. If you had enabled optimization, then adjust the `optimization` section accordingly.
 
 Constructor arguments should have been filled in automatically. If not, they can be retrieved from the trailing bytes of the deployment transaction (example: `000000000000000000000000a6fa4fb5f76172d178d61b04b0ecd319c5d1c0aa`).

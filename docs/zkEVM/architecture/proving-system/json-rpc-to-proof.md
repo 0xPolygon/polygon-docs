@@ -174,11 +174,11 @@ The figure below depicts the submission process.
 
 ![Figure: Sending txs to the system](../../../img/zkEVM/rpc-sending-tx-to-system.png)
 
-In the `validateTx()` function performs the following preliminary checks:
+The `validateTx()` function performs the following preliminary checks:
 
 1. The transaction IP address has a valid format.
 
-2. The transaction fields are properly signed (in both current and pre-EIP-155). EIP- 155 states that we must include the `chainID` in the hash of the data to be signed (which is an anti-replay attack protection).
+2. The transaction fields are properly signed (in both current and pre-EIP-155). EIP-155 states that we must include the `chainID` in the hash of the data to be signed (which is an anti-replay attack protection).
 
 3. The transaction’s `chainID` is the same as the pool’s `chainID` (which is the `chainID` of the L2 Network) whenever `chainID` is not zero.
 

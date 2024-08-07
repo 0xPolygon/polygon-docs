@@ -1,0 +1,84 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <body
+    style="
+      height: 100dvh;
+      padding: 20px;
+      margin: 0;
+      width: 100%;
+    "
+  >
+    <div class="container"
+      style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      "
+    >
+      <p style="
+              font-size: 20px;
+              line-height: 26px;
+              font-family: Space Mono, monospace;
+            ">
+        ERROR
+      </p>
+      <p style="
+              font-size: 120px;
+              line-height: 120px;
+              margin: 0;
+              font-family: Space Mono, monospace;
+            ">
+      404
+    </p>
+    <img src="/img/404.png" alt="404 image" width="294" height="282">
+    <p
+      style="
+        font-size: 42px;
+        line-height: 48px;
+        font-weight: 500;
+        text-align: center;
+        margin: 0;
+        max-width: 100%;
+      "
+    >
+      Uh Oh. Sorry there&apos;s something wrong.
+    </p>
+    <p
+      style="
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 500;
+        color: #67666e;
+        text-align: center;
+        max-width: 100%;
+      "
+    >
+      We couldn&apos;t find the page you&apos;re looking for.
+    </p>
+    <button
+      style="
+        padding: 10px 14px 10px 14px;
+        border-radius: 48px;
+        outline: none;
+        border: none;
+        background: #7047eb;
+        color: #fff;
+        font-size: 12px;
+        line-height: 15.6px;
+        font-weight: 500;
+        cursor: pointer;
+      "
+      onclick="window.location.href = 'https://docs.polygon.technology'"
+    >
+      Back to Home
+    </button>
+  </body>
+</html>
+
+{% endblock %}
+
+{% block htmltitle %}
+   <title>404 - Not found</title>
+{% endblock %}

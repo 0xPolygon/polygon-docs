@@ -1,7 +1,3 @@
-The class diagram below describes how the exit root contracts communicate with the bridge and the rollup manager.
-
-![Polygon Solidity smart contract bridging architecture](../../../../img/cdk/high-level-architecture/exit-root-class-diagram.png)
-
 An exit tree is a binary, append-only, sparse Merkle tree (SMT) whose leaf nodes store bridging data. The exit trees have a depth of 32.
 
 The Merkle root of an exit tree is known as the exit tree root, and it is the fingerprint of all the information recorded in the exit tree's leaf nodes. 
