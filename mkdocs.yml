@@ -167,6 +167,7 @@ nav:
               - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
               - Stream file: zkEVM/architecture/data-streamer/stream-file.md
               - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
+            - About reorgs: zkEVM/architecture/protocol/synchronizer-reorg.md
           - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
           - Upgrades:
             - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
