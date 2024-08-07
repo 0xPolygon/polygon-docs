@@ -16,7 +16,7 @@ The batch, denoted by $\mathtt{724^B}$, is therefore part of the virtual state. 
 
 ![Figure: Reorg - consolidated state](../../../img/zkEVM/sync-seq-consolidated-reorg.png)
 
-Consequently, and being cognisant of the current virtual state, _sequencer A_ needs to re-synchronize its state starting from batch $\mathtt{724^B}$.
+Therefore, to align with the current virtual state, sequencer A must re-synchronize its state from batch $\mathtt{724^B}$ onwards.
 
 To accomplish this, sequencers must always check sequenced transactions present in the L1, in case another sequencer has virtualized a different batch.
 
@@ -41,7 +41,7 @@ of the need to reorg.
 
 And, as in the above scenario of sequencer A and B, the synchronizer alerts sequencer A of the need to reorg.
 
-!!!info
+!!! info
     
     Currently, reorgs do not occur in the zkEVM system because a single sequencer is implemented, the _trusted sequencer_.
 
@@ -65,7 +65,7 @@ The figure below, depicts a reorg scenario where two batches are in the virtual 
 
 ![Figure: Reorg in L1 requires state change](../../../img/zkEVM/sync-reorg-in-l1-state.png)
 
-The synchronizer is in charge of detecting these types of scenario, and must inform the sequencer to perform the appropriate reorg.
+The synchronizer is responsible for identifying such scenarios and informing the sequencer to perform the appropriate reorg.
 
 ## Synchronizer
 
