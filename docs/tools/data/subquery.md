@@ -4,7 +4,7 @@
 
 ## Intro
 
-SubQuery is a leading blockchain data indexer that provides developers with fast, flexible, universal, open source and decentralised APIs for web3 projects. SubQuery SDK allows developers to get rich indexed data and build intuitive and immersive decentralised applications in a faster and more efficient way. SubQuery supports 100+ ecosystems including Polygon, Polygon zkEVM, Polygon Mumbai, Ethereum, Polkadot, Algorand, NEAR, and Avalanche.
+SubQuery is a leading blockchain data indexer that provides developers with fast, flexible, universal, open source and decentralised APIs for web3 projects. SubQuery SDK allows developers to get rich indexed data and build intuitive and immersive decentralised applications in a faster and more efficient way. SubQuery supports 100+ ecosystems including Polygon, Polygon zkEVM, Polygon Amoy, Ethereum, Polkadot, Algorand, NEAR, and Avalanche.
 
 Another one of SubQuery's competitive advantages is the ability to aggregate data not only within a chain but across multiple blockchains all within a single project. This allows the creation of feature-rich dashboard analytics and multi-chain block scanners.
 
