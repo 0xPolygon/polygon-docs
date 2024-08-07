@@ -4,7 +4,7 @@ Among other tasks, the synchronizer is responsible for managing the reorg proces
 
 ## L2 reorgs
 
-Consider a reorg of L2 batches. And suppose a sequencer, called _sequencer A_, has closed batch $\mathtt{724}$ and has not sequenced it yet. 
+Consider a reorg of L2 batches. Suppose a sequencer, called _sequencer A_, has closed batch $\mathtt{724}$ and has not sequenced it yet. 
 
 So the batch, denoted by $\mathtt{724^A}$, is part of the trusted state. And thus, the figure below depicts batch $\mathtt{724^A}$ in red.
 
