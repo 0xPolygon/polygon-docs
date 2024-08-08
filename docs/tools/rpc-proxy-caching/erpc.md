@@ -1,3 +1,8 @@
+!!! info "Content disclaimer"
+
+    Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
+
+
 # Polygon RPC Proxy and Caching
 
 [eRPC](https://erpc.cloud/) is a fault-tolerant EVM RPC proxy and re-org aware permanent caching solution. It is built with read-heavy use-cases in mind such as data indexing and high-load frontend usage.
