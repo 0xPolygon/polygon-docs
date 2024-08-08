@@ -21,6 +21,8 @@ The stream source uses the following functions of the stream server-source libra
 - $\texttt{GetBookmark(u8[ ] bookmark)}$: The stream source uses this function to get a bookmark. The function returns, $\texttt{u64 entryNumber}$.
 - $\texttt{GetFirstEventAfterBookmark(u8[ ] bookmark)}$: This function is used to get the first entry after a given bookmark. It returns, $\texttt{struct FileEntry}$.
 
-Find out more about the [DATA STREAMER INTERFACE (API)](https://github.com/0xPolygonHermez/zkevm-data-streamer#data-streamer-interface-api).
+!!! tip
+
+    Find out more about the [DATA STREAMER INTERFACE (API)](https://github.com/0xPolygonHermez/zkevm-data-streamer#data-streamer-interface-api).
 
 It's possible to create, using the stream source-server library, a stream source that connects with a server, opens and commits operations.
