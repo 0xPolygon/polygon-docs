@@ -9,2172 +9,2252 @@
 
 <url>
   <loc>https://docs.polygon.technology/</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/.</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/overview/</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/version-matrix/</loc>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/getting-started/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/layer2s/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/architecture/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/transaction-lifecycle/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/rollup-vs-validium/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/zk-vs-optimistic/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/blocks/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/transaction-finality/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/gas-fees/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/bridging/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/concepts/admin-upgradeability/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/how-to/migrate/forkid-7-to-9/</loc>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/how-to/migrate/fork/</loc>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/how-to/use-native-token/</loc>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/how-to/integrate-da/</loc>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/how-to/manage-policies/</loc>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/how-to/quick-test-stack/</loc>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/how-to/connect-testnet/</loc>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/cdk-zkevm/</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/cdk-validium/</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/staking-the-bridge/</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/spec/validium-vs-rollup/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/glossary/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/resources/third-party-guides/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/resources/cdk-repo-reference/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/overview/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/etrog-upgrade/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/quick-start/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/local-node/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/production-node/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/deploy-zkevm/intro/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/deploy-zkevm/environment-overview/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/deploy-zkevm/prerequisites/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/deploy-zkevm/install-dependencies/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/deploy-zkevm/create-wallets/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/deploy-zkevm/configure-node-deployment/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/deploy-zkevm/configure-prover/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/deploy-zkevm/start-node/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/setup-nodes/deploy-zkevm/start-services/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/state-sync-snapshots/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/get-started/historical-data/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/overview/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/overview/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/main-contracts/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/sequencing/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/bridging/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/exit-roots/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/verification/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMGlobalExitRootV2/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/CDKDataCommittee/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/PolygonDataComittee/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonDataCommittee/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonValidiumEtrog/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonRollupBaseEtrogNoGap/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonValidiumStorageMigration/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMEtrog/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMExistentEtrog/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2Existent/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractBase/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractLib/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractV2/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonAccessControlUpgradeable/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonRollupBaseEtrog/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonTransparentProxy/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonZkEVMGlobalExitRootBaseStorage/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/utils/ClaimCompressor/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/addresses/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/overview/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/main-contracts/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/sequencing/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/bridging/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/exit-roots/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/verification/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMGlobalExitRootV2/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/CDKDataCommittee/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/PolygonDataComittee/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonDataCommittee/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonValidiumEtrog/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonRollupBaseEtrogNoGap/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonValidiumStorageMigration/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMEtrog/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMExistentEtrog/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2Existent/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractBase/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractLib/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractV2/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonAccessControlUpgradeable/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonRollupBaseEtrog/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonTransparentProxy/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonZkEVMGlobalExitRootBaseStorage/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/api/utils/ClaimCompressor/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/high-level/smart-contracts/addresses/</loc>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zknode/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/state-management/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/transaction-life-cycle/transaction-execution/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/transaction-life-cycle/batch-sequencing/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/transaction-life-cycle/batch-aggregation/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/sequencing-batches/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/data-streamer/data-streamer-design/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/data-streamer/data-streamer-protocols/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/data-streamer/bookmarks/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/data-streamer/client-server-messages/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/data-streamer/stream-file/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/data-streamer/how-rollbacks-work/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/admin-role/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/upgradability/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/upgrade-process/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/security-council/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/malfunction-resistance/emergency-state/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/lxly-bridge/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/intro-proving-sys/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/the-executor-comp/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/proving-inputs/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/order-and-prove/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/aggregator-proofs/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/json-rpc-to-proof/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/polynom-identity-lang/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/execution-trace-design/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/exec-selector-columns/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/exec-trace-and-zkevm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/secondary-sms-lookup-tables/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/l2-state-tree/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/l2statetree-keys-and-values/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/processing-l2-blocks/</loc>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/proving-system/prover-and-verifier-recap/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/main-state-machine/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/main-state-machine/processor/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/proving-tools/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/composition-recursion-aggregation/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/recursion-sub-process/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/proving-architecture/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/circom-in-zkprover/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/proving-setup-phase/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/intermediate-recursion/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/final-recursion-step/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/stark-recursion/proof-generation-phase/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/storage-state-machine/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/storage-state-machine/construct-key-path/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/storage-state-machine/mechanism/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/storage-state-machine/executor-pil/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/arithmetic-sm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/binary-sm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/memory-sm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/mem-align-sm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/hashing-state-machines/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/hashing-state-machines/keccak-framework/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/hashing-state-machines/paddingkk-sm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/hashing-state-machines/paddingkk-bit-sm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/hashing-state-machines/bits2field-sm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/hashing-state-machines/keccakf-sm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/incentive-mechanism/</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/effective-gas/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/effective-gas/zkevm-egp-strat/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/effective-gas/user-tx-flow/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/effective-gas/user-tx-flow/rpc-flow-egp/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/effective-gas/user-tx-flow/sequencer-flow-egp/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/effective-gas/implement-egp-strat/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/effective-gas/tx-prioritization-egp/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/simple-example/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/modular-programs/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/connection-arguments/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/cyclicity-in-pil/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/filling-polynomials/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/generating-proofs/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/permutation-arguments/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/inclusion-arguments/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/compiling-using-pilcom/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/configuration-files/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/plonk-in-pil/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/pil/public-values/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/zkasm/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/zkasm/basic-syntax/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/zkasm/examples/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/spec/evm-differences/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/api/json-rpc/</loc>
-  <lastmod>2024-07-05T15:41:03+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/api/check-tx-status/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/evm-basics/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/sparse-merkle-trees/sparse-merkle-tree/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/sparse-merkle-trees/simple-smt/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/sparse-merkle-trees/detailed-smt/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/sparse-merkle-trees/basic-smt-ops/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/mfibonacci/mfibonacci/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/mfibonacci/mfibonacci-example/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/mfibonacci/commitment-scheme/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/mfibonacci/verification-scheme/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/mfibonacci/pil-stark/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/mfibonacci/pil-stark-demo/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/generic-state-machine/intro-generic-sm/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/generic-state-machine/exec-trace-correct/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/generic-state-machine/ending-program/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/generic-state-machine/program-counter/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/generic-state-machine/plookup/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/concepts/circom-intro-brief/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/troubleshooting/risk-disclosures/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/overview/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/get-started/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/get-started/building-on-polygon/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/get-started/becoming-a-validator/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/bridging/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/bridging/ethereum-polygon/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/bridging/ethereum-polygon/ethereum-to-matic/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/bridging/ethereum-polygon/matic-to-ethereum/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/bridging/ethereum-polygon/submit-mapping-request/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/bridging/l1-l2-communication/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/bridging/l1-l2-communication/state-transfer/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/polygon-did/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/delegate/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/snapshots/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/validator/validator-system-requirements/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/validator/prerequisites/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/validator/validator-binaries/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/validator/validator-ansible/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/validator/validator-packages/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/operate-validator-node/validator-best-practices/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/operate-validator-node/validator-staking-operations/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/operate-validator-node/validator-commission-operations/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/operate-validator-node/change-signer-address/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/operate-validator-node/topup-heimdall-fee/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/operate-validator-node/validator-performance/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/full-node/full-node-system-requirements/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/full-node/full-node-binaries/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/full-node/full-node-docker/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/full-node/full-node-ansible/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/full-node/full-node-packages/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/full-node/full-node-gcp/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/access-node/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/erigon-archive-node/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/troubleshoot/technical-faqs/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/troubleshoot/known-issues/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/how-to/troubleshoot/reporting-issues/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/governance/governance-fundamentals/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/bor/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/bor/state-sync/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/bor/network-config/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/bor/commands/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/heimdall-and-bor/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/authentication/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/key-management/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/validation/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/balance-transfers/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/staking/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/checkpoints/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/topup/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/chain-management/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/architecture/heimdall/governance/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/contracts/genesis-contracts/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/contracts/delegation/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/contracts/stakingmanager/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/rewards/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/port-management/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/commands/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/errors/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/rpc-endpoints/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/commit-chain-multisigs/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/reference/mapped-tokens/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/concepts/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/concepts/tokens/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/concepts/tokens/pol/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/concepts/tokens/matic/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/concepts/transactions/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/concepts/transactions/eip-1559/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/concepts/transactions/eip-4337/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/pos/concepts/transactions/meta-transactions/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/introduction/get-started/prerequisites/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/introduction/get-started/create-account-use-faucet/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/introduction/get-started/p2p-private/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/introduction/get-started/p2p-public/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/introduction/roadmap/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/overview/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/accounts/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/notes/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/assets/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/transactions/overview/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/transactions/execution/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/transactions/kernel/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/transactions/contexts/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/transactions/procedures/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/state/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/architecture/execution/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-base/network/network/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-client/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-client/features/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-client/design/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-client/install-and-run/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-client/cli-config/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-client/cli-reference/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-client/library/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/miden/miden-client/examples/</loc>
-  <lastmod>2024-07-05T15:41:06+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/launchpad/intro/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/launchpad/quickstart/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/launchpad/frontend/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/launchpad/smart-contracts/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/launchpad/commands/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/launchpad/contributing/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/launchpad/common-pitfalls/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/common-tools/hardhat/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/common-tools/remix/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/common-tools/replit/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/how-to/write-contract/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/how-to/using-foundry/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/how-to/using-hardhat/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/how-to/verify-contract/</loc>
-  <lastmod>2024-07-05T15:41:05+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/dApp-development/third-party-tutorials/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/gas/matic-faucet/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/gas/polygon-gas-station/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/chain-indexer-framework/overview/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/chain-indexer-framework/usage/</loc>
-  <lastmod>2024-07-05T15:41:00+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/data/covalent/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/data/envio/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/data/flair/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/data/moralis/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/data/parsiq/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/tools/data/sqd/</loc>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/data/subquery/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/installation/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/get-started/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/client/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/api-architecture/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/setup/ethers/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/setup/web3js/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/set-proof-api/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/advanced/abi-manager/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/advanced/exit-util/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/advanced/plugin/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/approve-max/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/approve/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/deposit/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/get-allowance/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/get-balance/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/is-withdraw-exited/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/transfer/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/withdraw-exit-faster/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/withdraw-exit/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc20/withdraw-start/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/approve-all/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/approve/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/deposit-many/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/deposit/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/get-all-tokens/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/get-token-id-at-index-for-user/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/get-tokens-count/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/is-approved-all/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/is-approved/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/is-withdraw-exited-many/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/is-withdraw-exited/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/transfer/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/withdraw-exit-faster-many/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/withdraw-exit-faster/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/withdraw-exit-many/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/withdraw-exit/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/withdraw-start-many/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/withdraw-start-with-meta-data/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc721/withdraw-start/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/approve-all-for-mintable/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/approve-all/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/deposit-many/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/deposit/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/get-balance/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/is-approved-all/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/is-withdraw-exited-many/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/is-withdraw-exited/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/transfer/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/withdraw-exit-faster-many/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/withdraw-exit-faster/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/withdraw-exit-many/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/withdraw-exit/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/withdraw-start-many/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/erc1155/withdraw-start/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/deposit-ether/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/is-check-pointed/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/pos/is-deposited/</loc>
-  <lastmod>2024-07-05T15:41:01+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/zkevm/initialize/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/zkevm/erc20/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/zkevm/message-passing/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/matic-js/zkevm/common-methods/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/storage/ipfs/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/storage/filecoinhelpers/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/storage/crusthelpers/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/getting-started/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/api3/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/bandchain/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/bandstandarddataset/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/chainlink/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/chronicle/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/diadataoracles/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/pyth/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/razor/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/supra/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/tellor/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/optimisticoracle/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/oracles/umbrella/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/getting-started/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/portal/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/metamask/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/metamask/add-polygon-network/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/venly/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/venly/create-wallet/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/venly/wallet-api/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/venly/venly-widget/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/openfort/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/particle-network/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/portis/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/torus/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/walletconnect/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/walletkit/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/tools/wallets/using-web3modal/</loc>
-  <lastmod>2024-07-05T15:41:02+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/welcome/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/agglayer/overview/</loc>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/agglayer/unified-bridge/</loc>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/agglayer/agglayer-go/</loc>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/agglayer/agglayer-rs/</loc>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.polygon.technology/cdk/agglayer/token-flows/</loc>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/intro-t1-prover/</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/how-to/deploy-t1-prover/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/how-to/deploy-t1-prover-devnet/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-architecture/</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-design-challenge/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/testing-and-proving-costs/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-cpu-component/</loc>
-  <lastmod>2024-07-05T15:40:58+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-ctl-protocol/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-rangechecks/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/plonky/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/polygon-protocols/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/overview/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/governance/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/risk/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/hr/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/infrastructure/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/sdlc/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/smartcontracts/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/vulnerability/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/operations/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/reports/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/bugbounty/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/disclosure/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/security/contact/</loc>
-  <lastmod>2024-07-05T15:40:59+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/etrog-upgrade/?h=blocks</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.polygon.technology/zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance/?h=forced+batches</loc>
-  <lastmod>2024-07-05T15:41:04+00:00</lastmod>
+  <lastmod>2024-08-01T13:57:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 

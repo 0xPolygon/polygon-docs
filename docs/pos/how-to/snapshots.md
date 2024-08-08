@@ -8,13 +8,15 @@ When setting up a new sentry, validator, or full node server, it is recommended 
 
 Polygon PoS has transitioned to a community-driven model for snapshots. Active community members now contribute to provide snapshots. Some of these members include:
 
-| Name                                                                 | Available snapshots   | Note                                         |
-| -------------------------------------------------------------------- | --------------------- | -------------------------------------------- |
-| Stakecraft                                                           | Mainnet, Amoy, Erigon | Support for Erigon archive snapshot          |
-| [PublicNode (by Allnodes)](https://publicnode.com/snapshots#polygon) | Mainnet, Amoy         | Support for PBSS + PebbleDB enabled snapshot |
-| Stakepool                                                            | Mainnet, Amoy         | -                                            |
-| Vaultstaking                                                         | Mainnet               | -                                            |
-| Girnaar Nodes                                                        | Amoy                  | -                                            |
+| Name                                                                   | Available snapshots   | Note                                         |
+| ---------------------------------------------------------------------- | --------------------- | -------------------------------------------- |
+| Stakecraft                                                             | Mainnet, Amoy, Erigon | Support for Erigon archive snapshot          |
+| [PublicNode (by Allnodes)*](https://publicnode.com/snapshots#polygon) | Mainnet, Amoy         | Support for PBSS + PebbleDB enabled snapshot |
+| Stakepool                                                              | Mainnet, Amoy         | -                                            |
+| Vaultstaking                                                           | Mainnet               | -                                            |
+| Girnaar Nodes                                                          | Amoy                  | -                                            |
+
+> *\*The PBSS + PebbleDB snapshot provided by PublicNode is currently in the beta phase.*
 
 !!! info "Snapshot aggregator"
 
@@ -70,7 +72,7 @@ sudo service bor start
 | Metric                            | Calculation Breakdown               | Value   |
 | --------------------------------- | ----------------------------------- | ------- |
 | approx. compressed total          | 250 GB (Bor) + 35 GB (Heimdall)     | 285 GB  |
-| approx. data growth daily         | 10 GB (Bor) + .5 GB (Heimdall)      | 10.5 GB |
+| approx. data growth daily         | 10 GB (Bor) + 0.5 GB (Heimdall)     | 10.5 GB |
 | approx. total extracted size      | 350 GB (Bor) + 50 GB (Heimdall)     | 400 GB  |
 | suggested disk size (2.5x buffer) | 400 GB * 2.5 (natural chain growth) | 1 TB    |
 
@@ -88,7 +90,7 @@ sudo service bor start
 | Metric                            | Calculation Breakdown               | Value  |
 | --------------------------------- | ----------------------------------- | ------ |
 | approx. compressed total          | 210 GB (Erigon) + 35 GB (Heimdall)  | 245 GB |
-| approx. data growth daily         | 4.5 GB (Erigon) + .5 GB (Heimdall)  | 5 GB   |
+| approx. data growth daily         | 4.5 GB (Erigon) + 0.5 GB (Heimdall) | 5 GB   |
 | approx. total extracted size      | 875 GB (Erigon) + 50 GB (Heimdall)  | 925 GB |
 | suggested disk size (2.5x buffer) | 925 GB * 2.5 (natural chain growth) | 2.5 TB |
 

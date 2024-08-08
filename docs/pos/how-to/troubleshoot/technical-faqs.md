@@ -176,7 +176,7 @@ and start Heimdall services again. You can refer to this [guide](../validator/pr
 
 ### 5. From where do I create the API key?
 
-You can access this link: [https://infura.io/register](https://infura.io/register) . Make sure that once you have setup your account and project, you copy the API key for Ropsten and not Mainnet.
+You can access this link: [https://infura.io/register](https://infura.io/register) . Make sure that once you have setup your account and project, you copy the API key for Sepolia and not mainnet.
 
 Mainnet is selected by default.
 

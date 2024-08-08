@@ -107,7 +107,7 @@ The chain name options are in this section of the help output:
 -n, --fork-network-name [NAME]        Name of the network to fork; optional. 
                                         By default, it starts a new
                                         chain from genesis block. (choices: "ethereum", "goerli",
-                                        "polygonPos", "polygonMumbai", "polygonZkevm", "polygonZkevmTestnet")
+                                        "polygonPos", "polygonAmoy", "polygonZkevm", "polygonZkevmTestnet")
 ```
 
 To fork Polygon zkEVM, for example, run the following command:

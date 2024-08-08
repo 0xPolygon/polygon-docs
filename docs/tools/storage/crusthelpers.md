@@ -5,11 +5,8 @@
 
 The protocol matches people who have hard drive space to spare with those who need to store data or host content. Crust supports most smart contract platforms with its cross-chain solution, including Polygon. Find out all the platforms that Crust storage supports on their [official website](https://crust.network/).
 
-:::info Learn more about Crust Network
-
-Check out the **[Decentralized Storage Market](https://wiki.crust.network/docs/en/DSM)** and **[Cross-chain Storage Solution](https://wiki.crust.network/docs/en/buildCrossChainSolution#ii-native-ipfs-integration)** offered by Crust Network. Also, you can start building with **[Crust Build-101](https://wiki.crust.network/docs/en/build101)**.
-
-:::
+!!! info "Learn more about Crust Network"
+    Check out the **[Decentralized Storage Market](https://wiki.crust.network/docs/en/DSM)** and **[Cross-chain Storage Solution](https://wiki.crust.network/docs/en/buildCrossChainSolution#ii-native-ipfs-integration)** offered by Crust Network. Also, you can start building with **[Crust Build-101](https://wiki.crust.network/docs/en/build101)**.
 
 ## Crust storage helpers
 
