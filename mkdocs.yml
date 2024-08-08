@@ -165,6 +165,7 @@ nav:
               - Data streamer protocols: zkEVM/architecture/data-streamer/data-streamer-protocols.md
               - Bookmarks: zkEVM/architecture/data-streamer/bookmarks.md
               - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
+              - Server-source library: zkEVM/architecture/data-streamer/server-source-library.md
               - Stream file: zkEVM/architecture/data-streamer/stream-file.md
               - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
             - About reorgs: zkEVM/architecture/protocol/synchronizer-reorg.md
