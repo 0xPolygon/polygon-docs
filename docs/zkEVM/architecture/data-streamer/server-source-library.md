@@ -1,4 +1,4 @@
-Interaction between the stream source and each stream server is enabled by the Server-source library, which is a Go library with six main functions for modifying or adding entries to operations.
+Interaction between the stream source and each stream server is enabled by the `server-source` library, which is a Go library with six main functions for modifying or adding entries to operations.
 
 ### Send data functions
 
@@ -13,16 +13,13 @@ When each of these functions is called, a corresponding message is generated and
 
 ### Query data functions
 
-The stream source can use a few more functions of the stream server-source library, to get information from the stream server.
+The stream source uses the following functions of the stream server-source library to get information from the stream server.
 
-It uses the following functions:
 
 - $\texttt{GetHeader()}$: The stream source uses this function to query the header of a particular entry. The function returns, $\texttt{struct HeaderEntry}$.
 - $\texttt{GetEntry(u64 entryNumber)}$: This function is used to get an entry that corresponds to a given entry number. It returns, $\texttt{struct FileEntry}$.
 - $\texttt{GetBookmark(u8[ ] bookmark)}$: The stream source uses this function to get a bookmark. The function returns, $\texttt{u64 entryNumber}$.
 - $\texttt{GetFirstEventAfterBookmark(u8[ ] bookmark)}$: This function is used to get the first entry after a given bookmark. It returns, $\texttt{struct FileEntry}$.
-
-
 
 The complete stream source-server library is described, but referred to as the DATA STREAMER INTERFACE (API), [here](https://github.com/0xPolygonHermez/zkevm-data-streamer#data-streamer-interface-api).
 
