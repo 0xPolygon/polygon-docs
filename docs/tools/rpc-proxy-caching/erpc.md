@@ -18,8 +18,7 @@
 # Quickstart
 
 1. Create your [`erpc.yaml`](https://docs.erpc.cloud/config/example) configuration file:
-
-```yaml filename="erpc.yaml"
+```yaml title="erpc.yaml"
 logLevel: debug
 projects:
   - id: main
@@ -29,17 +28,14 @@ projects:
       - endpoint: https://polygon-mainnet.blastapi.io/xxxx
       - endpoint: evm+alchemy://xxxx-my-alchemy-api-key-xxxx
 ```
-
-See [a complete config example](https://docs.erpc.cloud/config/example) for inspiration.
+  See [a complete config example](https://docs.erpc.cloud/config/example) for inspiration.
 
 2. Use the Docker image:
-
 ```bash
 docker run -v $(pwd)/erpc.yaml:/root/erpc.yaml -p 4000:4000 -p 4001:4001 ghcr.io/erpc/erpc:latest
 ```
 
 3. Send your first request:
-
 ```bash
 curl --location 'http://localhost:4000/main/evm/137' \
 --header 'Content-Type: application/json' \
@@ -54,8 +50,7 @@ curl --location 'http://localhost:4000/main/evm/137' \
 }'
 ```
 
-4. Bring up monitoring stack (Prometheus, Grafana) using docker-compose:
-
+4. Bring up monitoring stack (Prometheus, Grafana) using `docker-compose`:
 ```bash
 # clone the repo if you haven't
 git clone https://github.com/erpc/erpc.git
@@ -66,9 +61,10 @@ docker-compose up -d
 ```
 
 5. Open Grafana at [http://localhost:3000](http://localhost:3000) and login with the following credentials:
-
-- username: `admin`
-- password: `admin`
+  ```text
+  username: admin
+  password: admin
+  ```
 
 6. Send more requests and watch the metrics being collected and visualized in Grafana.
 
