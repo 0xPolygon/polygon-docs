@@ -429,6 +429,7 @@ nav:
       - Data:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
           - Covalent: tools/data/covalent.md
+          - DipDup: https://dipdup.io/docs/supported-networks/polygon
           - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
           - Moralis: tools/data/moralis.md
