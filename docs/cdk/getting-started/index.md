@@ -34,10 +34,10 @@ cd kurtosis-cdk
 
 ### Checking your environment
 
-Ensure Docker is running on your machine, then run the following command to confirm that all prerequisites are installed:
+Ensure Docker is running on your machine, then run the following command to confirm that all prerequisites are installed, run the tool_check.sh script. You may need to make the script executable: chmod +x scripts/tool_check.sh
 
 ```bash
-sh scripts/tool_check.sh
+./scripts/tool_check.sh
 ```
 
 If everything is installed correctly, you should see the following output:
