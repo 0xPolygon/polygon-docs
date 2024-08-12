@@ -24,15 +24,15 @@ hide:
          <div class="product-list-item-header">
             <div class="feature-card-heading">Understand the CDK</div>
          </div>
-         <p class="feature-paragraph">A high-level overview of the CDK and why you might use it.</p>
+         <p class="feature-paragraph">A high-level overview of the CDK, its features and benefits.</p>
       </a>
    </div>
    <div class="grid-item">
       <a href="./getting-started">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Try the CDK locally</div>
+            <div class="feature-card-heading">Try out the CDK locally</div>
          </div>
-         <p class="feature-paragraph">Get started by deploying a chain with the CDK on your local machine.</p>
+         <p class="feature-paragraph">Get started by deploying a chain on your local machine.</p>
       </a>
    </div>
    <div class="grid-item">
@@ -40,7 +40,7 @@ hide:
          <div class="product-list-item-header">
             <div class="feature-card-heading">CDK concepts</div>
          </div>
-         <p class="feature-paragraph">Learn the concepts behind the CDK.</p>
+         <p class="feature-paragraph">Learn about the concepts behind the CDK.</p>
       </a>
    </div>
     <div class="grid-item">
