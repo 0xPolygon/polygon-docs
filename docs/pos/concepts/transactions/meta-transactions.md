@@ -95,11 +95,11 @@ For any action that requires blockchain interaction,
     Steps:
 
     1. Let's register our contracts to Biconomy dashboard
-       1. Visit [Biconomy's offical docs](https://docs.biconomy.io/dashboard)
-       2. Navigate and login to the Dashboard
-       3. Select `Polygon Mumbai` when registering your dapp
-    2. Copy the`API key` to use for you dapp's frontend
-    3. And Add function `executeMetaTransaction` in Manage-Api and make sure to enable meta-tx. (Check 'native-metatx' option)
+       1. Visit [Biconomy's offical docs](https://docs.biconomy.io/dashboard).
+       2. Navigate and login to the Dashboard.
+       3. Select **Polygon Amoy Testnet** when registering your dApp.
+    2. Copy the API key to use for you dApp's frontend.
+    3. And add function `executeMetaTransaction` in **Manage-Api** and make sure to enable meta-tx (Check **native-metatx** option).
 
   - If you'd like to use your own custom API that sends signed transactions on the blockchain, you can refer to the server code here: [https://github.com/angelagilhotra/ETHOnline-Workshop/tree/master/2-network-agnostic-transfer](https://github.com/angelagilhotra/ETHOnline-Workshop/tree/master/2-network-agnostic-transfer)
 

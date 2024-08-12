@@ -173,8 +173,10 @@ nav:
               - Data streamer protocols: zkEVM/architecture/data-streamer/data-streamer-protocols.md
               - Bookmarks: zkEVM/architecture/data-streamer/bookmarks.md
               - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
+              - Server-source library: zkEVM/architecture/data-streamer/server-source-library.md
               - Stream file: zkEVM/architecture/data-streamer/stream-file.md
               - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
+            - About reorgs: zkEVM/architecture/protocol/synchronizer-reorg.md
           - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
           - Upgrades:
             - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
@@ -430,9 +432,12 @@ nav:
       - Chain indexer framework:
           - Overview: tools/chain-indexer-framework/overview.md
           - Usage: tools/chain-indexer-framework/usage.md 
+      - RPC Proxy:
+          - eRPC: tools/rpc-proxy-caching/erpc.md
       - Data:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
           - Covalent: tools/data/covalent.md
+          - DipDup: https://dipdup.io/docs/supported-networks/polygon
           - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
           - Moralis: tools/data/moralis.md
@@ -662,6 +667,10 @@ plugins:
       keep_docs_dir: false
   - search
   - open-in-new-tab
+  - redirects:
+      redirect_maps:
+        'docs/develop/network-details/network.md': 'cdk/index.md'
+
 
 validation:
   absolute_links: warn

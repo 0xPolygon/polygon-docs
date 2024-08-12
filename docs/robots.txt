@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-https://docs.polygon.technology/sitemap.xml
+Sitemap: https://docs.polygon.technology/sitemap.xml
