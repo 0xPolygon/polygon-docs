@@ -146,7 +146,7 @@ Let&rsquo;s perform some basic read and write operations on the L2 using Foundry
 Export the RPC URL of your L2 to an environment variable called `ETH_RPC_URL` with the following command:
 
 ```bash
-export ETH_RPC_URL="$(kurtosis port print cdk-v1 zkevm-node-rpc-001 http-rpc)"
+export ETH_RPC_URL="$(kurtosis port print cdk-v1 cdk-erigon-node-001 http-rpc)"
 ```
 
 Then, use `cast` to view information about the chain, such as the latest block number:
