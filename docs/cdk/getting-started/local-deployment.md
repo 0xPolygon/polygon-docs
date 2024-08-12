@@ -21,10 +21,10 @@ The [Polygon CDK Kurtosis package](https://github.com/0xPolygon/kurtosis-cdk/) a
 
 - [Docker Engine](https://docs.docker.com/engine/) version 4.27 or higher.
 - [Kurtosis CLI](https://docs.kurtosis.com/install/)
-- [Foundry](https://book.getfoundry.sh/getting-started/installation)
 
 And for submitting transactions and interacting with the environment once set up:
 
+- [Foundry](https://book.getfoundry.sh/getting-started/installation)
 - [yq](https://github.com/mikefarah/yq)
 - [jq](https://stedolan.github.io/jq/)
 - [polyon-cli](https://github.com/maticnetwork/polygon-cli)
@@ -42,7 +42,8 @@ cd kurtosis-cdk
 
 Run the `tool_check.sh` script to confirm you have all the prerequisite software.
 
-You may need to make the script executable: `chmod +x scripts/tool_check.sh`
+!!! tip
+      You may need to make the script executable: `chmod +x scripts/tool_check.sh`
 
 ```sh
 ./scripts/tool_check.sh
@@ -64,14 +65,11 @@ You might as well need the following tools to interact with the environment...
 🎉 You are ready to go!
 ```
 
-### Customize your chain
+### Understanding the deployment steps
 
-To begin understanding the codebase, there are two key files to inspect:
+There are two key files to look at which help you understand what's happening during a deployment.
 
-1. [`main.star`](https://github.com/0xPolygon/kurtosis-cdk/blob/main/main.star): The script that defines what steps to take to set up the chain on your machine.
-2. [`params.yml`](https://github.com/0xPolygon/kurtosis-cdk/blob/main/params.yml): The main configuration file that defines the parameters of the chain.
-
-#### `main.star`
+#### [`main.star`](https://github.com/0xPolygon/kurtosis-cdk/blob/main/main.star)
 
 The `main.star` file defines the step-by-step instructions of the deployment process. It is the main "hub" of the chain setup process; orchestrating the setup of all the components in sequential order by pulling in necessary logic from other files.
 
@@ -92,7 +90,7 @@ It defines the following steps for the deployment process:
 
 You can customize (or skip) the logic for each of these steps by modifying the logic in the respective files.
 
-#### `params.yml`
+#### [`params.yml`](https://github.com/0xPolygon/kurtosis-cdk/blob/main/params.yml) 
 
 The `params.yml` file defines the parameters of the chain and the deployment process. It includes configurations for simple parameters such as the chain ID and more complex configurations such as the gas token smart contract address.
 
