@@ -116,7 +116,7 @@ kurtosis run --enclave cdk-v1 --args-file params.yml --image-download always .
      - `--args-file params.yml` specifies the configuration file to use for the deployment process.
      - `--image-download always` specifies to always download the latest Docker images for the deployment process.
 
-This command typically takes around 10 minutes to complete and outputs the logs of each step in the deployment process for you to monitor the progress of the chain setup. Once the command is complete, you should see the following output:
+This command typically takes a while to complete and outputs the logs of each step in the deployment process for you to monitor the progress of the chain setup. Once the command is complete, you should see the following output:
 
 ```bash
 Starlark code successfully run. No output was returned.
@@ -137,7 +137,13 @@ Status:          RUNNING
 
 ```
 
-Run `kurtosis enclave inspect cdk-v1` to see the status of the enclave and the services running within it at any time.
+### Inspect the chain
+
+Run the following command to see the status of the enclave and the services running within it at any time.
+
+```sh
+kurtosis enclave inspect cdk-v1
+```
 
 ## Interacting with the chain
 
