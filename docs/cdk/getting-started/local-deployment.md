@@ -67,7 +67,7 @@ You might as well need the following tools to interact with the environment...
 
 ### Understanding the deployment steps
 
-There are two key files to look at which help you understand what's happening during a deployment.
+There are two key configurations files which help you understand what happens during a deployment.
 
 #### [`main.star`](https://github.com/0xPolygon/kurtosis-cdk/blob/main/main.star)
 
