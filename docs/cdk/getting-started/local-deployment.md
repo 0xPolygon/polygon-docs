@@ -1,33 +1,37 @@
-## Deploy CDK locally
+---
+comments: true
+---
 
-This guide walks you through the process of setting up and deploying a layer 2 blockchain on your local machine using the Polygon CDK with [Kurtosis](https://docs.kurtosis.com/). 
+This guide walks you through the process of setting up and deploying a layer 2 CDK blockchain on your local machine.
 
-The components run in Docker containers.
+The [Polygon CDK Kurtosis package](https://github.com/0xPolygon/kurtosis-cdk/) allows you to easily customize and instantiate all the components of a CDK chain. It uses the [Kurtosis](https://docs.kurtosis.com/) tool to orchestrate the setup of the chain components in Docker containers, with logic defined in [Starlark](https://github.com/bazelbuild/starlark) scripts (a Python dialect) which define the step-by-step process of setting up the chain.
+
+!!! tip
+      Check out the [Polygon Kurtosis docs](https://github.com/0xPolygon/kurtosis-cdk) for more documentation on this stack and how to use it, and if you need to raise an issue or have a question for the team.
 
 ## Prerequisites
 
 ### Hardware
 
-- A Linux-based operating system (or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
-- Minimum 8GB RAM and 2-core CPU.
-- An AMD64 architecture system.
+- Linux-based OS (or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
+- Minimum 8GB RAM/2-core CPU.
+- AMD64 architecture.
 
 ### Software
 
 - [Docker Engine](https://docs.docker.com/engine/) version 4.27 or higher.
 - [Kurtosis CLI](https://docs.kurtosis.com/install/)
 - [Foundry](https://book.getfoundry.sh/getting-started/installation)
+
+And for submitting transactions and interacting with the environment once set up:
+
 - [yq](https://github.com/mikefarah/yq)
 - [jq](https://stedolan.github.io/jq/)
-- [polycli](https://github.com/maticnetwork/polygon-cli) to help submit transactions and interact with the environment.
+- [polyon-cli](https://github.com/maticnetwork/polygon-cli)
 
 ## Set up the Kurtosis environment
 
-The [Polygon CDK Kurtosis package](https://github.com/0xPolygon/kurtosis-cdk/) allows you to easily customize and instantiate all the components of a CDK chain. It uses the [Kurtosis](https://docs.kurtosis.com/) tool to orchestrate the setup of the chain components in Docker containers, with logic defined in [Starlark](https://github.com/bazelbuild/starlark) scripts (a Python dialect) that define the step-by-step process of setting up the chain.
-
 ### Clone the repository
-
-To get started, clone the repository and navigate to the `kurtosis-cdk` directory:
 
 ```bash
 git clone https://github.com/0xPolygon/kurtosis-cdk.git
@@ -36,10 +40,12 @@ cd kurtosis-cdk
 
 ### Check your environment
 
-Ensure Docker is running on your machine, then run the following command to confirm that all prerequisites are installed:
+Run the `tool_check.sh` script to confirm you have all the prerequisite software.
 
-```bash
-sh scripts/tool_check.sh
+You may need to make the script executable: `chmod +x scripts/tool_check.sh`
+
+```sh
+./scripts/tool_check.sh
 ```
 
 If everything is installed correctly, you should see the following output:
