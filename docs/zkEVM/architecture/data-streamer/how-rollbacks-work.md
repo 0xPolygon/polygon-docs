@@ -10,13 +10,11 @@ Once all entries have been sent, the stream source calls the $\texttt{CommitAtom
 
 But if the $\texttt{RollbackAtomicOp}(\ )$ is triggered instead of the $\texttt{CommitAtomicOp}(\ )$, the header is not updated.
 
-In other words, the header of the stream file only changes when the $\texttt{CommitAtomicOp}(\ )$ function is called. So, although some entries related to the atomic operation have already been added to the stream file, the header of the stream file is updated only with information of entries related to committed atomic operations.
+In other words, the header of the stream file is updated only when the $\texttt{CommitAtomicOp}(\ )$ function is called. So, although some entries related to the atomic operation have already been added to the stream file, the header of the stream file is updated only with information of entries related to committed atomic operations.
 
 Since the $\texttt{RollbackAtomicOp}(\ )$​ function can only be executed before a given atomic operation is committed, the header is not updated because the added entries (of the uncommitted atomic operation) will be overwritten with entries of the next atomic operation(s).
 
-This means a rollback amounts to overwriting entries in the strem file that are related to an uncommitted atomic operation.
-
-
+This means a rollback amounts to overwriting entries in the stream file that are related to an uncommitted atomic operation.
 
 ## Example (Commit and rollback)
 

@@ -26,12 +26,12 @@ import Web3 from "web3"
 import Matic from "maticjs"
 ```
 
-Next, set up Polygon and Ropsten provider via WalletConnect’s object:
+Next, set up Polygon and Sepolia provider via WalletConnect’s object:
 
 ```javascript
 const maticProvider = new WalletConnectProvider(
   {
-    host: `https://rpc-mumbai.matic.today`,
+    host: `https://rpc-amoy.polygon.technology`,
     callbacks: {
       onConnect: console.log('connected'),
       onDisconnect: console.log('disconnected!')
@@ -39,8 +39,8 @@ const maticProvider = new WalletConnectProvider(
   }
 )
 
-const ropstenProvider = new WalletConnectProvider({
-  host: `https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc`,
+const sepoliaProvider = new WalletConnectProvider({
+  host: `https://ethereum-sepolia-rpc.publicnode.com`,
   callbacks: {
     onConnect: console.log('connected'),
     onDisconnect: console.log('disconnected')
@@ -52,7 +52,7 @@ We created the above two provider objects to instantiate our Web3 object with:
 
 ```js
 const maticWeb3 = new Web3(maticProvider)
-const ropstenWeb3 = new Web3(ropstenProvider)
+const sepoliaWeb3 = new Web3(sepoliaProvider)
 ```
 
 ## Instantiating contracts

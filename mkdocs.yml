@@ -60,11 +60,11 @@ nav:
         - L2 architecture overview: cdk/concepts/architecture.md
         - L2 transaction lifecycle: cdk/concepts/transaction-lifecycle.md
         - Rollups vs. validiums: cdk/concepts/rollup-vs-validium.md
-        - ZK vs. Optimistic rollups: cdk/concepts/zk-vs-optimistic.md
+        - ZK vs. optimistic rollups: cdk/concepts/zk-vs-optimistic.md
         - Batches, blocks, transactions: cdk/concepts/blocks.md
         - Transaction finality: cdk/concepts/transaction-finality.md
         - Gas fees: cdk/concepts/gas-fees.md
-        - Bridging and interoperability: cdk/concepts/bridging.md
+        - Bridging & interoperability: cdk/concepts/bridging.md
         - Admin upgradeability: cdk/concepts/admin-upgradeability.md
       - How to: 
         - Migrate:
@@ -89,13 +89,12 @@ nav:
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
+      - Releases: 
+        - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
       - Build:
-        - Releases: 
-          - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
-          - Historical data: zkEVM/get-started/historical-data.md
-          - Risk disclosures: zkEVM/troubleshooting/risk-disclosures.md
         - Get started: zkEVM/get-started/index.md
-        - Deployment guides:
+        - Quick start: zkEVM/get-started/quick-start.md
+        - Setup nodes:
           - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
           - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
           - Deploy zkEVM:
@@ -109,27 +108,17 @@ nav:
               - Start node: zkEVM/get-started/setup-nodes/deploy-zkevm/start-node.md
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
           - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
-        - Connect to zkEVM: zkEVM/get-started/quick-start.md
-        - JSON RPC API: 
-          - Endpoints: zkEVM/api/json-rpc.md
-          - Check transaction status: zkEVM/api/check-tx-status.md
+        - Historical data: zkEVM/get-started/historical-data.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
         - Smart contracts: 
           - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
           - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
           - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
-          - Unified bridge:
-            - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
-            - History of the unified bridge: zkEVM/architecture/protocol/unified-LxLy/lxly-bridge.md
-            - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
-            - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
-            - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
-            - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
-            - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
+          - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
           - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
           - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
-          - Solidity API:
+          - API:
             - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
             - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
             - PolygonZkEVMGlobalExitRootV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMGlobalExitRootV2.md
@@ -176,17 +165,26 @@ nav:
               - Data streamer protocols: zkEVM/architecture/data-streamer/data-streamer-protocols.md
               - Bookmarks: zkEVM/architecture/data-streamer/bookmarks.md
               - Protocol messages: zkEVM/architecture/data-streamer/client-server-messages.md
+              - Server-source library: zkEVM/architecture/data-streamer/server-source-library.md
               - Stream file: zkEVM/architecture/data-streamer/stream-file.md
               - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
+            - About reorgs: zkEVM/architecture/protocol/synchronizer-reorg.md
           - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
           - Upgrades:
             - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
-            - Upgrade process - HOW TO: zkEVM/architecture/protocol/upgrade-process.md
+            - Upgrade process: zkEVM/architecture/protocol/upgrade-process.md
           - Security council: zkEVM/architecture/protocol/security-council.md
           - Malfunction resistance:
             - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
             - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
             - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
+          - Unified bridge:
+            - History of the unified bridge: zkEVM/architecture/protocol/unified-LxLy/lxly-bridge.md
+            - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
+            - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
+            - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
+            - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
+            - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - zkProver design:
@@ -268,6 +266,9 @@ nav:
           - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
+      - API: 
+        - JSON RPC endpoints: zkEVM/api/json-rpc.md
+        - Check transaction status: zkEVM/api/check-tx-status.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -290,6 +291,8 @@ nav:
           - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
           - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
+      - Troubleshooting:
+        - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
       - PoS: pos/index.md
       - Overview: pos/overview.md
@@ -389,9 +392,7 @@ nav:
       - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
   - Developer tools: 
       - Developer tools: tools/index.md
-      - Polygon dApp development: 
-          - Polygon faucet: tools/gas/matic-faucet.md
-          - Polygon gas station: tools/gas/polygon-gas-station.md
+      - dApp development: 
           - dApp Launchpad:
               - Introduction: tools/dApp-development/launchpad/intro.md
               - Quickstart: tools/dApp-development/launchpad/quickstart.md
@@ -400,120 +401,114 @@ nav:
               - Commands: tools/dApp-development/launchpad/commands.md
               - Contributing: tools/dApp-development/launchpad/contributing.md
               - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
-          - Chain indexer framework:
-              - Overview: tools/chain-indexer-framework/overview.md
-              - Usage: tools/chain-indexer-framework/usage.md 
-          - Matic.js:
-            - Installation:  tools/matic-js/installation.md
-            - Get started:  tools/matic-js/get-started.md
-            - POS:
-                - POS client:  tools/matic-js/pos/client.md
-                - API overview:  tools/matic-js/api-architecture.md
-                - Setup:
-                    - Ethers:  tools/matic-js/setup/ethers.md
-                    - Web3js:  tools/matic-js/setup/web3js.md
-                - Set proof API:  tools/matic-js/set-proof-api.md
-                - Advanced:
-                    - ABI manager:  tools/matic-js/advanced/abi-manager.md
-                    - Exit util:  tools/matic-js/advanced/exit-util.md
-                    - Plugin:  tools/matic-js/advanced/plugin.md
-                - ERC20:
-                    - Overview: tools/matic-js/pos/erc20/index.md
-                    - approveMax:  tools/matic-js/pos/erc20/approve-max.md
-                    - approve:  tools/matic-js/pos/erc20/approve.md
-                    - deposit:  tools/matic-js/pos/erc20/deposit.md
-                    - getAllowance:  tools/matic-js/pos/erc20/get-allowance.md
-                    - getBalance:  tools/matic-js/pos/erc20/get-balance.md
-                    - isWithdrawExited:  tools/matic-js/pos/erc20/is-withdraw-exited.md
-                    - transfer:  tools/matic-js/pos/erc20/transfer.md
-                    - withdrawExitFaster:  tools/matic-js/pos/erc20/withdraw-exit-faster.md
-                    - withdrawExit:  tools/matic-js/pos/erc20/withdraw-exit.md
-                    - withdrawStart:  tools/matic-js/pos/erc20/withdraw-start.md
-                - ERC721:
-                    - Overview:  tools/matic-js/pos/erc721/index.md
-                    - approveAll:  tools/matic-js/pos/erc721/approve-all.md
-                    - approve:  tools/matic-js/pos/erc721/approve.md
-                    - depositMany:  tools/matic-js/pos/erc721/deposit-many.md
-                    - deposit:  tools/matic-js/pos/erc721/deposit.md
-                    - getAllTokens:  tools/matic-js/pos/erc721/get-all-tokens.md
-                    - getTokenIdAtIndexForUser:  tools/matic-js/pos/erc721/get-token-id-at-index-for-user.md
-                    - getTokensCount:  tools/matic-js/pos/erc721/get-tokens-count.md
-                    - isApprovedAll:  tools/matic-js/pos/erc721/is-approved-all.md
-                    - isApproved:  tools/matic-js/pos/erc721/is-approved.md
-                    - isWithdrawExitedMany:  tools/matic-js/pos/erc721/is-withdraw-exited-many.md
-                    - isWithdrawExited:  tools/matic-js/pos/erc721/is-withdraw-exited.md
-                    - transfer:  tools/matic-js/pos/erc721/transfer.md
-                    - withdrawExitFasterMany:  tools/matic-js/pos/erc721/withdraw-exit-faster-many.md
-                    - withdrawExitFaster:  tools/matic-js/pos/erc721/withdraw-exit-faster.md
-                    - withdrawExitMany:  tools/matic-js/pos/erc721/withdraw-exit-many.md
-                    - withdrawExit:  tools/matic-js/pos/erc721/withdraw-exit.md
-                    - withdrawStartMany:  tools/matic-js/pos/erc721/withdraw-start-many.md
-                    - withdrawStartWithMetaData:  tools/matic-js/pos/erc721/withdraw-start-with-meta-data.md
-                    - withdrawStart:  tools/matic-js/pos/erc721/withdraw-start.md
-                - ERC1155:
-                    - approveAllForMintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
-                    - approveAll:  tools/matic-js/pos/erc1155/approve-all.md
-                    - depositMany:  tools/matic-js/pos/erc1155/deposit-many.md
-                    - deposit:  tools/matic-js/pos/erc1155/deposit.md
-                    - getBalance:  tools/matic-js/pos/erc1155/get-balance.md
-                    - index:  tools/matic-js/pos/erc1155/index.md
-                    - isApprovedAll:  tools/matic-js/pos/erc1155/is-approved-all.md
-                    - isWithdrawExitedMany:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
-                    - isWithdrawExited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
-                    - transfer:  tools/matic-js/pos/erc1155/transfer.md
-                    - withdrawExitFasterMany:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
-                    - withdrawExitFaster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
-                    - withdrawExitMany:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
-                    - withdrawExit:  tools/matic-js/pos/erc1155/withdraw-exit.md
-                    - withdrawStartMany:  tools/matic-js/pos/erc1155/withdraw-start-many.md
-                    - withdrawStart:  tools/matic-js/pos/erc1155/withdraw-start.md
-                - Common methods:
-                    - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
-                    - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
-                    - isDeposited:  tools/matic-js/pos/is-deposited.md
+          - Smart contract development:
+            - PoS:
+              - Hardhat: tools/dApp-development/common-tools/hardhat.md
+              - Remix: tools/dApp-development/common-tools/remix.md
+              - Replit: tools/dApp-development/common-tools/replit.md
             - zkEVM:
-                - zkEVM client:  tools/matic-js/zkevm/initialize.md
-                - ERC20:  tools/matic-js/zkevm/erc20.md
-                - Message passing: tools/matic-js/zkevm/message-passing.md
-                - Common methods:  tools/matic-js/zkevm/common-methods.md
-          - Polygon Portal: tools/wallets/portal.md
-      - Polygon partners and external tools:
+              - Write a contract: zkEVM/how-to/write-contract.md
+              - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
+              - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
+              - Verify a contract: zkEVM/how-to/verify-contract.md
+          - Third-party tutorials: tools/dApp-development/third-party-tutorials.md
+          - Polygon faucet: tools/gas/matic-faucet.md
+          - Polygon gas station: tools/gas/polygon-gas-station.md
+      - Popular tools:
         - OKX explorer:
           - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
           - Verify contract with external plugins: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins
-        - Venly (not sure why Venly is here tbh):
+        - Venly:
           - NFT API: https://docs.venly.io/docs/nft-api-getting-started
           - Zapier integration: https://docs.venly.io/docs/zapier-integration
-          - Venly wallet (added Venly wallet but not sure):
-            - Intro:  tools/wallets/venly/index.md
-            - Create Venly wallet:  tools/wallets/venly/create-wallet.md
-            - Venly wallet API:  tools/wallets/venly/wallet-api.md
-            - Venly widget: tools/wallets/venly/venly-widget.md
-        - Smart contract development:
-          - PoS:
-            - Hardhat: tools/dApp-development/common-tools/hardhat.md
-            - Remix: tools/dApp-development/common-tools/remix.md
-            - Replit: tools/dApp-development/common-tools/replit.md
-          - zkEVM:
-            - Write a contract: zkEVM/how-to/write-contract.md
-            - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
-            - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
-            - Verify a contract: zkEVM/how-to/verify-contract.md
-        - Third-party tutorials: tools/dApp-development/third-party-tutorials.md
-      - Block explorers:
-          - OKX explorer: https://www.okx.com/web3/explorer/polygon      
-          - Polygon: https://polygonscan.com/ 
-          - zkEVM: https://zkevm.polygonscan.com/
-          - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
+      - Chain indexer framework:
+          - Overview: tools/chain-indexer-framework/overview.md
+          - Usage: tools/chain-indexer-framework/usage.md 
+      - RPC Proxy:
+          - eRPC: tools/rpc-proxy-caching/erpc.md
       - Data:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
           - Covalent: tools/data/covalent.md
+          - DipDup: https://dipdup.io/docs/supported-networks/polygon
           - Envio: tools/data/envio.md
           - Flair: tools/data/flair.md
           - Moralis: tools/data/moralis.md
           - PARSIQ: tools/data/parsiq.md
           - SQD (Subsquid): tools/data/sqd.md
           - SubQuery: tools/data/subquery.md
+      - Matic.js:
+          - Installation:  tools/matic-js/installation.md
+          - Get started:  tools/matic-js/get-started.md
+          - POS:
+              - POS client:  tools/matic-js/pos/client.md
+              - API overview:  tools/matic-js/api-architecture.md
+              - Setup:
+                  - Ethers:  tools/matic-js/setup/ethers.md
+                  - Web3js:  tools/matic-js/setup/web3js.md
+              - Set proof API:  tools/matic-js/set-proof-api.md
+              - Advanced:
+                  - ABI manager:  tools/matic-js/advanced/abi-manager.md
+                  - Exit util:  tools/matic-js/advanced/exit-util.md
+                  - Plugin:  tools/matic-js/advanced/plugin.md
+              - ERC20:
+                  - Overview: tools/matic-js/pos/erc20/index.md
+                  - approveMax:  tools/matic-js/pos/erc20/approve-max.md
+                  - approve:  tools/matic-js/pos/erc20/approve.md
+                  - deposit:  tools/matic-js/pos/erc20/deposit.md
+                  - getAllowance:  tools/matic-js/pos/erc20/get-allowance.md
+                  - getBalance:  tools/matic-js/pos/erc20/get-balance.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc20/is-withdraw-exited.md
+                  - transfer:  tools/matic-js/pos/erc20/transfer.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc20/withdraw-exit-faster.md
+                  - withdrawExit:  tools/matic-js/pos/erc20/withdraw-exit.md
+                  - withdrawStart:  tools/matic-js/pos/erc20/withdraw-start.md
+              - ERC721:
+                  - Overview:  tools/matic-js/pos/erc721/index.md
+                  - approveAll:  tools/matic-js/pos/erc721/approve-all.md
+                  - approve:  tools/matic-js/pos/erc721/approve.md
+                  - depositMany:  tools/matic-js/pos/erc721/deposit-many.md
+                  - deposit:  tools/matic-js/pos/erc721/deposit.md
+                  - getAllTokens:  tools/matic-js/pos/erc721/get-all-tokens.md
+                  - getTokenIdAtIndexForUser:  tools/matic-js/pos/erc721/get-token-id-at-index-for-user.md
+                  - getTokensCount:  tools/matic-js/pos/erc721/get-tokens-count.md
+                  - isApprovedAll:  tools/matic-js/pos/erc721/is-approved-all.md
+                  - isApproved:  tools/matic-js/pos/erc721/is-approved.md
+                  - isWithdrawExitedMany:  tools/matic-js/pos/erc721/is-withdraw-exited-many.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc721/is-withdraw-exited.md
+                  - transfer:  tools/matic-js/pos/erc721/transfer.md
+                  - withdrawExitFasterMany:  tools/matic-js/pos/erc721/withdraw-exit-faster-many.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc721/withdraw-exit-faster.md
+                  - withdrawExitMany:  tools/matic-js/pos/erc721/withdraw-exit-many.md
+                  - withdrawExit:  tools/matic-js/pos/erc721/withdraw-exit.md
+                  - withdrawStartMany:  tools/matic-js/pos/erc721/withdraw-start-many.md
+                  - withdrawStartWithMetaData:  tools/matic-js/pos/erc721/withdraw-start-with-meta-data.md
+                  - withdrawStart:  tools/matic-js/pos/erc721/withdraw-start.md
+              - ERC1155:
+                  - approveAllForMintable:  tools/matic-js/pos/erc1155/approve-all-for-mintable.md
+                  - approveAll:  tools/matic-js/pos/erc1155/approve-all.md
+                  - depositMany:  tools/matic-js/pos/erc1155/deposit-many.md
+                  - deposit:  tools/matic-js/pos/erc1155/deposit.md
+                  - getBalance:  tools/matic-js/pos/erc1155/get-balance.md
+                  - index:  tools/matic-js/pos/erc1155/index.md
+                  - isApprovedAll:  tools/matic-js/pos/erc1155/is-approved-all.md
+                  - isWithdrawExitedMany:  tools/matic-js/pos/erc1155/is-withdraw-exited-many.md
+                  - isWithdrawExited:  tools/matic-js/pos/erc1155/is-withdraw-exited.md
+                  - transfer:  tools/matic-js/pos/erc1155/transfer.md
+                  - withdrawExitFasterMany:  tools/matic-js/pos/erc1155/withdraw-exit-faster-many.md
+                  - withdrawExitFaster:  tools/matic-js/pos/erc1155/withdraw-exit-faster.md
+                  - withdrawExitMany:  tools/matic-js/pos/erc1155/withdraw-exit-many.md
+                  - withdrawExit:  tools/matic-js/pos/erc1155/withdraw-exit.md
+                  - withdrawStartMany:  tools/matic-js/pos/erc1155/withdraw-start-many.md
+                  - withdrawStart:  tools/matic-js/pos/erc1155/withdraw-start.md
+              - Common methods:
+                  - Deposit ETH:  tools/matic-js/pos/deposit-ether.md
+                  - isCheckPointed:  tools/matic-js/pos/is-check-pointed.md
+                  - isDeposited:  tools/matic-js/pos/is-deposited.md
+          - zkEVM:
+              - zkEVM client:  tools/matic-js/zkevm/initialize.md
+              - ERC20:  tools/matic-js/zkevm/erc20.md
+              - Message passing: tools/matic-js/zkevm/message-passing.md
+              - Common methods:  tools/matic-js/zkevm/common-methods.md
       - Storage: 
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md
@@ -534,12 +529,18 @@ nav:
           - Umbrella: tools/oracles/umbrella.md
       - Wallets:
           - Getting started:  tools/wallets/getting-started.md
+          - Polygon Portal: tools/wallets/portal.md
           - MetaMask:
               - Overview: tools/wallets/metamask/index.md
               - Create MetaMask wallet: https://support.metamask.io/getting-started/getting-started-with-metamask/
               - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
               - Configure custom tokens:  https://support.metamask.io/managing-my-tokens/custom-tokens/how-to-display-tokens-in-metamask/
               - Import accounts:  https://support.metamask.io/managing-my-wallet/accounts-and-addresses/how-to-import-an-account/
+          - Venly:
+              - Intro:  tools/wallets/venly/index.md
+              - Create Venly wallet:  tools/wallets/venly/create-wallet.md
+              - Venly wallet API:  tools/wallets/venly/wallet-api.md
+              - Venly widget: tools/wallets/venly/venly-widget.md
           - Fortmatic: https://docs.fortmatic.com/   
           - Openfort: tools/wallets/openfort.md
           - Particle network:  tools/wallets/particle-network.md
@@ -548,6 +549,11 @@ nav:
           - WalletConnect:  tools/wallets/walletconnect.md
           - WalletKit:  tools/wallets/walletkit.md
           - Web3Modal: tools/wallets/using-web3modal.md
+      - Block explorers:
+          - OKX explorer: https://www.okx.com/web3/explorer/polygon      
+          - Polygon: https://polygonscan.com/ 
+          - zkEVM: https://zkevm.polygonscan.com/
+          - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
   - Innovation & design:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
@@ -653,6 +659,10 @@ plugins:
       keep_docs_dir: false
   - search
   - open-in-new-tab
+  - redirects:
+      redirect_maps:
+        'docs/develop/network-details/network.md': 'cdk/index.md'
+
 
 validation:
   absolute_links: warn
