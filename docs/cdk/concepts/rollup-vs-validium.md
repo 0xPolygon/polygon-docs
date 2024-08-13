@@ -8,12 +8,12 @@ Rollups use Ethereum as a [data availability](https://docs.polygon.technology/cd
 
 Using Ethereum to store transaction data is generally considered the most secure option for DA as it leverages Ethereum's security and decentralization. However, this approach is costly, as the L2 must pay Ethereum&rsquo;s high gas fees for storing data on the L1, which typically results in higher gas fees for users.
 
-Within the rollup category, there are further nuances to storing transaction data on Ethereum. Some rollups post serialized transaction data directly, whereas others post state differences instead. Some rollups use [calldata](https://docs.soliditylang.org/en/v0.8.26/types.html#data-location) to store transaction data, while others use more recent Ethereum features such as blobs, introduced in [EIP-4844](https://www.eip4844.com/).
+Within the rollup category, there are further nuances to storing transaction data on Ethereum. Some rollups post serialized transaction data directly, whereas others post state differences instead. Some rollups use [calldata](https://docs.soliditylang.org/en/v0.8.26/types.html#data-location) to store transaction data, while others use more recent Ethereum features such as Blobs, introduced in [EIP-4844](https://www.eip4844.com/).
 
 The CDK provides full flexibility to developers to choose what to do with transaction data, including the ability to build rollups that store data on Ethereum as a rollup like the Polygon zkEVM. 
 
 !!! note
-    Currently, the rollup mode of Polygon CDK does not support blobs (EIP-4844), but this functionality is coming soon.
+    Currently, the rollup mode of Polygon CDK does not support BLOB mode (EIP4844), but this functionality is coming soon.
 
 ## Validiums
 
