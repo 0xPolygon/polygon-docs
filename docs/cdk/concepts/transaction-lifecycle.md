@@ -41,7 +41,7 @@ Depending on the data availability design choices of the L2, if the L2 is a [rol
 
 ## Aggregated
 
-The final step of the transaction lifecycle is to generate a ZK-proof that proves the batch of transactions is valid. Batches of transactions are read by the [aggregator](./architecture.md#aggregator) which utilizes a [prover](./architecture.md#prover) to generate a ZK-proof that is posted back to Ethereum.
+The final step of the transaction lifecycle is to generate a ZK-proof that proves the batch of transactions is valid. Batches of transactions are read by the [aggregator](./architecture.md#aggregator-and-prover) which utilizes a [prover](./architecture.md#aggregator-and-prover) to generate a ZK-proof that is posted back to Ethereum.
 
 ![Aggregator posting ZK-proof](../../img/cdk/aggregate-batches.png)
 
