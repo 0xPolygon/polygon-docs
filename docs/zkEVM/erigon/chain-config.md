@@ -1,4 +1,4 @@
-To use chains other than the [defaults](releases.md#current-status), supply a set of custom configuration files.
+To use chains other than the [defaults](releases.md#current-chainfork-support-status), supply a set of custom configuration files.
 
 1. Ensure the chain name starts with the word `dynamic` e.g. `dynamic-mynetwork`.
 

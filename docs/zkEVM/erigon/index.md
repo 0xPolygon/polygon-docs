@@ -26,7 +26,7 @@ The remote procedure call (RPC) interface in Erigon allows external applications
 
 The following sequence diagram shows how a transaction is processed by the Erigon node.
 
-![Erigon transactions](../../img/cdk/erigon/erigon.png)
+![Erigon transactions](../../img/zkEVM/erigon/erigon.png)
 
 ## CDK erigon 
 
