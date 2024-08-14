@@ -8,7 +8,7 @@ Polygon CDK empowers developers to launch new L2 chains running Polygon zkEVM te
 
 ## CDK features
 
-Polygon CDK builds layer 2 blockchains that are secure, scalable, and interoperable with other chains. Below are some of the key features of CDK:
+Polygon CDK provides the components necessary to build a layer 2 blockchain that is secure, scalable, and interoperable with other chains. Below are some of the key features of CDK:
 
 - Security: CDK builds high-performance, high-security, scalable L2s that utilize the latest innovations in zero-knowledge technology such as [Plonky3](../innovation-design/plonky.md#plonky-3).
 
