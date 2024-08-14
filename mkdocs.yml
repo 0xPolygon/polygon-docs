@@ -75,14 +75,6 @@ nav:
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Connect to CDK testnets: cdk/how-to/connect-testnet.md
-      - Erigon: 
-        - Erigon: cdk/erigon/index.md
-        - Releases: cdk/erigon/releases.md
-        - Deploy a node: cdk/erigon/deploy-cdk-erigon.md
-        - How to:
-          - Configure chains dynamically: cdk/erigon/chain-config.md
-          - Recover the network: cdk/erigon/network-recovery.md
-        - Resources: cdk/erigon/resources.md
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
@@ -102,6 +94,14 @@ nav:
       - Build:
         - Get started: zkEVM/get-started/index.md
         - Quick start: zkEVM/get-started/quick-start.md
+        - zkEVM erigon: 
+          - Erigon: zkEVM/erigon/index.md
+          - Releases: zkEVM/erigon/releases.md
+          - Deploy a node: zkEVM/erigon/deploy-cdk-erigon.md
+          - How to:
+            - Configure chains dynamically: zkEVM/erigon/chain-config.md
+            - Recover the network: zkEVM/erigon/network-recovery.md
+          - Resources: zkEVM/erigon/resources.md
         - Setup nodes:
           - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
           - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
