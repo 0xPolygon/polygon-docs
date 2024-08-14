@@ -17,7 +17,7 @@ This guide provides a detailed list of default ports used across Bor and Heimdal
 
 | Name                   | Port  | Tags                      | Description                                                                                         |
 | ---------------------- | ----- | ------------------------- | --------------------------------------------------------------------------------------------------- |
-| Network Listening Port | 30303 | Public                    | Port used by Heimdall for peer connections and synchronization.                                     |
+| Network Listening Port | 26656 | Public                    | Port used by Heimdall for peer connections and synchronization.                                     |
 | RPC Server             | 8545  | Can be Public, Internal   | RPC port for sending transactions and fetching data. Heimdall uses this port to obtain Bor headers. |
 | WebSocket Server       | 8546  | Can be Public, Internal   | WebSocket port for real-time updates.                                                               |
 | GraphQL Server         | 8547  | Internal                  | GraphQL port for querying data.                                                                     |
