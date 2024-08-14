@@ -1,6 +1,6 @@
 # Admin upgradeability
 
-As L2s work through the [stages of training wheels](https://medium.com/l2beat/introducing-stages-a-framework-to-evaluate-rollups-maturity-d290bb22befe) to become fully decentralized, chains that opt in to the [AggLayer](../glossary.md/#agglayer-v1-al1) implement shared security mechanisms with other AggLayer chains including the [Polygon zkEVM](../../zkEVM/architecture/protocol/upgradability.md) to ensure the safety of users.
+As L2s work through the [stages of training wheels](https://medium.com/l2beat/introducing-stages-a-framework-to-evaluate-rollups-maturity-d290bb22befe) to become fully decentralized, chains that opt in to the [AggLayer](../glossary/index.md#agglayer-v1-al1) implement shared security mechanisms with other AggLayer chains including the [Polygon zkEVM](../../zkEVM/architecture/protocol/upgradability.md) to ensure the safety of users.
 
 Chains opted into the AggLayer share the following upgradeability controls:
 
@@ -14,5 +14,5 @@ Chains opted into the AggLayer share the following upgradeability controls:
 - [zkEVM admin role and governance](../../zkEVM/architecture/protocol/admin-role.md).
 - [zkEVM upgrade process](../../zkEVM/architecture/protocol/upgrade-process.md).
 - [zkEVM security council](../../zkEVM/architecture/protocol/security-council.md).
-- [zkEVM emergency state](../../zkEVM/architecture/protocol/malfunction-resistance/.emergency-state.md).
+- [zkEVM emergency state](../../zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md).
 - [L2Beat - Polygon zkEVM](https://l2beat.com/scaling/projects/polygonzkevm?selectedChart=activity).
