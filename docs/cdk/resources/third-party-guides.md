@@ -21,7 +21,7 @@ This page links to full guides that some of [our solution providers](https://eco
             <div class="product-list-item-header">
                <div class="feature-card-heading">Gateway</div>
             </div>
-         <p class="feature-paragraph">Build a custom CDK chain with Gateway.</p>
+         <p class="feature-paragraph">Build a custom CDK chain with Gateway. </p>
       </a>
    </div>
    <div class="grid-item">
