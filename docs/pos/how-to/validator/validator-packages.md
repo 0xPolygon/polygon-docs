@@ -283,7 +283,7 @@ journalctl -u bor.service -f
 
 ## Installing packages on the validator node
 
-Follow the same [installation steps](#installing-packages) on validator node.
+Follow the same [installation steps](#installing-package) on validator node.
 
 ## Configuring the validator node
 
