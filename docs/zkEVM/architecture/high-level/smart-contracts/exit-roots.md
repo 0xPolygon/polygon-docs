@@ -71,7 +71,7 @@ uint8 private constant _LEAF_TYPE_ASSET = 0;
 uint8 private constant _LEAF_TYPE_MESSAGE = 1;
 ```
 
-Data in a leaf contains a Keccak256 hash of the metadata (ABI encoded metadata if any) and the following parameters (matched by publicly available transaction data as seen in the [bridge L1 to L2](bridging.md#l1-to-l2) documentation):
+Data in a leaf contains a Keccak256 hash of the metadata (ABI encoded metadata if any) and the following parameters (matched by publicly available transaction data as seen in the [bridge L1 to L2](../unified-LxLy/bridging.md#l1-to-l2) documentation):
 
 ```solidity
 _addLeaf(
