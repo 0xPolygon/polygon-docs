@@ -8,17 +8,17 @@ Under the hood, L2s create "batches" of transactions, and periodically submit ma
 
 Typically, L2s deploy smart contracts to Ethereum that handle the verification of these batches, ensuring that the transactions are valid. Since this verification process occurs on Ethereum, it is often said that L2s inherit the security of Ethereum.
 
-![L2 Batching Overview](../../img/cdk/l2-overview-diagram.svg)
+![L2 batching overview](../../img/cdk/l2-overview-diagram.svg)
 
 ## Types of layer 2s
 
 L2s come in different shapes and sizes in terms of their relationship with Ethereum: Each design decision comes with trade-offs in terms of security, scalability, or decentralization.
 
-For example, some L2s, such as the [Polygon zkEVM](https://docs.polygon.technology/zkEVM/) send all transaction data to Ethereum, whereas other L2s only send information about the state differences, or choose not to send transaction data to Ethereum; instead relying on different data availability mechanisms.
+For example, some L2s, such as the [Polygon zkEVM](../../zkEVM/index.md) send all transaction data to Ethereum, whereas other L2s only send information about the state differences, or choose not to send transaction data to Ethereum; instead relying on different data availability mechanisms.
 
-Since storing information on Ethereum is expensive, (see [gas and fees](https://ethereum.org/en/developers/docs/gas/)), building an L2 chain means making tradeoffs between security, decentralization and scalability. The CDK provides developers with the tools to make these trade-offs and build a chain that meets their specific needs depending on their use case.
+Since storing information on Ethereum is expensive, (see [gas and fees](https://ethereum.org/en/developers/docs/gas/)), building an L2 chain means making tradeoffs between security, decentralization, and scalability. The CDK provides developers with the tools to make these trade-offs and build a chain that meets their specific needs depending on their use case.
 
 ## Further reading
 
-- [Ethereum documentation: Layer 2s](https://ethereum.org/en/layer-2/)
-- [Ethereum documentation: Scaling](https://ethereum.org/en/developers/docs/scaling/)
+- [Ethereum documentation: Layer 2s](https://ethereum.org/en/layer-2/).
+- [Ethereum documentation: Scaling](https://ethereum.org/en/developers/docs/scaling/).

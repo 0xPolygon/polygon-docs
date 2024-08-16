@@ -556,7 +556,7 @@ nav:
           - OKX explorer: https://www.okx.com/web3/explorer/polygon      
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
-          - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
+          - zkEVM testnet: https://cardona-zkevm.polygonscan.com/
   - Innovation & design:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
