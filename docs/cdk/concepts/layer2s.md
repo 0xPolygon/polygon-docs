@@ -14,7 +14,7 @@ Typically, L2s deploy smart contracts to Ethereum that handle the verification o
 
 L2s come in different shapes and sizes in terms of their relationship with Ethereum: Each design decision comes with trade-offs in terms of security, scalability, or decentralization.
 
-For example, some L2s, such as the [Polygon zkEVM](../../zkEVM/) send all transaction data to Ethereum, whereas other L2s only send information about the state differences, or choose not to send transaction data to Ethereum; instead relying on different data availability mechanisms.
+For example, some L2s, such as the [Polygon zkEVM](../../zkEVM/index.md) send all transaction data to Ethereum, whereas other L2s only send information about the state differences, or choose not to send transaction data to Ethereum; instead relying on different data availability mechanisms.
 
 Since storing information on Ethereum is expensive, (see [gas and fees](https://ethereum.org/en/developers/docs/gas/)), building an L2 chain means making tradeoffs between security, decentralization, and scalability. The CDK provides developers with the tools to make these trade-offs and build a chain that meets their specific needs depending on their use case.
 
