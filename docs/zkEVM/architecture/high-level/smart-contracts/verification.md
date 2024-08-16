@@ -13,7 +13,7 @@ The sequence diagram below shows the verification workflow for rollup stacks and
 
 ![Polygon Solidity consensus verification flow](../../../../img/cdk/high-level-architecture/verification-flow.png)
 
-## `verifyBatchesTrustedAggregator()` function
+## `verifyBatchesTrustedAggregator()`
 
 The `verifyBatchesTrustedAggregator()` function is called on the `PolygonRollupManager` contract:
 

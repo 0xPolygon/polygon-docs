@@ -1,4 +1,4 @@
-An exit tree is a binary, append-only, sparse Merkle tree (SMT) whose leaf nodes store bridging data. The exit trees have a maximum depth of 32.
+An exit tree is a binary, append-only, sparse Merkle tree (SMT) with a maximum depth of 32, where leaf nodes store bridging data.
 
 The Merkle root of an exit tree is known as the exit tree root, and it is the fingerprint of all the information recorded in the exit tree's leaf nodes. 
 

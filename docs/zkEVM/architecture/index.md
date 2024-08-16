@@ -69,7 +69,7 @@ The underlying protocol in zkEVM ensures that the state transitions are correct 
 
 In order to ensure adherence to a set of pre-determined rules for state transitions, the consensus contract deployed on L1, is utilized.
 ​
-!!!info
+!!! info
     The consensus contract is currently deployed on both [Ethereum mainnet](https://etherscan.io/address/0x5132A183E9F3CB7C848b0AAC5Ae0c4f0491B7aB2) and [Cardona testnet](https://sepolia.etherscan.io/address/0xa997cfD539E703921fD1e3Cf25b4c241a27a4c7A).
 ​
 A smart contract verifies the validity proofs to ensure that each transition is completed correctly. 

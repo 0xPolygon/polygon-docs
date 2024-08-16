@@ -13,7 +13,7 @@ The diagram below shows the sequencing workflow for rollup (non-validium) stacks
 
 ![Polygon Solidity smart contract architecture](../../../../img/cdk/high-level-architecture/sequencing-flow.png)
 
-## `sequenceBatches()` function
+## `sequenceBatches()`
 
 The `sequenceBatches()` function is called on the `PolygonZkEVMEtrog.sol` contract:
 
@@ -49,7 +49,7 @@ Stepwise, the function does the following:
 1. Calls the `PolygonRollupManager.onSequenceBatches(...)` function which waits for an `OnSequenceBatches(...)` event callback.
 1. Emits `SequenceBatches(...)` event.
 
-## `onSequenceBatches()` function
+## `onSequenceBatches()`
 
 The `onSequenceBatches()` function is called on the `PolygonRollupManager.sol` contract:
 
@@ -67,7 +67,7 @@ Stepwise, the function does the following:
 1. Attempts to consolidate pending state for the rollup by updating `lastVerifiedBatch`, `batchNumToStateRoot[]`, and `lastLocalExitRoot` state variables, and also by updating `globalExitRootManager.updateExitRoot(L2sLocalExitRoot)`, after which it emits a `ConsolidatePendingState(...)` event.
 1. Emits an `OnSequenceBatches(...)` event back to the original `sequenceBatches(...)` call.
 
-## `sequenceBatchesValidium()` function
+## `sequenceBatchesValidium()`
 
 The `sequenceBatchesValidium()` function is called on the `PolygonValidiumEtrog.sol` contract:
 
