@@ -556,15 +556,15 @@ nav:
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://cardona-zkevm.polygonscan.com/
+  - AggLayer:
+    - Overview: cdk/agglayer/overview.md
+    - AggLayer | Unified bridge: cdk/agglayer/unified-bridge.md
+    - AggLayer | Go: cdk/agglayer/agglayer-go.md
+    - AggLayer | Rust: cdk/agglayer/agglayer-rs.md
+    - AggLayer | Token flows: cdk/agglayer/token-flows.md
   - Innovation & design:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
-      - AggLayer:
-        - Overview: cdk/agglayer/overview.md
-        - AggLayer | Unified bridge: cdk/agglayer/unified-bridge.md
-        - AggLayer | Go: cdk/agglayer/agglayer-go.md
-        - AggLayer | Rust: cdk/agglayer/agglayer-rs.md
-        - AggLayer | Token flows: cdk/agglayer/token-flows.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
