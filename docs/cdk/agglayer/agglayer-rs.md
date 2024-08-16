@@ -1,6 +1,6 @@
-## Overview
+AggLayer-rs is a Rust-based service designed to receive ZK proofs from various CDK chains and verify their validity before sending them to the L1 for final settlement. 
 
-AggLayer-rs is a Rust-based service designed to receive ZK proofs from various CDK chains and verify their validity before sending them to the L1 for final settlement. It replaces the previous [Golang implementation](agglayer-go.md).
+It replaces the previous [Golang implementation](agglayer-go.md).
 
 ## Architecture
 

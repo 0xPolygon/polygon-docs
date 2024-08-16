@@ -1,5 +1,3 @@
-## Overview
-
 The AggLayer-go is a service designed to receive zero-knowledge (ZK) proofs  from various CDK chains and verify their validity before sending them to the L1 for final settlement.
 
 !!! warning
