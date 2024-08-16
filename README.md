@@ -71,6 +71,6 @@ docker compose up
 
 ## The team
 
-- Anthony Matlala (@EmpieichO)
-- Katharine Murphy (@kmurphypolygon)
+- Anthony Matlala [(@EmpieichO)](https://github.com/EmpieichO)
+- Katharine Murphy [(@kmurphypolygon)](https://github.com/kmurphypolygon)
 - Hans (@hsutaiyu) 
