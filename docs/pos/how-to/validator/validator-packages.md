@@ -283,7 +283,7 @@ journalctl -u bor.service -f
 
 ## Installing packages on the validator node
 
-Follow the same [installation steps](#installing-packages) on validator node.
+Follow the same [installation steps](#installing-package) on validator node.
 
 ## Configuring the validator node
 
@@ -446,7 +446,7 @@ Open `config.toml` for editing: `vi /var/lib/bor/config.toml`.
 
 ## Configure service files for Bor and Heimdall
 
-After successfully installing Bor and Heimdall through [packages](#install-with-packages-recommended), their service file could be found under `/lib/systemd/system`, and Bor's config file could be found under `/var/lib/bor/config.toml`.
+After successfully installing Bor and Heimdall through [packages](#installing-packages-on-the-validator-node), their service file could be found under `/lib/systemd/system`, and Bor's config file could be found under `/var/lib/bor/config.toml`.
 
 You will need to check and modify these files accordingly.
 

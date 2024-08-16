@@ -6,14 +6,14 @@
 
 Rollups use Ethereum as a [data availability](https://docs.polygon.technology/cdk/glossary/#data-availability) (DA) layer, meaning they send and store transaction data directly on Ethereum, by providing it within specific parameters of a transaction submitted to a smart contract on the L1.
 
-Using Ethereum to store transaction data is generally considered the most secure option for DA as it leverages Ethereum's security and decentralization. However, this approach is costly, as the L2 must pay Ethereum&rsquo;s high gas fees for storing data on the L1, which typically results in higher gas fees for users.
+Using Ethereum to store transaction data is generally considered the most secure option for DA as it leverages Ethereum's security and decentralization. However, this approach is costly, as the L2 must pay Ethereum's high gas fees for storing data on the L1, which typically results in higher gas fees for users.
 
-Within the rollup category, there are further nuances to storing transaction data on Ethereum. Some rollups post serialized transaction data directly, whereas others post state differences instead. Some rollups use [calldata](https://docs.soliditylang.org/en/v0.8.26/types.html#data-location) to store transaction data, while others use more recent Ethereum features such as Blobs, introduced in [EIP-4844](https://www.eip4844.com/).
+Within the rollup category, there are further nuances to storing transaction data on Ethereum. Some rollups post serialized transaction data directly, whereas others post state differences instead. Some rollups use [calldata](https://docs.soliditylang.org/en/v0.8.26/types.html#data-location) to store transaction data, while others use more recent Ethereum features such as blobs, introduced in [EIP-4844](https://www.eip4844.com/).
 
 The CDK provides full flexibility to developers to choose what to do with transaction data, including the ability to build rollups that store data on Ethereum as a rollup like the Polygon zkEVM. 
 
 !!! note
-    Currently, the rollup mode of Polygon CDK does not support BLOB mode (EIP4844), but this functionality is coming soon.
+    Currently, the rollup mode of Polygon CDK does not support blobs (EIP-4844), but this functionality is coming soon.
 
 ## Validiums
 
@@ -21,7 +21,7 @@ Validiums do not store transaction data on Ethereum. Instead, they only post ZK-
 
 As an L2, a validium does not pay high gas fees associated with storing data on Ethereum. This approach is more cost-effective than rollups, meaning gas fees are much lower for users. 
 
-However, validiums are typically considered less secure than ZK-rollups, as they store transaction data off of Ethereum using solutions such as a [Data Availability Committee (DAC)](https://docs.polygon.technology/cdk/glossary/#data-availability-committee-dac) or [alternative data availability solutions](#alternative-da-solutions).
+However, validiums are typically considered less secure than ZK-rollups, as they store transaction data off of Ethereum using solutions such as a [Data Availability Committee (DAC)](../glossary/index.md#data-availability-committee-dac) or [alternative data availability solutions](#alternative-da-solutions).
 
 ### Alternative DA solutions
 
@@ -57,9 +57,7 @@ Below is a breakdown of the technical differences between a zkEVM rollup and val
 | **Gas fees**          | High, because all transaction data is stored on Ethereum.                                                                                                                                                | Low, because only the hash of the transaction data is stored on Ethereum.                                                                                                                                                                                  |
 | **Proof generation**  | Uses Prover to generate proofs of batched transactions for validation.                                                                                                                                   | Uses Prover to generate proofs of batched transactions for validation.                                                                                                                                                                                     |
 | **Final settlement**  | Transaction batches and their corresponding proofs are added to the Ethereum state.                                                                                                                      | The hash of transaction data and its proof are added to the Ethereum state, referred to as the consolidated state.                                                                                                                                         |
-
 <sub><sup>\*</sup>JSON RPC, Pool DB, Sequencer, Etherman, Synchronizer, State DB, Aggregator, Prover</sub>
-
 
 ## Further reading
 

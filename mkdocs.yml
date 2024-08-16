@@ -53,8 +53,10 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
-      - Version compatibility matrix: cdk/version-matrix.md
-      - Get started: cdk/getting-started/index.md
+      - Releases:
+        - Version compatibility matrix: cdk/version-matrix.md
+      - Get started: 
+        - Local deployment guide: cdk/getting-started/local-deployment.md
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - L2 architecture overview: cdk/concepts/architecture.md
@@ -553,7 +555,7 @@ nav:
           - OKX explorer: https://www.okx.com/web3/explorer/polygon      
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
-          - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
+          - zkEVM testnet: https://cardona-zkevm.polygonscan.com/
   - Innovation & design:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md

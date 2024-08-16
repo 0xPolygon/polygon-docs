@@ -206,11 +206,7 @@ hide:
 						<p class="home-section-subtext">Are you ready to start building?</p>
 					</div>
 					<div class="flexbox">
-<<<<<<< HEAD
-						<a href="cdk/get-started/quickstart/deploy-stack" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
-=======
-						<a href="cdk/build/quickstart/deploy-stack" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
->>>>>>> 9fa32de39d70b62134e9b19aa1a77ae74aeae095
+						<a href="cdk/getting-started/local-deployment/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
 								<div class="feature-content-name">Polygon CDK: Deploy a local test rollup</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
