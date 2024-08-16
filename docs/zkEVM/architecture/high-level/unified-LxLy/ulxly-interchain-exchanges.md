@@ -62,7 +62,7 @@ Recall also that in the bridge contract, the mapping $\texttt{tokenInfoToWrapped
 
 The problem is that if we change the $\texttt{creationBytecode}$ of the ERC-20 token contract, this will change all the addresses of the contract instances and breaks the data of the mapping.
 
-The $\texttt{creationBytecode}$ will change with high probability if we compile the factory (in our case the bridge) with another version of the Solidity compiler. In this case, we had to options:
+The $\texttt{creationBytecode}$ will change with high probability if we compile the factory (in our case the bridge) with another version of the Solidity compiler. In this case, we had two options:
 
 (a) Freeze the Solidity compiler version for the development of the whole bridge contract. 
 

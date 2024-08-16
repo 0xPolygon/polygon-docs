@@ -95,8 +95,8 @@ nav:
         - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
       - Build:
         - Get started: zkEVM/get-started/index.md
-        - Quick start: zkEVM/get-started/quick-start.md
-        - Setup nodes:
+        - Connect to zkEVM: zkEVM/get-started/quick-start.md
+        - Deployment guides:
           - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
           - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
           - Deploy zkEVM:
@@ -109,15 +109,23 @@ nav:
               - Configure prover: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-prover.md
               - Start node: zkEVM/get-started/setup-nodes/deploy-zkevm/start-node.md
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
-          - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+          # - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+        - Risk disclosures: zkEVM/get-started/risk-disclosures.md
         - Historical data: zkEVM/get-started/historical-data.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
-        - Smart contracts: 
+        - Smart contracts:
           - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
           - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
           - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
-          - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
+          - Unified bridge:
+            - History of the unified bridge: zkEVM/architecture/high-level/unified-LxLy/lxly-bridge.md
+            - The rollup manager: zkEVM/architecture/high-level/unified-LxLy/ulxly-rollupmanager.md
+            - Sequencing and verification flows: zkEVM/architecture/high-level/unified-LxLy/ulxly-sequence-verify.md
+            - Updating rollups: zkEVM/architecture/high-level/unified-LxLy/ulxly-updating-rollups.md
+            - Global exit trees: zkEVM/architecture/high-level/unified-LxLy/ulxly-exit-trees-node.md
+            - Cross-chain exchanges: zkEVM/architecture/high-level/unified-LxLy/ulxly-interchain-exchanges.md
+            - Bridging: zkEVM/architecture/high-level/unified-LxLy/bridging.md
           - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
           - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
           - API:
@@ -180,13 +188,6 @@ nav:
             - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
             - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
             - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
-          - Unified bridge:
-            - History of the unified bridge: zkEVM/architecture/protocol/unified-LxLy/lxly-bridge.md
-            - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
-            - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
-            - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
-            - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
-            - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - zkProver design:
@@ -293,8 +294,8 @@ nav:
           - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
           - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
-      - Troubleshooting:
-        - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
+      # - Troubleshooting:
+      #   - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
       - PoS: pos/index.md
       - Overview: pos/overview.md
