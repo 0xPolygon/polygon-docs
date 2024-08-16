@@ -1,4 +1,4 @@
-The LxLy bridge is an interoperability solution aimed at enabling cross-chain communication among Polygon chains. It facilitates interaction between two L2 chains or between an L2 chain and Ethereum as the L1.
+The LxLy bridge is an interoperability solution aimed at enabling cross-chain communication among networks. It facilitates interaction between two L2 chains or between an L2 chain and Ethereum as the L1.
 
 The LxLy bridge SC (or [PolygonZkEVMBridgeV2](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/v2/PolygonZkEVMBridgeV2.sol)) is an improved and a more robust version of the [zkEVM bridge](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMBridge.sol) deployed in the Polygon zkEVM mainnet_beta version_.
 
@@ -86,14 +86,20 @@ The governance contract oversees consensus mechanisms and verifiers that can be 
 The [rollup manager contract](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/v2/PolygonRollupManager.sol) has the relevant function for adding a new rollup:
 
 ```bash
- function addNewRollupType(
-        address consensusImplementation,
-        IVerifierRollup verifier,
-        uint64 forkID,
-        bytes32 genesis,
-        uint8 rollupCompatibilityID,
-        string memory description
-    ) ...
+function createNewRollup(
+    uint32 rollupTypeID,
+    uint64 chainID,
+    address admin,
+    address sequencer,
+    address gasTokenAddress,
+    uint32 gasTokenNetwork,
+    string memory sequencerURL,
+    string memory networkName
+) external onlyRole(_CREATE_ROLLUP_ROLE) {
+    // Check that rollup type exists
+    if (rollupTypeID == 0 || rollupTypeID > rollupTypeCount) {
+        revert RollupTypeDoesNotExist();
+    }
 ```
 
 - To create and connect a rollup to the LxLy bridge,

@@ -8,7 +8,7 @@ CDK-built chains come with a built-in bridge service and customizable UI out of 
 
 The LxLy bridge contracts carry out deposit and withdrawal of assets between L2 and L1.
 
-Chains looking to run their own bridge infrastructure can choose to deploy a new instance of the [LxLy bridge](../../zkEVM/architecture/protocol/unified-LxLy/lxly-bridge.md) that allows users to move assets (both native and [ERC20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) tokens) from L1 to the L2 and vice versa.
+Chains looking to run their own bridge infrastructure can choose to deploy a new instance of the [LxLy bridge](../../zkEVM/architecture/high-level/unified-LxLy/lxly-bridge.md) that allows users to move assets (both native and [ERC20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) tokens) from L1 to the L2 and vice versa.
 
 Deploying an individual instance of the LxLy means interoperability with other L2 chains via the [AggLayer](../agglayer/overview.md) is not possible. To enable cross-chain interoperability (i.e. L2-to-L2 cross-chain transactions), chains can opt-in to the AggLayer and use the [unified bridge](../agglayer/unified-bridge.md).
 
@@ -31,5 +31,5 @@ This option is suited to chains that want a standard bridging experience and do 
 ## Further reading
 
 - [Aggregated blockchains: A new thesis](https://polygon.technology/blog/aggregated-blockchains-a-new-thesis).
-- [LxLy bridge](../../zkEVM/architecture/protocol/unified-LxLy/lxly-bridge.md).
+- [LxLy bridge](../../zkEVM/architecture/high-level/unified-LxLy/lxly-bridge.md).
 - [Unified bridge Ooverview](../agglayer/unified-bridge.md).

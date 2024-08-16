@@ -8,7 +8,7 @@ The unified bridge is a single bridge contract on Ethereum, providing a safe, co
 
 ## Bridging mechanism
 
-The bridging mechanism enables token transfers and message-passing between Ethereum (L1) and CDK chains via smart contracts. Detailed in the [zkEVM bridging documentation](../../zkEVM/architecture/high-level/smart-contracts/bridging.md), core components include the bridge and exit root Solidity smart contracts.
+The bridging mechanism enables token transfers and message-passing between Ethereum (L1) and CDK chains via smart contracts. Detailed in the [zkEVM bridging documentation](../../zkEVM/architecture/high-level/unified-LxLy/bridging.md), core components include the bridge and exit root Solidity smart contracts.
 
 ## Data structures 
 

@@ -6,19 +6,13 @@ This document aims to offer a comprehensive understanding of the protocol design
 
 The major components of Polygon zkEVM are:
 
-- Consensus contract (PolygonZkEVM.sol)
+- Consensus contract, which was initially `PolygonZkEVM.sol` has now been upgraded to `PolygonZkEVMEtrog.sol`. 
 
-- zkNode
-    
-    - Synchronizer
+- zkNode, consisting of the synchronizer, sequencer, aggregator, and RPC.
 
-    - Sequencer & aggregator
+- zkProver for generating verifiable proofs of correct transaction executions. 
 
-    - RPC
-
-- zkProver
-
-- zkEVM bridge
+- zkEVM bridge for cross-chain messaging and transferring assets.
 
 The skeletal architecture of Polygon zkEVM is shown below:
 
@@ -31,7 +25,7 @@ The earlier version, Polygon Hermez 1.0, was based on the Proof of Donation (PoD
 PoD was basically a decentralized auction conducted automatically, with participants (coordinators) bidding a certain number of tokens in order to be selected for creating batches.
 
 
-The updated consensus contract (PolygonZkEVM.sol) is designed to build upon the insights gained from PoD in v1.0 and adds support for permissionless participation of multiple coordinators in producing L2 batches.
+The updated consensus contract is designed to build upon the insights gained from PoD in v1.0 and adds support for permissionless participation of multiple coordinators in producing L2 batches.
 
 In the PoD mechanism, economic incentives were structured to _require_ validators to operate with high efficiency to remain competitive.
 
@@ -41,7 +35,7 @@ While the protocol design is intended to support permissionless participation of
 ​
 ### Implementation model
 ​
-Unlike the PoD, the Consensus Contract (PolygonZkEVM.sol) employs a simpler technique and is favoured due to its greater efficiency in resolving the challenges involved in PoD.
+Unlike the PoD, the Consensus Contract employs a simpler technique and is favoured due to its greater efficiency in resolving the challenges involved in PoD.
 
 The strategic implementation of the contract-based consensus ensures that the network:
 
@@ -69,13 +63,13 @@ Under a Hybrid schema, either of the following is possible:
 
 Unless, among other considerations, the proving module can be significantly accelerated to alleviate high costs for validators, a hybrid schema remains a viable option.
 ​
-### `PolygonZkEVM.sol`
+### `PolygonZkEVMEtrog.sol`
 ​
 The underlying protocol in zkEVM ensures that the state transitions are correct by employing a validity proof.
 
-In order to ensure adherence to a set of pre-determined rules for state transitions, the consensus contract (`PolygonZkEVM.sol`, deployed on L1) is utilized.
+In order to ensure adherence to a set of pre-determined rules for state transitions, the consensus contract deployed on L1, is utilized.
 ​
-!!!info
+!!! info
     The consensus contract is currently deployed on both [Ethereum mainnet](https://etherscan.io/address/0x5132A183E9F3CB7C848b0AAC5Ae0c4f0491B7aB2) and [Cardona testnet](https://sepolia.etherscan.io/address/0xa997cfD539E703921fD1e3Cf25b4c241a27a4c7A).
 ​
 A smart contract verifies the validity proofs to ensure that each transition is completed correctly. 
@@ -105,11 +99,15 @@ The smart contract, therefore, makes two calls:
 
     These are henceforth referred to as the _trusted sequencer_ and the _trusted aggregator_. 
 
-### Tokenomics
+<!-- ### Tokenomics -->
+
+## zkNode
+
+zkNode is the essential software for running a zkEVM node. It is a client that the network requires to implement the synchronization and govern the roles of the participants, including the trusted sequencer and the trusted aggregator.
 
 The consensus smart contract imposes the following requirements on the trusted sequencer and the trusted aggregator.
 ​
-#### Sequencer
+### Sequencer
 
 - The trusted sequencer must run the software necessary for a full zkEVM node.
 
@@ -117,7 +115,7 @@ The consensus smart contract imposes the following requirements on the trusted s
 
 - The trusted sequencer is incentivized to propose valid batches (consisting of valid transactions) with the fees paid by the network users who initiated the transactions.
 
-#### Aggregator
+### Aggregator
 
 A trusted aggregator receives all the transaction information from the trusted sequencer and sends it to the prover, which in turn provides a zk-proof after performing some complex computations. 
 
@@ -132,10 +130,6 @@ The trusted aggregator's task is to therefore:
 - For a given batch, the trusted aggregator earns the POL fees (paid by the trusted sequencer) for providing a validity proof.
 
 - In a decentralized setting, each trusted aggregator needs to declare its intention to validate transactions, and subsequently compete to produce validity proofs based on its own strategy.
-
-## zkNode
-
-zkNode is the essential software for running a zkEVM node. It is a client that the network requires to implement the synchronization and govern the roles of the participants, including the trusted sequencer and the trusted aggregator.
 
 Other than the trusted sequencer and the trusted aggregator, participants in the Polygon zkEVM network can take part as nodes that seek to know the state of the network.
 

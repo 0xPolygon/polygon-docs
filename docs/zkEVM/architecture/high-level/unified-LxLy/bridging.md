@@ -93,7 +93,7 @@ The data below is transaction data (represented by a leaf node in an exit tree) 
 
 1. When a batch of transactions is processed, the bridge contract appends the L2 exit tree with a new leaf containing the batch information. This updates the L2 exit tree root.
 
-2. The bridge contracts communicates the L2 exit tree root to the L2 global exit root manager. The L2 global exit root manager, however, does not update the global exit tree at this stage.
+2. The bridge contract transmits the L2 exit tree root to the L2 global exit root manager. The L2 global exit root manager, however, does not update the global exit tree at this stage.
 
 3. For proving and verification, the zk-proof-generating circuit obtains the L2 exit tree root from the L2 global exit root manager.
 
