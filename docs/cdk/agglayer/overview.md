@@ -5,8 +5,28 @@
 
 The AggLayer is an in-development interoperability protocol that allows for trustless, cross-chain token transfers and message-passing, as well as more complex operations. The safety of the AggLayer is provided by ZK proofs. 
 
-The AggLayer currently connects chains built with Polygon CDK, a developer toolkit for designing ZK-powered Layer 2s. The long term goal for the protocol is to be flexible enough to provide interoperability among a growing range of blockchain architectures, including L2s, appchains, and non-EVM chains. 
- 
+The AggLayer currently connects chains built with Polygon CDK, a developer toolkit for designing ZK-powered Layer 2s. The long term goal for the protocol is to be flexible enough to provide interoperability among a growing range of blockchain architectures, including L2s, appchains, and non-EVM chains.
+
+## Chains connected to AggLayer
+
+Here's a list of chains connected to the alpha version of the AggLayer:
+
+
+| Polygon IP Partner | Chain Partner | L2 Chain ID | Network Name            |
+| ------------------ | ------------- | ----------- | ----------------------- |
+| Startale Labs      | Astar         | 6038361     | zKyoto                  |
+| Startale Labs      | Astar         | 3776        | Astar zkEVM             |
+| Gateway FM         | Lumia         | 1952959480  | Lumia Testnet           |
+| Gateway FM         | Lumia         | 994873017   | prism                   |
+| Gateway FM         | Moonveil      | 1297206718  | moonveil-testnet        |
+| OKX                | OKX           | 195         | X Layer Devnet          |
+| OKX                | OKX           | 196         | X Layer                 |
+| Gateway FM         | Silicon       | 1722641160  | silicon-sepolia-testnet |
+| Gateway FM         | Silicon       | 2355        | silicon-zk              |
+| Gateway FM         | Wirex         | 407985408   | wirex-pay-devnet        |
+| Gateway FM         | Wirex         | 31415       | pay-chain               |
+
+
 ## AggLayer components
 
 ### Polygon CDK
