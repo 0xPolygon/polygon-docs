@@ -4,7 +4,7 @@ Polygon zkEVM supports a majority of Ethereum EIPs, precompiles, and opcodes. De
 
 Connect to the fully-audited Polygon zkEVM mainnet or its testnet (Cardona testnet) using the details in the table below.
 
-| Network | RPC URL | ChainID | Block explorer URL | Currency |
+| Network | RPC URL | ChainID | Block explorer URL | Gas token |
 | ------- | ------------------------------- | ---------------- | ---------------- | ----- |
 | Polygon zkEVM | `https://zkevm-rpc.com` | `1101` | `https://zkevm.polygonscan.com/` | **ETH** |
 | Cardona zkEVM testnet | `https://rpc.cardona.zkevm-rpc.com` | `2442` | `https://cardona-zkevm.polygonscan.com/` | **ETH** |
@@ -58,10 +58,10 @@ A few of these strategies are listed below:
 3. Implementation of the bridge smart contract is made efficient by using only Merkle roots of exit trees.
 4. Utilization of specialized cryptographic primitives within the proving component, [zkProver](https://docs.polygon.technology/zkEVM/architecture/zkprover/), to speed up computations and minimize proof sizes. This is seen in:
     * Running a special zero-knowledge assembly language ([zkASM](./spec/zkasm/index.md)) for interpretation of bytecode.
-    * Using zero-knowledge tools such as zk-STARKs for proving purposes; these proofs are very fast though they are big in size.
+    * Using zero-knowledge technology such as zk-STARKs for proving purposes; these proofs are very fast though they are big in size.
     * Instead of publishing the sizeable zk-STARK proofs as validity proofs, a zk-SNARK is used to attest to the correctness of the zk-STARK proofs. 
     * Publishing zk-SNARKs as the validity proofs to state changes.
     
-	These help in reducing gas costs from 5M to 350K.
+	These help in reducing gas costs from 5M to 350K (wei).
 
 The Polygon zkEVM network is therefore secure, efficient, comes with verifiable block data, and cost-effective.
