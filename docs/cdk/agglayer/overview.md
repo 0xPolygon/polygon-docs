@@ -21,11 +21,11 @@ Here's a list of chains connected to the alpha version of the AggLayer:
 | Gateway FM         | Moonveil      | 1297206718  | moonveil-testnet        |
 | OKX                | OKX           | 195         | X Layer Devnet          |
 | OKX                | OKX           | 196         | X Layer                 |
+| Gateway FM         | GPT Protocol  | 1511670449  | gpt-mainnet             |
 | Gateway FM         | Silicon       | 1722641160  | silicon-sepolia-testnet |
 | Gateway FM         | Silicon       | 2355        | silicon-zk              |
 | Gateway FM         | Wirex         | 407985408   | wirex-pay-devnet        |
 | Gateway FM         | Wirex         | 31415       | pay-chain               |
-| Gateway FM         | GPT Protocol  | 1511670449  | gpt-mainnet             |
 
 ## AggLayer components
 
