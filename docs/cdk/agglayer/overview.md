@@ -25,7 +25,7 @@ Here's a list of chains connected to the alpha version of the AggLayer:
 | Gateway FM         | Silicon       | 2355        | silicon-zk              |
 | Gateway FM         | Wirex         | 407985408   | wirex-pay-devnet        |
 | Gateway FM         | Wirex         | 31415       | pay-chain               |
-
+| Gateway FM         | GPT Protocol  | 1511670449  | gpt-mainnet             |
 
 ## AggLayer components
 
