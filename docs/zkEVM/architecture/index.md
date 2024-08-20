@@ -97,9 +97,7 @@ The smart contract, therefore, makes two calls:
     
     Although the current protocol design allows for several sequencers and aggregators, to prioritize security and given the early stage of protocol development, only one sequencer and one aggregator are currently operational.
 
-    These are henceforth referred to as the _trusted sequencer_ and the _trusted aggregator_. 
-
-<!-- ### Tokenomics -->
+    These are henceforth referred to as the _trusted sequencer_ and the _trusted aggregator_.
 
 ## zkNode
 
@@ -232,35 +230,3 @@ To do so, users need to deposit Ether to L2 through the [Polygon Portal](https:/
 The above process is a summarized version of how transactions are processed in Polygon zkEVM. 
 
 Take a look at the complete description in the [transaction life cycle](protocol/transaction-life-cycle/submit-transaction.md) document.
-
-## Design characteristics
-
-The Polygon zkEVM network is secure, efficient, and comes with verifiable block data.
-
-Development efforts aim at permissionless-ness, that is, allowing anyone with the zkEVM software to participate in the network. For instance, the consensus algorithm could give anyone the opportunity to be an aggregator.
-
-Data availability is most crucial for decentralization, where every user has sufficient data needed to rebuild the full state of a rollup. As a rollup, Polygon zkEVM posts all transaction data and validity proof on Ethereum.
-
-The aim is to ensure that there is no censorship and that no one party can control the network. For this reason, mechanisms such as [force batches](protocol/malfunction-resistance/sequencer-resistance.md) and [force verification](protocol/malfunction-resistance/aggregator-resistance.md) have been activated.
-
-Polygon zkEVM was designed with security in mind. As an L2 solution, it inherits its security from Ethereum.
-
-Smart contracts are deployed to ensure that everyone who executes state changes does so appropriately, creates a proof that attests to the validity of a state change, and makes validity proofs available on-chain for verification.
-
-## Efficiency and overall strategy
-
-Efficiency is key to network performance. Polygon zkEVM uses several implementation strategies to maximize efficiency. A few are listed below:
-
-1. The first strategy is to deploy the consensus contract, which incentivizes the aggregator to participate in the proof generation process.
-
-2. The second strategy is to carry out all computations off-chain while keeping only the necessary data and zk-proofs on-chain.
-
-3. The bridge smart contract's implementation is made efficient by only using Merkle roots of exit trees.
-
-4. Utilization of specialized cryptographic primitives within the zkProver in order to speed up computations and minimize proof sizes, as seen in:
-    
-    - Running a special zero-knowledge assembly language (zkASM) for interpretation of bytecode.
-
-    - Using zero-knowledge tools such as zk-STARKs for proving purposes; these proofs are very fast though they are big in size.
-
-    - Instead of publishing the sizeable zk-STARK proofs as validity proofs, a zk-SNARK is used to attest to the correctness of the zk-STARK proofs. These zk-SNARKs are, in turn, published as the validity proofs to state changes. This helps in reducing the gas costs from 5M to 350K.
