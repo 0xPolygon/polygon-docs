@@ -16,6 +16,7 @@ Here's a list of chains connected to the alpha version of the AggLayer:
 | ------------------ | ------------- | ----------- | ----------------------- |
 | Startale Labs      | Astar         | 6038361     | zKyoto                  |
 | Startale Labs      | Astar         | 3776        | Astar zkEVM             |
+| Gateway FM         | GPT Protocol  | 1511670449  | gpt-mainnet             |
 | Gateway FM         | Lumia         | 1952959480  | Lumia Testnet           |
 | Gateway FM         | Lumia         | 994873017   | prism                   |
 | Gateway FM         | Moonveil      | 1297206718  | moonveil-testnet        |
@@ -25,7 +26,6 @@ Here's a list of chains connected to the alpha version of the AggLayer:
 | Gateway FM         | Silicon       | 2355        | silicon-zk              |
 | Gateway FM         | Wirex         | 407985408   | wirex-pay-devnet        |
 | Gateway FM         | Wirex         | 31415       | pay-chain               |
-
 
 ## AggLayer components
 
@@ -42,4 +42,4 @@ The unified bridge is a single bridge contract for all AggLayer-connected chains
 
 ### AggLayer service
 
-The AggLayer service is a service designed to receive ZK proofs from various CDK chains and verify their validity before sending them to the L1 for final settlement. Currently, the AggLayer service has two implementations: [agglayer-go](agglayer-go.md) and [agglayer-rs](agglayer-rs.md).
+The AggLayer service is designed to receive ZK proofs from various CDK and non-CDK chains, and verify their validity before sending them to the L1 Ethereum for final settlement. Currently, the AggLayer service has two implementations: [agglayer-go](agglayer-go.md) and [agglayer-rs](agglayer-rs.md).
