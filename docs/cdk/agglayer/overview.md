@@ -42,4 +42,4 @@ The unified bridge is a single bridge contract for all AggLayer-connected chains
 
 ### AggLayer service
 
-The AggLayer service is a service designed to receive ZK proofs from various CDK chains and verify their validity before sending them to the L1 for final settlement. Currently, the AggLayer service has two implementations: [agglayer-go](agglayer-go.md) and [agglayer-rs](agglayer-rs.md).
+The AggLayer service is designed to receive ZK proofs from various CDK and non-CDK chains, and verify their validity before sending them to the L1 Ethereum for final settlement. Currently, the AggLayer service has two implementations: [agglayer-go](agglayer-go.md) and [agglayer-rs](agglayer-rs.md).
