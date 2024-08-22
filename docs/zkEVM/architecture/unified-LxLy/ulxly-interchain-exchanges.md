@@ -6,7 +6,7 @@ The node configuration for a rollup (or validium) network typically involves spe
 
 The figure below provides a detailed breakdown of network parameters, which are given here as a snippet of node configuration within a TOML file.
 
-![ulxly-toml-file-node-config](../../../../img/zkEVM/ulxly-toml-file-node-config.png)
+![ulxly-toml-file-node-config](../../../img/zkEVM/ulxly-toml-file-node-config.png)
 
 The $\texttt{chainId}$ is the chain identifier of the base layer (i.e., The Ethereum mainnet in this case).
 
@@ -46,7 +46,7 @@ With focus on **LY** as a layer of interest, the diagram depicts several scenari
 - Bridging L1 ETH to LY gas token, or 
 - Bridging a wrapped ERC-20 token living on LX to LY ETH.
 
-![ulxly-mainnet-lx-ly-bridge](../../../../img/zkEVM/ulxly-mainnet-lx-ly-bridge.png)
+![ulxly-mainnet-lx-ly-bridge](../../../img/zkEVM/ulxly-mainnet-lx-ly-bridge.png)
 
 ## Upgradable CREATE2 factory issue
 

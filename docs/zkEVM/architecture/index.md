@@ -202,31 +202,3 @@ The SNARK verifier proves the validity of every transaction in the batch.
 It is the core entity in any zk-rollup architecture as it verifies the correctness of each proof, thus ensuring the integrity of state transitions.
 
 The verifier contract is currently deployed on the [Ethereum mainnet](https://etherscan.io/address/0x4F9A0e7FD2Bf6067db6994CF12E4495Df938E6e9) and [Cardona testnet](https://sepolia.etherscan.io/address/0x8EdA1d8c254a77a57A6A7A1C0262e9A44A7C6D6d).
-
-## Transaction life cycle
-
-Users need funds on L2 to be able to send transactions to the L2 network.
-
-To do so, users need to deposit Ether to L2 through the [Polygon Portal](https://portal.polygon.technology/bridge).
-
-- Bridge
-    
-    - Deposit ETH.
-    - Wait until `globalExitRoot` is posted on L2.
-    - Perform claim on L2 and receive the funds.
-
-- L2 transactions
-    
-    - User initiates a transaction using their wallet (e.g. MetaMask) and sends it to a trusted sequencer.
-
-    - The transaction gets finalized on L2 once the trusted sequencer commits to adding the transaction to a batch. This is known as the trusted state.
-
-    - Sequencer sends the batch data to L1 smart contract, enabling any L2 node to synchronize from L1 in a trustless way. This is also known as the virtual state.
-
-    - Aggregator takes the pending transactions, and builds a proof.
-
-    - Once the proof is verified, the transactions attain L1 finality (important for withdrawal of funds from L2). This is called the consolidated state.
-
-The above process is a summarized version of how transactions are processed in Polygon zkEVM. 
-
-Take a look at the complete description in the [transaction life cycle](protocol/transaction-life-cycle/submit-transaction.md) document.
