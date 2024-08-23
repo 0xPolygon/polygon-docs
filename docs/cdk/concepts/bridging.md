@@ -32,4 +32,4 @@ This option is suited to chains that want a standard bridging experience and do 
 
 - [Aggregated blockchains: A new thesis](https://polygon.technology/blog/aggregated-blockchains-a-new-thesis).
 - [LxLy bridge](../../zkEVM/architecture/high-level/unified-LxLy/lxly-bridge.md).
-- [Unified bridge Ooverview](../agglayer/unified-bridge.md).
+- [Unified bridge Overview](../agglayer/unified-bridge.md).
