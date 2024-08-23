@@ -16,7 +16,7 @@ Polygon CDK provides the components necessary to build a layer 2 blockchain that
 
 - Modularity: CDK modular components allow developers to easily customize their L2 environment and build a chain that meets their specific needs.
 
-- Interoperability: Opt-in to the [AggLayer](../innovation-design/agglayer/overview.md) to bootstrap your chain's ecosystem, enable cross-chain transactions, and gain access to the users and liquidity of other chains.
+- Interoperability: Opt-in to the [AggLayer](../innovation-design/agglayer/overview.md) to bootstrap your chain's ecosystem, enable cross-chain transactions expanding your reach and user base, while attracting users and liquidity from other established chains.
 
 - Sovereignty: Maintain full control over your chain's revenue, governance, security, economic policies, and more.
 
