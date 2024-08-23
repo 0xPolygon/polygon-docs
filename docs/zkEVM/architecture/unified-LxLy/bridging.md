@@ -2,7 +2,7 @@ The unified bridge transfers assets and messages between networks (L1, L2) by ca
 
 This contract is deployed on L1 and there is also one deployed on every L2 network. It communicates closely with an exit root manager contract specific to L1 or L2.
 
-![Polygon bridge contracts](../../../../img/zkEVM/bridge-l1-l2.png)
+![Polygon bridge contracts](../../../img/zkEVM/bridge-l1-l2.png)
 
 !!! tip
     - Notice that the L2 bridge content has a function for updating the global exit root: `setGlobalExitRoot(...)`.

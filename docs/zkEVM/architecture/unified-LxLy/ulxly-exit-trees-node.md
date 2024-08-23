@@ -17,7 +17,7 @@ The design of the updated global exit tree has two main branches:
 - One containing the root of the mainnet exit tree, and
 - The other branch containing the root of the **rollup exit tree**, which summarizes exit trees of all the rollups. The rollup exit tree has as its leaves all the local exit roots of the different rollups.
 
-![ulxly-mainnet-and-rollup-exit-trees](../../../../img/zkEVM/ulxly-mainnet-and-rollup-exit-trees.png)
+![ulxly-mainnet-and-rollup-exit-trees](../../../img/zkEVM/ulxly-mainnet-and-rollup-exit-trees.png)
 
 ## Rollup identifiers
 
@@ -54,6 +54,4 @@ The figure below depicts how the $\texttt{globalIndex}$ is interpreted:
   - the $\texttt{rollupIndex = 1}$ means the rollup is the second in the rollup exit tree, and 
   - the $\texttt{local root index = 3}$, pointing at the fourth leaf in the rollup 9002's exit tree.
 
-![ulxly-mainnet-and-rollups-exit-trees-2](../../../../img/zkEVM/ulxly-mainnet-and-rollups-exit-trees-2.png)
-
-
+![ulxly-mainnet-and-rollups-exit-trees-2](../../../img/zkEVM/ulxly-mainnet-and-rollups-exit-trees-2.png)

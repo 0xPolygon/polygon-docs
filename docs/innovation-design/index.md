@@ -32,7 +32,7 @@ hide:
 </div>
 <div class="grid-container">
    <div class="grid-item">
-      <a href="../cdk/agglayer/overview">
+      <a href="../innovation-design/agglayer/overview">
          <div class="product-list-item-header">
             <div class="feature-card-heading">AggLayer documentation</div>
          </div>
