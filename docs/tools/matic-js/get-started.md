@@ -6,7 +6,7 @@ Matic.js is a javascript library which helps in interacting with the various com
 
 In this get started document we will learn about how we can setup and interact with the POS bridge.
 
-In case you face any issues or have any queries, feel free to raise a [ticket](https://support.polygon.technology/support/tickets/new) to our Support Team or reach out to us on [Discord](https://discord.gg/32j4qNDn).
+In case you face any issues or have any queries, feel free to raise a [ticket](https://support.polygon.technology/support/tickets/new) to our Support Team or reach out to us on [Discord](https://discord.com/invite/0xPolygonCommunity).
 
 !!! important
     Make sure you have followed the [installation step](installation.md).

@@ -320,7 +320,7 @@ heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000
 
 ### 20. When will I get a chance to become a Validator?
 
-We are progressively adding validators throughout the course of Stage 1 event. We will be releasing a list of new external validators gradually. This list will be announced on the Discord channel.
+We are progressively adding validators throughout the course of Stage 1 event. We will be releasing a list of new external validators gradually. This list will be announced on the [Discord channel](https://discord.com/invite/0xPolygonCommunity).
 
 
 ### 21. Where can I find Heimdall account info location?
