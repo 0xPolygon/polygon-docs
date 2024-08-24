@@ -97,4 +97,4 @@ Please register or login to request free testnet tokens.
 
 ## Discord community
 
-Make sure to connect with the [Polygon Discord community](https://discord.gg/0xPolygon) for news, tips, and help.
+Make sure to connect with the [Polygon Discord community](https://discord.com/invite/0xPolygonCommunity) for news, tips, and help.
