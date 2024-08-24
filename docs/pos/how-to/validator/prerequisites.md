@@ -54,7 +54,7 @@ See the doc on [validator best practices](../operate-validator-node/validator-be
     | Run Build Essential | Yes                                            | No                                                                      | No                                             |
     | Node setup          | [Using binaries](../validator/validator-binaries.md) | [Using Ansible](../validator/validator-ansible.md)                            | [Using packages](../validator/validator-packages.md) |
 
-2. Once your sentry and validator nodes are synced and running, head over to our [Discord server](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes. You may check the logs by using the following commands:
+2. Once your sentry and validator nodes are synced and running, head over to our [Discord server](https://discord.com/invite/0xPolygonCommunity) and ask the community to health-check your nodes. You may check the logs by using the following commands:
 
     - Heimdall logs: `journalctl -u heimdalld.service -f`
     - Bor logs: `journalctl -u bor.service -f`
