@@ -22,4 +22,4 @@ Submitters of issues can connect with the community leaders via email or tag the
 
 ### Via Discord
 
-* Check out the @validator-support-team channel on our [Discord](https://discord.com/invite/0xPolygon) server.
+* Check out the @validator-support-team channel on our [Discord](https://discord.com/invite/0xPolygonCommunity) server.
