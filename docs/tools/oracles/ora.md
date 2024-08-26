@@ -34,21 +34,21 @@ To build with AI models of OAO, we provided an example of contract using OAO: [P
 
 1. Inherit `AIOracleCallbackReceiver` in your contract and bind with a specific OAO address:
 
-```solidity
-constructor(IAIOracle _aiOracle) AIOracleCallbackReceiver(_aiOracle) {}
-```
+    ```solidity
+    constructor(IAIOracle _aiOracle) AIOracleCallbackReceiver(_aiOracle) {}
+    ```
 
 2. Write your callback function to handle the AI result from OAO. Note that only OAO can call this function:
 
-```solidity
-function aiOracleCallback(uint256 requestId, bytes calldata output, bytes calldata callbackData) external override onlyAIOracleCallback()
-```
+    ```solidity
+    function aiOracleCallback(uint256 requestId, bytes calldata output, bytes calldata callbackData) external override onlyAIOracleCallback()
+    ```
 
 3. When you want to initiate an AI inference request, call OAO as follows:
 
-```solidity
-aiOracle.requestCallback(modelId, input, address(this), gas_limit, callbackData);
-```
+    ```solidity
+    aiOracle.requestCallback(modelId, input, address(this), gas_limit, callbackData);
+    ```
 
 ## Reference
 
