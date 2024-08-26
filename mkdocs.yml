@@ -535,6 +535,7 @@ nav:
           - Chainlink: tools/oracles/chainlink.md
           - Chronicle: tools/oracles/chronicle.md
           - DIA: tools/oracles/diadataoracles.md
+          - ORA: tools/oracles/ora.md
           - Pyth: tools/oracles/pyth.md
           - Razor: tools/oracles/razor.md
           - Supra: tools/oracles/supra.md
