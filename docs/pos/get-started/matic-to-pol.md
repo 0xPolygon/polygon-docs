@@ -6,13 +6,22 @@ POL will serve as a hyperproductive token: the native gas and staking token on P
 
 ## Steps to migrate to POL
 
-### MATIC tokens on Polygon PoS
-
-If your MATIC tokens are stored in your wallet on the Polygon PoS chain, you won't need to manually migrate them — they'll be automatically converted to POL at a 1:1 ratio.
+### MATIC tokens on Ethereum
 
 !!! info "Stakers and delegators"
 
-    MATIC stakers need not take action to upgrade from MATIC to POL.
+    MATIC stakers don't need to take any action to upgrade from MATIC to POL.
+
+If your MATIC tokens are on Ethereum, you can use [Polygon Portal's migration interface](https://portal.polygon.technology/pol-upgrade) to migrate your MATIC tokens to POL. The process is as follows:
+
+1. Navigate to Polygon Portal's migration interface: https://portal.polygon.technology/pol-upgrade
+2. Switch to Ethereum network in your wallet and connect to the Portal UI.
+3. Approve the migration action by granting the upgrade contract permission to access your MATIC tokens.
+4. Perform the migration action to receive POL in your wallet.
+
+### MATIC tokens on Polygon PoS
+
+If your MATIC tokens are stored in your wallet on the Polygon PoS chain, you won't need to manually migrate them — they'll be automatically converted to POL at a 1:1 ratio.
 
 However, you'll need to update the native token symbol in your wallet's network settings. If the token symbol isn't updated, the wallet may continue to display MATIC as the token name instead of POL.
 
@@ -38,16 +47,9 @@ Here’s how to do this in MetaMask.
     ![change-token-name-4](../../img/pos/change-token-name-4.png){width=50%}
     </center>
 
-### MATIC tokens on Ethereum
+The process to change the token symbol may vary depending on the wallet you're using. Please refer to the docs specific to your wallet and follow the outlined steps accordingly.
 
-If your MATIC tokens are on Ethereum, you can use [Polygon Portal's migration interface](https://portal.polygon.technology/pol-upgrade) to migrate your MATIC tokens to POL. The process is as follows:
-
-1. Navigate to Polygon Portal's migration interface: https://portal.polygon.technology/pol-upgrade
-2. Switch to Ethereum network in your wallet and connect to the Portal UI.
-3. Approve the migration action by granting the upgrade contract permission to access your MATIC tokens.
-4. Perform the migration action to receive POL in your wallet.
-
-### MATIC tokens on zkEVM
+### MATIC tokens on Polygon zkEVM
 
 If your MATIC tokens are on the zkEVM chain, use [Polygon Portal](https://portal.polygon.technology/bridge) to bridge your tokens to Ethereum, and then follow the steps described in the [MATIC tokens on Ethereum section](#matic-tokens-on-ethereum).
 
