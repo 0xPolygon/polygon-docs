@@ -1,12 +1,12 @@
-# Overview
+## Overview
 
 The POL token represents a significant technical upgrade for the Polygon network. As the new native gas and staking token, POL will serve as the fundamental unit of value within Polygon ecosystem. 
 
 POL token's introduction aligns with Polygon’s broader vision of becoming an aggregated network of blockchains, enabling enhanced interoperability and scalability. By transitioning to POL, Polygon aims to optimize network efficiency, improve security, and provide a more robust foundation for future development.
 
-# Steps to migrate to POL
+## Steps to migrate to POL
 
-## MATIC tokens on Polygon PoS
+### MATIC tokens on Polygon PoS
 
 If your MATIC tokens are stored in your wallet on the Polygon PoS chain, you won't need to manually migrate them — they'll be automatically converted to POL at a 1:1 ratio.
 
@@ -34,7 +34,7 @@ Here’s how to do this in MetaMask.
     ![change-token-name-4](../../img/pos/change-token-name-4.png){width=50%}
     </center>
 
-## MATIC tokens on Ethereum
+### MATIC tokens on Ethereum
 
 If your MATIC tokens are on Ethereum, you can use [Polygon Portal's migration interface](https://portal.polygon.technology/pol-upgrade) to migrate your MATIC tokens to POL. The process is as follows:
 
@@ -43,14 +43,14 @@ If your MATIC tokens are on Ethereum, you can use [Polygon Portal's migration in
 3. Approve the migration action by granting the upgrade contract permission to access your MATIC tokens.
 4. Perform the migration action to receive POL in your wallet.
 
-## MATIC tokens on zkEVM
+### MATIC tokens on zkEVM
 
-If your MATIC tokens are on the zkEVM chain, use Polygon Portal to bridge your tokens to Ethereum, and then follow the steps described in the [MATIC tokens on Ethereum section](#matic-tokens-on-ethereum).
+If your MATIC tokens are on the zkEVM chain, use [Polygon Portal](https://portal.polygon.technology/bridge) to bridge your tokens to Ethereum, and then follow the steps described in the [MATIC tokens on Ethereum section](#matic-tokens-on-ethereum).
 
 ## Read more about POL
 
 1. [Detailed blog post on MATIC to POL migration](https://polygon.technology/blog/save-the-date-matic-pol-migration-coming-september-4th-everything-you-need-to-know)
-2. [POL token reference doc](https://docs.polygon.technology/pos/concepts/tokens/pol/)
+2. [POL token reference doc](../concepts/tokens/pol.md)
 
 
 
