@@ -312,6 +312,7 @@ nav:
       - Overview: pos/overview.md
       - Get started: 
         - Get started: pos/get-started/index.md
+        - Migrate to POL: pos/get-started/matic-to-pol.md
         - Building on Polygon: pos/get-started/building-on-polygon.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
       - Builder how-tos:
