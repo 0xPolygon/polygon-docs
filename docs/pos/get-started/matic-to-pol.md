@@ -1,14 +1,18 @@
 ## Overview
 
-The POL token represents a significant technical upgrade for the Polygon network. As the new native gas and staking token, POL will serve as the fundamental unit of value within Polygon ecosystem. 
+The technical upgrade from MATIC to POL marks a critical juncture for the Polygon networks, enhancing utility and aligning with the vision as an aggregated network of blockchains. 
 
-POL token's introduction aligns with Polygon’s broader vision of becoming an aggregated network of blockchains, enabling enhanced interoperability and scalability. By transitioning to POL, Polygon aims to optimize network efficiency, improve security, and provide a more robust foundation for future development.
+POL will serve as a hyperproductive token: the native gas and staking token on Polygon PoS, as well as supporting the network's future expansion and security as an aggregated network.
 
 ## Steps to migrate to POL
 
 ### MATIC tokens on Polygon PoS
 
 If your MATIC tokens are stored in your wallet on the Polygon PoS chain, you won't need to manually migrate them — they'll be automatically converted to POL at a 1:1 ratio.
+
+!!! info "Stakers and delegators"
+
+    MATIC stakers need not take action to upgrade from MATIC to POL.
 
 However, you'll need to update the native token symbol in your wallet's network settings. If the token symbol isn't updated, the wallet may continue to display MATIC as the token name instead of POL.
 
