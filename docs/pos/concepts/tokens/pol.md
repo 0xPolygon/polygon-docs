@@ -1,4 +1,4 @@
-POL is the native token upgrade for the Polygon ecosystem, designed for use in a wide range of activities and purposes, including as a tool for network participation and security. By staking POL, participants can actively contribute to the ecosystem as validators. Importantly, POL has many of the same features as MATIC, is built on OpenZeppelin's ERC20 implementations, and supports [EIP-2612](https://eips.ethereum.org/EIPS/eip-2612) for signature-based permit approvals.
+POL is the native token upgrade for the Polygon ecosystem, designed for use in a wide range of activities and various purposes. For instance, POL is used as a tool for network participation and security. By staking POL, participants can actively contribute to the ecosystem as validators. Importantly, like MATIC, POL is built on OpenZeppelin's ERC20 implementations, supports [EIP-2612](https://eips.ethereum.org/EIPS/eip-2612) for signature-based permit approvals, and thus inherits most of the features found in MATIC.
 
 ## PIPs
 
@@ -16,11 +16,11 @@ Community-driven governance and feedback played a crucial role in refining the P
 
 ## Do I need to do anything manually?
 
-Please refer to the [MATIC to POL migration guide](../../get-started/matic-to-pol.md) for details on what action you need to perform, if any, depending on the chain they are currently located, i.e., Ethereum, Polygon PoS, Polygon zkEVM, etc. 
+Please refer to the [MATIC to POL migration guide](../../get-started/matic-to-pol.md) for details on what action you need to take, if any, depending on the chain they are currently located, i.e., Ethereum, Polygon PoS, Polygon zkEVM, etc. 
 
 !!! tip "Deep dive into POL"
 
-    Read the detailed [blog post on the POL migration](https://polygon.technology/blog/save-the-date-matic-pol-migration-coming-september-4th-everything-you-need-to-know) to learn more about the POL token, its properties, and what it entails for the Polygon ecosystem.
+    Read the detailed [blog post on the POL migration](https://polygon.technology/blog/save-the-date-matic-pol-migration-coming-september-4th-everything-you-need-to-know) to learn more about the POL token, its properties, and what the migration means for the Polygon ecosystem.
 
 As a dApp developer, feel free to review the PIP's to analyze the changes to the token protocol. Ideally, developers shouldn't see any breaking changes. But if you do, feel free to reach out to us via the [developer Discord](https://discord.com/invite/0xPolygonDevs).
 
