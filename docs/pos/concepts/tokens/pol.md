@@ -22,7 +22,7 @@ Please refer to the [MATIC to POL migration guide](../../get-started/matic-to-po
 
     Read the detailed [blog post on the POL migration](https://polygon.technology/blog/save-the-date-matic-pol-migration-coming-september-4th-everything-you-need-to-know) to learn more about the POL token, its properties, and what the migration means for the Polygon ecosystem.
 
-As a dApp developer, feel free to review the PIP's to analyze the changes to the token protocol. Ideally, developers shouldn't see any breaking changes. But if you do, feel free to reach out to us via the [developer Discord](https://discord.com/invite/0xPolygonDevs).
+As a dApp developer, feel free to review the PIP's to analyze the changes to the token protocol. Ideally, developers shouldn't see any breaking changes. But if you do, feel free to reach out to us via the [Polygon R&D Discord](https://discord.com/invite/0xpolygonrnd).
 
 ## POL technical information
 
