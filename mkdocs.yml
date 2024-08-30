@@ -311,24 +311,18 @@ nav:
       - PoS: pos/index.md
       - Overview: pos/overview.md
       - Get started: 
-        - Get started: pos/get-started/index.md
         - Migrate to POL: pos/get-started/matic-to-pol.md
-        - Building on Polygon: pos/get-started/building-on-polygon.md
+        - Building on PoS: pos/get-started/building-on-polygon.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
       - Builder how-tos:
-        - Bridge layers:
-          - Bridge layers: pos/how-to/bridging/index.md
-          - Ethereum-Polygon:
-            - Ethereum-Polygon: pos/how-to/bridging/ethereum-polygon/index.md
-            - Ethereum to MATIC: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
-            - MATIC to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
-            - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
-          - L1-L2 communication:
-            - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
-            - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
-        - Integrate Polygon DID: pos/how-to/polygon-did.md
+        - Token bridging:
+          - Polygon Portal: pos/how-to/bridging/ethereum-polygon/portal-ui.md
+          - Ethereum to PoS: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
+          - PoS to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
+          - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
+        - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
       - Node how-tos:
-        - Node how-tos: pos/how-to/index.md
+        - Choose a node type: pos/how-to/choose-node-type.md
         - Delegate tokens: pos/how-to/delegate.md
         - Sync node using snapshots: pos/how-to/snapshots.md
         - Run a validator node:

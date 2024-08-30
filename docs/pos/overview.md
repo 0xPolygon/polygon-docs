@@ -1,8 +1,12 @@
 The Polygon Proof-of-Stake (PoS) network is designed to address scalability challenges within the Ethereum ecosystem. It operates as an EVM-compatible Layer-2 (L2) scaling solution for Ethereum, enhancing its throughput while also significantly bringing down  gas costs, i.e., transaction fees.
 
-Originally launched as Matic Network in June 2020, Polygon PoS has undergone numerous upgrades since its inception. Initially designed to scale Ethereum through a sidechain, a new proposal on the Polygon forum suggests upgrading Polygon PoS into a zero-knowledge (ZK)-based validium on Ethereum. If approved, Polygon PoS would adopt the execution environment of Polygon zkEVM along with a dedicated data availability layer. This new architecture would be inherently interoperable with a broader network of ZK-powered Ethereum L2s via the Agglayer.
+## Dual layer architecture
 
-Polygon PoS will continue to be foundational infrastructure for a wide array of decentralized applications and services. More details about the overarching vision of a unified ecosystem of L2s on Ethereum can be found in [the Innovation & design space](../innovation-design/index.md).
+Polygon PoS is a Proof-of-Stake Layer-2 (L2) network anchored to Ethereum, and is composed of the following two layers:
+
+- Heimdall layer, a consensus layer consisting of a set of proof-of-stake Heimdall nodes for monitoring staking contracts deployed on the Ethereum mainnet, and committing the Polygon PoS network checkpoints to the Ethereum mainnet. The new version of Heimdall is based on [CometBFT](https://docs.cometbft.com/).
+
+- Bor layer, an execution layer which is made up of a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum (Geth).
 
 ## Transaction lifecycle
 
@@ -30,6 +34,8 @@ Public checkpoint nodes serve as validators in the Polygon PoS architecture. The
 
 The role of these nodes is crucial as they act as a bridge between the Ethereum mainnet and the Polygon PoS chain. They ensure data integrity and security by submitting cryptographic proofs to the core contracts on Ethereum.
 
-## Polygon sidechain
+## Upcoming developments
 
-The Polygon sidechain is where transaction processing occurs. Unlike the Ethereum mainnet, which can get congested and has higher transaction costs, the sidechain offers a more scalable and cost-effective solution. The blocks in the sidechain are validated by the public checkpoint nodes and are organized in a manner that allows for high throughput and low latency.
+Originally launched as Matic Network in June 2020, Polygon PoS has undergone numerous upgrades since its inception. Initially designed to scale Ethereum through a sidechain, a new proposal on the Polygon forum suggests upgrading Polygon PoS into a zero-knowledge (ZK)-based validium on Ethereum. Polygon PoS will soon adopt the execution environment of Polygon zkEVM along with a dedicated data availability layer. This new architecture would be inherently interoperable with a broader network of ZK-powered Ethereum L2s via the [AggLayer](../innovation-design/agglayer/overview.md).
+
+Polygon PoS will continue to be foundational infrastructure for a wide array of decentralized applications and services. More details about the overarching vision of a unified ecosystem of L2s on Ethereum can be found in [the innovation & design space](../innovation-design/index.md).
