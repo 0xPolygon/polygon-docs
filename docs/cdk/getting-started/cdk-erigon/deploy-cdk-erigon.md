@@ -1,5 +1,7 @@
 ## Prerequisites
 
+There are a few prerequisites for successfully deploying the CDK node.
+
 ### Hardware requirements
 
 * A Linux-based OS (e.g. Ubuntu 22.04 LTS).
@@ -57,7 +59,7 @@ CDK_ERIGON_SEQUENCER=1 ./build/bin/cdk-erigon <flags>
 
 The sequencer supports a special recovery mode which allows it to continue the chain using data from the L1. 
 
-To enable this add the following flag:
+To enable this, add the following flag:
 
 ```sh
 `zkevm.l1-sync-start-block: [first l1 block with sequencer data]`. 
@@ -66,9 +68,9 @@ To enable this add the following flag:
 !!! important
     Find the first block on the L1 from the sequencer contract that contains the `sequenceBatches` event. 
 
-When the node starts up it pulls the L1 data into the `cdk-erigon` database and uses this during execution rather than waiting for transactions from the transaction pool, effectively rebuilding the chain from the L1 data. 
+When the node starts up, it pulls the L1 data into the `cdk-erigon` database and uses it during execution, effectively rebuilding the chain from the L1 data rather than waiting for transactions from the transaction pool. 
 
-You can use this in tandem with unwinding the chain, or using the `zkevm.sync-limit` flag to limit the chain to a certain block height before starting the L1 recovery. This is useful if you have an RPC node available to speed up the process.
+You can use this in tandem with unwinding the chain or by using the `zkevm.sync-limit` flag to limit the chain to a specific block height before starting the L1 recovery. This is useful if you have an RPC node available to speed up the process.
 
 !!! warning
     If using the `zkevm.sync-limit` flag, you need to go to the boundary of a `batch+1` block; so if batch `41` ends at block `99` then set the flag to `100`.
@@ -103,15 +105,18 @@ In order to enable the `zkevm_ namespace`, add `zkevm` to the [`http.api`](#conf
 
 - `zkevm_getBroadcastURI` - removed by zkEVM.
 
-## Limitations/warnings
+## Warnings
 
-- The golden poseidon hashing is much faster on x86, so developers using MacOS M1/M2 chips may experience slower processing.
-- Falling behind the network significantly causes an SMT rebuild which takes some time to complete on longer chains.
+- The instantiation of Poseidon over the Goldilocks field is much faster on x86, but developers using MacOS M1/M2 chips may experience slower processing.
+
+- Developers should avoid falling significantly behind the network, especially for longer chains, as this triggers an SMT rebuild, which takes a considerable amount of time to complete.
 
 ## Configuration files
 
-- Config files are the easiest way to configure `cdk-erigon`. 
+- Config files are the easiest way to configure `cdk-erigon`.
+
 - There are examples files in the repository for each network; e.g. [`hermezconfig-mainnet.yaml.example`](https://github.com/0xPolygonHermez/cdk-erigon/blob/1d56fb0a5a64160fd8c05e11ffc8b668bd70b9e8/hermezconfig-mainnet.yaml.example#L4).
+
 - Depending on your RPC provider, you may wish to alter `zkevm.rpc-ratelimit` in the yaml file.
 
 ## Running CDK Erigon

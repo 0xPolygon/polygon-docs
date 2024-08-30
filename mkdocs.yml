@@ -57,8 +57,8 @@ nav:
         - Version compatibility matrix: cdk/version-matrix.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
-        - CDK erigon:
-          - CDK erigon: cdk/getting-started/cdk-erigon/index.md
+        - CDK Erigon:
+          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
           - Releases: cdk/getting-started/cdk-erigon/releases.md
           - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
           - How to:
