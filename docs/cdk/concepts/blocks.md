@@ -14,7 +14,7 @@ Transactions are included in blocks, and these blocks fill batches, which are th
 
 A transaction is a cryptographically signed instruction from an account to update the state of the blockchain. 
 
-Let's take a look at a real transaction in the Polygon zkEVM and inspect how it is recorded in the [explorer](https://zkevm.polygonscan.com/) as part of a block, then a batch, and ultimately in a sequence.
+Let's take a look at a real transaction in the Polygon zkEVM (which is in a way a CDK rollup), and inspect how the transaction is recorded in the [explorer](https://zkevm.polygonscan.com/) as part of a block, then a batch, and ultimately in a sequence.
 
 Consider the Polygon zkEVM transaction with the transaction hash, [`0xdd ... 6ef8`](https://zkevm.polygonscan.com/tx/0xdd3f79c24886310ddf868ad1d36aadc6a3b6495048f68aad765c658c42426ef8), which performs a `Simple Swap` function call, and is included in block number [`12952601`](https://zkevm.polygonscan.com/block/12952601) on the L2.
 
@@ -32,7 +32,7 @@ Also, as depicted in the figure below, block `12952601` is in turn contained in 
 
 ## Batch
 
-Since batches contain transactions included in blocks, they consist of the same number of transactions as their respective blocks.
+Batches contain multiple transactions from multiple blocks.
 
 The two transactions from our example block `12952601` are included in batch [`2041736`](https://zkevm.polygonscan.com/batch/2041736), which contains [10 transactions](https://zkevm.polygonscan.com/txs?batch=2041736) in total.
 
