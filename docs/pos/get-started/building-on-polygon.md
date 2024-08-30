@@ -16,9 +16,7 @@ Use the links below to find the right tooling and guides that suit your needs th
 - [Popular third-party tooling](../../tools/dApp-development/third-party-tutorials.md)
 - [Matic.js library](../../tools/matic-js/installation.md)
 
-Decentralized applications (dApps) act as the bridge between users and their data privacy on the blockchain. The increasing number of dApps validates their usefulness within the blockchain ecosystem, solving challenges like executing transactions between two participants without the need for central authority via smart contracts.
-
-Suppose you have no prior experience building dApps. In that case, the below-mentioned resources will give you a head start on the tools required to build, debug, and deploy dApps on the Polygon PoS network.
+If you have no prior experience in dApp development, the following resources will help you get started with some essential tools for building, testing, and deploying applications on Polygon PoS.
 
 - [Full Stack dApp: Tutorial Series](https://kauri.io/full-stack-dapp-tutorial-series/5b8e401ee727370001c942e3/c)
 - [Web3.js](https://www.dappuniversity.com/articles/web3-js-intro)
