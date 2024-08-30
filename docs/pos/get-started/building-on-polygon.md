@@ -83,7 +83,7 @@ main();
 
 !!! tip "Reach out to us!"
 
-    Running into issues while hacking? Encountering something hard to understand? Use the following methods to reach out to us:
+    If you're encountering problems while hacking or have questions about something, please use the following methods to contact us:
 
     1. If you come across a complex code repository, 404s on the docs site, or if you feel there's something missing - feel free to [open an issue on the Polygon Knowledge Layer's GitHub repository](https://github.com/0xPolygon/polygon-docs/issues). You can also open a PR if you're looking to [contribute](https://github.com/0xPolygon/polygon-docs?tab=readme-ov-file#contributing)!
     2. Get in touch with us via Discord:
