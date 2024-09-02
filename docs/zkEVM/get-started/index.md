@@ -13,4 +13,4 @@ Users do not need any special toolings or wallets in order to build or interact 
 Simply switch to the zkEVM RPC and start building on a network with a higher throughput and lower fees.
 
 !!!caution
-    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures](../troubleshooting/risk-disclosures.md) section.
+    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures](../get-started/risk-disclosures.md) section.

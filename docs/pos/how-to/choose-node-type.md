@@ -1,10 +1,6 @@
-Welcome to the Polygon PoS node how-tos section!
-
-This section contains guides that describe the system requirements and configurations necessary to spin up different kinds of Polygon nodes, and then take you step by step through the process of setting them up on the PoS network. 
-
 Depending on the extent to which you're looking to participate in different network processes, and the kind of computational and network capabilities you can offer, you can choose to deploy any of the following nodes:
 
-!!! tip
+!!! tip "Different minimum and recommended system requirements"
 
     It's always a good idea to first read and understand the *minimum* and *recommended* system requirements for any node that you choose to deploy to the PoS network.
 

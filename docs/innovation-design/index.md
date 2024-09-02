@@ -31,8 +31,13 @@ hide:
    </div>
 </div>
 <div class="grid-container">
+<<<<<<< HEAD
     <div class="grid-item">
       <a href="./polygon-protocols">
+=======
+   <div class="grid-item">
+      <a href="../innovation-design/agglayer/overview">
+>>>>>>> b77595f18b7efa6efe512716d8e3db503cd74d88
          <div class="product-list-item-header">
             <div class="feature-card-heading">The future of Polygon network</div>
          </div>

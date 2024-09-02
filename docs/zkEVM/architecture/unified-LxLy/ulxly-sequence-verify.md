@@ -12,7 +12,7 @@ The figure below depicts a simplified sequencing flow within the rollup manager 
 - Which in turn invokes a callback function $\texttt{onSequenceBatches()}$, 
 - Followed by the rollup manager storing the sequence data in the $\texttt{RollupData}$ struct.
 
-![ulxly-sequencer-consensus-rollupmanager](../../../../img/zkEVM/ulxly-sequencer-consensus-rollupmanager.png)
+![ulxly-sequencer-consensus-rollupmanager](../../../img/zkEVM/ulxly-sequencer-consensus-rollupmanager.png)
 
 ### Verification flow
 
@@ -33,4 +33,4 @@ The figure below depicts the verification flow within the rollup manager compone
 - Successful verification of a proof is followed by a call to the $\texttt{onVerifyBatches()}$ function.
 - At the end of the process, the consensus contract emits the $\texttt{verifyBatches}$ event.
 
-![ulxly-consensus-rollupmanager-aggregator](../../../../img/zkEVM/ulxly-consensus-rollupmanager-aggregator.png)
+![ulxly-consensus-rollupmanager-aggregator](../../../img/zkEVM/ulxly-consensus-rollupmanager-aggregator.png)
