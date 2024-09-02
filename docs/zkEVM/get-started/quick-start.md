@@ -3,7 +3,7 @@ comments: true
 ---
 
 !!!caution
-    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures](../troubleshooting/risk-disclosures.md) section.
+    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures](../get-started/risk-disclosures.md) section.
 
 ## Connect to zkEVM mainnet or testnet
 

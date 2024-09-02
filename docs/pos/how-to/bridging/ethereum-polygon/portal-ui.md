@@ -4,7 +4,7 @@ The official bridge is available on both the PoS Amoy testnet as well as mainnet
 
 !!! tip "Polygon Portal"
 
-    To learn more about the features that Polygon Portal offers, and a series of step-by-step reference guides that help you with using the platform, check out [the doc available here](../../../../tools/wallets/portal.md).
+    To learn more about the features that Polygon Portal offers, and a series of step-by-step instructions that help you with using the platform, check out [the Portal guide](../../../../tools/wallets/portal.md).
 
 There is no change to the circulating supply of your token when it crosses the bridge. This is what goes on in the background when you bridge your tokens over to Polygon PoS from Ethereum:
 

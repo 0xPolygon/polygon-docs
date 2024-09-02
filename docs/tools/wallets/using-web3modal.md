@@ -19,9 +19,9 @@ The Web3Modal team has prepared a [Polygon Code Sandbox](https://codesandbox.io/
 
 ## zkEVM support
 
-If you need help with anything related to the Polygon zkEVM, you can raise a ticket on the [Polygon Support](https://support.polygon.technology/support/tickets/new) portal, and check out the [Knowledge base](https://support.polygon.technology/support/solutions/folders/82000694871) to view the most common queries about the zkEVM. Additionally, you can reach out to the support team available on the **#zkevm-support** channel on the [Polygon Discord server](https://discord.com/invite/XvpHAxZ). Instructions for raising a zkEVM support ticket are as follows:
+If you need help with anything related to the Polygon zkEVM, you can raise a ticket on the [Polygon Support](https://support.polygon.technology/support/tickets/new) portal, and check out the [Knowledge base](https://support.polygon.technology/support/solutions/folders/82000694871) to view the most common queries about the zkEVM. Additionally, you can reach out to the support team available on the **#zkevm-support** channel on the [Polygon Discord server](https://discord.com/invite/0xPolygonCommunity). Instructions for raising a zkEVM support ticket are as follows:
 
-1. Join the **Polygon Discord** server [here](https://discord.gg/0xPolygon).
+1. Join the **Polygon Discord** server [here](https://discord.com/invite/0xPolygonCommunity).
 2. Accept the invite sent via DM.
 3. Take the **Member** role under **#roles**.
 4. Navigate to the **#zkevm-support** channel.
