@@ -1,4 +1,4 @@
-The LxLy bridge is an interoperability solution aimed at enabling cross-chain communication among Polygon chains. It facilitates interaction between two L2 chains or between an L2 chain and Ethereum as the L1.
+The LxLy bridge is an interoperability solution aimed at enabling cross-chain communication among networks. It facilitates interaction between two L2 chains or between an L2 chain and Ethereum as the L1.
 
 The LxLy bridge SC (or [PolygonZkEVMBridgeV2](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/v2/PolygonZkEVMBridgeV2.sol)) is an improved and a more robust version of the [zkEVM bridge](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMBridge.sol) deployed in the Polygon zkEVM mainnet_beta version_.
 
@@ -25,7 +25,7 @@ Version-1 consists mainly of three (3) smart contracts:
 
 - The bridge contract ([PolygonZkEVMBridge.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMBridge.sol)), which handles transfer of assets and messages between networks.
 - The global exit root manager contract ([PolygonZkEVMGlobalExitRoot.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVMGlobalExitRoot.sol)), which facilitates synchronization of state-info between the L2 and the L1.
-- The Polygon zkEVM consensus contract ([PolygonZkEVM.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/PolygonZkEVM.sol)), which handles the sequencing and verification of transactions in the form of batches.
+- The Polygon zkEVM consensus contract ([PolygonZkEVMEtrog.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/1ad7089d04910c319a257ff4f3674ffd6fc6e64e/contracts/v2/consensus/zkEVM/PolygonZkEVMEtrog.sol)), which handles the sequencing and verification of transactions in the form of batches.
 
 ### Global exit trees review
 
@@ -39,13 +39,13 @@ The root of the global exit tree is the single source of state-truth communicate
 
 It is the global exit root manager contract's responsibility to update the global exit tree root and acts as a custodian for the global exit tree's history.
 
-A complete transfer of assets in version-1 involves invoking three smart contracts; `PolygonZkEVM.sol`, `PolygonZkEVMBridge.sol` and `PolygonZkEVMGlobalExitRoot.sol`.
+A complete transfer of assets in version-1 involves invoking three smart contracts; `PolygonZkEVMEtrog.sol`, `PolygonZkEVMBridge.sol` and `PolygonZkEVMGlobalExitRoot.sol`.
 
 The below figure depicts a _bridge_ of assets and a _claim_ of assets;
 
-![Figure 1: An asset transfer and three Smart Contracts](../../../../img/zkEVM/lxly-1-v1-asset-transfer.png)
+![Figure 1: An asset transfer and three Smart Contracts](../../../img/zkEVM/lxly-1-v1-asset-transfer.png)
 
-Observe, in the above figure, that the consensus contract (`PolygonZkEVM.sol`) is able to:
+Observe, in the above figure, that the consensus contract (`PolygonZkEVMEtrog.sol`) is able to:
 
 - Retrieve the global exit root from the mainnet, and make it available in L2
 - Update the exit tree root in the global exit tree root manager.
@@ -72,28 +72,34 @@ The _rollup manager_ contract stores the information of the sequenced batches in
 
 Once sequenced batches have been verified, the _global exit tree_ gets updated, in an approach similar to the zkEVM bridge version-1.
 
-![Figure 2: New version of bridge](../../../../img/zkEVM/lxly-2-new-bridge-design.png)
+![Figure 2: New version of bridge](../../../img/zkEVM/lxly-2-new-bridge-design.png)
 
 ### Rollup manager's role
 
 The rollup manager is in charge of the following lists of availability:
 
-- Rollup consensus mechanisms: The list may consist of consensus contracts such as `PolygonZkEVM.sol` or `zkValidium.sol`.
-- Verifier contracts: For example, the `PolygonZkEVM.sol` uses the `Verifier.sol` contract for verification of batches.
+- Rollup consensus mechanisms: The list may consist of consensus contracts such as `PolygonZkEVMEtrog.sol` or `zkValidium.sol`.
+- Verifier contracts: For example, the `PolygonZkEVMEtrog.sol` uses the `Verifier.sol` contract for verification of batches.
 
 The governance contract oversees consensus mechanisms and verifiers that can be added to the respective lists.
 
 The [rollup manager contract](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/v2ForkID5/contracts/v2/PolygonRollupManager.sol) has the relevant function for adding a new rollup:
 
 ```bash
- function addNewRollupType(
-        address consensusImplementation,
-        IVerifierRollup verifier,
-        uint64 forkID,
-        bytes32 genesis,
-        uint8 rollupCompatibilityID,
-        string memory description
-    ) ...
+function createNewRollup(
+    uint32 rollupTypeID,
+    uint64 chainID,
+    address admin,
+    address sequencer,
+    address gasTokenAddress,
+    uint32 gasTokenNetwork,
+    string memory sequencerURL,
+    string memory networkName
+) external onlyRole(_CREATE_ROLLUP_ROLE) {
+    // Check that rollup type exists
+    if (rollupTypeID == 0 || rollupTypeID > rollupTypeCount) {
+        revert RollupTypeDoesNotExist();
+    }
 ```
 
 - To create and connect a rollup to the LxLy bridge,
@@ -114,7 +120,7 @@ The following diagram captures the following flow of events, most of which are h
 - Verification of batches.
 - Updating the global exit root.
 
-![Figure 3: Events flow related to RollupManager.sol](../../../../img/zkEVM/lxly-bridge-diagram.png)
+![Figure 3: Events flow related to RollupManager.sol](../../../img/zkEVM/lxly-bridge-diagram.png)
 
 ## Conclusion
 

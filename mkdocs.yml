@@ -57,6 +57,14 @@ nav:
         - Version compatibility matrix: cdk/version-matrix.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
+        - CDK Erigon:
+          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
+          - Releases: cdk/getting-started/cdk-erigon/releases.md
+          - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
+          - How to:
+            - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
+            - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
+          - Resources: cdk/getting-started/cdk-erigon/resources.md 
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - L2 architecture overview: cdk/concepts/architecture.md
@@ -117,53 +125,20 @@ nav:
               - Configure prover: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-prover.md
               - Start node: zkEVM/get-started/setup-nodes/deploy-zkevm/start-node.md
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
-          - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+          # - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
+        - Risk disclosures: zkEVM/get-started/risk-disclosures.md
         - Historical data: zkEVM/get-started/historical-data.md
+        - JSON RPC endpoints: zkEVM/get-started/json-rpc.md
+        - Check transaction status: zkEVM/get-started/check-tx-status.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
-        - Smart contracts: 
-          - Overview: zkEVM/architecture/high-level/smart-contracts/overview.md
-          - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
-          - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
-          - Bridging: zkEVM/architecture/high-level/smart-contracts/bridging.md
-          - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
-          - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
-          - API:
-            - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
-            - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
-            - PolygonZkEVMGlobalExitRootV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMGlobalExitRootV2.md
-            - Consensus:
-              - Data committee:
-                - CDKDataCommittee.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/CDKDataCommittee.md
-                - PolygonDataComittee.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/PolygonDataComittee.md
-              - Validium:
-                - PolygonDataCommittee.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonDataCommittee.md
-                - PolygonValidiumEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonValidiumEtrog.md
-                - Migration:
-                  - PolygonRollupBaseEtrogNoGap.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonRollupBaseEtrogNoGap.md
-                  - PolygonValidiumStorageMigration.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonValidiumStorageMigration.md
-              - ZkEVM:
-                - PolygonZkEVMEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMEtrog.md
-                - PolygonZkEVMExistentEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMExistentEtrog.md
-                - PolygonZkEVMV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2.md
-                - PolygonZkEVMV2Existent.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2Existent.md
-            - Lib:
-              - DepositContractBase.sol: zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractBase.md
-              - DepositContractLib.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractLib.md
-              - DepositContractV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractV2.md
-              - PolygonAccessControlUpgradeable.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonAccessControlUpgradeable.md
-              - PolygonRollupBaseEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonRollupBaseEtrog.md
-              - PolygonTransparentProxy.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonTransparentProxy.md
-              - PolygonZkEVMGlobalExitRootBaseStorage.sol: zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonZkEVMGlobalExitRootBaseStorage.md
-            - Utils:
-              - ClaimCompressor.sol:  zkEVM/architecture/high-level/smart-contracts/api/utils/ClaimCompressor.md
-          - Addresses: zkEVM/architecture/high-level/smart-contracts/addresses.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - zkNode: zkEVM/architecture/zknode/index.md
           - State management: 
             - State management: zkEVM/architecture/protocol/state-management.md
             - Transaction life cycle:
+              - Transaction life cycle: zkEVM/architecture/protocol/transaction-life-cycle/index.md
               - Submit transactions: zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md
               - Transaction execution: zkEVM/architecture/protocol/transaction-life-cycle/transaction-execution.md
               - Transaction batching: zkEVM/architecture/protocol/transaction-life-cycle/transaction-batching.md
@@ -188,13 +163,6 @@ nav:
             - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
             - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
             - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
-          - Unified bridge:
-            - History of the unified bridge: zkEVM/architecture/protocol/unified-LxLy/lxly-bridge.md
-            - The rollup manager: zkEVM/architecture/protocol/unified-LxLy/ulxly-rollupmanager.md
-            - Sequencing and verification flows: zkEVM/architecture/protocol/unified-LxLy/ulxly-sequence-verify.md
-            - Updating rollups: zkEVM/architecture/protocol/unified-LxLy/ulxly-updating-rollups.md
-            - Global exit trees: zkEVM/architecture/protocol/unified-LxLy/ulxly-exit-trees-node.md
-            - Cross-chain exchanges: zkEVM/architecture/protocol/unified-LxLy/ulxly-interchain-exchanges.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - zkProver design:
@@ -244,6 +212,50 @@ nav:
             - Bits2Field state machine: zkEVM/architecture/zkprover/hashing-state-machines/bits2field-sm.md
             - Keccak-f state machine: zkEVM/architecture/zkprover/hashing-state-machines/keccakf-sm.md
             - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
+        - Unified bridge:
+            - Unified bridge: zkEVM/architecture/unified-LxLy/index.md
+            - The rollup manager: zkEVM/architecture/unified-LxLy/ulxly-rollupmanager.md
+            - Sequencing and verification flows: zkEVM/architecture/unified-LxLy/ulxly-sequence-verify.md
+            - Updating rollups: zkEVM/architecture/unified-LxLy/ulxly-updating-rollups.md
+            - Global exit trees: zkEVM/architecture/unified-LxLy/ulxly-exit-trees-node.md
+            - Cross-chain exchanges: zkEVM/architecture/unified-LxLy/ulxly-interchain-exchanges.md
+            - Bridging: zkEVM/architecture/unified-LxLy/bridging.md
+        - Smart contracts:
+          - Smart contracts: zkEVM/architecture/high-level/smart-contracts/index.md
+          - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
+          - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
+          - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
+          - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
+          - API:
+            - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
+            - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
+            - PolygonZkEVMGlobalExitRootV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMGlobalExitRootV2.md
+            - Consensus:
+              - Data committee:
+                - CDKDataCommittee.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/CDKDataCommittee.md
+                - PolygonDataComittee.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/PolygonDataComittee.md
+              - Validium:
+                - PolygonDataCommittee.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonDataCommittee.md
+                - PolygonValidiumEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonValidiumEtrog.md
+                - Migration:
+                  - PolygonRollupBaseEtrogNoGap.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonRollupBaseEtrogNoGap.md
+                  - PolygonValidiumStorageMigration.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonValidiumStorageMigration.md
+              - ZkEVM:
+                - PolygonZkEVMEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMEtrog.md
+                - PolygonZkEVMExistentEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMExistentEtrog.md
+                - PolygonZkEVMV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2.md
+                - PolygonZkEVMV2Existent.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2Existent.md
+            - Lib:
+              - DepositContractBase.sol: zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractBase.md
+              - DepositContractLib.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractLib.md
+              - DepositContractV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractV2.md
+              - PolygonAccessControlUpgradeable.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonAccessControlUpgradeable.md
+              - PolygonRollupBaseEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonRollupBaseEtrog.md
+              - PolygonTransparentProxy.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonTransparentProxy.md
+              - PolygonZkEVMGlobalExitRootBaseStorage.sol: zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonZkEVMGlobalExitRootBaseStorage.md
+            - Utils:
+              - ClaimCompressor.sol:  zkEVM/architecture/high-level/smart-contracts/api/utils/ClaimCompressor.md
+          - Addresses: zkEVM/architecture/high-level/smart-contracts/addresses.md
         - Tokenomics:
           - Incentive mechanism: zkEVM/architecture/protocol/incentive-mechanism.md
           - Effective gas price:
@@ -276,9 +288,9 @@ nav:
           - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
-      - API: 
-        - JSON RPC endpoints: zkEVM/api/json-rpc.md
-        - Check transaction status: zkEVM/api/check-tx-status.md
+      # - API: 
+      #   - JSON RPC endpoints: zkEVM/api/json-rpc.md
+      #   - Check transaction status: zkEVM/api/check-tx-status.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -301,29 +313,24 @@ nav:
           - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
           - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
-      - Troubleshooting:
-        - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
+      # - Troubleshooting:
+      #   - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
       - PoS: pos/index.md
       - Overview: pos/overview.md
       - Get started: 
-        - Get started: pos/get-started/index.md
-        - Building on Polygon: pos/get-started/building-on-polygon.md
+        - Migrate to POL: pos/get-started/matic-to-pol.md
+        - Building on PoS: pos/get-started/building-on-polygon.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
       - Builder how-tos:
-        - Bridge layers:
-          - Bridge layers: pos/how-to/bridging/index.md
-          - Ethereum-Polygon:
-            - Ethereum-Polygon: pos/how-to/bridging/ethereum-polygon/index.md
-            - Ethereum to MATIC: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
-            - MATIC to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
-            - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
-          - L1-L2 communication:
-            - L1-L2 communication: pos/how-to/bridging/l1-l2-communication/index.md
-            - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
-        - Integrate Polygon DID: pos/how-to/polygon-did.md
+        - Token bridging:
+          - Polygon Portal: pos/how-to/bridging/ethereum-polygon/portal-ui.md
+          - Ethereum to PoS: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
+          - PoS to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
+          - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
+        - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
       - Node how-tos:
-        - Node how-tos: pos/how-to/index.md
+        - Choose a node type: pos/how-to/choose-node-type.md
         - Delegate tokens: pos/how-to/delegate.md
         - Sync node using snapshots: pos/how-to/snapshots.md
         - Run a validator node:
@@ -531,6 +538,7 @@ nav:
           - Chainlink: tools/oracles/chainlink.md
           - Chronicle: tools/oracles/chronicle.md
           - DIA: tools/oracles/diadataoracles.md
+          - ORA: tools/oracles/ora.md
           - Pyth: tools/oracles/pyth.md
           - Razor: tools/oracles/razor.md
           - Supra: tools/oracles/supra.md
@@ -563,16 +571,16 @@ nav:
           - OKX explorer: https://www.okx.com/web3/explorer/polygon      
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
-          - zkEVM testnet: https://testnet-zkevm.polygonscan.com/
+          - zkEVM testnet: https://cardona-zkevm.polygonscan.com/
   - Innovation & design:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
       - AggLayer:
-        - Overview: cdk/agglayer/overview.md
-        - AggLayer | Unified bridge: cdk/agglayer/unified-bridge.md
-        - AggLayer | Go: cdk/agglayer/agglayer-go.md
-        - AggLayer | Rust: cdk/agglayer/agglayer-rs.md
-        - AggLayer | Token flows: cdk/agglayer/token-flows.md
+        - Overview: innovation-design/agglayer/overview.md
+        - AggLayer | Unified bridge: innovation-design/agglayer/unified-bridge.md
+        - AggLayer | Go: innovation-design/agglayer/agglayer-go.md
+        - AggLayer | Rust: innovation-design/agglayer/agglayer-rs.md
+        - AggLayer | Token flows: innovation-design/agglayer/token-flows.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:

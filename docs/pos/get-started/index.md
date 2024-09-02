@@ -1,3 +1,0 @@
-This section of the documentation provides guidelines to building on the Polygon PoS network. It gives a brief architectural overview of the PoS network, and showcases how various developer toolings commonly used on Ethereum work seamlessly on Polygon PoS.
-
-It outlines how developers can build on Polygon PoS by connecting commonly used wallets such as Metamask and Arkane, deploying Ethereum smart contracts using Remix or developing dApps using Fauna.

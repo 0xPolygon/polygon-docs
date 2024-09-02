@@ -29,7 +29,7 @@ The figure below depicts the process of creating and initializing a new rollup i
 
 Observe that the state tree is empty in this situation.
 
-![ulxly-process-initializing-new-rollup](../../../../img/zkEVM/ulxly-process-initializing-new-rollup.png)
+![ulxly-process-initializing-new-rollup](../../../img/zkEVM/ulxly-process-initializing-new-rollup.png)
 
 ## Incorporating existing rollups
 
@@ -41,7 +41,7 @@ The diagram below depicts integration of an existing and operational rollup into
 
 In this case, the state tree has information, and this is simply added to the manager.
 
-![ulxly-existing-rollup-incorporate](../../../../img/zkEVM/ulxly-existing-rollup-incorporate.png)
+![ulxly-existing-rollup-incorporate](../../../img/zkEVM/ulxly-existing-rollup-incorporate.png)
 
 
 ## Rollup types
@@ -71,7 +71,7 @@ The $\texttt{RollupData\{\}}$ struct contains;
 - Information about the bridge within the rollup, such as the current local exit root.
 - Data about forced batches, which is documented [here](https://docs.polygon.technology/zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance/?h=forced+batches) in the Polygon Knowledge Layer.
 
-![ulxly-rollupdata-structure-definition](../../../../img/zkEVM/ulxly-rollupdata-structure-definition.png)
+![ulxly-rollupdata-structure-definition](../../../img/zkEVM/ulxly-rollupdata-structure-definition.png)
 
 ## Creating a rollup
 
@@ -96,6 +96,6 @@ The rollup creation process is concluded by calling the $\texttt{initialize()}$â
 
 Below is a schematic representation of the transparent proxy pattern within the Rollup Manager context.
 
-![ulxly-transparent-proxy-pattern](../../../../img/zkEVM/ulxly-transparent-proxy-pattern.png)
+![ulxly-transparent-proxy-pattern](../../../img/zkEVM/ulxly-transparent-proxy-pattern.png)
 
 Proxies are frequently utilized in Ethereum for upgradability, and the exact usage of proxies in the Polygon zkEVM's upgradability is discussed [here](https://docs.polygon.technology/zkEVM/architecture/protocol/upgradability/).

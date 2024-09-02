@@ -159,7 +159,7 @@ All validators must be open for delegation from the community. Each validator ha
 
 It is the moral duty of the validators to communicate the commission rates and the commission rate changes to the community. The preferred platforms to communicate the commission rates are:
 
-* [Discord](https://discord.com/invite/0xPolygon)
+* [Discord](https://discord.com/invite/0xPolygonCommunity)
 * [Forum](https://forum.polygon.technology/)
 
 ### Communication
@@ -168,7 +168,7 @@ It is the moral duty of the validators to communicate the commission rates and t
 
 Communicating issues as early as possible ensures that the community and the Polygon team can rectify the problems as soon as possible. The preferred platforms to communicate the commission rates are:
 
-* [Discord](https://discord.com/invite/0xPolygon)
+* [Discord](https://discord.com/invite/0xPolygonCommunity)
 * [Forum](https://forum.polygon.technology/)
 * [GitHub](https://github.com/maticnetwork)
 
@@ -193,5 +193,5 @@ The following step-by-step guides will take you through the process of running a
 
 ### Community assistance
 
-* [Discord](https://discord.com/invite/0xPolygon)
+* [Discord](https://discord.com/invite/0xPolygonCommunity)
 * [Forum](https://forum.polygon.technology/)

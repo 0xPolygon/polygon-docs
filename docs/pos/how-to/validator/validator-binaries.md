@@ -540,7 +540,7 @@ journalctl -u bor.service -f
 ## Health checks with the Community
 
 Now that your sentry and validator nodes are in sync and running, head over to
-[Discord](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes.
+[Discord](https://discord.com/invite/0xPolygonCommunity) and ask the community to health-check your nodes.
 
 !!! note
     
