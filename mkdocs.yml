@@ -672,6 +672,9 @@ plugins:
   - redirects:
       redirect_maps:
         'docs/develop/network-details/network.md': 'cdk/index.md'
+        'cdk/getting-started/index.md': 'cdk/getting-started/local-deployment.md'      
+        'zkEVM/how-to/index.md': 'zkEVM/get-started/index.md'
+        'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
 
 
 validation:

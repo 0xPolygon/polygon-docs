@@ -6,7 +6,7 @@ Polygon zkEVM deploys smart contracts to manage transaction processing and relat
 
 There are four key contract types built into the system design: 
 
-- [Consensus contracts](#consensus-contracts). 
+- [Consensus contracts](#consensus). 
 - [Rollup manager](#rollup-manager). 
 - [Bridge contract](#bridge). 
 - [Exit root management](#global-exit-roots).
