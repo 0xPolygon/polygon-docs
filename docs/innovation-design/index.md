@@ -31,6 +31,14 @@ hide:
    </div>
 </div>
 <div class="grid-container">
+   <div class="grid-item">
+      <a href="../agglayer/overview">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">AggLayer documentation</div>
+         </div>
+         <p class="feature-paragraph">AggLayer solves blockchain fragmentation by enabling sovereign chains to securely share liquidity, users, and state.</p>
+      </a>
+   </div>
     <div class="grid-item">
       <a href="./polygon-protocols">
          <div class="product-list-item-header">
