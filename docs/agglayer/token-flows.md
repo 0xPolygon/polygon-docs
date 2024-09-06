@@ -1,4 +1,4 @@
-The following describes how token transfers and message passing are implemented by the unified bridge across various L1 and L2 permutations. While the examples provided describe only token transfers, the sequence is the same for arbitrary messages in this current implementation of the AggLayer. 
+The following workflows describe how token transfers and message passing are implemented by the unified bridge across various L1 and L2 permutations. While the descriptions refer only to token transfers in the current AggLayer implementation, the sequence of events is exactly the same for arbitrary messages. 
 
 ## L1 to L2
 
@@ -34,7 +34,7 @@ The following describes how token transfers and message passing are implemented 
 
 1. When a batch of transactions is processed, the bridge contract appends the L2 exit tree with a new leaf containing the batch information. This updates the L2 exit tree root.
 
-2. The bridge contracts communicates the L2 exit tree root to the L2 global exit root manager. The L2 global exit root manager, however, does not update the global exit tree at this stage.
+2. The bridge contract communicates the L2 exit tree root to the L2 global exit root manager. The L2 global exit root manager, however, does not update the global exit tree at this stage.
 
 3. For proving and verification, the zk-proof-generating circuit obtains the L2 exit tree root from the L2 global exit root manager.
 

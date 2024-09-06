@@ -568,11 +568,11 @@ nav:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
       - AggLayer:
-        - Overview: innovation-design/agglayer/overview.md
-        - AggLayer | Unified bridge: innovation-design/agglayer/unified-bridge.md
-        - AggLayer | Go: innovation-design/agglayer/agglayer-go.md
-        - AggLayer | Rust: innovation-design/agglayer/agglayer-rs.md
-        - AggLayer | Token flows: innovation-design/agglayer/token-flows.md
+        - Overview: agglayer/overview.md
+        - AggLayer | Unified bridge: agglayer/unified-bridge.md
+        - AggLayer | Go: agglayer/agglayer-go.md
+        - AggLayer | Rust: agglayer/agglayer-rs.md
+        - AggLayer | Token flows: agglayer/token-flows.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:

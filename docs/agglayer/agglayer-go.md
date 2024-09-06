@@ -1,5 +1,3 @@
-## Overview
-
 The AggLayer-go is a service designed to receive zero-knowledge (ZK) proofs  from various CDK chains and verify their validity before sending them to the L1 for final settlement.
 
 !!! warning
@@ -12,7 +10,7 @@ The AggLayer Golang architecture supports interactions with multiple CDK chains 
 The diagram below shows the full start-up, running, and shutdown sequence for the application and its components.
 
 <center>
-![CDK architecture](../../img/cdk/agglayer/agglayer-go.png)
+![CDK architecture](../img/cdk/agglayer/agglayer-go.png)
 </center>
 
 ## Get started
