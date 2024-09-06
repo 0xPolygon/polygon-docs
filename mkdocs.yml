@@ -399,6 +399,7 @@ nav:
       - Miden: miden/index.md
       - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
       - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
+      - Miden compiler: '!import https://github.com/0xPolygonMiden/compiler?branch=next'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
