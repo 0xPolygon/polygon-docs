@@ -5,10 +5,10 @@ The unified bridge is a single bridge contract on Ethereum, providing a safe, co
 
 ## Bridging mechanism
 
-The bridging mechanism enables token transfers and message-passing between Ethereum (L1) and CDK chains via smart contracts. Detailed in the [zkEVM bridging documentation](../../zkEVM/architecture/unified-LxLy/bridging.md), core components include the bridge and exit root Solidity smart contracts.
+The bridging mechanism enables token transfers and message-passing between Ethereum (L1) and CDK chains via smart contracts. Detailed in the [zkEVM bridging documentation](../zkEVM/architecture/unified-LxLy/bridging.md), core components include the bridge and exit root Solidity smart contracts.
 
 ## Data structures 
 
 Each chain holds a single data structure which stores a record of all token withdrawals and messages that originated from that chain. This “exit tree” is an append-only Merkle trie, similar in structure to the Ethereum deposit trie. The latest state of each chain and the unified bridge is represented by the root of this Merkle tree, referred to as the “exit root.”
 
-As cryptographic commitments, exit roots ensure the integrity of the network as a whole.  Refer to the [exit root documentation](../../zkEVM/architecture/high-level/smart-contracts/exit-roots.md) for greater detail about the role of exit roots in the system.
+As cryptographic commitments, exit roots ensure the integrity of the network as a whole.  Refer to the [exit root documentation](../zkEVM/architecture/high-level/smart-contracts/exit-roots.md) for greater detail about the role of exit roots in the system.

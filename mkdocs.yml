@@ -399,6 +399,7 @@ nav:
       - Miden: miden/index.md
       - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
       - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
+      - Miden compiler: '!import https://github.com/0xPolygonMiden/compiler?branch=next'
   - Developer tools: 
       - Developer tools: tools/index.md
       - dApp development: 
@@ -432,9 +433,7 @@ nav:
           - Zapier integration: https://docs.venly.io/docs/zapier-integration
       - Chain indexer framework:
           - Overview: tools/chain-indexer-framework/overview.md
-          - Usage: tools/chain-indexer-framework/usage.md 
-      - RPC Proxy:
-          - eRPC: tools/rpc-proxy-caching/erpc.md
+          - Usage: tools/chain-indexer-framework/usage.md
       - Data:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
           - Covalent: tools/data/covalent.md
@@ -568,11 +567,11 @@ nav:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
       - AggLayer:
-        - Overview: innovation-design/agglayer/overview.md
-        - AggLayer | Unified bridge: innovation-design/agglayer/unified-bridge.md
-        - AggLayer | Go: innovation-design/agglayer/agglayer-go.md
-        - AggLayer | Rust: innovation-design/agglayer/agglayer-rs.md
-        - AggLayer | Token flows: innovation-design/agglayer/token-flows.md
+        - Overview: agglayer/overview.md
+        - AggLayer | Unified bridge: agglayer/unified-bridge.md
+        - AggLayer | Go: agglayer/agglayer-go.md
+        - AggLayer | Rust: agglayer/agglayer-rs.md
+        - AggLayer | Token flows: agglayer/token-flows.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
@@ -672,6 +671,9 @@ plugins:
   - redirects:
       redirect_maps:
         'docs/develop/network-details/network.md': 'cdk/index.md'
+        'cdk/getting-started/index.md': 'cdk/getting-started/local-deployment.md'      
+        'zkEVM/how-to/index.md': 'zkEVM/get-started/index.md'
+        'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
 
 
 validation:

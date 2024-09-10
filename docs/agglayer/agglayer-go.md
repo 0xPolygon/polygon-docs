@@ -10,7 +10,7 @@ The AggLayer Golang architecture supports interactions with multiple CDK chains 
 The diagram below shows the full start-up, running, and shutdown sequence for the application and its components.
 
 <center>
-![CDK architecture](../../img/cdk/agglayer/agglayer-go.png)
+![CDK architecture](../img/cdk/agglayer/agglayer-go.png)
 </center>
 
 ## Get started
