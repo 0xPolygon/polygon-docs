@@ -2,7 +2,7 @@ CDK Erigon is the implementation of Erigon adapted to be a specialized framework
 
 ## Erigon
 
-[Erigon](https://github.com/ledgerwatch/erigon), previously known as Turbo-Geth, is a high-performance Ethereum client designed to handle the growing demands of the Ethereum blockchain. It focuses on optimizing performance, disk space, and synchronization speed. 
+[Erigon](https://github.com/ledgerwatch/erigon), formerly known as Turbo-Geth, is a high-performance Ethereum client built to meet the increasing demands of the Ethereum blockchain. It focuses on optimizing performance, disk space, and synchronization speed. 
 
 Erigon is characterized by the following features: Modular architecture, optimized performance, reduced disk usage, and fast synchronization.
 
