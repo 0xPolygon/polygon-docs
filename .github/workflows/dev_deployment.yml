@@ -16,6 +16,7 @@ jobs:
       contents: write
     environment: dev
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'
     env:
       AWS_REGION: eu-west-1
       ECR_REPOSITORY: docs-dev-ecr
