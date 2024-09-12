@@ -41,8 +41,8 @@ The AggLayer connects chains built with Polygon CDK, which use ZK proofs to gene
 The unified bridge is a single bridge contract for all AggLayer-connected chains, allowing for the cross-chain transfer of fungible (non-wrapped) tokens. It is the source of unified liquidity for the AggLayer. 
 
 !!! tip "More information"
-    See the [unified bridge documentation](unified-bridge.md) for details. 
+    See the [unified bridge documentation](./unified-bridge.md) for details. 
 
 ### AggLayer service
 
-The AggLayer service is designed to receive ZK proofs from various CDK and non-CDK chains, and verify their validity before sending them to the L1 Ethereum for final settlement. Currently, the AggLayer service has two implementations: [agglayer-go](agglayer-go.md) and [agglayer-rs](agglayer-rs.md).
+The AggLayer service is designed to receive ZK proofs from various CDK and non-CDK chains, and verify their validity before sending them to the L1 Ethereum for final settlement. Currently, the AggLayer service has two implementations: [agglayer-go](./agglayer-go.md) and [agglayer-rs](./agglayer-rs.md).
