@@ -3,7 +3,7 @@ const linkSVG = `<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 
 
 function isAllowedEnvironment() {
     const currentUrl = window.location.href;
-    return currentUrl.includes('127.0.0.1') || currentUrl.startsWith('https://docs-dev');
+    return currentUrl.includes('127.0.0.1') || (currentUrl.startsWith('https://docs-dev') && currentUrl.includes("/learn/"))
 }
 
 document.addEventListener('DOMContentLoaded', function() {
