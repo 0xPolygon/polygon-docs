@@ -57,14 +57,6 @@ nav:
         - Version compatibility matrix: cdk/version-matrix.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
-        - CDK Erigon:
-          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
-          - Releases: cdk/getting-started/cdk-erigon/releases.md
-          - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
-          - How to:
-            - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
-            - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
-          - Resources: cdk/getting-started/cdk-erigon/resources.md 
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - L2 architecture overview: cdk/concepts/architecture.md
@@ -100,6 +92,14 @@ nav:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
       - Releases: 
+        - CDK Erigon:
+          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
+          - Releases: cdk/getting-started/cdk-erigon/releases.md
+          - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
+          - How to:
+            - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
+            - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
+          - Resources: cdk/getting-started/cdk-erigon/resources.md 
         - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
       - Build:
         - Get started: zkEVM/get-started/index.md
