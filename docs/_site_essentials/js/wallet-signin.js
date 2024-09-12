@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
             updateButtonState(true, savedAddress);
         }
     }
+    // const learnTab = Array.from(document.querySelectorAll('.md-tabs__link')).find(el => el.textContent.includes('Learn'));
+    // if (learnTab) {
+    //     learnTab.textContent = learnTab.textContent.replace('Learn', 'Learn (beta)');
+    // }
 });
 
 async function handleWalletAction() {
