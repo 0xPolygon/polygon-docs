@@ -44,7 +44,6 @@ There are several other third-party wallet options available to choose from, and
 
     Refer to the following guides and follow along to set up your wallet for making web3 function calls:
     
-    - [MetaMask](../../tools/wallets/metamask/index.md)
     - [Venly](../../tools/wallets/venly/index.md)
 
 ## Common tasks
