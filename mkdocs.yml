@@ -441,7 +441,6 @@ nav:
             - Venly NFT API: https://docs.venly.io/docs/nft-api-getting-started
             - Venly Zapier integration: https://docs.venly.io/docs/zapier-integration
       - Matic.js:
-          - Installation:  tools/matic-js/installation.md
           - Get started:  tools/matic-js/get-started.md
           - POS:
               - POS client:  tools/matic-js/pos/client.md
@@ -675,6 +674,7 @@ plugins:
         'cdk/getting-started/index.md': 'cdk/getting-started/local-deployment.md'      
         'zkEVM/how-to/index.md': 'zkEVM/get-started/index.md'
         'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
+        'tools/matic-js/installation.md': 'tools/matic-js/get-started.md'
 
 
 validation:

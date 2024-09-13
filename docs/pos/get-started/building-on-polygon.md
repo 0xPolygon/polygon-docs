@@ -14,7 +14,7 @@ Use the links below to find the right tooling and guides that suit your needs th
 - [Polygon gas station](../../tools/gas/polygon-gas-station.md) - Gas estimation API
 - [Polygon dApp Launchpad](../../tools/dApp-development/launchpad/intro.md) - dApp development CLI tool
 - [Popular third-party tooling](../../tools/dApp-development/third-party-tutorials.md)
-- [Matic.js library](../../tools/matic-js/installation.md)
+- [Matic.js library](../../tools/matic-js/get-started.md)
 
 If you have no prior experience in dApp development, the following resources will help you get started with some essential tools for building, testing, and deploying applications on Polygon PoS.
 

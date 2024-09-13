@@ -3,7 +3,7 @@ comments: true
 ---
 
 !!! important
-    Make sure you have followed the [installation](../installation.md) and [get started](../get-started.md) documentation.
+    Make sure you have set up Matic.js by following the [get started](../get-started.md) guide.
 
 The `ZkEvmClient` interacts with the zkEVM bridge.
 

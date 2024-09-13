@@ -53,7 +53,7 @@ There are mandatory environment variables in both the `frontend` and `smart-cont
 
 3. Open the `.env` file and add the `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` to the file. 
 
-    !!! info "How to get the WalletConnect project "
+    !!! info "How to get the WalletConnect project ID"
         You can get the variable by creating an application on [WalletConnect](https://cloud.walletconnect.com/). 
         
         1. Create an account and sign in.
