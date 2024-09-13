@@ -604,7 +604,7 @@ nav:
           - Responsable disclosure: innovation-design/security/disclosure.md
           - Contact us: innovation-design/security/contact.md
   - Learn:
-      - Learn with devrel: '!import https://github.com/0xPolygon/devrel-docs?branch=main'
+      - Learn (beta): '!import https://github.com/0xPolygon/devrel-docs?branch=main'
 
 extra:
   generator: false
