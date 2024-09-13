@@ -1,5 +1,7 @@
 name: Docs Dev Deployment
 on:
+  schedule:
+    - cron: '*/30 * * * *'
   push:
     branches: ['dev']
   pull_request:
