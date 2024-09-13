@@ -6,6 +6,7 @@ on:
 jobs:
   trigger_dev_deployment:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Trigger dev deployment
         uses: benc-uk/workflow-dispatch@v1
