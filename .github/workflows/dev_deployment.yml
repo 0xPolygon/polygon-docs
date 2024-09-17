@@ -1,6 +1,10 @@
 name: Docs Dev Deployment
 on:
+  #schedule:
+  #  - cron: '0 */12 * * *'    
   push:
+    branches: ['dev']
+  pull_request:
     branches: ['dev']
   workflow_dispatch:
 
@@ -23,13 +27,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          #ref: dev
+          fetch-depth: 0
           submodules: true
+
+      - name: Verify branch
+        run: |
+          echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
+          echo "GitHub ref: ${{ github.ref }}"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::605436358845:role/docs-dev-GithubActionsRole
+          role-to-assume: arn:aws:iam::058264511034:role/docs-dev-GithubActionsRole
           role-session-name: GithubActionsSession
 
       - name: Login to Amazon ECR
@@ -51,7 +62,7 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
+          IMAGE_TAG: ${{ github.sha }}-${{ github.run_number }}
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f .github/assets/Dockerfile.nginx .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG

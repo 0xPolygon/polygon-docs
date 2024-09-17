@@ -57,14 +57,6 @@ nav:
         - Version compatibility matrix: cdk/version-matrix.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
-        - CDK Erigon:
-          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
-          - Releases: cdk/getting-started/cdk-erigon/releases.md
-          - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
-          - How to:
-            - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
-            - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
-          - Resources: cdk/getting-started/cdk-erigon/resources.md 
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - L2 architecture overview: cdk/concepts/architecture.md
@@ -100,6 +92,14 @@ nav:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
       - Releases: 
+        - CDK Erigon:
+          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
+          - Releases: cdk/getting-started/cdk-erigon/releases.md
+          - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
+          - How to:
+            - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
+            - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
+          - Resources: cdk/getting-started/cdk-erigon/resources.md 
         - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
       - Build:
         - Get started: zkEVM/get-started/index.md
@@ -402,50 +402,45 @@ nav:
       - Miden compiler: '!import https://github.com/0xPolygonMiden/compiler?branch=next'
   - Developer tools: 
       - Developer tools: tools/index.md
-      - dApp development: 
-          - dApp Launchpad:
-              - Introduction: tools/dApp-development/launchpad/intro.md
-              - Quickstart: tools/dApp-development/launchpad/quickstart.md
-              - Frontend: tools/dApp-development/launchpad/frontend.md
-              - Smart contracts: tools/dApp-development/launchpad/smart-contracts.md
-              - Commands: tools/dApp-development/launchpad/commands.md
-              - Contributing: tools/dApp-development/launchpad/contributing.md
-              - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
-          - Smart contract development:
-            - PoS:
+      - Start building:
+        - Test token faucets: tools/gas/matic-faucet.md
+        - Polygon Portal: tools/wallets/portal.md
+        - MetaMask operations:
+          - Overview: tools/wallets/metamask/overview.md
+          - Create MetaMask wallet: https://support.metamask.io/getting-started/getting-started-with-metamask/
+          - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
+          - Configure custom tokens:  https://support.metamask.io/managing-my-tokens/custom-tokens/how-to-display-tokens-in-metamask/
+          - Import accounts:  https://support.metamask.io/managing-my-wallet/accounts-and-addresses/how-to-import-an-account/
+        - Build smart contracts:
+          - On PoS:
               - Hardhat: tools/dApp-development/common-tools/hardhat.md
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
-            - zkEVM:
+          - On zkEVM:
               - Write a contract: zkEVM/how-to/write-contract.md
               - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
               - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
               - Verify a contract: zkEVM/how-to/verify-contract.md
-          - Third-party tutorials: tools/dApp-development/third-party-tutorials.md
-          - Polygon faucet: tools/gas/matic-faucet.md
-          - Polygon gas station: tools/gas/polygon-gas-station.md
-      - Popular tools:
-        - OKX explorer:
-          - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
-          - Verify contract with external plugins: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins
-        - Venly:
-          - NFT API: https://docs.venly.io/docs/nft-api-getting-started
-          - Zapier integration: https://docs.venly.io/docs/zapier-integration
-      - Chain indexer framework:
+        - Verify smart contracts:
+          - OKX explorer:
+            - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
+            - Verify contract with external plugins: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins
+        - Estimate gas fees: tools/gas/polygon-gas-station.md
+        - dApp Launchpad:
+          - Introduction: tools/dApp-development/launchpad/intro.md
+          - Quickstart: tools/dApp-development/launchpad/quickstart.md
+          - Frontend: tools/dApp-development/launchpad/frontend.md
+          - Smart contracts: tools/dApp-development/launchpad/smart-contracts.md
+          - Commands: tools/dApp-development/launchpad/commands.md
+          - Contributing: tools/dApp-development/launchpad/contributing.md
+          - Common pitfalls: tools/dApp-development/launchpad/common-pitfalls.md
+        - Chain indexer framework:
           - Overview: tools/chain-indexer-framework/overview.md
           - Usage: tools/chain-indexer-framework/usage.md
-      - Data:
-          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
-          - Covalent: tools/data/covalent.md
-          - DipDup: https://dipdup.io/docs/supported-networks/polygon
-          - Envio: tools/data/envio.md
-          - Flair: tools/data/flair.md
-          - Moralis: tools/data/moralis.md
-          - PARSIQ: tools/data/parsiq.md
-          - SQD (Subsquid): tools/data/sqd.md
-          - SubQuery: tools/data/subquery.md
+        - Mint NFTs:
+            - Venly NFT API: https://docs.venly.io/docs/nft-api-getting-started
+            - Venly Zapier integration: https://docs.venly.io/docs/zapier-integration
       - Matic.js:
-          - Installation:  tools/matic-js/installation.md
           - Get started:  tools/matic-js/get-started.md
           - POS:
               - POS client:  tools/matic-js/pos/client.md
@@ -517,11 +512,23 @@ nav:
               - ERC20:  tools/matic-js/zkevm/erc20.md
               - Message passing: tools/matic-js/zkevm/message-passing.md
               - Common methods:  tools/matic-js/zkevm/common-methods.md
-      - Storage: 
+      - Third-party tools:
+        - Tutorials: tools/dApp-development/third-party-tutorials.md
+        - Data:
+          - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
+          - Covalent: tools/data/covalent.md
+          - DipDup: https://dipdup.io/docs/supported-networks/polygon
+          - Envio: tools/data/envio.md
+          - Flair: tools/data/flair.md
+          - Moralis: tools/data/moralis.md
+          - PARSIQ: tools/data/parsiq.md
+          - SQD (Subsquid): tools/data/sqd.md
+          - SubQuery: tools/data/subquery.md
+        - Storage: 
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md
           - Crust network: tools/storage/crusthelpers.md
-      - Oracles:
+        - Oracles:
           - Getting started: tools/oracles/getting-started.md
           - API3: tools/oracles/api3.md
           - Bandchain: tools/oracles/bandchain.md
@@ -536,15 +543,8 @@ nav:
           - Tellor: tools/oracles/tellor.md
           - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Umbrella: tools/oracles/umbrella.md
-      - Wallets:
+        - Wallets:
           - Getting started:  tools/wallets/getting-started.md
-          - Polygon Portal: tools/wallets/portal.md
-          - MetaMask:
-              - Overview: tools/wallets/metamask/index.md
-              - Create MetaMask wallet: https://support.metamask.io/getting-started/getting-started-with-metamask/
-              - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
-              - Configure custom tokens:  https://support.metamask.io/managing-my-tokens/custom-tokens/how-to-display-tokens-in-metamask/
-              - Import accounts:  https://support.metamask.io/managing-my-wallet/accounts-and-addresses/how-to-import-an-account/
           - Venly:
               - Intro:  tools/wallets/venly/index.md
               - Create Venly wallet:  tools/wallets/venly/create-wallet.md
@@ -558,7 +558,7 @@ nav:
           - WalletConnect:  tools/wallets/walletconnect.md
           - WalletKit:  tools/wallets/walletkit.md
           - Web3Modal: tools/wallets/using-web3modal.md
-      - Block explorers:
+        - Block explorers:
           - OKX explorer: https://www.okx.com/web3/explorer/polygon      
           - Polygon: https://polygonscan.com/ 
           - zkEVM: https://zkevm.polygonscan.com/
@@ -676,6 +676,7 @@ plugins:
         'cdk/getting-started/index.md': 'cdk/getting-started/local-deployment.md'      
         'zkEVM/how-to/index.md': 'zkEVM/get-started/index.md'
         'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
+        'tools/matic-js/installation.md': 'tools/matic-js/get-started.md'
 
 
 validation:

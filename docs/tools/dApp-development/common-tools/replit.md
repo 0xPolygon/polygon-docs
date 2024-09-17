@@ -29,7 +29,7 @@ You need a browser-based web3 wallet to interact with the Polygon Amoy testnet a
 You must set up all of the following prerequisites to be able to deploy your solidity smart contract on Polygon:
 
 1. [Create a Replit account](https://replit.com/signup).
-2. [Download MetaMask wallet](../../wallets/metamask/index.md).
+2. [Download MetaMask wallet](https://support.metamask.io/getting-started/getting-started-with-metamask/).
 3. [Configure Polygon on MetaMask](../../wallets/metamask/add-polygon-network.md).
 4. [Get testnet tokens](https://faucet.polygon.technology).
 
