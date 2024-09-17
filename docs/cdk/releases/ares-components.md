@@ -19,8 +19,8 @@ The following table lists the components and where you can find them for CDK rol
 | Node = RPC and sequencer | <a href=https://github.com/0xPolygonHermez/cdk-erigon>cdk-erigon</a> | <a href=https://github.com/0xPolygonHermez/cdk-erigon>cdk-erigon</a> | Customizable but usually sequencer=1 node, multiple for RPC |
 | Data availability | None | <a href=https://github.com/0xPolygon/cdk-data-availability>cdk-data-availability</a> |  |
 | Contracts | <a href=https://github.com/0xPolygonHermez/zkevm-contracts>zkevm-contracts</a> | <a href=https://github.com/0xPolygonHermez/zkevm-contracts>zkevm-contracts</a>  | Same code for both: 8.0.0-rc.2-fork.12 |
-| Data streamer | tbc | tbc  | tbc |
-| CLI | tbc | tbc  | tbc |
+| Data streamer | <a href=https://github.com/0xPolygon/zkevm-data-streamer>zkevm-data-streamer</a> | <a href=https://github.com/0xPolygon/zkevm-data-streamer>zkevm-data-streamer</a>  | Same code for both |
+| CLI | <a href=https://github.com/0xPolygon/cdk>CLI included</a> | <a href=https://github.com/0xPolygon/cdk>CLI included</a>  | Same code for both |
 | Sequence sender | <a href=https://github.com/0xPolygon/cdk>Sequence sender included</a> | <a href=https://github.com/0xPolygon/cdk>Sequence sender included</a>  | Same code for both |
 | Aggregator | <a href=https://github.com/0xPolygon/cdk>Aggregator included</a> | <a href=https://github.com/0xPolygon/cdk>Aggregator included</a> | Same code for both |
 | Tx pool manager | <a href=https://github.com/0xPolygon/zkevm-pool-manager>zkevm-pool-manager | <a href=https://github.com/0xPolygon/zkevm-pool-manager>zkevm-pool-manager | Same code for both |
@@ -45,7 +45,7 @@ This release follows on shortly after the Ares+ FEP release.
 | Erigon RPC | <a href=https://github.com/0xPolygonHermez/cdk-erigon>cdk-erigon</a> | <a href=https://github.com/0xPolygonHermez/cdk-erigon>cdk-erigon</a> | Same for both |
 | Erigon sequencer | <a href=https://github.com/0xPolygonHermez/cdk-erigon>cdk-erigon</a> | <a href=https://github.com/0xPolygonHermez/cdk-erigon>cdk-erigon</a> | Same for both |
 | Sequence sender | <a href=https://github.com/0xPolygonHermez/zkevm-sequence-sender>zkevm-sequence-sender</a> | <a href=https://github.com/0xPolygon/cdk-sequence-sender>cdk-sequence-sender</a> |  |
-| Aggregator | <a href=https://github.com/0xPolygonHermez/zkevm-aggregator>zkevm-aggregator</a>  | <a href=https://github.com/0xPolygon/cdk>cdk</a> |  |
+| Aggregator | <a href=https://github.com/0xPolygonHermez/zkevm-aggregator>zkevm-aggregator</a>  | <a href=https://github.com/0xPolygonHermez/zkevm-aggregator>zkevm-aggregator</a> | Same for both |
 | Pool manager | <a href=https://github.com/0xPolygon/zkevm-pool-manager>zkevm-pool-manager</a> using with cdk-erigon | No explicit pool manager as persistence is built in |  |
 | Prover | <a href=https://github.com/0xPolygonHermez/zkevm-prover>zkevm-prover<a>  | <a href=https://github.com/0xPolygonHermez/zkevm-prover>zkevm-prover<a> | Versions in flight |
 | Bridge service | <a href=https://github.com/0xPolygonHermez/zkevm-bridge-service>zkevm-bridge-service</a> | <a href=https://github.com/0xPolygonHermez/zkevm-bridge-service>zkevm-bridge-service</a> | Same for both |
