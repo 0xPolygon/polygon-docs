@@ -34,7 +34,7 @@ The following table lists the components and where you can find them for CDK rol
 
 ## CDK stack with pessimistic proofs
 
-This release will follow on shortly after the Ares+ FEP release.
+This release follows on shortly after the Ares+ FEP release.
 
 ## Previous release
 
