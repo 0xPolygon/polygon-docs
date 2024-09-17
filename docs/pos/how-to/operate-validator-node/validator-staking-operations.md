@@ -52,7 +52,7 @@ You can stake on Polygon using the [validator dashboard](https://staking.polygon
 ### Stake using the staking dashboard
 
 1. Access the [validator dashboard](https://staking.polygon.technology/validators/).
-2. Log in with your wallet. MetaMask is the recommended wallet. You have to make sure that you login using the same address where your MATIC tokens are present.
+2. Log in with your wallet. MetaMask is the recommended wallet. You have to make sure that you login using the same address where your POL tokens are present.
 3. Select **Become a Validator**. You will be asked to set up your node. If you haven't already set up your node by now, you will need to do so, else if you proceed ahead you will receive an error when you attempt to stake.
 4. On the next screen, add your validator details, the commission rate, and the staking amount.
 5. Select **Stake Now**.
@@ -86,7 +86,7 @@ The following output should appear:
 ```json
 address: 0x6c468cf8c9879006e22ec4029696e005c2319c9d
 coins:
-- denom: matic
+- denom: pol
 amount:
     i: "1000000000000000000000"
 accountnumber: 0

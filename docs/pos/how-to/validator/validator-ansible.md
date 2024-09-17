@@ -408,7 +408,7 @@ Save the changes in `config.toml` file.
 On Polygon, you should keep the owner and signer keys different.
 
 * Signer — the address that signs the checkpoint transactions. The recommendation is to keep at least 1 ETH on the signer address.
-* Owner — the address that does the staking transactions. The recommendation is to keep the MATIC tokens on the owner address.
+* Owner — the address that does the staking transactions. The recommendation is to keep the POL tokens on the owner address.
 
 ### Generate a Heimdall private key
 

@@ -2,12 +2,20 @@
 comments: true
 ---
 
-
 # How to delegate
 
-This is a step-by-step guide to help you become a delegator on the Polygon Network.
+This is a step-by-step guide to help you become a delegator in the Polygon network.
 
-The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainnet address.
+The only prerequisite is to have your POL tokens and ETH on the Ethereum mainnet address.
+
+!!! info "Staking MATIC"
+
+    Polygon network is transitioning from MATIC to POL, which will serve as the gas and staking token on Polygon PoS. Use the links below to learn more:
+
+    - [Migrate from MATIC to POL](../get-started/matic-to-pol.md)
+    - [POL token specs](../concepts/tokens/pol.md)
+    
+    It is advisable to [migrate your MATIC tokens to POL](../get-started/matic-to-pol.md), but if you continue to delegate MATIC tokens, you'll receive the staking rewards in the form of POL tokens.
 
 ## Access the dashboard
 
@@ -34,7 +42,7 @@ The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainn
     ![img](../../img/pos/home.png)
     </center>
 
-  2. Enter the amount of MATIC to delegate.
+  2. Select POL or MATIC from the drop-down list and enter the token amount to delegate. It is recommended to migrate your MATIC tokens to POL and delegate POL tokens. If you choose MATIC, you'll still receive your staking rewards in POL. Then, select **Continue**.
     <center>
     ![img](../../img/pos/delegateB.png){width=50%}
     </center>
@@ -70,7 +78,7 @@ To view your delegations, select **My Account**.
     ![img](../../img/pos/withdraw-reward.png)
     </center>
 
-This will withdraw the MATIC token rewards to your Ethereum address.
+This will withdraw the POL token rewards to your Ethereum address.
 
 ## Restake rewards
 
@@ -85,7 +93,7 @@ This will withdraw the MATIC token rewards to your Ethereum address.
     ![img](../../img/pos/restake-rewards.png)
 
 
-This will restake the MATIC token rewards to the validator and increase your delegation stake.
+This will restake the POL token rewards to the validator and increase your delegation stake.
 
 ## Unbond from a validator
 
@@ -135,7 +143,7 @@ Moving stake from one node to another node is a single transaction. There are no
 
 This will move the stake. The dashboard will update *after 12 block confirmations*.
 
-# Common queries and solutions
+## Common queries and solutions
 
 ### What is the staking dashboard URL?
 
@@ -143,7 +151,7 @@ The staking dashboard URL is https://staking.polygon.technology/.
 
 ### What is the minimum stake amount?
 
-There is no minimum stake amount to delegate. However, you can always start with 1 MATIC token.
+There is no minimum stake amount to delegate. However, you can always start with 1 POL token.
 
 
 ### How to stake tokens on Polygon?
@@ -165,7 +173,7 @@ All staking transactions of Polygon PoS take place on Ethereum for security reas
 The time taken to complete a transaction depends on the gas fees that you have allowed and also the network congestion of Ethereum mainnet at that point in time. You can always use the **Speed Up** option to increase the gas fees so that your transaction can be completed soon.
 
 
-### I've staked my MATIC tokens. How can I stake more?
+### I've staked my POL tokens. How can I stake more?
 
 Navigate to the **Your Delegations** page and choose one of the stakes. Then click on **Stake More**.
 
@@ -243,7 +251,7 @@ Please watch the video for a graphical illustration of how this works:
 
 ### I want to restake rewards but I am unable to.
 
-You would need to have a minimum of **2 MATIC** to restake rewards.
+You'll need to have a minimum of **2 POL** to restake rewards.
 
 ### How to withdraw rewards?
 
@@ -268,7 +276,7 @@ Please watch the video for a graphical illustration of how this works:
 
 ### I want to withdraw rewards but I am unable to.
 
-You would need to have a minimum of **2 MATIC** available to withdraw rewards.
+You'll need to have a minimum of **2 POL** available to withdraw rewards.
 
 ### How to claim stake?
 
@@ -329,7 +337,7 @@ On the dashboard, you can click on the **My Account** option on the left-hand si
 
 Yes. You should maintain at least ~0.05-0.1 ETH balance for gas fees to be safe.
 
-### Do I need to deposit MATIC tokens to the Polygon mainnet network for staking?
+### Do I need to deposit POL tokens to the Polygon mainnet network for staking?
 
 No. All your funds need to be on the main Ethereum network.
 
@@ -341,7 +349,7 @@ Please check if you have enough ETH for the gas fees.
 
 The rewards are distributed whenever a checkpoint is submitted.
 
-Currently, 71795 MATIC tokens are distributed proportionately on each successful checkpoint submission to each delegator based on their stake relative to the overall staking pool of all validators and delegators. Also, the percentage for the reward distributed to each delegator will vary with each checkpoint depending on the relative stake of the delegator, validator and the overall stake.
+Currently, 71795 POL tokens are distributed proportionately on each successful checkpoint submission to each delegator based on their stake relative to the overall staking pool of all validators and delegators. Also, the percentage for the reward distributed to each delegator will vary with each checkpoint depending on the relative stake of the delegator, validator and the overall stake.
 
 Note that there is a 10% proposer bonus that accrues to the validator who submits the checkpoint, but over time, the effect of the extra bonus is nullified over multiple checkpoints by different validators.
 
@@ -351,7 +359,7 @@ You can track checkpoints on the staking contract [here](https://etherscan.io/ad
 
 ### Why do rewards keep getting decreased at every checkpoint?
 
-Actual rewards earned will depend on the actual total locked supply in the network at each checkpoint. This is expected to vary significantly as more MATIC tokens get locked in the staking contracts.
+Actual rewards earned will depend on the actual total locked supply in the network at each checkpoint. This is expected to vary significantly as more POL tokens get locked in the staking contracts.
 
 Rewards will be higher, to begin with, and will keep decreasing as the locked supply % goes up. This change in locked supply is captured at every checkpoint, and rewards are calculated based on this.
 
