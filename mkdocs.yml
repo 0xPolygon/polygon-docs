@@ -55,7 +55,7 @@ nav:
       - Overview: cdk/overview.md
       - Releases:
         - Version compatibility matrix: cdk/releases/version-matrix.md
-        - Ares+ component stack: cdk/releases/ares-components.md
+        - Stack components: cdk/releases/stack-components.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
       - Concepts:
