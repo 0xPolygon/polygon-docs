@@ -12,14 +12,14 @@ This guide provides an index of network details for the Polygon Amoy testnet and
 
 ### Amoy
 
-The Amoy testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
+The Amoy testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these test tokens hold no real-world value.
 
 | Properties       | Network details                                                                                    |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
 | Network name     | **Amoy**                                                                                           |
 | Parent chain     | **Sepolia**                                                                                        |
 | Chain ID         | `80002`                                                                                            |
-| Gas token        | MATIC                                                                                              |
+| Gas token        | POL                                                                                              |
 | Gas station      | [AMOY gas station](https://gasstation-testnet.polygon.technology/amoy)                             |
 | RPC endpoint     | [https://rpc-amoy.polygon.technology/](https://rpc-amoy.polygon.technology/)                       |
 | Node endpoint    | [wss://rpc-amoy.polygon.technology/](wss://rpc-amoy.polygon.technology/)                           |
@@ -40,7 +40,7 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 | Network name     | **Polygon**                                                                                        |
 | Parent chain     | **Ethereum**                                                                                       |
 | Chain ID         | `137`                                                                                              |
-| Gas token        | MATIC                                                                                              |
+| Gas token        | POL                                                                                              |
 | Gas station      | [PolygonScan Gas Tracker](https://polygonscan.com/gastracker)                                      |
 | RPC endpoint     | [https://polygon-rpc.com/](https://polygon-rpc.com/)                                               |
 | Node endpoint    | [wss://rpc-mainnet.matic.network](wss://rpc-mainnet.matic.network)                                 |
