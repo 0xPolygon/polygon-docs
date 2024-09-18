@@ -681,6 +681,7 @@ plugins:
 
 validation:
   absolute_links: warn
+  anchors: warn
 
 extra_javascript:
   - _site_essentials/js/mathjax.js
