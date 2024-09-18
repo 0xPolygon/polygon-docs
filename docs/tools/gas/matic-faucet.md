@@ -7,12 +7,13 @@ comments: true
 
 Several faucet tools are available to receive test POL and ETH on Sepolia-anchored Polygon networks:
 
-|          Faucet          | Supported networks                                                                                                               |
+|          Faucet          | Supported testnets                                                                                                               |
 | :----------------------: | -------------------------------------------------------------------------------------------------------------------------------- |
 |      Polygon Faucet      | [zkEVM Cardona, PoS Amoy, Ethereum Sepolia](https://faucet.polygon.technology)                                                   |
 |      Alchemy Faucet      | [PoS Amoy](https://www.alchemy.com/faucets/polygon-amoy) \| [Ethereum Sepolia](https://www.alchemy.com/faucets/ethereum-sepolia) |
 | QuickNode Polygon Faucet | [PoS Amoy](https://faucet.quicknode.com/polygon/amoy)                                                                            |
 |     GetBlock Faucet      | [PoS Amoy](https://getblock.io/faucet/matic-amoy/) \| [Ethereum Sepolia](https://getblock.io/faucet/eth-sepolia)                 |
+|     StakePool Faucet     | [PoS Amoy, Ethereum Sepolia](https://faucet.stakepool.dev.br/)                                                                   |
 
 ## Polygon Faucet
 
