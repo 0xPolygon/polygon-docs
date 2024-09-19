@@ -8,7 +8,7 @@ Changes to the network require a high level of coordination and ecosystem consen
 
     A block number is selected, before which all nodes in the network should have upgraded to the new version; nodes running the old version will be disconnected from the canonical chain after the hard fork block.
 
-    Should there be ${1/3}+1$ staked MATIC in disagreement with the fork, two canonical chains will temporarily form until the end of the current span. Afterwards, Bor will stop producing blocks, and the chain will halt until consensus is reached.
+    Should there be ${1/3}+1$ staked POL in disagreement with the fork, two canonical chains will temporarily form until the end of the current span. Afterwards, Bor will stop producing blocks, and the chain will halt until consensus is reached.
 
     In contrast, a *soft fork* is backward-compatible with the pre-fork blocks. This type of protocol change does not require nodes to upgrade before a deadline, therefore, multiple versions of the node software can be running at once and be able to validate transactions. 
 
@@ -69,7 +69,7 @@ The Heimdall client also has an [in-built governance module](https://github.com/
 2. Each validator then tallies votes cast by validators.
 3. When the defined voting parameters are met, each validator makes the upgrade with the proposal data.
 
-The current voting parameters (denominated in staked MATIC):
+The current voting parameters (denominated in staked POL):
 
 - Quorum: 33.4%		
 - Threshold: 50% 

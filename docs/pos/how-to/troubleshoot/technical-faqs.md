@@ -221,7 +221,7 @@ Under the current limit, a maximum of 105 validators can be active at any given 
 
 Set the `stake-amount` and `heimdall-fee-amount` values according to the logic described below.
 
-A minimum of 10 Matic tokens is required for the stake amount whereas heimdall fee should be greater than 10. For example, your stake amount is 400 then the heimdall fee should be 20. We suggest to keep the Heimdall fee as 20.
+A minimum of 10 POL tokens is required for the stake amount whereas heimdall fee should be greater than 10. For example, your stake amount is 400 then the heimdall fee should be 20. We suggest to keep the Heimdall fee as 20.
 
 However, please note that the values entered in stake amount and `heimdal-fee-amount` should be entered in 18 decimals.
 
@@ -271,7 +271,7 @@ $ curl [http://localhost:26657/status](http://localhost:26657/status)
 Check the value of the `catching_up` flag. If it is `false` then the node is all synced up.
 
 
-### 15. If someone becomes a top 10 staker, how do they receive their MATIC reward?
+### 15. If someone becomes a top 10 staker, how do they receive their POL reward?
 
 Stage 1 rewards are not based on stake. Participants with high stake don't automatically qualify for a reward in this stage.
 
@@ -289,7 +289,7 @@ The correct version of Heimdall for stage 1 should be `heimdalld version is beta
 
 ### 17. What values should I add in the stake amount and fee amount?
 
-A minimum of 10 Matic tokens is required for the stake amount whereas heimdall fee should be greater than 10. For example, your stake amount is 400 then the heimdall fee should be 20. We suggest to keep the Heimdall fee as 20.
+A minimum of 10 POL tokens is required for the stake amount whereas heimdall fee should be greater than 10. For example, your stake amount is 400 then the heimdall fee should be 20. We suggest to keep the Heimdall fee as 20.
 
 However, please note that the values entered in stake amount and `heimdal-fee-amount` should be entered in 18 decimals.
 
