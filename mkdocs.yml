@@ -345,7 +345,6 @@ nav:
           - Using Ansible: pos/how-to/full-node/full-node-ansible.md
           - Using packages: pos/how-to/full-node/full-node-packages.md
           - Using GCP: pos/how-to/full-node/full-node-gcp.md
-        - Run an access node: pos/how-to/access-node.md
         - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
         - Troubleshoot nodes:
           - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
@@ -411,6 +410,8 @@ nav:
           - Add Polygon network:  tools/wallets/metamask/add-polygon-network.md
           - Configure custom tokens:  https://support.metamask.io/managing-my-tokens/custom-tokens/how-to-display-tokens-in-metamask/
           - Import accounts:  https://support.metamask.io/managing-my-wallet/accounts-and-addresses/how-to-import-an-account/
+        - dApp building essentials:
+          - Interact with a node RPC: tools/dApp-development/tutorials/access-node.md
         - Build smart contracts:
           - On PoS:
               - Hardhat: tools/dApp-development/common-tools/hardhat.md
@@ -676,6 +677,7 @@ plugins:
         'zkEVM/how-to/index.md': 'zkEVM/get-started/index.md'
         'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
         'tools/matic-js/installation.md': 'tools/matic-js/get-started.md'
+        'pos/how-to/access-node.md': 'tools/dApp-development/tutorials/access-node.md'
 
 
 validation:
