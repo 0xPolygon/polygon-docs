@@ -16,8 +16,8 @@ The table below shows the version compatibility for CDK releases and related com
     <th>Equivalent zkEVM node</th>
     <th>CDK validium node</th>
     <th>CDK data<br>availability</th>
-    <th>zkEVM node</th>
-    <th>ZK-EVM prover</th>
+    <th>zkEVM rollup node</th>
+    <th>zkEVM prover</th>
     <th>Contracts</th>
     <th>Bridge</th>
   </tr>
