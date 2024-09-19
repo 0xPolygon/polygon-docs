@@ -10,7 +10,7 @@ The *signer wallet* is an address that is used for signing Heimdall blocks, chec
 
 The validator must keep two types of balances in this wallet:
 
-- MATIC tokens on Heimdall (through top-up transactions) to perform validator responsibilities on Heimdall.
+- POL tokens on Heimdall (through top-up transactions) to perform validator responsibilities on Heimdall.
 - ETH on Ethereum to send checkpoints on Ethereum.
 
 The *owner wallet* is an address that is used for staking, re-staking, changing the signer key, withdrawing rewards, and managing delegation related parameters on the Ethereum chain. 

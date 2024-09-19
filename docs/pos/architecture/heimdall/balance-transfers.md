@@ -39,8 +39,8 @@ The bank module contains the following parameters:
 
 ### Send balance
 
-The following command sends 1000 matic tokens to the specified `address`:
+The following command sends 1000 POL tokens to the specified `address`:
 
 ```bash
-heimdallcli tx bank send <address> 1000matic --chain-id <chain-id>
+heimdallcli tx bank send <address> 1000pol --chain-id <chain-id>
 ```

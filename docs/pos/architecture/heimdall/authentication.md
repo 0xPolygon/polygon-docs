@@ -113,7 +113,7 @@ Expected result:
 ```json
 address: 0x68243159a498cf20d945cf3e4250918278ba538e
 coins:
-- denom: matic
+- denom: pol
     amount:
     i: "1000000000000000000000"
 pubkey: ""

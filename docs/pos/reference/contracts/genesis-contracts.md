@@ -5,7 +5,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 #### Parent chain: Ethereum mainnet
 
 | Contracts             | [Address](https://etherscan.io/address/Address)                                                                       |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| --------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | BytesLib              | [0x1d21fACFC8CaD068eF0cbc87FdaCdFb20D7e2417](https://etherscan.io/address/0x1d21fACFC8CaD068eF0cbc87FdaCdFb20D7e2417) |
 | Common                | [0x31851aAf1FA4cC6632f45570c2086aDcF8B7BD75](https://etherscan.io/address/0x31851aAf1FA4cC6632f45570c2086aDcF8B7BD75) |
 | ECVerify              | [0x71d91a8988D81617be53427126ee62471321b7DF](https://etherscan.io/address/0x71d91a8988D81617be53427126ee62471321b7DF) |
@@ -38,7 +38,8 @@ Here you will find a list of contracts deployed on Polygon together with their i
 | ERC20Predicate        | [0x158d5fa3ef8e4dda8a5367decf76b94e7effce95](https://etherscan.io/address/0x158d5fa3ef8e4dda8a5367decf76b94e7effce95) |
 | ERC721Predicate       | [0x54150f44c785d412ec262fe895cc3b689c72f49b](https://etherscan.io/address/0x54150f44c785d412ec262fe895cc3b689c72f49b) |
 | EIP1559Burn           | [0x70bca57f4579f58670ab2d18ef16e02c17553c38](https://etherscan.io/address/0x70bca57f4579f58670ab2d18ef16e02c17553c38) |
-| **Tokens**            | |
+| **Tokens**            |                                                                                                                       |
+| PolToken              | [0x455e53CBB86018Ac2B8092FdCd39d8444aFFC3F6](https://etherscan.io/address/0x455e53CBB86018Ac2B8092FdCd39d8444aFFC3F6) |
 | MaticToken            | [0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0](https://etherscan.io/address/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0) |
 | RootERC721            | [0x96CDDF45C0Cd9a59876A2a29029d7c54f6e54AD3](https://etherscan.io/address/0x96CDDF45C0Cd9a59876A2a29029d7c54f6e54AD3) |
 | MaticWeth             | [0xa45b966996374E9e65ab991C6FE4Bfce3a56DDe8](https://etherscan.io/address/0xa45b966996374E9e65ab991C6FE4Bfce3a56DDe8) |
@@ -46,21 +47,21 @@ Here you will find a list of contracts deployed on Polygon together with their i
 
 #### Child chain: PoS mainnet
 
-| Contracts             | Address                                    |
-|-----------------------|--------------------------------------------|
-| ChildChain            | [0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861](https://polygonscan.com/address/0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861) |
-| EIP1559Burn           | [0x7A8ed27F4C30512326878652d20fC85727401854](https://polygonscan.com/address/0x7A8ed27F4C30512326878652d20fC85727401854) |
-| **Tokens**            | |
-| MaticToken            | [0x0000000000000000000000000000000000001010](https://polygonscan.com/address/0x0000000000000000000000000000000000001010) |
-| MaticWeth             | [0x8cc8538d60901d19692F5ba22684732Bc28F54A3](https://polygonscan.com/address/0x8cc8538d60901d19692F5ba22684732Bc28F54A3) |
+| Contracts   | Address                                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| ChildChain  | [0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861](https://polygonscan.com/address/0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861) |
+| EIP1559Burn | [0x7A8ed27F4C30512326878652d20fC85727401854](https://polygonscan.com/address/0x7A8ed27F4C30512326878652d20fC85727401854) |
+| **Tokens**  |                                                                                                                          |
+| MaticToken  | [0x0000000000000000000000000000000000001010](https://polygonscan.com/address/0x0000000000000000000000000000000000001010) |
+| MaticWeth   | [0x8cc8538d60901d19692F5ba22684732Bc28F54A3](https://polygonscan.com/address/0x8cc8538d60901d19692F5ba22684732Bc28F54A3) |
 
 
 ### Amoy
 
 #### Parent chain: Sepolia
 
-| Contracts             | Address                                                                                                                      |
-|-----------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Contracts             | Address                                                                                                                       |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Governance            | [0x7ebDeC03873994A02acA5dbfac665e5e39287D77](https://sepolia.etherscan.io/address/0x7ebDeC03873994A02acA5dbfac665e5e39287D77) |
 | GovernanceProxy       | [0xB7086eda3180c728C1536B35c4d54F6A2B33D6aC](https://sepolia.etherscan.io/address/0xB7086eda3180c728C1536B35c4d54F6A2B33D6aC) |
 | Registry              | [0xfE92F7c3a701e43d8479738c8844bCc555b9e5CD](https://sepolia.etherscan.io/address/0xfE92F7c3a701e43d8479738c8844bCc555b9e5CD) |
@@ -83,21 +84,21 @@ Here you will find a list of contracts deployed on Polygon together with their i
 | ERC721Predicate       | [0x0059bBF8E5b9b071acc7682B6fe198c32AAA2A97](https://sepolia.etherscan.io/address/0x0059bBF8E5b9b071acc7682B6fe198c32AAA2A97) |
 | EventsHubProxy        | [0x700e0f2AfBd92e2b3fF91CAD8C62A564690ddf39](https://sepolia.etherscan.io/address/0x700e0f2AfBd92e2b3fF91CAD8C62A564690ddf39) |
 | EIP1559Burn           | [0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9](https://sepolia.etherscan.io/address/0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9) |
-| **Tokens**            | |
+| **Tokens**            |                                                                                                                               |
 | MaticToken            | [0x3fd0A53F4Bf853985a95F4Eb3F9C9FDE1F8e2b53](https://sepolia.etherscan.io/address/0x3fd0A53F4Bf853985a95F4Eb3F9C9FDE1F8e2b53) |
 | MaticWeth             | [0x700dDE29De87ed2c01c27C896dc8Badb4f671302](https://sepolia.etherscan.io/address/0x700dDE29De87ed2c01c27C896dc8Badb4f671302) |
 | RootERC721            | [0x13B0Edd9312886Ac0C73116e767208bEd1199679](https://sepolia.etherscan.io/address/0x13B0Edd9312886Ac0C73116e767208bEd1199679) |
 
 #### Child chain: Amoy
 
-| Contracts             | Address                                    |
-|-----------------------|--------------------------------------------|
-| ChildChain            | [0x4f9cd8a945EE035523979D7A120a23999D17D8C0](https://www.oklink.com/amoy/address/0x4f9cd8a945EE035523979D7A120a23999D17D8C0/) |
-| EIP1559Burn           | [0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9](https://www.oklink.com/amoy/address/0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9/) |
-| **Tokens**            | |
-| MaticToken            | [0x0000000000000000000000000000000000001010](https://www.oklink.com/amoy/address/0x0000000000000000000000000000000000001010/) |
-| MaticWeth             | [0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102](https://www.oklink.com/amoy/address/0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102/) |
-| RootERC721            | [0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e](https://www.oklink.com/amoy/address/0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e/) |
+| Contracts   | Address                                                                                                                       |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| ChildChain  | [0x4f9cd8a945EE035523979D7A120a23999D17D8C0](https://www.oklink.com/amoy/address/0x4f9cd8a945EE035523979D7A120a23999D17D8C0/) |
+| EIP1559Burn | [0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9](https://www.oklink.com/amoy/address/0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9/) |
+| **Tokens**  |                                                                                                                               |
+| MaticToken  | [0x0000000000000000000000000000000000001010](https://www.oklink.com/amoy/address/0x0000000000000000000000000000000000001010/) |
+| MaticWeth   | [0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102](https://www.oklink.com/amoy/address/0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102/) |
+| RootERC721  | [0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e](https://www.oklink.com/amoy/address/0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e/) |
 
 
 ### Mumbai (Deprecated)
@@ -105,7 +106,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 #### Parent chain: Goerli
 
 | Contracts             | Address                                                                                                                      |
-|-----------------------|------------------------------------------------------------------------------------------------------------------------------|
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | BytesLib              | [0xde5807d201788dB32C38a6CE0F11d31b1aeB822a](https://goerli.etherscan.io/address/0xde5807d201788dB32C38a6CE0F11d31b1aeB822a) |
 | Common                | [0x84Dc17F28658Bc74125C7E82299992429ED34c12](https://goerli.etherscan.io/address/0x84Dc17F28658Bc74125C7E82299992429ED34c12) |
 | ECVerify              | [0xccd1d8d16F462f9d281024CBD3eF52BADB10131C](https://goerli.etherscan.io/address/0xccd1d8d16F462f9d281024CBD3eF52BADB10131C) |
@@ -138,7 +139,7 @@ Here you will find a list of contracts deployed on Polygon together with their i
 
 #### Child chain: Mumbai
 
-| Contracts             | Address                                    |
-|-----------------------|--------------------------------------------|
-| ChildChain            | [0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e](https://mumbai.polygonscan.com/address/0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e/) |
+| Contracts  | Address                                                                                                                          |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| ChildChain | [0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e](https://mumbai.polygonscan.com/address/0x1EDd419627Ef40736ec4f8ceffdE671a30803c5e/) |
 

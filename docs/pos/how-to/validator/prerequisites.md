@@ -199,7 +199,7 @@ Run: `heimdalld version`
 
 ### 6. Which private key should be added when generating the validator key?
 
-The private key to be used is your wallet's ETH address where your MATIC testnet tokens are stored. You can complete the setup with one public-private key pair tied to the address submitted on the form.
+The private key to be used is your wallet's ETH address where your POL testnet tokens are stored. You can complete the setup with one public-private key pair tied to the address submitted on the form.
 
 ### 7. Where can I find Heimdall account info location?
 

@@ -2,6 +2,13 @@
 comments: true
 ---
 
+!!! info "Transitioning to POL"
+
+    Polygon network is transitioning from MATIC to POL, which will serve as the gas and staking token on Polygon PoS. Use the links below to learn more:
+
+    - [Migrate from MATIC to POL](../get-started/matic-to-pol.md)
+    - [POL token specs](../concepts/tokens/pol.md)
+
 ## Overview
 
 All your favorite Ethereum tools (Foundry, Remix, Web3.js) work seamlessly on Polygon, with the same familiar UX. Just switch to the [Polygon RPC](https://polygon-rpc.com/) and keep building.
