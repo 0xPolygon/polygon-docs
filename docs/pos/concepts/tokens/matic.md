@@ -2,8 +2,8 @@
 
     Polygon network is transitioning from MATIC to POL, which will serve as the gas and staking token on Polygon PoS. Use the links below to learn more:
 
-    - [Migrate from MATIC to POL](../get-started/matic-to-pol.md)
-    - [POL token specs](../concepts/tokens/pol.md)
+    - [Migrate from MATIC to POL](../../get-started/matic-to-pol.md)
+    - [POL token specs](../tokens/pol.md)
 
 [MATIC](https://etherscan.io/token/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0) is a native cryptocurrency that served as the gas token on Polygon PoS, analogous to how ETH functions within the Ethereum ecosystem.
 
