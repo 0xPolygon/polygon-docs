@@ -38,33 +38,6 @@ git clone https://github.com/0xPolygon/kurtosis-cdk.git
 cd kurtosis-cdk
 ```
 
-### Check your environment
-
-Run the `tool_check.sh` script to confirm you have all the prerequisite software.
-
-!!! tip
-      You may need to make the script executable: `chmod +x scripts/tool_check.sh`
-
-```sh
-./scripts/tool_check.sh
-```
-
-If everything is installed correctly, you should see the following output:
-
-```bash
-Checking that you have the necessary tools to deploy the Kurtosis CDK package...
-✅ kurtosis is installed, meets the requirement (=0.89).
-✅ docker is installed, meets the requirement (>=24.7).
-
-You might as well need the following tools to interact with the environment...
-✅ jq is installed.
-✅ yq is installed, meets the requirement (>=3.2).
-✅ cast is installed.
-✅ polycli is installed.
-
-🎉 You are ready to go!
-```
-
 ### Understanding the deployment steps
 
 There are two configuration files which help you understand what happens during a deployment.
