@@ -12,7 +12,7 @@ hide:
 <div class="section-wrapper product-section-head">
    <div class="hero-image"><img src="../img/cdk/cdk.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
    <div class="hero-left">
-      <h1 class="hero-heading">Polygon CDK Testing hosted branch 1</h1>
+      <h1 class="hero-heading">Polygon CDK Testing hosted branch 2</h1>
       <p class="hero-subtext">Polygon Chain Development Kit (CDK) is a modular, open-source blockchain stack for developers launching sovereign L2 chains powered by zero-knowledge (ZK) proofs.</p>
    </div>
    </br>
