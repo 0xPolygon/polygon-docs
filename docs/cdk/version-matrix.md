@@ -34,7 +34,7 @@ The table below shows the version compatibility for CDK releases and related com
     <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.4">v0.6.4 Elderberry 2</a></td>
     <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-validium-node/0.6.7-cdk.1/images/sha256-dafb15f9355331b4b7174f47ac416b275915ff24a9ed89c211c7c15c8adfc6b8?context=explore">0.6.7+cdk.1</a> </td>
     <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.7/images/sha256-17590789a831259d7a07d8a042ea87e381c5708dec3a7daef6f3f782f50b2c00?context=explore">v0.0.7</a></td>
-    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.4">v0.6.4 </a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.7">v0.6.7 </a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v6.0.0">v6.0.0</a></td>
     <td> <a href="https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v6.0.0-rc.1-fork.9">v6.0.0</a></td>
     <td><a href="https://hub.docker.com/layers/hermeznetwork/zkevm-bridge-service/v0.4.2-cdk.1/images/sha256-f22ad8c9ad058c7a97a3d38f53cac5b1053858916523b96211d33ae40a9b45f8?context=explore">v0.4.2-cdk.1</a></td>
