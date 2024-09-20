@@ -17,6 +17,8 @@ Here's a list of chains connected to the alpha version of the AggLayer:
 | Startale Labs      | Astar         | 6038361     | zKyoto                  |
 | Startale Labs      | Astar         | 3776        | Astar zkEVM             |
 | Gateway FM         | GPT Protocol  | 1511670449  | gpt-mainnet             |
+| Gateway FM         | Haust         | 1570754601  | haust-testnet           |
+| Gateway FM         | Haust         | 999         | haust-network           |
 | Gateway FM         | Lumia         | 1952959480  | Lumia Testnet           |
 | Gateway FM         | Lumia         | 994873017   | prism                   |
 | Gateway FM         | Moonveil      | 1297206718  | moonveil-testnet        |
@@ -28,7 +30,6 @@ Here's a list of chains connected to the alpha version of the AggLayer:
 | Gateway FM         | WilderWorld   | 1668201165  | zchain-testnet          |
 | Gateway FM         | Wirex         | 407985408   | wirex-pay-devnet        |
 | Gateway FM         | Wirex         | 31415       | pay-chain               |
-
 
 ## AggLayer components
 
