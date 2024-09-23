@@ -53,9 +53,9 @@
 	"networkMode": "awsvpc",
 	"memory": "1024",
 	"cpu": "512",
-	"executionRoleArn": "arn:aws:iam::605436358845:role/docs-dev-TaskRole",
+	"executionRoleArn": "arn:aws:iam::058264511034:role/docs-dev-TaskRole",
 	"family": "docs-dev-taskdefinition",
-	"taskRoleArn": "arn:aws:iam::605436358845:role/docs-dev-TaskRole",
+	"taskRoleArn": "arn:aws:iam::058264511034:role/docs-dev-TaskRole",
 	"runtimePlatform": {
 		"operatingSystemFamily": "LINUX"
 	},
@@ -81,7 +81,7 @@
 		},
 		{
 			"key": "IAC",
-			"value": "terraform-workspace-aws-dev-applications-eu-west-1-apps-docs-dev-polygon-technology"
+			"value": "terraform-workspace-aws-dev-apps-eu-west-1-apps-docs-dev-polygon-technology"
 		},
 		{
 			"key": "Team",
