@@ -2,8 +2,6 @@ name: hosted branch pr deployment
 on:
   pull_request:
     types: [opened, edited, reopened]
-    branches:
-      - hosted/*
   push:
     branches:
       - dev
@@ -11,6 +9,6 @@ on:
 
 jobs:
   deploy:
+    if: startsWith(github.head_ref, 'hosted/') || github.ref == 'refs/heads/dev'
     uses: ./.github/workflows/build_and_deploy.yml
     secrets: inherit
-    
