@@ -52,6 +52,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Get list of changed files
+        id: changes
+        run: |
+          changed_files=$(git diff --name-only HEAD^ HEAD)
+          echo "Changed files: $changed_files"
+          echo "FILES_CHANGED=$changed_files" >> "$GITHUB_OUTPUT"
+
+      - name: Stop if no files changed
+        if: ${{ steps.changes.outputs.FILES_CHANGED == '' }}
+        run: |
+          echo "No files were changed, skipping build."
+          exit 0
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
