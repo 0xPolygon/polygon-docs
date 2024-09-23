@@ -1,0 +1,16 @@
+name: hosted branch pr deployment
+on:
+  pull_request:
+    types: [opened, edited, reopened]
+    branches:
+      - hosted/*
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/build_and_deploy.yml
+    secrets: inherit
+    
