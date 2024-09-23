@@ -72,6 +72,21 @@ def clone_data_to_branch_folder(branch_name, remote_url, parent_dir, pr_number=N
     os.chdir(parent_dir)
 
 
+def update_pr_description(pr_number):
+    """
+    Updates PR description by adding the url to access the hosted environment under dev
+    if it does not already exist in the definition
+    :param pr_number: PR number for the branch hosting website
+    """
+    command = ["gh", "pr", "view", pr_number, "--json", "body", "--jq", "'.body'"]
+    pr_description = subprocess.run(command, capture_output=True, text=True).stdout.strip()
+    hosted_url = f"docs-dev.polygon.technology/{pr_number}"
+    if hosted_url not in pr_description:
+        new_pr_description = f"Hosted url: [{hosted_url}](https://{hosted_url})\n" + pr_description
+        command = ["gh", "pr", "edit", pr_number, "--body", new_pr_description]
+        subprocess.run(command)
+
+
 def process_branch_folders():
     """
     Clones the branch specific code to hosted/<branch-name> folder.
@@ -95,6 +110,7 @@ def process_branch_folders():
             continue
         pr_number = str(branch_data["number"])
         clone_data_to_branch_folder(branch_data["headRefName"], remote_url, parent_dir, pr_number)
+        update_pr_description(pr_number)
         pr_numbers.append(pr_number)
 
     return pr_numbers
