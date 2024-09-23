@@ -52,7 +52,7 @@ hide:
 							</div>
 							<p class="feature-paragraph">Deploy a dApp on the widely adopted Polygon Proof-of-Stake protocol, an EVM-compatible environment optimized for high throughput and low transaction fees.</p>
 						</a>
-						<a href="zkEVM" class="flex-card-item w-inline-block">
+						<a href="cdk/get-started/quickstart/deploy-stack" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
 								<div class="feature-card-heading">Polygon zkEVM</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
@@ -234,7 +234,7 @@ hide:
 						</a>
 					</div>
 					<div class="flexbox items-4">
-						<a href="pos/how-to/bridging/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+						<a href="/pos/how-to/bridging/ethereum-polygon/portal-ui/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
 								<div class="feature-content-name">Polygon PoS: Bridge tokens and send interlayer messages</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">

@@ -1,0 +1,9 @@
+workflowVersion: 1.0.0
+sources:
+    zkevm-rpc:
+        inputs:
+            - location: ~/Documents/docs/polygon-docs/docs/zkEVM/api/zkevm.openrpc.json
+targets:
+    my-first-target:
+        target: typescript
+        source: zkevm-rpc

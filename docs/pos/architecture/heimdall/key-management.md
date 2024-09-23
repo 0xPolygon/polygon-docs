@@ -8,7 +8,7 @@ The signer key is an address that is used for signing Heimdall blocks, checkpoin
 
 The validator must keep two types of balances on this address:
 
-- MATIC tokens on Heimdall (through top-up transactions) to perform validator responsibilities on Heimdall.
+- POL tokens on Heimdall (through top-up transactions) to perform validator responsibilities on Heimdall.
 - ETH on Ethereum chain to send checkpoints on Ethereum.
 
 ## Owner key

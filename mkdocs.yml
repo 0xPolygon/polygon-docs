@@ -54,7 +54,8 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Releases:
-        - Version compatibility matrix: cdk/version-matrix.md
+        - Version compatibility matrix: cdk/releases/version-matrix.md
+        - Stack components: cdk/releases/stack-components.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
       - Concepts:
@@ -603,6 +604,7 @@ nav:
           - Bug bounty programs: innovation-design/security/bugbounty.md
           - Responsable disclosure: innovation-design/security/disclosure.md
           - Contact us: innovation-design/security/contact.md
+  - Learn: '!import https://github.com/0xPolygon/devrel-docs?branch=main'
 
 extra:
   generator: false
@@ -679,9 +681,12 @@ plugins:
 
 validation:
   absolute_links: warn
+  anchors: warn
 
 extra_javascript:
   - _site_essentials/js/mathjax.js
+  - _site_essentials/js/ethers-5.2.umd.min.js
+  - _site_essentials/js/wallet-signin.js
   - https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
