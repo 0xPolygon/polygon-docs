@@ -89,7 +89,9 @@ def update_pr_description(pr_number:str):
         new_pr_description = f"Hosted url: [{hosted_url}](https://{hosted_url})\n" + pr_description
         print(f"Updated PR description: {new_pr_description}")
         command = ["gh", "pr", "edit", pr_number, "--body", new_pr_description]
-        subprocess.run(command)
+        print(f"Executing command: {str(command)}")
+        execution_cmd = subprocess.run(command, capture_output=True, text=True).stdout.strip()
+        print(f"Command Result: {execution_cmd}")
 
 
 def process_branch_folders():
