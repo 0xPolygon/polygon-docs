@@ -83,9 +83,11 @@ def update_pr_description(pr_number:str):
     """
     command = ["gh", "pr", "view", pr_number, "--json", "body", "--jq", ".body"]
     pr_description = subprocess.run(command, capture_output=True, text=True).stdout.strip()
+    print(f"Current branch PR description: {pr_description}")
     hosted_url = f"{HOSTED_SITE_DOMAIN}/{pr_number}"
     if hosted_url not in pr_description:
         new_pr_description = f"Hosted url: [{hosted_url}](https://{hosted_url})\n" + pr_description
+        print(f"Updated PR description: {new_pr_description}")
         command = ["gh", "pr", "edit", pr_number, "--body", new_pr_description]
         subprocess.run(command)
 
