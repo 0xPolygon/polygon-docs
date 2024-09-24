@@ -77,6 +77,11 @@ jobs:
     outputs:
       PR_OPEN: ${{ steps.check_pr.outputs.PR_OPEN }}
     steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
       - name: Check for open PR
         id: check_pr
         run: |
