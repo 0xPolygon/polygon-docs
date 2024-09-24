@@ -32,53 +32,15 @@ on:
         default: "frontend-dev-ecs-cluster"
 
 jobs:
-  build_site_data:
-    name: ${{ inputs.environment }} deployment
+  check_files_changed:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     permissions:
       id-token: write
       contents: write
-    env:
-      AWS_REGION: ${{ inputs.region }}
-      ECR_REPOSITORY: ${{ inputs.core_app }}-${{ inputs.environment }}-ecr
-      ECS_SERVICE: ${{ inputs.core_app }}-${{ inputs.environment }}-ecs-service
-      ECS_CLUSTER: frontend-${{ inputs.environment }}-ecs-cluster
-      ECS_TASK_DEFINITION: ${{ inputs.task_definition }}
-      APP_NAME: ${{ inputs.core_app }}-${{ inputs.environment }}
+    outputs:
+      FILES_CHANGED: ${{ steps.changes.outputs.FILES_CHANGED }}
     steps:
-      - name: Checkout Code Repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Get list of changed files
-        id: changes
-        run: |
-          changed_files=$(git diff --name-only HEAD^ HEAD)
-          echo "Changed files: $changed_files"
-          echo "FILES_CHANGED=$changed_files" >> "$GITHUB_OUTPUT"
-
-      - name: Stop if no files changed
-        if: ${{ steps.changes.outputs.FILES_CHANGED == '' }}
-        run: |
-          echo "No files were changed, skipping build."
-          exit 0
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ inputs.account_number }}:role/${{ env.APP_NAME }}-GithubActionsRole
-          role-session-name: GithubActionsSession
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Install pipenv
-        run: pip install pipenv
-
       - name: Install GitHub CLI
         run: |
           (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
@@ -92,9 +54,75 @@ jobs:
       - name: Authenticate GitHub CLI
         run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
 
+      - name: Checkout Code Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Get list of changed files
+        id: changes
+        run: |
+          changed_files=$(git diff --name-only HEAD^ HEAD)
+          num_changed_files=$(echo "$changed_files" | wc -l)
+          echo "FILES_CHANGED=$num_changed_files" >> "$GITHUB_OUTPUT"
+
+  check_pr_open:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    needs: [check_files_changed]
+    if: needs.check_files_changed.outputs.FILES_CHANGED != '' && startsWith(github.ref, 'refs/heads/hosted/')
+    permissions:
+      id-token: write
+      contents: write
+    outputs:
+      PR_OPEN: ${{ steps.check_pr.outputs.PR_OPEN }}
+    steps:
+      - name: Check for open PR
+        id: check_pr
+        run: |
+          BRANCH_NAME=$(echo "${GITHUB_REF}" | cut -d'/' -f4)
+          pr_number=$(gh pr list --head "hosted/$BRANCH_NAME" --state open --json number --jq '.[0].number')
+          echo "PR_OPEN=$pr_number" >> "$GITHUB_OUTPUT"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    needs: [check_files_changed, check_pr_open]
+    if: |
+      needs.check_files_changed.outputs.FILES_CHANGED != '' && github.ref == 'refs/heads/dev' ||
+      needs.check_pr_open.outputs.PR_OPEN != '' && needs.check_files_changed.outputs.FILES_CHANGED != '' && 
+      startsWith(github.ref, 'refs/heads/hosted/')
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install pipenv
+        run: pip install pipenv
+
+      - name: Checkout Code Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Authenticate GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Build Site
         run: |
-          python build_branches.py      
+          python build_branches.py
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ inputs.region }}
+          role-to-assume: arn:aws:iam::${{ inputs.account_number }}:role/${{ inputs.core_app }}-${{ inputs.environment }}-GithubActionsRole
+          role-session-name: GithubActionsSession
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -105,7 +133,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}-${{ github.run_number }}
-          ECR_REPOSITORY: ${{ env.APP_NAME }}-ecr
+          ECR_REPOSITORY: ${{ inputs.core_app }}-${{ inputs.environment }}-ecr
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile.review .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
@@ -115,16 +143,16 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: ${{ env.ECS_TASK_DEFINITION }}
-          container-name: ${{ env.APP_NAME }}
+          task-definition: ${{ inputs.task_definition }}
+          container-name: ${{ inputs.core_app }}-${{ inputs.environment }}
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ${{ env.ECS_SERVICE }}
-          cluster: ${{ env.ECS_CLUSTER }}
+          service: ${{ inputs.core_app }}-${{ inputs.environment }}-ecs-service
+          cluster: frontend-${{ inputs.environment }}-ecs-cluster
           wait-for-service-stability: true
 
       - name: Cloudflare Cache Purge
@@ -132,4 +160,4 @@ jobs:
         with:
           cf_zone: ${{ secrets.CLOUDFLARE_ZONE }}
           cf_auth: ${{ secrets.CLOUDFLARE_AUTH_KEY }}
-          hosts: ${{ env.APP_NAME }}.polygon.technology
+          hosts: ${{ inputs.core_app }}-${{ inputs.environment }}.polygon.technology
