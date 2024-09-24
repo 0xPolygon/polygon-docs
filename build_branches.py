@@ -4,6 +4,9 @@ import shutil
 import subprocess
 
 
+HOSTED_SITE_DOMAIN = "docs-dev.polygon.technology"
+
+
 def install_mkdocs_with_pipenv():
     """
     Builds a particular branch site.
@@ -72,15 +75,15 @@ def clone_data_to_branch_folder(branch_name, remote_url, parent_dir, pr_number=N
     os.chdir(parent_dir)
 
 
-def update_pr_description(pr_number):
+def update_pr_description(pr_number:str):
     """
     Updates PR description by adding the url to access the hosted environment under dev
     if it does not already exist in the definition
     :param pr_number: PR number for the branch hosting website
     """
-    command = ["gh", "pr", "view", pr_number, "--json", "body", "--jq", "'.body'"]
+    command = ["gh", "pr", "view", pr_number, "--json", "body", "--jq", ".body"]
     pr_description = subprocess.run(command, capture_output=True, text=True).stdout.strip()
-    hosted_url = f"docs-dev.polygon.technology/{pr_number}"
+    hosted_url = f"{HOSTED_SITE_DOMAIN}/{pr_number}"
     if hosted_url not in pr_description:
         new_pr_description = f"Hosted url: [{hosted_url}](https://{hosted_url})\n" + pr_description
         command = ["gh", "pr", "edit", pr_number, "--body", new_pr_description]
@@ -106,7 +109,7 @@ def process_branch_folders():
     clone_data_to_branch_folder("dev", remote_url, parent_dir, "dev")
     pr_numbers = []
     for branch_data in branches_data:
-        if not branch_data["headRefName"].startswith("hosted/"):
+        if not branch_data["headRefName"].startswith("hosted/") or not branch_data.get("number"):
             continue
         pr_number = str(branch_data["number"])
         clone_data_to_branch_folder(branch_data["headRefName"], remote_url, parent_dir, pr_number)
@@ -132,6 +135,7 @@ def update_nginx_config(pr_numbers):
         }}
         """
         nginx_location_blocks += location_block
+        print(f"Hosted site: https://{HOSTED_SITE_DOMAIN}/{pr_number}")
 
     with open(config_file, "r+") as f:
         content = f.read()
