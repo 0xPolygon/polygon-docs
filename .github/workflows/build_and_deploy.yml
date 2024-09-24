@@ -64,24 +64,31 @@ jobs:
         run: |
           changed_files=$(git diff --name-only HEAD^ HEAD)
           num_changed_files=$(echo "$changed_files" | wc -l)
+          echo "Number of Files changed=$num_changed_files"
           echo "FILES_CHANGED=$num_changed_files" >> "$GITHUB_OUTPUT"
 
   check_pr_open:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     needs: [check_files_changed]
-    if: needs.check_files_changed.outputs.FILES_CHANGED != '' && startsWith(github.ref, 'refs/heads/hosted/')
+    if: needs.check_files_changed.outputs.FILES_CHANGED != '' && startsWith(github.head_ref, 'hosted/')
     permissions:
       id-token: write
       contents: write
     outputs:
       PR_OPEN: ${{ steps.check_pr.outputs.PR_OPEN }}
     steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
       - name: Check for open PR
         id: check_pr
         run: |
-          BRANCH_NAME=$(echo "${GITHUB_REF}" | cut -d'/' -f4)
-          pr_number=$(gh pr list --head "hosted/$BRANCH_NAME" --state open --json number --jq '.[0].number')
+          BRANCH_NAME=${{ github.head_ref }}
+          pr_number=$(gh pr list --head "$BRANCH_NAME" --state open --json number --jq '.[0].number')
+          echo "Checked PR number: $pr_number"
           echo "PR_OPEN=$pr_number" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -93,10 +100,11 @@ jobs:
     if: |
       needs.check_files_changed.outputs.FILES_CHANGED != '' && github.ref == 'refs/heads/dev' ||
       needs.check_pr_open.outputs.PR_OPEN != '' && needs.check_files_changed.outputs.FILES_CHANGED != '' && 
-      startsWith(github.ref, 'refs/heads/hosted/')
+      startsWith(github.head_ref, 'hosted/')
     permissions:
       id-token: write
       contents: write
+      pull-requests: write
     steps:
       - uses: actions/setup-python@v4
         with:
