@@ -52,7 +52,6 @@ nav:
   - Home: index.md
   - CDK:
       - CDK: cdk/index.md
-      - Test: cdk/test.md
       - Overview: cdk/overview.md
       - Releases:
         - Version compatibility matrix: cdk/version-matrix.md
