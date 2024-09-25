@@ -41,15 +41,15 @@ jobs:
     outputs:
       FILES_CHANGED: ${{ steps.changes.outputs.FILES_CHANGED }}
     steps:
-      - name: Install GitHub CLI
-        run: |
-          (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
-            && sudo mkdir -p -m 755 /etc/apt/keyrings \
-            && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-            && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-            && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-            && sudo apt update \
-            && sudo apt install gh -y
+#      - name: Install GitHub CLI
+#        run: |
+#          (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
+#            && sudo mkdir -p -m 755 /etc/apt/keyrings \
+#            && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+#            && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+#            && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+#            && sudo apt update \
+#            && sudo apt install gh -y
 
       - name: Authenticate GitHub CLI
         run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
@@ -62,6 +62,15 @@ jobs:
       - name: Get list of changed files
         id: changes
         run: |
+          git fetch origin
+          BASE_BRANCH=${{ github.base_ref }}
+          echo "Base branch: $BASE_BRANCH"
+          if [ -z "$BASE_BRANCH" ]; then
+          
+          # Compare the current branch (HEAD) with the base branch
+          changed_files=$(git diff --name-only origin/$BASE_BRANCH...HEAD)
+          echo "FILES_CHANGED=$changed_files"
+          
           changed_files=$(git diff --name-only HEAD^ HEAD)
           num_changed_files=$(echo "$changed_files" | wc -l)
           echo "Number of Files changed=$num_changed_files"
