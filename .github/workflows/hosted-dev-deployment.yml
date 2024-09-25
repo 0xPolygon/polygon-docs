@@ -1,11 +1,10 @@
 name: Hosted PR and Dev Deployment
 on:
   pull_request:
-    types: [opened, edited, reopened]
+    types: [opened, edited, reopened, synchronize]
   push:
     branches:
       - dev
-      - hosted/**
   workflow_dispatch:
 
 jobs:
