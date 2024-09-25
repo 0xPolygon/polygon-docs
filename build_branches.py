@@ -1,3 +1,4 @@
+
 import ast
 import os
 import shutil
@@ -148,5 +149,5 @@ def update_nginx_config(pr_numbers):
 
 if __name__ == "__main__":
     current_dir = os.getcwd()
-    pr_numbers = process_branch_folders()
-    update_nginx_config(pr_numbers)
+    open_prs = process_branch_folders()
+    update_nginx_config(open_prs)
