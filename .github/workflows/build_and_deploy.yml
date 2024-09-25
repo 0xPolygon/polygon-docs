@@ -35,22 +35,13 @@ jobs:
   check_files_changed:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
+    if: github.event_name != 'push'
     permissions:
       id-token: write
       contents: write
     outputs:
       FILES_CHANGED: ${{ steps.changes.outputs.FILES_CHANGED }}
     steps:
-#      - name: Install GitHub CLI
-#        run: |
-#          (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
-#            && sudo mkdir -p -m 755 /etc/apt/keyrings \
-#            && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-#            && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-#            && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-#            && sudo apt update \
-#            && sudo apt install gh -y
-
       - name: Authenticate GitHub CLI
         run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
 
@@ -65,51 +56,19 @@ jobs:
           git fetch origin
           BASE_BRANCH=${{ github.base_ref }}
           echo "Base branch: $BASE_BRANCH"
-          if [ -z "$BASE_BRANCH" ]; then
           
           # Compare the current branch (HEAD) with the base branch
           changed_files=$(git diff --name-only origin/$BASE_BRANCH...HEAD)
           echo "FILES_CHANGED=$changed_files"
-          
-          changed_files=$(git diff --name-only HEAD^ HEAD)
           num_changed_files=$(echo "$changed_files" | wc -l)
           echo "Number of Files changed=$num_changed_files"
           echo "FILES_CHANGED=$num_changed_files" >> "$GITHUB_OUTPUT"
 
-  check_pr_open:
-    runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
-    needs: [check_files_changed]
-    if: needs.check_files_changed.outputs.FILES_CHANGED != '' && startsWith(github.head_ref, 'hosted/')
-    permissions:
-      id-token: write
-      contents: write
-    outputs:
-      PR_OPEN: ${{ steps.check_pr.outputs.PR_OPEN }}
-    steps:
-      - name: Checkout Code Repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
-
-      - name: Check for open PR
-        id: check_pr
-        run: |
-          BRANCH_NAME=${{ github.head_ref }}
-          pr_number=$(gh pr list --head "$BRANCH_NAME" --state open --json number --jq '.[0].number')
-          echo "Checked PR number: $pr_number"
-          echo "PR_OPEN=$pr_number" >> "$GITHUB_OUTPUT"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   build_and_deploy:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
-    needs: [check_files_changed, check_pr_open]
-    if: |
-      needs.check_files_changed.outputs.FILES_CHANGED != '' && github.ref == 'refs/heads/dev' ||
-      needs.check_pr_open.outputs.PR_OPEN != '' && needs.check_files_changed.outputs.FILES_CHANGED != '' && 
-      startsWith(github.head_ref, 'hosted/')
+    needs: [check_files_changed]
+    if: needs.check_files_changed.outputs.FILES_CHANGED != ''
     permissions:
       id-token: write
       contents: write
