@@ -52,6 +52,7 @@ nav:
   - Home: index.md
   - CDK:
       - CDK: cdk/index.md
+      - Test: cdk/test.md
       - Overview: cdk/overview.md
       - Releases:
         - Version compatibility matrix: cdk/version-matrix.md
@@ -661,7 +662,12 @@ markdown_extensions:
   - pymdownx.caret
   - meta
   - smarty
-  - pymdownx.extra
+  - pymdownx.extra:
+      pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
   - multirepo:

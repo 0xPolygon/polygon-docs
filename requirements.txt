@@ -3,3 +3,4 @@ markdown-include==0.8.1
 mkdocs-open-in-new-tab==1.0.3
 mkdocs-multirepo-plugin==0.7.0
 mkdocs-redirects==1.2.1
+mkdocs-mermaid2-plugin==1.1.1
