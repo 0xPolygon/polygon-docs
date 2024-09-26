@@ -4,7 +4,7 @@ hide:
 ---
 
 <style>
-   .git-revision-date-localized-plugin, .md-source-file, .md-content__button.md-icon {
+   .md-source-file, .md-content__button.md-icon {
       display: none;
    }
 </style>
