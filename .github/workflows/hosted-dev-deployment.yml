@@ -9,6 +9,6 @@ on:
 
 jobs:
   deploy:
-    if: github.event_name != 'push' || startsWith(github.head_ref, 'hosted/')
+    if: github.event_name == 'push' || startsWith(github.head_ref, 'hosted/')
     uses: ./.github/workflows/build_and_deploy.yml
     secrets: inherit
