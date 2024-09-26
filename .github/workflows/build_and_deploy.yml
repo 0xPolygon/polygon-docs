@@ -34,8 +34,7 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
-    if: github.event_name != 'push' || startsWith(github.head_ref, 'hosted/')
+    environment: ${{ inputs.environment }}    
     permissions:
       id-token: write
       contents: write
