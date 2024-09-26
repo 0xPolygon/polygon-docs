@@ -30,7 +30,7 @@ on:
         type: string
         description: "Cluster name for deployment"
         default: "frontend-dev-ecs-cluster"
-
+#
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
