@@ -1,7 +1,7 @@
 name: Hosted PR and Dev Deployment
 on:
   pull_request:
-    types: [opened, edited, reopened, synchronize]
+    types: [opened, reopened, synchronize]
   push:
     branches:
       - dev
@@ -9,5 +9,6 @@ on:
 
 jobs:
   deploy:
+    if: github.event_name != 'push' || startsWith(github.head_ref, 'hosted/')
     uses: ./.github/workflows/build_and_deploy.yml
     secrets: inherit
