@@ -32,43 +32,10 @@ on:
         default: "frontend-dev-ecs-cluster"
 
 jobs:
-  check_files_changed:
-    runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
-    if: github.event_name != 'push'
-    permissions:
-      id-token: write
-      contents: write
-    outputs:
-      FILES_CHANGED: ${{ steps.changes.outputs.FILES_CHANGED }}
-    steps:
-      - name: Authenticate GitHub CLI
-        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Checkout Code Repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      - name: Get list of changed files
-        id: changes
-        run: |
-          git fetch origin
-          BASE_BRANCH=${{ github.base_ref }}
-          echo "Base branch: $BASE_BRANCH"
-          
-          # Compare the current branch (HEAD) with the base branch
-          changed_files=$(git diff --name-only origin/$BASE_BRANCH...HEAD)
-          echo "FILES_CHANGED=$changed_files"
-          num_changed_files=$(echo "$changed_files" | wc -l)
-          echo "Number of Files changed=$num_changed_files"
-          echo "FILES_CHANGED=$num_changed_files" >> "$GITHUB_OUTPUT"
-
   build_and_deploy:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
-    needs: [check_files_changed]
-    if: needs.check_files_changed.outputs.FILES_CHANGED != ''
+    if: github.event_name != 'push' || startsWith(github.head_ref, 'hosted/')
     permissions:
       id-token: write
       contents: write

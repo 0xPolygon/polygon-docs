@@ -1,7 +1,7 @@
 name: Hosted PR and Dev Deployment
 on:
   pull_request:
-    types: [opened, edited, reopened, synchronize]
+    types: [opened, reopened, synchronize]
   push:
     branches:
       - dev
