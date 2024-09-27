@@ -345,6 +345,17 @@ nav:
           - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
           - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
           - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
+        - Reference:
+          - Contracts:
+            - Genesis contracts: pos/reference/contracts/genesis-contracts.md
+            - Delegation via validator shares: pos/reference/contracts/delegation.md
+            - Staking manager: pos/reference/contracts/stakingmanager.md 
+          - Rewards and staking incentives: pos/reference/rewards.md
+          - Default ports for nodes: pos/reference/port-management.md
+          - Common commands: pos/reference/commands.md
+          - RPC endpoints: pos/reference/rpc-endpoints.md
+          - PoS mainnet multi-signatures: pos/reference/commit-chain-multisigs.md
+          - Mapped tokens: pos/reference/mapped-tokens.md
       - Governance:
         - Governance fundamentals: pos/governance/governance-fundamentals.md
         - Delegate tokens: pos/how-to/delegate.md
@@ -367,18 +378,6 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
-      - Reference:
-        - Contracts:
-          - Genesis contracts: pos/reference/contracts/genesis-contracts.md
-          - Delegation via validator shares: pos/reference/contracts/delegation.md
-          - Staking manager: pos/reference/contracts/stakingmanager.md 
-        - Rewards and staking incentives: pos/reference/rewards.md
-        - Default ports for nodes: pos/reference/port-management.md
-        - Common commands: pos/reference/commands.md
-        - Node errors: pos/reference/errors.md
-        - RPC endpoints: pos/reference/rpc-endpoints.md
-        - PoS mainnet multi-signatures: pos/reference/commit-chain-multisigs.md
-        - Mapped tokens: pos/reference/mapped-tokens.md
       - Concepts: 
           - Concepts: pos/concepts/index.md
           - Tokens:
