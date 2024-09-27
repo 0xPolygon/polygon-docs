@@ -28,11 +28,11 @@ As a dApp developer, feel free to review the PIP's to analyze the changes to the
 
 ### Does the amount of POL increase over time?
 
-Yes, the amount of POL will increase, starting at $3%$ per year at genesis. Governance may change this rate through an upgrade of the `EmissionManager` contract.
+Yes, the amount of POL will increase on an emissions schedule that has reached community consensus. Originally proposed as a $2\%$ yearly emission rate, with $1\%$ to the community treasury and $1\%$ to validator rewards, community consensus was reached in [PIP-26](https://forum.polygon.technology/t/pip-26-transition-from-matic-to-pol-validator-rewards/13046) to continue the original emissions reward schedule, in addition to the proposed POL emissions rate, with an end date of the original emissions reward schedule in June 2025. PIP-26 revised the percentage of validator rewards to $2\%$ for the fourth year (2023-2024), $1.5\%$ for the fifth year (2024-2025), and $1\%$ thereafter—for an effective emission of $2\%$ increase of POL per year beginning after June 2025. Governance may change this rate through an upgrade of the `EmissionManager` contract.
 
 ### How is POL minted?
 
-The `EmissionsManager` smart contract is responsible for initiating the upgrade to POL through a minting process. This contract is upgradeable, allowing for future changes through governance. It also ensures that the `StakeManager` and `Treasury` contracts receive their respective amounts of the newly minted tokens.
+The `EmissionManager` smart contract is responsible for initiating the upgrade to POL through a minting process. This contract is upgradeable, allowing for future changes through governance. It also ensures that the `StakeManager` and `Treasury` contracts receive their respective amounts of the newly minted tokens.
 
 ### What determines the emission rate?
 
