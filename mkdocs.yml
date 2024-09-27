@@ -322,29 +322,24 @@ nav:
           - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
         - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
       - Node how-tos:
-        - Choose a node type: pos/how-to/choose-node-type.md
-        - Delegate tokens: pos/how-to/delegate.md
+        - Prerequisites: pos/how-to/prerequisites.md
         - Sync node using snapshots: pos/how-to/snapshots.md
-        - Run a validator node:
-          - System requirements: pos/how-to/validator/validator-system-requirements.md
-          - Prerequisites: pos/how-to/validator/prerequisites.md
-          - Using binaries: pos/how-to/validator/validator-binaries.md
-          - Using Ansible: pos/how-to/validator/validator-ansible.md
-          - Using packages: pos/how-to/validator/validator-packages.md
-        - Operate validator nodes:
-          - Validator best practices: pos/how-to/operate-validator-node/validator-best-practices.md
-          - Stake tokens: pos/how-to/operate-validator-node/validator-staking-operations.md
-          - Set commission rate: pos/how-to/operate-validator-node/validator-commission-operations.md
-          - Change signer address: pos/how-to/operate-validator-node/change-signer-address.md
-          - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
-          - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md
         - Run a full node:
-          - System requirements: pos/how-to/full-node/full-node-system-requirements.md
           - Using binaries: pos/how-to/full-node/full-node-binaries.md
           - Using Docker: pos/how-to/full-node/full-node-docker.md
           - Using Ansible: pos/how-to/full-node/full-node-ansible.md
           - Using packages: pos/how-to/full-node/full-node-packages.md
           - Using GCP: pos/how-to/full-node/full-node-gcp.md
+        - Run a validator node:
+          - Validator best practices: pos/how-to/validator/validator-best-practices.md
+          - Using binaries: pos/how-to/validator/validator-binaries.md
+          - Using Ansible: pos/how-to/validator/validator-ansible.md
+          - Using packages: pos/how-to/validator/validator-packages.md
+        - Operate validator nodes:
+          - Next steps: pos/how-to/operate-validator-node/next-steps.md
+          - Change owner and signer address: pos/how-to/operate-validator-node/change-signer-address.md
+          - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
+          - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md
         - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
         - Troubleshoot nodes:
           - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
@@ -352,6 +347,7 @@ nav:
           - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
       - Governance:
         - Governance fundamentals: pos/governance/governance-fundamentals.md
+        - Delegate tokens: pos/how-to/delegate.md
       - Architecture:
           - Architecture: pos/architecture/index.md
           - Bor:
@@ -678,6 +674,14 @@ plugins:
         'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
         'tools/matic-js/installation.md': 'tools/matic-js/get-started.md'
         'pos/how-to/access-node.md': 'tools/dApp-development/tutorials/access-node.md'
+        'pos/how-to/full-node/full-node-system-requirements.md': 'pos/how-to/prerequisites.md'
+        'pos/how-to/validator/prerequisites.md': 'pos/how-to/prerequisites.md'
+        'pos/how-to/validator/validator-system-requirements.md': 'pos/how-to/prerequisites.md'
+        'pos/how-to/choose-node-type.md': 'pos/how-to/prerequisites.md'
+        'pos/how-to/operate-validator-node/validator-best-practices.md': 'pos/how-to/validator/validator-best-practices.md'
+        'pos/how-to/operate-validator-node/validator-commission-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
+        'pos/how-to/operate-validator-node/validator-staking-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
+
 
 
 validation:
