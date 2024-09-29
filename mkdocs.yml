@@ -353,6 +353,7 @@ nav:
           - Rewards and staking incentives: pos/reference/rewards.md
           - Default ports for nodes: pos/reference/port-management.md
           - Common commands: pos/reference/commands.md
+          - Seed and bootnodes: pos/reference/seed-and-bootnodes.md
           - RPC endpoints: pos/reference/rpc-endpoints.md
           - PoS mainnet multi-signatures: pos/reference/commit-chain-multisigs.md
           - Mapped tokens: pos/reference/mapped-tokens.md
@@ -360,14 +361,13 @@ nav:
         - Governance fundamentals: pos/governance/governance-fundamentals.md
         - Delegate tokens: pos/how-to/delegate.md
       - Architecture:
-          - Architecture: pos/architecture/index.md
+          - Overview: pos/architecture/overview.md
           - Bor:
-            - Bor: pos/architecture/bor/index.md
+            - Introduction: pos/architecture/bor/introduction.md
             - State sync: pos/architecture/bor/state-sync.md
             - Network configuration: pos/architecture/bor/network-config.md
-            - Commands: pos/architecture/bor/commands.md
           - Heimdall:
-            - Heimdall: pos/architecture/heimdall/index.md
+            - Introduction: pos/architecture/heimdall/introduction.md
             - Heimdall and Bor: pos/architecture/heimdall/heimdall-and-bor.md
             - Authentication: pos/architecture/heimdall/authentication.md
             - Key management: pos/architecture/heimdall/key-management.md
@@ -379,13 +379,10 @@ nav:
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
       - Concepts: 
-          - Concepts: pos/concepts/index.md
           - Tokens:
-            - Tokens: pos/concepts/tokens/index.md
             - POL: pos/concepts/tokens/pol.md
             - MATIC: pos/concepts/tokens/matic.md
           - Transactions:
-            - Transactions: pos/concepts/transactions/index.md
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta-transactions: pos/concepts/transactions/meta-transactions.md

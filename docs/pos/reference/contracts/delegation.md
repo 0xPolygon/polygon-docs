@@ -1,16 +1,16 @@
 Polygon supports delegation via validator shares. By using this design, it is easier to distribute rewards and slash with scale (thousands of delegators) on Ethereum contracts without much computation.
 
-Delegators delegate by purchasing shares of a finite pool from validators. Each validator will have their own validator share token. Let's call these fungible tokens VATIC for a validator *A*. VATIC refers to validator-specific minted validator share ERC20 tokens. 
+Delegators delegate by purchasing shares of a finite pool from validators. Each validator will have their own validator share token. Let's call these fungible tokens VOL for a validator *A*. VOL refers to validator-specific minted validator share ERC20 tokens. 
 
-As soon as a user delegates to a validator *A*, they will be issued VATIC based on an exchange rate of MATIC/VATIC pair. As users accrue value the exchange rate indicates that they can now withdraw more MATIC for each VATIC and when users get slashed, users withdraw less MATIC for their VATIC.
+As soon as a user delegates to a validator *A*, they will be issued VOL based on an exchange rate of POL/VOL pair. As users accrue value the exchange rate indicates that they can now withdraw more POL for each VOL and when users get slashed, users withdraw less POL for their VOL.
 
-!!! note
+!!! info
 
-    MATIC is a staking token. A delegator needs to have MATIC tokens to participate in the delegation.
+    POL is a staking token. A delegator needs to have POL tokens to participate in the delegation.
 
-Initially, a delegator *D* buys tokens from validator *A* specific pool at *1 MATIC per 1 VATIC*.
+Initially, a delegator *D* buys tokens from validator *A* specific pool at *1 POL per 1 VOL*.
 
-When a validator gets rewarded with more MATIC tokens, new tokens are added to the pool. Let's say with the current pool of 100 MATIC, 10 MATIC rewards are added to the pool. But since the total supply of VATIC tokens didn't change due to rewards, the exchange rate becomes *1 MATIC per 0.9 VATIC*. Now, delegator *D* gets more MATIC for the same shares.
+When a validator gets rewarded with more POL tokens, new tokens are added to the pool. Let's say with the current pool of 100 POL, 10 POL rewards are added to the pool. But since the total supply of VOL tokens didn't change due to rewards, the exchange rate becomes *1 POL per 0.9 VOL*. Now, delegator *D* gets more POL for the same shares.
 
 ## Technical specification
 
@@ -84,7 +84,7 @@ Purpose of reStaking is that since delegator's validator has now more active sta
 function unStakeClaimTokens()
 ```
 
-Once withdrawal period is over, delegators who've sold their shares can claim their MATIC tokens. Must transfer tokens to user.
+Once withdrawal period is over, delegators who've sold their shares can claim their POL tokens. Must transfer tokens to user.
 
 ### `updateCommissionRate`
 
