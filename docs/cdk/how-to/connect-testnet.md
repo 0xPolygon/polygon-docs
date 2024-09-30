@@ -4,6 +4,10 @@ comments: true
 
 ## Stavanger
 
+!!! warning
+    - Stavanger is waiting for a stable redeployment.
+    - You may experience errors on the testnet until the next CDK release.
+
 The [CDK Stavanger testnet](https://polygon.technology/cdk-stavanger-testnet) is a validium testnet based on Sepolia.
 
 - Add the RPC network details to your wallet by navigating to the add network input and entering the data as given in the table below.
