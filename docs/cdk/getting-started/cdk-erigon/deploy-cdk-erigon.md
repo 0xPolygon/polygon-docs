@@ -5,7 +5,7 @@ There are a few prerequisites for successfully deploying the CDK node.
 ### Hardware requirements
 
 * A Linux-based OS (e.g. Ubuntu 22.04 LTS).
-* At least 32GB RAM with a 4-core CPU.
+* At least 64GB RAM with a 4-core CPU.
 * Both Apple Silicon and AMD64 are supported.
 
 !!! tip
