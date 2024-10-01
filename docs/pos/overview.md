@@ -14,12 +14,15 @@ The following cyclical workflow outlines the operational mechanics of today's Po
 
 1. User initiates transaction: On the Polygon PoS chain, typically via a smart contract function call.
 2. Validation by public checkpoint nodes: These nodes validate the transaction against the Polygon chain's current state.
-3. Checkpoint creation and submission: A checkpoint of the validated transactions is created and submitted to the core contracts on the Ethereum mainnet.
+3. Checkpoint creation and submission: A checkpoint of the validated transactions is created and submitted to the core contracts on the Ethereum mainnet every 30 minutes or so.
 4. Verification by core contracts: Core contracts verify checkpoint validity
 5. Transaction execution: Upon successful verification, the transaction is executed and state changes are committed to Polygon PoS.
-6. Asset transfer (optional): If needed, assets can be transferred back to the Ethereum mainnet via the exit queue in the core contracts.
+6. Asset transfer (optional): If needed, assets can be withdrawn to the Ethereum mainnet via the exit queue in the core contracts.
 7. Cycle reiteration: The process can be initiated again by the user, returning to step 1.
 
+!!! info "Checkpoint verification and L2 transactions"
+
+    Checkpoint verification plays an important role in ensuring the security of the PoS network, especially in the case of bridging, and other cross-chain transactions. In the case of simple transactions such as an L2 to L2 token transfer, the state finality is near instantaneous.
 
 ## Core contracts on Ethereum 
 
