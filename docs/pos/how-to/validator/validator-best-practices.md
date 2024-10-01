@@ -2,7 +2,7 @@ This document explores best practices for running a Polygon PoS validator node.
 
 !!! info "Deploying a validator node"
 
-    Get started with the process of deploying a validator node by reading the doc on [validator node prerequisites](../../how-to/validator/prerequisites.md).
+    Get started with the process of deploying a validator node by reading the doc on [node deployment prerequisites](../prerequisites.md).
 
 ## Owner and signer wallets
 
@@ -35,7 +35,7 @@ All transactions through this key happen on the Ethereum chain.
 
 ## Operating system
 
-The operating system of your choice is also a key factor in securing your validator and preventing exploitation. 
+The operating system of your choice is also a key factor in securing your validator node and preventing exploitation. 
 
 - Please keep your system up to date using common practices like using your operating system package manager, such as `yum`, `apt`, `brew`, `pacman`, etc. There are many package managers, and each one has its own best practices guide and suggestions that you can refer to.
 - *NEVER* run unnecessary software on your node. Limit the number of services and applications running on your node.
@@ -78,40 +78,7 @@ Every cloud provider offers a number of tools for this type of networking, inclu
 
 In your topology, you may have other scenarios to consider. Beware of the risks involved with what ports or nodes have access to your host(s).
 
-## Node deployment and configuration
-
-### Ansible
-
-You can use the [publicly available packages](../validator/validator-packages.md) and a series of tools to deploy your validator node as long as you have SSH access. You may choose to forego SSH access later, but it is important to understand your tooling selection for config management. 
-
-Industry-standard options, such as Ansible, can deploy configurations and manage nodes simply with playbooks and roles. You can also use the following public repository to set up your nodes: https://github.com/maticnetwork/node-ansible
-
-!!! info "Ansible"
-
-    See [Ansible GitHub](https://github.com/ansible/ansible) for more detailed info on Ansible and how it works.
-
-Ansible playbooks set up the required bootnodes, static nodes, seed nodes, and persistent peers for Bor and Heimdall respectively. Each installation tool bootstraps your node up with our internal nodes to use as a static node, persistent peer, or Heimdall seed. You may want to extend this further with other nodes, and you can do this by adding them to the playbooks.
-
-### Installing Bor
-
-The following Ansible command installs a Bor validator:
-
-```bash
-ansible-playbook -i $inventory playbooks/bor/bor.yml --extra-var="bor_version=v1.2.7 network=mainnet node_type=validator"
-```
-The `$inventory` variable references a file containing the IP addresses or hostnames for your nodes, depending on your setup. This playbook installs Bor and the appropriate configuration for use on the Polygon mainnet. The setup includes your static nodes and bootnodes. 
-
-### Installing Heimdall
-
-To install Heimdall with this repo, run the following playbook command: 
-
-```bash
-ansible-playbook -i $inventory playbooks/heimdall/heimdall.yml --extra-var="heimdall_version=v1.0.4 network=mainnet node_type=validator"
-```
-
-The `$inventory` variable references a file containing the IP addresses or hostnames for your nodes, depending on your setup. This playbook installs Heimdall and the appropriate configuration. As the node is a validator, it also installs the required RabbitMQ service for you. 
-
-### Validator backup
+## Validator backup
 
 There is also now a validator backup playbook available from the `node-ansible` repo. This tool allows you to backup your current configuration for your validator. This can be quite useful for migrating to a new host. To use this tool, run the following command: 
 
@@ -121,7 +88,7 @@ ansible-playbook -i $inventory playbooks/validator-backup.yml -e "destination=$W
 
 This tool requires you to define a destination variable, the path to your Bor config location, and the path to your Heimdall config location. It then creates a tarball and stores it locally on your machine in the directory path you have provided. 
 
-### Host migration
+## Host migration
 
 If you are migrating a host, you may want to create an existing snapshot of your chain data for Bor and Heimdall. You can do this by running the following commands: 
 
@@ -134,7 +101,7 @@ This starts a screen session while generating the tarball, which also implies th
 
 ## Monitoring and observability
 
-If you already ship your logs to Coralogix, Datadog, or Splunk, then your monitoring uses this information. You could also be using Nagios or similar to actively monitor your validator nodes. Here are some scenarios and data to consider logging when monitoring a node:
+If you already ship your logs to Coralogix, Datadog, or Splunk, then your monitoring uses this information. You could also be using Nagios or another similar tool to actively monitor your validator nodes. Here are some scenarios and data to consider logging when monitoring a node:
 
 - Is the Bor service up?
 - Is the Heimdall service up?

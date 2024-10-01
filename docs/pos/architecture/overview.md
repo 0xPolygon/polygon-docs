@@ -54,7 +54,7 @@ An overview of the process:
 * A selected proposer from the validator set is responsible for collecting all signatures for a particular checkpoint and committing the checkpoint on the Ethereum mainnet.
 * The responsibility of creating blocks and proposing checkpoints is variably dependent on a validator’s stake ratio in the overall pool.
 
-See also [Heimdall architecture](heimdall/index.md).
+See also [Heimdall architecture](../architecture/heimdall/introduction.md).
 <!-- (/docs/pos/design/heimdall/overview). -->
 
 ## Bor: Block production layer
@@ -63,5 +63,5 @@ Bor is Polygon PoS's block producer — the entity responsible for aggregating t
 
 Bor block producers are a subset of the validators and are shuffled periodically by the Heimdall validators.
 
-See also [Bor architecture](bor/index.md).
+See also [Bor architecture](../architecture/bor/introduction.md).
 <!-- (/docs/pos/design/bor/overview). -->
