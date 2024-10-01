@@ -2,7 +2,7 @@
 comments: true
 ---
 
-This document describes how to deploy Polygon PoS nodes into a virtual machine (VM) instance on the Google Cloud Platform (GCP).
+This document describes how to deploy Polygon PoS nodes in a virtual machine (VM) instance on the Google Cloud Platform (GCP).
 
 It is recommended to use any modern Debian or Linux Ubuntu OS with long-term support, i.e. Debian 11, Ubuntu 20.04. We'll focus on Ubuntu 20.04 in this guide.
 
@@ -17,7 +17,7 @@ You may use any of the following ways to create an instance in Google Cloud:
 1. Google Cloud CLI, local or [Cloud Shell](https://cloud.google.com/shell)
 2. Web Console
 
-We'll only cover the first case in this guide. Let's start with deployment using Google Cloud CLI.
+We only cover the first case in this guide. Let's start with deployment using Google Cloud CLI.
 
 1. Follow ["Before you begin" section](https://cloud.google.com/compute/docs/instances/create-start-instance#before-you-begin) to install and configure gcloud command-line tool.
 Pay attention to default region and zone, choose ones closer to you or your customers. You may use [gcping.com](https://gcping.com) to measure latency to choose the closest location.

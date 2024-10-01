@@ -60,7 +60,7 @@ We use `df -h` to make sure the mount looks good.
 
 ![img](../../../img/pos/space.png)
 
-Onc we've verified that successfully, we might as well create the home directories on this mount for Bor and Heimdall.
+Once we've verified that successfully, we might as well create the home directories on this mount for Bor and Heimdall.
 
 ```bash
 sudo mkdir /mnt/data/bor

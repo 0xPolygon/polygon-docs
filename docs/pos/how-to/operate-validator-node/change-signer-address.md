@@ -3,7 +3,7 @@ This guide will walk you through the process of changing the owner and signer ad
 
 ## Change the owner address
 
-1. Access StakingNFT Smart Contract.
+1. Access StakingNFT smart contract.
 
       - Mainnet: https://etherscan.io/address/0x47Cbe25BbDB40a774cC37E1dA92d10C2C7Ec897F#writeContract
       - Amoy: https://sepolia.etherscan.io/address/0x72CF5618142Eb369E75ec6529A907e9A6Fe99bB7#writeContract
