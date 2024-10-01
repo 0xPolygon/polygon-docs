@@ -385,7 +385,7 @@ nav:
           - Transactions:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
-            - Meta-transactions: pos/concepts/transactions/meta-transactions.md
+            - Meta transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
       - Miden: miden/index.md
       - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
