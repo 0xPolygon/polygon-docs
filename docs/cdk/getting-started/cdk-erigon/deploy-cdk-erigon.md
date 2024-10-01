@@ -4,9 +4,9 @@ There are a few prerequisites for successfully deploying the CDK node.
 
 ### Hardware requirements
 
-* A Linux-based OS (e.g. Ubuntu 22.04 LTS).
-* At least 64GB RAM with a minimum 4-core CPU.
-* Both Apple Silicon and AMD64 are supported.
+* Operating system: A Linux-based OS (e.g. Ubuntu 22.04 LTS).
+* Memory: At least 64GB RAM.
+* CPU: A minimum 4-core CPU, or higher (both Apple Silicon and amd64 are supported).
 
 !!! tip
     - On x86, the following packages are required to use the optimal, vectorized-Poseidon-hashing for the sparse Merkle tree:
