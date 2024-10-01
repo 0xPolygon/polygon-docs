@@ -36,7 +36,7 @@ Let's look at a few scenarios highlighting how meta transactions can enhance use
 
 ### Voting
 
-A user wishing to participate in on-chain governance can vote through a voting contract by signing a message with their decision. Traditionally, they would need to pay gas fees and know how to interact with the contract directly. Instead, they can sign a meta transaction off-chain containing the vote details and send it to a relayer. 
+A user wishing to participate in on-chain governance can vote through a voting contract by signing a message with their decision. Traditionally, they would need to pay gas fees and know how to interact with the contract directly. But in this case they sign a meta transaction containing the vote details off-chain and send it to a relayer. 
 
 The relayer receives the signed message, validates the priority of the vote, wraps it into a standard transaction, pays the gas fees, and submits it to the voting contract. Once validated, the contract executes the vote on behalf of the user.
 
