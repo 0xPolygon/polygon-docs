@@ -2,39 +2,40 @@
 comments: true
 ---
 
-!!! warning "Mumbai testnet deprecated"
-
-   Mumbai testnet is deprecated and will not receive any future updates. GCP support for deploying Amoy testnet nodes will be ready soon. Stay tuned!
-
-In this document, we will describe how to deploy Polygon nodes into a Virtual Machine instance on the Google Cloud Platform (GCP).
+This document describes how to deploy Polygon PoS nodes in a virtual machine (VM) instance on the Google Cloud Platform (GCP).
 
 It is recommended to use any modern Debian or Linux Ubuntu OS with long-term support, i.e. Debian 11, Ubuntu 20.04. We'll focus on Ubuntu 20.04 in this guide.
 
-## Deploy VM Instance
+!!! info
+      
+      This setup is currently only supported for mainnet. GCP support for deploying Amoy testnet nodes will be available soon.
+
+## Deploy VM instance
 
 You may use any of the following ways to create an instance in Google Cloud:
 
 1. Google Cloud CLI, local or [Cloud Shell](https://cloud.google.com/shell)
 2. Web Console
 
-We'll only cover the first case in this manual. Let's start with deployment using Google Cloud CLI.
+We only cover the first case in this guide. Let's start with deployment using Google Cloud CLI.
 
 1. Follow ["Before you begin" section](https://cloud.google.com/compute/docs/instances/create-start-instance#before-you-begin) to install and configure gcloud command-line tool.
 Pay attention to default region and zone, choose ones closer to you or your customers. You may use [gcping.com](https://gcping.com) to measure latency to choose the closest location.
 
-2. Adjust the following command variables using your favorite editor prior executing, when required
-   * `POLYGON_NETWORK` - choose `mainnet` or `mumbai` testnet network to run
-   * `POLYGON_NODETYPE` - choose `archive`,`fullnode` node type to run
-   * `POLYGON_BOOTSTRAP_MODE` - choose bootstrap mode `snapshot` or `from_scratch`
-   * `POLYGON_RPC_PORT` - choose JSON RPC bor node port to listen on, the default value is what used on VM instance creation and in firewall rules
-   * `EXTRA_VAR` - choose Bor and Heimdall branches, use `network_version=mainnet-v1` with `mainnet` network and `network_version=testnet-v4` with `amoy` network
-   * `INSTANCE_NAME` - the name of a VM instance with Polygon we are going to create
-   * `INSTANCE_TYPE` - GCP [machine type](https://cloud.google.com/compute/docs/machine-types), default value is recommended, You may change it later if required
-   * `BOR_EXT_DISK_SIZE` - additional disk size in GB to use with Bor, default value with `fullnode` is recommended, You may expand it later if required. You'll need 8192GB+ with `archive` node though
-   * `HEIMDALL_EXT_DISK_SIZE` - additional disk size in GB to use with Heimdall, default value is recommended
-   * `DISK_TYPE` - GCP [disk type](https://cloud.google.com/compute/docs/disks#disk-types), SSD is highly recommended. You may need to increase the total SSD GB quota in the region you are spinning up the node.
+2. Adjust the following command variables using your favorite editor prior to executing, when required:
 
-3. Use the following command to create an instance with correct hardware and software requirements. In the example below, we deploy Polygon `mainnet` from `snapshot` in the `fullnode` mode:
+      * `POLYGON_NETWORK` - choose `mainnet` network to run.
+      * `POLYGON_NODETYPE` - choose `archive`,`fullnode` node type to run.
+      * `POLYGON_BOOTSTRAP_MODE` - choose bootstrap mode `snapshot` or `from_scratch`.
+      * `POLYGON_RPC_PORT` - choose JSON RPC bor node port to listen on, the default value is what used on VM instance creation and in firewall rules.
+      * `EXTRA_VAR` - choose Bor and Heimdall branches, use `network_version=mainnet-v1` with `mainnet` network and `network_version=testnet-v4` with `amoy` network.
+      * `INSTANCE_NAME` - the name of a VM instance with Polygon we are going to create.
+      * `INSTANCE_TYPE` - GCP [machine type](https://cloud.google.com/compute/docs/machine-types), default value is recommended, You may change it later if required.
+      * `BOR_EXT_DISK_SIZE` - additional disk size in GB to use with Bor, default value with `fullnode` is recommended, You may expand it later if required. You'll need 8192GB+ with `archive` node though.
+      * `HEIMDALL_EXT_DISK_SIZE` - additional disk size in GB to use with Heimdall, default value is recommended.
+      * `DISK_TYPE` - GCP [disk type](https://cloud.google.com/compute/docs/disks#disk-types), SSD is highly recommended. You may need to increase the total SSD GB quota in the region you are spinning up the node.
+
+3. Use the following command to create an instance with the correct hardware and software requirements. In the example below, we deploy Polygon PoS `mainnet` from `snapshot` in the `fullnode` mode:
    ```bash
       export POLYGON_NETWORK=mainnet
       export POLYGON_NODETYPE=fullnode
@@ -69,7 +70,7 @@ The instance should be created and live in a couple of minutes.
 
 ## Login to VM
 
-It will take a couple of minutes to install all the required software and a couple of hours to download a snapshot when chosen.
+It will take a couple of minutes to install all the required software, and a couple of hours to download a snapshot when chosen.
 
 - You should see working `bor` and `heimdalld` processes filling up additional drives. You may run the following commands to check it.
 
@@ -99,11 +100,11 @@ It will take a couple of minutes to install all the required software and a coup
    journalctl -fu heimdalld
    ```
 
-!!! note
+!!! info
     
     Blockchain data is saved onto additional drives which are kept by default on VM instance removal. You need to remove additional disks manually if you don't need this data anymore.
 
 
-At the end, you will get an instance as shown in the below diagram.
+At the end, you will get an instance as shown in the diagram below.
 
-![Figure: Mainnet - Polygon instance](../../../img/pos/polygon-instance.svg)
+![Figure: Mainnet - Polygon instance](../../../img/pos/polygon-instance.png)

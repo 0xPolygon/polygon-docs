@@ -1,0 +1,105 @@
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: false
+        type: string
+        default: "dev"
+      core_app:
+        required: false
+        type: string
+        description: "Core app name"
+        default: "docs"
+      account_number:
+        required: false
+        type: string
+        description: "AWS Account number for deployment"
+        default: "058264511034"
+      region:
+        required: false
+        type: string
+        description: "AWS region for deployment"
+        default: "eu-west-1"
+      task_definition:
+        required: false
+        type: string
+        description: "Task Definition path for deployment"
+        default: ".github/assets/dev-taskdef.json"
+      cluster_name:
+        required: false
+        type: string
+        description: "Cluster name for deployment"
+        default: "frontend-dev-ecs-cluster"
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}    
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install pipenv
+        run: pip install pipenv
+
+      - name: Checkout Code Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Authenticate GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Build Site
+        run: |
+          python build_branches.py
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ inputs.region }}
+          role-to-assume: arn:aws:iam::${{ inputs.account_number }}:role/${{ inputs.core_app }}-${{ inputs.environment }}-GithubActionsRole
+          role-session-name: GithubActionsSession
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}-${{ github.run_number }}
+          ECR_REPOSITORY: ${{ inputs.core_app }}-${{ inputs.environment }}-ecr
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile.review .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: ${{ inputs.task_definition }}
+          container-name: ${{ inputs.core_app }}-${{ inputs.environment }}
+          image: ${{ steps.build-image.outputs.image }}
+
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: ${{ inputs.core_app }}-${{ inputs.environment }}-ecs-service
+          cluster: frontend-${{ inputs.environment }}-ecs-cluster
+          wait-for-service-stability: true
+
+      - name: Cloudflare Cache Purge
+        uses: nathanvaughn/actions-cloudflare-purge@master
+        with:
+          cf_zone: ${{ secrets.CLOUDFLARE_ZONE }}
+          cf_auth: ${{ secrets.CLOUDFLARE_AUTH_KEY }}
+          hosts: ${{ inputs.core_app }}-${{ inputs.environment }}.polygon.technology
