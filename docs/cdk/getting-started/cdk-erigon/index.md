@@ -1,6 +1,6 @@
 # CDK Erigon
 
-CDK Erigon is the implementation of Erigon adapted to be a specialized framework for creating and managing chains that run the Polygon zkEVM protocol. Its code repository can be found at [0xPolygonHermez/cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon). 
+CDK Erigon is the implementation of [Erigon](https://github.com/ledgerwatch/erigon) adapted to be a specialized framework for creating and managing chains that run the Polygon zkEVM protocol. Its code repository can be found at [0xPolygonHermez/cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon). 
 
 Erigon, formerly known as Turbo-Geth, is a high-performance Ethereum client built to meet the increasing demands of the Ethereum blockchain. It focuses on optimizing performance, disk space, and synchronization speed. 
 
