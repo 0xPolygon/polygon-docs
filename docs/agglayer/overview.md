@@ -26,7 +26,6 @@ Here's a list of chains connected to the alpha version of the AggLayer:
 | OKX                | OKX           | 196         | X Layer                 |
 | Gateway FM         | Silicon       | 1722641160  | silicon-sepolia-testnet |
 | Gateway FM         | Silicon       | 2355        | silicon-zk              |
-| Gateway FM         | WilderWorld   | 883424730   | meowchain-testnet       |
 | Gateway FM         | WilderWorld   | 1668201165  | zchain-testnet          |
 | Gateway FM         | Wirex         | 407985408   | wirex-pay-devnet        |
 | Gateway FM         | Wirex         | 31415       | pay-chain               |

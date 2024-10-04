@@ -191,12 +191,12 @@ The following step-by-step guides will take you through the process of running a
 
 * [Start and run the nodes with Ansible](../how-to/validator/validator-ansible.md).
 * [Start and run the nodes with binaries](../how-to/validator/validator-binaries.md).
-* [Stake as a validator](../how-to/operate-validator-node/validator-staking-operations.md).
+* [Stake as a validator](../how-to/operate-validator-node/next-steps.md#stake-tokens).
 
 ### Maintain your validator nodes
 
 * [Change the signer address](../how-to/operate-validator-node/change-signer-address.md).
-* [Change the commission](../how-to/operate-validator-node/validator-commission-operations.md).
+* [Change the commission](../how-to/operate-validator-node/next-steps.md#changing-your-commission-rate).
 
 ### Community assistance
 
