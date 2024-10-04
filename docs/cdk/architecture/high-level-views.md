@@ -1,10 +1,10 @@
-## CDK stack layout
+## CDK full execution proof (FEP)
 
-The following diagram depicts the full CDK stack layout and details some of the high level communication between components.
+The following diagram depicts the CDK FEP stack component layout and details some of the high level communication between components.
 
 ![High level view of CDK stack](../../img/cdk/cdk-stack.png)
 
-### Communication steps
+### Component interactions
 
 - External applications interact with the CDK Erigon RPC node via the transaction pool manager.
 - Engineers use a CLI tool to manage the backend components, installing and initializing various modes of operation, such as validium versus rollup for example.
@@ -16,13 +16,13 @@ The following diagram depicts the full CDK stack layout and details some of the 
 - Users interact with the bridge service via the bridge UI.
 - The AggLayer also utilizes the bridge service and interacts with the L1 smart contracts.
 
-## User data flow
+### User data flow
 
-The following diagram is a sequential depiction of the user data flow in validium mode using a mock prover and having an AggLayer connection.
+The following diagram is a sequential depiction of the user data flow for the CDK FEP stack in validium mode using a mock prover and having an AggLayer connection.
 
 ![High level view of CDK user data flow](../../img/cdk/user-data-flow.png)
 
-### Sequential steps
+#### Sequential interactions
 
 1. User sends a transaction to the CDK Erigon RPC node.
 2. The Erigon RPC node proxies the data to the CDK Erigon sequencer node.
