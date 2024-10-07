@@ -2,7 +2,7 @@
 comments: true
 ---
 
-This document shows you how to integrate a third-party data availability (DAC) solution into your CDK stack.
+This document shows you how to integrate a third-party data availability (DA) layer solution into your CDK stack.
 
 ## Prerequisites
 
@@ -15,11 +15,11 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 1. Clone [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts).
 
-2. `cd` into `zkevm-contracts` and checkout tag `v6.0.0-rc.1-fork.9`.
+2. Change directory `cd` to `/zkevm-contracts` and checkout tag `v6.0.0-rc.1-fork.9`.
 
 3. Run `npm install` from the root.
 
-4. `cd` to the `contracts/v2/consensus/validium` directory. 
+4. Change directory `cd` to the `/contracts/v2/consensus/validium`. 
 
     !!! tip
         - Until further notice, these contracts run on the [etrog release](https://polygon.technology/blog/polygon-zkevm-the-etrog-upgrade-is-live-on-mainnet).

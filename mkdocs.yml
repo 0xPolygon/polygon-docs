@@ -55,6 +55,7 @@ nav:
       - Overview: cdk/overview.md
       - Releases:
         - Version compatibility matrix: cdk/version-matrix.md
+        - CLI tool: cdk/cdk-cli-tool.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
       - Concepts:
@@ -73,7 +74,7 @@ nav:
           - Fork id 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
           - General guide for partners: cdk/how-to/migrate/fork.md
         - Create custom native token: cdk/how-to/use-native-token.md
-        - Integrate a DAC: cdk/how-to/integrate-da.md
+        - Integrate DA layer: cdk/how-to/integrate-da.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Connect to CDK testnets: cdk/how-to/connect-testnet.md
@@ -683,11 +684,11 @@ plugins:
         'pos/how-to/operate-validator-node/validator-best-practices.md': 'pos/how-to/validator/validator-best-practices.md'
         'pos/how-to/operate-validator-node/validator-commission-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
         'pos/how-to/operate-validator-node/validator-staking-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
-
-
+        'pos/how-to/operating/validator-node/index.md': 'pos/how-to/operate-validator-node/next-steps.md'
 
 validation:
   absolute_links: warn
+  anchors: warn
 
 extra_javascript:
   - _site_essentials/js/mathjax.js
