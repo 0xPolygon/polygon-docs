@@ -78,6 +78,7 @@ nav:
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Connect to CDK testnets: cdk/how-to/connect-testnet.md
       - Architecture:
+        - CDK components: cdk/architecture/cdk-components.md 
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
         - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
