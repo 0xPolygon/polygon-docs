@@ -11,7 +11,7 @@ In the CDK with full execution proofs release, any zkEVM components can be consi
 
 The following table lists the components and where you can find them for CDK rollup and validium stacks. You will notice only small differences in the component makeup of the two stacks; differences which are now mostly use case specific.
 
-| Component                                | CDK rollup (FEP)                                                                         | Notes                                                       |
+| Component                                | CDK FEP stack                                                                         | Notes                                                       |
 |------------------------------------------|------------------------------------------------------------------------------------------|-------------------------------------------------------------|
 | Node = RPC and sequencer                 | <a href=https://github.com/0xPolygonHermez/cdk-erigon>cdk-erigon</a>                     | Customizable, commonly: <br/>- Sequencer = 1 node</br>- RPC = multiple nodes |
 | Data availability                        | <a href=https://github.com/0xPolygon/cdk-data-availability>cdk-data-availability</a>     | **Only** for validium mode                                       |
