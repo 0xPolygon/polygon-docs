@@ -55,6 +55,7 @@ nav:
       - Overview: cdk/overview.md
       - Releases:
         - Version compatibility matrix: cdk/version-matrix.md
+        - CLI tool: cdk/cdk-cli-tool.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
       - Concepts:
