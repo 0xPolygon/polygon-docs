@@ -2,9 +2,15 @@ The Polygon Chain Development Kit, or simply CDK, is a tool box of components th
 
 At a high level, CDK components are like building blocks a chain administrator can select to configure a ZK-powered chain according to their own design.
 
-To abstract away the complexity of running or configuring CDK components, Polygon provides a RUST-based CLI tool which is an interface that chain administrators can use to deploy components.
+To abstract away the complexity of running or configuring CDK components, Polygon provides a Rust-based CLI tool which is an interface that chain administrators can use to interact with CDK components.
 
 This CLI tool is an entry point for chain administrators to access the CDK system.
+
+## Installation
+
+To use the CLI tool the chain admin needs only download the precompiled CDK package ([the binaries](https://github.com/0xPolygon/cdk/releases/)).
+
+There is no need to have Golang, checkout the CDK repo, or install anything else. It is also trustless.
 
 ## **Running the CLI tool**
 
@@ -15,45 +21,43 @@ This CLI tool is an entry point for chain administrators to access the CDK syste
     Get the binaries, packages and docker images published with each release, [here](https://github.com/0xPolygon/cdk/releases/).
     For example, version [v0.2.1](https://github.com/0xPolygon/cdk/releases/tag/v0.2.1).
     
+## Commands
 
-Chain administrators can configure an RPC node or a CDK Erigon node by running a single command:
+### cdk
 
-```
- cdk --config ../kurtosis-cdk/genesis/cdk-node-config.toml --chain ../kurtosis-cdk/genesis/genesis.json erigon
-```
+Here the Admin needs to provide the [cdk-node configuration file](needs a reference to the configuration doc) and a genesis file of the desired chain.
 
-Here the Admin simply provides a small configuration file and a genesis file.
+Usage: `cdk --config <CONFIG> --chain <CHAIN> <COMMAND>`
 
-The above command generates all the required configuration files, configures the node, and syncs with the network.
+Commands:
+* node - Run the cdk-node with the provided configuration    
+* erigon - Run cdk-erigon node with the provided default configuration
+* help    Print this message or the help of the given subcommand(s)
 
-## **Advantages of using the CLI tool**
+Options:
+  -c, --config <CONFIG>  The path to the configuration file [env: CDK_CONFIG_PATH=]
+  -g, --chain <CHAIN>    The path to a chain specification file [env: CDK_GENESIS_PATH=]
+  -h, --help             Print help
 
-The main advantage with using the CLI is in providing a small config file and a genesis file instead of having to run a Go script four times in order to generate [four configuration files](https://github.com/0xPolygonHermez/cdk-erigon/?tab=readme-ov-file#dynamic-chain-configuration), and download them.
+### cdk node
 
-For instance,
+To run cdk-node use the `node` subcommand
 
-```
- go run cmd/hack/allocs/main.go [your-file-name]
-```
+Usage: cdk --config <CONFIG> --chain <CHAIN> node [OPTIONS]
 
-That is, without this CLI, every new user who wants to configure an RPC node would have to first,
+Options:
+  -c, --components <COMPONENTS>  Components to run [env: CDK_COMPONENTS=]
+  -h, --help                     Print help
 
-- Checkout the CDK Erigon repo.
-- Install Golang.
-- Run the script.
+### cdk erigon
 
-Another alternative is for the user to request a trusted chain builder to provide the four configuration files. The chain builder generates the files and sends them to user for downloading.
+Chain administrators can run a cdk-erigon RPC node that syncs to an existing chain with default parameters.
 
-But this requires the user to trust such a provider of the files.
+This subcommand is intended for quickly spin-up of an RPC node or to test existing chains with default configuration values. In order fine tune and to access all configuration values, [check the full cdk-erigon documentation](reference to erigon configuration docs).
 
-To use the CLI tool the chain admin needs only download the precompiled CDK package ([the binaries](https://github.com/0xPolygon/cdk/releases/)).
+Usage: cdk --config <CONFIG> --chain <CHAIN> erigon
 
-There is no need to have Golang, checkout the CDK repo, or install anything else. It is also trustless.
+Options:
+  -h, --help  Print help
 
-## **Why RUST-based CLI?**
-
-The CLI is written in RUST language to align with Polygon's vision to ensure easy integration of Polygon technology stack with popular RUST-based platforms and libraries (such as Succinct's SP1).
-
-This is also in anticipation of new RPC endpoints implementation to enable integration of the CDK system with external systems, and thus accommodate vanilla execution clients that use pessimistic proofs.
-
-With such endpoints Reth, Cosmos space chains, or other execution clients can be introduced without code modifications.
+The above command generates all the required configuration files for cdk-erigon on-the-fly and run the node.
