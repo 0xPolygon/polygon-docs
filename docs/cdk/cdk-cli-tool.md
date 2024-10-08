@@ -29,24 +29,24 @@ Here the Admin needs to provide the [cdk-node configuration file](needs a refere
 Usage: `cdk --config <CONFIG> --chain <CHAIN> <COMMAND>`
 
 Commands:
-* node - Run the cdk-node with the provided configuration    
-* erigon - Run cdk-erigon node with the provided default configuration
-* help    Print this message or the help of the given subcommand(s)
+* `node` - Run the cdk-node with the provided configuration    
+* `erigon` - Run cdk-erigon node with the provided default configuration
+* `help`    Print this message or the help of the given subcommand(s)
 
 Options:
-  -c, --config <CONFIG>  The path to the configuration file [env: CDK_CONFIG_PATH=]
-  -g, --chain <CHAIN>    The path to a chain specification file [env: CDK_GENESIS_PATH=]
-  -h, --help             Print help
+* `-c, --config <CONFIG>` - The path to the configuration file [env: `CDK_CONFIG_PATH=`]
+* `-g, --chain <CHAIN>` - The path to a chain specification file [env: `CDK_GENESIS_PATH=`]
+* `-h, --help`             Print help
 
 ### cdk node
 
 To run cdk-node use the `node` subcommand
 
-Usage: cdk --config <CONFIG> --chain <CHAIN> node [OPTIONS]
+Usage: `cdk --config <CONFIG> --chain <CHAIN> node [OPTIONS]`
 
 Options:
-  -c, --components <COMPONENTS>  Components to run [env: CDK_COMPONENTS=]
-  -h, --help                     Print help
+* `-c, --components <COMPONENTS>`  Components to run [env: `CDK_COMPONENTS=`]
+* `-h, --help`             Print help
 
 ### cdk erigon
 
@@ -54,9 +54,9 @@ Chain administrators can run a cdk-erigon RPC node that syncs to an existing cha
 
 This subcommand is intended for quickly spin-up of an RPC node or to test existing chains with default configuration values. In order fine tune and to access all configuration values, [check the full cdk-erigon documentation](reference to erigon configuration docs).
 
-Usage: cdk --config <CONFIG> --chain <CHAIN> erigon
+Usage: `cdk --config <CONFIG> --chain <CHAIN> erigon`
 
 Options:
-  -h, --help  Print help
+* `-h, --help`  Print help
 
 The above command generates all the required configuration files for cdk-erigon on-the-fly and run the node.
