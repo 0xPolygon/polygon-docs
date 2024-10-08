@@ -27,7 +27,7 @@ And, optionally, for submitting transactions and interacting with the environmen
 - [Foundry](https://book.getfoundry.sh/getting-started/installation)
 - [yq](https://github.com/mikefarah/yq)
 - [jq](https://stedolan.github.io/jq/)
-- [polyon-cli](https://github.com/maticnetwork/polygon-cli)
+- [polyon-cli](https://github.com/0xPolygon/polygon-cli)
 
 ## Set up the Kurtosis environment
 
