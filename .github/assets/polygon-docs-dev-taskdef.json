@@ -50,7 +50,7 @@
 		"dockerLabels": null,
 		"systemControls": null,
 		"privileged": null,
-		"name": "docs-dev",
+		"name": "polygon-docs-dev",
 		"repositoryCredentials": {
 			"credentialsParameter": ""
 		}
@@ -120,9 +120,9 @@
 	"networkMode": "awsvpc",
 	"memory": "1024",
 	"cpu": "512",
-	"executionRoleArn": "arn:aws:iam::058264511034:role/docs-dev-TaskRole",
-	"family": "docs-dev-taskdefinition",
-	"taskRoleArn": "arn:aws:iam::058264511034:role/docs-dev-TaskRole",
+	"executionRoleArn": "arn:aws:iam::058264511034:role/polygon-docs-dev-TaskRole",
+	"family": "polygon-docs-dev-taskdefinition",
+	"taskRoleArn": "arn:aws:iam::058264511034:role/polygon-docs-dev-TaskRole",
 	"runtimePlatform": {
 		"operatingSystemFamily": "LINUX"
 	},
@@ -132,7 +132,7 @@
 		},
 		{
 			"key": "ParentService",
-			"value": "docs-dev"
+			"value": "polygon-docs-dev"
 		},
 		{
 			"key": "Environment",
@@ -148,7 +148,7 @@
 		},
 		{
 			"key": "IAC",
-			"value": "terraform-workspace-aws-dev-apps-eu-west-1-apps-docs-dev-polygon-technology"
+			"value": "terraform-workspace-aws-dev-apps-eu-west-1-apps-polygon-docs-dev-polygon-technology"
 		},
 		{
 			"key": "Team",
@@ -156,7 +156,7 @@
 		},
 		{
 			"key": "Name",
-			"value": "docs-dev-taskdefinition"
+			"value": "polygon-docs-dev-taskdefinition"
 		}
 	]
 }
