@@ -422,14 +422,9 @@ The Polygon Wallet Suite is a web application.
 
 First, you must withdraw your funds from Binance or any other exchange to your Ethereum address on Metamask. If you don't know how to use Metamask, google it a bit. There are plenty of videos and blogs to get started with it.
 
-### When can I become a validator and how many tokens do I for that?
+### When can I become a validator and how many tokens do I need for that?
 
-A user can earn a validator spot only by if the below conditions come into play:
-
-1. When a validator decides to unstake from the network, or
-2. Wait for the auction mechanism and replace the inactive validator.
-
-The minimum stake depends on the auction process where one user outbids another.
+To become a validator in the PoS network, you'll need to hold and stake a minimum of 10,000 POL tokens, and go through an admissions process to ensure network security."
 
 ### If I have earned rewards while delegating, and if I add additional funds to the same validator node, what happens?
 

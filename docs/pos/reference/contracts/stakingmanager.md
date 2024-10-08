@@ -56,7 +56,7 @@ function stakeFor(
 ```
 
 - Allows anyone with amount (in MATIC tokens) greater than `minDeposit`, if `currentValidatorSetSize` is less then `validatorThreshold`.
-- Must transfer `amount+heimdallFee`, puts validator into auction period for an `auctionInterval` (more in Auction section).
+- Must transfer `amount+heimdallFee`.
 - `updateTimeLine` updates special timeline data structure, which keeps track of active validators and active stake for given epoch / checkpoint count.
 - One unique `NFT` is minted on each new `stake` or `stakeFor` call, which can be transferred to anyone but can be owned 1:1 Ethereum address.
 - `acceptDelegation` set to true if validators want to accept delegation, `ValidatorShare` contract is deployed for the validator.
@@ -126,34 +126,6 @@ Note that `accountStateRoot` is re-written to prevent exits on multiple checkpoi
 ### Staking NFT
 
 Standard ERC721 contract with few restrictions like one token per user and minted in sequential manner.
-
-### `startAuction`
-
-```solidity
-function startAuction(
-    uint256 validatorId, /**  auction for validator */
-    uint256 amount /**  amount greater then old validator's stake */
-    ) external;
-```
-
-In order to start a bid or bid higher on already running auction, this function is used. Auction period runs in cycles like `(auctionPeriod--dynasty)--(auctionPeriod--dynasty)--(auctionPeriod--dynasty)` so it *must check for correct auction period*.
-
-`perceivedStakeFactor` is used to calculate exact $factor*old stake$ (note currently it is by default 1 WIP for picking the function). *Must check for auction from last auction period if any still going on* (one can choose to not call `confirmAuction` in order to get their capital out in the next auction). Normally continuous english auction is going on in a `auctionPeriod`.
-
-### `confirmAuctionBid`
-
-```solidity
-function confirmAuctionBid(
-        uint256 validatorId,
-        uint256 heimdallFee, /** for new validator */
-        bool acceptDelegation,
-        bytes calldata signerPubkey
-    ) external
-```
-
-- *Must check that this is not an auctionPeriod.*
-- If last bidder is owner of `validatorId`, behavior should be similar to restake.
-- In second case unstake `validatorId` and add new user as validator from next checkpoint, for the new user behavior should be similar to stake/stakeFor.
 
 ### `checkSignatures`
 
