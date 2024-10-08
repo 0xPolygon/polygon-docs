@@ -32,7 +32,7 @@ The following table lists the components and where you can find them for CDK rol
 
 Next are the brief descriptions of each CDK component.
 
-- CDK Erigon node, a fork of erigon, that manages the following:
+- CDK Erigon node, a fork of [erigon](https://github.com/ledgerwatch/erigon), that manages the following:
     - Multiple RPC nodes that provide common APIs for sending transactions.
     - Sequencer for executing transactions, and creating blocks and batches.
 - DAC: The Data Availability Committee, specifically for validium mode, is a set of *trusted actors* who keep custody of all transaction data, including monitoring and validating hash values the sequencer sender proposes to publish on L1.
