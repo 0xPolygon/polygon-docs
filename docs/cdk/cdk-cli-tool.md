@@ -19,7 +19,6 @@ There is no need to have Golang, checkout the CDK repo, or install anything else
     Requirements
 
     Get the binaries, packages and docker images published with each release, [here](https://github.com/0xPolygon/cdk/releases/).
-    For example, version [v0.2.1](https://github.com/0xPolygon/cdk/releases/tag/v0.2.1).
     
 ## Commands
 
