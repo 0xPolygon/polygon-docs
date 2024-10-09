@@ -1,0 +1,36 @@
+name: Hosted PR and Dev/Prod Deployment
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - hosted/*
+  push:
+    branches:
+      - dev
+      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: false
+        type: choice
+        description: "Select the environment to deploy to (only required for production deployment)"
+        options:
+          - staging
+          - prod
+
+jobs:
+  deploy:
+    if: |
+      (github.event_name == 'pull_request' && startsWith(github.base_ref, 'hosted/')) || 
+      (github.event_name == 'push' && github.ref == 'refs/heads/dev') || 
+      (github.event_name == 'push' && github.ref == 'refs/heads/main') || 
+      (github.event_name == 'workflow_dispatch' && inputs.environment == 'prod')
+    uses: ./.github/workflows/build_and_deploy.yml
+    with:
+      environment: ${{ inputs.environment || 
+                    (github.ref == 'refs/heads/dev' && 'dev') || 
+                    (github.ref == 'refs/heads/main' && 'staging') || 
+                    (github.event_name == 'pull_request' && 'dev') || 
+                    'dev' }}
+    secrets: inherit
