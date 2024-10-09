@@ -14,9 +14,9 @@ Polygon CDK utilizes an especially developed CLI tool to abstract away the compl
 
 Why does Polygon CDK focus on ZK-powered chains?
 
-The power of zero-knowledge technology is seen in enabling chains to achieve trustless finality, where chain users do not have to dependent on a few individuals to confirm finality of their transactions.
+The power of zero-knowledge technology is seen in enabling chains to achieve trustless finality, where chain users do not have to rely on a few individuals to confirm finality of their transactions.
 
-With Polygon CDK chains developers can first decide on how they want to configure proving and then choose the right CDK mode to build their chain.
+With Polygon CDK, developers can first decide how they want to configure proving and then choose the right CDK mode to build their chain.
 
 Polygon CDK therefore has two modes:
 
