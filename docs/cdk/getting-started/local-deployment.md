@@ -11,11 +11,11 @@ The [Polygon CDK Kurtosis package](https://github.com/0xPolygon/kurtosis-cdk/) a
 
 ## Prerequisites
 
-### Hardware
+### Hardware/OS
 
-- Linux-based OS (or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
+- x86-64 architecture.
 - Minimum 8GB RAM/2-core CPU.
-- AMD64 architecture.
+- Linux-based OS (or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
 
 ### Software
 
@@ -60,6 +60,10 @@ It defines the following steps for the deployment process:
 | -           | Input parser tool to help deployment stages        | [input_parser.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/input_parser.star) - deployed immediately                                                      | n/a              |
 | -           | zkEVM pool manager tool                 | [zkevm_pool_manager.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/zkevm_pool_manager.star) - deployed with CDK erigon node                                         | n/a             |
 
+
+!!! warning
+      - The Kurtosis stack is designed for local testing only.
+      - The prover component is a mock prover and should never be used for production environments.
 
 You can customize (or skip) any of the numbered steps by modifying the logic in the respective files.
 
