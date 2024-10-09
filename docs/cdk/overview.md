@@ -25,8 +25,6 @@ Polygon CDK therefore has two modes:
 
 These two Polygon CDK modes are released in the chronological order given above, with the Polygon-centric CDK mode coming first and then followed by the sovereign chain CDK mode.
 
-There are two types of ZK-proofs that are crucial to the Polygon ecosystem: Full execution proofs and Pessimistic proofs.
-
 ### Full execution proofs
 
 CDK rollups and validiums utilize *full execution proofs* as part of their finality mechanisms.
@@ -36,14 +34,6 @@ A *full execution proof* (FEP) is a zero-knowledge proof attesting to the correc
 For example, an FEP attests to the fact that the VM (such as the Polygon zkEVM, Succinct's zkVM, or MoveVM) has executed all state transitions in accordance with the specifications.
 
 A ZK-powered chain is therefore by definition an FEP chain.
-
-### Pessimistic proofs
-
-CDK-built chains that interoperate via the [unified bridge](https://www.notion.so/CDK-Overview-11580500116a80aa8f2ef9565d4e32bf?pvs=21) achieve cross-chain security through the use of *pessimistic proofs*.
-
-A *pessimistic proof* (PP) is a zero-knowledge proof attesting to the fact that a chain's bridge transitions were properly executed and all withdrawals are collateralized.
-
-Pessimistic proofs are the best solution to achieving trustless and secure interoperability for any network of [AggLayer-connected CDK chains](https://www.notion.so/CDK-Overview-11580500116a80aa8f2ef9565d4e32bf?pvs=21).
 
 ## Polygon CDK benefits
 
