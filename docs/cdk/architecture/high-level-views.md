@@ -10,9 +10,9 @@ The following diagram depicts the CDK FEP stack component layout and details som
 - Engineers use a CLI tool to manage the backend components, installing and initializing various modes of operation, such as validium versus rollup for example.
 - The CDK Erigon RPC sends transactions to the CDK Erigon sequencer which sequences transactions batches.
 - The CDK Erigon sequencer puts the transaction batches into the data streamer.
-- The data streamer streams data to the sequencer sender (validium mode) and the aggregator.
+- The data streamer streams data to the sequencer sender and the aggregator.
 - The sequencer sender sequences batches into the L1 smart contract domain and persists data into DAC nodes for validium mode operations.
-- The aggregator sends batches to the prover and receives proofs in return. It then aggregates the proofs into batches before submitting them to the L1 domain.
+- The aggregator sends batches to the prover and receives proofs in return. It then aggregates the proofs into batches before submitting them to the AggLayer or L1, depending on the chosen settlement layer.
 - Users interact with the bridge service via the bridge UI.
 - The AggLayer also utilizes the bridge service and interacts with the L1 smart contracts.
 
