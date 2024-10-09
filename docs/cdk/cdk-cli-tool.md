@@ -12,33 +12,33 @@ To use the CLI tool the chain admin needs only download the precompiled CDK pack
 
 There is no need to have Golang, checkout the CDK repo, or install anything else. It is also trustless.
 
-## **Running the CLI tool**
+## Running the CLI tool
 
 !!! info
     
-    Requirements
+    Requirements:
 
     Get the binaries, packages and docker images published with each release, [here](https://github.com/0xPolygon/cdk/releases/).
     
 ## Commands
 
-### cdk
+### CDK
 
 Here the Admin needs to provide the [cdk-node configuration file](needs a reference to the configuration doc) and a genesis file of the desired chain.
 
 Usage: `cdk --config <CONFIG> --chain <CHAIN> <COMMAND>`
 
 Commands:
-* `node` - Run the cdk-node with the provided configuration    
-* `erigon` - Run cdk-erigon node with the provided default configuration
-* `help`    Print this message or the help of the given subcommand(s)
+* `node` - Run the cdk-node with the provided configuration. 
+* `erigon` - Run cdk-erigon node with the provided default configuration. 
+* `help`    Print this message or the help of the given subcommand(s). 
 
 Options:
 * `-c, --config <CONFIG>` - The path to the configuration file [env: `CDK_CONFIG_PATH=`]
 * `-g, --chain <CHAIN>` - The path to a chain specification file [env: `CDK_GENESIS_PATH=`]
 * `-h, --help`             Print help
 
-### cdk node
+### CDK node
 
 To run cdk-node use the `node` subcommand
 
@@ -48,7 +48,7 @@ Options:
 * `-c, --components <COMPONENTS>`  Components to run [env: `CDK_COMPONENTS=`]
 * `-h, --help`             Print help
 
-### cdk erigon
+### CDK erigon
 
 Chain administrators can run a cdk-erigon RPC node that syncs to an existing chain with default parameters.
 
