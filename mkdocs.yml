@@ -57,6 +57,7 @@ nav:
         - Version compatibility matrix: cdk/version-matrix.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
+        - CLI tool: cdk/getting-started/cdk-cli-tool.md
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - L2 architecture overview: cdk/concepts/architecture.md
