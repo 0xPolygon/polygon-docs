@@ -563,7 +563,7 @@ nav:
         - Overview: agglayer/overview.md
         - AggLayer | Unified bridge: 
           - Architecture: agglayer/unified-bridge.md
-          - API and auto-claim service: cdk/agglayer/unified-bridge-api.md
+          - API and auto-claim service: agglayer/unified-bridge-api.md
         - AggLayer | Go: agglayer/agglayer-go.md
         - AggLayer | Rust: agglayer/agglayer-rs.md
         - AggLayer | Token flows: agglayer/token-flows.md

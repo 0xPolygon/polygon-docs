@@ -12,9 +12,9 @@ Bridge API is the backend service that powers the [Portal UI](https://portal.pol
 
 The Bridge API indexes data from Polygon PoS, Polygon zkEVM, Polygon CDK chains, and Ethereum, along with their corresponding testnets, and presents it to the UI in a unified manner. This makes Bridge API a comprehensive service for all Polygon chains, just like the current Bridge UI.
 
-![Bridge API architecture](../../img/cdk/bridge-api-service.png)
+![Bridge API architecture](../img/cdk/bridge-api-service.png)
 
-The Unified Bridge API is powered by the [chain indexer framework](../../tools/chain-indexer-framework/overview.md). The chain indexer's data pipeline consists of three main components:
+The Unified Bridge API is powered by the [chain indexer framework](../tools/chain-indexer-framework/overview.md). The chain indexer's data pipeline consists of three main components:
 
 ### Producer
 
@@ -116,7 +116,7 @@ The repository to spin up this service is not yet open source and is currently m
 
 ### Gas station 
 
-In order to estimate the gas price before submitting the transactions, we use the [Polygon gas station](../../tools/gas/polygon-gas-station.md), a lightweight service which gets gas price estimates for a specific chain.
+In order to estimate the gas price before submitting the transactions, we use the [Polygon gas station](../tools/gas/polygon-gas-station.md), a lightweight service which gets gas price estimates for a specific chain.
 
 The gas station is currently maintained by the Polygon Labs team, but can be hosted by anyone as the [code is open source](https://github.com/maticnetwork/maticgasstation).
 
