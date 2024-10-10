@@ -40,13 +40,12 @@ A ZK-powered chain is therefore by definition an FEP chain.
 Polygon CDK provides the components necessary to build a layer 2 blockchain that is secure, scalable, and interoperable with other chains.
 
 - Modularity: CDK modular components allow developers to easily customize their L2 environment and build a chain that meets their specific needs.
-- Interoperability: Opt-in to the [AggLayer](https://docs-dev.polygon.technology/1562/agglayer/overview/) to bootstrap your chain’s ecosystem, enable cross-chain transactions while expanding your reach, user base, and liquidity from other established chains.
+- Interoperability: Opt-in to the [AggLayer](../agglayer/overview.md) to bootstrap your chain’s ecosystem, enable cross-chain transactions while expanding your reach, user base, and liquidity from other established chains.
 - Sovereignty: Maintain full control over your chain’s revenue, governance, security, economic policies, and more.
 - Low gas fees: Transaction fees are orders of magnitude lower than in Ethereum, and processed substantially faster. This enables a fast, cheap, and secure user experience unaffected by any high activity experienced on shared networks.
 
 ### What you can do
 
-- [Deploy a local CDK on Kurtosis](https://docs-dev.polygon.technology/1562/cdk/getting-started/local-deployment/). Follow the guide to deploy a CDK stack on your local machine.
-- Check out the [concepts documentation](https://docs-dev.polygon.technology/1562/cdk/concepts/layer2s/) to understand the CDK at a high level.
-- Have a look at the [CDK architecture docs](https://docs.polygon.technology/cdk/architecture/cdk-zkevm/) to understand the CDK’s components and how they interact with each other.
-
+- [Deploy a local CDK on Kurtosis](../cdk/getting-started/local-deployment.md). Follow the guide to deploy a CDK stack on your local machine.
+- Check out the [concepts documentation](../cdk/concepts/layer2s.md) to understand the CDK at a high level.
+- Have a look at the [CDK architecture docs](../cdk/concepts/architecture.md) to understand the CDK’s components and how they interact with each other.
