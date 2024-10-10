@@ -14,9 +14,9 @@ Polygon CDK utilizes an especially developed CLI tool to abstract away the compl
 
 Why does Polygon CDK focus on ZK-powered chains?
 
-The power of zero-knowledge technology is seen in enabling chains to achieve trustless finality, where chain users do not have to dependent on a few individuals to confirm finality of their transactions.
+The power of zero-knowledge technology is seen in enabling chains to achieve trustless finality, where chain users do not have to rely on a few individuals to confirm finality of their transactions.
 
-With Polygon CDK chains developers can first decide on how they want to configure proving and then choose the right CDK mode to build their chain.
+With Polygon CDK, developers can first decide how they want to configure proving and then choose the right CDK mode to build their chain.
 
 Polygon CDK therefore has two modes:
 
@@ -24,8 +24,6 @@ Polygon CDK therefore has two modes:
 - The CDK sovereign chain mode used for custom chains. For instance a chain that uses a prover external to Polygon, such as Succinct's SP1.
 
 These two Polygon CDK modes are released in the chronological order given above, with the Polygon-centric CDK mode coming first and then followed by the sovereign chain CDK mode.
-
-There are two types of ZK-proofs that are crucial to the Polygon ecosystem: Full execution proofs and Pessimistic proofs.
 
 ### Full execution proofs
 
@@ -36,14 +34,6 @@ A *full execution proof* (FEP) is a zero-knowledge proof attesting to the correc
 For example, an FEP attests to the fact that the VM (such as the Polygon zkEVM, Succinct's zkVM, or MoveVM) has executed all state transitions in accordance with the specifications.
 
 A ZK-powered chain is therefore by definition an FEP chain.
-
-### Pessimistic proofs
-
-CDK-built chains that interoperate via the [unified bridge](https://www.notion.so/CDK-Overview-11580500116a80aa8f2ef9565d4e32bf?pvs=21) achieve cross-chain security through the use of *pessimistic proofs*.
-
-A *pessimistic proof* (PP) is a zero-knowledge proof attesting to the fact that a chain's bridge transitions were properly executed and all withdrawals are collateralized.
-
-Pessimistic proofs are the best solution to achieving trustless and secure interoperability for any network of [AggLayer-connected CDK chains](https://www.notion.so/CDK-Overview-11580500116a80aa8f2ef9565d4e32bf?pvs=21).
 
 ## Polygon CDK benefits
 
