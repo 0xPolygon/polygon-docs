@@ -24,7 +24,7 @@ There is no need to have Golang, checkout the CDK repo, or install anything else
 
 ### CDK
 
-Here the Admin needs to provide the [cdk-node configuration file](needs a reference to the configuration doc) and a genesis file of the desired chain.
+Here the Admin needs to provide the CDK-node configuration file and a genesis file of the desired chain.
 
 Usage: `cdk --config <CONFIG> --chain <CHAIN> <COMMAND>`
 
@@ -52,7 +52,7 @@ Options:
 
 Chain administrators can run a cdk-erigon RPC node that syncs to an existing chain with default parameters.
 
-This subcommand is intended for quickly spin-up of an RPC node or to test existing chains with default configuration values. In order fine tune and to access all configuration values, [check the full cdk-erigon documentation](reference to erigon configuration docs).
+This subcommand is intended for quickly spin-up of an RPC node or to test existing chains with default configuration values. In order fine tune and to access all configuration values, check the [full cdk-erigon documentation](../../cdk/getting-started/cdk-erigon/index.md) reference to erigon configuration docs.
 
 Usage: `cdk --config <CONFIG> --chain <CHAIN> erigon`
 
