@@ -20,7 +20,7 @@ The following diagram depicts the CDK FEP stack component layout and details som
 
 The following diagram is a sequential depiction of the user data flow for the CDK FEP stack in validium mode using a mock prover and having an AggLayer connection.
 
-![High level view of CDK user data flow](../../img/cdk/user-data-flow.png)
+![High level view of CDK user data flow](../../img/cdk/cdk-user-data-flow.png)
 
 #### Sequential interactions
 
@@ -36,7 +36,36 @@ The following diagram is a sequential depiction of the user data flow for the CD
 10. The aggregator submits the final proof to the AggLayer.
 11. The AggLayer submits the final proof to the L1 smart contract domain.
 
-![Sequence diagram of user data flow](../../img/cdk/user-data-flow-sequence.png)
+```mermaid
+sequenceDiagram
+    participant User
+    participant ErigonRPC as CDK Erigon RPC Node
+    participant Sequencer as CDK Erigon Sequencer Node
+    participant DataStreamer as Data Streamer
+    participant SeqSender as Sequence Sender
+    participant Aggregator
+    participant AggLayer
+    participant DACNodes as DAC Nodes
+    participant Prover
+    participant L1 as L1 Smart Contracts
+
+    User->>ErigonRPC: Send transaction
+    ErigonRPC->>Sequencer: Proxy transaction data
+    Sequencer->>Sequencer: Sequence transaction batches
+    Sequencer->>DataStreamer: Put batches into Data Streamer
+    DataStreamer->>SeqSender: Stream data into Sequence Sender
+    DataStreamer->>Aggregator: Stream data for Rollup & Validium mode
+    DataStreamer->>AggLayer: Stream data for Rollup & Validium mode
+    alt Validium Mode
+        SeqSender->>DACNodes: Persist transaction data
+    end
+    SeqSender->>L1: Sequence batches into L1 Smart Contracts (both modes)
+    Aggregator->>Prover: Send batches to Prover (both modes)
+    Prover->>Aggregator: Return proofs (both modes)
+    Aggregator->>Aggregator: Batch the proofs
+    Aggregator->>AggLayer: Submit final proof
+    AggLayer->>L1: Submit final proof to L1 Smart Contract Domain
+```
 
 !!! tip
     Detailed AggLayer flows will be published soon.
