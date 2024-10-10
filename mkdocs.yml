@@ -54,9 +54,11 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Releases:
-        - Version compatibility matrix: cdk/version-matrix.md
+        - Version compatibility matrix: cdk/releases/version-matrix.md
+        - Stack components: cdk/releases/stack-components.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
+        - CLI tool: cdk/getting-started/cdk-cli-tool.md
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - L2 architecture overview: cdk/concepts/architecture.md
@@ -73,11 +75,12 @@ nav:
           - Fork id 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
           - General guide for partners: cdk/how-to/migrate/fork.md
         - Create custom native token: cdk/how-to/use-native-token.md
-        - Integrate a DAC: cdk/how-to/integrate-da.md
+        - Integrate DA Layer: cdk/how-to/integrate-da.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Connect to CDK testnets: cdk/how-to/connect-testnet.md
       - Architecture:
+        - High level views: cdk/architecture/high-level-views.md
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
         - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
