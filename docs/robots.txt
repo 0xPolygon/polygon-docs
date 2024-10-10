@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /docs/
+Disallow: /tutorials/
+Disallow: /developer/
+Disallow: /core/
+Disallow: /validator/
 
 Sitemap: https://docs.polygon.technology/sitemap.xml
