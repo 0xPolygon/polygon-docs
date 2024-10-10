@@ -3,8 +3,6 @@ name: Hosted PR and Dev/Prod Deployment
 on:
   pull_request:
     types: [opened, reopened, synchronize]
-    branches:
-      - hosted/*
   push:
     branches:
       - dev
@@ -22,7 +20,7 @@ on:
 jobs:
   deploy:
     if: |
-      (github.event_name == 'pull_request' && startsWith(github.base_ref, 'hosted/')) || 
+      (github.event_name == 'pull_request' && startsWith(github.head_ref, 'hosted/')) || 
       (github.event_name == 'push' && github.ref == 'refs/heads/dev') || 
       (github.event_name == 'push' && github.ref == 'refs/heads/main') || 
       (github.event_name == 'workflow_dispatch' && inputs.environment == 'prod')
