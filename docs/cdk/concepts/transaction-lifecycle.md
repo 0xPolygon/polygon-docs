@@ -1,7 +1,6 @@
 # Transaction lifecycle
 
-Transactions on  CDK-built chains go through a series of steps to eventually reach [finality](./transaction-finality.md) on Ethereum.
-Specifically, they go through the following steps:
+Transactions on CDK-built chains go through a series of steps to eventually reach [finality](./transaction-finality.md) on Ethereum. Specifically, they go through the following steps:
 
 1. Submitted: The transaction is submitted to the L2.
 2. Executed: The transaction is executed on the L2 by the sequencer.
@@ -11,7 +10,7 @@ Specifically, they go through the following steps:
 
 ## Submitted
 
-Similar to Ethereum, users submit transactions to a &ldquo;pool&rdquo; of pending transactions on the L2. The transaction is submitted using the same interface as on Ethereum, via [JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) which is implemented by wallets such as MetaMask and developer libraries such as Ethers.js.
+Similar to Ethereum, users submit transactions to a pool of pending transactions on the L2. The transaction is submitted using the same interface as on Ethereum, via [JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) which is implemented by wallets such as MetaMask and developer libraries such as Ethers.js.
 
 ![User submitting transactions to L2](../../img/cdk/user-to-pending-pool.png)
 
@@ -41,10 +40,10 @@ Depending on the data availability design choices of the L2, if the L2 is a [rol
 
 ## Aggregated
 
-The final step of the transaction lifecycle is to generate a ZK-proof that proves the batch of transactions is valid. Batches of transactions are read by the [aggregator](./architecture.md#aggregator) which utilizes a [prover](./architecture.md#prover) to generate a ZK-proof that is posted back to Ethereum.
+The final step of the transaction lifecycle is to generate a ZK-proof that proves the batch of transactions is valid. Batches of transactions are read by the [aggregator](./architecture.md#aggregator-and-prover) which utilizes a [prover](./architecture.md#aggregator-and-prover) to generate a ZK-proof that is posted back to Ethereum.
 
 ![Aggregator posting ZK-proof](../../img/cdk/aggregate-batches.png)
 
 ## Further reading
 
-- [zkEVM transaction lifecycle documentation](https://docs.polygon.technology/zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction/)
+- [zkEVM transaction lifecycle documentation](../../zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md)

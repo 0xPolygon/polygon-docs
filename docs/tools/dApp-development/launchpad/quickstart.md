@@ -53,15 +53,15 @@ There are mandatory environment variables in both the `frontend` and `smart-cont
 
 3. Open the `.env` file and add the `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` to the file. 
 
-    !!! info "How to get the WalletConnect project id"
+    !!! info "How to get the WalletConnect project ID"
         You can get the variable by creating an application on [WalletConnect](https://cloud.walletconnect.com/). 
         
         1. Create an account and sign in.
         2. Select **Create a new project**.
-        3. Give it a name and select **App**. 
-        4. The URL can be blank. 
-        5. Click the **Create** button underneath the project box.
-        6. Copy the project id and paste it into the frontend `.env` file.
+        3. Give it a name and select **Continue**. You can leave the URL empty for now.
+        4. Select **AppKit** and continue.
+        5. Select **Next.js** and then select the **Create** button the bottom right of the pop-up window.
+        6. This brings up the dashboard. Copy the project ID form the sidebar on the left and paste it into the frontend `.env` file.
 
 4. Navigate to the smart-contracts directory and copy the example file.
 
@@ -107,7 +107,7 @@ The chain name options are in this section of the help output:
 -n, --fork-network-name [NAME]        Name of the network to fork; optional. 
                                         By default, it starts a new
                                         chain from genesis block. (choices: "ethereum", "goerli",
-                                        "polygonPos", "polygonMumbai", "polygonZkevm", "polygonZkevmTestnet")
+                                        "polygonPos", "polygonAmoy", "polygonZkevm", "polygonZkevmTestnet")
 ```
 
 To fork Polygon zkEVM, for example, run the following command:

@@ -8,66 +8,52 @@ comments: true
 - Install Heimdall and Bor packages on the Full Node machine.
 - Configure the Full node.
 - Start the Full node.
-- Check node health with the community.
 
-!!!note
-    You have to follow the exact outlined sequence of actions, otherwise you will run into issues.
+!!! warning
+    
+    It is essential to follow the outlined sequence of actions precisely, as any deviation may lead to potential issues.
 
 
 ## Install packages
 
-#### Prerequisites
+### Prerequisites
 
 - One machine is needed.
 - Bash is installed on the machine.
 
-#### Heimdall
+### Heimdall
 
 - Install the default latest version of sentry for Mainnet:
 
     ```shell
-    curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash
+    curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <version> <network> <node_type> 
     ```
 
     or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions can be found on
     [Heimdall GitHub repository](https://github.com/maticnetwork/heimdall/releases).
 
     ```shell
-    curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <version> <network> <node_type>
     # Example:
-    # curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- v1.0.3 mainnet sentry
+    # curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- v1.0.7 mainnet sentry
     ```
 
-#### Bor
+### Bor
 
 - Install the default latest version of sentry for Mainnet:
 
     ```shell
-    curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash
+    curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <version> <network> <node_type> 
     ```
 
     or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions could be found on
     [Bor Github repository](https://github.com/maticnetwork/bor/releases).
 
     ```shell
-    curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- <version> <network> <node_type>
-
     # Example:
-    # curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- v1.1.0
-    
-    
-    mainnet sentry
+    # curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- v1.3.7 mainnet sentry
     ```
 
-
 ## Configuration
-
-In this section, we will go through steps to initialize and customize configurations nodes.
-
-!!! warning
-    
-    Bor and Heimdall 0.3.0 use standardized paths for configuration files and chain data. If you have existing config files and chain data on your node, please skip the [Configure Heimdall](#configure-heimdall) section below and jump directly to **[Migration](#upgrade-from-02x-to-03x) section** to learn about migrating configs and data to standardized file locations.
-
 
 ### Configure Heimdall
 
@@ -94,17 +80,16 @@ sudo -u heimdall heimdalld init --chain=amoy --home /var/lib/heimdall
 
     Make sure you keep the proper formatting when you make the changes above.
 
-### Configure service files for bor and heimdall
+### Configure service files for Bor and Heimdall
 
-After successfully installing Bor and Heimdall through [packages](#install-packages), their service file could be found under `/lib/systemd/system`, and Bor's config
-file could be found under `/var/lib/bor/config.toml`.
+After successfully installing Bor and Heimdall through [packages](#install-packages), their service file could be found under `/lib/systemd/system`, and Bor's config file could be found under `/var/lib/bor/config.toml`.
 You will need to check and modify these files accordingly.
 
 - Make sure the chain is set correctly in `/lib/systemd/system/heimdalld.service` file. Open the file with following command `sudo vi /lib/systemd/system/heimdalld.service`
 
     - In the service file, set `--chain` to `mainnet` or `amoy` accordingly
 
-  Save the changes in `/lib/systemd/system/heimdalld.service`.
+Save the changes in `/lib/systemd/system/heimdalld.service`.
 
 - Make sure the chain is set correctly in `/var/lib/bor/config.toml` file. Open the file with following command `sudo vi /var/lib/bor/config.toml`
 
@@ -112,7 +97,7 @@ You will need to check and modify these files accordingly.
 
     - To enable Archive mode you can optionally enable the following flags:
 
-      ```
+      ```js
       gcmode "archive"
 
       [jsonrpc]
@@ -122,7 +107,7 @@ You will need to check and modify these files accordingly.
           corsdomain = ["*"]
       ```
 
-  Save the changes in `/var/lib/bor/config.toml`.
+Save the changes in `/var/lib/bor/config.toml`.
 
 
 ## Start services
@@ -139,25 +124,27 @@ Start Heimdall, Heimdall rest server, and Heimdall bridge.
 sudo service heimdalld start
 ```
 
-You can also check Heimdall logs with command
+You can also check Heimdall logs with the following command:
 
 ```shell
 journalctl -u heimdalld.service -f
 ```
 
-Now you need to make sure that **Heimdall is synced** completely and only then Start Bor. If you start Bor without Heimdall syncing completely, you will run into issues frequently.
+!!! warning
+    At this point, please make sure that *Heimdall is synced completely*, and only then start Bor. If you start Bor without Heimdall syncing completely, you will run into issues frequently.
 
-- To check if Heimdall is synced
-    - On the remote machine/VM, run `curl localhost:26657/status`
-    - In the output, `catching_up` value should be `false`
+To check if Heimdall is synced:
 
-Now once Heimdall is synced, run
+- On the remote machine/VM, run `curl localhost:26657/status`
+- In the output, `catching_up` value should be `false`
+
+Now, once Heimdall is synced, run:
 
 ```shell
 sudo service bor start
 ```
 
-You can check Bor logs via command
+You can check Bor logs using the following command:
 
 ```shell
 journalctl -u bor.service -f

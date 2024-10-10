@@ -8,9 +8,9 @@ Throughout the [transaction lifecycle](./transaction-lifecycle.md), transactions
 
 3. Consolidated: The transaction has been [aggregated](./transaction-lifecycle.md#aggregated), meaning a ZK-proof has been generated, posted, and verified on Ethereum to prove the validity of the transaction. The transaction is now considered final at the L1 level, enabling the user to withdraw their funds from the L2 chain back to Ethereum.
 
-![Transaction Finality](../../img/cdk/transaction-finality.png)
+![Transaction finality](../../img/cdk/transaction-finality.png)
 
 ## Further reading
 
-- [zkEVM state management](https://docs.polygon.technology/zkEVM/architecture/protocol/state-management/)
-- [zkEVM transaction lifecycle](https://docs.polygon.technology/zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction/)
+- [zkEVM state management](../../zkEVM/architecture/protocol/state-management.md).
+- [zkEVM transaction lifecycle](../../zkEVM/architecture/protocol/transaction-life-cycle/submit-transaction.md).

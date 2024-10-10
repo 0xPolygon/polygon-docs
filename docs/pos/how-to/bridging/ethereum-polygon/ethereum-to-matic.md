@@ -2,6 +2,10 @@
 comments: true
 ---
 
+!!! warning "Work in progress!"
+
+    This doc is currently undergoing revision, and the instructions provided may not be up to date. Stay tuned for updates!
+
 The mechanism to natively read Ethereum data from Polygon EVM chain is that of ‘State Sync’. In other words, this mechanism enables transfer of arbitrary data from Ethereum chain to Polygon chain. The procedure that makes it possible is: Validators on the Heimdall layer are listening for a particular event — `StateSynced` from a *sender* contract, as soon as the event is picked, the `data` that was passed in the event is written on the *receiver* contract. Read more [here](../../../architecture/bor/state-sync.md).
 
 The sender and receiver contracts are required to be mapped on Ethereum — [StateSender.sol](https://github.com/maticnetwork/contracts/blob/release-betaV2/contracts/root/stateSyncer/StateSender.sol) needs to be aware of each sender and receiver.
@@ -151,7 +155,7 @@ let receiver = new matic.eth.Contract(JSON.parse(receiverABI), receiverAddress)
 
 We're using `@maticnetwork/meta` package for the RPCs, the package isn't a requirement to run the script.
 
-`matic` and `main` objects refer to the web3 object initialized with Polygon's and Ropsten's RPC respectively.
+`matic` and `main` objects refer to the web3 object initialized with Polygon Amoy and Sepolia network's respective RPC URLs.
 
 `sender` and `receiver` objects refer to the contract objects of `Sender.sol` and `Receiver.sol` that we deployed in Step 1 and 2.
 

@@ -2,7 +2,7 @@
 comments: true
 ---
 
-This deployment guide walks you through starting and running a full node through various methods. For the system requirements, see the [minimum technical requirements](../validator/validator-system-requirements.md) guide.
+This deployment guide walks you through starting and running a full node through various methods. For the system requirements, see the [minimum technical requirements](../prerequisites.md) guide.
 
 !!! tip "Snapshots"
     
@@ -17,7 +17,7 @@ This deployment guide walks you through starting and running a full node through
 
 !!! warning
     
-    It's crucial to follow the outlined sequence of actions precisely; deviating from it may result in encountering issues.
+    It is essential to follow the outlined sequence of actions precisely, as any deviation may lead to potential issues.
 
 - Prepare the machine.
 - Install Heimdall and Bor binaries on the full node machine.
@@ -29,7 +29,7 @@ This deployment guide walks you through starting and running a full node through
 
 ### Install `build-essential`
 
-This is **required** for your full node. In order to install, run the below command:
+This is *required* for your full node. In order to install, run the below command:
 
 ```bash
 sudo apt-get update
@@ -44,22 +44,7 @@ Both binaries must be installed and run in the correct order to function properl
 
 ### Heimdall
 
-Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/maticnetwork/heimdall/releases). Note that the latest version, [Heimdall v1.0.5](https://github.com/maticnetwork/heimdall/releases/tag/v1.0.5), contains enhancements such as:
-
-1. Restricting data size in state sync txs to:
-    * *30Kb* when represented in `bytes`
-    * *60Kb* when represented as `string`
-
-2. Increasing the `delay time` between the contract events of different validators to ensure that the mempool doesn't get filled very quickly in case of a burst of events which can hamper the progress of the chain.
-
-The following example shows how the data size is restricted:
-
-```
-Data - "abcd1234"
-Length in string format - 8
-Hex Byte representation - [171 205 18 52]
-Length in byte format - 4
-```
+Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/maticnetwork/heimdall/releases).
 
 To install *Heimdall*, run the following commands:
 
@@ -73,7 +58,7 @@ You can run the above command with following options:
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
-That will install the `heimdalld` and `heimdallcli` binaries. Verify the installation by checking the Heimdall version on your machine:
+This will install the `heimdalld` and `heimdallcli` binaries. Verify the installation by checking the Heimdall version on your machine:
 
 ```bash
 heimdalld version --long
@@ -88,9 +73,9 @@ chown heimdall /var/lib/heimdall
 
 ### Configure Heimdall seeds (Amoy)
 
-The Heimdall seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
+The Heimdall and Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
 
-### Bor install
+### Bor
 
 Install the latest version of Bor, based on valid v1.0+ [released version](https://github.com/maticnetwork/bor/releases).
 
@@ -119,7 +104,7 @@ chown bor /var/lib/bor
 
 ### Configure Bor seeds (Amoy)
 
-The Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
+The Heimdall and Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
 
 ### Update service config user permission
 
@@ -160,20 +145,8 @@ Logs can be managed by the `journalctl` linux tool. Here is a tutorial for advan
 journalctl -u heimdalld.service -f
 ```
 
-### Check Heimdall REST-server logs
-
-```bash
-journalctl -u heimdalld-rest-server.service -f
-```
-
-### Check Bor REST-server logs
+### Check Bor node logs
 
 ```bash
 journalctl -u bor.service -f
 ```
-
-## Ports and firewall setup
-
-Open ports `22`, `26656` and `30303` to world (0.0.0.0/0) on sentry node firewall.
-
-You can use VPN to restrict access for port `22` as per your requirement and security guidelines.

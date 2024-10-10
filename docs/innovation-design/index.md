@@ -32,11 +32,19 @@ hide:
 </div>
 <div class="grid-container">
    <div class="grid-item">
-      <a href="../cdk/agglayer/overview">
+      <a href="../agglayer/overview">
          <div class="product-list-item-header">
             <div class="feature-card-heading">AggLayer documentation</div>
          </div>
          <p class="feature-paragraph">AggLayer solves blockchain fragmentation by enabling sovereign chains to securely share liquidity, users, and state.</p>
+      </a>
+   </div>
+    <div class="grid-item">
+      <a href="./polygon-protocols">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">The future of Polygon network</div>
+         </div>
+         <p class="feature-paragraph">Upcoming updates and iterations across Polygon network</p>
       </a>
    </div>
    <div class="grid-item">
@@ -61,14 +69,6 @@ hide:
             <div class="feature-card-heading">Plonky 2 & 3</div>
          </div>
          <p class="feature-paragraph">State-of-the-art cryptography libraries for developers.</p>
-      </a>
-   </div>
-    <div class="grid-item">
-      <a href="./polygon-protocols">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">The future of Polygon network</div>
-         </div>
-         <p class="feature-paragraph">Upcoming updates and iterations across Polygon network</p>
       </a>
    </div>
    <div class="grid-item">

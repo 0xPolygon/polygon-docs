@@ -100,7 +100,7 @@ hide:
 							</div>
 							<p class="feature-paragraph">Deep dives only. Further your understanding of Polygon scaling technology.</p></br>
 						</div>
-						<a href="cdk/agglayer/overview" class="flex-card-item w-inline-block">
+						<a href="agglayer/overview" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
 								<div class="feature-card-heading">AggLayer</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
@@ -206,7 +206,7 @@ hide:
 						<p class="home-section-subtext">Are you ready to start building?</p>
 					</div>
 					<div class="flexbox">
-						<a href="cdk/build/quickstart/deploy-stack" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+						<a href="cdk/getting-started/local-deployment/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
 								<div class="feature-content-name">Polygon CDK: Deploy a local test rollup</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
@@ -234,7 +234,7 @@ hide:
 						</a>
 					</div>
 					<div class="flexbox items-4">
-						<a href="pos/how-to/bridging/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+						<a href="/pos/how-to/bridging/ethereum-polygon/portal-ui/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
 								<div class="feature-content-name">Polygon PoS: Bridge tokens and send interlayer messages</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">

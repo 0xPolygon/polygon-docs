@@ -8,7 +8,7 @@
 #
 # Paste the markdown files into the relevant folder.
 # Run the script from the root `docs` and add the path to list_files(path_parameter).
-# Paste the resulting output directly into the `mkdocs.yaml` file at the relevant spot.
+# Paste the resulting output directly into the `mkdocs.yaml` file at the relevant spot. 
 # --------------------------------------------------------------------------------------------------------------
 
 import os

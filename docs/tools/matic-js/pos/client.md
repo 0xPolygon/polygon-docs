@@ -3,7 +3,7 @@ comments: true
 ---
 
 !!! important
-    Make sure you have followed the [installation](../installation.md) and [get started](../get-started.md) documentation.
+    Make sure you have set up Matic.js by following the [get started](../get-started.md) guide.
 
 The `POSClient` interacts with the POS bridge.
 
@@ -18,7 +18,7 @@ use(Web3ClientPlugin);
 const posClient = new POSClient();
 await posClient.init({
     network: 'testnet',
-    version: 'mumbai',
+    version: 'amoy',
     parent: {
       provider: new HDWalletProvider(privateKey, mainRPC),
       defaultConfig: {
@@ -39,13 +39,13 @@ After the `POSClient` is initiated, we can work with token types, such as `erc20
 
 ### ERC20
 
-**Create erc20 child token**
+#### Create ERC20 child token
 
 ```js
 const erc20ChildToken = posClient.erc20(<token address>);
 ```
 
-**Create erc20 parent token**
+#### Create ERC20 parent token
 
 ```js
 const erc20ParentToken = posClient.erc20(<token address>, true);

@@ -4,7 +4,7 @@ hide:
 - toc
 ---
 
-## CDK
+## CDK component versions/releases
 
 The table below shows the version compatibility for CDK releases and related components. 
 
@@ -16,27 +16,30 @@ The table below shows the version compatibility for CDK releases and related com
     <th>Equivalent zkEVM node</th>
     <th>CDK validium node</th>
     <th>CDK data<br>availability</th>
-    <th>ZK-EVM prover</th>
+    <th>zkEVM rollup node</th>
+    <th>zkEVM prover</th>
     <th>Contracts</th>
     <th>Bridge</th>
   </tr>
 </thead>
 <tbody>
+<!--
   <tr>
     <td>Rollup</td>
     <td colspan="7">Follow <a href="https://github.com/0xPolygonHermez#testnetmainnet-versions"> zkEVM </a></br><i>Disclaimer - These versions are intended for permissionless nodes</i> </td>
-  </tr>
+  </tr>-->
   <tr>
     <td>CDK Elderberry 2 Release </td>
     <td>9</td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.4">v0.6.4 Elderberry 2</a></td>
-    <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-validium-node/0.6.4-cdk.6/images/sha256-c0bcc13f32bb89e66917a10df049f6a6d6a4e2736b3e73b9c27eda85351ce723?context=explore">0.6.4+cdk.6</a> </td>
+    <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-validium-node/0.6.7-cdk.1/images/sha256-dafb15f9355331b4b7174f47ac416b275915ff24a9ed89c211c7c15c8adfc6b8?context=explore">0.6.7+cdk.1</a> </td>
     <td><a href="https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.7/images/sha256-17590789a831259d7a07d8a042ea87e381c5708dec3a7daef6f3f782f50b2c00?context=explore">v0.0.7</a></td>
+    <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.7">v0.6.7 </a></td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v6.0.0">v6.0.0</a></td>
     <td> <a href="https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v6.0.0-rc.1-fork.9">v6.0.0</a></td>
     <td><a href="https://hub.docker.com/layers/hermeznetwork/zkevm-bridge-service/v0.4.2-cdk.1/images/sha256-f22ad8c9ad058c7a97a3d38f53cac5b1053858916523b96211d33ae40a9b45f8?context=explore">v0.4.2-cdk.1</a></td>
   </tr>
-    <td>CDK Elderberry 1 Release </td>
+  <!--  <td>CDK Elderberry 1 Release </td>
     <td>8</td>
     <td><a href="https://github.com/0xPolygonHermez/zkevm-node/releases/tag/v0.6.2">v0.6.2 Elderberry</a></td>
     <td><a href="https://github.com/0xPolygon/cdk-validium-node/releases/tag/v0.6.2%2Bcdk4">0.6.2+cdk.4</a> </td>
@@ -64,7 +67,7 @@ The table below shows the version compatibility for CDK releases and related com
     <td>zkevm-prover<br>@3.0.2<br>Config files version 3.0.0-RC3-fork.6</td>
     <td><a href="https://github.com/0xPolygon/cdk-validium-contracts/releases/tag/v0.0.2">v0.0.2</a></td>
     <td>v0.3.2-RC1</td> 
-  </tr>
+  </tr>-->
 </tbody>
 </table>
 
@@ -72,6 +75,7 @@ The table below shows the version compatibility for CDK releases and related com
 
 - Anyone on earlier versions, we recommend going straight to fork ID 9.
 
+<!--
 ## zkEVM
 
 The table below shows the version compatibility for Polygon zkEVM releases.
@@ -123,3 +127,5 @@ The table below shows the version compatibility for Polygon zkEVM releases.
   </tr>
 </tbody>
 </table>
+-->
+

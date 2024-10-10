@@ -6,27 +6,23 @@ This guide provides an index of network details for the Polygon Amoy testnet and
 
 ## Network details
 
-!!! warning "Mumbai testnet deprecated"
-
-    The Goerli-anchored Mumbai testnet is now deprecated. Please use the Sepolia-anchored Amoy testnet for all future testing and dApp development activities on Polygon PoS.
-
 ### Amoy
 
-The Amoy testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
+The Amoy testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these test tokens hold no real-world value.
 
 | Properties       | Network details                                                                                    |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
 | Network name     | **Amoy**                                                                                           |
 | Parent chain     | **Sepolia**                                                                                        |
 | Chain ID         | `80002`                                                                                            |
-| Gas token        | MATIC                                                                                              |
+| Gas token        | POL                                                                                              |
 | Gas station      | [AMOY gas station](https://gasstation-testnet.polygon.technology/amoy)                             |
 | RPC endpoint     | [https://rpc-amoy.polygon.technology/](https://rpc-amoy.polygon.technology/)                       |
 | Node endpoint    | [wss://rpc-amoy.polygon.technology/](wss://rpc-amoy.polygon.technology/)                           |
 | Heimdall API     | [https://heimdall-api-amoy.polygon.technology](https://heimdall-api-amoy.polygon.technology)       |
 | Block Explorer   | [https://amoy.polygonscan.com/](https://amoy.polygonscan.com/)                                     |
 
-!!! note "Additional information"
+!!! info "Additional information"
 
     For more details, refer to this [**JSON data**](https://static.polygon.technology/network/testnet/amoy/index.json).
 
@@ -40,7 +36,7 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 | Network name     | **Polygon**                                                                                        |
 | Parent chain     | **Ethereum**                                                                                       |
 | Chain ID         | `137`                                                                                              |
-| Gas token        | MATIC                                                                                              |
+| Gas token        | POL                                                                                              |
 | Gas station      | [PolygonScan Gas Tracker](https://polygonscan.com/gastracker)                                      |
 | RPC endpoint     | [https://polygon-rpc.com/](https://polygon-rpc.com/)                                               |
 | Node endpoint    | [wss://rpc-mainnet.matic.network](wss://rpc-mainnet.matic.network)                                 |
@@ -48,30 +44,9 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 | Block explorer   | [https://polygonscan.com/](https://polygonscan.com/)                                               |
 
 
-!!! note "Additional information"
+!!! info "Additional information"
     
     For more details, refer to the [JSON data](https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json).
-
-
-### Mumbai (deprecated)
-
-The Mumbai testnet serves as a replica of the Polygon mainnet and is primarily used for testing. Obtain testnet tokens from the [faucet](https://faucet.polygon.technology/). Note that these tokens hold no value and differ from MATIC.
-
-| Properties       | Network details                                                                                    |
-| ---------------- | -------------------------------------------------------------------------------------------------- |
-| Network name     | **Mumbai**                                                                                         |
-| Parent chain     | **[Goërli](https://goerli.net/)**                                                                  |
-| Chain ID         | `80001`                                                                                            |
-| Gas token        | MATIC                                                                                              |
-| Gas station      | [Mumbai gas station](https://gasstation-testnet.polygon.technology/v2)                             |
-| RPC endpoint     | [https://rpc-mumbai.polygon.technology](https://rpc-mumbai.polygon.technology)                     |
-| Node endpoint    | [wss://rpc-mumbai.matic.today](wss://rpc-mumbai.matic.today)                                       |
-| Heimdall API     | [https://heimdall-api-testnet.polygon.technology](https://heimdall-api-testnet.polygon.technology) |
-| Block Explorer   | [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)                                 |
-
-!!! note "Additional information"
-
-    For more details, refer to this [JSON data](https://static.polygon.technology/network/testnet/mumbai/index.json).
 
 ## RPC API methods
 
@@ -84,7 +59,7 @@ Developers can interact with on-chain data and execute various types of transact
     To explore API requests without any setup, fix failing requests, or discover new methods on the Polygon network, try the [**Composer App**](https://composer.alchemyapi.io).
 
 
-### Infrastructure providers
+## Infrastructure providers
 
 Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC URLs, consider the following providers:
 
@@ -117,5 +92,6 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 - [4EVERLAND](https://docs.4everland.org/rpc-beta/polygon)
 - [SubQuery](https://subquery.network/rpc)
 - [Validation Cloud](https://app.validationcloud.io)
+- [dRPC](https://drpc.org/chainlist/polygon)
 
 For a complete list of public endpoints, visit [Alchemy's Chain Connect](https://www.alchemy.com/chain-connect/chain/polygon-pos) and [Chainlist](https://chainlist.org/?search=Polygon+Mainnet).

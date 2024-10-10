@@ -8,4 +8,4 @@ By default, gas fees on the L2 are determined by a combination of several factor
 
 ## Further reading
 
-- [zkEVM gas fees documentation](https://docs.polygon.technology/zkEVM/architecture/effective-gas/)
+- [zkEVM gas fees documentation](../../zkEVM/architecture/effective-gas/index.md).

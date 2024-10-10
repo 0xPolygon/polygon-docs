@@ -2,9 +2,16 @@
 comments: true
 ---
 
-Validators are the key actor in maintaining the Polygon PoS network. Validators run a full node, secure the network by staking MATIC to produce blocks, validate and participate in PoS consensus.
+!!! info "Transitioning to POL"
 
-Validators play a crucial role in maintaining the integrity and security of the Polygon PoS network. By running a full node, validators contribute to the network's infrastructure and help facilitate transactions. They secure the network by staking MATIC tokens, which enables them to produce blocks and participate in network consensus (PoS). This contributes to greater network security and enhances network decentralization making it more resilient against potential attacks.
+    Polygon network is transitioning from MATIC to POL, which will serve as the gas and staking token on Polygon PoS. Use the links below to learn more:
+
+    - [Migrate from MATIC to POL](../get-started/matic-to-pol.md)
+    - [POL token specs](../concepts/tokens/pol.md)
+
+Validators are the key actor in maintaining the Polygon PoS network. Validators run a full node, secure the network by staking POL to produce blocks, validate and participate in PoS consensus.
+
+Validators play a crucial role in maintaining the integrity and security of the Polygon PoS network. By running a full node, validators contribute to the network's infrastructure and help facilitate transactions. They secure the network by staking POL tokens, which enables them to produce blocks and participate in network consensus (PoS). This contributes to greater network security and enhances network decentralization making it more resilient against potential attacks.
 
 In return for their efforts, validators are rewarded with incentives, encouraging active participation and commitment to the network's stability and growth.
 
@@ -29,7 +36,7 @@ To be a validator on the Polygon PoS network, you must do the following:
 
 * Run a sentry node: A separate machine running a Heimdall node and a Bor node. A sentry node is open to all nodes on the Polygon PoS network.
 * Run a validator node: A separate machine running a Heimdall node and a Bor node. A validator node is only open to its sentry node and closed to the rest of the network.
-* Stake the MATIC tokens in the staking contracts deployed on the Ethereum mainnet.
+* Stake the POL tokens in the staking contracts deployed on the Ethereum mainnet.
 
 ## Components
 
@@ -68,11 +75,11 @@ Bor is the block producing node and layer for the Polygon PoS network. It is bas
 
     Keep up with the latest node and validator updates from the Polygon team and the community by keeping an eye on the [announcements posed to Polygon forums](https://forum.polygon.technology/c/announcement/6).
 
-A blockchain validator is someone who is responsible for validating transactions within a blockchain. On the Polygon PoS network, any participant can be qualified to become a Polygon's validator by running a validator node (sentry + validator) to earn rewards and collect transaction fees. To ensure the good participation by validators, they lock up at least 1 MATIC token as a stake in the ecosystem.
+A blockchain validator is someone who is responsible for validating transactions within a blockchain. On the Polygon PoS network, any participant can be qualified to become a Polygon's validator by running a validator node (sentry + validator) to earn rewards and collect transaction fees. To ensure the good participation by validators, they lock up at least 1 POL token as a stake in the ecosystem.
 
-!!! info "PIP4 raises the minimum staking amount"
+!!! info "PIP4 raised the minimum staking amount"
 
-    After the implementation of the [PIP4 governance proposal](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956) at the contract level, the minimum staking amount will increase to *10,000 MATIC*.
+    After the implementation of the [PIP4 governance proposal](https://forum.polygon.technology/t/pip-4-validator-performance-management/9956) at the contract level, the minimum staking amount was increased to *10,000 POL*.
 
 Any validator on the Polygon PoS network has the following responsibilities:
 
@@ -159,7 +166,7 @@ All validators must be open for delegation from the community. Each validator ha
 
 It is the moral duty of the validators to communicate the commission rates and the commission rate changes to the community. The preferred platforms to communicate the commission rates are:
 
-* [Discord](https://discord.com/invite/0xPolygon)
+* [Discord](https://discord.com/invite/0xPolygonCommunity)
 * [Forum](https://forum.polygon.technology/)
 
 ### Communication
@@ -168,7 +175,7 @@ It is the moral duty of the validators to communicate the commission rates and t
 
 Communicating issues as early as possible ensures that the community and the Polygon team can rectify the problems as soon as possible. The preferred platforms to communicate the commission rates are:
 
-* [Discord](https://discord.com/invite/0xPolygon)
+* [Discord](https://discord.com/invite/0xPolygonCommunity)
 * [Forum](https://forum.polygon.technology/)
 * [GitHub](https://github.com/maticnetwork)
 
@@ -184,14 +191,14 @@ The following step-by-step guides will take you through the process of running a
 
 * [Start and run the nodes with Ansible](../how-to/validator/validator-ansible.md).
 * [Start and run the nodes with binaries](../how-to/validator/validator-binaries.md).
-* [Stake as a validator](../how-to/operate-validator-node/validator-staking-operations.md).
+* [Stake as a validator](../how-to/operate-validator-node/next-steps.md#stake-tokens).
 
 ### Maintain your validator nodes
 
 * [Change the signer address](../how-to/operate-validator-node/change-signer-address.md).
-* [Change the commission](../how-to/operate-validator-node/validator-commission-operations.md).
+* [Change the commission](../how-to/operate-validator-node/next-steps.md#changing-your-commission-rate).
 
 ### Community assistance
 
-* [Discord](https://discord.com/invite/0xPolygon)
+* [Discord](https://discord.com/invite/0xPolygonCommunity)
 * [Forum](https://forum.polygon.technology/)

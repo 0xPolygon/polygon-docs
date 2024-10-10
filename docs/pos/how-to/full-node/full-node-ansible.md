@@ -2,7 +2,7 @@
 comments: true
 ---
 
-An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html) is used to configure and manage a full node. 
+An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html) can be used to configure and manage a full node. 
 
 ## Prerequisites
 
@@ -10,27 +10,9 @@ An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playboo
     - To install Ansible with Python 3.x, you can use pip. If you do not have pip on your machine,
       follow the steps outlined [here](https://pip.pypa.io/en/stable/). Run `pip3 install ansible` to install
       Ansible.
-- Check the [Polygon PoS Ansible repository](https://github.com/maticnetwork/node-ansible#requirements) for
-  requirements.
+- Check the [Polygon PoS Ansible repository](https://github.com/maticnetwork/node-ansible#requirements) for requirements.
 - You also need to ensure that Go is *not installed* in your environment. You will run into issues if you attempt to set up your full node through Ansible with Go installed as Ansible requires specific packages of Go.
 - You will also need to make sure that your VM / Machine does not have any previous setups for Polygon Validator or Heimdall or Bor. You will need to delete them as your setup will run into issues.
-
-!!! info "Heimdall source enhancements"
-
-    The latest Heimdall version, **[v1.0.3](https://github.com/maticnetwork/heimdall/releases/tag/v1.0.3)**, contains a few enhancements.
-    The delay time between the contract events of different validators **has been increased** to ensure that the mempool doesn't get filled quickly in case of a burst of events that could hamper the chain's progress.
-
-    Additionally, the data size **has been restricted in state sync txs to 30Kb (when represented in bytes) and 60Kb (when defined as string)**.
-
-    For example:
-
-    ```bash
-    Data - "abcd1234"
-    Length in string format - 8
-    Hex Byte representation - [171 205 18 52]
-    Length in byte format - 4
-    ```
-    
 
 ## Full node setup
 
@@ -97,10 +79,10 @@ An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playboo
     - On the remote machine/VM, run `curl localhost:26657/status`
     - In the output, `catching_up` value should be `false`
 
-- Once Heimdall is synced, run
+- Once Heimdall is synced, run:
     - `sudo service bor start`
 
-You have successfully set up a full node with Ansible.
+If you've reached this point, you have successfully set up a full node with Ansible.
 
 !!! note
     
@@ -120,14 +102,8 @@ Logs can be managed by the `journalctl` linux tool. Here is a tutorial for advan
 journalctl -u heimdalld.service -f
 ```
 
-### Check Bor REST-server logs
+### Check Bor node logs
 
 ```bash
 journalctl -u bor.service -f
 ```
-
-## Ports and firewall setup
-
-Open ports `22`, `26656` and `30303` to world (0.0.0.0/0) on sentry node firewall.
-
-You can use VPN to restrict access for port 22 as per your requirement and security guidelines.

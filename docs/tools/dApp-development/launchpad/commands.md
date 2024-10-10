@@ -37,7 +37,7 @@ The `dev` command starts
 
 | Option                               | Description                                                                                                                                                                                                    |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -n, --fork-network-name [NAME]       | Name of the network to fork; optional. By default, it starts a new chain from genesis block. (choices: "ethereum", "goerli", "polygonPos", "polygonMumbai", "polygonZkevm", "polygonZkevmTestnet")             |
+| -n, --fork-network-name [NAME]       | Name of the network to fork; optional. By default, it starts a new chain from genesis block. (choices: "ethereum", "goerli", "polygonPos", "polygonAmoy", "polygonZkevm", "polygonZkevmTestnet")             |
 | -b, --fork-block-num [number]        | Block number to fork at. By default, it's the latest block.                                                                                                                                                    |
 | -r, --reset-on-change                | Resets the entire local blockchain when any code is changed; for forked mode, it resets back to forked block number; NOT DEFAULT.                                                                              |
 | --only-smart-contracts               | Deploys only smart contracts (having started local test chain) and updates Smart contract configs for frontend; does not start frontend dev environment.                                                       |
@@ -66,7 +66,7 @@ dapp-launchpad deploy -n CHAIN_NAME
 
 |        Option         |        Description         |
 |:----------------------:|:-------------------------------------------------------|
-| -n, --network-name     | Name of the network to deploy smart contracts to. (choices: "ethereum", "goerli", "polygonPos", "polygonMumbai", "polygonZkevm", "polygonZkevmTestnet")               |
+| -n, --network-name     | Name of the network to deploy smart contracts to. (choices: "ethereum", "goerli", "polygonPos", "polygonAmoy", "polygonZkevm", "polygonZkevmTestnet")               |
 | --only-smart-contracts | Deploys only smart contracts and updates Smart contracts config for frontend.                                                                                         |
 | --only-frontend        | Deploys only frontend; smart contracts data is read from Smart contracts config which must pre-exist. To generate these manually, use generate smart-contracts-config |
 | -h, --help             | Display help for command                                                                                                                                              |
@@ -114,5 +114,5 @@ dapp-launchpad generate smart-contracts-config
 |          Option         |                         Description      |
 |:-----------------------:|:-----------------------------------------|
 | -e, --environment <ENV> | Environment where this config would be used (choices: "development", "production", default: "development")                                        |
-| -n, --network-name      | Name of the network to generate config for. (choices: "ethereum", "goerli", "polygonPos", "polygonMumbai", "polygonZkevm", "polygonZkevmTestnet") |
+| -n, --network-name      | Name of the network to generate config for. (choices: "ethereum", "goerli", "polygonPos", "polygonAmoy", "polygonZkevm", "polygonZkevmTestnet") |
 | -h, --help              | Display help for command                  |

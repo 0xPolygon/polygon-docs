@@ -1,0 +1,114 @@
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: false
+        type: string
+        default: "dev"
+      core_app:
+        required: false
+        type: string
+        description: "Core app name"
+        default: "polygon-docs"
+      region:
+        required: false
+        type: string
+        description: "AWS region for deployment"
+        default: "eu-west-1"
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Set APP_NAME
+        run: |
+          if [[ "${{ inputs.environment }}" == "prod" ]]; then
+            APP_NAME="${{ inputs.core_app }}"
+          else
+            APP_NAME="${{ inputs.core_app }}-${{ inputs.environment }}"
+          fi
+          echo "APP_NAME=$APP_NAME" >> $GITHUB_ENV
+          core_app_name=$(echo "$APP_NAME" | sed 's/^polygon-//')
+          echo "HOSTED_APP=$core_app_name" >> $GITHUB_ENV
+
+      - name: Print APP_NAME
+        run: echo "APP_NAME is $APP_NAME"
+
+      - name: Set AWS account number based on environment
+        run: |
+          if [[ "${{ inputs.environment }}" == "prod" ]]; then
+            echo "ACCOUNT_NUMBER=${{ secrets.PROD_ACCOUNT_NUMBER }}" >> $GITHUB_ENV
+          elif [[ "${{ inputs.environment }}" == "staging" ]]; then
+            echo "ACCOUNT_NUMBER=${{ secrets.STAGING_ACCOUNT_NUMBER }}" >> $GITHUB_ENV
+          else
+            echo "ACCOUNT_NUMBER=${{ secrets.DEV_ACCOUNT_NUMBER }}" >> $GITHUB_ENV
+          fi
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install pipenv
+        run: pip install pipenv
+
+      - name: Checkout Code Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Authenticate GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Build Site
+        run: |
+          python build_branches.py -env "${{ inputs.environment }}"
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ inputs.region }}
+          role-to-assume: arn:aws:iam::${{ env.ACCOUNT_NUMBER }}:role/${{ env.APP_NAME }}-GithubActionsRole
+          role-session-name: GithubActionsSession
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}-${{ github.run_number }}
+          ECR_REPOSITORY: ${{ env.APP_NAME }}-ecr
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile.review .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: ".github/assets/${{ env.APP_NAME }}-taskdef.json"
+          container-name: ${{ env.APP_NAME }}
+          image: ${{ steps.build-image.outputs.image }}
+
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: ${{ env.APP_NAME }}-ecs-service
+          cluster: frontend-${{ inputs.environment }}-ecs-cluster
+          wait-for-service-stability: true
+
+      - name: Cloudflare Cache Purge
+        uses: nathanvaughn/actions-cloudflare-purge@master
+        with:
+          cf_zone: ${{ secrets.CLOUDFLARE_ZONE }}
+          cf_auth: ${{ secrets.CLOUDFLARE_AUTH_KEY }}
+          hosts: ${{ env.HOSTED_APP }}.polygon.technology

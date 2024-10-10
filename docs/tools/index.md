@@ -39,9 +39,9 @@ hide:
    <div class="grid-item">
       <a href="./gas/matic-faucet">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Gas faucet</div>
+            <div class="feature-card-heading">Token faucets</div>
          </div>
-         <p class="feature-paragraph">The Polygon MATIC gas faucet and gas estimation tools.</p>
+         <p class="feature-paragraph">Different ways to fetch test POL and ETH on Polygon PoS and zkEVM network.</p>
       </a>
    </div>
    <div class="grid-item">

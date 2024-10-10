@@ -2,6 +2,10 @@
 comments: true
 ---
 
+!!! warning "Work in progress!"
+
+    This doc is currently undergoing revision, and the instructions provided may not be up to date. Stay tuned for updates!
+
 The mechanism for transferring data from Polygon PoS to Ethereum differs from the process of transferring data from Ethereum to Polygon PoS. Validators create *checkpoint transactions* on the Ethereum chain to facilitate this transfer. These checkpoints serve as periodic summaries of the PoS chain’s state, ensuring data integrity and consistency when moving data back to Ethereum. The flow of this process is briefly described below.
 
 1. A transaction is created on Polygon PoS. It is crucial to emit an event and ensure that the event logs include the data intended for transfer to Ethereum. This process is essential for tracking and verifying the data transfer, as the event logs serve as a reliable record that can be referenced on the Ethereum network.
@@ -68,7 +72,7 @@ contract Root {
 }
 ```
 
-Once the child and root contract is deployed on the Polygon and Ethereum chain respectively, these contracts have to be mapped using the PoS bridge. This mapping ensures that a connection is maintained between these two contracts across the chains. For doing this mapping,the Polygon team can be reached on [Discord](https://discord.com/invite/0xPolygon).
+Once the child and root contract is deployed on the Polygon and Ethereum chain respectively, these contracts have to be mapped using the PoS bridge. This mapping ensures that a connection is maintained between these two contracts across the chains. For doing this mapping,the Polygon team can be reached on [Discord](https://discord.com/invite/0xPolygonCommunity).
 
 One important thing to note is that in the root contract, there is a `onlyPredicate` modifier. It is recommended to use this modifier always because it ensures that only the predicate contract makes the state change on the root contract. The predicate contract is a special contract that triggers the root contract only when the transaction that happened on the Polygon PoS chain is verified by the `RootChainManager` on Ethereum chain. This ensures secure change of state on the root contract.
 
