@@ -57,7 +57,7 @@ Below is a breakdown of the technical differences between a zkEVM rollup and val
 | **Gas fees**          | High, because all transaction data is stored on Ethereum.                                                                                                                                                | Low, because only the hash of the transaction data is stored on Ethereum.                                                                                                                                                                                  |
 | **Proof generation**  | Uses Prover to generate proofs of batched transactions for validation.                                                                                                                                   | Uses Prover to generate proofs of batched transactions for validation.                                                                                                                                                                                     |
 | **Final settlement**  | Transaction batches and their corresponding proofs are added to the Ethereum state.                                                                                                                      | The hash of transaction data and its proof are added to the Ethereum state, referred to as the consolidated state.                                                                                                                                         |
-<sub><sup>\*</sup>JSON RPC, Pool DB, Sequencer, Etherman, Synchronizer, State DB, Aggregator, Prover</sub>
+<sub><sup>\*</sup>JSON RPC, Tx pool manager, Sequencer, Etherman, Synchronizer, State DB, Aggregator, Prover</sub>
 
 ## Further reading
 
