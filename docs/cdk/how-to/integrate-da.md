@@ -2,7 +2,7 @@
 comments: true
 ---
 
-This document shows you how to integrate a third-party data availability (DAC) solution into your CDK stack.
+This document shows you how to integrate a third-party data availability (DA) solution into your CDK stack.
 
 ## Prerequisites
 
@@ -15,22 +15,23 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 1. Clone [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts).
 
-2. `cd` into `zkevm-contracts` and checkout tag `v6.0.0-rc.1-fork.9`.
+2. `cd` into `zkevm-contracts` and checkout tag [`v8.0.0-rc.3-fork.12`](https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v8.0.0-rc.3-fork.12).
 
 3. Run `npm install` from the root.
 
 4. `cd` to the `contracts/v2/consensus/validium` directory. 
 
     !!! tip
-        - Until further notice, these contracts run on the [etrog release](https://polygon.technology/blog/polygon-zkevm-the-etrog-upgrade-is-live-on-mainnet).
+        - Until further notice, these contracts run on the [banana release](https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/banana).
 
-5. Create your custom contract in the same directory, and make sure it implements the [IDataAvailabilityProtocol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/contracts/v2/interfaces/IDataAvailabilityProtocol.sol) interface.
+5. Create your custom contract in the same directory, and make sure it implements the [IDataAvailabilityProtocol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/contracts/v2/interfaces/IDataAvailabilityProtocol.sol) interface.
+
 
     !!! tip
-        - Use the Polygon DAC implementation contract: [PolygonDataCommittee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/contracts/v2/consensus/validium/PolygonDataCommittee.sol) as a guide.
+        - Use the Polygon DAC implementation contract: [PolygonDataCommittee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/contracts/v2/consensus/validium/PolygonDataCommittee.sol) as a guide.
         - The contract supports custom smart contract implementation and, through this, DACs can add their custom on-chain verification logic.
 
-6. You can leave the `verifyMessage` function empty but make sure the `getProcotolName` function returns a unique name (such as Avail, Celestia, etc). The following example code comes from the [PolygonDataCommitee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/contracts/v2/consensus/validium/PolygonDataCommittee.sol)  implementation.
+6. You can leave the `verifyMessage` function empty but make sure the `getProcotolName` function returns a unique name (such as Avail, Celestia, etc). The following example code comes from the [PolygonDataCommitee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/contracts/v2/consensus/validium/PolygonDataCommittee.sol) implementation.
 
     ```solidity
     // Name of the data availability protocol
@@ -56,7 +57,7 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 !!! info "`PolygonValidiumEtrog.sol` solution"
 
-    The [Etrog DAC integration contract](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol) is still work-in-progress at the time of writing but there are some interesting things to note.
+    The [Etrog DAC integration contract](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol) is still work-in-progress at the time of writing but there are some interesting things to note.
 
     1. It implements the function [`verifyMessage` function](https://github.com/0xPolygonHermez/zkevm-contracts/blob/54f58c8b64806429bc4d5c52248f29cf80ba401c/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol#L231):
 
@@ -91,13 +92,13 @@ This section shows you how to create a custom CDK validium DAC contract.
 
 This section shows you how to deploy the Docker image containing your custom DAC contract.
 
-1. Edit the following parameters in the [`docker/scripts/v2/deploy_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/docker/scripts/v2/deploy_parameters_docker.json) file:
+1. Edit the following parameters in the [`docker/scripts/v2/deploy_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/docker/scripts/v2/deploy_parameters_docker.json) file:
 
     ```json
     "minDelayTimelock": 3600, // BECOMES "minDelayTimelock": 1,
     ```
 
-2. Edit the following parameters in the [`/docker/scripts/v2/create_rollup_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/docker/scripts/v2/create_rollup_parameters_docker.json) file:
+2. Edit the following parameters in the [`/docker/scripts/v2/create_rollup_parameters_docker.json`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/docker/scripts/v2/create_rollup_parameters_docker.json) file:
 
     ```json
     "consensusContract": "PolygonValidiumEtrog",  // CHANGE THIS TO YOUR CONTRACT NAME
@@ -110,7 +111,7 @@ This section shows you how to deploy the Docker image containing your custom DAC
     cp docker/scripts/v2/hardhat.example.paris hardhat.config.ts
     ```
 
-4. Edit [docker/scripts/v2/deploy-docker.sh](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v6.0.0-rc.1-fork.9/docker/scripts/v2/deploy-docker.sh) to add the following line:
+4. Edit [docker/scripts/v2/deploy-docker.sh](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/docker/scripts/v2/deploy-docker.sh) to add the following line:
 
     ```sh
     sudo chmod -R go+rxw docker/gethData before docker build -t hermeznetwork/geth-zkevm-contracts -f docker/Dockerfile .  
