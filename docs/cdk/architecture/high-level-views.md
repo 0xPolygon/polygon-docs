@@ -6,15 +6,15 @@ The following diagram depicts the CDK FEP stack component layout and details som
 
 ### Component interactions
 
-- Engineers use a CLI tool to manage the backend components, installing and initializing various modes of operation, such as validium versus rollup for example.
+- Engineers use a CLI to manage the backend components, installing and initializing various modes of operation, such as validium versus rollup for example.
 - External applications send transactions to the CDK Erigon RPC node which forwards the transaction data to the sequencer via the transaction pool manager.
-- The transaction pool manager proxies manages the transactions coming in from the RPC node and streams the data onto the sequence sender.
-- The sequencer sequences transactions batches and puts them into the data streamer.
-- The data streamer streams data to the sequencer sender and the aggregator.
-- The sequencer sender sequences batches into the L1 smart contract domain and persists data into DAC nodes for validium mode operations.
-- The aggregator sends batches to the prover and receives proofs in return. It then aggregates the proofs into batches before submitting them to the AggLayer or L1, depending on the chosen settlement layer.
-- Users interact with the bridge service via the bridge UI.
-- The AggLayer also utilizes the bridge service and interacts with the L1 smart contracts.
+- The sequencer sequences transactions batches and synchronizes data with the RPC node.
+- The sequencer sender reads batch data from the RPC node.
+- The aggregator reads batch data from the sequencer data stream.
+- The sequencer sender persists data into the L1 smart contract domain for rollup mode and into DAC nodes for validium mode operations.
+- The aggregator sends batches to the prover and receives proofs in return. Together with the prover, it aggregates the proofs into batches before submitting the final proofs to the AggLayer or L1, depending on the chosen settlement layer.
+- Users interact with the bridge service via the bridge UI or API.
+- The AggLayer verifies proofs and interacts with the L1 smart contracts.
 
 ### User data flow
 
