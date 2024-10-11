@@ -55,7 +55,7 @@ sequenceDiagram
     SeqSender->>L1: Sequence batches into L1 Smart Contracts 
     Aggregator->>Prover: Send batches to Prover 
     Prover->>Aggregator: Return proofs 
-    Aggregator->>Aggregator: Batch the proofs
+    Aggregator->>Aggregator: Aggregate the proofs
     Aggregator->>AggLayer: Submit final proof
     AggLayer->>L1: Submit final proof to L1 Smart Contract Domain
 ```
