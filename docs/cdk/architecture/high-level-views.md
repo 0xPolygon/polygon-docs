@@ -25,23 +25,21 @@ The following diagram is a sequential depiction of the user data flow for the CD
 #### Sequential interactions
 
 1. User sends a transaction to the CDK Erigon RPC node.
-2. The Erigon RPC node proxies the data to the CDK Erigon sequencer node.
+2. The CDK Erigon RPC node proxies the data to the CDK Erigon sequencer node and syncs the batch data between the sequencer and the RPC nodes.
 3. The sequencer sequences the transaction batches.
-4. The sequencer puts the batches into the data streamer component.
-5. The data streamer component streams the data into the sequence sender. It streams data into the aggregator and AggLayer for rollup and validium mode stacks. 
-6. In validium mode, the sequencer sender persists transaction data into the DAC nodes.
-7. In both modes, the sequencer sender sequences the batches into the L1 smart contracts.
-8. In both modes, the aggregator sends the batches to the prover and the prover returns the proofs.
-9. The aggregator batches the proofs.
-10. The aggregator submits the final proof to the AggLayer.
-11. The AggLayer submits the final proof to the L1 smart contract domain.
+4. The sequencer sender reads batches from the RPC node.
+5. In validium mode only, the sequencer sender persists transaction data into the DAC nodes.
+6. The sequencer sender sequences the batches into the L1 smart contracts.
+7. The aggregator reads batches from the sequencer data stream.
+8. The aggregator sends batches to the provers.
+9. The aggregator submits the final proof to the AggLayer.
+10. The AggLayer submits the final proof to the L1 smart contract domain.
 
 ```mermaid
 sequenceDiagram
     participant User
     participant ErigonRPC as CDK Erigon RPC Node
     participant Sequencer as CDK Erigon Sequencer Node
-    participant DataStreamer as Data Streamer
     participant SeqSender as Sequence Sender
     participant Aggregator
     participant AggLayer
@@ -50,18 +48,13 @@ sequenceDiagram
     participant L1 as L1 Smart Contracts
 
     User->>ErigonRPC: Send transaction
-    ErigonRPC->>Sequencer: Proxy transaction data
+    ErigonRPC->>Sequencer: Proxy and sync transaction data
     Sequencer->>Sequencer: Sequence transaction batches
-    Sequencer->>DataStreamer: Put batches into Data Streamer
-    DataStreamer->>SeqSender: Stream data into Sequence Sender
-    DataStreamer->>Aggregator: Stream data for Rollup & Validium mode
-    DataStreamer->>AggLayer: Stream data for Rollup & Validium mode
-    alt Validium Mode
-        SeqSender->>DACNodes: Persist transaction data
-    end
-    SeqSender->>L1: Sequence batches into L1 Smart Contracts (both modes)
-    Aggregator->>Prover: Send batches to Prover (both modes)
-    Prover->>Aggregator: Return proofs (both modes)
+    SeqSender->>ErigonRPC: Reads batches
+    SeqSender->>DACNodes: Persist transaction data (validium mode only)
+    SeqSender->>L1: Sequence batches into L1 Smart Contracts 
+    Aggregator->>Prover: Send batches to Prover 
+    Prover->>Aggregator: Return proofs 
     Aggregator->>Aggregator: Batch the proofs
     Aggregator->>AggLayer: Submit final proof
     AggLayer->>L1: Submit final proof to L1 Smart Contract Domain
