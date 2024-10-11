@@ -8,7 +8,7 @@ The following diagram depicts the CDK FEP stack component layout and details som
 
 - Engineers use a CLI to manage the backend components, installing and initializing various modes of operation, such as validium versus rollup for example.
 - External applications send transactions to the CDK Erigon RPC node which forwards the transaction data to the sequencer via the transaction pool manager.
-- The transaction pool manager proxies manages the transactions coming in from the RPC node and streams the data onto the sequence sender.
+- The transaction pool manager forwards transactions coming in from the RPC node to the sequencer.
 - The sequencer sequences transactions batches and puts them into the data streamer.
 - The data streamer streams data to the sequencer sender and the aggregator.
 - The sequencer sender sequences batches into the L1 smart contract domain and persists data into DAC nodes for validium mode operations.
