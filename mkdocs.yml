@@ -78,9 +78,9 @@ nav:
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Connect to CDK testnets: cdk/how-to/connect-testnet.md
       - Architecture:
+        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
-        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
@@ -561,7 +561,9 @@ nav:
       - Welcome: innovation-design/welcome.md
       - AggLayer:
         - Overview: agglayer/overview.md
-        - AggLayer | Unified bridge: agglayer/unified-bridge.md
+        - AggLayer | Unified bridge: 
+          - Architecture: agglayer/unified-bridge.md
+          - API and auto-claim service: agglayer/unified-bridge-api.md
         - AggLayer | Go: agglayer/agglayer-go.md
         - AggLayer | Rust: agglayer/agglayer-rs.md
         - AggLayer | Token flows: agglayer/token-flows.md
