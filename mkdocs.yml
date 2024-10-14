@@ -596,7 +596,7 @@ nav:
           - Bug bounty programs: innovation-design/security/bugbounty.md
           - Responsable disclosure: innovation-design/security/disclosure.md
           - Contact us: innovation-design/security/contact.md
-  - Learn: '!import https://github.com/0xPolygon/devrel-docs?branch=main'
+  #- Learn: '!import https://github.com/0xPolygon/devrel-docs?branch=main'
 
 extra:
   generator: false
