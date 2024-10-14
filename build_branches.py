@@ -160,7 +160,7 @@ def update_nginx_config(pr_numbers, parsed_env):
     for pr_number in pr_numbers:
         location_block = f"""location /{pr_number} {{
             alias /app/{pr_number};
-            try_files $uri $uri/ /index.html;
+            try_files $uri $uri/ =404;
             error_page 404 /404.html;
         }}
         """
