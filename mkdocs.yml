@@ -54,6 +54,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Releases:
+        - CDK FEP: cdk/cdk-fep-components.md
         - Version compatibility matrix: cdk/version-matrix.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
