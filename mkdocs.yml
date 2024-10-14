@@ -662,10 +662,10 @@ markdown_extensions:
             format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
-  - multirepo:
-      cleanup: true
-      keep_docs_dir: false
-  - search
+  #- multirepo:
+  #    cleanup: true
+  #    keep_docs_dir: false
+  #- search
   - with-pdf:
         #author: WHO
         copyright: Copyright &copy; 2024 Polygon Labs
@@ -700,7 +700,7 @@ plugins:
         #two_columns_level: 3
         #
         #render_js: true
-        #headless_chrome_path: headless-chromium
+        headless_chrome_path: headless-chromium
         #
         #output_path: any-place/document.pdf
         #enabled_if_env: ENABLE_PDF_EXPORT
@@ -708,22 +708,22 @@ plugins:
         #debug_html: true
         show_anchors: true
         #verbose: true
-  - open-in-new-tab
-  - redirects:
-      redirect_maps:
-        'cdk/getting-started/index.md': 'cdk/getting-started/local-deployment.md'      
-        'zkEVM/how-to/index.md': 'zkEVM/get-started/index.md'
-        'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
-        'tools/matic-js/installation.md': 'tools/matic-js/get-started.md'
-        'pos/how-to/access-node.md': 'tools/dApp-development/tutorials/access-node.md'
-        'pos/how-to/full-node/full-node-system-requirements.md': 'pos/how-to/prerequisites.md'
-        'pos/how-to/validator/prerequisites.md': 'pos/how-to/prerequisites.md'
-        'pos/how-to/validator/validator-system-requirements.md': 'pos/how-to/prerequisites.md'
-        'pos/how-to/choose-node-type.md': 'pos/how-to/prerequisites.md'
-        'pos/how-to/operate-validator-node/validator-best-practices.md': 'pos/how-to/validator/validator-best-practices.md'
-        'pos/how-to/operate-validator-node/validator-commission-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
-        'pos/how-to/operate-validator-node/validator-staking-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
-        'pos/how-to/operating/validator-node/index.md': 'pos/how-to/operate-validator-node/next-steps.md'
+  #- open-in-new-tab
+  #- redirects:
+  #    redirect_maps:
+  #      'cdk/getting-started/index.md': 'cdk/getting-started/local-deployment.md'      
+  #      'zkEVM/how-to/index.md': 'zkEVM/get-started/index.md'
+  #      'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
+  #      'tools/matic-js/installation.md': 'tools/matic-js/get-started.md'
+  #      'pos/how-to/access-node.md': 'tools/dApp-development/tutorials/access-node.md'
+  #      'pos/how-to/full-node/full-node-system-requirements.md': 'pos/how-to/prerequisites.md'
+  #      'pos/how-to/validator/prerequisites.md': 'pos/how-to/prerequisites.md'
+  #      'pos/how-to/validator/validator-system-requirements.md': 'pos/how-to/prerequisites.md'
+  #      'pos/how-to/choose-node-type.md': 'pos/how-to/prerequisites.md'
+  #      'pos/how-to/operate-validator-node/validator-best-practices.md': 'pos/how-to/validator/validator-best-practices.md'
+  #      'pos/how-to/operate-validator-node/validator-commission-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
+  #      'pos/how-to/operate-validator-node/validator-staking-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
+  #      'pos/how-to/operating/validator-node/index.md': 'pos/how-to/operate-validator-node/next-steps.md'
 
 validation:
   absolute_links: warn
