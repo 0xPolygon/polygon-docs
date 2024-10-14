@@ -2,7 +2,7 @@
 
 The following diagram depicts the CDK FEP stack component layout and details some of the high level communication between components.
 
-![High level view of CDK stack](../../img/cdk/cdk-stack.png)
+![High level view of CDK stack](../../img/cdk/cdk-stack.svg)
 
 ### Component interactions
 
@@ -20,7 +20,7 @@ The following diagram depicts the CDK FEP stack component layout and details som
 
 The following diagram is a sequential depiction of the user data flow for the CDK FEP stack in validium mode using a mock prover and having an AggLayer connection.
 
-![High level view of CDK user data flow](../../img/cdk/cdk-user-data-flow.png)
+![High level view of CDK user data flow](../../img/cdk/cdk-user-data-flow.svg)
 
 #### Sequential interactions
 
