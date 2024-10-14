@@ -388,9 +388,9 @@ nav:
             - Meta transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
       - Miden: miden/index.md
-      - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
-      - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
-      - Miden compiler: '!import https://github.com/0xPolygonMiden/compiler?branch=next'
+  #    - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
+  #    - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
+  #    - Miden compiler: '!import https://github.com/0xPolygonMiden/compiler?branch=next'
   - Developer tools: 
       - Developer tools: tools/index.md
       - Start building:
@@ -596,7 +596,7 @@ nav:
           - Bug bounty programs: innovation-design/security/bugbounty.md
           - Responsable disclosure: innovation-design/security/disclosure.md
           - Contact us: innovation-design/security/contact.md
-  - Learn: '!import https://github.com/0xPolygon/devrel-docs?branch=main'
+  #- Learn: '!import https://github.com/0xPolygon/devrel-docs?branch=main'
 
 extra:
   generator: false
@@ -666,7 +666,48 @@ plugins:
       cleanup: true
       keep_docs_dir: false
   - search
-  - pdf-export
+  - with-pdf:
+        #author: WHO
+        copyright: Copyright &copy; 2024 Polygon Labs
+        #
+        #cover: false
+        #back_cover: true
+        #cover_title: TITLE TEXT
+        #cover_subtitle: SUBTITLE TEXT
+        #custom_template_path: TEMPLATES PATH
+        #
+        #toc_title: TOC TITLE TEXT
+        #heading_shift: false
+        #toc_level: 6
+        #ordered_chapter_level: 2
+        #excludes_children:
+        #    - 'release-notes/:upgrading'
+        #    - 'release-notes/:changelog'
+        #
+        exclude_pages:
+            - 'index'
+            - 'agglayer/index'
+            - 'cdk/index'
+            - 'innovation-design/index'
+            - 'pos/index'
+            - 'tools/index'
+            - 'zkEVM/index'
+        #convert_iframe:
+        #    - src: IFRAME SRC
+        #      img: POSTER IMAGE URL
+        #      text: ALTERNATE TEXT
+        #    - src: ...
+        #two_columns_level: 3
+        #
+        #render_js: true
+        #headless_chrome_path: headless-chromium
+        #
+        #output_path: any-place/document.pdf
+        #enabled_if_env: ENABLE_PDF_EXPORT
+        #
+        #debug_html: true
+        show_anchors: true
+        #verbose: true
   - open-in-new-tab
   - redirects:
       redirect_maps:
