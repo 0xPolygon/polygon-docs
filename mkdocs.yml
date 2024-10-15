@@ -49,9 +49,7 @@ theme:
     - content.action.edit
 
 nav:
-  - Home: index.md
   - CDK:
-      - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Releases:
         - Version compatibility matrix: cdk/version-matrix.md
@@ -89,7 +87,6 @@ nav:
         - Third-party guides: cdk/resources/third-party-guides.md
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
-      - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
       - Releases: 
         - CDK Erigon:
@@ -386,13 +383,7 @@ nav:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta transactions: pos/concepts/transactions/meta-transactions.md
-  - Miden:
-      - Miden: miden/index.md
-  #    - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
-  #    - Miden client: '!import https://github.com/0xPolygonMiden/miden-client?branch=main'
-  #    - Miden compiler: '!import https://github.com/0xPolygonMiden/compiler?branch=next'
   - Developer tools: 
-      - Developer tools: tools/index.md
       - Start building:
         - Test token faucets: tools/gas/matic-faucet.md
         - Polygon Portal: tools/wallets/portal.md
@@ -557,7 +548,6 @@ nav:
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://cardona-zkevm.polygonscan.com/
   - Innovation & design:
-      - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
       - AggLayer:
         - Overview: agglayer/overview.md
@@ -596,7 +586,6 @@ nav:
           - Bug bounty programs: innovation-design/security/bugbounty.md
           - Responsable disclosure: innovation-design/security/disclosure.md
           - Contact us: innovation-design/security/contact.md
-  #- Learn: '!import https://github.com/0xPolygon/devrel-docs?branch=main'
 
 extra:
   generator: false
@@ -667,13 +656,13 @@ plugins:
   #    keep_docs_dir: false
   #- search
   - with-pdf:
-        #author: WHO
+        author: Polygon Labs
         copyright: Copyright &copy; 2024 Polygon Labs
         #
         #cover: false
         #back_cover: true
         #cover_title: TITLE TEXT
-        #cover_subtitle: SUBTITLE TEXT
+        cover_subtitle: Polygon Labs
         #custom_template_path: TEMPLATES PATH
         #
         #toc_title: TOC TITLE TEXT
@@ -684,14 +673,14 @@ plugins:
         #    - 'release-notes/:upgrading'
         #    - 'release-notes/:changelog'
         #
-        exclude_pages:
-            - 'index'
-            - 'agglayer/index'
-            - 'cdk/index'
-            - 'innovation-design/index'
-            - 'pos/index'
-            - 'tools/index'
-            - 'zkEVM/index'
+        #exclude_pages:
+        #    - 'index'
+        #    - 'agglayer/index'
+        #    - 'cdk/index'
+        #    - 'innovation-design/index'
+        #    - 'pos/index'
+        #    - 'tools/index'
+        #    - 'zkEVM/index'
         #convert_iframe:
         #    - src: IFRAME SRC
         #      img: POSTER IMAGE URL
@@ -700,7 +689,7 @@ plugins:
         #two_columns_level: 3
         #
         #render_js: true
-        headless_chrome_path: headless-chromium
+        #headless_chrome_path: headless-chromium
         #
         #output_path: any-place/document.pdf
         #enabled_if_env: ENABLE_PDF_EXPORT
@@ -725,9 +714,9 @@ plugins:
   #      'pos/how-to/operate-validator-node/validator-staking-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
   #      'pos/how-to/operating/validator-node/index.md': 'pos/how-to/operate-validator-node/next-steps.md'
 
-validation:
-  absolute_links: warn
-  anchors: warn
+#validation:
+#  absolute_links: warn
+#  anchors: warn
 
 extra_javascript:
   - _site_essentials/js/mathjax.js
