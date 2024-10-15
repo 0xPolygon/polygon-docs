@@ -25,9 +25,6 @@ The following table lists the components and where you can find them for CDK rol
 | Bridge UI                                | <a href=https://portal.polygon.technology/>Polygon Portal</a>                            |                                                             |
 | Recommended explorer service  | <a href=https://github.com/0xPolygonHermez/blockscout>Blockscout</a>                     | IP free to implement another explorer service           |
 
-!!! important
-    For specific release tags, please reference the [version matrix document](version-matrix.md).
-
 ### Component descriptions
 
 Next are the brief descriptions of each CDK component.
