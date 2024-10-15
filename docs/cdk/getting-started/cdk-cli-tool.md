@@ -1,16 +1,16 @@
-The Polygon Chain Development Kit, or simply CDK, is a tool box of components that a chain administrator can use to build a rollup or validium chain.
+The Polygon Chain Development Kit (CDK) is a comprehensive set of components that enable chain administrators to build and deploy rollup or validium chains.
 
-At a high level, CDK components are like building blocks a chain administrator can select to configure a ZK-powered chain according to their own design.
+At a high level, CDK components are like modular building blocks that a chain administrator can use to configure a ZK-powered chain tailored to their design requirements.
 
-To abstract away the complexity of running or configuring CDK components, Polygon provides a Rust-based CLI tool which is an interface that chain administrators can use to interact with CDK components.
+To simplify the process of running and configuring CDK components, Polygon provides a Rust-based CLI tool which is an interface that chain administrators can use to interact with the components.
 
 This CLI tool is an entry point for chain administrators to access the CDK system.
 
 ## Installation
 
-To use the CLI tool the chain admin needs only download the precompiled CDK package ([the binaries](https://github.com/0xPolygon/cdk/releases/)).
+As the chain admin, you simply need to download the precompiled [CDK package binaries](https://github.com/0xPolygon/cdk/releases/).
 
-There is no need to have Golang, checkout the CDK repo, or install anything else. It is also trustless.
+There is no need to install Golang, browse the CDK repo, or set up any additional tools. Moreover, the process is entirely trustless.
 
 ## Running the CLI tool
 
@@ -24,7 +24,7 @@ There is no need to have Golang, checkout the CDK repo, or install anything else
 
 ### CDK
 
-Here the Admin needs to provide the CDK-node configuration file and a genesis file of the desired chain.
+Here, you need to provide the CDK node configuration file and the genesis file for your desired chain.
 
 Usage: `cdk <COMMAND>`
 
@@ -37,9 +37,9 @@ Commands:
 Options:
 * `-h, --help` - Print help
 
-### cdk node
+### `cdk node`
 
-To run cdk-node use the `node` subcommand
+To run cdk-node use the `node` subcommand with one of the options mentioned below.
 
 Usage: `cdk node [OPTIONS]`
 
@@ -48,11 +48,11 @@ Options:
 * `-c, --components <COMPONENTS>` - Components to run [env: `CDK_COMPONENTS=`]
 * `-h, --help` - Print help
 
-### cdk erigon
+### `cdk erigon`
 
-Chain administrators can run a cdk-erigon RPC node that syncs to an existing chain with default parameters.
+You can run a cdk-erigon RPC node that syncs to an existing chain using the default parameters.
 
-This subcommand is intended for quickly spin-up of an RPC node or to test existing chains with default configuration values. In order fine tune and to access all configuration values, check the [full cdk-erigon documentation](../../cdk/getting-started/cdk-erigon/index.md) reference to erigon configuration docs.
+This subcommand is intended for quickly spinning up an RPC node or testing existing chains with default configuration values. In order to fine-tune settings and access all available configuration options, refer to the [full cdk-erigon documentation](../../cdk/getting-started/cdk-erigon/index.md) on Erigon configuration.
 
 Usage: `cdk erigon [OPTIONS]`
 
@@ -61,11 +61,11 @@ Options:
 * `-g, --chain <CHAIN>` - The path to a chain specification file [env: `CDK_GENESIS_PATH=`]
 * `-h, --help` - Print help
 
-### cdk versions
+### `cdk versions`
 
-The above command generates all the required configuration files for cdk-erigon on-the-fly and run the node.
+The above command generates all the required configuration files for cdk-erigon on the fly and runs the node.
 
-Output the corresponding versions of the components
+To print the corresponding versions of the components, run the following command:
 
 Usage: `cdk versions`
 
