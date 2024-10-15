@@ -54,7 +54,6 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Releases:
-        - Version compatibility matrix: cdk/releases/version-matrix.md
         - Stack components: cdk/releases/stack-components.md
       - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
