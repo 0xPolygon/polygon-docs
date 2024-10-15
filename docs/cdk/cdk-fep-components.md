@@ -21,7 +21,7 @@ The table below lists the CDK FEP components and where you can find them.
 | Contracts                                | <a href=https://github.com/0xPolygonHermez/zkevm-contracts>zkevm-contracts</a>           |                                                             |
 | CLI                                      | <a href=https://github.com/0xPolygon/cdk/releases/tag/v0.3.0-beta4>cdk:v0.3.0-beta4<a> |          Included in CDK repo                                                   |
 | Sequence sender                          | <a href=https://github.com/0xPolygon/cdk/releases/tag/v0.3.0-beta4>cdk:v0.3.0-beta4</a>                    |         Included in CDK repo                                                                    |
-| Aggregator                               | <a href=https://github.com/0xPolygon/cdk/releases/tag/v0.3.0-beta4>cdk:v0.3.0-beta</a>                         |     Included in CDK repo                                                                        |
+| Aggregator                               | <a href=https://github.com/0xPolygon/cdk/releases/tag/v0.3.0-beta4>cdk:v0.3.0-beta4</a>                         |     Included in CDK repo                                                                        |
 | Tx pool manager                          | <a href=https://github.com/0xPolygon/zkevm-pool-manager>  zkevm-pool-manager</a>                               |                                                             |
 | Prover                                   | <a href=https://github.com/0xPolygonHermez/zkevm-prover>zkevm-prover</a>                 |                                                             |
 
