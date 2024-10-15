@@ -7,15 +7,15 @@
         data-category="Announcements"
         data-category-id="DIC_kwDOKs6Fqs4CcoXX"
         data-mapping="pathname"
-        data-strict="0"
+        data-strict="1"
         data-reactions-enabled="1"
-        data-emit-metadata="0"
+        data-emit-metadata="1"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script>
+  </script>
 
   <!-- Synchronize Giscus theme with palette -->
   <script>
@@ -51,5 +51,22 @@
         }
       })
     })
+    </script>
+
+    <script>
+    import { MessageEvent, IMetadataMessage } from "https://giscus.app/lib/types/giscus.js";
+
+    // handle message events
+    function handleMessage(event: MessageEvent) {
+      if (event.origin !== 'https://giscus.app') return;
+      if (!(typeof event.data === 'object' && event.data.giscus)) return;
+
+      if ('discussion' in giscusData) {
+      const metadataMessage: IMetadataMessage = giscusData;
+      console.log(metadataMessage.discussion);
+      console.log(metadataMessage.viewer);
+      }
+    }
   </script>
+
 {% endif %}

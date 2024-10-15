@@ -1,6 +1,6 @@
 In this phase of the end-to-end transaction flow, transactions go through different stages, depending on the user's $\texttt{GasPriceSigned}$:
 
-1. Sequencing transactions from the pool.
+1. Sequencing transactions coming from the transaction pool manager.
 2. Estimating the effective gas price (EEGP) using the current $\texttt{L1GasPrice}$ and RPC's estimated $\texttt{GasUsedRPC}$.
     
     $$
@@ -27,7 +27,7 @@ In this phase of the end-to-end transaction flow, transactions go through differ
     - Transactions with these two opcodes get executed with the $\texttt{GasPriceSigned}$.
     - Otherwise, they are executed with the $\texttt{NEGP}$.
 
-   Since the sequencer is obliged to execute all transactions in the pool, each transaction is executed during a particular stage of the flow described above.
+   Since the sequencer is obliged to execute all transactions in the transaction pool manager, each transaction is executed during a particular stage of the flow described above.
 
    The entire sequencer flow is summarized in the figure below.
 
