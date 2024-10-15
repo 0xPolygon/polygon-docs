@@ -16,17 +16,14 @@ The table below lists the CDK FEP components and where you can find them.
 
 | Component                                | CDK FEP stack                                                                         | Notes                                                       |
 |------------------------------------------|------------------------------------------------------------------------------------------|-------------------------------------------------------------|
-| Node = RPC and sequencer                 | <a href=https://github.com/0xPolygonHermez/cdk-erigon>cdk-erigon</a>                     | Customizable, commonly: <br/>- Sequencer = 1 node</br>- RPC = multiple nodes |
+| Node = RPC and sequencer                 | <a href=https://github.com/0xPolygonHermez/cdk-erigon/releases/tag/v2.1.0-beta6>cdk-erigon:v2.1.0-beta6</a>                     | Customizable, commonly: <br/>- Sequencer = 1 node</br>- RPC = multiple nodes |
 | Data availability                        | <a href=https://github.com/0xPolygon/cdk-data-availability>cdk-data-availability</a>     | **Only** for validium mode                                       |
 | Contracts                                | <a href=https://github.com/0xPolygonHermez/zkevm-contracts>zkevm-contracts</a>           |                                                             |
-| CLI                                      | <a href=https://github.com/0xPolygon/cdk>cdk<a> |          Included in CDK repo                                                   |
-| Sequence sender                          | <a href=https://github.com/0xPolygon/cdk>cdk</a>                    |         Included in CDK repo                                                                    |
-| Aggregator                               | <a href=https://github.com/0xPolygon/cdk>cdk</a>                         |     Included in CDK repo                                                                        |
+| CLI                                      | <a href=https://github.com/0xPolygon/cdk/releases/tag/v0.3.0-beta4>cdk:v0.3.0-beta4<a> |          Included in CDK repo                                                   |
+| Sequence sender                          | <a href=https://github.com/0xPolygon/cdk/releases/tag/v0.3.0-beta4>cdk:v0.3.0-beta4</a>                    |         Included in CDK repo                                                                    |
+| Aggregator                               | <a href=https://github.com/0xPolygon/cdk/releases/tag/v0.3.0-beta4>cdk:v0.3.0-beta</a>                         |     Included in CDK repo                                                                        |
 | Tx pool manager                          | <a href=https://github.com/0xPolygon/zkevm-pool-manager>  zkevm-pool-manager</a>                               |                                                             |
 | Prover                                   | <a href=https://github.com/0xPolygonHermez/zkevm-prover>zkevm-prover</a>                 |                                                             |
-
-!!! important
-    For specific release tags, please reference the [version matrix document](version-matrix.md).
 
 ## Component descriptions
 
