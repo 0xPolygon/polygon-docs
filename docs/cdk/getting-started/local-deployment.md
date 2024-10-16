@@ -134,19 +134,25 @@ Below are a few examples of how you can interact with the chain.
 
 Let's do some read and write operations and test transactions on the L2 with Foundry.
 
-1. Use `cast` to view information about the chain, such as the latest block number:
+1. To facilitate the operations, export the RPC URL of your L2 to an environment variable called `ETH_RPC_URL` with the following command:
+
+      ```bash
+      export ETH_RPC_URL="$(kurtosis port print cdk cdk-erigon-node-001 rpc)"
+      ```
+
+2. Use `cast` to view information about the chain, such as the latest block number:
 
       ```bash
       cast block-number
       ```
 
-2. View the balance of an address, such as the pre-funded admin account:
+3. View the balance of an address, such as the pre-funded admin account:
 
       ```bash
       cast balance --ether 0xE34aaF64b29273B7D567FCFc40544c014EEe9970
       ```
 
-3. Send simple transactions to the chain, such as a transfer of some ETH:
+4. Send simple transactions to the chain, such as a transfer of some ETH:
 
       ```bash
       cast send --legacy --value 0.01ether 0x0000000000000000000000000000000000000000 --private-key "0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
@@ -154,23 +160,14 @@ Let's do some read and write operations and test transactions on the L2 with Fou
 
 ### Load testing the chain
 
-!!!   tip
-      You may need to adjust the various commands slightly if you deployed the legacy zkevm-node as the sequencer. You should target the zkevm-node-rpc-001 service instead of cdk-erigon-node-001
-
-1. Export the RPC URL of your L2 to an environment variable called `ETH_RPC_URL` with the following command:
-
-      ```bash
-      eexport ETH_RPC_URL="$(kurtosis port print cdk cdk-erigon-node-001 rpc)"
-      ```
-
-2. Let's send a transaction with cast:
+1. Let's send a transaction with cast:
 
       ```bash
       export PK="0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
       cast send --legacy --private-key "$PK" --value 0.01ether 0x0000000000000000000000000000000000000000
       ```
 
-3. Use the [`polycli loadtest`](https://github.com/maticnetwork/polygon-cli/blob/main/doc/polycli_loadtest.md) command to send multiple transactions at once to the chain to test its performance:
+2. Use the [`polycli loadtest`](https://github.com/maticnetwork/polygon-cli/blob/main/doc/polycli_loadtest.md) command to send multiple transactions at once to the chain to test its performance:
 
       ```bash
       polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --private-key "$PK" --verbosity 700 --requests 50000 --rate-limit 50 --concurrency 5 --mode t
@@ -209,10 +206,10 @@ cast rpc zkevm_verifiedBatchNumber  # Latest batch verified or "proven" on the L
 
 ### Opening the bridge UI
 
-To open the bridge interface and bridge tokens across the L1 and L2, run the following command:
+To open the `zkevm-bridge` interface and bridge tokens across the L1 and L2, run the following command:
 
 ```bash
-open $(kurtosis port print cdk-v1 zkevm-bridge-proxy-001 web-ui)
+open $(kurtosis port print cdk zkevm-bridge-proxy-001 web-ui)
 ```
 
 ## Additional services
