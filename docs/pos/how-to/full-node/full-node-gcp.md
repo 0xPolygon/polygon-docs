@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This document describes how to deploy Polygon PoS nodes in a virtual machine (VM) instance on the Google Cloud Platform (GCP).
 

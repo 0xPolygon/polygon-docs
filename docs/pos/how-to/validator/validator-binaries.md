@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This guide will walk you through running a Polygon validator node using binaries.
 

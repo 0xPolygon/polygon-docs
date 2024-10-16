@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This guide walks you through the process of setting up and deploying a layer 2 CDK blockchain stack on your local machine.
 

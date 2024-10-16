@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Find in here a record of the zkEVM’s historical data. This document records timelines, major milestones, forks, and updates to the zkEVM.
 
