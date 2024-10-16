@@ -1,15 +1,18 @@
-The latest CDK release has two modes:
+Developers can use the CDK rollup/validium mode, or simply _CDK FEP_, to configure CDK chains that run the Polygon zkEVM protocol.
 
-1. The CDK rollup/validium mode with full execution proofs is the first mode for release.
-2. The CDK sovereign chain mode with pessimistic proofs, and no full execution proofs, is coming shortly after.
+As part of its finality mechanism, a CDK rollup or validium configured with this mode utilizes the type of ZK-proofs referred to as *full execution proofs*.
 
-This document details the full stack components for the first mode of release: CDK with full execution proofs.
+## What is a full execution proof?
 
-## CDK stack with full execution proofs (FEP)
+A *full execution proof* (FEP) is a zero-knowledge proof attesting to the correctness of the chain's full state transition.
 
-In the CDK with full execution proofs release, any zkEVM components can be considered as part of a CDK stack in rollup mode. 
+That is, an FEP attests to the fact that the underlying VM (such as the Polygon zkEVM, Succinct's zkVM, or MoveVM) has executed all state transitions in accordance with specifications.
 
-The following table lists the components and where you can find them for CDK rollup and validium stacks. You will notice only small differences in the component makeup of the two stacks; differences which are now mostly use case specific.
+## CDK FEP components
+
+Next, we detail the architectural components of the CDK FEP mode.
+
+The table below lists the CDK FEP components and where you can find them.
 
 | Component                                | CDK FEP stack                                                                         | Notes                                                       |
 |------------------------------------------|------------------------------------------------------------------------------------------|-------------------------------------------------------------|
@@ -21,13 +24,10 @@ The following table lists the components and where you can find them for CDK rol
 | Aggregator                               | <a href=https://github.com/0xPolygon/cdk/releases>cdk:v0.3.x</a>                         |     Included in CDK repo                                                                        |
 | Tx pool manager                          | <a href=https://github.com/0xPolygon/zkevm-pool-manager>  zkevm-pool-manager</a>                               |                                                             |
 | Prover                                   | <a href=https://github.com/0xPolygonHermez/zkevm-prover>zkevm-prover</a>                 |                                                             |
-| Bridge service                           | <a href=https://github.com/0xPolygonHermez/zkevm-bridge-service>zkevm-bridge-service</a> |                                                             |
-| Bridge UI                                | <a href=https://portal.polygon.technology/>Polygon Portal</a>                            |                                                             |
-| Recommended explorer service  | <a href=https://github.com/0xPolygonHermez/blockscout>Blockscout</a>                     | IP free to implement another explorer service           |
 
-### Component descriptions
+## Component descriptions
 
-Next are the brief descriptions of each CDK component.
+Here are brief descriptions of each CDK FEP component.
 
 - CDK Erigon node, a fork of [erigon](https://github.com/ledgerwatch/erigon), that manages the following:
     - Multiple RPC nodes that provide common APIs for sending transactions.
@@ -47,13 +47,13 @@ Next are the brief descriptions of each CDK component.
 - Aggregator: For facilitating proving and verification, fetching and providing batch data and witness to the prover.
 - Transaction pool manager: For storing transactions submitted by users.
 - Prover: A complex cryptographic tool capable of producing ZK-proofs of hundreds of batches, and aggregating these into a single ZK-proof which is published as the validity proof.
-- Bridge service: A backend service for enabling clients like the [web UI](https://github.com/0xPolygonHermez/zkevm-bridge-ui) to interact with the [bridge smart contract](https://github.com/0xPolygonHermez/zkevm-contracts) by providing Merkle proofs.
-- Bridge UI: The Polygon bridge portal which abstracts away the backend operations involved in bridge deposits and withdrawals.
-- Blockscout: An application that allows to view, confirm, and inspect transactions on EVM chains, optimistic rollups and zk rollups. EVM chains include the POA Network, Gnosis Chain, Ethereum Classic and other Ethereum testnets, private networks and side chains. Users may opt to use a different explorer service.
 
-## CDK stack with pessimistic proofs
+## Support services
 
-The CDK with pessimistic proofs release follows on shortly after the CDK FEP release.
+[Bridge service](https://github.com/0xPolygonHermez/zkevm-bridge-service): A backend service for enabling clients like the [web UI](https://github.com/0xPolygonHermez/zkevm-bridge-ui) to interact with the [bridge smart contract](https://github.com/0xPolygonHermez/zkevm-contracts) by providing Merkle proofs.
 
-!!! tip 
-    Coming soon.
+[Bridge UI](https://portal.polygon.technology/): The Polygon bridge portal which abstracts away the backend operations involved in bridge deposits and withdrawals.
+
+Recommended explorer service: <a href=https://github.com/0xPolygonHermez/blockscout>Blockscout</a>, which is an application that allows you to view, confirm, and inspect transactions on EVM chains, optimistic rollups and zk rollups.
+
+However, users may opt to use a different explorer service.
