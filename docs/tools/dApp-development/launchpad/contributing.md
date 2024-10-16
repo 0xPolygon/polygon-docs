@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 ## Build from source
 

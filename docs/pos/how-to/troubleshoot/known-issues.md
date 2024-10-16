@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This resource is designed to help you efficiently diagnose and resolve common issues encountered while interacting with the Polygon PoS network as a validator.
 

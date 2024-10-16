@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This document shows you how to deploy a [docker-compose file](https://github.com/0xPolygonZero/eth-pos-devnet-provable/blob/959da56673c25c2094b1a23bc9e1fa9ae9a9db6e/docker-compose.yml) for running a fully-functional, local development network (devnet) for Ethereum with proof-of-stake enabled.
 

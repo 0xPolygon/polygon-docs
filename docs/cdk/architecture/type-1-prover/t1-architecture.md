@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 The Polygon type 1 prover is designed for efficient implementation of STARK proofs and verification of Ethereum transactions. It achieves efficiency by restricting the Algebraic Intermediate Representation (AIR) to constraints of degree 3.
 
