@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Polygon zkEVM is a zero-knowledge rollup (or zk-rollup) designed to emulate the Ethereum Virtual Machine.
 

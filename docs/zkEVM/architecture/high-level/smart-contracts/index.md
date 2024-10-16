@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Polygon zkEVM deploys smart contracts to manage transaction processing and related data transfers between itself and other networks, such as the Ethereum L1 or other L2s connected to the AggLayer. 
 

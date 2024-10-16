@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This guide covers running a validator node through packages.
 

@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 The Polygon zkEVM beta mainnet is available for developers to launch smart contracts, execute transactions, and experiment. This document shows you how to launch your own production zkNode.
 

@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Deploying the full zkEVM stack requires installing and deploying a number of different components.
 

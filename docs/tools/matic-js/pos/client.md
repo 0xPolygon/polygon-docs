@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 !!! important
     Make sure you have set up Matic.js by following the [get started](../get-started.md) guide.

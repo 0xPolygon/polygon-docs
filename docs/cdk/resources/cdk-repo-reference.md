@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 
 | Component                                                                   | Description                                    |

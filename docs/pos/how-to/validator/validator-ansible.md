@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This section guides you through starting and running the validator node through an Ansible playbook. Check out the [Git repository](https://github.com/maticnetwork/node-ansible/tree/master?tab=readme-ov-file#sentry-node-setup) for details.
 

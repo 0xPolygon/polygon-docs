@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 If you're a new Web3 developer, it's unlikely that you'll need to run your own full node on Polygon.
 
