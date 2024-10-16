@@ -27,7 +27,7 @@ The [Polygon CDK Kurtosis package](https://github.com/0xPolygon/kurtosis-cdk/) a
 And, optionally, for submitting transactions and interacting with the environment once set up, we are using:
 
 - [Foundry](https://book.getfoundry.sh/getting-started/installation)
-- [yq](https://github.com/mikefarah/yq)
+- [yq](https://github.com/mikefarah/yq) (v3)
 - [jq](https://stedolan.github.io/jq/)
 - [polyon-cli](https://github.com/0xPolygon/polygon-cli)
 
@@ -54,11 +54,13 @@ It defines the following steps for the deployment process:
 |-------------|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
 | 1           | Deploy a local layer 1 Ethereum chain              | [ethereum.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/ethereum.star)                                                              | True               |
 | 2           | Deploy the CDK smart contracts on the L1           | [deploy_zkevm_contracts.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/deploy_zkevm_contracts.star)                                  | True               |
-| 3           | Deploy the central environment, prover, and CDK erigon or zkEVM node databases | [databases.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/databases.star)                                                            | True               |
-| 4           | Deploy the CDK central environment                 | [cdk_central_environment.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/cdk_central_environment.star)                                | True               |
-| 5           | Deploy the CDK erigon package                      | [cdk_erigon.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/cdk_erigon.star) - included in step 4 deployment |      True              |
-| 6           | Deploy the bridge infrastructure                   | [cdk_bridge_infrastructure.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/cdk_bridge_infra.star)                                     | True               |
-| 7           | Deploy the AggLayer                                | [agglayer.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/agglayer.star)                                                              | True              |
+| 3           | Deploy the central environment, prover, and CDK erigon or zkEVM node databases | [databases.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/databases.star)       
+| 4           | Get the genesis file | n/a                                                       | False               |
+| 5           | Deploy the CDK central environment                 | [cdk_central_environment.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/cdk_central_environment.star)                                | True               |
+| 6           | Deploy the CDK erigon package                      | [cdk_erigon.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/cdk_erigon.star) - included in step 4 deployment |      True              |
+| 7           | Deploy the bridge infrastructure                   | [cdk_bridge_infrastructure.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/cdk_bridge_infra.star)                                     | True               |
+| 8           | Deploy the AggLayer                                | [agglayer.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/agglayer.star)                                                              | True              |
+| 9           | Additional services                |   Explorers, reporting, permissionless zkEVM node            | False             |
 | -           | Input parser tool to help deployment stages        | [input_parser.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/input_parser.star) - deployed immediately                                                      | n/a              |
 | -           | zkEVM pool manager tool                 | [zkevm_pool_manager.star](https://github.com/0xPolygon/kurtosis-cdk/blob/main/zkevm_pool_manager.star) - deployed with CDK erigon node                                         | n/a             |
 
@@ -88,23 +90,21 @@ You can modify each of these parameters to customize the chain to your specific 
 2. In the `kurtosis-cdk` directory, use the [kurtosis run](https://docs.kurtosis.com/run) command to deploy the chain on your local machine by executing the `main.star` script provided with the `params.yml` configuration file:
 
       ```bash
-      kurtosis run --enclave cdk-v1 --args-file params.yml --image-download always .
+      kurtosis run --enclave cdk .
       ```
-
-      - `enclave cdk-v1` specifies the name of the enclave, or isolated environment, to use for the deployment process.
-      - `args-file params.yml` specifies the configuration file to use for the deployment process.
-      - `image-download` specifies to always download the latest Docker images for the deployment process.
 
 3. This command typically takes a while to complete and outputs the logs of each step in the deployment process for you to monitor the progress of the chain setup. Once the command is complete, you should see the following output:
 
       ```bash
       Starlark code successfully run. No output was returned.
 
-      ===============================================
-      ||          Created enclave: cdk-v1          ||
-      ===============================================
-      Name:            cdk-v1
+      INFO[2024-10-16T16:10:27+02:00] ============================================
+      INFO[2024-10-16T16:10:27+02:00] ||          Created enclave: cdk          ||
+      INFO[2024-10-16T16:10:27+02:00] ============================================
+      Name:            cdk
+      UUID:            3e30c0e1863d
       Status:          RUNNING
+      Creation Time:   Wed, 16 Oct 2024 16:01:48 CEST
 
       ========================================= Files Artifacts =========================================
 
@@ -121,7 +121,7 @@ You can modify each of these parameters to customize the chain to your specific 
       Run the following command to see the status of the enclave and the services running within it at any time.
 
       ```sh
-      kurtosis enclave inspect cdk-v1
+      kurtosis enclave inspect cdk
       ```
 
 ## Interacting with the chain
@@ -152,22 +152,48 @@ Let's do some read and write operations and test transactions on the L2 with Fou
       cast send --legacy --value 0.01ether 0x0000000000000000000000000000000000000000 --private-key "0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
       ```
 
-      !!! info
-            The `0xE34...9970` and `0x12d...c625` public-private key pair used in the above commands is the default admin account configured in `params.yml`.
-
 ### Load testing the chain
+
+!!!   tip
+      You may need to adjust the various commands slightly if you deployed the legacy zkevm-node as the sequencer. You should target the zkevm-node-rpc-001 service instead of cdk-erigon-node-001
 
 1. Export the RPC URL of your L2 to an environment variable called `ETH_RPC_URL` with the following command:
 
       ```bash
-      export ETH_RPC_URL="$(kurtosis port print cdk-v1 cdk-erigon-node-001 http-rpc)"
+      eexport ETH_RPC_URL="$(kurtosis port print cdk cdk-erigon-node-001 rpc)"
       ```
 
-2. Use the [`polycli loadtest`](https://github.com/maticnetwork/polygon-cli/blob/main/doc/polycli_loadtest.md) command to send multiple transactions at once to the chain to test its performance:
+2. Let's send a transaction with cast:
 
       ```bash
-      polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --verbosity 700 --requests 500 --rate-limit 5 --mode t --private-key "0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
+      export PK="0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
+      cast send --legacy --private-key "$PK" --value 0.01ether 0x0000000000000000000000000000000000000000
       ```
+
+3. Use the [`polycli loadtest`](https://github.com/maticnetwork/polygon-cli/blob/main/doc/polycli_loadtest.md) command to send multiple transactions at once to the chain to test its performance:
+
+      ```bash
+      polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --private-key "$PK" --verbosity 700 --requests 50000 --rate-limit 50 --concurrency 5 --mode t
+      polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --private-key "$PK" --verbosity 700 --requests 500 --rate-limit 10 --mode 2
+      polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --private-key "$PK" --verbosity 700 --requests 500 --rate-limit 3  --mode uniswapv3
+      ```
+
+### Grab some logs
+
+Add the service name to the following command to grab the logs you're interested in.
+
+```bash
+kurtosis service logs cdk agglayer --follow
+```
+
+### Open a shell on a service
+
+To open a shell to examine a service, add the service name to the following command.
+
+```bash
+kurtosis service shell cdk contracts-001
+jq . /opt/zkevm/combined.json
+```
 
 ### Viewing transaction finality
 
