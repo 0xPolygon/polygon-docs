@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Polygon Chain Development Kit (CDK) is a modular, open source, software toolkit for blockchain developers which supports the installation and configuration of a variety of chain architectures. 
 

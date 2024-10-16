@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 The Polygon CDK validium is one of two configuration options of the Polygon CDK, the other being the Polygon zkEVM rollup.
 
