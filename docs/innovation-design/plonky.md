@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Plonky 2 & 3 are active research efforts into the development of libraries containing performant cryptographic functions for use in zero-knowledge proof systems.
 

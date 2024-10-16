@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 ### MetaMask transactions fail with a nonce error in dev environment 
 

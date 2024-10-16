@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 !!! info "Git repo and contact details"
     - For details about the technical architecture and if you want to contribute, head over to the repo https://github.com/0xPolygon/chain-indexer-framework

@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This quick start guide shows you how to deploy a zkEVM rollup stack on your local machine.
 
