@@ -1,7 +1,3 @@
-The Polygon Chain Development Kit (CDK) is a comprehensive set of components that enable chain administrators to build and deploy rollup or validium chains.
-
-At a high level, CDK components are like modular building blocks that a chain administrator can use to configure a ZK-powered chain tailored to their design requirements.
-
 To simplify the process of running and configuring CDK components, Polygon provides a Rust-based CLI tool which is an interface that chain administrators can use to interact with the components.
 
 This CLI tool is an entry point for chain administrators to access the CDK system.
