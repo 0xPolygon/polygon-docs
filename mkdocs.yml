@@ -71,6 +71,7 @@ nav:
         - Admin upgradeability: cdk/concepts/admin-upgradeability.md
       - How to: 
         - Migrate:
+          - Fork id 9 to 12: cdk/how-to/migrate/forkid-9-12.md
           - Fork id 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
           - General guide for partners: cdk/how-to/migrate/fork.md
         - Create custom native token: cdk/how-to/use-native-token.md
