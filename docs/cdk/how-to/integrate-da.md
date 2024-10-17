@@ -4,10 +4,6 @@ comments: true
 ---
 -->
 
----
-comments: true
----
-
 This document shows you how to integrate a third-party data availability (DA) solution into your CDK stack.
 
 ## Prerequisites
