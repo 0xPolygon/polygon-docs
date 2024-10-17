@@ -1,4 +1,4 @@
-Developers can use the CDK rollup/validium mode, or simply _CDK FEP_, to configure CDK chains that run the Polygon zkEVM protocol.
+Developers can use CDK to configure chains that run the Polygon zkEVM protocol in either rollup or validium mode. We refer to these chains, in either mode, as a CDK FEP.
 
 As part of its finality mechanism, a CDK rollup or validium configured with this mode utilizes the type of ZK-proofs referred to as *full execution proofs*.
 
