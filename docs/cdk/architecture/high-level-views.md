@@ -6,7 +6,7 @@ The diagram below depicts a simplified architectural layout of the CDK FEP stack
 
 ### Component interactions
 
-- Engineers use a CLI to manage the backend components, installing and initializing various modes of operation, such as validium versus rollup for example.
+- The CLI tool is the starting point. Developers, or chain administrators in particular, can use the CLI tool to build and configure chains in various modes of operation, such as validiums and rollups.
 - Once a chain is configured with the CLI, users can submit transactions through the CDK Erigon RPC node. These transactions are relayed to the `tx-pool manager` before the sequencer selects and executes them.
 - The sequencer sequences transactions batches and synchronizes data with the RPC node.
 - The sequencer sender reads batch data from the RPC node.
