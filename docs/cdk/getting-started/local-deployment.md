@@ -33,13 +33,6 @@ And, optionally, for submitting transactions and interacting with the environmen
 
 ## Set up the Kurtosis environment
 
-### Clone the repository
-
-```bash
-git clone https://github.com/0xPolygon/kurtosis-cdk.git
-cd kurtosis-cdk
-```
-
 ### Understanding the deployment steps
 
 There are two configuration files which help you understand what happens during a deployment.
@@ -81,30 +74,23 @@ You can modify each of these parameters to customize the chain to your specific 
 
 ## Run the chain locally
 
-1. Run the [kurtosis clean](https://docs.kurtosis.com/clean) to remove any existing Kurtosis environments:
+1. In the `kurtosis-cdk` directory, use the [kurtosis run](https://docs.kurtosis.com/run) command to deploy the chain on your local machine by executing the `main.star` script provided with the `params.yml` configuration file:
 
       ```bash
-      kurtosis clean --all
+      kurtosis run --enclave cdk github.com/0xPolygon/kurtosis-cdk
       ```
 
-2. In the `kurtosis-cdk` directory, use the [kurtosis run](https://docs.kurtosis.com/run) command to deploy the chain on your local machine by executing the `main.star` script provided with the `params.yml` configuration file:
-
-      ```bash
-      kurtosis run --enclave cdk .
-      ```
-
-3. This command typically takes a while to complete and outputs the logs of each step in the deployment process for you to monitor the progress of the chain setup. Once the command is complete, you should see the following output:
+2. This command typically takes a while to complete and outputs the logs of each step in the deployment process for you to monitor the progress of the chain setup. Once the command is complete, you should see the following output:
 
       ```bash
       Starlark code successfully run. No output was returned.
 
-      INFO[2024-10-16T16:10:27+02:00] ============================================
-      INFO[2024-10-16T16:10:27+02:00] ||          Created enclave: cdk          ||
-      INFO[2024-10-16T16:10:27+02:00] ============================================
+      INFO[2024-10-17T10:56:06+02:00] ============================================
+      INFO[2024-10-17T10:56:06+02:00] ||          Created enclave: cdk          ||
+      INFO[2024-10-17T10:56:06+02:00] ============================================
       Name:            cdk
-      UUID:            3e30c0e1863d
+      UUID:            0fb1ba8e87ad
       Status:          RUNNING
-      Creation Time:   Wed, 16 Oct 2024 16:01:48 CEST
 
       ========================================= Files Artifacts =========================================
 
@@ -116,13 +102,29 @@ You can modify each of these parameters to customize the chain to your specific 
 
       ```
 
-3. Inspect the chain
+The default deployment includes `cdk-erigon` as the sequencer, and `cdk-node` functioning as the sequence sender and aggregator. 
 
-      Run the following command to see the status of the enclave and the services running within it at any time.
+You can verify the default versions of these components and the default fork ID by reviewing `input_parser.star`. You can check the default versions of the deployed components and the default fork ID by looking at `input_parser.star`.
 
-      ```sh
-      kurtosis enclave inspect cdk
-      ```
+3. Customize the chain
+
+To make customizations to the CDK environment, clone this repo, make any desired configuration changes, and then run:
+
+```sh
+# Delete all stop and clean all currently running enclaves
+kurtosis clean --all
+
+# Run this command from the root of the repository to start the network
+kurtosis run --enclave cdk .
+```
+
+4. Inspect the chain
+
+Get a feel for the entire network layout by running the following command:
+
+```sh
+kurtosis enclave inspect cdk
+```
 
 ## Interacting with the chain
 
@@ -155,19 +157,13 @@ Let's do some read and write operations and test transactions on the L2 with Fou
 4. Send simple transactions to the chain, such as a transfer of some ETH:
 
       ```bash
-      cast send --legacy --value 0.01ether 0x0000000000000000000000000000000000000000 --private-key "0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
+      --private-key "0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
+      cast send --legacy --value 0.01ether 0x0000000000000000000000000000000000000000 
       ```
 
 ### Load testing the chain
 
-1. Let's send a transaction with cast:
-
-      ```bash
-      export PK="0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
-      cast send --legacy --private-key "$PK" --value 0.01ether 0x0000000000000000000000000000000000000000
-      ```
-
-2. Use the [`polycli loadtest`](https://github.com/maticnetwork/polygon-cli/blob/main/doc/polycli_loadtest.md) command to send multiple transactions at once to the chain to test its performance:
+1. Use the [`polycli loadtest`](https://github.com/maticnetwork/polygon-cli/blob/main/doc/polycli_loadtest.md) command to send multiple transactions at once to the chain to test its performance:
 
       ```bash
       polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --private-key "$PK" --verbosity 700 --requests 50000 --rate-limit 50 --concurrency 5 --mode t
