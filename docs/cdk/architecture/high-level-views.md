@@ -1,6 +1,6 @@
 ## CDK full execution proof (FEP)
 
-The following diagram depicts the CDK FEP stack component layout and details some of the high level communication between components.
+The diagram below depicts a simplified architectural layout of the CDK FEP stack and indicates at a high level how components communicate.
 
 ![High level view of CDK stack](../../img/cdk/cdk-stack.svg)
 
