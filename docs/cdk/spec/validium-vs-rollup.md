@@ -10,7 +10,7 @@ Polygon CDK running in validium mode inherits the core functionalities of a zkEV
 
 |        | Rollup                                                    | Validium                                                                           |
 | ------------------------ | ----------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| **Node type**            | [cdk-erigon:v1.2.24](https://github.com/0xPolygonHermez/cdk-erigon/releases/tag/v1.2.24) | [cdk-erigon:v2.1.x](https://github.com/0xPolygonHermez/cdk-erigon/releases): zkEVM node with validium extensions                  |
+| **Node type**            | [cdk-erigon:v1.2.24](https://github.com/0xPolygonHermez/cdk-erigon/releases/tag/v1.2.24) | [cdk-erigon:v2.1.x](https://github.com/0xPolygonHermez/cdk-erigon/releases)                  |
 | **Data availability**    | On-chain via L1                                            | Off-chain via a local option, or a [DAC](../glossary/index.md#data-availability-committee-dac) + [DA node](https://github.com/0xPolygon/cdk-data-availability) |
 | **Components**           | zkEVM components\*                                        | zkEVM components\* + PostgreSQL database + on-chain committees                   |
 | **Contracts** | [zkEVM smart contracts](https://github.com/0xPolygonHermez/zkevm-contracts)  <ul><li>`PolygonZkEVM` (main rollup contract)</li> <li> `PolygonZkEVMBridge`</li> <li>`PolygonZkEVMGlobalExitRoot`</li></ul>  | [Validium-specific DAC contract](https://github.com/0xPolygon/cdk-validium-contracts) <ul><li>`CDKDataCommittee.sol`</li><li> `CDKValidium.sol` </li></ul> |
