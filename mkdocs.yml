@@ -82,7 +82,7 @@ nav:
       - Architecture:
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
-        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
+        - Staking the Bridge (STB): cdk/architecture/staking-the-bridge.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
