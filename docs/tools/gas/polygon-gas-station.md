@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Polygon gas station aims to help dApp developers with gas price recommendations, so that they can use it before sending transaction off to the Polygon network.
 
