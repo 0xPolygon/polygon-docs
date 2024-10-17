@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This tutorial takes you through the process of deploying a full zkEVM stack on either testnet or mainnet.
 

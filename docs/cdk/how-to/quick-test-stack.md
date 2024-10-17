@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 A quick and easy method for testing a running CDK stack, whether in validium or rollup mode, is by sending a zero-value transaction and examining the result.
 
