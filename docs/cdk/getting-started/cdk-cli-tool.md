@@ -10,8 +10,6 @@ This CLI tool is an entry point for chain administrators to access the CDK syste
 
 As the chain admin, you simply need to download the precompiled [CDK package binaries](https://github.com/0xPolygon/cdk/releases/).
 
-There is no need to install Golang, browse the CDK repo, or set up any additional tools. Moreover, the process is entirely trustless.
-
 ## Running the CLI tool
 
 !!! info
@@ -48,6 +46,12 @@ Options:
 * `-c, --components <COMPONENTS>` - Components to run [env: `CDK_COMPONENTS=`]
 * `-h, --help` - Print help
 
+Example:
+
+```
+cdk node --config /etc/cdk/cdk-node-config.toml --components sequence-sender,aggregator
+```
+
 ### `cdk erigon`
 
 You can run a cdk-erigon RPC node that syncs to an existing chain using the default parameters.
@@ -71,3 +75,9 @@ Usage: `cdk versions`
 
 Options:
 * `-h, --help` - Print help
+
+Example:
+
+```
+cdk erigon --config /etc/cdk/cdk-node-config.toml --chain genesis.json
+```
