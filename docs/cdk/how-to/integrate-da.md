@@ -4,6 +4,10 @@ comments: true
 ---
 -->
 
+---
+comments: true
+---
+
 This document shows you how to integrate a third-party data availability (DA) solution into your CDK stack.
 
 ## Prerequisites
@@ -198,4 +202,3 @@ To test your DAC integration, follow the steps below.
 4. Update the contracts Docker image tag with the custom tag you created at the [deploy Docker image](#deploy-docker-image) section, step 7, by amending the node's [Docker compose file](https://github.com/0xPolygon/cdk-validium-node/blob/develop/test/docker-compose.yml).
 
 5. Modify the Makefile so it can run your test. Use the [Polygon DAC Makefile](https://github.com/0xPolygon/cdk-validium-node/blob/develop/test/Makefile) as an example.
-
