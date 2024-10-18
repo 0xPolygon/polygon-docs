@@ -53,6 +53,7 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
+      - Second doc in experiment: cdk/second-experiment-doc.md
       - Releases:
         - Full execution proofs (FEP): cdk/releases/stack-components.md
       - Get started: 
