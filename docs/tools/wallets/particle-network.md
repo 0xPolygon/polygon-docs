@@ -1,11 +1,11 @@
 !!! caution "Content disclaimer"
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
-Particle Network's Wallet Abstraction services facilitate user onboarding and interactions that bridge Web2 and Web3. At its core is [Smart Wallet-as-a-Service (WaaS)](https://developers.particle.network/landing/wallet-abstraction/waas/overview), designed to onboard users into MPC-secured smart accounts that support any blockchain. This service offers developers enhanced user experiences through modular, fully customizable EOA/AA embedded wallets. 
+Particle Network's Wallet Abstraction SDKs facilitate 2-click user onboarding into EOAs/SCAs through passkeys, social logins, or typical Web3 wallets.
 
-Developers can integrate Particle's Smart Wallet-as-a-Service via APIs and SDKs for mobile and desktop. This enables secure key generation and management initiated by social or Web3 logins.
+Developers can integrate Particle's Wallet Abstraction suite via APIs and SDKs for mobile and desktop, acting as an all-in-one method of bringing users into your Polygon application, regardless of their background (Web3 natives, brand new users, and so on).
 
-Additionally, across various EVM chains, including Polygon, Particle's Smart Wallet-as-a-Service can facilitate full-stack, modular implementation of Account Abstraction- handling key management.
+Additionally, across various EVM chains, including Polygon, Particle's SDKs can facilitate full-stack, modular implementation of ERC-4337 Account Abstraction.
 
 Particle Wallet itself is available either in an application-embedded format, depending on the type of integration a specific developer chooses, or standalone through the [mobile](https://apps.apple.com/us/app/particle-crypto-wallet/id1632425771) or [web](https://wallet.particle.network) application, and it can be integrated via various SDKs. This page will cover [Particle Connect](https://developers.particle.network/api-reference/connect/desktop/web). 
 
@@ -33,10 +33,9 @@ OR
 
 ```js
 npm install @particle-network/connectkit viem@^2
-
 ```
 
-### Configure particle Connect
+### Configure Particle Connect
 
 Now that you've installed the initial dependencies, you'll need to head over to the [Particle Network dashboard](https://dashboard.particle.network/#/login) to create a project & application so that you can acquire the required keys/IDs (`projectId`, `clientKey`, and `appId`) for configuration.
 
