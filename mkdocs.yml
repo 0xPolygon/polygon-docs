@@ -545,7 +545,7 @@ nav:
               - Venly widget: tools/wallets/venly/venly-widget.md
           - Fortmatic: https://docs.fortmatic.com/   
           - Openfort: tools/wallets/openfort.md
-          - Particle network:  tools/wallets/particle-network.md
+          - Particle Network:  tools/wallets/particle-network.md
           - Portis:  tools/wallets/portis.md    
           - Torus:  tools/wallets/torus.md  
           - WalletConnect:  tools/wallets/walletconnect.md
