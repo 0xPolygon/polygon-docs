@@ -55,6 +55,9 @@ nav:
       - Overview: cdk/overview.md
       - Releases:
         - Full execution proofs (FEP): cdk/releases/stack-components.md
+      - Get started:
+        - Local deployment guide: cdk/getting-started/local-deployment.md
+        - CLI tool: cdk/getting-started/cli-tool.md
         - CDK Erigon:
           - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
           - Releases: cdk/getting-started/cdk-erigon/releases.md
@@ -63,9 +66,6 @@ nav:
             - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
             - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
           - Resources: cdk/getting-started/cdk-erigon/resources.md
-      - Get started: 
-        - Local deployment guide: cdk/getting-started/local-deployment.md
-        - CLI tool: cdk/getting-started/cli-tool.md
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - L2 architecture overview: cdk/concepts/architecture.md
