@@ -10,7 +10,7 @@ The L2 bridge contract manages a special Merkle tree called a local exit tree fo
 
 <center>
 
-![Local exit tree for network participant](../../../../img/cdk/high-level-architecture/local-exit-tree.png)
+![Local exit tree for network participant](../../../img/cdk/smart-contracts/local-exit-tree.png)
 
 </center>
 
@@ -29,7 +29,7 @@ The roots of the L2 local exit trees feed into a single exit tree that manages s
 
 <center>
 
-![Exit tree for rollups](../../../../img/cdk/high-level-architecture/exit-tree-for-rollups.png)
+![Exit tree for rollups](../../../img/cdk/smart-contracts/exit-tree-for-rollups.png)
 
 </center>
 
@@ -41,7 +41,7 @@ Every time there is a call to `bridgeAsset()` and `bridgeMessage()` on the bridg
 
 <center>
 
-![L1 local exit tree](../../../../img/cdk/high-level-architecture/l1-ethereum-exit-tree.png)
+![L1 local exit tree](../../../img/cdk/smart-contracts/l1-ethereum-exit-tree.png)
 
 </center>
 
@@ -55,7 +55,7 @@ The GER is the fingerprint of the information stored in all trees, and thus repr
 
 <center>
 
-![Exit tree for rollups](../../../../img/cdk/high-level-architecture/l1-info-tree.png)
+![Exit tree for rollups](../../../img/cdk/smart-contracts/l1-info-tree.png)
 
 </center>
 
@@ -71,7 +71,7 @@ uint8 private constant _LEAF_TYPE_ASSET = 0;
 uint8 private constant _LEAF_TYPE_MESSAGE = 1;
 ```
 
-Data in a leaf contains a Keccak256 hash of the metadata (ABI encoded metadata if any) and the following parameters (matched by publicly available transaction data as seen in the [bridge L1 to L2](../../unified-LxLy/bridging.md#l1-to-l2) documentation):
+Data in a leaf contains a Keccak256 hash of the metadata (ABI encoded metadata if any) and the following parameters (matched by publicly available transaction data as seen in the [bridge L1 to L2](../unified-LxLy/bridging.md#l1-to-l2) documentation):
 
 ```solidity
 _addLeaf(
@@ -111,7 +111,7 @@ The exit roots are modified in two key flows; sequencing and bridging.
 
 The `PolygonZkEVMGlobalExitRootV2` contract manages updates to the exit roots on sequencing. The contract calls `updateExitRoot(...)` on the `GlobalExitRootManager` during the sequencing flow to add an exit leaf to the relevant exit tree. 
 
-![Update exit roots via sequencing flow](../../../../img/cdk/high-level-architecture/update-exit-roots-via-sequencing.png)
+![Update exit roots via sequencing flow](../../../img/cdk/smart-contracts/update-exit-roots-via-sequencing.png)
 
 1. Initiate update: `PolygonZkEVMEtrog` initiates the update process by calling `updateExitRoots` on `PolygonRollupBaseEtrog`.
 2. Retrieve current roots: `PolygonRollupBaseEtrog` retrieves the current local and global exit roots from `PolygonZkEVMGlobalExitRootL2` and `PolygonZkEVMGlobalExitRootV2` respectively.
@@ -128,7 +128,7 @@ The `PolygonZkEVMGlobalExitRootV2` contract manages updates to the exit roots on
 
 When bridging, the global exit root is updated if the [`forceUpdateGlobalExitRoot`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol#L312) variable is set to `true`.
 
-![Update exit roots via bridging flow](../../../../img/cdk/high-level-architecture/update-exit-roots-via-bridging.png)
+![Update exit roots via bridging flow](../../../img/cdk/smart-contracts/update-exit-roots-via-bridging.png)
 
 1. The user interacts with the `PolygonZkEVMBridgeV2` contract by calling the `bridge()` function.
 2. `PolygonZkEVMBridgeV2` calls `updateLocalExitRoot()` on `PolygonZkEVMGlobalExitRootL2`, which updates the local exit root.

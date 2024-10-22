@@ -136,6 +136,50 @@ nav:
             - Emergency state: zkEVM/operations/malfunction-resistance/emergency-state.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
+        - Smart contracts:
+          - Smart contracts: zkEVM/architecture/smart-contracts/index.md
+          - Main contracts: zkEVM/architecture/smart-contracts/main-contracts.md
+          - Consensus contracts - sequencing: zkEVM/architecture/smart-contracts/sequencing.md
+          - Exit roots: zkEVM/architecture/smart-contracts/exit-roots.md   
+          - Consensus contracts - verification: zkEVM/architecture/smart-contracts/verification.md
+          - API:
+            - PolygonRollupManager.sol:  zkEVM/architecture/smart-contracts/api/PolygonRollupManager.md
+            - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/smart-contracts/api/PolygonZkEVMBridgeV2.md
+            - PolygonZkEVMGlobalExitRootV2.sol:  zkEVM/architecture/smart-contracts/api/PolygonZkEVMGlobalExitRootV2.md
+            - Consensus:
+              - Data committee:
+                - CDKDataCommittee.sol:  zkEVM/architecture/smart-contracts/api/consensus/dataComittee/CDKDataCommittee.md
+                - PolygonDataComittee.sol:  zkEVM/architecture/smart-contracts/api/consensus/dataComittee/PolygonDataComittee.md
+              - Validium:
+                - PolygonDataCommittee.sol:  zkEVM/architecture/smart-contracts/api/consensus/validium/PolygonDataCommittee.md
+                - PolygonValidiumEtrog.sol:  zkEVM/architecture/smart-contracts/api/consensus/validium/PolygonValidiumEtrog.md
+                - Migration:
+                  - PolygonRollupBaseEtrogNoGap.sol:  zkEVM/architecture/smart-contracts/api/consensus/validium/migration/PolygonRollupBaseEtrogNoGap.md
+                  - PolygonValidiumStorageMigration.sol:  zkEVM/architecture/smart-contracts/api/consensus/validium/migration/PolygonValidiumStorageMigration.md
+              - ZkEVM:
+                - PolygonZkEVMEtrog.sol:  zkEVM/architecture/smart-contracts/api/consensus/zkEVM/PolygonZkEVMEtrog.md
+                - PolygonZkEVMExistentEtrog.sol:  zkEVM/architecture/smart-contracts/api/consensus/zkEVM/PolygonZkEVMExistentEtrog.md
+                - PolygonZkEVMV2.sol:  zkEVM/architecture/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2.md
+                - PolygonZkEVMV2Existent.sol:  zkEVM/architecture/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2Existent.md
+            - Lib:
+              - DepositContractBase.sol: zkEVM/architecture/smart-contracts/api/lib/DepositContractBase.md
+              - DepositContractLib.sol:  zkEVM/architecture/smart-contracts/api/lib/DepositContractLib.md
+              - DepositContractV2.sol:  zkEVM/architecture/smart-contracts/api/lib/DepositContractV2.md
+              - PolygonAccessControlUpgradeable.sol:  zkEVM/architecture/smart-contracts/api/lib/PolygonAccessControlUpgradeable.md
+              - PolygonRollupBaseEtrog.sol:  zkEVM/architecture/smart-contracts/api/lib/PolygonRollupBaseEtrog.md
+              - PolygonTransparentProxy.sol:  zkEVM/architecture/smart-contracts/api/lib/PolygonTransparentProxy.md
+              - PolygonZkEVMGlobalExitRootBaseStorage.sol: zkEVM/architecture/smart-contracts/api/lib/PolygonZkEVMGlobalExitRootBaseStorage.md
+            - Utils:
+              - ClaimCompressor.sol:  zkEVM/architecture/smart-contracts/api/utils/ClaimCompressor.md
+          - Addresses: zkEVM/architecture/smart-contracts/addresses.md
+        - Unified bridge:
+            - Unified bridge: zkEVM/architecture/unified-LxLy/index.md
+            - The rollup manager: zkEVM/architecture/unified-LxLy/ulxly-rollupmanager.md
+            - Sequencing and verification flows: zkEVM/architecture/unified-LxLy/ulxly-sequence-verify.md
+            - Updating rollups: zkEVM/architecture/unified-LxLy/ulxly-updating-rollups.md
+            - Global exit trees: zkEVM/architecture/unified-LxLy/ulxly-exit-trees-node.md
+            - Cross-chain exchanges: zkEVM/architecture/unified-LxLy/ulxly-interchain-exchanges.md
+            - Bridging: zkEVM/architecture/unified-LxLy/bridging.md
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - zkNode: zkEVM/architecture/zknode/index.md
@@ -207,50 +251,6 @@ nav:
             - Bits2Field state machine: zkEVM/architecture/zkprover/hashing-state-machines/bits2field-sm.md
             - Keccak-f state machine: zkEVM/architecture/zkprover/hashing-state-machines/keccakf-sm.md
             - Poseidon state machine: zkEVM/architecture/zkprover/hashing-state-machines/poseidon-sm.md
-        - Unified bridge:
-            - Unified bridge: zkEVM/architecture/unified-LxLy/index.md
-            - The rollup manager: zkEVM/architecture/unified-LxLy/ulxly-rollupmanager.md
-            - Sequencing and verification flows: zkEVM/architecture/unified-LxLy/ulxly-sequence-verify.md
-            - Updating rollups: zkEVM/architecture/unified-LxLy/ulxly-updating-rollups.md
-            - Global exit trees: zkEVM/architecture/unified-LxLy/ulxly-exit-trees-node.md
-            - Cross-chain exchanges: zkEVM/architecture/unified-LxLy/ulxly-interchain-exchanges.md
-            - Bridging: zkEVM/architecture/unified-LxLy/bridging.md
-        - Smart contracts:
-          - Smart contracts: zkEVM/architecture/high-level/smart-contracts/index.md
-          - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
-          - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
-          - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
-          - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
-          - API:
-            - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
-            - PolygonZkEVMBridgeV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMBridgeV2.md
-            - PolygonZkEVMGlobalExitRootV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonZkEVMGlobalExitRootV2.md
-            - Consensus:
-              - Data committee:
-                - CDKDataCommittee.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/CDKDataCommittee.md
-                - PolygonDataComittee.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/dataComittee/PolygonDataComittee.md
-              - Validium:
-                - PolygonDataCommittee.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonDataCommittee.md
-                - PolygonValidiumEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/PolygonValidiumEtrog.md
-                - Migration:
-                  - PolygonRollupBaseEtrogNoGap.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonRollupBaseEtrogNoGap.md
-                  - PolygonValidiumStorageMigration.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/validium/migration/PolygonValidiumStorageMigration.md
-              - ZkEVM:
-                - PolygonZkEVMEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMEtrog.md
-                - PolygonZkEVMExistentEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMExistentEtrog.md
-                - PolygonZkEVMV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2.md
-                - PolygonZkEVMV2Existent.sol:  zkEVM/architecture/high-level/smart-contracts/api/consensus/zkEVM/PolygonZkEVMV2Existent.md
-            - Lib:
-              - DepositContractBase.sol: zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractBase.md
-              - DepositContractLib.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractLib.md
-              - DepositContractV2.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/DepositContractV2.md
-              - PolygonAccessControlUpgradeable.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonAccessControlUpgradeable.md
-              - PolygonRollupBaseEtrog.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonRollupBaseEtrog.md
-              - PolygonTransparentProxy.sol:  zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonTransparentProxy.md
-              - PolygonZkEVMGlobalExitRootBaseStorage.sol: zkEVM/architecture/high-level/smart-contracts/api/lib/PolygonZkEVMGlobalExitRootBaseStorage.md
-            - Utils:
-              - ClaimCompressor.sol:  zkEVM/architecture/high-level/smart-contracts/api/utils/ClaimCompressor.md
-          - Addresses: zkEVM/architecture/high-level/smart-contracts/addresses.md
         - Tokenomics:
           - Incentive mechanism: zkEVM/architecture/protocol/incentive-mechanism.md
           - Effective gas price:
