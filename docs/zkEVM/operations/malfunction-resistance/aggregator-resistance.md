@@ -47,7 +47,7 @@ The `lastPendingState` storage variable is used to keep track of the number of p
 
 The below figure shows the L2 Stages timeline from a batch perspective, and the actions that triggers its inclusion in the next L2 state stage, when a batch sequence is Aggregated through the `verifyBatches` function.
 
-![L2 State stages timeline with pending state](../../../../img/zkEVM/11l2-stages-timeline-pending.png)
+![L2 State stages timeline with pending state](../../../img/zkEVM/11l2-stages-timeline-pending.png)
 
 The presence of batch sequences in pending state has no effect on the correct and proper functioning of the protocol. Non-forced batch sequences are verified before pending ones, and not all sequences enter the pending state.
 

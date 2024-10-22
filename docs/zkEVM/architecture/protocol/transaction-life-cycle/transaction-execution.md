@@ -15,6 +15,6 @@ Users typically interact with trusted L2 state. However, because of specific pro
      - What is the rare case scenario?
         Verification of transactions on L1 can take 1 week in the case when an emergency state is activated or the aggregator does not batch any proofs at all.
 
-     - Additionally, the emergency mode is activated if a sequenced batch is not aggregated in 7 days. Please refer to [this guide](../malfunction-resistance/emergency-state.md) to understand more about the emergency state.
+     - Additionally, the emergency mode is activated if a sequenced batch is not aggregated in 7 days. Please refer to [this guide](../../../operations/malfunction-resistance/emergency-state.md) to understand more about the emergency state.
 
 As a result, users should be mindful of the potential risks associated with high-value transactions, particularly those that cannot be reversed, such as off-ramps, over-the-counter transactions, and alternative bridges.

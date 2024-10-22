@@ -123,6 +123,17 @@ nav:
         - API:
           - JSON RPC endpoints: zkEVM/get-started/json-rpc.md
           - Check transaction status: zkEVM/get-started/check-tx-status.md
+      - Operations:
+          - Governance:
+            - Admin role: zkEVM/operations/admin-role.md
+            - Security council: zkEVM/operations/security-council.md           
+          - Upgrades:
+            - Protocol upgradability: zkEVM/operations/upgradability.md
+            - Upgrade process: zkEVM/operations/upgrade-process.md
+          - Malfunction resistance:
+            - Force batches: zkEVM/operations/malfunction-resistance/sequencer-resistance.md
+            - Force verification: zkEVM/operations/malfunction-resistance/aggregator-resistance.md
+            - Emergency state: zkEVM/operations/malfunction-resistance/emergency-state.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
         - zkEVM protocol:
@@ -147,15 +158,6 @@ nav:
               - Stream file: zkEVM/architecture/data-streamer/stream-file.md
               - How rollbacks work: zkEVM/architecture/data-streamer/how-rollbacks-work.md
             - About reorgs: zkEVM/architecture/protocol/synchronizer-reorg.md
-          - Admin role and governance: zkEVM/architecture/protocol/admin-role.md
-          - Upgrades:
-            - Protocol upgradability: zkEVM/architecture/protocol/upgradability.md
-            - Upgrade process: zkEVM/architecture/protocol/upgrade-process.md
-          - Security council: zkEVM/architecture/protocol/security-council.md
-          - Malfunction resistance:
-            - Force batches: zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md
-            - Force verification: zkEVM/architecture/protocol/malfunction-resistance/aggregator-resistance.md
-            - Emergency state: zkEVM/architecture/protocol/malfunction-resistance/emergency-state.md
         - zkProver:
           - zkProver: zkEVM/architecture/zkprover/index.md
           - zkProver design:

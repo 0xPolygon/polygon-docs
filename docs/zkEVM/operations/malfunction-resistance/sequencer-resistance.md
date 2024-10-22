@@ -2,7 +2,7 @@ Users must rely on a trusted sequencer for their transactions to be executed in 
 
 A forced batch is a collection of L2 transactions that users can commit to L1 to publicly declare their intent to execute those transactions.
 
-![Forced batch sequencing flow](../../../../img/zkEVM/09l2-forced-batch-seq-flow.png)
+![Forced batch sequencing flow](../../../img/zkEVM/09l2-forced-batch-seq-flow.png)
 
 The `PolygonZkEVM.sol` contract has a `forcedBatches` mapping, as shown in the above figure, in which users can submit transaction batches to be forced. The `forcedBatches` mapping serves as an immutable notice board where forced batches are timestamped and published before being included in a sequence.
 
@@ -93,4 +93,4 @@ This situation has been detected and handled by the node software. It reorganise
 
 The below diagram depicts the distinction between trusted and virtual L2 states that occur when a forced batch sequence is executed.
 
-![Differences between trusted and virtual L2 state](../../../../img/zkEVM/10l2-diff-trustd-virtual-state.png)
+![Differences between trusted and virtual L2 state](../../../img/zkEVM/10l2-diff-trustd-virtual-state.png)
