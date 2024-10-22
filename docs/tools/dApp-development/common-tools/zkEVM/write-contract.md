@@ -37,4 +37,4 @@ With the resulting lines of code, you now have the NFT token contract written in
 
 The below figure depicts the auto-written NFT smart contract code.
 
-![The end-product NFT source code](../../img/zkEVM/zkv-end-product-nft-code.png)
+![The end-product NFT source code](../../../../img/zkEVM/zkv-end-product-nft-code.png)

@@ -7,7 +7,7 @@ This document is a guide on how to deploy a smart contract on the Polygon zkEVM 
 
 !!!info
     
-    Before starting with this deployment, please ensure that your wallet is connected to the Polygon zkEVM Testnet. See the demo [here](../get-started/quick-start.md) for details on how to connect your wallet.
+    Before starting with this deployment, please ensure that your wallet is connected to the Polygon zkEVM Testnet. See the demo [here](../../../../zkEVM/get-started/connect-to-zkEVM.md) for details on how to connect your wallet.
 
 - Add the Polygon zkEVM Testnet to your Metamask wallet and get some Testnet ETH from the [Polygon Faucet](https://faucet.polygon.technology).
 
@@ -63,7 +63,7 @@ mv README.md README-tutorial.md
 
     The aim here is to achieve the following outcome:
 
-    ![Figure _ ](../../img/zkEVM/zkv-proj-created-outcome.png)
+    ![Figure _ ](../../../../img/zkEVM/zkv-proj-created-outcome.png)
 
     So then,
 

@@ -109,7 +109,7 @@ nav:
           - Etrog specifics: zkEVM/releases/etrog-upgrade.md
       - Build:
         - Get started: zkEVM/get-started/index.md
-        - Connect to zkEVM: zkEVM/get-started/quick-start.md
+        - Connect to zkEVM: zkEVM/get-started/connect-to-zkEVM.md
         - Deployment guides:
           - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
           - Setup production zkNode: zkEVM/get-started/setup-nodes/production-node.md
@@ -412,10 +412,10 @@ nav:
               - Remix: tools/dApp-development/common-tools/remix.md
               - Replit: tools/dApp-development/common-tools/replit.md
           - On zkEVM:
-              - Write a contract: zkEVM/how-to/write-contract.md
-              - Deploy a contract with Foundry: zkEVM/how-to/using-foundry.md
-              - Deploy a contract with Hardhat: zkEVM/how-to/using-hardhat.md
-              - Verify a contract: zkEVM/how-to/verify-contract.md
+              - Write a contract: tools/dApp-development/common-tools/zkEVM/write-contract.md
+              - Deploy a contract with Foundry: tools/dApp-development/common-tools/zkEVM/using-foundry.md
+              - Deploy a contract with Hardhat: tools/dApp-development/common-tools/zkEVM/using-hardhat.md
+              - Verify a contract: tools/dApp-development/common-tools/zkEVM/verify-contract.md
         - Verify smart contracts:
           - OKX explorer:
             - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
