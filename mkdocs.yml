@@ -101,10 +101,10 @@ nav:
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
+      - Risk disclosure: zkEVM/risk-disclosures.md
       - Releases:
         - History of releases: zkEVM/releases/historical-data.md
         - Etrog specifics: zkEVM/releases/etrog-upgrade.md
-        - Risk disclosures: zkEVM/releases/risk-disclosures.md
       - Build:
         - Connect to zkEVM: zkEVM/get-started/connect-to-zkEVM.md
         - Deployment guides:
