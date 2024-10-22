@@ -61,4 +61,4 @@ In this case, batch `2041736` happens to be the last batch to be sequenced, as d
 
 ## Further reading
 
-- [Blocks in the zkEVM Etrog upgrade](../../zkEVM/architecture/protocol/etrog-upgrade.md/?h=blocks#etrog-blocks).
+- [Blocks in the zkEVM Etrog upgrade](../../zkEVM/releases/etrog-upgrade.md/?h=blocks#etrog-blocks).

@@ -101,9 +101,12 @@ nav:
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
-      - Overview: zkEVM/overview.md
+      - Overview: 
+          - Overview: zkEVM/overview/index.md
+          - Risk disclosures: zkEVM/overview/risk-disclosures.md
       - Releases:
-        - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
+          - History of releases: zkEVM/releases/historical-data.md
+          - Etrog specifics: zkEVM/releases/etrog-upgrade.md
       - Build:
         - Get started: zkEVM/get-started/index.md
         - Connect to zkEVM: zkEVM/get-started/quick-start.md
@@ -120,11 +123,9 @@ nav:
               - Configure prover: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-prover.md
               - Start node: zkEVM/get-started/setup-nodes/deploy-zkevm/start-node.md
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
-          # - Sync state with snapshots: zkEVM/get-started/state-sync-snapshots.md
-        - Risk disclosures: zkEVM/get-started/risk-disclosures.md
-        - Historical data: zkEVM/get-started/historical-data.md
-        - JSON RPC endpoints: zkEVM/get-started/json-rpc.md
-        - Check transaction status: zkEVM/get-started/check-tx-status.md
+        - API:
+          - JSON RPC endpoints: zkEVM/get-started/json-rpc.md
+          - Check transaction status: zkEVM/get-started/check-tx-status.md
       - Architecture:
         - Architecture: zkEVM/architecture/index.md
         - zkEVM protocol:
@@ -308,8 +309,6 @@ nav:
           - Program counter: zkEVM/concepts/generic-state-machine/program-counter.md
           - Plookup: zkEVM/concepts/generic-state-machine/plookup.md
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
-      # - Troubleshooting:
-      #   - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
   - PoS:
       - PoS: pos/index.md
       - Overview: pos/overview.md

@@ -17,7 +17,7 @@ Following the launch of the testnet, the code base for Polygon zkEVM underwent s
 
 After the audits, Polygon zkEVM Mainnet Beta [launched in March 2023](https://www.youtube.com/watch?v=UvQIX5i09A4&ab_channel=ETHGlobal). Since then, the zkEVM network has had two major upgrades: [Dragon Fruit (ForkID5)](https://polygon.technology/blog/polygon-zkevm-dragon-fruit-upgrade-with-new-opcode-coming-to-mainnet-beta), in September 2023, and [Inca Berry (ForkID6)](https://polygon.technology/blog/polygon-zkevm-inca-berry-upgrade-coming-to-mainnet-beta), in November 2023.
 
-All updates and upgrades of both the mainnet and testnet can be found in the [Historical data document](../zkEVM/get-started/historical-data.md).
+All updates and upgrades of both the mainnet and testnet can be found in the [Historical data document](../releases/historical-data.md).
 
 ## Security measures
 
@@ -27,7 +27,7 @@ zkEVM's upgrades are on par with Ethereum's security standards as they involve d
 - A timelock contract to give users sufficient time delay to withdraw before execution.
 - A transparent upgradeable proxy, from OpenZeppelin’s libraries of audited and battle-tested contracts.
 
-The activation of the 10-day timelock for upgrading zkEVM's smart contracts on Ethereum requires approval by the network's [Admin](https://etherscan.io/address/0x242daE44F5d8fb54B198D03a94dA45B5a4413e21), a three-participant multisig that acts as a [governance tool](../zkEVM/architecture/protocol/admin-role.md#governance-of-zkevm-contracts) for the protocol. This is a Gnosis Safe with a 2/3 threshold.
+The activation of the 10-day timelock for upgrading zkEVM's smart contracts on Ethereum requires approval by the network's [Admin](https://etherscan.io/address/0x242daE44F5d8fb54B198D03a94dA45B5a4413e21), a three-participant multisig that acts as a [governance tool](../architecture/protocol/admin-role.md#governance-of-zkevm-contracts) for the protocol. This is a Gnosis Safe with a 2/3 threshold.
 
 In the event of an emergency that puts user funds at risk, the network's [Security Council](https://etherscan.io/address/0x37c58Dfa7BF0A165C5AAEdDf3e2EdB475ac6Dcb6) may remove the 10-day timelock. In such an emergency, the network state stops advancing and bridge functionality is paused. The Security Council is an eight-participant multisig. This is a Gnosis Safe with a 6/8 threshold. Learn more about [zkEVM upgradability](https://docs.polygon.technology/zkEVM/architecture/protocol/upgradability/).
 
@@ -39,7 +39,7 @@ Smart contracts are deployed to ensure that everyone who executes state changes 
 
 Development efforts aim at permissionless-ness, that is, allowing anyone with the zkEVM software to participate in the network. 
 
-For instance, the network allows anyone to circumvent any transaction-censorship by triggering the [force batches](./architecture/protocol/malfunction-resistance/sequencer-resistance.md) mechanism, or to avoid denial of validity-proving by activating the [force verification](./architecture/protocol/malfunction-resistance/aggregator-resistance.md) feature. 
+For instance, the network allows anyone to circumvent any transaction-censorship by triggering the [force batches](../architecture/protocol/malfunction-resistance/sequencer-resistance.md) mechanism, or to avoid denial of validity-proving by activating the [force verification](../architecture/protocol/malfunction-resistance/aggregator-resistance.md) feature. 
 
 The ultimate aim is to ensure that there is no censorship and that no one party can control the network.
 
@@ -57,7 +57,7 @@ A few of these strategies are listed below:
 2. Carry out all computations off-chain while keeping only the necessary data and ZK-proofs on-chain.
 3. Implementation of the bridge smart contract is made efficient by using only Merkle roots of exit trees.
 4. Utilization of specialized cryptographic primitives within the proving component, [zkProver](https://docs.polygon.technology/zkEVM/architecture/zkprover/), to speed up computations and minimize proof sizes. This is seen in:
-    * Running a special zero-knowledge assembly language ([zkASM](./spec/zkasm/index.md)) for interpretation of bytecode.
+    * Running a special zero-knowledge assembly language ([zkASM](../spec/zkasm/index.md)) for interpretation of bytecode.
     * Using zero-knowledge technology such as zk-STARKs for proving purposes; these proofs are very fast though they are big in size.
     * Instead of publishing the sizeable zk-STARK proofs as validity proofs, a zk-SNARK is used to attest to the correctness of the zk-STARK proofs. 
     * Publishing zk-SNARKs as the validity proofs to state changes.

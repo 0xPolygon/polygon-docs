@@ -1,4 +1,4 @@
-In this document we discuss the differences between the Dragonfruit upgrade, which comes with the executor fork-ID 5, and the [Etrog upgrade](../protocol/etrog-upgrade.md) associated with fork-ID 6.
+In this document we discuss the differences between the Dragonfruit upgrade, which comes with the executor fork-ID 5, and the [Etrog upgrade](../../releases/etrog-upgrade.md) associated with fork-ID 6.
 
 The key differences between the two Polygon zkEVM upgrades are mainly related to the definition of the L2 block and timestamps.
 
