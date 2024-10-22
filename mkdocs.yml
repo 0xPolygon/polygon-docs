@@ -101,14 +101,11 @@ nav:
         - CDK repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
-      - Overview: 
-          - Overview: zkEVM/overview/index.md
-          - Risk disclosures: zkEVM/overview/risk-disclosures.md
       - Releases:
-          - History of releases: zkEVM/releases/historical-data.md
-          - Etrog specifics: zkEVM/releases/etrog-upgrade.md
+        - History of releases: zkEVM/releases/historical-data.md
+        - Etrog specifics: zkEVM/releases/etrog-upgrade.md
+        - Risk disclosures: zkEVM/releases/risk-disclosures.md
       - Build:
-        - Get started: zkEVM/get-started/index.md
         - Connect to zkEVM: zkEVM/get-started/connect-to-zkEVM.md
         - Deployment guides:
           - Setup local zkNode: zkEVM/get-started/setup-nodes/local-node.md
@@ -284,9 +281,6 @@ nav:
           - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
-      # - API: 
-      #   - JSON RPC endpoints: zkEVM/api/json-rpc.md
-      #   - Check transaction status: zkEVM/api/check-tx-status.md
       - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
@@ -673,7 +667,6 @@ plugins:
       redirect_maps:
         'docs/develop/network-details/network.md': 'cdk/index.md'
         'cdk/getting-started/index.md': 'cdk/getting-started/local-deployment.md'      
-        'zkEVM/how-to/index.md': 'zkEVM/get-started/index.md'
         'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
         'tools/matic-js/installation.md': 'tools/matic-js/get-started.md'
         'pos/how-to/access-node.md': 'tools/dApp-development/tutorials/access-node.md'
