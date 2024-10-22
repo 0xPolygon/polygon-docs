@@ -12,7 +12,7 @@ hide:
 <div class="section-wrapper product-section-head">
     <div class="hero-image"><img src="../img/zkEVM/zkevm.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
     <div class="hero-left">
-       <h1 class="hero-heading">Polygon zkEVM</h1>
+       <h1 class="hero-heading">Polygon zkEVM - Draft restructure</h1>
        <p class="hero-subtext">Polygon zkEVM is a Layer 2 network of the Ethereum Virtual Machine (EVM), a zero-knowledge (ZK) rollup scaling solution.</p>
     </div>
     </br>
