@@ -35,15 +35,15 @@ The table below lists the components of a CDK PP chain and where you can find th
 Here are brief descriptions for each CDK FEP component.
 
 - CDK Erigon node, a fork of [erigon](https://github.com/ledgerwatch/erigon), that manages the following:
-  - Multiple RPC nodes that provide common APIs for sending transactions.
-  - Sequencer for executing transactions, and creating blocks and batches.
+    - Multiple RPC nodes that provide common APIs for sending transactions.
+    - Sequencer for executing transactions, and creating blocks and batches.
 - Contracts: Various smart contracts deployed on L1 for the full implementation and complete functionality of the Polygon zkEVM protocol:
-  - `PolygonRollupManager`
-  - `PolygonZkEVMBridgeV2`
-  - `PolygonZkEVMGlobalExitRootV2`
-  - `FflonkVerifier`
-  - `PolygonZkEVMDeployer`
-  - `PolygonZkEVMTimelock`
+    - `PolygonRollupManager`
+    - `PolygonZkEVMBridgeV2`
+    - `PolygonZkEVMGlobalExitRootV2`
+    - `FflonkVerifier`
+    - `PolygonZkEVMDeployer`
+    - `PolygonZkEVMTimelock`
 - CLI tool: A single command line interface tool for abstracting away the complexity of deploying or configuring CDK components.
 - AggSender is the CDK PP component that accumulates all necessary info in order to generate certificates, which are sent to the SP1 prover via the JSON-RPC API  for the generation of pessimistic proofs.
 - Transaction pool manager: For storing transactions submitted by users.
