@@ -39,7 +39,6 @@ Here are brief descriptions for each CDK FEP component.
 - CDK Erigon node, a fork of [erigon](https://github.com/ledgerwatch/erigon), that manages the following:
   - Multiple RPC nodes that provide common APIs for sending transactions.
   - Sequencer for executing transactions, and creating blocks and batches.
-- DAC: The Data Availability Committee, specifically for validium mode, is a set of *trusted actors* who keep custody of all transaction data, including monitoring and validating hash values the sequencer sender proposes to publish on L1.
 - Contracts: Various smart contracts deployed on L1 for the full implementation and complete functionality of the Polygon zkEVM protocol:
   - `PolygonRollupManager`
   - `PolygonZkEVMBridgeV2`
