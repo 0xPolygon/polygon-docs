@@ -10,7 +10,7 @@ The 10-day delay allows users to carefully assess the proposed changes and decid
 
 Another smart contract called _Timelock Contract_ is responsible for enabling the 10-day delay.
 
-An outline of the _upgrade process_ is outlined [here](upgrade-process.md).
+An outline of the _upgrade process_ is outlined [here](./upgrade-process.md).
 
 ## Admin contract in detail
 
@@ -55,7 +55,7 @@ The Admin carries significant and critical responsibility, which is why it is co
 
 Below figure shows the governance tree of Polygon zkEVM L1 contracts.
 
-![governance tree of zkEVM L1 contracts](../../../img/zkEVM/governance-tree.png)
+![governance tree of zkEVM L1 contracts](../../img/zkEVM/governance-tree.png)
 
 Protocol maintenance operations can only be performed by following these steps:
 

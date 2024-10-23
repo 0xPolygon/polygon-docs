@@ -47,7 +47,7 @@ And, as in the above scenario of sequencer A and B, the synchronizer alerts sequ
 
 The possibility of L2 reorgs arises only in the event of L1 reorgs.
 
-There’s a slight chance for a reorg occurrence in the event of [_forced batches_](../protocol/malfunction-resistance/sequencer-resistance.md), where a user is sequencing a batch.
+There’s a slight chance for a reorg occurrence in the event of [_forced batches_](../../operations/malfunction-resistance/sequencer-resistance.md), where a user is sequencing a batch.
 
 However, the design of forced batches is specifically crafted to mitigate such scenarios.
 

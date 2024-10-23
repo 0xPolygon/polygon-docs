@@ -88,7 +88,7 @@ The main use case is to allow a user to send bridge transactions to withdraw ass
 
 Since every user who sends L2 batch data is, by default, 'untrusted,' the system must ensure that anything sent by any user can be verified.
 
-The _forced batches_ mechanism is elaborated on in the [Malfunction resistance subsection](../../../zkEVM/architecture/protocol/malfunction-resistance/sequencer-resistance.md).
+The _forced batches_ mechanism is elaborated on in the [Malfunction resistance subsection](../../../zkEVM/operations/malfunction-resistance/sequencer-resistance.md).
 
 ## zkCounters
 

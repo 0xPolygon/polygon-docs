@@ -33,7 +33,7 @@ In line with Transparent Upgradaeable Proxies, this ensures that the state of th
 
 Following the above example of an upgrade on the Consensus Contract, the below depicts the process flow of a Polygon zkEVM upgrade.
 
-![Upgrade Overview](../../../img/zkEVM/upgrade-overview.png)
+![Upgrade Overview](../../img/zkEVM/upgrade-overview.png)
 
 ## Benefits for users
 

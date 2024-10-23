@@ -13,7 +13,7 @@ This section focuses on the verification workflow.
 
 The sequence diagram below shows the verification workflow for rollup stacks and/or the AggLayer calling the `verifyBatchesTrustedAggregator(...)` function on the rollup manager.
 
-![Polygon Solidity consensus verification flow](../../../../img/cdk/high-level-architecture/verification-flow.png)
+![Polygon Solidity consensus verification flow](../../../img/cdk/smart-contracts/verification-flow.png)
 
 ## `verifyBatchesTrustedAggregator()`
 
