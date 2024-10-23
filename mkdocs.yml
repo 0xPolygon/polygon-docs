@@ -120,7 +120,7 @@ nav:
               - Configure prover: zkEVM/get-started/setup-nodes/deploy-zkevm/configure-prover.md
               - Start node: zkEVM/get-started/setup-nodes/deploy-zkevm/start-node.md
               - Start services: zkEVM/get-started/setup-nodes/deploy-zkevm/start-services.md
-        - API:
+        - JSON RPC API:
           - JSON RPC endpoints: zkEVM/get-started/json-rpc.md
           - Check transaction status: zkEVM/get-started/check-tx-status.md
       - Operations:
