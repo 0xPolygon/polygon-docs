@@ -4,9 +4,6 @@ comments: true
 ---
 -->
 
-!!!caution
-    Check the list of potential risks associated with the use of Polygon zkEVM in the [Disclosures](../get-started/risk-disclosures.md) section.
-
 ## Connect to zkEVM mainnet or testnet
 
 Add a full network configuration to your wallet in one click.

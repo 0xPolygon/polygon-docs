@@ -242,7 +242,7 @@ Join discussions or ask questions on Telegram: https://t.me/polygonzkevm_technic
 
 **zkEVM mainnet Upgrade: Etrog hardfork**
 
-This upgrade brings the Polygon zkEVM to being almost a type 2 ZK-EVM. See further details [here](../architecture/protocol/etrog-upgrade.md)
+This upgrade brings the Polygon zkEVM to being almost a type 2 ZK-EVM. See further details [here](../releases/etrog-upgrade.md)
 
 |                 |                           Version                            |
 | :-------------: | :----------------------------------------------------------: |

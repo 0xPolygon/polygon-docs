@@ -8,7 +8,7 @@ In tandem, Polygon intends to move its governance of upgrades from the currently
 
 These gradual _changes in governance_ follow Polygon Improvement Proposals (PIPs), as already outlined in Polygon's [Three Pillars of Governance](https://forum.polygon.technology/t/the-three-pillars-of-polygon-governance-call-for-proposals/11847).
 
-Presently, centralization is seen in the form of the _Admin Multisig Contract_ and the [_Security Council Multisig_](security-council.md).
+Presently, centralization is seen in the form of the _Admin Multisig Contract_ and the [_Security Council Multisig_](../operations/security-council.md).
 
 ## Deploying battle-tested contracts
 
@@ -29,7 +29,7 @@ To inherit security and avoid prolonging and making the audit process more compl
 
 As shown in the diagram below, Open Zeppelin's TUP pattern separates the protocol implementation of storage variables using delegated calls and the fallback function, allowing the implementation code to be updated without changing the storage state or the contract's public address.
 
-![tup pattern schema](../../../img/zkEVM/tup-pattern.png)
+![tup pattern schema](../../img/zkEVM/tup-pattern.png)
 
 Following OpenZeppelin's recommendations, an instance of the contract **ProxyAdmin.sol**, which is also included in the openzeppelin-upgrades library, is deployed and its address is set as the proxy contract's admin. The Hardhat and Truffle plugins make these operations safe and simple.
 

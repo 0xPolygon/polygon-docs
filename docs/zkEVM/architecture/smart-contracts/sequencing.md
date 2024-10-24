@@ -13,7 +13,7 @@ This section focuses on the sequencing workflow.
 
 The diagram below shows the sequencing workflow for rollup (non-validium) stacks which calls `sequenceBatches(...)` and `onSequenceBatches(...)`. 
 
-![Polygon Solidity smart contract architecture](../../../../img/cdk/high-level-architecture/sequencing-flow.png)
+![Polygon Solidity smart contract architecture](../../../img/cdk/smart-contracts/sequencing-flow.png)
 
 ## `sequenceBatches()`
 

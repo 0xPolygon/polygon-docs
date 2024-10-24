@@ -1,4 +1,4 @@
-This document provides brief remarks on the differences between the EVM and the Polygon zkEVM. Lists of supported and unsupported EIPs, opcodes, and additional changes made when building the Polygon zkEVM, can be found [here](../architecture/protocol/etrog-upgrade.md).
+This document provides brief remarks on the differences between the EVM and the Polygon zkEVM. Lists of supported and unsupported EIPs, opcodes, and additional changes made when building the Polygon zkEVM, can be found [here](../releases/etrog-upgrade.md).
 
 ### EVM-equivalence
 

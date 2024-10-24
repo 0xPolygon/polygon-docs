@@ -25,11 +25,11 @@ If you never installed Rust or need an update, visit the website [here](https://
 
 Run the command `forge build` to build the project. The output should look something like this:
 
-![Successful forge build command](../../img/zkEVM/zkv-success-forge-build.png)
+![Successful forge build command](../../../../img/zkEVM/zkv-success-forge-build.png)
 
 Now, test the build with `forge test`
 
-![Testing Forge Build](../../img/zkEVM/zkv-test-forge-build.png)
+![Testing Forge Build](../../../../img/zkEVM/zkv-test-forge-build.png)
 
 You can check out the contents of the newly built project by switching to your IDE. In case of VSCode, just type: ```code .```
 
@@ -126,7 +126,7 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
 
 - Create a `.env.sample` file within the `src` folder
 
-- Populate `.env.sample` file with your `ACCOUNT_PRIVATE_KEY` and the zkEVM Testnet's `RPC URL` found [here](../get-started/quick-start.md). So the `.env.sample` file looks like this:
+- Populate `.env.sample` file with your `ACCOUNT_PRIVATE_KEY` and the zkEVM Testnet's `RPC URL` found [here](../../../../zkEVM/get-started/connect-to-zkEVM.md). So the `.env.sample` file looks like this:
 
     ```json
     RPC_URL="https://rpc.cardona.zkevm-rpc.com"
@@ -177,7 +177,7 @@ In order to deploy on the zkEVM Testnet, populate the `.env` file in the usual w
 
 The above command compiles and deploys the contract to the zkEVM Testnet. The output on the CLI looks like this one below.
 
-![Successful Deploy Sbt.sol](../../img/zkEVM/zkv-success-deploy-sbtdotsol.png)
+![Successful Deploy Sbt.sol](../../../../img/zkEVM/zkv-success-deploy-sbtdotsol.png)
 
 ## Check deployed contract in explorer
 

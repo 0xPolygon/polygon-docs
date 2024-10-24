@@ -118,7 +118,7 @@ The figure below depicts the structure of the Etrog upgrade's batches.
 
 ![Figure: Fork-ID 6 - batch approach](../../../img/zkEVM/rpc-batch-approach-forkid6.png)
 
-Read the [Etrog upgrade document](../protocol/etrog-upgrade.md) for further details and how it differs from the Dragonfruit upgrade.
+Read the [Etrog upgrade document](../../releases/etrog-upgrade.md) for further details and how it differs from the Dragonfruit upgrade.
 
 ## Custom zkEVM endpoints
 

@@ -38,7 +38,7 @@ Owing to this fact, the Etrog upgrade therefore helps Polygon zkEVM inch closer 
 
 The below table displays Polygon zkEVM's precompiled status.
 
-![Figure: etrog-precompiled](../../../img/zkEVM/etrog-precompiled.png)
+![Figure: etrog-precompiled](../../img/zkEVM/etrog-precompiled.png)
 
 
 
@@ -101,7 +101,7 @@ Blocks with several transactions are achieved by using a small timeout of a few 
 
 The figure below shows the structure of the blocks in Etrog versus those of the Dragonfruit upgrade.
 
-![Figure: etrog-blocks-vs-dragonfruit](../../../img/zkEVM/etrog-blocks-vs-dragonfruit.png)
+![Figure: etrog-blocks-vs-dragonfruit](../../img/zkEVM/etrog-blocks-vs-dragonfruit.png)
 
 ## Etrog timestamps
 
@@ -111,7 +111,7 @@ The solution is achieved by enabling the sequencer to change the timestamp for d
 
 The figure below shows how `changeL2Block` is used to change the timestamp whenever a new block is formed.
 
-![Figure: etrog-changel2block](../../../img/zkEVM/changel2block-etrog.png)
+![Figure: etrog-changel2block](../../img/zkEVM/changel2block-etrog.png)
 
 ## Conclusion
 
