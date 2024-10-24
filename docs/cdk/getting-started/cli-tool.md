@@ -61,6 +61,10 @@ Options:
 * `-g, --chain <CHAIN>` - The path to a chain specification file [env: `CDK_GENESIS_PATH=`]
 * `-h, --help` - Print help
 
+```
+cdk erigon --config /etc/cdk/cdk-node-config.toml --chain genesis.json
+```
+
 ### `cdk versions`
 
 The above command generates all the required configuration files for cdk-erigon on the fly and runs the node.
@@ -75,5 +79,5 @@ Options:
 Example:
 
 ```
-cdk erigon --config /etc/cdk/cdk-node-config.toml --chain genesis.json
+cdk versions
 ```
