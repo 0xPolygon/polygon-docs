@@ -14,7 +14,7 @@ A *pessimistic proof* (PP) is a zero-knowledge proof attesting to the fact that 
 
 Therefore, pessimistic proofs enable CDK-built chains that interoperate via the [unified bridge](../../zkEVM/architecture/unified-LxLy/index.md) to achieve trustless cross-chain security. 
 
-Pessimistic proofs allow CDK sovereign chains connected to the [AggLayer](../../agglayer/overview.md) interoperate securely
+Pessimistic proofs allow CDK sovereign chains connected to the [AggLayer](../../agglayer/overview.md) interoperate securely.
 
 We henceforth refer to CDK sovereign chains as CDK PP chains.
 
