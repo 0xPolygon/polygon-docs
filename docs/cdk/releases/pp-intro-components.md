@@ -47,7 +47,7 @@ Here are brief descriptions for each CDK FEP component.
     - `PolygonZkEVMDeployer`
     - `PolygonZkEVMTimelock`
 - CLI tool: A single command line interface tool for abstracting away the complexity of deploying or configuring CDK components.
-- AggSender is the CDK PP component that accumulates all necessary info in order to generate certificates, which are sent to the SP1 prover via the JSON-RPC API  for the generation of pessimistic proofs.
+- AggSender is the CDK PP component that accumulates all necessary info in order to generate certificates, which are sent to the SP1 prover via the JSON-RPC API for the generation of pessimistic proofs.
 - Transaction pool manager: For storing transactions submitted by users.
 
 ## AggLayer-side components
