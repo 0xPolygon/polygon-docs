@@ -58,4 +58,4 @@ Here are brief descriptions for each CDK FEP component.
 
   In reality, the AggSender sends certificates to the JSON-RPC API, which in turn requests the SP1 prover to generate ZK-proofs. On receipt of the ZK-proofs, it sends the ZK-proofs to L1.
 
-  See the high level view of the CDK PP chain architecture [here](../architecture/high-level-views.md)
+  See the high level view of the CDK PP chain architecture [here](../architecture/cdk-pp-highlevel-arch.md)
