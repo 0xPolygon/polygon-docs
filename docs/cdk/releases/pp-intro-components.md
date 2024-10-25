@@ -50,7 +50,7 @@ Here are brief descriptions for each CDK FEP component.
 - AggSender is the CDK PP component that accumulates all necessary info in order to generate certificates, which are sent to the SP1 prover via the JSON-RPC API for the generation of pessimistic proofs.
 - Transaction pool manager: For storing transactions submitted by users.
 
-## AggLayer-side components
+### AggLayer-side components
 
 - Succinct's SP1 prover: A simplified cryptographic tool designed to take Rust-written inputs in order to generate ZK-proofs.
 
