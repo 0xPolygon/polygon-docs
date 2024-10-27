@@ -57,8 +57,8 @@ This subcommand is intended for quickly spinning up an RPC node or testing exist
 Usage: `cdk erigon [OPTIONS]`
 
 Options:
-* `-C, --config <CONFIG>` - The path to the configuration file [env: `CDK_CONFIG_PATH=`]
-* `-g, --chain <CHAIN>` - The path to a chain specification file [env: `CDK_GENESIS_PATH=`]
+* `-C, --config <CONFIG>` - The path to the cdk-node sequencer configuration file [env: `CDK_CONFIG_PATH=`]
+* `-g, --chain <CHAIN>` - The path to the genesis.json file [env: `CDK_GENESIS_PATH=`]
 * `-h, --help` - Print help
 
 ```
