@@ -45,7 +45,7 @@ Options:
 Example:
 
 ```
-cdk node --config /etc/cdk/cdk-node-config.toml --components sequence-sender,aggregator
+cdk node --config /etc/cdk/cdk-node-config.toml --components sequence-sender,aggregator,aggsender
 ```
 
 ### `cdk erigon`
