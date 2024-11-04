@@ -23,7 +23,7 @@ The table below lists the CDK FEP components and where you can find them.
 | Sequence sender                          | <a href=https://github.com/0xPolygon/cdk/releases>cdk:v0.3.x</a>                    |         Included in CDK repo                                                                    |
 | Aggregator                               | <a href=https://github.com/0xPolygon/cdk/releases>cdk:v0.3.x</a>                         |     Included in CDK repo                                                                        |
 | Tx pool manager                          | <a href=https://github.com/0xPolygon/zkevm-pool-manager>  zkevm-pool-manager</a>                               |  Use latest tag                                                           |
-| Prover                                   | <a href=[https://github.com/0xPolygonHermez/zkevm-prover>zkevm-prover](https://hub.docker.com/r/hermeznetwork/zkevm-prover/tags)</a>                 |                                                             |
+| Prover                                   | <a href=https://hub.docker.com/r/hermeznetwork/zkevm-prover/tags> zkevm-prover   </a>                 |  v8.0.0-RC14                                                          |
 
 ## Component descriptions
 
