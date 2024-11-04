@@ -68,10 +68,4 @@ docker compose up
 
 - For docs issues (technical or language) open an issue here.
 - For technical issues with the software, either raise an issue here and we will follow up, or check https://support.polygon.technology/support/home. 
-
-## The team
-
-- Anthony Matlala [(@EmpieichO)](https://github.com/EmpieichO)
-- Hans Bodani [(@hsutaiyu)](https://github.com/hsutaiyu)
-- Katharine Murphy [(@kmurphypolygon)](https://github.com/kmurphypolygon)
  
