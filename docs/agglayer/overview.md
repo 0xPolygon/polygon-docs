@@ -12,7 +12,7 @@ The AggLayer currently connects chains built with Polygon CDK, a developer toolk
 Here's a list of chains connected to the alpha version of the AggLayer:
 
 
-| Polygon IP Partner | Chain Partner | L2 Chain ID | Network Name            |
+| Implementation Provider | Chain Name | L2 Chain ID |Network Name           |
 | ------------------ | ------------- | ----------- | ----------------------- |
 | Startale Labs      | Astar         | 6038361     | zKyoto                  |
 | Startale Labs      | Astar         | 3776        | Astar zkEVM             |
