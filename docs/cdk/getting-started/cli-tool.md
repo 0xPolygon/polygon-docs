@@ -42,11 +42,18 @@ Options:
 * `-c, --components <COMPONENTS>` - Components to run [env: `CDK_COMPONENTS=`]
 * `-h, --help` - Print help
 
-Example:
+Example to run in FEP mode:
 
 ```
-cdk node --config /etc/cdk/cdk-node-config.toml --components sequence-sender,aggregator,aggsender
+cdk node --config /etc/cdk/cdk-node-config.toml --components sequence-sender,aggregator
 ```
+
+Example to run in PP mode:
+
+```
+cdk node --config /etc/cdk/cdk-node-config.toml --components rpc,aggsender
+```
+
 
 ### `cdk erigon`
 
