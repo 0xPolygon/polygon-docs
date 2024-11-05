@@ -27,6 +27,7 @@ Here's a list of chains connected to the alpha version of the AggLayer:
 | Gateway FM         | Silicon       | 2355        | silicon-zk              |
 | Gateway FM         | WilderWorld   | 1668201165  | zchain-testnet          |  
 | Gateway FM         | Wirex         | 31415       | pay-chain               |
+| Gateway FM         | Witness       | 1702448187  | witnesschain            |
 
 ## AggLayer components
 
