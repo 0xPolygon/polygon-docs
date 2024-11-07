@@ -4,20 +4,20 @@
 
 ## 1. Summary of the Procedure
 
-To initiate a CDK chain upgrade, the Implementation Provider can request support from Polygon by submitting the "*Request Help for an Issue with an Existing CDK Chain*" through the service desk.
+To initiate a CDK chain upgrade, the Implementation Provider can request support from Polygon by submitting the "*Request Help for an Issue with an Existing CDK Chain*" through the [service desk](https://cdk.polygon.technology/).
 
 <table>
   <tr>
     <td>
-      <img alt="CDK Service Desk" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/CDK-service-desk.png?raw=true" width="300"/>
+      <img alt="CDK Service Desk" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/CDK-service-desk.png?raw=true" width="300" height="200"/>
     </td>
     <td>
-      <img alt="Example Request" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/Example-request.png?raw=true" width="300"/>
+      <img alt="Example Request" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/Example-request.png?raw=true" width="300" height="200"/>
     </td>
   </tr>
   <tr>
-    <td><strong>CDK service desk</strong></td>
-    <td><strong>Example request</strong></td>
+    <td align="center"><strong>CDK Service Desk</strong></td>
+    <td align="center"><strong>Example Request</strong></td>
   </tr>
 </table>
 
@@ -44,12 +44,11 @@ The table below lists the CDK Fork ID 9 components and the new CDK FEP Fork ID 1
 
 | **CDK Components**                         | **Fork ID 9**                                                                                                                                            | **CDK Components**                         | **Fork ID 12**                                                                                                            |
 |--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| CDK Validium node<br>Sequence sender<br>Aggregator | [0.6.7+cdk.1](https://hub.docker.com/layers/0xpolygon/cdk-validium-node/0.6.7-cdk.1/images/sha256-dafb15f9355331b4b7174f47ac416b275915ff24a9ed89c211c7c15c8adfc6b8?context=explore) | CDK Erigon RPC & CDK node                 | [cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon) 2.1.1 -- forkid.12 release *(Will link final version when released)* |
-|                                            |                                                                                                                   | CDK node<br>Sequence sender<br>Aggregator | 0.3.0-rc2                                                                                                                 |
-| Tx pool manager                            | [zkevm-pool-manager](https://github.com/0xPolygon/zkevm-pool-manager)                                                                                    | Tx pool manager                            | [zkevm-pool-manager](https://github.com/0xPolygon/zkevm-pool-manager)                                                    |
-| Executor                                   |                                                                                                                   | Executor                                   | hermeznetwork/zkevm-prover:v8.0.0-RC14-fork.12                                                                            |
-| Prover                                     | [v6.0.0](https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v6.0.0)                                                                            | Prover                                     | hermeznetwork/zkevm-prover:v8.0.0-RC14-fork.12                                                                            |
-| CDK data availability                      | [v0.0.7](https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.7/images/sha256-17590789a831259d7a07d8a042ea87e381c5708dec3a7daef6f3f782f50b2c00?context=explore) | CDK data availability                      | [cdk-data-availability](https://github.com/0xPolygon/cdk-data-availability) v0.0.10                                       |
+| CDK Validium node<br>Sequence sender<br>Aggregator | [0.6.7+cdk.1](https://hub.docker.com/layers/0xpolygon/cdk-validium-node/0.6.7-cdk.1/images/sha256-dafb15f9355331b4b7174f47ac416b275915ff24a9ed89c211c7c15c8adfc6b8?context=explore) | CDK Erigon RPC & CDK node                 | [cdk-erigon:v2.1.x](https://github.com/0xPolygonHermez/cdk-erigon/releases) |
+|                                            |                                                                                                                   | CDK node<br>Sequence sender<br>Aggregator | [cdk:v0.3.x](https://github.com/0xPolygonHermez/cdk-erigon/releases)                                                                                                                 |
+| Tx pool manager                            | [zkevm-pool-manager](https://github.com/0xPolygon/zkevm-pool-manager)                                                                                    | Tx pool manager                            | [zkevm-pool-manager](https://github.com/0xPolygon/zkevm-pool-manager) use latest tag                                                   |
+| Prover                                     | [v6.0.0](https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v6.0.0)                                                                            | Prover                                     | [zkevm-prover v8.0.0-RC14](https://hub.docker.com/r/hermeznetwork/zkevm-prover/tags)                                                                            |
+| CDK data availability                      | [v0.0.7](https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.7/images/sha256-17590789a831259d7a07d8a042ea87e381c5708dec3a7daef6f3f782f50b2c00?context=explore) | CDK data availability                      | [cdk-data-availability](https://github.com/0xPolygon/cdk-data-availability) use latest tag                                       |
 | zkEVM rollup node                          | [v6.0.0](https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v6.0.0)                                                                            | zkEVM rollup node                          | N/A                                                                                                                       |
 | Contracts                                  | [v6.0.0](https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v6.0.0-rc.1-fork.9)                                                             | Contracts                                  | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts)                                                     |
 | Bridge service                             | [v0.4.2-cdk.1](https://hub.docker.com/layers/hermeznetwork/zkevm-bridge-service/v0.4.2-cdk.1/images/sha256-f22ad8c9ad058c7a97a3d38f53cac5b1053858916523b96211d33ae40a9b45f8?context=explore) | Bridge service                             | [zkevm-bridge-service](https://github.com/0xPolygonHermez/zkevm-bridge-service)                                           |
@@ -59,7 +58,7 @@ The table below lists the CDK Fork ID 9 components and the new CDK FEP Fork ID 1
 
 The Implementation Provider must prepare in advance for the upgrade to ensure a smooth transition from fork ID 9 to fork ID 12. Failure to complete these steps ahead of time could result in delays or even cancellation of the scheduled upgrade.
 
-1. The Implementation Provider downloads CDK Fork 12 components binaries/images in advance so they are ready to deploy.
+1. The Implementation Provider downloads [CDK Fork 12 components](https://docs.polygon.technology/cdk/releases/stack-components/#cdk-fep-components) in advance so they are ready to deploy.
 2. Map to the latest prover files which can be found here: [https://storage.googleapis.com/zkevm/zkproverc/v8.0.0-rc.9-fork.12.tgz](https://storage.googleapis.com/zkevm/zkproverc/v8.0.0-rc.9-fork.12.tgz)
 3. Scale up the number of provers in advance. It is recommended that you at least double the number of provers up and running for the scheduled upgrade maintenance window.
     - Ensure all (majority) of the network batches are verified before starting the upgrade process, otherwise there will be additional downtime as we wait for the network to be ready.
@@ -74,7 +73,7 @@ The Implementation Provider must prepare in advance for the upgrade to ensure a 
     - Wait for it to sync to the tip.
     - CDK-Erigon can be stopped. The generated files will be used later during the upgrade process.
 
-The whole process should look more orr less like this:
+The whole process should look more or less like this:
 ```bash
 # PREREQUISITES: Install GO 1.23
 WORK_DIR=/tmp
@@ -104,7 +103,7 @@ go run ./zk/debug_tools/datastream-host \
     - Rolluptype for fork 12
     - Upgrade transaction to fork 12
 4. For chains attached to the Polygon Agglayer, Polygon will handle steps to upgrade the permissionless node.
-5. Polygon will share [example communication](https://docs.google.com/document/d/1zyXojlg4n2Th6P3y3Wqe8px15HL8FnBpSIWd54co1tE/edit) that Implementation Providers can use to prepare their customer network partners and communities.
+5. [See example communication](#example-maintenance-communication-to-network-partners) that Implementation Providers can use to prepare their customer network partners and communities.
 
 ## 5. Operational Steps
 
@@ -165,7 +164,7 @@ go run ./zk/debug_tools/datastream-host \
 
 ### Steps to Deploy CDK FEP Fork 12 Components
 
-1. [With the network stopped, repeat Erigon sync to get it fully synced to the current state.](https://www.notion.so/CDK-chain-upgrade-procedure-from-Fork-ID9-to-Fork-ID12-11980500116a802ab22cec6f7eea6080?pvs=21)
+1. [With the network stopped, repeat Erigon sync to get it fully synced to the current state.](#5-operational-steps)
     - This instance is ready to act as Sequencer and/or RPC. Clone the whole Erigon config/datadir as many times as instances are needed. Pick one to be the new Sequencer (by setting the environment variable **`CDK_ERIGON_SEQUENCER=1`**), and configure all other instances (permissionless RPCs) to point to the Sequencer:
     
     ```yaml
@@ -184,19 +183,7 @@ go run ./zk/debug_tools/datastream-host \
 
 ### Polygon Steps for CDK Chains Attached to the Agglayer
 
-Polygon will be accountable for upgrading the Agglayer permissionless nodes during the upgrade process.
-
-1. When the Implementation Provider has stopped the sequencer.
-2. Polygon's v-team shuts down the CDK chain permissionless nodes hosted by Polygon:
-    - Set `replicaCount` to 0 for `rpc`, `synchronizer`, and `executor` in the desired node definition as found [here](https://github.com/0xPolygon/helm-charts/tree/main/charts/permissionless-nodes/nodes).
-    - Run helm update to deploy changes, which will shut down the permissionless nodes.
-3. Polygon v-team updates the Agglayer config:
-    - Change the `image.tag` to the desired version [here](https://github.com/0xPolygon/helm-charts/tree/main/charts/permissionless-nodes/nodes).
-4. When the Implementation Provider restarts the sequencer and everything is running as expected:
-5. Polygon starts the upgraded permissionless nodes to ID12:
-    - Set `replicaCount` to 3 for `rpc` and `executor`; set `replicaCount` to 1 for `synchronizer`.
-    - Run helm update to deploy changes.
-    - Monitor logs/service status in Datadog for progress.
+Polygon's DevOps team will be accountable for upgrading the Agglayer permissionless nodes during the upgrade process.
 
 ### Post-Upgrade Validations
 
@@ -211,7 +198,7 @@ There is a planned maintenance window upgrade of the xxxx network on the followi
 
 **Date:** TBD by Implementation Provider
 
-**Time:** 00:00 PM EDT / 12:00 PM UTC
+**Time:** 00:00 PM EDT / 00:00 PM UTC
 
 **Duration:** 2 Hours
 
