@@ -157,8 +157,9 @@ go run ./zk/debug_tools/datastream-host \
 
 > 💡 For an **isolated chain not attached to the Agglayer**, the chain admin can perform operational step 4 on their chain’s rollup manager contract. Polygon is not involved.
 
-1. **Please Note:** Wait for Polygon to send the L1 transaction (tx) and confirm it.
-2. **Polygon:** Upgrade the Smart Contract (multisig):
+**Please Note:** Wait for Polygon to send the L1 transaction (tx) and confirm it.
+
+4. **Polygon:** Upgrade the Smart Contract (multisig):
     - Upgrade rollup to fork 12.
     - Wait for the Tx to be finalized.
 
