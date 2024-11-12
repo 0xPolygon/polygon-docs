@@ -64,13 +64,13 @@ It defines the following steps for the deployment process:
 
 You can customize (or skip) any of the numbered steps by modifying the logic in the respective files.
 
-#### 2. [`params.yml`](https://github.com/0xPolygon/kurtosis-cdk/blob/main/params.yml) 
+#### 2. [`input_parser.star`](https://github.com/0xPolygon/kurtosis-cdk/blob/main/input_parser.star)
 
-The `params.yml` file defines the parameters of the chain and the deployment process. 
+The `input_parser.star` file defines the default parameters of the chain and the deployment process. 
 
 It includes configurations for simple parameters such as the chain ID and more complex configurations such as the gas token smart contract address.
 
-You can modify each of these parameters to customize the chain to your specific needs.
+To customize the chain to your specific needs you need to create a new configuration file in your desired path, for example: `./params.yml`
 
 ## Run the chain locally
 
@@ -102,20 +102,35 @@ You can modify each of these parameters to customize the chain to your specific 
 
       ```
 
-The default deployment includes `cdk-erigon` as the sequencer, and `cdk-node` functioning as the sequence sender and aggregator. 
+The default deployment it's a **Full Execution Proofs** setup that includes `cdk-erigon` as the sequencer, and `cdk-node` functioning as the sequence sender and aggregator.
 
 You can verify the default versions of these components and the default fork ID by reviewing `input_parser.star`. You can check the default versions of the deployed components and the default fork ID by looking at `input_parser.star`.
 
 3. Customize the chain
 
-To make customizations to the CDK environment, clone this repo, make any desired configuration changes, and then run:
+To make customizations to the CDK environment create a kurtosis configuration file with your desired environment, for example:
+
+### Configure a Pesimistic Proof chain
+
+```yaml
+args:
+  consensus_contract_type: pessimistic
+  sequencer_type: erigon
+  erigon_strict_mode: false
+  agglayer_prover_sp1_key: REDACTED
+  enable_normalcy: true
+```
+
+Save this config to `paraml.yml` file, and then run:
 
 ```sh
 # Delete all stop and clean all currently running enclaves
 kurtosis clean --all
 
+
+
 # Run this command from the root of the repository to start the network
-kurtosis run --enclave cdk .
+kurtosis run --enclave cdk --args-file ./params.yml github.com/0xPolygon/kurtosis-cdk
 ```
 
 4. Inspect the chain
