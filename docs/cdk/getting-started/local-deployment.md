@@ -133,7 +133,7 @@ args:
   enable_normalcy: true
 ```
 
-Save this config to `paraml.yml` file, and then run:
+Save this config to `params.yml` file, and then run:
 
 ```sh
 # Delete all stop and clean all currently running enclaves
