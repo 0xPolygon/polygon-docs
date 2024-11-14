@@ -31,7 +31,19 @@ And, optionally, for submitting transactions and interacting with the environmen
 - [jq](https://stedolan.github.io/jq/)
 - [polyon-cli](https://github.com/0xPolygon/polygon-cli)
 
-## Set up the Kurtosis environment
+## Quick setup
+
+After installing the requirements you can launch a CDK chains with a oneliner:
+
+### Pesimistic Proof
+
+kurtosis run --enclave cdk --args-file "https://raw.githubusercontent.com/0xPolygon/kurtosis-cdk/refs/heads/main/.github/tests/fork12-pessimistic.yml" github.com/0xPolygon/kurtosis-cdk
+
+### FEP
+
+kurtosis run --enclave cdk github.com/0xPolygon/kurtosis-cdk
+
+## Extended Kurtosis environment setup
 
 ### Understanding the deployment steps
 
