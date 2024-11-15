@@ -1,4 +1,4 @@
-> 💡 For CDK fork ID9 chains **NOT attached to the AggLayer** (Isolated), go straight to section 5.
+> 💡 For CDK fork ID9 chains **NOT attached to the AggLayer** (Isolated), can ignore section 4.
 
 > 💡 For CDK fork ID9 chains **attached to the AggLayer**, follow steps in sections 1 to 5. This is a coordinated effort between Polygon and the Implementation Provider.
 
