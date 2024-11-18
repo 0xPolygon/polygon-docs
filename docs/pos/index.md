@@ -36,7 +36,7 @@ hide:
        </a>
     </div>
     <div class="grid-item">
-       <a href="./architecture/">
+       <a href="./pos/architecture/overview/">
           <div class="product-list-item-header">
              <div class="feature-card-heading">PoS architecture</div>
           </div>
