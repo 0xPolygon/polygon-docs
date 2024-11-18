@@ -122,7 +122,7 @@ You can verify the default versions of these components and the default fork ID 
 
 To make customizations to the CDK environment create a kurtosis configuration file with your desired environment, for example:
 
-### Configure a Pesimistic Proof chain
+### Configure a CDK Sovereign chain
 
 ```yaml
 args:
