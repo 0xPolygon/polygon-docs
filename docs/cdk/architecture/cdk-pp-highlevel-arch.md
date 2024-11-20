@@ -1,6 +1,6 @@
 The figure below depicts a simplified, high level view of the CDK PP chain architecture, as well as the flow of transactions through the system.
 
-![Figure: CDK PP Architecture](../../img/cdk/cdk-pp-architecture-001.png)
+![Figure: CDK PP Architecture](../../img/cdk/CDK-pessimistic-proof-chain.jpg)
 
 ## Transaction flow
 
