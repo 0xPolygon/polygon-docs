@@ -55,7 +55,7 @@ nav:
       - Overview: cdk/overview.md
       - Releases:
         - Full execution proofs (FEP): cdk/releases/stack-components.md
-        - Pessimistic proofs (PP): cdk/releases/pp-intro.components.md
+        - Pessimistic proofs (PP): cdk/releases/pp-intro-components.md
       - Get started:
         - Local deployment guide: cdk/getting-started/local-deployment.md
         - CLI tool: cdk/getting-started/cli-tool.md

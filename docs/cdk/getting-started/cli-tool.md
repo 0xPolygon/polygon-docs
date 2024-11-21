@@ -23,13 +23,13 @@ Here, you need to provide the CDK node configuration file and the genesis file f
 Usage: `cdk <COMMAND>`
 
 Commands:
-* `node` - Run the cdk-node with the provided configuration
-* `erigon` - Run cdk-erigon node with the provided default configuration
-* `versions` - Output the corresponding versions of the components
-* `help`    Print this message or the help of the given subcommand(s)
+- `node` - Run the cdk-node with the provided configuration
+- `erigon` - Run cdk-erigon node with the provided default configuration
+- `versions` - Output the corresponding versions of the components
+- `help`    Print this message or the help of the given subcommand(s)
 
 Options:
-* `-h, --help` - Print help
+- `-h, --help` - Print help
 
 ### `cdk node`
 
@@ -38,15 +38,22 @@ To run cdk-node use the `node` subcommand with one of the options mentioned belo
 Usage: `cdk node [OPTIONS]`
 
 Options:
-* `-C, --config <CONFIG>` - The path to the configuration file [env: `CDK_CONFIG_PATH=`]
-* `-c, --components <COMPONENTS>` - Components to run [env: `CDK_COMPONENTS=`]
-* `-h, --help` - Print help
+- `-C, --config <CONFIG>` - The path to the configuration file [env: `CDK_CONFIG_PATH=`]
+- `-c, --components <COMPONENTS>` - Components to run [env: `CDK_COMPONENTS=`]
+- `-h, --help` - Print help
 
-Example:
+Example to run in FEP mode:
 
 ```
 cdk node --config /etc/cdk/cdk-node-config.toml --components sequence-sender,aggregator
 ```
+
+Example to run in PP mode:
+
+```
+cdk node --config /etc/cdk/cdk-node-config.toml --components rpc,aggsender
+```
+
 
 ### `cdk erigon`
 
@@ -57,9 +64,13 @@ This subcommand is intended for quickly spinning up an RPC node or testing exist
 Usage: `cdk erigon [OPTIONS]`
 
 Options:
-* `-C, --config <CONFIG>` - The path to the configuration file [env: `CDK_CONFIG_PATH=`]
-* `-g, --chain <CHAIN>` - The path to a chain specification file [env: `CDK_GENESIS_PATH=`]
-* `-h, --help` - Print help
+- `-C, --config <CONFIG>` - The path to the cdk-node configuration file [env: `CDK_CONFIG_PATH=`]
+- `-g, --chain <CHAIN>` - The path to the genesis.json file [env: `CDK_GENESIS_PATH=`]
+- `-h, --help` - Print help
+
+```
+cdk erigon --config /etc/cdk/cdk-node-config.toml --chain genesis.json
+```
 
 ```
 cdk erigon --config /etc/cdk/cdk-node-config.toml --chain genesis.json
@@ -74,7 +85,7 @@ To print the corresponding versions of the components, run the following command
 Usage: `cdk versions`
 
 Options:
-* `-h, --help` - Print help
+- `-h, --help` - Print help
 
 Example:
 
