@@ -9,7 +9,7 @@ Here is a step by step flow of transactions starting from when users submit tran
 1. A user connects to the chain via a CDK Erigon RPC node and submits a transaction.
 2. CDK Erigon RPC node sends the transaction data to the transaction-pool manager.
 3. The transaction-pool manager proxies all transaction data to the CDK Erigon sequencer.
-4. CDK Erigon sequencer executes transactions, puts the transactions in blocks, and the blocks fill up batches. 
+4. CDK Erigon sequencer executes transactions, puts the transactions in blocks
 5. CDK Erigon sequencer syncs all transaction data with any CDK Erigon RPC node.
 6. AggSender gets batch data from the CDK Erigon sequencer, uses the data to generate certificates, and submits the certificates to the JSON-RPC API.
 7. The JSON-RPC API checks validity of the certificates against the transaction data in the CDK Erigon RPC node.
