@@ -14,7 +14,7 @@ Here is a step by step flow of transactions starting from when users submit tran
 6. AggSender gets batch data from the CDK Erigon sequencer, uses the data to generate certificates, and submits the certificates to the AggLayer RPC.
 7. The AggLayer RPC checks validity of the certificate by asserting that the balances of the bridge interactions are consistent with the liquidity of the chain
 8. After validating the certificates, the AggLayer RPC sends a request to generate a proof, together with the necessary data (including the certificates), to the SP1 prover. 
-9. Once the proof is received from the SP1 prover, the JSON-RPC API sends it to L1.  
+9. Once the proof is received from the SP1 prover, the AggLayer RPC sends it to L1.  
 
 
 
