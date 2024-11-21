@@ -12,7 +12,7 @@ Here is a step by step flow of transactions starting from when users submit tran
 4. CDK Erigon sequencer executes transactions, puts the transactions in blocks
 5. CDK Erigon sequencer syncs all transaction data with any CDK Erigon RPC node.
 6. AggSender gets batch data from the CDK Erigon sequencer, uses the data to generate certificates, and submits the certificates to the JSON-RPC API.
-7. The JSON-RPC API checks validity of the certificates against the transaction data in the CDK Erigon RPC node.
+7. The AggLayer RPC checks validity of the certificate by asserting that the balances of the bridge interactions are consistent with the liquidity of the chain
 8. After validating the certificates, the JSON-RPC API sends a request to generate a proof, together with the necessary data (including the certificates), to the SP1 prover. 
 9. Once the proof is received from the SP1 prover, the JSON-RPC API sends it to L1.  
 
