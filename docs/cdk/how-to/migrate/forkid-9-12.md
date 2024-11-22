@@ -1,4 +1,4 @@
-> 💡 For CDK fork ID9 chains **NOT attached to the AggLayer** (Isolated), can ignore section 4.
+> 💡 For CDK fork ID9 chains **NOT attached to the AggLayer** (Isolated), they can ignore section 4.
 
 > 💡 For CDK fork ID9 chains **attached to the AggLayer**, follow steps in sections 1 to 5. This is a coordinated effort between Polygon and the Implementation Provider.
 
@@ -50,7 +50,7 @@ The table below lists the CDK Fork ID 9 components and the new CDK FEP Fork ID 1
 | Prover                                     | [v6.0.0](https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v6.0.0)                                                                            | Prover                                     | [zkevm-prover v8.0.0-RC14](https://hub.docker.com/r/hermeznetwork/zkevm-prover/tags)                                                                            |
 | CDK data availability                      | [v0.0.7](https://hub.docker.com/layers/0xpolygon/cdk-data-availability/0.0.7/images/sha256-17590789a831259d7a07d8a042ea87e381c5708dec3a7daef6f3f782f50b2c00?context=explore) | CDK data availability                      | [cdk-data-availability](https://github.com/0xPolygon/cdk-data-availability) use latest tag                                       |
 | zkEVM rollup node                          | [v6.0.0](https://github.com/0xPolygonHermez/zkevm-prover/releases/tag/v6.0.0)                                                                            | zkEVM rollup node                          | N/A                                                                                                                       |
-| Contracts                                  | [v6.0.0](https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v6.0.0-rc.1-fork.9)                                                             | Contracts                                  | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts)                                                     |
+| Contracts                                  | [v6.0.0](https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v6.0.0-rc.1-fork.9)                                                             | Contracts                                  | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts/releases/tag/v8.0.0-fork.12)                                                   |
 | Bridge service                             | [v0.4.2-cdk.1](https://hub.docker.com/layers/hermeznetwork/zkevm-bridge-service/v0.4.2-cdk.1/images/sha256-f22ad8c9ad058c7a97a3d38f53cac5b1053858916523b96211d33ae40a9b45f8?context=explore) | Bridge service                             | [zkevm-bridge-service](https://github.com/0xPolygonHermez/zkevm-bridge-service)                                           |
 | Bridge UI                                  | [Polygon Portal](https://portal.polygon.technology/)                                                                                                     | Bridge UI                                  | [Polygon Portal](https://portal.polygon.technology/)                                                                      |
 
@@ -62,8 +62,12 @@ The Implementation Provider must prepare in advance for the upgrade to ensure a 
 2. Map to the latest prover files which can be found here: [https://storage.googleapis.com/zkevm/zkproverc/v8.0.0-rc.9-fork.12.tgz](https://storage.googleapis.com/zkevm/zkproverc/v8.0.0-rc.9-fork.12.tgz)
 3. Scale up the number of provers in advance. It is recommended that you at least double the number of provers up and running for the scheduled upgrade maintenance window.
     - Ensure all (majority) of the network batches are verified before starting the upgrade process, otherwise there will be additional downtime as we wait for the network to be ready.
-4. Run the CDK-Node aggregator component in sync-only mode in advance to populate its database.
-5. Required Erigon pre-syncing:
+4. Setting up your CDK Erigon node.
+    - Please see the [cdk-erigon readme](https://github.com/0xPolygonHermez/cdk-erigon/blob/v1.0.3/README.md) for information on Prereqs, configuration files and running cdk-erigon.
+5. Required CDK-Node pre syncing.
+   - Run CDK-Node aggregator component in sync only mode in advance to populate its database.
+   - Run CDK-Node l1infotreesync component in advance to populate the sequence sender database.
+7. Required Erigon pre-syncing:
     - Generate data stream files from the current `cdk-validium-node` database.
         - Tool and instructions can be found here:  
             - [https://github.com/0xPolygonHermez/zkevm-node/tree/develop/tools/datastreamer](https://github.com/0xPolygonHermez/zkevm-node/tree/develop/tools/datastreamer)
@@ -155,7 +159,8 @@ go run ./zk/debug_tools/datastream-host \
     
 3. Stop all services (node, prover/executor, bridge).
 
-> 💡 For an **isolated chain not attached to the Agglayer**, the chain admin can perform operational step 4 on their chain’s rollup manager contract. Polygon is not involved.
+> 💡 Please note: For an isolated chain not attached to the Agglayer the chain admin can  perform operational step 4 on their chain’s rollupmanagercontract. 
+Polygon are not involved. Please check the [upgrade procedure for isolated networks](#contract-upgrade-procedure-for-isolated-networks).
 
 **Please Note:** Wait for Polygon to send the L1 transaction (tx) and confirm it.
 
@@ -164,8 +169,16 @@ go run ./zk/debug_tools/datastream-host \
     - Wait for the Tx to be finalized.
 
 ### Steps to Deploy CDK FEP Fork 12 Components
+1. It is recommended to back up your DAC node by taking a snapshot of the DAC database.
+     -  **Locate Your PostgreSQL Instance**:
+         - Identify the PostgreSQL host, port, database name (`dac_db`), and the username (`master_user`) configured for your DAC node. These values can typically be found in your environment's configuration or `.env` files.
+        -  **Run the `pg_dump` Command**:
+           -  Use the `pg_dump` command to create a backup of your DAC database. Replace the placeholders with your specific values:
+           -  pg_dump -U master_user -d dac_db -h 127.0.0.1 -p 5432 > dac.db.sql
+        -  **Verify the Backup**:
+           -  After running the command, ensure that the `dac.db.sql` file has been created and contains the database snapshot.
 
-1. [With the network stopped, repeat Erigon sync to get it fully synced to the current state.](#5-operational-steps)
+2. [With the network stopped, repeat Erigon sync to get it fully synced to the current state.](#5-operational-steps)
     - This instance is ready to act as Sequencer and/or RPC. Clone the whole Erigon config/datadir as many times as instances are needed. Pick one to be the new Sequencer (by setting the environment variable **`CDK_ERIGON_SEQUENCER=1`**), and configure all other instances (permissionless RPCs) to point to the Sequencer:
     
     ```yaml
@@ -173,14 +186,14 @@ go run ./zk/debug_tools/datastream-host \
     zkevm.l2-datastreamer-url: "sequencer-fqdn-or-ip:6900"
     ```
     
-2. Start the stateless Executor.
-3. Start the CDK-Erigon Sequencer.
-4. Verify in the sequencer’s logs that new blocks are being generated with fork ID 12.
-5. Start the Pool Manager (if used/needed).
-6. Start CDK-Erigon RPCs (if used/needed).
-7. Start the Bridge.
-8. Start the CDK aggregator and Sequence Sender components.
-9. Start the stateless Prover.
+3. Start the stateless Executor.
+4. Start the CDK-Erigon Sequencer.
+5. Verify in the sequencer’s logs that new blocks are being generated with fork ID 12.
+6. Start the Pool Manager (if used/needed).
+7. Start CDK-Erigon RPCs (if used/needed).
+8. Start the Bridge.
+9. Start the CDK aggregator and Sequence Sender components.
+10. Start the stateless Prover.
 
 ### Polygon Steps for CDK Chains Attached to the Agglayer
 
@@ -190,6 +203,8 @@ Polygon's DevOps team will be accountable for upgrading the Agglayer permissionl
 
 1. Test batch lifecycle.
 2. Test the bridge.
+
+
 
 # Example Maintenance Communication to Network Partners
 
@@ -222,3 +237,83 @@ Update FROM node version [0.6.7+cdk.1](https://hub.docker.com/layers/0xpolygon/c
     1. Prover/Executor
     2. Synchronizer
     3. RPC
+
+
+
+
+# Contract Upgrade procedure for isolated networks
+## Resources
+
+- [rollup-manager-cli](https://github.com/0xPolygonHermez/rollup-manager-cli)
+    - get L1 information easily
+- [tool deploy verifiers](https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/tools/deployVerifier)
+- [tool add new rollup type](https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/tools/addRollupType)
+
+> For fork.12 upgrades, it is need to upgrade PolygonZkEVMGlobalExitRootV2 and the PolygonRollupManager. Please refer to [the Upgrade Banana SC section](https://www.notion.so/CDK-chain-upgrade-procedure-from-Fork-ID9-to-Fork-ID12-11980500116a802ab22cec6f7eea6080?pvs=21) in order to do the SCs upgrade
+> 
+
+## Verifier
+
+- Go to the correct branch(or tag) in [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts)
+    - [main](https://github.com/0xPolygonHermez/zkevm-contracts) for fork.10 & fork.11
+    - [develop](https://github.com/0xPolygonHermez/zkevm-contracts/tree/develop) for fork.12 (AKA Banana)
+- Check out previous verifiers deployed in [contracts-info repository](https://github.com/0xPolygonHermez/contracts-info/tree/master/verifiers)
+- If verifiers are not deployed:
+    - use the [following tool](https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/tools/deployVerifier) to deploy them
+
+## Add rollup type
+
+- check-out which address has the ability to add new rollup types
+    - role is `_ADD_ROLLUP_TYPE_ROLE`
+    - [this tool](https://github.com/0xPolygonHermez/rollup-manager-cli) could be used to check which addresses has this role
+- Two types of addresses could do the SC call: EOA or timelock (multisig)
+    - Next tooling takes that into account
+    - Timelock usually have an associated delay. In order to check it, you can check it directly on etherscan as it is a SC variable.
+    - Example:
+        - Timelock delay Cardona: https://sepolia.etherscan.io/address/0xfd8ace213595fac05d45714e8e2a63df267e3545#readContract#F6
+        - Timelock delay Mainnet: https://etherscan.io/address/0xef1462451c30ea7ad8555386226059fe837ca4ef#readContract#F6
+- Use [tool to add new rollup type](https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/tools/addRollupType) to do the transaction properly
+    - if the receiver is the timelock:
+        - transaction needs to be schedules first and then executed
+        - tool output needs to be forwarded to the admin address of the timelock to schedule/execute the transaction
+
+## Upgrade rollup
+
+- check-out which address has the ability to add new rollup types
+    - role is `_UPDATE_ROLLUP_ROLE`
+    - rollup admin
+    - [this tool](https://github.com/0xPolygonHermez/rollup-manager-cli) could be used to check which addresses has this role and the rollup admin
+- this step is straughforward and it can be done is several ways:
+    - directly call etherscan function if the role is managed by an EOA
+        - example Bali
+            - https://sepolia.etherscan.io/address/0xE2EF6215aDc132Df6913C8DD16487aBF118d1764#writeProxyContract#F20
+            - https://sepolia.etherscan.io/address/0xE2EF6215aDc132Df6913C8DD16487aBF118d1764#writeProxyContract#F21
+    - use [this tool](https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/tools/updateRollup) to call the SC function
+
+# Upgrade Smart Contracts to Banana
+
+- [script to upgrade from old version (fork.11) to Banana SC](https://github.com/0xPolygonHermez/zkevm-contracts/tree/v8.0.0-fork.12/upgrade/upgradeBanana)
+    - it upgrades the [PolygonZkEVMGlobalExitRootV2](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-fork.12/upgrade/upgradeBanana/upgradeBanana.ts#L104)
+    - and [PolygonRollupManager](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-fork.12/upgrade/upgradeBanana/upgradeBanana.ts#L140)
+
+## Params
+
+- [example parameters](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-fork.12/upgrade/upgradeBanana/upgrade_parameters.json.example)
+    - the script deploys the new implementation and any EOA can do that
+- On top of those parameters, it is needed a file from previous deployment
+    - this file is generated automatically by hardhat when you deploy a network
+    - placed in `$root-sc_repo/.oppenzeppelin/${network-name}.json`
+    - remember to copy this file into thew folder mentioned above and then run the [upgradeBanana](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-fork.12/upgrade/upgradeBanana/upgradeBanana.ts) script
+
+## Output script
+
+- [Similar to this one](https://github.com/0xPolygonHermez/contracts-info/blob/master/mainnet/upgrade-banana/upgrade_output.json)
+    - Take the `scheduleData`, send a tx to `timelockAddress` with the proper EOA that has `proxyAdmin` rights
+    - wait `timelockDelay`
+    - Take the `executeData`, send a tx to `timelockAddress` with the proper EOA that has `proxyAdmin` rights
+
+## Apply upgrade
+
+- `cast send $TIMELOCK_ADDR $SCHEDULE_DATA --private-key $ADMIN_KEY --rpc-url $L1_URL`
+- Wait timelock delay
+- `cast send $TIMELOCK_ADDR $EXECUTE_DATA --private-key $ADMIN_KEY --rpc-url $L1_URL`
