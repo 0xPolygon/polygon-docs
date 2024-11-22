@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 The LxLy bridge is the native bridging infrastructure for all CDK chains. The way it works is each individual CDK chain deploys an instance of the LxLy bridge that connects to an L1 (Ethereum by default) by deploying contracts that carry out deposit and withdrawal of assets, along with escrow management. These contracts are managed by node operators corresponding to the respective CDK chains.
 

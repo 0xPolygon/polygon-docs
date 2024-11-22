@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Open a terminal window and run the following commands to install the required software.
 

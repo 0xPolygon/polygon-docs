@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Token mapping is important in order to enable the transfer mechanism for the said token between Ethereum and Polygon PoS.
 

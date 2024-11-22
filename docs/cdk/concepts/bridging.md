@@ -26,7 +26,7 @@ Chains that integrate with the unified bridge can benefit from the network effec
 
 This option is suited to chains that want a standard bridging experience and do not require customization of the bridge's operation. The shared bridge is also not directly managed by the chain operator, instead, it shares the governance outlined in the [admin upgradeability](./admin-upgradeability.md) section.
 
-![Unified bridge](../../img/cdk/unified-bridge.png)
+![unified bridge](https://github.com/0xPolygon/polygon-docs/blob/254d7d70a0596a1244122e006e62c4c34c9fbec4/docs/img/cdk/high-level-architecture/unified-bridge-rev.png)
 
 ## Further reading
 

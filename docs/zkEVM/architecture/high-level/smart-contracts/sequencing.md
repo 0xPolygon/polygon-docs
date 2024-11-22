@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Transactions flowing through the system reach the smart contract environment after one of two contract call use cases:
 

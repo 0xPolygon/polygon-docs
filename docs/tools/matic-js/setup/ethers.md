@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 [ethers.js](https://docs.ethers.io/) is a library for interacting with the Ethereum Blockchain and its ecosystem.
 
