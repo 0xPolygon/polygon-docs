@@ -38,7 +38,7 @@ The high-level steps in the collaborative process are:
 
 Please read carefully to fully understand the new architecture before starting the process: [https://docs.polygon.technology/cdk/getting-started/cdk-erigon/](https://docs.polygon.technology/cdk/getting-started/cdk-erigon/)
 
-The table below lists the CDK Fork ID 9 components and the new CDK FEP Fork ID 12 component.
+The table below lists the CDK Fork ID 9 components and the new CDK FEP Fork ID 12 components.
 
 > 💡 **Please note:** Latest CDK FEP Fork ID 12 components are listed in the [Polygon Knowledge Layer](https://docs.polygon.technology/cdk/releases/stack-components/#cdk-fep-components)
 
@@ -63,7 +63,7 @@ The Implementation Provider must prepare in advance for the upgrade to ensure a 
 3. Scale up the number of provers in advance. It is recommended that you at least double the number of provers up and running for the scheduled upgrade maintenance window.
     - Ensure all (majority) of the network batches are verified before starting the upgrade process, otherwise there will be additional downtime as we wait for the network to be ready.
 4. Setting up your CDK Erigon node.
-    - Please see the [cdk-erigon readme](https://github.com/0xPolygonHermez/cdk-erigon/blob/v1.0.3/README.md) for information on Prereqs, configuration files and running cdk-erigon.
+    - Please see the [cdk-erigon readme](https://github.com/0xPolygonHermez/cdk-erigon/blob/v1.0.3/README.md) for information on prereqs, configuration files and running cdk-erigon.
 5. Required CDK-Node pre syncing.
    - Run CDK-Node aggregator component in sync only mode in advance to populate its database.
    - Run CDK-Node l1infotreesync component in advance to populate the sequence sender database.
@@ -162,11 +162,11 @@ go run ./zk/debug_tools/datastream-host \
 > 💡 Please note: For an isolated chain not attached to the Agglayer the chain admin can  perform operational step 4 on their chain’s rollupmanagercontract. 
 Polygon are not involved. Please check the [upgrade procedure for isolated networks](#contract-upgrade-procedure-for-isolated-networks).
 
-**Please Note:** Wait for Polygon to send the L1 transaction (tx) and confirm it.
-
 4. **Polygon:** Upgrade the Smart Contract (multisig):
     - Upgrade rollup to fork 12.
     - Wait for the Tx to be finalized.
+
+**Please Note:** Wait for Polygon to send the L1 transaction (tx) and confirm it.
 
 ### Steps to Deploy CDK FEP Fork 12 Components
 1. It is recommended to back up your DAC node by taking a snapshot of the DAC database.
