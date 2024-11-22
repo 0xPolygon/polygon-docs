@@ -114,7 +114,9 @@ go run ./zk/debug_tools/datastream-host \
 **Please Note:** To avoid creating reorgs or other unwanted situations, it's important that all L2 transactions are verified before performing a fork upgrade. This means all batches should be closed, sequenced, and verified on L1.
 
 ### Steps to Halt the Sequencer
-
+> 💡 Please note: For an isolated chain not attached to the Agglayer the chain admin can  perform operational step 4 on their chain’s rollupmanagercontract. 
+Polygon are not involved. Please check the [upgrade procedure for isolated networks](#contract-upgrade-procedure-for-isolated-networks).
+> 
 1. Stop the sequencer.
 2. Reconfigure the node to enforce sequencer stops at a specific `batch_num`:
     - Get the current batch number from StateDB:
@@ -158,9 +160,6 @@ go run ./zk/debug_tools/datastream-host \
     ```
     
 3. Stop all services (node, prover/executor, bridge).
-
-> 💡 Please note: For an isolated chain not attached to the Agglayer the chain admin can  perform operational step 4 on their chain’s rollupmanagercontract. 
-Polygon are not involved. Please check the [upgrade procedure for isolated networks](#contract-upgrade-procedure-for-isolated-networks).
 
 4. **Polygon:** Upgrade the Smart Contract (multisig):
     - Upgrade rollup to fork 12.
