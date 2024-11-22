@@ -116,8 +116,7 @@ go run ./zk/debug_tools/datastream-host \
 ### Steps to Halt the Sequencer
 > 💡 Please note: For an isolated chain not attached to the Agglayer the chain admin can  perform operational step 4 on their chain’s rollupmanagercontract. 
 Polygon are not involved. Please check the [upgrade procedure for isolated networks](#contract-upgrade-procedure-for-isolated-networks).
-
- 
+> 
 1. Stop the sequencer.
 2. Reconfigure the node to enforce sequencer stops at a specific `batch_num`:
     - Get the current batch number from StateDB:
