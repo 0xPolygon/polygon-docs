@@ -50,57 +50,50 @@ theme:
 
 nav:
   - Home: index.md
-  - CDK:
+  - Polygon CDK home:
       - Polygon CDK home: cdk/index.md
-      - Overview: cdk/overview.md
-      - Releases:
-        - Full execution proofs (FEP): cdk/releases/stack-components.md
-        - Pessimistic proofs (PP): cdk/releases/pp-intro-components.md
-      - Get started:
-        - Local deployment guide: cdk/getting-started/local-deployment.md
-        - CLI tool: cdk/getting-started/cli-tool.md
-        - CDK Erigon:
-          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
-          - Releases: cdk/getting-started/cdk-erigon/releases.md
-          - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
-          - How to:
-            - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
-            - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
+      -  - Overview: cdk/overview.md
+  - Releases:
+      - Fork ID 12: cdk/releases/fork-12.md
+      - CDK Erigon Release: cdk/releases/erigon-release.md
+  - Get Started:
+      - Local Deployment Guide: cdk/getting-started/local-deployment.md
+      - CLI Tool: cdk/getting-started/cli-tool.md
+      - CDK Erigon:
+          - Overview: cdk/getting-started/cdk-erigon/index.md
+          - Deploy a Node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
+          - Configure Chains Dynamically: cdk/getting-started/cdk-erigon/chain-config.md
+          - Network Recovery: cdk/getting-started/cdk-erigon/network-recovery.md
           - Resources: cdk/getting-started/cdk-erigon/resources.md
-      - Concepts:
-        - Layer 2s: cdk/concepts/layer2s.md
-        - L2 architecture overview: cdk/concepts/architecture.md
-        - L2 transaction lifecycle: cdk/concepts/transaction-lifecycle.md
-        - Rollups vs. validiums: cdk/concepts/rollup-vs-validium.md
-        - ZK vs. optimistic rollups: cdk/concepts/zk-vs-optimistic.md
-        - Batches, blocks, transactions: cdk/concepts/blocks.md
-        - Transaction finality: cdk/concepts/transaction-finality.md
-        - Gas fees: cdk/concepts/gas-fees.md
-        - Bridging & interoperability: cdk/concepts/bridging.md
-        - Admin upgradeability: cdk/concepts/admin-upgradeability.md
-      - How to: 
-        - Migrate:
-          - Fork id 9 to 12: cdk/how-to/migrate/forkid-9-12.md
-          - Fork id 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
-          - General guide for partners: cdk/how-to/migrate/fork.md
-        - Create custom native token: cdk/how-to/use-native-token.md
-        - Integrate DA layer: cdk/how-to/integrate-da.md
-        - Manage allowlists with policies: cdk/how-to/manage-policies.md
-        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
-        - Connect to CDK testnets: cdk/how-to/connect-testnet.md
-      - Architecture:
-        - CDK FEP high level view: cdk/architecture/high-level-views.md
-        - CDK PP high level view: cdk/architecture/cdk-pp-highlevel-arch.md
-        - CDK rollup: cdk/architecture/cdk-zkevm.md
-        - CDK validium: cdk/architecture/cdk-validium.md
-        - Staking the Bridge (STB): cdk/architecture/staking-the-bridge.md
-      - Specification:
-        - Validium vs rollup: cdk/spec/validium-vs-rollup.md
-      - Glossary:
-        - Glossary: cdk/glossary/index.md
-      - Additional resources:
-        - Third-party guides: cdk/resources/third-party-guides.md
-        - CDK repos: cdk/resources/cdk-repo-reference.md
+  - How-To Guides:
+      - Migrate:
+          - Fork ID 9 to 12: cdk/how-to/migrate/forkid-9-12.md
+          - General Partner Guide: cdk/how-to/migrate/fork.md
+      - Create Custom Native Token: cdk/how-to/use-native-token.md
+      - Integrate DA Layer: cdk/how-to/integrate-da.md
+      - Manage Policies: cdk/how-to/manage-policies.md
+      - Connect to CDK Testnets: cdk/how-to/connect-testnet.md
+  - Architecture:
+      - Configurations:
+          - Validium: cdk/architecture/configurations/validium.md
+          - zkRollup: cdk/architecture/configurations/zkrollup.md
+          - Sovereign Chain: cdk/architecture/configurations/sovereign-chain.md
+      - Features:
+          - Full Execution Proofs (FEP): cdk/architecture/features/full-execution-proofs.md
+          - Pessimistic Proofs (PP): cdk/architecture/features/pessimistic-proofs.md
+          - Staking the Bridge (STB): cdk/architecture/features/staking-the-bridge.md
+  - Concepts:
+      - Layer 2s: cdk/concepts/layer2s.md
+      - L2 Architecture Overview: cdk/concepts/architecture.md
+      - L2 Transaction Lifecycle: cdk/concepts/transaction-lifecycle.md
+      - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
+      - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
+      - Bridging & Interoperability: cdk/concepts/bridging.md
+      - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
+  - Glossary: cdk/glossary/index.md
+  - Additional Resources:
+      - Third-Party Guides: cdk/resources/third-party-guides.md
+      - CDK Repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
