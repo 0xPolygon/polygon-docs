@@ -51,7 +51,7 @@ theme:
 nav:
   - Home: index.md
   - CDK:
-      - CDK: cdk/index.md
+      - Polygon CDK home: cdk/index.md
       - Overview: cdk/overview.md
       - Releases:
         - Full execution proofs (FEP): cdk/releases/stack-components.md
