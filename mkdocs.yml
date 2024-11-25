@@ -688,7 +688,7 @@ plugins:
         'pos/how-to/operate-validator-node/validator-commission-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
         'pos/how-to/operate-validator-node/validator-staking-operations.md': 'pos/how-to/operate-validator-node/next-steps.md'
         'pos/how-to/operating/validator-node/index.md': 'pos/how-to/operate-validator-node/next-steps.md'
-        'cdk/version-matrix/index.md: index.md'
+        'cdk/version-matrix/index.md': 'index.md'
 
 validation:
   absolute_links: warn
