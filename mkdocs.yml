@@ -50,6 +50,12 @@ theme:
 
 nav:
   - Home: index.md
+  - AggLayer:
+        - Overview: agglayer/overview.md
+        - AggLayer | Unified bridge: agglayer/unified-bridge.md
+        - AggLayer | Go: agglayer/agglayer-go.md
+        - AggLayer | Rust: agglayer/agglayer-rs.md
+        - AggLayer | Token flows: agglayer/token-flows.md
   - CDK:
       - Polygon CDK Home: cdk/index.md
       - Overview: cdk/overview.md
@@ -567,12 +573,6 @@ nav:
   - Innovation & design:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
-      - AggLayer:
-        - Overview: agglayer/overview.md
-        - AggLayer | Unified bridge: agglayer/unified-bridge.md
-        - AggLayer | Go: agglayer/agglayer-go.md
-        - AggLayer | Rust: agglayer/agglayer-rs.md
-        - AggLayer | Token flows: agglayer/token-flows.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:
