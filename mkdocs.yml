@@ -51,12 +51,12 @@ theme:
 nav:
   - Home: index.md
   - CDK:
-      - Polygon CDK home: cdk/index.md
+    - Polygon CDK home: cdk/index.md
       - Overview: cdk/overview.md
-  - Releases:
+    - Releases:
       - Fork ID 12: cdk/releases/fork-12.md
       - CDK Erigon Release: cdk/releases/erigon-release.md
-  - Get Started:
+    - Get Started:
       - Local Deployment Guide: cdk/getting-started/local-deployment.md
       - CLI Tool: cdk/getting-started/cli-tool.md
       - CDK Erigon:
@@ -65,7 +65,7 @@ nav:
           - Configure Chains Dynamically: cdk/getting-started/cdk-erigon/chain-config.md
           - Network Recovery: cdk/getting-started/cdk-erigon/network-recovery.md
           - Resources: cdk/getting-started/cdk-erigon/resources.md
-  - How-To Guides:
+    - How-To Guides:
       - Migrate:
           - Fork ID 9 to 12: cdk/how-to/migrate/forkid-9-12.md
           - General Partner Guide: cdk/how-to/migrate/fork.md
@@ -73,7 +73,7 @@ nav:
       - Integrate DA Layer: cdk/how-to/integrate-da.md
       - Manage Policies: cdk/how-to/manage-policies.md
       - Connect to CDK Testnets: cdk/how-to/connect-testnet.md
-  - Architecture:
+    - Architecture:
       - Configurations:
           - Validium: cdk/architecture/configurations/validium.md
           - zkRollup: cdk/architecture/configurations/zkrollup.md
@@ -82,7 +82,7 @@ nav:
           - Full Execution Proofs (FEP): cdk/architecture/features/full-execution-proofs.md
           - Pessimistic Proofs (PP): cdk/architecture/features/pessimistic-proofs.md
           - Staking the Bridge (STB): cdk/architecture/features/staking-the-bridge.md
-  - Concepts:
+    - Concepts:
       - Layer 2s: cdk/concepts/layer2s.md
       - L2 Architecture Overview: cdk/concepts/architecture.md
       - L2 Transaction Lifecycle: cdk/concepts/transaction-lifecycle.md
@@ -90,8 +90,8 @@ nav:
       - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
       - Bridging & Interoperability: cdk/concepts/bridging.md
       - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
-  - Glossary: cdk/glossary/index.md
-  - Additional Resources:
+    - Glossary: cdk/glossary/index.md
+    - Additional Resources:
       - Third-Party Guides: cdk/resources/third-party-guides.md
       - CDK Repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
