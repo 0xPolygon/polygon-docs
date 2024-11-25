@@ -50,7 +50,7 @@ theme:
 
 nav:
   - Home: index.md
-  - Polygon CDK home:
+  - CDK:
       - Polygon CDK home: cdk/index.md
       - Overview: cdk/overview.md
   - Releases:
