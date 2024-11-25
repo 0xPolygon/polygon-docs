@@ -54,30 +54,21 @@ nav:
       - Polygon CDK Home: cdk/index.md
       - Overview: cdk/overview.md
       - Releases:
-        - Full execution proofs (FEP): cdk/releases/stack-components.md
-        - Pessimistic proofs (PP): cdk/releases/pp-intro-components.md
+        - Current Release:
+          - Polygon CDK Fork ID 12: cdk/releases/stack-components.md
+        - Previous Releases:
+        - Polygon CDK Erigon: cdk/getting-started/cdk-erigon/releases.md
+        - Polygon CDK Fork ID 9: cdk/releases/stack-components.md
       - Get started:
         - Local deployment guide: cdk/getting-started/local-deployment.md
         - CLI tool: cdk/getting-started/cli-tool.md
         - CDK Erigon:
           - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
-          - Releases: cdk/getting-started/cdk-erigon/releases.md
           - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
           - How to:
             - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
             - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
           - Resources: cdk/getting-started/cdk-erigon/resources.md
-      - Concepts:
-        - Layer 2s: cdk/concepts/layer2s.md
-        - L2 architecture overview: cdk/concepts/architecture.md
-        - L2 transaction lifecycle: cdk/concepts/transaction-lifecycle.md
-        - Rollups vs. validiums: cdk/concepts/rollup-vs-validium.md
-        - ZK vs. optimistic rollups: cdk/concepts/zk-vs-optimistic.md
-        - Batches, blocks, transactions: cdk/concepts/blocks.md
-        - Transaction finality: cdk/concepts/transaction-finality.md
-        - Gas fees: cdk/concepts/gas-fees.md
-        - Bridging & interoperability: cdk/concepts/bridging.md
-        - Admin upgradeability: cdk/concepts/admin-upgradeability.md
       - How to: 
         - Migrate:
           - Fork id 9 to 12: cdk/how-to/migrate/forkid-9-12.md
@@ -88,6 +79,19 @@ nav:
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Connect to CDK testnets: cdk/how-to/connect-testnet.md
+      - Concepts:
+        - Full Execution Proofs (FEP): cdk/releases/stack-components.md
+        - Pessimistic proofs (PP): cdk/releases/pp-intro-components.md
+        - Layer 2s: cdk/concepts/layer2s.md
+        - L2 architecture overview: cdk/concepts/architecture.md
+        - L2 transaction lifecycle: cdk/concepts/transaction-lifecycle.md
+        - Rollups vs. validiums: cdk/concepts/rollup-vs-validium.md
+        - ZK vs. optimistic rollups: cdk/concepts/zk-vs-optimistic.md
+        - Batches, blocks, transactions: cdk/concepts/blocks.md
+        - Transaction finality: cdk/concepts/transaction-finality.md
+        - Gas fees: cdk/concepts/gas-fees.md
+        - Bridging & interoperability: cdk/concepts/bridging.md
+        - Admin upgradeability: cdk/concepts/admin-upgradeability.md
       - Architecture:
         - CDK FEP high level view: cdk/architecture/high-level-views.md
         - CDK PP high level view: cdk/architecture/cdk-pp-highlevel-arch.md
