@@ -55,10 +55,10 @@ nav:
       - Overview: cdk/overview.md
       - Releases:
           - Current Release:
-              - Polygon CDK Fork ID 12: cdk/releases/stack-components.md
+              - Polygon CDK Fork ID 12: docs/cdk/releases/fork-id-12.md
           - Previous Releases:
               - Polygon CDK Erigon: cdk/getting-started/cdk-erigon/releases.md
-              - Polygon CDK Fork ID 9: cdk/releases/stack-components.md
+              - Polygon CDK Fork ID 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
       - Get Started:
           - Local Deployment Guide: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
@@ -72,7 +72,6 @@ nav:
       - How To:
           - Migrate:
               - Fork ID 9 to 12: cdk/how-to/migrate/forkid-9-12.md
-              - Fork ID 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
               - General Guide for Partners: cdk/how-to/migrate/fork.md
           - Create Custom Native Token: cdk/how-to/use-native-token.md
           - Integrate DA Layer: cdk/how-to/integrate-da.md
