@@ -1,7 +1,3 @@
-# Fork ID 12 Release Notes
-
-## Overview
-
 Fork ID 12 introduces significant enhancements to the Polygon Chain Development Kit (CDK), emphasizing security, performance, and developer usability. This release includes cutting-edge features tailored for seamless Layer 2 blockchain development, aligning with the latest innovations in zk-based proof systems and execution frameworks.
 
 ## Key Features
