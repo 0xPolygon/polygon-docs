@@ -52,7 +52,7 @@ nav:
   - Home: index.md
   - Polygon CDK home:
       - Polygon CDK home: cdk/index.md
-      -  - Overview: cdk/overview.md
+      - Overview: cdk/overview.md
   - Releases:
       - Fork ID 12: cdk/releases/fork-12.md
       - CDK Erigon Release: cdk/releases/erigon-release.md
