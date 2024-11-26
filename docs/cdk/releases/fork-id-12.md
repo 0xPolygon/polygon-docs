@@ -20,15 +20,6 @@ This release enhances zk-based security protocols, providing advanced cryptograp
 - **Why it matters:** Ensures optimal security for Layer 2 chains, bolstering resistance against fraud and data tampering.
 - **Use case:** Essential for chains leveraging zk-rollups for scalable transaction throughput.
 
-## Upgrade Instructions
-
-To upgrade to Fork ID 12:
-
-1. **Backup your existing environment**: Ensure all current data and configurations are saved.
-2. **Update dependencies**: Replace older dependencies with those specified in the Fork ID 12 documentation.
-3. **Migrate configurations**: Adjust any custom configurations to align with Fork ID 12 requirements.
-4. **Deploy the new release**: Follow the deployment guide for a smooth transition to the updated stack.
-
 ## Changelog
 
 - Added Full Execution Proofs for transaction validation.
