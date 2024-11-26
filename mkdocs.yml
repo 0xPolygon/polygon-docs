@@ -61,10 +61,9 @@ nav:
       - Overview: cdk/overview.md
       - Releases:
           - Current Release:
-              - Polygon CDK Fork ID 12: docs/cdk/releases/fork-id-12.md
+              - Polygon CDK Fork ID 12: cdk/releases/fork-id-12.md
           - Previous Releases:
               - Polygon CDK Erigon: cdk/getting-started/cdk-erigon/releases.md
-              - Polygon CDK Fork ID 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
       - Get Started:
           - Local Deployment Guide: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
@@ -77,8 +76,9 @@ nav:
               - Resources: cdk/getting-started/cdk-erigon/resources.md
       - How To:
           - Migrate:
+              - General Guide for Projects: cdk/how-to/migrate/fork.md
               - Fork ID 9 to 12: cdk/how-to/migrate/forkid-9-12.md
-              - General Guide for Partners: cdk/how-to/migrate/fork.md
+              - Fork ID 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
           - Create Custom Native Token: cdk/how-to/use-native-token.md
           - Integrate DA Layer: cdk/how-to/integrate-da.md
           - Manage Allowlists with Policies: cdk/how-to/manage-policies.md
@@ -103,8 +103,6 @@ nav:
           - CDK Rollup: cdk/architecture/cdk-zkevm.md
           - CDK Validium: cdk/architecture/cdk-validium.md
           - Staking the Bridge (STB): cdk/architecture/staking-the-bridge.md
-      - Specification:
-          - Validium vs Rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
           - Glossary: cdk/glossary/index.md
       - Additional Resources:
