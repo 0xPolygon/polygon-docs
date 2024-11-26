@@ -42,12 +42,13 @@ hide:
 							</div>
 							<p class="feature-paragraph">Build today using Polygon technology. Select the protocol that best fits your needs.</p>
 						</div>
-						<a href="docs/agglayer/overview.md" class="flex-card-item w-inline-block">
+						<a href="agglayer/overview.md" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">AggLayer documentation</div>
+								<div class="feature-card-heading">AggLayer</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
+								<div class="status-tag">Soon</div>
 							</div>
 							<p class="feature-paragraph">AggLayer solves blockchain fragmentation by enabling sovereign chains to securely share liquidity, users, and state.</p>
 						</a>
@@ -143,6 +144,129 @@ hide:
 									</svg></div>
 							</div>
 							<p class="feature-paragraph">The Polygon protocol that’s best for you. A guide and decision matrix designed to empower users to navigate the evolving world of decentralization.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container-global">
+			<div class="section-wrapper">
+				<div class="home-dev-resources">
+					<div class="section-header-wrapper">
+						<h2 class="heading-h2">Developer resources</h2>
+						<p class="home-section-subtext">For developers who know what they want to build and are ready to go.</p>
+					</div>
+					<div class="flexbox">
+						<a href="/tools/" class="home-feature-card w-inline-block"><img src="img/home/build.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content">
+								<div class="feature-content-wrapper">
+									<div class="feature-content-name">Developer tools</div>
+									<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+											<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+										</svg></div>
+								</div>
+								<p class="paragraph-small">RPC providers, faucets, data indexing, Web3 dApp development SDKs, block explorers, storage, and more.</p>
+							</div>
+						</a>
+						<a href="./zkEVM/how-to/write-contract" class="home-feature-card w-inline-block"><img src="img/home/tutorial.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content">
+								<div class="feature-content-wrapper">
+									<div class="feature-content-name">Write a zkEVM contract</div>
+									<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+											<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+										</svg></div>
+								</div>
+								<p class="paragraph-small">Step-by-step guidance for writing smart contracts with zkEVM.</p>
+							</div>
+						</a>
+						<a href="https://ecosystem.polygon.technology/spn/explore/?search=&competency=&chain=" class="home-feature-card w-inline-block"><img src="img/home/network.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content">
+								<div class="feature-content-wrapper">
+									<div class="feature-content-name">Solution Provider Network</div>
+									<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+											<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+										</svg></div>
+								</div>
+								<p class="paragraph-small">Searchable catalog of tooling and infrastructure for developers.</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container-global">
+			<div class="section-wrapper">
+				<div class="home-dev-resources">
+					<div class="section-header-wrapper">
+						<h2 class="heading-h2">Quickstart</h2>
+						<p class="home-section-subtext">Are you ready to start building?</p>
+					</div>
+					<div class="flexbox">
+						<a href="cdk/getting-started/local-deployment/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content-wrapper">
+								<div class="feature-content-name">Polygon CDK: Deploy a local test rollup</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+							</div>
+						</a>
+						<a href="zkEVM/how-to/using-hardhat/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content">
+								<div class="feature-content-wrapper">
+									<div class="feature-content-name">Polygon zkEVM: Deploy a smart contract to the zkEVM Cardona testnet</div>
+									<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+											<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+										</svg></div>
+								</div>
+							</div>
+						</a>
+						<a href="pos/get-started/building-on-polygon/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content-wrapper">
+								<div class="feature-content-name">Polygon PoS: Build a new web3 dApp</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+							</div>
+						</a>
+					</div>
+					<div class="flexbox items-4">
+						<a href="/pos/how-to/bridging/ethereum-polygon/portal-ui/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content-wrapper">
+								<div class="feature-content-name">Polygon PoS: Bridge tokens and send interlayer messages</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+							</div>
+						</a>
+						<a href="zkEVM/get-started/setup-nodes/production-node/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content-wrapper">
+								<div class="feature-content-name">Polygon zkEVM: Set up a zkNode</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+							</div>
+						</a>
+						<a href="https://github.com/Snapchain/zkValidium-quickstart" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content-wrapper">
+								<div class="feature-content-name">Polygon CDK: Create your own validium</div>
+								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+									</svg></div>
+							</div>
+						</a>
+						<a href="https://0xpolygonmiden.github.io/examples/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+							<div class="feature-content">
+								<div class="feature-content-wrapper">
+									<div class="feature-content-name">Polygon Miden: Explore the sandbox</div>
+									<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
+											<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
+										</svg></div>
+								</div>
+							</div>
 						</a>
 					</div>
 				</div>
