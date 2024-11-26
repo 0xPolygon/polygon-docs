@@ -1,12 +1,12 @@
 ## Introduction to the Unified Bridge
 
-The Unified Bridge (Prev. LxLy bridge) is an interoperability layer aimed at enabling cross-chain communication among AggLayer connected chains. It enables the interaction between different networks such as L2 to L2, L1 to L2, and L2 to L1.
+The Unified Bridge (prev. LxLy bridge) is an interoperability layer aimed at enabling cross-chain communication among AggLayer connected chains. It enables the interaction between different networks such as L2 to L2, L1 to L2, and L2 to L1.
 
 ### Why do we need a Unified Bridge?
 
 The Unified Bridge is needed to enable cross-chain communication among different networks to solve the problem of fragmentation as well as to initiate one-step cross-chain transactions for seamless UX.
 
-For **the AggLayer**, it is a critical component to facilitate unified experience among AggLayer-connected chains. In the process of cross-chain communication, the Unified Bridge is the interface for developers and users to initiate cross-chain transactions, which the AggLayer will then monitor and validate the validity of via a Pessimistic Proof. Once validated, the cross-chain message will be accepted and ready to be claimed on the destination chain.
+For the **AggLayer**, it is a critical component to facilitate unified experience among AggLayer-connected chains. In the process of cross-chain communication, the Unified Bridge is the interface for developers and users to initiate cross-chain transactions, which the AggLayer will then monitor and validate the validity of via a Pessimistic Proof. Once validated, the cross-chain message will be accepted and ready to be claimed on the destination chain.
 
 ## Unified Bridge: Data Structure
 
@@ -17,7 +17,7 @@ The AggLayer maintains a merkle tree to record all cross-chain transactions and 
 
 ### Local Exit Root & Local Index
 
-All cross-chain transactions using the Unified Bridge are recorded in a Sparse Merkle Tree called the Local Exit Tree. Each AggLayer-connected chain maintains its own local exit tree. This is maintained in [`PolygonZKEVMBridgeV2.sol`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) on each AggLayer-connected L2 and L1.
+All cross-chain transactions using the Unified Bridge are recorded in a Sparse Merkle Tree called the Local Exit Tree. Each AggLayer-connected chain maintains its own local exit tree. This is maintained in the [`PolygonZKEVMBridgeV2.sol`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMBridgeV2.sol) contract on each AggLayer-connected L2 and L1.
 
 - `Local Exit Root(LET)`: The root of the tree is called the local exit root. It is a binary tree with a height of 32. The root is updated every time a new cross-chain transaction is initiated.
 
@@ -148,7 +148,7 @@ function bridgeAsset(
 )
 ```
 
-The code goes through a few steps to complete the bridging process:
+These steps complete the bridging process:
 1. Check the `destinationNetwork` is not set as the source network's ID.
 2. Prepare tokens to be bridged.
 
@@ -204,7 +204,7 @@ function claimAsset(
 )
 ```
 
-Before the `claimAsset` function is initiated, all of these inputs must be prepared:
+Before the `claimAsset` function is initiated, these inputs must be satisfied:
 
 - Both `smtProofLocalExitRoot` and `smtProofRollupExitRoot` can be fetched via the **Proof Generation API**, the `depositCount` param for the Proof API is located at the fetch result of **Transaction API**, is your bridge transaction's `counter` field in the response.
 - `GlobalIndex` can be constructed as described in **Global Exit Root, L1 Info Tree, Global Index**
@@ -270,7 +270,7 @@ function bridgeMessageWETH(
 )
 ```
 
-The code will go through a few steps to complete the bridging process:
+These steps complete the bridging process:
 
 1. Check value condition:
    - [For `BridgeMessage`], if the custom gas token exist in the source chain, then this function is only callable without value. A value should only be transferable via this function if the native gas token is `ETH`
@@ -378,7 +378,7 @@ function bridgeAndCall(
 ) external payable
 ```
 
-the code will go through a few steps to complete the bridging process:
+These steps complete the bridging process:
 
 1. Preparing Bridging Tokens:
    - When the source chain's gas token is not `ETH`, then send `WETH` from sender address to the bridge extension contract
@@ -404,7 +404,7 @@ function onMessageReceived(
 ) external payable
 ```
 
-Note: this function is called when calling `claimMessage` on the destination chain; it's only callable by the Bridge Contract.
+Note: This function is called when calling `claimMessage` on the destination chain; it's only callable by the Bridge Contract.
 
 1. Access control, making sure its Bridge Contract Calling, and the message origin on the source chain is also bridge contract.
 
@@ -436,11 +436,11 @@ constructor(
 ) payable
 ```
 
-The assets transferred from the source chain via `bridgeAsset` should have already transferred to this new jumpPoint Smart contract on the destination chain.
+The assets transferred from the source chain via `bridgeAsset` should have already transferred to this new jumpPoint smart contract on the destination chain.
 
-1. Once instantiated, check that the asset that was transferred to `this`, whether it is a `ETH` token, `WETH` token, Custom Gas Token, or ERC-20 token.
-2. Depending on the token type, transfer the token accordingly to the final `callAddress`, and then do the smart contract call with `callData`
-3. If the execution fails on the `callAddress` contract, tokens are transferred to `fallbackAddress`.
+1. Once instantiated, check that the asset that was transferred to the jumpPoint smart contract, whether it is a `ETH` token, `WETH` token, Custom Gas Token, or ERC-20 token.
+2. Depending on the token type, transfer the token accordingly to the final `callAddress`, and then perform the smart contract call with `callData`
+3. If the execution fails on the `callAddress` contract, tokens are transferred to `fallbackAddress`
 
 ## Security of the Unified Bridge
 - **Secured by Ethereum**: Settlement on Ethereum
@@ -465,6 +465,8 @@ The assets transferred from the source chain via `bridgeAsset` should have alrea
 - **Secured by Access Control**: No Administrative Privileges
   
   The bridge contract can only mint, burn, or transfer assets through user-initiated bridge transactions. There is no administrative control over assets locked in the bridge contract. Only users with a balance of the specific tokens have access to their respective assets.
+
+The supply of tokens shown on an individual chain’s contracts may be much higher than what has actually been deposited; this is an implementation detail to provide a sufficient virtual balance to handle any bridging activity. These figures do not reflect the circulating supply. The actual movement of tokens is strictly controlled by cryptographic proofs, mathematical constraints, and the immutable total supply of that particular token.
 
 To learn more about the actions for different types of tokens (gas token, ETH, ERC-20 tokens, etc), refer to the above [specs](#assets-bridging)
 
