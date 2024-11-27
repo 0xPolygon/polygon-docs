@@ -42,7 +42,7 @@ hide:
 							</div>
 							<p class="feature-paragraph">Build today using Polygon technology. Select the protocol that best fits your needs.</p>
 						</div>
-						<a href="AggLayer" class="flex-card-item w-inline-block">
+						<a href="agglayer/overiview" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
 								<div class="feature-card-heading">AggLayer</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
