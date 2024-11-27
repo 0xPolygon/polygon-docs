@@ -42,13 +42,13 @@ hide:
 							</div>
 							<p class="feature-paragraph">Build today using Polygon technology. Select the protocol that best fits your needs.</p>
 						</div>
-						<a href="agglayer/overview.md" class="flex-card-item w-inline-block">
+						<a href="AggLayer" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
 								<div class="feature-card-heading">AggLayer</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
-								<div class="status-tag">Soon</div>
+								<div class="status-tag">SOON</div>
 							</div>
 							<p class="feature-paragraph">AggLayer solves blockchain fragmentation by enabling sovereign chains to securely share liquidity, users, and state.</p>
 						</a>
@@ -88,7 +88,7 @@ hide:
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
-								<div class="status-tag">COMING SOON</div>
+								<div class="status-tag">SOON</div>
 							</div>
 							<p class="feature-paragraph">Test the Miden VM and learn about Polygon Miden, the novel ZK rollup designed to extend the EVM’s feature-set, including for privacy.</p>
 						</a>
