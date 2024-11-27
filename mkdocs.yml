@@ -61,7 +61,7 @@ nav:
       - Overview: cdk/overview.md
       - Releases:
           - Current Release:
-              - Release 12: cdk/releases/fork-id-12.md
+              - CDK Fork ID 12: cdk/releases/fork-id-12.md
           - Previous Releases:
               - Polygon CDK Erigon: cdk/getting-started/cdk-erigon/release.md
       - Get Started:
