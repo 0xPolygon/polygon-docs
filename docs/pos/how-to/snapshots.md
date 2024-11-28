@@ -65,7 +65,7 @@ sudo service bor start
 
 !!! tip "Appropriate user permissions"
     
-    Ensure that the Bor and Heimdall user files have appropriate permissions to access the `datadir`. To set correct permissions for Bor, execute `sudo chown -R bor:nogroup /var/lib/heimdall/data`. Similarly, for Heimdall, run `sudo chown -R heimdall:nogroup /var/lib/bor/data/bor`
+    Ensure that the Bor and Heimdall user files have appropriate permissions to access the `datadir`. To set correct permissions for Bor, execute `sudo chown -R bor:nogroup /var/lib/bor/`. Similarly, for Heimdall, run `sudo chown -R heimdall:nogroup /var/lib/heimdall/`
 
 ## Recommended disk size guidance
 
