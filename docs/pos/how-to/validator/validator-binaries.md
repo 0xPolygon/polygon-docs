@@ -217,7 +217,7 @@ First, start the Heimdall service. Then, once the Heimdall service syncs, start 
     The Heimdall service can take several days to sync from scratch fully.
 
     Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours.
-    For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](https://forum.polygon.technology/t/snapshot-instructions-for-heimdall-and-bor/9233).
+    For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](https://docs.polygon.technology/pos/how-to/snapshots/).
 
 ### Starting the Heimdall service
 
