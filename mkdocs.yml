@@ -8,19 +8,19 @@ site_url: https://docs.polygon.technology/
 
 theme:
   name: material
-  palette:
+  palette:Y4SVMXS5MAE1C67T5XMCI11DQP8YCSW7W
     # Palette toggle for light mode
     - scheme: default
       primary: white
       accent: purple
-      toggle:
+      toggle:FFIBFQEZAVRXMQMC574R3G53EHDD2ZU7E
         icon: material/eye
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
       primary: black
       accent: purple
-      toggle:
+      toggle:XDHUF765Z4MAIB7HKT396598ZWP5NRG9XC
         icon: material/eye-outline
         name: Switch to light mode
   language: en
