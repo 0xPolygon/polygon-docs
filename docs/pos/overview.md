@@ -1,12 +1,12 @@
-The Polygon Proof-of-Stake (PoS) network is designed to address scalability challenges within the Ethereum ecosystem. It operates as an EVM-compatible Layer-2 (L2) scaling solution for Ethereum, enhancing its throughput while also significantly bringing down  gas costs, i.e., transaction fees.
+The Polygon Proof-of-Stake (PoS) network is designed to address scalability challenges within the Ethereum ecosystem. It operates as an EVM-compatible sidechain for Ethereum, enhancing its throughput while also significantly bringing down gas costs, i.e., transaction fees.
 
 ## Dual layer architecture
 
-Polygon PoS is a Proof-of-Stake Layer-2 (L2) network anchored to Ethereum, and is composed of the following two layers:
+Polygon PoS network which uses Ethereum for settlement is composed of the following two layers:
 
-- Heimdall layer, a consensus layer consisting of a set of proof-of-stake Heimdall nodes for monitoring staking contracts deployed on the Ethereum mainnet, and committing the Polygon PoS network checkpoints to the Ethereum mainnet. The new version of Heimdall is based on [CometBFT](https://docs.cometbft.com/).
+- Heimdall layer, a consensus layer consisting of a set of proof-of-stake Heimdall nodes for monitoring staking contracts deployed on the Ethereum mainnet, bridging events, and committing the Polygon PoS network checkpoints to the Ethereum mainnet. The new version of Heimdall is based on [CometBFT](https://docs.cometbft.com/).
 
-- Bor layer, an execution layer which is made up of a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum (Geth).
+- Bor layer, an execution layer which is made up of a set of block-producing Bor nodes shuffled by Heimdall nodes. The primary Bor client is based on Go Ethereum (Geth) and Erigon is also supported.
 
 ## Transaction lifecycle
 
