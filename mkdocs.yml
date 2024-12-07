@@ -54,19 +54,9 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Releases:
-        - Full execution proofs (FEP): cdk/releases/stack-components.md
-        - Pessimistic proofs (PP): cdk/releases/pp-intro-components.md
-      - Get started:
+        - Version compatibility matrix: cdk/version-matrix.md
+      - Get started: 
         - Local deployment guide: cdk/getting-started/local-deployment.md
-        - CLI tool: cdk/getting-started/cli-tool.md
-        - CDK Erigon:
-          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
-          - Releases: cdk/getting-started/cdk-erigon/releases.md
-          - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
-          - How to:
-            - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
-            - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
-          - Resources: cdk/getting-started/cdk-erigon/resources.md
       - Concepts:
         - Layer 2s: cdk/concepts/layer2s.md
         - L2 architecture overview: cdk/concepts/architecture.md
@@ -80,20 +70,17 @@ nav:
         - Admin upgradeability: cdk/concepts/admin-upgradeability.md
       - How to: 
         - Migrate:
-          - Fork id 9 to 12: cdk/how-to/migrate/forkid-9-12.md
           - Fork id 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
           - General guide for partners: cdk/how-to/migrate/fork.md
         - Create custom native token: cdk/how-to/use-native-token.md
-        - Integrate DA layer: cdk/how-to/integrate-da.md
+        - Integrate a DAC: cdk/how-to/integrate-da.md
         - Manage allowlists with policies: cdk/how-to/manage-policies.md
         - Quickly test a running stack: cdk/how-to/quick-test-stack.md
         - Connect to CDK testnets: cdk/how-to/connect-testnet.md
       - Architecture:
-        - CDK FEP high level view: cdk/architecture/high-level-views.md
-        - CDK PP high level view: cdk/architecture/cdk-pp-highlevel-arch.md
+        - Unified bridge - STB: cdk/architecture/staking-the-bridge.md
         - CDK rollup: cdk/architecture/cdk-zkevm.md
         - CDK validium: cdk/architecture/cdk-validium.md
-        - Staking the Bridge (STB): cdk/architecture/staking-the-bridge.md
       - Specification:
         - Validium vs rollup: cdk/spec/validium-vs-rollup.md
       - Glossary:
@@ -104,7 +91,15 @@ nav:
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
-      - Releases:
+      - Releases: 
+        - CDK Erigon:
+          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
+          - Releases: cdk/getting-started/cdk-erigon/releases.md
+          - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
+          - How to:
+            - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
+            - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
+          - Resources: cdk/getting-started/cdk-erigon/resources.md 
         - Etrog upgrade: zkEVM/architecture/protocol/etrog-upgrade.md
       - Build:
         - Get started: zkEVM/get-started/index.md
@@ -550,7 +545,7 @@ nav:
               - Venly widget: tools/wallets/venly/venly-widget.md
           - Fortmatic: https://docs.fortmatic.com/   
           - Openfort: tools/wallets/openfort.md
-          - Particle Network:  tools/wallets/particle-network.md
+          - Particle network:  tools/wallets/particle-network.md
           - Portis:  tools/wallets/portis.md    
           - Torus:  tools/wallets/torus.md  
           - WalletConnect:  tools/wallets/walletconnect.md
@@ -566,7 +561,9 @@ nav:
       - Welcome: innovation-design/welcome.md
       - AggLayer:
         - Overview: agglayer/overview.md
-        - AggLayer | Unified bridge: agglayer/unified-bridge.md
+        - AggLayer | Unified bridge: 
+          - Architecture: agglayer/unified-bridge.md
+          - API and auto-claim service: agglayer/unified-bridge-api.md
         - AggLayer | Go: agglayer/agglayer-go.md
         - AggLayer | Rust: agglayer/agglayer-rs.md
         - AggLayer | Token flows: agglayer/token-flows.md
