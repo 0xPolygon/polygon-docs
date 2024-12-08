@@ -87,28 +87,3 @@ bda8943b47d96ccf8f36dc5d306450926906571b@47.128.184.10:26656
 ```
 
 Alternatively, you can find more seeds [here](https://docs.stakepool.dev.br/polygon/live-peers).
-
-## Enhancing Bor Peering with DNS Discovery
-
-To further enhance bor peering capabilities, the DNS discovery flag can be utilized. The ENR trees for the mainnet and Amoy testnet are provided below:
-
-* **Mainnet** - `enrtree://AKUEZKN7PSKVNR65FZDHECMKOJQSGPARGTPPBI7WS2VUL4EGR6XPC@pos.polygon-peers.io`
-* **Amoy Testnet** - `enrtree://AKUEZKN7PSKVNR65FZDHECMKOJQSGPARGTPPBI7WS2VUL4EGR6XPC@amoy.polygon-peers.io`
-
-### Configuration Steps
-
-To configure DNS discovery, follow these steps:
-
-1. Edit your `config.toml` file:
-   * Locate the `[p2p]` section.
-   * Set `maxpeers` to:
-       * 2000 for Mainnet
-       * 500 for Amoy Testnet
-   * Set `maxpendpeers` to:
-       * 500 for Mainnet
-       * 100 for Amoy testnet
-2. Add the DNS under `[p2p.discovery]` section.
-
-!!! note
-
-    Increasing the number of peers can significantly enhance node connectivity, enabling connection to hundreds of peers almost instantly. However, please be aware that this adjustment may lead to increased bandwidth usage. Adjusting maxpeers and maxpendpeers is optional but can improve peering efficiency. Read more [here](https://forum.polygon.technology/t/introducing-our-new-dns-discovery-for-polygon-pos-faster-smarter-more-connected/19871).

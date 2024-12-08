@@ -554,10 +554,8 @@ nav:
           - Portis:  tools/wallets/portis.md    
           - Torus:  tools/wallets/torus.md  
           - WalletConnect:  tools/wallets/walletconnect.md
-          - Reown:
-              - Intro: tools/wallets/reown.md
-              - AppKit: tools/wallets/appkit.md
           - WalletKit:  tools/wallets/walletkit.md
+          - Web3Modal: tools/wallets/using-web3modal.md
         - Block explorers:
           - OKX explorer: https://www.okx.com/web3/explorer/polygon      
           - Polygon: https://polygonscan.com/ 
