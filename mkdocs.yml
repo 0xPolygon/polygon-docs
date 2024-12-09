@@ -50,12 +50,12 @@ theme:
 
 nav:
   - Home: index.md
-  - AggLayer:
+  - Agglayer:
       - Overview: agglayer/overview.md
-      - AggLayer | Unified bridge: agglayer/unified-bridge.md
-      - AggLayer | Go: agglayer/agglayer-go.md
-      - AggLayer | Rust: agglayer/agglayer-rs.md
-      - AggLayer | Token flows: agglayer/token-flows.md
+      - Unified Bridge: agglayer/unified-bridge.md
+      - Go: agglayer/agglayer-go.md
+      - Rust: agglayer/agglayer-rs.md
+      - Token Flows: agglayer/token-flows.md
   - CDK:
       - Polygon CDK: cdk/index.md
       - Overview: cdk/overview.md
@@ -65,16 +65,16 @@ nav:
           - Local Deployment Guide: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
           - CDK Erigon:
-            - Overview: cdk/getting-started/cdk-erigon/index.md
-            - Release: cdk/getting-started/cdk-erigon/release.md
-            - Deploy a Node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
-            - How To:
-                - Configure Chains Dynamically: cdk/getting-started/cdk-erigon/chain-config.md
-                - Recover the Network: cdk/getting-started/cdk-erigon/network-recovery.md
-            - Resources: cdk/getting-started/cdk-erigon/resources.md
+              - Overview: cdk/getting-started/cdk-erigon/index.md
+              - Release: cdk/getting-started/cdk-erigon/release.md
+              - How To:
+                  - Deploy a Node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
+                  - Configure Chains Dynamically: cdk/getting-started/cdk-erigon/chain-config.md
+                  - Recover the Network: cdk/getting-started/cdk-erigon/network-recovery.md
+              - Resources: cdk/getting-started/cdk-erigon/resources.md
       - How To:
           - Migration Guides:
-              - General Guide for IPs: cdk/how-to/migrate/fork.md
+              - General Guide for Implementation Providers: cdk/how-to/migrate/fork.md
               - Fork ID 9 to 12: cdk/how-to/migrate/forkid-9-12.md
               - Fork ID 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
           - Create Custom Native Token: cdk/how-to/use-native-token.md
