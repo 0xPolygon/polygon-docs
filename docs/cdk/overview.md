@@ -1,9 +1,3 @@
-<!--
----
-comments: true
----
--->
-
 The **Polygon Chain Development Kit (CDK)** is a modular, open-source toolkit for building highly customizable Ethereum-compatible layer 2s. Designed to empower developers to build for their use case, CDK enables the deployment of Layer 2 solutions optimized for performance, security, and cost-efficiency.
 
 ## Flexible Configurations
