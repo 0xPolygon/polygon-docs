@@ -64,8 +64,7 @@ nav:
       - Get Started:
           - Local Deployment Guide: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
-          - CDK Erigon:
-              - Overview: cdk/getting-started/cdk-erigon/index.md
+          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
               - Release: cdk/getting-started/cdk-erigon/release.md
               - How To:
                   - Deploy a Node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
