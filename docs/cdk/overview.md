@@ -4,37 +4,29 @@ comments: true
 ---
 -->
 
-The Polygon Chain Development Kit (CDK) is a modular, open-source software toolkit that enables blockchain developers to deploy and configure ZK-powered chain architectures.
+The **Polygon Chain Development Kit (CDK)** is a modular, open-source toolkit for building highly customizable Ethereum-compatible layer 2s. Designed to empower developers to build for their use case, CDK enables the deployment of Layer 2 solutions optimized for performance, security, and cost-efficiency.
 
-With Polygon CDK, developers can launch new chains that use the Polygon zkEVM protocol as custom Layer 2 solutions on Ethereum.
+## Flexible Configurations
 
-Developers can configure ZK-powered rollups, validium networks, or even sovereign chains with their own tailored finality mechanisms.
+Polygon CDK supports a range of configurations, enabling developers to customize their Layer 2 to specific needs:
+- **Rollup Configurations:** Fully secured by Ethereum using zero-knowledge proofs for trustless scalability and decentralization.  
+- **Validium Configurations:** Utilize off-chain data availability for reduced costs and higher throughput.  
+- **Agglayer Native Configurations:** Cost-optimized setups natively connected to the Agglayer and secured by pessimistic proofs. These configurations offer a lightweight, affordable option with ecosystem-level security.
 
-## Trustless finality
+## Key Advantages
 
-Why does Polygon CDK focus on ZK-powered chains?
+Polygon CDK provides the essential components to build Layer 2 solutions that are secure, scalable, and interoperable with other chains.
 
-Polygon CDK focuses on ZK-powered chains because zero-knowledge technology enables chains to achieve *trustless finality*, which means chain users don't need to rely on a small group of individuals to confirm the finality of their transactions, ensuring greater security and a higher degree of decentralization.
+- **Security:** CDK builds highly secure L2 solutions using the latest innovations in zero-knowledge technology and pessimistic proofs.  
+- **High Performance:** CDK integrates fast-syncing Erigon clients and the battle-tested Polygon zkEVM protocol for scalable, low-latency operations.  
+- **Modularity:** CDK’s modular architecture allows developers to easily customize their environment, including finality mechanisms, proving systems, and economic policies.  
+- **Interoperability:** Opt-in to the [Agglayer](../agglayer/overview.md) to bootstrap your chain’s ecosystem, enable cross-chain transactions, and expand your reach, user base, and liquidity from other established chains.  
+- **Cost Efficiency:** Agglayer native configurations provide low-cost options with reduced gas fees and fast transaction processing, making them ideal for budget-conscious projects.  
 
-With Polygon CDK, developers can choose between a rollup and validium chain setup, and decide on how they want to configure the chain's proving system.
+### Next Steps
 
-Polygon has launched the CDK rollup/validium mode enabling developers to configure CDK components that run the Polygon zkEVM protocol.
+- [Deploy a local CDK environment using Kurtosis](../cdk/getting-started/local-deployment.md). Follow the guide to deploy a CDK stack on your local machine.  
 
-## Key advantages
+- Check out the [concepts documentation](../cdk/concepts/layer2s.md) to learn about rollup, validium, and Agglayer native configurations.  
 
-Polygon CDK provides the essential components to build a Layer 2 blockchain that is secure, scalable, and interoperable with other chains.
-
-- Security: CDK builds highly secure, scalable L2s that utilize the latest innovations in zero-knowledge technology.
-- High-performance: CDK Erigon implements fast-syncing Erigon clients that run the battle-tested Polygon zkEVM protocol.
-- Modularity: CDK modular components allow developers to easily customize their L2 environment and build a chain that meets their specific needs.
-- Interoperability: Opt-in to the [AggLayer](../agglayer/overview.md) to bootstrap your chain’s ecosystem, enable cross-chain transactions while expanding your reach, user base, and liquidity from other established chains.
-- Sovereignty: Maintain full control over your chain’s revenue, governance, security, economic policies, and more.
-- Low gas fees: Transaction fees are orders of magnitude lower than those on Ethereum and are processed substantially faster. This enables a fast, ultra low-cost, and secure user experience unaffected by any high activity experienced on shared networks.
-
-### Next steps
-
-- [Deploy a local CDK environment using Kurtosis](../cdk/getting-started/local-deployment.md). Follow the guide to deploy a CDK stack on your local machine.
-
-- Check out the [concepts documentation](../cdk/concepts/layer2s.md) to gain a high-level understanding of the CDK.
-
-- Have a look at the [CDK architecture docs](../cdk/concepts/architecture.md) to understand the CDK’s components and how they interact with each other.
+- Have a look at the [CDK architecture docs](../cdk/concepts/architecture.md) to understand how the CDK’s modular components interact to power custom blockchain solutions.

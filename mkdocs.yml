@@ -57,18 +57,16 @@ nav:
       - AggLayer | Rust: agglayer/agglayer-rs.md
       - AggLayer | Token flows: agglayer/token-flows.md
   - CDK:
-      - Polygon CDK Home: cdk/index.md
+      - Polygon CDK: cdk/index.md
       - Overview: cdk/overview.md
-      - Releases:
-          - Current Release:
-              - CDK Fork ID 12: cdk/releases/fork-id-12.md
-          - Previous Releases:
-              - Polygon CDK Erigon: cdk/getting-started/cdk-erigon/release.md
+      - Release Notes:
+          - Version 12: cdk/releases/release-notes.md
       - Get Started:
           - Local Deployment Guide: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
           - CDK Erigon:
-            - Overview: cdk/getting-started/cdk-erigon/index.md
+            - Overview: cdk/getting-started/cdk-erigon/overview.md
+            - Release: cdk/getting-started/cdk-erigon/release.md
             - Deploy a Node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
             - How To:
                 - Configure Chains Dynamically: cdk/getting-started/cdk-erigon/chain-config.md
