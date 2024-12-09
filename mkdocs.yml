@@ -53,8 +53,8 @@ nav:
   - Agglayer:
       - Overview: agglayer/overview.md
       - Unified Bridge: agglayer/unified-bridge.md
-      - Go: agglayer/agglayer-go.md
-      - Rust: agglayer/agglayer-rs.md
+      - Go SDK: agglayer/agglayer-go.md
+      - Rust SDK: agglayer/agglayer-rs.md
       - Token Flows: agglayer/token-flows.md
   - CDK:
       - Polygon CDK: cdk/index.md
@@ -64,7 +64,8 @@ nav:
       - Get Started:
           - Local Deployment Guide: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
-          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
+          - CDK Erigon:
+              - Overview: cdk/getting-started/cdk-erigon/index.md
               - Release: cdk/getting-started/cdk-erigon/release.md
               - How To:
                   - Deploy a Node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
