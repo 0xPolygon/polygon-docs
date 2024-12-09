@@ -9,10 +9,10 @@ To initiate a CDK chain upgrade, the Implementation Provider can request support
 <table>
   <tr>
     <td>
-      <img alt="CDK Service Desk" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/CDK-service-desk.png?raw=true" width="300" height="200"/>
+      <img alt="CDK Service Desk" src="docs/img/cdk/CDK-service-desk.png?raw=true" width="300" height="200"/>
     </td>
     <td>
-      <img alt="Example Request" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/Example-request.png?raw=true" width="300" height="200"/>
+      <img alt="Example Request" src="docs/img/cdk/Example-request.png?raw=true" width="300" height="200"/>
     </td>
   </tr>
   <tr>
