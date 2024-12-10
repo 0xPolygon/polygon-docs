@@ -1,26 +1,37 @@
-The **Polygon Chain Development Kit (CDK)** is a modular, open-source toolkit for building highly customizable Ethereum-compatible layer 2s. Designed to empower developers to build for their use case, CDK enables the deployment of Layer 2 solutions optimized for performance, security, and cost-efficiency.
+# Overview
 
-## Flexible Configurations
+The **Polygon Chain Development Kit (CDK)** is a modular, open-source framework for building custom Layer 2 (L2) chains tailored to any use case. With **Polygon CDK**, developers can configure and deploy scalable, Ethereum-compatible chains using cutting-edge zk and aggregated blockchain technology.
 
-Polygon CDK supports a range of configurations, enabling developers to customize their Layer 2 to specific needs:
-- **Rollup Configurations:** Fully secured by Ethereum using zero-knowledge proofs for trustless scalability and decentralization.  
-- **Validium Configurations:** Utilize off-chain data availability for reduced costs and higher throughput.  
-- **Agglayer Native Configurations:** Cost-optimized setups natively connected to the Agglayer and secured by pessimistic proofs. These configurations offer a lightweight, affordable option with ecosystem-level security.
+## Key Configurations
 
-## Key Advantages
+Polygon CDK enables flexible deployment options, including:
+- **Rollup Configurations**: Maximize security by leveraging on-chain data availability.
+- **Validium Configurations**: Optimize scalability with off-chain data availability.
+- **Agglayer Native Configuration**: A cost-effective, performance-driven configuration connected to the Agglayer, secured by **pessimistic proofs**. Ideal for projects requiring independent operations with unified liquidity.
 
-Polygon CDK provides the essential components to build Layer 2 solutions that are secure, scalable, and interoperable with other chains.
+This modular design ensures projects can scale securely, minimize costs, and deliver high performance while maintaining full customization.
 
-- **Security:** CDK builds highly secure L2 solutions using the latest innovations in zero-knowledge technology and pessimistic proofs.  
-- **High Performance:** CDK integrates fast-syncing Erigon clients and the battle-tested Polygon zkEVM protocol for scalable, low-latency operations.  
-- **Modularity:** CDK’s modular architecture allows developers to easily customize their environment, including finality mechanisms, proving systems, and economic policies.  
-- **Interoperability:** Opt-in to the [Agglayer](../agglayer/overview.md) to bootstrap your chain’s ecosystem, enable cross-chain transactions, and expand your reach, user base, and liquidity from other established chains.  
-- **Cost Efficiency:** Agglayer native configurations provide low-cost options with reduced gas fees and fast transaction processing, making them ideal for budget-conscious projects.  
+## Why Choose Polygon CDK?
 
-### Next Steps
+- **Customization**: Tailor your chain’s performance, cost, and security to your exact needs.
+- **Scalability**: Configurations support high transaction volumes with minimal latency.
+- **Interoperability**: Native Agglayer integration connects chains for unified liquidity and cross-chain compatibility.
+- **Cost Efficiency**: Options like the Agglayer Native Configuration minimize costs without sacrificing performance.
+- **Upgradability**: Seamlessly transition to advanced features like Full Execution Proofs as your project scales.
 
-- [Deploy a local CDK environment using Kurtosis](../cdk/getting-started/local-deployment.md). Follow the guide to deploy a CDK stack on your local machine.  
+## Next Steps
 
-- Check out the [concepts documentation](../cdk/concepts/layer2s.md) to learn about rollup, validium, and Agglayer native configurations.  
+1. **Set Up Your Environment**  
+   Follow the deployment guide to configure your local development environment using **Polygon CDK**.
 
-- Have a look at the [CDK architecture docs](../cdk/concepts/architecture.md) to understand how the CDK’s modular components interact to power custom blockchain solutions.
+2. **Learn the Concepts**  
+   Explore foundational architecture and configuration options to build a chain tailored to your use case.
+
+3. **Dive Deeper**  
+   Read the advanced architecture documentation to understand how to optimize your deployment.
+
+## Conclusion
+
+Polygon CDK empowers developers to build scalable, secure, and interoperable Layer 2 chains with unmatched customization. Whether you’re deploying a cost-sensitive configuration, a performance-maximized chain, or leveraging Agglayer for ecosystem integration, Polygon CDK provides the tools to bring your blockchain vision to life.
+
+The future of Web3 is aggregated. Build with **Polygon CDK** today.
