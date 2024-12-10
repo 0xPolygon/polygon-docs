@@ -11,9 +11,7 @@ This deployment guide walks you through starting and running a full node through
     Steps in these guide involve waiting for the Heimdall and Bor services to fully sync. This process takes several days to complete.
 
     Please use snapshots for faster syncing without having to sync over the network. For detailed instructions, see [Sync node using snapshots](../../how-to/snapshots.md).
-
-    For snapshot download links, see the [Polygon Chains Snapshots](https://snapshots.polygon.technology/) page.
-
+    
 
 ## Overview
 
