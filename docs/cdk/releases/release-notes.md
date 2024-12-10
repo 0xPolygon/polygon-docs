@@ -30,7 +30,5 @@ Polygon CDK Fork ID 12 introduces critical updates to enhance performance, secur
 ---
 
 ## Next Steps
-- [Explore the Full Features](../cdk/concepts/overview.md): Learn more about Full Execution Proofs and Erigon integration.  
-- [Deploy Your Chain](../cdk/getting-started/cli-guide.md): Follow the CLI guide to launch your Layer 2 solution.
-
-Polygon CDK Fork ID 12 provides the tools to build scalable, secure, and high-performance Layer 2 solutions. Start building today!
+- [Explore the Full Features](cdk/concepts/full-execution-proofs.md): Learn more about Full Execution Proofs and Erigon integration.  
+- [Deploy Your Chain](cdk/getting-started/local-deployment.md): Follow the CLI guide to launch your Layer 2 solution.
