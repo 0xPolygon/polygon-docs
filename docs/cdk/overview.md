@@ -1,37 +1,42 @@
-# Overview
+The **Polygon Chain Development Kit (CDK)** is a modular, open-source framework for building scalable and secure Layer 2s (L2s). Designed for flexibility, the Polygon CDK stack has 3 main configurations (with options to customize further): zk rollup config, validium config, and the Agglayer native config.
 
-The **Polygon Chain Development Kit (CDK)** is a modular, open-source framework for building custom Layer 2 (L2) chains tailored to any use case. With **Polygon CDK**, developers can configure and deploy scalable, Ethereum-compatible chains using cutting-edge zk and aggregated blockchain technology.
+---
 
-## Key Configurations
+## Why Use Polygon CDK?
 
-Polygon CDK enables flexible deployment options, including:
-- **Rollup Configurations**: Maximize security by leveraging on-chain data availability.
-- **Validium Configurations**: Optimize scalability with off-chain data availability.
-- **Agglayer Native Configuration**: A cost-effective, performance-driven configuration connected to the Agglayer, secured by **pessimistic proofs**. Ideal for projects requiring independent operations with unified liquidity.
+### **1. Build ZK-Powered Chains**
+Polygon CDK enables developers to launch chains using cutting-edge zero-knowledge (ZK) technology for:
+- **Trustless Finality**: Transactions are validated without relying on centralized authorities.
+- **Maximum Security**: Leverage zk-proofs to safeguard user data and ensure cryptographic integrity.
 
-This modular design ensures projects can scale securely, minimize costs, and deliver high performance while maintaining full customization.
+### **2. Modular Architecture**
+- **Customizable Components**: Select and configure modules like consensus, data availability, and proving systems to fit your use case.
+- **Future-Ready Design**: Adapt your chain as requirements evolve or new technologies emerge.
 
-## Why Choose Polygon CDK?
+### **3. Interoperability**
+- **Agglayer Integration**: Seamlessly connect to Agglayer for cross-chain functionality and ecosystem bootstrapping.
+- **Ethereum-Compatible**: Build on a foundation that supports Ethereum tooling, enabling easy adoption and user migration.
 
-- **Customization**: Tailor your chain’s performance, cost, and security to your exact needs.
-- **Scalability**: Configurations support high transaction volumes with minimal latency.
-- **Interoperability**: Native Agglayer integration connects chains for unified liquidity and cross-chain compatibility.
-- **Cost Efficiency**: Options like the Agglayer Native Configuration minimize costs without sacrificing performance.
-- **Upgradability**: Seamlessly transition to advanced features like Full Execution Proofs as your project scales.
+### **4. High Performance**
+- **Erigon Client**: Benefit from faster syncing and high transaction throughput powered by the optimized Erigon architecture.
+- **Cost Efficiency**: Reduce transaction fees by orders of magnitude compared to Ethereum Layer 1.
 
-## Next Steps
+### **5. Sovereignty**
+Maintain full control over your chain’s:
+- Governance and revenue.
+- Security policies and economic frameworks.
+- Finality and operational structure.
 
-1. **Set Up Your Environment**  
-   Follow the deployment guide to configure your local development environment using **Polygon CDK**.
+---
 
-2. **Learn the Concepts**  
-   Explore foundational architecture and configuration options to build a chain tailored to your use case.
+## Key Features at a Glance
 
-3. **Dive Deeper**  
-   Read the advanced architecture documentation to understand how to optimize your deployment.
+| **Feature**            | **Description**                                         |
+|-------------------------|---------------------------------------------------------|
+| **Trustless Finality**  | ZK-powered chains with decentralized validation.        |
+| **Scalable Design**     | Optimized for high transaction throughput and low fees. |
+| **Customizability**     | Modular components tailored to specific use cases.      |
+| **Cross-Chain Ready**   | Connect seamlessly to other chains via Agglayer.        |
+| **High-Speed Syncing**  | Built on the ultra-efficient Erigon client.             |
 
-## Conclusion
-
-Polygon CDK empowers developers to build scalable, secure, and interoperable Layer 2 chains with unmatched customization. Whether you’re deploying a cost-sensitive configuration, a performance-maximized chain, or leveraging Agglayer for ecosystem integration, Polygon CDK provides the tools to bring your blockchain vision to life.
-
-The future of Web3 is aggregated. Build with **Polygon CDK** today.
+---
