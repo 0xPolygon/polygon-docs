@@ -57,7 +57,7 @@ nav:
       - Rust SDK: agglayer/agglayer-rs.md
       - Token Flows: agglayer/token-flows.md
   - CDK:
-      - Polygon CDK: cdk/index.md
+      - Polygon CDK Home: cdk/index.md
       - Overview: cdk/overview.md
       - Release Notes:
           - Version 12: cdk/releases/release-notes.md
