@@ -1,4 +1,4 @@
-This document shows Polygon partners how to migrate an isolated CDK stack.
+This document shows Implementation Providers how to migrate an isolated CDK stack.
 
 ## Process to upgrade forks for isolated CDK chains
 
