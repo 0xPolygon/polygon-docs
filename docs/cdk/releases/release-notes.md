@@ -1,5 +1,3 @@
-# Version 12 Release Notes
-
 Polygon CDK Version 12 introduces critical updates to enhance performance, security, and the developer experience, including Full Execution Proofs and Erigon integration.
 
 ---
