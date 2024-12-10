@@ -1,34 +1,29 @@
-Polygon CDK Fork ID 12 introduces critical updates to enhance performance, security, and the developer experience, including Full Execution Proofs and Erigon integration.
+The **Version 12 Release (Fork ID 12)** introduces improvements to performance, security, and usability, enabling developers to build custom Layer 2 (L2) solutions tailored to their needs. This release includes key enhancements like **Full Execution Proofs**, **Erigon integration**, and improved developer tooling to streamline the chain deployment process.
 
 ---
 
 ## Key Updates
 
 ### Full Execution Proofs
-- zk-based security for robust transaction validation.
-- Rollback sequences for protocol flexibility and minimal downtime.
-- Customizable upgrades, allowing operators to manage their chain independently.
+- **zk-Based Security**: Zero-knowledge proofs ensure trustless finality and robust transaction validation.
+- **Customizable Upgrades**: Provide chain operators with independent control over their update processes.
 
-### Erigon Client Integration
-- Seamless compatibility with Ethereum-based tools and infrastructure.
-- Increased transaction throughput (TPS) for high-demand chains.
+### Erigon Integration
+- **Ethereum Compatibility**: Seamless integration with Ethereum tools and infrastructure for a familiar development experience.
+- **Enhanced Performance**: Higher transaction throughput (TPS) to support high-demand use cases.
 
 ### Enhanced Prover Capacity
-- Supports higher zkCounter limits for complex computations and high transaction volumes.
+- **Increased zkCounter Limits**: Scale complex computations and handle higher transaction volumes for demanding applications.
 
-### Improved Developer Experience
-- CLI enhancements simplify chain deployment and reduce time-to-market.
-- Updated documentation provides clearer guidance for building and deploying chains.
+### Developer Experience Enhancements
+- **CLI Improvements**: Streamlined deployment process reduces complexity and accelerates development cycles.
+- **Updated Documentation**: Comprehensive and clear guidance for deploying and customizing L2 solutions with Polygon CDK.
 
 ---
 
 ## Benefits for Developers
-- **Security:** Advanced zk-based protection for transactions.
-- **Scalability:** Supports high TPS and complex applications.
-- **Performance:** Boosts chain speed and ensures compatibility with Ethereum tooling.
 
----
-
-## Next Steps
-- [Explore the Full Features](cdk/concepts/full-execution-proofs.md): Learn more about Full Execution Proofs and Erigon integration.  
-- [Deploy Your Chain](cdk/getting-started/local-deployment.md): Follow the CLI guide to launch your Layer 2 solution.
+- **Flexibility**: Build custom L2 solutions that align with your specific use case, whether it’s DeFi, gaming, or enterprise applications.
+- **Scalability**: Support high transaction volumes and complex applications with improved prover capacity.
+- **Security**: Rely on advanced zk-based security for robust fraud prevention and data integrity.
+- **Efficiency**: Erigon integration and CLI enhancements make deployment faster and easier.
