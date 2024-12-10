@@ -6,20 +6,9 @@
 
 To initiate a CDK chain upgrade, the Implementation Provider can request support from Polygon by submitting the "*Request Help for an Issue with an Existing CDK Chain*" through the [service desk](https://cdk.polygon.technology/).
 
-<table>
-  <tr>
-    <td>
-      <img alt="CDK Service Desk" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/CDK-service-desk.png?raw=true" width="300" height="200"/>
-    </td>
-    <td>
-      <img alt="Example Request" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/Example-request.png?raw=true" width="300" height="200"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><strong>CDK Service Desk</strong></td>
-    <td align="center"><strong>Example Request</strong></td>
-  </tr>
-</table>
+| ![CDK Service Desk](https://raw.githubusercontent.com/0xPolygon/polygon-docs/a8eee02f74ed28011ccaec99ae73b5b95d768b87/docs/img/cdk/Service-desk-screenshot.png) | ![Example Request](https://raw.githubusercontent.com/0xPolygon/polygon-docs/a8eee02f74ed28011ccaec99ae73b5b95d768b87/docs/img/cdk/Example-request-screenshot.png) |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| **CDK Service Desk**| **Example Request**|
 
 Polygon will then collaborate with the Implementation Provider to **schedule** the UTC timing and dates for the upgrade.
 
