@@ -11,7 +11,6 @@ For the **AggLayer**, it is a critical component to facilitate unified experienc
 ## Unified Bridge: Data Structure
 
 The data structures for the Unified Bridge are as follows:
-![Unified Bridge Data Structure](/docs/img/zkEVM/UnifiedBridgeTree.png)
 
 The AggLayer maintains a merkle tree to record all cross-chain transactions and verify the validity of all cross-chain transactions, ensuring source chain transactions are indeed finalized on the L1 before claiming on the destination chain.
 
@@ -23,8 +22,6 @@ All cross-chain transactions using the Unified Bridge are recorded in a Sparse M
 
 - `depositCount(Local Root Index)`: The index of the leaf node, per leaf node is a hash of cross-chain transaction such as `bridgeAsset`/`bridgeMessage`.
 
-![LET](/docs/img/zkEVM/LET.png)
-
 ### Rollup Exit Root
 
 `rollupExitRoot` is the merkle root of all L2s' Local Exit Root. All AggLayer-connected L2s constantly update their Local Exit Root in [`PolygonRollupManager.sol`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonRollupManager.sol), which updates the Rollup Exit Sparse Merkle Tree.
@@ -33,13 +30,9 @@ For each cross-chain transaction, it is the Source Chain's responsibility to sub
 
 Once the RollupManager has updated a `localExitRoot` of an L2, it will then update the `rollupExitRoot` on it, which will then update the `globalExitRoot` in [`PolygonZkEVMGlobalExitRootV2.sol`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMGlobalExitRootV2.sol) on the L1.
 
-![RER](/docs/img/zkEVM/RET.png)
-
 ### Mainnet Exit Root
 
 `mainnetExitRoot` is functionally the same as the Local Exit Root, but maintained on the L1, which tracks the bridging activities of the L1 to all AggLayer-connected L2s. When the Mainnet Exit Root is updated in the `PolygonZKEVMBridgeV2.sol` contract on the L1, it will then update the `mainnetExitRoot` in the [`PolygonZkEVMGlobalExitRootV2.sol`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/main/contracts/v2/PolygonZkEVMGlobalExitRootV2.sol) on the L1.
-
-![L1MET](/docs/img/zkEVM/L1MET.png)
 
 ### Global Exit Root, L1 Info Tree, Global Index:
 
@@ -48,12 +41,11 @@ Once the RollupManager has updated a `localExitRoot` of an L2, it will then upda
 `L1InfoTree` is the Sparse Merkle Tree that maintains the GERs. It is a binary tree with a height of 32. The root is updated every time a new GER is submitted.
 
 `Global Index` is used to locate the unique leaf in the new global exit tree when creating and verifying the SMT proof. It is a 256-bit string composed of unused bits, mainnet flag, rollup index bits, and local root index bits. Beginning with the most significant, `Global Index` consists of the following bits:
+
 - **191 bits of unused bits**: These bits are unused, and can be filled with any value. The best option is to fill them with zeros because zeros are cheaper.
 - **1 bit of mainnet flag**: This single bit serves as a flag indicating whether an exit pertains to a rollup (represented by 0) or the mainnet (indicated by 1).
 - **32 bit of the rollup Index**: These bits indicate the specific rollup being pointed at, within the rollup exit tree. These bits are therefore only used whenever mainnet flag is 0.
 - **32 bits of the local root index**: These bits indicate the specific index being pointed at, within each rollup’s local exit tree.
-
-![L1InfoTree](/docs/img/zkEVM/L1InfoTree.png)
 
 ## Unified Bridge: Components
 
@@ -64,6 +56,7 @@ There are two main components of the Unified Bridge: the on-chain contracts and 
 The core of the service that acts as the interface for developers to initiate cross-chain transactions and facilitate contract calls on the destination chain if specified. It is deployed on both the source and destination chains.
 
 These [contracts](https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/contracts) consist of:
+
 - `PolygonZKEVMBridgeV2.sol`: Bridge contract on both L1 and L2, maintains its own LET. It is the access point for all cross-chain transactions, including `bridgeAsset`, `bridgeMessage`, `claimAsset`, and `claimMessage`. 
 - `PolygonRollupManager.sol`: Rollup Manager contract on L1, all L2 contracts settle on L1 and update their LET via the Rollup Manager on the L1. Then Rollup Manager updates the RET on L1.
 - `PolygonZkEVMGlobalExitRootV2.sol`: The Global Exit Root contract on the L1 and L2, the root of which is updated each time a new Rollup Exit Root or Mainnet Exit Root is updated.
@@ -109,8 +102,6 @@ These [contracts](https://github.com/0xPolygonHermez/zkevm-contracts/tree/main/c
 
 - **Claimer**: Any network participant may complete the bridging process by becoming the claimer. The Claim Service can be deployed by dapps, chains, or any individual end-user. There's also an [auto claiming script](https://github.com/0xPolygon/auto-claim-service) which automates the claim process on the destination chain.
 - **[Lxly.js](https://github.com/0xpolygon/lxly.js?tab=readme-ov-file)**: LxLy.js is a javascript library which has all the prebuilt functions for interacting with the unified bridge contracts. It does most of the heavy lifting, including type conversion, formatting, error handling, etc., making it very easy for a developer to invoke the bridge, claim, and other functions required for bridging.
-
-![Unified Bridge](/docs/img/zkEVM/UnifiedBridgeDiagram.png)
 
 ## Unified Bridge: Bridging Interface
 
@@ -347,8 +338,6 @@ There are multiple interfaces and helper contracts, as well as the extension con
 
 - [`BridgeExtension.sol`](https://github.com/agglayer/lxly-bridge-and-call/blob/755088953ddd2f586a2009ae34a33ae12e60f0eb/src/BridgeExtension.sol): Bridge Extension contract on both L1 and L2 that access the `PolygonZKEVMBridgeV2.sol` contract. 
 - [`JumpPoint.sol`](https://github.com/agglayer/lxly-bridge-and-call/blob/755088953ddd2f586a2009ae34a33ae12e60f0eb/src/JumpPoint.sol): Process the Destination Chain asset transfer as well as the contract call.
-
-![Unified Bridge](/docs/img/zkEVM/UnifiedBridgeDiagram_BandC.png)
 
 ## Bridging Interface in Bridge-and-Call
 
