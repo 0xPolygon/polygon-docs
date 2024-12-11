@@ -176,13 +176,16 @@ Polygon are not involved. Please check the [upgrade procedure for isolated netwo
     ```
     
 3. Start the stateless Executor.
-4. Start the CDK-Erigon Sequencer.
-5. Verify in the sequencer’s logs that new blocks are being generated with fork ID 12.
-6. Start the Pool Manager (if used/needed).
-7. Start CDK-Erigon RPCs (if used/needed).
-8. Start the Bridge.
-9. Start the CDK aggregator and Sequence Sender components.
-10. Start the stateless Prover.
+4. Start CDK-Erigon Sequencer
+    - On a fork upgrade, once the upgrade Tx is finalized you can start the sequencer. Once started, check logs and ensure new blocks are generated with new forkid.
+        - You would expect to see starting block #5796790 as forkid 12. If you see the starting block 5796790 as fork id 9 there is a problem.
+        If the new block is on the old fork id 9, you need to resync sequencer from scratch or get one of the rpc datadirs (that were synced till the halt and are currenctly stopped) and replace it to become the new sequencer.
+6. Verify in the sequencer’s logs that new blocks are being generated with fork ID 12.
+7. Start the Pool Manager (if used/needed).
+8. Start CDK-Erigon RPCs (if used/needed).
+9. Start the Bridge.
+10. Start the CDK aggregator and Sequence Sender components.
+11. Start the stateless Prover.
 
 ### Polygon Steps for CDK Chains Attached to the Agglayer
 
