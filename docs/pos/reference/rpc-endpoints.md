@@ -31,7 +31,7 @@ The Amoy testnet serves as a replica of the Polygon mainnet and is primarily use
 
 ### Mainnet
 
-The native token for the Polygon PoS mainnet is MATIC, which is used for transaction fees.
+The native token for the Polygon PoS mainnet is POL, which is used for transaction fees.
 
 | Properties       | Network details                                                                                    |
 | ---------------- | -------------------------------------------------------------------------------------------------- |
