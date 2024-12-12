@@ -5,7 +5,7 @@ The AggLayer-go is a service designed to receive zero-knowledge (ZK) proofs  fro
 
 ## Architecture
 
-The AggLayer Golang architecture supports interactions with multiple CDK chains for proof-verification. It uses a PostgreSQL database for storage and interacts with both L1 and L2 chains through configured RPC nodes.
+The Agglayer Golang architecture supports interactions with multiple CDK chains for proof-verification. It uses a PostgreSQL database for storage and interacts with both L1 and L2 chains through configured RPC nodes.
 
 The diagram below shows the full start-up, running, and shutdown sequence for the application and its components.
 
