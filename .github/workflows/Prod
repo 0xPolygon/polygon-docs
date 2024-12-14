@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        required: false
+        required: 
         type: choice
         description: "Select the environment to deploy to (only required for production deployment)"
         options:
