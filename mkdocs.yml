@@ -59,10 +59,10 @@ nav:
   - CDK:
       - Polygon CDK Home: cdk/index.md
       - Overview: cdk/overview.md
-      - Release Notes:
-          - Fork ID 12: cdk/releases/release-notes.md
+      - Current Release:
+          - Release Notes: cdk/releases/release-notes.md
       - Get Started:
-          - Local Deployment Guide: cdk/getting-started/local-deployment.md
+          - Quickstart: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
           - CDK Erigon:
               - Overview: cdk/getting-started/cdk-erigon/index.md
