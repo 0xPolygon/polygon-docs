@@ -4,6 +4,11 @@ comments: true
 ---
 -->
 
+!!! danger
+    - This zkevm-node setup is deprecated and will no longer be supported.
+    - Please migrate to the [cdk-erigon node setup](https://docs.polygon.technology/cdk/getting-started/cdk-erigon/deploy-cdk-erigon/).
+
+
 This quick start guide shows you how to deploy a zkEVM rollup stack on your local machine.
 
 It sets up and runs the following components:
