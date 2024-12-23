@@ -50,57 +50,62 @@ theme:
 
 nav:
   - Home: index.md
+  - Agglayer:
+      - Overview: agglayer/overview.md
+      - Unified Bridge: agglayer/unified-bridge.md
+      - Go SDK: agglayer/agglayer-go.md
+      - Rust SDK: agglayer/agglayer-rs.md
+      - Token Flows: agglayer/token-flows.md
   - CDK:
-      - CDK: cdk/index.md
+      - Polygon CDK Home: cdk/index.md
       - Overview: cdk/overview.md
-      - Releases:
-        - Full execution proofs (FEP): cdk/releases/stack-components.md
-        - Pessimistic proofs (PP): cdk/releases/pp-intro-components.md
-      - Get started:
-        - Local deployment guide: cdk/getting-started/local-deployment.md
-        - CLI tool: cdk/getting-started/cli-tool.md
-        - CDK Erigon:
-          - CDK Erigon: cdk/getting-started/cdk-erigon/index.md
-          - Releases: cdk/getting-started/cdk-erigon/releases.md
-          - Deploy a node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
-          - How to:
-            - Configure chains dynamically: cdk/getting-started/cdk-erigon/chain-config.md
-            - Recover the network: cdk/getting-started/cdk-erigon/network-recovery.md
-          - Resources: cdk/getting-started/cdk-erigon/resources.md
+      - Current Release:
+          - Release Notes: cdk/releases/release-notes.md
+      - Get Started:
+          - Quickstart: cdk/getting-started/local-deployment.md
+          - CLI Tool: cdk/getting-started/cli-tool.md
+          - CDK Erigon:
+              - Overview: cdk/getting-started/cdk-erigon/index.md
+              - Release: cdk/getting-started/cdk-erigon/release.md
+              - How To:
+                  - Deploy a Node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
+                  - Configure Chains Dynamically: cdk/getting-started/cdk-erigon/chain-config.md
+                  - Recover the Network: cdk/getting-started/cdk-erigon/network-recovery.md
+              - Resources: cdk/getting-started/cdk-erigon/resources.md
+      - How To:
+          - Migration Guides:
+              - General Guide for Implementation Providers: cdk/how-to/migrate/fork.md
+              - Fork ID 9 to 12: cdk/how-to/migrate/forkid-9-12.md
+              - Fork ID 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
+          - Create Custom Native Token: cdk/how-to/use-native-token.md
+          - Integrate DA Layer: cdk/how-to/integrate-da.md
+          - Manage Allowlists with Policies: cdk/how-to/manage-policies.md
+          - Quickly Test a Running Stack: cdk/how-to/quick-test-stack.md
+          - Connect to CDK Testnets: cdk/how-to/connect-testnet.md
       - Concepts:
-        - Layer 2s: cdk/concepts/layer2s.md
-        - L2 architecture overview: cdk/concepts/architecture.md
-        - L2 transaction lifecycle: cdk/concepts/transaction-lifecycle.md
-        - Rollups vs. validiums: cdk/concepts/rollup-vs-validium.md
-        - ZK vs. optimistic rollups: cdk/concepts/zk-vs-optimistic.md
-        - Batches, blocks, transactions: cdk/concepts/blocks.md
-        - Transaction finality: cdk/concepts/transaction-finality.md
-        - Gas fees: cdk/concepts/gas-fees.md
-        - Bridging & interoperability: cdk/concepts/bridging.md
-        - Admin upgradeability: cdk/concepts/admin-upgradeability.md
-      - How to: 
-        - Migrate:
-          - Fork id 9 to 12: cdk/how-to/migrate/forkid-9-12.md
-          - Fork id 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
-          - General guide for partners: cdk/how-to/migrate/fork.md
-        - Create custom native token: cdk/how-to/use-native-token.md
-        - Integrate DA layer: cdk/how-to/integrate-da.md
-        - Manage allowlists with policies: cdk/how-to/manage-policies.md
-        - Quickly test a running stack: cdk/how-to/quick-test-stack.md
-        - Connect to CDK testnets: cdk/how-to/connect-testnet.md
+          - Full Execution Proofs (FEP): cdk/concepts/full-execution-proofs.md
+          - Pessimistic Proofs (PP): cdk/concepts/pessimistic-proofs.md
+          - Layer 2s: cdk/concepts/layer2s.md
+          - L2 Architecture Overview: cdk/concepts/architecture.md
+          - L2 Transaction Lifecycle: cdk/concepts/transaction-lifecycle.md
+          - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
+          - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
+          - Batches, Blocks, Transactions: cdk/concepts/blocks.md
+          - Transaction Finality: cdk/concepts/transaction-finality.md
+          - Gas Fees: cdk/concepts/gas-fees.md
+          - Bridging & Interoperability: cdk/concepts/bridging.md
+          - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
       - Architecture:
-        - CDK FEP high level view: cdk/architecture/high-level-views.md
-        - CDK PP high level view: cdk/architecture/cdk-pp-highlevel-arch.md
-        - CDK rollup: cdk/architecture/cdk-zkevm.md
-        - CDK validium: cdk/architecture/cdk-validium.md
-        - Staking the Bridge (STB): cdk/architecture/staking-the-bridge.md
-      - Specification:
-        - Validium vs rollup: cdk/spec/validium-vs-rollup.md
+          - CDK FEP High Level View: cdk/architecture/high-level-views.md
+          - CDK PP High Level View: cdk/architecture/cdk-pp-highlevel-arch.md
+          - CDK Rollup: cdk/architecture/cdk-zkevm.md
+          - CDK Validium: cdk/architecture/cdk-validium.md
+          - Staking the Bridge (STB): cdk/architecture/staking-the-bridge.md
       - Glossary:
-        - Glossary: cdk/glossary/index.md
-      - Additional resources:
-        - Third-party guides: cdk/resources/third-party-guides.md
-        - CDK repos: cdk/resources/cdk-repo-reference.md
+          - Glossary: cdk/glossary/index.md
+      - Additional Resources:
+          - Third-Party Guides: cdk/resources/third-party-guides.md
+          - CDK Repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
@@ -522,6 +527,7 @@ nav:
           - PARSIQ: tools/data/parsiq.md
           - SQD (Subsquid): tools/data/sqd.md
           - SubQuery: tools/data/subquery.md
+          - The Graph: tools/data/thegraph.md
         - Storage: 
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md
@@ -566,12 +572,6 @@ nav:
   - Innovation & design:
       - Innovation & design: innovation-design/index.md
       - Welcome: innovation-design/welcome.md
-      - AggLayer:
-        - Overview: agglayer/overview.md
-        - AggLayer | Unified bridge: agglayer/unified-bridge.md
-        - AggLayer | Go: agglayer/agglayer-go.md
-        - AggLayer | Rust: agglayer/agglayer-rs.md
-        - AggLayer | Token flows: agglayer/token-flows.md
       - Polygon type 1 prover:
           - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
           - How to:

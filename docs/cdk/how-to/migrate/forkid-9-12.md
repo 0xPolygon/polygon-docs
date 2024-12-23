@@ -6,20 +6,9 @@
 
 To initiate a CDK chain upgrade, the Implementation Provider can request support from Polygon by submitting the "*Request Help for an Issue with an Existing CDK Chain*" through the [service desk](https://cdk.polygon.technology/).
 
-<table>
-  <tr>
-    <td>
-      <img alt="CDK Service Desk" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/CDK-service-desk.png?raw=true" width="300" height="200"/>
-    </td>
-    <td>
-      <img alt="Example Request" src="https://github.com/mitchpolygon/polygon-docs/blob/main/docs/img/cdk/Example-request.png?raw=true" width="300" height="200"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><strong>CDK Service Desk</strong></td>
-    <td align="center"><strong>Example Request</strong></td>
-  </tr>
-</table>
+| ![CDK Service Desk](https://raw.githubusercontent.com/0xPolygon/polygon-docs/a8eee02f74ed28011ccaec99ae73b5b95d768b87/docs/img/cdk/Service-desk-screenshot.png) | ![Example Request](https://raw.githubusercontent.com/0xPolygon/polygon-docs/a8eee02f74ed28011ccaec99ae73b5b95d768b87/docs/img/cdk/Example-request-screenshot.png) |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| **CDK Service Desk**| **Example Request**|
 
 Polygon will then collaborate with the Implementation Provider to **schedule** the UTC timing and dates for the upgrade.
 
@@ -187,13 +176,16 @@ Polygon are not involved. Please check the [upgrade procedure for isolated netwo
     ```
     
 3. Start the stateless Executor.
-4. Start the CDK-Erigon Sequencer.
-5. Verify in the sequencer’s logs that new blocks are being generated with fork ID 12.
-6. Start the Pool Manager (if used/needed).
-7. Start CDK-Erigon RPCs (if used/needed).
-8. Start the Bridge.
-9. Start the CDK aggregator and Sequence Sender components.
-10. Start the stateless Prover.
+4. Start CDK-Erigon Sequencer
+    - On a fork upgrade, once the upgrade Tx is finalized you can start the sequencer. Once started, check logs and ensure new blocks are generated with new forkid.
+        - You would expect to see starting block #5796790 as forkid 12. If you see the starting block 5796790 as fork id 9 there is a problem.
+        If the new block is on the old fork id 9, you need to resync sequencer from scratch or get one of the rpc datadirs (that were synced till the halt and are currenctly stopped) and replace it to become the new sequencer.
+6. Verify in the sequencer’s logs that new blocks are being generated with fork ID 12.
+7. Start the Pool Manager (if used/needed).
+8. Start CDK-Erigon RPCs (if used/needed).
+9. Start the Bridge.
+10. Start the CDK aggregator and Sequence Sender components.
+11. Start the stateless Prover.
 
 ### Polygon Steps for CDK Chains Attached to the Agglayer
 

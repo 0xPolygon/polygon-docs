@@ -1,6 +1,6 @@
 # Polygon Knowledge Layer
 
-Welcome to the Polygon Knowledge Layer.
+Welcome to the Polygon Knowledge Layer .
 
 These docs use [the Material theme for MkDocs](https://squidfunk.github.io/mkdocs-material/). Our goal is to establish a high-quality, curated, and comprehensive "source of truth" for Polygon's technology. 
 
