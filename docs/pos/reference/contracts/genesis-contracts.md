@@ -41,13 +41,13 @@ Here you will find a list of contracts deployed on Polygon together with their i
 
 ### Child chain: PoS mainnet
 
-| Contracts   | Address                                                                                                                  |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------ |
-| ChildChain  | [0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861](https://polygonscan.com/address/0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861) |
-| EIP1559Burn | [0x7A8ed27F4C30512326878652d20fC85727401854](https://polygonscan.com/address/0x7A8ed27F4C30512326878652d20fC85727401854) |
-| **Tokens**  |                                                                                                                          |
-| MaticToken  | [0x0000000000000000000000000000000000001010](https://polygonscan.com/address/0x0000000000000000000000000000000000001010) |
-| MaticWeth   | [0x8cc8538d60901d19692F5ba22684732Bc28F54A3](https://polygonscan.com/address/0x8cc8538d60901d19692F5ba22684732Bc28F54A3) |
+| Contracts              | Address                                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| ChildChain             | [0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861](https://polygonscan.com/address/0xD9c7C4ED4B66858301D0cb28Cc88bf655Fe34861) |
+| EIP1559Burn            | [0x7A8ed27F4C30512326878652d20fC85727401854](https://polygonscan.com/address/0x7A8ed27F4C30512326878652d20fC85727401854) |
+| **Tokens**             |                                                                                                                          |
+| PolygonEcosystemToken  | [0x0000000000000000000000000000000000001010](https://polygonscan.com/address/0x0000000000000000000000000000000000001010) |
+| MaticWeth              | [0x8cc8538d60901d19692F5ba22684732Bc28F54A3](https://polygonscan.com/address/0x8cc8538d60901d19692F5ba22684732Bc28F54A3) |
 
 ### Helper functions
 
@@ -103,12 +103,12 @@ Here you will find a list of contracts deployed on Polygon together with their i
 
 ### Child chain: Amoy
 
-| Contracts   | Address                                                                                                                       |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| ChildChain  | [0x4f9cd8a945EE035523979D7A120a23999D17D8C0](https://www.oklink.com/amoy/address/0x4f9cd8a945EE035523979D7A120a23999D17D8C0/) |
-| EIP1559Burn | [0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9](https://www.oklink.com/amoy/address/0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9/) |
-| **Tokens**  |                                                                                                                               |
-| MaticToken  | [0x0000000000000000000000000000000000001010](https://www.oklink.com/amoy/address/0x0000000000000000000000000000000000001010/) |
-| MaticWeth   | [0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102](https://www.oklink.com/amoy/address/0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102/) |
-| RootERC721  | [0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e](https://www.oklink.com/amoy/address/0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e/) |
+| Contracts              | Address                                                                                                                       |
+| -----------------------|------------------------------------------------------------------------------------------------------------------------------ |
+| ChildChain             | [0x4f9cd8a945EE035523979D7A120a23999D17D8C0](https://www.oklink.com/amoy/address/0x4f9cd8a945EE035523979D7A120a23999D17D8C0/) |
+| EIP1559Burn            | [0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9](https://www.oklink.com/amoy/address/0xeCDD77cE6f146cCf5dab707941d318Bd50eeD2C9/) |
+| **Tokens**             |                                                                                                                               |
+| PolygonEcosystemToken  | [0x0000000000000000000000000000000000001010](https://www.oklink.com/amoy/address/0x0000000000000000000000000000000000001010/) |
+| MaticWeth              | [0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102](https://www.oklink.com/amoy/address/0x41Dc3C8eB8368bd9139Cec50434a0C294c8c1102/) |
+| RootERC721             | [0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e](https://www.oklink.com/amoy/address/0x3ADBC484Ff0cFEb657e1A9AF8F3CB16DC0B53e7e/) |
 
