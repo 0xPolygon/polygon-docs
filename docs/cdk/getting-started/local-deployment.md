@@ -142,9 +142,6 @@ Save this config to `params.yml` file, and then run:
 ```sh
 # Delete all stop and clean all currently running enclaves
 kurtosis clean --all
-
-
-
 # Run this command from the root of the repository to start the network
 kurtosis run --enclave cdk --args-file ./params.yml github.com/0xPolygon/kurtosis-cdk
 ```
@@ -170,7 +167,7 @@ Let's do some read and write operations and test transactions on the L2 with Fou
 1. To facilitate the operations, export the RPC URL of your L2 to an environment variable called `ETH_RPC_URL` with the following command:
 
       ```bash
-      export ETH_RPC_URL="$(kurtosis port print cdk cdk-erigon-node-001 rpc)"
+      export ETH_RPC_URL="$(kurtosis port print cdk cdk-erigon-rpc-001 rpc)"
       ```
 
 2. Use `cast` to view information about the chain, such as the latest block number:
@@ -187,9 +184,8 @@ Let's do some read and write operations and test transactions on the L2 with Fou
 
 4. Send simple transactions to the chain, such as a transfer of some ETH:
 
-      ```bash
-      --private-key "0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
-      cast send --legacy --value 0.01ether 0x0000000000000000000000000000000000000000 
+      ```bash      
+      cast send --legacy --private-key "0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625" --value 0.01ether 0x0000000000000000000000000000000000000000 
       ```
 
 ### Load testing the chain
