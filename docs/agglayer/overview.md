@@ -21,7 +21,7 @@ Here's a list of chains connected to the alpha version of the AggLayer:
 | Gateway FM         | Haust         | 938        | haust-network           |
 | Gateway FM         | Lumia         | 1952959480  | Lumia Testnet           |
 | Gateway FM         | Lumia         | 994873017   | prism                   |
-| Gateway FM         | Moonveil      | 1297206718  | moonveil-testnet        |
+| Gateway FM         | Moonveil      | 1093502521  | moonveil-testnet        |
 | OKX                | OKX           | 196         | X Layer                 |
 | Gateway FM         | Silicon       | 1722641160  | silicon-sepolia-testnet |
 | Gateway FM         | Silicon       | 2355        | silicon-zk              |
