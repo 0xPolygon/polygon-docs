@@ -2,7 +2,7 @@
 
 Pessimistic Proofs (PP) are zero-knowledge proofs that validate the correctness of bridge transitions and ensure the collateralization of all withdrawals. They provide a trustless mechanism for secure cross-chain interactions between chains configured with the CDK Sovereign Config and the Agglayer.
 
-#### Key features:
+#### Key Features:
 - **Bridge validation:** Ensures transactions processed through the unified bridge are correct.
 - **Withdrawal collateralization:** Confirms all withdrawals are properly collateralized, preventing unauthorized asset transfers.
 - **Trustless interoperability:** Facilitates secure and seamless cross-chain communication.
@@ -21,19 +21,19 @@ Pessimistic Proofs enable developers to build robust, secure, and interoperable 
 
 ### How Pessimistic Proofs work
 
-Pessimistic Proofs validate cross-chain transactions using cryptographic proofs, ensuring trustless and secure interactions between chains configured with the Sovereign Config and the Agglayer.
+Pessimistic Proofs validate cross-chain transactions by using cryptographic zero-knowledge proofs to ensure secure and trustless interactions between chains. These proofs safeguard the integrity of bridge operations and withdrawal processes.
 
 #### Workflow:
 1. **Transaction submission:** Transactions are sent to the chain’s sequencer.
-2. **Certificate generation:** The AggSender aggregates chain data and sends certificates to the Agglayer node.
+2. **Certificate generation:** The AggSender aggregates transaction data and sends certificates to the Agglayer node.
 3. **Proof generation:** The SP1 prover in the Agglayer generates zero-knowledge proofs based on the certificates.
 4. **Validation:** The Agglayer node validates the proofs and finalizes the transactions.
 
-This ensures all transactions are secure, transparent, and trustlessly verified.
+This ensures that all transactions are secure, trustlessly verified, and transparently executed.
 
 ---
 
-### Architectural components of Sovereign Configs with Pessimistic Proofs
+### Architectural Components of Sovereign Configs with Pessimistic Proofs
 
 | Component                | Repository                                                                                   | Notes                                                       |
 |--------------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------|
@@ -47,7 +47,7 @@ This ensures all transactions are secure, transparent, and trustlessly verified.
 
 ---
 
-### Component descriptions
+### Component Descriptions
 
 - **Node (RPC and Sequencer):** A fork of [Erigon](https://github.com/ledgerwatch/erigon) responsible for managing multiple RPC nodes and running a sequencer to execute transactions and create blocks and batches.
 - **Contracts:** Smart contracts deployed on Layer 1 to implement bridge transitions and withdrawal collateralization:
@@ -65,11 +65,11 @@ This ensures all transactions are secure, transparent, and trustlessly verified.
 
 ---
 
-### Support services
+### Support Services
 
-#### Bridge services
+#### Bridge Services
 - [Bridge service](https://github.com/0xPolygonHermez/zkevm-bridge-service): A backend service enabling interactions with bridge contracts via Merkle proofs.
 - [Bridge UI](https://portal.polygon.technology/): A user-friendly portal for managing deposits and withdrawals.
 
-#### Explorer services
+#### Explorer Services
 - [Blockscout](https://github.com/0xPolygonHermez/blockscout): Recommended for inspecting transactions and cross-chain operations. Alternative explorers can also be integrated.

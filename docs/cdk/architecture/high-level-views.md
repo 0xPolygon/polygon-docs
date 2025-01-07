@@ -4,7 +4,7 @@ The diagram below depicts a simplified architectural layout of the CDK FEP confi
 
 ---
 
-### Component interactions
+### Component Interactions
 
 - The **CLI tool** is the starting point. Developers, or chain administrators in particular, use the CLI tool to build and configure chains in various modes of operation, such as validiums and rollups.
 - Once a chain is configured with the CLI, users can submit transactions through the **CDK Erigon RPC node**. These transactions are relayed to the `tx-pool manager` before the sequencer selects and executes them.
@@ -18,13 +18,15 @@ The diagram below depicts a simplified architectural layout of the CDK FEP confi
 
 ---
 
-### User data flow
+### User Data Flow
 
 The following diagram sequentially depicts the user data flow for the CDK FEP config in validium mode using a mock prover and an Agglayer connection.
 
 ![High level view of CDK user data flow](../../img/cdk/cdk-user-data-flow.svg)
 
-#### Sequential interactions
+---
+
+### Sequential Interactions
 
 1. The user sends a transaction to the **CDK Erigon RPC node**.
 2. The **CDK Erigon RPC node** proxies the data to the **CDK Erigon sequencer node** and syncs the batch data between the sequencer and the RPC nodes.
@@ -38,6 +40,8 @@ The following diagram sequentially depicts the user data flow for the CDK FEP co
 10. The Agglayer submits the final proof to the **L1 smart contract domain**.
 
 ---
+
+### Mermaid Sequence Diagram
 
 ```mermaid
 sequenceDiagram
@@ -54,11 +58,11 @@ sequenceDiagram
     User->>ErigonRPC: Send transaction
     ErigonRPC->>Sequencer: Proxy and sync transaction data
     Sequencer->>Sequencer: Sequence transaction batches
-    SeqSender->>ErigonRPC: Reads batches
+    SeqSender->>ErigonRPC: Read batches
     SeqSender->>DACNodes: Persist transaction data (validium mode only)
-    SeqSender->>L1: Sequence batches into L1 Smart Contracts 
-    Aggregator->>Prover: Send batches to Prover 
-    Prover->>Aggregator: Return proofs 
-    Aggregator->>Aggregator: Aggregate the proofs
+    SeqSender->>L1: Sequence batches into L1 Smart Contracts
+    Aggregator->>Prover: Send batches to Prover
+    Prover->>Aggregator: Return proofs
+    Aggregator->>Aggregator: Aggregate proofs
     Aggregator->>Agglayer: Submit final proof
     Agglayer->>L1: Submit final proof to L1 Smart Contract Domain
