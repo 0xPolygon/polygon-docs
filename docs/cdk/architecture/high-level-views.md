@@ -66,3 +66,4 @@ sequenceDiagram
     Aggregator->>Aggregator: Aggregate proofs
     Aggregator->>Agglayer: Submit final proof
     Agglayer->>L1: Submit final proof to L1 Smart Contract Domain
+```
