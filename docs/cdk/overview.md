@@ -21,7 +21,7 @@ Polygon CDK allows developers to build scalable and customizable Layer 2 blockch
 
 ### How Does It Work?
 
-Polygon CDK simplifies the process of building Layer 2 blockchains by providing pre-built components for every essential layer of a chain. Here’s how it works at a high level:
+Polygon CDK simplifies the process of building Layer 2 blockchains by providing pre-built components of a chain. Here’s how it works at a high level:
 
 #### Execution Layer
 
