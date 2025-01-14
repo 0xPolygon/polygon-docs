@@ -1,4 +1,4 @@
-The **Polygon Chain Development Kit (CDK)** is a modular, open-source framework for building scalable and secure Layer 2s (L2s). Designed for flexibility, the Polygon CDK stack has 3 main configurations (with options to customize further): zk rollup config, validium config, and the Agglayer native config.
+The Polygon Chain Development Kit (CDK) is a modular, open-source framework for building scalable and secure Layer 2s (L2s). Designed for flexibility, the Polygon CDK stack has 3 main configurations (with options to customize further): zk rollup config, validium config, and the Agglayer native config.
 
 ---
 
