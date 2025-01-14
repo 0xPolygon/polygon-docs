@@ -1,4 +1,4 @@
-### What is Polygon CDK?
+### What is Polygon CDK
 
 Polygon CDK is a modular, open-source framework for building Ethereum-compatible Layer 2 blockchains. It enables developers to configure their Layer 2 to meet specific use cases, such as:
 
