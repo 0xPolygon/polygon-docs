@@ -19,10 +19,10 @@ See [Example Maintenance Communication to Network Partners](#example-maintenance
 The high-level steps in the collaborative process are:
 
 1. Implementation Provider halting the sequencer,
-2. Implementation Provider can send & executes the upgrade transaction,
+2. Implementation Provider can send & execute the upgrade transaction,
 3. Implementation Provider upgrades components to Fork 12 stack,
 4. Implementation Provider restarts the components.
-5. Polygon updated the Permissionless node attached to the Agglayer for that chain.
+5. Polygon updates the Permissionless node attached to the Agglayer for that chain.
 
 ## 2. CDK Components Versions
 
@@ -92,12 +92,8 @@ go run ./zk/debug_tools/datastream-host \
 ## 4. Polygon Preparation Steps
 
 1. Polygon will collaborate with the Implementation Provider to agree on the scheduled and dates for the upgrade which will incorporate any required time locks.
-2. Polygon will set up Google Meet calls between Polygon and the Implementation Provider's engineers to conduct planned upgrades for both testnet and mainnet on agreed dates.
-3. Polygon will prepare in advance and with agreed timelock:
-    - Rolluptype for fork 12
-    - Upgrade transaction to fork 12
-4. For chains attached to the Polygon Agglayer, Polygon will handle steps to upgrade the permissionless node.
-5. [See example communication](#example-maintenance-communication-to-network-partners) that Implementation Providers can use to prepare their customer network partners and communities.
+2. For chains attached to the Polygon Agglayer, Polygon will handle steps to upgrade the permissionless node.
+3. [See example communication](#example-maintenance-communication-to-network-partners) that Implementation Providers can use to prepare their customer network partners and communities.
 
 ## 5. Operational Steps
 
@@ -149,11 +145,10 @@ go run ./zk/debug_tools/datastream-host \
     
 3. Stop all services (node, prover/executor, bridge).
 
-4. Implementation Provider Rollup admin: Upgrade Smart Contract (multisig):
+4. Implementation Provider Rollup admin: Upgrade Smart Contract.
     - Upgrade rollup to fork 12.
     - Wait for the Tx to be finalized.
 
-**Please Note:** Wait for Polygon to send the L1 transaction (tx) and confirm it.
 
 ### Steps to Deploy CDK FEP Fork 12 Components
 1. It is recommended to back up your DAC node by taking a snapshot of the DAC database.
