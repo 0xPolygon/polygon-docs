@@ -320,73 +320,73 @@ nav:
   - PoS:
       - PoS: pos/index.md
       - Overview: pos/overview.md
-      - Get started: 
+      - Get Started: 
         - Migrate to POL: pos/get-started/matic-to-pol.md
-        - Building on PoS: pos/get-started/building-on-polygon.md
-        - Becoming a validator: pos/get-started/becoming-a-validator.md
-      - Builder how-tos:
-        - Token bridging:
+        - Build on PoS: pos/get-started/building-on-polygon.md
+        - Become a Validator: pos/get-started/becoming-a-validator.md
+      - Builder How-To's:
+        - Token Bridging:
           - Polygon Portal: pos/how-to/bridging/ethereum-polygon/portal-ui.md
           - Ethereum to PoS: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
           - PoS to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
-          - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
+          - Submit a Mapping Request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
         - State transfer: pos/how-to/bridging/l1-l2-communication/state-transfer.md
-      - Node how-tos:
+      - Node How-To's:
         - Prerequisites: pos/how-to/prerequisites.md
-        - Sync node using snapshots: pos/how-to/snapshots.md
-        - Run a full node:
-          - Using binaries: pos/how-to/full-node/full-node-binaries.md
+        - Sync Node Using Snapshots: pos/how-to/snapshots.md
+        - Run a Full Node:
+          - Using Binaries: pos/how-to/full-node/full-node-binaries.md
           - Using Docker: pos/how-to/full-node/full-node-docker.md
           - Using Ansible: pos/how-to/full-node/full-node-ansible.md
-          - Using packages: pos/how-to/full-node/full-node-packages.md
+          - Using Packages: pos/how-to/full-node/full-node-packages.md
           - Using GCP: pos/how-to/full-node/full-node-gcp.md
-        - Run a validator node:
-          - Validator best practices: pos/how-to/validator/validator-best-practices.md
-          - Using binaries: pos/how-to/validator/validator-binaries.md
+        - Run a Validator Node:
+          - Validator Best Practices: pos/how-to/validator/validator-best-practices.md
+          - Using Binaries: pos/how-to/validator/validator-binaries.md
           - Using Ansible: pos/how-to/validator/validator-ansible.md
-          - Using packages: pos/how-to/validator/validator-packages.md
-        - Operate validator nodes:
-          - Next steps: pos/how-to/operate-validator-node/next-steps.md
-          - Change owner and signer address: pos/how-to/operate-validator-node/change-signer-address.md
-          - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
-          - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md
-        - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
-        - Troubleshoot nodes:
+          - Using Packages: pos/how-to/validator/validator-packages.md
+        - Operate Validator Nodes:
+          - Next Steps: pos/how-to/operate-validator-node/next-steps.md
+          - Change Owner and Signer Address: pos/how-to/operate-validator-node/change-signer-address.md
+          - Top Up Heimdall Fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
+          - Validator Performance Requirements: pos/how-to/operate-validator-node/validator-performance.md
+        - Run an Erigon Archive Node: pos/how-to/erigon-archive-node.md
+        - Troubleshoot Nodes:
           - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
-          - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
-          - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
+          - Known Issues and Errors: pos/how-to/troubleshoot/known-issues.md
+          - Reporting Issues: pos/how-to/troubleshoot/reporting-issues.md
         - Reference:
           - Contracts:
-            - Genesis contracts: pos/reference/contracts/genesis-contracts.md
-            - Delegation via validator shares: pos/reference/contracts/delegation.md
-            - Staking manager: pos/reference/contracts/stakingmanager.md 
-          - Rewards and staking incentives: pos/reference/rewards.md
-          - Default ports for nodes: pos/reference/port-management.md
-          - Common commands: pos/reference/commands.md
-          - Seed and bootnodes: pos/reference/seed-and-bootnodes.md
-          - RPC endpoints: pos/reference/rpc-endpoints.md
-          - PoS mainnet multi-signatures: pos/reference/commit-chain-multisigs.md
-          - Mapped tokens: pos/reference/mapped-tokens.md
+            - Genesis Contracts: pos/reference/contracts/genesis-contracts.md
+            - Delegation via Validator Shares: pos/reference/contracts/delegation.md
+            - Staking Manager: pos/reference/contracts/stakingmanager.md 
+          - Rewards and Staking Incentives: pos/reference/rewards.md
+          - Default Ports for Nodes: pos/reference/port-management.md
+          - Common Commands: pos/reference/commands.md
+          - Seed and Bootnodes: pos/reference/seed-and-bootnodes.md
+          - RPC Endpoints: pos/reference/rpc-endpoints.md
+          - PoS Mainnet Multi-signatures: pos/reference/commit-chain-multisigs.md
+          - Mapped Tokens: pos/reference/mapped-tokens.md
       - Governance:
-        - Governance fundamentals: pos/governance/governance-fundamentals.md
-        - Delegate tokens: pos/how-to/delegate.md
+        - Governance Fundamentals: pos/governance/governance-fundamentals.md
+        - Delegate Tokens: pos/how-to/delegate.md
       - Architecture:
           - Overview: pos/architecture/overview.md
           - Bor:
             - Introduction: pos/architecture/bor/introduction.md
-            - State sync: pos/architecture/bor/state-sync.md
-            - Network configuration: pos/architecture/bor/network-config.md
+            - State Sync: pos/architecture/bor/state-sync.md
+            - Network Configuration: pos/architecture/bor/network-config.md
           - Heimdall:
             - Introduction: pos/architecture/heimdall/introduction.md
             - Heimdall and Bor: pos/architecture/heimdall/heimdall-and-bor.md
             - Authentication: pos/architecture/heimdall/authentication.md
-            - Key management: pos/architecture/heimdall/key-management.md
+            - Key Management: pos/architecture/heimdall/key-management.md
             - Validation: pos/architecture/heimdall/validation.md
-            - Balance transfers: pos/architecture/heimdall/balance-transfers.md
+            - Balance Transfers: pos/architecture/heimdall/balance-transfers.md
             - Staking: pos/architecture/heimdall/staking.md
             - Checkpoints: pos/architecture/heimdall/checkpoints.md
             - Topup: pos/architecture/heimdall/topup.md
-            - Chain management: pos/architecture/heimdall/chain-management.md
+            - Chain Management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
       - Concepts: 
           - Tokens:
@@ -395,7 +395,7 @@ nav:
           - Transactions:
             - EIP-1559: pos/concepts/transactions/eip-1559.md
             - EIP-4337: pos/concepts/transactions/eip-4337.md
-            - Meta transactions: pos/concepts/transactions/meta-transactions.md
+            - Meta Transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
       - Miden: miden/index.md
       - Miden base: '!import https://github.com/0xPolygonMiden/miden-base?branch=main'
