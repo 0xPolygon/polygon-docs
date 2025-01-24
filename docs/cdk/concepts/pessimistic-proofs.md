@@ -18,7 +18,7 @@ The architectural components of CDK sovereign chains are detailed in the table b
 
 | Component                | CDK Stack                                                    | Notes                                                        |
 | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Node = RPC and sequencer | [cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon)  | Customizable, commonly:<br/>\- Sequencer = 1 node<br/>\- RPC = multiple nodes |
+| Node = RPC and sequencer | [cdk-erigon v2.61.x](https://github.com/0xPolygonHermez/cdk-erigon)  | Customizable, commonly:<br/>\- Sequencer = 1 node<br/>\- RPC = multiple nodes |
 | Contracts                | <a href=https://github.com/0xPolygonHermez/zkevm-contracts>zkevm-contracts</a> | Includes L1 contracts for functionality                     |
 | CLI                      | [cdk](https://github.com/0xPolygon/cdk)                      | Included in [CDK](https://github.com/0xPolygon/cdk) repo     |
 | AggSender                | <a href=https://github.com/0xPolygon/cdk>cdk</a>             | A sub-component of the CDK client that sends certificates to the AggLayer node |
