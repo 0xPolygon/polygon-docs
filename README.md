@@ -1,3 +1,7 @@
+
+[![Twitter follow](https://img.shields.io/twitter/follow/Polygon?style=social)](https://x.com/0xPolygon)
+[![Discord](https://img.shields.io/discord/635865020172861441)](https://discord.com/invite/0xPolygonCommunity)
+
 # Polygon Knowledge Layer
 
 Welcome to the Polygon Knowledge Layer .
