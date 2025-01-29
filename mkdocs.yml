@@ -547,6 +547,8 @@ nav:
           - Tellor: tools/oracles/tellor.md
           - UMA optimistic oracle: tools/oracles/optimisticoracle.md
           - Umbrella: tools/oracles/umbrella.md
+        - Interoperability:
+          - LayerZero: tools/interop/layerzero.md
         - Wallets:
           - Getting started:  tools/wallets/getting-started.md
           - Venly:

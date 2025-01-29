@@ -1,5 +1,6 @@
 FROM python:3.9-alpine
 
+RUN apk add bash
 RUN apk update
 RUN apk add rsync
 RUN apk add git
