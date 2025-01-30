@@ -11,16 +11,13 @@ hide:
 
 <div class="section-wrapper product-section-head">
    <div class="hero-image">
-      <img src="../img/agglayer/agglayer-hero.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;">
+      <img src="/img/agglayer/agglayer-hero.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;">
    </div>
-</div>
-
    <div class="hero-left">
       <h1 class="hero-heading">The Agglayer</h1>
       <p class="hero-subtext">The Agglayer is an in-development interoperability protocol that allows for trustless, cross-chain token transfers and message-passing, as well as more complex operations. The safety of the Agglayer is provided by ZK proofs.</p>
       <p class="hero-subtext">The latest version of the Agglayer (v0.2) connects chains built with Polygon CDK, a developer toolkit for designing ZK-powered Layer 2s. Coming versions will support interoperability among additional blockchain architectures, including L2s, appchains, and non-EVM chains.</p>
    </div>
-   </br>
 </div>
 
 <div class="grid-container">
