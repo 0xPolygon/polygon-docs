@@ -10,7 +10,11 @@ hide:
 </style>
 
 <div class="section-wrapper product-section-head">
-   <div class="hero-image"><<img src="../img/agglayer/agglayer-hero.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
+   <div class="hero-image">
+      <img src="../img/agglayer/agglayer-hero.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;">
+   </div>
+</div>
+
    <div class="hero-left">
       <h1 class="hero-heading">The Agglayer</h1>
       <p class="hero-subtext">The Agglayer is an in-development interoperability protocol that allows for trustless, cross-chain token transfers and message-passing, as well as more complex operations. The safety of the Agglayer is provided by ZK proofs.</p>
@@ -23,25 +27,25 @@ hide:
    <div class="grid-item">
       <a href="./architecture">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Agglayer architecture</div>
+            <div class="feature-card-heading">Agglayer Architecture</div>
          </div>
-         <p class="feature-paragraph">A high-level overview of the Agglayer’s components and their functions.</p>
+         <p class="feature-paragraph">A high-level overview of the Agglayer’s components and their functions</p>
       </a>
    </div>
    <div class="grid-item">
       <a href="./cross-chain-interop">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Cross-chain interop</div>
+            <div class="feature-card-heading">Cross-chain Interop</div>
          </div>
-         <p class="feature-paragraph">Cross-chain token transfers are performed using <code>bridgeAndCall()</code>. Here’s how it works.</p>
+         <p class="feature-paragraph">Cross-chain token transfers are performed using <code>bridgeAndCall()</code>. Here’s how it works</p>
       </a>
    </div>
    <div class="grid-item">
       <a href="../../agglayer/pessimistic-proof.md">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Pessimistic proofs</div>
+            <div class="feature-card-heading">Pessimistic Proof</div>
          </div>
-         <p class="feature-paragraph">Designed to be chain-agnostic, the pessimistic proof ensures safety for the Agglayer.</p>
+         <p class="feature-paragraph">Designed to be chain-agnostic, the pessimistic proof ensures safety for the Agglayer</p>
       </a>
    </div>
 </div>
