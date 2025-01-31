@@ -28,12 +28,14 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="agglayer/architecture/overview.md">Agglayer Architecture
-         <div class="product-list-item-header">
+    <a href="agglayer/architecture/architecture-overview.md">
+        <div class="product-list-item-header">
             <div class="feature-card-heading">Agglayer Architecture</div>
-         </div>
-         <p class="feature-paragraph">A high-level overview of the Agglayer’s components and their functions</p>
-      </a>
+        </div>
+        <p class="feature-paragraph">A high-level overview of the Agglayer’s components and their functions</p>
+    </a>
+</div>
+
    </div>
    <div class="grid-item">
       <a href="./cross-chain-interop">
