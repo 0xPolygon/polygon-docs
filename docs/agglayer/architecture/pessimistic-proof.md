@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 <style>
    .git-revision-date-localized-plugin, .md-source-file, .md-content__button.md-icon {
       display: none;

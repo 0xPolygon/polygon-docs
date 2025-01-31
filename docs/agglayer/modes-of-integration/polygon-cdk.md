@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # Polygon CDK
 
 ## Overview

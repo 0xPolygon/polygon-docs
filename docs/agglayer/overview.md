@@ -1,8 +1,13 @@
 ---
 hide:
   - toc
-  - title
 ---
+
+<style>
+   .md-content h1:first-of-type {
+      display: none;
+   }
+</style>
 
 <style>
    .git-revision-date-localized-plugin, .md-source-file, .md-content__button.md-icon {
@@ -12,7 +17,7 @@ hide:
 
 <div class="section-wrapper product-section-head" style="text-align: center;">
    <div class="hero-image">
-      <img src="/img/agglayer/agglayer-hero.svg" loading="lazy" class="hero-image" style="width: 25%; display: block; margin: 0 auto;">
+      <img src="/img/agglayer/agglayer-hero.svg" loading="lazy" class="hero-image" style="width: 50%; display: block; margin: 0 auto; padding-bottom: 0; margin-bottom: -10px;">
    </div>
 </div>
 
