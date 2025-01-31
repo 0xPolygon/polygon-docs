@@ -11,7 +11,7 @@ hide:
 
 <div class="section-wrapper product-section-head" style="text-align: center;">
    <div class="hero-image">
-      <img src="/img/agglayer/agglayer-hero.svg" loading="lazy" class="hero-image" style="width: 50%; display: block; margin: 0 auto;">
+      <img src="/img/agglayer/agglayer-hero.svg" loading="lazy" class="hero-image" style="width: 25%; display: block; margin: 0 auto;">
    </div>
 </div>
 
