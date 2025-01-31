@@ -28,7 +28,7 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="agglayer/architecture/overview.md">Agglayer Architecture</a>
+      <a href="agglayer/architecture/overview.md">Agglayer Architecture
          <div class="product-list-item-header">
             <div class="feature-card-heading">Agglayer Architecture</div>
          </div>
@@ -40,7 +40,7 @@ hide:
          <div class="product-list-item-header">
             <div class="feature-card-heading">Cross-chain Interop</div>
          </div>
-         <p class="feature-paragraph">Cross-chain token transfers are performed using <code>bridgeAndCall()</code>. Here’s how it works</p>
+         <p class="feature-paragraph">Learn how to use <code>bridgeAndCall()</code> for cross-chain interactions</p>
       </a>
    </div>
    <div class="grid-item">
