@@ -14,11 +14,9 @@ hide:
 The **Agglayer Node** is a Rust-based service responsible for processing and verifying zero-knowledge (ZK) proofs from chains connected to the Agglayer. 
 
 ### Key functions:
-- **Zero-Knowledge Proof Verification**: The node receives and verifies cryptographic proofs from connected chains before sending them to L1.
-- **Certificate Management**: Handles certificates that attest to the state transitions of connected chains.
-- **Orchestration of Epochs**: Manages state updates in a structured manner through epochs.
-
-> **Note:** Developers can clone and build the Agglayer Node locally to run test suites and generate proofs using Succinct’s Prover Network.
+- **Zero-knowledge proof verification**: The node receives and verifies cryptographic proofs from connected chains before sending them to L1.
+- **Certificate management**: Handles certificates that attest to the state transitions of connected chains.
+- **Orchestration of epochs**: Manages state updates in a structured manner through epochs.
 
 ## Pessimistic proof
 

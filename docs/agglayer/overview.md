@@ -28,7 +28,7 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="agglayer/architecture/architecture-overview.md">Agglayer Architecture</a>
+      <a href="agglayer/architecture/overview.md">Agglayer Architecture</a>
          <div class="product-list-item-header">
             <div class="feature-card-heading">Agglayer Architecture</div>
          </div>

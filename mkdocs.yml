@@ -52,7 +52,8 @@ nav:
   - Home: index.md
   - Agglayer:
       - Overview: agglayer/overview.md
-      - Architecture: agglayer/architecture/overview.md
+      - Architecture: 
+          - Overview: agglayer/architecture/overview.md
           - Agglayer Node: agglayer/architecture/agglayer-node.md
           - Pessimistic Proof: agglayer/architecture/pessimistic-proof.md
           - Unified Bridge: agglayer/architecture/unified-bridge.md
