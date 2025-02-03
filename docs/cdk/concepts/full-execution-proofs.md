@@ -19,7 +19,6 @@ By leveraging Full Execution Proofs, CDK configs help achieve scalability, secur
 
 Full Execution Proofs provide developers with tools to build robust, secure, and interoperable Layer 2 chains.
 
----
 
 ### How Full Execution Proofs work
 

@@ -533,6 +533,7 @@ nav:
           - PARSIQ: tools/data/parsiq.md
           - SQD (Subsquid): tools/data/sqd.md
           - SubQuery: tools/data/subquery.md
+          - The Graph: tools/data/thegraph.md
         - Storage: 
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md

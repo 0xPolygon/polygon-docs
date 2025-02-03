@@ -1,6 +1,6 @@
 The figure below depicts a simplified, high-level view of the CDK chain architecture using pessimistic proofs and the flow of transactions through the system.
 
-![Figure: CDK Architecture](../../img/cdk/CDK-pessimistic-proof-chain.jpg)
+![Figure: CDK Architecture](../../img/cdk/Pessimistic-proofs-diagram.jpg)
 
 ---
 

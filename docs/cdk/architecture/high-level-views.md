@@ -1,6 +1,6 @@
 The diagram below depicts a simplified architectural layout of the CDK FEP config and indicates at a high level how components communicate.
 
-![High level view of CDK config](../../img/cdk/cdk-stack.svg)
+![High level view of CDK stack](../../img/cdk/Full-execution-proofs-diagram.jpg)
 
 ---
 
