@@ -19,9 +19,10 @@ See [Example Maintenance Communication to Network Partners](#example-maintenance
 The high-level steps in the collaborative process are:
 
 1. Implementation Provider halting the sequencer,
-2. Polygon executes the upgrade transaction,
+2. Implementation Provider can send & execute the upgrade transaction,
 3. Implementation Provider upgrades components to Fork 12 stack,
 4. Implementation Provider restarts the components.
+5. Polygon updates the Permissionless node attached to the Agglayer for that chain.
 
 ## 2. CDK Components Versions
 
@@ -90,22 +91,15 @@ go run ./zk/debug_tools/datastream-host \
 
 ## 4. Polygon Preparation Steps
 
-1. Polygon will collaborate with the Implementation Provider to **schedule** the UTC timing and dates for the upgrade, incorporating required timelocks.
-2. Polygon will set up Google Meet calls between Polygon and the Implementation Provider's engineers to conduct planned upgrades for both testnet and mainnet on agreed dates.
-3. Polygon will prepare in advance and with agreed timelock:
-    - Rolluptype for fork 12
-    - Upgrade transaction to fork 12
-4. For chains attached to the Polygon Agglayer, Polygon will handle steps to upgrade the permissionless node.
-5. [See example communication](#example-maintenance-communication-to-network-partners) that Implementation Providers can use to prepare their customer network partners and communities.
+1. Polygon will collaborate with the Implementation Provider to agree on the scheduled and dates for the upgrade which will incorporate any required time locks.
+2. For chains attached to the Polygon Agglayer, Polygon will handle steps to upgrade the permissionless node.
+3. [See example communication](#example-maintenance-communication-to-network-partners) that Implementation Providers can use to prepare their customer network partners and communities.
 
 ## 5. Operational Steps
 
 **Please Note:** To avoid creating reorgs or other unwanted situations, it's important that all L2 transactions are verified before performing a fork upgrade. This means all batches should be closed, sequenced, and verified on L1.
 
-### Steps to Halt the Sequencer
-> 💡 Please note: For an isolated chain not attached to the Agglayer the chain admin can  perform operational step 4 on their chain’s rollupmanagercontract. 
-Polygon are not involved. Please check the [upgrade procedure for isolated networks](#contract-upgrade-procedure-for-isolated-networks).
-
+**Please Note:** IP Partner Rollup admin can send & execute the fork ID upgrade transaction.  
  
 1. Stop the sequencer.
 2. Reconfigure the node to enforce sequencer stops at a specific `batch_num`:
@@ -151,11 +145,10 @@ Polygon are not involved. Please check the [upgrade procedure for isolated netwo
     
 3. Stop all services (node, prover/executor, bridge).
 
-4. **Polygon:** Upgrade the Smart Contract (multisig):
+4. Implementation Provider Rollup admin: Upgrade Smart Contract.
     - Upgrade rollup to fork 12.
     - Wait for the Tx to be finalized.
 
-**Please Note:** Wait for Polygon to send the L1 transaction (tx) and confirm it.
 
 ### Steps to Deploy CDK FEP Fork 12 Components
 1. It is recommended to back up your DAC node by taking a snapshot of the DAC database.
@@ -193,8 +186,8 @@ Polygon's DevOps team will be accountable for upgrading the Agglayer permissionl
 
 ### Post-Upgrade Validations
 
-1. Test batch lifecycle.
-2. Test the bridge.
+1. Implementation Provider will test the batch lifecycle.
+2. Implementation Provider will test the bridge.
 
 
 

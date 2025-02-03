@@ -26,7 +26,7 @@ To enable the Proof of Stake (PoS) mechanism on Polygon, the system employs a se
 
 The staking contracts implement the following features:
 
-* The ability for anyone to stake MATIC tokens on the staking contracts on the Ethereum mainnet and join the system as a validator.
+* The ability for anyone to stake POL tokens on the staking contracts on the Ethereum mainnet and join the system as a validator.
 * Earn staking rewards for validating state transitions on the Polygon Network.
 * Save checkpoints on the Ethereum mainnet.
 

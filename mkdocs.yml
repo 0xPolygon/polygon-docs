@@ -57,7 +57,7 @@ nav:
       - Rust SDK: agglayer/agglayer-rs.md
       - Token Flows: agglayer/token-flows.md
   - CDK:
-      - Polygon CDK Home: cdk/index.md
+      - Polygon CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Current Release:
           - Release Notes: cdk/releases/release-notes.md
@@ -74,10 +74,10 @@ nav:
               - Resources: cdk/getting-started/cdk-erigon/resources.md
       - How To:
           - Migration Guides:
-              - General Guide for Implementation Providers: cdk/how-to/migrate/fork.md
+              - General Guide: cdk/how-to/migrate/fork.md
               - Fork ID 9 to 12: cdk/how-to/migrate/forkid-9-12.md
               - Fork ID 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
-          - Create Custom Native Token: cdk/how-to/use-native-token.md
+          - Create A Native Token: cdk/how-to/use-native-token.md
           - Integrate DA Layer: cdk/how-to/integrate-da.md
           - Manage Allowlists with Policies: cdk/how-to/manage-policies.md
           - Quickly Test a Running Stack: cdk/how-to/quick-test-stack.md
@@ -96,16 +96,16 @@ nav:
           - Bridging & Interoperability: cdk/concepts/bridging.md
           - Admin Upgradeability: cdk/concepts/admin-upgradeability.md
       - Architecture:
-          - CDK FEP High Level View: cdk/architecture/high-level-views.md
-          - CDK PP High Level View: cdk/architecture/cdk-pp-highlevel-arch.md
-          - CDK Rollup: cdk/architecture/cdk-zkevm.md
-          - CDK Validium: cdk/architecture/cdk-validium.md
+          - FEP Overview: cdk/architecture/high-level-views.md
+          - PP Overview: cdk/architecture/cdk-pp-highlevel-arch.md
+          - Rollup Overview: cdk/architecture/cdk-zkevm.md
+          - Validium Overview: cdk/architecture/cdk-validium.md
           - Staking the Bridge (STB): cdk/architecture/staking-the-bridge.md
       - Glossary:
           - Glossary: cdk/glossary/index.md
       - Additional Resources:
           - Third-Party Guides: cdk/resources/third-party-guides.md
-          - CDK Repos: cdk/resources/cdk-repo-reference.md
+          - Polygon CDK Repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
       - Overview: zkEVM/overview.md
