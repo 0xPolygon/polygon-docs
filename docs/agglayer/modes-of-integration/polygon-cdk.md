@@ -66,7 +66,7 @@ The **AggSender** sub-component is responsible for **fetching certificates** fro
 
 ### **AggOracle** (experimental)
 
-**AggOracle** is used by chains to fetch the **settled Agglayer state**, represented by the **Global Exit Root**, from **L1**.
+**AggOracle** may be used by chains to fetch the **settled Agglayer state**, represented by the **Global Exit Root**, from **L1**. For users of CDK, this functionality is built into the CDK client and doesn't require an external service.
 
 - **globalExitRootUpdater** is used to update the chain’s **Global Exit Root**.
 - This address is configured via the `setGlobalExitRootUpdater` function on the deployed `GlobalExitRootManagerL2SovereignChain` contract.
