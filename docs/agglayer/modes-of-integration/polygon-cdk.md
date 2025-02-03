@@ -64,7 +64,7 @@ The integration path for different **CDK chain configurations** exposes the **su
 
 The **AggSender** sub-component is responsible for **fetching certificates** from chains and communicating the information to the Agglayer using the **interop_sendCertificate API**.
 
-### **AggOracle**
+### **AggOracle** (experimental)
 
 **AggOracle** is used by chains to fetch the **settled Agglayer state**, represented by the **Global Exit Root**, from **L1**.
 
