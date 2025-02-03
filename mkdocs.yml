@@ -52,10 +52,16 @@ nav:
   - Home: index.md
   - Agglayer:
       - Overview: agglayer/overview.md
-      - Unified Bridge: agglayer/unified-bridge.md
-      - Go SDK: agglayer/agglayer-go.md
-      - Rust SDK: agglayer/agglayer-rs.md
-      - Token Flows: agglayer/token-flows.md
+      - Architecture: 
+          - Overview: agglayer/architecture/overview.md
+          - Agglayer Node: agglayer/architecture/agglayer-node.md
+          - Pessimistic Proof: agglayer/architecture/pessimistic-proof.md
+          - Unified Bridge: agglayer/architecture/unified-bridge.md
+      - Crosschain Interop:
+          - Crosschain Interop: agglayer/crosschain-interop/crosschain-interop.md
+          - Token Flows: agglayer/crosschain-interop/token-flows.md
+      - Modes of Integration:
+          - Polygon CDK: agglayer/modes-of-integration/polygon-cdk.md
   - CDK:
       - Polygon CDK: cdk/index.md
       - Overview: cdk/overview.md
