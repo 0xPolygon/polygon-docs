@@ -22,7 +22,7 @@ For any cross-chain token transfer to be finalized such that the token may be wi
 > **Note:** For more on how the AggLayer settles bridge claims to the underlying L1, see: [Unified Bridge](#)
 
 ## Token State
-Each chain maintains a data structure called a **Local Exit Tree**, which contains only the messages and token transfers originating from it. In the unified bridge, Ethereum holds a **Global Exit Root**, which represents all of the Local Exit Roots of chains integrated with the AggLayer.
+Each chain maintains a data structure called a **Local Exit Tree**, which contains only the messages and token transfers originating from it. In the unified bridge, Ethereum holds a **Global Exit Root**, which represents a tree containing all of the Local Exit Roots of chains integrated with the AggLayer.
 
 > **Note:** See the [Unified Bridge: Data Structures and State Management](#) for a detailed breakdown of all data used by the AggLayer.
 
