@@ -1,47 +1,54 @@
-!!! info "Disclaimer"
-    - Some of the content in this section discusses technology in development and not ready for release.
-    - Please check against the main documentation site for any live releases.
-    - Feel free to experiment with any code in public repos.
+---
+hide:
+  - toc
+---
 
-The AggLayer is an in-development interoperability protocol that allows for trustless, cross-chain token transfers and message-passing, as well as more complex operations. The safety of the AggLayer is provided by ZK proofs. 
+<style>
+   .md-content h1:first-of-type {
+      display: none;
+   }
+</style>
 
-The AggLayer currently connects chains built with Polygon CDK, a developer toolkit for designing ZK-powered Layer 2s. The long term goal for the protocol is to be flexible enough to provide interoperability among a growing range of blockchain architectures, including L2s, appchains, and non-EVM chains.
+<style>
+   .git-revision-date-localized-plugin, .md-source-file, .md-content__button.md-icon {
+      display: none;
+   }
+</style>
 
-## Chains connected to AggLayer
+<div class="section-wrapper product-section-head" style="text-align: center;">
+   <div class="hero-image">
+      <img src="/img/agglayer/agglayer-hero.svg" loading="lazy" class="hero-image" style="width: 50%; display: block; margin: 0 auto; padding-bottom: 0; margin-bottom: -10px;">
+   </div>
+</div>
 
-Here's a list of chains connected to the alpha version of the AggLayer:
+<div class="hero-left" style="text-align: center;">
+   <p class="hero-subtext">The Agglayer is an in-development interoperability protocol that allows for trustless, cross-chain token transfers and message-passing, as well as more complex operations. The safety of the Agglayer is provided by ZK proofs.</p>
+   <p class="hero-subtext">The latest version of the Agglayer (v0.2) connects chains built with Polygon CDK, a developer toolkit for designing ZK-powered Layer 2s. Coming versions will support interoperability among additional blockchain architectures, including existing L2s, appchains, and non-EVM chains.</p>
+</div>
 
-
-| Implementation Provider | Chain Name | L2 Chain ID |Network Name           |
-| ------------------ | ------------- | ----------- | ----------------------- |
-| Startale Labs      | Astar         | 6038361     | zKyoto                  |
-| Startale Labs      | Astar         | 3776        | Astar zkEVM             |
-| Gateway FM         | GPT Protocol  | 1511670449  | gpt-mainnet             |
-| Gateway FM         | Haust         | 1570754601  | haust-testnet           |
-| Gateway FM         | Haust         | 938        | haust-network           |
-| Gateway FM         | Lumia         | 1952959480  | Lumia Testnet           |
-| Gateway FM         | Lumia         | 994873017   | prism                   |
-| Gateway FM         | Moonveil      | 1093502521  | moonveil-testnet        |
-| OKX                | OKX           | 196         | X Layer                 |
-| Gateway FM         | Silicon       | 1722641160  | silicon-sepolia-testnet |
-| Gateway FM         | Silicon       | 2355        | silicon-zk              |
-| Gateway FM         | WilderWorld   | 1668201165  | zchain-testnet          |  
-| Gateway FM         | Wirex         | 31415       | pay-chain               |
-| Gateway FM         | Witness       | 1702448187  | witnesschain            |
-
-## AggLayer components
-
-### Polygon CDK
-
-The AggLayer connects chains built with Polygon CDK, which use ZK proofs to generate state transitions that are cryptographically secure. 
-
-### Unified bridge
-
-The unified bridge is a single bridge contract for all AggLayer-connected chains, allowing for the cross-chain transfer of fungible (non-wrapped) tokens. It is the source of unified liquidity for the AggLayer. 
-
-!!! tip "More information"
-    See the [unified bridge documentation](unified-bridge.md) for details. 
-
-### AggLayer service
-
-The AggLayer service is designed to receive ZK proofs from various CDK and non-CDK chains, and verify their validity before sending them to the L1 Ethereum for final settlement. Currently, the AggLayer service has two implementations: [agglayer-go](agglayer-go.md) and [agglayer-rs](agglayer-rs.md).
+<div class="grid-container">
+   <div class="grid-item">
+    <a href="agglayer/architecture/architecture-overview.md">
+        <div class="product-list-item-header">
+            <div class="feature-card-heading">Agglayer Architecture</div>
+        </div>
+        <p class="feature-paragraph">A high-level overview of the Agglayer’s components and their functions</p>
+    </a>
+   </div>
+   <div class="grid-item">
+      <a href="./cross-chain-interop">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Cross-chain Interop</div>
+         </div>
+         <p class="feature-paragraph">Learn how to use <code>bridgeAndCall()</code> for cross-chain interactions</p>
+      </a>
+   </div>
+   <div class="grid-item">
+      <a href="../../agglayer/pessimistic-proof.md">
+         <div class="product-list-item-header">
+            <div class="feature-card-heading">Pessimistic Proof</div>
+         </div>
+         <p class="feature-paragraph">Designed to be chain-agnostic, the pessimistic proof ensures safety for the Agglayer</p>
+      </a>
+   </div>
+</div>
