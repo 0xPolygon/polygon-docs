@@ -14,7 +14,7 @@ The AggLayer is designed to be flexible enough to support blockchain architectur
 
 The pessimistic proof does not extend security to chains integrated with the AggLayer; rather, each chain connected to the AggLayer is as secure as it would be if it were not integrated with the AggLayer.
 
-The AggLayer uses the pessimistic proof to provide a complete view of all token and message transfers occurring over the protocol. This allows chains that may not trust one another to safely interoperate.
+The AggLayer uses per-chain pessimistic proofs to ensure a complete view of all token and message transfers occurring over the protocol. This allows chains that may not trust one another to safely interoperate.
 
 ## Building a Pessimistic Proof
 For any cross-chain token transfer to be finalized such that the token may be withdrawn on the underlying L1, a valid pessimistic proof must be generated. Each chain connected to the AggLayer is required to provide some of the inputs necessary for building a valid pessimistic proof.
