@@ -55,7 +55,7 @@ rm -rf /var/lib/bor/data/bor/chaindata
 mv ~/snapshots/heimdall_extract ~/snapshots/data
 mv ~/snapshots/bor_extract ~/snapshots/chaindata
 sudo ln -s ~/snapshots/data /var/lib/heimdall
-sudo ln -s ~/snapshots/chaindata /var/lib/bor/data/bor/
+sudo ln -s ~/snapshots/chaindata /var/lib/bor/data/bor
 
 # bring up clients with all snapshot data properly registered
 sudo service heimdalld start
