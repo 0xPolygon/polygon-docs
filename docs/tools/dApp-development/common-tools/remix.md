@@ -89,20 +89,20 @@ To deploy to the Amoy testnet, we have to connect to the web3 with a service lik
     - **RPC URL (public endpoint):** <https://rpc-amoy.polygon.technology/>.
     - **RPC URL (dedicated endpoint):** <https://polygon-amoy.g.alchemy.com/v2/{your-api-key}>. You need a [free API key](https://docs.alchemy.com)
     - **Chain ID:** 80002
-    - **Currency Symbol:** MATIC
+    - **Currency Symbol:** POL
     - **Block explorer URL:** <https://amoy.polygonscan.com/>
 
 - Go ahead and click **Save**
 
 - Copy your wallet address from MetaMask by clicking over your account name
 
-- Head over to [the faucet](https://faucet.polygon.technology/) and request test MATIC to pay for gas on the Polygon network. Select **Amoy** as the network and **MATIC Token** as the token in the faucet. You can also use the [Alchemy Amoy faucet](https://www.alchemy.com/faucets/polygon-amoy).
+- Head over to [the faucet](https://faucet.polygon.technology/) and request test POL to pay for gas on the Polygon network. Select **Amoy** as the network and **POL Token** as the token in the faucet. You can also use the [Alchemy Amoy faucet](https://www.alchemy.com/faucets/polygon-amoy).
 
 - Finally, to deploy to Amoy, refer to the instructions in the [Remix deployment](#remix-deployment) section below.
 
 ## Deploying to Polygon mainnet
 
-After deploying on Amoy without any errors, you can deploy the smart contract on the Polygon mainnet. Remember this costs real $ in the form of MATIC tokens.
+After deploying on Amoy without any errors, you can deploy the smart contract on the Polygon mainnet. Remember this costs real $ in the form of POL tokens.
 
 1. Open your MetaMask wallet. 
 2. Click on the network dropdown menu (set to **Ethereum Mainnet** by default) and click on the **Add Network** button. 
@@ -113,14 +113,14 @@ After deploying on Amoy without any errors, you can deploy the smart contract on
     - **Network Name**: Polygon Mainnet
     - **New RPC URL**: <https://polygon-mainnet.g.alchemy.com/v2/{your-api-key}>
     - **Chain ID**: 137
-    - **Currency Symbol**: MATIC
+    - **Currency Symbol**: POL
     - **Block Explorer URL**: <https://polygonscan.com/>
 
 - Go ahead and click **Save**
 
 - Copy your wallet address from MetaMask by clicking over your account name
 
-5. Make sure your MetaMask wallet has MATIC tokens to pay the deployment's gas fees.
+5. Make sure your MetaMask wallet has POL tokens to pay the deployment's gas fees.
 
 
 ## Remix deployment
