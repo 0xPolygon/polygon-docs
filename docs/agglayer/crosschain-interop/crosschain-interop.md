@@ -33,7 +33,9 @@ The code for `BridgeAsset` can be found [here](https://github.com/0xPolygonHerme
    - **WETH**: WETH tokens are burned from the user's address.
    - **Foreign ERC20 Token**: Burn the token if it does not originate from the source network.
    - **Native ERC20 Token**: Run `permitData` (if provided), then transfer tokens to the bridge contract.
+
    - **Note**: For ETH as the native token, the `PolygonZkEVMBridgeV2.WETHToken` address is set to `0x0`.
+
 3. Emit the `BridgeEvent`.
 4. Add the `bridgeAsset` data to the Local Exit Tree as a leaf node.
 
