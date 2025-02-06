@@ -14,6 +14,7 @@ The AggLayer is designed to be flexible enough to support blockchain architectur
 
 The pessimistic proof does not extend security to chains integrated with the AggLayer; rather, each chain connected to the AggLayer is as secure as it would be if it were not integrated with the AggLayer.
 
+
 The AggLayer uses per-chain pessimistic proofs to ensure a complete view of all token and message transfers occurring over the protocol. This allows chains that may not trust one another to safely interoperate.
 
 ## Building a Pessimistic Proof
@@ -22,6 +23,8 @@ For any cross-chain token transfer to be finalized such that the token may be wi
 > **Note:** For more on how the AggLayer settles bridge claims to the underlying L1, see: [Unified Bridge](#)
 
 ## Token State
+
+=======
 Each chain maintains a data structure called a **Local Exit Tree**, which contains only the messages and token transfers originating from it. In the unified bridge, Ethereum holds a **Global Exit Root**, which represents a tree containing all of the Local Exit Roots of chains integrated with the AggLayer.
 
 > **Note:** See the [Unified Bridge: Data Structures and State Management](#) for a detailed breakdown of all data used by the AggLayer.
