@@ -15,33 +15,17 @@ hide:
       <h1 class="hero-heading">Polygon Miden</h1>
       <h2><code>Software in development</code></h2>
       <h2></h2>
-      <p class="hero-subtext">Polygon Miden is a zero-knowledge rollup for private, high-throughput applications.</p>
+      <p class="hero-subtext">Polygon Miden is a zero-knowledge rollup for high-throughput, private applications.</p>
    </div>
 </div>
 
 <div class="grid-container">
    <div class="grid-item">
-      <a href="./miden-base/introduction/get-started/prerequisites/">
+      <a href="https://0xpolygonmiden.github.io/miden-docs/">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Getting started</div>
+            <div class="feature-card-heading">Miden docs</div>
          </div>
-         <p class="feature-paragraph">Follow the Miden getting started guide to get up and running.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./miden-base/architecture/overview/">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Miden architecture</div>
-         </div>
-         <p class="feature-paragraph">Learn more about the Miden architecture.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="./miden-base/introduction/roadmap/">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Roadmap</div>
-         </div>
-         <p class="feature-paragraph">Check out the Miden roadmap for the latest updates.</p>
+         <p class="feature-paragraph">Learn everything about Miden.</p>
       </a>
    </div>
 </div>
