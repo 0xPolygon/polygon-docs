@@ -28,7 +28,7 @@ hide:
 
 <div class="grid-container">
    <div class="grid-item">
-    <a href="agglayer/architecture/overview.md">
+    <a href="./architecture/overview/">
         <div class="product-list-item-header">
             <div class="feature-card-heading">Agglayer Architecture</div>
         </div>
@@ -36,7 +36,7 @@ hide:
     </a>
 </div>
 <div class="grid-item">
-    <a href="../crosschain-interop/crosschain-interop.md">
+    <a href="./crosschain-interop/crosschain-interop/">
         <div class="product-list-item-header">
             <div class="feature-card-heading">Cross-chain Interop</div>
         </div>
@@ -44,7 +44,7 @@ hide:
     </a>
 </div>
 <div class="grid-item">
-    <a href="agglayer/architecture/pessimistic-proof.md">
+    <a href="./architecture/pessimistic-proof/">
         <div class="product-list-item-header">
             <div class="feature-card-heading">Pessimistic Proof</div>
         </div>
