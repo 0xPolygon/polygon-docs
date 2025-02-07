@@ -44,13 +44,13 @@ hide:
 						</div>
 						<a href="agglayer/overview/" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">AggLayer</div>
+								<div class="feature-card-heading">Agglayer</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
-								<div class="status-tag">SOON</div>
+								<div class="status-tag">LIVE</div>
 							</div>
-							<p class="feature-paragraph">AggLayer solves blockchain fragmentation by enabling sovereign chains to securely share liquidity, users, and state.</p>
+							<p class="feature-paragraph">Agglayer solves blockchain fragmentation by enabling sovereign chains to securely share liquidity, users, and state.</p>
 						</a>
 						<a href="pos" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
@@ -102,12 +102,12 @@ hide:
 						</div>
 						<a href="agglayer/overview" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">AggLayer</div>
+								<div class="feature-card-heading">Agglayer</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
 							</div>
-							<p class="feature-paragraph">Introducing the multi-chain, multi-transaction, Polygon AggLayer; what it is and how it works.</p>
+							<p class="feature-paragraph">Introducing the multi-chain Agglayer: what it is and how it works.</p>
 						</a>
 						<a href="innovation-design" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">

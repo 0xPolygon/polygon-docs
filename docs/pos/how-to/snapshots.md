@@ -49,13 +49,13 @@ Let's say you have mounted your block device at `~/snapshots` and have downloade
 ```bash
 # remove any existing datadirs for Heimdall and Bor
 rm -rf /var/lib/heimdall/data
-rm -rf /var/lib/bor/chaindata
+rm -rf /var/lib/bor/data/bor/chaindata
 
 # rename and setup symlinks to match default client datadir configs
 mv ~/snapshots/heimdall_extract ~/snapshots/data
 mv ~/snapshots/bor_extract ~/snapshots/chaindata
 sudo ln -s ~/snapshots/data /var/lib/heimdall
-sudo ln -s ~/snapshots/chaindata /var/lib/bor
+sudo ln -s ~/snapshots/chaindata /var/lib/bor/data/bor
 
 # bring up clients with all snapshot data properly registered
 sudo service heimdalld start

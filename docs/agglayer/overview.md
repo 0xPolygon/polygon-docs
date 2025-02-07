@@ -29,26 +29,27 @@ hide:
 <div class="grid-container">
    <div class="grid-item">
     <a href="agglayer/architecture/overview.md">
+    <a href="./architecture/overview/">
         <div class="product-list-item-header">
             <div class="feature-card-heading">Agglayer Architecture</div>
         </div>
         <p class="feature-paragraph">A high-level overview of the Agglayer’s components and their functions</p>
     </a>
-   </div>
-   <div class="grid-item">
-      <a href="agglayer/crosschain-interop/crosschain-interop.md">
-         <div class="product-list-item-header">
+</div>
+<div class="grid-item">
+    <a href="./crosschain-interop/crosschain-interop/">
+        <div class="product-list-item-header">
             <div class="feature-card-heading">Cross-chain Interop</div>
-         </div>
-         <p class="feature-paragraph">Learn how to use <code>bridgeAndCall()</code> for cross-chain interactions</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="agglayer/architecture/pessimistic-proof.md">
-         <div class="product-list-item-header">
+        </div>
+        <p class="feature-paragraph">Learn how to use <code>bridgeAndCall()</code> for cross-chain interactions</p>
+    </a>
+</div>
+<div class="grid-item">
+    <a href="./architecture/pessimistic-proof/">
+        <div class="product-list-item-header">
             <div class="feature-card-heading">Pessimistic Proof</div>
-         </div>
-         <p class="feature-paragraph">Designed to be chain-agnostic, the pessimistic proof ensures safety for the Agglayer</p>
-      </a>
-   </div>
+        </div>
+        <p class="feature-paragraph">Designed to be chain-agnostic, the pessimistic proof ensures safety for the Agglayer</p>
+    </a>
+</div>
 </div>

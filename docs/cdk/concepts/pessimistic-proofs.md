@@ -37,6 +37,7 @@ This ensures that all transactions are secure, trustlessly verified, and transpa
 
 | Component                | Repository                                                                                   | Notes                                                       |
 |--------------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| Node (RPC and Sequencer) | [cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon)                                | Customizable; typically:<br>- Sequencer = 1 node<br>- RPC = multiple nodes |
 | Node (RPC and Sequencer) | [cdk-erigon v2.61.x](https://github.com/0xPolygonHermez/cdk-erigon)                                | Customizable; typically:<br>- Sequencer = 1 node<br>- RPC = multiple nodes |
 | Contracts                | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts)                       | Includes Layer 1 contracts for functionality               |
 | CLI tool                 | [cdk](https://github.com/0xPolygon/cdk)                                                    | Simplifies deployment and configuration                     |
