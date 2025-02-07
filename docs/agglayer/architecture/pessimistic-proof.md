@@ -20,14 +20,16 @@ The AggLayer uses per-chain pessimistic proofs to ensure a complete view of all 
 ## Building a Pessimistic Proof
 For any cross-chain token transfer to be finalized such that the token may be withdrawn on the underlying L1, a valid pessimistic proof must be generated. Each chain connected to the AggLayer is required to provide some of the inputs necessary for building a valid pessimistic proof.
 
-> **Note:** For more on how the AggLayer settles bridge claims to the underlying L1, see: [Unified Bridge](#)
+!!! note
+      For more on how the AggLayer settles bridge claims to the underlying L1, see: [Unified Bridge](#)
 
 ## Token State
 
 =======
 Each chain maintains a data structure called a **Local Exit Tree**, which contains only the messages and token transfers originating from it. In the unified bridge, Ethereum holds a **Global Exit Root**, which represents a tree containing all of the Local Exit Roots of chains integrated with the AggLayer.
 
-> **Note:** See the [Unified Bridge: Data Structures and State Management](#) for a detailed breakdown of all data used by the AggLayer.
+!!! note
+      For a **detailed breakdown** of all data used by the AggLayer, refer to the **[Unified Bridge: Data Structures](../../agglayer/architecture/unified-bridge.md#unified-bridge-data-structures)** section.
 
 In a simple token transfer, the source chain’s **Local Exit Tree** is used to reduce the balance of available tokens on its **Local Balance Tree**.
 
@@ -60,5 +62,8 @@ The first statement ensures that each chain has reached its latest state accordi
 
 If the computation performed within the pessimistic proof is consistent, a valid proof is generated.
 
-> **Note:** The AggLayer v0.2 allows rollups and validiums built with Polygon CDK to use the legacy settlement mechanism without generating a pessimistic proof.
+!!! note
+      The AggLayer v0.2 allows rollups and validiums built with Polygon CDK to use the legacy settlement mechanism without generating a pessimistic proof.
 
+
+![Pessimistic Proof Sequence](../../img/agglayer/pessimistic-proof-sequence.svg)
