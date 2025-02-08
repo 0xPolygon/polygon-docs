@@ -12,7 +12,7 @@ However, there are input and output values shared among the tables. These values
 
 ## How CTLs work
 
-The CTL protocol is based on the [logUP argment](https://eprint.iacr.org/2022/1530.pdf), which works similar to how range-checks work. Range-checks are discussed in a subsequent document to this one.
+The CTL protocol is based on the [logUP argument](https://eprint.iacr.org/2022/1530.pdf), which works similar to how range-checks work. Range-checks are discussed in a subsequent document to this one.
 
 ### Example (CTL)
 
