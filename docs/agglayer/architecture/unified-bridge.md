@@ -41,18 +41,15 @@ When the **Mainnet Exit Root** is updated in `PolygonZkEVMBridgeV2.sol`, the con
 ## Bridge Service
 
 ### Chain Indexer Framework
-- An EVM blockchain data indexer that parses, sorts, and organizes blockchain data for the **Bridge Service API**.
-- Each Agglayer-connected chain has its own indexer instance.
-
+An EVM blockchain data indexer that parses, sorts, and organizes blockchain data for the **Bridge Service API**. Each Agglayer-connected chain has its own indexer instance.
 
 ### Transaction API
 - Provides details of a bridge transaction initiated by or incoming to a user’s wallet address.
 
 **API Endpoints:**
-=======
-- **Testnet:**  
+**Testnet:**  
   `https://api-gateway.polygon.technology/api/v3/transactions/testnet?userAddress={userAddress}`
-- **Mainnet:**  
+**Mainnet:**  
   `https://api-gateway.polygon.technology/api/v3/transactions/mainnet?userAddress={userAddress}`
 
 ### Proof Generation API
