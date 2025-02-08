@@ -21,13 +21,13 @@ The AggLayer uses per-chain pessimistic proofs to ensure a complete view of all 
 For any cross-chain token transfer to be finalized such that the token may be withdrawn on the underlying L1, a valid pessimistic proof must be generated. Each chain connected to the AggLayer is required to provide some of the inputs necessary for building a valid pessimistic proof.
 
 !!! note
-      For more on how the Agglayer settles bridge claims to the underlying L1, see: [Unified Bridge](../architecture/unified-bridge/)
+      For more on how the Agglayer settles bridge claims to the underlying L1, see: [Unified Bridge](/agglayer/architecture/unified-bridge/)
 
 ## Token State
 Each chain maintains a data structure called a **Local Exit Tree**, which contains only the messages and token transfers originating from it. In the unified bridge, Ethereum holds a **Global Exit Root**, which represents a tree containing all of the Local Exit Roots of chains integrated with the AggLayer.
 
 !!! note
-      For a detailed breakdown of all data used by the Agglayer, see: [Unified Bridge: Data Structures](../../agglayer/architecture/unified-bridge.md#unified-bridge-data-structures)
+      For a detailed breakdown of all data used by the Agglayer, see: [Unified Bridge: Data Structures](/agglayer/architecture/unified-bridge.md#unified-bridge-data-structures)
 
 In a simple token transfer, the source chain’s **Local Exit Tree** is used to reduce the balance of available tokens on its **Local Balance Tree**.
 
