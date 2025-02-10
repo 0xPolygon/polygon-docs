@@ -7,6 +7,7 @@ on:
     branches:
       - dev
       - main
+      - SPEC-889-Add-github-workflow-to-publish-docker-img
   workflow_dispatch:
     inputs:
       environment:
@@ -22,12 +23,14 @@ jobs:
     if: |
       (github.event_name == 'pull_request' && startsWith(github.head_ref, 'hosted/')) || 
       (github.event_name == 'push' && github.ref == 'refs/heads/dev') || 
+      (github.event_name == 'push' && github.ref == 'refs/heads/SPEC-889-Add-github-workflow-to-publish-docker-img') || 
       (github.event_name == 'push' && github.ref == 'refs/heads/main') || 
       (github.event_name == 'workflow_dispatch' && inputs.environment == 'prod')
     uses: ./.github/workflows/build_and_deploy_gcp.yml
     with:
       environment: ${{ inputs.environment || 
                     (github.ref == 'refs/heads/dev' && 'dev') || 
+                    (github.ref == 'refs/heads/SPEC-889-Add-github-workflow-to-publish-docker-img' && 'dev') || 
                     (github.ref == 'refs/heads/main' && 'staging') || 
                     (github.event_name == 'pull_request' && 'dev') || 
                     'dev' }}

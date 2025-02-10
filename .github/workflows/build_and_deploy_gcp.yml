@@ -17,6 +17,10 @@ env:
   OIDC_PROVIDER: projects/23849419004/locations/global/workloadIdentityPools/polygonlabs-shared-prod/providers/oidc-shared-prod
   OIDC_SERVICE_ACCOUNT: shared-prod-oidc-sa@prj-polygonlabs-shared-prod.iam.gserviceaccount.com
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
