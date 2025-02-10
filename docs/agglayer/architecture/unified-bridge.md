@@ -34,9 +34,9 @@ Functionally similar to the **Local Exit Root**, but it tracks the bridging acti
 When the **Mainnet Exit Root** is updated in `PolygonZkEVMBridgeV2.sol`, the contract then updates `mainnetExitRoot` in `PolygonZkEVMGlobalExitRootV2.sol`.
 
 ### Global Exit Root, L1 Info Tree, Global Index
-**Global Exit Root** is the hash of the **Rollup Exit Root** and **Mainnet Exit Root**. When a new **Rollup Exit Root** or **Mainnet Exit Root** is submitted, the contract appends the new **Global Exit Root** to the **L1 Info Tree**.
-**L1 Info Tree** is a **Sparse Merkle Tree** that maintains Global Exit Roots. It is a binary tree with a height of 32, updated every time a new Global Exit Root is submitted. 
-**Global Index** is a **256-bit string** used to locate the unique leaf in the latest **Global Exit Tree** when creating and verifying SMT proofs.
+**Global Exit Root** is the hash of the Rollup Exit Root and Mainnet Exit Root. When a new Rollup Exit Root or Mainnet Exit Root is submitted, the contract appends the new **Global Exit Root** to the **L1 Info Tree**.
+**L1 Info Tree** is a Sparse Merkle Tree that maintains Global Exit Roots. It is a binary tree with a height of 32, updated every time a new Global Exit Root is submitted. 
+**Global Index** is a 256-bit string used to locate the unique leaf in the latest **Global Exit Tree** when creating and verifying SMT proofs.
 
 ## Bridge Service
 
@@ -49,7 +49,6 @@ When the **Mainnet Exit Root** is updated in `PolygonZkEVMBridgeV2.sol`, the con
 - Provides details of a bridge transaction initiated by or incoming to a user’s wallet address.
 
 **API Endpoints:**
-=======
 - **Testnet:**  
   `https://api-gateway.polygon.technology/api/v3/transactions/testnet?userAddress={userAddress}`
 - **Mainnet:**  

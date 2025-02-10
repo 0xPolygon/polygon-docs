@@ -4,7 +4,8 @@
 
 **The Agglayer node** is the Rust-based service designed to receive zero-knowledge proofs from Agglayer-connected chains, verify their validity, and send them to the L1 for final settlement. 
 
-> **Note:** Instructions on how to clone and build the Agglayer locally, including running the pessimistic proof test suite and generating a verifiable proof using Succinct’s Prover Network, can be found [here](#).
+!!! note
+      Instructions on how to clone and build the Agglayer locally, including running the pessimistic proof test suite and generating a verifiable proof using Succinct’s Prover Network, can be found [here](https://github.com/agglayer/agglayer/blob/main/README.md)
 
 ## Crate directory
 
