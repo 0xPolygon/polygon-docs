@@ -61,7 +61,7 @@ nav:
           - Architecture: agglayer/core-concepts/architecture.md
           - Unified Bridge: agglayer/core-concepts/unified-bridge.md
           - Pessimistic Proof: agglayer/core-concepts/pessimistic-proof.md
-          - Connecting Agglayer to CDK chains & existing EVM chains: agglayer/core-concepts/connecting-chains.md
+          - Multi-stack Interop: agglayer/core-concepts/connecting-chains.md
 
 extra:
   generator: false
