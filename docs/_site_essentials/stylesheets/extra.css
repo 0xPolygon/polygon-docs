@@ -1011,16 +1011,7 @@ div.main .nav-content {
     background-color: var(--blue);
 }
 
-.side-bar-link:hover {
-    background-color: var(--orange);
-    color: var(--white);
-}
-
 .feature-card-heading:hover {
-    color: var(--orange);
-}
-
-.nav-menu-btn:hover {
     color: var(--orange);
 }
 
