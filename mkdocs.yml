@@ -12,20 +12,21 @@ theme:
     # Palette toggle for light mode
     - scheme: default
       primary: white
-      accent: purple
+      accent: "#FF8E08"  
       toggle:
-        icon: material/eye
+        icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
       primary: black
-      accent: purple
+      accent: "#FF8E08" 
       toggle:
-        icon: material/eye-outline
+        icon: material/brightness-4
         name: Switch to light mode
   language: en
   custom_dir: overrides
   favicon: img/favicon.ico
+  logo: img/agglayer/agglayer-logo-mark-black-rgb.svg
   icon:
     logo: logo
     repo: repo
