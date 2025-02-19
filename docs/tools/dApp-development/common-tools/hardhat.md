@@ -86,7 +86,7 @@ contract Lock {
 ### Setting up the contract
 
 - Go to `hardhat.config.js`
-- Update the `hardhat-config` with matic-network-credentials
+- Update the `hardhat-config` with polygon-amoy-credentials
 - Create `.env` file in the root to store your private key
 - Add Polygonscan API key to `.env` file to verify the contract on Polygonscan. You can generate an API key by [creating an account](https://polygonscan.com/register)
 
