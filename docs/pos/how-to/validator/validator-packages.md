@@ -388,7 +388,7 @@ Open config file for editing by running: `vi /var/lib/bor/config.toml`.
     
     And similarly, run the following command to set permissions for `UTC-<time>-<address>`: 
     ```bash
-    sudo chown -R heimdall:nogroup /var/lib/bor/data/keystore/UTC-<time>-<address>
+    sudo chown -R bor:nogroup /var/lib/bor/data/keystore/UTC-<time>-<address>
     ```
 
 ## Starting the validator node
