@@ -33,7 +33,7 @@ This section shows you how to create a custom CDK validium DAC contract.
         - Use the Polygon DAC implementation contract: [PolygonDataCommittee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/contracts/v2/consensus/validium/PolygonDataCommittee.sol) as a guide.
         - The contract supports custom smart contract implementation and, through this, DACs can add their custom on-chain verification logic.
 
-6. You can leave the `verifyMessage` function empty but make sure the `getProcotolName` function returns a unique name (such as Avail, Celestia, etc). The following example code comes from the [PolygonDataCommitee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/contracts/v2/consensus/validium/PolygonDataCommittee.sol) implementation.
+6. You can leave the `verifyMessage` function empty but make sure the `getProtocolName` function returns a unique name (such as Avail, Celestia, etc). The following example code comes from the [PolygonDataCommitee.sol](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v8.0.0-rc.3-fork.12/contracts/v2/consensus/validium/PolygonDataCommittee.sol) implementation.
 
     ```solidity
     // Name of the data availability protocol
@@ -44,7 +44,7 @@ This section shows you how to create a custom CDK validium DAC contract.
     /**
      * @notice Return the protocol name
      */
-    function getProcotolName() external pure override returns (string memory) {
+    function getProtocolName() external pure override returns (string memory) {
         return _PROTOCOL_NAME;
     }
     ```
