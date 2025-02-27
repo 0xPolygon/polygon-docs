@@ -448,25 +448,6 @@ When you run this command, you'll see an output like this:
 
 This will indicate the `currentBlock` that’s been synced and also the `highestBlock` that we’re aware of. If the node is already synced, we should get `false`.
 
-## Seed nodes and bootnodes
+## Seeds and Bootnodes
 
-!!! info "Amoy testnet seeds"
-
-    The Bor and Heimdall seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
-
-### Heimdall seed nodes
-
-```bash
-# Mainnet:
-seeds = "1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656,6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656"
-```
-
-!!! tip
-    The following Heimdall seed can also be used for mainnet: `8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:27656`
-
-### Bootnodes
-
-```bash
-# Mainnet:
-bootnodes = ["enode://b8f1cc9c5d4403703fbf377116469667d2b1823c0daf16b7250aa576bacf399e42c3930ccfcb02c5df6879565a2b8931335565f0e8d3f8e72385ecf4a4bf160a@3.36.224.80:30303", "enode://8729e0c825f3d9cad382555f3e46dcff21af323e89025a0e6312df541f4a9e73abfa562d64906f5e59c51fe6f0501b3e61b07979606c56329c020ed739910759@54.194.245.5:30303"]
-```
+The latest bor and heimdall seeds can be found [here](https://docs.polygon.technology/pos/reference/seed-and-bootnodes/). Using them will ensure that bor/heimdall is able to connect to peers quickly.
