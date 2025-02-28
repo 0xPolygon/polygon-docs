@@ -86,8 +86,10 @@ bor version
 ### Configure Heimdall and Bor seeds
 
 The latest bor and heimdall seeds can be found [here](https://docs.polygon.technology/pos/reference/seed-and-bootnodes/). To configure them, update the following lines:
+
 - Set the `seeds` value in `/var/lib/heimdall/config/config.toml`
 - Set the `bootnodes` in `/var/lib/bor/config.toml`
+
 This will ensure your node connects to the peers.
 
 
