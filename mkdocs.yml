@@ -368,6 +368,7 @@ nav:
             - Staking manager: pos/reference/contracts/stakingmanager.md 
           - Rewards and staking incentives: pos/reference/rewards.md
           - Default ports for nodes: pos/reference/port-management.md
+          - Network upgrade process: pos/reference/network-upgrade-process.md
           - Common commands: pos/reference/commands.md
           - Seed and bootnodes: pos/reference/seed-and-bootnodes.md
           - RPC endpoints: pos/reference/rpc-endpoints.md
