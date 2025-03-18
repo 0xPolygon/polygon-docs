@@ -41,7 +41,7 @@ Polygon is governed by the polygon governance, where any significant protocol ch
  - Community discussion and feedback.
  - On-chain voting to pass the proposal.
 
- ### 2. Development & Testing
+### 2. Development & Testing
  Once a proposal is approved, developers implement and test the changes:
 
 - Code is developed and reviewed.
