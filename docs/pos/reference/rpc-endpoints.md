@@ -56,8 +56,8 @@ Developers can interact with on-chain data and execute various types of transact
 
 !!! info "Getting started with RPC calls"
 
-    For a comprehensive list of API documentation, visit [**Polygon JSON-RPC calls**](https://github.com/0xPolygon/polygon-edge/tree/develop/docs/docs/api).
-
+    For a comprehensive list of API documentation, visit your RPC provider’s documentation. 
+    
     To explore API requests without any setup, fix failing requests, or discover new methods on the Polygon network, try the [**Composer App**](https://composer.alchemyapi.io).
 
 
