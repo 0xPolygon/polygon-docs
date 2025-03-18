@@ -367,6 +367,7 @@ nav:
             - Delegation via validator shares: pos/reference/contracts/delegation.md
             - Staking manager: pos/reference/contracts/stakingmanager.md 
           - Rewards and staking incentives: pos/reference/rewards.md
+          - Setting Up Telemetry: pos/reference/telemetry-setup-guide.md
           - Default ports for nodes: pos/reference/port-management.md
           - Network upgrade process: pos/reference/network-upgrade-process.md
           - Common commands: pos/reference/commands.md
