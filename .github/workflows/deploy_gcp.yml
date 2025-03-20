@@ -7,28 +7,17 @@ on:
     branches:
       - dev
       - main
-  workflow_dispatch:
-    inputs:
-      environment:
-        required: false
-        type: choice
-        description: "Select the environment to deploy to (only required for production deployment)"
-        options:
-          - staging
-          - prod
 
 jobs:
   deploy:
     if: |
       (github.event_name == 'pull_request' && startsWith(github.head_ref, 'hosted/')) || 
       (github.event_name == 'push' && github.ref == 'refs/heads/dev') || 
-      (github.event_name == 'push' && github.ref == 'refs/heads/main') || 
-      (github.event_name == 'workflow_dispatch' && inputs.environment == 'prod')
+      (github.event_name == 'push' && github.ref == 'refs/heads/main')
     uses: ./.github/workflows/build_and_deploy_gcp.yml
     with:
-      environment: ${{ inputs.environment || 
-                    (github.ref == 'refs/heads/dev' && 'dev') || 
+      environment: ${{(github.ref == 'refs/heads/dev' && 'dev') || 
                     (github.ref == 'refs/heads/main' && 'staging') || 
-                    (github.event_name == 'pull_request' && 'dev') || 
-                    'dev' }}
+                    (github.event_name == 'pull_request' && 'dev')}}
+      core_app: ${{ github.ref == 'refs/heads/main' && 'polygon-docs-main' || 'polygon-docs-dev' }}
     secrets: inherit
