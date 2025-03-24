@@ -2182,31 +2182,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://docs.polygon.technology/agglayer/overview/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/unified-bridge/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/agglayer-go/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/agglayer-rs/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/token-flows/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/intro-t1-prover/</loc>
   <lastmod>2024-10-17T18:52:27+00:00</lastmod>
   <priority>0.80</priority>

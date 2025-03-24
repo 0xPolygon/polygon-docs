@@ -39,6 +39,6 @@ The role of these nodes is crucial as they act as a bridge between the Ethereum 
 
 ## Upcoming developments
 
-Originally launched as Matic Network in June 2020, Polygon PoS has undergone numerous upgrades since its inception. Initially designed to scale Ethereum through a sidechain, a new proposal on the Polygon forum suggests upgrading Polygon PoS into a zero-knowledge (ZK)-based validium on Ethereum. Polygon PoS will soon adopt the execution environment of Polygon zkEVM along with a dedicated data availability layer. This new architecture would be inherently interoperable with a broader network of ZK-powered Ethereum L2s via the [AggLayer](../agglayer/overview.md).
+Originally launched as Matic Network in June 2020, Polygon PoS has undergone numerous upgrades since its inception. Initially designed to scale Ethereum through a sidechain, a new proposal on the Polygon forum suggests upgrading Polygon PoS into a zero-knowledge (ZK)-based validium on Ethereum. Polygon PoS will soon adopt the execution environment of Polygon zkEVM along with a dedicated data availability layer. This new architecture would be inherently interoperable with a broader network of ZK-powered Ethereum L2s via the [Agglayer](https://docs.agglayer.dev).
 
 Polygon PoS will continue to be the foundational infrastructure for a wide array of decentralized applications and services. More details about the overarching vision of a unified ecosystem of L2s on Ethereum can be found in [the innovation & design space](../innovation-design/index.md).
