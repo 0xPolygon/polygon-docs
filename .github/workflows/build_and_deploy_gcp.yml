@@ -22,7 +22,12 @@ permissions:
   id-token: write
 
 jobs:
+  generate-version:
+    uses: 0xPolygon/pipelines/.github/workflows/generate_version.yaml@main
+
   build_and_deploy:
+    needs:
+      - generate-version
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     permissions:
@@ -68,11 +73,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+          tags: ${{ needs.generate-version.outputs.version }}
           flavor: |
             latest=false
 
