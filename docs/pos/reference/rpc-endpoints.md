@@ -96,5 +96,6 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 - [SubQuery](https://subquery.network/rpc)
 - [Validation Cloud](https://app.validationcloud.io)
 - [dRPC](https://drpc.org/chainlist/polygon)
+- [Blockdaemon](https://www.blockdaemon.com/api/rpc)
 
 For a complete list of public endpoints, visit [Alchemy's Chain Connect](https://www.alchemy.com/chain-connect/chain/polygon-pos) and [Chainlist](https://chainlist.org/?search=Polygon+Mainnet).
