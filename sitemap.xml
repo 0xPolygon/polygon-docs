@@ -1223,8 +1223,17 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://docs.polygon.technology/pos/reference/telemetry-setup-guide/</loc>
+  <lastmod>2025-03-18T17:23:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://docs.polygon.technology/pos/reference/port-management/</loc>
   <lastmod>2024-10-17T18:52:29+00:00</lastmod>
+  <priority>0.80</priority>
+<url>
+  <loc>https://docs.polygon.technology/pos/reference/network-upgrade-process/</loc>
+  <lastmod>2025-03-18T11:27:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -2170,31 +2179,6 @@
 <url>
   <loc>https://docs.polygon.technology/innovation-design/welcome/</loc>
   <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/overview/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/unified-bridge/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/agglayer-go/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/agglayer-rs/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/token-flows/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>

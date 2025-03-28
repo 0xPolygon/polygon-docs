@@ -50,18 +50,7 @@ theme:
 
 nav:
   - Home: index.md
-  - Agglayer:
-      - Overview: agglayer/overview.md
-      - Architecture: 
-          - Overview: agglayer/architecture/overview.md
-          - Agglayer Node: agglayer/architecture/agglayer-node.md
-          - Pessimistic Proof: agglayer/architecture/pessimistic-proof.md
-          - Unified Bridge: agglayer/architecture/unified-bridge.md
-      - Crosschain Interop:
-          - Crosschain Interop: agglayer/crosschain-interop/crosschain-interop.md
-          - Token Flows: agglayer/crosschain-interop/token-flows.md
-      - Modes of Integration:
-          - Polygon CDK: agglayer/modes-of-integration/polygon-cdk.md
+  - Agglayer: "https://docs.agglayer.dev"
   - CDK:
       - Polygon CDK: cdk/index.md
       - Overview: cdk/overview.md
@@ -367,7 +356,9 @@ nav:
             - Delegation via validator shares: pos/reference/contracts/delegation.md
             - Staking manager: pos/reference/contracts/stakingmanager.md 
           - Rewards and staking incentives: pos/reference/rewards.md
+          - Setting Up Telemetry: pos/reference/telemetry-setup-guide.md
           - Default ports for nodes: pos/reference/port-management.md
+          - Network upgrade process: pos/reference/network-upgrade-process.md
           - Common commands: pos/reference/commands.md
           - Seed and bootnodes: pos/reference/seed-and-bootnodes.md
           - RPC endpoints: pos/reference/rpc-endpoints.md

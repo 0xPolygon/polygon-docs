@@ -45,7 +45,7 @@ or install a specific version, node type (`sentry` or `validator`), and network 
 
 ```shell
   # Example:
-  curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- v1.0.7 mainnet sentry
+  curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- v1.2.0 mainnet sentry
 ```
 
 ### Bor
@@ -63,7 +63,7 @@ or install a specific version, node type (`sentry` or `validator`), and network 
 curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- <version> <network> <node_type>
 
 # Example:
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- v1.1.0 mainnet sentry
+curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- v2.0.0 mainnet sentry
 ```
 
 ### Check installation
@@ -99,14 +99,7 @@ vi /var/lib/heimdall/config/config.toml
 In the config file, update the following parameters:
 
 * `moniker` — any name. Example: `moniker = "my-sentry-node"`.
-* `seeds` — the seed node addresses consisting of a node ID, an IP address, and a port.
-
-Use the following values:
-
-```toml
-seeds="1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656,6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656"
-```
-
+* `seeds` — the seed node addresses consisting of a node ID, an IP address, and a port. The seeds are provided in the next section.
 * `pex` — set the value to `true` to enable the peer exchange. Example: `pex = true`.
 * `private_peer_ids` — the node ID of Heimdall set up on the validator machine.
 
@@ -154,6 +147,10 @@ Example content of static node field in `/var/lib/bor/config.toml`:
 ```
 
 Finally, save the changes in `/var/lib/bor/config.toml`.
+
+### Seeds and Bootnodes
+
+The latest bor and heimdall seeds can be found [here](https://docs.polygon.technology/pos/reference/seed-and-bootnodes/). Adding them will ensure your node connects to the peers.
 
 ### Configuring a firewall
 
@@ -388,7 +385,7 @@ Open config file for editing by running: `vi /var/lib/bor/config.toml`.
     
     And similarly, run the following command to set permissions for `UTC-<time>-<address>`: 
     ```bash
-    sudo chown -R heimdall:nogroup /var/lib/bor/data/keystore/UTC-<time>-<address>
+    sudo chown -R bor:nogroup /var/lib/bor/data/keystore/UTC-<time>-<address>
     ```
 
 ## Starting the validator node

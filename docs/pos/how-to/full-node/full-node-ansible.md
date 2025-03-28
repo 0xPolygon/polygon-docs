@@ -54,28 +54,7 @@ An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playboo
 
 - Once you initiate the Ansible playbook, log in to the remote machine.
 
-- Please *ensure that the value of seeds and bootnodes mentioned below is the same value as mentioned in Heimdall and Bor `config.toml` files*. If not, change the values accordingly.
-
-!!! tip "Amoy testnet seeds"
-
-    The Heimdall and Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
-
-- Heimdall seed nodes:
-
-    ```bash
-    moniker=<enter unique identifier>
-
-    # Mainnet:
-    seeds="1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656,6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656"
-  
-    ```
-
-- Bootnodes:
-
-    ```bash
-    # Mainnet:
-    bootnode ["enode://b8f1cc9c5d4403703fbf377116469667d2b1823c0daf16b7250aa576bacf399e42c3930ccfcb02c5df6879565a2b8931335565f0e8d3f8e72385ecf4a4bf160a@3.36.224.80:30303", "enode://8729e0c825f3d9cad382555f3e46dcff21af323e89025a0e6312df541f4a9e73abfa562d64906f5e59c51fe6f0501b3e61b07979606c56329c020ed739910759@54.194.245.5:30303"]
-    ```
+- Please *ensure that the value of seeds and bootnodes mentioned [here](https://docs.polygon.technology/pos/reference/seed-and-bootnodes/) is the same value as mentioned in Heimdall and Bor `config.toml` files*. If not, change the values accordingly.
 
 - To check if Heimdall is synced
     - On the remote machine/VM, run `curl localhost:26657/status`

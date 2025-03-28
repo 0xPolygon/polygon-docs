@@ -64,17 +64,6 @@ This will install the `heimdalld` and `heimdallcli` binaries. Verify the install
 heimdalld version --long
 ```
 
-### Configure Heimdall seeds (Mainnet)
-
-```bash
-sed -i 's|^seeds =.*|seeds = "1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656,6726b826df45ac8e9afb4bdb2469c7771bd797f1@52.209.21.164:26656"|g' /var/lib/heimdall/config/config.toml
-chown heimdall /var/lib/heimdall
-```
-
-### Configure Heimdall seeds (Amoy)
-
-The Heimdall and Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
-
 ### Bor
 
 Install the latest version of Bor, based on valid v1.0+ [released version](https://github.com/maticnetwork/bor/releases).
@@ -94,17 +83,15 @@ That will install the `bor` binary. Verify the installation by checking the Bor 
 bor version
 ```
 
-### Configure Bor seeds (mainnet)
+### Configure Heimdall and Bor seeds
 
-```bash
-sed -i 's|.*\[p2p.discovery\]|  \[p2p.discovery\] |g' /var/lib/bor/config.toml
-sed -i 's|.*bootnodes =.*|    bootnodes = ["enode://b8f1cc9c5d4403703fbf377116469667d2b1823c0daf16b7250aa576bacf399e42c3930ccfcb02c5df6879565a2b8931335565f0e8d3f8e72385ecf4a4bf160a@3.36.224.80:30303", "enode://8729e0c825f3d9cad382555f3e46dcff21af323e89025a0e6312df541f4a9e73abfa562d64906f5e59c51fe6f0501b3e61b07979606c56329c020ed739910759@54.194.245.5:30303"]|g' /var/lib/bor/config.toml
-chown bor /var/lib/bor
-```
+The latest bor and heimdall seeds can be found [here](https://docs.polygon.technology/pos/reference/seed-and-bootnodes/). To configure them, update the following lines:
 
-### Configure Bor seeds (Amoy)
+- Set the `seeds` value in `/var/lib/heimdall/config/config.toml`
+- Set the `bootnodes` in `/var/lib/bor/config.toml`
 
-The Heimdall and Bor seeds don't need to be configured manually for Amoy testnet since they've already been included at genesis.
+This will ensure your node connects to the peers.
+
 
 ### Update service config user permission
 
