@@ -57,15 +57,15 @@ nav:
           - Quickstart: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
       - Stacks:
-          - CDK Erigon:
+          - CDK erigon:
               - Overview: cdk/getting-started/cdk-erigon/index.md
               - Architecture: cdk/architecture/cdk-zkevm.md
               - Release Notes: cdk/getting-started/cdk-erigon/release.md
               - How To:
                   - Deploy a Node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
                   - Configure Chains Dynamically: cdk/getting-started/cdk-erigon/chain-config.md
-                  - Migration Guide: cdk/how-to/migrate/fork.md
-          - CDK OP-Geth:
+                  - Migration Guide: cdk/how-to/migrate/forkid-9-12.md
+          - CDK op-geth:
               - Overview: cdk/stacks/cdk-opgeth/index.md
               - Architecture: cdk/stacks/cdk-opgeth/architecture.md
       - How To:
