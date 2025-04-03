@@ -53,8 +53,6 @@ nav:
   - Agglayer: "https://docs.agglayer.dev"
   - Polygon CDK:
       - Overview: cdk/overview.md
-          - Quickstart: cdk/getting-started/local-deployment.md
-          - CLI Tool: cdk/getting-started/cli-tool.md
       - Stacks:
           - CDK-opgeth:
               - Overview: cdk/stacks/cdk-opgeth/index.md
