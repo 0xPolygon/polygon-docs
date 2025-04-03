@@ -58,8 +58,6 @@ nav:
       - Stacks:
           - CDK-opgeth:
               - Overview: cdk/stacks/cdk-opgeth/index.md
-              - Quickstart:
-              - CLI Tool:
               - Architecture: cdk/stacks/cdk-opgeth/architecture.md
               - Release Notes: cdk/stacks/cdk-opgeth/release.md
               - Deploy a Node: cdk/how-to/cdk-opgeth/deploy-cdk-opgeth.md
