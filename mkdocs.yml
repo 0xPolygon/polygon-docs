@@ -53,17 +53,20 @@ nav:
   - Agglayer: "https://docs.agglayer.dev"
   - Polygon CDK:
       - Overview: cdk/overview.md
-      - Get Started:
           - Quickstart: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
       - Stacks:
           - CDK-opgeth:
               - Overview: cdk/stacks/cdk-opgeth/index.md
+              - Quickstart:
+              - CLI Tool:
               - Architecture: cdk/stacks/cdk-opgeth/architecture.md
               - Release Notes: cdk/stacks/cdk-opgeth/release.md
               - Deploy a Node: cdk/how-to/cdk-opgeth/deploy-cdk-opgeth.md
           - CDK-erigon:
               - Overview: cdk/stacks/cdk-erigon/index.md
+              - Quickstart: cdk/getting-started/local-deployment.md
+              - CLI Tool: cdk/getting-started/cli-tool.md
               - Architecture: cdk/stacks/cdk-erigon/architecture.md
               - Release Notes: cdk/stacks/cdk-erigon/release.md
               - Deploy a Node: cdk/how-to/cdk-erigon/deploy-cdk-erigon.md
