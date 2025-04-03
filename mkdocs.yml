@@ -61,20 +61,17 @@ nav:
               - Overview: cdk/stacks/cdk-opgeth/index.md
               - Architecture: cdk/stacks/cdk-opgeth/architecture.md
               - Release Notes: cdk/stacks/cdk-opgeth/release.md
+              - Deploy a Node: cdk/how-to/cdk-opgeth/deploy-cdk-opgeth.md
           - CDK-erigon:
               - Overview: cdk/stacks/cdk-erigon/index.md
               - Architecture: cdk/stacks/cdk-erigon/architecture.md
               - Release Notes: cdk/stacks/cdk-erigon/release.md
-      - How To:
-          - CDK-opgeth:
-              - Deploy a Node: cdk/how-to/cdk-opgeth/deploy-cdk-opgeth.md
-          - CDK-erigon:
               - Deploy a Node: cdk/how-to/cdk-erigon/deploy-cdk-erigon.md
               - Create a Native Gas Token: cdk/how-to/cdk-erigon/use-native-token.md
               - Configure Chains Dynamically: cdk/how-to/cdk-erigon/chain-config.md
               - Migration Guide: cdk/how-to/cdk-erigon/migrate-forkid-9-12.md
-          - Integrate DA Layer: cdk/how-to/integrate-da.md
-          - Connect to Testnets: cdk/how-to/connect-testnet.md
+              - Integrate DA Layer: cdk/how-to/integrate-da.md
+              - Connect to Testnets: cdk/how-to/connect-testnet.md
       - Concepts:
           - Rollups vs. Validiums: cdk/concepts/rollup-vs-validium.md
           - ZK vs. Optimistic Rollups: cdk/concepts/zk-vs-optimistic.md
