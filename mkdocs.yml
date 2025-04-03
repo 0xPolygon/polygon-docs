@@ -51,23 +51,26 @@ theme:
 nav:
   - Home: index.md
   - Agglayer: "https://docs.agglayer.dev"
-  - CDK:
-      - Polygon CDK Overview: cdk/overview.md
+  - Polygon CDK:
+      - Overview: cdk/overview.md
       - Get Started:
           - Quickstart: cdk/getting-started/local-deployment.md
           - CLI Tool: cdk/getting-started/cli-tool.md
       - Stacks:
-          - CDK erigon:
-              - Overview: cdk/getting-started/cdk-erigon/index.md
-              - Architecture: cdk/architecture/cdk-zkevm.md
-              - Release Notes: cdk/getting-started/cdk-erigon/release.md
+          - CDK Erigon:
+              - Overview: cdk/stacks/cdk-erigon/index.md
+              - Architecture: cdk/stacks/cdk-erigon/architecture.md
+              - Release Notes: cdk/stacks/cdk-erigon/release.md
               - How To:
-                  - Deploy a Node: cdk/getting-started/cdk-erigon/deploy-cdk-erigon.md
-                  - Configure Chains Dynamically: cdk/getting-started/cdk-erigon/chain-config.md
-                  - Migration Guide: cdk/how-to/migrate/forkid-9-12.md
+                  - Deploy a Node: cdk/stacks/cdk-erigon/deploy-cdk-erigon.md
+                  - Configure Chains Dynamically: cdk/stacks/cdk-erigon/chain-config.md
+                  - Migration Guide: cdk/stacks/cdk-erigon/migrate-forkid-9-12.md
           - CDK op-geth:
               - Overview: cdk/stacks/cdk-opgeth/index.md
               - Architecture: cdk/stacks/cdk-opgeth/architecture.md
+              - Release Notes: cdk/stacks/cdk-opgeth/release.md
+              - How To:
+                  - Deploy a Node: cdk/stacks/cdk-opgeth/deploy-cdk-opgeth.md
       - How To:
           - Create a Native Token: cdk/how-to/use-native-token.md
           - Integrate DA Layer: cdk/how-to/integrate-da.md
