@@ -9,28 +9,9 @@ POL will serve as a hyperproductive token: the native gas and staking token on P
 ### MATIC tokens on Ethereum
 
 !!! info "Stakers and delegators"
+![IMG_20250308_140643](https://github.com/user-attachments/assets/5daed59d-1b84-4a73-a55c-8e7a368798fd)![download](https://github.com/user-attachments/assets/1a40c54a-ec04-4678-b143-c579d0337db5)
+![download](https://github.com/user-attachments/assets/a4aafb94-fbc3-4f3d-9477-e75cfb19f040)
 
-    MATIC stakers don't need to take any action to upgrade from MATIC to POL.
-
-If your MATIC tokens are on Ethereum, you can use [Polygon Portal's migration interface](https://portal.polygon.technology/pol-upgrade) to migrate your MATIC tokens to POL. The process is as follows:
-
-1. Navigate to Polygon Portal's migration interface: https://portal.polygon.technology/pol-upgrade
-2. Switch to Ethereum network in your wallet and connect to the Portal UI.
-3. Approve the migration action by granting the upgrade contract permission to access your MATIC tokens.
-4. Perform the migration action to receive POL in your wallet.
-
-### MATIC tokens on Polygon PoS
-
-If your MATIC tokens are stored in your wallet on the Polygon PoS chain, you won't need to manually migrate them — they'll be automatically converted to POL at a 1:1 ratio.
-
-However, you'll need to update the native token symbol in your wallet's network settings. If the token symbol isn't updated, the wallet may continue to display MATIC as the token name instead of POL.
-
-Here’s how to do this in MetaMask.
-
-1. Within your browser, open your MetaMask wallet in the expanded mode by selecting on the **Expand view** option from the options menu in the top-right corner.
-
-    <center>
-    ![change-token-name-1](../../img/pos/change-token-name-1.png){width=50%}
     </center>
 
 2. Select the options menu again from the wallet's expanded view, and then select **Settings** from the drop-down list.
