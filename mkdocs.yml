@@ -52,25 +52,24 @@ nav:
   - Home: index.md
   - Agglayer: "https://docs.agglayer.dev"
   - Polygon CDK:
-      - Overview: cdk/overview.md
-      - Stacks:
-          - CDK-opgeth:
-              - Overview: cdk/stacks/cdk-opgeth/index.md
-              - Architecture: cdk/stacks/cdk-opgeth/architecture.md
-              - Release Notes: cdk/stacks/cdk-opgeth/release.md
-              - Deploy a Node: cdk/how-to/cdk-opgeth/deploy-cdk-opgeth.md
-          - CDK-erigon:
-              - Overview: cdk/stacks/cdk-erigon/index.md
-              - Quickstart: cdk/getting-started/local-deployment.md
-              - CLI Tool: cdk/getting-started/cli-tool.md
-              - Architecture: cdk/stacks/cdk-erigon/architecture.md
-              - Release Notes: cdk/stacks/cdk-erigon/release.md
-              - Deploy a Node: cdk/how-to/cdk-erigon/deploy-cdk-erigon.md
-              - Create a Native Gas Token: cdk/how-to/cdk-erigon/use-native-token.md
-              - Configure Chains Dynamically: cdk/how-to/cdk-erigon/chain-config.md
-              - Migration Guide: cdk/how-to/cdk-erigon/migrate-forkid-9-12.md
-              - Integrate DA Layer: cdk/how-to/integrate-da.md
-              - Connect to Testnets: cdk/how-to/connect-testnet.md
+      - Overview:
+          - What is Polygon CDK?: cdk/overview.md
+          - What is Polygon CDK-opgeth?: cdk/stacks/cdk-opgeth/index.md
+          - What is Polygon CDK-erigon?: cdk/stacks/cdk-erigon/index.md
+          - Why Use CDK?: cdk/overview/why-cdk.md
+          - Overview of Benefits: cdk/overview/benefits.md
+          - What Configuration Should I Choose?: cdk/overview/configuration.md
+          - FAQs: cdk/overview/faqs.md
+      - CDK-opgeth:
+          - Get Started: cdk/opgeth/get-started.md  # Tabs: Quickstart, CLI Tool, Deploy a Node, Connect to Testnets
+      - CDK-erigon:
+          - Get Started: cdk/erigon/get-started.md  # Tabs: Quickstart, CLI Tool, Deploy a Node, Connect to Testnets
+          - Migration Guide:
+              - Fork ID 9 to 12: cdk/how-to/cdk-erigon/migrate-forkid-9-12.md
+      - Concepts:
+          - Layer 2 Basics: cdk/concepts/layer2-basics.md
+          - Rollups vs. Validiums: cdk/concepts/rollups-validiums.md
+          - Bridging & Interoperability: cdk/concepts/bridging-interoperability.md
       - Resources:
           - Glossary: cdk/glossary/index.md
           - CDK Repos: cdk/resources/cdk-repo-reference.md
