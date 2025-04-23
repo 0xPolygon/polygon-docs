@@ -528,10 +528,8 @@ nav:
           - Crust network: tools/storage/crusthelpers.md
         - Oracles:
           - Getting started: tools/oracles/getting-started.md
-          - Bandchain: tools/oracles/bandchain.md
-          - Band standard dataset: tools/oracles/bandstandarddataset.md
           - Chainlink: tools/oracles/chainlink.md
-          - UMA optimistic oracle: tools/oracles/optimisticoracle.md
+          - Chronicle: tools/oracles/chronicle.md
 
         - Wallets:
           - Getting started:  tools/wallets/getting-started.md
