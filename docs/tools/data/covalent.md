@@ -2,14 +2,11 @@
 
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
-!!! tip "Quickstart"
 
-    Check out **[this introductory video](https://www.youtube.com/watch?v=qhibXxKANWE)**
-    to get started.
 
 ## Supported endpoints
 
-All [__Class A__](https://www.covalenthq.com/docs/api/#tag--Class-A) endpoints are supported for the Matic mainnet and the Amoy testnet. You can query either network via the unified API by changing the `chainName`.
+All [__Class A__](https://www.covalenthq.com/docs/api/#tag--Class-A) endpoints are supported for the Polygon mainnet and the Amoy testnet. You can query either network via the unified API by changing the `chainName`.
 
 !!! info "Endpoints"
 
@@ -17,17 +14,17 @@ All [__Class A__](https://www.covalenthq.com/docs/api/#tag--Class-A) endpoints a
 
 ## Appendix
 
-### MATIC gas token
+### POL gas token
 
-To interact with Polygon network, MATIC tokens are required to pay gas fees. Covalent's responses automatically return `gas_*` fields in MATIC units.
+To interact with Polygon network, POL tokens are required to pay gas fees. Covalent's responses automatically return `gas_*` fields in POL units.
 
 ### Token mapping
 
-Covalent maintains an on-chain real-time mapping of token addresses between the Ethereum mainnet and Polygon. These addresses are used to reverse-lookup prices on MATIC and also to return the right token logo URLs.
+Covalent maintains an on-chain real-time mapping of token addresses between the Ethereum mainnet and Polygon. These addresses are used to reverse-lookup prices on Polygon and also to return the right token logo URLs.
 
 Some example of mapped tokens:
 
-|Token|Ethereum mainnet|Matic mainnet|
+|Token|Ethereum mainnet|Polygon mainnet|
 |---|---|---|
 |USDT|0xdac17f958d2ee523a2206206994597c13d831ec7|0xc2132d05d31c914a87c6611c10748aeb04b58e8f|
 |Uniswap UNI|0x1f9840a85d5af5bf1d1762f925bdaddc4201f984|0xb33eaad8d922b1083446dc23f610c2567fb5180f|
