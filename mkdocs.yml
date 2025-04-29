@@ -52,7 +52,7 @@ nav:
   - Home: index.md
   - Agglayer: "https://docs.agglayer.dev"
   - CDK:
-      - Polygon CDK: cdk/index.md
+      - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Current Release:
           - Release Notes: cdk/releases/release-notes.md
