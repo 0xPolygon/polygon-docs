@@ -1,25 +1,28 @@
 !!! caution "Content disclaimer"
     Please view the third-party content disclaimer [here](https://github.com/0xPolygon/polygon-docs/blob/main/CONTENT_DISCLAIMER.md).
 
-[Openfort](https://openfort.xyz) is an infrastructure provider designed to simplify the development of games and gamified experiences across their suite of API endpoints. The platform vertically integrates the AA stack, offering three core components: Identity, Cloud, and Ecosystems.
+[Openfort](https://openfort.io) is an open-source alternative to wallet infrastructure solutions. The core offerings—Openfort Kit, Invisible Wallet, and Cross-app Wallet - enable rapid integration of wallet functionality, intuitive onboarding, and flexible user journeys for any application or ecosystem.
 
-## Account abstraction infrastructure built for web3 games
+### [Openfort Kit](https://www.openfort.io/docs/products/kit/react/quickstart)
 
-### [Identity](https://www.openfort.xyz/docs/guides/auth)
-- **Authentication**: Openfort's authentication service offers a comprehensive solution for user onboarding in web3 gaming by integrating with various backend solutions and authentication platforms.
-- **Private Key Management**: Utilizing an MPC SSS solution, Openfort ensures secure and efficient private key handling.
-- **Smart Contract Wallets**: Accounts are depicted as on-chain entities that secure a user's assets, acting as digital lockers. User accounts involve interactions with smart accounts, providing a secure and flexible account model.
+Openfort Kit is a developer toolkit that streamlines the integration of wallet authentication and connectivity into any web application. It provides:
 
-### [Cloud](https://www.openfort.xyz/docs/guides/transaction-cloud)
-- **Transaction Management**: Openfort's transaction system is designed to handle transactions at scale, supporting high throughput for games.
-- **Gasless Transactions**: Simplify user experience by abstracting away gas fees from end-users.
-- **Parallelization**: Efficient processing of multiple transactions simultaneously to enhance performance.
-- **Nonce Management**: Automatic handling of transaction nonces to prevent conflicts and ensure smooth execution.
+- **Plug-and-play UI Components**: Prebuilt, customizable authentication and wallet connection flows that can be deployed in minutes, not weeks, with support for major authentication providers and wallet connector
+- **Developer Experience**: TypeScript-ready, ecosystem-standard libraries (wagmi, viem), and easy integration with frameworks like React, Next.js, and Create React App.
+- **Full Customization**: Predesigned themes or the ability to fully tailor the UI to match your brand.
 
-### [Ecosystems](https://www.openfort.xyz/docs/guides/ecosystem)
-- **Middleware Deployment**: Deploy Openfort's middleware technology in your chain from day zero, enabling quick integration and scalability.
-- **Whitelabel Onboarding**: Customize the onboarding experience to match your ecosystem's branding and requirements.
-- **Ecosystem Wallets**: Tailored wallet solutions that integrate seamlessly with your specific ecosystem.
-- **Ecosystem Policies**: Implement and manage policies specific to your ecosystem, ensuring compliance and optimal functionality.
+### [Invisible Wallet](https://www.openfort.io/docs/products/embedded-wallet/javascript)
 
-Get started by forking [live samples](https://www.openfort.xyz/docs/guides/resources) of Openfort infrastructure to explore these components in action.
+Invisible Wallet enables applications to onboard users without requiring them to interact directly with traditional wallet interfaces. Features include:
+
+- **Embedded Non-custodial Signer**: Secure, self-custodied wallet creation and signing for users, with no need for browser extensions or external apps.
+- **Fundign Support**: Users can onramp their newly created wallets with traditional methods or depositing crypto. 
+- **Key Export**: Users can always export private keys, allowing them to take the wallet with them.
+
+### [Cross-app Wallet](https://www.openfort.io/docs/products/cross-app-wallet/setup)
+
+The Cross-app Wallet empowers ecosystems and platforms to offer branded, interoperable wallets that work across multiple apps and services. Key capabilities:
+
+- **Ecosystem SDK**: Build your own wallet SDK that can be integrated across your suite of apps, ensuring users have a consistent identity and asset management experience everywhere.
+- **No App or Extension Required**: Users can create and use wallets instantly via iFrames or embedded flows, compatible with any EVM chain.
+- **Modern Standards**: Supports the latest Ethereum standards (EIP-1193, 6963, 7702, 4337, and more) for broad compatibility and future-proofing.
