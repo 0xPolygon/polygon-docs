@@ -68,8 +68,7 @@ nav:
               - Fork ID 9 to 12: cdk/how-to/migrate/forkid-9-12.md
               - Fork ID 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
       - Additional Resources:
-          - Glossary: cdk/glossary/index.md
-          - Glossary: cdk/glossary/index.md
+          - Glossary: cdk/resources/glossary.md
           - CDK Repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
       - zkEVM: zkEVM/index.md
