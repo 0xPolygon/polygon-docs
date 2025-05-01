@@ -394,7 +394,7 @@ nav:
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta transactions: pos/concepts/transactions/meta-transactions.md
   - Miden:
-      - Miden: miden/index.md
+      - Miden: "https://0xmiden.github.io/miden-docs/"
   - Developer tools:
       - Developer tools: tools/index.md
       - Start building:
