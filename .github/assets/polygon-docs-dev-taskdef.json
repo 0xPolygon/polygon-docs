@@ -10,9 +10,10 @@
                 "logDriver": "awsfirelens",
                 "options": {
                     "Name": "datadog",
-                    "Host": "http-intake.logs.datadoghq.com",
+                    "Host": "http-intake.logs.datadoghq.eu",
                     "dd_service": "polygon-docs-dev",
                     "dd_source": "nodejs",
+					"dd_tags": "account_number:058264511034",
                     "TLS": "on",
                     "provider": "ecs"
                 },
