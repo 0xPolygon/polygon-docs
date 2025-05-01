@@ -55,7 +55,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Benefits: cdk/releases/release-notes.md
-      - FAQs: cdk/releases/release-notes.md
+      - FAQs: cdk/resources/faqs.md
       - cdk-opgeth:
           - Quickstart: cdk/getting-started/local-deployment.md
           - Architecture: cdk/architecture/high-level-views.md
