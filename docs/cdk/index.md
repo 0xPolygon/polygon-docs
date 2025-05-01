@@ -12,8 +12,8 @@ hide:
 <div class="section-wrapper product-section-head">
    <div class="hero-image"><img src="../img/cdk/cdk.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
    <div class="hero-left">
-      <h1 class="hero-heading">Polygon CDK</h1>
-      <p class="hero-subtext">Polygon Chain Development Kit (CDK) is a modular, open-source blockchain stack for developers launching sovereign L2 chains powered by zero-knowledge (ZK) proofs.</p>
+      <h1 class="hero-heading">Agglayer CDK</h1>
+      <p class="hero-subtext">The Agglayer Chain Development Kit (CDK) is a multistack framework for building Ethereum Layer 2 (L2) chains with default Agglayer integration. Chains built with CDK are natively connected to the Agglayer network for unified liquidity, cross-chain messaging, and seamless composability. CDK enables developers to choose between familiar and customizable stacks while maintaining deep Ethereum compatibility, fast finality, and robust security backed by zero-knowledge technology.</p>
    </div>
    </br>
 </div>
