@@ -13,7 +13,7 @@ hide:
 <div class="hero-image"><img src="../img/home/main-img.svg" loading="lazy" class="hero-image" style="width: 40%; float: right;"></div>
    <div class="hero-left">
       <h1 class="hero-heading">Agglayer CDK</h1>
-      <p class="hero-subtext">The Agglayer Chain Development Kit (CDK) is a multistack toolkit for building Ethereum Layer 2 (L2) chains with default Agglayer integration. Chains built with CDK are natively connected to the Agglayer network for unified liquidity, cross-chain messaging, and seamless composability. CDK enables developers to choose between familiar and customizable stacks while maintaining deep Ethereum compatibility, fast finality, and robust security backed by zero-knowledge technology.</p>
+      <p class="hero-subtext">With Agglayer Chain Development Kit (CDK), create custom Layer 2 chains natively connected to Agglayer.</p>
    </div>
    </br>
 </div>
