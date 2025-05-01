@@ -55,6 +55,7 @@ nav:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
       - Benefits: cdk/releases/release-notes.md
+      - FAQs: cdk/releases/release-notes.md
       - cdk-opgeth:
           - Quickstart: cdk/getting-started/local-deployment.md
           - Architecture: cdk/architecture/high-level-views.md
@@ -66,8 +67,8 @@ nav:
               - General Guide: cdk/how-to/migrate/fork.md
               - Fork ID 9 to 12: cdk/how-to/migrate/forkid-9-12.md
               - Fork ID 7 to 9: cdk/how-to/migrate/forkid-7-to-9.md
-          - Create A Native Token: cdk/how-to/use-native-token.md
       - Additional Resources:
+          - Glossary: cdk/glossary/index.md
           - Glossary: cdk/glossary/index.md
           - CDK Repos: cdk/resources/cdk-repo-reference.md
   - zkEVM:
