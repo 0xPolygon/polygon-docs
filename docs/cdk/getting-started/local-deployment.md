@@ -1,15 +1,6 @@
-<!--
----
-comments: true
----
--->
+# Quickstart: Run cdk-erigon Locally with Kurtosis
 
-This guide walks you through the process of setting up and deploying a layer 2 CDK blockchain stack on your local machine.
-
-The [Polygon CDK Kurtosis package](https://github.com/0xPolygon/kurtosis-cdk/) allows you to easily customize and instantiate all the components of a CDK chain. It uses the [Kurtosis](https://docs.kurtosis.com/) tool to orchestrate the setup of the chain components in Docker containers, with logic defined in [Starlark](https://github.com/bazelbuild/starlark) scripts (a Python dialect) which define the step-by-step process of setting up the chain.
-
-!!! tip
-      Check out the [Polygon Kurtosis docs](https://github.com/0xPolygon/kurtosis-cdk) for more documentation on this stack and how to use it, and if you need to raise an issue or have a question for the team.
+Use this guide to deploy a local testnet instance of `cdk-erigon` using [Kurtosis](https://docs.kurtosis.com/install).
 
 ## Prerequisites
 

@@ -1,20 +1,71 @@
-The diagram below depicts a simplified architectural layout of the CDK FEP config and indicates at a high level how components communicate.
+This section outlines the architecture of the `cdk-erigon` stack across its three configurations: **Sovereign**, **Validium**, and **zkRollup**. All versions are designed for high-throughput chains with native token support, deep customization, and optional ZK security.
+---
 
-![High level view of CDK stack](../../img/cdk/Full-execution-proofs-diagram.jpg)
+## 📘 cdk-erigon-sovereign
+
+A production-grade configuration using pessimistic proofs and Agglayer for cross-chain settlement.
+
+### 🧱 CDK-Erigon Stack
+- **[CDK-Erigon (EL + CL)](https://github.com/0xPolygonHermez/cdk-erigon)**
+
+### 🧩 AggKit
+- **[AggOracle](https://github.com/agglayer/aggkit):** Updates the Global Exit Root (GER)  
+- **AggSender:** Sends Certificates to Agglayer  
+- **[Bridge API](https://github.com/0xPolygonHermez/zkevm-bridge-service):** Manages cross-chain messages  
+
+### 🗂️ Data Availability & Settlement
+- **[Ethereum Bridge Contracts](https://github.com/0xPolygonHermez/zkevm-contracts)**  
+- **[Agglayer](https://github.com/agglayer/agglayer)**  
+- Agglayer Node  
+- Agglayer Prover
 
 ---
 
-### Component Interactions
+## 📘 cdk-erigon-validium
 
-- The **CLI tool** is the starting point. Developers, or chain administrators in particular, use the CLI tool to build and configure chains in various modes of operation, such as validiums and rollups.
-- Once a chain is configured with the CLI, users can submit transactions through the **CDK Erigon RPC node**. These transactions are relayed to the `tx-pool manager` before the sequencer selects and executes them.
-- The **sequencer** sequences transaction batches and synchronizes data with the **RPC node**.
-- The **sequencer sender** reads batch data from the RPC node.
-- The **aggregator** reads batch data from the sequencer data stream.
-- The sequencer sender persists data into the **L1 smart contract domain** for rollup mode and into **DAC nodes** for validium mode operations.
-- The aggregator sends batches to the **prover** and receives proofs in return. Together with the prover, it aggregates the proofs into batches before submitting the final proofs to the **Agglayer** or L1, depending on the chosen settlement layer.
-- Users interact with the **bridge service** via the **bridge UI** or **API**.
-- The Agglayer verifies proofs and interacts with the **L1 smart contracts**.
+An off-chain DA configuration backed by DAC committees and zk-SNARK proofs. Offers cheaper costs but will be sunset.
+
+### 🧱 CDK-Erigon Stack
+- **[CDK-Erigon (EL + CL)](https://github.com/0xPolygonHermez/cdk-erigon)**  
+- Sequence Sender  
+- Aggregator  
+
+### 🧩 Messaging
+- **[Bridge API](https://github.com/0xPolygonHermez/zkevm-bridge-service)**  
+- **[Ethereum Bridge Contracts](https://github.com/0xPolygonHermez/zkevm-contracts)**
+
+### 🗂️ Data Availability
+- **[Custom DAC](https://github.com/0xPolygon/cdk-data-availability):** Off-chain DA module  
+- **[Agglayer](https://github.com/agglayer/agglayer)**  
+- Agglayer Node
+
+### 🔐 Prover Network
+- **[Hermez Prover](https://github.com/0xPolygonHermez/zkevm-prover):** zk-SNARK proof generator
+
+---
+
+## 📘 cdk-erigon-zkrollup
+
+A ZK Rollup mode using full Ethereum on-chain data availability and zk-SNARK proofs for trustless finality.
+
+![High level view of cdk-erigon-zkrollup stack](../../img/cdk/Full-execution-proofs-diagram.jpg)
+
+### 🧱 CDK-Erigon Stack
+- **[CDK-Erigon (EL + CL)](https://github.com/0xPolygonHermez/cdk-erigon)**  
+- Sequence Sender  
+- Aggregator  
+
+### 🧩 Messaging
+- **[Bridge API](https://github.com/0xPolygonHermez/zkevm-bridge-service)**  
+- **[Ethereum Bridge Contracts](https://github.com/0xPolygonHermez/zkevm-contracts)**
+
+### 🗂️ Data Availability
+- **Ethereum DA:** On-chain DA via Ethereum  
+- **[Agglayer](https://github.com/agglayer/agglayer)**  
+- Agglayer Node
+
+### 🔐 Prover Network
+- **[Hermez Prover](https://github.com/0xPolygonHermez/zkevm-prover):** zk-SNARK proof generator
 
 ---
 

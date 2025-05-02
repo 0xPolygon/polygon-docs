@@ -57,8 +57,8 @@ nav:
       - Benefits: cdk/releases/release-notes.md
       - FAQs: cdk/resources/faqs.md
       - cdk-opgeth:
-          - Quickstart: cdk/getting-started/local-deployment.md
-          - Architecture: cdk/architecture/high-level-views.md
+          - Quickstart: cdk/cdk-opgeth/quickstart.md
+          - Architecture: cdk/cdk-opgeth/architecture.md
       - cdk-erigon:
           - Quickstart: cdk/getting-started/local-deployment.md
           - Architecture: cdk/architecture/high-level-views.md
