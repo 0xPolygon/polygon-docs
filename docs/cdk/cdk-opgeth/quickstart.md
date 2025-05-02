@@ -30,7 +30,7 @@ This will:
 - Deploy AggKit and op-succinct infrastructure
 
 📸 Screenshot: Kurtosis services output  
-![Kurtosis Services](../screenshot-1.png)
+![Kurtosis Services](..docs/img/cdk/cdk-opgeth-quickstart-1.png)
 
 ---
 
