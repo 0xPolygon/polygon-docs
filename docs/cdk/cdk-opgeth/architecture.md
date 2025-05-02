@@ -8,7 +8,7 @@ This section outlines the architecture of the `cdk-opgeth` stack across its thre
 
 Chains using the sovereign configuration benefit from fast deployment, OP compatibility, and Agglayer's pessimistic security model. No execution proofs are used.
 
-![cdk-opgeth-sovereign architecture](..img/cdk/CDK-opgeth-sovereign.png)
+![cdk-opgeth-sovereign architecture](../img/cdk/CDK-opgeth-sovereign.png)
 
 ### 🔧 OP Stack
 - **[OP Geth Client (EL)](https://github.com/ethereum-optimism/op-geth)**  
@@ -36,7 +36,7 @@ Chains using the sovereign configuration benefit from fast deployment, OP compat
 
 A configuration designed for off-chain data availability using alternative DA layers and ZK proofs via the SP1 prover.
 
-![cdk-opgeth-validium architecture](../CDK-opgeth-zkrollup.png)
+![cdk-opgeth-validium architecture](../img/cdk/CDK-opgeth-zkrollup.png)
 
 ### 🔧 OP Stack
 - **[OP Geth Client (EL)](https://github.com/ethereum-optimism/op-geth)**  
