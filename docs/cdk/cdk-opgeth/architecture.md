@@ -3,7 +3,7 @@
 This page outlines the full system architecture for CDK-opgeth across supported and upcoming modes.
 
 ## 🖥️ Sovereign Mode (Live)
-![CDK-opgeth Sovereign](../img/cdk/CDK-opgeth-sovereign.png)
+![CDK-opgeth Sovereign](../../img/cdk/CDK-opgeth-sovereign.png)
 
 | Layer         | Component           | Description                              | Repository |
 |---------------|----------------------|------------------------------------------|------------|
@@ -35,7 +35,7 @@ This page outlines the full system architecture for CDK-opgeth across supported 
 |              | Ethereum Bridge      | Final settlement                         | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts) |
 
 ## 🔒 zkRollup Mode (In Development)
-![CDK-opgeth zkRollup](../img/cdk/CDK-opgeth-zkrollup.png)
+![CDK-opgeth zkRollup](../../img/cdk/CDK-opgeth-zkrollup.png)
 
 | Layer         | Component           | Description                              | Repository |
 |---------------|----------------------|------------------------------------------|------------|

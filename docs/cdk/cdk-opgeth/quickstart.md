@@ -29,7 +29,7 @@ This will:
 * Deploy op-geth, op-node, and op-batcher
 * Deploy Aggkit and op-succinct infrastructure
 
-![Kurtosis service output](../cdk-opgeth-quickstart-1.png)
+![Kurtosis service output](../../img/cdk/cdk-opgeth-quickstart-1.png)
 
 ---
 
@@ -48,6 +48,7 @@ polycli ulxly bridge asset \
 ```
 
 📸 `cdk-opgeth-quickstart-2.png`
+![Kurtosis service output](../../img/cdk/cdk-opgeth-quickstart-2.png)
 
 ---
 
@@ -64,7 +65,7 @@ polycli ulxly bridge asset \
 If successful, you'll see a transaction confirmation.
 
 📸 `cdk-opgeth-quickstart-3.png`
-
+![Kurtosis service output](../../img/cdk/cdk-opgeth-quickstart-3.png)
 ---
 
 ## 4. Check Balance on L2
@@ -76,7 +77,7 @@ cast balance --ether \
 ```
 
 📸 `cdk-opgeth-quickstart-4.png`
-
+![Kurtosis service output](../../img/cdk/cdk-opgeth-quickstart-4.png)
 ---
 
 ## 5. Send a Transaction on L2 (Inscription)
@@ -92,7 +93,7 @@ cast send \
 This command sends a transaction with `Hello Agglayer!` embedded in the calldata.
 
 📸 `cdk-opgeth-quickstart-5.png`
-
+![Kurtosis service output](../../img/cdk/cdk-opgeth-quickstart-5.png)
 ---
 
 ## 6. View the Inscription
