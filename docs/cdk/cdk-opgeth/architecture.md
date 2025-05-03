@@ -1,95 +1,52 @@
-# 🖥️ cdk-opgeth Architecture
+# CDK-opgeth Architecture
 
-This section outlines the architecture of the `cdk-opgeth` stack across its three configurations: **Sovereign**, **Validium**, and **zkRollup**. All configurations use the OP Stack, AggKit, and Agglayer components to deliver performant, Ethereum-compatible L2s with ZK-backed infrastructure.
+This page outlines the full system architecture for CDK-opgeth across supported and upcoming modes.
 
----
+## 🖥️ Sovereign Mode (Live)
+![CDK-opgeth Sovereign](../img/cdk/CDK-opgeth-sovereign.png)
 
-## 📘 cdk-opgeth-sovereign
+| Layer         | Component           | Description                              | Repository |
+|---------------|----------------------|------------------------------------------|------------|
+| OP Stack     | OP Geth              | EL (Execution Layer)                     | [op-geth](https://github.com/ethereum-optimism/op-geth) |
+|              | OP Node              | CL (Consensus Layer)                     | [optimism](https://github.com/ethereum-optimism/optimism) |
+| Aggkit       | AggOracle            | GER update component                     | [aggkit](https://github.com/agglayer/aggkit) |
+|              | AggSender            | Sends certificates to Agglayer           | — |
+|              | Bridge API           | Cross-chain messaging                    | [bridge-service](https://github.com/0xPolygonHermez/zkevm-bridge-service) |
+| DA           | OP Batcher           | Data to Ethereum L1                      | [optimism](https://github.com/ethereum-optimism/optimism) |
+|              | Agglayer             | Bridge/messaging network                 | [agglayer](https://github.com/agglayer/agglayer) |
+| Contracts    | OP-Contracts-L1      | Bedrock contracts (L1)                   | [v0.0.11](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11) |
+|              | OP-Contracts-L2      | Bedrock contracts (L2)                   | [v0.0.11](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11) |
+|              | Ethereum Bridge      | Final settlement                         | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts) |
 
-Chains using the sovereign configuration benefit from fast deployment, OP compatibility, and Agglayer's pessimistic security model. No execution proofs are used.
+## 🧪 Validium Mode (In Development)
 
-![cdk-opgeth-sovereign architecture](../img/cdk/CDK-opgeth-sovereign.png)
+| Layer         | Component           | Description                              | Repository |
+|---------------|----------------------|------------------------------------------|------------|
+| OP Stack     | OP Geth              | EL (Execution Layer)                     | [op-geth](https://github.com/ethereum-optimism/op-geth) |
+|              | OP Node              | CL (Consensus Layer)                     | [optimism](https://github.com/ethereum-optimism/optimism) |
+|              | OP Proposer          | Prover publishing logic                  | [optimism](https://github.com/ethereum-optimism/optimism) |
+| Aggkit       | AggOracle            | GER update component                     | [aggkit](https://github.com/agglayer/aggkit) |
+|              | AggSender            | Sends certificates to Agglayer           | — |
+|              | Bridge API           | Cross-chain messaging                    | [bridge-service](https://github.com/0xPolygonHermez/zkevm-bridge-service) |
+| DA           | Alt-DA               | TBD data availability network            | [alt-da-mode](https://docs.optimism.io/stack/beta-features/alt-da-mode) |
+|              | Agglayer             | Bridge/messaging network                 | [agglayer](https://github.com/agglayer/agglayer) |
+| Prover       | SP1 Prover           | zkVM proofs                              | [sp1](https://github.com/succinctlabs/sp1) |
+| Contracts    | OP-Contracts-L1/L2   | Bedrock L1/L2 Contracts                  | [v0.0.11](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11) |
+|              | Ethereum Bridge      | Final settlement                         | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts) |
 
-### 🔧 OP Stack
-- **[OP Geth Client (EL)](https://github.com/ethereum-optimism/op-geth)**  
-- **[OP Node (CL)](https://github.com/ethereum-optimism/optimism)**
+## 🔒 zkRollup Mode (In Development)
+![CDK-opgeth zkRollup](../img/cdk/CDK-opgeth-zkrollup.png)
 
-### 🧩 AggKit
-- **[AggOracle](https://github.com/agglayer/aggkit):** Updates the Global Exit Root (GER)
-- **AggSender:** Sends Certificates to Agglayer
-- **[Bridge API](https://github.com/0xPolygonHermez/zkevm-bridge-service):** Handles chain messaging
-
-### 🗂️ Data Availability
-- **[OP Batcher](https://github.com/ethereum-optimism/optimism):** Sends data to Ethereum L1
-- **[Agglayer](https://github.com/agglayer/agglayer)**  
-- Agglayer Node  
-- Agglayer Prover  
-
-### 📜 Contracts
-- **[OP-Contracts-L1](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11)**  
-- **[OP-Contracts-L2](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11)**  
-- **[Ethereum Bridge Contracts](https://github.com/0xPolygonHermez/zkevm-contracts):** Ethereum L1 settlement
-
----
-
-## 📘 cdk-opgeth-validium *(In Development)*
-
-A configuration designed for off-chain data availability using alternative DA layers and ZK proofs via the SP1 prover.
-
-![cdk-opgeth-validium architecture](../img/cdk/CDK-opgeth-zkrollup.png)
-
-### 🔧 OP Stack
-- **[OP Geth Client (EL)](https://github.com/ethereum-optimism/op-geth)**  
-- **[OP Node (CL)](https://github.com/ethereum-optimism/optimism)**  
-- **[OP Proposer](https://github.com/ethereum-optimism/optimism)**
-
-### 🧩 AggKit
-- **[AggOracle](https://github.com/agglayer/aggkit)**  
-- AggSender  
-- **[Bridge API](https://github.com/0xPolygonHermez/zkevm-bridge-service)**
-
-### 🗂️ Data Availability
-- **[Alt-DA TBD](https://docs.optimism.io/stack/beta-features/alt-da-mode)**  
-- **[Agglayer](https://github.com/agglayer/agglayer)**  
-- Agglayer Node  
-- Agglayer Prover  
-
-### 📜 Contracts
-- **[OP-Contracts-L1](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11)**  
-- **[OP-Contracts-L2](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11)**  
-- **[Ethereum Bridge Contracts](https://github.com/0xPolygonHermez/zkevm-contracts)**
-
-### 🔐 Prover Network
-- **[SP1 Prover](https://github.com/succinctlabs/sp1):** Generates zkVM proofs
-
----
-
-## 📘 cdk-opgeth-zkrollup *(In Development)*
-
-A full ZK Rollup configuration that uses on-chain DA and the SP1 prover for trustless finality.
-
-![cdk-opgeth-zkrollup architecture](../CDK-opgeth-zkrollup.png)
-
-### 🔧 OP Stack
-- **[OP Geth Client (EL)](https://github.com/ethereum-optimism/op-geth)**  
-- **[OP Node (CL)](https://github.com/ethereum-optimism/optimism)**  
-- **[OP Proposer](https://github.com/ethereum-optimism/optimism)**
-
-### 🧩 AggKit
-- **[AggOracle](https://github.com/agglayer/aggkit)**  
-- AggSender  
-- **[Bridge API](https://github.com/0xPolygonHermez/zkevm-bridge-service)**
-
-### 🗂️ Data Availability
-- **Ethereum DA:** Native Ethereum protocol  
-- **[Agglayer](https://github.com/agglayer/agglayer)**  
-- Agglayer Node  
-- Agglayer Prover  
-
-### 📜 Contracts
-- **[OP-Contracts-L1](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11)**  
-- **[OP-Contracts-L2](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11)**  
-- **[Ethereum Bridge Contracts](https://github.com/0xPolygonHermez/zkevm-contracts)**
-
-### 🔐 Prover Network
-- **[SP1 Prover](https://github.com/succinctlabs/sp1)**
+| Layer         | Component           | Description                              | Repository |
+|---------------|----------------------|------------------------------------------|------------|
+| OP Stack     | OP Geth              | EL (Execution Layer)                     | [op-geth](https://github.com/ethereum-optimism/op-geth) |
+|              | OP Node              | CL (Consensus Layer)                     | [optimism](https://github.com/ethereum-optimism/optimism) |
+|              | OP Proposer          | Prover publishing logic                  | [optimism](https://github.com/ethereum-optimism/optimism) |
+| Aggkit       | AggOracle            | GER update component                     | [aggkit](https://github.com/agglayer/aggkit) |
+|              | AggSender            | Sends certificates to Agglayer           | — |
+|              | Bridge API           | Cross-chain messaging                    | [bridge-service](https://github.com/0xPolygonHermez/zkevm-bridge-service) |
+| DA           | Ethereum DA          | On-chain data storage                    | — (uses Ethereum L1) |
+|              | Agglayer             | Bridge/messaging network                 | [agglayer](https://github.com/agglayer/agglayer) |
+| Prover       | SP1 Prover           | zkVM proofs                              | [sp1](https://github.com/succinctlabs/sp1) |
+| Contracts    | OP-Contracts-L1/L2   | Bedrock L1/L2 Contracts                  | [v0.0.11](https://github.com/ethereum-optimism/optimism/releases/tag/op-deployer%2Fv0.0.11) |
+|              | Ethereum Bridge      | Final settlement                         | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts) |

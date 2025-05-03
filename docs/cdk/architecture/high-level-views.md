@@ -1,73 +1,40 @@
-This section outlines the architecture of the `cdk-erigon` stack across its three configurations: **Sovereign**, **Validium**, and **zkRollup**. All versions are designed for high-throughput chains with native token support, deep customization, and optional ZK security.
----
+## 💻 Sovereign Mode (Live)
 
-## 📘 cdk-erigon-sovereign
+| Layer         | Component           | Description                              | Repository |
+|---------------|----------------------|------------------------------------------|------------|
+| CDK Stack    | CDK-Erigon           | Combined EL + CL client                  | [cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon) |
+| Aggkit       | AggOracle            | GER update component                     | [aggkit](https://github.com/agglayer/aggkit) |
+|              | AggSender            | Sends certificates to Agglayer           | — |
+|              | Bridge API           | Cross-chain messaging                    | [bridge-service](https://github.com/0xPolygonHermez/zkevm-bridge-service) |
+| DA           | Agglayer             | Native Agglayer connectivity             | [agglayer](https://github.com/agglayer/agglayer) |
+| Contracts    | Ethereum Bridge      | Final settlement                         | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts) |
 
-A production-grade configuration using pessimistic proofs and Agglayer for cross-chain settlement.
+## 🧪 Validium Mode
 
-### 🧱 CDK-Erigon Stack
-- **[CDK-Erigon (EL + CL)](https://github.com/0xPolygonHermez/cdk-erigon)**
+| Layer         | Component           | Description                              | Repository |
+|---------------|----------------------|------------------------------------------|------------|
+| CDK Stack    | CDK-Erigon           | EL + CL client                           | [cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon) |
+| CDK          | Aggregator           | Handles sequencing                       | — |
+|              | Sequence Sender      | Submits blocks to DA                     | — |
+|              | Bridge API           | Messaging layer                          | [bridge-service](https://github.com/0xPolygonHermez/zkevm-bridge-service) |
+| DA           | Custom DAC           | Off-chain DA                             | [cdk-data-availability](https://github.com/0xPolygon/cdk-data-availability) |
+|              | Agglayer             | Messaging/bridge layer                   | [agglayer](https://github.com/agglayer/agglayer) |
+| Prover       | Hermez Prover        | zk-SNARK based prover                    | [zkevm-prover](https://github.com/0xPolygonHermez/zkevm-prover) |
+| Contracts    | Ethereum Bridge      | Final settlement                         | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts) |
 
-### 🧩 AggKit
-- **[AggOracle](https://github.com/agglayer/aggkit):** Updates the Global Exit Root (GER)  
-- **AggSender:** Sends Certificates to Agglayer  
-- **[Bridge API](https://github.com/0xPolygonHermez/zkevm-bridge-service):** Manages cross-chain messages  
+## 🔒 zkRollup Mode
 
-### 🗂️ Data Availability & Settlement
-- **[Ethereum Bridge Contracts](https://github.com/0xPolygonHermez/zkevm-contracts)**  
-- **[Agglayer](https://github.com/agglayer/agglayer)**  
-- Agglayer Node  
-- Agglayer Prover
+| Layer         | Component           | Description                              | Repository |
+|---------------|----------------------|------------------------------------------|------------|
+| CDK Stack    | CDK-Erigon           | EL + CL client                           | [cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon) |
+| CDK          | Aggregator           | Handles sequencing                       | — |
+|              | Sequence Sender      | Submits blocks to L1                     | — |
+|              | Bridge API           | Messaging layer                          | [bridge-service](https://github.com/0xPolygonHermez/zkevm-bridge-service) |
+| DA           | Ethereum DA          | On-chain data storage                    | — (uses Ethereum L1) |
+|              | Agglayer             | Messaging/bridge layer                   | [agglayer](https://github.com/agglayer/agglayer) |
+| Prover       | Hermez Prover        | zk-SNARK based prover                    | [zkevm-prover](https://github.com/0xPolygonHermez/zkevm-prover) |
+| Contracts    | Ethereum Bridge      | Final settlement                         | [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts) |
 
----
-
-## 📘 cdk-erigon-validium
-
-An off-chain DA configuration backed by DAC committees and zk-SNARK proofs. Offers cheaper costs but will be sunset.
-
-### 🧱 CDK-Erigon Stack
-- **[CDK-Erigon (EL + CL)](https://github.com/0xPolygonHermez/cdk-erigon)**  
-- Sequence Sender  
-- Aggregator  
-
-### 🧩 Messaging
-- **[Bridge API](https://github.com/0xPolygonHermez/zkevm-bridge-service)**  
-- **[Ethereum Bridge Contracts](https://github.com/0xPolygonHermez/zkevm-contracts)**
-
-### 🗂️ Data Availability
-- **[Custom DAC](https://github.com/0xPolygon/cdk-data-availability):** Off-chain DA module  
-- **[Agglayer](https://github.com/agglayer/agglayer)**  
-- Agglayer Node
-
-### 🔐 Prover Network
-- **[Hermez Prover](https://github.com/0xPolygonHermez/zkevm-prover):** zk-SNARK proof generator
-
----
-
-## 📘 cdk-erigon-zkrollup
-
-A ZK Rollup mode using full Ethereum on-chain data availability and zk-SNARK proofs for trustless finality.
-
-![High level view of cdk-erigon-zkrollup stack](../../img/cdk/Full-execution-proofs-diagram.jpg)
-
-### 🧱 CDK-Erigon Stack
-- **[CDK-Erigon (EL + CL)](https://github.com/0xPolygonHermez/cdk-erigon)**  
-- Sequence Sender  
-- Aggregator  
-
-### 🧩 Messaging
-- **[Bridge API](https://github.com/0xPolygonHermez/zkevm-bridge-service)**  
-- **[Ethereum Bridge Contracts](https://github.com/0xPolygonHermez/zkevm-contracts)**
-
-### 🗂️ Data Availability
-- **Ethereum DA:** On-chain DA via Ethereum  
-- **[Agglayer](https://github.com/agglayer/agglayer)**  
-- Agglayer Node
-
-### 🔐 Prover Network
-- **[Hermez Prover](https://github.com/0xPolygonHermez/zkevm-prover):** zk-SNARK proof generator
-
----
 
 ### User Data Flow
 

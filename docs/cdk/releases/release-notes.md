@@ -1,24 +1,27 @@
-_Last updated: December 2024_
+# Benefits
 
-Fork ID 12 brings significant updates to the Polygon CDK stack, enhancing performance, scalability, and the developer experience. This release focuses on improvements across the client layer, proving systems, and developer tooling, making it easier to build and operate high-performance Layer 2 chains.
+## Multistack Architecture
+Choose between stacks based on your project needs:
+- `cdk-opgeth` offers fast launch times and the familiarity of Geth and OP Stack
+- `cdk-erigon` provides granular control and customization, from gas tokens to core stack components
 
----
+## Unified Liquidity and State
+CDK chains are Agglayer-native, meaning they share liquidity, state, and messaging by default—powering cross-chain UX and composable dApps.
 
-### Key Updates
+## Zero-Knowledge Security
+Every chain mode is ZK-backed:
+- **Sovereign**: Optimized for cost with pessimistic proofs
+- **Validium**: Off-chain data, on-chain integrity
+- **zkRollup**: Full ZK security and scalability
 
-#### Erigon Integration
-- Faster syncing for quicker chain setup and operation.
-- Improved transaction throughput and resource efficiency.
-- Full compatibility with Ethereum tools and infrastructure.
+## EVM-Equivalent Development
+Build using the same tooling, smart contracts, and workflows you're already familiar with. 100% EVM compatibility, zero rewriting.
 
-#### Proving System Enhancements
-- Increased capacity for handling complex transactions and higher volumes.
-- Faster proof generation for quicker deployment and smoother operations.
+## Accelerated Deployment
+Reduce time-to-launch with:
+- Open-source components
+- Preconfigured Kurtosis local dev environments
+- Implementation support from Conduit (cdk-opgeth) and Gateway.fm (cdk-erigon) for production ready chains
 
-#### Developer Tooling Improvements
-- Simplified CLI for easier chain deployment and configuration.
-- Updated documentation with improved guides for developers.
-
-#### Full Execution Proofs
-- Comprehensive validation: Verifies that all state transitions executed by the underlying VM (such as Polygon zkEVM) adhere to the protocol’s specifications.
-- Flexibility across modes: Supports both rollup and validium modes, providing scalability and security tailored to different use cases.
+## Infrastructure for Aggregated Web3
+With CDK, you're not building a siloed L2—you’re contributing to an aggregated, interoperable blockchain future.
