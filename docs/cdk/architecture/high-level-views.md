@@ -1,8 +1,7 @@
 This section describes the core components and flow of the `cdk-erigon` configuration across its three main deployment modes: **sovereign**, **validium**, and **zkRollup**. These configurations vary primarily in data availability and prover setup, while sharing the same core Erigon-based client and bridge infrastructure.
 
----
-
-## ✅ `cdk-erigon-sovereign`
+## `cdk-erigon-sovereign`
+![CDK-erigon-sovereign](../../img/cdk/Pessimistic-proofs-diagram.jpg)
 
 | **Component** | **Description / Link** |
 | --- | --- |
@@ -15,23 +14,8 @@ This section describes the core components and flow of the `cdk-erigon` configur
 |  | Agglayer Node — Participates in Agglayer |
 |  | Agglayer Prover — Generates validity proofs |
 
----
-
-## ✅ `cdk-erigon-validium`
-
-| **Component** | **Description / Link** |
-| --- | --- |
-| **Execution + Consensus Layer** | [CDK-Erigon](https://github.com/0xPolygonHermez/cdk-erigon) |
-| **Internal CDK Infrastructure** | Sequence Sender and Aggregator — build and send transaction batches |
-| **Bridge API** | [zkEVM Bridge Service](https://github.com/0xPolygonHermez/zkevm-bridge-service) |
-| **Ethereum Bridge Contracts** | [zkEVM Contracts](https://github.com/0xPolygonHermez/zkevm-contracts) |
-| **Data Availability Layer** | [Custom DAC](https://github.com/0xPolygon/cdk-data-availability) — Off-chain data availability committee |
-| **Agglayer Network** | [Agglayer](https://github.com/agglayer/agglayer), Agglayer Node |
-| **Prover Network** | [Hermez Prover](https://github.com/0xPolygonHermez/zkevm-prover) — zk-SNARK based proof generator |
-
----
-
-## ✅ `cdk-erigon-zkrollup`
+## `cdk-erigon-zkrollup`
+![CDK-erigon-zkrollup](../../img/cdk/Full-execution-proofs-diagram.jpg)
 
 | **Component** | **Description / Link** |
 | --- | --- |
@@ -43,15 +27,24 @@ This section describes the core components and flow of the `cdk-erigon` configur
 | **Agglayer Network** | [Agglayer](https://github.com/agglayer/agglayer), Agglayer Node |
 | **Prover Network** | [Hermez Prover](https://github.com/0xPolygonHermez/zkevm-prover) — zk-SNARK based proof generator |
 
----
+## `cdk-erigon-validium`
+> 💡 **Note:** This mode shares the same architecture as `zkrollup`, but uses an alternative data availability (DA) layer.
+
+| **Component** | **Description / Link** |
+| --- | --- |
+| **Execution + Consensus Layer** | [CDK-Erigon](https://github.com/0xPolygonHermez/cdk-erigon) |
+| **Internal CDK Infrastructure** | Sequence Sender and Aggregator — build and send transaction batches |
+| **Bridge API** | [zkEVM Bridge Service](https://github.com/0xPolygonHermez/zkevm-bridge-service) |
+| **Ethereum Bridge Contracts** | [zkEVM Contracts](https://github.com/0xPolygonHermez/zkevm-contracts) |
+| **Data Availability Layer** | [Custom DAC](https://github.com/0xPolygon/cdk-data-availability) — Off-chain data availability committee |
+| **Agglayer Network** | [Agglayer](https://github.com/agglayer/agglayer), Agglayer Node |
+| **Prover Network** | [Hermez Prover](https://github.com/0xPolygonHermez/zkevm-prover) — zk-SNARK based proof generator |
 
 ### User Data Flow
 
 The following diagram sequentially depicts the user data flow for the CDK FEP config in validium mode using a mock prover and an Agglayer connection.
 
 ![High level view of CDK user data flow](../../img/cdk/cdk-user-data-flow.svg)
-
----
 
 ### Sequential Interactions
 
@@ -65,8 +58,6 @@ The following diagram sequentially depicts the user data flow for the CDK FEP co
 8. The aggregator sends batches to the **provers**.
 9. The aggregator submits the final proof to the **Agglayer**.
 10. The Agglayer submits the final proof to the **L1 smart contract domain**.
-
----
 
 ### Mermaid Sequence Diagram
 
