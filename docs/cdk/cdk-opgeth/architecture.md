@@ -37,6 +37,7 @@ This page outlines the full system architecture for CDK-opgeth across supported 
 ---
 
 ### ⚙️ `cdk-opgeth-validium` *(Not live yet)*
+> 💡 **Note:** This mode shares the same architecture as `zkrollup`, but uses an alternative data availability (DA) layer.
 
 | Component                  | Description / Link                                                                                                      |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------|
