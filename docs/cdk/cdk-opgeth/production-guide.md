@@ -65,7 +65,7 @@ You will receive:
 
 ---
 
-## 🌱 Genesis File Generation
+## Genesis File Generation
 
 ### Option Selection
 
