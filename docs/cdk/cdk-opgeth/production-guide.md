@@ -1,6 +1,6 @@
 # Production Deployment Guide
 
-Welcome! This document provides a comprehensive, step-by-step guide to deploying a **Pessimistic Proofs (PP)** network with support from **Polygon Labs**.
+Welcome! This document provides a comprehensive, step-by-step guide to deploying a **Pessimistic Proofs (PP)** (cdk-opgeth-sovereign) network with support from **Polygon Labs**.
 
 ---
 
@@ -31,7 +31,7 @@ export DEPLOYER_PRIVATE_KEY=0x0000000000000000000000000000000000000000
 
 To initiate the rollup creation:
 
-1. The **Implementation Partner (IP)** must submit a request to Polygon Labs.
+1. The **Implementation Provider (IP)** must submit a request to Polygon Labs.
 2. Use the [Polygon Support Portal](https://polygon.atlassian.net/servicedesk/customer/portal/22) to raise a support ticket.
 
 #### Required Parameters
