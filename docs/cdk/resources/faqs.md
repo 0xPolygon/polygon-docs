@@ -1,23 +1,41 @@
-## What is the Chain Development Kit (CDK)?
-CDK is a multistack toolkit by Polygon Labs for building Ethereum L2 chains with native Agglayer integration. It offers developers stack flexibility, shared liquidity, and zero-knowledge security options.
+This section answers common questions about the Agglayer Chain Development Kit (CDK), including multistack support, execution stack differences, Agglayer integration, and how to get started. If you're exploring CDK for development or deployment, this is a great place to begin.
+
+
+## What is the Agglayer Chain Development Kit (CDK)?
+
+CDK is a toolkit for launching Ethereum Layer 2 chains that come with **native Agglayer connectivity**. It supports multiple stacks—such as **cdk-opgeth** and **cdk-erigon**—allowing developers to build **performant, interoperable chains** without being locked into a single architecture.
 
 ## What does it mean for CDK to go multistack?
-CDK’s multistack approach means you can build with OP Stack (`cdk-opgeth`), Erigon (`cdk-erigon`), and more stacks coming soon—all while maintaining Agglayer-native connectivity.
+
+**Multistack support** means CDK allows developers to select from different execution stacks based on their needs. Each stack is fully integrated with Agglayer and offers unique benefits around **performance**, **tooling**, and **flexibility**.
 
 ## What is cdk-opgeth, and what does it offer?
-Built on Geth (Ethereum’s leading client), `cdk-opgeth` supports fast launch timelines, Sovereign mode with pessimistic proof security, and upcoming zkRollup/Validium options via SP1 prover.
+
+**cdk-opgeth** is a CDK stack based on Ethereum’s **Geth client** and the **OP Stack** architecture. It offers a **familiar developer environment**, **high throughput**, **native Agglayer connectivity**, and **future support for zkRollup and Validium modes**.
 
 ## How does cdk-erigon differ from cdk-opgeth?
-`cdk-erigon` offers deep customization for projects that need native tokens, advanced pricing, and tailored performance. It’s ZK-powered and enterprise-ready with proven production usage.
+
+**cdk-erigon** is optimized for **customization** and **ZK security**. It supports:
+- Native gas tokens
+- Three rollup modes (zkRollup, Validium, Sovereign)
+- Advanced configuration options
+
+**cdk-opgeth** is designed for developers familiar with the OP Stack who want **familiar tooling** and **performance**, with an **upgrade path to ZK**.
 
 ## What is a sovereign chain in CDK?
-Sovereign mode enables chains to skip full ZK proving while maintaining security through pessimistic proofs. It ensures no chain can extract more than it deposits—low-cost and safe.
+
+A **sovereign chain** operates **without a prover**. Instead, it uses **pessimistic proofs via Agglayer** to enforce safety and ensure that no chain can withdraw more than it deposits. This enables **secure, low-cost execution** with **fast finality**.
 
 ## Why is Agglayer integration important for CDK chains?
-Agglayer provides a unified liquidity layer, shared state, and seamless UX across all connected chains—eliminating fragmentation and powering aggregation.
 
-## Do I need to use Agglayer with CDK chains?
-Agglayer connectivity is enabled by default, but technically optional. Developers can opt out for isolated deployments.
+**Agglayer** enables CDK chains to share **liquidity**, **state**, and **messaging** across an interconnected network. This creates **seamless user experiences** and **interoperability** between chains, regardless of their execution stack.
 
-## How can I start building a CDK chain?
-Check out the CDK Quickstart guides. For production-ready launches, contact implementation providers like Conduit (cdk-opgeth) or Gateway.fm (cdk-erigon).
+## Do I need to use Agglayer with CDK?
+
+CDK chains are **connected to Agglayer by default**. While it's technically possible to disable this, doing so removes the benefits of **unified liquidity** and **cross-chain UX**.
+
+## How can I start building with CDK?
+
+Visit the **CDK developer documentation** to deploy a **local testnet**. For **production-ready deployments**:
+- Contact **Conduit** for **cdk-opgeth**
+- Contact **Gateway.fm** for **cdk-erigon**

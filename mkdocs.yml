@@ -54,7 +54,7 @@ nav:
   - CDK:
       - CDK: cdk/index.md
       - Overview: cdk/overview.md
-      - Benefits: cdk/releases/release-notes.md
+      - Benefits: cdk/benefits.md
       - FAQs: cdk/resources/faqs.md
       - cdk-opgeth:
           - Quickstart:
