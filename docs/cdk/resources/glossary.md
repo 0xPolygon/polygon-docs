@@ -4,45 +4,77 @@ comments: true
 ---
 -->
 
-This glossary provides definitions for technical terminology and concepts that commonly occur throughout the CDK docs space.
+This glossary defines technical concepts used throughout the Agglayer CDK documentation. Whether you're building with `cdk-opgeth`, `cdk-erigon`, or deploying a multistack rollup, this reference provides clear definitions of key terms and components.
 
-### AggLayer v1 (AL1)
-The AggLayer is the interoperability layer that CDK chains connect to, enabling features such as seamless and efficient cross-chain communication, unified liquidity, and more. AggLayer v1 (AL1), is the first version of many planned iterations that relies on ZK checks to ensure operational soundness, and a unified bridge infrastructure.
-Read more on the AggLayer in the Polygon blog [here](https://polygon.technology/blog/wtf-is-polygon?utm_source=twitter&utm_medium=social&utm_content=wtf-is-polygon).
+### Agglayer
 
-### Chain operator
-The IP, or individual(s), who own a chain and are responsible for chain operation and maintenance. This includes tasks such as transaction validation, block production, and ensuring the security and integrity of the chain, etc., any combination of which a chain operator may perform personally in varying degrees.
+Agglayer is a cross-chain settlement layer that connects the liquidity and users of any blockchain for fast, low-cost interoperability and growth. It enables trustless bridging, shared messaging, and unified state across Layer 2s using zero-knowledge (ZK) proofs.
 
-### Data availability
-Data availability in the context of modular rollups refers to the idea that transaction callback data needs to be available to L1 network actors where transactions are settled and finalized, so it can be used to verify transaction execution if necessary. 
+[Visit Agglayer.dev](https://www.agglayer.dev/)
+
+### Agglayer CDK (Chain Development Kit)
+
+A multistack toolkit for building custom Ethereum Layer 2 chains. Each CDK chain is natively connected to Agglayer for seamless interoperability, shared liquidity, and integrated messaging. Developers can choose between stacks such as `cdk-opgeth` and `cdk-erigon`, with more to be added in the future.
+
+### CDK-erigon
+
+An execution stack in the Agglayer CDK optimized for customization and ZK security. It provides native token support, custom gas metering, multiple rollup modes (zkRollup, Validium, Sovereign), and extensive configuration options.
+
+### CDK-opgeth
+
+An execution stack based on Ethereum’s Geth client and the OP Stack architecture. Designed for fast, high-throughput deployments and OP Stack familiarity, with native Agglayer integration. Supports Sovereign mode now, with zkRollup and Validium support forthcoming.
+
+### Chain Operator
+
+An individual, team, or DAO responsible for launching and managing a CDK-based chain. Operators may handle sequencing, bridge operations, infrastructure deployment, data availability configuration, and other network responsibilities.
+
+### Data Availability (DA)
+
+The requirement that transaction data remains accessible to Layer 1 validators for verifying off-chain execution. DA ensures the security of modular rollups. CDK chains can use on-chain DA (e.g., Ethereum), off-chain DACs, or local solutions.
 
 ### Data Availability Committee (DAC)
-Polygon CDK validiums connect to a DAC to guarantee data availability. The DAC nodes fetch tx data from the sequencer, validate it independently, and then sign it guaranteeing its validity before storing it in the local database. The data remains available to be fetched by other networks actors across all DAC nodes.
 
-### LxLy bridge
-The native bridge infrastructure of CDK chains that allows transfer of assets and messages between L2 and L1 (typically Ethereum).
+A decentralized set of nodes that ensures off-chain data availability for CDK chains using Validium mode. DAC nodes fetch transaction data, verify it, sign it, and store it for later retrieval.
 
-### LxLy messenger
-A contract on the LxLy bridge utilizes its message passing capabilities to pass arbitrary messages between L1 and L2.  This is not a separate component, but part of the LxLy bridge's architecture.
+### Implementation Providers (IPs)
 
-### POL (Token)
-The POL token powers the Polygon ecosystem through a native re-staking protocol that allows token holders to validate multiple chains, and perform multiple roles on each of those chains (sequencing, ZK proof generation, participation in data availability committees, etc.) 
+External infrastructure teams that assist developers with launching and maintaining CDK chains. Notable IPs include Conduit (for `cdk-opgeth`) and Gateway.fm (for `cdk-erigon`).
+
+### Multistack
+
+An architectural feature of CDK that allows developers to select from multiple execution stacks based on their project needs. All stacks integrate natively with Agglayer.
 
 ### Rollups
-Rollups refer to blockchain scaling solutions (in the context of Ethereum) that carry out transaction execution on L2, and then post updated state data to a contract on L1. There are different types rollups, two of the most popular being optimistic, and zero-knowledge (ZK) rollups. Follow the links below to learn more:
+
+Layer 2 solutions that execute transactions off-chain and post state data to Ethereum. CDK supports multiple rollup types, including:
 
 - [Optimistic rollups](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/)
 - [ZK rollups](https://ethereum.org/en/developers/docs/scaling/zk-rollups/)
+- Validium (ZK with off-chain DA)
+- Sovereign (non-ZK with pessimistic proofs)
+
+### Sovereign Mode
+
+A rollup configuration that does not use a ZK prover. Instead, Agglayer enforces security through pessimistic proofs, ensuring that no chain can withdraw more than it deposits. Available in both `cdk-opgeth` and `cdk-erigon`.
 
 ### Stake the Bridge (STB)
-A feature of the [unified bridge](#unified-bridge) that lets CDK chain operators maintain control over the assets that are deposited to their respective networks, enabling them to implement staking mechanisms, investment strategies, and other custom features on L2.
 
-### Unified bridge
-A specific instance of an LxLy bridge that allows several chains to connect to it.  This instance is specific to the [AggLayer v1](#agglayer-v1-al1).
+A feature of the Unified Bridge that allows CDK chain operators to stake and manage assets deposited to their networks. Enables custom staking, liquidity incentives, or economic configurations at the L2 level.
 
-### Unified escrow (Master Escrow)
-The unified bridge's escrow contract that holds all the tokens that bridged (locked on L1), and natively minted on L2.
+### Unified Bridge
 
-### Validiums
-Validiums are a special kind of ZK rollup protocol that handles data availability off-chain instead of posting callback data to base layer Ethereum. CDK chains support deploying and running validium using a Data Availability Committee (DAC) as the DA solution.
-Learn more about validiums [here](https://ethereum.org/en/developers/docs/scaling/validium/).
+The shared bridge infrastructure for CDK chains, providing secure cross-chain asset transfers and messaging. Replaces the LxLy bridge. It supports shared escrow, sovereign and ZK rollup flows, and seamless Agglayer integration.
+
+### Unified Escrow
+
+A component of the Unified Bridge that holds tokens either bridged from Ethereum or minted natively on Layer 2. Ensures consistent accounting and solvency across all CDK chains.
+
+### Validium
+
+A rollup configuration that uses ZK proofs for execution but stores transaction data off-chain, reducing costs and increasing throughput. CDK Validium chains rely on DACs for off-chain data availability.
+
+[Learn more about Validium](https://ethereum.org/en/developers/docs/scaling/validium/)
+
+### ZK Proofs
+
+Zero-knowledge proofs validate computations without revealing input data. Agglayer uses ZK proofs to provide cryptographic guarantees for execution, enabling fast finality and trustless security across chains.
