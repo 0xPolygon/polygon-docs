@@ -22,49 +22,24 @@ hide:
    <div class="grid-item">
       <a href="./overview">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Understand the CDK</div>
+            <div class="feature-card-heading">Understand Agglayer CDK</div>
          </div>
-         <p class="feature-paragraph">A high-level overview of the CDK, its features and benefits.</p>
+         <p class="feature-paragraph">A high-level overview of what is Agglayer CDK, its features, and main configurations.</p>
       </a>
    </div>
    <div class="grid-item">
       <a href="./getting-started/local-deployment/">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">Try out the CDK locally</div>
+            <div class="feature-card-heading">The Key Benefits</div>
          </div>
-         <p class="feature-paragraph">Get started by deploying a chain on your local machine.</p>
+         <p class="feature-paragraph">An overview of the benefits, and why you would choose CDK.</p>
       </a>
    </div>
    <div class="grid-item">
       <a href="./concepts/layer2s">
          <div class="product-list-item-header">
-            <div class="feature-card-heading">CDK concepts</div>
+            <div class="feature-card-heading">The Most Common FAQs</div>
          </div>
-         <p class="feature-paragraph">Learn about the concepts behind the CDK.</p>
+         <p class="feature-paragraph">Frequently asked questions from developers, the community, and IPs.</p>
       </a>
    </div>
-    <div class="grid-item">
-      <a href="./architecture/cdk-zkevm">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">CDK architecture</div>
-         </div>
-         <p class="feature-paragraph">Dive deeper into the components of a CDK chain and how they interact.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="https://github.com/0xPolygon/cdk-validium-node" target="_blank">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Contribute to the CDK</div>
-         </div>
-         <p class="feature-paragraph">Get involved in building the open-source CDK stack on GitHub.</p>
-      </a>
-   </div>
-   <div class="grid-item">
-      <a href="https://discord.com/invite/0xpolygonRnD" target="_blank">
-         <div class="product-list-item-header">
-            <div class="feature-card-heading">Join the dev community</div>
-         </div>
-         <p class="feature-paragraph">Join our developer Discord server to ask questions and get help.</p>
-      </a>
-   </div>
-</div>
