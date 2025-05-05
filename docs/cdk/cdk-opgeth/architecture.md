@@ -1,4 +1,4 @@
-This section describes the core components and flow of the cdk-opgeth configuration across its three main deployment modes: sovereign, validium, and zkRollup. These configurations vary primarily in data availability and prover setup, while sharing the same core Geth-based client and OP stack components.
+This section describes the core components of the cdk-opgeth configuration across its three main deployment modes: sovereign, validium, and zkrollup. These configurations vary primarily in data availability and prover setup, while sharing the same core Geth-based client and OP stack components.
 
 ### `cdk-opgeth-sovereign`
 ![CDK-opgeth Sovereign](../../img/cdk/CDK-opgeth-sovereign.png)
