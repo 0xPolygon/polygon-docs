@@ -2,7 +2,7 @@
 
 > 💡 For building full production chains please work directly with IPs like Conduit and Gateway FM
 
-Welcome! This document provides a comprehensive, step-by-step guide to deploying a **Pessimistic Proof (PP)** (cdk-opgeth-sovereign) production-like devent. 
+This document provides a comprehensive, step-by-step guide to deploying a **Pessimistic Proof (PP)** (cdk-opgeth-sovereign) production-like devent. 
 
 ---
 
