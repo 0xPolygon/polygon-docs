@@ -15,7 +15,7 @@ Before starting, ensure you have:
 - [Docker](https://www.docker.com/) (or any other container orchestrator of your choice)
 - [Cast](https://book.getfoundry.sh/cast/)
 - [Polycli](https://github.com/0xPolygon/polygon-cli)
-- [Reference Repo] (https://github.com/0xPolygon/tnobayashi/tree/main/network)
+- [Reference Repo](https://github.com/0xPolygon/tnobayashi/tree/main/network)
 
 Export these variables:
 
