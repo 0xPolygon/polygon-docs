@@ -1,6 +1,8 @@
-# Production Deployment Guide
+# Devnet Deployment Guide
 
-Welcome! This document provides a comprehensive, step-by-step guide to deploying a **Pessimistic Proofs (PP)** (cdk-opgeth-sovereign) network with support from **Polygon Labs**.
+> 💡 For building full production chains please work directly with IPs like Conduit and Gateway FM
+
+Welcome! This document provides a comprehensive, step-by-step guide to deploying a **Pessimistic Proof (PP)** (cdk-opgeth-sovereign) production-like devent. 
 
 ---
 
@@ -10,9 +12,10 @@ Before starting, ensure you have:
 
 - A valid L1 RPC URL
 - A wallet address with Sepolia testnet funds (deployer)
-- [Docker](https://www.docker.com/)
+- [Docker](https://www.docker.com/) (or any other container orchestrator of your choice)
 - [Cast](https://book.getfoundry.sh/cast/)
 - [Polycli](https://github.com/0xPolygon/polygon-cli)
+- [Reference Repo] (https://github.com/0xPolygon/tnobayashi/tree/main/network)
 
 Export these variables:
 
@@ -270,7 +273,7 @@ docker compose up -d op-batcher
 
 ---
 
-### Polygon Components
+### Aggkit
 
 1. **Config**
 

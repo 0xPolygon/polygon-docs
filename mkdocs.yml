@@ -59,7 +59,7 @@ nav:
       - cdk-opgeth:
           - Quickstart:
             - Local Guide: cdk/cdk-opgeth/local-guide.md
-            - Production Guide: cdk/cdk-opgeth/production-guide.md
+            - Devnet Guide: cdk/cdk-opgeth/devnet-guide.md
           - Architecture: cdk/cdk-opgeth/architecture.md
       - cdk-erigon:
           - Quickstart: cdk/getting-started/local-deployment.md
