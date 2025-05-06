@@ -1,7 +1,5 @@
 # Devnet Deployment Guide
 
-> 💡 For building full production chains please work directly with IPs like Conduit and Gateway FM
-
 This document provides a comprehensive, step-by-step guide to deploying a **Pessimistic Proof (PP)** (cdk-opgeth-sovereign) production-like devent. 
 
 ---
@@ -15,7 +13,7 @@ Before starting, ensure you have:
 - [Docker](https://www.docker.com/) (or any other container orchestrator of your choice)
 - [Cast](https://book.getfoundry.sh/cast/)
 - [Polycli](https://github.com/0xPolygon/polygon-cli)
-- [Reference Repo](https://github.com/0xPolygon/tnobayashi/tree/main/network)
+- [Reference Repo](https://github.com/0xPolygon/tnobayashi/tree/main/network) (configuration files used in the guide)
 
 Export these variables:
 
