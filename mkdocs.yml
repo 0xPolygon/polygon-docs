@@ -56,12 +56,12 @@ nav:
       - Overview: cdk/overview.md
       - Benefits: cdk/benefits.md
       - FAQs: cdk/resources/faqs.md
-      - cdk-opgeth:
+      - CDK-opgeth:
           - Quickstart:
             - Local Guide: cdk/cdk-opgeth/local-guide.md
             - Devnet Guide: cdk/cdk-opgeth/devnet-guide.md
           - Architecture: cdk/cdk-opgeth/architecture.md
-      - cdk-erigon:
+      - CDK-erigon:
           - Quickstart: cdk/getting-started/local-deployment.md
           - Architecture: cdk/architecture/high-level-views.md
           - Create A Native Token: cdk/how-to/use-native-token.md
