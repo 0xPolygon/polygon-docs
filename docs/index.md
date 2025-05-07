@@ -72,9 +72,9 @@ hide:
 							</div>
 							<p class="feature-paragraph">Deploy a dApp or build infrastructure on zkEVM, an EVM-equivalent ZK rollup designed for security.</p>
 						</a>
-						<a href="cdk" class="flex-card-item w-inline-block">
+						<a href="https://docs.agglayer.dev/cdk/" class="flex-card-item w-inline-block">
 							<div class="product-list-item-header">
-								<div class="feature-card-heading">Polygon CDK</div>
+								<div class="feature-card-heading">Agglayer CDK</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
@@ -206,9 +206,9 @@ hide:
 						<p class="home-section-subtext">Are you ready to start building?</p>
 					</div>
 					<div class="flexbox">
-						<a href="cdk/getting-started/local-deployment/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
+						<a href="https://docs.agglayer.dev/cdk/cdk-opgeth/local-guide/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
-								<div class="feature-content-name">Polygon CDK: Deploy a local test rollup</div>
+								<div class="feature-content-name">Agglayer CDK: Deploy a local test rollup</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
@@ -245,14 +245,6 @@ hide:
 						<a href="zkEVM/get-started/setup-nodes/production-node/" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
 							<div class="feature-content-wrapper">
 								<div class="feature-content-name">Polygon zkEVM: Set up a zkNode</div>
-								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
-										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
-									</svg></div>
-							</div>
-						</a>
-						<a href="https://github.com/Snapchain/zkValidium-quickstart" class="home-feature-card w-inline-block"><img src="img/home/polygon-icon.svg" loading="lazy" alt="" class="feature-icon">
-							<div class="feature-content-wrapper">
-								<div class="feature-content-name">Polygon CDK: Create your own validium</div>
 								<div class="arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" display="block" width="100%" height="auto" viewbox="0 0 16 17" fill="none">
 										<path d="M9.98805 5.70133L3.41071 12.2787L4.58922 13.4572L11.1666 6.87976V12.2013H12.8333V4.03467H4.66665V5.70133H9.98805Z" fill="currentColor"></path>
 									</svg></div>
