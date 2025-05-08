@@ -1,12 +1,12 @@
-On the Polygon PoS network, validators stake their MATIC tokens as collateral to help secure the network. In return for their service, they earn rewards.
+On the Polygon PoS network, validators stake their POL tokens as collateral to help secure the network. In return for their service, they earn rewards.
 
 To leverage the PoS network's tokenomics, you'll need to participate in the network either as a validator, or a delegator.
 
-To be a validator, you need to [run a full validator node](../get-started/becoming-a-validator.md) and stake MATIC.
+To be a validator, you need to [run a full validator node](../get-started/becoming-a-validator.md) and stake POL.
 
 Also, check the [validator responsibilities](../get-started/becoming-a-validator.md#validator-responsibilities) page.
 
-To be a delegator, you need to [delegate MATIC to a validator](../how-to/delegate.md).
+To be a delegator, you need to [delegate POL to a validator](../how-to/delegate.md).
 
 ## How are validators incentivized?
 
