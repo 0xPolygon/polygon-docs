@@ -512,13 +512,6 @@ nav:
         - Tutorials: tools/dApp-development/third-party-tutorials.md
         - Data:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
-          - Covalent: tools/data/covalent.md
-          - DipDup: https://dipdup.io/docs/supported-networks/polygon
-          - Envio: tools/data/envio.md
-          - Flair: tools/data/flair.md
-          - Moralis: tools/data/moralis.md
-          - SQD (Subsquid): tools/data/sqd.md
-          - SubQuery: tools/data/subquery.md
           - The Graph: tools/data/thegraph.md
         - Storage: 
           - IPFS: tools/storage/ipfs.md
@@ -531,13 +524,6 @@ nav:
 
         - Wallets:
           - Getting started:  tools/wallets/getting-started.md
-          - Venly:
-              - Intro:  tools/wallets/venly/index.md
-              - Create Venly wallet:  tools/wallets/venly/create-wallet.md
-              - Venly wallet API:  tools/wallets/venly/wallet-api.md
-              - Venly widget: tools/wallets/venly/venly-widget.md
-          - Openfort: tools/wallets/openfort.md
-          - Particle Network:  tools/wallets/particle-network.md
           - WalletConnect:  tools/wallets/walletconnect.md
           - Reown:
               - Intro: tools/wallets/reown.md
