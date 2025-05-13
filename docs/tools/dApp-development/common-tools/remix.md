@@ -81,7 +81,7 @@ The `update` function is another public function that is similar to the constr
 
 Now, we have to deploy our smart contract on Amoy, the Polygon testnet. Not only does it cost money (e.g., gas fees) to deploy a smart contract on Polygon mainnet, but the contract is immutable and can't be changed once deployed. Therefore, it's best to deploy your smart contract to the testnet first.
 
-To deploy to the Amoy testnet, we have to connect to the web3 with a service like MetaMask, Brave, Portis, etc. We use MetaMask in this tutorial. Please follow this [guide to set up a MetaMask account](https://support.metamask.io/getting-started/getting-started-with-metamask/).
+To deploy to the Amoy testnet, we have to connect to the web3 with a service like MetaMask, Brave, etc. We use MetaMask in this tutorial. Please follow this [guide to set up a MetaMask account](https://support.metamask.io/getting-started/getting-started-with-metamask/).
 
 - Open Metamask. Click on the network dropdown menu (set to **Ethereum Mainnet** by default) and click on the **Add Network** button. MaticVigil provides a public endpoint and is rate-limited. Therefore, most developers use a free blockchain provider like [Alchemy](https://docs.alchemy.com/docs/how-to-add-polygon-to-metamask) or [Quicknode](https://www.quicknode.com/guides/smart-contract-development/how-to-deploy-a-smart-contract-on-maticpolygon#setting-up-metamask-with-polygon-node) to have a dedicated RPC endpoint with faster throughput AKA computing units per second (CUPs). You need to create a free account to get your private API key from one of these providers to put into the dedicated RPC endpoint URL below.
 

@@ -19,6 +19,9 @@ IPFS based storage allows you to simply store the CID for your content rather th
 
 ### Example projects
 
+!!! info "Note"
+    Please note that the content below might contain test networks that have been deprecated. You can always switch network details with the ones listed [here](http://docs.polygon.technology/tools/wallets/metamask/add-polygon-network/#add-a-network-manually).
+
 1. Tutorial in scaffold-eth that demonstrates how to mint an NFT on Polygon with IPFS - [link](https://github.com/scaffold-eth/scaffold-eth/tree/simple-nft-example).
 
 2. Building a full stack web3 app with Next.js, Polygon, Solidity, The Graph, IPFS, and Hardhat - [link](https://dev.to/dabit3/the-complete-guide-to-full-stack-web3-development-4g74).
