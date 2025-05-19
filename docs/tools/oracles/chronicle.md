@@ -6,7 +6,7 @@
 
 [Chronicle Protocol](https://chroniclelabs.org/) is a novel Oracle solution that has exclusively secured over $10B in assets for MakerDAO and its ecosystem since 2017. Chronicle overcomes the current limitations of transferring data on-chain by developing scalable, cost-efficient, decentralized, and verifiable Oracles, rewriting the rulebook on data transparency and accessibility.
 
-### Querying the price of MATIC using Chronicle
+### Querying the price of POL using Chronicle
 Chronicle contracts are read-protected by a whitelist, meaning you won't be able to read them on-chain without your address being added to the whitelist. On the Testnet, users can add themselves to the whitelist through the SelfKisser contract, a process playfully referred to as "kissing" themselves. For access to production Oracles on the Mainnet, please open a support ticket on [Discord](https://discord.com/invite/CjgvJ9EspJ) in the 🆘｜support channel.
 
 For the deployment addresses, please check out the [Dashboard](https://chroniclelabs.org/dashboard/oracles). 
@@ -18,24 +18,24 @@ pragma solidity ^0.8.16;
  * @title OracleReader
  * @notice A simple contract to read from Chronicle oracles
  * @dev To see the full repository, visit https://github.com/chronicleprotocol/OracleReader-Example.
- * @dev Addresses in this contract are hardcoded for the zkEVM Testnet.
+ * @dev Addresses in this contract are hardcoded for the zkEVM Cardona Testnet.
  * For other supported networks, check the https://chroniclelabs.org/dashboard/oracles.
  */
 contract OracleReader {
     /**
     * @notice The Chronicle oracle to read from.
-    * Chronicle_MATIC_USD_1 - 0x55a07a60cd9ed198B5Ba4360FF9800eBb6667388
-    * Network: zkEVM Testnet
+    * Chronicle_POL_USD_1 - 0x55a07a60cd9ed198B5Ba4360FF9800eBb6667388
+    * Network: zkEVM Cardona Testnet
     */
 
     IChronicle public chronicle = IChronicle(address(0x55a07a60cd9ed198B5Ba4360FF9800eBb6667388));
 
     /** 
     * @notice The SelfKisser granting access to Chronicle oracles.
-    * SelfKisser_1:0x0Dcc19657007713483A5cA76e6A7bbe5f56EA37d
-    * Network: zkEVM Testnet
+    * SelfKisser_1:0xCce64A8127c051E784ba7D84af86B2e6F53d1a09
+    * Network: zkEVM Cardona Testnet
     */
-    ISelfKisser public selfKisser = ISelfKisser(address(0x0Dcc19657007713483A5cA76e6A7bbe5f56EA37d));
+    ISelfKisser public selfKisser = ISelfKisser(address(0xCce64A8127c051E784ba7D84af86B2e6F53d1a09));
 
     constructor() {
         // Note to add address(this) to chronicle oracle's whitelist.
