@@ -1,184 +1,231 @@
+#!/usr/bin/env python3
 """
-Handles dynamic environment building and hosting through dynamically
-updated nginx.conf
+Fast multi-branch docs builder *with rich logging*.
 """
+
+from __future__ import annotations
 import argparse
-import ast
+import json
+import logging
 import os
 import shutil
 import subprocess
-import sys
-
+import time
+from functools import lru_cache
+from pathlib import Path
 
 HOSTED_SITE_DOMAIN = "docs-dev.polygon.technology"
 
 
-def parse_args():
-    """
-    Parses arguments passed from command line
-    """
-    parser = argparse.ArgumentParser(description="Parser to read arguments for build")
-    parser.add_argument("-env", "--environment", type=str,
-        help="Environment to handle build", default="dev"
-    )
-    args = parser.parse_args(sys.argv[1:])
-    parsed_env = args.environment.strip()
-    return parsed_env
+# ────────────────────────── logging setup ──────────────────────────────────── #
 
+def setup_logging(verbosity: int) -> None:
+    """
+    Configure root logger.
+    -0 : WARNING,  1 : INFO (default),  2 : DEBUG,  ≥3 : NOTSET
+    """
+    level = max(logging.WARNING - (verbosity * 10), logging.NOTSET)
+    fmt   = "%(asctime)s  %(levelname)-7s  %(message)s"
+    datef = "%H:%M:%S"
+    logging.basicConfig(level=level, format=fmt, datefmt=datef)
 
-def install_mkdocs_with_pipenv():
-    """
-    Builds a particular branch site.
-    Having a varying set of requirements can be handled by having each branch
-    build their dependencies and then running mkdocs build.
-    """
-    folder = os.getcwd()
-    subprocess.run(["pipenv", "install", "--site-packages"], cwd=folder, check=True)
-    subprocess.run(["pipenv", "install", "-r", "requirements.txt"], cwd=folder, check=True)
-    subprocess.run(["pipenv", "run", "mkdocs", "build"], cwd=folder, check=True)
+log = logging.getLogger(__name__)
 
-def copy_folder(source_dir, target_dir):
-    """
-    Copies contents from source directory to target directory
-    :param source_dir: Source directory from which contents are to be copied
-    :param target_dir: Target Directory where the contents are copied to.
-    """
-    os.makedirs(target_dir, exist_ok=True)
+# ────────────────────────── helpers ───────────────────────────────────────── #
 
-    for item in os.listdir(source_dir):
-        source_path = os.path.join(source_dir, item)
-        target_path = os.path.join(target_dir, item)
-
-        if os.path.isdir(source_path):
-            shutil.copytree(source_path, target_path, dirs_exist_ok=True)
-        else:
-            if os.path.exists(target_path):
-                os.remove(target_path)
-            shutil.copy2(source_path, target_path)
-
-def delete_folders(folder_paths):
+def run(cmd: list[str] | tuple[str, ...],
+        cwd: str | Path | None = None,
+        capture_output: bool = False) -> subprocess.CompletedProcess[str]:
     """
-    Cleans existing folders for app and branches before executing the builds
-    :param folder_paths: List of folders to be deleted under the current working directory
+    Wrapper around subprocess.run with detailed logging & timing.
+    Returns CompletedProcess; raises if non-zero exit code.
     """
-    for folder_path in folder_paths:
-        try:
-            shutil.rmtree(folder_path)
-            print(f"Folder {folder_path} deletion successful.")
-        except OSError as e:
-            print(f"Error deleting folder: {e}")
+    cmd_display = " ".join(cmd)
+    wd = str(cwd) if cwd else os.getcwd()
+    log.debug("RUN  %s (cwd=%s)", cmd_display, wd)
 
-def clone_data_to_branch_folder(branch_name, remote_url, parent_dir, pr_number=None):
-    """
-    Clones data to branch folder in branch/<PR Number> or branch/dev folder
-    :param branch_name: Branch to clone and build
-    :param remote_url: Remote url for the git repository
-    :param parent_dir: Parent directory to get context of where data is stored
-    :param pr_number: PR number for the branch to host data into the folder or 
-        environment name staging/prod
-    """
-    common_dir = "branch"
-    target_path = os.path.join(common_dir, pr_number)
-    os.makedirs(target_path, exist_ok=True)
-    os.chdir(target_path)
-    subprocess.run(["git", "init"], check=True)
-    subprocess.run(["git", "remote", "add", "origin", remote_url], check=True)
-    print(f"Checking out branch {branch_name}")
-    subprocess.run(["git", "fetch", "--depth", "1", "origin", branch_name], check=True)
-    subprocess.run([
-        "git", "checkout", "-b", branch_name, "--track",
-        f"origin/{branch_name}"
-    ], check=True)
-    install_mkdocs_with_pipenv()
-    source_dir = os.path.join(os.getcwd(), "site")
-    copy_folder(source_dir, os.path.join(parent_dir, "app", pr_number))
-    os.chdir(parent_dir)
+    t0 = time.perf_counter()
+    try:
+        cp = subprocess.run(
+            cmd,
+            cwd=cwd,
+            check=True,
+            text=True,
+            capture_output=capture_output
+        )
+        elapsed = time.perf_counter() - t0
+        log.debug("OK   %s (%.2fs)", cmd_display, elapsed)
+        return cp
+    except subprocess.CalledProcessError as exc:
+        elapsed = time.perf_counter() - t0
+        log.error("FAIL %s (%.2fs, exit=%s)", cmd_display, elapsed, exc.returncode)
+        if exc.stdout:
+            log.error("stdout:\n%s", exc.stdout.strip())
+        if exc.stderr:
+            log.error("stderr:\n%s", exc.stderr.strip())
+        raise                        # re-raise so caller still sees the traceback
 
+# ────────────────────────── git helpers ───────────────────────────────────── #
 
-def update_pr_description(pr_number:str):
-    """
-    Updates PR description by adding the url to access the hosted environment under dev
-    if it does not already exist in the definition
-    :param pr_number: PR number for the branch hosting website
-    """
-    command = ["gh", "pr", "view", pr_number, "--json", "body", "--jq", ".body"]
-    pr_description = subprocess.run(command, capture_output=True, text=True,
-                                    check=True).stdout.strip()
-    hosted_url = f"{HOSTED_SITE_DOMAIN}/{pr_number}"
-    if hosted_url not in pr_description:
-        new_pr_description = f"Hosted url: [{hosted_url}](https://{hosted_url})\n" + pr_description
-        command = ["gh", "pr", "edit", pr_number, "--body", new_pr_description]
-        subprocess.run(command, check=True)
+REPO_CACHE_DIR = Path(".repo-cache")
+WORKTREES_DIR  = Path("branch")
+APPS_DIR       = Path("app")
+UV_ENV_DIR     = ".venv"
 
+def prepare_repo_cache(remote_url: str) -> Path:
+    if not REPO_CACHE_DIR.exists():
+        log.info("Cloning %s → %s", remote_url, REPO_CACHE_DIR)
+        run([
+            "git", "clone",
+            "--filter=blob:none",
+            remote_url,
+            str(REPO_CACHE_DIR),
+        ])
+    else:
+        log.info("Fetching updates inside %s", REPO_CACHE_DIR)
+        run(["git", "fetch", "--prune", "origin", "+refs/heads/*:refs/remotes/origin/*"], cwd=REPO_CACHE_DIR)
+    log.debug("Available branches in %s:", REPO_CACHE_DIR)
+    branches = run(["git", "branch", "-r"], cwd=REPO_CACHE_DIR, capture_output=True).stdout
+    log.debug("%s", branches)
+    return REPO_CACHE_DIR
 
-def process_branch_folders(parsed_env: str):
-    """
-    Clones the branch specific code to hosted/<branch-name> folder.
-    It then executes the build command and copy the built site to apps folder
-    under the same branch name
-    :param parsed_env: Environment which is used to build.
-    :return: PR numbers in str list where the site data is copied to
-    """
-    delete_folders(["branch", "app"])
+def checkout_worktree(repo: Path, branch: str, dest: Path) -> None:
+    dest = dest.resolve()
+    if dest.exists():
+        log.debug("Removing stale worktree %s", dest)
+        run(["git", "worktree", "remove", "--force", str(dest)], cwd=repo)
+    log.info("Creating worktree %s for branch %s", dest, branch)
+    run(["git", "worktree", "add", "--force", str(dest), f"origin/{branch}"], cwd=repo)
 
-    command = ["gh", "pr", "list", "--json", "number,headRefName"]
-    command_run_result = subprocess.run(command, capture_output=True, text=True,
-                                        check=True).stdout.strip()
-    branches_data = ast.literal_eval(command_run_result)
-    remote_url = subprocess.run(["git", "remote", "get-url", "origin"],
-                                capture_output=True,
-                                text=True, check=True).stdout.strip()
-    parent_dir = os.getcwd()
-    branch_name = parsed_env
-    if parsed_env in ["staging", "prod"]:
-        branch_name = "main"
-    clone_data_to_branch_folder(branch_name, remote_url, parent_dir, parsed_env)
-    pr_numbers = []
-    if parsed_env == "dev":
-        for branch_data in branches_data:
-            if not branch_data["headRefName"].startswith("hosted/") or \
-                    not branch_data.get("number"):
+# ────────────────────────── build helpers ─────────────────────────────────── #
+
+@lru_cache(maxsize=None)
+def ensure_uv_env(repo: Path) -> None:
+    if not (repo / UV_ENV_DIR).exists():
+        log.info("Creating shared uv virtual-env %s", UV_ENV_DIR)
+        run(["uv", "venv", UV_ENV_DIR], cwd=repo)
+    log.debug("Ensuring deps are installed in shared env")
+    lock_file = repo / "uv.lock"  # Correct: repo is .repo-cache
+    log.debug("Checking for uv.lock at %s", lock_file)
+    if not lock_file.exists():
+        log.error("uv.lock not found at %s, installing mkdocs only", lock_file)
+        run(["uv", "pip", "install", "mkdocs"], cwd=repo)
+    else:
+        log.info("Syncing dependencies from %s", lock_file)
+        run(["uv", "sync", "--frozen"], cwd=repo)
+
+def build_site(root: Path) -> None:
+    ensure_uv_env(root.parent)           # repo is parent of worktree
+    log.info("Building MkDocs site in %s", root)
+    run(["uv", "run", "mkdocs", "build", "-q"], cwd=root)
+
+# ────────────────────────── misc helpers ──────────────────────────────────── #
+
+def copy_site(src: Path, dst: Path) -> None:
+    log.info("Copy site %s → %s", src, dst)
+    dst.mkdir(parents=True, exist_ok=True)
+    shutil.copytree(src, dst, dirs_exist_ok=True)
+
+def delete_tree(path: Path) -> None:
+    log.debug("Checking if path %s exists", path)
+    if path.exists():
+        log.debug("Deleting %s", path)
+        shutil.rmtree(path, ignore_errors=True)
+    else:
+        log.debug("Path %s does not exist, skipping deletion", path)
+
+# ────────────────────────── PR helpers ────────────────────────────────────── #
+
+def update_pr_description(pr_number: str) -> None:
+    hosted_url = f"https://{HOSTED_SITE_DOMAIN}/{pr_number}"
+    body = run(
+        ["gh", "pr", "view", pr_number, "--json", "body", "--jq", ".body"],
+        capture_output=True
+    ).stdout
+    if hosted_url not in body:
+        log.info("Updating PR #%s description with hosted URL", pr_number)
+        new_body = f"Hosted url: [{hosted_url}]({hosted_url})\n{body}"
+        run(["gh", "pr", "edit", pr_number, "--body", new_body])
+
+# ────────────────────────── main workflow ─────────────────────────────────── #
+
+def branch_exists(repo: Path, branch: str) -> bool:
+    """Check if a branch exists in the repository."""
+    try:
+        run(["git", "rev-parse", "--verify", f"origin/{branch}"], cwd=repo, capture_output=True)
+        return True
+    except subprocess.CalledProcessError:
+        return False
+
+def process_environment(env: str) -> list[str]:
+    delete_tree(WORKTREES_DIR)
+    delete_tree(APPS_DIR)
+    remote_url = run(["git", "remote", "get-url", "origin"], capture_output=True).stdout.strip()
+    repo = prepare_repo_cache(remote_url)  # repo is .repo-cache
+    main_branch = "main" if env in {"staging", "prod"} else env
+    if env == "dev" and not branch_exists(repo, main_branch):
+        log.warning("Branch 'dev' does not exist, falling back to 'main'")
+        main_branch = "main"
+    main_wt = (WORKTREES_DIR / env).resolve()
+    checkout_worktree(repo, main_branch, main_wt)
+    ensure_uv_env(repo)  # Pass repo (.repo-cache), not main_wt.parent
+    build_site(main_wt)
+    copy_site(main_wt / "site", APPS_DIR / env)
+
+    pr_numbers: list[str] = []
+    if env == "dev":
+        prs_json = run(
+            ["gh", "pr", "list", "--json", "number,headRefName"],
+            capture_output=True
+        ).stdout
+        for pr in json.loads(prs_json):
+            if not pr["headRefName"].startswith("hosted/"):
                 continue
-            pr_number = str(branch_data["number"])
-            clone_data_to_branch_folder(branch_data["headRefName"], remote_url,
-                                        parent_dir, pr_number)
-            update_pr_description(pr_number)
-            pr_numbers.append(pr_number)
+            num = str(pr["number"])
+            if not branch_exists(repo, pr["headRefName"]):
+                log.warning("Skipping PR #%s: branch %s does not exist", num, pr["headRefName"])
+                continue
+            pr_numbers.append(num)
+            wt = (WORKTREES_DIR / num).resolve()
+            checkout_worktree(repo, pr["headRefName"], wt)
+            build_site(wt)
+            copy_site(wt / "site", APPS_DIR / num)
+            update_pr_description(num)
 
     return pr_numbers
 
-def update_nginx_config(pr_numbers, parsed_env):
-    """
-    Updates nginx.conf file with branches built information to host multiple versions
-    of software at the same time.
-    :param pr_numbers: pr numbers a str list of open pr numbers to be hosted
-    :param parsed_env: Environment which is used to build.
-    """
-    config_file = os.path.join(os.getcwd(), "nginx.conf")
-    nginx_location_blocks = ""
+def update_nginx_config(pr_numbers: list[str], env: str) -> None:
+    blocks = "\n".join(
+        f"""location /{n} {{
+    alias /app/{n};
+    try_files $uri $uri/ =404;
+    error_page 404 /404.html;
+}}""" for n in pr_numbers)
+    conf_template = Path("nginx_template")
+    conf = Path("nginx.conf")
+    content = conf_template.read_text(encoding="utf-8")
+    content = content.replace("#REPLACE_APPS", blocks).replace("#environment", env)
+    conf.write_text(content, encoding="utf-8")
+    log.info("NGINX configuration updated with %d blocks", len(pr_numbers))
+    log.info("Generated nginx.conf content:\n%s", conf.read_text(encoding="utf-8"))
 
-    for pr_number in pr_numbers:
-        location_block = f"""location /{pr_number} {{
-            alias /app/{pr_number};
-            try_files $uri $uri/ =404;
-            error_page 404 /404.html;
-        }}
-        """
-        nginx_location_blocks += location_block
-        print(f"Hosted site: https://{HOSTED_SITE_DOMAIN}/{pr_number}")
+# ────────────────────────── CLI ───────────────────────────────────────────── #
 
-    content = ""
-    with open(config_file, "r+", encoding="utf-8") as f:
-        content = f.read()
-        content = content.replace("#REPLACE_APPS", nginx_location_blocks)
-        content = content.replace("#environment", parsed_env)
-        f.seek(0)
-        f.write(content)
-        f.truncate()
+def parse_args() -> tuple[str, int]:
+    p = argparse.ArgumentParser()
+    p.add_argument("-env", "--environment", default="dev",
+                   help="dev (default) | staging | prod")
+    p.add_argument("-v", "--verbose", action="count", default=1,
+                   help="-v INFO (default), -vv DEBUG, -vvv NOTSET")
+    args = p.parse_args()
+    return args.environment.strip(), args.verbose
 
-    print(f"NGINX configuration updated successfully! content: \n{content}")
+# ────────────────────────── entry point ───────────────────────────────────── #
 
 if __name__ == "__main__":
-    environment = parse_args()
-    open_prs = process_branch_folders(environment)
-    update_nginx_config(open_prs, environment)
+    env, verbosity = parse_args()
+    setup_logging(verbosity)
+    log.info("Start build for environment=%s", env)
+    prs = process_environment(env)
+    update_nginx_config(prs, env)
+    log.info("All done. Hosted PRs: %s", ", ".join(prs) or "none")
