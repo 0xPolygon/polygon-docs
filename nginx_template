@@ -1,4 +1,3 @@
-# Example nginx configuration file for serving multiple applications
 worker_processes auto;
 
 events {
@@ -15,28 +14,14 @@ http {
     server {
         listen 80;
 
-        location /2657 {
-    alias /app/2657;
-    try_files $uri $uri/ =404;
-    error_page 404 /404.html;
-}
-location /2656 {
-    alias /app/2656;
-    try_files $uri $uri/ =404;
-    error_page 404 /404.html;
-}
-location /2655 {
-    alias /app/2655;
-    try_files $uri $uri/ =404;
-    error_page 404 /404.html;
-}
+        #REPLACE_APPS
 
         location  /cdk/version-matrix/ {
           return 302 /; # Redirect to the home page with a temporary redirect
         }
 
         location / {
-            root /app/dev;
+            root /app/#environment;
             index index.html;
             try_files $uri $uri/ /404.html;
             error_page 404 /404.html;
