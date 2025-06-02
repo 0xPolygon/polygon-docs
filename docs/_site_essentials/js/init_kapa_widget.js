@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
   script.setAttribute('data-modal-disclaimer-font-size', '0.6rem');
   script.setAttribute('data-modal-title-font-size', '1.1rem');
   script.setAttribute("data-example-question-button-font-size","0.6rem");
+  script.setAttribute("data-user-analytics-cookie-enabled","true");
   script.setAttribute(
     'data-modal-disclaimer',
     'This AI chatbot is powered by kapa.ai. Responses are generated automatically and may be inaccurate or incomplete. Do not rely on this information as legal, financial or other professional advice. By using this assistant, you agree that your input may be processed in accordance with the kapa.ai privacy policy: https://www.kapa.ai/content/privacy-policy'
