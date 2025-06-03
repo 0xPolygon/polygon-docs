@@ -17,9 +17,7 @@ A validator’s performance is measured based on the checkpoints it signed over 
 
 ### Performance benchmark
 
-<center>
-![Figure: performance benchmark](../../../img/pos/performance-benchmark.png){width=60%}
-</center>
+![Figure: performance benchmark](../../../img/pos/performance-benchmark.png)
 
 To facilitate the transition, there will be a slightly lower benchmark around the first two months while validators become accustomed to the parameters.
 
@@ -53,9 +51,7 @@ The **Public Notices** page shows the recent notices and messages sent to the co
 
 This is what a notice message should look like:
 
-<center>
-![Figure: Notice](../../../img/pos/notice.png){width=60%}
-</center>
+![Figure: Notice](../../../img/pos/notice.png)
 
 
 ### Forced unstaking
