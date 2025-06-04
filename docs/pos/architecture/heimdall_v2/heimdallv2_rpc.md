@@ -1,0 +1,1 @@
+<swagger-ui src="heimdallv2_swagger.yaml"/>

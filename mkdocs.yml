@@ -335,6 +335,22 @@ nav:
             - Topup: pos/architecture/heimdall/topup.md
             - Chain management: pos/architecture/heimdall/chain-management.md
             - Governance: pos/architecture/heimdall/governance.md
+          - Heimdall v2:
+            - Introduction: pos/architecture/heimdall_v2/introduction.md
+            - Changes from v1: pos/architecture/heimdall_v2/changes-from-v1.md
+            - Authentication: pos/architecture/heimdall_v2/authentication.md
+            - Balance transfers: pos/architecture/heimdall_v2/balance-transfers.md
+            - Staking: pos/architecture/heimdall_v2/staking.md
+            - Checkpoints: pos/architecture/heimdall_v2/checkpoints.md
+            - Topup: pos/architecture/heimdall_v2/topup.md
+            - Chain management: pos/architecture/heimdall_v2/chain-management.md
+            - Governance: pos/architecture/heimdall_v2/governance.md
+            - Clerk: pos/architecture/heimdall_v2/clerk.md
+            - Heimdall Bor module: pos/architecture/heimdall_v2/heimdall-bor-module.md
+            - Milestones: pos/architecture/heimdall_v2/milestones.md
+            - Reference:
+              - Heimdall v2 RPC Endpoints: pos/architecture/heimdall_v2/heimdallv2_rpc
+              - Cosmos SDK RPC Endpoints: pos/architecture/heimdall_v2/cosmos_sdk_rpc
       - Concepts: 
           - Tokens:
             - POL: pos/concepts/tokens/pol.md
