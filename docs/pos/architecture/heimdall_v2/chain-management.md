@@ -5,7 +5,9 @@ This document specifies an overview of the chain manager module of Heimdall.
 
 ## Overview
 
-The chainmanager module is responsible for fetching the PoS protocol parameters. These params include addresses of contracts deployed on mainchain (Ethereum) and borchain (Bor), chain ids, mainchain and borchain confirmation blocks.
+The chainmanager module is responsible for fetching the PoS protocol parameters.
+These params include addresses of contracts deployed on mainchain (Ethereum) and bor chain (Bor),
+chain ids, mainchain and bor chain confirmation blocks.
 
 ```protobuf
 message ChainParams {
@@ -35,7 +37,7 @@ message Params {
 
 One can run the following query commands from the chainmanager module :
 
-* `params` - Fetch the parameters associated to chainmanager module.
+* `params` - Fetch the parameters associated with the chainmanager module.
 
 ### CLI commands
 

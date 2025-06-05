@@ -606,6 +606,7 @@ plugins:
       keep_docs_dir: false
   - search
   - open-in-new-tab
+  - swagger-ui-tag
   - redirects:
       redirect_maps:
         'docs/develop/network-details/network.md': 'cdk/index.md'

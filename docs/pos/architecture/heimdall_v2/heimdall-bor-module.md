@@ -6,13 +6,13 @@ Heimdall's `bor` module is responsible for managing span intervals and coordinat
 
 * A `side-transaction` is a normal heimdall transaction but the data with which the message is composed needs to be voted on by the validators since the data is obscure to the consensus protocol itself, and it has no way of validating the data's correctness.
 * A `sprint` comprises of 16 bor blocks (configured in [bor](https://github.com/maticnetwork/launch/blob/fe86ba6cd16e5c36067a5ae49c0bad62ce8b1c3f/mainnet-v1/sentry/validator/bor/genesis.json#L26C18-L28)).
-* A `span` comprises 400 sprints in bor (check heimdall's bor [params](https://heimdall-api.polygon.technology/bor/params) endpoint ).
+* A `span` comprises 400 sprints in bor (check heimdall's bor [params](https://heimdall-api.polygon.technology/bor/params) endpoint).
 
 ## Overview
 
-The validators on the Bor chain produce blocks in sprints and spans. Hence, it is imperative for the protocol to formalise the validators who will be producers in a range of blocks (`span`). The `bor` module in heimdall facilitates this by pseudo-randomly selecting validators who will producing blocks (producers) from the current validator set. The bor chain fetches and persists this information before the next span begins. `bor` module is a crucial component in heimdall since the PoS chain "liveness" depends on it.
+The validators on the bor chain produce blocks in sprints and spans. Hence, it is imperative for the protocol to formalize the validators who will be producers in a range of blocks (`span`). The `bor` module in heimdall facilitates this by pseudo-randomly selecting validators who will producing blocks (producers) from the current validator set. The bor chain fetches and persists this information before the next span begins. `bor` module is a crucial component in heimdall since the PoS chain "liveness" depends on it.
 
-## How does it work
+## How it works
 
 A `Span` is defined by the data structure:
 
@@ -110,7 +110,7 @@ One can run the following query commands from the bor module:
 * `latest-span` - Query the latest span.
 * `next-span-seed` - Query the seed for the next span.
 * `next-span` - Query the next span.
-* `params` - Fetch the parameters associated to bor module.
+* `params` - Fetch the parameters associated with the bor module.
 
 ### CLI commands
 
@@ -140,7 +140,7 @@ heimdalld query bor params
 
 ### GRPC Endpoints
 
-The endpoints and the params are defined in the [bor/query.proto](/proto/heimdallv2/bor/query.proto) file. Please refer them for more information about the optional params.
+The endpoints and the params are defined in the [bor/query.proto](/proto/heimdallv2/bor/query.proto) file. Please refer to them for more information about the optional params.
 
 ```bash
 grpcurl -plaintext -d '{}' localhost:9090 heimdallv2.bor.Query/GetSpanList
@@ -170,29 +170,28 @@ grpcurl -plaintext -d '{}' localhost:9090 heimdallv2.bor.Query/GetBorParams
 
 ### REST endpoints
 
-The endpoints and the params are defined in the [bor/query.proto](/proto/heimdallv2/bor/query.proto) file. Please refer them for more information about the optional params.
+The endpoints and the params are defined in the [bor/query.proto](/proto/heimdallv2/bor/query.proto) file. Please refer to them for more information about the optional params.
 
 ```bash
-curl localhost:1317/bor/span/list
+curl localhost:1317/bor/spans/list
 ```
 
 ```bash
-curl localhost:1317/bor/span/latest
+curl localhost:1317/bor/spans/latest
 ```
 
 ```bash
-curl localhost:1317/bor/span/seed/<SPAN_ID>
+curl localhost:1317/bor/spans/seed/<SPAN_ID>
 ```
 
 ```bash
-curl "localhost:1317/bor/span/prepare?span_id=<SPAN_ID>&start_block=<BOR_START_BLOCK>&bor_chain_id=<BOR_CHAIN_ID>"
+curl "localhost:1317/bor/spans/prepare?span_id=<SPAN_ID>&start_block=<BOR_START_BLOCK>&bor_chain_id=<BOR_CHAIN_ID>"
 ```
 
 ```bash
-curl localhost:1317/bor/span/<SPAN_ID>
+curl localhost:1317/bor/spans/<SPAN_ID>
 ```
 
 ```bash
 curl localhost:1317/bor/params
 ```
-

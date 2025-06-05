@@ -2,25 +2,23 @@
 
 ## Overview
 
-Heimdall Topup is an amount which will be used to pay fees on Heimdall chain.
+Heimdall Topup is an amount that will be used to pay fees on the heimdall chain.
 
 There are two ways to top up your account:
 
 1. When new validator joins, they can mention a `topup` amount as top-up in addition to the staked amount, which will be
-   moved as balance on Heimdall chain to pay fees on Heimdall.
+   moved as balance on the heimdall chain to pay fees on Heimdall.
 2. A user can directly call the top-up function on the staking smart contract on Ethereum to increase top-up balance on
    Heimdall.
 
 ## Flow
 
-The Heimdall Top-up Mechanism facilitates the management of validator fees on the Heimdall v2 chain by allowing deposits from the Ethereum (L1) root chain. 
-
-This mechanism ensures validators have enough balance on Heimdall to cover operational fees.  
-
-The system integrates staking smart contract on Ethereum with Heimdall custom x/topup and x/checkpoint module and a bridge components to enable seamless cross-chain fee management.  
+The Heimdall Top-up Mechanism facilitates the management of validator fees on the Heimdall v2 chain by allowing deposits from the Ethereum (L1) root chain.  
+This mechanism ensures validators have enough balances on Heimdall to cover operational fees.  
+The system integrates staking smart contract on Ethereum with Heimdall custom x/topup and x/checkpoint modules and a bridge component to enable seamless cross-chain fee management.  
 
 ### Top-Up Funding Methods
-There are two primary ways to fund a validator’s fee balance on Heimdall:  
+There are two primary ways to fund a validator’s fee balance on Heimdall:
 
 - During Validator Initialization: When a new validator joins, they can specify a top-up amount in addition to the staked amount. This top-up is transferred to Heimdall as an initial balance.
 - Direct Top-Up: Any user can invoke the top-up function on the Ethereum staking smart contract to increase the validators’ top-up balance on Heimdall.
@@ -29,7 +27,7 @@ There are two primary ways to fund a validator’s fee balance on Heimdall:
 Top-up events on the Ethereum layer trigger automated processing through the bridge process:
 
 - The Root Chain Log Listener monitors for `StakinginfoTopUpFee` events.  
-- The Top-up Fee Processor task, upon detecting such an event, triggers the `sendTopUpFeeToHeimdall` execution.
+- the Top-up Fee Processor task, upon detecting such an event, triggers the `sendTopUpFeeToHeimdall` execution.
 
 The task:
 
@@ -42,16 +40,16 @@ This fallback mechanism is used in scenarios where issues arise in bridging or p
 
 ### Heimdall x/topup Module Implementation
 Two core messages are defined in the x/topup module for fee management:
+
 - `MsgTopupTx`: Handles minting the top-up amount on Heimdall based on Ethereum events.  
-Each top-up is uniquely identified by a sequence number built from `TxHash` and `LogIndex` to prevent duplicate processing.  
+Each top-up is uniquely identified by a sequence number built from `TxHash` and `LogIndex` to prevent duplicate processing.
 
-`MsgTopupTx` is a side-transaction, ensuring state changes only after the successful pre-commit majority of the votes are collected and final validation and post-tx handler execution in the following block height.
-
+`MsgTopupTx` is a side-transaction, ensuring state changes only after the successful pre-commit majority of the votes are collected and final validation and post-tx handler execution in the following block height.  
 When broadcasting the `MsgTopupTx` - sender (proposer of the topup) must sign it, and additional user address must be sent.
 
 For the top-up to be accepted, the `MsgTopupTx.Fee` must be at least equal to the `DefaultFeeWantedPerTx` amount. The top-up processing on Heimdall v2 involves:
 
-- Minting the top-up amount of pol tokens to the top-up module account.  
+- Minting the top-up number of pol tokens to the top-up module account.  
 - Transferring the entire amount from the top-up module account to the user account.  
 - Transferring the `DefaultFeeWantedPerTx` amount from the user account to the proposer validator account.
 
@@ -101,8 +99,8 @@ message MsgTopupTx {
 
 ### MsgWithdrawFeeTx
 
-`MsgWithdrawFeeTx` is responsible for withdrawing balance from Heimdall to Ethereum chain. A Validator can
-withdraw any amount from Heimdall.
+`MsgWithdrawFeeTx` is responsible for withdrawing balance from Heimdall to the Ethereum chain.
+A Validator can withdraw any amount from Heimdall.
 
 Handler processes the withdrawal by deducting the balance from the given validator and prepares the state to send the next
 checkpoint. The next possible checkpoint will contain the withdrawal-related state for the specific validator.
@@ -175,7 +173,8 @@ heimdalld query topup verify-account-proof [address] [proof]
 
 ### GRPC Endpoints
 
-The endpoints and the params are defined in the [topup/query.proto](/proto/heimdallv2/topup/query.proto) file. Please refer them for more information about the optional params.
+The endpoints and the params are defined in the [topup/query.proto](/proto/heimdallv2/topup/query.proto) file.
+Please refer to them for more information about the optional params.
 
 ```bash
 grpcurl -plaintext -d '{"tx_hash": <>, "log_index": <>}' localhost:9090 heimdallv2.topup.Query/IsTopupTxOld
@@ -203,10 +202,11 @@ grpcurl -plaintext -d '{"address": <>}' localhost:9090 heimdallv2.topup.Query/Ge
 
 ### REST APIs
 
-The endpoints and the params are defined in the [topup/query.proto](/proto/heimdallv2/topup/query.proto) file. Please refer them for more information about the optional params.
+The endpoints and the params are defined in the [topup/query.proto](/proto/heimdallv2/topup/query.proto) file.
+Please refer to them for more information about the optional params.
 
 ```bash
-curl localhost:1317/topup/isoldtx?tx_hash=<tx-hash>&log_index=<log-index>
+curl localhost:1317/topup/is-old-tx?tx_hash=<tx-hash>&log_index=<log-index>
 ```
 
 ```bash

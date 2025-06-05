@@ -3,7 +3,7 @@
 ## Overview
 
 This module enables deterministic finality by leveraging Polygon PoS’s dual client architecture.  
-This is done using a hybrid system that utilizes Peppermint layer consensus,  
+This is done using a hybrid system that uses Peppermint layer consensus,  
 along with an additional fork choice rule within the execution layer.
 With the introduction of milestones, finality is deterministic even before a checkpoint is submitted to L1.  
 After a certain number of blocks (minimum 12), a milestone is proposed and voted by Heimdall.  
@@ -44,7 +44,7 @@ Duplicate vote extensions from the same validator are ignored.
 The algorithm uses data structures keyed by `(block_number, block_hash)` to handle forks (same block number may have different hashes), so that fork-resilience is achieved by:
 
 - Separating vote data by hash and block number.
-- Ensuring the finalized milestones continue from the last one with no gaps.
+- Ensuring the finalized milestones continue from the last one with no gaps.  
 
 The core algorithm looks for:
 
@@ -93,10 +93,10 @@ One can run the following query commands from the milestone module:
 * `get-params` - Get milestone params
 * `get-count` - Get milestone count
 * `get-latest-milestone` - Get latest milestone
-* `get-milestone-by-number` - Get milestone by number
-* `get-milestone-proposer` - Get milestone proposer
-* `get-latest-no-ack-milestone` - Get latest no ack milestone
-* `get-no-ack-milestone-by-id` - Get no ack milestone by id
+* `get-milestone-by-number` - Get the milestone by number
+* `get-milestone-proposer` - Get the milestone proposer
+* `get-latest-no-ack-milestone` - Get the latest no ack milestone
+* `get-no-ack-milestone-by-id` - Get the no ack milestone by id
 
 ```bash
 heimdalld query milestone get-params
@@ -128,7 +128,8 @@ heimdalld query milestone get-no-ack-milestone-by-id
 
 ### GRPC Endpoints
 
-The endpoints and the params are defined in the [milestone/query.proto](/proto/heimdallv2/milestone/query.proto) file. Please refer them for more information about the optional params.
+The endpoints and the params are defined in the [milestone/query.proto](/proto/heimdallv2/milestone/query.proto) file.
+Please refer to them for more information about the optional params.
 
 ```bash
 grpcurl -plaintext -d '{}' localhost:9090 heimdallv2.milestone.Query/GetMilestoneParams
@@ -148,20 +149,21 @@ grpcurl -plaintext -d '{}' localhost:9090 heimdallv2.milestone.Query/GetMileston
 
 ### REST APIs
 
-The endpoints and the params are defined in the [milestone/query.proto](/proto/heimdallv2/milestone/query.proto) file. Please refer them for more information about the optional params.
+The endpoints and the params are defined in the [milestone/query.proto](/proto/heimdallv2/milestone/query.proto) file.
+Please refer to them for more information about the optional params.
 
 ```bash
-curl localhost:1317/milestone/params
+curl localhost:1317/milestones/params
 ```
 
 ```bash
-curl localhost:1317/milestone/count
+curl localhost:1317/milestones/count
 ```
 
 ```bash
-curl localhost:1317/milestone/latest
+curl localhost:1317/milestones/latest
 ```
 
 ```bash
-curl localhost:1317/milestone/{number}
+curl localhost:1317/milestones/{number}
 ```
