@@ -576,7 +576,7 @@ A user can query and interact with the `bank` module using the CLI.
 The `query` commands allow users to query `bank` state.
 
 ```shell
-simd query bank --help
+heimdalld query bank --help
 ```
 
 ##### balances
@@ -584,13 +584,13 @@ simd query bank --help
 The `balances` command allows users to query account balances by address.
 
 ```shell
-simd query bank balances [address] [flags]
+heimdalld query bank balances [address] [flags]
 ```
 
 Example:
 
 ```shell
-simd query bank balances cosmos1..
+heimdalld query bank balances cosmos1..
 ```
 
 Example Output:
@@ -609,13 +609,13 @@ pagination:
 The `denom-metadata` command allows users to query metadata for coin denominations. A user can query metadata for a single denomination using the `--denom` flag or all denominations without it.
 
 ```shell
-simd query bank denom-metadata [flags]
+heimdalld query bank denom-metadata [flags]
 ```
 
 Example:
 
 ```shell
-simd query bank denom-metadata --denom stake
+heimdalld query bank denom-metadata --denom stake
 ```
 
 Example Output:
@@ -638,13 +638,13 @@ metadata:
 The `total` command allows users to query the total supply of coins. A user can query the total supply for a single coin using the `--denom` flag or all coins without it.
 
 ```shell
-simd query bank total [flags]
+heimdalld query bank total [flags]
 ```
 
 Example:
 
 ```shell
-simd query bank total --denom stake
+heimdalld query bank total --denom stake
 ```
 
 Example Output:
@@ -659,13 +659,13 @@ denom: stake
 The `send-enabled` command allows users to query for all or some SendEnabled entries.
 
 ```shell
-simd query bank send-enabled [denom1 ...] [flags]
+heimdalld query bank send-enabled [denom1 ...] [flags]
 ```
 
 Example:
 
 ```shell
-simd query bank send-enabled
+heimdalld query bank send-enabled
 ```
 
 Example output:
@@ -685,7 +685,7 @@ pagination:
 The `tx` commands allow users to interact with the `bank` module.
 
 ```shell
-simd tx bank --help
+heimdalld tx bank --help
 ```
 
 ##### send
@@ -693,13 +693,13 @@ simd tx bank --help
 The `send` command allows users to send funds from one account to another.
 
 ```shell
-simd tx bank send [from_key_or_address] [to_address] [amount] [flags]
+heimdalld tx bank send [from_key_or_address] [to_address] [amount] [flags]
 ```
 
 Example:
 
 ```shell
-simd tx bank send cosmos1.. cosmos1.. 100stake
+heimdalld tx bank send cosmos1.. cosmos1.. 100stake
 ```
 
 ## gRPC
