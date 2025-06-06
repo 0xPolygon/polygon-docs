@@ -270,6 +270,7 @@ nav:
         - Migrate to POL: pos/get-started/matic-to-pol.md
         - Building on PoS: pos/get-started/building-on-polygon.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
+        - Test Swagger: pos/get-started/test-swagger.md
       - Builder how-tos:
         - Token bridging:
           - Polygon Portal: pos/how-to/bridging/ethereum-polygon/portal-ui.md

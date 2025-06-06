@@ -19,5 +19,5 @@ jobs:
       environment: ${{(github.ref == 'refs/heads/dev' && 'dev') || 
                     (github.ref == 'refs/heads/main' && 'staging') || 
                     (github.event_name == 'pull_request' && 'dev')}}
-      core_app: ${{ github.ref == 'refs/heads/main' && 'polygon-docs-main' || 'polygon-docs-dev' }}
+      core_app: ${{ github.ref == 'refs/heads/main' && 'polygon-docs' || 'polygon-docs-dev' }}
     secrets: inherit
