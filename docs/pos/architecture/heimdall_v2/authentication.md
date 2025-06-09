@@ -35,7 +35,7 @@ signature verification, as well as costs proportional to the tx size. Operators
 should set minimum gas prices when starting their nodes. They must set the unit
 costs of gas in each token denomination they wish to support:
 
-`simd start ... --minimum-gas-prices=0.00001stake;0.05photinos`
+`heimdalld start ... --minimum-gas-prices=0.00001stake;0.05photinos`
 
 When adding transactions to mempool or gossipping transactions, validators check
 if the transaction's gas prices, which are determined by the provided fees, meet
@@ -234,7 +234,7 @@ A user can query and interact with the `auth` module using the CLI.
 The `query` commands allow users to query `auth` state.
 
 ```bash
-simd query auth --help
+heimdalld query auth --help
 ```
 
 #### account
@@ -242,13 +242,13 @@ simd query auth --help
 The `account` command allow users to query for an account by it's address.
 
 ```bash
-simd query auth account [address] [flags]
+heimdalld query auth account [address] [flags]
 ```
 
 Example:
 
 ```bash
-simd query auth account cosmos1...
+heimdalld query auth account cosmos1...
 ```
 
 Example Output:
@@ -268,13 +268,13 @@ sequence: "1"
 The `accounts` command allow users to query all the available accounts.
 
 ```bash
-simd query auth accounts [flags]
+heimdalld query auth accounts [flags]
 ```
 
 Example:
 
 ```bash
-simd query auth accounts
+heimdalld query auth accounts
 ```
 
 Example Output:
@@ -367,13 +367,13 @@ pagination:
 The `params` command allow users to query the current auth parameters.
 
 ```bash
-simd query auth params [flags]
+heimdalld query auth params [flags]
 ```
 
 Example:
 
 ```bash
-simd query auth params
+heimdalld query auth params
 ```
 
 Example Output:
@@ -396,7 +396,7 @@ The `auth` module supports transactions commands to help you with signing and mo
 Use directly the `--help` flag to get more information about the `tx` command.
 
 ```bash
-simd tx --help
+heimdalld tx --help
 ```
 
 #### `sign`
@@ -404,12 +404,12 @@ simd tx --help
 The `sign` command allows users to sign transactions that was generated offline.
 
 ```bash
-simd tx sign tx.json --from $ALICE > tx.signed.json
+heimdalld tx sign tx.json --from $ALICE > tx.signed.json
 ```
 
 The result is a signed transaction that can be broadcasted to the network thanks to the broadcast command.
 
-More information about the `sign` command can be found running `simd tx sign --help`.
+More information about the `sign` command can be found running `heimdalld tx sign --help`.
 
 #### `sign-batch`
 
@@ -417,18 +417,18 @@ The `sign-batch` command allows users to sign multiples offline generated transa
 The transactions can be in one file, with one tx per line, or in multiple files.
 
 ```bash
-simd tx sign txs.json --from $ALICE > tx.signed.json
+heimdalld tx sign txs.json --from $ALICE > tx.signed.json
 ```
 
 or
 
 ```bash 
-simd tx sign tx1.json tx2.json tx3.json --from $ALICE > tx.signed.json
+heimdalld tx sign tx1.json tx2.json tx3.json --from $ALICE > tx.signed.json
 ```
 
 The result is multiples signed transactions. For combining the signed transactions into one transactions, use the `--append` flag.
 
-More information about the `sign-batch` command can be found running `simd tx sign-batch --help`.
+More information about the `sign-batch` command can be found running `heimdalld tx sign-batch --help`.
 
 #### `multi-sign`
 
@@ -436,7 +436,7 @@ The `multi-sign` command allows users to sign transactions that was generated of
 The multi signature functionality is not supported by Heimdall.
 
 ```bash
-simd tx multisign transaction.json k1k2k3 k1sig.json k2sig.json k3sig.json
+heimdalld tx multisign transaction.json k1k2k3 k1sig.json k2sig.json k3sig.json
 ```
 
 Where `k1k2k3` is the multisig account address, `k1sig.json` is the signature of the first signer, `k2sig.json` is the signature of the second signer, and `k3sig.json` is the signature of the third signer.
@@ -447,17 +447,17 @@ To allow transactions to be signed by nested multisigs, meaning that a participa
 
 ```bash
 # First aggregate signatures of the multisig participant
-simd tx multi-sign transaction.json ms1 ms1p1sig.json ms1p2sig.json --signature-only --skip-signature-verification > ms1sig.json
+heimdalld tx multi-sign transaction.json ms1 ms1p1sig.json ms1p2sig.json --signature-only --skip-signature-verification > ms1sig.json
 
 # Then use the aggregated signatures and the other signatures to sign the final transaction
-simd tx multi-sign transaction.json k1ms1 k1sig.json ms1sig.json --skip-signature-verification
+heimdalld tx multi-sign transaction.json k1ms1 k1sig.json ms1sig.json --skip-signature-verification
 ```
 
 Where `ms1` is the nested multisig account address, `ms1p1sig.json` is the signature of the first participant of the nested multisig account, `ms1p2sig.json` is the signature of the second participant of the nested multisig account, and `ms1sig.json` is the aggregated signature of the nested multisig account.
 
 `k1ms1` is a multisig account comprised of an individual signer and another nested multisig account (`ms1`). `k1sig.json` is the signature of the first signer of the individual member.
 
-More information about the `multi-sign` command can be found running `simd tx multi-sign --help`.
+More information about the `multi-sign` command can be found running `heimdalld tx multi-sign --help`.
 
 #### `multisign-batch`
 
@@ -465,14 +465,14 @@ The `multisign-batch` works the same way as `sign-batch`, but for multisig accou
 With the difference that the `multisign-batch` command requires all transactions to be in one file, and the `--append` flag does not exist.  
 The multi signature functionality is not supported by Heimdall.
 
-More information about the `multisign-batch` command can be found running `simd tx multisign-batch --help`.
+More information about the `multisign-batch` command can be found running `heimdalld tx multisign-batch --help`.
 
 #### `validate-signatures`
 
 The `validate-signatures` command allows users to validate the signatures of a signed transaction.
 
 ```bash
-$ simd tx validate-signatures tx.signed.json
+$ heimdalld tx validate-signatures tx.signed.json
 Signers:
   0: 0x...
 
@@ -480,17 +480,17 @@ Signatures:
   0: 0x...                                [OK]
 ```
 
-More information about the `validate-signatures` command can be found running `simd tx validate-signatures --help`.
+More information about the `validate-signatures` command can be found running `heimdalld tx validate-signatures --help`.
 
 #### `broadcast`
 
 The `broadcast` command allows users to broadcast a signed transaction to the network.
 
 ```bash
-simd tx broadcast tx.signed.json
+heimdalld tx broadcast tx.signed.json
 ```
 
-More information about the `broadcast` command can be found running `simd tx broadcast --help`.
+More information about the `broadcast` command can be found running `heimdalld tx broadcast --help`.
 
 
 ### gRPC

@@ -1,6 +1,6 @@
-# Heimdall
+# Heimdall v2
 
-Heimdall v2 a modernized and revamped consensus client that is at the heart of the Polygon PoS network. Similar to the previous version of Heimdall it performs the following functions:
+Heimdall v2 is a modernized and revamped consensus client that is at the heart of the Polygon PoS network. Similar to the previous version of Heimdall it performs the following functions:
 
 - Manages validators.
 - Handles block producer selection.
