@@ -8,8 +8,8 @@ Heimdall v2 is a modernized and revamped consensus client that is at the heart o
 - Orchestrates the state sync mechanism between Ethereum and Polygon PoS.
 - Addresses other essential aspects of the system.
 
-It uses the latest [*Cosmos SDK*](https://github.com/maticnetwork/cosmos-sdk) and [*CometBFT*](https://github.com/cometbft/cometbft) for its consensus.
+It uses a fork of [*Cosmos SDK*](https://github.com/0xPolygon/cosmos-sdk) based on `v0.50.13` and a fork of [*CometBFT*](https://github.com/0xPolygon/cometbft/) based on `v0.38.17` for its consensus.
 
-Heimdall removes certain modules from Cosmos SDK but primarily utilizes a customized version of it, following a similar pattern.
+Heimdall leverages some modified versions of `cosmos-sdk` modules (`auth`, `bank` and `gov`) plus some fully customized modules (`bor`, `chainmanager`, `checkpoint`, `clerk`, `milestone`, `stake` and `topup`).
 
 For detailed instructions on running Heimdall v2, refer to the [Readme](https://github.com/0xPolygon/heimdall-v2/blob/develop/README.md) in the Github repository

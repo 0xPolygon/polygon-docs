@@ -1539,6 +1539,45 @@ paths:
           format: uint64
       tags:
         - Query
+  /clerk/event-records/latest-id:
+    get:
+      summary: GetLatestRecordId queries the latest record id from L1.
+      operationId: GetLatestRecordId
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              latest_record_id:
+                type: string
+                format: uint64
+              is_processed_by_heimdall:
+                type: boolean
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type_url:
+                      type: string
+                    value:
+                      type: string
+                      format: byte
+      tags:
+        - Query
   /clerk/event-records/list:
     get:
       summary: GetRecordList queries a list of records
@@ -4203,6 +4242,14 @@ definitions:
     type: object
     properties:
       is_old:
+        type: boolean
+  heimdallv2.clerk.LatestRecordIdResponse:
+    type: object
+    properties:
+      latest_record_id:
+        type: string
+        format: uint64
+      is_processed_by_heimdall:
         type: boolean
   heimdallv2.clerk.RecordListResponse:
     type: object
