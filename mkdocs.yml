@@ -267,15 +267,13 @@ nav:
       - PoS: pos/index.md
       - Overview: pos/overview.md
       - Get started: 
-        - Migrate to POL: pos/get-started/matic-to-pol.md
         - Building on PoS: pos/get-started/building-on-polygon.md
-        - Becoming a validator: pos/get-started/becoming-a-validator.md
-      - Builder how-tos:
         - Token bridging:
           - Polygon Portal: pos/how-to/bridging/ethereum-polygon/portal-ui.md
           - Ethereum to PoS: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
           - PoS to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
           - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
+        - Becoming a validator: pos/get-started/becoming-a-validator.md
       - Node how-tos:
         - Prerequisites: pos/how-to/prerequisites.md
         - Sync node using snapshots: pos/how-to/snapshots.md
@@ -311,9 +309,7 @@ nav:
           - Network upgrade process: pos/reference/network-upgrade-process.md
           - Common commands: pos/reference/commands.md
           - Seed and bootnodes: pos/reference/seed-and-bootnodes.md
-          - RPC endpoints: pos/reference/rpc-endpoints.md
           - PoS mainnet multi-signatures: pos/reference/commit-chain-multisigs.md
-          - Mapped tokens: pos/reference/mapped-tokens.md
       - Governance:
         - Governance fundamentals: pos/governance/governance-fundamentals.md
         - Delegate tokens: pos/how-to/delegate.md
@@ -351,8 +347,12 @@ nav:
             - Reference:
               - Heimdall v2 RPC Endpoints: pos/architecture/heimdall_v2/heimdallv2_rpc
               - Cosmos SDK RPC Endpoints: pos/architecture/heimdall_v2/cosmos_sdk_rpc
+      - References:
+          - RPC endpoints: pos/reference/rpc-endpoints.md
+          - Mapped tokens: pos/reference/mapped-tokens.md
       - Concepts: 
           - Tokens:
+            - Migrate to POL: pos/concepts/tokens/matic-to-pol.md
             - POL: pos/concepts/tokens/pol.md
             - MATIC: pos/concepts/tokens/matic.md
           - Transactions:
