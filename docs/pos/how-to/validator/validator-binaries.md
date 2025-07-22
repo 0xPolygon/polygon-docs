@@ -20,16 +20,7 @@ This guide will walk you through running a Polygon validator node using binaries
   ```bash
   sudo apt-get install build-essential
   ```
-
 * Go 1.24+ installed on both the sentry and the validator machines.
-
-  To install:
-
-  ```bash
-  wget https://raw.githubusercontent.com/maticnetwork/node-ansible/master/go-install.sh
-  bash go-install.sh
-  sudo ln -nfs ~/.go/bin/go /usr/bin/go
-  ```
 
 * RabbitMQ installed on the validator machine.
 
@@ -68,12 +59,12 @@ Both binaries must be installed and run in the correct order to function properl
 
 ### Install Heimdall
 
-Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/maticnetwork/heimdall/releases).
+Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/heimdall-v2/releases).
 
 To install Heimdall, run the following command:
 
 ```bash
-curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- v0.2.12 <network> <node_type>
+curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- <version> <network> <node_type>
 ```
 You can run the above command with following options:
 
