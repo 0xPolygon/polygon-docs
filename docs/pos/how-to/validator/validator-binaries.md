@@ -20,18 +20,9 @@ This guide will walk you through running a Polygon validator node using binaries
   ```bash
   sudo apt-get install build-essential
   ```
+* Go 1.24+ installed on both the sentry and the validator machines.
 
-* Go 1.19 installed on both the sentry and the validator machines.
-
-  To install:
-
-  ```bash
-  wget https://raw.githubusercontent.com/maticnetwork/node-ansible/master/go-install.sh
-  bash go-install.sh
-  sudo ln -nfs ~/.go/bin/go /usr/bin/go
-  ```
-
-* RabbitMQ installed on both the sentry and the validator machines.
+* RabbitMQ installed on the validator machine.
 
   Here are the commands to install RabbitMQ:
 
@@ -68,23 +59,23 @@ Both binaries must be installed and run in the correct order to function properl
 
 ### Install Heimdall
 
-Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/maticnetwork/heimdall/releases).
+Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/heimdall-v2/releases).
 
-To install Heimdall, run the following commands:
+To install Heimdall, run the following command:
 
 ```bash
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <heimdall_version> <network_type> <node_type>
+curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- <version> <network> <node_type>
 ```
 You can run the above command with following options:
 
-- `heimdall_version`: valid v1.0+ release tag from https://github.com/maticnetwork/heimdall/releases
+- `heimdall_version`: valid v0.2+ release tag from https://github.com/0xPolygon/heimdall-v2/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
-That will install the `heimdalld` and `heimdallcli` binaries. Verify the installation by checking the Heimdall version on your machine using the following command:
+That will install the `heimdalld` binary. Verify the installation by checking the Heimdall version on your machine using the following command:
 
 ```bash
-heimdalld version --long
+heimdalld version
 ```
 
 !!! note
@@ -290,16 +281,16 @@ Example: `persistent_peers = "sentry_machineNodeID@sentry_instance_ip:26656"`
 
 Save the changes in `config.toml`.
 
-Open for editing `vi /var/lib/heimdall/config/heimdall-config.toml`.
+Open for editing `vi /var/lib/heimdall/config/app.toml`.
 
-In `heimdall-config.toml`, update the following:
+In `app.toml`, update the following:
 
 * `eth_rpc_url` — an RPC endpoint for a fully synced Ethereum mainnet node,
   e.g., Infura. `eth_rpc_url =<insert Infura or any full node RPC URL to Ethereum>`
 
 Example: `eth_rpc_url = "https://nd-123-456-789.p2pify.com/60f2a23810ba11c827d3da642802412a"`
 
-Save the changes in `heimdall-config.toml`.
+Save the changes in `app.toml`.
 
 ### Configuring the Bor service
 
@@ -333,7 +324,7 @@ private key on the sentry machine.
 To generate the private key, run:
 
 ```sh
-heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
+heimdalld generate-validatorkey ETHEREUM_PRIVATE_KEY
 ```
 
 where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s private key.
@@ -351,7 +342,7 @@ You must generate a Bor keystore file only on the validator machine. Do not gene
 To generate the private key, run:
 
 ```sh
-heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
+heimdalld generate-keystore ETHEREUM_PRIVATE_KEY
 ```
 
 where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s private key.
