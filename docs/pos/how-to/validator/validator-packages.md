@@ -10,7 +10,7 @@ This guide covers running a validator node through packages.
 
 * Two machines — one sentry and one validator.
 * Bash installed on both the sentry and the validator machines.
-* RabbitMQ installed on both the sentry and the validator machines.
+* RabbitMQ installed on the validator machine.
   See [Downloading and Installing RabbitMQ](https://www.rabbitmq.com/download.html).
 
 ## Overview
@@ -37,15 +37,15 @@ To spin up a functioning validator node, follow these steps in the *specified se
 Install the default latest version of sentry and validator for the PoS mainnet/Amoy testnet:
 
 ```shell
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <version> <network> <node_type>
+curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- <version> <network> <node_type>
 ```
 
 or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions can be found on
-    [Heimdall GitHub repository](https://github.com/maticnetwork/heimdall/releases).
+    [Heimdall GitHub repository](https://github.com/0xPolygon/heimdall-v2/releases).
 
 ```shell
   # Example:
-  curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- v1.2.0 mainnet sentry
+  curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- v0.2.15 mainnet sentry
 ```
 
 ### Bor
@@ -71,7 +71,7 @@ curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bas
 Check Heimdall installation using the following command:
 
 ```shell
-heimdalld version --long
+heimdalld version
 ```
 
 Check Bor installation using the following command:
@@ -267,7 +267,7 @@ Example: `persistent_peers = "sentry_machineNodeID@sentry_instance_ip:26656"`
 
 Save the changes in `config.toml`.
 
-Open the `heimdall-config.toml` file for editing by running: `vi /var/lib/heimdall/config/heimdall-config.toml`.
+Open the `app.toml` file for editing by running: `vi /var/lib/heimdall/config/app.toml`.
 
 In config file, update the following parameters:
 
@@ -276,7 +276,7 @@ In config file, update the following parameters:
 
 Example: `eth_rpc_url = "https://nd-123-456-789.p2pify.com/60f2a23810ba11c827d3da642802412a"`
 
-Finally, save the changes in `heimdall-config.toml`.
+Finally, save the changes in `app.toml`.
 
 ### Configuring Bor
 
@@ -322,7 +322,7 @@ private key on the sentry machine.
 To generate the private key, run:
 
 ```sh
-heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
+heimdallcli generate-validator-key ETHEREUM_PRIVATE_KEY
 ```
 
 where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet's private key.
