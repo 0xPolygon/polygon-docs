@@ -28,15 +28,15 @@ comments: true
 - Install the default latest version of sentry for Mainnet:
 
     ```shell
-    curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <version> <network> <node_type> 
+    curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- <version> <network> <node_type>
     ```
 
     or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions can be found on
-    [Heimdall GitHub repository](https://github.com/maticnetwork/heimdall/releases).
+    [Heimdall GitHub repository](https://github.com/0xPolygon/heimdall-v2/releases).
 
     ```shell
     # Example:
-    # curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- v1.0.7 mainnet sentry
+    # curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- v0.2.15 mainnet validator
     ```
 
 ### Bor
@@ -52,7 +52,7 @@ comments: true
 
     ```shell
     # Example:
-    # curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- v1.3.7 mainnet sentry
+    # curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- v2.2.9 mainnet sentry
     ```
 
 ## Configuration
