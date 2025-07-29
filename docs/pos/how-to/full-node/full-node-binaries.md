@@ -49,19 +49,19 @@ Install the latest version of Heimdall and related services. Make sure you check
 To install *Heimdall*, run the following commands:
 
 ```bash
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <heimdall_version> <network_type> <node_type>
+curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- <version> <network> <node_type>
 ```
 
 You can run the above command with following options:
 
-- `heimdall_version`: Valid v1.0+ release tag from https://github.com/maticnetwork/heimdall/releases
+- `heimdall_version`: Valid v0.2+ release tag from https://github.com/0xPolygon/heimdall-v2/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
 This will install the `heimdalld` and `heimdallcli` binaries. Verify the installation by checking the Heimdall version on your machine:
 
 ```bash
-heimdalld version --long
+heimdalld version
 ```
 
 ### Bor
@@ -73,7 +73,7 @@ curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bas
 ```
 You can run the above command with following options:
 
-- `bor_version`: valid v1.0+ release tag from https://github.com/maticnetwork/bor/releases
+- `bor_version`: valid v2.0+ release tag from https://github.com/maticnetwork/bor/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
