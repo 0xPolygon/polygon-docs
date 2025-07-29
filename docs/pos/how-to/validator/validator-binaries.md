@@ -324,7 +324,7 @@ private key on the sentry machine.
 To generate the private key, run:
 
 ```sh
-heimdalld generate-validatorkey ETHEREUM_PRIVATE_KEY
+heimdalld generate-validator-key ETHEREUM_PRIVATE_KEY
 ```
 
 where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s private key.
