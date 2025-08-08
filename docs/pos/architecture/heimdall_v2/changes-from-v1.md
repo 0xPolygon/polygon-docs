@@ -1,6 +1,6 @@
 
 
-# Heimdall v2 changes compared to v1
+# Heimdall-v2 changes compared to v1
 
 There are a number of differences between Heimdall v1 to v2. These changes are outlined below:
 
@@ -13,7 +13,7 @@ Hex encoded: `BJSk2KCI4snP2Cw/ntDdgp8R25XJ2xg18KL67fyEAwgtPMpeq5APSUHrkv5wtgrFfp
 Base64 encoded: `0x0494a4d8a088e2c9cfd82c3f9ed0dd829f11db95c9db1835f0a2faedfc8403082d3cca5eab900f4941eb92fe70b60ac57e999c0e2be73fc1cf1ae7f2c979c1cb1a`
 
 ## Validator signing key
-In Heimdall v2, validator signing keys must be imported into the keyring for transaction signing. For details of keyring, refer to the Cosmos SDK documentation [here](https://docs.cosmos.network/v0.46/run-node/keyring.html)
+In Heimdall-v2, validator signing keys must be imported into the keyring for transaction signing. For details of keyring, refer to the Cosmos SDK documentation [here](https://docs.cosmos.network/v0.46/run-node/keyring.html)
 
 From the Cosmos documentation:
 
@@ -42,4 +42,4 @@ When running a `tx` command, just specify the `--from` argument, by using the na
 
 ## Vote extension in each block
 
-In Heimdall v2, the first transaction of each block will contain the encoded vote extensions. To decode these, use the additional command in `heimdallld`
+In Heimdall-v2, the first transaction of each block will contain the encoded vote extensions. To decode these, use the additional command in `heimdallld`

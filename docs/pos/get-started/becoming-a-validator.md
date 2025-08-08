@@ -31,7 +31,7 @@ In return for their efforts, validators are rewarded with incentives, encouragin
 Polygon consists of the three following layers:
 
 * Ethereum layer: A set of contracts on the Ethereum mainnet.
-* Heimdall layer: A set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon PoS network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
+* Heimdall layer: A set of proof-of-stake Heimdall nodes running in parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet, and committing the Polygon PoS network checkpoints to the Ethereum mainnet. Heimdall is based on CometBFT and Cosmos-SDK.
 * Bor layer: A set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
 
 To be a validator on the Polygon PoS network, you must do the following:
@@ -50,12 +50,12 @@ Heimdall does the following:
 * Verifies all state transitions on the Bor chain.
 * Commits the Bor chain state checkpoints to the Ethereum mainnet.
 
-Heimdall is based on Tendermint.
+Heimdall is based on CometBFT and Cosmos-SDK.
 
 !!! info "See also"
 
-    * GitHub repository: [Heimdall](https://github.com/maticnetwork/heimdall)
-    * GitHub repository: [Staking contracts](https://github.com/maticnetwork/contracts/tree/master/contracts/staking)
+    * GitHub repository: [Heimdall](https://github.com/0xPolygon/heimdall-v2)
+    * GitHub repository: [Staking contracts](https://github.com/0xPolygon/pos-contracts/tree/master/contracts/staking)
     * Blog post: [Heimdall](https://polygon.technology/blog/heimdall-vaibhav-chellani-the-all-seeing-all-hearing-protector-of-matic)
 
 ### Bor
@@ -68,7 +68,7 @@ Bor is the block producing node and layer for the Polygon PoS network. It is bas
 
 !!! info "See also"
 
-    * GitHub repository: [Bor](https://github.com/maticnetwork/bor)
+    * GitHub repository: [Bor](https://github.com/0xPolygon/bor)
     * Blog post: [Heimdall and Bor](https://blog.polygon.technology/heimdall-and-bor/)
 
 ## Validator responsibilities
@@ -179,7 +179,7 @@ Communicating issues as early as possible ensures that the community and the Pol
 
 * [Discord](https://discord.com/invite/0xPolygonCommunity)
 * [Forum](https://forum.polygon.technology/)
-* [GitHub](https://github.com/maticnetwork)
+* [GitHub](https://github.com/0xPolygon)
 
 #### Provide feedback and suggestions
 

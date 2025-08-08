@@ -24,7 +24,6 @@ The scope of the ISO/IEC 27001:2022 certification is limited to the information 
 
 ## POS
  
- - Bor/Heimdal milestones audit by Least Authority: https://github.com/maticnetwork/bor/blob/develop/audit/audit-feature-milestones.pdf.
  - POS portal audits: https://github.com/maticnetwork/pos-portal/tree/master/audits.
  - POS contracts: https://github.com/0xPolygon/pos-contracts/tree/main/audit.
 

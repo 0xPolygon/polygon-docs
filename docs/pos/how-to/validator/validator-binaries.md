@@ -53,7 +53,9 @@ To set up a running validator node, follow these steps in the *exact sequence*:
 
 ## Installing the binaries
 
-Polygon node consists of 2 layers: Heimdall and Bor. Heimdall is a tendermint fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
+Polygon node consists of 2 layers: Heimdall and Bor.  
+Heimdall is a Cosmos-SDK/CometBFT fork that monitors contracts in parallel with the Ethereum network.  
+Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
 
 Both binaries must be installed and run in the correct order to function properly.
 
@@ -64,19 +66,37 @@ Install the latest version of Heimdall and related services. Make sure you check
 To install Heimdall, run the following command:
 
 ```bash
-curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- <version> <network> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/heimdall-v2/heimdall-v2.sh | bash -s -- <heimdall_version> <network_type> <node_type>
 ```
-You can run the above command with following options:
+You can run the above command with the following options:
 
 - `heimdall_version`: valid v0.2+ release tag from https://github.com/0xPolygon/heimdall-v2/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
-That will install the `heimdalld` binary. Verify the installation by checking the Heimdall version on your machine using the following command:
+That will install the `heimdalld` binary.  
+
+Then, edit the configuration files under `/var/lib/heimdall/config`  
+The templates for each supported network are available [here](https://github.com/0xPolygon/heimdall-v2/tree/develop/packaging/templates/config)  
+Download the `genesis.json` file and place it under `/var/lib/heimdall/config/`
+Use the following commands based on your target network:
+```bash
+cd /var/lib/heimdall/config
+curl -fsSL <BUCKET_URL> -o genesis.json
+```
+
+Where `BUCKET_URL` is
+
+- https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
+- https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
+
+Verify the installation by checking the Heimdall version on your machine:
 
 ```bash
 heimdalld version
 ```
+
+It should return the version of Heimdall you installed.
 
 !!! note
     
@@ -85,14 +105,14 @@ heimdalld version
 
 ### Install Bor
 
-Install the latest version of Bor. Make sure you checkout to the correct [release version](https://github.com/maticnetwork/bor/releases).
+Install the latest version of Bor. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/bor/releases).
 
 ```bash
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- <bor_version> <network_type> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/main/bor.sh | bash -s -- <bor_version> <network_type> <node_type>
 ```
-You can run the above command with following options:
+You can run the above command with the following options:
 
-- `bor_version`: valid v1.0+ release tag from https://github.com/maticnetwork/bor/releases
+- `bor_version`: valid v2.0+ release tag from https://github.com/0xPolygon/bor/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
@@ -106,41 +126,6 @@ bor version
     
     Before proceeding, make sure that Bor is installed on both the sentry and validator machines.
 
-
-## Configuring the sentry node
-
-Start by logging in to the remote sentry machine.
-
-### Configure Heimdall
-
-Open the Heimdall configuration file for editing:
-
-```sh
-vi /var/lib/heimdall/config/config.toml
-```
-
-In `config.toml`, change the following parameters:
-
-* `moniker` — any name. Example: `moniker = "my-sentry-node"`.
-* `seeds` — the seed node addresses consisting of a node ID, an IP address, and a port. The seeds are provided in the next section.
-* `pex` — set the value to `true` to enable the peer exchange. Example: `pex = true`.
-* `private_peer_ids` — the node ID of Heimdall set up on the validator machine.
-
-To get the node ID of Heimdall on the validator machine:
-
-1. Log in to the validator machine.
-2. Run:
-
-  ```sh
-  heimdalld tendermint show-node-id
-  ```
-
-Example: `private_peer_ids = "0ee1de0515f577700a6a4b6ad882eff1eb15f066"`.
-
-* `prometheus` — set the value to `true` to enable the Prometheus metrics. Example: `prometheus = true`.
-* `max_open_connections` — set the value to `100`. Example: `max_open_connections = 100`.
-
-Finally, save the changes in `config.toml`.
 
 ### Configure Bor
 
@@ -202,8 +187,6 @@ Start the Heimdall service:
 ```sh
 sudo service heimdalld start
 ```
-!!! info
-    The `heimdall-rest` service starts along with heimdall.
 
 Check the Heimdall service logs using the following command:
 
@@ -257,40 +240,6 @@ journalctl -u bor.service -f
 !!! info
     
     In order to proceed, you'll need to have access to an RPC endpoint of a fully synced Ethereum mainnet node ready.
-
-### Configuring the Heimdall service
-
-Log in to the remote validator machine.
-
-Open for editing `vi /var/lib/heimdall/config/config.toml`.
-
-In `config.toml`, change the following:
-
-* `moniker` — any name. Example: `moniker = "my-validator-node"`.
-* `pex` — set the value to `false` to disable the peer exchange. Example: `pex = false`.
-* `private_peer_ids` — comment out the value to disable it. Example: `# private_peer_ids = ""`.
-
-To get the node ID of Heimdall on the sentry machine:
-
-1. Log in to the sentry machine.
-2. Run `heimdalld tendermint show-node-id`.
-
-Example: `persistent_peers = "sentry_machineNodeID@sentry_instance_ip:26656"`
-
-* `prometheus` — set the value to `true` to enable the Prometheus metrics. Example: `prometheus = true`.
-
-Save the changes in `config.toml`.
-
-Open for editing `vi /var/lib/heimdall/config/app.toml`.
-
-In `app.toml`, update the following:
-
-* `eth_rpc_url` — an RPC endpoint for a fully synced Ethereum mainnet node,
-  e.g., Infura. `eth_rpc_url =<insert Infura or any full node RPC URL to Ethereum>`
-
-Example: `eth_rpc_url = "https://nd-123-456-789.p2pify.com/60f2a23810ba11c827d3da642802412a"`
-
-Save the changes in `app.toml`.
 
 ### Configuring the Bor service
 
@@ -402,7 +351,7 @@ sudo service heimdalld start
 
 !!! info
 
-    The `heimdall-rest` service and `heimdall-bridge` starts along with heimdall.
+    The rest service and the bridge starts along with heimdall.
 
 Check the Heimdall service logs using the following command:
 

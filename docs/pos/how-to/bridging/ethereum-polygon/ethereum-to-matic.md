@@ -10,7 +10,7 @@ comments: true
 
 The mechanism to natively read Ethereum data from Polygon EVM chain is that of ‘State Sync’. In other words, this mechanism enables transfer of arbitrary data from Ethereum chain to Polygon chain. The procedure that makes it possible is: Validators on the Heimdall layer are listening for a particular event — `StateSynced` from a *sender* contract, as soon as the event is picked, the `data` that was passed in the event is written on the *receiver* contract. Read more [here](../../../architecture/bor/state-sync.md).
 
-The sender and receiver contracts are required to be mapped on Ethereum — [StateSender.sol](https://github.com/maticnetwork/contracts/blob/release-betaV2/contracts/root/stateSyncer/StateSender.sol) needs to be aware of each sender and receiver.
+The sender and receiver contracts are required to be mapped on Ethereum — [StateSender.sol](https://github.com/0xPolygon/pos-contracts/blob/release-betaV2/contracts/root/stateSyncer/StateSender.sol) needs to be aware of each sender and receiver.
 
 !!! tip "Custom tokens"
 
@@ -22,7 +22,7 @@ In the following walkthrough, we'll be deploying a sender contract on Sepolia (E
 
 ### 1. Deploy sender contract
 
-The sole purpose of the sender contract is to be able to call [syncState](https://github.com/maticnetwork/contracts/blob/e999579e9dc898ab6e66ddcb49ee84c2543a9658/contracts/root/stateSyncer/StateSender.sol#L33) function on the StateSender contract — which is the state syncer contract on Polygon PoS that emits the `StateSynced` event that Heimdall listens for.
+The sole purpose of the sender contract is to be able to call [syncState](https://github.com/0xPolygon/pos-contracts/blob/e999579e9dc898ab6e66ddcb49ee84c2543a9658/contracts/root/stateSyncer/StateSender.sol#L33) function on the StateSender contract — which is the state syncer contract on Polygon PoS that emits the `StateSynced` event that Heimdall listens for.
 
 Deployed at:
 
@@ -88,7 +88,7 @@ Use Remix to deploy the contract and keep a note of the address and ABI.
 
 ### 2. Deploy receiver contract
 
-The receiver contract is the one that is invoked by a validator when the `StateSynced` event is emitted. The validator invokes the function `onStateReceive`on the receiver contract to submit the data. To implement it, we first import [StateReceiver](https://github.com/maticnetwork/contracts/blob/release-betaV2/contracts/child/bor/StateReceiver.sol) interface and write down our custom logic — to interpret the transferred data inside onStateReceive.
+The receiver contract is the one that is invoked by a validator when the `StateSynced` event is emitted. The validator invokes the function `onStateReceive`on the receiver contract to submit the data. To implement it, we first import [StateReceiver](https://github.com/0xPolygon/pos-contracts/blob/release-betaV2/contracts/child/bor/StateReceiver.sol) interface and write down our custom logic — to interpret the transferred data inside onStateReceive.
 
 The following is what our `Receiver.sol` looks like:
 
@@ -114,7 +114,7 @@ contract receiver {
 }
 ```
 
-The function simply assigns the last received state ID and data to variables. [`StateId`](https://github.com/maticnetwork/contracts/blob/239a91045622ddcf9ebec2cec81fdc6daa3a33e3/contracts/root/stateSyncer/StateSender.sol#L36) is a simple unique reference to the transferred state (a simple counter).
+The function simply assigns the last received state ID and data to variables. [`StateId`](https://github.com/0xPolygon/pos-contracts/blob/239a91045622ddcf9ebec2cec81fdc6daa3a33e3/contracts/root/stateSyncer/StateSender.sol#L36) is a simple unique reference to the transferred state (a simple counter).
 
 Deploy your `Receiver.sol` to Amoy testnet and keep a note of the address and ABI.
 

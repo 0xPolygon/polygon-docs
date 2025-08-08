@@ -12,18 +12,18 @@ An [Ansible playbook](https://docs.ansible.com/ansible/latest/user_guide/playboo
     - To install Ansible with Python 3.x, you can use pip. If you do not have pip on your machine,
       follow the steps outlined [here](https://pip.pypa.io/en/stable/). Run `pip3 install ansible` to install
       Ansible.
-- Check the [Polygon PoS Ansible repository](https://github.com/maticnetwork/node-ansible#requirements) for requirements.
+- Check the [Polygon PoS Ansible repository](https://github.com/0xPolygon/node-ansible#requirements) for requirements.
 - You also need to ensure that Go is *not installed* in your environment. You will run into issues if you attempt to set up your full node through Ansible with Go installed as Ansible requires specific packages of Go.
 - You will also need to make sure that your VM / Machine does not have any previous setups for Polygon Validator or Heimdall or Bor. You will need to delete them as your setup will run into issues.
 
 ## Full node setup
 
 - Ensure you have access to the remote machine or VM on which the full node is being set up.
-  > Refer to [https://github.com/maticnetwork/node-ansible#setup](https://github.com/maticnetwork/node-ansible#setup) for more details.
-- Clone the [https://github.com/maticnetwork/node-ansible](https://github.com/maticnetwork/node-ansible) repository.
+  > Refer to [https://github.com/0xPolygon/node-ansible](https://github.com/0xPolygon/node-ansible) for more details.
+- Clone the [https://github.com/0xPolygon/node-ansible](https://github.com/0xPolygon/node-ansible) repository.
 - Navigate into the node-ansible folder: `cd node-ansible`
 - Edit the `inventory.yml` file and insert your IP(s) in the `sentry->hosts` section.
-  > Refer to [https://github.com/maticnetwork/node-ansible#inventory](https://github.com/maticnetwork/node-ansible#inventory) for more details.
+  > Refer to [https://github.com/0xPolygon/node-ansible#inventory](https://github.com/0xPolygon/node-ansible#inventory) for more details.
 - Check if the remote machine is reachable by running: `ansible sentry -m ping`
 - To test if the correct machine is configured, run the following command:
 

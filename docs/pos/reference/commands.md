@@ -37,17 +37,18 @@ bor attach .bor/data/bor.ipc <command>
 
 ## Node management commands
 
-| Description                  | Command                                     |
-| ---------------------------- | ------------------------------------------- |
-| Locate Heimdall genesis file | `$CONFIGPATH/heimdall/config/genesis.json`  |
-| Locate heimdall-config.toml  | `/etc/heimdall/config/heimdall-config.toml` |
-| Locate config.toml           | `/etc/heimdall/config/config.toml`          |
-| Start Heimdall               | `$ sudo service heimdalld start`            |
-| Locate Bor genesis file      | `$CONFIGPATH/bor/genesis.json`              |
-| Start Bor                    | `sudo service bor start`                    |
-| Retrieve Heimdall logs       | `/var/log/matic-logs/`                      |
-| Check Heimdall logs          | `journalctl -fu heimdalld.service`          |
-| Check Bor logs               | `journalctl -fu bor.service`                |
+| Description                  | Command                                    |
+|------------------------------|--------------------------------------------|
+| Locate Heimdall genesis file | `$CONFIGPATH/heimdall/config/genesis.json` |
+| Locate app.toml              | `/etc/heimdall/config/app.toml`            |
+| Locate config.toml           | `/etc/heimdall/config/config.toml`         |
+| Locate client.toml           | `/etc/heimdall/config/client.toml`         |
+| Start Heimdall               | `$ sudo service heimdalld start`           |
+| Locate Bor genesis file      | `$CONFIGPATH/bor/genesis.json`             |
+| Start Bor                    | `sudo service bor start`                   |
+| Retrieve Heimdall logs       | `/var/log/matic-logs/`                     |
+| Check Heimdall logs          | `journalctl -fu heimdalld.service`         |
+| Check Bor logs               | `journalctl -fu bor.service`               |
 
 ## Remove Heimdall directories
 

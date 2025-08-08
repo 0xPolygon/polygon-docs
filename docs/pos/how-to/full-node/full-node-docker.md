@@ -94,19 +94,19 @@ At this point, we have a host with docker running on it and we have ample mounte
 First let’s make sure we can run Heimdall with docker. Run the following command:
 
 ```bash
-docker run -it 0xpolygon/heimdall:1.0.3 heimdallcli version
+docker run -it 0xpolygon/heimdall-v2:0.2.16 heimdalld version
 ```
 
 If this is the first time you’ve run Heimdall with docker, it should pull the required image automatically and output the version information.
 
 ![img](../../../img/pos/heimdall-version.png)
 
-If you’d like to check the details of the Heimdall image or find a different tag, you can take a look at the repository on Docker Hub: https://hub.docker.com/repository/docker/0xpolygon/heimdall
+If you’d like to check the details of the Heimdall image or find a different tag, you can take a look at the repository on Docker Hub: https://hub.docker.com/repository/docker/0xpolygon/heimdall-v2
 
 At this point, let’s run the Heimdall `init` command to set up our home directory.
 
 ```bash
-docker run -v /mnt/data/heimdall:/heimdall-home:rw --entrypoint /usr/bin/heimdalld -it 0xpolygon/heimdall:1.0.3 init --home=/heimdall-home
+docker run -v /mnt/data/heimdall:/heimdall-home:rw --entrypoint /usr/bin/heimdalld -it 0xpolygon/heimdall-v2:0.2.16 init test-moniker --chain-id=<CHAIN_ID> --home=/heimdall-home
 ```
 
 Let’s break this command down a bit in case anything goes wrong.
@@ -121,78 +121,47 @@ Let’s break this command down a bit in case anything goes wrong.
 
 * The switch `it` is used to run the command interactively.
 
-* Finally we’re specifying which image we want to run with `0xpolygon/heimdall:1.0.3`.
+* Finally, we’re specifying which image we want to run with `0xpolygon/heimdall-v2:0.2.16`.
 
-* After that `init --home=/heimdall-home` are arguments being passed to the heimdalld executable. `init` is the command we want to run and `--home` is used to specify the location of the home directory.
+* After that `init test-moniker --chain-id=<CHAIN_ID> --home=/heimdall-home` are arguments being passed to the heimdalld executable. `init` is the command we want to run, `test-moniker` is the name of the node and `--chain-id` is used to specify the chain (`heimdallv2-80002` for `amoy` and `heimdallv2-137` for `mainnet`), while `--home` defines the home directory of your heimdall service.  
 
-After running the `init` command, your `/mnt/data/heimdall` directory should have some structure and look like this:
+After running the `init` command, your `/mnt/data/heimdall` directory should have some structure.  
 
-![img](../../../img/pos/heimdall-tree.png)
+Now we need to make a few updates before starting Heimdall.  
 
-Now we need to make a few updates before starting Heimdall. First we’re going to edit the `config.toml` file.
-
+Download the genesis file and place it under `HEIMDALL_HOME/config/genesis.json` (replacing the one potentially already present there)
 ```bash
-# Open the config.toml and and make three edits
-# moniker = "YOUR NODE NAME HERE"
-# laddr = "tcp://0.0.0.0:26657"
-# seeds = "LATEST LIST OF SEEDS"
-
-sudo emacs /mnt/data/heimdall/config/config.toml
+curl -L -o "<HEIMDALL_HOME>/config/genesis.json" <BUCKET_URL>
 ```
 
-If you don’t have a list of seeds, you can find one [in this section](#seed-nodes-and-bootnodes). In our case, our file has these three lines:
+where `BUCKET_URL` is https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoyand https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
 
-```
-# A custom human readable name for this node
-moniker="examplenode01"
+Replace `HEIMDALL_HOME` with the actual path to your Heimdall home directory.
 
-# TCP or UNIX socket address for the RPC server to listen on
-laddr = "tcp://0.0.0.0:26657"
+Please note that the genesis file size is around 50MB for amoy and 3GB for mainnet.  
+Hence, the download might take a while, and it’s recommended to use a stable and fast connection.  
 
-# Comma separated list of seed nodes to connect to
-seeds="f4f605d60b8ffaaf15240564e58a81103510631c@159.203.9.164:26656,4fb1bc820088764a564d4f66bba1963d47d82329@44.232.55.71:26656,2eadba4be3ce47ac8db0a3538cb923b57b41c927@35.199.4.13:26656,3b23b20017a6f348d329c102ddc0088f0a10a444@35.221.13.28:26656,25f5f65a09c56e9f1d2d90618aa70cd358aa68da@35.230.116.151:26656"
-```
+Then, you can customize the configs under `HEIMDALL_HOME/config` (`app.toml`, `client.toml`, `config.toml`), based on your setup.  
 
-!!! warning
-    
-    There are two `laddr` parameters inside `config.toml` file. Make sure that you only change the `laddr` parameter under `[rpc]`.
+Templates for each supported network are available [here](https://github.com/0xPolygon/heimdall-v2/tree/develop/packaging/templates/config)  
 
-Now that your `config.toml` file is all set, you’ll need to make two small changes to your `heimdall-config.toml` file. Use your favorite editor to update these two settings:
+Make sure to configure your Ethereum and Bor connection parameters based on your infrastructure.  
 
-```
-# RPC endpoint for ethereum chain
-eth_rpc_url = "http://localhost:9545"
+## (Optional) Start Heimdall from snapshot
 
-# RPC endpoint for bor chain
-bor_rpc_url = "http://localhost:8545"
-```
+In case you want to start Heimdall from a snapshot,  
+you can download it, and extract in the `data` folder.
+Examples of snapshots can be found here https://all4nodes.io/Polygon, and they are managed by the community.
 
-The `eth_rpc_url` should be updated to whatever URL you use for Ethereum mainnet RPC. The `bor_rpc_url` in our case is going to be updated to `http://bor:8545`. After making the edits, our file has these lines:
-
-```
-# RPC endpoint for ethereum chain
-eth_rpc_url = "https://eth-mainnet.g.alchemy.com/v2/ydmGjsREDACTED_DONT_USE9t7FSf"
-
-# RPC endpoint for bor chain
-bor_rpc_url = "http://bor:8545"
-```
-
-The default `init` command provides a `genesis.json` but that will not work with PoS mainnet or Amoy. If you’re setting up a mainnet node, you can run this command to download the correct genesis file:
-
+e.g.:
 ```bash
-sudo curl -o /mnt/data/heimdall/config/genesis.json https://raw.githubusercontent.com/maticnetwork/heimdall/master/builder/files/genesis-mainnet-v1.json
-```
-
-If you want to verify that you have the right file, you can check against this hash:
-
-```
-# sha256sum genesis.json
-498669113c72864002c101f65cd30b9d6b159ea2ed4de24169f1c6de5bcccf14  genesis.json
+lz4 -dc polygon-heimdall-24404501-25758577.tar.lz4 | tar -x
 ```
 
 ## Starting Heimdall
 
-Before we start Heimdall, we’re going to create a docker network so that the containers can easily network with each other based on names. In order to create the network, run the following command:
+Before we start Heimdall, we’re going to create a docker network so that the containers can easily network with each other based on names.  
+In order to create the network, run the following command:
 
 ```bash
 docker network create polygon
@@ -201,7 +170,7 @@ docker network create polygon
 Now we’re going to start Heimdall. Run the following command:
 
 ```bash
-docker run -p 26657:26657 -p 26656:26656 -v /mnt/data/heimdall:/heimdall-home:rw --net polygon --name heimdall --entrypoint /usr/bin/heimdalld -d --restart unless-stopped  0xpolygon/heimdall:1.0.3 start --home=/heimdall-home
+docker run -p 26657:26657 -p 26656:26656 -v /mnt/data/heimdall:/heimdall-home:rw --net polygon --name heimdall --entrypoint /usr/bin/heimdalld -d --restart unless-stopped  0xpolygon/heimdall-v2:0.2.16 start --home=/heimdall-home
 ```
 
 Many of the options in this command will look familiar. So let’s talk about what’s new.
@@ -218,7 +187,7 @@ Many of the options in this command will look familiar. So let’s talk about wh
 
 * Finally, `start` is being used to actually run the application instead of `init` which just set up the home directory.
 
-At this point it’s helpful to check and see what’s going on. These two commands can be useful:
+At this point, it’s helpful to check and see what’s going on. These two commands can be useful:
 
 ```bash
 # ps will list the running docker processes. At this point you should see one container running
@@ -254,46 +223,20 @@ This will return a response like:
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "id": "",
-  "result": {
-    "node_info": {
-      "protocol_version": {
-        "p2p": "7",
-        "block": "10",
-        "app": "0"
-      },
-      "id": "0698e2f205de0ffbe4ca215e19b2ee7275d2c334",
-      "listen_addr": "tcp://0.0.0.0:26656",
-      "network": "heimdall-137",
-      "version": "0.32.7",
-      "channels": "4020212223303800",
-      "moniker": "examplenode01",
-      "other": {
-        "tx_index": "on",
-        "rpc_address": "tcp://0.0.0.0:26657"
-      }
-    },
-    "sync_info": {
-      "latest_block_hash": "812700055F33B175CF90C870B740D01B0C5B5DCB8D22376D2954E1859AF30458",
-      "latest_app_hash": "83A1568E85A1D942D37FE5415F3FB3CBD9DFD846A42CBC247DFD6ABB9CE7E606",
-      "latest_block_height": "16130",
-      "latest_block_time": "2020-05-31T17:06:31.350723885Z",
-      "catching_up": true
-    },
-    "validator_info": {
-      "address": "3C6058AF387BB74D574582C2BEEF377E7A4C0238",
-      "pub_key": {
-        "type": "tendermint/PubKeySecp256k1",
-        "value": "BOIKA6z1q3l5iSJoaAiagWpwUw3taAhiEMyZ9ffxAMznas2GU1giD5YmtnrB6jzp4kkIqv4tOmuGYILSdy9+wYI="
-      },
-      "voting_power": "0"
-    }
-  }
+  "latest_block_hash":"6217E7BDAABE4DF58F8FCA2AAF0BD41BD93A96983F533DA7A0034E514D15BC5B",
+  "latest_app_hash":"BAA894A82E756A2797E3F608F6F7EED295549B8F7FB621E31542D206F5CA740C",
+  "latest_block_height":26191190,
+  "latest_block_time":"2025-08-06T12:50:35.062210407Z",
+  "earliest_block_hash":"14C55F6E824DD1C1D3D9AB424D0A983953F6C2BCA0C9ED692AE2C43498D870CD",
+  "earliest_app_hash":"E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "earliest_block_height":24404501,
+  "earliest_block_time":"2025-07-10T15:20:00Z",
+  "catching_up":false
 }
 ```
 
-In this initial setup phase, it’s important to pay attention to the `sync_info` field. If `catching_up` is true, it means that Heimdall is not fully synced. You can check the other properties within `sync_info` to get a sense how far behind Heimdall is.
+In this initial setup phase, it’s important to pay attention to the `catching_up` field.  
+If `catching_up` is true, it means that Heimdall is not fully synced. 
 
 ## Starting Bor
 
@@ -318,7 +261,7 @@ Bor will rely on this interface. So if you don’t see JSON output, there is som
 Now let’s download the `genesis` file for Bor specifically:
 
 ```bash
-sudo curl -o /mnt/data/bor/genesis.json 'https://raw.githubusercontent.com/maticnetwork/bor/master/builder/files/genesis-mainnet-v1.json'
+sudo curl -o /mnt/data/bor/genesis.json 'https://raw.githubusercontent.com/0xPolygon/bor/master/builder/files/genesis-mainnet-v1.json'
 ```
 
 Let’s verify the `sha256 sum` again for this file:

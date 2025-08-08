@@ -6,7 +6,7 @@ Heimdall, an integral part of this process, manages checkpoint functionalities u
 
 ## Overview
 
-Heimdall selects the next proposer using Peppermint’s leader selection algorithm.  
+Heimdall selects the next proposer using CometBFT’s leader selection algorithm.  
 The multi-stage checkpoint process is crucial due to potential failures when submitting checkpoints on the Ethereum chain caused by factors like gas limit, network traffic, or high gas fees.
 Each checkpoint has a validator as the proposer.  
 The outcome of a checkpoint on the Ethereum chain (success or failure) triggers an ack (acknowledgment) or no-ack (no acknowledgment) transaction,  
@@ -56,7 +56,7 @@ Additionally, the selection of the next checkpoint proposer is adjusted based on
 The `MsgCpNoAck` message is broadcast by the bridge processor to indicate that a checkpoint was potentially transferred to the Ethereum chain but has not received an acknowledgment.  
 A background routine periodically checks for time elapsed and publishes the No-ACK signal. No-ACK is sent if a sufficient amount of time has passed since:
 
-- the last checkpoint was created on the Heimdall v2 chain and
+- the last checkpoint was created on the Heimdall-v2 chain and
 - the last No-ACK was issued.  
   To conclude, the No-ACKs are triggered only when a checkpoint acknowledgment is overdue, ensuring they are not sent too frequently.  
   This message is broadcasted only by the proposer. This entire flow ensures that checkpoints are securely proposed, verified, and finalized across the Heimdall and Ethereum chains in a decentralized manner.

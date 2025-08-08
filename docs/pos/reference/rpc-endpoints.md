@@ -48,7 +48,7 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 
 !!! info "Additional information"
     
-    For more details, refer to the [JSON data](https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json).
+    For more details, refer to the [JSON data](https://github.com/0xPolygon/static/blob/master/network/mainnet/v1/index.json).
 
 ## RPC API methods
 

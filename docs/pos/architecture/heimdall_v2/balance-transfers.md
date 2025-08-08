@@ -15,9 +15,9 @@ interaction with other modules which must alter user balances.
 In addition, the bank module tracks and provides query support for the total
 supply of all assets used in the application.
 
-This module is used in the Cosmos Hub and [Heimdall-v2](https://github.com/0xPolygon/heimdall-v2).
+This module is used in the Cosmos Hub and [Heimdall](https://github.com/0xPolygon/heimdall-v2).
 
-**NOTE**: For heimdall-v2, minimal changes have been done in the fork listed [here](#conceptschanges-specific-to-heimdall-v2)
+**NOTE**: For heimdall, minimal changes have been done in the fork listed [here](#conceptschanges-specific-to-heimdall)
 
 ## Supply
 
@@ -1016,7 +1016,7 @@ Example Output:
 }
 ```
 
-## concepts/changes specific to heimdall-v2
+## concepts/changes specific to heimdall
 
 Since heimdall is a unique component of the PoS architecture and not a traditional Cosmos SDK app, some changes had to be made in order to ensure correct functionality, some of which are :
 
