@@ -134,13 +134,13 @@ Reloading service files to make sure all changes to service files are loaded cor
 sudo systemctl daemon-reload
 ```
 
-Verify the installation by checking the Heimdall-v2 version on your machine:
+Verify the installation by checking the Heimdall version on your machine:
 
 ```bash
 heimdalld version
 ```
 
-It should return the version of Heimdall-v2 you installed.
+It should return the version of Heimdall you installed.
 
 Start Heimdall, Heimdall rest server, and Heimdall bridge.
 

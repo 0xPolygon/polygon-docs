@@ -83,7 +83,7 @@ nav:
         - zkEVM protocol:
           - zkEVM protocol: zkEVM/architecture/protocol/index.md
           - zkNode: zkEVM/architecture/zknode/index.md
-          - State management: 
+          - State management:
             - State management: zkEVM/architecture/protocol/state-management.md
             - Transaction life cycle:
               - Transaction life cycle: zkEVM/architecture/protocol/transaction-life-cycle/index.md
@@ -172,7 +172,7 @@ nav:
           - Smart contracts: zkEVM/architecture/high-level/smart-contracts/index.md
           - Main contracts: zkEVM/architecture/high-level/smart-contracts/main-contracts.md
           - Consensus contracts - sequencing: zkEVM/architecture/high-level/smart-contracts/sequencing.md
-          - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md   
+          - Exit roots: zkEVM/architecture/high-level/smart-contracts/exit-roots.md
           - Consensus contracts - verification: zkEVM/architecture/high-level/smart-contracts/verification.md
           - API:
             - PolygonRollupManager.sol:  zkEVM/architecture/high-level/smart-contracts/api/PolygonRollupManager.md
@@ -236,7 +236,7 @@ nav:
           - Basic Syntax: zkEVM/spec/zkasm/basic-syntax.md
           - Examples: zkEVM/spec/zkasm/examples.md
         - EVM vs. zkEVM: zkEVM/spec/evm-differences.md
-      # - API: 
+      # - API:
       #   - JSON RPC endpoints: zkEVM/api/json-rpc.md
       #   - Check transaction status: zkEVM/api/check-tx-status.md
       - Concepts:
@@ -254,7 +254,7 @@ nav:
           - Verification scheme: zkEVM/concepts/mfibonacci/verification-scheme.md
           - PIL-STARK process: zkEVM/concepts/mfibonacci/pil-stark.md
           - PIL-STARK demo: zkEVM/concepts/mfibonacci/pil-stark-demo.md
-        - Generic state machine: 
+        - Generic state machine:
           - Generic SM introduction: zkEVM/concepts/generic-state-machine/intro-generic-sm.md
           - Execution trace: zkEVM/concepts/generic-state-machine/exec-trace-correct.md
           - Ending programs: zkEVM/concepts/generic-state-machine/ending-program.md
@@ -266,7 +266,7 @@ nav:
   - PoS:
       - PoS: pos/index.md
       - Overview: pos/overview.md
-      - Get started: 
+      - Get started:
         - Building on PoS: pos/get-started/building-on-polygon.md
         - Token bridging:
           - Polygon Portal: pos/how-to/bridging/ethereum-polygon/portal-ui.md
@@ -302,7 +302,7 @@ nav:
           - Contracts:
             - Genesis contracts: pos/reference/contracts/genesis-contracts.md
             - Delegation via validator shares: pos/reference/contracts/delegation.md
-            - Staking manager: pos/reference/contracts/stakingmanager.md 
+            - Staking manager: pos/reference/contracts/stakingmanager.md
           - Rewards and staking incentives: pos/reference/rewards.md
           - Setting Up Telemetry: pos/reference/telemetry-setup-guide.md
           - Default ports for nodes: pos/reference/port-management.md
@@ -319,19 +319,7 @@ nav:
             - Introduction: pos/architecture/bor/introduction.md
             - State sync: pos/architecture/bor/state-sync.md
             - Network configuration: pos/architecture/bor/network-config.md
-          - Heimdall:
-            - Introduction: pos/architecture/heimdall/introduction.md
-            - Heimdall and Bor: pos/architecture/heimdall/heimdall-and-bor.md
-            - Authentication: pos/architecture/heimdall/authentication.md
-            - Key management: pos/architecture/heimdall/key-management.md
-            - Validation: pos/architecture/heimdall/validation.md
-            - Balance transfers: pos/architecture/heimdall/balance-transfers.md
-            - Staking: pos/architecture/heimdall/staking.md
-            - Checkpoints: pos/architecture/heimdall/checkpoints.md
-            - Topup: pos/architecture/heimdall/topup.md
-            - Chain management: pos/architecture/heimdall/chain-management.md
-            - Governance: pos/architecture/heimdall/governance.md
-          - Heimdall v2:
+          - Heimdall-v2:
             - Introduction: pos/architecture/heimdall_v2/introduction.md
             - Changes from v1: pos/architecture/heimdall_v2/changes-from-v1.md
             - Authentication: pos/architecture/heimdall_v2/authentication.md
@@ -345,12 +333,12 @@ nav:
             - Heimdall Bor module: pos/architecture/heimdall_v2/heimdall-bor-module.md
             - Milestones: pos/architecture/heimdall_v2/milestones.md
             - Reference:
-              - Heimdall v2 RPC Endpoints: pos/architecture/heimdall_v2/heimdallv2_rpc
+              - Heimdall-v2 RPC Endpoints: pos/architecture/heimdall_v2/heimdallv2_rpc
               - Cosmos SDK RPC Endpoints: pos/architecture/heimdall_v2/cosmos_sdk_rpc
       - References:
           - RPC endpoints: pos/reference/rpc-endpoints.md
           - Mapped tokens: pos/reference/mapped-tokens.md
-      - Concepts: 
+      - Concepts:
           - Tokens:
             - Migrate to POL: pos/concepts/tokens/matic-to-pol.md
             - POL: pos/concepts/tokens/pol.md
@@ -386,7 +374,7 @@ nav:
               - Verify a contract: zkEVM/how-to/verify-contract.md
         - Verify smart contracts:
           - OKX explorer:
-            - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification 
+            - Verify contract with API: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification
             - Verify contract with external plugins: https://www.oklink.com/docs/en/#on-chain-tools-contract-verification-plugins
         - Estimate gas fees: tools/gas/polygon-gas-station.md
         - dApp Launchpad:
@@ -480,7 +468,7 @@ nav:
         - Data:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
           - The Graph: tools/data/thegraph.md
-        - Storage: 
+        - Storage:
           - IPFS: tools/storage/ipfs.md
           - Filecoin: tools/storage/filecoinhelpers.md
           - Crust network: tools/storage/crusthelpers.md
@@ -497,8 +485,8 @@ nav:
               - AppKit: tools/wallets/appkit.md
           - WalletKit:  tools/wallets/walletkit.md
         - Block explorers:
-          - OKX explorer: https://www.okx.com/web3/explorer/polygon      
-          - Polygon: https://polygonscan.com/ 
+          - OKX explorer: https://www.okx.com/web3/explorer/polygon
+          - Polygon: https://polygonscan.com/
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://cardona-zkevm.polygonscan.com/
   - Innovation & design:
@@ -541,7 +529,7 @@ extra:
   generator: false
   analytics:
     provider: custom
-    property: google    
+    property: google
   social:
     - icon: fontawesome/solid/circle-question
       link: https://support.polygon.technology/support/solutions
@@ -610,7 +598,7 @@ plugins:
   - redirects:
       redirect_maps:
         'docs/develop/network-details/network.md': 'cdk/index.md'
-        'cdk/getting-started/index.md': 'cdk/getting-started/local-deployment.md'      
+        'cdk/getting-started/index.md': 'cdk/getting-started/local-deployment.md'
         'zkEVM/how-to/index.md': 'zkEVM/get-started/index.md'
         'cdk/concepts/index.md': 'cdk/concepts/layer2s.md'
         'tools/matic-js/installation.md': 'tools/matic-js/get-started.md'
@@ -633,5 +621,5 @@ extra_javascript:
   - _site_essentials/js/mathjax.js
   - https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js

@@ -1,6 +1,6 @@
-# Heimdall v2
+# Heimdall-v2
 
-Heimdall v2 is a modernized and revamped consensus client that is at the heart of the Polygon PoS network. Similar to the previous version of Heimdall it performs the following functions:
+Heimdall-v2 is a modernized and revamped consensus client that is at the heart of the Polygon PoS network. Similar to the previous version of Heimdall it performs the following functions:
 
 - Manages validators.
 - Handles block producer selection.
@@ -12,4 +12,4 @@ It uses a fork of [*Cosmos SDK*](https://github.com/0xPolygon/cosmos-sdk) based 
 
 Heimdall leverages some modified versions of `cosmos-sdk` modules (`auth`, `bank` and `gov`) plus some fully customized modules (`bor`, `chainmanager`, `checkpoint`, `clerk`, `milestone`, `stake` and `topup`).
 
-For detailed instructions on running Heimdall v2, refer to the [Readme](https://github.com/0xPolygon/heimdall-v2/blob/develop/README.md) in the Github repository
+For detailed instructions on running Heimdall, refer to the [Readme](https://github.com/0xPolygon/heimdall-v2/blob/develop/README.md) in the Github repository

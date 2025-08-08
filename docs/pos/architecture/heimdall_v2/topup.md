@@ -13,7 +13,7 @@ There are two ways to top up your account:
 
 ## Flow
 
-The Heimdall Top-up Mechanism facilitates the management of validator fees on the Heimdall v2 chain by allowing deposits from the Ethereum (L1) root chain.  
+The Heimdall Top-up Mechanism facilitates the management of validator fees on the Heimdall chain by allowing deposits from the Ethereum (L1) root chain.  
 This mechanism ensures validators have enough balances on Heimdall to cover operational fees.  
 The system integrates staking smart contract on Ethereum with Heimdall custom x/topup and x/checkpoint modules and a bridge component to enable seamless cross-chain fee management.  
 
@@ -47,7 +47,7 @@ Each top-up is uniquely identified by a sequence number built from `TxHash` and 
 `MsgTopupTx` is a side-transaction, ensuring state changes only after the successful pre-commit majority of the votes are collected and final validation and post-tx handler execution in the following block height.  
 When broadcasting the `MsgTopupTx` - sender (proposer of the topup) must sign it, and additional user address must be sent.
 
-For the top-up to be accepted, the `MsgTopupTx.Fee` must be at least equal to the `DefaultFeeWantedPerTx` amount. The top-up processing on Heimdall v2 involves:
+For the top-up to be accepted, the `MsgTopupTx.Fee` must be at least equal to the `DefaultFeeWantedPerTx` amount. The top-up processing on Heimdall involves:
 
 - Minting the top-up number of pol tokens to the top-up module account.  
 - Transferring the entire amount from the top-up module account to the user account.  

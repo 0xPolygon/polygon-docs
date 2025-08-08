@@ -54,13 +54,13 @@ An overview of the process:
 * A selected proposer from the validator set is responsible for collecting all signatures for a particular checkpoint and committing the checkpoint on the Ethereum mainnet.
 * The responsibility of creating blocks and proposing checkpoints is variably dependent on a validator’s stake ratio in the overall pool.
 
-Heimdall (v1) was deprecated and replaced by Heimdall-v2.  
+The original Heimdall implementation (v1) was deprecated and replaced by Heimdall-v2.  
 In these docs, referring to Heimdall means Heimdall-v2, unless otherwise specified.  
 The new version is a complete rewrite of the original Heimdall, based on Cosmos SDK and CometBFT.  
 More information can be found in the following PIPs:
 - [PIP-43: Replacing Tendermint with CometBFT](https://github.com/maticnetwork/Polygon-Improvement-Proposals/blob/cb371136414b5e198c44750cd4c30f7aad16043a/PIPs/PIP-43.md)
 - [PIP-44: Upgrade Cosmos-SDK](https://github.com/maticnetwork/Polygon-Improvement-Proposals/blob/cb371136414b5e198c44750cd4c30f7aad16043a/PIPs/PIP-44.md)
-- [PIP-62: Heimdall v2 Migration](https://github.com/maticnetwork/Polygon-Improvement-Proposals/blob/cb371136414b5e198c44750cd4c30f7aad16043a/PIPs/PIP-62.md)
+- [PIP-62: Heimdall-v2 Migration](https://github.com/maticnetwork/Polygon-Improvement-Proposals/blob/cb371136414b5e198c44750cd4c30f7aad16043a/PIPs/PIP-62.md)
 
 ## Bor: Block production layer
 

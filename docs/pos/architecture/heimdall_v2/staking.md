@@ -12,7 +12,7 @@ this module saves the validator information on Heimdall state.
 
 ## Flow
 
-The x/stake module manages validator-related transactions and validator set management for Heimdall v2.
+The x/stake module manages validator-related transactions and validator set management for Heimdall.
 
 Validators stake their tokens on the Ethereum chain to participate in consensus. To synchronize these changes with Heimdall, the bridge processor broadcasts the corresponding transaction for an Ethereum-emitted event, choosing from one of the following messages each with the necessary parameters:
 
@@ -21,14 +21,14 @@ Validators stake their tokens on the Ethereum chain to participate in consensus.
 - `MsgValidatorExit`: When a validator decides to exit, they initiate the process on Ethereum, leading to the emission of a `UnstakeInit` event. This message ensures that Heimdall records the validator’s departure accordingly.  
 - `MsgSignerUpdate`: This message is responsible for processing changes to a validator’s signer key. When a validator updates their signer key on Ethereum, it emits a `SignerUpdate` event, prompting Heimdall to reflect the new signer key in its records.
 
-Each of these transactions in Heimdall v2 follows the same processing mechanisms, leveraging ABCI++ phases.
+Each of these transactions in Heimdall follows the same processing mechanisms, leveraging ABCI++ phases.
 
 During the `PreCommit` phase, side transaction handlers are triggered, and a vote is injected after validating the Ethereum-emitted event and ensuring its alignment with the data in the processed message.
 
 Once a majority of validators confirm that the action described in the message has occurred on Ethereum, the x/stake module updates the validator’s state in Heimdall during the `FinalizeBlock`’s `PreBlocker` execution.  
 
 ### Replay Prevention Mechanism
-Heimdall v2 employs a replay prevention mechanism in the post-tx handler functions to ensure that validator update messages derived from Ethereum events are not processed multiple times.
+Heimdall employs a replay prevention mechanism in the post-tx handler functions to ensure that validator update messages derived from Ethereum events are not processed multiple times.
 
 This mechanism prevents replay attacks by assigning a unique sequence number to each transaction and verifying whether it has already been processed.  
 The sequence number is constructed using the Ethereum block number and log index, following the formula:

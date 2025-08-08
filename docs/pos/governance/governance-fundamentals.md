@@ -39,7 +39,7 @@ The framework is composed of three key components:
 
 The PoS network currently uses two clients simultaneously:
 
-- Heimdall-v2: The [consensus layer](https://docs.polygon.technology/pos/architecture/heimdall_v2/introduction/) - [See GitHub](https://github.com/0xPolygon/heimdall-v2)
+- Heimdall: The [consensus layer](https://docs.polygon.technology/pos/architecture/heimdall_v2/introduction/) - [See GitHub](https://github.com/0xPolygon/heimdall-v2)
 - Bor: The [execution layer](https://docs.polygon.technology/pos/architecture/bor/introduction/) client - [See GitHub](https://github.com/0xPolygon/bor)
 
 Currently, Bor and Heimdall are the majority clients for the PoS network. These clients serve as ecosystem focal points rather than control switches operated by core developers that can dictate decisions.

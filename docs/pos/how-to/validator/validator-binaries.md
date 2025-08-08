@@ -53,13 +53,15 @@ To set up a running validator node, follow these steps in the *exact sequence*:
 
 ## Installing the binaries
 
-Polygon node consists of 2 layers: Heimdall-v2 and Bor. Heimdall-v2 is a Cosmos-SDK/CometBFT fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
+Polygon node consists of 2 layers: Heimdall and Bor.  
+Heimdall is a Cosmos-SDK/CometBFT fork that monitors contracts in parallel with the Ethereum network.  
+Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
 
 Both binaries must be installed and run in the correct order to function properly.
 
-### Install Heimdall-v2
+### Install Heimdall
 
-Install the latest version of Heimdall-v2 and related services. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/heimdall-v2/releases).
+Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/heimdall-v2/releases).
 
 To install Heimdall, run the following command:
 
@@ -88,13 +90,13 @@ Where `BUCKET_URL` is
 - https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
 - https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
 
-Verify the installation by checking the Heimdall-v2 version on your machine:
+Verify the installation by checking the Heimdall version on your machine:
 
 ```bash
 heimdalld version
 ```
 
-It should return the version of Heimdall-v2 you installed.
+It should return the version of Heimdall you installed.
 
 !!! note
     

@@ -136,7 +136,7 @@ curl -L -o "<HEIMDALL_HOME>/config/genesis.json" <BUCKET_URL>
 
 where `BUCKET_URL` is https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoyand https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
 
-Replace `HEIMDALL_HOME` with the actual path to your Heimdall-v2 home directory.
+Replace `HEIMDALL_HOME` with the actual path to your Heimdall home directory.
 
 Please note that the genesis file size is around 50MB for amoy and 3GB for mainnet.  
 Hence, the download might take a while, and it’s recommended to use a stable and fast connection.  

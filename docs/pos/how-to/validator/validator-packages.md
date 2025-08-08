@@ -258,13 +258,13 @@ Where `BUCKET_URL` is
 - https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
 - https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
 
-Verify the installation by checking the Heimdall-v2 version on your machine:
+Verify the installation by checking the Heimdall version on your machine:
 
 ```bash
 heimdalld version
 ```
 
-It should return the version of Heimdall-v2 you installed.
+It should return the version of Heimdall you installed.
 
 To get the node ID of Heimdall on the sentry machine:
 

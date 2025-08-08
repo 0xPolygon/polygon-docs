@@ -44,12 +44,12 @@ Both binaries must be installed and run in the correct order to function properl
 
 ### Heimdall
 
-Install the latest version of Heimdall-v2 and related services. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/heimdall-v2/releases).
+Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/heimdall-v2/releases).
 
-To install *Heimdall-v2*, run the following commands:
+To install *Heimdall*, run the following commands:
 
 ```bash
-curl -L https://raw.githubusercontent.com/0xPolygon/install/main/heimdall-v2.sh | bash -s -- <heimdall_version> <network> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/heimdall-v2/heimdall-v2.sh | bash -s -- <heimdall_version> <network> <node_type>
 ```
 
 You can run the above command with the following options:
@@ -74,13 +74,13 @@ Where `BUCKET_URL` is
 - https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
 - https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
 
-Verify the installation by checking the Heimdall-v2 version on your machine:
+Verify the installation by checking the Heimdall version on your machine:
 
 ```bash
 heimdalld version
 ```
 
-It should return the version of Heimdall-v2 you installed.  
+It should return the version of Heimdall you installed.  
 
 ### Bor
 
@@ -101,7 +101,7 @@ That will install the `bor` binary. Verify the installation by checking the Bor 
 bor version
 ```
 
-### Configure Heimdall-v2 and Bor seeds
+### Configure Heimdall and Bor seeds
 
 The latest bor and heimdall seeds can be found [here](https://docs.polygon.technology/pos/reference/seed-and-bootnodes/). To configure them, update the following lines:
 
@@ -130,7 +130,7 @@ sed -i 's/User=bor/User=root/g' /lib/systemd/system/bor.service
 
 ## Start services
 
-Run the full Heimdall-v2 node with these commands on your Sentry Node:
+Run the full Heimdall node with these commands on your Sentry Node:
 
 ```bash
 sudo service heimdalld start
