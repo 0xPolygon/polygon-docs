@@ -20,18 +20,9 @@ This guide will walk you through running a Polygon validator node using binaries
   ```bash
   sudo apt-get install build-essential
   ```
+* Go 1.24+ installed on both the sentry and the validator machines.
 
-* Go 1.19 installed on both the sentry and the validator machines.
-
-  To install:
-
-  ```bash
-  wget https://raw.githubusercontent.com/0xPolygon/node-ansible/master/go-install.sh
-  bash go-install.sh
-  sudo ln -nfs ~/.go/bin/go /usr/bin/go
-  ```
-
-* RabbitMQ installed on both the sentry and the validator machines.
+* RabbitMQ installed on the validator machine.
 
   Here are the commands to install RabbitMQ:
 
@@ -70,14 +61,14 @@ Both binaries must be installed and run in the correct order to function properl
 
 Install the latest version of Heimdall-v2 and related services. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/heimdall-v2/releases).
 
-To install Heimdall, run the following commands:
+To install Heimdall, run the following command:
 
 ```bash
-curl -L https://raw.githubusercontent.com/0xPolygon/install/main/heimdall-v2.sh | bash -s -- <heimdall_version> <network_type> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/heimdall-v2/heimdall-v2.sh | bash -s -- <heimdall_version> <network_type> <node_type>
 ```
 You can run the above command with the following options:
 
-- `heimdall_version`: valid release tag from https://github.com/0xPolygon/heimdall-v2/releases
+- `heimdall_version`: valid v0.2+ release tag from https://github.com/0xPolygon/heimdall-v2/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
@@ -119,7 +110,7 @@ curl -L https://raw.githubusercontent.com/0xPolygon/install/main/bor.sh | bash -
 ```
 You can run the above command with the following options:
 
-- `bor_version`: valid v1.0+ release tag from https://github.com/0xPolygon/bor/releases
+- `bor_version`: valid v2.0+ release tag from https://github.com/0xPolygon/bor/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 

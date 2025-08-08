@@ -6,7 +6,7 @@ This module enables deterministic finality by leveraging Polygon PoS’s dual cl
 This is done using a hybrid system that uses CometBFT layer consensus,  
 along with an additional fork choice rule within the execution layer.
 With the introduction of milestones, finality is deterministic even before a checkpoint is submitted to L1.  
-After a certain number of blocks (minimum 12), a milestone is proposed and voted by Heimdall.  
+After a certain number of blocks (minimum 1), a milestone is proposed and voted by Heimdall.  
 Once 2/3+ of the network agrees, the milestone is finalized, and all transactions up to that milestone are considered final, with no chance of reorganization.
 
 ## Flow

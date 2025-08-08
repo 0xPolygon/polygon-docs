@@ -10,7 +10,7 @@ This guide covers running a validator node through packages.
 
 * Two machines — one sentry and one validator.
 * Bash installed on both the sentry and the validator machines.
-* RabbitMQ installed on both the sentry and the validator machines.
+* RabbitMQ installed on the validator machine.
   See [Downloading and Installing RabbitMQ](https://www.rabbitmq.com/download.html).
 
 ## Overview
@@ -37,7 +37,7 @@ To spin up a functioning validator node, follow these steps in the *specified se
 Install the default latest version of sentry and validator for the PoS mainnet/Amoy testnet:
 
 ```shell
-curl -L https://raw.githubusercontent.com/0xPolygon/install/main/heimdall-v2.sh | bash -s -- <version> <network> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/heimdall-v2/heimdall-v2.sh | bash -s -- <version> <network> <node_type>
 ```
 
 or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions can be found on
@@ -45,7 +45,7 @@ or install a specific version, node type (`sentry` or `validator`), and network 
 
 ```shell
   # Example:
-  curl -L https://raw.githubusercontent.com/0xPolygon/install/main/heimdall-v2.sh | bash -s -- v0.2.16 mainnet sentry
+  curl -L https://raw.githubusercontent.com/0xPolygon/install/heimdall-v2/heimdall-v2.sh | bash -s -- v0.2.16 mainnet sentry
 ```
 
 ### Bor

@@ -20,8 +20,8 @@ This deployment guide walks you through starting and running a full node through
     It is essential to follow the outlined sequence of actions precisely, as any deviation may lead to potential issues.
 
 - Prepare the machine.
-- Install Heimdall-v2 and Bor binaries on the full node machine.
-- Set up Heimdall-v2 and Bor services on the full node machine.
+- Install Heimdall and Bor binaries on the full node machine.
+- Set up Heimdall and Bor services on the full node machine.
 - Configure the full node machine.
 - Start the full node machine.
 - Check node health with the community.
@@ -38,23 +38,23 @@ sudo apt-get install build-essential
 
 ## Install binaries
 
-Polygon node consists of 2 layers: Heimdall-v2 and Bor. Heimdall-v2 is a Cosmos-SDK/CometBFT fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall-v2 nodes.
+Polygon node consists of 2 layers: Heimdall and Bor. Heimdall is a Cosmos-SDK/CometBFT fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
 
 Both binaries must be installed and run in the correct order to function properly.
 
-### Heimdall-v2
+### Heimdall
 
 Install the latest version of Heimdall-v2 and related services. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/heimdall-v2/releases).
 
 To install *Heimdall-v2*, run the following commands:
 
 ```bash
-curl -L https://raw.githubusercontent.com/0xPolygon/install/main/heimdall-v2.sh | bash -s -- <heimdall_version> <network_type> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/main/heimdall-v2.sh | bash -s -- <heimdall_version> <network> <node_type>
 ```
 
 You can run the above command with the following options:
 
-- `heimdall_version`: Valid release tag from https://github.com/0xPolygon/heimdall-v2/releases
+- `heimdall_version`: Valid v0.2+ release tag from https://github.com/0xPolygon/heimdall-v2/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
@@ -84,14 +84,14 @@ It should return the version of Heimdall-v2 you installed.
 
 ### Bor
 
-Install the latest version of Bor, based on valid v1.0+ [released version](https://github.com/0xPolygon/bor/releases).
+Install the latest version of Bor, based on valid v2.0+ [released version](https://github.com/0xPolygon/bor/releases).
 
 ```bash
 curl -L https://raw.githubusercontent.com/0xPolygon/install/main/bor.sh | bash -s -- <bor_version> <network_type> <node_type>
 ```
 You can run the above command with following options:
 
-- `bor_version`: valid v1.0+ release tag from https://github.com/0xPolygon/bor/releases
+- `bor_version`: valid v2.0+ release tag from https://github.com/0xPolygon/bor/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
