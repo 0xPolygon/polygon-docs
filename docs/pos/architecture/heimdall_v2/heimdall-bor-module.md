@@ -5,7 +5,7 @@ Heimdall's `bor` module is responsible for managing span intervals and coordinat
 ## Preliminary terminology
 
 * A `side-transaction` is a normal heimdall transaction but the data with which the message is composed needs to be voted on by the validators since the data is obscure to the consensus protocol itself, and it has no way of validating the data's correctness.
-* A `sprint` comprises of 16 bor blocks (configured in [bor](https://github.com/maticnetwork/launch/blob/fe86ba6cd16e5c36067a5ae49c0bad62ce8b1c3f/mainnet-v1/sentry/validator/bor/genesis.json#L26C18-L28)).
+* A `sprint` comprises of 16 bor blocks (configured in [bor](https://github.com/0xPolygon/launch/blob/fe86ba6cd16e5c36067a5ae49c0bad62ce8b1c3f/mainnet-v1/sentry/validator/bor/genesis.json#L26C18-L28)).
 * A `span` comprises 400 sprints in bor (check heimdall's bor [params](https://heimdall-api.polygon.technology/bor/params) endpoint).
 
 ## Overview

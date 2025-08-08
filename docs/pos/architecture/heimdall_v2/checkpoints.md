@@ -6,7 +6,7 @@ Heimdall, an integral part of this process, manages checkpoint functionalities u
 
 ## Overview
 
-Heimdall selects the next proposer using Peppermint’s leader selection algorithm.  
+Heimdall selects the next proposer using CometBFT’s leader selection algorithm.  
 The multi-stage checkpoint process is crucial due to potential failures when submitting checkpoints on the Ethereum chain caused by factors like gas limit, network traffic, or high gas fees.
 Each checkpoint has a validator as the proposer.  
 The outcome of a checkpoint on the Ethereum chain (success or failure) triggers an ack (acknowledgment) or no-ack (no acknowledgment) transaction,  

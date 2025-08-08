@@ -37,15 +37,15 @@ To spin up a functioning validator node, follow these steps in the *specified se
 Install the default latest version of sentry and validator for the PoS mainnet/Amoy testnet:
 
 ```shell
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <version> <network> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/main/heimdall-v2.sh | bash -s -- <version> <network> <node_type>
 ```
 
 or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions can be found on
-    [Heimdall GitHub repository](https://github.com/maticnetwork/heimdall/releases).
+    [Heimdall GitHub repository](https://github.com/0xPolygon/heimdall-v2/releases).
 
 ```shell
   # Example:
-  curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- v1.2.0 mainnet sentry
+  curl -L https://raw.githubusercontent.com/0xPolygon/install/main/heimdall-v2.sh | bash -s -- v0.2.16 mainnet sentry
 ```
 
 ### Bor
@@ -53,26 +53,20 @@ or install a specific version, node type (`sentry` or `validator`), and network 
 Install the default latest version of sentry and validator for the PoS mainnet/Amoy testnet:
 
 ```shell
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash
+curl -L https://raw.githubusercontent.com/0xPolygon/install/main/bor.sh | bash
 ```
 
-or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions could be found on [Bor Github repository](https://github.com/maticnetwork/bor/releases).
+or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions could be found on [Bor Github repository](https://github.com/0xPolygon/bor/releases).
 
 ```shell
 # structure
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- <version> <network> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/main/bor.sh | bash -s -- <version> <network> <node_type>
 
 # Example:
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- v2.0.0 mainnet sentry
+curl -L https://raw.githubusercontent.com/0xPolygon/install/main/bor.sh | bash -s -- v2.0.0 mainnet sentry
 ```
 
 ### Check installation
-
-Check Heimdall installation using the following command:
-
-```shell
-heimdalld version --long
-```
 
 Check Bor installation using the following command:
 
@@ -90,33 +84,39 @@ In this section, we will go through steps to initialize and customize configurat
 
 ### Configure Heimdall
 
-Open the Heimdall configuration file for editing using the following command:
-
-```sh
-vi /var/lib/heimdall/config/config.toml
+Edit the configuration files under `/var/lib/heimdall/config`  
+The templates for each supported network are available [here](https://github.com/0xPolygon/heimdall-v2/tree/develop/packaging/templates/config)  
+Download the `genesis.json` file and place it under `/var/lib/heimdall/config/`
+Use the following commands based on your target network:
+```bash
+cd /var/lib/heimdall/config
+curl -fsSL <BUCKET_URL> -o genesis.json
 ```
 
-In the config file, update the following parameters:
+Where `BUCKET_URL` is
 
-* `moniker` — any name. Example: `moniker = "my-sentry-node"`.
-* `seeds` — the seed node addresses consisting of a node ID, an IP address, and a port. The seeds are provided in the next section.
-* `pex` — set the value to `true` to enable the peer exchange. Example: `pex = true`.
-* `private_peer_ids` — the node ID of Heimdall set up on the validator machine.
+- https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
+- https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
 
 To get the node ID of Heimdall on the validator machine:
 
 1. Log in to the validator machine.
 2. Run:
   ```sh
-  heimdalld tendermint show-node-id
+  heimdalld comet show-node-id
   ```
 
 Example: `private_peer_ids = "0ee1de0515f577700a6a4b6ad882eff1eb15f066"`.
 
-* `prometheus` — set the value to `true` to enable the Prometheus metrics. Example: `prometheus = true`.
-* `max_open_connections` — set the value to `100`. Example: `max_open_connections = 100`.
-
 Finally, save the changes in `config.toml`.
+
+Check Heimdall installation using the following command:
+
+```shell
+heimdalld version
+```
+
+It should return the version of Heimdall you installed.  
 
 ### Configure Bor
 
@@ -244,30 +244,38 @@ Follow the same [installation steps](#installing-packages) on the validator node
 
 Log in to the remote validator machine.
 
-Open the Heimdall configuration file for editing using the following command:
-
-```sh
-vi /var/lib/heimdall/config/config.toml
+Then, edit the configuration files under `/var/lib/heimdall/config`  
+The templates for each supported network are available [here](https://github.com/0xPolygon/heimdall-v2/tree/develop/packaging/templates/config)  
+Download the `genesis.json` file and place it under `/var/lib/heimdall/config/`
+Use the following commands based on your target network:
+```bash
+cd /var/lib/heimdall/config
+curl -fsSL <BUCKET_URL> -o genesis.json
 ```
 
-In `config.toml` file, update the following parameters:
+Where `BUCKET_URL` is
 
-* `moniker` — any name. Example: `moniker = "my-validator-node"`.
-* `pex` — set the value to `false` to disable the peer exchange. Example: `pex = false`.
-* `private_peer_ids` — comment out the value to disable it. Example: `# private_peer_ids = ""`.
+- https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
+- https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
+
+Verify the installation by checking the Heimdall-v2 version on your machine:
+
+```bash
+heimdalld version
+```
+
+It should return the version of Heimdall-v2 you installed.
 
 To get the node ID of Heimdall on the sentry machine:
 
 1. Log in to the sentry machine.
-2. Run `heimdalld tendermint show-node-id`.
+2. Run `heimdalld comet show-node-id`.
 
 Example: `persistent_peers = "sentry_machineNodeID@sentry_instance_ip:26656"`
 
-* `prometheus` — set the value to `true` to enable the Prometheus metrics. Example: `prometheus = true`.
-
 Save the changes in `config.toml`.
 
-Open the `heimdall-config.toml` file for editing by running: `vi /var/lib/heimdall/config/heimdall-config.toml`.
+Open the `app.toml` file for editing by running: `vi /var/lib/heimdall/config/app.toml`.
 
 In config file, update the following parameters:
 
@@ -276,7 +284,7 @@ In config file, update the following parameters:
 
 Example: `eth_rpc_url = "https://nd-123-456-789.p2pify.com/60f2a23810ba11c827d3da642802412a"`
 
-Finally, save the changes in `heimdall-config.toml`.
+Finally, save the changes in `app.toml`.
 
 ### Configuring Bor
 
@@ -322,7 +330,7 @@ private key on the sentry machine.
 To generate the private key, run:
 
 ```sh
-heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
+heimdalld generate-validator-key ETHEREUM_PRIVATE_KEY
 ```
 
 where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet's private key.
@@ -341,7 +349,7 @@ mv ./priv_validator_key.json /var/lib/heimdall/config
 To generate the private key, run:
 
 ```sh
-heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
+heimdalld generate-keystore ETHEREUM_PRIVATE_KEY
 ```
 
 where `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet's private key.

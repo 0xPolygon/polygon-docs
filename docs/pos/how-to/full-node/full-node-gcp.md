@@ -65,7 +65,7 @@ Pay attention to default region and zone, choose ones closer to you or your cust
       #cloud-config
 
       bootcmd:
-      - screen -dmS polygon su -l -c bash -c "curl -L https://raw.githubusercontent.com/maticnetwork/node-ansible/master/install-gcp.sh | bash -s -- -n '${POLYGON_NETWORK}' -m '${POLYGON_NODETYPE}' -s '${POLYGON_BOOTSTRAP_MODE}' -p '${POLYGON_RPC_PORT}' -e \"'${EXTRA_VAR}'\"; bash"'
+      - screen -dmS polygon su -l -c bash -c "curl -L https://raw.githubusercontent.com/0xPolygon/node-ansible/master/install-gcp.sh | bash -s -- -n '${POLYGON_NETWORK}' -m '${POLYGON_NODETYPE}' -s '${POLYGON_BOOTSTRAP_MODE}' -p '${POLYGON_RPC_PORT}' -e \"'${EXTRA_VAR}'\"; bash"'
    ```
 
 The instance should be created and live in a couple of minutes.

@@ -72,7 +72,7 @@ The following steps create some test data.
 
 1. Start the devnet up with `docker compose up`. If you had previously run this command, you might want to wipe old data with a `make clean` to avoid running from a previous state.
 2. Wait for blocks to start being produced. This should only take a few seconds. You can use `polycli monitor` to quickly check that blocks are being created.
-3. Generate some load and test transactions, by using a tool like [polycli](https://github.com/maticnetwork/polygon-cli/blob/main/doc/polycli_loadtest.md) to create transactions.
+3. Generate some load and test transactions, by using a tool like [polycli](https://github.com/0xPolygon/polygon-cli/blob/main/doc/polycli_loadtest.md) to create transactions.
 4. Once the load is done, and if you ran docker in detached mode, you can stop the devnet with `docker compose stop`.
 5. Checkout and build [jerrigon](https://github.com/0xPolygonZero/erigon/tree/feat/zero) from the `feat/zero` branch. You can use `make all` to build everything.
 6. Create a copy of the erigon state directory to avoid corrupting things

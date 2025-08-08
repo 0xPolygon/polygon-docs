@@ -12,8 +12,9 @@ Refer to the [list of common commands](../../reference/commands.md) that might c
 ### 3. Default Directories
 
 - Heimdall genesis file: `/var/lib/heimdall/config/genesis.json`
-- Heimdall-config.toml file: `/var/lib/heimdall/config/heimdall-config.toml`
+- Heimdall app.toml file: `/var/lib/heimdall/config/app.toml`
 - Heimdall config.toml file: `/var/lib/heimdall/config/config.toml`
+- Heimdall client.toml file: `/var/lib/heimdall/config/client.toml`
 - Heimdall data directory: `/var/lib/heimdall/data/` 
 - Bor config.toml file: `/var/lib/bor/config.toml` 
 - Bor data directory: `/var/lib/bor/data/bor/chaindata`
@@ -60,7 +61,7 @@ Check the value of the `catching_up` flag. If it is `false` then the node is all
 
 ### 10. Which file do I add the API key in?
 
-Once you have created the API key, you need to add it to the `heimdall-config.toml` file.
+Once you have created the API key, you need to add it to the `app.toml` file.
 
 ### 11. How to check if the correct signer address is used for validator setup?
 
@@ -83,7 +84,7 @@ This error occurs because the path for the `password.txt` file is incorrect. You
 
 Try the following solutions:
 
-1. Start by checking and updating the `bor_rpc_url` parameter in the `heimdall-config.toml` file of the validator to any external node RPC providers and restart the services. This change helps to avoid missing checkpoints.
+1. Start by checking and updating the `bor_rpc_url` parameter in the `app.toml` file of the validator to any external node RPC providers and restart the services. This change helps to avoid missing checkpoints.
 
     !!! info
         At this point in time, the node will not mine blocks. So once the issue is fixed, the changes made have to be reverted for the node to return to normal functionality.

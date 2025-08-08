@@ -2,7 +2,7 @@ For the Polygon PoS Proof of Security based consensus, all the $2/3+1$ proof ver
 
 *Stakers* are divided into *validators*, *delegators*, and *watchers* (for fraud reporting).
 
-[`StakeManager`](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/stakeManager/StakeManager.sol) is the main contract for handling validator related activities like `checkPoint` signature verification, reward distribution, and stake management. Since the contract is using *NFT ID* as a source of ownership, change of ownership and signer won't affect anything in the system.
+[`StakeManager`](https://github.com/0xPolygon/pos-contracts/blob/develop/contracts/staking/stakeManager/StakeManager.sol) is the main contract for handling validator related activities like `checkPoint` signature verification, reward distribution, and stake management. Since the contract is using *NFT ID* as a source of ownership, change of ownership and signer won't affect anything in the system.
 
 !!! info
     
@@ -164,8 +164,8 @@ mapping(uint256 => State) public validatorState;
 
 ## `StakingInfo`
 
-Centralized logging contract for both validator and delegation events, includes few read only functions. You can check out the source code of the [`StakingInfo.sol`](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/StakingInfo.sol) contract on GitHub.
+Centralized logging contract for both validator and delegation events, includes few read only functions. You can check out the source code of the [`StakingInfo.sol`](https://github.com/0xPolygon/pos-contracts/blob/develop/contracts/staking/StakingInfo.sol) contract on GitHub.
 
 ## `ValidatorShareFactory`
 
-A factory contract to deploy `ValidatorShare` contract for each validator who opt-in for delegation. You can check out the source code of the [ValidatorShareFactory.sol](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/validatorShare/ValidatorShareFactory.sol) contract on GitHub.
+A factory contract to deploy `ValidatorShare` contract for each validator who opt-in for delegation. You can check out the source code of the [ValidatorShareFactory.sol](https://github.com/0xPolygon/pos-contracts/blob/develop/contracts/staking/validatorShare/ValidatorShareFactory.sol) contract on GitHub.

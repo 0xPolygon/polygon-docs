@@ -20,8 +20,8 @@ This deployment guide walks you through starting and running a full node through
     It is essential to follow the outlined sequence of actions precisely, as any deviation may lead to potential issues.
 
 - Prepare the machine.
-- Install Heimdall and Bor binaries on the full node machine.
-- Set up Heimdall and Bor services on the full node machine.
+- Install Heimdall-v2 and Bor binaries on the full node machine.
+- Set up Heimdall-v2 and Bor services on the full node machine.
 - Configure the full node machine.
 - Start the full node machine.
 - Check node health with the community.
@@ -38,42 +38,60 @@ sudo apt-get install build-essential
 
 ## Install binaries
 
-Polygon node consists of 2 layers: Heimdall and Bor. Heimdall is a Tendermint fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall nodes.
+Polygon node consists of 2 layers: Heimdall-v2 and Bor. Heimdall-v2 is a Cosmos-SDK/CometBFT fork that monitors contracts in parallel with the Ethereum network. Bor is basically a Geth fork that generates blocks shuffled by Heimdall-v2 nodes.
 
 Both binaries must be installed and run in the correct order to function properly.
 
-### Heimdall
+### Heimdall-v2
 
-Install the latest version of Heimdall and related services. Make sure you checkout to the correct [release version](https://github.com/maticnetwork/heimdall/releases).
+Install the latest version of Heimdall-v2 and related services. Make sure you checkout to the correct [release version](https://github.com/0xPolygon/heimdall-v2/releases).
 
-To install *Heimdall*, run the following commands:
+To install *Heimdall-v2*, run the following commands:
 
 ```bash
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <heimdall_version> <network_type> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/main/heimdall-v2.sh | bash -s -- <heimdall_version> <network_type> <node_type>
 ```
 
-You can run the above command with following options:
+You can run the above command with the following options:
 
-- `heimdall_version`: Valid v1.0+ release tag from https://github.com/maticnetwork/heimdall/releases
+- `heimdall_version`: Valid release tag from https://github.com/0xPolygon/heimdall-v2/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
-This will install the `heimdalld` and `heimdallcli` binaries. Verify the installation by checking the Heimdall version on your machine:
+This will install the `heimdalld` binary.  
+
+Then, edit the configuration files under `/var/lib/heimdall/config`  
+The templates for each supported network are available [here](https://github.com/0xPolygon/heimdall-v2/tree/develop/packaging/templates/config)  
+Download the `genesis.json` file and place it under `/var/lib/heimdall/config/`
+Use the following commands based on your target network:  
+```bash
+cd /var/lib/heimdall/config
+curl -fsSL <BUCKET_URL> -o genesis.json
+```
+
+Where `BUCKET_URL` is
+
+- https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
+- https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
+
+Verify the installation by checking the Heimdall-v2 version on your machine:
 
 ```bash
-heimdalld version --long
+heimdalld version
 ```
+
+It should return the version of Heimdall-v2 you installed.  
 
 ### Bor
 
-Install the latest version of Bor, based on valid v1.0+ [released version](https://github.com/maticnetwork/bor/releases).
+Install the latest version of Bor, based on valid v1.0+ [released version](https://github.com/0xPolygon/bor/releases).
 
 ```bash
-curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- <bor_version> <network_type> <node_type>
+curl -L https://raw.githubusercontent.com/0xPolygon/install/main/bor.sh | bash -s -- <bor_version> <network_type> <node_type>
 ```
 You can run the above command with following options:
 
-- `bor_version`: valid v1.0+ release tag from https://github.com/maticnetwork/bor/releases
+- `bor_version`: valid v1.0+ release tag from https://github.com/0xPolygon/bor/releases
 - `network_type`: `mainnet` and `amoy`
 - `node_type`: `sentry`
 
@@ -83,15 +101,25 @@ That will install the `bor` binary. Verify the installation by checking the Bor 
 bor version
 ```
 
-### Configure Heimdall and Bor seeds
+### Configure Heimdall-v2 and Bor seeds
 
 The latest bor and heimdall seeds can be found [here](https://docs.polygon.technology/pos/reference/seed-and-bootnodes/). To configure them, update the following lines:
 
-- Set the `seeds` value in `/var/lib/heimdall/config/config.toml`
+- If not done previously, set the `seeds` and `persistent_peers` values in `/var/lib/heimdall/config/config.toml`
 - Set the `bootnodes` in `/var/lib/bor/config.toml`
 
 This will ensure your node connects to the peers.
 
+### (Optional) Start Heimdall from snapshot
+
+In case you want to start Heimdall from a snapshot,  
+you can download it, and extract in the `data` folder.
+Examples of snapshots can be found here https://all4nodes.io/Polygon, and they are managed by the community.    
+
+e.g.: 
+```bash
+lz4 -dc polygon-heimdall-24404501-25758577.tar.lz4 | tar -x
+```
 
 ### Update service config user permission
 
@@ -102,7 +130,7 @@ sed -i 's/User=bor/User=root/g' /lib/systemd/system/bor.service
 
 ## Start services
 
-Run the full Heimdall node with these commands on your Sentry Node:
+Run the full Heimdall-v2 node with these commands on your Sentry Node:
 
 ```bash
 sudo service heimdalld start

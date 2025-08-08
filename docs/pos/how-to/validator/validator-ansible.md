@@ -4,7 +4,7 @@ comments: true
 ---
 -->
 
-This section guides you through starting and running the validator node through an Ansible playbook. Check out the [Git repository](https://github.com/maticnetwork/node-ansible/tree/master?tab=readme-ov-file#sentry-node-setup) for details.
+This section guides you through starting and running the validator node through an Ansible playbook. Check out the [Git repository](https://github.com/0xPolygon/node-ansible/tree/master?tab=readme-ov-file#sentry-node-setup) for details.
 
 !!! info "Limited spots for new validators"
     
@@ -37,10 +37,10 @@ To deploy a running validator node, follow these steps in the *exact sequence*:
 
 ## Set up the sentry node
 
-On your local machine, clone the [node-ansible repository](https://github.com/maticnetwork/node-ansible):
+On your local machine, clone the [node-ansible repository](https://github.com/0xPolygon/node-ansible):
 
 ```sh
-git clone https://github.com/maticnetwork/node-ansible
+git clone https://github.com/0xPolygon/node-ansible
 ```
 
 Change the working directory to the cloned repository using:
@@ -184,26 +184,19 @@ Start by logging into the remote sentry machine.
 
 ### Configure Heimdall
 
-Open the config file for editing by running `vi /var/lib/heimdall/config/config.toml`.
+Edit the configuration files under `/var/lib/heimdall/config`  
+The templates for each supported network are available [here](https://github.com/0xPolygon/heimdall-v2/tree/develop/packaging/templates/config)  
+Download the `genesis.json` file and place it under `/var/lib/heimdall/config/`
+Use the following commands based on your target network:
+```bash
+cd /var/lib/heimdall/config
+curl -fsSL <BUCKET_URL> -o genesis.json
+```
 
-In the `config.toml` file, update the following parameters:
+Where `BUCKET_URL` is
 
-* `moniker` — any name. Example: `moniker = "my-full-node"`.
-* `seeds` — the seed node addresses consisting of a node ID, an IP address, and a port. The seeds are provided in the next section.
-* `pex` — set the value to `true` to enable the peer exchange. Example: `pex = true`.
-* `private_peer_ids` — the node ID of Heimdall set up on the validator machine.
-
-To get the node ID of Heimdall on the validator machine:
-
-1. Log into the validator machine.
-2. Run: `heimdalld tendermint show-node-id`.
-
-Example: `private_peer_ids = "0ee1de0515f577700a6a4b6ad882eff1eb15f066"`.
-
-* `prometheus` — set the value to `true` to enable the Prometheus metrics. Example: `prometheus = true`.
-* `max_open_connections` — set the value to `100`. Example: `max_open_connections = 100`.
-
-Finally, save the changes in `config.toml`.
+- https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
+- https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
 
 ### Configure the Bor service
 
@@ -315,18 +308,25 @@ journalctl -u bor.service -f
 
 Log into the remote validator machine.
 
-Open the config file for editing by running: `vi /var/lib/heimdall/config/config.toml`.
+Then, edit the configuration files under `/var/lib/heimdall/config`  
+The templates for each supported network are available [here](https://github.com/0xPolygon/heimdall-v2/tree/develop/packaging/templates/config)  
+Download the `genesis.json` file and place it under `/var/lib/heimdall/config/`
+Use the following commands based on your target network:
+```bash
+cd /var/lib/heimdall/config
+curl -fsSL <BUCKET_URL> -o genesis.json
+```
 
-Next, update the following parameters in the config file:
+Where `BUCKET_URL` is
 
-* `moniker` — any name. Example: `moniker = "my-validator-node"`.
-* `pex` — set the value to `false` to disable the peer exchange. Example: `pex = false`.
-* `private_peer_ids` — comment out the value to disable it. Example: `# private_peer_ids = ""`.
+- https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
+- https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainnet
+
 
 To get the node ID of Heimdall on the sentry machine, run the following command:
 
 1. Login to the sentry machine.
-2. Run `heimdalld tendermint show-node-id`.
+2. Run `heimdalld comet show-node-id`.
 
 Example: `persistent_peers = "sentry_machineNodeID@sentry_instance_ip:26656"`
 
@@ -334,15 +334,15 @@ Example: `persistent_peers = "sentry_machineNodeID@sentry_instance_ip:26656"`
 
 Save the changes in `config.toml`.
 
-Now, open `heimdall-config.toml` for editing by running: `vi /var/lib/heimdall/config/heimdall-config.toml`.
+Now, open `app.toml` for editing by running: `vi /var/lib/heimdall/config/app.toml`.
 
-In the `heimdall-config.toml` file, update the following parameters:
+In the `app.toml` file, update the following parameters:
 
 * `eth_rpc_url` — an RPC endpoint for a fully synced Ethereum mainnet node, i.e Infura. `eth_rpc_url =<insert Infura or any full node RPC URL to Ethereum>`
 
 Example: `eth_rpc_url = "https://nd-123-456-789.p2pify.com/60f2a23810ba11c827d3da642802412a"`
 
-Finally, save the changes in `heimdall-config.toml`.
+Finally, save the changes in `app.toml`.
 
 ### Configure the Bor service
 
@@ -378,7 +378,7 @@ On Polygon PoS, it is recommended that you keep the owner and signer keys differ
 To generate the private key, run:
 
 ```sh
-heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
+heimdalld generate-validator-key ETHEREUM_PRIVATE_KEY
 ```
 
 Here `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s signer private key.
@@ -399,7 +399,7 @@ mv ./priv_validator_key.json /var/lib/heimdall/config/
 To generate the private key, run:
 
 ```sh
-heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
+heimdalld generate-keystore ETHEREUM_PRIVATE_KEY
 ```
 
 Here `ETHEREUM_PRIVATE_KEY` is your Ethereum wallet’s signer private key.
@@ -460,7 +460,7 @@ sudo service heimdalld start
 
 !!! info
 
-    The `heimdall-rest` service and the `heimdall-bridge` both start along with Heimdall.
+    The rest service and the bridge both start along with Heimdall.
 
 Check the Heimdall service logs by running the following command:
 
