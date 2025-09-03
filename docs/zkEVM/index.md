@@ -14,6 +14,11 @@ hide:
     <div class="hero-left">
        <h1 class="hero-heading">Polygon zkEVM</h1>
        <p class="hero-subtext">Polygon zkEVM is a Layer 2 network of the Ethereum Virtual Machine (EVM), a zero-knowledge (ZK) rollup scaling solution.</p>
+       <p>
+  <a href="https://forum.polygon.technology/t/sunsetting-polygon-zkevm-mainnet-beta-in-2026/21020" target="_blank" rel="noopener noreferrer">
+    Note: The zkEVM network will be sunsetting during 2026
+  </a>
+</p>
     </div>
     </br>
 </div>

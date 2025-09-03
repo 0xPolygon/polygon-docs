@@ -50,6 +50,90 @@ theme:
 
 nav:
   - Home: index.md
+  - PoS:
+      - PoS: pos/index.md
+      - Overview: pos/overview.md
+      - Get started:
+        - Building on PoS: pos/get-started/building-on-polygon.md
+        - Token bridging:
+          - Polygon Portal: pos/how-to/bridging/ethereum-polygon/portal-ui.md
+          - Ethereum to PoS: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
+          - PoS to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
+          - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
+        - Becoming a validator: pos/get-started/becoming-a-validator.md
+      - Node how-tos:
+        - Prerequisites: pos/how-to/prerequisites.md
+        - Sync node using snapshots: pos/how-to/snapshots.md
+        - Run a full node:
+          - Using binaries: pos/how-to/full-node/full-node-binaries.md
+          - Using Docker: pos/how-to/full-node/full-node-docker.md
+          - Using Ansible: pos/how-to/full-node/full-node-ansible.md
+          - Using packages: pos/how-to/full-node/full-node-packages.md
+          - Using GCP: pos/how-to/full-node/full-node-gcp.md
+        - Run a validator node:
+          - Validator best practices: pos/how-to/validator/validator-best-practices.md
+          - Using binaries: pos/how-to/validator/validator-binaries.md
+          - Using Ansible: pos/how-to/validator/validator-ansible.md
+          - Using packages: pos/how-to/validator/validator-packages.md
+        - Operate validator nodes:
+          - Next steps: pos/how-to/operate-validator-node/next-steps.md
+          - Change owner and signer address: pos/how-to/operate-validator-node/change-signer-address.md
+          - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
+          - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md
+        - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
+        - Troubleshoot nodes:
+          - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
+          - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
+          - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
+        - Reference:
+          - Contracts:
+            - Genesis contracts: pos/reference/contracts/genesis-contracts.md
+            - Delegation via validator shares: pos/reference/contracts/delegation.md
+            - Staking manager: pos/reference/contracts/stakingmanager.md
+          - Rewards and staking incentives: pos/reference/rewards.md
+          - Setting Up Telemetry: pos/reference/telemetry-setup-guide.md
+          - Default ports for nodes: pos/reference/port-management.md
+          - Network upgrade process: pos/reference/network-upgrade-process.md
+          - Common commands: pos/reference/commands.md
+          - Seed and bootnodes: pos/reference/seed-and-bootnodes.md
+          - PoS mainnet multi-signatures: pos/reference/commit-chain-multisigs.md
+      - Governance:
+        - Governance fundamentals: pos/governance/governance-fundamentals.md
+        - Delegate tokens: pos/how-to/delegate.md
+      - Architecture:
+          - Overview: pos/architecture/overview.md
+          - Bor:
+            - Introduction: pos/architecture/bor/introduction.md
+            - State sync: pos/architecture/bor/state-sync.md
+            - Network configuration: pos/architecture/bor/network-config.md
+          - Heimdall-v2:
+            - Introduction: pos/architecture/heimdall_v2/introduction.md
+            - Changes from v1: pos/architecture/heimdall_v2/changes-from-v1.md
+            - Authentication: pos/architecture/heimdall_v2/authentication.md
+            - Balance transfers: pos/architecture/heimdall_v2/balance-transfers.md
+            - Staking: pos/architecture/heimdall_v2/staking.md
+            - Checkpoints: pos/architecture/heimdall_v2/checkpoints.md
+            - Topup: pos/architecture/heimdall_v2/topup.md
+            - Chain management: pos/architecture/heimdall_v2/chain-management.md
+            - Governance: pos/architecture/heimdall_v2/governance.md
+            - Clerk: pos/architecture/heimdall_v2/clerk.md
+            - Heimdall Bor module: pos/architecture/heimdall_v2/heimdall-bor-module.md
+            - Milestones: pos/architecture/heimdall_v2/milestones.md
+            - Reference:
+              - Heimdall-v2 RPC Endpoints: pos/architecture/heimdall_v2/heimdallv2_rpc
+              - Cosmos SDK RPC Endpoints: pos/architecture/heimdall_v2/cosmos_sdk_rpc
+      - References:
+          - RPC endpoints: pos/reference/rpc-endpoints.md
+          - Mapped tokens: pos/reference/mapped-tokens.md
+      - Concepts:
+          - Tokens:
+            - Migrate to POL: pos/concepts/tokens/matic-to-pol.md
+            - POL: pos/concepts/tokens/pol.md
+            - MATIC: pos/concepts/tokens/matic.md
+          - Transactions:
+            - EIP-1559: pos/concepts/transactions/eip-1559.md
+            - EIP-4337: pos/concepts/transactions/eip-4337.md
+            - Meta transactions: pos/concepts/transactions/meta-transactions.md
   - Agglayer: "https://docs.agglayer.dev"
   - CDK: "https://docs.agglayer.dev/cdk/"
   - zkEVM:
@@ -215,7 +299,7 @@ nav:
               - Sequencer transaction flow: zkEVM/architecture/effective-gas/user-tx-flow/sequencer-flow-egp.md
             - Implementing EGP strategy: zkEVM/architecture/effective-gas/implement-egp-strat.md
             - Transaction prioritization: zkEVM/architecture/effective-gas/tx-prioritization-egp.md
-      - Specification:
+      # - Specification:
         - Specification: zkEVM/spec/index.md
         - Polynomial Identity Language:
           - Polynomial Identity Language: zkEVM/spec/pil/index.md
@@ -239,7 +323,7 @@ nav:
       # - API:
       #   - JSON RPC endpoints: zkEVM/api/json-rpc.md
       #   - Check transaction status: zkEVM/api/check-tx-status.md
-      - Concepts:
+      # - Concepts:
         - Concepts: zkEVM/concepts/index.md
         - EVM basics: zkEVM/concepts/evm-basics.md
         - Sparse Merkle trees:
@@ -263,93 +347,10 @@ nav:
         - CIRCOM: zkEVM/concepts/circom-intro-brief.md
       # - Troubleshooting:
       #   - Disclosures: zkEVM/troubleshooting/risk-disclosures.md
-  - PoS:
-      - PoS: pos/index.md
-      - Overview: pos/overview.md
-      - Get started:
-        - Building on PoS: pos/get-started/building-on-polygon.md
-        - Token bridging:
-          - Polygon Portal: pos/how-to/bridging/ethereum-polygon/portal-ui.md
-          - Ethereum to PoS: pos/how-to/bridging/ethereum-polygon/ethereum-to-matic.md
-          - PoS to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
-          - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
-        - Becoming a validator: pos/get-started/becoming-a-validator.md
-      - Node how-tos:
-        - Prerequisites: pos/how-to/prerequisites.md
-        - Sync node using snapshots: pos/how-to/snapshots.md
-        - Run a full node:
-          - Using binaries: pos/how-to/full-node/full-node-binaries.md
-          - Using Docker: pos/how-to/full-node/full-node-docker.md
-          - Using Ansible: pos/how-to/full-node/full-node-ansible.md
-          - Using packages: pos/how-to/full-node/full-node-packages.md
-          - Using GCP: pos/how-to/full-node/full-node-gcp.md
-        - Run a validator node:
-          - Validator best practices: pos/how-to/validator/validator-best-practices.md
-          - Using binaries: pos/how-to/validator/validator-binaries.md
-          - Using Ansible: pos/how-to/validator/validator-ansible.md
-          - Using packages: pos/how-to/validator/validator-packages.md
-        - Operate validator nodes:
-          - Next steps: pos/how-to/operate-validator-node/next-steps.md
-          - Change owner and signer address: pos/how-to/operate-validator-node/change-signer-address.md
-          - Top up Heimdall fee: pos/how-to/operate-validator-node/topup-heimdall-fee.md
-          - Validator performance requirements: pos/how-to/operate-validator-node/validator-performance.md
-        - Run an Erigon archive node: pos/how-to/erigon-archive-node.md
-        - Troubleshoot nodes:
-          - Technical FAQs: pos/how-to/troubleshoot/technical-faqs.md
-          - Known issues and errors: pos/how-to/troubleshoot/known-issues.md
-          - Reporting issues: pos/how-to/troubleshoot/reporting-issues.md
-        - Reference:
-          - Contracts:
-            - Genesis contracts: pos/reference/contracts/genesis-contracts.md
-            - Delegation via validator shares: pos/reference/contracts/delegation.md
-            - Staking manager: pos/reference/contracts/stakingmanager.md
-          - Rewards and staking incentives: pos/reference/rewards.md
-          - Setting Up Telemetry: pos/reference/telemetry-setup-guide.md
-          - Default ports for nodes: pos/reference/port-management.md
-          - Network upgrade process: pos/reference/network-upgrade-process.md
-          - Common commands: pos/reference/commands.md
-          - Seed and bootnodes: pos/reference/seed-and-bootnodes.md
-          - PoS mainnet multi-signatures: pos/reference/commit-chain-multisigs.md
-      - Governance:
-        - Governance fundamentals: pos/governance/governance-fundamentals.md
-        - Delegate tokens: pos/how-to/delegate.md
-      - Architecture:
-          - Overview: pos/architecture/overview.md
-          - Bor:
-            - Introduction: pos/architecture/bor/introduction.md
-            - State sync: pos/architecture/bor/state-sync.md
-            - Network configuration: pos/architecture/bor/network-config.md
-          - Heimdall-v2:
-            - Introduction: pos/architecture/heimdall_v2/introduction.md
-            - Changes from v1: pos/architecture/heimdall_v2/changes-from-v1.md
-            - Authentication: pos/architecture/heimdall_v2/authentication.md
-            - Balance transfers: pos/architecture/heimdall_v2/balance-transfers.md
-            - Staking: pos/architecture/heimdall_v2/staking.md
-            - Checkpoints: pos/architecture/heimdall_v2/checkpoints.md
-            - Topup: pos/architecture/heimdall_v2/topup.md
-            - Chain management: pos/architecture/heimdall_v2/chain-management.md
-            - Governance: pos/architecture/heimdall_v2/governance.md
-            - Clerk: pos/architecture/heimdall_v2/clerk.md
-            - Heimdall Bor module: pos/architecture/heimdall_v2/heimdall-bor-module.md
-            - Milestones: pos/architecture/heimdall_v2/milestones.md
-            - Reference:
-              - Heimdall-v2 RPC Endpoints: pos/architecture/heimdall_v2/heimdallv2_rpc
-              - Cosmos SDK RPC Endpoints: pos/architecture/heimdall_v2/cosmos_sdk_rpc
-      - References:
-          - RPC endpoints: pos/reference/rpc-endpoints.md
-          - Mapped tokens: pos/reference/mapped-tokens.md
-      - Concepts:
-          - Tokens:
-            - Migrate to POL: pos/concepts/tokens/matic-to-pol.md
-            - POL: pos/concepts/tokens/pol.md
-            - MATIC: pos/concepts/tokens/matic.md
-          - Transactions:
-            - EIP-1559: pos/concepts/transactions/eip-1559.md
-            - EIP-4337: pos/concepts/transactions/eip-4337.md
-            - Meta transactions: pos/concepts/transactions/meta-transactions.md
+ 
   # - Miden:
   #     - Miden: miden/index.md
-  - Developer tools:
+  - Developer Tools:
       - Developer tools: tools/index.md
       - Start building:
         - Test token faucets: tools/gas/matic-faucet.md
@@ -489,41 +490,57 @@ nav:
           - Polygon: https://polygonscan.com/
           - zkEVM: https://zkevm.polygonscan.com/
           - zkEVM testnet: https://cardona-zkevm.polygonscan.com/
-  - Innovation & design:
-      - Innovation & design: innovation-design/index.md
-      - Welcome: innovation-design/welcome.md
-      - Polygon type 1 prover:
-          - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
-          - How to:
-              - Run prover quickly: cdk/how-to/deploy-t1-prover.md
-              - Deploy prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
-          - Architecture:
-              - Overview: cdk/architecture/type-1-prover/t1-architecture.md
-              - Type 1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
-              - Tests and proving costs: cdk/architecture/type-1-prover/testing-and-proving-costs.md
-          - Specification:
-              - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
-              - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
-              - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
-      - Plonky 2 & 3: innovation-design/plonky.md
-      - Polygon protocols: innovation-design/polygon-protocols.md
-      - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
-      - Security:
-          - Overview: innovation-design/security/overview.md
-          - Security areas:
-            - Governance & management: innovation-design/security/governance.md
-            - Risk management: innovation-design/security/risk.md
-            - Human resources: innovation-design/security/hr.md
-            - Infrastructure: innovation-design/security/infrastructure.md
-            - Software development: innovation-design/security/sdlc.md
-            - Smart contracts: innovation-design/security/smartcontracts.md
-            - Vulnerability management: innovation-design/security/vulnerability.md
-            - Security operations: innovation-design/security/operations.md
-          - Security reports: innovation-design/security/reports.md
-          - Bug bounty programs: innovation-design/security/bugbounty.md
-          - Responsable disclosure: innovation-design/security/disclosure.md
-          - Contact us: innovation-design/security/contact.md
-  - Learn: '!import https://github.com/0xPolygon/devrel-docs?branch=main'
+  - Security:
+      - Overview: security/security/overview.md
+      - Security areas:
+        - Governance & management: security/security/governance.md
+        - Risk management: security/security/risk.md
+        - Human resources: security/security/hr.md
+        - Infrastructure: security/security/infrastructure.md
+        - Software development: security/security/sdlc.md
+        - Smart contracts: security/security/smartcontracts.md
+        - Vulnerability management: security/security/vulnerability.md
+        - Security operations: security/security/operations.md
+      - Security reports: security/security/reports.md
+      - Bug bounty programs: security/security/bugbounty.md
+      - Responsable disclosure: security/security/disclosure.md
+      - Contact us: security/security/contact.md
+
+  # - Innovation & design:
+  #     - Innovation & design: innovation-design/index.md
+  #     - Welcome: innovation-design/welcome.md
+  #     - Polygon type 1 prover:
+  #         - Introduction and definitions: cdk/architecture/type-1-prover/intro-t1-prover.md
+  #         - How to:
+  #             - Run prover quickly: cdk/how-to/deploy-t1-prover.md
+  #             - Deploy prover on devnet: cdk/how-to/deploy-t1-prover-devnet.md
+  #         - Architecture:
+  #             - Overview: cdk/architecture/type-1-prover/t1-architecture.md
+  #             - Type 1 design challenges: cdk/architecture/type-1-prover/t1-design-challenge.md
+  #             - Tests and proving costs: cdk/architecture/type-1-prover/testing-and-proving-costs.md
+  #         - Specification:
+  #             - CPU component: cdk/architecture/type-1-prover/t1-cpu-component.md
+  #             - CTL protocol: cdk/architecture/type-1-prover/t1-ctl-protocol.md
+  #             - Range checks: cdk/architecture/type-1-prover/t1-rangechecks.md
+  #     - Plonky 2 & 3: innovation-design/plonky.md
+  #     - Polygon protocols: innovation-design/polygon-protocols.md
+  #     - Demystifying reorgs: https://polygon.technology/blog/reorgs-demystified-insights-from-monitoring-with-a-sensor-network
+  #     - Security:
+  #         - Overview: innovation-design/security/overview.md
+  #         - Security areas:
+  #           - Governance & management: innovation-design/security/governance.md
+  #           - Risk management: innovation-design/security/risk.md
+  #           - Human resources: innovation-design/security/hr.md
+  #           - Infrastructure: innovation-design/security/infrastructure.md
+  #           - Software development: innovation-design/security/sdlc.md
+  #           - Smart contracts: innovation-design/security/smartcontracts.md
+  #           - Vulnerability management: innovation-design/security/vulnerability.md
+  #           - Security operations: innovation-design/security/operations.md
+  #         - Security reports: innovation-design/security/reports.md
+  #         - Bug bounty programs: innovation-design/security/bugbounty.md
+  #         - Responsable disclosure: innovation-design/security/disclosure.md
+  #         - Contact us: innovation-design/security/contact.md
+  # - Learn: '!import https://github.com/0xPolygon/devrel-docs?branch=main'
 
 extra:
   generator: false
