@@ -17,44 +17,60 @@ To get the finalized block, you can use the following JSON-RPC call:
   "jsonrpc": "2.0"
 }
 ```
+## Using the Milestone API
 
-## Introduction to Bor and Heimdall in Polygon PoS
+Here's a simple code example to check if a transaction has reached finality
+using the milestone mechanism.
 
-### What is Bor?
+```ts
+async function milestones_checkFinality(client: any, txHash: string): Promise<boolean> {
+  const tx = await client.getTransaction({ hash: `0x${txHash}` })
+  if (!tx || !tx.blockNumber) return false
+  const latestBlock: Block = await client.getBlock({ blockTag: 'finalized' })
 
-Bor is the execution layer in the Polygon Proof-of-Stake (PoS) network. It is
-responsible for:
+  console.log(`Latest finalized block: ${latestBlock.number}`)
+  console.log(`Your transaction block: ${tx.blockNumber}`)
 
-- Aggregating transactions into blocks.
-- Managing the execution of smart contracts.
-- Maintaining the state of the Polygon network, such as account balances.
+  // Checking whether the finalized block number via milestones has reached the transaction block number.
+  if (latestBlock.number !== null && latestBlock.number > tx.blockNumber) {
+    console.log("Your transaction block has been confirmed after 16 blocks");
+    return true
+  } else {
+    return false
+  }
+}
+```
 
-### What is Heimdall?
+### Running the Code Locally
 
-Heimdall acts as the proof of stake layer and uses Tendermint BFT consensus. It
-decides which validators should be producing blocks in Bor in each span (based
-on their stake). It also:
+- Step 1: Copy the code into a file named `milestones.ts`.
 
-- Submits checkpoints to the Ethereum mainnet, securing the Polygon chain.
-- Helps in arriving at finality of Bor blocks using Milestones.
-- Plays a key role in state sync mechanism from L1 to Bor.
+- Step 2: Install the required dependencies by running:
 
-### How Do They Work Together?
+  ```bash
+  npm install
+  ```
 
-Heimdall determines the validators that should be part of the next span. Bor
-fetches these details from Heimdall and the selected validators start producing
-blocks based on the consensus rules. Heimdall also periodically aggregates Bor
-blocks and submits checkpoints to L1 (Ethereum) to secure the network.
+- Step 3: Run the code using Node.js with the required command-line arguments:
 
-Heimdall is also responsible for the finality of blocks produced by Bor which is
-achieved through a mechanism called Milestones. And we will be diving deeper
-into Milestones in this tutorial.
+  ```bash
+  npx ts-node milestones.ts --txHash <transaction_hash> --function <function_name> --network <network_name>
+  ```
 
-![Bor and Heimdall](../../../img/pos/milestones_01.png)
+  Replace <transaction_hash> with the actual transaction hash, <function_name>
+  with either pre_milestones or milestones, and <network_name> with either
+  polygon or amoy.
 
-For more on Bor and Heimdall check out the official
-[documentation](https://docs.polygon.technology/pos/architecture/#architectural-overview)
-for more details on Bor and Heimdall.
+- Step 4: Observe the output to determine if your transaction has been finalized
+  based on the selected milestone mechanism and network.
+
+### Results
+
+The results should show whether the transaction has been finalized based on the
+selected milestone mechanism and network. Usually Milestones will take 3-5
+seconds to finalize the transaction.
+
+
 
 ## The Evolution of Finality: Before and After Milestones
 
@@ -102,117 +118,5 @@ With the introduction of milestones:
 ![Finality After Milestones](../../../img/pos/milestones_03.png)
 
 _Finality achieved after at least 12 blocks confirmation and 4 blocks of buffer,
-as well as a consensus period among the validators (approx. 1-2 minute)_
+as well as a consensus period among the validators (approx. 3-5 seconds)_
 
-## Using the Milestone API
-
-Here's a simple code example to check if a transaction has reached finality
-using the milestone mechanism.
-
-```ts
-// Import Relevant Libraries
-import { createPublicClient, http, Hash } from 'viem'
-import { polygon, polygonAmoy } from 'viem/chains'
-import { program } from 'commander'
-```
-
-Here's the implementation of Checking Transaction Finality BEFORE Milestones Implementation:
-
-```ts
-async function pre_milestones_checkFinality(client: any, txHash: string): Promise<boolean> {
-  const tx = await client.getTransaction({ hash: `0x${txHash}` })
-  if (!tx || !tx.blockNumber) return false
-  const latestBlock: Block = await client.getBlock({ blockTag: 'finalized' })
-
-  console.log(`Latest finalized block: ${latestBlock.number}`)
-  console.log(`Your transaction block: ${tx.blockNumber}`)
-
-  // Checking whether there has been 256 blocks since the transaction was included in a block
-  if (latestBlock.number !== null && latestBlock.number - tx.blockNumber >= 256) {
-    console.log("Your transaction block has been confirmed after 256 blocks");
-    return true
-  } else {
-    return false
-  }
-}
-```
-
-Here's the implementation of Checking Transaction Finality AFTER Milestones Implementation:
-
-```ts
-async function milestones_checkFinality(client: any, txHash: string): Promise<boolean> {
-  const tx = await client.getTransaction({ hash: `0x${txHash}` })
-  if (!tx || !tx.blockNumber) return false
-  const latestBlock: Block = await client.getBlock({ blockTag: 'finalized' })
-
-  console.log(`Latest finalized block: ${latestBlock.number}`)
-  console.log(`Your transaction block: ${tx.blockNumber}`)
-
-  // Checking whether the finalized block number via milestones has reached the transaction block number.
-  if (latestBlock.number !== null && latestBlock.number > tx.blockNumber) {
-    console.log("Your transaction block has been confirmed after 16 blocks");
-    return true
-  } else {
-    return false
-  }
-}
-```
-
-> Please note that this is just a demo purpose to show the previous
-> implementations, since Milestones has already been implemented in the
-> protocol, therefore, 16 blocks is the minimum time for finality, the
-> `pre_milestones_checkFinality` function is not needed anymore in actual
-> implementation. Just use the `milestones_checkFinality` function to check your
-> transaction finality.
-
-### Running the Code Locally
-
-- Step 1: Copy the code into a file named `milestones.ts`.
-
-- Step 2: Install the required dependencies by running:
-
-  ```bash
-  npm install
-  ```
-
-- Step 3: Run the code using Node.js with the required command-line arguments:
-
-  ```bash
-  npx ts-node milestones.ts --txHash <transaction_hash> --function <function_name> --network <network_name>
-  ```
-
-  Replace <transaction_hash> with the actual transaction hash, <function_name>
-  with either pre_milestones or milestones, and <network_name> with either
-  polygon or amoy.
-
-- Step 4: Observe the output to determine if your transaction has been finalized
-  based on the selected milestone mechanism and network.
-
-### Results
-
-The results should show whether the transaction has been finalized based on the
-selected milestone mechanism and network. Usually Milestones will take 1-2
-minutes to finalize the transaction. Result as follows:
-
-![milestones_result](../../../img/pos/milestones_04.png)
-
-Here's a screenshot of the `pre_milestones_checkFinality` function, where it
-shows that the new blocks are not yet 256:
-
-![pre_milestones_result](../../../img/pos/milestones_05.png)
-
-Here's a screenshot of the `pre_milestones_checkFinality` function, where it
-shows that the new blocks are 256:
-
-![pre_milestones_finalized](../../../img/pos/milestones_06.png)
-
-### Experimenting Further
-
-Modify the code to check different transactions and networks to see how finality
-is achieved with milestones on various Polygon networks.
-
-## Resources/References
-
-- [Polygon PoS Documentation](https://docs.polygon.technology/pos/overview)
-- [Polygon PoS Faster Finality Announcement](https://polygon.technology/blog/faster-finality-with-the-aalborg-upgrade-for-polygon-proof-of-stake-network)
-- [PIP-11: Deterministic finality via Milestones](https://forum.polygon.technology/t/pip-11-deterministic-finality-via-milestones/11918)
