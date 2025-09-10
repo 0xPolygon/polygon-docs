@@ -61,6 +61,19 @@ nav:
           - PoS to Ethereum: pos/how-to/bridging/ethereum-polygon/matic-to-ethereum.md
           - Submit mapping request: pos/how-to/bridging/ethereum-polygon/submit-mapping-request.md
         - Becoming a validator: pos/get-started/becoming-a-validator.md
+      - Payments:
+        - Overview: pos/payments/overview.md
+        - Onramps:
+          - Stripe: pos/payments/onramps/onramps-stripe.md
+          - USDC: pos/payments/onramps/onramps-usdc.md
+          - MoonPay: pos/payments/onramps/onramps-moonpay.md
+          - BlindPay: pos/payments/onramps/onramps-blindpay.md
+        - Transfers: 
+          - Stripe: pos/payments/payments.md
+          - USDC: pos/transfers/transfers-usdc.md
+          - MoonPay: pos/transfers/moonpay.md
+          - Bridge: pos/transfers/bridge.md
+        # - KYC / KYB: pos/payments-kit/compliance.md
       - Node how-tos:
         - Prerequisites: pos/how-to/prerequisites.md
         - Sync node using snapshots: pos/how-to/snapshots.md
