@@ -126,6 +126,7 @@ nav:
           - RPC endpoints: pos/reference/rpc-endpoints.md
           - Mapped tokens: pos/reference/mapped-tokens.md
       - Concepts:
+          - Finality: pos/concepts/finality/finality.md
           - Tokens:
             - Migrate to POL: pos/concepts/tokens/matic-to-pol.md
             - POL: pos/concepts/tokens/pol.md
