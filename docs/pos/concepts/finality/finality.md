@@ -72,7 +72,7 @@ seconds to finalize the transaction.
 
 
 
-## The Evolution of Finality: Before and After Milestones
+## The Evolution of Finality
 
 There are two main types of finality in blockchains: probabilistic and
 deterministic. Probabilistic finality means that there is a chance of a
@@ -81,42 +81,21 @@ Deterministic finality means that there is no chance of a reorganization. A
 popular chain with probabilistic finality is Bitcoin. A popular chain with
 deterministic finality is Ethereum.
 
-### Before Milestones
-
-In the traditional setup:
-
-- Finality was **probabilistic** until a checkpoint was submitted to L1. Users
-  and developers had to wait for many blocks (some applications waited 256
-  blocks) to be created before they could be reasonably sure that a transaction
-  was final. This meant that there was always a small chance of a reorganization
-  (reorg), where a different chain might become the canonical chain.
-
-- Checkpoints to Ethereum: Heimdall would submit checkpoints to Ethereum after
-  every 256 blocks (minimum), anchoring Polygon’s state to the security of
-  Ethereum. However, finality on the Polygon chain itself was slow and uncertain
-  until this checkpoint was confirmed.
-
-![Finality Before Milestones](../../../img/pos/milestones_02.png)
-
-_Finality achieved after 256 blocks (approx. 10 minutes)._
-
-### After Milestones
+### With Milestones in Polygon
 
 With the introduction of milestones:
 
 - Finality is **deterministic** even before a checkpoint is submitted to L1.
-  After a certain number of blocks (minimum 12), a milestone is proposed and
+  After a certain number of blocks in consensus layer, a milestone is proposed and
   validated by Heimdall. Once 2/3+ of the network agrees, the milestone is
   finalized, and all transactions up to that milestone are considered final,
   with no chance of reorganization.
 
 - Separation of Checkpoints and Milestones: Checkpoints still occur every 256
   blocks (minimum) and are submitted to Ethereum. However, milestones provide
-  much faster finality on the Polygon chain itself, using Heimdall layer for
+  much faster finality on Polygon chain, using Heimdall layer for
   finalization, improving the user experience significantly.
 
-![Finality After Milestones](../../../img/pos/milestones_03.png)
-
-_Finality achieved after at least 12 blocks confirmation and 4 blocks of buffer,
+_Finality achieved after a number of blocks confirmation,
 as well as a consensus period among the validators (approx. 3-5 seconds)_
 
