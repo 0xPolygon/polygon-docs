@@ -11,9 +11,9 @@ comments: true
 
 Add a full network configuration to your wallet in one click.
 
-<center>
-![img](../../img/zkEVM/chainlist-add-network.gif)
-</center>
+<div style="text-align: center;">
+    <img src="/img/zkEVM/chainlist-add-network.gif" alt="Add Network to Wallet">
+</div>
 
 Chainlist is a site that provides a button to connect your wallet to the Polygon zkEVM mainnet and the Polygon Cardona zkEVM testnet.
 
