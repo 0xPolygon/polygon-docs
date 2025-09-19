@@ -4,7 +4,7 @@
 
 	* Use (Circle’s sandbox environment)[https://app-sandbox.circle.com/signin] for development and testing. Production requires a separate API key and account setup.  ￼ 
 	* Authenticate HTTP requests via (the Authorization: Bearer YOUR_API_KEY header.)[https://developers.circle.com/circle-mint/getting-started-with-the-circle-apis?utm_source=chatgpt.com#api-key-authentication]
-	* (Circle SDK)[https://developers.circle.com/circle-mint/circle-sdks]
+	* [Circle SDK](https://developers.circle.com/circle-mint/circle-sdks)
 !!! info 
     Keep your API key secure! Never expose it in client-side code.  ￼
 
