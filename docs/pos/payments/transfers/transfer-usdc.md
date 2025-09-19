@@ -1,5 +1,8 @@
+!!! info 
+    NOTE: Like all of crypto, payments require handling sensitive data. The following examples are demonstrations of integrations but should not be used in production. In production, sensitive information such as API keys, private-key wallets, etc., should be put in a secrets manager or vault.
+
 ## USDC 
-USDC is ranked as the 7th largest cryptocurrency, with a circulation of $65 billion. Nearly 5 million monthly active users engage with USDC on Polygon protocols. Cost-efficient transactions on Polygon makes it the default chain for USDC payments, especially micro or high-volume payments.    
+USDC is a [top stablecoin used for payments on Polygon.](https://defillama.com/stablecoins/Polygon) Cost-efficient transactions on Polygon makes it the default chain for USDC payments, especially micro or high-volume payments.    
 
 ### Integrating USDC
 Circle has [excellent documentation,](https://developers.circle.com/) including ready-to-use SDKs and sample applications
@@ -51,6 +54,10 @@ main();
 ```
 
 ### Gateway integration:
+
+Gateway collects USDC balances across any chain with USDC. Users need to send USDC to the Gateway Wallet (not an ERC-20), [more details here.](https://developers.circle.com/gateway#setting-up-a-balance)     
+
+Once the users have a balance, they can send 
 
 ```ts
 

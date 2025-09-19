@@ -11,8 +11,6 @@ Stripe integration requires a US domicile (excluding Hawaii) and a registration 
 * [Stripe API access](https://docs.stripe.com/api)
 * [Stripe SDK](https://github.com/stripe/stripe-node)  
 
-
-
 ### Server
 
 ```curl
