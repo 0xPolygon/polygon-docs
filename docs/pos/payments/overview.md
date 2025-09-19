@@ -18,18 +18,3 @@ Polygon is the choice for major payment projects due to the hundreds of third-pa
 * **Stablecoins:** [USDC](https://developers.circle.com/), [USDT](https://tether.to/en/why-tether), Agora, Axelar, [DAI](https://docs.makerdao.com/smart-contract-modules/dai-module/dai-detailed-documentation), [FRAX](https://docs.frax.finance/fraxlend/abi-and-code)
 
 * **KYC / Compliance:** [Sumsub](https://docs.sumsub.com/docs/overview), [Onfido](https://documentation.onfido.com/), [Persona](https://docs.withpersona.com/getting-started), [Chainanalysis](https://www.chainalysis.com/), [TRM](https://www.trmlabs.com/), [Forta](https://docs.forta.network/en/latest/), [Elliptic](https://developers.elliptic.co/docs/getting-started)
-
-
-We're also highlighting some of the best payment options available on Polygon today.
-
-!!! info 
-    NOTE: Like all of crypto, payments require handling sensitive data. The following examples are demonstrations of integrations but should not be used in production. In production, sensitive information such as API keys, private-key wallets, etc., should be put in a secrets manager or vault.
-
-## Payments Overview
-
-For developers, the critical piece of payments is the on- and offboarding of users to stablecoins. The easier the onramps, the faster the users will be able to use your application for payments.
-
-### On- and Offramps
-Onramps present a gradient of onboarding friction: Users already holding USDT or USDC do not need to be onboarded, however your grandmother or non-crypto friend may have significant friction getting stablecoin support.
-
-Polygon has tons of options for 
