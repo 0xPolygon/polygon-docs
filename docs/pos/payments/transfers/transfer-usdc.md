@@ -61,7 +61,7 @@ Once the users have a balance, they can send USDC to any chain using the Gateway
 
 ## Prerequisites
 
-The follow example requires a Circle API key, which you can create through [the Circle Developer dashboard.](https://console.circle.com/) (You do not need a Cirlce business license to get a sandbox API key).
+The follow example requires a Circle API key, which you can create through [the Circle Developer dashboard.](https://console.circle.com/) (You do not need a Cirlce  license to get a sandbox API key).
 
 ```ts
 

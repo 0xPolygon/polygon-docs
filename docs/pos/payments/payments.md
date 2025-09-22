@@ -140,8 +140,6 @@ USDT makes up over half of the stablecoins on Polygon and has been upgraded from
 
 Tether is an ERC-20 and follows the common `approve`/`transfer` flow:
 
-
-
 ```ts
 import { createPublicClient, createWalletClient, http, parseUnits } from "viem";
 import { polygon } from "viem/chains";

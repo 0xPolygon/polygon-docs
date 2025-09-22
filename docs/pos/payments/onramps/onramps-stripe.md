@@ -6,7 +6,7 @@
 
     [Full documentation available on Stripe.](https://docs.stripe.com/)
 
-Stripe integration requires a US domicile (excluding Hawaii) and a registration for your business. Once that registration has cleared, the API `Crypto/Onramps_sessions` will be enabled and you can use the following code to onboarding users to USDC on Polygon:
+Stripe integration requires a US domicile (excluding Hawaii) and a registration for your business. Once that registration has cleared, the API `Crypto/Onramps_sessions` will be enabled. Below is an example using Stripe's Sandbox environment:
 
 ### Prerequisites
 
@@ -60,7 +60,6 @@ export async function createOnrampSession(req, res) {
   res.json({ client_secret: session.client_secret });
 }
 ```
-
 
 ## Serving to Frontend
 
