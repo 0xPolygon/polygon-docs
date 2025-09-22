@@ -21,6 +21,7 @@ Fast finality means payments will be immediately available for your users.
 
 [Read more about finality here.](../concepts/finality/finality.md)
 
+Polygon transaction are also incredibly low-cost, around 0.0001 in cost. [You can track the average price of Polygon transactions here.](https://polygonscan.com/chart/avg-txfee-usd)
 
 ## 99.999% Uptime
 
