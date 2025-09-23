@@ -1,6 +1,6 @@
 !!! info "5 Second Finality in Polygon"
 
-    NOTE: With the upgrade to Heimdall v2, deterministic finality on PoS is now achieved in between 2-5 seconds thanks to the 1-2 seconds block time in Heimdall, meaning miletones are voted on and finalized much faster.
+    NOTE: With the upgrade to Heimdall v2, deterministic finality on PoS is now achieved in between 2-4 seconds thanks to the 1-2 seconds block time in Heimdall, meaning miletones are voted on and finalized much faster.
 
 ## How to Get Finalized Block
 
@@ -32,12 +32,7 @@ async function milestones_checkFinality(client: any, txHash: string): Promise<bo
   console.log(`Your transaction block: ${tx.blockNumber}`)
 
   // Checking whether the finalized block number via milestones has reached the transaction block number.
-  if (latestBlock.number !== null && latestBlock.number > tx.blockNumber) {
-    console.log("Your transaction block has been confirmed after 16 blocks");
-    return true
-  } else {
-    return false
-  }
+  return (latestBlock.number !== null && latestBlock.number > tx.blockNumber)
 }
 ```
 
@@ -67,7 +62,7 @@ async function milestones_checkFinality(client: any, txHash: string): Promise<bo
 ### Results
 
 The results should show whether the transaction has been finalized based on the
-selected milestone mechanism and network. Usually Milestones will take 3-5
+selected milestone mechanism and network. Usually Milestones will take 2-4
 seconds to finalize the transaction.
 
 
@@ -86,9 +81,9 @@ deterministic finality is Ethereum.
 With the introduction of milestones:
 
 - Finality is **deterministic** even before a checkpoint is submitted to L1.
-  After a certain number of blocks in consensus layer, a milestone is proposed and
-  validated by Heimdall. Once 2/3+ of the network agrees, the milestone is
-  finalized, and all transactions up to that milestone are considered final,
+  For every block produced in the consensus layer, a milestone is proposed and
+  validated by Heimdall, with supermajority of the voting power by validators. 
+  With a new milestone, all the transactions up to that point are considered final,
   with no chance of reorganization.
 
 - Separation of Checkpoints and Milestones: Checkpoints still occur every 256
@@ -96,6 +91,6 @@ With the introduction of milestones:
   much faster finality on Polygon chain, using Heimdall layer for
   finalization, improving the user experience significantly.
 
-_Finality achieved after a number of blocks confirmation,
-as well as a consensus period among the validators (approx. 3-5 seconds)_
+_Finality achieved after a block confirmation,
+as well as a consensus period among the validators (approx. 2-4 seconds)_
 
