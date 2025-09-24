@@ -66,7 +66,7 @@ nav:
         - Onramps:
           - Stripe: pos/payments/onramps/onramps-stripe.md
         - Transfers: 
-          - USDC: pos/transfers/transfer-usdc.md
+          - USDC: pos/payments/transfers/transfer-usdc.md
       - Node how-tos:
         - Prerequisites: pos/how-to/prerequisites.md
         - Sync node using snapshots: pos/how-to/snapshots.md
