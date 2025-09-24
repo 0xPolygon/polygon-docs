@@ -4,7 +4,9 @@
 
 ## How to Get Finalized Block
 
-Simply use the standard `eth_getBlockByNumber` JSON-RPC method with the `"finalized"` block parameter to retrieve information about the most recently finalized block in Polygon PoS. Finalized blocks are considered highly secure and irreversible, making them crucial for applications requiring strong transaction certainty. 
+Use the standard `eth_getBlockByNumber` JSON-RPC method with the `"finalized"` block parameter to retrieve information about the most recently finalized block in Polygon PoS.
+Finalized blocks are considered highly secure and irreversible,
+making them crucial for applications requiring strong transaction certainty. 
 
 To get the finalized block, you can use the following JSON-RPC call: 
 
@@ -32,12 +34,7 @@ async function milestones_checkFinality(client: any, txHash: string): Promise<bo
   console.log(`Your transaction block: ${tx.blockNumber}`)
 
   // Checking whether the finalized block number via milestones has reached the transaction block number.
-  if (latestBlock.number !== null && latestBlock.number > tx.blockNumber) {
-    console.log("Your transaction block has been confirmed after 16 blocks");
-    return true
-  } else {
-    return false
-  }
+  return (latestBlock.number !== null && latestBlock.number > tx.blockNumber)
 }
 ```
 
@@ -67,8 +64,8 @@ async function milestones_checkFinality(client: any, txHash: string): Promise<bo
 ### Results
 
 The results should show whether the transaction has been finalized based on the
-selected milestone mechanism and network. Usually Milestones will take 3-5
-seconds to finalize the transaction.
+selected milestone mechanism and network.
+Usually Milestones will take 2–5 seconds to finalize the transaction.
 
 
 
@@ -86,16 +83,20 @@ deterministic finality is Ethereum.
 With the introduction of milestones:
 
 - Finality is **deterministic** even before a checkpoint is submitted to L1.
-  After a certain number of blocks in consensus layer, a milestone is proposed and
-  validated by Heimdall. Once 2/3+ of the network agrees, the milestone is
-  finalized, and all transactions up to that milestone are considered final,
-  with no chance of reorganization.
+  With the new milestones flow, every validator proposes the local bor blocks'
+  hashes they see after the last milestone.
+  This gets done at every Heimdall height, leveraging vote extensions.
+  Basically, on the consensus layer, at height H, every validator proposes the block hashes  
+  he has produced/imported since the last finalized milestone via vote extensions;
+  then these vote extensions become available at the next height.
+  When finalizing heimdall height H+1, Heimdall looks for the longest common sequence of block hashes  
+  from all the validators that have 2/3+ agreement, and that gets finalized as the new milestone.
 
 - Separation of Checkpoints and Milestones: Checkpoints still occur every 256
   blocks (minimum) and are submitted to Ethereum. However, milestones provide
-  much faster finality on Polygon chain, using Heimdall layer for
+  much faster finality on Polygon Chain, using Heimdall layer for
   finalization, improving the user experience significantly.
 
-_Finality achieved after a number of blocks confirmation,
-as well as a consensus period among the validators (approx. 3-5 seconds)_
+_Finality achieved after a block confirmation,
+as well as a consensus period among the validators (approx. 2–5 seconds)_
 
