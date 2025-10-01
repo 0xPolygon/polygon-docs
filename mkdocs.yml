@@ -69,8 +69,8 @@ nav:
           - USDC: pos/transfers/transfer-usdc.md
         - x402:
           - Overview: pos/payments/x402/overview.md
-          - Quickstart for Buyers: pos/payments/x402/buyers.md
-          - Quickstart for Sellers: pos/payments/x402/sellers.md
+          - Quickstart for Buyers: pos/payments/x402/quickstart-buyers.md
+          - Quickstart for Sellers: pos/payments/x402/quickstart-sellers.md
       - Node how-tos:
         - Prerequisites: pos/how-to/prerequisites.md
         - Sync node using snapshots: pos/how-to/snapshots.md

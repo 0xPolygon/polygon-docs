@@ -34,15 +34,28 @@ Create a wallet client using a tool like [viem](https://viem.sh/):
 npm install viem
 ```
 
-Then, instantiate the wallet account:
+Then, instantiate the wallet account and client:
 
 ```typescript
-import { createWalletClient, http } from "viem";
-import { privateKeyToAccount } from "viem/accounts";
-import { polygonAmoy } from "viem/chains";
+import { wrapFetchWithPayment, decodeXPaymentResponse } from "x402-fetch";
+import { createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { polygonAmoy } from 'viem/chains';
+import 'dotenv/config';
 
-// Create a wallet client (using your private key)
-const account = privateKeyToAccount("0xYourPrivateKey"); // we recommend using an environment variable for this
+const privateKey = process.env.PRIVATE_KEY;
+if (!privateKey) {
+  throw new Error("PRIVATE_KEY not set in .env file");
+}
+
+const account = privateKeyToAccount(`0x${privateKey}`);
+const client = createWalletClient({
+  account,
+  chain: polygonAmoy,
+  transport: http()
+});
+
+console.log("Using wallet address:", account.address);
 ```
 
 ## 3. Make Paid Requests Automatically
@@ -50,7 +63,7 @@ const account = privateKeyToAccount("0xYourPrivateKey"); // we recommend using a
 You can use either `x402-fetch` or `x402-axios` to automatically handle 402 Payment Required responses and complete payment flows.
 
 !!! info x402-fetch
-    **x402-fetch** extends the native `fetch` API to handle 402 responses and payment headers for you. [Full example from Coinbase here](https://github.com/coinbase/x402/tree/main/examples/typescript/clients/fetch)
+    **x402-fetch** extends the native `fetch` API to handle 402 responses and payment headers for you. [Full example here](https://github.com/AkshatGada/x402_Polygon/blob/feature/facilitator-amoy/demo/quickstart-local/buyer_x402.js)
 
 ```typescript
 import { wrapFetchWithPayment, decodeXPaymentResponse } from "x402-fetch";
@@ -58,21 +71,51 @@ import { wrapFetchWithPayment, decodeXPaymentResponse } from "x402-fetch";
 
 // wallet creation logic...
 
-const fetchWithPayment = wrapFetchWithPayment(fetch, account);
+const FACILITATOR_URL = process.env.FACILITATOR_URL || "https://facilitator.x402.rs";
+
+const fetchWithPayment = wrapFetchWithPayment(fetch, client);
+
+const url = process.env.QUICKSTART_RESOURCE_URL || 'http://127.0.0.1:4021/weather';
 
 fetchWithPayment(url, { //url should be something like https://api.example.com/paid-endpoint
   method: "GET",
 })
   .then(async response => {
     const body = await response.json();
-    console.log(body);
+    console.log('Response body:', body);
 
-    const paymentResponse = decodeXPaymentResponse(response.headers.get("x-payment-response")!);
-    console.log(paymentResponse);
+    // Only try to decode payment response if we got the weather data (not the 402 response)
+    if (body.report) {
+      console.log('All response headers:', Object.fromEntries(response.headers.entries()));
+      const rawPaymentResponse = response.headers.get("x-payment-response");
+      console.log('Raw x-payment-response:', rawPaymentResponse);
+
+      try {
+        const paymentResponse = decodeXPaymentResponse(rawPaymentResponse);
+        console.log('Decoded payment response:', paymentResponse);
+      } catch (e) {
+        console.error('Error decoding payment response:', e);
+        console.error('Failed to decode response:', rawPaymentResponse);
+        throw e;
+      }
+    }
   })
-  .catch(error => {
-    console.error(error.response?.data?.error);
-  });
+  .catch(async error => {
+    console.error('Error:', error.message);
+    if (error.response) {
+      try {
+        const text = await error.response.text();
+        console.error('Response text:', text);
+        console.error('Response status:', error.response.status);
+        console.error('Response headers:', error.response.headers);
+      } catch (e) {
+        console.error('Error reading response:', e);
+        console.error('Raw error:', error);
+      }
+    } else {
+      console.error('Raw error:', error);
+    }
+  }); 
 ```
 
 ## 4. Error Handling
