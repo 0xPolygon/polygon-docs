@@ -19,9 +19,13 @@ Polygon currently supports x402 on Mainnet and Amoy through the following facili
 
 1. [x402.rs Facilitator Endpoint](https://facilitator.x402.rs/)
 2. [ThirdWeb](https://playground.thirdweb.com/payments/x402)
-3. Polygon Self-Hosted Facilitator (Contact for access)
+3. Polygon Testnet Facilitator: https://x402.polygon.technology
 
-The following guides will show how to use x402 on Polygon. The x402 community also has
+Please note: For mainnet access through Polygon's Facilitator, 
+reach out for [access here.](https://t.me/PolygonHQ/32)
+
+The following guides will show how to use x402 on Polygon. 
+The x402 community also has
 created [multiple examples](https://github.com/coinbase/x402/tree/main/examples/typescript) 
-which can be easily adapted.
+which can be easily adapted for Polygon.
 

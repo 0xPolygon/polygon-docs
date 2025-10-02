@@ -66,7 +66,7 @@ nav:
         - Onramps:
           - Stripe: pos/payments/onramps/onramps-stripe.md
         - Transfers: 
-          - USDC: pos/transfers/transfer-usdc.md
+          - USDC: pos/payments/transfers/transfer-usdc.md
         - x402:
           - Overview: pos/payments/x402/overview.md
           - Quickstart for Buyers: pos/payments/x402/quickstart-buyers.md

@@ -26,7 +26,6 @@ Install the [x402 Express middleware package](https://www.npmjs.com/package/x402
 
 ```bash
 npm install x402-express
-npm install @coinbase/x402 # for the mainnet facilitator
 ```
 
 Install the [x402 Next.js middleware package](https://www.npmjs.com/package/x402-next).
@@ -39,15 +38,6 @@ npm install x402-next
 npm install x402-hono
 ```
 
-This [community package](https://github.com/ethanniser/x402-mcp) showcases how you can use MCP (Model Context Protocol) with x402. We're working on enshrining an official MCP spec in x402 soon.
-
-```bash
-npm install x402-mcp
-```
-
-Full example in the repo [here](https://github.com/ethanniser/x402-mcp/tree/main/apps/example).
-
-
 ### 2. Add Payment Middleware
 
 Integrate the payment middleware into your application. You will need 
@@ -55,21 +45,18 @@ to provide:
 
 * The Facilitator URL or facilitator object. For testing, 
 use `https://facilitator.x402.rs/` which works on Polygon Mainnet and Amoy.
-* For more information on running in production on mainnet, check 
-out [CDP's Quickstart for Sellers](https://docs.cdp.coinbase.com/x402/docs/
-quickstart-sellers). For a facilitator access on Polygon, please contact us [here.](https://t.me/PolygonHQ/32)
+* For a facilitator access on Polygon, please contact us [here.](https://t.me/PolygonHQ/32)
 * The routes you want to protect.
 * Your receiving wallet address.
 
 
-Full example in the repo [here](https://github.com/coinbase/x402/tree/main/examples/typescript/servers/express). 
-Please adapt for Polygon.
+Full example in the repo [here](https://github.com/AkshatGada/x402_Polygon/tree/feature/facilitator-amoy/demo/quickstart-local). 
+
 
 
 ```javascript
 import express from "express";
 import { paymentMiddleware } from "x402-express";
-// import { facilitator } from "@coinbase/x402"; // For mainnet
 
 const app = express();
 
@@ -119,7 +106,7 @@ app.listen(4021, () => {
 }); 
 ```
 
-Full example in the repo [here](https://github.com/AkshatGada/x402_Polygon/blob/feature/facilitator-amoy/demo/quickstart-local/seller_x402.js). 
+Full example in the repo [here](https://github.com/AkshatGada/x402_Polygon/tree/feature/facilitator-amoy/demo/quickstart-local). 
 Since this is a fullstack example, we recommend using the example to build
 this yourself, and treat the code snippet below as a reference to adapt for
 Polygon.
@@ -152,7 +139,7 @@ export const config = {
 };
 ```
 
-Full example in the repo [here](https://github.com/coinbase/x402/tree/main/examples/typescript/servers/express).
+
 
 ```javascript
 import { Hono } from "hono";

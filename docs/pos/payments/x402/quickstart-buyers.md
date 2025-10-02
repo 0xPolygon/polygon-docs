@@ -24,6 +24,7 @@ npm install x402-axios
 # or
 npm install x402-fetch
 ```
+";
 
 ## 2. Create a Wallet Client
 
@@ -63,7 +64,7 @@ console.log("Using wallet address:", account.address);
 You can use either `x402-fetch` or `x402-axios` to automatically handle 402 Payment Required responses and complete payment flows.
 
 !!! info x402-fetch
-    **x402-fetch** extends the native `fetch` API to handle 402 responses and payment headers for you. [Full example here](https://github.com/AkshatGada/x402_Polygon/blob/feature/facilitator-amoy/demo/quickstart-local/buyer_x402.js)
+    **x402-fetch** extends the native `fetch` API to handle 402 responses and payment headers for you. [Full example here](https://github.com/AkshatGada/x402_Polygon/tree/feature/facilitator-amoy/demo/quickstart-local)
 
 ```typescript
 import { wrapFetchWithPayment, decodeXPaymentResponse } from "x402-fetch";
@@ -71,8 +72,7 @@ import { wrapFetchWithPayment, decodeXPaymentResponse } from "x402-fetch";
 
 // wallet creation logic...
 
-const FACILITATOR_URL = process.env.FACILITATOR_URL || "https://facilitator.x402.rs";
-
+const FACILITATOR_URL = process.env.FACILITATOR_URL || "https://x402.polygon.technology"
 const fetchWithPayment = wrapFetchWithPayment(fetch, client);
 
 const url = process.env.QUICKSTART_RESOURCE_URL || 'http://127.0.0.1:4021/weather';
