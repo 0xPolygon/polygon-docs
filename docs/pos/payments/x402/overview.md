@@ -19,7 +19,7 @@ Polygon currently supports x402 on Mainnet and Amoy through the following facili
 
 1. [x402.rs Facilitator Endpoint](https://facilitator.x402.rs/)
 2. [ThirdWeb](https://playground.thirdweb.com/payments/x402)
-3. Polygon Testnet Facilitator: https://x402.polygon.technology
+3. Polygon Testnet Facilitator: https://x402-amoy.polygon.technology
 
 Please note: For mainnet access through Polygon's Facilitator, 
 reach out for [access here.](https://t.me/PolygonHQ/32)

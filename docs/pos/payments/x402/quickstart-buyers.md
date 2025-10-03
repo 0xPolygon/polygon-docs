@@ -72,7 +72,7 @@ import { wrapFetchWithPayment, decodeXPaymentResponse } from "x402-fetch";
 
 // wallet creation logic...
 
-const FACILITATOR_URL = process.env.FACILITATOR_URL || "https://x402.polygon.technology"
+const FACILITATOR_URL = process.env.FACILITATOR_URL || "https://x402-amoy.polygon.technology"
 const fetchWithPayment = wrapFetchWithPayment(fetch, client);
 
 const url = process.env.QUICKSTART_RESOURCE_URL || 'http://127.0.0.1:4021/weather';
