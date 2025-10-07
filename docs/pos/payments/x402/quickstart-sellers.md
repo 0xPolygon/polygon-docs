@@ -44,8 +44,8 @@ Integrate the payment middleware into your application. You will need
 to provide:
 
 * The Facilitator URL or facilitator object. For testing, 
-use `https://facilitator.x402.rs/` which works on Polygon Mainnet and Amoy.
-* For a facilitator access on Polygon, please contact us [here.](https://t.me/PolygonHQ/32)
+use `https://x402-amoy.polygon.technology` which works on Polygon Amoy testnet.
+* For a facilitator access on Polygon, please contact us [here.](https://info.polygon.technology/devrel-intake-form)
 * The routes you want to protect.
 * Your receiving wallet address.
 
