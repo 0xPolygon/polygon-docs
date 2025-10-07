@@ -342,6 +342,8 @@ In the `app.toml` file, update the following parameters:
 
 Example: `eth_rpc_url = "https://nd-123-456-789.p2pify.com/60f2a23810ba11c827d3da642802412a"`
 
+* [Optional] Post [Rio hardfork](https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-73.md), which enables [VeBlop architecture](https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-64.md), validators are able to elect block producers through heimdall config flag `producer_votes`, whose default validator`"91,92,93"`. Change this value if needed, e.g. `producer_votes="91,92,93"`.
+
 Finally, save the changes in `app.toml`.
 
 ### Configure the Bor service
