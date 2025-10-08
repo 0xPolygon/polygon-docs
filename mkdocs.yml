@@ -440,6 +440,7 @@ nav:
           - Getting started: tools/oracles/getting-started.md
           - Chainlink: tools/oracles/chainlink.md
           - Chronicle: tools/oracles/chronicle.md
+          - Supra: tools/oracles/supra.md
 
         - Wallets:
           - Getting started:  tools/wallets/getting-started.md
