@@ -91,8 +91,6 @@ For any action that requires blockchain interaction,
     2. Copy the API key to use for you dApp's frontend.
     3. And add function `executeMetaTransaction` in **Manage-Api** and make sure to enable meta-tx (Check **native-metatx** option).
 
-  - If you'd like to use your own custom API that sends signed transactions on the blockchain, you can refer to the server code here: [https://github.com/angelagilhotra/ETHOnline-Workshop/tree/master/2-network-agnostic-transfer](https://github.com/angelagilhotra/ETHOnline-Workshop/tree/master/2-network-agnostic-transfer)
-
 - Make sure that the contract you'd like to interact with inherits from `NativeMetaTransactions` - 👀 peep into `executeMetaTransaction` function in the contract.
 - Link: [https://github.com/maticnetwork/pos-portal/blob/34be03cfd227c25b49c5791ffba6a4ffc9b76036/flat/ChildERC20.sol#L1338](https://github.com/maticnetwork/pos-portal/blob/34be03cfd227c25b49c5791ffba6a4ffc9b76036/flat/ChildERC20.sol#L1338)
 
@@ -133,8 +131,6 @@ let data = await web3.eth.abi.encodeFunctionCall({
 
 - Once you have a relayer and the contracts set up, what is required is for the client to be able to fetch an EIP-712 formatted signature and simply call the API with the required parameters
 
-ref: [https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L47](https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L47)
-
 ```jsx
 
 let data = await web3.eth.abi.encodeFunctionCall({
@@ -168,7 +164,7 @@ let data = await web3.eth.abi.encodeFunctionCall({
   });
 ```
 
-Calling the API, ref: [https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L110](https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/sign.js#L110)
+Calling the API
 
 ```jsx
 const response = await request.post(
@@ -222,8 +218,6 @@ where the `txObj` should look something like:
 ```
 
 - If you use the custom API, it executes the `executeMetaTransaction` function on the contract:
-
-(ref: [https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/server/index.js#L40](https://github.com/angelagilhotra/ETHOnline-Workshop/blob/6b615b8a4ef00553c17729c721572529303c8e1b/2-network-agnostic-transfer/server/index.js#L40))
 
 ```jsx
 try {
