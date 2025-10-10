@@ -27,9 +27,9 @@ First, you'll need an Alchemy API key to authenticate your requests. You can [cr
 !!! tip "Optional"
     You can also pull existing API keys by hovering over **Apps** and selecting one. You can **View Key** here, as well as **Edit App** to whitelist specific domains, see several developer tools, and view analytics.
 
-  <center>
-  ![img](https://files.readme.io/f0dbb19-ezgif.com-gif-maker_1.gif)
-  </center>
+<div style="text-align: center;">
+  <img src="https://files.readme.io/f0dbb19-ezgif.com-gif-maker_1.gif" alt="Alchemy App Creation GIF">
+</div>
 
 ### Making a cURL request
 

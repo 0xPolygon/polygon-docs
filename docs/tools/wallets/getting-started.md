@@ -41,9 +41,11 @@ There are companion plugins for wallets that help detect, warn, and prevent mali
 
 Be sure to select **Layer 2** on the Filter menu on the left side of the page to list wallets that are compatible with Polygon networks.
 
-<center>
-[![ethereum.org Wallet List](../../img/tools/wallet/getting-started/ethereum-org-wallets.gif)](https://ethereum.org/en/wallets/find-wallet/)
-</center>
+<div style="text-align: center;">
+      <a href="https://ethereum.org/en/wallets/find-wallet/" target="_blank">
+            <img src="/img/tools/wallet/getting-started/ethereum-org-wallets.gif" alt="ethereum.org Wallet List">
+      </a>
+</div>
 
 ## Polygon portal
 
