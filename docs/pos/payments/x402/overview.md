@@ -11,22 +11,21 @@ cycle.** This lowers the barrier for web2 developers experimenting with crypto,
 while also giving web3 builders a lightweight way to support pay-per-use APIs, 
 agent-to-agent transactions, and micropayments.
 
-[Read more about the x402 architecture and concepts here.](https://x402.gitbook.io/x402)
+[Read more about the x402 architecture and Agentic Commerce here.](https://agentic-docs.polygon.technology)
 
 ## Access on Polygon
 
 Polygon currently supports x402 on Mainnet and Amoy through the following facilitators:
 
-1. Polygon Testnet Facilitator: https://x402-amoy.polygon.technology
-2. [ThirdWeb](https://playground.thirdweb.com/payments/x402)
-3. [x402.rs Facilitator Endpoint](https://facilitator.x402.rs/)
-4. [Pay.AI](https://payai.network/)
+1. Polygon Mainnet Facilitator: https://x402.polygon.technology
+2. Polygon Testnet Facilitator: https://x402-amoy.polygon.technology
+3. [ThirdWeb](https://playground.thirdweb.com/payments/x402)
+4. [x402.rs Facilitator Endpoint](https://facilitator.x402.rs/)
+5. [Pay.AI](https://payai.network/)
+6. [Corbits](https://docs.corbits.dev/about-x402/facilitators)
+7. [Questflow](https://facilitator.questflow.ai/)
 
-Please note: For mainnet access through Polygon's Facilitator, 
-reach out for [access here.](https://info.polygon.technology/devrel-intake-form)
 
-The following guides will show how to use x402 on Polygon. 
-The x402 community also has
-created [multiple examples](https://github.com/coinbase/x402/tree/main/examples/typescript) 
-which can be easily adapted for Polygon.
+To implement x402 with Polygon and your applications or agents, checkout our
+[Agentic Payments documentation.](https://agentic-docs.polygon.technology)
 

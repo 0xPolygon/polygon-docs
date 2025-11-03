@@ -146,6 +146,7 @@ nav:
             - EIP-4337: pos/concepts/transactions/eip-4337.md
             - Meta transactions: pos/concepts/transactions/meta-transactions.md
   - Agglayer: "https://docs.agglayer.dev"
+  - Agentic Payments: "https://agentic-docs.polygon.technology"
   - CDK: "https://docs.agglayer.dev/cdk/"
   - zkEVM:
       - zkEVM: zkEVM/index.md
