@@ -1,5 +1,8 @@
 # Quickstart for Buyers
 
+_To implement x402 with Polygon and your applications or agents, checkout our_
+_[Agentic Payments documentation.](https://agentic-docs.polygon.technology)_
+
 This guide will walk you how to use x402 on Polygon 
 to interact with services that require payment.
 
