@@ -1,5 +1,8 @@
 # Quickstart for Sellers
 
+_To implement x402 with Polygon and your applications or agents, checkout our_
+_[Agentic Payments documentation.](https://agentic-docs.polygon.technology)_
+
 This guide walks you through integrating with x402 
 to enable payments for your API or service. By the end, 
 your API will be able to charge buyers and AI agents for access.
