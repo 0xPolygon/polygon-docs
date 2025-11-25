@@ -446,6 +446,7 @@ nav:
         - Wallets:
           - Getting started:  tools/wallets/getting-started.md
           - WalletConnect:  tools/wallets/walletconnect.md
+          - MetaMask Embedded Wallets: tools/wallets/metamask-ew.md
           - Reown:
               - Intro: tools/wallets/reown.md
               - AppKit: tools/wallets/appkit.md
