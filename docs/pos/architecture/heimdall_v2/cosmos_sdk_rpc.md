@@ -1,0 +1,1 @@
+<swagger-ui src="cosmos_sdk_swagger.yaml"/>

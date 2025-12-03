@@ -48,7 +48,7 @@ The native token for the Polygon PoS mainnet is MATIC, which is used for transac
 
 !!! info "Additional information"
     
-    For more details, refer to the [JSON data](https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json).
+    For more details, refer to the [JSON data](https://github.com/0xPolygon/static/blob/master/network/mainnet/v1/index.json).
 
 ## RPC API methods
 
@@ -56,8 +56,8 @@ Developers can interact with on-chain data and execute various types of transact
 
 !!! info "Getting started with RPC calls"
 
-    For a comprehensive list of API documentation, visit [**Polygon JSON-RPC calls**](https://github.com/0xPolygon/polygon-edge/tree/develop/docs/docs/api).
-
+    For a comprehensive list of API documentation, visit your RPC provider’s documentation. 
+    
     To explore API requests without any setup, fix failing requests, or discover new methods on the Polygon network, try the [**Composer App**](https://composer.alchemyapi.io).
 
 
@@ -67,6 +67,7 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 
 - [Alchemy](https://www.alchemy.com/)
 - [Allnodes](https://polygon.publicnode.com)
+- [Tenderly](https://tenderly.co/web3-gateway)
 - [All That Node](https://www.allthatnode.com/polygon.dsrv)
 - [Amazon Managed Blockchain](https://aws.amazon.com/managed-blockchain/)
 - [Ankr](https://www.ankr.com/)

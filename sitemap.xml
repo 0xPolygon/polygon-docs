@@ -53,188 +53,8 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://docs.polygon.technology/cdk/overview/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/releases/stack-components/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/getting-started/local-deployment/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/getting-started/cli-tool/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/layer2s/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/architecture/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/transaction-lifecycle/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/rollup-vs-validium/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/zk-vs-optimistic/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/blocks/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/transaction-finality/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/gas-fees/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/bridging/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/concepts/admin-upgradeability/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/migrate/forkid-9-12/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/migrate/forkid-7-to-9/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/migrate/fork/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/use-native-token/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/integrate-da/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/manage-policies/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/quick-test-stack/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/connect-testnet/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/high-level-views/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/cdk-zkevm/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/cdk-validium/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/staking-the-bridge/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/spec/validium-vs-rollup/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/glossary/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/resources/third-party-guides/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/resources/cdk-repo-reference/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://docs.polygon.technology/zkEVM/overview/</loc>
   <lastmod>2024-10-17T18:52:32+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/getting-started/cdk-erigon/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/getting-started/cdk-erigon/releases/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/getting-started/cdk-erigon/deploy-cdk-erigon/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/getting-started/cdk-erigon/chain-config/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/getting-started/cdk-erigon/network-recovery/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/getting-started/cdk-erigon/resources/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -1223,8 +1043,17 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://docs.polygon.technology/pos/reference/telemetry-setup-guide/</loc>
+  <lastmod>2025-03-18T17:23:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://docs.polygon.technology/pos/reference/port-management/</loc>
   <lastmod>2024-10-17T18:52:29+00:00</lastmod>
+  <priority>0.80</priority>
+<url>
+  <loc>https://docs.polygon.technology/pos/reference/network-upgrade-process/</loc>
+  <lastmod>2025-03-18T11:27:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -2008,11 +1837,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://docs.polygon.technology/tools/data/parsiq/</loc>
-  <lastmod>2024-10-17T18:52:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://docs.polygon.technology/tools/data/sqd/</loc>
   <lastmod>2024-10-17T18:52:30+00:00</lastmod>
   <priority>0.80</priority>
@@ -2169,76 +1993,6 @@
 </url>
 <url>
   <loc>https://docs.polygon.technology/innovation-design/welcome/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/overview/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/unified-bridge/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/agglayer-go/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/agglayer-rs/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/agglayer/token-flows/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/intro-t1-prover/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/deploy-t1-prover/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/how-to/deploy-t1-prover-devnet/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-architecture/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-design-challenge/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/testing-and-proving-costs/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-cpu-component/</loc>
-  <lastmod>2024-10-17T18:52:27+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-ctl-protocol/</loc>
-  <lastmod>2024-10-17T18:52:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://docs.polygon.technology/cdk/architecture/type-1-prover/t1-rangechecks/</loc>
   <lastmod>2024-10-17T18:52:28+00:00</lastmod>
   <priority>0.80</priority>
 </url>

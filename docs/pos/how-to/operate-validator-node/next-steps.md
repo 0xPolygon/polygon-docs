@@ -141,22 +141,21 @@ The output should appear in the following format:
 To check the balance of your address, run the following command:
 
 ```sh
-heimdallcli query auth account SIGNER_ADDRESS --chain-id CHAIN_ID
+heimdalld query auth account SIGNER_ADDRESS [flags]
 ```
 
 where,
 
 * `SIGNER_ADDRESS`: Your signer address.
-* `CHAIN_ID`: The Polygon mainnet chain ID with the client prefix: `heimdall-137`.
 
 The following output should appear:
 
-```json
+```bash
+'@type': /cosmos.auth.v1beta1.BaseAccount
+account_number: "0"
 address: 0x6c468cf8c9879006e22ec4029696e005c2319c9d
-coins:
-- denom: pol
-amount:
-    i: "1000000000000000000000"
-accountnumber: 0
-sequence: 0
+pub_key:
+  '@type': /cosmos.crypto.secp256k1.PubKey
+  key: ...
+sequence: "0"
 ```

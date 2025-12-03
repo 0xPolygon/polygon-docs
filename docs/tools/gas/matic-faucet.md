@@ -7,53 +7,16 @@ comments: true
 
 Several faucet tools are available to receive test POL and ETH on Sepolia-anchored Polygon networks:
 
+!!! info "Polygon Faucet is deprecated, please use other third party faucets listed below"
+      The official Polygon Faucet is no longer available. Please head to https://faucet.polygon.technology to see the list of available options for testnet faucets
+
 |          Faucet          | Supported testnets                                                                                                               |
 | :----------------------: | -------------------------------------------------------------------------------------------------------------------------------- |
-|      Polygon Faucet      | [zkEVM Cardona, PoS Amoy, Ethereum Sepolia](https://faucet.polygon.technology)                                                   |
 |      Alchemy Faucet      | [PoS Amoy](https://www.alchemy.com/faucets/polygon-amoy) \| [Ethereum Sepolia](https://www.alchemy.com/faucets/ethereum-sepolia) |
 | QuickNode Polygon Faucet | [PoS Amoy](https://faucet.quicknode.com/polygon/amoy)                                                                            |
 |     GetBlock Faucet      | [PoS Amoy](https://getblock.io/faucet/matic-amoy/) \| [Ethereum Sepolia](https://getblock.io/faucet/eth-sepolia)                 |
 |     StakePool Faucet     | [PoS Amoy, Ethereum Sepolia](https://faucet.stakepool.dev.br/)                                                                   |
 
-## Polygon Faucet
-
-The Polygon Faucet is a tool provided by Polygon and ecosystem partners like Alchemy, QuickNode, and GetBlock. It enables developers to acquire free POL/ETH test tokens on the PoS Amoy and zkEVM Cardona testnets. Start deploying and testing your dApps on the Polygon network with test tokens that allow you to explore Polygon features without spending actual POL tokens on the mainnet.
-
-Polygon Faucet drips:
-
-- POL on PoS Amoy.
-- POL and a dummy ERC20 token on Ethereum Sepolia.
-- Test ETH on zkEVM Cardona.
-
-- Start by navigating to [faucet.polygon.technology](https://faucet.polygon.technology/) and connecting/verifying your Discord by selecting **Connect Discord** in the top-right corner of the page.
-
-   <center>
-   ![img](../../img/tools/gas/faucet.png){width=70%}
-   </center>
-
-- Select one of the blockchain testnet networks from the drop-down list. We'll select **Polygon zkEVM (cardona)** for this example.
-
-- Select the type of token you want to receive; zkEVM ETH in this case.
-
-- Copy your wallet address and either paste it directly in the **Wallet Address** field, or select **Paste**. Typing is disabled to prevent entering a wrong address.
-
-- Select **Submit**. 
-
-- Verify the details and select **Confirm** to finalize the transaction.
-
-   <center>
-   ![img](../../img/tools/gas/confirm-transaction.png){width=50%}
-   </center>
-
-- Testnet tokens usually arrive within 1 to 2 minutes.
-
-   <center>
-   ![img](../../img/tools/gas/success.png){width=50%}
-   </center>
-
-!!! tip "Always maintain sufficient test token balance"
-
-      If you don't have enough POL/ETH test tokens in your wallet account to pay for gas fees when sending transactions, the action will fail. If you require testnet tokens in bulk, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSe4npoGldJknEs9EBtPaV3AS-0HTso2IuMWDCiMmLEMCx8euQ/viewform).
 
 ## Alchemy Faucet
 

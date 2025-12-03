@@ -22,7 +22,12 @@ permissions:
   id-token: write
 
 jobs:
+  generate-version:
+    uses: 0xPolygon/pipelines/.github/workflows/generate_version.yaml@main
+
   build_and_deploy:
+    needs:
+      - generate-version
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     permissions:
@@ -49,6 +54,25 @@ jobs:
         run: |
           python build_branches.py -env "${{ inputs.environment }}"
 
+      - name: Construct metadata tags input
+        id: metadata-tags
+        run: |
+          echo 'tag_config<<EOF' >> $GITHUB_OUTPUT
+
+          if [ -n "${{ needs.generate-version.outputs.version }}" ]; then
+            echo "type=raw,value=${{ needs.generate-version.outputs.version }}" >> $GITHUB_OUTPUT
+          else
+            echo "type=ref,event=branch" >> $GITHUB_OUTPUT
+            echo "type=ref,event=pr" >> $GITHUB_OUTPUT
+            echo "type=semver,pattern={{version}}" >> $GITHUB_OUTPUT
+            echo "type=semver,pattern={{major}}.{{minor}}" >> $GITHUB_OUTPUT
+          fi 
+
+          echo 'EOF' >> $GITHUB_OUTPUT
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -68,19 +92,13 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+          tags: ${{ needs.generate-version.outputs.version }}
           flavor: |
             latest=false
 
       - name: Push to GCP Artifact Registry
         uses: docker/build-push-action@v6
         with:
-          file: ${{ inputs.dockerfile_path }}
-          context: ${{ inputs.dockerfile_context }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

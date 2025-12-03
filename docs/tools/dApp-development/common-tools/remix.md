@@ -81,7 +81,7 @@ The `update` function is another public function that is similar to the constr
 
 Now, we have to deploy our smart contract on Amoy, the Polygon testnet. Not only does it cost money (e.g., gas fees) to deploy a smart contract on Polygon mainnet, but the contract is immutable and can't be changed once deployed. Therefore, it's best to deploy your smart contract to the testnet first.
 
-To deploy to the Amoy testnet, we have to connect to the web3 with a service like MetaMask, Brave, Portis, etc. We use MetaMask in this tutorial. Please follow this [guide to set up a MetaMask account](https://support.metamask.io/getting-started/getting-started-with-metamask/).
+To deploy to the Amoy testnet, we have to connect to the web3 with a service like MetaMask, Brave, etc. We use MetaMask in this tutorial. Please follow this [guide to set up a MetaMask account](https://support.metamask.io/getting-started/getting-started-with-metamask/).
 
 - Open Metamask. Click on the network dropdown menu (set to **Ethereum Mainnet** by default) and click on the **Add Network** button. MaticVigil provides a public endpoint and is rate-limited. Therefore, most developers use a free blockchain provider like [Alchemy](https://docs.alchemy.com/docs/how-to-add-polygon-to-metamask) or [Quicknode](https://www.quicknode.com/guides/smart-contract-development/how-to-deploy-a-smart-contract-on-maticpolygon#setting-up-metamask-with-polygon-node) to have a dedicated RPC endpoint with faster throughput AKA computing units per second (CUPs). You need to create a free account to get your private API key from one of these providers to put into the dedicated RPC endpoint URL below.
 
@@ -89,20 +89,20 @@ To deploy to the Amoy testnet, we have to connect to the web3 with a service lik
     - **RPC URL (public endpoint):** <https://rpc-amoy.polygon.technology/>.
     - **RPC URL (dedicated endpoint):** <https://polygon-amoy.g.alchemy.com/v2/{your-api-key}>. You need a [free API key](https://docs.alchemy.com)
     - **Chain ID:** 80002
-    - **Currency Symbol:** MATIC
+    - **Currency Symbol:** POL
     - **Block explorer URL:** <https://amoy.polygonscan.com/>
 
 - Go ahead and click **Save**
 
 - Copy your wallet address from MetaMask by clicking over your account name
 
-- Head over to [the faucet](https://faucet.polygon.technology/) and request test MATIC to pay for gas on the Polygon network. Select **Amoy** as the network and **MATIC Token** as the token in the faucet. You can also use the [Alchemy Amoy faucet](https://www.alchemy.com/faucets/polygon-amoy).
+- Head over to [the faucet](https://faucet.polygon.technology/) and request test POL to pay for gas on the Polygon network. Select **Amoy** as the network and **POL Token** as the token in the faucet. You can also use the [Alchemy Amoy faucet](https://www.alchemy.com/faucets/polygon-amoy).
 
 - Finally, to deploy to Amoy, refer to the instructions in the [Remix deployment](#remix-deployment) section below.
 
 ## Deploying to Polygon mainnet
 
-After deploying on Amoy without any errors, you can deploy the smart contract on the Polygon mainnet. Remember this costs real $ in the form of MATIC tokens.
+After deploying on Amoy without any errors, you can deploy the smart contract on the Polygon mainnet. Remember this costs real $ in the form of POL tokens.
 
 1. Open your MetaMask wallet. 
 2. Click on the network dropdown menu (set to **Ethereum Mainnet** by default) and click on the **Add Network** button. 
@@ -113,14 +113,14 @@ After deploying on Amoy without any errors, you can deploy the smart contract on
     - **Network Name**: Polygon Mainnet
     - **New RPC URL**: <https://polygon-mainnet.g.alchemy.com/v2/{your-api-key}>
     - **Chain ID**: 137
-    - **Currency Symbol**: MATIC
+    - **Currency Symbol**: POL
     - **Block Explorer URL**: <https://polygonscan.com/>
 
 - Go ahead and click **Save**
 
 - Copy your wallet address from MetaMask by clicking over your account name
 
-5. Make sure your MetaMask wallet has MATIC tokens to pay the deployment's gas fees.
+5. Make sure your MetaMask wallet has POL tokens to pay the deployment's gas fees.
 
 
 ## Remix deployment

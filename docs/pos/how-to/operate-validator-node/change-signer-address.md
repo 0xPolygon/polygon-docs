@@ -51,3 +51,32 @@ This guide refers to your current validator node as Node 1 and your new validato
    ```
 
 Selecting **Save** will save your new details for your node. This essentially means that Node 1 will be your address that controls the stake, where the rewards will be sent to, etc. And Node 2 will now be performing activities like signing blocks, signing checkpoints, etc.
+
+Alternatively, the signer address can be updated via contract using the following process:
+
+1. Access StakeManagerProxy smart contract.
+
+      - Mainnet: https://etherscan.io/address/0x5e3Ef299fDDf15eAa0432E6e66473ace8c13D908#writeProxyContract
+      - Amoy: https://sepolia.etherscan.io/address/0x5e3Ef299fDDf15eAa0432E6e66473ace8c13D908#writeProxyContract
+
+2. Click on the **Connect to Web3** button and login using the owner address of your validator node. 
+
+      <center>
+      ![change-owner-1](../../../img/pos/change-owner-1.png){width=30%}
+      </center>
+
+3. You will see a list of functions appear. Click on **`updateSigner`** function. This will be 47th function in the list. There will be 2 data fields that you will need to add information.
+
+4. Here:
+
+      - **validatorId** is the associated ID with your validator
+      - **signerPubkey** is the signer pubkey for your new signer address. 
+
+To get the public key, run the following command on the validator node:
+
+   ```sh
+   heimdalld show-account
+   ```
+Please note that the first 2 characters after `0x` should be removed when you enter the new signer pubkey in the contract.
+
+5. Fill in the relevant information and select **Write**. You will be prompted to sign a transaction. Ensure that you have sufficient ETH to make the transaction.

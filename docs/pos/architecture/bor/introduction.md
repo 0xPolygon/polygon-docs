@@ -11,7 +11,7 @@ The ratio of stake/staking power specifies the probability to be selected as a m
 1. Validators are given slots proportionally according to their stake.
 2. Using historical Ethereum block data as seed, we shuffle this array.
 3. Now depending on Producer count*(maintained by validator's governance)*, validators are taken from the top.
-4. Using this validator set and Tendermint's proposer selection algorithm, we choose a producer for every sprint on Bor.
+4. Using this validator set and CometBFT's proposer selection algorithm, we choose a producer for every sprint on Bor.
 
 ## Detailed mechanics of Bor consensus
 
@@ -21,7 +21,7 @@ In Polygon's Proof-of-Stake (PoS) framework, participants can stake MATIC tokens
 
 ### Span: Defining validator sets and voting power
 
-A span is a defined set of blocks, during which a specific subset of validators is selected from the broader validator pool. Heimdall provides intricate details of each span through its span-details APIs. Within a span, each validator is assigned a certain voting power. The probability of a validator being chosen as a block producer is directly proportional to their voting power. The selection algorithm for block producers is borrowed from Tendermint's consensus protocol.
+A span is a defined set of blocks, during which a specific subset of validators is selected from the broader validator pool. Heimdall provides intricate details of each span through its span-details APIs. Within a span, each validator is assigned a certain voting power. The probability of a validator being chosen as a block producer is directly proportional to their voting power. The selection algorithm for block producers is borrowed from CometBFT's consensus protocol.
 
 ### Sprint: Single block producer selection within a span
 

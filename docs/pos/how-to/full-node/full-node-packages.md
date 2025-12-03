@@ -28,15 +28,15 @@ comments: true
 - Install the default latest version of sentry for Mainnet:
 
     ```shell
-    curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <version> <network> <node_type> 
+    curl -L https://raw.githubusercontent.com/0xPolygon/install/heimdall-v2/heimdall-v2.sh | bash -s -- <version> <network> <node_type> 
     ```
 
     or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions can be found on
-    [Heimdall GitHub repository](https://github.com/maticnetwork/heimdall/releases).
+    [Heimdall GitHub repository](https://github.com/0xPolygon/heimdall-v2/releases).
 
     ```shell
     # Example:
-    # curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- v1.0.7 mainnet sentry
+    # curl -L https://raw.githubusercontent.com/maticnetwork/install/heimdall-v2/heimdall-v2.sh | bash -s -- v0.2.15 mainnet validator
     ```
 
 ### Bor
@@ -44,15 +44,15 @@ comments: true
 - Install the default latest version of sentry for Mainnet:
 
     ```shell
-    curl -L https://raw.githubusercontent.com/maticnetwork/install/main/heimdall.sh | bash -s -- <version> <network> <node_type> 
+    curl -L https://raw.githubusercontent.com/0xPolygon/install/main/bor.sh | bash -s -- <version> <network> <node_type> 
     ```
 
     or install a specific version, node type (`sentry` or `validator`), and network (`mainnet` or `amoy`). All release versions could be found on
-    [Bor Github repository](https://github.com/maticnetwork/bor/releases).
+    [Bor Github repository](https://github.com/0xPolygon/bor/releases).
 
     ```shell
     # Example:
-    # curl -L https://raw.githubusercontent.com/maticnetwork/install/main/bor.sh | bash -s -- v1.3.7 mainnet sentry
+    # curl -L https://raw.githubusercontent.com/0xPolygon/install/main/bor.sh | bash -s -- v2.2.9 mainnet sentry
     ```
 
 ## Configuration
@@ -63,24 +63,28 @@ comments: true
 
 ```shell
 # For mainnet
-sudo -u heimdall heimdalld init --chain=mainnet --home /var/lib/heimdall
-
-# For testnet
-sudo -u heimdall heimdalld init --chain=amoy --home /var/lib/heimdall
+sudo -u heimdall heimdalld init <MONIKER> --chain-id=<CHAIN_ID> --home /var/lib/heimdall
 ```
 
-- You will need to add a few details in the `config.toml` file. To open the `config.toml` file run the following command `vi /var/lib/heimdall/config/config.toml`
+Where `CHAIN_ID` is `heimdallv2-80002` for `amoy` and `heimdallv2-137` for `mainnet`
 
-    - Now in the config file you will have to change `Moniker`
+Then, edit the configuration files under `/var/lib/heimdall/config`  
+The templates for each supported network are available [here](https://github.com/0xPolygon/heimdall-v2/tree/develop/packaging/templates/config)  
+Download the `genesis.json` file and place it under `/var/lib/heimdall/config/`
+Use the following commands based on your target network:
+```bash
+cd /var/lib/heimdall/config
+curl -fsSL <BUCKET_URL> -o genesis.json
+```
 
-    ```shell
-    moniker=<enter unique identifier> For example, moniker=my-sentry-node
-    ```
+Where `BUCKET_URL` is
 
-    - Change the value of **Prometheus** to `true`
-    - Set the `max_open_connections` value to `100`
+- https://storage.googleapis.com/amoy-heimdallv2-genesis/migrated_dump-genesis.json for amoy
+- https://storage.googleapis.com/mainnet-heimdallv2-genesis/migrated_dump-genesis.json for mainne
 
-    Make sure you keep the proper formatting when you make the changes above.
+
+- You will need to change a few details in the config files.  
+- Templates for each supported network are available [here](https://github.com/0xPolygon/heimdall-v2/tree/develop/packaging/templates/config)
 
 ### Configure service files for Bor and Heimdall
 
@@ -111,6 +115,16 @@ Save the changes in `/lib/systemd/system/heimdalld.service`.
 
 Save the changes in `/var/lib/bor/config.toml`.
 
+## (Optional) Start Heimdall from snapshot
+
+In case you want to start Heimdall from a snapshot,  
+you can download it, and extract in the `data` folder.
+Examples of snapshots can be found here https://all4nodes.io/Polygon, and they are managed by the community.
+
+e.g.:
+```bash
+lz4 -dc polygon-heimdall-24404501-25758577.tar.lz4 | tar -x
+```
 
 ## Start services
 
@@ -119,6 +133,14 @@ Reloading service files to make sure all changes to service files are loaded cor
 ```shell
 sudo systemctl daemon-reload
 ```
+
+Verify the installation by checking the Heimdall version on your machine:
+
+```bash
+heimdalld version
+```
+
+It should return the version of Heimdall you installed.
 
 Start Heimdall, Heimdall rest server, and Heimdall bridge.
 
