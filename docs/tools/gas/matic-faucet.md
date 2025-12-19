@@ -13,6 +13,7 @@ Several faucet tools are available to receive test POL and ETH on Sepolia-anchor
 |          Faucet          | Supported testnets                                                                                                               |
 | :----------------------: | -------------------------------------------------------------------------------------------------------------------------------- |
 |      Alchemy Faucet      | [PoS Amoy](https://www.alchemy.com/faucets/polygon-amoy) \| [Ethereum Sepolia](https://www.alchemy.com/faucets/ethereum-sepolia) |
+|      Chainstack Faucet   | [PoS Amoy](https://faucet.chainstack.com/amoy-faucet) \| [Ethereum Sepolia](https://faucet.chainstack.com/sepolia-testnet-faucet)|
 | QuickNode Polygon Faucet | [PoS Amoy](https://faucet.quicknode.com/polygon/amoy)                                                                            |
 |     GetBlock Faucet      | [PoS Amoy](https://getblock.io/faucet/matic-amoy/) \| [Ethereum Sepolia](https://getblock.io/faucet/eth-sepolia)                 |
 |     StakePool Faucet     | [PoS Amoy, Ethereum Sepolia](https://faucet.stakepool.dev.br/)                                                                   |
@@ -28,6 +29,10 @@ Several faucet tools are available to receive test POL and ETH on Sepolia-anchor
    ![img](../../img/tools/gas/alchemy-faucet1.png)
 
 - Check the transaction hash as soon as you finish requesting your POL, and view the transaction details on [Polygonscan](https://amoy.polygonscan.com/).
+
+## Chainstack Faucet
+
+Request both Sepolia & Amoy once every 24 hours as validated by your Chainstack API key.
 
 ## QuickNode Polygon Faucet
 
